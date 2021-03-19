@@ -27,10 +27,14 @@ class CommonGroupUpdate
     public const TYPE_PARTNER = 11;
     /**
      * The group's name
+     *
+     * @var string
      */
     protected string $name;
     /**
      * The group's description
+     *
+     * @var string
      */
     protected string $description;
     /**
@@ -44,10 +48,14 @@ class CommonGroupUpdate
      * - `CommonGroupUpdate::TYPE_CHANNEL`
      * - `CommonGroupUpdate::TYPE_STARTER`
      * - `CommonGroupUpdate::TYPE_PARTNER`
+     *
+     * @var int
      */
     protected int $type;
     /**
      * The timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
+     *
+     * @var string
      */
     protected string $timezone;
 }

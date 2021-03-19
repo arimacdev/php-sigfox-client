@@ -2,6 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition\MinProvider;
+use Arimac\Sigfox\Definition\MinContact;
 /**
  * Generic internet subscription information
  */
@@ -30,6 +32,8 @@ class UpdateInternetSubscription
      * - `UpdateInternetSubscription::TYPE_SATELLITE`
      * - `UpdateInternetSubscription::TYPE_LAN`
      * - `UpdateInternetSubscription::TYPE_WIFI`
+     *
+     * @var int
      */
     protected int $type;
     /**
@@ -37,19 +41,30 @@ class UpdateInternetSubscription
      * - `UpdateInternetSubscription::PRIORITY_PRIMARY`
      * - `UpdateInternetSubscription::PRIORITY_SECONDARY`
      * - `UpdateInternetSubscription::PRIORITY_TERMINATED`
+     *
+     * @var int
      */
     protected int $priority;
     /**
      * The comments about this internet subscription. This field can be unset when updating.
+     *
+     * @var string
      */
     protected string $comments;
     /**
      * The start time of this internet subscription
+     *
+     * @var int
      */
     protected int $startTime;
     /**
      * The end time this internet subscription. This field can be unset when updating.
+     *
+     * @var int
      */
     protected int $endTime;
+    /** @var MinProvider */
+    protected MinProvider $provider;
+    /** @var MinContact[] */
     protected array $contacts;
 }

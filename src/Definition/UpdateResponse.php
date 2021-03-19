@@ -2,9 +2,10 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition\BaseResponse;
 /**
  * Generic information about user update operation
  */
-class UpdateResponse
+class UpdateResponse extends BaseResponse
 {
 }

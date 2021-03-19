@@ -18,44 +18,62 @@ class EthernetConnectivityBase
     public const SOURCE_TOOLS = 3;
     /**
      * The name of the configuration
+     *
+     * @var string
      */
-    protected ?string $name;
+    protected string $name;
     /**
      * Token's type of an ethernet connectivity configuration
      * - `EthernetConnectivityBase::TYPE_STATIC`
      * - `EthernetConnectivityBase::TYPE_PARTLY_DYNAMIC`
+     *
+     * @var int
      */
-    protected ?int $type;
+    protected int $type;
     /**
      * IP address of the ethernet connectivity, required if the type is STATIC
+     *
+     * @var string
      */
-    protected string $ip;
+    protected ?string $ip;
     /**
      * Subnet mask of the ethernet connectivity, required if the type is STATIC
+     *
+     * @var string
      */
-    protected string $mask;
+    protected ?string $mask;
     /**
      * DNS n°1 of the ethernet connectivity, required if the type is STATIC
+     *
+     * @var string
      */
-    protected string $dns1;
+    protected ?string $dns1;
     /**
      * DNS n°2 of the ethernet connectivity, only applicable if the type is STATIC. This field can be unset by setting the value as an empty string.
+     *
+     * @var string
      */
-    protected string $dns2;
+    protected ?string $dns2;
     /**
      * Gateway of the ethernet connectivity, required if the type is STATIC
+     *
+     * @var string
      */
-    protected string $gateway;
+    protected ?string $gateway;
     /**
      * MTU of the ethernet connectivity, required if the type is PARTLY_DYNAMIC. This field can be unset by setting the value to null.
+     *
+     * @var int
      */
-    protected int $mtu;
+    protected ?int $mtu;
     /**
      * Configuration origin of the connectivity
      * - `EthernetConnectivityBase::SOURCE_REMOTE`
      * - `EthernetConnectivityBase::SOURCE_OTHERS`
      * - `EthernetConnectivityBase::SOURCE_DEFAULT`
      * - `EthernetConnectivityBase::SOURCE_TOOLS`
+     *
+     * @var int
      */
-    protected int $source;
+    protected ?int $source;
 }

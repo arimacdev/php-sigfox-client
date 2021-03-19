@@ -29,6 +29,8 @@ class Callback
     public const CALLBACK_SUBTYPE_DATA_ADVANCED = 6;
     /**
      * The callback's identifier
+     *
+     * @var string
      */
     protected string $id;
     /**
@@ -36,6 +38,8 @@ class Callback
      * - URL
      * - BATCH_URL
      * - EMAIL
+     *
+     * @var string
      */
     protected string $channel;
     /**
@@ -43,6 +47,8 @@ class Callback
      * - `Callback::CALLBACK_TYPE_DATA`
      * - `Callback::CALLBACK_TYPE_SERVICE`
      * - `Callback::CALLBACK_TYPE_ERROR`
+     *
+     * @var int
      */
     protected int $callbackType;
     /**
@@ -54,18 +60,26 @@ class Callback
      * - `Callback::CALLBACK_SUBTYPE_ACKNOWLEDGE`
      * - `Callback::CALLBACK_SUBTYPE_REPEATER`
      * - `Callback::CALLBACK_SUBTYPE_DATA_ADVANCED`
+     *
+     * @var int
      */
     protected int $callbackSubtype;
     /**
      * The custom payload configuration. Only for DATA callbacks. This field can be unset when updating.
+     *
+     * @var string
      */
     protected string $payloadConfig;
     /**
      * True to enable the callback, otherwise false
+     *
+     * @var bool
      */
     protected bool $enabled;
     /**
      * True if last use of the callback fails, otherwise false
+     *
+     * @var bool
      */
     protected bool $dead;
 }

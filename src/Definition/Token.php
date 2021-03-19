@@ -20,6 +20,8 @@ class Token
      * - `Token::STATE_OFF_CONTRACT`
      * - `Token::STATE_NA_FOR_API`
      * - `Token::STATE_INVALID_TOKEN`
+     *
+     * @var int
      */
     protected int $state;
     /**
@@ -28,18 +30,26 @@ class Token
      * - Off Contract
      * - Not applicable for API
      * - Invalid
+     *
+     * @var string
      */
     protected string $detailMessage;
     /**
      * The device's communication end time (in milliseconds since the Unix Epoch)
+     *
+     * @var int
      */
     protected int $end;
     /**
      * The number of free messages left for this token
+     *
+     * @var int
      */
     protected int $freeMessages;
     /**
      * The number of free messages already sent for this token
+     *
+     * @var int
      */
     protected int $freeMessagesSent;
 }

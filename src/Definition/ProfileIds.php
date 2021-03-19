@@ -5,7 +5,8 @@ namespace Arimac\Sigfox\Definition;
 /**
  * The API user profile identifier(s)
  */
-class ProfileIds
+trait ProfileIds
 {
+    /** @var string[] */
     protected array $profileId;
 }

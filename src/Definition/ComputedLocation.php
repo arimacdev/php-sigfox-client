@@ -25,14 +25,20 @@ class ComputedLocation
     public const SOURCE_PROXIMITY_LOCATION = 7;
     /**
      * The device's estimated latitude
+     *
+     * @var int
      */
     protected int $lat;
     /**
      * The device's estimated longitude
+     *
+     * @var int
      */
     protected int $lng;
     /**
      * The radius of the circle (meters)
+     *
+     * @var int
      */
     protected int $radius;
     /**
@@ -45,10 +51,14 @@ class ComputedLocation
      * - `ComputedLocation::SOURCE_PRIVATE_DATABASE_LOCATION`
      * - `ComputedLocation::SOURCE_WIFI_LOCATION`
      * - `ComputedLocation::SOURCE_PROXIMITY_LOCATION`
+     *
+     * @var int
      */
     protected int $source;
     /**
      * The place ids computed by the Sigfox Geolocation service
+     *
+     * @var string[]
      */
     protected array $placeIds;
 }

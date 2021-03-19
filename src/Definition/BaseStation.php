@@ -2,6 +2,12 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition\object;
+use Arimac\Sigfox\Definition\object;
+use Arimac\Sigfox\Definition\object;
+use Arimac\Sigfox\Definition\object;
+use Arimac\Sigfox\Definition\Actions;
+use Arimac\Sigfox\Definition\Resources;
 /**
  * Defines the base station's properties
  */
@@ -173,82 +179,122 @@ class BaseStation
     public const GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_CONTRIBUTION_STATUS_NOT_AVAILABLE_FOR_THE_MOMENT = 4;
     /**
      * The base station's identifier (hexadecimal format)
+     *
+     * @var string
      */
     protected string $id;
     /**
      * The base station's name
+     *
+     * @var string
      */
     protected string $name;
     /**
      * The current version of the software installed on this base station
+     *
+     * @var string
      */
     protected string $versionCurrent;
     /**
      * The current version of the hardware of this base station
+     *
+     * @var string
      */
     protected string $hwVersion;
+    /** @var object */
     protected object $group;
     /**
      * The first commissioning time of the station (in milliseconds)
+     *
+     * @var int
      */
     protected int $firstCommissioningTime;
     /**
      * The commissioning time of the station (in milliseconds)
+     *
+     * @var int
      */
     protected int $commissioningTime;
     /**
      * The decommissioning time of the station (in milliseconds)
+     *
+     * @var int
      */
     protected int $decommissioningTime;
     /**
      * The number of operating days of the station. To present if the station was not decommissioned, or to decommisioning time otherwise
+     *
+     * @var int
      */
     protected int $operatingDays;
     /**
      * Date of the delivery made by the manufacturer for this base station
+     *
+     * @var int
      */
     protected int $manufacturerDeliveryTime;
     /**
      * Date of the beginning of the warranty for this base station
+     *
+     * @var int
      */
     protected int $warrantyTime;
     /**
      * Date of the last communication made with this base station
+     *
+     * @var int
      */
     protected int $lastCommunicationTime;
     /**
      * Date of the last PING received from this base station
+     *
+     * @var int
      */
     protected int $lastPingTime;
     /**
      * Date of the last restart of this base station
+     *
+     * @var int
      */
     protected int $restartTime;
     /**
      * Base station connection type.
      * - `BaseStation::CONNECTION_TYPE_ETH`
      * - `BaseStation::CONNECTION_TYPE_GSM`
+     *
+     * @var int
      */
     protected int $connectionType;
     /**
      * Description of the base station
+     *
+     * @var string
      */
     protected string $description;
     /**
      * ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department available for some countries).
+     *
+     * @var array
      */
     protected array $location;
+    /** @var object */
     protected object $hwFamily;
     /**
      * Number of seconds the base station keep alive
+     *
+     * @var int
      */
     protected int $keepAlive;
     /**
      * The base station's latitude
+     *
+     * @var int
      */
     protected int $lat;
     /**
      * The base station's longitude
+     *
+     * @var int
      */
     protected int $lng;
     /**
@@ -258,6 +304,8 @@ class BaseStation
      * - `BaseStation::COMMUNICATION_STATE_WARN`
      * - `BaseStation::COMMUNICATION_STATE_KO`
      * - `BaseStation::COMMUNICATION_STATE_OK_KO`
+     *
+     * @var int
      */
     protected int $communicationState;
     /**
@@ -267,6 +315,8 @@ class BaseStation
      * - `BaseStation::STATE_WARN`
      * - `BaseStation::STATE_KO`
      * - `BaseStation::STATE_OK_KO`
+     *
+     * @var int
      */
     protected int $state;
     /**
@@ -275,55 +325,82 @@ class BaseStation
      * - `BaseStation::LIFECYCLE_STATUS_PROD`
      * - `BaseStation::LIFECYCLE_STATUS_MAINTENANCE`
      * - `BaseStation::LIFECYCLE_STATUS_DEAD`
+     *
+     * @var int
      */
     protected int $lifecycleStatus;
+    /** @var object */
     protected object $queue;
     /**
      * true if the base station is muted
+     *
+     * @var bool
      */
     protected bool $muted;
     /**
      * true if the transmission is authorized on this base station
+     *
+     * @var bool
      */
     protected bool $transmissionAuthorized;
     /**
      * true if the downlink is enabled on this base station
+     *
+     * @var bool
      */
     protected bool $downlinkEnabled;
     /**
      * Name if the installer of this base station
+     *
+     * @var string
      */
     protected string $installer;
     /**
      * Date of the creation of the base station (in milliseconds since Unix Epoch)
+     *
+     * @var int
      */
     protected int $creationTime;
     /**
      * Id of the user who created this base station
+     *
+     * @var string
      */
     protected string $createdBy;
     /**
      * Date of the last modification made on this base station (in milliseconds since Unix Epoch)
+     *
+     * @var int
      */
     protected int $lastEditionTime;
     /**
      * Id of the user who edited this base station for the last time
+     *
+     * @var string
      */
     protected string $lastEditedBy;
     /**
      * Uplink base frequency of this base station (in Hz)
+     *
+     * @var int
      */
     protected int $baseFrequency;
     /**
      * Downlink center frequency of this base station (in Hz)
+     *
+     * @var int
      */
     protected int $downlinkCenterFrequency;
     /**
      * Macro channel of this base station (in Hz)
+     *
+     * @var int
      */
     protected int $macroChannel;
     /**
      * TX power amplification of this base station (in %)
+     *
+     * @var int
      */
     protected int $txPowerAmplification;
     /**
@@ -331,6 +408,8 @@ class BaseStation
      * - `BaseStation::PROTOCOL_V0`
      * - `BaseStation::PROTOCOL_V1`
      * - `BaseStation::PROTOCOL_BOTH`
+     *
+     * @var int
      */
     protected int $protocol;
     /**
@@ -338,6 +417,8 @@ class BaseStation
      * - `BaseStation::PRE_AMP1_LNA`
      * - `BaseStation::PRE_AMP1_BYPASS`
      * - `BaseStation::PRE_AMP1_ATTEND`
+     *
+     * @var int
      */
     protected int $preAmp1;
     /**
@@ -345,6 +426,8 @@ class BaseStation
      * - `BaseStation::PRE_AMP2_LNA`
      * - `BaseStation::PRE_AMP2_BYPASS`
      * - `BaseStation::PRE_AMP2_ATTEND`
+     *
+     * @var int
      */
     protected int $preAmp2;
     /**
@@ -353,6 +436,8 @@ class BaseStation
      * - `BaseStation::R_A_M_LOG_NO`
      * - `BaseStation::R_A_M_LOG_AUTO`
      * - `BaseStation::R_A_M_LOG_DROP`
+     *
+     * @var int
      */
     protected int $RAMLog;
     /**
@@ -363,24 +448,34 @@ class BaseStation
      * - `BaseStation::WWAN_MODE_WCDMA_PREF`
      * - `BaseStation::WWAN_MODE_GPRS_PREF`
      * - `BaseStation::WWAN_MODE_GPRS`
+     *
+     * @var int
      */
     protected int $wwanMode;
     /**
      * Base station bit rate.
      * - `BaseStation::BIT_RATE_BIT_RATE_100_BS`
      * - `BaseStation::BIT_RATE_BIT_RATE_600_BS`
+     *
+     * @var int
      */
     protected int $bitRate;
     /**
      * true if the base station is available for the global coverage computation
+     *
+     * @var bool
      */
     protected bool $globalCoverageEnable;
     /**
      * Antenna height of the base station (in m)
+     *
+     * @var int
      */
     protected int $elevation;
     /**
      * Radius of the base station (in km)
+     *
+     * @var int
      */
     protected int $splatRadius;
     /**
@@ -408,14 +503,20 @@ class BaseStation
      * - `BaseStation::MAST_EQUIPMENT_LNA_V3_SBS_923_P`
      * - `BaseStation::MAST_EQUIPMENT_NONE`
      * - `BaseStation::MAST_EQUIPMENT_LNAC_868_TX`
+     *
+     * @var int
      */
     protected int $mastEquipment;
     /**
      * The base station's mast equipment description
+     *
+     * @var string
      */
     protected string $mastEquipmentDescription;
     /**
      * true if the LNA is by-passed
+     *
+     * @var bool
      */
     protected bool $lnaByPass;
     /**
@@ -431,74 +532,108 @@ class BaseStation
      * - `BaseStation::CAVITY_FILTER_VERSION_FCC_9225MHZ`
      * - `BaseStation::CAVITY_FILTER_VERSION_ETSI_867MHZ_MATECH`
      * - `BaseStation::CAVITY_FILTER_VERSION_ETSI_867MHZ_TECHNIWAVE`
+     *
+     * @var int
      */
     protected int $cavityFilterVersion;
     /**
      * The base station's cavity filter version description
+     *
+     * @var string
      */
     protected string $cavityFilterVersionDescription;
     /**
      * Environment loss of this base station (in dB)
+     *
+     * @var int
      */
     protected int $environmentLoss;
     /**
      * Cable loss of this base station (in dB)
+     *
+     * @var int
      */
     protected int $cableLoss;
     /**
      * Antenna gain of this base station (in dB).
+     *
+     * @var int
      */
     protected int $antennaGain;
     /**
      * Antenna noise figure of this base station (in dB). This setting is only relevant when an antenna with a filter is installed.
+     *
+     * @var int
      */
     protected int $antennaNoiseFigure;
     /**
      * Antenna insertion loss of this base station (in dB). This setting is only relevant when an antenna with a filter is installed.
+     *
+     * @var int
      */
     protected int $antennaInsertionLoss;
     /**
      * Antenna max admissible power of this base station (in dBm). This setting is only relevant when an antenna with a filter is installed.
+     *
+     * @var int
      */
     protected int $antennaMaxAdmissiblePower;
     /**
      * true if the base station has a gain flag
+     *
+     * @var bool
      */
     protected bool $gainFlag;
     /**
      * Mast equipment gain of this base station (in dB)
+     *
+     * @var int
      */
     protected int $mastEquipmentGain;
     /**
      * Mast equipment noise figure of this base station (in dB)
+     *
+     * @var int
      */
     protected int $mastEquipmentNoiseFigure;
     /**
      * LNA insertion loss of this base station (in dB)
+     *
+     * @var int
      */
     protected int $lnaInsertionLoss;
     /**
      * Cavity filter insertion loss of this base station (in dB)
+     *
+     * @var int
      */
     protected int $cavityFilterInsertionLoss;
     /**
      * TX power margin of this base station (in dBm)
+     *
+     * @var int
      */
     protected int $txPowerMargin;
     /**
      * power capability of this base station (in dBm)
+     *
+     * @var int
      */
     protected int $powerCapability;
     /**
      * Antenna location.
      * - `BaseStation::ANTENNA_LOCATION_CODE_OUTDOOR`
      * - `BaseStation::ANTENNA_LOCATION_CODE_INDOOR`
+     *
+     * @var int
      */
     protected int $antennaLocationCode;
     /**
      * Service coverage (for Mini base station)
      * - `BaseStation::SERVICE_COVERAGE_GLOBAL`
      * - `BaseStation::SERVICE_COVERAGE_CUSTOMER`
+     *
+     * @var int
      */
     protected int $serviceCoverage;
     /**
@@ -506,6 +641,8 @@ class BaseStation
      * - `BaseStation::GEOLOC_COMPUTATION_DEFAULT`
      * - `BaseStation::GEOLOC_COMPUTATION_ENABLED`
      * - `BaseStation::GEOLOC_COMPUTATION_DISABLED`
+     *
+     * @var int
      */
     protected int $geolocComputation;
     /**
@@ -515,12 +652,22 @@ class BaseStation
      * - `BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_GREY_LISTED`
      * - `BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_BLACK_LISTED`
      * - `BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_CONTRIBUTION_STATUS_NOT_AVAILABLE_FOR_THE_MOMENT`
+     *
+     * @var int
      */
     protected int $geolocGlobalStateOfContribution;
+    /** @var object */
     protected object $antenna;
+    /** @var int[] */
     protected array $availableConnections;
     /**
      * the base station’s marker code
+     *
+     * @var string
      */
     protected string $makerCode;
+    /** @var Actions */
+    protected Actions $actions;
+    /** @var Resources */
+    protected Resources $resources;
 }

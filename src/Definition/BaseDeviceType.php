@@ -26,10 +26,14 @@ class BaseDeviceType
     public const PAYLOAD_TYPE_SENSITV2 = 9;
     /**
      * The device type's name
+     *
+     * @var string
      */
     protected string $name;
     /**
      * The device type's description
+     *
+     * @var string
      */
     protected string $description;
     /**
@@ -38,11 +42,15 @@ class BaseDeviceType
      * - `BaseDeviceType::DOWNLINK_MODE_CALLBACK`
      * - `BaseDeviceType::DOWNLINK_MODE_NONE`
      * - `BaseDeviceType::DOWNLINK_MODE_MANAGED`
+     *
+     * @var int
      */
     protected int $downlinkMode;
     /**
      * Downlink data to be sent to the devices of this device type if the downlinkMode is equal to 0.
      * It must be an 8 byte length message given in hexadecimal string format.
+     *
+     * @var string
      */
     protected string $downlinkDataString;
     /**
@@ -53,22 +61,32 @@ class BaseDeviceType
      * - `BaseDeviceType::PAYLOAD_TYPE_DISPLAY_IN_ASCII`
      * - `BaseDeviceType::PAYLOAD_TYPE_RADIO_PLANNING_FRAME`
      * - `BaseDeviceType::PAYLOAD_TYPE_SENSITV2`
+     *
+     * @var int
      */
     protected int $payloadType;
     /**
      * The payload configuration. Required if the payload type is Custom, else ignored.
+     *
+     * @var string
      */
     protected string $payloadConfig;
     /**
      * Keep alive period in seconds (0 to not keep alive else 1800 second minimum)
+     *
+     * @var int
      */
     protected int $keepAlive;
     /**
      * Email address to contact in case of problems occurring while executing a callback. This field can be unset when updating.
+     *
+     * @var string
      */
     protected string $alertEmail;
     /**
      * Allows the automatic renewal of devices attached to this device type
+     *
+     * @var bool
      */
     protected bool $automaticRenewal;
 }

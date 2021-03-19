@@ -24,12 +24,16 @@ class CommonGroupCreate
     public const TYPE_PARTNER = 11;
     /**
      * The group's name
+     *
+     * @var string
      */
-    protected ?string $name;
+    protected string $name;
     /**
      * The group's description
+     *
+     * @var string
      */
-    protected ?string $description;
+    protected string $description;
     /**
      * Group's type:
      * - `CommonGroupCreate::TYPE_SO`
@@ -41,14 +45,20 @@ class CommonGroupCreate
      * - `CommonGroupCreate::TYPE_CHANNEL`
      * - `CommonGroupCreate::TYPE_STARTER`
      * - `CommonGroupCreate::TYPE_PARTNER`
+     *
+     * @var int
      */
-    protected ?int $type;
+    protected int $type;
     /**
      * The group's timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
+     *
+     * @var string
      */
-    protected ?string $timezone;
+    protected string $timezone;
     /**
      * The parent group id
+     *
+     * @var string
      */
-    protected ?string $parentId;
+    protected string $parentId;
 }

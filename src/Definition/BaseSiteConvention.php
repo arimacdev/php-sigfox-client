@@ -29,30 +29,44 @@ class BaseSiteConvention
     public const TYPE_COMPANY = 4;
     /**
      * The annual cost of this convention
+     *
+     * @var int
      */
     protected int $annualCost;
     /**
      * The comments of this convention
+     *
+     * @var string
      */
     protected string $comments;
     /**
      * The start time of this convention
+     *
+     * @var int
      */
     protected int $startTime;
     /**
      * The end time of this convention
+     *
+     * @var int
      */
     protected int $endTime;
     /**
      * The bss contract reference of this convention
+     *
+     * @var string
      */
     protected string $contractReference;
     /**
      * is this convention in maintenance
+     *
+     * @var bool
      */
     protected bool $maintenance;
     /**
      * The annual cost of the maintenance of this convention
+     *
+     * @var int
      */
     protected int $maintenanceAnnualCost;
     /**
@@ -62,6 +76,8 @@ class BaseSiteConvention
      * - `BaseSiteConvention::STATUS_SIGNED_SIGFOX`
      * - `BaseSiteConvention::STATUS_SIGNED_HOST`
      * - `BaseSiteConvention::STATUS_SIGNED_BOTH`
+     *
+     * @var int
      */
     protected int $status;
     /**
@@ -71,6 +87,8 @@ class BaseSiteConvention
      * - `BaseSiteConvention::TYPE_SOCIAL_HOUSING_AUTHORITY`
      * - `BaseSiteConvention::TYPE_ASSOCIATION`
      * - `BaseSiteConvention::TYPE_COMPANY`
+     *
+     * @var int
      */
     protected int $type;
 }

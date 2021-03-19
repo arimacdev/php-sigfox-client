@@ -14,34 +14,48 @@ class CellularConnectivityBase
     public const SOURCE_TOOLS = 3;
     /**
      * The name of the configuration
+     *
+     * @var string
      */
-    protected ?string $name;
+    protected string $name;
     /**
      * The APN used to connect to the base station with this cellular connectivity configuration
+     *
+     * @var string
      */
-    protected ?string $apn;
+    protected string $apn;
     /**
      * The username used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     *
+     * @var string
      */
-    protected string $username;
+    protected ?string $username;
     /**
      * The password used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     *
+     * @var string
      */
-    protected string $password;
+    protected ?string $password;
     /**
      * The PIN used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     *
+     * @var string
      */
-    protected string $pin;
+    protected ?string $pin;
     /**
      * Indicates if the cellular connectivity is registered on a roaming network.
+     *
+     * @var bool
      */
-    protected bool $roaming;
+    protected ?bool $roaming;
     /**
      * Configuration origin of the connectivity
      * - `CellularConnectivityBase::SOURCE_REMOTE`
      * - `CellularConnectivityBase::SOURCE_OTHERS`
      * - `CellularConnectivityBase::SOURCE_DEFAULT`
      * - `CellularConnectivityBase::SOURCE_TOOLS`
+     *
+     * @var int
      */
-    protected int $source;
+    protected ?int $source;
 }

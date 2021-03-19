@@ -15,6 +15,8 @@ class CommonRole
     public const TYPE_META = 2;
     /**
      * the role's name
+     *
+     * @var string
      */
     protected string $name;
     /**
@@ -22,6 +24,8 @@ class CommonRole
      * - `CommonRole::TYPE_ROLE`
      * - `CommonRole::TYPE_META_EMPTY`
      * - `CommonRole::TYPE_META`
+     *
+     * @var int
      */
     protected int $type;
 }

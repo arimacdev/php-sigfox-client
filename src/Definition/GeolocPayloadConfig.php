@@ -9,10 +9,14 @@ class GeolocPayloadConfig
 {
     /**
      * Geolocation payload id
+     *
+     * @var string
      */
     protected string $id;
     /**
      * Geolocation payload name
+     *
+     * @var string
      */
     protected string $name;
 }

@@ -6,6 +6,8 @@ class TokenUnsubscribe
 {
     /**
      * Timestamp of token unsubscription date (in milliseconds since the Unix Epoch)
+     *
+     * @var int
      */
     protected int $unsubscriptionTime;
 }

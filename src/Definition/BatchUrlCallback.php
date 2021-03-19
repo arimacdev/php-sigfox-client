@@ -2,9 +2,28 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition\Callback;
 /**
  * Defines the properties needed to create a batch url callback
  */
-class BatchUrlCallback
+class BatchUrlCallback extends Callback
 {
+    /**
+     * The callback's url
+     *
+     * @var string
+     */
+    protected string $url;
+    /**
+     * The http method used to send a callback
+     *
+     * @var string
+     */
+    protected string $httpMethod;
+    /**
+     * The line pattern representing a message.
+     *
+     * @var string
+     */
+    protected string $linePattern;
 }

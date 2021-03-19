@@ -27,11 +27,17 @@ class Definition
 
     protected $name;
 
+    protected $forceTraits = ["BillableGroup", "CallbackEmail", "GroupCallbackEmail", "ProfileIds"];
+
     public function __construct(string $name, ?string $description = null)
     {
         $this->factory = new BuilderFactory;
         $this->namespace = $this->factory->namespace("Arimac\Sigfox\Definition");
-        $this->class = $this->factory->class($name);
+        if (in_array($name, $this->forceTraits)) {
+            $this->class = $this->factory->trait($name);
+        } else {
+            $this->class = $this->factory->class($name);
+        }
         $this->name = $name;
         if ($description) {
             $this->class->setDocComment($this->formatDocComment($description));
@@ -53,18 +59,39 @@ class Definition
         return $prettyPrinter->prettyPrintFile($stmts);
     }
 
-    public function addPrimitiveTypeProperty(string $name, string $type, bool $required, ?string $message = null)
+    public function addProperty(string $name, string $type, bool $optional, ?string $message = null)
     {
         $property = $this->factory->property($name);
-        $property->setType($required ? new NullableType($type) : $type);
+        $docType = $type;
+        if (substr($type, strlen($type) - 2) == "[]") {
+            $type = "array";
+        }
+        $property->setType($optional ? new NullableType($type) : $type);
         if ($message) {
-            $property->setDocComment($this->formatDocComment($message, $name));
+            $property->setDocComment($this->formatDocComment($message, $name, [["var", $docType]]));
+        } else {
+            $property->setDocComment("/** @var $docType */");
         }
         $property->makeProtected();
         $this->class->addStmt($property);
     }
 
-    protected function formatDocComment(string $message, ?string $propertyName = null): string
+    public function addUse($name)
+    {
+        $this->namespace->addStmt($this->factory->use("Arimac\Sigfox\Definition\\" . $name));
+    }
+
+    public function extend(string $name)
+    {
+        $this->addUse($name);
+        if (in_array($name, $this->forceTraits)) {
+            $this->class->addStmt($this->factory->useTrait($name));
+        } else {
+            $this->class->extend($name);
+        }
+    }
+
+    protected function formatDocComment(string $message, ?string $propertyName = null, $docCommentParams = []): string
     {
         $lines = explode("\n", $message);
         if (trim(end($lines)) === "") {
@@ -111,6 +138,14 @@ class Definition
         }
 
         $formatted = implode("\n * ", $lines);
-        return "/**\n * $formatted\n */";
+        $formatted = "/**\n * $formatted\n";
+        if (count($docCommentParams) > 0) {
+            $formatted .= " *\n";
+            foreach ($docCommentParams as $comment) {
+                $formatted .= " * @" . $comment[0] . " " . $comment[1] . "\n";
+            }
+        }
+
+        return $formatted . " */";
     }
 }

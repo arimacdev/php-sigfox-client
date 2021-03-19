@@ -2,6 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition\MinProvider;
+use Arimac\Sigfox\Definition\MinContact;
 /**
  * Generic internet subscription information
  */
@@ -25,8 +27,10 @@ class CreateInternetSubscription
     public const PRIORITY_TERMINATED = 2;
     /**
      * The identifier of this internet subscription
+     *
+     * @var string
      */
-    protected string $id;
+    protected ?string $id;
     /**
      * Internet subscription type
      * - `CreateInternetSubscription::TYPE_GSM`
@@ -34,26 +38,39 @@ class CreateInternetSubscription
      * - `CreateInternetSubscription::TYPE_SATELLITE`
      * - `CreateInternetSubscription::TYPE_LAN`
      * - `CreateInternetSubscription::TYPE_WIFI`
+     *
+     * @var int
      */
-    protected ?int $type;
+    protected int $type;
     /**
      * Internet subscription priority.
      * - `CreateInternetSubscription::PRIORITY_PRIMARY`
      * - `CreateInternetSubscription::PRIORITY_SECONDARY`
      * - `CreateInternetSubscription::PRIORITY_TERMINATED`
+     *
+     * @var int
      */
-    protected ?int $priority;
+    protected int $priority;
     /**
      * The comments about this internet subscription. This field can be unset when updating.
+     *
+     * @var string
      */
-    protected string $comments;
+    protected ?string $comments;
     /**
      * The start time of this internet subscription
+     *
+     * @var int
      */
-    protected ?int $startTime;
+    protected int $startTime;
     /**
      * The end time this internet subscription. This field can be unset when updating.
+     *
+     * @var int
      */
-    protected int $endTime;
-    protected array $contacts;
+    protected ?int $endTime;
+    /** @var MinProvider */
+    protected ?MinProvider $provider;
+    /** @var MinContact[] */
+    protected ?array $contacts;
 }

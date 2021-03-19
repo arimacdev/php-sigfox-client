@@ -6,6 +6,8 @@ class CertificateUpdate
 {
     /**
      * The certificate name
+     *
+     * @var string
      */
     protected string $key;
 }

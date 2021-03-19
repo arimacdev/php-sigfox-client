@@ -17,21 +17,12 @@ function rrmdir($dir)
     }
 }
 
-function typeCast(string $type, ?string $format = null): string
-{
-    switch ($type) {
-        case "integer":
-            return "int";
-        case "number":
-            return "int";
-        case "boolean":
-            return "bool";
-        default:
-            return $type;
-    }
-}
-
 function camelToUnderscore(string $str): string
 {
     return strtoupper(preg_replace('/(?<=\\w)(?=[A-Z])/', "_$1", $str));
+}
+
+function defToName(string $defStr): string
+{
+    return ucfirst(substr($defStr, 14));
 }

@@ -2,6 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition\Actions;
+use Arimac\Sigfox\Definition\Resources;
 /**
  * Defines a group entity
  */
@@ -27,10 +29,14 @@ class MinGroup
     public const TYPE_PARTNER = 11;
     /**
      * The group identifier
+     *
+     * @var string
      */
     protected string $id;
     /**
      * The group name
+     *
+     * @var string
      */
     protected string $name;
     /**
@@ -44,10 +50,18 @@ class MinGroup
      * - `MinGroup::TYPE_CHANNEL`
      * - `MinGroup::TYPE_STARTER`
      * - `MinGroup::TYPE_PARTNER`
+     *
+     * @var int
      */
     protected int $type;
     /**
      * The depth level of the group in hierarchy
+     *
+     * @var int
      */
     protected int $level;
+    /** @var Actions */
+    protected Actions $actions;
+    /** @var Resources */
+    protected Resources $resources;
 }

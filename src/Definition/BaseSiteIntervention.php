@@ -57,10 +57,14 @@ class BaseSiteIntervention
     public const TYPE_DISMANTLING = 7;
     /**
      * The author of this intervention
+     *
+     * @var string
      */
     protected string $author;
     /**
      * The comment about this intervention
+     *
+     * @var string
      */
     protected string $comment;
     /**
@@ -81,34 +85,50 @@ class BaseSiteIntervention
      * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_KEY_3G`
      * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_CIRCUIT_BREAKER`
      * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ROUTER_3G`
+     *
+     * @var int[]
      */
     protected array $equipmentsToChange;
     /**
      * The planned time of this intervention
+     *
+     * @var int
      */
     protected int $plannedTime;
     /**
      * The time of this intervention
+     *
+     * @var int
      */
     protected int $interventionTime;
     /**
      * The end time of this intervention
+     *
+     * @var int
      */
     protected int $endTime;
     /**
      * The bill code of this intervention
+     *
+     * @var string
      */
     protected string $billCode;
     /**
      * The request tracker identifier of this intervention
+     *
+     * @var string
      */
     protected string $rtId;
     /**
      * is this intervention closed
+     *
+     * @var bool
      */
     protected bool $closed;
     /**
      * The costs of this intervention
+     *
+     * @var int
      */
     protected int $costs;
     /**
@@ -121,6 +141,8 @@ class BaseSiteIntervention
      * - `BaseSiteIntervention::TYPE_SAT_INSTALLATION`
      * - `BaseSiteIntervention::TYPE_ELECTRICAL`
      * - `BaseSiteIntervention::TYPE_DISMANTLING`
+     *
+     * @var int
      */
     protected int $type;
 }

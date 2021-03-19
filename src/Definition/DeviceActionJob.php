@@ -4,5 +4,6 @@ namespace Arimac\Sigfox\Definition;
 
 class DeviceActionJob
 {
-    protected ?array $data;
+    /** @var string[] */
+    protected array $data;
 }

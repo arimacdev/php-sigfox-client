@@ -25,14 +25,20 @@ class LastComputedLocation
     public const SOURCE_CODE_PROXIMITY_LOCATION = 7;
     /**
      * The device's estimated latitude
+     *
+     * @var int
      */
     protected int $lat;
     /**
      * The device's estimated longitude
+     *
+     * @var int
      */
     protected int $lng;
     /**
      * The radius of the circle (meters)
+     *
+     * @var int
      */
     protected int $radius;
     /**
@@ -45,10 +51,14 @@ class LastComputedLocation
      * - `LastComputedLocation::SOURCE_CODE_PRIVATE_DATABASE_LOCATION`
      * - `LastComputedLocation::SOURCE_CODE_WIFI_LOCATION`
      * - `LastComputedLocation::SOURCE_CODE_PROXIMITY_LOCATION`
+     *
+     * @var int
      */
     protected int $sourceCode;
     /**
      * The place ids computed by the Sigfox Geolocation service
+     *
+     * @var string[]
      */
     protected array $placeIds;
 }

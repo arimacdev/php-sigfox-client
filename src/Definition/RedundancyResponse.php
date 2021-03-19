@@ -9,6 +9,8 @@ class RedundancyResponse
 {
     /**
      * The base station redundancy, 0 = none, 1 = 1 base station, 2 = 2 base stations, 3 = 3 base stations or more
+     *
+     * @var int
      */
     protected int $redundancy;
 }

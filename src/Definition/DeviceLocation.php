@@ -9,10 +9,14 @@ class DeviceLocation
 {
     /**
      * The device's estimated latitude
+     *
+     * @var int
      */
     protected int $lat;
     /**
      * The device's estimated longitude
+     *
+     * @var int
      */
     protected int $lng;
 }

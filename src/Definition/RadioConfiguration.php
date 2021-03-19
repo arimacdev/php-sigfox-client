@@ -33,6 +33,8 @@ class RadioConfiguration
      * - `RadioConfiguration::ID_RC5`
      * - `RadioConfiguration::ID_RC6`
      * - `RadioConfiguration::ID_RC7`
+     *
+     * @var int
      */
-    protected ?int $id;
+    protected int $id;
 }

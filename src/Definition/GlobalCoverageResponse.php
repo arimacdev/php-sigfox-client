@@ -9,6 +9,8 @@ class GlobalCoverageResponse
 {
     /**
      * An array containing the response for each point.
+     *
+     * @var array
      */
     protected array $data;
 }

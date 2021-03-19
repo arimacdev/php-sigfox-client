@@ -2,9 +2,12 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition\CommonGroupUpdate;
+use Arimac\Sigfox\Definition\BillableGroup;
 /**
  * Defines the Basic group's update properties
  */
-class BasicUpdate
+class BasicUpdate extends CommonGroupUpdate
 {
+    use BillableGroup;
 }

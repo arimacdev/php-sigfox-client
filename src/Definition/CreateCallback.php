@@ -32,15 +32,19 @@ class CreateCallback
      * - URL
      * - BATCH_URL
      * - EMAIL
+     *
+     * @var string
      */
-    protected ?string $channel;
+    protected string $channel;
     /**
      * The callback's type.
      * - `CreateCallback::CALLBACK_TYPE_DATA`
      * - `CreateCallback::CALLBACK_TYPE_SERVICE`
      * - `CreateCallback::CALLBACK_TYPE_ERROR`
+     *
+     * @var int
      */
-    protected ?int $callbackType;
+    protected int $callbackType;
     /**
      * The callback's subtype. The subtype must be valid against its type.
      * - `CreateCallback::CALLBACK_SUBTYPE_STATUS`
@@ -50,14 +54,20 @@ class CreateCallback
      * - `CreateCallback::CALLBACK_SUBTYPE_ACKNOWLEDGE`
      * - `CreateCallback::CALLBACK_SUBTYPE_REPEATER`
      * - `CreateCallback::CALLBACK_SUBTYPE_DATA_ADVANCED`
+     *
+     * @var int
      */
-    protected ?int $callbackSubtype;
+    protected int $callbackSubtype;
     /**
      * The custom payload configuration. Only for DATA and DATA_ADVANCED callbacks. This field can be unset when updating.
+     *
+     * @var string
      */
-    protected string $payloadConfig;
+    protected ?string $payloadConfig;
     /**
      * True to enable the callback, otherwise false
+     *
+     * @var bool
      */
-    protected ?bool $enabled;
+    protected bool $enabled;
 }

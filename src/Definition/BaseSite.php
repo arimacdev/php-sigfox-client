@@ -53,18 +53,26 @@ class BaseSite
     public const INVERTER_INFO_DC_POWER_SOLAR = 5;
     /**
      * The site's name
+     *
+     * @var string
      */
     protected string $name;
     /**
      * The lessor identifier of the site. This field can be unset when updating.
+     *
+     * @var string
      */
     protected string $lessorId;
     /**
      * The address of the site
+     *
+     * @var string
      */
     protected string $address;
     /**
      * Comment about the site. This field can be unset when updating.
+     *
+     * @var string
      */
     protected string $comment;
     /**
@@ -81,10 +89,14 @@ class BaseSite
      * - `BaseSite::STATUS_LABO`
      * - `BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY`
      * - `BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY`
+     *
+     * @var int
      */
     protected int $status;
     /**
      * The comment of the status of the site. This field can be unset when updating.
+     *
+     * @var string
      */
     protected string $statusComment;
     /**
@@ -93,6 +105,8 @@ class BaseSite
      * - `BaseSite::STATION_INSTALLATION_OUTDOOR_WITH_CABINET`
      * - `BaseSite::STATION_INSTALLATION_INDOOR_WITH_CABINET`
      * - `BaseSite::STATION_INSTALLATION_OUTDOOR_WITHOUT_CABINET`
+     *
+     * @var int
      */
     protected int $stationInstallation;
     /**
@@ -103,18 +117,26 @@ class BaseSite
      * - `BaseSite::INVERTER_INFO_AC_POWER_SIGFOX_INVERTER`
      * - `BaseSite::INVERTER_INFO_DC_POWER_HOST_48V`
      * - `BaseSite::INVERTER_INFO_DC_POWER_SOLAR`
+     *
+     * @var int
      */
     protected int $inverterInfo;
     /**
      * is the site access to the aerial work platform
+     *
+     * @var bool
      */
     protected bool $aerialWorkPlatformAccess;
     /**
      * the site's latitude
+     *
+     * @var int
      */
     protected int $lat;
     /**
      * the site's longitutde
+     *
+     * @var int
      */
     protected int $lng;
 }

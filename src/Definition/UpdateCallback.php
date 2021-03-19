@@ -32,6 +32,8 @@ class UpdateCallback
      * - URL
      * - BATCH_URL
      * - EMAIL
+     *
+     * @var string
      */
     protected string $channel;
     /**
@@ -39,6 +41,8 @@ class UpdateCallback
      * - `UpdateCallback::CALLBACK_TYPE_DATA`
      * - `UpdateCallback::CALLBACK_TYPE_SERVICE`
      * - `UpdateCallback::CALLBACK_TYPE_ERROR`
+     *
+     * @var int
      */
     protected int $callbackType;
     /**
@@ -50,14 +54,20 @@ class UpdateCallback
      * - `UpdateCallback::CALLBACK_SUBTYPE_ACKNOWLEDGE`
      * - `UpdateCallback::CALLBACK_SUBTYPE_REPEATER`
      * - `UpdateCallback::CALLBACK_SUBTYPE_DATA_ADVANCED`
+     *
+     * @var int
      */
     protected int $callbackSubtype;
     /**
      * The custom payload configuration. Only for DATA callbacks. This field can be unset when updating.
+     *
+     * @var string
      */
     protected string $payloadConfig;
     /**
      * True to enable the callback, otherwise false
+     *
+     * @var bool
      */
     protected bool $enabled;
 }

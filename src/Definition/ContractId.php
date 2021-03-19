@@ -9,6 +9,8 @@ class ContractId
 {
     /**
      * The contract's id
+     *
+     * @var string
      */
-    protected ?string $id;
+    protected string $id;
 }

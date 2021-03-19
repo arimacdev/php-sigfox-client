@@ -9,6 +9,11 @@
             "email": "whizsid@aol.com"
         }
     ],
+    "autoload": {
+        "psr-4": {
+            "Arimac\\Sigfox\\": "src/"
+        }
+    },
     "minimum-stability": "dev",
     "require": {}
 }

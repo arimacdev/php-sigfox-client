@@ -21,10 +21,14 @@ class MinHwFamily
      * - `MinHwFamily::ID_MINI`
      * - `MinHwFamily::ID_ACCESS_STATION_MINI`
      * - `MinHwFamily::ID_ACCESS_STATION_MICRO`
+     *
+     * @var int
      */
     protected int $id;
     /**
      * The hardware family's name
+     *
+     * @var string
      */
     protected string $name;
 }

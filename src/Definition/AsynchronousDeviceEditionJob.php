@@ -2,7 +2,9 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition\DeviceEditionBulk;
 class AsynchronousDeviceEditionJob
 {
-    protected ?array $data;
+    /** @var DeviceEditionBulk[] */
+    protected array $data;
 }

@@ -2,6 +2,13 @@
 
 namespace Arimac\Sigfox\Definition;
 
-class DeviceUpdateJob
+use Arimac\Sigfox\Definition\SingleDeviceFields;
+class DeviceUpdateJob extends SingleDeviceFields
 {
+    /**
+     * The device's name
+     *
+     * @var string
+     */
+    protected string $name;
 }
