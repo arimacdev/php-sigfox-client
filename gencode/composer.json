@@ -1,0 +1,29 @@
+{
+    "name": "arimac/sigfox-gencode",
+    "description": "Generating Sigfox API Wrapper Codes",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "WhizSid",
+            "email": "whizsid@aol.com"
+        }
+    ],
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Arimac\\Sigfox\\GenCode\\": "src/"
+        },
+        "files": [
+            "src/Utils.php"
+        ]
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "cebe/php-openapi": "1.5.x-dev",
+        "nikic/php-parser": "^4.10"
+    }
+}

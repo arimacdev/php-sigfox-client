@@ -1,0 +1,14 @@
+{
+    "name": "arimac/sigfox",
+    "description": "A highlevel wrapper for Sigfox API",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "WhizSid",
+            "email": "whizsid@aol.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
