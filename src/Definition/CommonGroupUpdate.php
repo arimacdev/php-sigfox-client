@@ -58,4 +58,78 @@ class CommonGroupUpdate
      * @var string
      */
     protected string $timezone;
+    /**
+     * @param string name The group's name
+     */
+    function setName(string $name)
+    {
+        $this->name = $name;
+    }
+    /**
+     * @return string The group's name
+     */
+    function getName() : string
+    {
+        return $this->name;
+    }
+    /**
+     * @param string description The group's description
+     */
+    function setDescription(string $description)
+    {
+        $this->description = $description;
+    }
+    /**
+     * @return string The group's description
+     */
+    function getDescription() : string
+    {
+        return $this->description;
+    }
+    /**
+     * @param int type - Group's type
+     * - `CommonGroupUpdate::TYPE_SO`
+     * - `CommonGroupUpdate::TYPE_OTHER`
+     * - `CommonGroupUpdate::TYPE_SVNO`
+     * - `CommonGroupUpdate::TYPE_PARTNERS`
+     * - `CommonGroupUpdate::TYPE_NIP`
+     * - `CommonGroupUpdate::TYPE_DIST`
+     * - `CommonGroupUpdate::TYPE_CHANNEL`
+     * - `CommonGroupUpdate::TYPE_STARTER`
+     * - `CommonGroupUpdate::TYPE_PARTNER`
+     */
+    function setType(int $type)
+    {
+        $this->type = $type;
+    }
+    /**
+     * @return int - Group's type
+     * - `CommonGroupUpdate::TYPE_SO`
+     * - `CommonGroupUpdate::TYPE_OTHER`
+     * - `CommonGroupUpdate::TYPE_SVNO`
+     * - `CommonGroupUpdate::TYPE_PARTNERS`
+     * - `CommonGroupUpdate::TYPE_NIP`
+     * - `CommonGroupUpdate::TYPE_DIST`
+     * - `CommonGroupUpdate::TYPE_CHANNEL`
+     * - `CommonGroupUpdate::TYPE_STARTER`
+     * - `CommonGroupUpdate::TYPE_PARTNER`
+     */
+    function getType() : int
+    {
+        return $this->type;
+    }
+    /**
+     * @param string timezone The timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
+     */
+    function setTimezone(string $timezone)
+    {
+        $this->timezone = $timezone;
+    }
+    /**
+     * @return string The timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
+     */
+    function getTimezone() : string
+    {
+        return $this->timezone;
+    }
 }

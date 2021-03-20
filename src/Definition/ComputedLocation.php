@@ -61,4 +61,90 @@ class ComputedLocation
      * @var string[]
      */
     protected array $placeIds;
+    /**
+     * @param int lat The device's estimated latitude
+     */
+    function setLat(int $lat)
+    {
+        $this->lat = $lat;
+    }
+    /**
+     * @return int The device's estimated latitude
+     */
+    function getLat() : int
+    {
+        return $this->lat;
+    }
+    /**
+     * @param int lng The device's estimated longitude
+     */
+    function setLng(int $lng)
+    {
+        $this->lng = $lng;
+    }
+    /**
+     * @return int The device's estimated longitude
+     */
+    function getLng() : int
+    {
+        return $this->lng;
+    }
+    /**
+     * @param int radius The radius of the circle (meters)
+     */
+    function setRadius(int $radius)
+    {
+        $this->radius = $radius;
+    }
+    /**
+     * @return int The radius of the circle (meters)
+     */
+    function getRadius() : int
+    {
+        return $this->radius;
+    }
+    /**
+     * @param int source Define how the location has been computed:
+     * - `ComputedLocation::SOURCE_RSSI_AND_POSITION_OF_THE_STATION`
+     * - `ComputedLocation::SOURCE_THE_GPS_DATA_INSIDE_THE_PAYLOAD`
+     * - `ComputedLocation::SOURCE_NETWORK_LOCATION`
+     * - `ComputedLocation::SOURCE_POI_LOCATION`
+     * - `ComputedLocation::SOURCE_HD_NETWORK_LOCATION`
+     * - `ComputedLocation::SOURCE_PRIVATE_DATABASE_LOCATION`
+     * - `ComputedLocation::SOURCE_WIFI_LOCATION`
+     * - `ComputedLocation::SOURCE_PROXIMITY_LOCATION`
+     */
+    function setSource(int $source)
+    {
+        $this->source = $source;
+    }
+    /**
+     * @return int Define how the location has been computed:
+     * - `ComputedLocation::SOURCE_RSSI_AND_POSITION_OF_THE_STATION`
+     * - `ComputedLocation::SOURCE_THE_GPS_DATA_INSIDE_THE_PAYLOAD`
+     * - `ComputedLocation::SOURCE_NETWORK_LOCATION`
+     * - `ComputedLocation::SOURCE_POI_LOCATION`
+     * - `ComputedLocation::SOURCE_HD_NETWORK_LOCATION`
+     * - `ComputedLocation::SOURCE_PRIVATE_DATABASE_LOCATION`
+     * - `ComputedLocation::SOURCE_WIFI_LOCATION`
+     * - `ComputedLocation::SOURCE_PROXIMITY_LOCATION`
+     */
+    function getSource() : int
+    {
+        return $this->source;
+    }
+    /**
+     * @param string[] placeIds The place ids computed by the Sigfox Geolocation service
+     */
+    function setPlaceIds(array $placeIds)
+    {
+        $this->placeIds = $placeIds;
+    }
+    /**
+     * @return string[] The place ids computed by the Sigfox Geolocation service
+     */
+    function getPlaceIds() : array
+    {
+        return $this->placeIds;
+    }
 }

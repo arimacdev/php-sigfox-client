@@ -58,4 +58,110 @@ class CellularConnectivityBase
      * @var int
      */
     protected ?int $source;
+    /**
+     * @param string name The name of the configuration
+     */
+    function setName(string $name)
+    {
+        $this->name = $name;
+    }
+    /**
+     * @return string The name of the configuration
+     */
+    function getName() : string
+    {
+        return $this->name;
+    }
+    /**
+     * @param string apn The APN used to connect to the base station with this cellular connectivity configuration
+     */
+    function setApn(string $apn)
+    {
+        $this->apn = $apn;
+    }
+    /**
+     * @return string The APN used to connect to the base station with this cellular connectivity configuration
+     */
+    function getApn() : string
+    {
+        return $this->apn;
+    }
+    /**
+     * @param string username The username used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     */
+    function setUsername(?string $username)
+    {
+        $this->username = $username;
+    }
+    /**
+     * @return string The username used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     */
+    function getUsername() : ?string
+    {
+        return $this->username;
+    }
+    /**
+     * @param string password The password used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     */
+    function setPassword(?string $password)
+    {
+        $this->password = $password;
+    }
+    /**
+     * @return string The password used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     */
+    function getPassword() : ?string
+    {
+        return $this->password;
+    }
+    /**
+     * @param string pin The PIN used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     */
+    function setPin(?string $pin)
+    {
+        $this->pin = $pin;
+    }
+    /**
+     * @return string The PIN used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     */
+    function getPin() : ?string
+    {
+        return $this->pin;
+    }
+    /**
+     * @param bool roaming Indicates if the cellular connectivity is registered on a roaming network.
+     */
+    function setRoaming(?bool $roaming)
+    {
+        $this->roaming = $roaming;
+    }
+    /**
+     * @return bool Indicates if the cellular connectivity is registered on a roaming network.
+     */
+    function getRoaming() : ?bool
+    {
+        return $this->roaming;
+    }
+    /**
+     * @param int source Configuration origin of the connectivity
+     * - `CellularConnectivityBase::SOURCE_REMOTE`
+     * - `CellularConnectivityBase::SOURCE_OTHERS`
+     * - `CellularConnectivityBase::SOURCE_DEFAULT`
+     * - `CellularConnectivityBase::SOURCE_TOOLS`
+     */
+    function setSource(?int $source)
+    {
+        $this->source = $source;
+    }
+    /**
+     * @return int Configuration origin of the connectivity
+     * - `CellularConnectivityBase::SOURCE_REMOTE`
+     * - `CellularConnectivityBase::SOURCE_OTHERS`
+     * - `CellularConnectivityBase::SOURCE_DEFAULT`
+     * - `CellularConnectivityBase::SOURCE_TOOLS`
+     */
+    function getSource() : ?int
+    {
+        return $this->source;
+    }
 }

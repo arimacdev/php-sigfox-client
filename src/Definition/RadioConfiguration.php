@@ -37,4 +37,34 @@ class RadioConfiguration
      * @var int
      */
     protected int $id;
+    /**
+     * @param int id The radio configuration identifier
+     * - `RadioConfiguration::ID_RC1`
+     * - `RadioConfiguration::ID_RC2`
+     * - `RadioConfiguration::ID_RC3`
+     * - `RadioConfiguration::ID_RC101`
+     * - `RadioConfiguration::ID_RC4`
+     * - `RadioConfiguration::ID_RC5`
+     * - `RadioConfiguration::ID_RC6`
+     * - `RadioConfiguration::ID_RC7`
+     */
+    function setId(int $id)
+    {
+        $this->id = $id;
+    }
+    /**
+     * @return int The radio configuration identifier
+     * - `RadioConfiguration::ID_RC1`
+     * - `RadioConfiguration::ID_RC2`
+     * - `RadioConfiguration::ID_RC3`
+     * - `RadioConfiguration::ID_RC101`
+     * - `RadioConfiguration::ID_RC4`
+     * - `RadioConfiguration::ID_RC5`
+     * - `RadioConfiguration::ID_RC6`
+     * - `RadioConfiguration::ID_RC7`
+     */
+    function getId() : int
+    {
+        return $this->id;
+    }
 }

@@ -6,10 +6,13 @@ use PhpParser\Builder\Class_;
 use PhpParser\BuilderFactory;
 use PhpParser\BuilderHelpers;
 use PhpParser\Node\Const_;
+use PhpParser\Node\Expr\Assign;
+use PhpParser\Node\Expr\Variable;
 use PhpParser\Node\NullableType;
 use PhpParser\Node\Scalar\LNumber;
 use PhpParser\Node\Stmt\Class_ as StmtClass_;
 use PhpParser\Node\Stmt\ClassConst;
+use PhpParser\Node\Stmt\Return_;
 use PhpParser\PrettyPrinter;
 
 use function Arimac\Sigfox\GenCode\Utils\camelToUnderscore;
@@ -40,7 +43,7 @@ class Definition
         }
         $this->name = $name;
         if ($description) {
-            $this->class->setDocComment($this->formatDocComment($description));
+            $this->class->setDocComment($this->formatDocComment("class", $description));
         }
     }
 
@@ -68,12 +71,38 @@ class Definition
         }
         $property->setType($optional ? new NullableType($type) : $type);
         if ($message) {
-            $property->setDocComment($this->formatDocComment($message, $name, [["var", $docType]]));
+            $property->setDocComment($this->formatDocComment("property", $message, $name, [["var", $docType]]));
         } else {
             $property->setDocComment("/** @var $docType */");
         }
         $property->makeProtected();
         $this->class->addStmt($property);
+
+        // Setter
+        $method = $this->factory->method("set" . ucfirst($name));
+        $param = $this->factory->param($name);
+        $param->setType($optional ? new NullableType($type) : $type);
+        $method->addParam($param);
+        if ($message) {
+            $method->setDocComment($this->formatDocComment("setter", "@param $docType $name " . $message, $name));
+        } else {
+            $method->setDocComment("/**\n * @param $docType $name\n */");
+        }
+        $expression = new Assign(new Variable("this->$name"), new Variable("$name"));
+        $method->addStmt($expression);
+        $this->class->addStmt($method);
+
+        // Getter
+        $method = $this->factory->method("get" . ucfirst($name));
+        $method->setReturnType($optional ? new NullableType($type) : $type);
+        if ($message) {
+            $method->setDocComment($this->formatDocComment("getter", "@return $docType " . $message, $name));
+        } else {
+            $method->setDocComment("/**\n * @return $docType $name\n */");
+        }
+        $expression = new Return_(new Variable("this->$name"));
+        $method->addStmt($expression);
+        $this->class->addStmt($method);
     }
 
     public function addUse($name)
@@ -91,14 +120,18 @@ class Definition
         }
     }
 
-    protected function formatDocComment(string $message, ?string $propertyName = null, $docCommentParams = []): string
-    {
+    protected function formatDocComment(
+        string $type,
+        string $message,
+        ?string $name = null,
+        $docCommentParams = []
+    ): string {
         $lines = explode("\n", $message);
         if (trim(end($lines)) === "") {
             array_pop($lines);
         }
 
-        if ($propertyName && count($lines) > 1) {
+        if (in_array($type, ["setter", "getter", "property"]) && count($lines) > 1) {
             foreach ($lines as $key => $line) {
                 $matched = preg_match("/^(-\s)?(\d+)\s->\s(.*?)$/", trim($line), $groups);
                 if ($matched) {
@@ -122,15 +155,17 @@ class Definition
                             $constName
                         )
                     ))));
-                    $constName = camelToUnderscore($propertyName) . "_" . $constName;
+                    $constName = camelToUnderscore($name) . "_" . $constName;
 
-                    $const = new Const_($constName, new LNumber((int)$value));
-                    $classConst = new ClassConst(
-                        [$const],
-                        StmtClass_::MODIFIER_PUBLIC,
-                        ["comments" => [BuilderHelpers::normalizeDocComment("/** $description */")]]
-                    );
-                    $this->class->addStmt($classConst);
+                    if ($type == "property") {
+                        $const = new Const_($constName, new LNumber((int)$value));
+                        $classConst = new ClassConst(
+                            [$const],
+                            StmtClass_::MODIFIER_PUBLIC,
+                            ["comments" => [BuilderHelpers::normalizeDocComment("/** $description */")]]
+                        );
+                        $this->class->addStmt($classConst);
+                    }
 
                     $lines[$key] = sprintf("- `%s::%s`", $this->name, $constName);
                 }

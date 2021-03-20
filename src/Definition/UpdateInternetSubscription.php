@@ -67,4 +67,118 @@ class UpdateInternetSubscription
     protected MinProvider $provider;
     /** @var MinContact[] */
     protected array $contacts;
+    /**
+     * @param int type Internet subscription type
+     * - `UpdateInternetSubscription::TYPE_GSM`
+     * - `UpdateInternetSubscription::TYPE_ADSL`
+     * - `UpdateInternetSubscription::TYPE_SATELLITE`
+     * - `UpdateInternetSubscription::TYPE_LAN`
+     * - `UpdateInternetSubscription::TYPE_WIFI`
+     */
+    function setType(int $type)
+    {
+        $this->type = $type;
+    }
+    /**
+     * @return int Internet subscription type
+     * - `UpdateInternetSubscription::TYPE_GSM`
+     * - `UpdateInternetSubscription::TYPE_ADSL`
+     * - `UpdateInternetSubscription::TYPE_SATELLITE`
+     * - `UpdateInternetSubscription::TYPE_LAN`
+     * - `UpdateInternetSubscription::TYPE_WIFI`
+     */
+    function getType() : int
+    {
+        return $this->type;
+    }
+    /**
+     * @param int priority Internet subscription priority.
+     * - `UpdateInternetSubscription::PRIORITY_PRIMARY`
+     * - `UpdateInternetSubscription::PRIORITY_SECONDARY`
+     * - `UpdateInternetSubscription::PRIORITY_TERMINATED`
+     */
+    function setPriority(int $priority)
+    {
+        $this->priority = $priority;
+    }
+    /**
+     * @return int Internet subscription priority.
+     * - `UpdateInternetSubscription::PRIORITY_PRIMARY`
+     * - `UpdateInternetSubscription::PRIORITY_SECONDARY`
+     * - `UpdateInternetSubscription::PRIORITY_TERMINATED`
+     */
+    function getPriority() : int
+    {
+        return $this->priority;
+    }
+    /**
+     * @param string comments The comments about this internet subscription. This field can be unset when updating.
+     */
+    function setComments(string $comments)
+    {
+        $this->comments = $comments;
+    }
+    /**
+     * @return string The comments about this internet subscription. This field can be unset when updating.
+     */
+    function getComments() : string
+    {
+        return $this->comments;
+    }
+    /**
+     * @param int startTime The start time of this internet subscription
+     */
+    function setStartTime(int $startTime)
+    {
+        $this->startTime = $startTime;
+    }
+    /**
+     * @return int The start time of this internet subscription
+     */
+    function getStartTime() : int
+    {
+        return $this->startTime;
+    }
+    /**
+     * @param int endTime The end time this internet subscription. This field can be unset when updating.
+     */
+    function setEndTime(int $endTime)
+    {
+        $this->endTime = $endTime;
+    }
+    /**
+     * @return int The end time this internet subscription. This field can be unset when updating.
+     */
+    function getEndTime() : int
+    {
+        return $this->endTime;
+    }
+    /**
+     * @param MinProvider provider
+     */
+    function setProvider(MinProvider $provider)
+    {
+        $this->provider = $provider;
+    }
+    /**
+     * @return MinProvider provider
+     */
+    function getProvider() : MinProvider
+    {
+        return $this->provider;
+    }
+    /**
+     * @param MinContact[] contacts
+     */
+    function setContacts(array $contacts)
+    {
+        $this->contacts = $contacts;
+    }
+    /**
+     * @return MinContact[] contacts
+     */
+    function getContacts() : array
+    {
+        return $this->contacts;
+    }
 }

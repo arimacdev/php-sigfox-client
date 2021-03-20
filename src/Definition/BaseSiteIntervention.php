@@ -145,4 +145,206 @@ class BaseSiteIntervention
      * @var int
      */
     protected int $type;
+    /**
+     * @param string author The author of this intervention
+     */
+    function setAuthor(string $author)
+    {
+        $this->author = $author;
+    }
+    /**
+     * @return string The author of this intervention
+     */
+    function getAuthor() : string
+    {
+        return $this->author;
+    }
+    /**
+     * @param string comment The comment about this intervention
+     */
+    function setComment(string $comment)
+    {
+        $this->comment = $comment;
+    }
+    /**
+     * @return string The comment about this intervention
+     */
+    function getComment() : string
+    {
+        return $this->comment;
+    }
+    /**
+     * @param int[] equipmentsToChange List of equipment to change for this intervention
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ANTENNA`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_BASE_STATION`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_LNA`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_FEEDER`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ADSL_MODEM`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_NETWORK_CABLE`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SURGE`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_WATERPROOFNESS`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_DEMOD`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_LNB`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_DISH`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_POWER_SUPPLY`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_INVERTER`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_KEY_3G`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_CIRCUIT_BREAKER`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ROUTER_3G`
+     */
+    function setEquipmentsToChange(array $equipmentsToChange)
+    {
+        $this->equipmentsToChange = $equipmentsToChange;
+    }
+    /**
+     * @return int[] List of equipment to change for this intervention
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ANTENNA`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_BASE_STATION`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_LNA`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_FEEDER`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ADSL_MODEM`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_NETWORK_CABLE`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SURGE`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_WATERPROOFNESS`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_DEMOD`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_LNB`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_DISH`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_POWER_SUPPLY`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_INVERTER`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_KEY_3G`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_CIRCUIT_BREAKER`
+     * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ROUTER_3G`
+     */
+    function getEquipmentsToChange() : array
+    {
+        return $this->equipmentsToChange;
+    }
+    /**
+     * @param int plannedTime The planned time of this intervention
+     */
+    function setPlannedTime(int $plannedTime)
+    {
+        $this->plannedTime = $plannedTime;
+    }
+    /**
+     * @return int The planned time of this intervention
+     */
+    function getPlannedTime() : int
+    {
+        return $this->plannedTime;
+    }
+    /**
+     * @param int interventionTime The time of this intervention
+     */
+    function setInterventionTime(int $interventionTime)
+    {
+        $this->interventionTime = $interventionTime;
+    }
+    /**
+     * @return int The time of this intervention
+     */
+    function getInterventionTime() : int
+    {
+        return $this->interventionTime;
+    }
+    /**
+     * @param int endTime The end time of this intervention
+     */
+    function setEndTime(int $endTime)
+    {
+        $this->endTime = $endTime;
+    }
+    /**
+     * @return int The end time of this intervention
+     */
+    function getEndTime() : int
+    {
+        return $this->endTime;
+    }
+    /**
+     * @param string billCode The bill code of this intervention
+     */
+    function setBillCode(string $billCode)
+    {
+        $this->billCode = $billCode;
+    }
+    /**
+     * @return string The bill code of this intervention
+     */
+    function getBillCode() : string
+    {
+        return $this->billCode;
+    }
+    /**
+     * @param string rtId The request tracker identifier of this intervention
+     */
+    function setRtId(string $rtId)
+    {
+        $this->rtId = $rtId;
+    }
+    /**
+     * @return string The request tracker identifier of this intervention
+     */
+    function getRtId() : string
+    {
+        return $this->rtId;
+    }
+    /**
+     * @param bool closed is this intervention closed
+     */
+    function setClosed(bool $closed)
+    {
+        $this->closed = $closed;
+    }
+    /**
+     * @return bool is this intervention closed
+     */
+    function getClosed() : bool
+    {
+        return $this->closed;
+    }
+    /**
+     * @param int costs The costs of this intervention
+     */
+    function setCosts(int $costs)
+    {
+        $this->costs = $costs;
+    }
+    /**
+     * @return int The costs of this intervention
+     */
+    function getCosts() : int
+    {
+        return $this->costs;
+    }
+    /**
+     * @param int type Convention status.
+     * - `BaseSiteIntervention::TYPE_OTHER`
+     * - `BaseSiteIntervention::TYPE_PRE_VISIT`
+     * - `BaseSiteIntervention::TYPE_ANTENNA_INSTALLATION`
+     * - `BaseSiteIntervention::TYPE_TELECOM_LINE_INSTALLATION`
+     * - `BaseSiteIntervention::TYPE_SITE_SEARCH`
+     * - `BaseSiteIntervention::TYPE_SAT_INSTALLATION`
+     * - `BaseSiteIntervention::TYPE_ELECTRICAL`
+     * - `BaseSiteIntervention::TYPE_DISMANTLING`
+     */
+    function setType(int $type)
+    {
+        $this->type = $type;
+    }
+    /**
+     * @return int Convention status.
+     * - `BaseSiteIntervention::TYPE_OTHER`
+     * - `BaseSiteIntervention::TYPE_PRE_VISIT`
+     * - `BaseSiteIntervention::TYPE_ANTENNA_INSTALLATION`
+     * - `BaseSiteIntervention::TYPE_TELECOM_LINE_INSTALLATION`
+     * - `BaseSiteIntervention::TYPE_SITE_SEARCH`
+     * - `BaseSiteIntervention::TYPE_SAT_INSTALLATION`
+     * - `BaseSiteIntervention::TYPE_ELECTRICAL`
+     * - `BaseSiteIntervention::TYPE_DISMANTLING`
+     */
+    function getType() : int
+    {
+        return $this->type;
+    }
 }

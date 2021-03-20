@@ -33,4 +33,60 @@ class DeviceTypeCreate extends BaseDeviceType
      * @var string
      */
     protected ?string $geolocPayloadConfigId;
+    /**
+     * @param string groupId The device type's group identifier
+     */
+    function setGroupId(string $groupId)
+    {
+        $this->groupId = $groupId;
+    }
+    /**
+     * @return string The device type's group identifier
+     */
+    function getGroupId() : string
+    {
+        return $this->groupId;
+    }
+    /**
+     * @param string contractId The device type's contract identifier
+     */
+    function setContractId(?string $contractId)
+    {
+        $this->contractId = $contractId;
+    }
+    /**
+     * @return string The device type's contract identifier
+     */
+    function getContractId() : ?string
+    {
+        return $this->contractId;
+    }
+    /**
+     * @param ContractId[] contracts The device type's contract identifiers
+     */
+    function setContracts(array $contracts)
+    {
+        $this->contracts = $contracts;
+    }
+    /**
+     * @return ContractId[] The device type's contract identifiers
+     */
+    function getContracts() : array
+    {
+        return $this->contracts;
+    }
+    /**
+     * @param string geolocPayloadConfigId The geoloc payload configuration identifier. Required if the payload type is Geolocation, else ignored.
+     */
+    function setGeolocPayloadConfigId(?string $geolocPayloadConfigId)
+    {
+        $this->geolocPayloadConfigId = $geolocPayloadConfigId;
+    }
+    /**
+     * @return string The geoloc payload configuration identifier. Required if the payload type is Geolocation, else ignored.
+     */
+    function getGeolocPayloadConfigId() : ?string
+    {
+        return $this->geolocPayloadConfigId;
+    }
 }

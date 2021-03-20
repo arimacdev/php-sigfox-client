@@ -62,4 +62,118 @@ class EthernetConnectivityForBs extends EthernetConnectivityBase
     protected Actions $actions;
     /** @var Resources */
     protected Resources $resources;
+    /**
+     * @param string id The group's identifier
+     */
+    function setId(string $id)
+    {
+        $this->id = $id;
+    }
+    /**
+     * @return string The group's identifier
+     */
+    function getId() : string
+    {
+        return $this->id;
+    }
+    /**
+     * @param MinGroup group
+     */
+    function setGroup(MinGroup $group)
+    {
+        $this->group = $group;
+    }
+    /**
+     * @return MinGroup group
+     */
+    function getGroup() : MinGroup
+    {
+        return $this->group;
+    }
+    /**
+     * @param MinBaseStation baseStation
+     */
+    function setBaseStation(MinBaseStation $baseStation)
+    {
+        $this->baseStation = $baseStation;
+    }
+    /**
+     * @return MinBaseStation baseStation
+     */
+    function getBaseStation() : MinBaseStation
+    {
+        return $this->baseStation;
+    }
+    /**
+     * @param int state State of an ethernet connectivity configuration
+     * - `EthernetConnectivityForBs::STATE_ACTIVE`
+     * - `EthernetConnectivityForBs::STATE_PASSIVE`
+     * - `EthernetConnectivityForBs::STATE_PENDING`
+     * - `EthernetConnectivityForBs::STATE_REJECTED`
+     * - `EthernetConnectivityForBs::STATE_DELETING`
+     */
+    function setState(int $state)
+    {
+        $this->state = $state;
+    }
+    /**
+     * @return int State of an ethernet connectivity configuration
+     * - `EthernetConnectivityForBs::STATE_ACTIVE`
+     * - `EthernetConnectivityForBs::STATE_PASSIVE`
+     * - `EthernetConnectivityForBs::STATE_PENDING`
+     * - `EthernetConnectivityForBs::STATE_REJECTED`
+     * - `EthernetConnectivityForBs::STATE_DELETING`
+     */
+    function getState() : int
+    {
+        return $this->state;
+    }
+    /**
+     * @param int syncStatus Synchronisation status of an ethernet connectivity configuration
+     * - `EthernetConnectivityForBs::SYNC_STATUS_OK`
+     * - `EthernetConnectivityForBs::SYNC_STATUS_TO_BE_SENT`
+     * - `EthernetConnectivityForBs::SYNC_STATUS_SENT`
+     */
+    function setSyncStatus(int $syncStatus)
+    {
+        $this->syncStatus = $syncStatus;
+    }
+    /**
+     * @return int Synchronisation status of an ethernet connectivity configuration
+     * - `EthernetConnectivityForBs::SYNC_STATUS_OK`
+     * - `EthernetConnectivityForBs::SYNC_STATUS_TO_BE_SENT`
+     * - `EthernetConnectivityForBs::SYNC_STATUS_SENT`
+     */
+    function getSyncStatus() : int
+    {
+        return $this->syncStatus;
+    }
+    /**
+     * @param Actions actions
+     */
+    function setActions(Actions $actions)
+    {
+        $this->actions = $actions;
+    }
+    /**
+     * @return Actions actions
+     */
+    function getActions() : Actions
+    {
+        return $this->actions;
+    }
+    /**
+     * @param Resources resources
+     */
+    function setResources(Resources $resources)
+    {
+        $this->resources = $resources;
+    }
+    /**
+     * @return Resources resources
+     */
+    function getResources() : Resources
+    {
+        return $this->resources;
+    }
 }

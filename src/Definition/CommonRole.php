@@ -28,4 +28,38 @@ class CommonRole
      * @var int
      */
     protected int $type;
+    /**
+     * @param string name the role's name
+     */
+    function setName(string $name)
+    {
+        $this->name = $name;
+    }
+    /**
+     * @return string the role's name
+     */
+    function getName() : string
+    {
+        return $this->name;
+    }
+    /**
+     * @param int type Token's type of role
+     * - `CommonRole::TYPE_ROLE`
+     * - `CommonRole::TYPE_META_EMPTY`
+     * - `CommonRole::TYPE_META`
+     */
+    function setType(int $type)
+    {
+        $this->type = $type;
+    }
+    /**
+     * @return int Token's type of role
+     * - `CommonRole::TYPE_ROLE`
+     * - `CommonRole::TYPE_META_EMPTY`
+     * - `CommonRole::TYPE_META`
+     */
+    function getType() : int
+    {
+        return $this->type;
+    }
 }

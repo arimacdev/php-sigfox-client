@@ -98,4 +98,176 @@ class Group
     protected bool $leaf;
     /** @var Actions */
     protected Actions $actions;
+    /**
+     * @param string name The group's name
+     */
+    function setName(string $name)
+    {
+        $this->name = $name;
+    }
+    /**
+     * @return string The group's name
+     */
+    function getName() : string
+    {
+        return $this->name;
+    }
+    /**
+     * @param string description The group's description
+     */
+    function setDescription(string $description)
+    {
+        $this->description = $description;
+    }
+    /**
+     * @return string The group's description
+     */
+    function getDescription() : string
+    {
+        return $this->description;
+    }
+    /**
+     * @param int type Group's type
+     * - `Group::TYPE_SO`
+     * - `Group::TYPE_BASIC`
+     * - `Group::TYPE_SVNO`
+     * - `Group::TYPE_PARTNERS`
+     * - `Group::TYPE_NIP`
+     * - `Group::TYPE_DIST`
+     * - `Group::TYPE_CHANNEL`
+     * - `Group::TYPE_STARTER`
+     * - `Group::TYPE_PARTNER`
+     */
+    function setType(int $type)
+    {
+        $this->type = $type;
+    }
+    /**
+     * @return int Group's type
+     * - `Group::TYPE_SO`
+     * - `Group::TYPE_BASIC`
+     * - `Group::TYPE_SVNO`
+     * - `Group::TYPE_PARTNERS`
+     * - `Group::TYPE_NIP`
+     * - `Group::TYPE_DIST`
+     * - `Group::TYPE_CHANNEL`
+     * - `Group::TYPE_STARTER`
+     * - `Group::TYPE_PARTNER`
+     */
+    function getType() : int
+    {
+        return $this->type;
+    }
+    /**
+     * @param string timezone The timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
+     */
+    function setTimezone(string $timezone)
+    {
+        $this->timezone = $timezone;
+    }
+    /**
+     * @return string The timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
+     */
+    function getTimezone() : string
+    {
+        return $this->timezone;
+    }
+    /**
+     * @param string id The group's identifier
+     */
+    function setId(string $id)
+    {
+        $this->id = $id;
+    }
+    /**
+     * @return string The group's identifier
+     */
+    function getId() : string
+    {
+        return $this->id;
+    }
+    /**
+     * @param string nameCI The group's name to ascii and lowercase
+     */
+    function setNameCI(string $nameCI)
+    {
+        $this->nameCI = $nameCI;
+    }
+    /**
+     * @return string The group's name to ascii and lowercase
+     */
+    function getNameCI() : string
+    {
+        return $this->nameCI;
+    }
+    /**
+     * @param MinGroup[] path The group's path sorted by descending ancestor {id} (direct parent to farthest parent), restricted to the groups visible by the API user
+     */
+    function setPath(array $path)
+    {
+        $this->path = $path;
+    }
+    /**
+     * @return MinGroup[] The group's path sorted by descending ancestor {id} (direct parent to farthest parent), restricted to the groups visible by the API user
+     */
+    function getPath() : array
+    {
+        return $this->path;
+    }
+    /**
+     * @param string createdBy The user id of the group's creator
+     */
+    function setCreatedBy(string $createdBy)
+    {
+        $this->createdBy = $createdBy;
+    }
+    /**
+     * @return string The user id of the group's creator
+     */
+    function getCreatedBy() : string
+    {
+        return $this->createdBy;
+    }
+    /**
+     * @param int creationTime The creation date of the group (timestamp in milliseconds since Unix Epoch)
+     */
+    function setCreationTime(int $creationTime)
+    {
+        $this->creationTime = $creationTime;
+    }
+    /**
+     * @return int The creation date of the group (timestamp in milliseconds since Unix Epoch)
+     */
+    function getCreationTime() : int
+    {
+        return $this->creationTime;
+    }
+    /**
+     * @param bool leaf true if the group is leaf
+     */
+    function setLeaf(bool $leaf)
+    {
+        $this->leaf = $leaf;
+    }
+    /**
+     * @return bool true if the group is leaf
+     */
+    function getLeaf() : bool
+    {
+        return $this->leaf;
+    }
+    /**
+     * @param Actions actions
+     */
+    function setActions(Actions $actions)
+    {
+        $this->actions = $actions;
+    }
+    /**
+     * @return Actions actions
+     */
+    function getActions() : Actions
+    {
+        return $this->actions;
+    }
 }

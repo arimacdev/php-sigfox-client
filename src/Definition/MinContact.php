@@ -22,4 +22,46 @@ class MinContact
     protected string $name;
     /** @var Actions */
     protected Actions $actions;
+    /**
+     * @param string id The contact's identifier
+     */
+    function setId(string $id)
+    {
+        $this->id = $id;
+    }
+    /**
+     * @return string The contact's identifier
+     */
+    function getId() : string
+    {
+        return $this->id;
+    }
+    /**
+     * @param string name The contact's name
+     */
+    function setName(string $name)
+    {
+        $this->name = $name;
+    }
+    /**
+     * @return string The contact's name
+     */
+    function getName() : string
+    {
+        return $this->name;
+    }
+    /**
+     * @param Actions actions
+     */
+    function setActions(Actions $actions)
+    {
+        $this->actions = $actions;
+    }
+    /**
+     * @return Actions actions
+     */
+    function getActions() : Actions
+    {
+        return $this->actions;
+    }
 }

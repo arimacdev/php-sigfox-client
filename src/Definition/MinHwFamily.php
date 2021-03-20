@@ -31,4 +31,40 @@ class MinHwFamily
      * @var string
      */
     protected string $name;
+    /**
+     * @param int id Base station hardware family id.
+     * - `MinHwFamily::ID_STANDARD`
+     * - `MinHwFamily::ID_MINI`
+     * - `MinHwFamily::ID_ACCESS_STATION_MINI`
+     * - `MinHwFamily::ID_ACCESS_STATION_MICRO`
+     */
+    function setId(int $id)
+    {
+        $this->id = $id;
+    }
+    /**
+     * @return int Base station hardware family id.
+     * - `MinHwFamily::ID_STANDARD`
+     * - `MinHwFamily::ID_MINI`
+     * - `MinHwFamily::ID_ACCESS_STATION_MINI`
+     * - `MinHwFamily::ID_ACCESS_STATION_MICRO`
+     */
+    function getId() : int
+    {
+        return $this->id;
+    }
+    /**
+     * @param string name The hardware family's name
+     */
+    function setName(string $name)
+    {
+        $this->name = $name;
+    }
+    /**
+     * @return string The hardware family's name
+     */
+    function getName() : string
+    {
+        return $this->name;
+    }
 }

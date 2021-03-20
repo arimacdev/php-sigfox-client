@@ -19,4 +19,32 @@ class CommonDevice
      * @var string
      */
     protected string $name;
+    /**
+     * @param string id The device's identifier (hexadecimal format)
+     */
+    function setId(string $id)
+    {
+        $this->id = $id;
+    }
+    /**
+     * @return string The device's identifier (hexadecimal format)
+     */
+    function getId() : string
+    {
+        return $this->id;
+    }
+    /**
+     * @param string name The device's name
+     */
+    function setName(string $name)
+    {
+        $this->name = $name;
+    }
+    /**
+     * @return string The device's name
+     */
+    function getName() : string
+    {
+        return $this->name;
+    }
 }

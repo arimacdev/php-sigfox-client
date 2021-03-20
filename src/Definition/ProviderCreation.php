@@ -11,4 +11,18 @@ class ProviderCreation extends BaseProvider
      * @var string
      */
     protected string $groupId;
+    /**
+     * @param string groupId identifier of the group of this provider
+     */
+    function setGroupId(string $groupId)
+    {
+        $this->groupId = $groupId;
+    }
+    /**
+     * @return string identifier of the group of this provider
+     */
+    function getGroupId() : string
+    {
+        return $this->groupId;
+    }
 }

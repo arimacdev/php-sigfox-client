@@ -68,4 +68,98 @@ class SimpleSite extends MinSite
     protected string $lessorId;
     /** @var Actions */
     protected Actions $actions;
+    /**
+     * @param MinHost host
+     */
+    function setHost(MinHost $host)
+    {
+        $this->host = $host;
+    }
+    /**
+     * @return MinHost host
+     */
+    function getHost() : MinHost
+    {
+        return $this->host;
+    }
+    /**
+     * @param int candidateExternalId external id of the site where the base station is installed
+     */
+    function setCandidateExternalId(int $candidateExternalId)
+    {
+        $this->candidateExternalId = $candidateExternalId;
+    }
+    /**
+     * @return int external id of the site where the base station is installed
+     */
+    function getCandidateExternalId() : int
+    {
+        return $this->candidateExternalId;
+    }
+    /**
+     * @param int status Site status
+     * - `SimpleSite::STATUS_PROD`
+     * - `SimpleSite::STATUS_REFUSED`
+     * - `SimpleSite::STATUS_INSTALLED`
+     * - `SimpleSite::STATUS_NOT_PLANNED`
+     * - `SimpleSite::STATUS_PRE_PROD`
+     * - `SimpleSite::STATUS_CANDIDATE`
+     * - `SimpleSite::STATUS_CANCELLED`
+     * - `SimpleSite::STATUS_CLIENT`
+     * - `SimpleSite::STATUS_RD`
+     * - `SimpleSite::STATUS_LABO`
+     * - `SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY`
+     * - `SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY`
+     */
+    function setStatus(int $status)
+    {
+        $this->status = $status;
+    }
+    /**
+     * @return int Site status
+     * - `SimpleSite::STATUS_PROD`
+     * - `SimpleSite::STATUS_REFUSED`
+     * - `SimpleSite::STATUS_INSTALLED`
+     * - `SimpleSite::STATUS_NOT_PLANNED`
+     * - `SimpleSite::STATUS_PRE_PROD`
+     * - `SimpleSite::STATUS_CANDIDATE`
+     * - `SimpleSite::STATUS_CANCELLED`
+     * - `SimpleSite::STATUS_CLIENT`
+     * - `SimpleSite::STATUS_RD`
+     * - `SimpleSite::STATUS_LABO`
+     * - `SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY`
+     * - `SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY`
+     */
+    function getStatus() : int
+    {
+        return $this->status;
+    }
+    /**
+     * @param string lessorId id of the lessor of the site where the base station is installed
+     */
+    function setLessorId(string $lessorId)
+    {
+        $this->lessorId = $lessorId;
+    }
+    /**
+     * @return string id of the lessor of the site where the base station is installed
+     */
+    function getLessorId() : string
+    {
+        return $this->lessorId;
+    }
+    /**
+     * @param Actions actions
+     */
+    function setActions(Actions $actions)
+    {
+        $this->actions = $actions;
+    }
+    /**
+     * @return Actions actions
+     */
+    function getActions() : Actions
+    {
+        return $this->actions;
+    }
 }

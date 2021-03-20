@@ -44,4 +44,48 @@ class ProductCertificateRadioConfiguration extends RadioConfiguration
      * @var int
      */
     protected int $maxEirp;
+    /**
+     * @param int uplinkClass The device uplink class
+     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U0`
+     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U1`
+     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U2`
+     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U3`
+     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D0`
+     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D1`
+     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D2`
+     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D3`
+     */
+    function setUplinkClass(int $uplinkClass)
+    {
+        $this->uplinkClass = $uplinkClass;
+    }
+    /**
+     * @return int The device uplink class
+     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U0`
+     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U1`
+     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U2`
+     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U3`
+     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D0`
+     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D1`
+     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D2`
+     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D3`
+     */
+    function getUplinkClass() : int
+    {
+        return $this->uplinkClass;
+    }
+    /**
+     * @param int maxEirp Maximum radiated power EIRP (dBm)
+     */
+    function setMaxEirp(int $maxEirp)
+    {
+        $this->maxEirp = $maxEirp;
+    }
+    /**
+     * @return int Maximum radiated power EIRP (dBm)
+     */
+    function getMaxEirp() : int
+    {
+        return $this->maxEirp;
+    }
 }

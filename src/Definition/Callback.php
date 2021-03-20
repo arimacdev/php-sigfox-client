@@ -82,4 +82,128 @@ class Callback
      * @var bool
      */
     protected bool $dead;
+    /**
+     * @param string id The callback's identifier
+     */
+    function setId(string $id)
+    {
+        $this->id = $id;
+    }
+    /**
+     * @return string The callback's identifier
+     */
+    function getId() : string
+    {
+        return $this->id;
+    }
+    /**
+     * @param string channel The callback's channel.
+     * - URL
+     * - BATCH_URL
+     * - EMAIL
+     */
+    function setChannel(string $channel)
+    {
+        $this->channel = $channel;
+    }
+    /**
+     * @return string The callback's channel.
+     * - URL
+     * - BATCH_URL
+     * - EMAIL
+     */
+    function getChannel() : string
+    {
+        return $this->channel;
+    }
+    /**
+     * @param int callbackType The callback's type.
+     * - `Callback::CALLBACK_TYPE_DATA`
+     * - `Callback::CALLBACK_TYPE_SERVICE`
+     * - `Callback::CALLBACK_TYPE_ERROR`
+     */
+    function setCallbackType(int $callbackType)
+    {
+        $this->callbackType = $callbackType;
+    }
+    /**
+     * @return int The callback's type.
+     * - `Callback::CALLBACK_TYPE_DATA`
+     * - `Callback::CALLBACK_TYPE_SERVICE`
+     * - `Callback::CALLBACK_TYPE_ERROR`
+     */
+    function getCallbackType() : int
+    {
+        return $this->callbackType;
+    }
+    /**
+     * @param int callbackSubtype The callback's subtype. The subtype must be valid against its type.
+     * - `Callback::CALLBACK_SUBTYPE_STATUS`
+     * - `Callback::CALLBACK_SUBTYPE_GEOLOC`
+     * - `Callback::CALLBACK_SUBTYPE_UPLINK`
+     * - `Callback::CALLBACK_SUBTYPE_BIDIR`
+     * - `Callback::CALLBACK_SUBTYPE_ACKNOWLEDGE`
+     * - `Callback::CALLBACK_SUBTYPE_REPEATER`
+     * - `Callback::CALLBACK_SUBTYPE_DATA_ADVANCED`
+     */
+    function setCallbackSubtype(int $callbackSubtype)
+    {
+        $this->callbackSubtype = $callbackSubtype;
+    }
+    /**
+     * @return int The callback's subtype. The subtype must be valid against its type.
+     * - `Callback::CALLBACK_SUBTYPE_STATUS`
+     * - `Callback::CALLBACK_SUBTYPE_GEOLOC`
+     * - `Callback::CALLBACK_SUBTYPE_UPLINK`
+     * - `Callback::CALLBACK_SUBTYPE_BIDIR`
+     * - `Callback::CALLBACK_SUBTYPE_ACKNOWLEDGE`
+     * - `Callback::CALLBACK_SUBTYPE_REPEATER`
+     * - `Callback::CALLBACK_SUBTYPE_DATA_ADVANCED`
+     */
+    function getCallbackSubtype() : int
+    {
+        return $this->callbackSubtype;
+    }
+    /**
+     * @param string payloadConfig The custom payload configuration. Only for DATA callbacks. This field can be unset when updating.
+     */
+    function setPayloadConfig(string $payloadConfig)
+    {
+        $this->payloadConfig = $payloadConfig;
+    }
+    /**
+     * @return string The custom payload configuration. Only for DATA callbacks. This field can be unset when updating.
+     */
+    function getPayloadConfig() : string
+    {
+        return $this->payloadConfig;
+    }
+    /**
+     * @param bool enabled True to enable the callback, otherwise false
+     */
+    function setEnabled(bool $enabled)
+    {
+        $this->enabled = $enabled;
+    }
+    /**
+     * @return bool True to enable the callback, otherwise false
+     */
+    function getEnabled() : bool
+    {
+        return $this->enabled;
+    }
+    /**
+     * @param bool dead True if last use of the callback fails, otherwise false
+     */
+    function setDead(bool $dead)
+    {
+        $this->dead = $dead;
+    }
+    /**
+     * @return bool True if last use of the callback fails, otherwise false
+     */
+    function getDead() : bool
+    {
+        return $this->dead;
+    }
 }

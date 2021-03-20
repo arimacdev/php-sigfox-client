@@ -17,4 +17,60 @@ class Provider extends BaseProvider
     protected Actions $actions;
     /** @var Resources */
     protected Resources $resources;
+    /**
+     * @param MinGroup group
+     */
+    function setGroup(MinGroup $group)
+    {
+        $this->group = $group;
+    }
+    /**
+     * @return MinGroup group
+     */
+    function getGroup() : MinGroup
+    {
+        return $this->group;
+    }
+    /**
+     * @param Contact[] contacts
+     */
+    function setContacts(array $contacts)
+    {
+        $this->contacts = $contacts;
+    }
+    /**
+     * @return Contact[] contacts
+     */
+    function getContacts() : array
+    {
+        return $this->contacts;
+    }
+    /**
+     * @param Actions actions
+     */
+    function setActions(Actions $actions)
+    {
+        $this->actions = $actions;
+    }
+    /**
+     * @return Actions actions
+     */
+    function getActions() : Actions
+    {
+        return $this->actions;
+    }
+    /**
+     * @param Resources resources
+     */
+    function setResources(Resources $resources)
+    {
+        $this->resources = $resources;
+    }
+    /**
+     * @return Resources resources
+     */
+    function getResources() : Resources
+    {
+        return $this->resources;
+    }
 }

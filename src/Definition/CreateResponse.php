@@ -14,4 +14,18 @@ class CreateResponse extends BaseResponse
      * @var string
      */
     protected string $id;
+    /**
+     * @param string id The user's identifier
+     */
+    function setId(string $id)
+    {
+        $this->id = $id;
+    }
+    /**
+     * @return string The user's identifier
+     */
+    function getId() : string
+    {
+        return $this->id;
+    }
 }

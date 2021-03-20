@@ -52,4 +52,88 @@ class Token
      * @var int
      */
     protected int $freeMessagesSent;
+    /**
+     * @param int state - 0 -> OK
+     * - `Token::STATE_OFF_CONTRACT`
+     * - `Token::STATE_NA_FOR_API`
+     * - `Token::STATE_INVALID_TOKEN`
+     */
+    function setState(int $state)
+    {
+        $this->state = $state;
+    }
+    /**
+     * @return int - 0 -> OK
+     * - `Token::STATE_OFF_CONTRACT`
+     * - `Token::STATE_NA_FOR_API`
+     * - `Token::STATE_INVALID_TOKEN`
+     */
+    function getState() : int
+    {
+        return $this->state;
+    }
+    /**
+     * @param string detailMessage Token state description
+     * - Valid
+     * - Off Contract
+     * - Not applicable for API
+     * - Invalid
+     */
+    function setDetailMessage(string $detailMessage)
+    {
+        $this->detailMessage = $detailMessage;
+    }
+    /**
+     * @return string Token state description
+     * - Valid
+     * - Off Contract
+     * - Not applicable for API
+     * - Invalid
+     */
+    function getDetailMessage() : string
+    {
+        return $this->detailMessage;
+    }
+    /**
+     * @param int end The device's communication end time (in milliseconds since the Unix Epoch)
+     */
+    function setEnd(int $end)
+    {
+        $this->end = $end;
+    }
+    /**
+     * @return int The device's communication end time (in milliseconds since the Unix Epoch)
+     */
+    function getEnd() : int
+    {
+        return $this->end;
+    }
+    /**
+     * @param int freeMessages The number of free messages left for this token
+     */
+    function setFreeMessages(int $freeMessages)
+    {
+        $this->freeMessages = $freeMessages;
+    }
+    /**
+     * @return int The number of free messages left for this token
+     */
+    function getFreeMessages() : int
+    {
+        return $this->freeMessages;
+    }
+    /**
+     * @param int freeMessagesSent The number of free messages already sent for this token
+     */
+    function setFreeMessagesSent(int $freeMessagesSent)
+    {
+        $this->freeMessagesSent = $freeMessagesSent;
+    }
+    /**
+     * @return int The number of free messages already sent for this token
+     */
+    function getFreeMessagesSent() : int
+    {
+        return $this->freeMessagesSent;
+    }
 }

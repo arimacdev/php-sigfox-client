@@ -16,4 +16,18 @@ class Partner extends Group
      * @var int
      */
     protected int $currentPrototypeCount;
+    /**
+     * @param int currentPrototypeCount Number of prototype registered. Accessible only for groups under SO
+     */
+    function setCurrentPrototypeCount(int $currentPrototypeCount)
+    {
+        $this->currentPrototypeCount = $currentPrototypeCount;
+    }
+    /**
+     * @return int Number of prototype registered. Accessible only for groups under SO
+     */
+    function getCurrentPrototypeCount() : int
+    {
+        return $this->currentPrototypeCount;
+    }
 }

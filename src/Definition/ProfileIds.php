@@ -9,4 +9,18 @@ trait ProfileIds
 {
     /** @var string[] */
     protected array $profileId;
+    /**
+     * @param string[] profileId
+     */
+    function setProfileId(array $profileId)
+    {
+        $this->profileId = $profileId;
+    }
+    /**
+     * @return string[] profileId
+     */
+    function getProfileId() : array
+    {
+        return $this->profileId;
+    }
 }

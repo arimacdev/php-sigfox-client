@@ -139,4 +139,202 @@ class BaseSite
      * @var int
      */
     protected int $lng;
+    /**
+     * @param string name The site's name
+     */
+    function setName(string $name)
+    {
+        $this->name = $name;
+    }
+    /**
+     * @return string The site's name
+     */
+    function getName() : string
+    {
+        return $this->name;
+    }
+    /**
+     * @param string lessorId The lessor identifier of the site. This field can be unset when updating.
+     */
+    function setLessorId(string $lessorId)
+    {
+        $this->lessorId = $lessorId;
+    }
+    /**
+     * @return string The lessor identifier of the site. This field can be unset when updating.
+     */
+    function getLessorId() : string
+    {
+        return $this->lessorId;
+    }
+    /**
+     * @param string address The address of the site
+     */
+    function setAddress(string $address)
+    {
+        $this->address = $address;
+    }
+    /**
+     * @return string The address of the site
+     */
+    function getAddress() : string
+    {
+        return $this->address;
+    }
+    /**
+     * @param string comment Comment about the site. This field can be unset when updating.
+     */
+    function setComment(string $comment)
+    {
+        $this->comment = $comment;
+    }
+    /**
+     * @return string Comment about the site. This field can be unset when updating.
+     */
+    function getComment() : string
+    {
+        return $this->comment;
+    }
+    /**
+     * @param int status Site status:
+     * - `BaseSite::STATUS_PROD`
+     * - `BaseSite::STATUS_REFUSED`
+     * - `BaseSite::STATUS_INSTALLED`
+     * - `BaseSite::STATUS_NOT_PLANNED`
+     * - `BaseSite::STATUS_PRE_PROD`
+     * - `BaseSite::STATUS_CANDIDATE`
+     * - `BaseSite::STATUS_CANCELLED`
+     * - `BaseSite::STATUS_CLIENT`
+     * - `BaseSite::STATUS_RD`
+     * - `BaseSite::STATUS_LABO`
+     * - `BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY`
+     * - `BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY`
+     */
+    function setStatus(int $status)
+    {
+        $this->status = $status;
+    }
+    /**
+     * @return int Site status:
+     * - `BaseSite::STATUS_PROD`
+     * - `BaseSite::STATUS_REFUSED`
+     * - `BaseSite::STATUS_INSTALLED`
+     * - `BaseSite::STATUS_NOT_PLANNED`
+     * - `BaseSite::STATUS_PRE_PROD`
+     * - `BaseSite::STATUS_CANDIDATE`
+     * - `BaseSite::STATUS_CANCELLED`
+     * - `BaseSite::STATUS_CLIENT`
+     * - `BaseSite::STATUS_RD`
+     * - `BaseSite::STATUS_LABO`
+     * - `BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY`
+     * - `BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY`
+     */
+    function getStatus() : int
+    {
+        return $this->status;
+    }
+    /**
+     * @param string statusComment The comment of the status of the site. This field can be unset when updating.
+     */
+    function setStatusComment(string $statusComment)
+    {
+        $this->statusComment = $statusComment;
+    }
+    /**
+     * @return string The comment of the status of the site. This field can be unset when updating.
+     */
+    function getStatusComment() : string
+    {
+        return $this->statusComment;
+    }
+    /**
+     * @param int stationInstallation Station installation:
+     * - `BaseSite::STATION_INSTALLATION_INDOOR_WITHOUT_CABINET`
+     * - `BaseSite::STATION_INSTALLATION_OUTDOOR_WITH_CABINET`
+     * - `BaseSite::STATION_INSTALLATION_INDOOR_WITH_CABINET`
+     * - `BaseSite::STATION_INSTALLATION_OUTDOOR_WITHOUT_CABINET`
+     */
+    function setStationInstallation(int $stationInstallation)
+    {
+        $this->stationInstallation = $stationInstallation;
+    }
+    /**
+     * @return int Station installation:
+     * - `BaseSite::STATION_INSTALLATION_INDOOR_WITHOUT_CABINET`
+     * - `BaseSite::STATION_INSTALLATION_OUTDOOR_WITH_CABINET`
+     * - `BaseSite::STATION_INSTALLATION_INDOOR_WITH_CABINET`
+     * - `BaseSite::STATION_INSTALLATION_OUTDOOR_WITHOUT_CABINET`
+     */
+    function getStationInstallation() : int
+    {
+        return $this->stationInstallation;
+    }
+    /**
+     * @param int inverterInfo Inverter type:
+     * - `BaseSite::INVERTER_INFO_NONE`
+     * - `BaseSite::INVERTER_INFO_AC_POWER_HOST`
+     * - `BaseSite::INVERTER_INFO_AC_POWER_HOST_INVERTER`
+     * - `BaseSite::INVERTER_INFO_AC_POWER_SIGFOX_INVERTER`
+     * - `BaseSite::INVERTER_INFO_DC_POWER_HOST_48V`
+     * - `BaseSite::INVERTER_INFO_DC_POWER_SOLAR`
+     */
+    function setInverterInfo(int $inverterInfo)
+    {
+        $this->inverterInfo = $inverterInfo;
+    }
+    /**
+     * @return int Inverter type:
+     * - `BaseSite::INVERTER_INFO_NONE`
+     * - `BaseSite::INVERTER_INFO_AC_POWER_HOST`
+     * - `BaseSite::INVERTER_INFO_AC_POWER_HOST_INVERTER`
+     * - `BaseSite::INVERTER_INFO_AC_POWER_SIGFOX_INVERTER`
+     * - `BaseSite::INVERTER_INFO_DC_POWER_HOST_48V`
+     * - `BaseSite::INVERTER_INFO_DC_POWER_SOLAR`
+     */
+    function getInverterInfo() : int
+    {
+        return $this->inverterInfo;
+    }
+    /**
+     * @param bool aerialWorkPlatformAccess is the site access to the aerial work platform
+     */
+    function setAerialWorkPlatformAccess(bool $aerialWorkPlatformAccess)
+    {
+        $this->aerialWorkPlatformAccess = $aerialWorkPlatformAccess;
+    }
+    /**
+     * @return bool is the site access to the aerial work platform
+     */
+    function getAerialWorkPlatformAccess() : bool
+    {
+        return $this->aerialWorkPlatformAccess;
+    }
+    /**
+     * @param int lat the site's latitude
+     */
+    function setLat(int $lat)
+    {
+        $this->lat = $lat;
+    }
+    /**
+     * @return int the site's latitude
+     */
+    function getLat() : int
+    {
+        return $this->lat;
+    }
+    /**
+     * @param int lng the site's longitutde
+     */
+    function setLng(int $lng)
+    {
+        $this->lng = $lng;
+    }
+    /**
+     * @return int the site's longitutde
+     */
+    function getLng() : int
+    {
+        return $this->lng;
+    }
 }

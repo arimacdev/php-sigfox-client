@@ -39,4 +39,74 @@ class UpdateUrlCallback extends UpdateCallback
      * @var string
      */
     protected string $bodyTemplate;
+    /**
+     * @param string url The callback's url
+     */
+    function setUrl(string $url)
+    {
+        $this->url = $url;
+    }
+    /**
+     * @return string The callback's url
+     */
+    function getUrl() : string
+    {
+        return $this->url;
+    }
+    /**
+     * @param string httpMethod The http method used to send a callback
+     */
+    function setHttpMethod(string $httpMethod)
+    {
+        $this->httpMethod = $httpMethod;
+    }
+    /**
+     * @return string The http method used to send a callback
+     */
+    function getHttpMethod() : string
+    {
+        return $this->httpMethod;
+    }
+    /**
+     * @param object headers The headers of the http request to send, as an object with key:value. This field can be unset when updating.
+     */
+    function setHeaders(object $headers)
+    {
+        $this->headers = $headers;
+    }
+    /**
+     * @return object The headers of the http request to send, as an object with key:value. This field can be unset when updating.
+     */
+    function getHeaders() : object
+    {
+        return $this->headers;
+    }
+    /**
+     * @param bool sendSni Send SNI (Server Name Indication) for SSL/TLS connections. Used by BATCH_URL and URL callbacks (optional).
+     */
+    function setSendSni(bool $sendSni)
+    {
+        $this->sendSni = $sendSni;
+    }
+    /**
+     * @return bool Send SNI (Server Name Indication) for SSL/TLS connections. Used by BATCH_URL and URL callbacks (optional).
+     */
+    function getSendSni() : bool
+    {
+        return $this->sendSni;
+    }
+    /**
+     * @param string bodyTemplate The body template of the request. Only if httpMethpd is set to POST or PUT. It can contain predefined and custom variables. Mandatory for URL callbacks. This field can be unset when updating.
+     */
+    function setBodyTemplate(string $bodyTemplate)
+    {
+        $this->bodyTemplate = $bodyTemplate;
+    }
+    /**
+     * @return string The body template of the request. Only if httpMethpd is set to POST or PUT. It can contain predefined and custom variables. Mandatory for URL callbacks. This field can be unset when updating.
+     */
+    function getBodyTemplate() : string
+    {
+        return $this->bodyTemplate;
+    }
 }
