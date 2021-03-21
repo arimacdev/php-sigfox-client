@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CommonContractInfo\OptionsItemItem;
+use Arimac\Sigfox\Definition\CommonContractInfo\OptionsItem;
 use Arimac\Sigfox\Definition;
 /**
  * Defines a contract common properties
@@ -72,9 +72,9 @@ class CommonContractInfo extends Definition
     /**
      * The activated premium options. Given options will be merged with existing options in contract. In order to delete a single option use "/{id}/options" API.
      *
-     * @var CommonContractInfo\OptionsItemItem
+     * @var OptionsItem[]
      */
-    protected ?CommonContractInfo\OptionsItemItem $options = null;
+    protected ?array $options = null;
     /**
      * @param string $name The contract name
      */
@@ -216,16 +216,16 @@ class CommonContractInfo extends Definition
         return $this->renewalDuration;
     }
     /**
-     * @param CommonContractInfo\OptionsItemItem $options The activated premium options. Given options will be merged with existing options in contract. In order to delete a single option use "/{id}/options" API.
+     * @param OptionsItem[] $options The activated premium options. Given options will be merged with existing options in contract. In order to delete a single option use "/{id}/options" API.
      */
-    function setOptions(?CommonContractInfo\OptionsItemItem $options)
+    function setOptions(?array $options)
     {
         $this->options = $options;
     }
     /**
-     * @return CommonContractInfo\OptionsItemItem The activated premium options. Given options will be merged with existing options in contract. In order to delete a single option use "/{id}/options" API.
+     * @return OptionsItem[] The activated premium options. Given options will be merged with existing options in contract. In order to delete a single option use "/{id}/options" API.
      */
-    function getOptions() : ?CommonContractInfo\OptionsItemItem
+    function getOptions() : ?array
     {
         return $this->options;
     }

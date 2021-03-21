@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Definition\DeviceConsumption;
 
-use Arimac\Sigfox\Definition\DeviceConsumption\DeviceConsumptionsItem\RoamingDetailsItemItem;
+use Arimac\Sigfox\Definition\DeviceConsumption\DeviceConsumptionsItem\RoamingDetailsItem;
 use Arimac\Sigfox\Definition;
 class DeviceConsumptionsItem extends Definition
 {
@@ -30,8 +30,8 @@ class DeviceConsumptionsItem extends Definition
      * @var int
      */
     protected ?int $roamingDownlinkFrameCount = null;
-    /** @var DeviceConsumptionsItem\RoamingDetailsItemItem */
-    protected ?DeviceConsumptionsItem\RoamingDetailsItemItem $roamingDetails = null;
+    /** @var RoamingDetailsItem[] */
+    protected ?array $roamingDetails = null;
     /**
      * @param int $frameCount Number of uplink messages this day
      */
@@ -89,16 +89,16 @@ class DeviceConsumptionsItem extends Definition
         return $this->roamingDownlinkFrameCount;
     }
     /**
-     * @param DeviceConsumptionsItem\RoamingDetailsItemItem roamingDetails
+     * @param RoamingDetailsItem[] roamingDetails
      */
-    function setRoamingDetails(?DeviceConsumptionsItem\RoamingDetailsItemItem $roamingDetails)
+    function setRoamingDetails(?array $roamingDetails)
     {
         $this->roamingDetails = $roamingDetails;
     }
     /**
-     * @return DeviceConsumptionsItem\RoamingDetailsItemItem roamingDetails
+     * @return RoamingDetailsItem[] roamingDetails
      */
-    function getRoamingDetails() : ?DeviceConsumptionsItem\RoamingDetailsItemItem
+    function getRoamingDetails() : ?array
     {
         return $this->roamingDetails;
     }

@@ -21,9 +21,9 @@ class RegistrationJobStatus extends Definition
     /**
      * The information about the devices already processed
      *
-     * @var RegistrationJobStatus\Status
+     * @var Status
      */
-    protected ?RegistrationJobStatus\Status $status = null;
+    protected ?Status $status = null;
     /**
      * @param bool $jobDone If the job is finished or not
      */
@@ -53,16 +53,16 @@ class RegistrationJobStatus extends Definition
         return $this->total;
     }
     /**
-     * @param RegistrationJobStatus\Status $status The information about the devices already processed
+     * @param Status $status The information about the devices already processed
      */
-    function setStatus(?RegistrationJobStatus\Status $status)
+    function setStatus(?Status $status)
     {
         $this->status = $status;
     }
     /**
-     * @return RegistrationJobStatus\Status The information about the devices already processed
+     * @return Status The information about the devices already processed
      */
-    function getStatus() : ?RegistrationJobStatus\Status
+    function getStatus() : ?Status
     {
         return $this->status;
     }

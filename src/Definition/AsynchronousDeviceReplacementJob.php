@@ -2,23 +2,23 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\AsynchronousDeviceReplacementJob\DataItemItem;
+use Arimac\Sigfox\Definition\AsynchronousDeviceReplacementJob\DataItem;
 use Arimac\Sigfox\Definition;
 class AsynchronousDeviceReplacementJob extends Definition
 {
-    /** @var AsynchronousDeviceReplacementJob\DataItemItem */
-    protected ?AsynchronousDeviceReplacementJob\DataItemItem $data = null;
+    /** @var DataItem[] */
+    protected ?array $data = null;
     /**
-     * @param AsynchronousDeviceReplacementJob\DataItemItem data
+     * @param DataItem[] data
      */
-    function setData(?AsynchronousDeviceReplacementJob\DataItemItem $data)
+    function setData(?array $data)
     {
         $this->data = $data;
     }
     /**
-     * @return AsynchronousDeviceReplacementJob\DataItemItem data
+     * @return DataItem[] data
      */
-    function getData() : ?AsynchronousDeviceReplacementJob\DataItemItem
+    function getData() : ?array
     {
         return $this->data;
     }

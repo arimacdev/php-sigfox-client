@@ -93,9 +93,11 @@ function addProperties(Definition $defClass, $definition)
                         $propertyAttr
                     );
                     $propertyDefClass->save();
+
+                    $defClass->addUse($defClass->getNamespace() . "\\" . $defClass->getClassName(), $propertyDefClass->getClassName());
                     $defClass->addProperty(
                         $propertyName,
-                        typeCast($defClass, $defClass->getClassName() . "\\" . $propertyDefClass->getClassName(), $propertyAttr),
+                        $propertyDefClass->getClassName(),
                         !in_array($propertyName, $required),
                         $propertyAttr["description"] ?? null
                     );
@@ -119,13 +121,10 @@ function addProperties(Definition $defClass, $definition)
                     $propertyAttr["items"]
                 );
                 $propertyDefClass->save();
+                $defClass->addUse($defClass->getNamespace() . "\\" . $defClass->getClassName(), $propertyDefClass->getClassName());
                 $defClass->addProperty(
                     $propertyName,
-                    typeCast(
-                        $defClass,
-                        $defClass->getClassName() . "\\" . $propertyDefClass->getClassName() . "Item",
-                        $propertyAttr
-                    ),
+                    $propertyDefClass->getClassName() . "[]",
                     !in_array($propertyName, $required),
                     $propertyAttr["description"] ?? null
                 );

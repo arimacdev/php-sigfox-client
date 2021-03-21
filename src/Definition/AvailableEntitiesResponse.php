@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\AvailableEntitiesResponse\OperatorsItemItem;
-use Arimac\Sigfox\Definition\AvailableEntitiesResponse\ClassesItemItem;
+use Arimac\Sigfox\Definition\AvailableEntitiesResponse\OperatorsItem;
+use Arimac\Sigfox\Definition\AvailableEntitiesResponse\ClassesItem;
 use Arimac\Sigfox\Definition;
 /**
  * Returned data for Service Coverage Available Entities API
@@ -13,42 +13,42 @@ class AvailableEntitiesResponse extends Definition
     /**
      * Array of operators infos and their forecast radio planning infos
      *
-     * @var AvailableEntitiesResponse\OperatorsItemItem
+     * @var OperatorsItem[]
      */
-    protected ?AvailableEntitiesResponse\OperatorsItemItem $operators = null;
+    protected ?array $operators = null;
     /**
      * Array of device class infos.
      *
-     * @var AvailableEntitiesResponse\ClassesItemItem
+     * @var ClassesItem[]
      */
-    protected ?AvailableEntitiesResponse\ClassesItemItem $classes = null;
+    protected ?array $classes = null;
     /** @var string[] */
     protected ?array $actions = null;
     /**
-     * @param AvailableEntitiesResponse\OperatorsItemItem $operators Array of operators infos and their forecast radio planning infos
+     * @param OperatorsItem[] $operators Array of operators infos and their forecast radio planning infos
      */
-    function setOperators(?AvailableEntitiesResponse\OperatorsItemItem $operators)
+    function setOperators(?array $operators)
     {
         $this->operators = $operators;
     }
     /**
-     * @return AvailableEntitiesResponse\OperatorsItemItem Array of operators infos and their forecast radio planning infos
+     * @return OperatorsItem[] Array of operators infos and their forecast radio planning infos
      */
-    function getOperators() : ?AvailableEntitiesResponse\OperatorsItemItem
+    function getOperators() : ?array
     {
         return $this->operators;
     }
     /**
-     * @param AvailableEntitiesResponse\ClassesItemItem $classes Array of device class infos.
+     * @param ClassesItem[] $classes Array of device class infos.
      */
-    function setClasses(?AvailableEntitiesResponse\ClassesItemItem $classes)
+    function setClasses(?array $classes)
     {
         $this->classes = $classes;
     }
     /**
-     * @return AvailableEntitiesResponse\ClassesItemItem Array of device class infos.
+     * @return ClassesItem[] Array of device class infos.
      */
-    function getClasses() : ?AvailableEntitiesResponse\ClassesItemItem
+    function getClasses() : ?array
     {
         return $this->classes;
     }

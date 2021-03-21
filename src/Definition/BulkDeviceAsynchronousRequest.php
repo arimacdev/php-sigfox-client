@@ -3,7 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition\CertificateUpdate;
-use Arimac\Sigfox\Definition\BulkDeviceAsynchronousRequest\DataItemItem;
+use Arimac\Sigfox\Definition\BulkDeviceAsynchronousRequest\DataItem;
 use Arimac\Sigfox\Definition;
 /**
  * Defines the the common information shared by the devices created in an ansychronous bulk request
@@ -31,8 +31,8 @@ class BulkDeviceAsynchronousRequest extends Definition
      * @var string
      */
     protected ?string $prefix = null;
-    /** @var BulkDeviceAsynchronousRequest\DataItemItem */
-    protected ?BulkDeviceAsynchronousRequest\DataItemItem $data = null;
+    /** @var DataItem[] */
+    protected ?array $data = null;
     protected $objects = array('productCertificate' => '\\Arimac\\Sigfox\\Definition\\CertificateUpdate');
     /**
      * @param string $deviceTypeId The identifier of the device type under which the new devices will be created
@@ -91,16 +91,16 @@ class BulkDeviceAsynchronousRequest extends Definition
         return $this->prefix;
     }
     /**
-     * @param BulkDeviceAsynchronousRequest\DataItemItem data
+     * @param DataItem[] data
      */
-    function setData(?BulkDeviceAsynchronousRequest\DataItemItem $data)
+    function setData(?array $data)
     {
         $this->data = $data;
     }
     /**
-     * @return BulkDeviceAsynchronousRequest\DataItemItem data
+     * @return DataItem[] data
      */
-    function getData() : ?BulkDeviceAsynchronousRequest\DataItemItem
+    function getData() : ?array
     {
         return $this->data;
     }

@@ -15,9 +15,9 @@ class ActionJob extends Definition
     /**
      * the informations about the devices already treated
      *
-     * @var ActionJob\Status
+     * @var Status
      */
-    protected ?ActionJob\Status $status = null;
+    protected ?Status $status = null;
     /**
      * @param bool $jobDone If the job is finished or not
      */
@@ -33,16 +33,16 @@ class ActionJob extends Definition
         return $this->jobDone;
     }
     /**
-     * @param ActionJob\Status $status the informations about the devices already treated
+     * @param Status $status the informations about the devices already treated
      */
-    function setStatus(?ActionJob\Status $status)
+    function setStatus(?Status $status)
     {
         $this->status = $status;
     }
     /**
-     * @return ActionJob\Status the informations about the devices already treated
+     * @return Status the informations about the devices already treated
      */
-    function getStatus() : ?ActionJob\Status
+    function getStatus() : ?Status
     {
         return $this->status;
     }

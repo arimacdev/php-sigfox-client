@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\GlobalCoverageResponse\DataItemItem;
+use Arimac\Sigfox\Definition\GlobalCoverageResponse\DataItem;
 use Arimac\Sigfox\Definition;
 /**
  * Returned data for Global Coverage API
@@ -12,20 +12,20 @@ class GlobalCoverageResponse extends Definition
     /**
      * An array containing the response for each point.
      *
-     * @var GlobalCoverageResponse\DataItemItem
+     * @var DataItem[]
      */
-    protected ?GlobalCoverageResponse\DataItemItem $data = null;
+    protected ?array $data = null;
     /**
-     * @param GlobalCoverageResponse\DataItemItem $data An array containing the response for each point.
+     * @param DataItem[] $data An array containing the response for each point.
      */
-    function setData(?GlobalCoverageResponse\DataItemItem $data)
+    function setData(?array $data)
     {
         $this->data = $data;
     }
     /**
-     * @return GlobalCoverageResponse\DataItemItem An array containing the response for each point.
+     * @return DataItem[] An array containing the response for each point.
      */
-    function getData() : ?GlobalCoverageResponse\DataItemItem
+    function getData() : ?array
     {
         return $this->data;
     }

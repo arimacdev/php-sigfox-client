@@ -42,9 +42,9 @@ class RegistrationJob extends Definition
     /**
      * the informations about the base stations already treated
      *
-     * @var RegistrationJob\Status
+     * @var Status
      */
-    protected ?RegistrationJob\Status $status = null;
+    protected ?Status $status = null;
     /**
      * @param bool $jobDone If the job is finished or not
      */
@@ -116,16 +116,16 @@ class RegistrationJob extends Definition
         return $this->total;
     }
     /**
-     * @param RegistrationJob\Status $status the informations about the base stations already treated
+     * @param Status $status the informations about the base stations already treated
      */
-    function setStatus(?RegistrationJob\Status $status)
+    function setStatus(?Status $status)
     {
         $this->status = $status;
     }
     /**
-     * @return RegistrationJob\Status the informations about the base stations already treated
+     * @return Status the informations about the base stations already treated
      */
-    function getStatus() : ?RegistrationJob\Status
+    function getStatus() : ?Status
     {
         return $this->status;
     }

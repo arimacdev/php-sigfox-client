@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\ErrorContent\ErrorsItemItem;
+use Arimac\Sigfox\Definition\ErrorContent\ErrorsItem;
 use Arimac\Sigfox\Definition;
 /**
  * Content of error messages, and sub-errors messages if any
@@ -18,9 +18,9 @@ class ErrorContent extends Definition
     /**
      * List of errors that occured during request
      *
-     * @var ErrorContent\ErrorsItemItem
+     * @var ErrorsItem[]
      */
-    protected ?ErrorContent\ErrorsItemItem $errors = null;
+    protected ?array $errors = null;
     /**
      * @param string $message General error message
      */
@@ -36,16 +36,16 @@ class ErrorContent extends Definition
         return $this->message;
     }
     /**
-     * @param ErrorContent\ErrorsItemItem $errors List of errors that occured during request
+     * @param ErrorsItem[] $errors List of errors that occured during request
      */
-    function setErrors(?ErrorContent\ErrorsItemItem $errors)
+    function setErrors(?array $errors)
     {
         $this->errors = $errors;
     }
     /**
-     * @return ErrorContent\ErrorsItemItem List of errors that occured during request
+     * @return ErrorsItem[] List of errors that occured during request
      */
-    function getErrors() : ?ErrorContent\ErrorsItemItem
+    function getErrors() : ?array
     {
         return $this->errors;
     }

@@ -3,7 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition\CommonUser;
-use Arimac\Sigfox\Definition\UserUpdate\UserRolesItemItem;
+use Arimac\Sigfox\Definition\UserUpdate\UserRolesItem;
 /**
  * User information to be updated
  */
@@ -12,9 +12,9 @@ class UserUpdate extends CommonUser
     /**
      * Defines the rights of the user
      *
-     * @var UserUpdate\UserRolesItemItem
+     * @var UserRolesItem[]
      */
-    protected ?UserUpdate\UserRolesItemItem $userRoles = null;
+    protected ?array $userRoles = null;
     /**
      * list of base station ids (Comma-separated values in hexadecimal format) corresponding to the userRoles with tap limited access granted
      *
@@ -28,16 +28,16 @@ class UserUpdate extends CommonUser
      */
     protected ?string $maintenances = null;
     /**
-     * @param UserUpdate\UserRolesItemItem $userRoles Defines the rights of the user
+     * @param UserRolesItem[] $userRoles Defines the rights of the user
      */
-    function setUserRoles(?UserUpdate\UserRolesItemItem $userRoles)
+    function setUserRoles(?array $userRoles)
     {
         $this->userRoles = $userRoles;
     }
     /**
-     * @return UserUpdate\UserRolesItemItem Defines the rights of the user
+     * @return UserRolesItem[] Defines the rights of the user
      */
-    function getUserRoles() : ?UserUpdate\UserRolesItemItem
+    function getUserRoles() : ?array
     {
         return $this->userRoles;
     }

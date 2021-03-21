@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\GlobalCoverageRequest\LocationsItemItem;
+use Arimac\Sigfox\Definition\GlobalCoverageRequest\LocationsItem;
 use Arimac\Sigfox\Definition;
 /**
  * Defines the request to get Global Coverage
@@ -13,9 +13,9 @@ class GlobalCoverageRequest extends Definition
     /**
      * An array of positions. Valid locations have two properties, lat and lng.
      *
-     * @var GlobalCoverageRequest\LocationsItemItem
+     * @var LocationsItem[]
      */
-    protected GlobalCoverageRequest\LocationsItemItem $locations;
+    protected array $locations;
     /**
      * The radius of the area in which the coverage results are averaged and returned for a selected location, in meters.
      *
@@ -29,16 +29,16 @@ class GlobalCoverageRequest extends Definition
      */
     protected ?string $groupId = null;
     /**
-     * @param GlobalCoverageRequest\LocationsItemItem $locations An array of positions. Valid locations have two properties, lat and lng.
+     * @param LocationsItem[] $locations An array of positions. Valid locations have two properties, lat and lng.
      */
-    function setLocations(GlobalCoverageRequest\LocationsItemItem $locations)
+    function setLocations(array $locations)
     {
         $this->locations = $locations;
     }
     /**
-     * @return GlobalCoverageRequest\LocationsItemItem An array of positions. Valid locations have two properties, lat and lng.
+     * @return LocationsItem[] An array of positions. Valid locations have two properties, lat and lng.
      */
-    function getLocations() : GlobalCoverageRequest\LocationsItemItem
+    function getLocations() : array
     {
         return $this->locations;
     }

@@ -3,7 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition\MinGroup;
-use Arimac\Sigfox\Definition\BaseStation\LocationItemItem;
+use Arimac\Sigfox\Definition\BaseStation\LocationItem;
 use Arimac\Sigfox\Definition\MinHwFamily;
 use Arimac\Sigfox\Definition\BaseStation\Queue;
 use Arimac\Sigfox\Definition\Antenna;
@@ -274,9 +274,9 @@ class BaseStation extends Definition
     /**
      * ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department available for some countries).
      *
-     * @var BaseStation\LocationItemItem
+     * @var LocationItem[]
      */
-    protected ?BaseStation\LocationItemItem $location = null;
+    protected ?array $location = null;
     /** @var MinHwFamily */
     protected ?MinHwFamily $hwFamily = null;
     /**
@@ -329,8 +329,8 @@ class BaseStation extends Definition
      * @var int
      */
     protected ?int $lifecycleStatus = null;
-    /** @var BaseStation\Queue */
-    protected ?BaseStation\Queue $queue = null;
+    /** @var Queue */
+    protected ?Queue $queue = null;
     /**
      * true if the base station is muted
      *
@@ -900,16 +900,16 @@ class BaseStation extends Definition
         return $this->description;
     }
     /**
-     * @param BaseStation\LocationItemItem $location ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department available for some countries).
+     * @param LocationItem[] $location ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department available for some countries).
      */
-    function setLocation(?BaseStation\LocationItemItem $location)
+    function setLocation(?array $location)
     {
         $this->location = $location;
     }
     /**
-     * @return BaseStation\LocationItemItem ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department available for some countries).
+     * @return LocationItem[] ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department available for some countries).
      */
-    function getLocation() : ?BaseStation\LocationItemItem
+    function getLocation() : ?array
     {
         return $this->location;
     }
@@ -1040,16 +1040,16 @@ class BaseStation extends Definition
         return $this->lifecycleStatus;
     }
     /**
-     * @param BaseStation\Queue queue
+     * @param Queue queue
      */
-    function setQueue(?BaseStation\Queue $queue)
+    function setQueue(?Queue $queue)
     {
         $this->queue = $queue;
     }
     /**
-     * @return BaseStation\Queue queue
+     * @return Queue queue
      */
-    function getQueue() : ?BaseStation\Queue
+    function getQueue() : ?Queue
     {
         return $this->queue;
     }

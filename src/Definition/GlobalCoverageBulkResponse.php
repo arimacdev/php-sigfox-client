@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\GlobalCoverageBulkResponse\ResultsItemItem;
+use Arimac\Sigfox\Definition\GlobalCoverageBulkResponse\ResultsItem;
 use Arimac\Sigfox\Definition;
 /**
  * Returned data for Bulk Global Coverage API
@@ -24,9 +24,9 @@ class GlobalCoverageBulkResponse extends Definition
     /**
      * An array containing the response for each point.
      *
-     * @var GlobalCoverageBulkResponse\ResultsItemItem
+     * @var ResultsItem[]
      */
-    protected ?GlobalCoverageBulkResponse\ResultsItemItem $results = null;
+    protected ?array $results = null;
     /**
      * @param bool $jobDone If the job is completed or not
      */
@@ -56,16 +56,16 @@ class GlobalCoverageBulkResponse extends Definition
         return $this->time;
     }
     /**
-     * @param GlobalCoverageBulkResponse\ResultsItemItem $results An array containing the response for each point.
+     * @param ResultsItem[] $results An array containing the response for each point.
      */
-    function setResults(?GlobalCoverageBulkResponse\ResultsItemItem $results)
+    function setResults(?array $results)
     {
         $this->results = $results;
     }
     /**
-     * @return GlobalCoverageBulkResponse\ResultsItemItem An array containing the response for each point.
+     * @return ResultsItem[] An array containing the response for each point.
      */
-    function getResults() : ?GlobalCoverageBulkResponse\ResultsItemItem
+    function getResults() : ?array
     {
         return $this->results;
     }

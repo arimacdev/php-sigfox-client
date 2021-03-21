@@ -7,7 +7,7 @@ use Arimac\Sigfox\Definition\MinHost;
 use Arimac\Sigfox\Definition\MinMaintenance;
 use Arimac\Sigfox\Definition\MinGroup;
 use Arimac\Sigfox\Definition\InternetSubscription;
-use Arimac\Sigfox\Definition\Site\LocationItemItem;
+use Arimac\Sigfox\Definition\Site\LocationItem;
 class Site extends BaseSite
 {
     /**
@@ -39,9 +39,9 @@ class Site extends BaseSite
     /**
      * ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department available for some countries).
      *
-     * @var Site\LocationItemItem
+     * @var LocationItem[]
      */
-    protected ?Site\LocationItemItem $location = null;
+    protected ?array $location = null;
     /**
      * Date of the creation of this site (in milliseconds)
      *
@@ -170,16 +170,16 @@ class Site extends BaseSite
         return $this->candidateExternalId;
     }
     /**
-     * @param Site\LocationItemItem $location ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department available for some countries).
+     * @param LocationItem[] $location ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department available for some countries).
      */
-    function setLocation(?Site\LocationItemItem $location)
+    function setLocation(?array $location)
     {
         $this->location = $location;
     }
     /**
-     * @return Site\LocationItemItem ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department available for some countries).
+     * @return LocationItem[] ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department available for some countries).
      */
-    function getLocation() : ?Site\LocationItemItem
+    function getLocation() : ?array
     {
         return $this->location;
     }

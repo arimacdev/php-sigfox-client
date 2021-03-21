@@ -15,9 +15,9 @@ class ReplaceResponse extends Definition
     /**
      * The information about the devices already processed
      *
-     * @var ReplaceResponse\Status
+     * @var Status
      */
-    protected ?ReplaceResponse\Status $status = null;
+    protected ?Status $status = null;
     /**
      * @param int $total The total number of devices to be replaced
      */
@@ -33,16 +33,16 @@ class ReplaceResponse extends Definition
         return $this->total;
     }
     /**
-     * @param ReplaceResponse\Status $status The information about the devices already processed
+     * @param Status $status The information about the devices already processed
      */
-    function setStatus(?ReplaceResponse\Status $status)
+    function setStatus(?Status $status)
     {
         $this->status = $status;
     }
     /**
-     * @return ReplaceResponse\Status The information about the devices already processed
+     * @return Status The information about the devices already processed
      */
-    function getStatus() : ?ReplaceResponse\Status
+    function getStatus() : ?Status
     {
         return $this->status;
     }

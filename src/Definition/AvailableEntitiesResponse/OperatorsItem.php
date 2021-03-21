@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Definition\AvailableEntitiesResponse;
 
-use Arimac\Sigfox\Definition\AvailableEntitiesResponse\OperatorsItem\OperatorForecastsItemItem;
+use Arimac\Sigfox\Definition\AvailableEntitiesResponse\OperatorsItem\OperatorForecastsItem;
 use Arimac\Sigfox\Definition;
 class OperatorsItem extends Definition
 {
@@ -39,9 +39,9 @@ class OperatorsItem extends Definition
     /**
      * Array of all the operator forecast radio planning infos.
      *
-     * @var OperatorsItem\OperatorForecastsItemItem
+     * @var OperatorForecastsItem[]
      */
-    protected ?OperatorsItem\OperatorForecastsItemItem $operatorForecasts = null;
+    protected ?array $operatorForecasts = null;
     /** @var string[] */
     protected ?array $actions = null;
     /**
@@ -115,16 +115,16 @@ class OperatorsItem extends Definition
         return $this->operatorStandard;
     }
     /**
-     * @param OperatorsItem\OperatorForecastsItemItem $operatorForecasts Array of all the operator forecast radio planning infos.
+     * @param OperatorForecastsItem[] $operatorForecasts Array of all the operator forecast radio planning infos.
      */
-    function setOperatorForecasts(?OperatorsItem\OperatorForecastsItemItem $operatorForecasts)
+    function setOperatorForecasts(?array $operatorForecasts)
     {
         $this->operatorForecasts = $operatorForecasts;
     }
     /**
-     * @return OperatorsItem\OperatorForecastsItemItem Array of all the operator forecast radio planning infos.
+     * @return OperatorForecastsItem[] Array of all the operator forecast radio planning infos.
      */
-    function getOperatorForecasts() : ?OperatorsItem\OperatorForecastsItemItem
+    function getOperatorForecasts() : ?array
     {
         return $this->operatorForecasts;
     }
