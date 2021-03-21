@@ -2,65 +2,67 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\Actions;
+use Arimac\Sigfox\Definition\AvailableEntitiesResponse\OperatorsItemItem;
+use Arimac\Sigfox\Definition\AvailableEntitiesResponse\ClassesItemItem;
+use Arimac\Sigfox\Definition;
 /**
  * Returned data for Service Coverage Available Entities API
  */
-class AvailableEntitiesResponse
+class AvailableEntitiesResponse extends Definition
 {
     /**
      * Array of operators infos and their forecast radio planning infos
      *
-     * @var array
+     * @var AvailableEntitiesResponse\OperatorsItemItem
      */
-    protected array $operators;
+    protected ?AvailableEntitiesResponse\OperatorsItemItem $operators = null;
     /**
      * Array of device class infos.
      *
-     * @var array
+     * @var AvailableEntitiesResponse\ClassesItemItem
      */
-    protected array $classes;
-    /** @var Actions */
-    protected Actions $actions;
+    protected ?AvailableEntitiesResponse\ClassesItemItem $classes = null;
+    /** @var string[] */
+    protected ?array $actions = null;
     /**
-     * @param array operators Array of operators infos and their forecast radio planning infos
+     * @param AvailableEntitiesResponse\OperatorsItemItem $operators Array of operators infos and their forecast radio planning infos
      */
-    function setOperators(array $operators)
+    function setOperators(?AvailableEntitiesResponse\OperatorsItemItem $operators)
     {
         $this->operators = $operators;
     }
     /**
-     * @return array Array of operators infos and their forecast radio planning infos
+     * @return AvailableEntitiesResponse\OperatorsItemItem Array of operators infos and their forecast radio planning infos
      */
-    function getOperators() : array
+    function getOperators() : ?AvailableEntitiesResponse\OperatorsItemItem
     {
         return $this->operators;
     }
     /**
-     * @param array classes Array of device class infos.
+     * @param AvailableEntitiesResponse\ClassesItemItem $classes Array of device class infos.
      */
-    function setClasses(array $classes)
+    function setClasses(?AvailableEntitiesResponse\ClassesItemItem $classes)
     {
         $this->classes = $classes;
     }
     /**
-     * @return array Array of device class infos.
+     * @return AvailableEntitiesResponse\ClassesItemItem Array of device class infos.
      */
-    function getClasses() : array
+    function getClasses() : ?AvailableEntitiesResponse\ClassesItemItem
     {
         return $this->classes;
     }
     /**
-     * @param Actions actions
+     * @param string[] actions
      */
-    function setActions(Actions $actions)
+    function setActions(?array $actions)
     {
         $this->actions = $actions;
     }
     /**
-     * @return Actions actions
+     * @return string[] actions
      */
-    function getActions() : Actions
+    function getActions() : ?array
     {
         return $this->actions;
     }

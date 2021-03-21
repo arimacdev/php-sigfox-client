@@ -17,31 +17,31 @@ class GsmSubscription extends InternetSubscription
      *
      * @var string
      */
-    protected string $dataNumber;
+    protected ?string $dataNumber = null;
     /**
      * The sim card number of this internet subscription. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $simCardNumber;
+    protected ?string $simCardNumber = null;
     /**
      * The IMEI of this internet subscription. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $imei;
+    protected ?string $imei = null;
     /**
      * The modem of this internet subscription. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $modem;
+    protected ?string $modem = null;
     /**
      * The serial number of the modem of this internet subscription
      *
      * @var string
      */
-    protected string $modemSerialNumber;
+    protected ?string $modemSerialNumber = null;
     /**
      * GSM subscription connection type
      * - `GsmSubscription::GSM_CONNECTION_TYPE_DONGLE_USB`
@@ -49,83 +49,83 @@ class GsmSubscription extends InternetSubscription
      *
      * @var int
      */
-    protected int $gsmConnectionType;
+    protected ?int $gsmConnectionType = null;
     /**
-     * @param string dataNumber The data number of this internet subscription. This field can be unset when updating.
+     * @param string $dataNumber The data number of this internet subscription. This field can be unset when updating.
      */
-    function setDataNumber(string $dataNumber)
+    function setDataNumber(?string $dataNumber)
     {
         $this->dataNumber = $dataNumber;
     }
     /**
      * @return string The data number of this internet subscription. This field can be unset when updating.
      */
-    function getDataNumber() : string
+    function getDataNumber() : ?string
     {
         return $this->dataNumber;
     }
     /**
-     * @param string simCardNumber The sim card number of this internet subscription. This field can be unset when updating.
+     * @param string $simCardNumber The sim card number of this internet subscription. This field can be unset when updating.
      */
-    function setSimCardNumber(string $simCardNumber)
+    function setSimCardNumber(?string $simCardNumber)
     {
         $this->simCardNumber = $simCardNumber;
     }
     /**
      * @return string The sim card number of this internet subscription. This field can be unset when updating.
      */
-    function getSimCardNumber() : string
+    function getSimCardNumber() : ?string
     {
         return $this->simCardNumber;
     }
     /**
-     * @param string imei The IMEI of this internet subscription. This field can be unset when updating.
+     * @param string $imei The IMEI of this internet subscription. This field can be unset when updating.
      */
-    function setImei(string $imei)
+    function setImei(?string $imei)
     {
         $this->imei = $imei;
     }
     /**
      * @return string The IMEI of this internet subscription. This field can be unset when updating.
      */
-    function getImei() : string
+    function getImei() : ?string
     {
         return $this->imei;
     }
     /**
-     * @param string modem The modem of this internet subscription. This field can be unset when updating.
+     * @param string $modem The modem of this internet subscription. This field can be unset when updating.
      */
-    function setModem(string $modem)
+    function setModem(?string $modem)
     {
         $this->modem = $modem;
     }
     /**
      * @return string The modem of this internet subscription. This field can be unset when updating.
      */
-    function getModem() : string
+    function getModem() : ?string
     {
         return $this->modem;
     }
     /**
-     * @param string modemSerialNumber The serial number of the modem of this internet subscription
+     * @param string $modemSerialNumber The serial number of the modem of this internet subscription
      */
-    function setModemSerialNumber(string $modemSerialNumber)
+    function setModemSerialNumber(?string $modemSerialNumber)
     {
         $this->modemSerialNumber = $modemSerialNumber;
     }
     /**
      * @return string The serial number of the modem of this internet subscription
      */
-    function getModemSerialNumber() : string
+    function getModemSerialNumber() : ?string
     {
         return $this->modemSerialNumber;
     }
     /**
-     * @param int gsmConnectionType GSM subscription connection type
+     * @param int $gsmConnectionType GSM subscription connection type
      * - `GsmSubscription::GSM_CONNECTION_TYPE_DONGLE_USB`
      * - `GsmSubscription::GSM_CONNECTION_TYPE_ROUTER_ETH`
      */
-    function setGsmConnectionType(int $gsmConnectionType)
+    function setGsmConnectionType(?int $gsmConnectionType)
     {
         $this->gsmConnectionType = $gsmConnectionType;
     }
@@ -134,7 +134,7 @@ class GsmSubscription extends InternetSubscription
      * - `GsmSubscription::GSM_CONNECTION_TYPE_DONGLE_USB`
      * - `GsmSubscription::GSM_CONNECTION_TYPE_ROUTER_ETH`
      */
-    function getGsmConnectionType() : int
+    function getGsmConnectionType() : ?int
     {
         return $this->gsmConnectionType;
     }

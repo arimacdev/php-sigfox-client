@@ -10,38 +10,38 @@ class DeviceLocation_2 extends ComputedLocation
      *
      * @var int
      */
-    protected int $time;
+    protected ?int $time = null;
     /**
      * true, if a valid estimation for this message is available (GPS or RSSI)
      *
      * @var bool
      */
-    protected bool $valid;
+    protected ?bool $valid = null;
     /**
-     * @param int time Timestamp of the message (in milliseconds since the Unix Epoch)
+     * @param int $time Timestamp of the message (in milliseconds since the Unix Epoch)
      */
-    function setTime(int $time)
+    function setTime(?int $time)
     {
         $this->time = $time;
     }
     /**
      * @return int Timestamp of the message (in milliseconds since the Unix Epoch)
      */
-    function getTime() : int
+    function getTime() : ?int
     {
         return $this->time;
     }
     /**
-     * @param bool valid true, if a valid estimation for this message is available (GPS or RSSI)
+     * @param bool $valid true, if a valid estimation for this message is available (GPS or RSSI)
      */
-    function setValid(bool $valid)
+    function setValid(?bool $valid)
     {
         $this->valid = $valid;
     }
     /**
      * @return bool true, if a valid estimation for this message is available (GPS or RSSI)
      */
-    function getValid() : bool
+    function getValid() : ?bool
     {
         return $this->valid;
     }

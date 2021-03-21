@@ -16,146 +16,147 @@ class SiteIntervention extends BaseSiteIntervention
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /** @var MinSite */
-    protected MinSite $site;
+    protected ?MinSite $site = null;
     /** @var MinGroup */
-    protected MinGroup $group;
+    protected ?MinGroup $group = null;
     /** @var MinBaseStation */
-    protected MinBaseStation $baseStation;
+    protected ?MinBaseStation $baseStation = null;
     /**
      * Date of the creation of this intervention (in milliseconds)
      *
      * @var int
      */
-    protected int $creationTime;
+    protected ?int $creationTime = null;
     /**
      * Identifier of the user who created this intervention
      *
      * @var string
      */
-    protected string $createdBy;
+    protected ?string $createdBy = null;
     /**
      * Date of the last edition of this intervention (in milliseconds)
      *
      * @var int
      */
-    protected int $lastEditedTime;
+    protected ?int $lastEditedTime = null;
     /**
      * Identifier of the user who last edited this intervention
      *
      * @var string
      */
-    protected string $lastEditedBy;
+    protected ?string $lastEditedBy = null;
+    protected $objects = array('site' => '\\Arimac\\Sigfox\\Definition\\MinSite', 'group' => '\\Arimac\\Sigfox\\Definition\\MinGroup', 'baseStation' => '\\Arimac\\Sigfox\\Definition\\MinBaseStation');
     /**
-     * @param string id The intervention's identifier
+     * @param string $id The intervention's identifier
      */
-    function setId(string $id)
+    function setId(?string $id)
     {
         $this->id = $id;
     }
     /**
      * @return string The intervention's identifier
      */
-    function getId() : string
+    function getId() : ?string
     {
         return $this->id;
     }
     /**
      * @param MinSite site
      */
-    function setSite(MinSite $site)
+    function setSite(?MinSite $site)
     {
         $this->site = $site;
     }
     /**
      * @return MinSite site
      */
-    function getSite() : MinSite
+    function getSite() : ?MinSite
     {
         return $this->site;
     }
     /**
      * @param MinGroup group
      */
-    function setGroup(MinGroup $group)
+    function setGroup(?MinGroup $group)
     {
         $this->group = $group;
     }
     /**
      * @return MinGroup group
      */
-    function getGroup() : MinGroup
+    function getGroup() : ?MinGroup
     {
         return $this->group;
     }
     /**
      * @param MinBaseStation baseStation
      */
-    function setBaseStation(MinBaseStation $baseStation)
+    function setBaseStation(?MinBaseStation $baseStation)
     {
         $this->baseStation = $baseStation;
     }
     /**
      * @return MinBaseStation baseStation
      */
-    function getBaseStation() : MinBaseStation
+    function getBaseStation() : ?MinBaseStation
     {
         return $this->baseStation;
     }
     /**
-     * @param int creationTime Date of the creation of this intervention (in milliseconds)
+     * @param int $creationTime Date of the creation of this intervention (in milliseconds)
      */
-    function setCreationTime(int $creationTime)
+    function setCreationTime(?int $creationTime)
     {
         $this->creationTime = $creationTime;
     }
     /**
      * @return int Date of the creation of this intervention (in milliseconds)
      */
-    function getCreationTime() : int
+    function getCreationTime() : ?int
     {
         return $this->creationTime;
     }
     /**
-     * @param string createdBy Identifier of the user who created this intervention
+     * @param string $createdBy Identifier of the user who created this intervention
      */
-    function setCreatedBy(string $createdBy)
+    function setCreatedBy(?string $createdBy)
     {
         $this->createdBy = $createdBy;
     }
     /**
      * @return string Identifier of the user who created this intervention
      */
-    function getCreatedBy() : string
+    function getCreatedBy() : ?string
     {
         return $this->createdBy;
     }
     /**
-     * @param int lastEditedTime Date of the last edition of this intervention (in milliseconds)
+     * @param int $lastEditedTime Date of the last edition of this intervention (in milliseconds)
      */
-    function setLastEditedTime(int $lastEditedTime)
+    function setLastEditedTime(?int $lastEditedTime)
     {
         $this->lastEditedTime = $lastEditedTime;
     }
     /**
      * @return int Date of the last edition of this intervention (in milliseconds)
      */
-    function getLastEditedTime() : int
+    function getLastEditedTime() : ?int
     {
         return $this->lastEditedTime;
     }
     /**
-     * @param string lastEditedBy Identifier of the user who last edited this intervention
+     * @param string $lastEditedBy Identifier of the user who last edited this intervention
      */
-    function setLastEditedBy(string $lastEditedBy)
+    function setLastEditedBy(?string $lastEditedBy)
     {
         $this->lastEditedBy = $lastEditedBy;
     }
     /**
      * @return string Identifier of the user who last edited this intervention
      */
-    function getLastEditedBy() : string
+    function getLastEditedBy() : ?string
     {
         return $this->lastEditedBy;
     }

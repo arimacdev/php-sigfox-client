@@ -2,10 +2,11 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 /**
  * generic information about a Role
  */
-class CommonRole
+class CommonRole extends Definition
 {
     /** ROLE */
     public const TYPE_ROLE = 0;
@@ -18,7 +19,7 @@ class CommonRole
      *
      * @var string
      */
-    protected string $name;
+    protected ?string $name = null;
     /**
      * Token's type of role
      * - `CommonRole::TYPE_ROLE`
@@ -27,28 +28,28 @@ class CommonRole
      *
      * @var int
      */
-    protected int $type;
+    protected ?int $type = null;
     /**
-     * @param string name the role's name
+     * @param string $name the role's name
      */
-    function setName(string $name)
+    function setName(?string $name)
     {
         $this->name = $name;
     }
     /**
      * @return string the role's name
      */
-    function getName() : string
+    function getName() : ?string
     {
         return $this->name;
     }
     /**
-     * @param int type Token's type of role
+     * @param int $type Token's type of role
      * - `CommonRole::TYPE_ROLE`
      * - `CommonRole::TYPE_META_EMPTY`
      * - `CommonRole::TYPE_META`
      */
-    function setType(int $type)
+    function setType(?int $type)
     {
         $this->type = $type;
     }
@@ -58,7 +59,7 @@ class CommonRole
      * - `CommonRole::TYPE_META_EMPTY`
      * - `CommonRole::TYPE_META`
      */
-    function getType() : int
+    function getType() : ?int
     {
         return $this->type;
     }

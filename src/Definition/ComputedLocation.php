@@ -2,10 +2,11 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 /**
  * Contains the estimated position of the device within a circle based on the GPS data or the Sigfox Geolocation service
  */
-class ComputedLocation
+class ComputedLocation extends Definition
 {
     /** computed using RSSI and position of the station (legacy) */
     public const SOURCE_RSSI_AND_POSITION_OF_THE_STATION = 0;
@@ -26,21 +27,21 @@ class ComputedLocation
     /**
      * The device's estimated latitude
      *
-     * @var int
+     * @var float
      */
-    protected int $lat;
+    protected ?float $lat = null;
     /**
      * The device's estimated longitude
      *
-     * @var int
+     * @var float
      */
-    protected int $lng;
+    protected ?float $lng = null;
     /**
      * The radius of the circle (meters)
      *
      * @var int
      */
-    protected int $radius;
+    protected ?int $radius = null;
     /**
      * Define how the location has been computed:
      * - `ComputedLocation::SOURCE_RSSI_AND_POSITION_OF_THE_STATION`
@@ -54,57 +55,57 @@ class ComputedLocation
      *
      * @var int
      */
-    protected int $source;
+    protected ?int $source = null;
     /**
      * The place ids computed by the Sigfox Geolocation service
      *
      * @var string[]
      */
-    protected array $placeIds;
+    protected ?array $placeIds = null;
     /**
-     * @param int lat The device's estimated latitude
+     * @param float $lat The device's estimated latitude
      */
-    function setLat(int $lat)
+    function setLat(?float $lat)
     {
         $this->lat = $lat;
     }
     /**
-     * @return int The device's estimated latitude
+     * @return float The device's estimated latitude
      */
-    function getLat() : int
+    function getLat() : ?float
     {
         return $this->lat;
     }
     /**
-     * @param int lng The device's estimated longitude
+     * @param float $lng The device's estimated longitude
      */
-    function setLng(int $lng)
+    function setLng(?float $lng)
     {
         $this->lng = $lng;
     }
     /**
-     * @return int The device's estimated longitude
+     * @return float The device's estimated longitude
      */
-    function getLng() : int
+    function getLng() : ?float
     {
         return $this->lng;
     }
     /**
-     * @param int radius The radius of the circle (meters)
+     * @param int $radius The radius of the circle (meters)
      */
-    function setRadius(int $radius)
+    function setRadius(?int $radius)
     {
         $this->radius = $radius;
     }
     /**
      * @return int The radius of the circle (meters)
      */
-    function getRadius() : int
+    function getRadius() : ?int
     {
         return $this->radius;
     }
     /**
-     * @param int source Define how the location has been computed:
+     * @param int $source Define how the location has been computed:
      * - `ComputedLocation::SOURCE_RSSI_AND_POSITION_OF_THE_STATION`
      * - `ComputedLocation::SOURCE_THE_GPS_DATA_INSIDE_THE_PAYLOAD`
      * - `ComputedLocation::SOURCE_NETWORK_LOCATION`
@@ -114,7 +115,7 @@ class ComputedLocation
      * - `ComputedLocation::SOURCE_WIFI_LOCATION`
      * - `ComputedLocation::SOURCE_PROXIMITY_LOCATION`
      */
-    function setSource(int $source)
+    function setSource(?int $source)
     {
         $this->source = $source;
     }
@@ -129,21 +130,21 @@ class ComputedLocation
      * - `ComputedLocation::SOURCE_WIFI_LOCATION`
      * - `ComputedLocation::SOURCE_PROXIMITY_LOCATION`
      */
-    function getSource() : int
+    function getSource() : ?int
     {
         return $this->source;
     }
     /**
-     * @param string[] placeIds The place ids computed by the Sigfox Geolocation service
+     * @param string[] $placeIds The place ids computed by the Sigfox Geolocation service
      */
-    function setPlaceIds(array $placeIds)
+    function setPlaceIds(?array $placeIds)
     {
         $this->placeIds = $placeIds;
     }
     /**
      * @return string[] The place ids computed by the Sigfox Geolocation service
      */
-    function getPlaceIds() : array
+    function getPlaceIds() : ?array
     {
         return $this->placeIds;
     }

@@ -2,10 +2,11 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 /**
  * Common information about Callback template
  */
-class CreateCallback
+class CreateCallback extends Definition
 {
     /** DATA callback delivering uplink messages to a customer platform. */
     public const CALLBACK_TYPE_DATA = 0;
@@ -27,6 +28,7 @@ class CreateCallback
     public const CALLBACK_SUBTYPE_REPEATER = 5;
     /** DATA_ADVANCED callback sent on a message that can be geolocated (available for SERVICE callbacks) */
     public const CALLBACK_SUBTYPE_DATA_ADVANCED = 6;
+    protected $required = array('callbackSubtype', 'callbackType', 'channel', 'enabled');
     /**
      * The callback's channel.
      * - URL
@@ -63,7 +65,7 @@ class CreateCallback
      *
      * @var string
      */
-    protected ?string $payloadConfig;
+    protected ?string $payloadConfig = null;
     /**
      * True to enable the callback, otherwise false
      *
@@ -71,7 +73,7 @@ class CreateCallback
      */
     protected bool $enabled;
     /**
-     * @param string channel The callback's channel.
+     * @param string $channel The callback's channel.
      * - URL
      * - BATCH_URL
      * - EMAIL
@@ -91,7 +93,7 @@ class CreateCallback
         return $this->channel;
     }
     /**
-     * @param int callbackType The callback's type.
+     * @param int $callbackType The callback's type.
      * - `CreateCallback::CALLBACK_TYPE_DATA`
      * - `CreateCallback::CALLBACK_TYPE_SERVICE`
      * - `CreateCallback::CALLBACK_TYPE_ERROR`
@@ -111,7 +113,7 @@ class CreateCallback
         return $this->callbackType;
     }
     /**
-     * @param int callbackSubtype The callback's subtype. The subtype must be valid against its type.
+     * @param int $callbackSubtype The callback's subtype. The subtype must be valid against its type.
      * - `CreateCallback::CALLBACK_SUBTYPE_STATUS`
      * - `CreateCallback::CALLBACK_SUBTYPE_GEOLOC`
      * - `CreateCallback::CALLBACK_SUBTYPE_UPLINK`
@@ -139,7 +141,7 @@ class CreateCallback
         return $this->callbackSubtype;
     }
     /**
-     * @param string payloadConfig The custom payload configuration. Only for DATA and DATA_ADVANCED callbacks. This field can be unset when updating.
+     * @param string $payloadConfig The custom payload configuration. Only for DATA and DATA_ADVANCED callbacks. This field can be unset when updating.
      */
     function setPayloadConfig(?string $payloadConfig)
     {
@@ -153,7 +155,7 @@ class CreateCallback
         return $this->payloadConfig;
     }
     /**
-     * @param bool enabled True to enable the callback, otherwise false
+     * @param bool $enabled True to enable the callback, otherwise false
      */
     function setEnabled(bool $enabled)
     {

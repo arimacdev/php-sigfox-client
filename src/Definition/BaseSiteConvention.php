@@ -2,10 +2,11 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 /**
  * Generic information about convention
  */
-class BaseSiteConvention
+class BaseSiteConvention extends Definition
 {
     /** AT SIGFOX */
     public const STATUS_AT_SIGFOX = 0;
@@ -30,45 +31,45 @@ class BaseSiteConvention
     /**
      * The annual cost of this convention
      *
-     * @var int
+     * @var float
      */
-    protected int $annualCost;
+    protected ?float $annualCost = null;
     /**
      * The comments of this convention
      *
      * @var string
      */
-    protected string $comments;
+    protected ?string $comments = null;
     /**
      * The start time of this convention
      *
      * @var int
      */
-    protected int $startTime;
+    protected ?int $startTime = null;
     /**
      * The end time of this convention
      *
      * @var int
      */
-    protected int $endTime;
+    protected ?int $endTime = null;
     /**
      * The bss contract reference of this convention
      *
      * @var string
      */
-    protected string $contractReference;
+    protected ?string $contractReference = null;
     /**
      * is this convention in maintenance
      *
      * @var bool
      */
-    protected bool $maintenance;
+    protected ?bool $maintenance = null;
     /**
      * The annual cost of the maintenance of this convention
      *
-     * @var int
+     * @var float
      */
-    protected int $maintenanceAnnualCost;
+    protected ?float $maintenanceAnnualCost = null;
     /**
      * Convention status.
      * - `BaseSiteConvention::STATUS_AT_SIGFOX`
@@ -79,7 +80,7 @@ class BaseSiteConvention
      *
      * @var int
      */
-    protected int $status;
+    protected ?int $status = null;
     /**
      * Convention status.
      * - `BaseSiteConvention::TYPE_CONDOMINIUM`
@@ -90,114 +91,114 @@ class BaseSiteConvention
      *
      * @var int
      */
-    protected int $type;
+    protected ?int $type = null;
     /**
-     * @param int annualCost The annual cost of this convention
+     * @param float $annualCost The annual cost of this convention
      */
-    function setAnnualCost(int $annualCost)
+    function setAnnualCost(?float $annualCost)
     {
         $this->annualCost = $annualCost;
     }
     /**
-     * @return int The annual cost of this convention
+     * @return float The annual cost of this convention
      */
-    function getAnnualCost() : int
+    function getAnnualCost() : ?float
     {
         return $this->annualCost;
     }
     /**
-     * @param string comments The comments of this convention
+     * @param string $comments The comments of this convention
      */
-    function setComments(string $comments)
+    function setComments(?string $comments)
     {
         $this->comments = $comments;
     }
     /**
      * @return string The comments of this convention
      */
-    function getComments() : string
+    function getComments() : ?string
     {
         return $this->comments;
     }
     /**
-     * @param int startTime The start time of this convention
+     * @param int $startTime The start time of this convention
      */
-    function setStartTime(int $startTime)
+    function setStartTime(?int $startTime)
     {
         $this->startTime = $startTime;
     }
     /**
      * @return int The start time of this convention
      */
-    function getStartTime() : int
+    function getStartTime() : ?int
     {
         return $this->startTime;
     }
     /**
-     * @param int endTime The end time of this convention
+     * @param int $endTime The end time of this convention
      */
-    function setEndTime(int $endTime)
+    function setEndTime(?int $endTime)
     {
         $this->endTime = $endTime;
     }
     /**
      * @return int The end time of this convention
      */
-    function getEndTime() : int
+    function getEndTime() : ?int
     {
         return $this->endTime;
     }
     /**
-     * @param string contractReference The bss contract reference of this convention
+     * @param string $contractReference The bss contract reference of this convention
      */
-    function setContractReference(string $contractReference)
+    function setContractReference(?string $contractReference)
     {
         $this->contractReference = $contractReference;
     }
     /**
      * @return string The bss contract reference of this convention
      */
-    function getContractReference() : string
+    function getContractReference() : ?string
     {
         return $this->contractReference;
     }
     /**
-     * @param bool maintenance is this convention in maintenance
+     * @param bool $maintenance is this convention in maintenance
      */
-    function setMaintenance(bool $maintenance)
+    function setMaintenance(?bool $maintenance)
     {
         $this->maintenance = $maintenance;
     }
     /**
      * @return bool is this convention in maintenance
      */
-    function getMaintenance() : bool
+    function getMaintenance() : ?bool
     {
         return $this->maintenance;
     }
     /**
-     * @param int maintenanceAnnualCost The annual cost of the maintenance of this convention
+     * @param float $maintenanceAnnualCost The annual cost of the maintenance of this convention
      */
-    function setMaintenanceAnnualCost(int $maintenanceAnnualCost)
+    function setMaintenanceAnnualCost(?float $maintenanceAnnualCost)
     {
         $this->maintenanceAnnualCost = $maintenanceAnnualCost;
     }
     /**
-     * @return int The annual cost of the maintenance of this convention
+     * @return float The annual cost of the maintenance of this convention
      */
-    function getMaintenanceAnnualCost() : int
+    function getMaintenanceAnnualCost() : ?float
     {
         return $this->maintenanceAnnualCost;
     }
     /**
-     * @param int status Convention status.
+     * @param int $status Convention status.
      * - `BaseSiteConvention::STATUS_AT_SIGFOX`
      * - `BaseSiteConvention::STATUS_AT_HOST`
      * - `BaseSiteConvention::STATUS_SIGNED_SIGFOX`
      * - `BaseSiteConvention::STATUS_SIGNED_HOST`
      * - `BaseSiteConvention::STATUS_SIGNED_BOTH`
      */
-    function setStatus(int $status)
+    function setStatus(?int $status)
     {
         $this->status = $status;
     }
@@ -209,19 +210,19 @@ class BaseSiteConvention
      * - `BaseSiteConvention::STATUS_SIGNED_HOST`
      * - `BaseSiteConvention::STATUS_SIGNED_BOTH`
      */
-    function getStatus() : int
+    function getStatus() : ?int
     {
         return $this->status;
     }
     /**
-     * @param int type Convention status.
+     * @param int $type Convention status.
      * - `BaseSiteConvention::TYPE_CONDOMINIUM`
      * - `BaseSiteConvention::TYPE_INDIVIDUAL`
      * - `BaseSiteConvention::TYPE_SOCIAL_HOUSING_AUTHORITY`
      * - `BaseSiteConvention::TYPE_ASSOCIATION`
      * - `BaseSiteConvention::TYPE_COMPANY`
      */
-    function setType(int $type)
+    function setType(?int $type)
     {
         $this->type = $type;
     }
@@ -233,7 +234,7 @@ class BaseSiteConvention
      * - `BaseSiteConvention::TYPE_ASSOCIATION`
      * - `BaseSiteConvention::TYPE_COMPANY`
      */
-    function getType() : int
+    function getType() : ?int
     {
         return $this->type;
     }

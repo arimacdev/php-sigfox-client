@@ -26,55 +26,55 @@ class CreateSatSubscription extends CreateInternetSubscription
      *
      * @var int
      */
-    protected int $connectionStatus;
+    protected ?int $connectionStatus = null;
     /**
      * The altitude of the satellite of this internet subscription
      *
-     * @var int
+     * @var float
      */
-    protected int $altitude;
+    protected ?float $altitude = null;
     /**
      * The azimuth of the satellite of this internet subscription
      *
-     * @var int
+     * @var float
      */
-    protected int $azimuth;
+    protected ?float $azimuth = null;
     /**
      * The polarization of the satellite of this internet subscription
      *
-     * @var int
+     * @var float
      */
-    protected int $polarization;
+    protected ?float $polarization = null;
     /**
      * The order number of this internet subscription
      *
      * @var string
      */
-    protected string $orderNumber;
+    protected ?string $orderNumber = null;
     /**
      * The location code of this internet subscription. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $locationCode;
+    protected ?string $locationCode = null;
     /**
      * The cluster code of this internet subscription. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $clusterCode;
+    protected ?string $clusterCode = null;
     /**
      * The login of this internet subscription. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $login;
+    protected ?string $login = null;
     /**
      * The password of this internet subscription. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $password;
+    protected ?string $password = null;
     /**
      * Subscription receiver type
      * - `CreateSatSubscription::R_TYPE_HEATING`
@@ -82,14 +82,14 @@ class CreateSatSubscription extends CreateInternetSubscription
      *
      * @var int
      */
-    protected int $rType;
+    protected ?int $rType = null;
     /**
-     * @param int connectionStatus Subscription connection status
+     * @param int $connectionStatus Subscription connection status
      * - `CreateSatSubscription::CONNECTION_STATUS_REQUEST`
      * - `CreateSatSubscription::CONNECTION_STATUS_CREDENTIALS_PROVIDED`
      * - `CreateSatSubscription::CONNECTION_STATUS_KIT_RECEIVED`
      */
-    function setConnectionStatus(int $connectionStatus)
+    function setConnectionStatus(?int $connectionStatus)
     {
         $this->connectionStatus = $connectionStatus;
     }
@@ -99,128 +99,128 @@ class CreateSatSubscription extends CreateInternetSubscription
      * - `CreateSatSubscription::CONNECTION_STATUS_CREDENTIALS_PROVIDED`
      * - `CreateSatSubscription::CONNECTION_STATUS_KIT_RECEIVED`
      */
-    function getConnectionStatus() : int
+    function getConnectionStatus() : ?int
     {
         return $this->connectionStatus;
     }
     /**
-     * @param int altitude The altitude of the satellite of this internet subscription
+     * @param float $altitude The altitude of the satellite of this internet subscription
      */
-    function setAltitude(int $altitude)
+    function setAltitude(?float $altitude)
     {
         $this->altitude = $altitude;
     }
     /**
-     * @return int The altitude of the satellite of this internet subscription
+     * @return float The altitude of the satellite of this internet subscription
      */
-    function getAltitude() : int
+    function getAltitude() : ?float
     {
         return $this->altitude;
     }
     /**
-     * @param int azimuth The azimuth of the satellite of this internet subscription
+     * @param float $azimuth The azimuth of the satellite of this internet subscription
      */
-    function setAzimuth(int $azimuth)
+    function setAzimuth(?float $azimuth)
     {
         $this->azimuth = $azimuth;
     }
     /**
-     * @return int The azimuth of the satellite of this internet subscription
+     * @return float The azimuth of the satellite of this internet subscription
      */
-    function getAzimuth() : int
+    function getAzimuth() : ?float
     {
         return $this->azimuth;
     }
     /**
-     * @param int polarization The polarization of the satellite of this internet subscription
+     * @param float $polarization The polarization of the satellite of this internet subscription
      */
-    function setPolarization(int $polarization)
+    function setPolarization(?float $polarization)
     {
         $this->polarization = $polarization;
     }
     /**
-     * @return int The polarization of the satellite of this internet subscription
+     * @return float The polarization of the satellite of this internet subscription
      */
-    function getPolarization() : int
+    function getPolarization() : ?float
     {
         return $this->polarization;
     }
     /**
-     * @param string orderNumber The order number of this internet subscription
+     * @param string $orderNumber The order number of this internet subscription
      */
-    function setOrderNumber(string $orderNumber)
+    function setOrderNumber(?string $orderNumber)
     {
         $this->orderNumber = $orderNumber;
     }
     /**
      * @return string The order number of this internet subscription
      */
-    function getOrderNumber() : string
+    function getOrderNumber() : ?string
     {
         return $this->orderNumber;
     }
     /**
-     * @param string locationCode The location code of this internet subscription. This field can be unset when updating.
+     * @param string $locationCode The location code of this internet subscription. This field can be unset when updating.
      */
-    function setLocationCode(string $locationCode)
+    function setLocationCode(?string $locationCode)
     {
         $this->locationCode = $locationCode;
     }
     /**
      * @return string The location code of this internet subscription. This field can be unset when updating.
      */
-    function getLocationCode() : string
+    function getLocationCode() : ?string
     {
         return $this->locationCode;
     }
     /**
-     * @param string clusterCode The cluster code of this internet subscription. This field can be unset when updating.
+     * @param string $clusterCode The cluster code of this internet subscription. This field can be unset when updating.
      */
-    function setClusterCode(string $clusterCode)
+    function setClusterCode(?string $clusterCode)
     {
         $this->clusterCode = $clusterCode;
     }
     /**
      * @return string The cluster code of this internet subscription. This field can be unset when updating.
      */
-    function getClusterCode() : string
+    function getClusterCode() : ?string
     {
         return $this->clusterCode;
     }
     /**
-     * @param string login The login of this internet subscription. This field can be unset when updating.
+     * @param string $login The login of this internet subscription. This field can be unset when updating.
      */
-    function setLogin(string $login)
+    function setLogin(?string $login)
     {
         $this->login = $login;
     }
     /**
      * @return string The login of this internet subscription. This field can be unset when updating.
      */
-    function getLogin() : string
+    function getLogin() : ?string
     {
         return $this->login;
     }
     /**
-     * @param string password The password of this internet subscription. This field can be unset when updating.
+     * @param string $password The password of this internet subscription. This field can be unset when updating.
      */
-    function setPassword(string $password)
+    function setPassword(?string $password)
     {
         $this->password = $password;
     }
     /**
      * @return string The password of this internet subscription. This field can be unset when updating.
      */
-    function getPassword() : string
+    function getPassword() : ?string
     {
         return $this->password;
     }
     /**
-     * @param int rType Subscription receiver type
+     * @param int $rType Subscription receiver type
      * - `CreateSatSubscription::R_TYPE_HEATING`
      * - `CreateSatSubscription::R_TYPE_STANDARD`
      */
-    function setRType(int $rType)
+    function setRType(?int $rType)
     {
         $this->rType = $rType;
     }
@@ -229,7 +229,7 @@ class CreateSatSubscription extends CreateInternetSubscription
      * - `CreateSatSubscription::R_TYPE_HEATING`
      * - `CreateSatSubscription::R_TYPE_STANDARD`
      */
-    function getRType() : int
+    function getRType() : ?int
     {
         return $this->rType;
     }

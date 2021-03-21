@@ -2,125 +2,125 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\Actions;
+use Arimac\Sigfox\Definition;
 /**
  * Define the city area's properties
  */
-class CityArea
+class CityArea extends Definition
 {
     /**
      * The city area's identifier
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /**
      * The city area's name
      *
      * @var string
      */
-    protected string $name;
+    protected ?string $name = null;
     /**
      * The city area operator's identifier
      *
      * @var string
      */
-    protected string $groupId;
+    protected ?string $groupId = null;
     /**
      * true if the city area is not editable by an operator user.
      *
      * @var bool
      */
-    protected bool $readOnly;
+    protected ?bool $readOnly = null;
     /**
      * true if the city area is included in the monthly deployement kpi report of the operator.
      *
      * @var bool
      */
-    protected bool $deploymentKpiReport;
-    /** @var Actions */
-    protected Actions $actions;
+    protected ?bool $deploymentKpiReport = null;
+    /** @var string[] */
+    protected ?array $actions = null;
     /**
-     * @param string id The city area's identifier
+     * @param string $id The city area's identifier
      */
-    function setId(string $id)
+    function setId(?string $id)
     {
         $this->id = $id;
     }
     /**
      * @return string The city area's identifier
      */
-    function getId() : string
+    function getId() : ?string
     {
         return $this->id;
     }
     /**
-     * @param string name The city area's name
+     * @param string $name The city area's name
      */
-    function setName(string $name)
+    function setName(?string $name)
     {
         $this->name = $name;
     }
     /**
      * @return string The city area's name
      */
-    function getName() : string
+    function getName() : ?string
     {
         return $this->name;
     }
     /**
-     * @param string groupId The city area operator's identifier
+     * @param string $groupId The city area operator's identifier
      */
-    function setGroupId(string $groupId)
+    function setGroupId(?string $groupId)
     {
         $this->groupId = $groupId;
     }
     /**
      * @return string The city area operator's identifier
      */
-    function getGroupId() : string
+    function getGroupId() : ?string
     {
         return $this->groupId;
     }
     /**
-     * @param bool readOnly true if the city area is not editable by an operator user.
+     * @param bool $readOnly true if the city area is not editable by an operator user.
      */
-    function setReadOnly(bool $readOnly)
+    function setReadOnly(?bool $readOnly)
     {
         $this->readOnly = $readOnly;
     }
     /**
      * @return bool true if the city area is not editable by an operator user.
      */
-    function getReadOnly() : bool
+    function getReadOnly() : ?bool
     {
         return $this->readOnly;
     }
     /**
-     * @param bool deploymentKpiReport true if the city area is included in the monthly deployement kpi report of the operator.
+     * @param bool $deploymentKpiReport true if the city area is included in the monthly deployement kpi report of the operator.
      */
-    function setDeploymentKpiReport(bool $deploymentKpiReport)
+    function setDeploymentKpiReport(?bool $deploymentKpiReport)
     {
         $this->deploymentKpiReport = $deploymentKpiReport;
     }
     /**
      * @return bool true if the city area is included in the monthly deployement kpi report of the operator.
      */
-    function getDeploymentKpiReport() : bool
+    function getDeploymentKpiReport() : ?bool
     {
         return $this->deploymentKpiReport;
     }
     /**
-     * @param Actions actions
+     * @param string[] actions
      */
-    function setActions(Actions $actions)
+    function setActions(?array $actions)
     {
         $this->actions = $actions;
     }
     /**
-     * @return Actions actions
+     * @return string[] actions
      */
-    function getActions() : Actions
+    function getActions() : ?array
     {
         return $this->actions;
     }

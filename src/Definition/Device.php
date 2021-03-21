@@ -11,8 +11,6 @@ use Arimac\Sigfox\Definition\Certificate;
 use Arimac\Sigfox\Definition\DeviceLocation;
 use Arimac\Sigfox\Definition\LastComputedLocation;
 use Arimac\Sigfox\Definition\Token;
-use Arimac\Sigfox\Definition\Actions;
-use Arimac\Sigfox\Definition\Resources;
 /**
  * Defines the device's properties
  */
@@ -64,44 +62,45 @@ class Device extends CommonDevice
     public const AUTOMATIC_RENEWAL_STATUS_RENEWED = 2;
     /** ENDED */
     public const AUTOMATIC_RENEWAL_STATUS_ENDED = 3;
+    protected $required = array('automaticRenewal', 'comState', 'creationTime', 'pac', 'state');
     /**
      * Can the device communicate using satellite communication
      *
      * @var bool
      */
-    protected ?bool $satelliteCapable;
+    protected ?bool $satelliteCapable = null;
     /**
      * Has the device repeater function
      *
      * @var bool
      */
-    protected ?bool $repeater;
+    protected ?bool $repeater = null;
     /**
      * The message modulo
      *
      * @var int
      */
-    protected ?int $messageModulo;
+    protected ?int $messageModulo = null;
     /** @var MinDeviceType */
-    protected ?MinDeviceType $deviceType;
+    protected ?MinDeviceType $deviceType = null;
     /** @var MinContractInfo */
-    protected ?MinContractInfo $contract;
+    protected ?MinContractInfo $contract = null;
     /** @var MinGroup */
-    protected ?MinGroup $group;
+    protected ?MinGroup $group = null;
     /** @var Certificate */
-    protected ?Certificate $modemCertificate;
+    protected ?Certificate $modemCertificate = null;
     /**
      * The device is a prototype
      *
      * @var bool
      */
-    protected ?bool $prototype;
+    protected ?bool $prototype = null;
     /** @var Certificate */
-    protected ?Certificate $productCertificate;
+    protected ?Certificate $productCertificate = null;
     /** @var DeviceLocation */
-    protected ?DeviceLocation $location;
+    protected ?DeviceLocation $location = null;
     /** @var LastComputedLocation */
-    protected ?LastComputedLocation $lastComputedLocation;
+    protected ?LastComputedLocation $lastComputedLocation = null;
     /**
      * The device's PAC (Porting Access Code)
      *
@@ -114,20 +113,20 @@ class Device extends CommonDevice
      *
      * @var int
      */
-    protected ?int $sequenceNumber;
+    protected ?int $sequenceNumber = null;
     /**
      * The last trashed device's sequence number.
      * Absent if there is no message trashed or if the SIGFOX message protocol is V0
      *
      * @var int
      */
-    protected ?int $trashSequenceNumber;
+    protected ?int $trashSequenceNumber = null;
     /**
      * The last time (in milliseconds since the Unix Epoch) the device has communicated
      *
      * @var int
      */
-    protected ?int $lastCom;
+    protected ?int $lastCom = null;
     /**
      * Link Quality Indicator
      * - `Device::LQI_LIMIT`
@@ -138,13 +137,13 @@ class Device extends CommonDevice
      *
      * @var int
      */
-    protected ?int $lqi;
+    protected ?int $lqi = null;
     /**
      * The device's activation time (in milliseconds since the Unix Epoch)
      *
      * @var int
      */
-    protected ?int $activationTime;
+    protected ?int $activationTime = null;
     /**
      * The device's provisionning time (in milliseconds since the Unix Epoch)
      *
@@ -178,31 +177,31 @@ class Device extends CommonDevice
      */
     protected int $comState;
     /** @var Token */
-    protected ?Token $token;
+    protected ?Token $token = null;
     /**
      * The device's unsubscription time (in milliseconds since the Unix Epoch)
      *
      * @var int
      */
-    protected ?int $unsubscriptionTime;
+    protected ?int $unsubscriptionTime = null;
     /**
      * The id of device's creator user
      *
      * @var string
      */
-    protected ?string $createdBy;
+    protected ?string $createdBy = null;
     /**
      * Date of the last edition of this device (in milliseconds since the Unix Epoch)
      *
      * @var int
      */
-    protected ?int $lastEditionTime;
+    protected ?int $lastEditionTime = null;
     /**
      * The id of device's last editor user
      *
      * @var string
      */
-    protected ?string $lastEditedBy;
+    protected ?string $lastEditedBy = null;
     /**
      * Allow token renewal ?
      *
@@ -218,19 +217,20 @@ class Device extends CommonDevice
      *
      * @var int
      */
-    protected ?int $automaticRenewalStatus;
+    protected ?int $automaticRenewalStatus = null;
     /**
      * true if the device is activable and can take a token
      *
      * @var bool
      */
-    protected ?bool $activable;
-    /** @var Actions */
-    protected ?Actions $actions;
-    /** @var Resources */
-    protected ?Resources $resources;
+    protected ?bool $activable = null;
+    /** @var string[] */
+    protected ?array $actions = null;
+    /** @var string[] */
+    protected ?array $resources = null;
+    protected $objects = array('deviceType' => '\\Arimac\\Sigfox\\Definition\\MinDeviceType', 'contract' => '\\Arimac\\Sigfox\\Definition\\MinContractInfo', 'group' => '\\Arimac\\Sigfox\\Definition\\MinGroup', 'modemCertificate' => '\\Arimac\\Sigfox\\Definition\\Certificate', 'productCertificate' => '\\Arimac\\Sigfox\\Definition\\Certificate', 'location' => '\\Arimac\\Sigfox\\Definition\\DeviceLocation', 'lastComputedLocation' => '\\Arimac\\Sigfox\\Definition\\LastComputedLocation', 'token' => '\\Arimac\\Sigfox\\Definition\\Token');
     /**
-     * @param bool satelliteCapable Can the device communicate using satellite communication
+     * @param bool $satelliteCapable Can the device communicate using satellite communication
      */
     function setSatelliteCapable(?bool $satelliteCapable)
     {
@@ -244,7 +244,7 @@ class Device extends CommonDevice
         return $this->satelliteCapable;
     }
     /**
-     * @param bool repeater Has the device repeater function
+     * @param bool $repeater Has the device repeater function
      */
     function setRepeater(?bool $repeater)
     {
@@ -258,7 +258,7 @@ class Device extends CommonDevice
         return $this->repeater;
     }
     /**
-     * @param int messageModulo The message modulo
+     * @param int $messageModulo The message modulo
      */
     function setMessageModulo(?int $messageModulo)
     {
@@ -328,7 +328,7 @@ class Device extends CommonDevice
         return $this->modemCertificate;
     }
     /**
-     * @param bool prototype The device is a prototype
+     * @param bool $prototype The device is a prototype
      */
     function setPrototype(?bool $prototype)
     {
@@ -384,7 +384,7 @@ class Device extends CommonDevice
         return $this->lastComputedLocation;
     }
     /**
-     * @param string pac The device's PAC (Porting Access Code)
+     * @param string $pac The device's PAC (Porting Access Code)
      */
     function setPac(string $pac)
     {
@@ -398,7 +398,7 @@ class Device extends CommonDevice
         return $this->pac;
     }
     /**
-     * @param int sequenceNumber The last device's sequence number.
+     * @param int $sequenceNumber The last device's sequence number.
      * Absent if the device has never communicated or if the SIGFOX message protocol is V0
      */
     function setSequenceNumber(?int $sequenceNumber)
@@ -414,7 +414,7 @@ class Device extends CommonDevice
         return $this->sequenceNumber;
     }
     /**
-     * @param int trashSequenceNumber The last trashed device's sequence number.
+     * @param int $trashSequenceNumber The last trashed device's sequence number.
      * Absent if there is no message trashed or if the SIGFOX message protocol is V0
      */
     function setTrashSequenceNumber(?int $trashSequenceNumber)
@@ -430,7 +430,7 @@ class Device extends CommonDevice
         return $this->trashSequenceNumber;
     }
     /**
-     * @param int lastCom The last time (in milliseconds since the Unix Epoch) the device has communicated
+     * @param int $lastCom The last time (in milliseconds since the Unix Epoch) the device has communicated
      */
     function setLastCom(?int $lastCom)
     {
@@ -444,7 +444,7 @@ class Device extends CommonDevice
         return $this->lastCom;
     }
     /**
-     * @param int lqi Link Quality Indicator
+     * @param int $lqi Link Quality Indicator
      * - `Device::LQI_LIMIT`
      * - `Device::LQI_AVERAGE`
      * - `Device::LQI_GOOD`
@@ -468,7 +468,7 @@ class Device extends CommonDevice
         return $this->lqi;
     }
     /**
-     * @param int activationTime The device's activation time (in milliseconds since the Unix Epoch)
+     * @param int $activationTime The device's activation time (in milliseconds since the Unix Epoch)
      */
     function setActivationTime(?int $activationTime)
     {
@@ -482,7 +482,7 @@ class Device extends CommonDevice
         return $this->activationTime;
     }
     /**
-     * @param int creationTime The device's provisionning time (in milliseconds since the Unix Epoch)
+     * @param int $creationTime The device's provisionning time (in milliseconds since the Unix Epoch)
      */
     function setCreationTime(int $creationTime)
     {
@@ -496,7 +496,7 @@ class Device extends CommonDevice
         return $this->creationTime;
     }
     /**
-     * @param int state State of this device.
+     * @param int $state State of this device.
      * - `Device::STATE_OK`
      * - `Device::STATE_DEAD`
      * - `Device::STATE_OFF_CONTRACT`
@@ -526,7 +526,7 @@ class Device extends CommonDevice
         return $this->state;
     }
     /**
-     * @param int comState Communication state of this device.
+     * @param int $comState Communication state of this device.
      * - `Device::COM_STATE_NO`
      * - `Device::COM_STATE_OK`
      * - `Device::COM_STATE_WARN`
@@ -566,7 +566,7 @@ class Device extends CommonDevice
         return $this->token;
     }
     /**
-     * @param int unsubscriptionTime The device's unsubscription time (in milliseconds since the Unix Epoch)
+     * @param int $unsubscriptionTime The device's unsubscription time (in milliseconds since the Unix Epoch)
      */
     function setUnsubscriptionTime(?int $unsubscriptionTime)
     {
@@ -580,7 +580,7 @@ class Device extends CommonDevice
         return $this->unsubscriptionTime;
     }
     /**
-     * @param string createdBy The id of device's creator user
+     * @param string $createdBy The id of device's creator user
      */
     function setCreatedBy(?string $createdBy)
     {
@@ -594,7 +594,7 @@ class Device extends CommonDevice
         return $this->createdBy;
     }
     /**
-     * @param int lastEditionTime Date of the last edition of this device (in milliseconds since the Unix Epoch)
+     * @param int $lastEditionTime Date of the last edition of this device (in milliseconds since the Unix Epoch)
      */
     function setLastEditionTime(?int $lastEditionTime)
     {
@@ -608,7 +608,7 @@ class Device extends CommonDevice
         return $this->lastEditionTime;
     }
     /**
-     * @param string lastEditedBy The id of device's last editor user
+     * @param string $lastEditedBy The id of device's last editor user
      */
     function setLastEditedBy(?string $lastEditedBy)
     {
@@ -622,7 +622,7 @@ class Device extends CommonDevice
         return $this->lastEditedBy;
     }
     /**
-     * @param bool automaticRenewal Allow token renewal ?
+     * @param bool $automaticRenewal Allow token renewal ?
      */
     function setAutomaticRenewal(bool $automaticRenewal)
     {
@@ -636,7 +636,7 @@ class Device extends CommonDevice
         return $this->automaticRenewal;
     }
     /**
-     * @param int automaticRenewalStatus Computed automatic renewal status.
+     * @param int $automaticRenewalStatus Computed automatic renewal status.
      * - `Device::AUTOMATIC_RENEWAL_STATUS_ALLOWED`
      * - `Device::AUTOMATIC_RENEWAL_STATUS_NOT_ALLOWED`
      * - `Device::AUTOMATIC_RENEWAL_STATUS_RENEWED`
@@ -658,7 +658,7 @@ class Device extends CommonDevice
         return $this->automaticRenewalStatus;
     }
     /**
-     * @param bool activable true if the device is activable and can take a token
+     * @param bool $activable true if the device is activable and can take a token
      */
     function setActivable(?bool $activable)
     {
@@ -672,30 +672,30 @@ class Device extends CommonDevice
         return $this->activable;
     }
     /**
-     * @param Actions actions
+     * @param string[] actions
      */
-    function setActions(?Actions $actions)
+    function setActions(?array $actions)
     {
         $this->actions = $actions;
     }
     /**
-     * @return Actions actions
+     * @return string[] actions
      */
-    function getActions() : ?Actions
+    function getActions() : ?array
     {
         return $this->actions;
     }
     /**
-     * @param Resources resources
+     * @param string[] resources
      */
-    function setResources(?Resources $resources)
+    function setResources(?array $resources)
     {
         $this->resources = $resources;
     }
     /**
-     * @return Resources resources
+     * @return string[] resources
      */
-    function getResources() : ?Resources
+    function getResources() : ?array
     {
         return $this->resources;
     }

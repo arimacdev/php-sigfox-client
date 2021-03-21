@@ -2,10 +2,11 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 /**
  * Common information about Callback template
  */
-class UpdateCallback
+class UpdateCallback extends Definition
 {
     /** DATA callback delivering uplink messages to a customer platform. */
     public const CALLBACK_TYPE_DATA = 0;
@@ -35,7 +36,7 @@ class UpdateCallback
      *
      * @var string
      */
-    protected string $channel;
+    protected ?string $channel = null;
     /**
      * The callback's type.
      * - `UpdateCallback::CALLBACK_TYPE_DATA`
@@ -44,7 +45,7 @@ class UpdateCallback
      *
      * @var int
      */
-    protected int $callbackType;
+    protected ?int $callbackType = null;
     /**
      * The callback's subtype. The subtype must be valid against its type.
      * - `UpdateCallback::CALLBACK_SUBTYPE_STATUS`
@@ -57,26 +58,26 @@ class UpdateCallback
      *
      * @var int
      */
-    protected int $callbackSubtype;
+    protected ?int $callbackSubtype = null;
     /**
      * The custom payload configuration. Only for DATA callbacks. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $payloadConfig;
+    protected ?string $payloadConfig = null;
     /**
      * True to enable the callback, otherwise false
      *
      * @var bool
      */
-    protected bool $enabled;
+    protected ?bool $enabled = null;
     /**
-     * @param string channel The callback's channel.
+     * @param string $channel The callback's channel.
      * - URL
      * - BATCH_URL
      * - EMAIL
      */
-    function setChannel(string $channel)
+    function setChannel(?string $channel)
     {
         $this->channel = $channel;
     }
@@ -86,17 +87,17 @@ class UpdateCallback
      * - BATCH_URL
      * - EMAIL
      */
-    function getChannel() : string
+    function getChannel() : ?string
     {
         return $this->channel;
     }
     /**
-     * @param int callbackType The callback's type.
+     * @param int $callbackType The callback's type.
      * - `UpdateCallback::CALLBACK_TYPE_DATA`
      * - `UpdateCallback::CALLBACK_TYPE_SERVICE`
      * - `UpdateCallback::CALLBACK_TYPE_ERROR`
      */
-    function setCallbackType(int $callbackType)
+    function setCallbackType(?int $callbackType)
     {
         $this->callbackType = $callbackType;
     }
@@ -106,12 +107,12 @@ class UpdateCallback
      * - `UpdateCallback::CALLBACK_TYPE_SERVICE`
      * - `UpdateCallback::CALLBACK_TYPE_ERROR`
      */
-    function getCallbackType() : int
+    function getCallbackType() : ?int
     {
         return $this->callbackType;
     }
     /**
-     * @param int callbackSubtype The callback's subtype. The subtype must be valid against its type.
+     * @param int $callbackSubtype The callback's subtype. The subtype must be valid against its type.
      * - `UpdateCallback::CALLBACK_SUBTYPE_STATUS`
      * - `UpdateCallback::CALLBACK_SUBTYPE_GEOLOC`
      * - `UpdateCallback::CALLBACK_SUBTYPE_UPLINK`
@@ -120,7 +121,7 @@ class UpdateCallback
      * - `UpdateCallback::CALLBACK_SUBTYPE_REPEATER`
      * - `UpdateCallback::CALLBACK_SUBTYPE_DATA_ADVANCED`
      */
-    function setCallbackSubtype(int $callbackSubtype)
+    function setCallbackSubtype(?int $callbackSubtype)
     {
         $this->callbackSubtype = $callbackSubtype;
     }
@@ -134,35 +135,35 @@ class UpdateCallback
      * - `UpdateCallback::CALLBACK_SUBTYPE_REPEATER`
      * - `UpdateCallback::CALLBACK_SUBTYPE_DATA_ADVANCED`
      */
-    function getCallbackSubtype() : int
+    function getCallbackSubtype() : ?int
     {
         return $this->callbackSubtype;
     }
     /**
-     * @param string payloadConfig The custom payload configuration. Only for DATA callbacks. This field can be unset when updating.
+     * @param string $payloadConfig The custom payload configuration. Only for DATA callbacks. This field can be unset when updating.
      */
-    function setPayloadConfig(string $payloadConfig)
+    function setPayloadConfig(?string $payloadConfig)
     {
         $this->payloadConfig = $payloadConfig;
     }
     /**
      * @return string The custom payload configuration. Only for DATA callbacks. This field can be unset when updating.
      */
-    function getPayloadConfig() : string
+    function getPayloadConfig() : ?string
     {
         return $this->payloadConfig;
     }
     /**
-     * @param bool enabled True to enable the callback, otherwise false
+     * @param bool $enabled True to enable the callback, otherwise false
      */
-    function setEnabled(bool $enabled)
+    function setEnabled(?bool $enabled)
     {
         $this->enabled = $enabled;
     }
     /**
      * @return bool True to enable the callback, otherwise false
      */
-    function getEnabled() : bool
+    function getEnabled() : ?bool
     {
         return $this->enabled;
     }

@@ -2,10 +2,11 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 /**
  * Contains the token information of the device
  */
-class Token
+class Token extends Definition
 {
     /** OK */
     public const STATE_OK = 0;
@@ -23,7 +24,7 @@ class Token
      *
      * @var int
      */
-    protected int $state;
+    protected ?int $state = null;
     /**
      * Token state description
      * - Valid
@@ -33,32 +34,32 @@ class Token
      *
      * @var string
      */
-    protected string $detailMessage;
+    protected ?string $detailMessage = null;
     /**
      * The device's communication end time (in milliseconds since the Unix Epoch)
      *
      * @var int
      */
-    protected int $end;
+    protected ?int $end = null;
     /**
      * The number of free messages left for this token
      *
      * @var int
      */
-    protected int $freeMessages;
+    protected ?int $freeMessages = null;
     /**
      * The number of free messages already sent for this token
      *
      * @var int
      */
-    protected int $freeMessagesSent;
+    protected ?int $freeMessagesSent = null;
     /**
-     * @param int state - 0 -> OK
+     * @param int $state - 0 -> OK
      * - `Token::STATE_OFF_CONTRACT`
      * - `Token::STATE_NA_FOR_API`
      * - `Token::STATE_INVALID_TOKEN`
      */
-    function setState(int $state)
+    function setState(?int $state)
     {
         $this->state = $state;
     }
@@ -68,18 +69,18 @@ class Token
      * - `Token::STATE_NA_FOR_API`
      * - `Token::STATE_INVALID_TOKEN`
      */
-    function getState() : int
+    function getState() : ?int
     {
         return $this->state;
     }
     /**
-     * @param string detailMessage Token state description
+     * @param string $detailMessage Token state description
      * - Valid
      * - Off Contract
      * - Not applicable for API
      * - Invalid
      */
-    function setDetailMessage(string $detailMessage)
+    function setDetailMessage(?string $detailMessage)
     {
         $this->detailMessage = $detailMessage;
     }
@@ -90,49 +91,49 @@ class Token
      * - Not applicable for API
      * - Invalid
      */
-    function getDetailMessage() : string
+    function getDetailMessage() : ?string
     {
         return $this->detailMessage;
     }
     /**
-     * @param int end The device's communication end time (in milliseconds since the Unix Epoch)
+     * @param int $end The device's communication end time (in milliseconds since the Unix Epoch)
      */
-    function setEnd(int $end)
+    function setEnd(?int $end)
     {
         $this->end = $end;
     }
     /**
      * @return int The device's communication end time (in milliseconds since the Unix Epoch)
      */
-    function getEnd() : int
+    function getEnd() : ?int
     {
         return $this->end;
     }
     /**
-     * @param int freeMessages The number of free messages left for this token
+     * @param int $freeMessages The number of free messages left for this token
      */
-    function setFreeMessages(int $freeMessages)
+    function setFreeMessages(?int $freeMessages)
     {
         $this->freeMessages = $freeMessages;
     }
     /**
      * @return int The number of free messages left for this token
      */
-    function getFreeMessages() : int
+    function getFreeMessages() : ?int
     {
         return $this->freeMessages;
     }
     /**
-     * @param int freeMessagesSent The number of free messages already sent for this token
+     * @param int $freeMessagesSent The number of free messages already sent for this token
      */
-    function setFreeMessagesSent(int $freeMessagesSent)
+    function setFreeMessagesSent(?int $freeMessagesSent)
     {
         $this->freeMessagesSent = $freeMessagesSent;
     }
     /**
      * @return int The number of free messages already sent for this token
      */
-    function getFreeMessagesSent() : int
+    function getFreeMessagesSent() : ?int
     {
         return $this->freeMessagesSent;
     }

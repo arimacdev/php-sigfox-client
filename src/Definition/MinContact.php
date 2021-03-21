@@ -2,65 +2,65 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\Actions;
+use Arimac\Sigfox\Definition;
 /**
  * Defines a contact entity
  */
-class MinContact
+class MinContact extends Definition
 {
     /**
      * The contact's identifier
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /**
      * The contact's name
      *
      * @var string
      */
-    protected string $name;
-    /** @var Actions */
-    protected Actions $actions;
+    protected ?string $name = null;
+    /** @var string[] */
+    protected ?array $actions = null;
     /**
-     * @param string id The contact's identifier
+     * @param string $id The contact's identifier
      */
-    function setId(string $id)
+    function setId(?string $id)
     {
         $this->id = $id;
     }
     /**
      * @return string The contact's identifier
      */
-    function getId() : string
+    function getId() : ?string
     {
         return $this->id;
     }
     /**
-     * @param string name The contact's name
+     * @param string $name The contact's name
      */
-    function setName(string $name)
+    function setName(?string $name)
     {
         $this->name = $name;
     }
     /**
      * @return string The contact's name
      */
-    function getName() : string
+    function getName() : ?string
     {
         return $this->name;
     }
     /**
-     * @param Actions actions
+     * @param string[] actions
      */
-    function setActions(Actions $actions)
+    function setActions(?array $actions)
     {
         $this->actions = $actions;
     }
     /**
-     * @return Actions actions
+     * @return string[] actions
      */
-    function getActions() : Actions
+    function getActions() : ?array
     {
         return $this->actions;
     }

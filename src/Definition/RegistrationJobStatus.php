@@ -2,66 +2,67 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\object;
-class RegistrationJobStatus
+use Arimac\Sigfox\Definition\RegistrationJobStatus\Status;
+use Arimac\Sigfox\Definition;
+class RegistrationJobStatus extends Definition
 {
     /**
      * If the job is finished or not
      *
      * @var bool
      */
-    protected bool $jobDone;
+    protected ?bool $jobDone = null;
     /**
      * The total number of devices given to be created
      *
      * @var int
      */
-    protected int $total;
+    protected ?int $total = null;
     /**
      * The information about the devices already processed
      *
-     * @var object
+     * @var RegistrationJobStatus\Status
      */
-    protected object $status;
+    protected ?RegistrationJobStatus\Status $status = null;
     /**
-     * @param bool jobDone If the job is finished or not
+     * @param bool $jobDone If the job is finished or not
      */
-    function setJobDone(bool $jobDone)
+    function setJobDone(?bool $jobDone)
     {
         $this->jobDone = $jobDone;
     }
     /**
      * @return bool If the job is finished or not
      */
-    function getJobDone() : bool
+    function getJobDone() : ?bool
     {
         return $this->jobDone;
     }
     /**
-     * @param int total The total number of devices given to be created
+     * @param int $total The total number of devices given to be created
      */
-    function setTotal(int $total)
+    function setTotal(?int $total)
     {
         $this->total = $total;
     }
     /**
      * @return int The total number of devices given to be created
      */
-    function getTotal() : int
+    function getTotal() : ?int
     {
         return $this->total;
     }
     /**
-     * @param object status The information about the devices already processed
+     * @param RegistrationJobStatus\Status $status The information about the devices already processed
      */
-    function setStatus(object $status)
+    function setStatus(?RegistrationJobStatus\Status $status)
     {
         $this->status = $status;
     }
     /**
-     * @return object The information about the devices already processed
+     * @return RegistrationJobStatus\Status The information about the devices already processed
      */
-    function getStatus() : object
+    function getStatus() : ?RegistrationJobStatus\Status
     {
         return $this->status;
     }

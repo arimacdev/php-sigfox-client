@@ -3,17 +3,19 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition\MinGroup;
+use Arimac\Sigfox\Definition;
 /**
  * Defines the common properties of a certificate
  */
-class CommonCertificate
+class CommonCertificate extends Definition
 {
+    protected $required = array('name');
     /**
      * The certificate's identifier
      *
      * @var string
      */
-    protected ?string $id;
+    protected ?string $id = null;
     /**
      * The certificate's name
      *
@@ -25,29 +27,30 @@ class CommonCertificate
      *
      * @var int
      */
-    protected ?int $status;
+    protected ?int $status = null;
     /**
      * The certificate's key
      *
      * @var string
      */
-    protected ?string $key;
+    protected ?string $key = null;
     /** @var MinGroup */
-    protected ?MinGroup $manufacturer;
+    protected ?MinGroup $manufacturer = null;
     /**
      * The certificate's version
      *
      * @var string
      */
-    protected ?string $version;
+    protected ?string $version = null;
     /**
      * The certificate description
      *
      * @var string
      */
-    protected ?string $description;
+    protected ?string $description = null;
+    protected $objects = array('manufacturer' => '\\Arimac\\Sigfox\\Definition\\MinGroup');
     /**
-     * @param string id The certificate's identifier
+     * @param string $id The certificate's identifier
      */
     function setId(?string $id)
     {
@@ -61,7 +64,7 @@ class CommonCertificate
         return $this->id;
     }
     /**
-     * @param string name The certificate's name
+     * @param string $name The certificate's name
      */
     function setName(string $name)
     {
@@ -75,7 +78,7 @@ class CommonCertificate
         return $this->name;
     }
     /**
-     * @param int status The certificate's status code (0 -> ongoing, 1 -> finalized)
+     * @param int $status The certificate's status code (0 -> ongoing, 1 -> finalized)
      */
     function setStatus(?int $status)
     {
@@ -89,7 +92,7 @@ class CommonCertificate
         return $this->status;
     }
     /**
-     * @param string key The certificate's key
+     * @param string $key The certificate's key
      */
     function setKey(?string $key)
     {
@@ -117,7 +120,7 @@ class CommonCertificate
         return $this->manufacturer;
     }
     /**
-     * @param string version The certificate's version
+     * @param string $version The certificate's version
      */
     function setVersion(?string $version)
     {
@@ -131,7 +134,7 @@ class CommonCertificate
         return $this->version;
     }
     /**
-     * @param string description The certificate description
+     * @param string $description The certificate description
      */
     function setDescription(?string $description)
     {

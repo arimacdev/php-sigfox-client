@@ -38,13 +38,13 @@ class DeviceType extends BaseDeviceType
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /**
      * The device type's description
      *
      * @var string
      */
-    protected string $description;
+    protected ?string $description = null;
     /**
      * The downlink mode to use for the devices of this device type.
      * - `DeviceType::DOWNLINK_MODE_DIRECT`
@@ -54,14 +54,14 @@ class DeviceType extends BaseDeviceType
      *
      * @var int
      */
-    protected int $downlinkMode;
+    protected ?int $downlinkMode = null;
     /**
      * Downlink data to be sent to the devices of this device type if downlinkMode is equal to 0.
      * It must be an 8 byte length message given in hexadecimal string format.
      *
      * @var string
      */
-    protected string $downlinkDataString;
+    protected ?string $downlinkDataString = null;
     /**
      * The payload type
      * - `DeviceType::PAYLOAD_TYPE_REGULAR`
@@ -73,97 +73,98 @@ class DeviceType extends BaseDeviceType
      *
      * @var int
      */
-    protected int $payloadType;
+    protected ?int $payloadType = null;
     /**
      * The payload configuration. Required if the payload type is Custom, else ignored.
      *
      * @var string
      */
-    protected string $payloadConfig;
+    protected ?string $payloadConfig = null;
     /** @var MinGroup */
-    protected MinGroup $group;
+    protected ?MinGroup $group = null;
     /** @var MinContractInfo */
-    protected MinContractInfo $contract;
+    protected ?MinContractInfo $contract = null;
     /**
      * The list of the contracts associated with the device type
      *
      * @var MinContractInfo[]
      */
-    protected array $contracts;
+    protected ?array $contracts = null;
     /**
      * The list of the contracts that were associated with the device type at some point, but are not anymore.
      *
      * @var MinContractInfo[]
      */
-    protected array $detachedContracts;
+    protected ?array $detachedContracts = null;
     /** @var GeolocPayloadConfig */
-    protected GeolocPayloadConfig $geolocPayloadConfig;
+    protected ?GeolocPayloadConfig $geolocPayloadConfig = null;
     /**
      * Date of the creation of this device type (in milliseconds)
      *
      * @var int
      */
-    protected int $creationTime;
+    protected ?int $creationTime = null;
     /**
      * Identifier of the user who created this device type
      *
      * @var string
      */
-    protected string $createdBy;
+    protected ?string $createdBy = null;
     /**
      * Date of the last edition of this device type (in milliseconds)
      *
      * @var int
      */
-    protected int $lastEditionTime;
+    protected ?int $lastEditionTime = null;
     /**
      * Identifier of the user who last edited this device type
      *
      * @var string
      */
-    protected string $lastEditedBy;
+    protected ?string $lastEditedBy = null;
     /**
      * Allows the automatic renewal of devices attached to this device type
      *
      * @var bool
      */
-    protected bool $automaticRenewal;
+    protected ?bool $automaticRenewal = null;
+    protected $objects = array('group' => '\\Arimac\\Sigfox\\Definition\\MinGroup', 'contract' => '\\Arimac\\Sigfox\\Definition\\MinContractInfo', 'geolocPayloadConfig' => '\\Arimac\\Sigfox\\Definition\\GeolocPayloadConfig');
     /**
-     * @param string id The device type's identifier
+     * @param string $id The device type's identifier
      */
-    function setId(string $id)
+    function setId(?string $id)
     {
         $this->id = $id;
     }
     /**
      * @return string The device type's identifier
      */
-    function getId() : string
+    function getId() : ?string
     {
         return $this->id;
     }
     /**
-     * @param string description The device type's description
+     * @param string $description The device type's description
      */
-    function setDescription(string $description)
+    function setDescription(?string $description)
     {
         $this->description = $description;
     }
     /**
      * @return string The device type's description
      */
-    function getDescription() : string
+    function getDescription() : ?string
     {
         return $this->description;
     }
     /**
-     * @param int downlinkMode The downlink mode to use for the devices of this device type.
+     * @param int $downlinkMode The downlink mode to use for the devices of this device type.
      * - `DeviceType::DOWNLINK_MODE_DIRECT`
      * - `DeviceType::DOWNLINK_MODE_CALLBACK`
      * - `DeviceType::DOWNLINK_MODE_NONE`
      * - `DeviceType::DOWNLINK_MODE_MANAGED`
      */
-    function setDownlinkMode(int $downlinkMode)
+    function setDownlinkMode(?int $downlinkMode)
     {
         $this->downlinkMode = $downlinkMode;
     }
@@ -174,15 +175,15 @@ class DeviceType extends BaseDeviceType
      * - `DeviceType::DOWNLINK_MODE_NONE`
      * - `DeviceType::DOWNLINK_MODE_MANAGED`
      */
-    function getDownlinkMode() : int
+    function getDownlinkMode() : ?int
     {
         return $this->downlinkMode;
     }
     /**
-     * @param string downlinkDataString Downlink data to be sent to the devices of this device type if downlinkMode is equal to 0.
+     * @param string $downlinkDataString Downlink data to be sent to the devices of this device type if downlinkMode is equal to 0.
      * It must be an 8 byte length message given in hexadecimal string format.
      */
-    function setDownlinkDataString(string $downlinkDataString)
+    function setDownlinkDataString(?string $downlinkDataString)
     {
         $this->downlinkDataString = $downlinkDataString;
     }
@@ -190,12 +191,12 @@ class DeviceType extends BaseDeviceType
      * @return string Downlink data to be sent to the devices of this device type if downlinkMode is equal to 0.
      * It must be an 8 byte length message given in hexadecimal string format.
      */
-    function getDownlinkDataString() : string
+    function getDownlinkDataString() : ?string
     {
         return $this->downlinkDataString;
     }
     /**
-     * @param int payloadType The payload type
+     * @param int $payloadType The payload type
      * - `DeviceType::PAYLOAD_TYPE_REGULAR`
      * - `DeviceType::PAYLOAD_TYPE_CUSTOM_GRAMMAR`
      * - `DeviceType::PAYLOAD_TYPE_GEOLOCATION`
@@ -203,7 +204,7 @@ class DeviceType extends BaseDeviceType
      * - `DeviceType::PAYLOAD_TYPE_RADIO_PLANNING_FRAME`
      * - `DeviceType::PAYLOAD_TYPE_SENSITV2`
      */
-    function setPayloadType(int $payloadType)
+    function setPayloadType(?int $payloadType)
     {
         $this->payloadType = $payloadType;
     }
@@ -216,161 +217,161 @@ class DeviceType extends BaseDeviceType
      * - `DeviceType::PAYLOAD_TYPE_RADIO_PLANNING_FRAME`
      * - `DeviceType::PAYLOAD_TYPE_SENSITV2`
      */
-    function getPayloadType() : int
+    function getPayloadType() : ?int
     {
         return $this->payloadType;
     }
     /**
-     * @param string payloadConfig The payload configuration. Required if the payload type is Custom, else ignored.
+     * @param string $payloadConfig The payload configuration. Required if the payload type is Custom, else ignored.
      */
-    function setPayloadConfig(string $payloadConfig)
+    function setPayloadConfig(?string $payloadConfig)
     {
         $this->payloadConfig = $payloadConfig;
     }
     /**
      * @return string The payload configuration. Required if the payload type is Custom, else ignored.
      */
-    function getPayloadConfig() : string
+    function getPayloadConfig() : ?string
     {
         return $this->payloadConfig;
     }
     /**
      * @param MinGroup group
      */
-    function setGroup(MinGroup $group)
+    function setGroup(?MinGroup $group)
     {
         $this->group = $group;
     }
     /**
      * @return MinGroup group
      */
-    function getGroup() : MinGroup
+    function getGroup() : ?MinGroup
     {
         return $this->group;
     }
     /**
      * @param MinContractInfo contract
      */
-    function setContract(MinContractInfo $contract)
+    function setContract(?MinContractInfo $contract)
     {
         $this->contract = $contract;
     }
     /**
      * @return MinContractInfo contract
      */
-    function getContract() : MinContractInfo
+    function getContract() : ?MinContractInfo
     {
         return $this->contract;
     }
     /**
-     * @param MinContractInfo[] contracts The list of the contracts associated with the device type
+     * @param MinContractInfo[] $contracts The list of the contracts associated with the device type
      */
-    function setContracts(array $contracts)
+    function setContracts(?array $contracts)
     {
         $this->contracts = $contracts;
     }
     /**
      * @return MinContractInfo[] The list of the contracts associated with the device type
      */
-    function getContracts() : array
+    function getContracts() : ?array
     {
         return $this->contracts;
     }
     /**
-     * @param MinContractInfo[] detachedContracts The list of the contracts that were associated with the device type at some point, but are not anymore.
+     * @param MinContractInfo[] $detachedContracts The list of the contracts that were associated with the device type at some point, but are not anymore.
      */
-    function setDetachedContracts(array $detachedContracts)
+    function setDetachedContracts(?array $detachedContracts)
     {
         $this->detachedContracts = $detachedContracts;
     }
     /**
      * @return MinContractInfo[] The list of the contracts that were associated with the device type at some point, but are not anymore.
      */
-    function getDetachedContracts() : array
+    function getDetachedContracts() : ?array
     {
         return $this->detachedContracts;
     }
     /**
      * @param GeolocPayloadConfig geolocPayloadConfig
      */
-    function setGeolocPayloadConfig(GeolocPayloadConfig $geolocPayloadConfig)
+    function setGeolocPayloadConfig(?GeolocPayloadConfig $geolocPayloadConfig)
     {
         $this->geolocPayloadConfig = $geolocPayloadConfig;
     }
     /**
      * @return GeolocPayloadConfig geolocPayloadConfig
      */
-    function getGeolocPayloadConfig() : GeolocPayloadConfig
+    function getGeolocPayloadConfig() : ?GeolocPayloadConfig
     {
         return $this->geolocPayloadConfig;
     }
     /**
-     * @param int creationTime Date of the creation of this device type (in milliseconds)
+     * @param int $creationTime Date of the creation of this device type (in milliseconds)
      */
-    function setCreationTime(int $creationTime)
+    function setCreationTime(?int $creationTime)
     {
         $this->creationTime = $creationTime;
     }
     /**
      * @return int Date of the creation of this device type (in milliseconds)
      */
-    function getCreationTime() : int
+    function getCreationTime() : ?int
     {
         return $this->creationTime;
     }
     /**
-     * @param string createdBy Identifier of the user who created this device type
+     * @param string $createdBy Identifier of the user who created this device type
      */
-    function setCreatedBy(string $createdBy)
+    function setCreatedBy(?string $createdBy)
     {
         $this->createdBy = $createdBy;
     }
     /**
      * @return string Identifier of the user who created this device type
      */
-    function getCreatedBy() : string
+    function getCreatedBy() : ?string
     {
         return $this->createdBy;
     }
     /**
-     * @param int lastEditionTime Date of the last edition of this device type (in milliseconds)
+     * @param int $lastEditionTime Date of the last edition of this device type (in milliseconds)
      */
-    function setLastEditionTime(int $lastEditionTime)
+    function setLastEditionTime(?int $lastEditionTime)
     {
         $this->lastEditionTime = $lastEditionTime;
     }
     /**
      * @return int Date of the last edition of this device type (in milliseconds)
      */
-    function getLastEditionTime() : int
+    function getLastEditionTime() : ?int
     {
         return $this->lastEditionTime;
     }
     /**
-     * @param string lastEditedBy Identifier of the user who last edited this device type
+     * @param string $lastEditedBy Identifier of the user who last edited this device type
      */
-    function setLastEditedBy(string $lastEditedBy)
+    function setLastEditedBy(?string $lastEditedBy)
     {
         $this->lastEditedBy = $lastEditedBy;
     }
     /**
      * @return string Identifier of the user who last edited this device type
      */
-    function getLastEditedBy() : string
+    function getLastEditedBy() : ?string
     {
         return $this->lastEditedBy;
     }
     /**
-     * @param bool automaticRenewal Allows the automatic renewal of devices attached to this device type
+     * @param bool $automaticRenewal Allows the automatic renewal of devices attached to this device type
      */
-    function setAutomaticRenewal(bool $automaticRenewal)
+    function setAutomaticRenewal(?bool $automaticRenewal)
     {
         $this->automaticRenewal = $automaticRenewal;
     }
     /**
      * @return bool Allows the automatic renewal of devices attached to this device type
      */
-    function getAutomaticRenewal() : bool
+    function getAutomaticRenewal() : ?bool
     {
         return $this->automaticRenewal;
     }

@@ -2,13 +2,13 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\Actions;
-use Arimac\Sigfox\Definition\Resources;
+use Arimac\Sigfox\Definition;
 /**
  * Defines a contact entity
  */
-class BaseContact
+class BaseContact extends Definition
 {
+    protected $required = array('name');
     /**
      * The contact's name
      *
@@ -20,37 +20,37 @@ class BaseContact
      *
      * @var string
      */
-    protected ?string $email;
+    protected ?string $email = null;
     /**
      * The contact's phone number must be in the international format with no spaces between numbers (+country code - number). This field can be unset when updating.
      *
      * @var string
      */
-    protected ?string $phoneNumber;
+    protected ?string $phoneNumber = null;
     /**
      * The contact's mobile phone number must be in the international format with no spaces between numbers (+country code - number). This field can be unset when updating.
      *
      * @var string
      */
-    protected ?string $mobilePhoneNumber;
+    protected ?string $mobilePhoneNumber = null;
     /**
      * The contact's address
      *
      * @var string
      */
-    protected ?string $address;
+    protected ?string $address = null;
     /**
      * The contact's description
      *
      * @var string
      */
-    protected ?string $description;
-    /** @var Actions */
-    protected ?Actions $actions;
-    /** @var Resources */
-    protected ?Resources $resources;
+    protected ?string $description = null;
+    /** @var string[] */
+    protected ?array $actions = null;
+    /** @var string[] */
+    protected ?array $resources = null;
     /**
-     * @param string name The contact's name
+     * @param string $name The contact's name
      */
     function setName(string $name)
     {
@@ -64,7 +64,7 @@ class BaseContact
         return $this->name;
     }
     /**
-     * @param string email The contact's email. This field can be unset when updating.
+     * @param string $email The contact's email. This field can be unset when updating.
      */
     function setEmail(?string $email)
     {
@@ -78,7 +78,7 @@ class BaseContact
         return $this->email;
     }
     /**
-     * @param string phoneNumber The contact's phone number must be in the international format with no spaces between numbers (+country code - number). This field can be unset when updating.
+     * @param string $phoneNumber The contact's phone number must be in the international format with no spaces between numbers (+country code - number). This field can be unset when updating.
      */
     function setPhoneNumber(?string $phoneNumber)
     {
@@ -92,7 +92,7 @@ class BaseContact
         return $this->phoneNumber;
     }
     /**
-     * @param string mobilePhoneNumber The contact's mobile phone number must be in the international format with no spaces between numbers (+country code - number). This field can be unset when updating.
+     * @param string $mobilePhoneNumber The contact's mobile phone number must be in the international format with no spaces between numbers (+country code - number). This field can be unset when updating.
      */
     function setMobilePhoneNumber(?string $mobilePhoneNumber)
     {
@@ -106,7 +106,7 @@ class BaseContact
         return $this->mobilePhoneNumber;
     }
     /**
-     * @param string address The contact's address
+     * @param string $address The contact's address
      */
     function setAddress(?string $address)
     {
@@ -120,7 +120,7 @@ class BaseContact
         return $this->address;
     }
     /**
-     * @param string description The contact's description
+     * @param string $description The contact's description
      */
     function setDescription(?string $description)
     {
@@ -134,30 +134,30 @@ class BaseContact
         return $this->description;
     }
     /**
-     * @param Actions actions
+     * @param string[] actions
      */
-    function setActions(?Actions $actions)
+    function setActions(?array $actions)
     {
         $this->actions = $actions;
     }
     /**
-     * @return Actions actions
+     * @return string[] actions
      */
-    function getActions() : ?Actions
+    function getActions() : ?array
     {
         return $this->actions;
     }
     /**
-     * @param Resources resources
+     * @param string[] resources
      */
-    function setResources(?Resources $resources)
+    function setResources(?array $resources)
     {
         $this->resources = $resources;
     }
     /**
-     * @return Resources resources
+     * @return string[] resources
      */
-    function getResources() : ?Resources
+    function getResources() : ?array
     {
         return $this->resources;
     }

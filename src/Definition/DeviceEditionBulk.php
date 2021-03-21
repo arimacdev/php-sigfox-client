@@ -3,8 +3,10 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition\SingleDeviceFields;
-class DeviceEditionBulk extends SingleDeviceFields
+class DeviceEditionBulk
 {
+    use SingleDeviceFields;
+    protected $required = array('id');
     /**
      * The device's identifier (hexadecimal format)
      *
@@ -16,9 +18,9 @@ class DeviceEditionBulk extends SingleDeviceFields
      *
      * @var string
      */
-    protected ?string $name;
+    protected ?string $name = null;
     /**
-     * @param string id The device's identifier (hexadecimal format)
+     * @param string $id The device's identifier (hexadecimal format)
      */
     function setId(string $id)
     {
@@ -32,7 +34,7 @@ class DeviceEditionBulk extends SingleDeviceFields
         return $this->id;
     }
     /**
-     * @param string name The name of the device
+     * @param string $name The name of the device
      */
     function setName(?string $name)
     {

@@ -2,7 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-class CommonGroupCreate
+use Arimac\Sigfox\Definition;
+class CommonGroupCreate extends Definition
 {
     /** SO */
     public const TYPE_SO = 0;
@@ -22,6 +23,7 @@ class CommonGroupCreate
     public const TYPE_STARTER = 10;
     /** Partner */
     public const TYPE_PARTNER = 11;
+    protected $required = array('description', 'name', 'parentId', 'timezone', 'type');
     /**
      * The group's name
      *
@@ -62,7 +64,7 @@ class CommonGroupCreate
      */
     protected string $parentId;
     /**
-     * @param string name The group's name
+     * @param string $name The group's name
      */
     function setName(string $name)
     {
@@ -76,7 +78,7 @@ class CommonGroupCreate
         return $this->name;
     }
     /**
-     * @param string description The group's description
+     * @param string $description The group's description
      */
     function setDescription(string $description)
     {
@@ -90,7 +92,7 @@ class CommonGroupCreate
         return $this->description;
     }
     /**
-     * @param int type Group's type:
+     * @param int $type Group's type:
      * - `CommonGroupCreate::TYPE_SO`
      * - `CommonGroupCreate::TYPE_OTHER`
      * - `CommonGroupCreate::TYPE_SVNO`
@@ -122,7 +124,7 @@ class CommonGroupCreate
         return $this->type;
     }
     /**
-     * @param string timezone The group's timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
+     * @param string $timezone The group's timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
      */
     function setTimezone(string $timezone)
     {
@@ -136,7 +138,7 @@ class CommonGroupCreate
         return $this->timezone;
     }
     /**
-     * @param string parentId The parent group id
+     * @param string $parentId The parent group id
      */
     function setParentId(string $parentId)
     {

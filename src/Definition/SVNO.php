@@ -13,18 +13,18 @@ class SVNO extends Group
      *
      * @var string
      */
-    protected string $networkOperatorId;
+    protected ?string $networkOperatorId = null;
     /**
-     * @param string networkOperatorId SO or NIP group id for a DIST & SVNO  group. This field is mandatory for DIST & SVNO group creation.
+     * @param string $networkOperatorId SO or NIP group id for a DIST & SVNO  group. This field is mandatory for DIST & SVNO group creation.
      */
-    function setNetworkOperatorId(string $networkOperatorId)
+    function setNetworkOperatorId(?string $networkOperatorId)
     {
         $this->networkOperatorId = $networkOperatorId;
     }
     /**
      * @return string SO or NIP group id for a DIST & SVNO  group. This field is mandatory for DIST & SVNO group creation.
      */
-    function getNetworkOperatorId() : string
+    function getNetworkOperatorId() : ?string
     {
         return $this->networkOperatorId;
     }

@@ -13,58 +13,58 @@ class CreateBatchUrlCallback extends CreateCallback
      *
      * @var string
      */
-    protected string $url;
+    protected ?string $url = null;
     /**
      * The http method used to send a callback
      *
      * @var string
      */
-    protected string $httpMethod;
+    protected ?string $httpMethod = null;
     /**
      * The line pattern representing a message.
      *
      * @var string
      */
-    protected string $linePattern;
+    protected ?string $linePattern = null;
     /**
-     * @param string url The callback's url
+     * @param string $url The callback's url
      */
-    function setUrl(string $url)
+    function setUrl(?string $url)
     {
         $this->url = $url;
     }
     /**
      * @return string The callback's url
      */
-    function getUrl() : string
+    function getUrl() : ?string
     {
         return $this->url;
     }
     /**
-     * @param string httpMethod The http method used to send a callback
+     * @param string $httpMethod The http method used to send a callback
      */
-    function setHttpMethod(string $httpMethod)
+    function setHttpMethod(?string $httpMethod)
     {
         $this->httpMethod = $httpMethod;
     }
     /**
      * @return string The http method used to send a callback
      */
-    function getHttpMethod() : string
+    function getHttpMethod() : ?string
     {
         return $this->httpMethod;
     }
     /**
-     * @param string linePattern The line pattern representing a message.
+     * @param string $linePattern The line pattern representing a message.
      */
-    function setLinePattern(string $linePattern)
+    function setLinePattern(?string $linePattern)
     {
         $this->linePattern = $linePattern;
     }
     /**
      * @return string The line pattern representing a message.
      */
-    function getLinePattern() : string
+    function getLinePattern() : ?string
     {
         return $this->linePattern;
     }

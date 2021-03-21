@@ -2,228 +2,230 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition\CommonContractInfo\OptionsItemItem;
+use Arimac\Sigfox\Definition;
 /**
  * Defines a contract common properties
  */
-class CommonContractInfo
+class CommonContractInfo extends Definition
 {
     /**
      * The contract name
      *
      * @var string
      */
-    protected string $name;
+    protected ?string $name = null;
     /**
      * The activation end time (in milliseconds) of the contract. 0 means no activation time limit.
      *
      * @var int
      */
-    protected int $activationEndTime;
+    protected ?int $activationEndTime = null;
     /**
      * The end time (in milliseconds) of the communication. 0 means no communication time limit.
      *
      * @var int
      */
-    protected int $communicationEndTime;
+    protected ?int $communicationEndTime = null;
     /**
      * True if the contract info is bidirectional.
      *
      * @var bool
      */
-    protected bool $bidir;
+    protected ?bool $bidir = null;
     /**
      * True if all downlinks are high priority.
      *
      * @var bool
      */
-    protected bool $highPriorityDownlink;
+    protected ?bool $highPriorityDownlink = null;
     /**
      * The maximum number of uplink frames.
      *
      * @var int
      */
-    protected int $maxUplinkFrames;
+    protected ?int $maxUplinkFrames = null;
     /**
      * The maximum number of downlink frames.
      *
      * @var int
      */
-    protected int $maxDownlinkFrames;
+    protected ?int $maxDownlinkFrames = null;
     /**
      * The maximum number of tokens for this contract. Either 0 (unlimited) or a positive number.
      *
      * @var int
      */
-    protected int $maxTokens;
+    protected ?int $maxTokens = null;
     /**
      * True if automatic renewal is allowed.
      *
      * @var bool
      */
-    protected bool $automaticRenewal;
+    protected ?bool $automaticRenewal = null;
     /**
      * The renewal duration in months.
      *
      * @var int
      */
-    protected int $renewalDuration;
+    protected ?int $renewalDuration = null;
     /**
      * The activated premium options. Given options will be merged with existing options in contract. In order to delete a single option use "/{id}/options" API.
      *
-     * @var array
+     * @var CommonContractInfo\OptionsItemItem
      */
-    protected array $options;
+    protected ?CommonContractInfo\OptionsItemItem $options = null;
     /**
-     * @param string name The contract name
+     * @param string $name The contract name
      */
-    function setName(string $name)
+    function setName(?string $name)
     {
         $this->name = $name;
     }
     /**
      * @return string The contract name
      */
-    function getName() : string
+    function getName() : ?string
     {
         return $this->name;
     }
     /**
-     * @param int activationEndTime The activation end time (in milliseconds) of the contract. 0 means no activation time limit.
+     * @param int $activationEndTime The activation end time (in milliseconds) of the contract. 0 means no activation time limit.
      */
-    function setActivationEndTime(int $activationEndTime)
+    function setActivationEndTime(?int $activationEndTime)
     {
         $this->activationEndTime = $activationEndTime;
     }
     /**
      * @return int The activation end time (in milliseconds) of the contract. 0 means no activation time limit.
      */
-    function getActivationEndTime() : int
+    function getActivationEndTime() : ?int
     {
         return $this->activationEndTime;
     }
     /**
-     * @param int communicationEndTime The end time (in milliseconds) of the communication. 0 means no communication time limit.
+     * @param int $communicationEndTime The end time (in milliseconds) of the communication. 0 means no communication time limit.
      */
-    function setCommunicationEndTime(int $communicationEndTime)
+    function setCommunicationEndTime(?int $communicationEndTime)
     {
         $this->communicationEndTime = $communicationEndTime;
     }
     /**
      * @return int The end time (in milliseconds) of the communication. 0 means no communication time limit.
      */
-    function getCommunicationEndTime() : int
+    function getCommunicationEndTime() : ?int
     {
         return $this->communicationEndTime;
     }
     /**
-     * @param bool bidir True if the contract info is bidirectional.
+     * @param bool $bidir True if the contract info is bidirectional.
      */
-    function setBidir(bool $bidir)
+    function setBidir(?bool $bidir)
     {
         $this->bidir = $bidir;
     }
     /**
      * @return bool True if the contract info is bidirectional.
      */
-    function getBidir() : bool
+    function getBidir() : ?bool
     {
         return $this->bidir;
     }
     /**
-     * @param bool highPriorityDownlink True if all downlinks are high priority.
+     * @param bool $highPriorityDownlink True if all downlinks are high priority.
      */
-    function setHighPriorityDownlink(bool $highPriorityDownlink)
+    function setHighPriorityDownlink(?bool $highPriorityDownlink)
     {
         $this->highPriorityDownlink = $highPriorityDownlink;
     }
     /**
      * @return bool True if all downlinks are high priority.
      */
-    function getHighPriorityDownlink() : bool
+    function getHighPriorityDownlink() : ?bool
     {
         return $this->highPriorityDownlink;
     }
     /**
-     * @param int maxUplinkFrames The maximum number of uplink frames.
+     * @param int $maxUplinkFrames The maximum number of uplink frames.
      */
-    function setMaxUplinkFrames(int $maxUplinkFrames)
+    function setMaxUplinkFrames(?int $maxUplinkFrames)
     {
         $this->maxUplinkFrames = $maxUplinkFrames;
     }
     /**
      * @return int The maximum number of uplink frames.
      */
-    function getMaxUplinkFrames() : int
+    function getMaxUplinkFrames() : ?int
     {
         return $this->maxUplinkFrames;
     }
     /**
-     * @param int maxDownlinkFrames The maximum number of downlink frames.
+     * @param int $maxDownlinkFrames The maximum number of downlink frames.
      */
-    function setMaxDownlinkFrames(int $maxDownlinkFrames)
+    function setMaxDownlinkFrames(?int $maxDownlinkFrames)
     {
         $this->maxDownlinkFrames = $maxDownlinkFrames;
     }
     /**
      * @return int The maximum number of downlink frames.
      */
-    function getMaxDownlinkFrames() : int
+    function getMaxDownlinkFrames() : ?int
     {
         return $this->maxDownlinkFrames;
     }
     /**
-     * @param int maxTokens The maximum number of tokens for this contract. Either 0 (unlimited) or a positive number.
+     * @param int $maxTokens The maximum number of tokens for this contract. Either 0 (unlimited) or a positive number.
      */
-    function setMaxTokens(int $maxTokens)
+    function setMaxTokens(?int $maxTokens)
     {
         $this->maxTokens = $maxTokens;
     }
     /**
      * @return int The maximum number of tokens for this contract. Either 0 (unlimited) or a positive number.
      */
-    function getMaxTokens() : int
+    function getMaxTokens() : ?int
     {
         return $this->maxTokens;
     }
     /**
-     * @param bool automaticRenewal True if automatic renewal is allowed.
+     * @param bool $automaticRenewal True if automatic renewal is allowed.
      */
-    function setAutomaticRenewal(bool $automaticRenewal)
+    function setAutomaticRenewal(?bool $automaticRenewal)
     {
         $this->automaticRenewal = $automaticRenewal;
     }
     /**
      * @return bool True if automatic renewal is allowed.
      */
-    function getAutomaticRenewal() : bool
+    function getAutomaticRenewal() : ?bool
     {
         return $this->automaticRenewal;
     }
     /**
-     * @param int renewalDuration The renewal duration in months.
+     * @param int $renewalDuration The renewal duration in months.
      */
-    function setRenewalDuration(int $renewalDuration)
+    function setRenewalDuration(?int $renewalDuration)
     {
         $this->renewalDuration = $renewalDuration;
     }
     /**
      * @return int The renewal duration in months.
      */
-    function getRenewalDuration() : int
+    function getRenewalDuration() : ?int
     {
         return $this->renewalDuration;
     }
     /**
-     * @param array options The activated premium options. Given options will be merged with existing options in contract. In order to delete a single option use "/{id}/options" API.
+     * @param CommonContractInfo\OptionsItemItem $options The activated premium options. Given options will be merged with existing options in contract. In order to delete a single option use "/{id}/options" API.
      */
-    function setOptions(array $options)
+    function setOptions(?CommonContractInfo\OptionsItemItem $options)
     {
         $this->options = $options;
     }
     /**
-     * @return array The activated premium options. Given options will be merged with existing options in contract. In order to delete a single option use "/{id}/options" API.
+     * @return CommonContractInfo\OptionsItemItem The activated premium options. Given options will be merged with existing options in contract. In order to delete a single option use "/{id}/options" API.
      */
-    function getOptions() : array
+    function getOptions() : ?CommonContractInfo\OptionsItemItem
     {
         return $this->options;
     }

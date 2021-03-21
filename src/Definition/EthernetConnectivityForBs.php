@@ -5,8 +5,6 @@ namespace Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\EthernetConnectivityBase;
 use Arimac\Sigfox\Definition\MinGroup;
 use Arimac\Sigfox\Definition\MinBaseStation;
-use Arimac\Sigfox\Definition\Actions;
-use Arimac\Sigfox\Definition\Resources;
 /**
  * Ethernet connectivity configuration for a base station.
  */
@@ -33,11 +31,11 @@ class EthernetConnectivityForBs extends EthernetConnectivityBase
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /** @var MinGroup */
-    protected MinGroup $group;
+    protected ?MinGroup $group = null;
     /** @var MinBaseStation */
-    protected MinBaseStation $baseStation;
+    protected ?MinBaseStation $baseStation = null;
     /**
      * State of an ethernet connectivity configuration
      * - `EthernetConnectivityForBs::STATE_ACTIVE`
@@ -48,7 +46,7 @@ class EthernetConnectivityForBs extends EthernetConnectivityBase
      *
      * @var int
      */
-    protected int $state;
+    protected ?int $state = null;
     /**
      * Synchronisation status of an ethernet connectivity configuration
      * - `EthernetConnectivityForBs::SYNC_STATUS_OK`
@@ -57,62 +55,63 @@ class EthernetConnectivityForBs extends EthernetConnectivityBase
      *
      * @var int
      */
-    protected int $syncStatus;
-    /** @var Actions */
-    protected Actions $actions;
-    /** @var Resources */
-    protected Resources $resources;
+    protected ?int $syncStatus = null;
+    /** @var string[] */
+    protected ?array $actions = null;
+    /** @var string[] */
+    protected ?array $resources = null;
+    protected $objects = array('group' => '\\Arimac\\Sigfox\\Definition\\MinGroup', 'baseStation' => '\\Arimac\\Sigfox\\Definition\\MinBaseStation');
     /**
-     * @param string id The group's identifier
+     * @param string $id The group's identifier
      */
-    function setId(string $id)
+    function setId(?string $id)
     {
         $this->id = $id;
     }
     /**
      * @return string The group's identifier
      */
-    function getId() : string
+    function getId() : ?string
     {
         return $this->id;
     }
     /**
      * @param MinGroup group
      */
-    function setGroup(MinGroup $group)
+    function setGroup(?MinGroup $group)
     {
         $this->group = $group;
     }
     /**
      * @return MinGroup group
      */
-    function getGroup() : MinGroup
+    function getGroup() : ?MinGroup
     {
         return $this->group;
     }
     /**
      * @param MinBaseStation baseStation
      */
-    function setBaseStation(MinBaseStation $baseStation)
+    function setBaseStation(?MinBaseStation $baseStation)
     {
         $this->baseStation = $baseStation;
     }
     /**
      * @return MinBaseStation baseStation
      */
-    function getBaseStation() : MinBaseStation
+    function getBaseStation() : ?MinBaseStation
     {
         return $this->baseStation;
     }
     /**
-     * @param int state State of an ethernet connectivity configuration
+     * @param int $state State of an ethernet connectivity configuration
      * - `EthernetConnectivityForBs::STATE_ACTIVE`
      * - `EthernetConnectivityForBs::STATE_PASSIVE`
      * - `EthernetConnectivityForBs::STATE_PENDING`
      * - `EthernetConnectivityForBs::STATE_REJECTED`
      * - `EthernetConnectivityForBs::STATE_DELETING`
      */
-    function setState(int $state)
+    function setState(?int $state)
     {
         $this->state = $state;
     }
@@ -124,17 +123,17 @@ class EthernetConnectivityForBs extends EthernetConnectivityBase
      * - `EthernetConnectivityForBs::STATE_REJECTED`
      * - `EthernetConnectivityForBs::STATE_DELETING`
      */
-    function getState() : int
+    function getState() : ?int
     {
         return $this->state;
     }
     /**
-     * @param int syncStatus Synchronisation status of an ethernet connectivity configuration
+     * @param int $syncStatus Synchronisation status of an ethernet connectivity configuration
      * - `EthernetConnectivityForBs::SYNC_STATUS_OK`
      * - `EthernetConnectivityForBs::SYNC_STATUS_TO_BE_SENT`
      * - `EthernetConnectivityForBs::SYNC_STATUS_SENT`
      */
-    function setSyncStatus(int $syncStatus)
+    function setSyncStatus(?int $syncStatus)
     {
         $this->syncStatus = $syncStatus;
     }
@@ -144,35 +143,35 @@ class EthernetConnectivityForBs extends EthernetConnectivityBase
      * - `EthernetConnectivityForBs::SYNC_STATUS_TO_BE_SENT`
      * - `EthernetConnectivityForBs::SYNC_STATUS_SENT`
      */
-    function getSyncStatus() : int
+    function getSyncStatus() : ?int
     {
         return $this->syncStatus;
     }
     /**
-     * @param Actions actions
+     * @param string[] actions
      */
-    function setActions(Actions $actions)
+    function setActions(?array $actions)
     {
         $this->actions = $actions;
     }
     /**
-     * @return Actions actions
+     * @return string[] actions
      */
-    function getActions() : Actions
+    function getActions() : ?array
     {
         return $this->actions;
     }
     /**
-     * @param Resources resources
+     * @param string[] resources
      */
-    function setResources(Resources $resources)
+    function setResources(?array $resources)
     {
         $this->resources = $resources;
     }
     /**
-     * @return Resources resources
+     * @return string[] resources
      */
-    function getResources() : Resources
+    function getResources() : ?array
     {
         return $this->resources;
     }

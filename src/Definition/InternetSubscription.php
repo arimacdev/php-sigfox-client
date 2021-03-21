@@ -4,12 +4,11 @@ namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition\MinProvider;
 use Arimac\Sigfox\Definition\MinContact;
-use Arimac\Sigfox\Definition\Actions;
-use Arimac\Sigfox\Definition\Resources;
+use Arimac\Sigfox\Definition;
 /**
  * Generic internet subscription information
  */
-class InternetSubscription
+class InternetSubscription extends Definition
 {
     /** GSM */
     public const TYPE_GSM = 0;
@@ -32,7 +31,7 @@ class InternetSubscription
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /**
      * Internet subscription type
      * - `InternetSubscription::TYPE_GSM`
@@ -43,7 +42,7 @@ class InternetSubscription
      *
      * @var int
      */
-    protected int $type;
+    protected ?int $type = null;
     /**
      * Internet subscription priority.
      * - `InternetSubscription::PRIORITY_PRIMARY`
@@ -52,56 +51,57 @@ class InternetSubscription
      *
      * @var int
      */
-    protected int $priority;
+    protected ?int $priority = null;
     /**
      * The comments about this internet subscription. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $comments;
+    protected ?string $comments = null;
     /**
      * The start time of this internet subscription
      *
      * @var int
      */
-    protected int $startTime;
+    protected ?int $startTime = null;
     /**
      * The end time this internet subscription. This field can be unset when updating.
      *
      * @var int
      */
-    protected int $endTime;
+    protected ?int $endTime = null;
     /** @var MinProvider */
-    protected MinProvider $provider;
+    protected ?MinProvider $provider = null;
     /** @var MinContact[] */
-    protected array $contacts;
-    /** @var Actions */
-    protected Actions $actions;
-    /** @var Resources */
-    protected Resources $resources;
+    protected ?array $contacts = null;
+    /** @var string[] */
+    protected ?array $actions = null;
+    /** @var string[] */
+    protected ?array $resources = null;
+    protected $objects = array('provider' => '\\Arimac\\Sigfox\\Definition\\MinProvider');
     /**
-     * @param string id The identifier of this internet subscription
+     * @param string $id The identifier of this internet subscription
      */
-    function setId(string $id)
+    function setId(?string $id)
     {
         $this->id = $id;
     }
     /**
      * @return string The identifier of this internet subscription
      */
-    function getId() : string
+    function getId() : ?string
     {
         return $this->id;
     }
     /**
-     * @param int type Internet subscription type
+     * @param int $type Internet subscription type
      * - `InternetSubscription::TYPE_GSM`
      * - `InternetSubscription::TYPE_ADSL`
      * - `InternetSubscription::TYPE_SATELLITE`
      * - `InternetSubscription::TYPE_LAN`
      * - `InternetSubscription::TYPE_WIFI`
      */
-    function setType(int $type)
+    function setType(?int $type)
     {
         $this->type = $type;
     }
@@ -113,17 +113,17 @@ class InternetSubscription
      * - `InternetSubscription::TYPE_LAN`
      * - `InternetSubscription::TYPE_WIFI`
      */
-    function getType() : int
+    function getType() : ?int
     {
         return $this->type;
     }
     /**
-     * @param int priority Internet subscription priority.
+     * @param int $priority Internet subscription priority.
      * - `InternetSubscription::PRIORITY_PRIMARY`
      * - `InternetSubscription::PRIORITY_SECONDARY`
      * - `InternetSubscription::PRIORITY_TERMINATED`
      */
-    function setPriority(int $priority)
+    function setPriority(?int $priority)
     {
         $this->priority = $priority;
     }
@@ -133,105 +133,105 @@ class InternetSubscription
      * - `InternetSubscription::PRIORITY_SECONDARY`
      * - `InternetSubscription::PRIORITY_TERMINATED`
      */
-    function getPriority() : int
+    function getPriority() : ?int
     {
         return $this->priority;
     }
     /**
-     * @param string comments The comments about this internet subscription. This field can be unset when updating.
+     * @param string $comments The comments about this internet subscription. This field can be unset when updating.
      */
-    function setComments(string $comments)
+    function setComments(?string $comments)
     {
         $this->comments = $comments;
     }
     /**
      * @return string The comments about this internet subscription. This field can be unset when updating.
      */
-    function getComments() : string
+    function getComments() : ?string
     {
         return $this->comments;
     }
     /**
-     * @param int startTime The start time of this internet subscription
+     * @param int $startTime The start time of this internet subscription
      */
-    function setStartTime(int $startTime)
+    function setStartTime(?int $startTime)
     {
         $this->startTime = $startTime;
     }
     /**
      * @return int The start time of this internet subscription
      */
-    function getStartTime() : int
+    function getStartTime() : ?int
     {
         return $this->startTime;
     }
     /**
-     * @param int endTime The end time this internet subscription. This field can be unset when updating.
+     * @param int $endTime The end time this internet subscription. This field can be unset when updating.
      */
-    function setEndTime(int $endTime)
+    function setEndTime(?int $endTime)
     {
         $this->endTime = $endTime;
     }
     /**
      * @return int The end time this internet subscription. This field can be unset when updating.
      */
-    function getEndTime() : int
+    function getEndTime() : ?int
     {
         return $this->endTime;
     }
     /**
      * @param MinProvider provider
      */
-    function setProvider(MinProvider $provider)
+    function setProvider(?MinProvider $provider)
     {
         $this->provider = $provider;
     }
     /**
      * @return MinProvider provider
      */
-    function getProvider() : MinProvider
+    function getProvider() : ?MinProvider
     {
         return $this->provider;
     }
     /**
      * @param MinContact[] contacts
      */
-    function setContacts(array $contacts)
+    function setContacts(?array $contacts)
     {
         $this->contacts = $contacts;
     }
     /**
      * @return MinContact[] contacts
      */
-    function getContacts() : array
+    function getContacts() : ?array
     {
         return $this->contacts;
     }
     /**
-     * @param Actions actions
+     * @param string[] actions
      */
-    function setActions(Actions $actions)
+    function setActions(?array $actions)
     {
         $this->actions = $actions;
     }
     /**
-     * @return Actions actions
+     * @return string[] actions
      */
-    function getActions() : Actions
+    function getActions() : ?array
     {
         return $this->actions;
     }
     /**
-     * @param Resources resources
+     * @param string[] resources
      */
-    function setResources(Resources $resources)
+    function setResources(?array $resources)
     {
         $this->resources = $resources;
     }
     /**
-     * @return Resources resources
+     * @return string[] resources
      */
-    function getResources() : Resources
+    function getResources() : ?array
     {
         return $this->resources;
     }

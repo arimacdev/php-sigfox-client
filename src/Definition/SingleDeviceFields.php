@@ -3,121 +3,122 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition\CertificateUpdate;
-class SingleDeviceFields
+trait SingleDeviceFields
 {
     /**
      * true if the device is activable and can take a token. Not used if the device has already a token
      *
      * @var bool
      */
-    protected bool $activable;
+    protected ?bool $activable = null;
     /**
      * Allow token renewal ?
      *
      * @var bool
      */
-    protected bool $automaticRenewal;
+    protected ?bool $automaticRenewal = null;
     /**
      * The device's provided latitude
      *
-     * @var int
+     * @var float
      */
-    protected int $lat;
+    protected ?float $lat = null;
     /**
      * The device's provided longitude
      *
-     * @var int
+     * @var float
      */
-    protected int $lng;
+    protected ?float $lng = null;
     /** @var CertificateUpdate */
-    protected CertificateUpdate $productCertificate;
+    protected ?CertificateUpdate $productCertificate = null;
     /**
      * If the device is a prototype or not
      *
      * @var bool
      */
-    protected bool $prototype;
+    protected ?bool $prototype = null;
+    protected $objects = array('productCertificate' => '\\Arimac\\Sigfox\\Definition\\CertificateUpdate');
     /**
-     * @param bool activable true if the device is activable and can take a token. Not used if the device has already a token
+     * @param bool $activable true if the device is activable and can take a token. Not used if the device has already a token
      */
-    function setActivable(bool $activable)
+    function setActivable(?bool $activable)
     {
         $this->activable = $activable;
     }
     /**
      * @return bool true if the device is activable and can take a token. Not used if the device has already a token
      */
-    function getActivable() : bool
+    function getActivable() : ?bool
     {
         return $this->activable;
     }
     /**
-     * @param bool automaticRenewal Allow token renewal ?
+     * @param bool $automaticRenewal Allow token renewal ?
      */
-    function setAutomaticRenewal(bool $automaticRenewal)
+    function setAutomaticRenewal(?bool $automaticRenewal)
     {
         $this->automaticRenewal = $automaticRenewal;
     }
     /**
      * @return bool Allow token renewal ?
      */
-    function getAutomaticRenewal() : bool
+    function getAutomaticRenewal() : ?bool
     {
         return $this->automaticRenewal;
     }
     /**
-     * @param int lat The device's provided latitude
+     * @param float $lat The device's provided latitude
      */
-    function setLat(int $lat)
+    function setLat(?float $lat)
     {
         $this->lat = $lat;
     }
     /**
-     * @return int The device's provided latitude
+     * @return float The device's provided latitude
      */
-    function getLat() : int
+    function getLat() : ?float
     {
         return $this->lat;
     }
     /**
-     * @param int lng The device's provided longitude
+     * @param float $lng The device's provided longitude
      */
-    function setLng(int $lng)
+    function setLng(?float $lng)
     {
         $this->lng = $lng;
     }
     /**
-     * @return int The device's provided longitude
+     * @return float The device's provided longitude
      */
-    function getLng() : int
+    function getLng() : ?float
     {
         return $this->lng;
     }
     /**
      * @param CertificateUpdate productCertificate
      */
-    function setProductCertificate(CertificateUpdate $productCertificate)
+    function setProductCertificate(?CertificateUpdate $productCertificate)
     {
         $this->productCertificate = $productCertificate;
     }
     /**
      * @return CertificateUpdate productCertificate
      */
-    function getProductCertificate() : CertificateUpdate
+    function getProductCertificate() : ?CertificateUpdate
     {
         return $this->productCertificate;
     }
     /**
-     * @param bool prototype If the device is a prototype or not
+     * @param bool $prototype If the device is a prototype or not
      */
-    function setPrototype(bool $prototype)
+    function setPrototype(?bool $prototype)
     {
         $this->prototype = $prototype;
     }
     /**
      * @return bool If the device is a prototype or not
      */
-    function getPrototype() : bool
+    function getPrototype() : ?bool
     {
         return $this->prototype;
     }

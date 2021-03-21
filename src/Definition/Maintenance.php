@@ -5,71 +5,70 @@ namespace Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\BaseMaintenance;
 use Arimac\Sigfox\Definition\MinGroup;
 use Arimac\Sigfox\Definition\Contact;
-use Arimac\Sigfox\Definition\Actions;
-use Arimac\Sigfox\Definition\Resources;
 class Maintenance extends BaseMaintenance
 {
     /** @var MinGroup */
-    protected MinGroup $group;
+    protected ?MinGroup $group = null;
     /** @var Contact[] */
-    protected array $contacts;
-    /** @var Actions */
-    protected Actions $actions;
-    /** @var Resources */
-    protected Resources $resources;
+    protected ?array $contacts = null;
+    /** @var string[] */
+    protected ?array $actions = null;
+    /** @var string[] */
+    protected ?array $resources = null;
+    protected $objects = array('group' => '\\Arimac\\Sigfox\\Definition\\MinGroup');
     /**
      * @param MinGroup group
      */
-    function setGroup(MinGroup $group)
+    function setGroup(?MinGroup $group)
     {
         $this->group = $group;
     }
     /**
      * @return MinGroup group
      */
-    function getGroup() : MinGroup
+    function getGroup() : ?MinGroup
     {
         return $this->group;
     }
     /**
      * @param Contact[] contacts
      */
-    function setContacts(array $contacts)
+    function setContacts(?array $contacts)
     {
         $this->contacts = $contacts;
     }
     /**
      * @return Contact[] contacts
      */
-    function getContacts() : array
+    function getContacts() : ?array
     {
         return $this->contacts;
     }
     /**
-     * @param Actions actions
+     * @param string[] actions
      */
-    function setActions(Actions $actions)
+    function setActions(?array $actions)
     {
         $this->actions = $actions;
     }
     /**
-     * @return Actions actions
+     * @return string[] actions
      */
-    function getActions() : Actions
+    function getActions() : ?array
     {
         return $this->actions;
     }
     /**
-     * @param Resources resources
+     * @param string[] resources
      */
-    function setResources(Resources $resources)
+    function setResources(?array $resources)
     {
         $this->resources = $resources;
     }
     /**
-     * @return Resources resources
+     * @return string[] resources
      */
-    function getResources() : Resources
+    function getResources() : ?array
     {
         return $this->resources;
     }

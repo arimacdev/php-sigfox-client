@@ -2,10 +2,11 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 /**
  * Common information about Callback template
  */
-class Callback
+class Callback extends Definition
 {
     /** DATA callback delivering uplink messages to a customer platform. */
     public const CALLBACK_TYPE_DATA = 0;
@@ -32,7 +33,7 @@ class Callback
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /**
      * The callback's channel.
      * - URL
@@ -41,7 +42,7 @@ class Callback
      *
      * @var string
      */
-    protected string $channel;
+    protected ?string $channel = null;
     /**
      * The callback's type.
      * - `Callback::CALLBACK_TYPE_DATA`
@@ -50,7 +51,7 @@ class Callback
      *
      * @var int
      */
-    protected int $callbackType;
+    protected ?int $callbackType = null;
     /**
      * The callback's subtype. The subtype must be valid against its type.
      * - `Callback::CALLBACK_SUBTYPE_STATUS`
@@ -63,46 +64,46 @@ class Callback
      *
      * @var int
      */
-    protected int $callbackSubtype;
+    protected ?int $callbackSubtype = null;
     /**
      * The custom payload configuration. Only for DATA callbacks. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $payloadConfig;
+    protected ?string $payloadConfig = null;
     /**
      * True to enable the callback, otherwise false
      *
      * @var bool
      */
-    protected bool $enabled;
+    protected ?bool $enabled = null;
     /**
      * True if last use of the callback fails, otherwise false
      *
      * @var bool
      */
-    protected bool $dead;
+    protected ?bool $dead = null;
     /**
-     * @param string id The callback's identifier
+     * @param string $id The callback's identifier
      */
-    function setId(string $id)
+    function setId(?string $id)
     {
         $this->id = $id;
     }
     /**
      * @return string The callback's identifier
      */
-    function getId() : string
+    function getId() : ?string
     {
         return $this->id;
     }
     /**
-     * @param string channel The callback's channel.
+     * @param string $channel The callback's channel.
      * - URL
      * - BATCH_URL
      * - EMAIL
      */
-    function setChannel(string $channel)
+    function setChannel(?string $channel)
     {
         $this->channel = $channel;
     }
@@ -112,17 +113,17 @@ class Callback
      * - BATCH_URL
      * - EMAIL
      */
-    function getChannel() : string
+    function getChannel() : ?string
     {
         return $this->channel;
     }
     /**
-     * @param int callbackType The callback's type.
+     * @param int $callbackType The callback's type.
      * - `Callback::CALLBACK_TYPE_DATA`
      * - `Callback::CALLBACK_TYPE_SERVICE`
      * - `Callback::CALLBACK_TYPE_ERROR`
      */
-    function setCallbackType(int $callbackType)
+    function setCallbackType(?int $callbackType)
     {
         $this->callbackType = $callbackType;
     }
@@ -132,12 +133,12 @@ class Callback
      * - `Callback::CALLBACK_TYPE_SERVICE`
      * - `Callback::CALLBACK_TYPE_ERROR`
      */
-    function getCallbackType() : int
+    function getCallbackType() : ?int
     {
         return $this->callbackType;
     }
     /**
-     * @param int callbackSubtype The callback's subtype. The subtype must be valid against its type.
+     * @param int $callbackSubtype The callback's subtype. The subtype must be valid against its type.
      * - `Callback::CALLBACK_SUBTYPE_STATUS`
      * - `Callback::CALLBACK_SUBTYPE_GEOLOC`
      * - `Callback::CALLBACK_SUBTYPE_UPLINK`
@@ -146,7 +147,7 @@ class Callback
      * - `Callback::CALLBACK_SUBTYPE_REPEATER`
      * - `Callback::CALLBACK_SUBTYPE_DATA_ADVANCED`
      */
-    function setCallbackSubtype(int $callbackSubtype)
+    function setCallbackSubtype(?int $callbackSubtype)
     {
         $this->callbackSubtype = $callbackSubtype;
     }
@@ -160,49 +161,49 @@ class Callback
      * - `Callback::CALLBACK_SUBTYPE_REPEATER`
      * - `Callback::CALLBACK_SUBTYPE_DATA_ADVANCED`
      */
-    function getCallbackSubtype() : int
+    function getCallbackSubtype() : ?int
     {
         return $this->callbackSubtype;
     }
     /**
-     * @param string payloadConfig The custom payload configuration. Only for DATA callbacks. This field can be unset when updating.
+     * @param string $payloadConfig The custom payload configuration. Only for DATA callbacks. This field can be unset when updating.
      */
-    function setPayloadConfig(string $payloadConfig)
+    function setPayloadConfig(?string $payloadConfig)
     {
         $this->payloadConfig = $payloadConfig;
     }
     /**
      * @return string The custom payload configuration. Only for DATA callbacks. This field can be unset when updating.
      */
-    function getPayloadConfig() : string
+    function getPayloadConfig() : ?string
     {
         return $this->payloadConfig;
     }
     /**
-     * @param bool enabled True to enable the callback, otherwise false
+     * @param bool $enabled True to enable the callback, otherwise false
      */
-    function setEnabled(bool $enabled)
+    function setEnabled(?bool $enabled)
     {
         $this->enabled = $enabled;
     }
     /**
      * @return bool True to enable the callback, otherwise false
      */
-    function getEnabled() : bool
+    function getEnabled() : ?bool
     {
         return $this->enabled;
     }
     /**
-     * @param bool dead True if last use of the callback fails, otherwise false
+     * @param bool $dead True if last use of the callback fails, otherwise false
      */
-    function setDead(bool $dead)
+    function setDead(?bool $dead)
     {
         $this->dead = $dead;
     }
     /**
      * @return bool True if last use of the callback fails, otherwise false
      */
-    function getDead() : bool
+    function getDead() : ?bool
     {
         return $this->dead;
     }

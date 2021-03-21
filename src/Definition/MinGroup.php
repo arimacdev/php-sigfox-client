@@ -2,12 +2,11 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\Actions;
-use Arimac\Sigfox\Definition\Resources;
+use Arimac\Sigfox\Definition;
 /**
  * Defines a group entity
  */
-class MinGroup
+class MinGroup extends Definition
 {
     /** SO */
     public const TYPE_SO = 0;
@@ -32,13 +31,13 @@ class MinGroup
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /**
      * The group name
      *
      * @var string
      */
-    protected string $name;
+    protected ?string $name = null;
     /**
      * Group's type
      * - `MinGroup::TYPE_SO`
@@ -53,47 +52,47 @@ class MinGroup
      *
      * @var int
      */
-    protected int $type;
+    protected ?int $type = null;
     /**
      * The depth level of the group in hierarchy
      *
      * @var int
      */
-    protected int $level;
-    /** @var Actions */
-    protected Actions $actions;
-    /** @var Resources */
-    protected Resources $resources;
+    protected ?int $level = null;
+    /** @var string[] */
+    protected ?array $actions = null;
+    /** @var string[] */
+    protected ?array $resources = null;
     /**
-     * @param string id The group identifier
+     * @param string $id The group identifier
      */
-    function setId(string $id)
+    function setId(?string $id)
     {
         $this->id = $id;
     }
     /**
      * @return string The group identifier
      */
-    function getId() : string
+    function getId() : ?string
     {
         return $this->id;
     }
     /**
-     * @param string name The group name
+     * @param string $name The group name
      */
-    function setName(string $name)
+    function setName(?string $name)
     {
         $this->name = $name;
     }
     /**
      * @return string The group name
      */
-    function getName() : string
+    function getName() : ?string
     {
         return $this->name;
     }
     /**
-     * @param int type Group's type
+     * @param int $type Group's type
      * - `MinGroup::TYPE_SO`
      * - `MinGroup::TYPE_OTHER`
      * - `MinGroup::TYPE_SVNO`
@@ -104,7 +103,7 @@ class MinGroup
      * - `MinGroup::TYPE_STARTER`
      * - `MinGroup::TYPE_PARTNER`
      */
-    function setType(int $type)
+    function setType(?int $type)
     {
         $this->type = $type;
     }
@@ -120,49 +119,49 @@ class MinGroup
      * - `MinGroup::TYPE_STARTER`
      * - `MinGroup::TYPE_PARTNER`
      */
-    function getType() : int
+    function getType() : ?int
     {
         return $this->type;
     }
     /**
-     * @param int level The depth level of the group in hierarchy
+     * @param int $level The depth level of the group in hierarchy
      */
-    function setLevel(int $level)
+    function setLevel(?int $level)
     {
         $this->level = $level;
     }
     /**
      * @return int The depth level of the group in hierarchy
      */
-    function getLevel() : int
+    function getLevel() : ?int
     {
         return $this->level;
     }
     /**
-     * @param Actions actions
+     * @param string[] actions
      */
-    function setActions(Actions $actions)
+    function setActions(?array $actions)
     {
         $this->actions = $actions;
     }
     /**
-     * @return Actions actions
+     * @return string[] actions
      */
-    function getActions() : Actions
+    function getActions() : ?array
     {
         return $this->actions;
     }
     /**
-     * @param Resources resources
+     * @param string[] resources
      */
-    function setResources(Resources $resources)
+    function setResources(?array $resources)
     {
         $this->resources = $resources;
     }
     /**
-     * @return Resources resources
+     * @return string[] resources
      */
-    function getResources() : Resources
+    function getResources() : ?array
     {
         return $this->resources;
     }

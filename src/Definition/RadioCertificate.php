@@ -10,38 +10,38 @@ class RadioCertificate extends CommonCertificate
      *
      * @var int[]
      */
-    protected array $modes;
+    protected ?array $modes = null;
     /**
      * The certificate's input sensitivity
      *
      * @var int
      */
-    protected int $inputSensitivity;
+    protected ?int $inputSensitivity = null;
     /**
-     * @param int[] modes The certificate's mode code (0 -> Uplink only, 1 -> Uplink and downlink)
+     * @param int[] $modes The certificate's mode code (0 -> Uplink only, 1 -> Uplink and downlink)
      */
-    function setModes(array $modes)
+    function setModes(?array $modes)
     {
         $this->modes = $modes;
     }
     /**
      * @return int[] The certificate's mode code (0 -> Uplink only, 1 -> Uplink and downlink)
      */
-    function getModes() : array
+    function getModes() : ?array
     {
         return $this->modes;
     }
     /**
-     * @param int inputSensitivity The certificate's input sensitivity
+     * @param int $inputSensitivity The certificate's input sensitivity
      */
-    function setInputSensitivity(int $inputSensitivity)
+    function setInputSensitivity(?int $inputSensitivity)
     {
         $this->inputSensitivity = $inputSensitivity;
     }
     /**
      * @return int The certificate's input sensitivity
      */
-    function getInputSensitivity() : int
+    function getInputSensitivity() : ?int
     {
         return $this->inputSensitivity;
     }

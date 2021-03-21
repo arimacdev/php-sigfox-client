@@ -15,18 +15,18 @@ class Channel extends Group
      *
      * @var int
      */
-    protected int $currentPrototypeCount;
+    protected ?int $currentPrototypeCount = null;
     /**
-     * @param int currentPrototypeCount Number of prototype registered. Accessible only for groups under SO
+     * @param int $currentPrototypeCount Number of prototype registered. Accessible only for groups under SO
      */
-    function setCurrentPrototypeCount(int $currentPrototypeCount)
+    function setCurrentPrototypeCount(?int $currentPrototypeCount)
     {
         $this->currentPrototypeCount = $currentPrototypeCount;
     }
     /**
      * @return int Number of prototype registered. Accessible only for groups under SO
      */
-    function getCurrentPrototypeCount() : int
+    function getCurrentPrototypeCount() : ?int
     {
         return $this->currentPrototypeCount;
     }

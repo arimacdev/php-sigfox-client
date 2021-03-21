@@ -2,21 +2,23 @@
 
 namespace Arimac\Sigfox\Definition;
 
-class BulkUnsubscribe
+use Arimac\Sigfox\Definition\BulkUnsubscribe\DataItemItem;
+use Arimac\Sigfox\Definition;
+class BulkUnsubscribe extends Definition
 {
-    /** @var array */
-    protected array $data;
+    /** @var BulkUnsubscribe\DataItemItem */
+    protected ?BulkUnsubscribe\DataItemItem $data = null;
     /**
-     * @param array data
+     * @param BulkUnsubscribe\DataItemItem data
      */
-    function setData(array $data)
+    function setData(?BulkUnsubscribe\DataItemItem $data)
     {
         $this->data = $data;
     }
     /**
-     * @return array data
+     * @return BulkUnsubscribe\DataItemItem data
      */
-    function getData() : array
+    function getData() : ?BulkUnsubscribe\DataItemItem
     {
         return $this->data;
     }

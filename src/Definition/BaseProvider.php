@@ -2,45 +2,46 @@
 
 namespace Arimac\Sigfox\Definition;
 
-class BaseProvider
+use Arimac\Sigfox\Definition;
+class BaseProvider extends Definition
 {
     /**
      * The provider's name
      *
      * @var string
      */
-    protected string $name;
+    protected ?string $name = null;
     /**
      * The provider's annual cost. This field can be unset when updating.
      *
-     * @var int
+     * @var float
      */
-    protected int $annualCost;
+    protected ?float $annualCost = null;
     /**
-     * @param string name The provider's name
+     * @param string $name The provider's name
      */
-    function setName(string $name)
+    function setName(?string $name)
     {
         $this->name = $name;
     }
     /**
      * @return string The provider's name
      */
-    function getName() : string
+    function getName() : ?string
     {
         return $this->name;
     }
     /**
-     * @param int annualCost The provider's annual cost. This field can be unset when updating.
+     * @param float $annualCost The provider's annual cost. This field can be unset when updating.
      */
-    function setAnnualCost(int $annualCost)
+    function setAnnualCost(?float $annualCost)
     {
         $this->annualCost = $annualCost;
     }
     /**
-     * @return int The provider's annual cost. This field can be unset when updating.
+     * @return float The provider's annual cost. This field can be unset when updating.
      */
-    function getAnnualCost() : int
+    function getAnnualCost() : ?float
     {
         return $this->annualCost;
     }

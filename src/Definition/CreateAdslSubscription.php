@@ -22,86 +22,86 @@ class CreateAdslSubscription extends CreateInternetSubscription
      *
      * @var int
      */
-    protected int $connectionStatus;
+    protected ?int $connectionStatus = null;
     /**
      * The internet account of this internet subscription. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $internetAccount;
+    protected ?string $internetAccount = null;
     /**
      * The order number of this internet subscription. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $orderNumber;
+    protected ?string $orderNumber = null;
     /**
      * The interface login of this internet subscription
      *
      * @var string
      */
-    protected string $interfaceLogin;
+    protected ?string $interfaceLogin = null;
     /**
      * The interface password of this internet subscription
      *
      * @var string
      */
-    protected string $interfacePassword;
+    protected ?string $interfacePassword = null;
     /**
      * The adsl login of this internet subscription. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $adslLogin;
+    protected ?string $adslLogin = null;
     /**
      * The adsl password of this internet subscription. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $adslPassword;
+    protected ?string $adslPassword = null;
     /**
      * The line number of this internet subscription
      *
      * @var string
      */
-    protected string $lineNumber;
+    protected ?string $lineNumber = null;
     /**
      * The modem of this internet subscription
      *
      * @var string
      */
-    protected string $modem;
+    protected ?string $modem = null;
     /**
      * The serial number of the modem of this internet subscription
      *
      * @var string
      */
-    protected string $modemSerialNumber;
+    protected ?string $modemSerialNumber = null;
     /**
      * The jumper strip of this internet subscription. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $jumperStrip;
+    protected ?string $jumperStrip = null;
     /**
      * The jumper block of this internet subscription. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $jumperBlock;
+    protected ?string $jumperBlock = null;
     /**
      * The pair of this internet subscription. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $pair;
+    protected ?string $pair = null;
     /**
-     * @param int connectionStatus Subscription connection status
+     * @param int $connectionStatus Subscription connection status
      * - `CreateAdslSubscription::CONNECTION_STATUS_REQUEST`
      * - `CreateAdslSubscription::CONNECTION_STATUS_INSTALLED`
      * - `CreateAdslSubscription::CONNECTION_STATUS_ACTIVATED`
      */
-    function setConnectionStatus(int $connectionStatus)
+    function setConnectionStatus(?int $connectionStatus)
     {
         $this->connectionStatus = $connectionStatus;
     }
@@ -111,175 +111,175 @@ class CreateAdslSubscription extends CreateInternetSubscription
      * - `CreateAdslSubscription::CONNECTION_STATUS_INSTALLED`
      * - `CreateAdslSubscription::CONNECTION_STATUS_ACTIVATED`
      */
-    function getConnectionStatus() : int
+    function getConnectionStatus() : ?int
     {
         return $this->connectionStatus;
     }
     /**
-     * @param string internetAccount The internet account of this internet subscription. This field can be unset when updating.
+     * @param string $internetAccount The internet account of this internet subscription. This field can be unset when updating.
      */
-    function setInternetAccount(string $internetAccount)
+    function setInternetAccount(?string $internetAccount)
     {
         $this->internetAccount = $internetAccount;
     }
     /**
      * @return string The internet account of this internet subscription. This field can be unset when updating.
      */
-    function getInternetAccount() : string
+    function getInternetAccount() : ?string
     {
         return $this->internetAccount;
     }
     /**
-     * @param string orderNumber The order number of this internet subscription. This field can be unset when updating.
+     * @param string $orderNumber The order number of this internet subscription. This field can be unset when updating.
      */
-    function setOrderNumber(string $orderNumber)
+    function setOrderNumber(?string $orderNumber)
     {
         $this->orderNumber = $orderNumber;
     }
     /**
      * @return string The order number of this internet subscription. This field can be unset when updating.
      */
-    function getOrderNumber() : string
+    function getOrderNumber() : ?string
     {
         return $this->orderNumber;
     }
     /**
-     * @param string interfaceLogin The interface login of this internet subscription
+     * @param string $interfaceLogin The interface login of this internet subscription
      */
-    function setInterfaceLogin(string $interfaceLogin)
+    function setInterfaceLogin(?string $interfaceLogin)
     {
         $this->interfaceLogin = $interfaceLogin;
     }
     /**
      * @return string The interface login of this internet subscription
      */
-    function getInterfaceLogin() : string
+    function getInterfaceLogin() : ?string
     {
         return $this->interfaceLogin;
     }
     /**
-     * @param string interfacePassword The interface password of this internet subscription
+     * @param string $interfacePassword The interface password of this internet subscription
      */
-    function setInterfacePassword(string $interfacePassword)
+    function setInterfacePassword(?string $interfacePassword)
     {
         $this->interfacePassword = $interfacePassword;
     }
     /**
      * @return string The interface password of this internet subscription
      */
-    function getInterfacePassword() : string
+    function getInterfacePassword() : ?string
     {
         return $this->interfacePassword;
     }
     /**
-     * @param string adslLogin The adsl login of this internet subscription. This field can be unset when updating.
+     * @param string $adslLogin The adsl login of this internet subscription. This field can be unset when updating.
      */
-    function setAdslLogin(string $adslLogin)
+    function setAdslLogin(?string $adslLogin)
     {
         $this->adslLogin = $adslLogin;
     }
     /**
      * @return string The adsl login of this internet subscription. This field can be unset when updating.
      */
-    function getAdslLogin() : string
+    function getAdslLogin() : ?string
     {
         return $this->adslLogin;
     }
     /**
-     * @param string adslPassword The adsl password of this internet subscription. This field can be unset when updating.
+     * @param string $adslPassword The adsl password of this internet subscription. This field can be unset when updating.
      */
-    function setAdslPassword(string $adslPassword)
+    function setAdslPassword(?string $adslPassword)
     {
         $this->adslPassword = $adslPassword;
     }
     /**
      * @return string The adsl password of this internet subscription. This field can be unset when updating.
      */
-    function getAdslPassword() : string
+    function getAdslPassword() : ?string
     {
         return $this->adslPassword;
     }
     /**
-     * @param string lineNumber The line number of this internet subscription
+     * @param string $lineNumber The line number of this internet subscription
      */
-    function setLineNumber(string $lineNumber)
+    function setLineNumber(?string $lineNumber)
     {
         $this->lineNumber = $lineNumber;
     }
     /**
      * @return string The line number of this internet subscription
      */
-    function getLineNumber() : string
+    function getLineNumber() : ?string
     {
         return $this->lineNumber;
     }
     /**
-     * @param string modem The modem of this internet subscription
+     * @param string $modem The modem of this internet subscription
      */
-    function setModem(string $modem)
+    function setModem(?string $modem)
     {
         $this->modem = $modem;
     }
     /**
      * @return string The modem of this internet subscription
      */
-    function getModem() : string
+    function getModem() : ?string
     {
         return $this->modem;
     }
     /**
-     * @param string modemSerialNumber The serial number of the modem of this internet subscription
+     * @param string $modemSerialNumber The serial number of the modem of this internet subscription
      */
-    function setModemSerialNumber(string $modemSerialNumber)
+    function setModemSerialNumber(?string $modemSerialNumber)
     {
         $this->modemSerialNumber = $modemSerialNumber;
     }
     /**
      * @return string The serial number of the modem of this internet subscription
      */
-    function getModemSerialNumber() : string
+    function getModemSerialNumber() : ?string
     {
         return $this->modemSerialNumber;
     }
     /**
-     * @param string jumperStrip The jumper strip of this internet subscription. This field can be unset when updating.
+     * @param string $jumperStrip The jumper strip of this internet subscription. This field can be unset when updating.
      */
-    function setJumperStrip(string $jumperStrip)
+    function setJumperStrip(?string $jumperStrip)
     {
         $this->jumperStrip = $jumperStrip;
     }
     /**
      * @return string The jumper strip of this internet subscription. This field can be unset when updating.
      */
-    function getJumperStrip() : string
+    function getJumperStrip() : ?string
     {
         return $this->jumperStrip;
     }
     /**
-     * @param string jumperBlock The jumper block of this internet subscription. This field can be unset when updating.
+     * @param string $jumperBlock The jumper block of this internet subscription. This field can be unset when updating.
      */
-    function setJumperBlock(string $jumperBlock)
+    function setJumperBlock(?string $jumperBlock)
     {
         $this->jumperBlock = $jumperBlock;
     }
     /**
      * @return string The jumper block of this internet subscription. This field can be unset when updating.
      */
-    function getJumperBlock() : string
+    function getJumperBlock() : ?string
     {
         return $this->jumperBlock;
     }
     /**
-     * @param string pair The pair of this internet subscription. This field can be unset when updating.
+     * @param string $pair The pair of this internet subscription. This field can be unset when updating.
      */
-    function setPair(string $pair)
+    function setPair(?string $pair)
     {
         $this->pair = $pair;
     }
     /**
      * @return string The pair of this internet subscription. This field can be unset when updating.
      */
-    function getPair() : string
+    function getPair() : ?string
     {
         return $this->pair;
     }

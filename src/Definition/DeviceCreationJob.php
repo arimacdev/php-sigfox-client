@@ -4,8 +4,10 @@ namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition\CommonDevice;
 use Arimac\Sigfox\Definition\SingleDeviceFields;
-class DeviceCreationJob extends SingleDeviceFields
+class DeviceCreationJob extends CommonDevice
 {
+    use SingleDeviceFields;
+    protected $required = array('deviceTypeId', 'pac');
     /**
      * The device type's identifier this device is affected
      *
@@ -23,33 +25,33 @@ class DeviceCreationJob extends SingleDeviceFields
      *
      * @var bool
      */
-    protected ?bool $prototype;
+    protected ?bool $prototype = null;
     /**
      * Subscribtion to automatic token renewal
      *
      * @var bool
      */
-    protected ?bool $automaticRenewal;
+    protected ?bool $automaticRenewal = null;
     /**
      * The device is activable and can take a token
      *
      * @var bool
      */
-    protected ?bool $activable;
+    protected ?bool $activable = null;
     /**
      * The device's provided latitude
      *
-     * @var int
+     * @var float
      */
-    protected ?int $lat;
+    protected ?float $lat = null;
     /**
      * The device's provided longitude
      *
-     * @var int
+     * @var float
      */
-    protected ?int $lng;
+    protected ?float $lng = null;
     /**
-     * @param string deviceTypeId The device type's identifier this device is affected
+     * @param string $deviceTypeId The device type's identifier this device is affected
      */
     function setDeviceTypeId(string $deviceTypeId)
     {
@@ -63,7 +65,7 @@ class DeviceCreationJob extends SingleDeviceFields
         return $this->deviceTypeId;
     }
     /**
-     * @param string pac The device's PAC (Porting Access Code)
+     * @param string $pac The device's PAC (Porting Access Code)
      */
     function setPac(string $pac)
     {
@@ -77,7 +79,7 @@ class DeviceCreationJob extends SingleDeviceFields
         return $this->pac;
     }
     /**
-     * @param bool prototype Set to true if the device is a prototype
+     * @param bool $prototype Set to true if the device is a prototype
      */
     function setPrototype(?bool $prototype)
     {
@@ -91,7 +93,7 @@ class DeviceCreationJob extends SingleDeviceFields
         return $this->prototype;
     }
     /**
-     * @param bool automaticRenewal Subscribtion to automatic token renewal
+     * @param bool $automaticRenewal Subscribtion to automatic token renewal
      */
     function setAutomaticRenewal(?bool $automaticRenewal)
     {
@@ -105,7 +107,7 @@ class DeviceCreationJob extends SingleDeviceFields
         return $this->automaticRenewal;
     }
     /**
-     * @param bool activable The device is activable and can take a token
+     * @param bool $activable The device is activable and can take a token
      */
     function setActivable(?bool $activable)
     {
@@ -119,30 +121,30 @@ class DeviceCreationJob extends SingleDeviceFields
         return $this->activable;
     }
     /**
-     * @param int lat The device's provided latitude
+     * @param float $lat The device's provided latitude
      */
-    function setLat(?int $lat)
+    function setLat(?float $lat)
     {
         $this->lat = $lat;
     }
     /**
-     * @return int The device's provided latitude
+     * @return float The device's provided latitude
      */
-    function getLat() : ?int
+    function getLat() : ?float
     {
         return $this->lat;
     }
     /**
-     * @param int lng The device's provided longitude
+     * @param float $lng The device's provided longitude
      */
-    function setLng(?int $lng)
+    function setLng(?float $lng)
     {
         $this->lng = $lng;
     }
     /**
-     * @return int The device's provided longitude
+     * @return float The device's provided longitude
      */
-    function getLng() : ?int
+    function getLng() : ?float
     {
         return $this->lng;
     }

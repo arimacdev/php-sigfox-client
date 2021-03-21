@@ -2,8 +2,10 @@
 
 namespace Arimac\Sigfox\Definition;
 
-class DeviceActionJob
+use Arimac\Sigfox\Definition;
+class DeviceActionJob extends Definition
 {
+    protected $required = array('data');
     /** @var string[] */
     protected array $data;
     /**

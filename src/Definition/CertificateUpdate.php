@@ -2,25 +2,26 @@
 
 namespace Arimac\Sigfox\Definition;
 
-class CertificateUpdate
+use Arimac\Sigfox\Definition;
+class CertificateUpdate extends Definition
 {
     /**
      * The certificate name
      *
      * @var string
      */
-    protected string $key;
+    protected ?string $key = null;
     /**
-     * @param string key The certificate name
+     * @param string $key The certificate name
      */
-    function setKey(string $key)
+    function setKey(?string $key)
     {
         $this->key = $key;
     }
     /**
      * @return string The certificate name
      */
-    function getKey() : string
+    function getKey() : ?string
     {
         return $this->key;
     }

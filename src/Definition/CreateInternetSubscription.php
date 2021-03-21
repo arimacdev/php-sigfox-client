@@ -4,10 +4,11 @@ namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition\MinProvider;
 use Arimac\Sigfox\Definition\MinContact;
+use Arimac\Sigfox\Definition;
 /**
  * Generic internet subscription information
  */
-class CreateInternetSubscription
+class CreateInternetSubscription extends Definition
 {
     /** GSM */
     public const TYPE_GSM = 0;
@@ -25,12 +26,13 @@ class CreateInternetSubscription
     public const PRIORITY_SECONDARY = 1;
     /** TERMINATED */
     public const PRIORITY_TERMINATED = 2;
+    protected $required = array('priority', 'startTime', 'type');
     /**
      * The identifier of this internet subscription
      *
      * @var string
      */
-    protected ?string $id;
+    protected ?string $id = null;
     /**
      * Internet subscription type
      * - `CreateInternetSubscription::TYPE_GSM`
@@ -56,7 +58,7 @@ class CreateInternetSubscription
      *
      * @var string
      */
-    protected ?string $comments;
+    protected ?string $comments = null;
     /**
      * The start time of this internet subscription
      *
@@ -68,13 +70,14 @@ class CreateInternetSubscription
      *
      * @var int
      */
-    protected ?int $endTime;
+    protected ?int $endTime = null;
     /** @var MinProvider */
-    protected ?MinProvider $provider;
+    protected ?MinProvider $provider = null;
     /** @var MinContact[] */
-    protected ?array $contacts;
+    protected ?array $contacts = null;
+    protected $objects = array('provider' => '\\Arimac\\Sigfox\\Definition\\MinProvider');
     /**
-     * @param string id The identifier of this internet subscription
+     * @param string $id The identifier of this internet subscription
      */
     function setId(?string $id)
     {
@@ -88,7 +91,7 @@ class CreateInternetSubscription
         return $this->id;
     }
     /**
-     * @param int type Internet subscription type
+     * @param int $type Internet subscription type
      * - `CreateInternetSubscription::TYPE_GSM`
      * - `CreateInternetSubscription::TYPE_ADSL`
      * - `CreateInternetSubscription::TYPE_SATELLITE`
@@ -112,7 +115,7 @@ class CreateInternetSubscription
         return $this->type;
     }
     /**
-     * @param int priority Internet subscription priority.
+     * @param int $priority Internet subscription priority.
      * - `CreateInternetSubscription::PRIORITY_PRIMARY`
      * - `CreateInternetSubscription::PRIORITY_SECONDARY`
      * - `CreateInternetSubscription::PRIORITY_TERMINATED`
@@ -132,7 +135,7 @@ class CreateInternetSubscription
         return $this->priority;
     }
     /**
-     * @param string comments The comments about this internet subscription. This field can be unset when updating.
+     * @param string $comments The comments about this internet subscription. This field can be unset when updating.
      */
     function setComments(?string $comments)
     {
@@ -146,7 +149,7 @@ class CreateInternetSubscription
         return $this->comments;
     }
     /**
-     * @param int startTime The start time of this internet subscription
+     * @param int $startTime The start time of this internet subscription
      */
     function setStartTime(int $startTime)
     {
@@ -160,7 +163,7 @@ class CreateInternetSubscription
         return $this->startTime;
     }
     /**
-     * @param int endTime The end time this internet subscription. This field can be unset when updating.
+     * @param int $endTime The end time this internet subscription. This field can be unset when updating.
      */
     function setEndTime(?int $endTime)
     {

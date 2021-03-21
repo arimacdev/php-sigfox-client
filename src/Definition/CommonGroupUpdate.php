@@ -2,10 +2,11 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 /**
  * Generic information for group update
  */
-class CommonGroupUpdate
+class CommonGroupUpdate extends Definition
 {
     /** SO */
     public const TYPE_SO = 0;
@@ -30,13 +31,13 @@ class CommonGroupUpdate
      *
      * @var string
      */
-    protected string $name;
+    protected ?string $name = null;
     /**
      * The group's description
      *
      * @var string
      */
-    protected string $description;
+    protected ?string $description = null;
     /**
      * - Group's type
      * - `CommonGroupUpdate::TYPE_SO`
@@ -51,43 +52,43 @@ class CommonGroupUpdate
      *
      * @var int
      */
-    protected int $type;
+    protected ?int $type = null;
     /**
      * The timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
      *
      * @var string
      */
-    protected string $timezone;
+    protected ?string $timezone = null;
     /**
-     * @param string name The group's name
+     * @param string $name The group's name
      */
-    function setName(string $name)
+    function setName(?string $name)
     {
         $this->name = $name;
     }
     /**
      * @return string The group's name
      */
-    function getName() : string
+    function getName() : ?string
     {
         return $this->name;
     }
     /**
-     * @param string description The group's description
+     * @param string $description The group's description
      */
-    function setDescription(string $description)
+    function setDescription(?string $description)
     {
         $this->description = $description;
     }
     /**
      * @return string The group's description
      */
-    function getDescription() : string
+    function getDescription() : ?string
     {
         return $this->description;
     }
     /**
-     * @param int type - Group's type
+     * @param int $type - Group's type
      * - `CommonGroupUpdate::TYPE_SO`
      * - `CommonGroupUpdate::TYPE_OTHER`
      * - `CommonGroupUpdate::TYPE_SVNO`
@@ -98,7 +99,7 @@ class CommonGroupUpdate
      * - `CommonGroupUpdate::TYPE_STARTER`
      * - `CommonGroupUpdate::TYPE_PARTNER`
      */
-    function setType(int $type)
+    function setType(?int $type)
     {
         $this->type = $type;
     }
@@ -114,21 +115,21 @@ class CommonGroupUpdate
      * - `CommonGroupUpdate::TYPE_STARTER`
      * - `CommonGroupUpdate::TYPE_PARTNER`
      */
-    function getType() : int
+    function getType() : ?int
     {
         return $this->type;
     }
     /**
-     * @param string timezone The timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
+     * @param string $timezone The timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
      */
-    function setTimezone(string $timezone)
+    function setTimezone(?string $timezone)
     {
         $this->timezone = $timezone;
     }
     /**
      * @return string The timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
      */
-    function getTimezone() : string
+    function getTimezone() : ?string
     {
         return $this->timezone;
     }

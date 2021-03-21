@@ -2,16 +2,16 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\object;
-use Arimac\Sigfox\Definition\object;
-use Arimac\Sigfox\Definition\object;
-use Arimac\Sigfox\Definition\object;
-use Arimac\Sigfox\Definition\Actions;
-use Arimac\Sigfox\Definition\Resources;
+use Arimac\Sigfox\Definition\MinGroup;
+use Arimac\Sigfox\Definition\BaseStation\LocationItemItem;
+use Arimac\Sigfox\Definition\MinHwFamily;
+use Arimac\Sigfox\Definition\BaseStation\Queue;
+use Arimac\Sigfox\Definition\Antenna;
+use Arimac\Sigfox\Definition;
 /**
  * Defines the base station's properties
  */
-class BaseStation
+class BaseStation extends Definition
 {
     /** ETH */
     public const CONNECTION_TYPE_ETH = 0;
@@ -182,81 +182,81 @@ class BaseStation
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /**
      * The base station's name
      *
      * @var string
      */
-    protected string $name;
+    protected ?string $name = null;
     /**
      * The current version of the software installed on this base station
      *
      * @var string
      */
-    protected string $versionCurrent;
+    protected ?string $versionCurrent = null;
     /**
      * The current version of the hardware of this base station
      *
      * @var string
      */
-    protected string $hwVersion;
-    /** @var object */
-    protected object $group;
+    protected ?string $hwVersion = null;
+    /** @var MinGroup */
+    protected ?MinGroup $group = null;
     /**
      * The first commissioning time of the station (in milliseconds)
      *
      * @var int
      */
-    protected int $firstCommissioningTime;
+    protected ?int $firstCommissioningTime = null;
     /**
      * The commissioning time of the station (in milliseconds)
      *
      * @var int
      */
-    protected int $commissioningTime;
+    protected ?int $commissioningTime = null;
     /**
      * The decommissioning time of the station (in milliseconds)
      *
      * @var int
      */
-    protected int $decommissioningTime;
+    protected ?int $decommissioningTime = null;
     /**
      * The number of operating days of the station. To present if the station was not decommissioned, or to decommisioning time otherwise
      *
      * @var int
      */
-    protected int $operatingDays;
+    protected ?int $operatingDays = null;
     /**
      * Date of the delivery made by the manufacturer for this base station
      *
      * @var int
      */
-    protected int $manufacturerDeliveryTime;
+    protected ?int $manufacturerDeliveryTime = null;
     /**
      * Date of the beginning of the warranty for this base station
      *
      * @var int
      */
-    protected int $warrantyTime;
+    protected ?int $warrantyTime = null;
     /**
      * Date of the last communication made with this base station
      *
      * @var int
      */
-    protected int $lastCommunicationTime;
+    protected ?int $lastCommunicationTime = null;
     /**
      * Date of the last PING received from this base station
      *
      * @var int
      */
-    protected int $lastPingTime;
+    protected ?int $lastPingTime = null;
     /**
      * Date of the last restart of this base station
      *
      * @var int
      */
-    protected int $restartTime;
+    protected ?int $restartTime = null;
     /**
      * Base station connection type.
      * - `BaseStation::CONNECTION_TYPE_ETH`
@@ -264,39 +264,39 @@ class BaseStation
      *
      * @var int
      */
-    protected int $connectionType;
+    protected ?int $connectionType = null;
     /**
      * Description of the base station
      *
      * @var string
      */
-    protected string $description;
+    protected ?string $description = null;
     /**
      * ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department available for some countries).
      *
-     * @var array
+     * @var BaseStation\LocationItemItem
      */
-    protected array $location;
-    /** @var object */
-    protected object $hwFamily;
+    protected ?BaseStation\LocationItemItem $location = null;
+    /** @var MinHwFamily */
+    protected ?MinHwFamily $hwFamily = null;
     /**
      * Number of seconds the base station keep alive
      *
      * @var int
      */
-    protected int $keepAlive;
+    protected ?int $keepAlive = null;
     /**
      * The base station's latitude
      *
-     * @var int
+     * @var float
      */
-    protected int $lat;
+    protected ?float $lat = null;
     /**
      * The base station's longitude
      *
-     * @var int
+     * @var float
      */
-    protected int $lng;
+    protected ?float $lng = null;
     /**
      * Base station communication state.
      * - `BaseStation::COMMUNICATION_STATE_NO`
@@ -307,7 +307,7 @@ class BaseStation
      *
      * @var int
      */
-    protected int $communicationState;
+    protected ?int $communicationState = null;
     /**
      * Base station state.
      * - `BaseStation::STATE_NO`
@@ -318,7 +318,7 @@ class BaseStation
      *
      * @var int
      */
-    protected int $state;
+    protected ?int $state = null;
     /**
      * Base station lifecycle status
      * - `BaseStation::LIFECYCLE_STATUS_STOCK`
@@ -328,81 +328,81 @@ class BaseStation
      *
      * @var int
      */
-    protected int $lifecycleStatus;
-    /** @var object */
-    protected object $queue;
+    protected ?int $lifecycleStatus = null;
+    /** @var BaseStation\Queue */
+    protected ?BaseStation\Queue $queue = null;
     /**
      * true if the base station is muted
      *
      * @var bool
      */
-    protected bool $muted;
+    protected ?bool $muted = null;
     /**
      * true if the transmission is authorized on this base station
      *
      * @var bool
      */
-    protected bool $transmissionAuthorized;
+    protected ?bool $transmissionAuthorized = null;
     /**
      * true if the downlink is enabled on this base station
      *
      * @var bool
      */
-    protected bool $downlinkEnabled;
+    protected ?bool $downlinkEnabled = null;
     /**
      * Name if the installer of this base station
      *
      * @var string
      */
-    protected string $installer;
+    protected ?string $installer = null;
     /**
      * Date of the creation of the base station (in milliseconds since Unix Epoch)
      *
      * @var int
      */
-    protected int $creationTime;
+    protected ?int $creationTime = null;
     /**
      * Id of the user who created this base station
      *
      * @var string
      */
-    protected string $createdBy;
+    protected ?string $createdBy = null;
     /**
      * Date of the last modification made on this base station (in milliseconds since Unix Epoch)
      *
      * @var int
      */
-    protected int $lastEditionTime;
+    protected ?int $lastEditionTime = null;
     /**
      * Id of the user who edited this base station for the last time
      *
      * @var string
      */
-    protected string $lastEditedBy;
+    protected ?string $lastEditedBy = null;
     /**
      * Uplink base frequency of this base station (in Hz)
      *
      * @var int
      */
-    protected int $baseFrequency;
+    protected ?int $baseFrequency = null;
     /**
      * Downlink center frequency of this base station (in Hz)
      *
      * @var int
      */
-    protected int $downlinkCenterFrequency;
+    protected ?int $downlinkCenterFrequency = null;
     /**
      * Macro channel of this base station (in Hz)
      *
      * @var int
      */
-    protected int $macroChannel;
+    protected ?int $macroChannel = null;
     /**
      * TX power amplification of this base station (in %)
      *
      * @var int
      */
-    protected int $txPowerAmplification;
+    protected ?int $txPowerAmplification = null;
     /**
      * Base station protocol.
      * - `BaseStation::PROTOCOL_V0`
@@ -411,7 +411,7 @@ class BaseStation
      *
      * @var int
      */
-    protected int $protocol;
+    protected ?int $protocol = null;
     /**
      * Base station pre amp 1.
      * - `BaseStation::PRE_AMP1_LNA`
@@ -420,7 +420,7 @@ class BaseStation
      *
      * @var int
      */
-    protected int $preAmp1;
+    protected ?int $preAmp1 = null;
     /**
      * Base station pre amp 2.
      * - `BaseStation::PRE_AMP2_LNA`
@@ -429,7 +429,7 @@ class BaseStation
      *
      * @var int
      */
-    protected int $preAmp2;
+    protected ?int $preAmp2 = null;
     /**
      * Base station RAM log.
      * - `BaseStation::R_A_M_LOG_YES`
@@ -439,7 +439,7 @@ class BaseStation
      *
      * @var int
      */
-    protected int $RAMLog;
+    protected ?int $RAMLog = null;
     /**
      * Base station WWAN mode.
      * - `BaseStation::WWAN_MODE_NONE`
@@ -451,7 +451,7 @@ class BaseStation
      *
      * @var int
      */
-    protected int $wwanMode;
+    protected ?int $wwanMode = null;
     /**
      * Base station bit rate.
      * - `BaseStation::BIT_RATE_BIT_RATE_100_BS`
@@ -459,25 +459,25 @@ class BaseStation
      *
      * @var int
      */
-    protected int $bitRate;
+    protected ?int $bitRate = null;
     /**
      * true if the base station is available for the global coverage computation
      *
      * @var bool
      */
-    protected bool $globalCoverageEnable;
+    protected ?bool $globalCoverageEnable = null;
     /**
      * Antenna height of the base station (in m)
      *
      * @var int
      */
-    protected int $elevation;
+    protected ?int $elevation = null;
     /**
      * Radius of the base station (in km)
      *
      * @var int
      */
-    protected int $splatRadius;
+    protected ?int $splatRadius = null;
     /**
      * LNA version of the base station. Mini stations have type 7 -> MINI. Mini Access Stations have type 21.
      * - `BaseStation::MAST_EQUIPMENT_OTHER`
@@ -506,19 +506,19 @@ class BaseStation
      *
      * @var int
      */
-    protected int $mastEquipment;
+    protected ?int $mastEquipment = null;
     /**
      * The base station's mast equipment description
      *
      * @var string
      */
-    protected string $mastEquipmentDescription;
+    protected ?string $mastEquipmentDescription = null;
     /**
      * true if the LNA is by-passed
      *
      * @var bool
      */
-    protected bool $lnaByPass;
+    protected ?bool $lnaByPass = null;
     /**
      * Cavity filter version of the base station.
      * -1 -> None
@@ -535,91 +535,91 @@ class BaseStation
      *
      * @var int
      */
-    protected int $cavityFilterVersion;
+    protected ?int $cavityFilterVersion = null;
     /**
      * The base station's cavity filter version description
      *
      * @var string
      */
-    protected string $cavityFilterVersionDescription;
+    protected ?string $cavityFilterVersionDescription = null;
     /**
      * Environment loss of this base station (in dB)
      *
-     * @var int
+     * @var float
      */
-    protected int $environmentLoss;
+    protected ?float $environmentLoss = null;
     /**
      * Cable loss of this base station (in dB)
      *
-     * @var int
+     * @var float
      */
-    protected int $cableLoss;
+    protected ?float $cableLoss = null;
     /**
      * Antenna gain of this base station (in dB).
      *
-     * @var int
+     * @var float
      */
-    protected int $antennaGain;
+    protected ?float $antennaGain = null;
     /**
      * Antenna noise figure of this base station (in dB). This setting is only relevant when an antenna with a filter is installed.
      *
-     * @var int
+     * @var float
      */
-    protected int $antennaNoiseFigure;
+    protected ?float $antennaNoiseFigure = null;
     /**
      * Antenna insertion loss of this base station (in dB). This setting is only relevant when an antenna with a filter is installed.
      *
-     * @var int
+     * @var float
      */
-    protected int $antennaInsertionLoss;
+    protected ?float $antennaInsertionLoss = null;
     /**
      * Antenna max admissible power of this base station (in dBm). This setting is only relevant when an antenna with a filter is installed.
      *
-     * @var int
+     * @var float
      */
-    protected int $antennaMaxAdmissiblePower;
+    protected ?float $antennaMaxAdmissiblePower = null;
     /**
      * true if the base station has a gain flag
      *
      * @var bool
      */
-    protected bool $gainFlag;
+    protected ?bool $gainFlag = null;
     /**
      * Mast equipment gain of this base station (in dB)
      *
-     * @var int
+     * @var float
      */
-    protected int $mastEquipmentGain;
+    protected ?float $mastEquipmentGain = null;
     /**
      * Mast equipment noise figure of this base station (in dB)
      *
-     * @var int
+     * @var float
      */
-    protected int $mastEquipmentNoiseFigure;
+    protected ?float $mastEquipmentNoiseFigure = null;
     /**
      * LNA insertion loss of this base station (in dB)
      *
-     * @var int
+     * @var float
      */
-    protected int $lnaInsertionLoss;
+    protected ?float $lnaInsertionLoss = null;
     /**
      * Cavity filter insertion loss of this base station (in dB)
      *
-     * @var int
+     * @var float
      */
-    protected int $cavityFilterInsertionLoss;
+    protected ?float $cavityFilterInsertionLoss = null;
     /**
      * TX power margin of this base station (in dBm)
      *
-     * @var int
+     * @var float
      */
-    protected int $txPowerMargin;
+    protected ?float $txPowerMargin = null;
     /**
      * power capability of this base station (in dBm)
      *
-     * @var int
+     * @var float
      */
-    protected int $powerCapability;
+    protected ?float $powerCapability = null;
     /**
      * Antenna location.
      * - `BaseStation::ANTENNA_LOCATION_CODE_OUTDOOR`
@@ -627,7 +627,7 @@ class BaseStation
      *
      * @var int
      */
-    protected int $antennaLocationCode;
+    protected ?int $antennaLocationCode = null;
     /**
      * Service coverage (for Mini base station)
      * - `BaseStation::SERVICE_COVERAGE_GLOBAL`
@@ -635,7 +635,7 @@ class BaseStation
      *
      * @var int
      */
-    protected int $serviceCoverage;
+    protected ?int $serviceCoverage = null;
     /**
      * Defines whether the Base Station should contribute to the Sigfox Network location service.
      * - `BaseStation::GEOLOC_COMPUTATION_DEFAULT`
@@ -644,7 +644,7 @@ class BaseStation
      *
      * @var int
      */
-    protected int $geolocComputation;
+    protected ?int $geolocComputation = null;
     /**
      * The status, computed by the geolocation services, of the Base Station's contribution to the Sigfox Network location service.
      * - `BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_NOT_CONTRIBUTING`
@@ -655,223 +655,224 @@ class BaseStation
      *
      * @var int
      */
-    protected int $geolocGlobalStateOfContribution;
-    /** @var object */
-    protected object $antenna;
+    protected ?int $geolocGlobalStateOfContribution = null;
+    /** @var Antenna */
+    protected ?Antenna $antenna = null;
     /** @var int[] */
-    protected array $availableConnections;
+    protected ?array $availableConnections = null;
     /**
      * the base station’s marker code
      *
      * @var string
      */
-    protected string $makerCode;
-    /** @var Actions */
-    protected Actions $actions;
-    /** @var Resources */
-    protected Resources $resources;
+    protected ?string $makerCode = null;
+    /** @var string[] */
+    protected ?array $actions = null;
+    /** @var string[] */
+    protected ?array $resources = null;
+    protected $objects = array('group' => '\\Arimac\\Sigfox\\Definition\\MinGroup', 'hwFamily' => '\\Arimac\\Sigfox\\Definition\\MinHwFamily', 'antenna' => '\\Arimac\\Sigfox\\Definition\\Antenna');
     /**
-     * @param string id The base station's identifier (hexadecimal format)
+     * @param string $id The base station's identifier (hexadecimal format)
      */
-    function setId(string $id)
+    function setId(?string $id)
     {
         $this->id = $id;
     }
     /**
      * @return string The base station's identifier (hexadecimal format)
      */
-    function getId() : string
+    function getId() : ?string
     {
         return $this->id;
     }
     /**
-     * @param string name The base station's name
+     * @param string $name The base station's name
      */
-    function setName(string $name)
+    function setName(?string $name)
     {
         $this->name = $name;
     }
     /**
      * @return string The base station's name
      */
-    function getName() : string
+    function getName() : ?string
     {
         return $this->name;
     }
     /**
-     * @param string versionCurrent The current version of the software installed on this base station
+     * @param string $versionCurrent The current version of the software installed on this base station
      */
-    function setVersionCurrent(string $versionCurrent)
+    function setVersionCurrent(?string $versionCurrent)
     {
         $this->versionCurrent = $versionCurrent;
     }
     /**
      * @return string The current version of the software installed on this base station
      */
-    function getVersionCurrent() : string
+    function getVersionCurrent() : ?string
     {
         return $this->versionCurrent;
     }
     /**
-     * @param string hwVersion The current version of the hardware of this base station
+     * @param string $hwVersion The current version of the hardware of this base station
      */
-    function setHwVersion(string $hwVersion)
+    function setHwVersion(?string $hwVersion)
     {
         $this->hwVersion = $hwVersion;
     }
     /**
      * @return string The current version of the hardware of this base station
      */
-    function getHwVersion() : string
+    function getHwVersion() : ?string
     {
         return $this->hwVersion;
     }
     /**
-     * @param object group
+     * @param MinGroup group
      */
-    function setGroup(object $group)
+    function setGroup(?MinGroup $group)
     {
         $this->group = $group;
     }
     /**
-     * @return object group
+     * @return MinGroup group
      */
-    function getGroup() : object
+    function getGroup() : ?MinGroup
     {
         return $this->group;
     }
     /**
-     * @param int firstCommissioningTime The first commissioning time of the station (in milliseconds)
+     * @param int $firstCommissioningTime The first commissioning time of the station (in milliseconds)
      */
-    function setFirstCommissioningTime(int $firstCommissioningTime)
+    function setFirstCommissioningTime(?int $firstCommissioningTime)
     {
         $this->firstCommissioningTime = $firstCommissioningTime;
     }
     /**
      * @return int The first commissioning time of the station (in milliseconds)
      */
-    function getFirstCommissioningTime() : int
+    function getFirstCommissioningTime() : ?int
     {
         return $this->firstCommissioningTime;
     }
     /**
-     * @param int commissioningTime The commissioning time of the station (in milliseconds)
+     * @param int $commissioningTime The commissioning time of the station (in milliseconds)
      */
-    function setCommissioningTime(int $commissioningTime)
+    function setCommissioningTime(?int $commissioningTime)
     {
         $this->commissioningTime = $commissioningTime;
     }
     /**
      * @return int The commissioning time of the station (in milliseconds)
      */
-    function getCommissioningTime() : int
+    function getCommissioningTime() : ?int
     {
         return $this->commissioningTime;
     }
     /**
-     * @param int decommissioningTime The decommissioning time of the station (in milliseconds)
+     * @param int $decommissioningTime The decommissioning time of the station (in milliseconds)
      */
-    function setDecommissioningTime(int $decommissioningTime)
+    function setDecommissioningTime(?int $decommissioningTime)
     {
         $this->decommissioningTime = $decommissioningTime;
     }
     /**
      * @return int The decommissioning time of the station (in milliseconds)
      */
-    function getDecommissioningTime() : int
+    function getDecommissioningTime() : ?int
     {
         return $this->decommissioningTime;
     }
     /**
-     * @param int operatingDays The number of operating days of the station. To present if the station was not decommissioned, or to decommisioning time otherwise
+     * @param int $operatingDays The number of operating days of the station. To present if the station was not decommissioned, or to decommisioning time otherwise
      */
-    function setOperatingDays(int $operatingDays)
+    function setOperatingDays(?int $operatingDays)
     {
         $this->operatingDays = $operatingDays;
     }
     /**
      * @return int The number of operating days of the station. To present if the station was not decommissioned, or to decommisioning time otherwise
      */
-    function getOperatingDays() : int
+    function getOperatingDays() : ?int
     {
         return $this->operatingDays;
     }
     /**
-     * @param int manufacturerDeliveryTime Date of the delivery made by the manufacturer for this base station
+     * @param int $manufacturerDeliveryTime Date of the delivery made by the manufacturer for this base station
      */
-    function setManufacturerDeliveryTime(int $manufacturerDeliveryTime)
+    function setManufacturerDeliveryTime(?int $manufacturerDeliveryTime)
     {
         $this->manufacturerDeliveryTime = $manufacturerDeliveryTime;
     }
     /**
      * @return int Date of the delivery made by the manufacturer for this base station
      */
-    function getManufacturerDeliveryTime() : int
+    function getManufacturerDeliveryTime() : ?int
     {
         return $this->manufacturerDeliveryTime;
     }
     /**
-     * @param int warrantyTime Date of the beginning of the warranty for this base station
+     * @param int $warrantyTime Date of the beginning of the warranty for this base station
      */
-    function setWarrantyTime(int $warrantyTime)
+    function setWarrantyTime(?int $warrantyTime)
     {
         $this->warrantyTime = $warrantyTime;
     }
     /**
      * @return int Date of the beginning of the warranty for this base station
      */
-    function getWarrantyTime() : int
+    function getWarrantyTime() : ?int
     {
         return $this->warrantyTime;
     }
     /**
-     * @param int lastCommunicationTime Date of the last communication made with this base station
+     * @param int $lastCommunicationTime Date of the last communication made with this base station
      */
-    function setLastCommunicationTime(int $lastCommunicationTime)
+    function setLastCommunicationTime(?int $lastCommunicationTime)
     {
         $this->lastCommunicationTime = $lastCommunicationTime;
     }
     /**
      * @return int Date of the last communication made with this base station
      */
-    function getLastCommunicationTime() : int
+    function getLastCommunicationTime() : ?int
     {
         return $this->lastCommunicationTime;
     }
     /**
-     * @param int lastPingTime Date of the last PING received from this base station
+     * @param int $lastPingTime Date of the last PING received from this base station
      */
-    function setLastPingTime(int $lastPingTime)
+    function setLastPingTime(?int $lastPingTime)
     {
         $this->lastPingTime = $lastPingTime;
     }
     /**
      * @return int Date of the last PING received from this base station
      */
-    function getLastPingTime() : int
+    function getLastPingTime() : ?int
     {
         return $this->lastPingTime;
     }
     /**
-     * @param int restartTime Date of the last restart of this base station
+     * @param int $restartTime Date of the last restart of this base station
      */
-    function setRestartTime(int $restartTime)
+    function setRestartTime(?int $restartTime)
     {
         $this->restartTime = $restartTime;
     }
     /**
      * @return int Date of the last restart of this base station
      */
-    function getRestartTime() : int
+    function getRestartTime() : ?int
     {
         return $this->restartTime;
     }
     /**
-     * @param int connectionType Base station connection type.
+     * @param int $connectionType Base station connection type.
      * - `BaseStation::CONNECTION_TYPE_ETH`
      * - `BaseStation::CONNECTION_TYPE_GSM`
      */
-    function setConnectionType(int $connectionType)
+    function setConnectionType(?int $connectionType)
     {
         $this->connectionType = $connectionType;
     }
@@ -880,103 +881,103 @@ class BaseStation
      * - `BaseStation::CONNECTION_TYPE_ETH`
      * - `BaseStation::CONNECTION_TYPE_GSM`
      */
-    function getConnectionType() : int
+    function getConnectionType() : ?int
     {
         return $this->connectionType;
     }
     /**
-     * @param string description Description of the base station
+     * @param string $description Description of the base station
      */
-    function setDescription(string $description)
+    function setDescription(?string $description)
     {
         $this->description = $description;
     }
     /**
      * @return string Description of the base station
      */
-    function getDescription() : string
+    function getDescription() : ?string
     {
         return $this->description;
     }
     /**
-     * @param array location ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department available for some countries).
+     * @param BaseStation\LocationItemItem $location ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department available for some countries).
      */
-    function setLocation(array $location)
+    function setLocation(?BaseStation\LocationItemItem $location)
     {
         $this->location = $location;
     }
     /**
-     * @return array ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department available for some countries).
+     * @return BaseStation\LocationItemItem ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department available for some countries).
      */
-    function getLocation() : array
+    function getLocation() : ?BaseStation\LocationItemItem
     {
         return $this->location;
     }
     /**
-     * @param object hwFamily
+     * @param MinHwFamily hwFamily
      */
-    function setHwFamily(object $hwFamily)
+    function setHwFamily(?MinHwFamily $hwFamily)
     {
         $this->hwFamily = $hwFamily;
     }
     /**
-     * @return object hwFamily
+     * @return MinHwFamily hwFamily
      */
-    function getHwFamily() : object
+    function getHwFamily() : ?MinHwFamily
     {
         return $this->hwFamily;
     }
     /**
-     * @param int keepAlive Number of seconds the base station keep alive
+     * @param int $keepAlive Number of seconds the base station keep alive
      */
-    function setKeepAlive(int $keepAlive)
+    function setKeepAlive(?int $keepAlive)
     {
         $this->keepAlive = $keepAlive;
     }
     /**
      * @return int Number of seconds the base station keep alive
      */
-    function getKeepAlive() : int
+    function getKeepAlive() : ?int
     {
         return $this->keepAlive;
     }
     /**
-     * @param int lat The base station's latitude
+     * @param float $lat The base station's latitude
      */
-    function setLat(int $lat)
+    function setLat(?float $lat)
     {
         $this->lat = $lat;
     }
     /**
-     * @return int The base station's latitude
+     * @return float The base station's latitude
      */
-    function getLat() : int
+    function getLat() : ?float
     {
         return $this->lat;
     }
     /**
-     * @param int lng The base station's longitude
+     * @param float $lng The base station's longitude
      */
-    function setLng(int $lng)
+    function setLng(?float $lng)
     {
         $this->lng = $lng;
     }
     /**
-     * @return int The base station's longitude
+     * @return float The base station's longitude
      */
-    function getLng() : int
+    function getLng() : ?float
     {
         return $this->lng;
     }
     /**
-     * @param int communicationState Base station communication state.
+     * @param int $communicationState Base station communication state.
      * - `BaseStation::COMMUNICATION_STATE_NO`
      * - `BaseStation::COMMUNICATION_STATE_OK`
      * - `BaseStation::COMMUNICATION_STATE_WARN`
      * - `BaseStation::COMMUNICATION_STATE_KO`
      * - `BaseStation::COMMUNICATION_STATE_OK_KO`
      */
-    function setCommunicationState(int $communicationState)
+    function setCommunicationState(?int $communicationState)
     {
         $this->communicationState = $communicationState;
     }
@@ -988,19 +989,19 @@ class BaseStation
      * - `BaseStation::COMMUNICATION_STATE_KO`
      * - `BaseStation::COMMUNICATION_STATE_OK_KO`
      */
-    function getCommunicationState() : int
+    function getCommunicationState() : ?int
     {
         return $this->communicationState;
     }
     /**
-     * @param int state Base station state.
+     * @param int $state Base station state.
      * - `BaseStation::STATE_NO`
      * - `BaseStation::STATE_OK`
      * - `BaseStation::STATE_WARN`
      * - `BaseStation::STATE_KO`
      * - `BaseStation::STATE_OK_KO`
      */
-    function setState(int $state)
+    function setState(?int $state)
     {
         $this->state = $state;
     }
@@ -1012,18 +1013,18 @@ class BaseStation
      * - `BaseStation::STATE_KO`
      * - `BaseStation::STATE_OK_KO`
      */
-    function getState() : int
+    function getState() : ?int
     {
         return $this->state;
     }
     /**
-     * @param int lifecycleStatus Base station lifecycle status
+     * @param int $lifecycleStatus Base station lifecycle status
      * - `BaseStation::LIFECYCLE_STATUS_STOCK`
      * - `BaseStation::LIFECYCLE_STATUS_PROD`
      * - `BaseStation::LIFECYCLE_STATUS_MAINTENANCE`
      * - `BaseStation::LIFECYCLE_STATUS_DEAD`
      */
-    function setLifecycleStatus(int $lifecycleStatus)
+    function setLifecycleStatus(?int $lifecycleStatus)
     {
         $this->lifecycleStatus = $lifecycleStatus;
     }
@@ -1034,199 +1035,199 @@ class BaseStation
      * - `BaseStation::LIFECYCLE_STATUS_MAINTENANCE`
      * - `BaseStation::LIFECYCLE_STATUS_DEAD`
      */
-    function getLifecycleStatus() : int
+    function getLifecycleStatus() : ?int
     {
         return $this->lifecycleStatus;
     }
     /**
-     * @param object queue
+     * @param BaseStation\Queue queue
      */
-    function setQueue(object $queue)
+    function setQueue(?BaseStation\Queue $queue)
     {
         $this->queue = $queue;
     }
     /**
-     * @return object queue
+     * @return BaseStation\Queue queue
      */
-    function getQueue() : object
+    function getQueue() : ?BaseStation\Queue
     {
         return $this->queue;
     }
     /**
-     * @param bool muted true if the base station is muted
+     * @param bool $muted true if the base station is muted
      */
-    function setMuted(bool $muted)
+    function setMuted(?bool $muted)
     {
         $this->muted = $muted;
     }
     /**
      * @return bool true if the base station is muted
      */
-    function getMuted() : bool
+    function getMuted() : ?bool
     {
         return $this->muted;
     }
     /**
-     * @param bool transmissionAuthorized true if the transmission is authorized on this base station
+     * @param bool $transmissionAuthorized true if the transmission is authorized on this base station
      */
-    function setTransmissionAuthorized(bool $transmissionAuthorized)
+    function setTransmissionAuthorized(?bool $transmissionAuthorized)
     {
         $this->transmissionAuthorized = $transmissionAuthorized;
     }
     /**
      * @return bool true if the transmission is authorized on this base station
      */
-    function getTransmissionAuthorized() : bool
+    function getTransmissionAuthorized() : ?bool
     {
         return $this->transmissionAuthorized;
     }
     /**
-     * @param bool downlinkEnabled true if the downlink is enabled on this base station
+     * @param bool $downlinkEnabled true if the downlink is enabled on this base station
      */
-    function setDownlinkEnabled(bool $downlinkEnabled)
+    function setDownlinkEnabled(?bool $downlinkEnabled)
     {
         $this->downlinkEnabled = $downlinkEnabled;
     }
     /**
      * @return bool true if the downlink is enabled on this base station
      */
-    function getDownlinkEnabled() : bool
+    function getDownlinkEnabled() : ?bool
     {
         return $this->downlinkEnabled;
     }
     /**
-     * @param string installer Name if the installer of this base station
+     * @param string $installer Name if the installer of this base station
      */
-    function setInstaller(string $installer)
+    function setInstaller(?string $installer)
     {
         $this->installer = $installer;
     }
     /**
      * @return string Name if the installer of this base station
      */
-    function getInstaller() : string
+    function getInstaller() : ?string
     {
         return $this->installer;
     }
     /**
-     * @param int creationTime Date of the creation of the base station (in milliseconds since Unix Epoch)
+     * @param int $creationTime Date of the creation of the base station (in milliseconds since Unix Epoch)
      */
-    function setCreationTime(int $creationTime)
+    function setCreationTime(?int $creationTime)
     {
         $this->creationTime = $creationTime;
     }
     /**
      * @return int Date of the creation of the base station (in milliseconds since Unix Epoch)
      */
-    function getCreationTime() : int
+    function getCreationTime() : ?int
     {
         return $this->creationTime;
     }
     /**
-     * @param string createdBy Id of the user who created this base station
+     * @param string $createdBy Id of the user who created this base station
      */
-    function setCreatedBy(string $createdBy)
+    function setCreatedBy(?string $createdBy)
     {
         $this->createdBy = $createdBy;
     }
     /**
      * @return string Id of the user who created this base station
      */
-    function getCreatedBy() : string
+    function getCreatedBy() : ?string
     {
         return $this->createdBy;
     }
     /**
-     * @param int lastEditionTime Date of the last modification made on this base station (in milliseconds since Unix Epoch)
+     * @param int $lastEditionTime Date of the last modification made on this base station (in milliseconds since Unix Epoch)
      */
-    function setLastEditionTime(int $lastEditionTime)
+    function setLastEditionTime(?int $lastEditionTime)
     {
         $this->lastEditionTime = $lastEditionTime;
     }
     /**
      * @return int Date of the last modification made on this base station (in milliseconds since Unix Epoch)
      */
-    function getLastEditionTime() : int
+    function getLastEditionTime() : ?int
     {
         return $this->lastEditionTime;
     }
     /**
-     * @param string lastEditedBy Id of the user who edited this base station for the last time
+     * @param string $lastEditedBy Id of the user who edited this base station for the last time
      */
-    function setLastEditedBy(string $lastEditedBy)
+    function setLastEditedBy(?string $lastEditedBy)
     {
         $this->lastEditedBy = $lastEditedBy;
     }
     /**
      * @return string Id of the user who edited this base station for the last time
      */
-    function getLastEditedBy() : string
+    function getLastEditedBy() : ?string
     {
         return $this->lastEditedBy;
     }
     /**
-     * @param int baseFrequency Uplink base frequency of this base station (in Hz)
+     * @param int $baseFrequency Uplink base frequency of this base station (in Hz)
      */
-    function setBaseFrequency(int $baseFrequency)
+    function setBaseFrequency(?int $baseFrequency)
     {
         $this->baseFrequency = $baseFrequency;
     }
     /**
      * @return int Uplink base frequency of this base station (in Hz)
      */
-    function getBaseFrequency() : int
+    function getBaseFrequency() : ?int
     {
         return $this->baseFrequency;
     }
     /**
-     * @param int downlinkCenterFrequency Downlink center frequency of this base station (in Hz)
+     * @param int $downlinkCenterFrequency Downlink center frequency of this base station (in Hz)
      */
-    function setDownlinkCenterFrequency(int $downlinkCenterFrequency)
+    function setDownlinkCenterFrequency(?int $downlinkCenterFrequency)
     {
         $this->downlinkCenterFrequency = $downlinkCenterFrequency;
     }
     /**
      * @return int Downlink center frequency of this base station (in Hz)
      */
-    function getDownlinkCenterFrequency() : int
+    function getDownlinkCenterFrequency() : ?int
     {
         return $this->downlinkCenterFrequency;
     }
     /**
-     * @param int macroChannel Macro channel of this base station (in Hz)
+     * @param int $macroChannel Macro channel of this base station (in Hz)
      */
-    function setMacroChannel(int $macroChannel)
+    function setMacroChannel(?int $macroChannel)
     {
         $this->macroChannel = $macroChannel;
     }
     /**
      * @return int Macro channel of this base station (in Hz)
      */
-    function getMacroChannel() : int
+    function getMacroChannel() : ?int
     {
         return $this->macroChannel;
     }
     /**
-     * @param int txPowerAmplification TX power amplification of this base station (in %)
+     * @param int $txPowerAmplification TX power amplification of this base station (in %)
      */
-    function setTxPowerAmplification(int $txPowerAmplification)
+    function setTxPowerAmplification(?int $txPowerAmplification)
     {
         $this->txPowerAmplification = $txPowerAmplification;
     }
     /**
      * @return int TX power amplification of this base station (in %)
      */
-    function getTxPowerAmplification() : int
+    function getTxPowerAmplification() : ?int
     {
         return $this->txPowerAmplification;
     }
     /**
-     * @param int protocol Base station protocol.
+     * @param int $protocol Base station protocol.
      * - `BaseStation::PROTOCOL_V0`
      * - `BaseStation::PROTOCOL_V1`
      * - `BaseStation::PROTOCOL_BOTH`
      */
-    function setProtocol(int $protocol)
+    function setProtocol(?int $protocol)
     {
         $this->protocol = $protocol;
     }
@@ -1236,17 +1237,17 @@ class BaseStation
      * - `BaseStation::PROTOCOL_V1`
      * - `BaseStation::PROTOCOL_BOTH`
      */
-    function getProtocol() : int
+    function getProtocol() : ?int
     {
         return $this->protocol;
     }
     /**
-     * @param int preAmp1 Base station pre amp 1.
+     * @param int $preAmp1 Base station pre amp 1.
      * - `BaseStation::PRE_AMP1_LNA`
      * - `BaseStation::PRE_AMP1_BYPASS`
      * - `BaseStation::PRE_AMP1_ATTEND`
      */
-    function setPreAmp1(int $preAmp1)
+    function setPreAmp1(?int $preAmp1)
     {
         $this->preAmp1 = $preAmp1;
     }
@@ -1256,17 +1257,17 @@ class BaseStation
      * - `BaseStation::PRE_AMP1_BYPASS`
      * - `BaseStation::PRE_AMP1_ATTEND`
      */
-    function getPreAmp1() : int
+    function getPreAmp1() : ?int
     {
         return $this->preAmp1;
     }
     /**
-     * @param int preAmp2 Base station pre amp 2.
+     * @param int $preAmp2 Base station pre amp 2.
      * - `BaseStation::PRE_AMP2_LNA`
      * - `BaseStation::PRE_AMP2_BYPASS`
      * - `BaseStation::PRE_AMP2_ATTEND`
      */
-    function setPreAmp2(int $preAmp2)
+    function setPreAmp2(?int $preAmp2)
     {
         $this->preAmp2 = $preAmp2;
     }
@@ -1276,18 +1277,18 @@ class BaseStation
      * - `BaseStation::PRE_AMP2_BYPASS`
      * - `BaseStation::PRE_AMP2_ATTEND`
      */
-    function getPreAmp2() : int
+    function getPreAmp2() : ?int
     {
         return $this->preAmp2;
     }
     /**
-     * @param int RAMLog Base station RAM log.
+     * @param int $RAMLog Base station RAM log.
      * - `BaseStation::R_A_M_LOG_YES`
      * - `BaseStation::R_A_M_LOG_NO`
      * - `BaseStation::R_A_M_LOG_AUTO`
      * - `BaseStation::R_A_M_LOG_DROP`
      */
-    function setRAMLog(int $RAMLog)
+    function setRAMLog(?int $RAMLog)
     {
         $this->RAMLog = $RAMLog;
     }
@@ -1298,12 +1299,12 @@ class BaseStation
      * - `BaseStation::R_A_M_LOG_AUTO`
      * - `BaseStation::R_A_M_LOG_DROP`
      */
-    function getRAMLog() : int
+    function getRAMLog() : ?int
     {
         return $this->RAMLog;
     }
     /**
-     * @param int wwanMode Base station WWAN mode.
+     * @param int $wwanMode Base station WWAN mode.
      * - `BaseStation::WWAN_MODE_NONE`
      * - `BaseStation::WWAN_MODE_AUTO`
      * - `BaseStation::WWAN_MODE_WCDMA`
@@ -1311,7 +1312,7 @@ class BaseStation
      * - `BaseStation::WWAN_MODE_GPRS_PREF`
      * - `BaseStation::WWAN_MODE_GPRS`
      */
-    function setWwanMode(int $wwanMode)
+    function setWwanMode(?int $wwanMode)
     {
         $this->wwanMode = $wwanMode;
     }
@@ -1324,16 +1325,16 @@ class BaseStation
      * - `BaseStation::WWAN_MODE_GPRS_PREF`
      * - `BaseStation::WWAN_MODE_GPRS`
      */
-    function getWwanMode() : int
+    function getWwanMode() : ?int
     {
         return $this->wwanMode;
     }
     /**
-     * @param int bitRate Base station bit rate.
+     * @param int $bitRate Base station bit rate.
      * - `BaseStation::BIT_RATE_BIT_RATE_100_BS`
      * - `BaseStation::BIT_RATE_BIT_RATE_600_BS`
      */
-    function setBitRate(int $bitRate)
+    function setBitRate(?int $bitRate)
     {
         $this->bitRate = $bitRate;
     }
@@ -1342,54 +1343,54 @@ class BaseStation
      * - `BaseStation::BIT_RATE_BIT_RATE_100_BS`
      * - `BaseStation::BIT_RATE_BIT_RATE_600_BS`
      */
-    function getBitRate() : int
+    function getBitRate() : ?int
     {
         return $this->bitRate;
     }
     /**
-     * @param bool globalCoverageEnable true if the base station is available for the global coverage computation
+     * @param bool $globalCoverageEnable true if the base station is available for the global coverage computation
      */
-    function setGlobalCoverageEnable(bool $globalCoverageEnable)
+    function setGlobalCoverageEnable(?bool $globalCoverageEnable)
     {
         $this->globalCoverageEnable = $globalCoverageEnable;
     }
     /**
      * @return bool true if the base station is available for the global coverage computation
      */
-    function getGlobalCoverageEnable() : bool
+    function getGlobalCoverageEnable() : ?bool
     {
         return $this->globalCoverageEnable;
     }
     /**
-     * @param int elevation Antenna height of the base station (in m)
+     * @param int $elevation Antenna height of the base station (in m)
      */
-    function setElevation(int $elevation)
+    function setElevation(?int $elevation)
     {
         $this->elevation = $elevation;
     }
     /**
      * @return int Antenna height of the base station (in m)
      */
-    function getElevation() : int
+    function getElevation() : ?int
     {
         return $this->elevation;
     }
     /**
-     * @param int splatRadius Radius of the base station (in km)
+     * @param int $splatRadius Radius of the base station (in km)
      */
-    function setSplatRadius(int $splatRadius)
+    function setSplatRadius(?int $splatRadius)
     {
         $this->splatRadius = $splatRadius;
     }
     /**
      * @return int Radius of the base station (in km)
      */
-    function getSplatRadius() : int
+    function getSplatRadius() : ?int
     {
         return $this->splatRadius;
     }
     /**
-     * @param int mastEquipment LNA version of the base station. Mini stations have type 7 -> MINI. Mini Access Stations have type 21.
+     * @param int $mastEquipment LNA version of the base station. Mini stations have type 7 -> MINI. Mini Access Stations have type 21.
      * - `BaseStation::MAST_EQUIPMENT_OTHER`
      * - `BaseStation::MAST_EQUIPMENT_LNA_V2_SBS_868_P`
      * - `BaseStation::MAST_EQUIPMENT_LNA_V2_SBS_902_P`
@@ -1414,7 +1415,7 @@ class BaseStation
      * - `BaseStation::MAST_EQUIPMENT_NONE`
      * - `BaseStation::MAST_EQUIPMENT_LNAC_868_TX`
      */
-    function setMastEquipment(int $mastEquipment)
+    function setMastEquipment(?int $mastEquipment)
     {
         $this->mastEquipment = $mastEquipment;
     }
@@ -1444,40 +1445,40 @@ class BaseStation
      * - `BaseStation::MAST_EQUIPMENT_NONE`
      * - `BaseStation::MAST_EQUIPMENT_LNAC_868_TX`
      */
-    function getMastEquipment() : int
+    function getMastEquipment() : ?int
     {
         return $this->mastEquipment;
     }
     /**
-     * @param string mastEquipmentDescription The base station's mast equipment description
+     * @param string $mastEquipmentDescription The base station's mast equipment description
      */
-    function setMastEquipmentDescription(string $mastEquipmentDescription)
+    function setMastEquipmentDescription(?string $mastEquipmentDescription)
     {
         $this->mastEquipmentDescription = $mastEquipmentDescription;
     }
     /**
      * @return string The base station's mast equipment description
      */
-    function getMastEquipmentDescription() : string
+    function getMastEquipmentDescription() : ?string
     {
         return $this->mastEquipmentDescription;
     }
     /**
-     * @param bool lnaByPass true if the LNA is by-passed
+     * @param bool $lnaByPass true if the LNA is by-passed
      */
-    function setLnaByPass(bool $lnaByPass)
+    function setLnaByPass(?bool $lnaByPass)
     {
         $this->lnaByPass = $lnaByPass;
     }
     /**
      * @return bool true if the LNA is by-passed
      */
-    function getLnaByPass() : bool
+    function getLnaByPass() : ?bool
     {
         return $this->lnaByPass;
     }
     /**
-     * @param int cavityFilterVersion Cavity filter version of the base station.
+     * @param int $cavityFilterVersion Cavity filter version of the base station.
      * -1 -> None
      * - `BaseStation::CAVITY_FILTER_VERSION_OTHER`
      * - `BaseStation::CAVITY_FILTER_VERSION_ETSI_868MHZ_MATECH`
@@ -1490,7 +1491,7 @@ class BaseStation
      * - `BaseStation::CAVITY_FILTER_VERSION_ETSI_867MHZ_MATECH`
      * - `BaseStation::CAVITY_FILTER_VERSION_ETSI_867MHZ_TECHNIWAVE`
      */
-    function setCavityFilterVersion(int $cavityFilterVersion)
+    function setCavityFilterVersion(?int $cavityFilterVersion)
     {
         $this->cavityFilterVersion = $cavityFilterVersion;
     }
@@ -1508,212 +1509,212 @@ class BaseStation
      * - `BaseStation::CAVITY_FILTER_VERSION_ETSI_867MHZ_MATECH`
      * - `BaseStation::CAVITY_FILTER_VERSION_ETSI_867MHZ_TECHNIWAVE`
      */
-    function getCavityFilterVersion() : int
+    function getCavityFilterVersion() : ?int
     {
         return $this->cavityFilterVersion;
     }
     /**
-     * @param string cavityFilterVersionDescription The base station's cavity filter version description
+     * @param string $cavityFilterVersionDescription The base station's cavity filter version description
      */
-    function setCavityFilterVersionDescription(string $cavityFilterVersionDescription)
+    function setCavityFilterVersionDescription(?string $cavityFilterVersionDescription)
     {
         $this->cavityFilterVersionDescription = $cavityFilterVersionDescription;
     }
     /**
      * @return string The base station's cavity filter version description
      */
-    function getCavityFilterVersionDescription() : string
+    function getCavityFilterVersionDescription() : ?string
     {
         return $this->cavityFilterVersionDescription;
     }
     /**
-     * @param int environmentLoss Environment loss of this base station (in dB)
+     * @param float $environmentLoss Environment loss of this base station (in dB)
      */
-    function setEnvironmentLoss(int $environmentLoss)
+    function setEnvironmentLoss(?float $environmentLoss)
     {
         $this->environmentLoss = $environmentLoss;
     }
     /**
-     * @return int Environment loss of this base station (in dB)
+     * @return float Environment loss of this base station (in dB)
      */
-    function getEnvironmentLoss() : int
+    function getEnvironmentLoss() : ?float
     {
         return $this->environmentLoss;
     }
     /**
-     * @param int cableLoss Cable loss of this base station (in dB)
+     * @param float $cableLoss Cable loss of this base station (in dB)
      */
-    function setCableLoss(int $cableLoss)
+    function setCableLoss(?float $cableLoss)
     {
         $this->cableLoss = $cableLoss;
     }
     /**
-     * @return int Cable loss of this base station (in dB)
+     * @return float Cable loss of this base station (in dB)
      */
-    function getCableLoss() : int
+    function getCableLoss() : ?float
     {
         return $this->cableLoss;
     }
     /**
-     * @param int antennaGain Antenna gain of this base station (in dB).
+     * @param float $antennaGain Antenna gain of this base station (in dB).
      */
-    function setAntennaGain(int $antennaGain)
+    function setAntennaGain(?float $antennaGain)
     {
         $this->antennaGain = $antennaGain;
     }
     /**
-     * @return int Antenna gain of this base station (in dB).
+     * @return float Antenna gain of this base station (in dB).
      */
-    function getAntennaGain() : int
+    function getAntennaGain() : ?float
     {
         return $this->antennaGain;
     }
     /**
-     * @param int antennaNoiseFigure Antenna noise figure of this base station (in dB). This setting is only relevant when an antenna with a filter is installed.
+     * @param float $antennaNoiseFigure Antenna noise figure of this base station (in dB). This setting is only relevant when an antenna with a filter is installed.
      */
-    function setAntennaNoiseFigure(int $antennaNoiseFigure)
+    function setAntennaNoiseFigure(?float $antennaNoiseFigure)
     {
         $this->antennaNoiseFigure = $antennaNoiseFigure;
     }
     /**
-     * @return int Antenna noise figure of this base station (in dB). This setting is only relevant when an antenna with a filter is installed.
+     * @return float Antenna noise figure of this base station (in dB). This setting is only relevant when an antenna with a filter is installed.
      */
-    function getAntennaNoiseFigure() : int
+    function getAntennaNoiseFigure() : ?float
     {
         return $this->antennaNoiseFigure;
     }
     /**
-     * @param int antennaInsertionLoss Antenna insertion loss of this base station (in dB). This setting is only relevant when an antenna with a filter is installed.
+     * @param float $antennaInsertionLoss Antenna insertion loss of this base station (in dB). This setting is only relevant when an antenna with a filter is installed.
      */
-    function setAntennaInsertionLoss(int $antennaInsertionLoss)
+    function setAntennaInsertionLoss(?float $antennaInsertionLoss)
     {
         $this->antennaInsertionLoss = $antennaInsertionLoss;
     }
     /**
-     * @return int Antenna insertion loss of this base station (in dB). This setting is only relevant when an antenna with a filter is installed.
+     * @return float Antenna insertion loss of this base station (in dB). This setting is only relevant when an antenna with a filter is installed.
      */
-    function getAntennaInsertionLoss() : int
+    function getAntennaInsertionLoss() : ?float
     {
         return $this->antennaInsertionLoss;
     }
     /**
-     * @param int antennaMaxAdmissiblePower Antenna max admissible power of this base station (in dBm). This setting is only relevant when an antenna with a filter is installed.
+     * @param float $antennaMaxAdmissiblePower Antenna max admissible power of this base station (in dBm). This setting is only relevant when an antenna with a filter is installed.
      */
-    function setAntennaMaxAdmissiblePower(int $antennaMaxAdmissiblePower)
+    function setAntennaMaxAdmissiblePower(?float $antennaMaxAdmissiblePower)
     {
         $this->antennaMaxAdmissiblePower = $antennaMaxAdmissiblePower;
     }
     /**
-     * @return int Antenna max admissible power of this base station (in dBm). This setting is only relevant when an antenna with a filter is installed.
+     * @return float Antenna max admissible power of this base station (in dBm). This setting is only relevant when an antenna with a filter is installed.
      */
-    function getAntennaMaxAdmissiblePower() : int
+    function getAntennaMaxAdmissiblePower() : ?float
     {
         return $this->antennaMaxAdmissiblePower;
     }
     /**
-     * @param bool gainFlag true if the base station has a gain flag
+     * @param bool $gainFlag true if the base station has a gain flag
      */
-    function setGainFlag(bool $gainFlag)
+    function setGainFlag(?bool $gainFlag)
     {
         $this->gainFlag = $gainFlag;
     }
     /**
      * @return bool true if the base station has a gain flag
      */
-    function getGainFlag() : bool
+    function getGainFlag() : ?bool
     {
         return $this->gainFlag;
     }
     /**
-     * @param int mastEquipmentGain Mast equipment gain of this base station (in dB)
+     * @param float $mastEquipmentGain Mast equipment gain of this base station (in dB)
      */
-    function setMastEquipmentGain(int $mastEquipmentGain)
+    function setMastEquipmentGain(?float $mastEquipmentGain)
     {
         $this->mastEquipmentGain = $mastEquipmentGain;
     }
     /**
-     * @return int Mast equipment gain of this base station (in dB)
+     * @return float Mast equipment gain of this base station (in dB)
      */
-    function getMastEquipmentGain() : int
+    function getMastEquipmentGain() : ?float
     {
         return $this->mastEquipmentGain;
     }
     /**
-     * @param int mastEquipmentNoiseFigure Mast equipment noise figure of this base station (in dB)
+     * @param float $mastEquipmentNoiseFigure Mast equipment noise figure of this base station (in dB)
      */
-    function setMastEquipmentNoiseFigure(int $mastEquipmentNoiseFigure)
+    function setMastEquipmentNoiseFigure(?float $mastEquipmentNoiseFigure)
     {
         $this->mastEquipmentNoiseFigure = $mastEquipmentNoiseFigure;
     }
     /**
-     * @return int Mast equipment noise figure of this base station (in dB)
+     * @return float Mast equipment noise figure of this base station (in dB)
      */
-    function getMastEquipmentNoiseFigure() : int
+    function getMastEquipmentNoiseFigure() : ?float
     {
         return $this->mastEquipmentNoiseFigure;
     }
     /**
-     * @param int lnaInsertionLoss LNA insertion loss of this base station (in dB)
+     * @param float $lnaInsertionLoss LNA insertion loss of this base station (in dB)
      */
-    function setLnaInsertionLoss(int $lnaInsertionLoss)
+    function setLnaInsertionLoss(?float $lnaInsertionLoss)
     {
         $this->lnaInsertionLoss = $lnaInsertionLoss;
     }
     /**
-     * @return int LNA insertion loss of this base station (in dB)
+     * @return float LNA insertion loss of this base station (in dB)
      */
-    function getLnaInsertionLoss() : int
+    function getLnaInsertionLoss() : ?float
     {
         return $this->lnaInsertionLoss;
     }
     /**
-     * @param int cavityFilterInsertionLoss Cavity filter insertion loss of this base station (in dB)
+     * @param float $cavityFilterInsertionLoss Cavity filter insertion loss of this base station (in dB)
      */
-    function setCavityFilterInsertionLoss(int $cavityFilterInsertionLoss)
+    function setCavityFilterInsertionLoss(?float $cavityFilterInsertionLoss)
     {
         $this->cavityFilterInsertionLoss = $cavityFilterInsertionLoss;
     }
     /**
-     * @return int Cavity filter insertion loss of this base station (in dB)
+     * @return float Cavity filter insertion loss of this base station (in dB)
      */
-    function getCavityFilterInsertionLoss() : int
+    function getCavityFilterInsertionLoss() : ?float
     {
         return $this->cavityFilterInsertionLoss;
     }
     /**
-     * @param int txPowerMargin TX power margin of this base station (in dBm)
+     * @param float $txPowerMargin TX power margin of this base station (in dBm)
      */
-    function setTxPowerMargin(int $txPowerMargin)
+    function setTxPowerMargin(?float $txPowerMargin)
     {
         $this->txPowerMargin = $txPowerMargin;
     }
     /**
-     * @return int TX power margin of this base station (in dBm)
+     * @return float TX power margin of this base station (in dBm)
      */
-    function getTxPowerMargin() : int
+    function getTxPowerMargin() : ?float
     {
         return $this->txPowerMargin;
     }
     /**
-     * @param int powerCapability power capability of this base station (in dBm)
+     * @param float $powerCapability power capability of this base station (in dBm)
      */
-    function setPowerCapability(int $powerCapability)
+    function setPowerCapability(?float $powerCapability)
     {
         $this->powerCapability = $powerCapability;
     }
     /**
-     * @return int power capability of this base station (in dBm)
+     * @return float power capability of this base station (in dBm)
      */
-    function getPowerCapability() : int
+    function getPowerCapability() : ?float
     {
         return $this->powerCapability;
     }
     /**
-     * @param int antennaLocationCode Antenna location.
+     * @param int $antennaLocationCode Antenna location.
      * - `BaseStation::ANTENNA_LOCATION_CODE_OUTDOOR`
      * - `BaseStation::ANTENNA_LOCATION_CODE_INDOOR`
      */
-    function setAntennaLocationCode(int $antennaLocationCode)
+    function setAntennaLocationCode(?int $antennaLocationCode)
     {
         $this->antennaLocationCode = $antennaLocationCode;
     }
@@ -1722,16 +1723,16 @@ class BaseStation
      * - `BaseStation::ANTENNA_LOCATION_CODE_OUTDOOR`
      * - `BaseStation::ANTENNA_LOCATION_CODE_INDOOR`
      */
-    function getAntennaLocationCode() : int
+    function getAntennaLocationCode() : ?int
     {
         return $this->antennaLocationCode;
     }
     /**
-     * @param int serviceCoverage Service coverage (for Mini base station)
+     * @param int $serviceCoverage Service coverage (for Mini base station)
      * - `BaseStation::SERVICE_COVERAGE_GLOBAL`
      * - `BaseStation::SERVICE_COVERAGE_CUSTOMER`
      */
-    function setServiceCoverage(int $serviceCoverage)
+    function setServiceCoverage(?int $serviceCoverage)
     {
         $this->serviceCoverage = $serviceCoverage;
     }
@@ -1740,17 +1741,17 @@ class BaseStation
      * - `BaseStation::SERVICE_COVERAGE_GLOBAL`
      * - `BaseStation::SERVICE_COVERAGE_CUSTOMER`
      */
-    function getServiceCoverage() : int
+    function getServiceCoverage() : ?int
     {
         return $this->serviceCoverage;
     }
     /**
-     * @param int geolocComputation Defines whether the Base Station should contribute to the Sigfox Network location service.
+     * @param int $geolocComputation Defines whether the Base Station should contribute to the Sigfox Network location service.
      * - `BaseStation::GEOLOC_COMPUTATION_DEFAULT`
      * - `BaseStation::GEOLOC_COMPUTATION_ENABLED`
      * - `BaseStation::GEOLOC_COMPUTATION_DISABLED`
      */
-    function setGeolocComputation(int $geolocComputation)
+    function setGeolocComputation(?int $geolocComputation)
     {
         $this->geolocComputation = $geolocComputation;
     }
@@ -1760,19 +1761,19 @@ class BaseStation
      * - `BaseStation::GEOLOC_COMPUTATION_ENABLED`
      * - `BaseStation::GEOLOC_COMPUTATION_DISABLED`
      */
-    function getGeolocComputation() : int
+    function getGeolocComputation() : ?int
     {
         return $this->geolocComputation;
     }
     /**
-     * @param int geolocGlobalStateOfContribution The status, computed by the geolocation services, of the Base Station's contribution to the Sigfox Network location service.
+     * @param int $geolocGlobalStateOfContribution The status, computed by the geolocation services, of the Base Station's contribution to the Sigfox Network location service.
      * - `BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_NOT_CONTRIBUTING`
      * - `BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_CURRENTLY_CONTRIBUTING`
      * - `BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_GREY_LISTED`
      * - `BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_BLACK_LISTED`
      * - `BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_CONTRIBUTION_STATUS_NOT_AVAILABLE_FOR_THE_MOMENT`
      */
-    function setGeolocGlobalStateOfContribution(int $geolocGlobalStateOfContribution)
+    function setGeolocGlobalStateOfContribution(?int $geolocGlobalStateOfContribution)
     {
         $this->geolocGlobalStateOfContribution = $geolocGlobalStateOfContribution;
     }
@@ -1784,77 +1785,77 @@ class BaseStation
      * - `BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_BLACK_LISTED`
      * - `BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_CONTRIBUTION_STATUS_NOT_AVAILABLE_FOR_THE_MOMENT`
      */
-    function getGeolocGlobalStateOfContribution() : int
+    function getGeolocGlobalStateOfContribution() : ?int
     {
         return $this->geolocGlobalStateOfContribution;
     }
     /**
-     * @param object antenna
+     * @param Antenna antenna
      */
-    function setAntenna(object $antenna)
+    function setAntenna(?Antenna $antenna)
     {
         $this->antenna = $antenna;
     }
     /**
-     * @return object antenna
+     * @return Antenna antenna
      */
-    function getAntenna() : object
+    function getAntenna() : ?Antenna
     {
         return $this->antenna;
     }
     /**
      * @param int[] availableConnections
      */
-    function setAvailableConnections(array $availableConnections)
+    function setAvailableConnections(?array $availableConnections)
     {
         $this->availableConnections = $availableConnections;
     }
     /**
      * @return int[] availableConnections
      */
-    function getAvailableConnections() : array
+    function getAvailableConnections() : ?array
     {
         return $this->availableConnections;
     }
     /**
-     * @param string makerCode the base station’s marker code
+     * @param string $makerCode the base station’s marker code
      */
-    function setMakerCode(string $makerCode)
+    function setMakerCode(?string $makerCode)
     {
         $this->makerCode = $makerCode;
     }
     /**
      * @return string the base station’s marker code
      */
-    function getMakerCode() : string
+    function getMakerCode() : ?string
     {
         return $this->makerCode;
     }
     /**
-     * @param Actions actions
+     * @param string[] actions
      */
-    function setActions(Actions $actions)
+    function setActions(?array $actions)
     {
         $this->actions = $actions;
     }
     /**
-     * @return Actions actions
+     * @return string[] actions
      */
-    function getActions() : Actions
+    function getActions() : ?array
     {
         return $this->actions;
     }
     /**
-     * @param Resources resources
+     * @param string[] resources
      */
-    function setResources(Resources $resources)
+    function setResources(?array $resources)
     {
         $this->resources = $resources;
     }
     /**
-     * @return Resources resources
+     * @return string[] resources
      */
-    function getResources() : Resources
+    function getResources() : ?array
     {
         return $this->resources;
     }

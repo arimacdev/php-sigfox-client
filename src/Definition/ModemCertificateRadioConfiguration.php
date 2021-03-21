@@ -11,40 +11,40 @@ class ModemCertificateRadioConfiguration extends RadioConfiguration
     /**
      * Output conducted power (dBm)
      *
-     * @var int
+     * @var float
      */
-    protected int $outputPower;
+    protected ?float $outputPower = null;
     /**
      * Balanced link budget
      *
      * @var bool
      */
-    protected bool $balancedLinkBudget;
+    protected ?bool $balancedLinkBudget = null;
     /**
-     * @param int outputPower Output conducted power (dBm)
+     * @param float $outputPower Output conducted power (dBm)
      */
-    function setOutputPower(int $outputPower)
+    function setOutputPower(?float $outputPower)
     {
         $this->outputPower = $outputPower;
     }
     /**
-     * @return int Output conducted power (dBm)
+     * @return float Output conducted power (dBm)
      */
-    function getOutputPower() : int
+    function getOutputPower() : ?float
     {
         return $this->outputPower;
     }
     /**
-     * @param bool balancedLinkBudget Balanced link budget
+     * @param bool $balancedLinkBudget Balanced link budget
      */
-    function setBalancedLinkBudget(bool $balancedLinkBudget)
+    function setBalancedLinkBudget(?bool $balancedLinkBudget)
     {
         $this->balancedLinkBudget = $balancedLinkBudget;
     }
     /**
      * @return bool Balanced link budget
      */
-    function getBalancedLinkBudget() : bool
+    function getBalancedLinkBudget() : ?bool
     {
         return $this->balancedLinkBudget;
     }

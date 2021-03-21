@@ -2,21 +2,22 @@
 
 namespace Arimac\Sigfox\Definition;
 
-class Paging
+use Arimac\Sigfox\Definition;
+class Paging extends Definition
 {
     /** @var string */
-    protected string $next;
+    protected ?string $next = null;
     /**
      * @param string next
      */
-    function setNext(string $next)
+    function setNext(?string $next)
     {
         $this->next = $next;
     }
     /**
      * @return string next
      */
-    function getNext() : string
+    function getNext() : ?string
     {
         return $this->next;
     }

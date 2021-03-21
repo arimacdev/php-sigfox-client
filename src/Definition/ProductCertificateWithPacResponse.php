@@ -12,210 +12,210 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @var string
      */
-    protected string $externalId;
+    protected ?string $externalId = null;
     /**
      * Certificate's code
      *
      * @var int
      */
-    protected int $certificateCode;
+    protected ?int $certificateCode = null;
     /**
      * Certificate's index
      *
      * @var int
      */
-    protected int $certificateIndex;
+    protected ?int $certificateIndex = null;
     /**
      * Date of qualification (in milliseconds since the Unix Epoch)
      *
      * @var int
      */
-    protected int $qualificationTime;
+    protected ?int $qualificationTime = null;
     /**
      * Report number
      *
      * @var string
      */
-    protected string $reportNumber;
+    protected ?string $reportNumber = null;
     /**
      * Input sensitivity
      *
      * @var int
      */
-    protected int $inputSensitivity;
+    protected ?int $inputSensitivity = null;
     /**
      * true if the payload will be encrypted
      *
      * @var bool
      */
-    protected bool $encryptionPayload;
+    protected ?bool $encryptionPayload = null;
     /**
      * DevKit Flag
      *
      * @var bool
      */
-    protected bool $devKit;
+    protected ?bool $devKit = null;
     /**
      * List of modes of the certificate [1=DOWNLINK, 2=MONARCH]
      *
      * @var int[]
      */
-    protected array $modes;
+    protected ?array $modes = null;
     /** @var RadioConfiguration[] */
-    protected array $standards;
+    protected ?array $standards = null;
     /** @var ProductCertificateRadioConfiguration[] */
-    protected array $standardCfgs;
+    protected ?array $standardCfgs = null;
     /**
-     * @param string externalId External Id of the certificate
+     * @param string $externalId External Id of the certificate
      */
-    function setExternalId(string $externalId)
+    function setExternalId(?string $externalId)
     {
         $this->externalId = $externalId;
     }
     /**
      * @return string External Id of the certificate
      */
-    function getExternalId() : string
+    function getExternalId() : ?string
     {
         return $this->externalId;
     }
     /**
-     * @param int certificateCode Certificate's code
+     * @param int $certificateCode Certificate's code
      */
-    function setCertificateCode(int $certificateCode)
+    function setCertificateCode(?int $certificateCode)
     {
         $this->certificateCode = $certificateCode;
     }
     /**
      * @return int Certificate's code
      */
-    function getCertificateCode() : int
+    function getCertificateCode() : ?int
     {
         return $this->certificateCode;
     }
     /**
-     * @param int certificateIndex Certificate's index
+     * @param int $certificateIndex Certificate's index
      */
-    function setCertificateIndex(int $certificateIndex)
+    function setCertificateIndex(?int $certificateIndex)
     {
         $this->certificateIndex = $certificateIndex;
     }
     /**
      * @return int Certificate's index
      */
-    function getCertificateIndex() : int
+    function getCertificateIndex() : ?int
     {
         return $this->certificateIndex;
     }
     /**
-     * @param int qualificationTime Date of qualification (in milliseconds since the Unix Epoch)
+     * @param int $qualificationTime Date of qualification (in milliseconds since the Unix Epoch)
      */
-    function setQualificationTime(int $qualificationTime)
+    function setQualificationTime(?int $qualificationTime)
     {
         $this->qualificationTime = $qualificationTime;
     }
     /**
      * @return int Date of qualification (in milliseconds since the Unix Epoch)
      */
-    function getQualificationTime() : int
+    function getQualificationTime() : ?int
     {
         return $this->qualificationTime;
     }
     /**
-     * @param string reportNumber Report number
+     * @param string $reportNumber Report number
      */
-    function setReportNumber(string $reportNumber)
+    function setReportNumber(?string $reportNumber)
     {
         $this->reportNumber = $reportNumber;
     }
     /**
      * @return string Report number
      */
-    function getReportNumber() : string
+    function getReportNumber() : ?string
     {
         return $this->reportNumber;
     }
     /**
-     * @param int inputSensitivity Input sensitivity
+     * @param int $inputSensitivity Input sensitivity
      */
-    function setInputSensitivity(int $inputSensitivity)
+    function setInputSensitivity(?int $inputSensitivity)
     {
         $this->inputSensitivity = $inputSensitivity;
     }
     /**
      * @return int Input sensitivity
      */
-    function getInputSensitivity() : int
+    function getInputSensitivity() : ?int
     {
         return $this->inputSensitivity;
     }
     /**
-     * @param bool encryptionPayload true if the payload will be encrypted
+     * @param bool $encryptionPayload true if the payload will be encrypted
      */
-    function setEncryptionPayload(bool $encryptionPayload)
+    function setEncryptionPayload(?bool $encryptionPayload)
     {
         $this->encryptionPayload = $encryptionPayload;
     }
     /**
      * @return bool true if the payload will be encrypted
      */
-    function getEncryptionPayload() : bool
+    function getEncryptionPayload() : ?bool
     {
         return $this->encryptionPayload;
     }
     /**
-     * @param bool devKit DevKit Flag
+     * @param bool $devKit DevKit Flag
      */
-    function setDevKit(bool $devKit)
+    function setDevKit(?bool $devKit)
     {
         $this->devKit = $devKit;
     }
     /**
      * @return bool DevKit Flag
      */
-    function getDevKit() : bool
+    function getDevKit() : ?bool
     {
         return $this->devKit;
     }
     /**
-     * @param int[] modes List of modes of the certificate [1=DOWNLINK, 2=MONARCH]
+     * @param int[] $modes List of modes of the certificate [1=DOWNLINK, 2=MONARCH]
      */
-    function setModes(array $modes)
+    function setModes(?array $modes)
     {
         $this->modes = $modes;
     }
     /**
      * @return int[] List of modes of the certificate [1=DOWNLINK, 2=MONARCH]
      */
-    function getModes() : array
+    function getModes() : ?array
     {
         return $this->modes;
     }
     /**
      * @param RadioConfiguration[] standards
      */
-    function setStandards(array $standards)
+    function setStandards(?array $standards)
     {
         $this->standards = $standards;
     }
     /**
      * @return RadioConfiguration[] standards
      */
-    function getStandards() : array
+    function getStandards() : ?array
     {
         return $this->standards;
     }
     /**
      * @param ProductCertificateRadioConfiguration[] standardCfgs
      */
-    function setStandardCfgs(array $standardCfgs)
+    function setStandardCfgs(?array $standardCfgs)
     {
         $this->standardCfgs = $standardCfgs;
     }
     /**
      * @return ProductCertificateRadioConfiguration[] standardCfgs
      */
-    function getStandardCfgs() : array
+    function getStandardCfgs() : ?array
     {
         return $this->standardCfgs;
     }

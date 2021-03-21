@@ -2,10 +2,11 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 /**
  * minimal information about Hardware Family.
  */
-class MinHwFamily
+class MinHwFamily extends Definition
 {
     /** STANDARD */
     public const ID_STANDARD = 0;
@@ -24,21 +25,21 @@ class MinHwFamily
      *
      * @var int
      */
-    protected int $id;
+    protected ?int $id = null;
     /**
      * The hardware family's name
      *
      * @var string
      */
-    protected string $name;
+    protected ?string $name = null;
     /**
-     * @param int id Base station hardware family id.
+     * @param int $id Base station hardware family id.
      * - `MinHwFamily::ID_STANDARD`
      * - `MinHwFamily::ID_MINI`
      * - `MinHwFamily::ID_ACCESS_STATION_MINI`
      * - `MinHwFamily::ID_ACCESS_STATION_MICRO`
      */
-    function setId(int $id)
+    function setId(?int $id)
     {
         $this->id = $id;
     }
@@ -49,21 +50,21 @@ class MinHwFamily
      * - `MinHwFamily::ID_ACCESS_STATION_MINI`
      * - `MinHwFamily::ID_ACCESS_STATION_MICRO`
      */
-    function getId() : int
+    function getId() : ?int
     {
         return $this->id;
     }
     /**
-     * @param string name The hardware family's name
+     * @param string $name The hardware family's name
      */
-    function setName(string $name)
+    function setName(?string $name)
     {
         $this->name = $name;
     }
     /**
      * @return string The hardware family's name
      */
-    function getName() : string
+    function getName() : ?string
     {
         return $this->name;
     }

@@ -2,10 +2,11 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 /**
  * Generic information about intervention
  */
-class BaseSiteIntervention
+class BaseSiteIntervention extends Definition
 {
     /** ANTENNA */
     public const EQUIPMENTS_TO_CHANGE_ANTENNA = 0;
@@ -60,13 +61,13 @@ class BaseSiteIntervention
      *
      * @var string
      */
-    protected string $author;
+    protected ?string $author = null;
     /**
      * The comment about this intervention
      *
      * @var string
      */
-    protected string $comment;
+    protected ?string $comment = null;
     /**
      * List of equipment to change for this intervention
      * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ANTENNA`
@@ -88,49 +89,49 @@ class BaseSiteIntervention
      *
      * @var int[]
      */
-    protected array $equipmentsToChange;
+    protected ?array $equipmentsToChange = null;
     /**
      * The planned time of this intervention
      *
      * @var int
      */
-    protected int $plannedTime;
+    protected ?int $plannedTime = null;
     /**
      * The time of this intervention
      *
      * @var int
      */
-    protected int $interventionTime;
+    protected ?int $interventionTime = null;
     /**
      * The end time of this intervention
      *
      * @var int
      */
-    protected int $endTime;
+    protected ?int $endTime = null;
     /**
      * The bill code of this intervention
      *
      * @var string
      */
-    protected string $billCode;
+    protected ?string $billCode = null;
     /**
      * The request tracker identifier of this intervention
      *
      * @var string
      */
-    protected string $rtId;
+    protected ?string $rtId = null;
     /**
      * is this intervention closed
      *
      * @var bool
      */
-    protected bool $closed;
+    protected ?bool $closed = null;
     /**
      * The costs of this intervention
      *
-     * @var int
+     * @var float
      */
-    protected int $costs;
+    protected ?float $costs = null;
     /**
      * Convention status.
      * - `BaseSiteIntervention::TYPE_OTHER`
@@ -144,37 +145,37 @@ class BaseSiteIntervention
      *
      * @var int
      */
-    protected int $type;
+    protected ?int $type = null;
     /**
-     * @param string author The author of this intervention
+     * @param string $author The author of this intervention
      */
-    function setAuthor(string $author)
+    function setAuthor(?string $author)
     {
         $this->author = $author;
     }
     /**
      * @return string The author of this intervention
      */
-    function getAuthor() : string
+    function getAuthor() : ?string
     {
         return $this->author;
     }
     /**
-     * @param string comment The comment about this intervention
+     * @param string $comment The comment about this intervention
      */
-    function setComment(string $comment)
+    function setComment(?string $comment)
     {
         $this->comment = $comment;
     }
     /**
      * @return string The comment about this intervention
      */
-    function getComment() : string
+    function getComment() : ?string
     {
         return $this->comment;
     }
     /**
-     * @param int[] equipmentsToChange List of equipment to change for this intervention
+     * @param int[] $equipmentsToChange List of equipment to change for this intervention
      * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ANTENNA`
      * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_BASE_STATION`
      * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_LNA`
@@ -192,7 +193,7 @@ class BaseSiteIntervention
      * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_CIRCUIT_BREAKER`
      * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ROUTER_3G`
      */
-    function setEquipmentsToChange(array $equipmentsToChange)
+    function setEquipmentsToChange(?array $equipmentsToChange)
     {
         $this->equipmentsToChange = $equipmentsToChange;
     }
@@ -215,110 +216,110 @@ class BaseSiteIntervention
      * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_CIRCUIT_BREAKER`
      * - `BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ROUTER_3G`
      */
-    function getEquipmentsToChange() : array
+    function getEquipmentsToChange() : ?array
     {
         return $this->equipmentsToChange;
     }
     /**
-     * @param int plannedTime The planned time of this intervention
+     * @param int $plannedTime The planned time of this intervention
      */
-    function setPlannedTime(int $plannedTime)
+    function setPlannedTime(?int $plannedTime)
     {
         $this->plannedTime = $plannedTime;
     }
     /**
      * @return int The planned time of this intervention
      */
-    function getPlannedTime() : int
+    function getPlannedTime() : ?int
     {
         return $this->plannedTime;
     }
     /**
-     * @param int interventionTime The time of this intervention
+     * @param int $interventionTime The time of this intervention
      */
-    function setInterventionTime(int $interventionTime)
+    function setInterventionTime(?int $interventionTime)
     {
         $this->interventionTime = $interventionTime;
     }
     /**
      * @return int The time of this intervention
      */
-    function getInterventionTime() : int
+    function getInterventionTime() : ?int
     {
         return $this->interventionTime;
     }
     /**
-     * @param int endTime The end time of this intervention
+     * @param int $endTime The end time of this intervention
      */
-    function setEndTime(int $endTime)
+    function setEndTime(?int $endTime)
     {
         $this->endTime = $endTime;
     }
     /**
      * @return int The end time of this intervention
      */
-    function getEndTime() : int
+    function getEndTime() : ?int
     {
         return $this->endTime;
     }
     /**
-     * @param string billCode The bill code of this intervention
+     * @param string $billCode The bill code of this intervention
      */
-    function setBillCode(string $billCode)
+    function setBillCode(?string $billCode)
     {
         $this->billCode = $billCode;
     }
     /**
      * @return string The bill code of this intervention
      */
-    function getBillCode() : string
+    function getBillCode() : ?string
     {
         return $this->billCode;
     }
     /**
-     * @param string rtId The request tracker identifier of this intervention
+     * @param string $rtId The request tracker identifier of this intervention
      */
-    function setRtId(string $rtId)
+    function setRtId(?string $rtId)
     {
         $this->rtId = $rtId;
     }
     /**
      * @return string The request tracker identifier of this intervention
      */
-    function getRtId() : string
+    function getRtId() : ?string
     {
         return $this->rtId;
     }
     /**
-     * @param bool closed is this intervention closed
+     * @param bool $closed is this intervention closed
      */
-    function setClosed(bool $closed)
+    function setClosed(?bool $closed)
     {
         $this->closed = $closed;
     }
     /**
      * @return bool is this intervention closed
      */
-    function getClosed() : bool
+    function getClosed() : ?bool
     {
         return $this->closed;
     }
     /**
-     * @param int costs The costs of this intervention
+     * @param float $costs The costs of this intervention
      */
-    function setCosts(int $costs)
+    function setCosts(?float $costs)
     {
         $this->costs = $costs;
     }
     /**
-     * @return int The costs of this intervention
+     * @return float The costs of this intervention
      */
-    function getCosts() : int
+    function getCosts() : ?float
     {
         return $this->costs;
     }
     /**
-     * @param int type Convention status.
+     * @param int $type Convention status.
      * - `BaseSiteIntervention::TYPE_OTHER`
      * - `BaseSiteIntervention::TYPE_PRE_VISIT`
      * - `BaseSiteIntervention::TYPE_ANTENNA_INSTALLATION`
@@ -328,7 +329,7 @@ class BaseSiteIntervention
      * - `BaseSiteIntervention::TYPE_ELECTRICAL`
      * - `BaseSiteIntervention::TYPE_DISMANTLING`
      */
-    function setType(int $type)
+    function setType(?int $type)
     {
         $this->type = $type;
     }
@@ -343,7 +344,7 @@ class BaseSiteIntervention
      * - `BaseSiteIntervention::TYPE_ELECTRICAL`
      * - `BaseSiteIntervention::TYPE_DISMANTLING`
      */
-    function getType() : int
+    function getType() : ?int
     {
         return $this->type;
     }

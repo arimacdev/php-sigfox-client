@@ -2,128 +2,129 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 /**
  * Antenna related settings
  */
-class Antenna
+class Antenna extends Definition
 {
     /**
      * Antenna model of the station. E.g. "CXL 900-3LW", "CXL 900-6LW" , "" -> NONE ...
      *
      * @var string
      */
-    protected string $model;
+    protected ?string $model = null;
     /**
      * The base station's azimuth (in °)
      *
-     * @var int
+     * @var float
      */
-    protected int $azimuth;
+    protected ?float $azimuth = null;
     /**
      * The base station's attenuation signal (in %)
      *
-     * @var int
+     * @var float
      */
-    protected int $attenuation;
+    protected ?float $attenuation = null;
     /**
      * The base station's attenuation direct (in °). This field can be unset when updating.
      *
-     * @var int
+     * @var float
      */
-    protected int $attenuationDirect;
+    protected ?float $attenuationDirect = null;
     /**
      * The base station's attenuation indirect (in °). This field can be unset when updating.
      *
-     * @var int
+     * @var float
      */
-    protected int $attenuationIndirect;
+    protected ?float $attenuationIndirect = null;
     /**
      * The base station's tilt
      *
-     * @var int
+     * @var float
      */
-    protected int $tilt;
+    protected ?float $tilt = null;
     /**
-     * @param string model Antenna model of the station. E.g. "CXL 900-3LW", "CXL 900-6LW" , "" -> NONE ...
+     * @param string $model Antenna model of the station. E.g. "CXL 900-3LW", "CXL 900-6LW" , "" -> NONE ...
      */
-    function setModel(string $model)
+    function setModel(?string $model)
     {
         $this->model = $model;
     }
     /**
      * @return string Antenna model of the station. E.g. "CXL 900-3LW", "CXL 900-6LW" , "" -> NONE ...
      */
-    function getModel() : string
+    function getModel() : ?string
     {
         return $this->model;
     }
     /**
-     * @param int azimuth The base station's azimuth (in °)
+     * @param float $azimuth The base station's azimuth (in °)
      */
-    function setAzimuth(int $azimuth)
+    function setAzimuth(?float $azimuth)
     {
         $this->azimuth = $azimuth;
     }
     /**
-     * @return int The base station's azimuth (in °)
+     * @return float The base station's azimuth (in °)
      */
-    function getAzimuth() : int
+    function getAzimuth() : ?float
     {
         return $this->azimuth;
     }
     /**
-     * @param int attenuation The base station's attenuation signal (in %)
+     * @param float $attenuation The base station's attenuation signal (in %)
      */
-    function setAttenuation(int $attenuation)
+    function setAttenuation(?float $attenuation)
     {
         $this->attenuation = $attenuation;
     }
     /**
-     * @return int The base station's attenuation signal (in %)
+     * @return float The base station's attenuation signal (in %)
      */
-    function getAttenuation() : int
+    function getAttenuation() : ?float
     {
         return $this->attenuation;
     }
     /**
-     * @param int attenuationDirect The base station's attenuation direct (in °). This field can be unset when updating.
+     * @param float $attenuationDirect The base station's attenuation direct (in °). This field can be unset when updating.
      */
-    function setAttenuationDirect(int $attenuationDirect)
+    function setAttenuationDirect(?float $attenuationDirect)
     {
         $this->attenuationDirect = $attenuationDirect;
     }
     /**
-     * @return int The base station's attenuation direct (in °). This field can be unset when updating.
+     * @return float The base station's attenuation direct (in °). This field can be unset when updating.
      */
-    function getAttenuationDirect() : int
+    function getAttenuationDirect() : ?float
     {
         return $this->attenuationDirect;
     }
     /**
-     * @param int attenuationIndirect The base station's attenuation indirect (in °). This field can be unset when updating.
+     * @param float $attenuationIndirect The base station's attenuation indirect (in °). This field can be unset when updating.
      */
-    function setAttenuationIndirect(int $attenuationIndirect)
+    function setAttenuationIndirect(?float $attenuationIndirect)
     {
         $this->attenuationIndirect = $attenuationIndirect;
     }
     /**
-     * @return int The base station's attenuation indirect (in °). This field can be unset when updating.
+     * @return float The base station's attenuation indirect (in °). This field can be unset when updating.
      */
-    function getAttenuationIndirect() : int
+    function getAttenuationIndirect() : ?float
     {
         return $this->attenuationIndirect;
     }
     /**
-     * @param int tilt The base station's tilt
+     * @param float $tilt The base station's tilt
      */
-    function setTilt(int $tilt)
+    function setTilt(?float $tilt)
     {
         $this->tilt = $tilt;
     }
     /**
-     * @return int The base station's tilt
+     * @return float The base station's tilt
      */
-    function getTilt() : int
+    function getTilt() : ?float
     {
         return $this->tilt;
     }

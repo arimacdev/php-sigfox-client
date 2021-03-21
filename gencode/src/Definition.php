@@ -16,6 +16,8 @@ use PhpParser\Node\Stmt\Return_;
 use PhpParser\PrettyPrinter;
 
 use function Arimac\Sigfox\GenCode\Utils\camelToUnderscore;
+use function Arimac\Sigfox\GenCode\Utils\defToName;
+use function Arimac\Sigfox\GenCode\Utils\extractEnumFieldsFromDescription;
 
 class Definition
 {
@@ -30,12 +32,21 @@ class Definition
 
     protected $name;
 
-    protected $forceTraits = ["BillableGroup", "CallbackEmail", "GroupCallbackEmail", "ProfileIds"];
+    protected $forceTraits = [
+        "BillableGroup",
+        "CallbackEmail",
+        "GroupCallbackEmail",
+        "ProfileIds",
+        "SingleDeviceFields"
+    ];
 
-    public function __construct(string $name, ?string $description = null)
+    protected $namespaceName;
+
+    public function __construct(string $namespaceName, string $name, ?string $description = null)
     {
         $this->factory = new BuilderFactory;
-        $this->namespace = $this->factory->namespace("Arimac\Sigfox\Definition");
+        $this->namespaceName = $namespaceName;
+        $this->namespace = $this->factory->namespace($namespaceName);
         if (in_array($name, $this->forceTraits)) {
             $this->class = $this->factory->trait($name);
         } else {
@@ -62,6 +73,24 @@ class Definition
         return $prettyPrinter->prettyPrintFile($stmts);
     }
 
+    protected function setArrayProperty(string $propertyName, array $items)
+    {
+        $property = $this->factory->property($propertyName);
+        $property->setDefault($items);
+        $property->makeProtected();
+        $this->class->addStmt($property);
+    }
+
+    public function setRequired(array $required)
+    {
+        $this->setArrayProperty("required", $required);
+    }
+
+    public function setObjects(array $objects)
+    {
+        $this->setArrayProperty("objects", $objects);
+    }
+
     public function addProperty(string $name, string $type, bool $optional, ?string $message = null)
     {
         $property = $this->factory->property($name);
@@ -70,6 +99,9 @@ class Definition
             $type = "array";
         }
         $property->setType($optional ? new NullableType($type) : $type);
+        if ($optional) {
+            $property->setDefault(null);
+        }
         if ($message) {
             $property->setDocComment($this->formatDocComment("property", $message, $name, [["var", $docType]]));
         } else {
@@ -84,7 +116,7 @@ class Definition
         $param->setType($optional ? new NullableType($type) : $type);
         $method->addParam($param);
         if ($message) {
-            $method->setDocComment($this->formatDocComment("setter", "@param $docType $name " . $message, $name));
+            $method->setDocComment($this->formatDocComment("setter", "@param $docType \$$name " . $message, $name));
         } else {
             $method->setDocComment("/**\n * @param $docType $name\n */");
         }
@@ -105,19 +137,60 @@ class Definition
         $this->class->addStmt($method);
     }
 
-    public function addUse($name)
+    public function addUse($namespace, $name)
     {
-        $this->namespace->addStmt($this->factory->use("Arimac\Sigfox\Definition\\" . $name));
+        $this->namespace->addStmt($this->factory->use("$namespace\\" . $name));
     }
 
-    public function extend(string $name)
+    public function extend(string $namespace, string $name)
     {
-        $this->addUse($name);
+        $this->addUse($namespace, $name);
         if (in_array($name, $this->forceTraits)) {
             $this->class->addStmt($this->factory->useTrait($name));
         } else {
             $this->class->extend($name);
         }
+    }
+
+    public static function fromArray($namespace, $name, array $definition): Definition
+    {
+        $defClass = new Definition($namespace, $name, $definition["description"] ?? null);
+        addProperties($defClass, $definition);
+
+        $extended = false;
+        if (isset($definition["allOf"])) {
+            foreach ($definition["allOf"] as $allOf) {
+                if (isset($allOf["\$ref"])) {
+                    $extended = true;
+                    $defClass->extend("Arimac\\Sigfox\\Definition", defToName($allOf["\$ref"]));
+                } else if (isset($allOf["type"]) && $allOf["type"] == "object") {
+                    addProperties($defClass, $allOf);
+                }
+            }
+        }
+        if (!$extended && !in_array($name, $defClass->forceTraits)) {
+            $defClass->extend("Arimac\\Sigfox", "Definition");
+        }
+
+        return $defClass;
+    }
+
+    public function getNamespace(): string
+    {
+        return $this->namespaceName;
+    }
+
+    public function save()
+    {
+        $namespaceSlices = explode("\\", $this->namespaceName);
+        array_shift($namespaceSlices);
+        array_shift($namespaceSlices);
+        $dir = dirname(__DIR__) . "/../src/";
+        foreach ($namespaceSlices as $folder) {
+            $dir .= $folder . "/";
+            @mkdir($dir);
+        }
+        file_put_contents($dir . $this->getClassName() . ".php", $this->getContents());
     }
 
     protected function formatDocComment(
@@ -126,51 +199,24 @@ class Definition
         ?string $name = null,
         $docCommentParams = []
     ): string {
-        $lines = explode("\n", $message);
-        if (trim(end($lines)) === "") {
-            array_pop($lines);
-        }
+        $message = trim($message);
 
-        if (in_array($type, ["setter", "getter", "property"]) && count($lines) > 1) {
-            foreach ($lines as $key => $line) {
-                $matched = preg_match("/^(-\s)?(\d+)\s->\s(.*?)$/", trim($line), $groups);
-                if ($matched) {
-                    $description = $groups[3];
-                    $value = $groups[2];
-                    if (preg_match("/^([A-Z_]+)\s([A-Za-z][a-z]+)(.*)/", $description, $groups)) {
-                        $constName = $groups[1];
-                    } else if (preg_match('/^(.*?)\(([A-Z][^\s\-]+)\)/', $description, $groups)) {
-                        $constName =  $groups[1] . strtoupper($groups[2]);
-                    } else if (substr($description, 0, 14) == "computed using") {
-                        $constName = substr($description, 15);
-                    } else {
-                        $constName = $description;
-                    }
-                    $constName = strtoupper(str_replace(" ", "_", trim(preg_replace(
-                        "/[^A-Za-z0-9\s\-_]/",
-                        "",
-                        preg_replace(
-                            "/\((.*)\)/",
-                            "",
-                            $constName
-                        )
-                    ))));
-                    $constName = camelToUnderscore($name) . "_" . $constName;
-
-                    if ($type == "property") {
-                        $const = new Const_($constName, new LNumber((int)$value));
-                        $classConst = new ClassConst(
-                            [$const],
-                            StmtClass_::MODIFIER_PUBLIC,
-                            ["comments" => [BuilderHelpers::normalizeDocComment("/** $description */")]]
-                        );
-                        $this->class->addStmt($classConst);
-                    }
-
-                    $lines[$key] = sprintf("- `%s::%s`", $this->name, $constName);
+        if (in_array($type, ["setter", "getter", "property"]) && substr_count($message, "\n") > 0) {
+            $enumFields = extractEnumFieldsFromDescription($this->getClassName(), $name, $message);
+            if ($type == "property") {
+                foreach ($enumFields as $constName => $valDoc) {
+                    $const = new Const_($constName, new LNumber($valDoc[0]));
+                    $description = $valDoc[1];
+                    $classConst = new ClassConst(
+                        [$const],
+                        StmtClass_::MODIFIER_PUBLIC,
+                        ["comments" => [BuilderHelpers::normalizeDocComment("/** $description */")]]
+                    );
+                    $this->class->addStmt($classConst);
                 }
             }
         }
+        $lines = explode("\n", $message);
 
         $formatted = implode("\n * ", $lines);
         $formatted = "/**\n * $formatted\n";

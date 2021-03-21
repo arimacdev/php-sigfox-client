@@ -2,18 +2,21 @@
 
 namespace Arimac\Sigfox\Definition;
 
-class AsynchronousDeviceTransferJob
+use Arimac\Sigfox\Definition\AsynchronousDeviceTransferJob\DataItemItem;
+use Arimac\Sigfox\Definition;
+class AsynchronousDeviceTransferJob extends Definition
 {
+    protected $required = array('deviceTypeId');
     /**
      * The device type where new devices will be transfered
      *
      * @var string
      */
     protected string $deviceTypeId;
-    /** @var array */
-    protected ?array $data;
+    /** @var AsynchronousDeviceTransferJob\DataItemItem */
+    protected ?AsynchronousDeviceTransferJob\DataItemItem $data = null;
     /**
-     * @param string deviceTypeId The device type where new devices will be transfered
+     * @param string $deviceTypeId The device type where new devices will be transfered
      */
     function setDeviceTypeId(string $deviceTypeId)
     {
@@ -27,16 +30,16 @@ class AsynchronousDeviceTransferJob
         return $this->deviceTypeId;
     }
     /**
-     * @param array data
+     * @param AsynchronousDeviceTransferJob\DataItemItem data
      */
-    function setData(?array $data)
+    function setData(?AsynchronousDeviceTransferJob\DataItemItem $data)
     {
         $this->data = $data;
     }
     /**
-     * @return array data
+     * @return AsynchronousDeviceTransferJob\DataItemItem data
      */
-    function getData() : ?array
+    function getData() : ?AsynchronousDeviceTransferJob\DataItemItem
     {
         return $this->data;
     }

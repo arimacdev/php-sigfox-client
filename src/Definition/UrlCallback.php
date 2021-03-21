@@ -3,7 +3,6 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition\Callback;
-use Arimac\Sigfox\Definition\object;
 /**
  * Defines the properties needed to create a url callback
  */
@@ -14,138 +13,138 @@ class UrlCallback extends Callback
      *
      * @var string
      */
-    protected string $url;
+    protected ?string $url = null;
     /**
      * The http method used to send a callback
      *
      * @var string
      */
-    protected string $httpMethod;
+    protected ?string $httpMethod = null;
     /**
      * True if this callback is used for downlink, else false.
      *
      * @var bool
      */
-    protected bool $downlinkHook;
+    protected ?bool $downlinkHook = null;
     /**
      * The headers of the http request to send, as an object with key:value. This field can be unset when updating.
      *
-     * @var object
+     * @var array
      */
-    protected object $headers;
+    protected ?array $headers = null;
     /**
      * Send SNI (Server Name Indication) for SSL/TLS connections. Used by BATCH_URL and URL callbacks (optional).
      *
      * @var bool
      */
-    protected bool $sendSni;
+    protected ?bool $sendSni = null;
     /**
      * The body template of the request. Only if httpMethpd is set to POST or PUT. It can contain predefined and custom variables. Mandatory for URL callbacks. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $bodyTemplate;
+    protected ?string $bodyTemplate = null;
     /**
      * The body media type of the request, only if httpMethpd is set to POST or PUT. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $contentType;
+    protected ?string $contentType = null;
     /**
-     * @param string url The callback's url
+     * @param string $url The callback's url
      */
-    function setUrl(string $url)
+    function setUrl(?string $url)
     {
         $this->url = $url;
     }
     /**
      * @return string The callback's url
      */
-    function getUrl() : string
+    function getUrl() : ?string
     {
         return $this->url;
     }
     /**
-     * @param string httpMethod The http method used to send a callback
+     * @param string $httpMethod The http method used to send a callback
      */
-    function setHttpMethod(string $httpMethod)
+    function setHttpMethod(?string $httpMethod)
     {
         $this->httpMethod = $httpMethod;
     }
     /**
      * @return string The http method used to send a callback
      */
-    function getHttpMethod() : string
+    function getHttpMethod() : ?string
     {
         return $this->httpMethod;
     }
     /**
-     * @param bool downlinkHook True if this callback is used for downlink, else false.
+     * @param bool $downlinkHook True if this callback is used for downlink, else false.
      */
-    function setDownlinkHook(bool $downlinkHook)
+    function setDownlinkHook(?bool $downlinkHook)
     {
         $this->downlinkHook = $downlinkHook;
     }
     /**
      * @return bool True if this callback is used for downlink, else false.
      */
-    function getDownlinkHook() : bool
+    function getDownlinkHook() : ?bool
     {
         return $this->downlinkHook;
     }
     /**
-     * @param object headers The headers of the http request to send, as an object with key:value. This field can be unset when updating.
+     * @param array $headers The headers of the http request to send, as an object with key:value. This field can be unset when updating.
      */
-    function setHeaders(object $headers)
+    function setHeaders(?array $headers)
     {
         $this->headers = $headers;
     }
     /**
-     * @return object The headers of the http request to send, as an object with key:value. This field can be unset when updating.
+     * @return array The headers of the http request to send, as an object with key:value. This field can be unset when updating.
      */
-    function getHeaders() : object
+    function getHeaders() : ?array
     {
         return $this->headers;
     }
     /**
-     * @param bool sendSni Send SNI (Server Name Indication) for SSL/TLS connections. Used by BATCH_URL and URL callbacks (optional).
+     * @param bool $sendSni Send SNI (Server Name Indication) for SSL/TLS connections. Used by BATCH_URL and URL callbacks (optional).
      */
-    function setSendSni(bool $sendSni)
+    function setSendSni(?bool $sendSni)
     {
         $this->sendSni = $sendSni;
     }
     /**
      * @return bool Send SNI (Server Name Indication) for SSL/TLS connections. Used by BATCH_URL and URL callbacks (optional).
      */
-    function getSendSni() : bool
+    function getSendSni() : ?bool
     {
         return $this->sendSni;
     }
     /**
-     * @param string bodyTemplate The body template of the request. Only if httpMethpd is set to POST or PUT. It can contain predefined and custom variables. Mandatory for URL callbacks. This field can be unset when updating.
+     * @param string $bodyTemplate The body template of the request. Only if httpMethpd is set to POST or PUT. It can contain predefined and custom variables. Mandatory for URL callbacks. This field can be unset when updating.
      */
-    function setBodyTemplate(string $bodyTemplate)
+    function setBodyTemplate(?string $bodyTemplate)
     {
         $this->bodyTemplate = $bodyTemplate;
     }
     /**
      * @return string The body template of the request. Only if httpMethpd is set to POST or PUT. It can contain predefined and custom variables. Mandatory for URL callbacks. This field can be unset when updating.
      */
-    function getBodyTemplate() : string
+    function getBodyTemplate() : ?string
     {
         return $this->bodyTemplate;
     }
     /**
-     * @param string contentType The body media type of the request, only if httpMethpd is set to POST or PUT. This field can be unset when updating.
+     * @param string $contentType The body media type of the request, only if httpMethpd is set to POST or PUT. This field can be unset when updating.
      */
-    function setContentType(string $contentType)
+    function setContentType(?string $contentType)
     {
         $this->contentType = $contentType;
     }
     /**
      * @return string The body media type of the request, only if httpMethpd is set to POST or PUT. This field can be unset when updating.
      */
-    function getContentType() : string
+    function getContentType() : ?string
     {
         return $this->contentType;
     }

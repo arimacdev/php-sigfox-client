@@ -2,10 +2,11 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 /**
  * Generic information about a site
  */
-class BaseSite
+class BaseSite extends Definition
 {
     /** PROD */
     public const STATUS_PROD = 0;
@@ -56,25 +57,25 @@ class BaseSite
      *
      * @var string
      */
-    protected string $name;
+    protected ?string $name = null;
     /**
      * The lessor identifier of the site. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $lessorId;
+    protected ?string $lessorId = null;
     /**
      * The address of the site
      *
      * @var string
      */
-    protected string $address;
+    protected ?string $address = null;
     /**
      * Comment about the site. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $comment;
+    protected ?string $comment = null;
     /**
      * Site status:
      * - `BaseSite::STATUS_PROD`
@@ -92,13 +93,13 @@ class BaseSite
      *
      * @var int
      */
-    protected int $status;
+    protected ?int $status = null;
     /**
      * The comment of the status of the site. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $statusComment;
+    protected ?string $statusComment = null;
     /**
      * Station installation:
      * - `BaseSite::STATION_INSTALLATION_INDOOR_WITHOUT_CABINET`
@@ -108,7 +109,7 @@ class BaseSite
      *
      * @var int
      */
-    protected int $stationInstallation;
+    protected ?int $stationInstallation = null;
     /**
      * Inverter type:
      * - `BaseSite::INVERTER_INFO_NONE`
@@ -120,83 +121,83 @@ class BaseSite
      *
      * @var int
      */
-    protected int $inverterInfo;
+    protected ?int $inverterInfo = null;
     /**
      * is the site access to the aerial work platform
      *
      * @var bool
      */
-    protected bool $aerialWorkPlatformAccess;
+    protected ?bool $aerialWorkPlatformAccess = null;
     /**
      * the site's latitude
      *
-     * @var int
+     * @var float
      */
-    protected int $lat;
+    protected ?float $lat = null;
     /**
      * the site's longitutde
      *
-     * @var int
+     * @var float
      */
-    protected int $lng;
+    protected ?float $lng = null;
     /**
-     * @param string name The site's name
+     * @param string $name The site's name
      */
-    function setName(string $name)
+    function setName(?string $name)
     {
         $this->name = $name;
     }
     /**
      * @return string The site's name
      */
-    function getName() : string
+    function getName() : ?string
     {
         return $this->name;
     }
     /**
-     * @param string lessorId The lessor identifier of the site. This field can be unset when updating.
+     * @param string $lessorId The lessor identifier of the site. This field can be unset when updating.
      */
-    function setLessorId(string $lessorId)
+    function setLessorId(?string $lessorId)
     {
         $this->lessorId = $lessorId;
     }
     /**
      * @return string The lessor identifier of the site. This field can be unset when updating.
      */
-    function getLessorId() : string
+    function getLessorId() : ?string
     {
         return $this->lessorId;
     }
     /**
-     * @param string address The address of the site
+     * @param string $address The address of the site
      */
-    function setAddress(string $address)
+    function setAddress(?string $address)
     {
         $this->address = $address;
     }
     /**
      * @return string The address of the site
      */
-    function getAddress() : string
+    function getAddress() : ?string
     {
         return $this->address;
     }
     /**
-     * @param string comment Comment about the site. This field can be unset when updating.
+     * @param string $comment Comment about the site. This field can be unset when updating.
      */
-    function setComment(string $comment)
+    function setComment(?string $comment)
     {
         $this->comment = $comment;
     }
     /**
      * @return string Comment about the site. This field can be unset when updating.
      */
-    function getComment() : string
+    function getComment() : ?string
     {
         return $this->comment;
     }
     /**
-     * @param int status Site status:
+     * @param int $status Site status:
      * - `BaseSite::STATUS_PROD`
      * - `BaseSite::STATUS_REFUSED`
      * - `BaseSite::STATUS_INSTALLED`
@@ -210,7 +211,7 @@ class BaseSite
      * - `BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY`
      * - `BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY`
      */
-    function setStatus(int $status)
+    function setStatus(?int $status)
     {
         $this->status = $status;
     }
@@ -229,32 +230,32 @@ class BaseSite
      * - `BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY`
      * - `BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY`
      */
-    function getStatus() : int
+    function getStatus() : ?int
     {
         return $this->status;
     }
     /**
-     * @param string statusComment The comment of the status of the site. This field can be unset when updating.
+     * @param string $statusComment The comment of the status of the site. This field can be unset when updating.
      */
-    function setStatusComment(string $statusComment)
+    function setStatusComment(?string $statusComment)
     {
         $this->statusComment = $statusComment;
     }
     /**
      * @return string The comment of the status of the site. This field can be unset when updating.
      */
-    function getStatusComment() : string
+    function getStatusComment() : ?string
     {
         return $this->statusComment;
     }
     /**
-     * @param int stationInstallation Station installation:
+     * @param int $stationInstallation Station installation:
      * - `BaseSite::STATION_INSTALLATION_INDOOR_WITHOUT_CABINET`
      * - `BaseSite::STATION_INSTALLATION_OUTDOOR_WITH_CABINET`
      * - `BaseSite::STATION_INSTALLATION_INDOOR_WITH_CABINET`
      * - `BaseSite::STATION_INSTALLATION_OUTDOOR_WITHOUT_CABINET`
      */
-    function setStationInstallation(int $stationInstallation)
+    function setStationInstallation(?int $stationInstallation)
     {
         $this->stationInstallation = $stationInstallation;
     }
@@ -265,12 +266,12 @@ class BaseSite
      * - `BaseSite::STATION_INSTALLATION_INDOOR_WITH_CABINET`
      * - `BaseSite::STATION_INSTALLATION_OUTDOOR_WITHOUT_CABINET`
      */
-    function getStationInstallation() : int
+    function getStationInstallation() : ?int
     {
         return $this->stationInstallation;
     }
     /**
-     * @param int inverterInfo Inverter type:
+     * @param int $inverterInfo Inverter type:
      * - `BaseSite::INVERTER_INFO_NONE`
      * - `BaseSite::INVERTER_INFO_AC_POWER_HOST`
      * - `BaseSite::INVERTER_INFO_AC_POWER_HOST_INVERTER`
@@ -278,7 +279,7 @@ class BaseSite
      * - `BaseSite::INVERTER_INFO_DC_POWER_HOST_48V`
      * - `BaseSite::INVERTER_INFO_DC_POWER_SOLAR`
      */
-    function setInverterInfo(int $inverterInfo)
+    function setInverterInfo(?int $inverterInfo)
     {
         $this->inverterInfo = $inverterInfo;
     }
@@ -291,49 +292,49 @@ class BaseSite
      * - `BaseSite::INVERTER_INFO_DC_POWER_HOST_48V`
      * - `BaseSite::INVERTER_INFO_DC_POWER_SOLAR`
      */
-    function getInverterInfo() : int
+    function getInverterInfo() : ?int
     {
         return $this->inverterInfo;
     }
     /**
-     * @param bool aerialWorkPlatformAccess is the site access to the aerial work platform
+     * @param bool $aerialWorkPlatformAccess is the site access to the aerial work platform
      */
-    function setAerialWorkPlatformAccess(bool $aerialWorkPlatformAccess)
+    function setAerialWorkPlatformAccess(?bool $aerialWorkPlatformAccess)
     {
         $this->aerialWorkPlatformAccess = $aerialWorkPlatformAccess;
     }
     /**
      * @return bool is the site access to the aerial work platform
      */
-    function getAerialWorkPlatformAccess() : bool
+    function getAerialWorkPlatformAccess() : ?bool
     {
         return $this->aerialWorkPlatformAccess;
     }
     /**
-     * @param int lat the site's latitude
+     * @param float $lat the site's latitude
      */
-    function setLat(int $lat)
+    function setLat(?float $lat)
     {
         $this->lat = $lat;
     }
     /**
-     * @return int the site's latitude
+     * @return float the site's latitude
      */
-    function getLat() : int
+    function getLat() : ?float
     {
         return $this->lat;
     }
     /**
-     * @param int lng the site's longitutde
+     * @param float $lng the site's longitutde
      */
-    function setLng(int $lng)
+    function setLng(?float $lng)
     {
         $this->lng = $lng;
     }
     /**
-     * @return int the site's longitutde
+     * @return float the site's longitutde
      */
-    function getLng() : int
+    function getLng() : ?float
     {
         return $this->lng;
     }

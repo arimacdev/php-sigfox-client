@@ -2,11 +2,13 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 /**
  * Contract's id
  */
-class ContractId
+class ContractId extends Definition
 {
+    protected $required = array('id');
     /**
      * The contract's id
      *
@@ -14,7 +16,7 @@ class ContractId
      */
     protected string $id;
     /**
-     * @param string id The contract's id
+     * @param string $id The contract's id
      */
     function setId(string $id)
     {

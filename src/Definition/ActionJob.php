@@ -2,46 +2,47 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\object;
-class ActionJob
+use Arimac\Sigfox\Definition\ActionJob\Status;
+use Arimac\Sigfox\Definition;
+class ActionJob extends Definition
 {
     /**
      * If the job is finished or not
      *
      * @var bool
      */
-    protected bool $jobDone;
+    protected ?bool $jobDone = null;
     /**
      * the informations about the devices already treated
      *
-     * @var object
+     * @var ActionJob\Status
      */
-    protected object $status;
+    protected ?ActionJob\Status $status = null;
     /**
-     * @param bool jobDone If the job is finished or not
+     * @param bool $jobDone If the job is finished or not
      */
-    function setJobDone(bool $jobDone)
+    function setJobDone(?bool $jobDone)
     {
         $this->jobDone = $jobDone;
     }
     /**
      * @return bool If the job is finished or not
      */
-    function getJobDone() : bool
+    function getJobDone() : ?bool
     {
         return $this->jobDone;
     }
     /**
-     * @param object status the informations about the devices already treated
+     * @param ActionJob\Status $status the informations about the devices already treated
      */
-    function setStatus(object $status)
+    function setStatus(?ActionJob\Status $status)
     {
         $this->status = $status;
     }
     /**
-     * @return object the informations about the devices already treated
+     * @return ActionJob\Status the informations about the devices already treated
      */
-    function getStatus() : object
+    function getStatus() : ?ActionJob\Status
     {
         return $this->status;
     }

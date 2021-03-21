@@ -3,8 +3,10 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition\DeviceEditionBulk;
-class AsynchronousDeviceEditionJob
+use Arimac\Sigfox\Definition;
+class AsynchronousDeviceEditionJob extends Definition
 {
+    protected $required = array('data');
     /** @var DeviceEditionBulk[] */
     protected array $data;
     /**

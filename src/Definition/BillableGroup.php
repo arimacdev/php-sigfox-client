@@ -12,58 +12,58 @@ trait BillableGroup
      *
      * @var bool
      */
-    protected bool $billable;
+    protected ?bool $billable = null;
     /**
      * The technical contact email
      *
      * @var string
      */
-    protected string $technicalEmail;
+    protected ?string $technicalEmail = null;
     /**
      * Number of prototypes allowed. Accessible only for groups under SO
      *
      * @var int
      */
-    protected int $maxPrototypeAllowed;
+    protected ?int $maxPrototypeAllowed = null;
     /**
-     * @param bool billable true if the group is billable
+     * @param bool $billable true if the group is billable
      */
-    function setBillable(bool $billable)
+    function setBillable(?bool $billable)
     {
         $this->billable = $billable;
     }
     /**
      * @return bool true if the group is billable
      */
-    function getBillable() : bool
+    function getBillable() : ?bool
     {
         return $this->billable;
     }
     /**
-     * @param string technicalEmail The technical contact email
+     * @param string $technicalEmail The technical contact email
      */
-    function setTechnicalEmail(string $technicalEmail)
+    function setTechnicalEmail(?string $technicalEmail)
     {
         $this->technicalEmail = $technicalEmail;
     }
     /**
      * @return string The technical contact email
      */
-    function getTechnicalEmail() : string
+    function getTechnicalEmail() : ?string
     {
         return $this->technicalEmail;
     }
     /**
-     * @param int maxPrototypeAllowed Number of prototypes allowed. Accessible only for groups under SO
+     * @param int $maxPrototypeAllowed Number of prototypes allowed. Accessible only for groups under SO
      */
-    function setMaxPrototypeAllowed(int $maxPrototypeAllowed)
+    function setMaxPrototypeAllowed(?int $maxPrototypeAllowed)
     {
         $this->maxPrototypeAllowed = $maxPrototypeAllowed;
     }
     /**
      * @return int Number of prototypes allowed. Accessible only for groups under SO
      */
-    function getMaxPrototypeAllowed() : int
+    function getMaxPrototypeAllowed() : ?int
     {
         return $this->maxPrototypeAllowed;
     }

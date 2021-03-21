@@ -2,68 +2,69 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 /**
  * Generic information about a User
  */
-class CommonUser
+class CommonUser extends Definition
 {
     /**
      * The user's first name
      *
      * @var string
      */
-    protected string $firstName;
+    protected ?string $firstName = null;
     /**
      * The user's last name
      *
      * @var string
      */
-    protected string $lastName;
+    protected ?string $lastName = null;
     /**
      * The user's timezone
      *
      * @var string
      */
-    protected string $timezone;
+    protected ?string $timezone = null;
     /**
-     * @param string firstName The user's first name
+     * @param string $firstName The user's first name
      */
-    function setFirstName(string $firstName)
+    function setFirstName(?string $firstName)
     {
         $this->firstName = $firstName;
     }
     /**
      * @return string The user's first name
      */
-    function getFirstName() : string
+    function getFirstName() : ?string
     {
         return $this->firstName;
     }
     /**
-     * @param string lastName The user's last name
+     * @param string $lastName The user's last name
      */
-    function setLastName(string $lastName)
+    function setLastName(?string $lastName)
     {
         $this->lastName = $lastName;
     }
     /**
      * @return string The user's last name
      */
-    function getLastName() : string
+    function getLastName() : ?string
     {
         return $this->lastName;
     }
     /**
-     * @param string timezone The user's timezone
+     * @param string $timezone The user's timezone
      */
-    function setTimezone(string $timezone)
+    function setTimezone(?string $timezone)
     {
         $this->timezone = $timezone;
     }
     /**
      * @return string The user's timezone
      */
-    function getTimezone() : string
+    function getTimezone() : ?string
     {
         return $this->timezone;
     }

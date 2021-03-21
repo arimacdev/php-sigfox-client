@@ -12,38 +12,38 @@ trait GroupCallbackEmail
      *
      * @var string
      */
-    protected string $subject;
+    protected ?string $subject = null;
     /**
      * The body of the mail which have been sent
      *
      * @var string
      */
-    protected string $message;
+    protected ?string $message = null;
     /**
-     * @param string subject the subject of the mail which have been sent
+     * @param string $subject the subject of the mail which have been sent
      */
-    function setSubject(string $subject)
+    function setSubject(?string $subject)
     {
         $this->subject = $subject;
     }
     /**
      * @return string the subject of the mail which have been sent
      */
-    function getSubject() : string
+    function getSubject() : ?string
     {
         return $this->subject;
     }
     /**
-     * @param string message The body of the mail which have been sent
+     * @param string $message The body of the mail which have been sent
      */
-    function setMessage(string $message)
+    function setMessage(?string $message)
     {
         $this->message = $message;
     }
     /**
      * @return string The body of the mail which have been sent
      */
-    function getMessage() : string
+    function getMessage() : ?string
     {
         return $this->message;
     }

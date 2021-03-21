@@ -2,65 +2,65 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\Actions;
+use Arimac\Sigfox\Definition;
 /**
  * Defines a profile entity
  */
-class MinProfile
+class MinProfile extends Definition
 {
     /**
      * The profile's identifier
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /**
      * The profile's name
      *
      * @var string
      */
-    protected string $name;
-    /** @var Actions */
-    protected Actions $actions;
+    protected ?string $name = null;
+    /** @var string[] */
+    protected ?array $actions = null;
     /**
-     * @param string id The profile's identifier
+     * @param string $id The profile's identifier
      */
-    function setId(string $id)
+    function setId(?string $id)
     {
         $this->id = $id;
     }
     /**
      * @return string The profile's identifier
      */
-    function getId() : string
+    function getId() : ?string
     {
         return $this->id;
     }
     /**
-     * @param string name The profile's name
+     * @param string $name The profile's name
      */
-    function setName(string $name)
+    function setName(?string $name)
     {
         $this->name = $name;
     }
     /**
      * @return string The profile's name
      */
-    function getName() : string
+    function getName() : ?string
     {
         return $this->name;
     }
     /**
-     * @param Actions actions
+     * @param string[] actions
      */
-    function setActions(Actions $actions)
+    function setActions(?array $actions)
     {
         $this->actions = $actions;
     }
     /**
-     * @return Actions actions
+     * @return string[] actions
      */
-    function getActions() : Actions
+    function getActions() : ?array
     {
         return $this->actions;
     }

@@ -5,8 +5,6 @@ namespace Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\CellularConnectivityBase;
 use Arimac\Sigfox\Definition\MinGroup;
 use Arimac\Sigfox\Definition\MinBaseStation;
-use Arimac\Sigfox\Definition\Actions;
-use Arimac\Sigfox\Definition\Resources;
 /**
  * Cellular connectivity configuration for a base station.
  */
@@ -57,11 +55,11 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /** @var MinGroup */
-    protected MinGroup $group;
+    protected ?MinGroup $group = null;
     /** @var MinBaseStation */
-    protected MinBaseStation $baseStation;
+    protected ?MinBaseStation $baseStation = null;
     /**
      * State of a cellular connectivity configuration
      * - `CellularConnectivityForBs::STATE_ACTIVE`
@@ -72,7 +70,7 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *
      * @var int
      */
-    protected int $state;
+    protected ?int $state = null;
     /**
      * Synchronisation status of a cellular connectivity configuration
      * - `CellularConnectivityForBs::SYNC_STATUS_OK`
@@ -81,7 +79,7 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *
      * @var int
      */
-    protected int $syncStatus;
+    protected ?int $syncStatus = null;
     /**
      * Error status returned after a connectivity config switch
      * - `CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_SUCCESS`
@@ -93,7 +91,7 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *
      * @var int
      */
-    protected int $lastSwitchErrorStatus;
+    protected ?int $lastSwitchErrorStatus = null;
     /**
      * Error status returned after a connectivity config creation/edition
      * - `CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_SUCCESS`
@@ -105,62 +103,63 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *
      * @var int
      */
-    protected int $lastSetconfErrorStatus;
-    /** @var Actions */
-    protected Actions $actions;
-    /** @var Resources */
-    protected Resources $resources;
+    protected ?int $lastSetconfErrorStatus = null;
+    /** @var string[] */
+    protected ?array $actions = null;
+    /** @var string[] */
+    protected ?array $resources = null;
+    protected $objects = array('group' => '\\Arimac\\Sigfox\\Definition\\MinGroup', 'baseStation' => '\\Arimac\\Sigfox\\Definition\\MinBaseStation');
     /**
-     * @param string id The group's identifier
+     * @param string $id The group's identifier
      */
-    function setId(string $id)
+    function setId(?string $id)
     {
         $this->id = $id;
     }
     /**
      * @return string The group's identifier
      */
-    function getId() : string
+    function getId() : ?string
     {
         return $this->id;
     }
     /**
      * @param MinGroup group
      */
-    function setGroup(MinGroup $group)
+    function setGroup(?MinGroup $group)
     {
         $this->group = $group;
     }
     /**
      * @return MinGroup group
      */
-    function getGroup() : MinGroup
+    function getGroup() : ?MinGroup
     {
         return $this->group;
     }
     /**
      * @param MinBaseStation baseStation
      */
-    function setBaseStation(MinBaseStation $baseStation)
+    function setBaseStation(?MinBaseStation $baseStation)
     {
         $this->baseStation = $baseStation;
     }
     /**
      * @return MinBaseStation baseStation
      */
-    function getBaseStation() : MinBaseStation
+    function getBaseStation() : ?MinBaseStation
     {
         return $this->baseStation;
     }
     /**
-     * @param int state State of a cellular connectivity configuration
+     * @param int $state State of a cellular connectivity configuration
      * - `CellularConnectivityForBs::STATE_ACTIVE`
      * - `CellularConnectivityForBs::STATE_PASSIVE`
      * - `CellularConnectivityForBs::STATE_PENDING`
      * - `CellularConnectivityForBs::STATE_REJECTED`
      * - `CellularConnectivityForBs::STATE_DELETING`
      */
-    function setState(int $state)
+    function setState(?int $state)
     {
         $this->state = $state;
     }
@@ -172,17 +171,17 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      * - `CellularConnectivityForBs::STATE_REJECTED`
      * - `CellularConnectivityForBs::STATE_DELETING`
      */
-    function getState() : int
+    function getState() : ?int
     {
         return $this->state;
     }
     /**
-     * @param int syncStatus Synchronisation status of a cellular connectivity configuration
+     * @param int $syncStatus Synchronisation status of a cellular connectivity configuration
      * - `CellularConnectivityForBs::SYNC_STATUS_OK`
      * - `CellularConnectivityForBs::SYNC_STATUS_TO_BE_SENT`
      * - `CellularConnectivityForBs::SYNC_STATUS_SENT`
      */
-    function setSyncStatus(int $syncStatus)
+    function setSyncStatus(?int $syncStatus)
     {
         $this->syncStatus = $syncStatus;
     }
@@ -192,12 +191,12 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      * - `CellularConnectivityForBs::SYNC_STATUS_TO_BE_SENT`
      * - `CellularConnectivityForBs::SYNC_STATUS_SENT`
      */
-    function getSyncStatus() : int
+    function getSyncStatus() : ?int
     {
         return $this->syncStatus;
     }
     /**
-     * @param int lastSwitchErrorStatus Error status returned after a connectivity config switch
+     * @param int $lastSwitchErrorStatus Error status returned after a connectivity config switch
      * - `CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_SUCCESS`
      * - `CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_BAD_GSM_PIN`
      * - `CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_TOO_MANY_PIN_TRIES`
@@ -205,7 +204,7 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      * - `CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_NETWORK_REJECTED`
      * - `CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_UNKNOWN`
      */
-    function setLastSwitchErrorStatus(int $lastSwitchErrorStatus)
+    function setLastSwitchErrorStatus(?int $lastSwitchErrorStatus)
     {
         $this->lastSwitchErrorStatus = $lastSwitchErrorStatus;
     }
@@ -218,12 +217,12 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      * - `CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_NETWORK_REJECTED`
      * - `CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_UNKNOWN`
      */
-    function getLastSwitchErrorStatus() : int
+    function getLastSwitchErrorStatus() : ?int
     {
         return $this->lastSwitchErrorStatus;
     }
     /**
-     * @param int lastSetconfErrorStatus Error status returned after a connectivity config creation/edition
+     * @param int $lastSetconfErrorStatus Error status returned after a connectivity config creation/edition
      * - `CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_SUCCESS`
      * - `CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_BAD_FORMAT`
      * - `CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_EXISTING_CONFIG`
@@ -231,7 +230,7 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      * - `CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_CONFIG_ID_CONFLICT`
      * - `CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_UNKNOWN`
      */
-    function setLastSetconfErrorStatus(int $lastSetconfErrorStatus)
+    function setLastSetconfErrorStatus(?int $lastSetconfErrorStatus)
     {
         $this->lastSetconfErrorStatus = $lastSetconfErrorStatus;
     }
@@ -244,35 +243,35 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      * - `CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_CONFIG_ID_CONFLICT`
      * - `CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_UNKNOWN`
      */
-    function getLastSetconfErrorStatus() : int
+    function getLastSetconfErrorStatus() : ?int
     {
         return $this->lastSetconfErrorStatus;
     }
     /**
-     * @param Actions actions
+     * @param string[] actions
      */
-    function setActions(Actions $actions)
+    function setActions(?array $actions)
     {
         $this->actions = $actions;
     }
     /**
-     * @return Actions actions
+     * @return string[] actions
      */
-    function getActions() : Actions
+    function getActions() : ?array
     {
         return $this->actions;
     }
     /**
-     * @param Resources resources
+     * @param string[] resources
      */
-    function setResources(Resources $resources)
+    function setResources(?array $resources)
     {
         $this->resources = $resources;
     }
     /**
-     * @return Resources resources
+     * @return string[] resources
      */
-    function getResources() : Resources
+    function getResources() : ?array
     {
         return $this->resources;
     }

@@ -8,18 +8,18 @@ namespace Arimac\Sigfox\Definition;
 trait ProfileIds
 {
     /** @var string[] */
-    protected array $profileId;
+    protected ?array $profileId = null;
     /**
      * @param string[] profileId
      */
-    function setProfileId(array $profileId)
+    function setProfileId(?array $profileId)
     {
         $this->profileId = $profileId;
     }
     /**
      * @return string[] profileId
      */
-    function getProfileId() : array
+    function getProfileId() : ?array
     {
         return $this->profileId;
     }

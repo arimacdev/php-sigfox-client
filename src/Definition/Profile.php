@@ -4,115 +4,115 @@ namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition\MinGroup;
 use Arimac\Sigfox\Definition\MinRole;
-use Arimac\Sigfox\Definition\Actions;
-use Arimac\Sigfox\Definition\Resources;
-class Profile
+use Arimac\Sigfox\Definition;
+class Profile extends Definition
 {
     /**
      * The profiler identifier
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /**
      * The profile name
      *
      * @var string
      */
-    protected string $name;
+    protected ?string $name = null;
     /** @var MinGroup */
-    protected MinGroup $group;
+    protected ?MinGroup $group = null;
     /**
      * Lists the role contained in this profile.
      *
      * @var MinRole[]
      */
-    protected array $roles;
-    /** @var Actions */
-    protected Actions $actions;
-    /** @var Resources */
-    protected Resources $resources;
+    protected ?array $roles = null;
+    /** @var string[] */
+    protected ?array $actions = null;
+    /** @var string[] */
+    protected ?array $resources = null;
+    protected $objects = array('group' => '\\Arimac\\Sigfox\\Definition\\MinGroup');
     /**
-     * @param string id The profiler identifier
+     * @param string $id The profiler identifier
      */
-    function setId(string $id)
+    function setId(?string $id)
     {
         $this->id = $id;
     }
     /**
      * @return string The profiler identifier
      */
-    function getId() : string
+    function getId() : ?string
     {
         return $this->id;
     }
     /**
-     * @param string name The profile name
+     * @param string $name The profile name
      */
-    function setName(string $name)
+    function setName(?string $name)
     {
         $this->name = $name;
     }
     /**
      * @return string The profile name
      */
-    function getName() : string
+    function getName() : ?string
     {
         return $this->name;
     }
     /**
      * @param MinGroup group
      */
-    function setGroup(MinGroup $group)
+    function setGroup(?MinGroup $group)
     {
         $this->group = $group;
     }
     /**
      * @return MinGroup group
      */
-    function getGroup() : MinGroup
+    function getGroup() : ?MinGroup
     {
         return $this->group;
     }
     /**
-     * @param MinRole[] roles Lists the role contained in this profile.
+     * @param MinRole[] $roles Lists the role contained in this profile.
      */
-    function setRoles(array $roles)
+    function setRoles(?array $roles)
     {
         $this->roles = $roles;
     }
     /**
      * @return MinRole[] Lists the role contained in this profile.
      */
-    function getRoles() : array
+    function getRoles() : ?array
     {
         return $this->roles;
     }
     /**
-     * @param Actions actions
+     * @param string[] actions
      */
-    function setActions(Actions $actions)
+    function setActions(?array $actions)
     {
         $this->actions = $actions;
     }
     /**
-     * @return Actions actions
+     * @return string[] actions
      */
-    function getActions() : Actions
+    function getActions() : ?array
     {
         return $this->actions;
     }
     /**
-     * @param Resources resources
+     * @param string[] resources
      */
-    function setResources(Resources $resources)
+    function setResources(?array $resources)
     {
         $this->resources = $resources;
     }
     /**
-     * @return Resources resources
+     * @return string[] resources
      */
-    function getResources() : Resources
+    function getResources() : ?array
     {
         return $this->resources;
     }

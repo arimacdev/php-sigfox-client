@@ -15,50 +15,51 @@ class SiteConvention extends BaseSiteConvention
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /** @var MinSite */
-    protected MinSite $site;
+    protected ?MinSite $site = null;
     /** @var MinGroup */
-    protected MinGroup $group;
+    protected ?MinGroup $group = null;
+    protected $objects = array('site' => '\\Arimac\\Sigfox\\Definition\\MinSite', 'group' => '\\Arimac\\Sigfox\\Definition\\MinGroup');
     /**
-     * @param string id The convention's identifier
+     * @param string $id The convention's identifier
      */
-    function setId(string $id)
+    function setId(?string $id)
     {
         $this->id = $id;
     }
     /**
      * @return string The convention's identifier
      */
-    function getId() : string
+    function getId() : ?string
     {
         return $this->id;
     }
     /**
      * @param MinSite site
      */
-    function setSite(MinSite $site)
+    function setSite(?MinSite $site)
     {
         $this->site = $site;
     }
     /**
      * @return MinSite site
      */
-    function getSite() : MinSite
+    function getSite() : ?MinSite
     {
         return $this->site;
     }
     /**
      * @param MinGroup group
      */
-    function setGroup(MinGroup $group)
+    function setGroup(?MinGroup $group)
     {
         $this->group = $group;
     }
     /**
      * @return MinGroup group
      */
-    function getGroup() : MinGroup
+    function getGroup() : ?MinGroup
     {
         return $this->group;
     }

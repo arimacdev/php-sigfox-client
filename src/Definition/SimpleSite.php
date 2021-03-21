@@ -4,7 +4,6 @@ namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition\MinSite;
 use Arimac\Sigfox\Definition\MinHost;
-use Arimac\Sigfox\Definition\Actions;
 /**
  * Minimal information about a site linked to a Base Station.
  */
@@ -35,13 +34,13 @@ class SimpleSite extends MinSite
     /** INSTALLED CONNECTED ONLY PRIMARY */
     public const STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY = 15;
     /** @var MinHost */
-    protected MinHost $host;
+    protected ?MinHost $host = null;
     /**
      * external id of the site where the base station is installed
      *
      * @var int
      */
-    protected int $candidateExternalId;
+    protected ?int $candidateExternalId = null;
     /**
      * Site status
      * - `SimpleSite::STATUS_PROD`
@@ -59,45 +58,46 @@ class SimpleSite extends MinSite
      *
      * @var int
      */
-    protected int $status;
+    protected ?int $status = null;
     /**
      * id of the lessor of the site where the base station is installed
      *
      * @var string
      */
-    protected string $lessorId;
-    /** @var Actions */
-    protected Actions $actions;
+    protected ?string $lessorId = null;
+    /** @var string[] */
+    protected ?array $actions = null;
+    protected $objects = array('host' => '\\Arimac\\Sigfox\\Definition\\MinHost');
     /**
      * @param MinHost host
      */
-    function setHost(MinHost $host)
+    function setHost(?MinHost $host)
     {
         $this->host = $host;
     }
     /**
      * @return MinHost host
      */
-    function getHost() : MinHost
+    function getHost() : ?MinHost
     {
         return $this->host;
     }
     /**
-     * @param int candidateExternalId external id of the site where the base station is installed
+     * @param int $candidateExternalId external id of the site where the base station is installed
      */
-    function setCandidateExternalId(int $candidateExternalId)
+    function setCandidateExternalId(?int $candidateExternalId)
     {
         $this->candidateExternalId = $candidateExternalId;
     }
     /**
      * @return int external id of the site where the base station is installed
      */
-    function getCandidateExternalId() : int
+    function getCandidateExternalId() : ?int
     {
         return $this->candidateExternalId;
     }
     /**
-     * @param int status Site status
+     * @param int $status Site status
      * - `SimpleSite::STATUS_PROD`
      * - `SimpleSite::STATUS_REFUSED`
      * - `SimpleSite::STATUS_INSTALLED`
@@ -111,7 +111,7 @@ class SimpleSite extends MinSite
      * - `SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY`
      * - `SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY`
      */
-    function setStatus(int $status)
+    function setStatus(?int $status)
     {
         $this->status = $status;
     }
@@ -130,35 +130,35 @@ class SimpleSite extends MinSite
      * - `SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY`
      * - `SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY`
      */
-    function getStatus() : int
+    function getStatus() : ?int
     {
         return $this->status;
     }
     /**
-     * @param string lessorId id of the lessor of the site where the base station is installed
+     * @param string $lessorId id of the lessor of the site where the base station is installed
      */
-    function setLessorId(string $lessorId)
+    function setLessorId(?string $lessorId)
     {
         $this->lessorId = $lessorId;
     }
     /**
      * @return string id of the lessor of the site where the base station is installed
      */
-    function getLessorId() : string
+    function getLessorId() : ?string
     {
         return $this->lessorId;
     }
     /**
-     * @param Actions actions
+     * @param string[] actions
      */
-    function setActions(Actions $actions)
+    function setActions(?array $actions)
     {
         $this->actions = $actions;
     }
     /**
-     * @return Actions actions
+     * @return string[] actions
      */
-    function getActions() : Actions
+    function getActions() : ?array
     {
         return $this->actions;
     }

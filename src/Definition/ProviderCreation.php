@@ -5,6 +5,7 @@ namespace Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\BaseProvider;
 class ProviderCreation extends BaseProvider
 {
+    protected $required = array('groupId');
     /**
      * identifier of the group of this provider
      *
@@ -12,7 +13,7 @@ class ProviderCreation extends BaseProvider
      */
     protected string $groupId;
     /**
-     * @param string groupId identifier of the group of this provider
+     * @param string $groupId identifier of the group of this provider
      */
     function setGroupId(string $groupId)
     {

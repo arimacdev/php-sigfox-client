@@ -13,38 +13,38 @@ class UserCreation extends UserUpdate
      *
      * @var string
      */
-    protected string $email;
+    protected ?string $email = null;
     /**
      * Send an email to the user to create/change is password
      *
      * @var bool
      */
-    protected bool $sendWelcomeEmail;
+    protected ?bool $sendWelcomeEmail = null;
     /**
-     * @param string email The user's email
+     * @param string $email The user's email
      */
-    function setEmail(string $email)
+    function setEmail(?string $email)
     {
         $this->email = $email;
     }
     /**
      * @return string The user's email
      */
-    function getEmail() : string
+    function getEmail() : ?string
     {
         return $this->email;
     }
     /**
-     * @param bool sendWelcomeEmail Send an email to the user to create/change is password
+     * @param bool $sendWelcomeEmail Send an email to the user to create/change is password
      */
-    function setSendWelcomeEmail(bool $sendWelcomeEmail)
+    function setSendWelcomeEmail(?bool $sendWelcomeEmail)
     {
         $this->sendWelcomeEmail = $sendWelcomeEmail;
     }
     /**
      * @return bool Send an email to the user to create/change is password
      */
-    function getSendWelcomeEmail() : bool
+    function getSendWelcomeEmail() : ?bool
     {
         return $this->sendWelcomeEmail;
     }

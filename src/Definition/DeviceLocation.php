@@ -2,48 +2,49 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 /**
  * Contains the position of the device
  */
-class DeviceLocation
+class DeviceLocation extends Definition
 {
     /**
      * The device's estimated latitude
      *
-     * @var int
+     * @var float
      */
-    protected int $lat;
+    protected ?float $lat = null;
     /**
      * The device's estimated longitude
      *
-     * @var int
+     * @var float
      */
-    protected int $lng;
+    protected ?float $lng = null;
     /**
-     * @param int lat The device's estimated latitude
+     * @param float $lat The device's estimated latitude
      */
-    function setLat(int $lat)
+    function setLat(?float $lat)
     {
         $this->lat = $lat;
     }
     /**
-     * @return int The device's estimated latitude
+     * @return float The device's estimated latitude
      */
-    function getLat() : int
+    function getLat() : ?float
     {
         return $this->lat;
     }
     /**
-     * @param int lng The device's estimated longitude
+     * @param float $lng The device's estimated longitude
      */
-    function setLng(int $lng)
+    function setLng(?float $lng)
     {
         $this->lng = $lng;
     }
     /**
-     * @return int The device's estimated longitude
+     * @return float The device's estimated longitude
      */
-    function getLng() : int
+    function getLng() : ?float
     {
         return $this->lng;
     }

@@ -16,330 +16,331 @@ class ContractInfo extends CommonContractInfo
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /**
      * The contract external ID. It's used to identify the contract info in EDRs.
      *
      * @var string
      */
-    protected string $contractId;
+    protected ?string $contractId = null;
     /**
      * The ID of the user who created the contract in BSS.
      *
      * @var string
      */
-    protected string $userId;
+    protected ?string $userId = null;
     /** @var MinGroup */
-    protected MinGroup $group;
+    protected ?MinGroup $group = null;
     /** @var MinContractInfo */
-    protected MinContractInfo $order;
+    protected ?MinContractInfo $order = null;
     /**
      * The pricing model used by this contract info. - 1 -> Pricing model version 1. - 2 -> Pricing model version 2. - 3 -> Pricing model version 3.
      *
      * @var int
      */
-    protected int $pricingModel;
+    protected ?int $pricingModel = null;
     /**
      * The user id of contract's creator
      *
      * @var string
      */
-    protected string $createdBy;
+    protected ?string $createdBy = null;
     /**
      * Creation date of this contract (timestamp in milliseconds since Unix Epoch)
      *
      * @var int
      */
-    protected int $lastEditionTime;
+    protected ?int $lastEditionTime = null;
     /**
      * Creation date of this contract (timestamp in milliseconds since Unix Epoch)
      *
      * @var int
      */
-    protected int $creationTime;
+    protected ?int $creationTime = null;
     /**
      * The user id of the contract last editor
      *
      * @var string
      */
-    protected string $lastEditedBy;
+    protected ?string $lastEditedBy = null;
     /**
      * The start time (in milliseconds) of the contract
      *
      * @var int
      */
-    protected int $startTime;
+    protected ?int $startTime = null;
     /**
      * The contract timezone name as a Java TimeZone ID ("full name" version only, like "America/Costa_Rica").
      *
      * @var string
      */
-    protected string $timezone;
+    protected ?string $timezone = null;
     /**
      * The contract info subscription plan. - 0 -> Free order - 1 -> Pay As You Grow (PAYG) - 2 -> Committed Volume Plan (CVP) - 3 -> Flexible Committed Volume Plan (CVP Flex)
      *
      * @var int
      */
-    protected int $subscriptionPlan;
+    protected ?int $subscriptionPlan = null;
     /**
      * The token duration in months. Must be >= 0. 0 means unlimited time.
      *
      * @var int
      */
-    protected int $tokenDuration;
+    protected ?int $tokenDuration = null;
     /**
      * The list of "blacklisted" territories, as an array of NIP groups.
      *
      * @var MinGroup[]
      */
-    protected array $blacklistedTerritories;
+    protected ?array $blacklistedTerritories = null;
     /**
      * The number of tokens in use.
      *
      * @var int
      */
-    protected int $tokensInUse;
+    protected ?int $tokensInUse = null;
     /**
      * The number of tokens used (expired or revoked).
      *
      * @var int
      */
-    protected int $tokensUsed;
+    protected ?int $tokensUsed = null;
+    protected $objects = array('group' => '\\Arimac\\Sigfox\\Definition\\MinGroup', 'order' => '\\Arimac\\Sigfox\\Definition\\MinContractInfo');
     /**
-     * @param string id The contract ID.
+     * @param string $id The contract ID.
      */
-    function setId(string $id)
+    function setId(?string $id)
     {
         $this->id = $id;
     }
     /**
      * @return string The contract ID.
      */
-    function getId() : string
+    function getId() : ?string
     {
         return $this->id;
     }
     /**
-     * @param string contractId The contract external ID. It's used to identify the contract info in EDRs.
+     * @param string $contractId The contract external ID. It's used to identify the contract info in EDRs.
      */
-    function setContractId(string $contractId)
+    function setContractId(?string $contractId)
     {
         $this->contractId = $contractId;
     }
     /**
      * @return string The contract external ID. It's used to identify the contract info in EDRs.
      */
-    function getContractId() : string
+    function getContractId() : ?string
     {
         return $this->contractId;
     }
     /**
-     * @param string userId The ID of the user who created the contract in BSS.
+     * @param string $userId The ID of the user who created the contract in BSS.
      */
-    function setUserId(string $userId)
+    function setUserId(?string $userId)
     {
         $this->userId = $userId;
     }
     /**
      * @return string The ID of the user who created the contract in BSS.
      */
-    function getUserId() : string
+    function getUserId() : ?string
     {
         return $this->userId;
     }
     /**
      * @param MinGroup group
      */
-    function setGroup(MinGroup $group)
+    function setGroup(?MinGroup $group)
     {
         $this->group = $group;
     }
     /**
      * @return MinGroup group
      */
-    function getGroup() : MinGroup
+    function getGroup() : ?MinGroup
     {
         return $this->group;
     }
     /**
      * @param MinContractInfo order
      */
-    function setOrder(MinContractInfo $order)
+    function setOrder(?MinContractInfo $order)
     {
         $this->order = $order;
     }
     /**
      * @return MinContractInfo order
      */
-    function getOrder() : MinContractInfo
+    function getOrder() : ?MinContractInfo
     {
         return $this->order;
     }
     /**
-     * @param int pricingModel The pricing model used by this contract info. - 1 -> Pricing model version 1. - 2 -> Pricing model version 2. - 3 -> Pricing model version 3.
+     * @param int $pricingModel The pricing model used by this contract info. - 1 -> Pricing model version 1. - 2 -> Pricing model version 2. - 3 -> Pricing model version 3.
      */
-    function setPricingModel(int $pricingModel)
+    function setPricingModel(?int $pricingModel)
     {
         $this->pricingModel = $pricingModel;
     }
     /**
      * @return int The pricing model used by this contract info. - 1 -> Pricing model version 1. - 2 -> Pricing model version 2. - 3 -> Pricing model version 3.
      */
-    function getPricingModel() : int
+    function getPricingModel() : ?int
     {
         return $this->pricingModel;
     }
     /**
-     * @param string createdBy The user id of contract's creator
+     * @param string $createdBy The user id of contract's creator
      */
-    function setCreatedBy(string $createdBy)
+    function setCreatedBy(?string $createdBy)
     {
         $this->createdBy = $createdBy;
     }
     /**
      * @return string The user id of contract's creator
      */
-    function getCreatedBy() : string
+    function getCreatedBy() : ?string
     {
         return $this->createdBy;
     }
     /**
-     * @param int lastEditionTime Creation date of this contract (timestamp in milliseconds since Unix Epoch)
+     * @param int $lastEditionTime Creation date of this contract (timestamp in milliseconds since Unix Epoch)
      */
-    function setLastEditionTime(int $lastEditionTime)
+    function setLastEditionTime(?int $lastEditionTime)
     {
         $this->lastEditionTime = $lastEditionTime;
     }
     /**
      * @return int Creation date of this contract (timestamp in milliseconds since Unix Epoch)
      */
-    function getLastEditionTime() : int
+    function getLastEditionTime() : ?int
     {
         return $this->lastEditionTime;
     }
     /**
-     * @param int creationTime Creation date of this contract (timestamp in milliseconds since Unix Epoch)
+     * @param int $creationTime Creation date of this contract (timestamp in milliseconds since Unix Epoch)
      */
-    function setCreationTime(int $creationTime)
+    function setCreationTime(?int $creationTime)
     {
         $this->creationTime = $creationTime;
     }
     /**
      * @return int Creation date of this contract (timestamp in milliseconds since Unix Epoch)
      */
-    function getCreationTime() : int
+    function getCreationTime() : ?int
     {
         return $this->creationTime;
     }
     /**
-     * @param string lastEditedBy The user id of the contract last editor
+     * @param string $lastEditedBy The user id of the contract last editor
      */
-    function setLastEditedBy(string $lastEditedBy)
+    function setLastEditedBy(?string $lastEditedBy)
     {
         $this->lastEditedBy = $lastEditedBy;
     }
     /**
      * @return string The user id of the contract last editor
      */
-    function getLastEditedBy() : string
+    function getLastEditedBy() : ?string
     {
         return $this->lastEditedBy;
     }
     /**
-     * @param int startTime The start time (in milliseconds) of the contract
+     * @param int $startTime The start time (in milliseconds) of the contract
      */
-    function setStartTime(int $startTime)
+    function setStartTime(?int $startTime)
     {
         $this->startTime = $startTime;
     }
     /**
      * @return int The start time (in milliseconds) of the contract
      */
-    function getStartTime() : int
+    function getStartTime() : ?int
     {
         return $this->startTime;
     }
     /**
-     * @param string timezone The contract timezone name as a Java TimeZone ID ("full name" version only, like "America/Costa_Rica").
+     * @param string $timezone The contract timezone name as a Java TimeZone ID ("full name" version only, like "America/Costa_Rica").
      */
-    function setTimezone(string $timezone)
+    function setTimezone(?string $timezone)
     {
         $this->timezone = $timezone;
     }
     /**
      * @return string The contract timezone name as a Java TimeZone ID ("full name" version only, like "America/Costa_Rica").
      */
-    function getTimezone() : string
+    function getTimezone() : ?string
     {
         return $this->timezone;
     }
     /**
-     * @param int subscriptionPlan The contract info subscription plan. - 0 -> Free order - 1 -> Pay As You Grow (PAYG) - 2 -> Committed Volume Plan (CVP) - 3 -> Flexible Committed Volume Plan (CVP Flex)
+     * @param int $subscriptionPlan The contract info subscription plan. - 0 -> Free order - 1 -> Pay As You Grow (PAYG) - 2 -> Committed Volume Plan (CVP) - 3 -> Flexible Committed Volume Plan (CVP Flex)
      */
-    function setSubscriptionPlan(int $subscriptionPlan)
+    function setSubscriptionPlan(?int $subscriptionPlan)
     {
         $this->subscriptionPlan = $subscriptionPlan;
     }
     /**
      * @return int The contract info subscription plan. - 0 -> Free order - 1 -> Pay As You Grow (PAYG) - 2 -> Committed Volume Plan (CVP) - 3 -> Flexible Committed Volume Plan (CVP Flex)
      */
-    function getSubscriptionPlan() : int
+    function getSubscriptionPlan() : ?int
     {
         return $this->subscriptionPlan;
     }
     /**
-     * @param int tokenDuration The token duration in months. Must be >= 0. 0 means unlimited time.
+     * @param int $tokenDuration The token duration in months. Must be >= 0. 0 means unlimited time.
      */
-    function setTokenDuration(int $tokenDuration)
+    function setTokenDuration(?int $tokenDuration)
     {
         $this->tokenDuration = $tokenDuration;
     }
     /**
      * @return int The token duration in months. Must be >= 0. 0 means unlimited time.
      */
-    function getTokenDuration() : int
+    function getTokenDuration() : ?int
     {
         return $this->tokenDuration;
     }
     /**
-     * @param MinGroup[] blacklistedTerritories The list of "blacklisted" territories, as an array of NIP groups.
+     * @param MinGroup[] $blacklistedTerritories The list of "blacklisted" territories, as an array of NIP groups.
      */
-    function setBlacklistedTerritories(array $blacklistedTerritories)
+    function setBlacklistedTerritories(?array $blacklistedTerritories)
     {
         $this->blacklistedTerritories = $blacklistedTerritories;
     }
     /**
      * @return MinGroup[] The list of "blacklisted" territories, as an array of NIP groups.
      */
-    function getBlacklistedTerritories() : array
+    function getBlacklistedTerritories() : ?array
     {
         return $this->blacklistedTerritories;
     }
     /**
-     * @param int tokensInUse The number of tokens in use.
+     * @param int $tokensInUse The number of tokens in use.
      */
-    function setTokensInUse(int $tokensInUse)
+    function setTokensInUse(?int $tokensInUse)
     {
         $this->tokensInUse = $tokensInUse;
     }
     /**
      * @return int The number of tokens in use.
      */
-    function getTokensInUse() : int
+    function getTokensInUse() : ?int
     {
         return $this->tokensInUse;
     }
     /**
-     * @param int tokensUsed The number of tokens used (expired or revoked).
+     * @param int $tokensUsed The number of tokens used (expired or revoked).
      */
-    function setTokensUsed(int $tokensUsed)
+    function setTokensUsed(?int $tokensUsed)
     {
         $this->tokensUsed = $tokensUsed;
     }
     /**
      * @return int The number of tokens used (expired or revoked).
      */
-    function getTokensUsed() : int
+    function getTokensUsed() : ?int
     {
         return $this->tokensUsed;
     }

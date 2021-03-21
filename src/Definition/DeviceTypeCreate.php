@@ -9,6 +9,7 @@ use Arimac\Sigfox\Definition\ContractId;
  */
 class DeviceTypeCreate extends BaseDeviceType
 {
+    protected $required = array('contracts', 'groupId');
     /**
      * The device type's group identifier
      *
@@ -20,7 +21,7 @@ class DeviceTypeCreate extends BaseDeviceType
      *
      * @var string
      */
-    protected ?string $contractId;
+    protected ?string $contractId = null;
     /**
      * The device type's contract identifiers
      *
@@ -32,9 +33,9 @@ class DeviceTypeCreate extends BaseDeviceType
      *
      * @var string
      */
-    protected ?string $geolocPayloadConfigId;
+    protected ?string $geolocPayloadConfigId = null;
     /**
-     * @param string groupId The device type's group identifier
+     * @param string $groupId The device type's group identifier
      */
     function setGroupId(string $groupId)
     {
@@ -48,7 +49,7 @@ class DeviceTypeCreate extends BaseDeviceType
         return $this->groupId;
     }
     /**
-     * @param string contractId The device type's contract identifier
+     * @param string $contractId The device type's contract identifier
      */
     function setContractId(?string $contractId)
     {
@@ -62,7 +63,7 @@ class DeviceTypeCreate extends BaseDeviceType
         return $this->contractId;
     }
     /**
-     * @param ContractId[] contracts The device type's contract identifiers
+     * @param ContractId[] $contracts The device type's contract identifiers
      */
     function setContracts(array $contracts)
     {
@@ -76,7 +77,7 @@ class DeviceTypeCreate extends BaseDeviceType
         return $this->contracts;
     }
     /**
-     * @param string geolocPayloadConfigId The geoloc payload configuration identifier. Required if the payload type is Geolocation, else ignored.
+     * @param string $geolocPayloadConfigId The geoloc payload configuration identifier. Required if the payload type is Geolocation, else ignored.
      */
     function setGeolocPayloadConfigId(?string $geolocPayloadConfigId)
     {

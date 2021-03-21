@@ -2,7 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-class CellularConnectivityBase
+use Arimac\Sigfox\Definition;
+class CellularConnectivityBase extends Definition
 {
     /** REMOTE (Configuration provided by Cloud) */
     public const SOURCE_REMOTE = 0;
@@ -12,6 +13,7 @@ class CellularConnectivityBase
     public const SOURCE_DEFAULT = 2;
     /** TOOLS (Factory, AAT or secure-control) */
     public const SOURCE_TOOLS = 3;
+    protected $required = array('apn', 'name');
     /**
      * The name of the configuration
      *
@@ -29,25 +31,25 @@ class CellularConnectivityBase
      *
      * @var string
      */
-    protected ?string $username;
+    protected ?string $username = null;
     /**
      * The password used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
      *
      * @var string
      */
-    protected ?string $password;
+    protected ?string $password = null;
     /**
      * The PIN used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
      *
      * @var string
      */
-    protected ?string $pin;
+    protected ?string $pin = null;
     /**
      * Indicates if the cellular connectivity is registered on a roaming network.
      *
      * @var bool
      */
-    protected ?bool $roaming;
+    protected ?bool $roaming = null;
     /**
      * Configuration origin of the connectivity
      * - `CellularConnectivityBase::SOURCE_REMOTE`
@@ -57,9 +59,9 @@ class CellularConnectivityBase
      *
      * @var int
      */
-    protected ?int $source;
+    protected ?int $source = null;
     /**
-     * @param string name The name of the configuration
+     * @param string $name The name of the configuration
      */
     function setName(string $name)
     {
@@ -73,7 +75,7 @@ class CellularConnectivityBase
         return $this->name;
     }
     /**
-     * @param string apn The APN used to connect to the base station with this cellular connectivity configuration
+     * @param string $apn The APN used to connect to the base station with this cellular connectivity configuration
      */
     function setApn(string $apn)
     {
@@ -87,7 +89,7 @@ class CellularConnectivityBase
         return $this->apn;
     }
     /**
-     * @param string username The username used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     * @param string $username The username used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
      */
     function setUsername(?string $username)
     {
@@ -101,7 +103,7 @@ class CellularConnectivityBase
         return $this->username;
     }
     /**
-     * @param string password The password used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     * @param string $password The password used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
      */
     function setPassword(?string $password)
     {
@@ -115,7 +117,7 @@ class CellularConnectivityBase
         return $this->password;
     }
     /**
-     * @param string pin The PIN used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     * @param string $pin The PIN used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
      */
     function setPin(?string $pin)
     {
@@ -129,7 +131,7 @@ class CellularConnectivityBase
         return $this->pin;
     }
     /**
-     * @param bool roaming Indicates if the cellular connectivity is registered on a roaming network.
+     * @param bool $roaming Indicates if the cellular connectivity is registered on a roaming network.
      */
     function setRoaming(?bool $roaming)
     {
@@ -143,7 +145,7 @@ class CellularConnectivityBase
         return $this->roaming;
     }
     /**
-     * @param int source Configuration origin of the connectivity
+     * @param int $source Configuration origin of the connectivity
      * - `CellularConnectivityBase::SOURCE_REMOTE`
      * - `CellularConnectivityBase::SOURCE_OTHERS`
      * - `CellularConnectivityBase::SOURCE_DEFAULT`

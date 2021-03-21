@@ -2,65 +2,65 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\Actions;
+use Arimac\Sigfox\Definition;
 /**
  * Minimal information about a provider
  */
-class MinProvider
+class MinProvider extends Definition
 {
     /**
      * The provider identifier
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /**
      * The provider name
      *
      * @var string
      */
-    protected string $name;
-    /** @var Actions */
-    protected Actions $actions;
+    protected ?string $name = null;
+    /** @var string[] */
+    protected ?array $actions = null;
     /**
-     * @param string id The provider identifier
+     * @param string $id The provider identifier
      */
-    function setId(string $id)
+    function setId(?string $id)
     {
         $this->id = $id;
     }
     /**
      * @return string The provider identifier
      */
-    function getId() : string
+    function getId() : ?string
     {
         return $this->id;
     }
     /**
-     * @param string name The provider name
+     * @param string $name The provider name
      */
-    function setName(string $name)
+    function setName(?string $name)
     {
         $this->name = $name;
     }
     /**
      * @return string The provider name
      */
-    function getName() : string
+    function getName() : ?string
     {
         return $this->name;
     }
     /**
-     * @param Actions actions
+     * @param string[] actions
      */
-    function setActions(Actions $actions)
+    function setActions(?array $actions)
     {
         $this->actions = $actions;
     }
     /**
-     * @return Actions actions
+     * @return string[] actions
      */
-    function getActions() : Actions
+    function getActions() : ?array
     {
         return $this->actions;
     }

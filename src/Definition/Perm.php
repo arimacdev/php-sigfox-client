@@ -2,102 +2,101 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\Actions;
-use Arimac\Sigfox\Definition\Resources;
+use Arimac\Sigfox\Definition;
 /**
  * Information about a Permission
  */
-class Perm
+class Perm extends Definition
 {
     /**
      * The permission's code
      *
      * @var int
      */
-    protected int $code;
+    protected ?int $code = null;
     /**
      * The permission's name
      *
      * @var string
      */
-    protected string $name;
+    protected ?string $name = null;
     /**
      * The permission's description (in english)
      *
      * @var string
      */
-    protected string $description;
-    /** @var Actions */
-    protected Actions $actions;
-    /** @var Resources */
-    protected Resources $resources;
+    protected ?string $description = null;
+    /** @var string[] */
+    protected ?array $actions = null;
+    /** @var string[] */
+    protected ?array $resources = null;
     /**
-     * @param int code The permission's code
+     * @param int $code The permission's code
      */
-    function setCode(int $code)
+    function setCode(?int $code)
     {
         $this->code = $code;
     }
     /**
      * @return int The permission's code
      */
-    function getCode() : int
+    function getCode() : ?int
     {
         return $this->code;
     }
     /**
-     * @param string name The permission's name
+     * @param string $name The permission's name
      */
-    function setName(string $name)
+    function setName(?string $name)
     {
         $this->name = $name;
     }
     /**
      * @return string The permission's name
      */
-    function getName() : string
+    function getName() : ?string
     {
         return $this->name;
     }
     /**
-     * @param string description The permission's description (in english)
+     * @param string $description The permission's description (in english)
      */
-    function setDescription(string $description)
+    function setDescription(?string $description)
     {
         $this->description = $description;
     }
     /**
      * @return string The permission's description (in english)
      */
-    function getDescription() : string
+    function getDescription() : ?string
     {
         return $this->description;
     }
     /**
-     * @param Actions actions
+     * @param string[] actions
      */
-    function setActions(Actions $actions)
+    function setActions(?array $actions)
     {
         $this->actions = $actions;
     }
     /**
-     * @return Actions actions
+     * @return string[] actions
      */
-    function getActions() : Actions
+    function getActions() : ?array
     {
         return $this->actions;
     }
     /**
-     * @param Resources resources
+     * @param string[] resources
      */
-    function setResources(Resources $resources)
+    function setResources(?array $resources)
     {
         $this->resources = $resources;
     }
     /**
-     * @return Resources resources
+     * @return string[] resources
      */
-    function getResources() : Resources
+    function getResources() : ?array
     {
         return $this->resources;
     }

@@ -2,106 +2,108 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\object;
-class DownlinkAnswerStatus
+use Arimac\Sigfox\Definition\MinBaseStationWithType;
+use Arimac\Sigfox\Definition;
+class DownlinkAnswerStatus extends Definition
 {
     /**
      * base station to send downlink message
      *
-     * @var object
+     * @var MinBaseStationWithType
      */
-    protected object $baseStation;
+    protected ?MinBaseStationWithType $baseStation = null;
     /**
      * planned downlink power as it was computed by the backend
      *
-     * @var int
+     * @var float
      */
-    protected int $plannedPower;
+    protected ?float $plannedPower = null;
     /**
      * response content, hex encoded
      *
      * @var string
      */
-    protected string $data;
+    protected ?string $data = null;
     /**
      * name of the first operator which received the message as roaming
      *
      * @var string
      */
-    protected string $operator;
+    protected ?string $operator = null;
     /**
      * country of the operator
      *
      * @var string
      */
-    protected string $country;
+    protected ?string $country = null;
+    protected $objects = array('baseStation' => '\\Arimac\\Sigfox\\Definition\\MinBaseStationWithType');
     /**
-     * @param object baseStation base station to send downlink message
+     * @param MinBaseStationWithType $baseStation base station to send downlink message
      */
-    function setBaseStation(object $baseStation)
+    function setBaseStation(?MinBaseStationWithType $baseStation)
     {
         $this->baseStation = $baseStation;
     }
     /**
-     * @return object base station to send downlink message
+     * @return MinBaseStationWithType base station to send downlink message
      */
-    function getBaseStation() : object
+    function getBaseStation() : ?MinBaseStationWithType
     {
         return $this->baseStation;
     }
     /**
-     * @param int plannedPower planned downlink power as it was computed by the backend
+     * @param float $plannedPower planned downlink power as it was computed by the backend
      */
-    function setPlannedPower(int $plannedPower)
+    function setPlannedPower(?float $plannedPower)
     {
         $this->plannedPower = $plannedPower;
     }
     /**
-     * @return int planned downlink power as it was computed by the backend
+     * @return float planned downlink power as it was computed by the backend
      */
-    function getPlannedPower() : int
+    function getPlannedPower() : ?float
     {
         return $this->plannedPower;
     }
     /**
-     * @param string data response content, hex encoded
+     * @param string $data response content, hex encoded
      */
-    function setData(string $data)
+    function setData(?string $data)
     {
         $this->data = $data;
     }
     /**
      * @return string response content, hex encoded
      */
-    function getData() : string
+    function getData() : ?string
     {
         return $this->data;
     }
     /**
-     * @param string operator name of the first operator which received the message as roaming
+     * @param string $operator name of the first operator which received the message as roaming
      */
-    function setOperator(string $operator)
+    function setOperator(?string $operator)
     {
         $this->operator = $operator;
     }
     /**
      * @return string name of the first operator which received the message as roaming
      */
-    function getOperator() : string
+    function getOperator() : ?string
     {
         return $this->operator;
     }
     /**
-     * @param string country country of the operator
+     * @param string $country country of the operator
      */
-    function setCountry(string $country)
+    function setCountry(?string $country)
     {
         $this->country = $country;
     }
     /**
      * @return string country of the operator
      */
-    function getCountry() : string
+    function getCountry() : ?string
     {
         return $this->country;
     }

@@ -40,13 +40,13 @@ class DeviceTypeUpdate extends BaseDeviceType
      *
      * @var int
      */
-    protected int $payloadType;
+    protected ?int $payloadType = null;
     /**
      * The payload configuration. Required if the payload type is Custom, else ignored.
      *
      * @var string
      */
-    protected string $payloadConfig;
+    protected ?string $payloadConfig = null;
     /**
      * The downlink mode to use for the devices of this device type.
      * - `DeviceTypeUpdate::DOWNLINK_MODE_DIRECT`
@@ -56,46 +56,46 @@ class DeviceTypeUpdate extends BaseDeviceType
      *
      * @var int
      */
-    protected int $downlinkMode;
+    protected ?int $downlinkMode = null;
     /**
      * Downlink data to be sent to the devices of this device type if downlinkMode is equal to 0.
      * It must be an 8 byte length message given in hexadecimal string format.
      *
      * @var string
      */
-    protected string $downlinkDataString;
+    protected ?string $downlinkDataString = null;
     /**
      * The device types's description
      *
      * @var string
      */
-    protected string $description;
+    protected ?string $description = null;
     /**
      * The device type's contract identifier (must be on the same group than the device type)
      *
      * @var string
      */
-    protected string $contractId;
+    protected ?string $contractId = null;
     /**
      * The device type's contract identifiers (must be on the same group than the device type)
      *
      * @var ContractId[]
      */
-    protected array $contracts;
+    protected ?array $contracts = null;
     /**
      * The geoloc payload configuration identifier. Required if the payload type is Geolocation, else ignored.
      *
      * @var string
      */
-    protected string $geolocPayloadConfigId;
+    protected ?string $geolocPayloadConfigId = null;
     /**
      * Allows the automatic renewal of devices attached to this device type
      *
      * @var bool
      */
-    protected bool $automaticRenewal;
+    protected ?bool $automaticRenewal = null;
     /**
-     * @param int payloadType The payload type
+     * @param int $payloadType The payload type
      * - `DeviceTypeUpdate::PAYLOAD_TYPE_REGULAR`
      * - `DeviceTypeUpdate::PAYLOAD_TYPE_CUSTOM_GRAMMAR`
      * - `DeviceTypeUpdate::PAYLOAD_TYPE_GEOLOCATION`
@@ -103,7 +103,7 @@ class DeviceTypeUpdate extends BaseDeviceType
      * - `DeviceTypeUpdate::PAYLOAD_TYPE_RADIO_PLANNING_FRAME`
      * - `DeviceTypeUpdate::PAYLOAD_TYPE_SENSITV2`
      */
-    function setPayloadType(int $payloadType)
+    function setPayloadType(?int $payloadType)
     {
         $this->payloadType = $payloadType;
     }
@@ -116,32 +116,32 @@ class DeviceTypeUpdate extends BaseDeviceType
      * - `DeviceTypeUpdate::PAYLOAD_TYPE_RADIO_PLANNING_FRAME`
      * - `DeviceTypeUpdate::PAYLOAD_TYPE_SENSITV2`
      */
-    function getPayloadType() : int
+    function getPayloadType() : ?int
     {
         return $this->payloadType;
     }
     /**
-     * @param string payloadConfig The payload configuration. Required if the payload type is Custom, else ignored.
+     * @param string $payloadConfig The payload configuration. Required if the payload type is Custom, else ignored.
      */
-    function setPayloadConfig(string $payloadConfig)
+    function setPayloadConfig(?string $payloadConfig)
     {
         $this->payloadConfig = $payloadConfig;
     }
     /**
      * @return string The payload configuration. Required if the payload type is Custom, else ignored.
      */
-    function getPayloadConfig() : string
+    function getPayloadConfig() : ?string
     {
         return $this->payloadConfig;
     }
     /**
-     * @param int downlinkMode The downlink mode to use for the devices of this device type.
+     * @param int $downlinkMode The downlink mode to use for the devices of this device type.
      * - `DeviceTypeUpdate::DOWNLINK_MODE_DIRECT`
      * - `DeviceTypeUpdate::DOWNLINK_MODE_CALLBACK`
      * - `DeviceTypeUpdate::DOWNLINK_MODE_NONE`
      * - `DeviceTypeUpdate::DOWNLINK_MODE_MANAGED`
      */
-    function setDownlinkMode(int $downlinkMode)
+    function setDownlinkMode(?int $downlinkMode)
     {
         $this->downlinkMode = $downlinkMode;
     }
@@ -152,15 +152,15 @@ class DeviceTypeUpdate extends BaseDeviceType
      * - `DeviceTypeUpdate::DOWNLINK_MODE_NONE`
      * - `DeviceTypeUpdate::DOWNLINK_MODE_MANAGED`
      */
-    function getDownlinkMode() : int
+    function getDownlinkMode() : ?int
     {
         return $this->downlinkMode;
     }
     /**
-     * @param string downlinkDataString Downlink data to be sent to the devices of this device type if downlinkMode is equal to 0.
+     * @param string $downlinkDataString Downlink data to be sent to the devices of this device type if downlinkMode is equal to 0.
      * It must be an 8 byte length message given in hexadecimal string format.
      */
-    function setDownlinkDataString(string $downlinkDataString)
+    function setDownlinkDataString(?string $downlinkDataString)
     {
         $this->downlinkDataString = $downlinkDataString;
     }
@@ -168,77 +168,77 @@ class DeviceTypeUpdate extends BaseDeviceType
      * @return string Downlink data to be sent to the devices of this device type if downlinkMode is equal to 0.
      * It must be an 8 byte length message given in hexadecimal string format.
      */
-    function getDownlinkDataString() : string
+    function getDownlinkDataString() : ?string
     {
         return $this->downlinkDataString;
     }
     /**
-     * @param string description The device types's description
+     * @param string $description The device types's description
      */
-    function setDescription(string $description)
+    function setDescription(?string $description)
     {
         $this->description = $description;
     }
     /**
      * @return string The device types's description
      */
-    function getDescription() : string
+    function getDescription() : ?string
     {
         return $this->description;
     }
     /**
-     * @param string contractId The device type's contract identifier (must be on the same group than the device type)
+     * @param string $contractId The device type's contract identifier (must be on the same group than the device type)
      */
-    function setContractId(string $contractId)
+    function setContractId(?string $contractId)
     {
         $this->contractId = $contractId;
     }
     /**
      * @return string The device type's contract identifier (must be on the same group than the device type)
      */
-    function getContractId() : string
+    function getContractId() : ?string
     {
         return $this->contractId;
     }
     /**
-     * @param ContractId[] contracts The device type's contract identifiers (must be on the same group than the device type)
+     * @param ContractId[] $contracts The device type's contract identifiers (must be on the same group than the device type)
      */
-    function setContracts(array $contracts)
+    function setContracts(?array $contracts)
     {
         $this->contracts = $contracts;
     }
     /**
      * @return ContractId[] The device type's contract identifiers (must be on the same group than the device type)
      */
-    function getContracts() : array
+    function getContracts() : ?array
     {
         return $this->contracts;
     }
     /**
-     * @param string geolocPayloadConfigId The geoloc payload configuration identifier. Required if the payload type is Geolocation, else ignored.
+     * @param string $geolocPayloadConfigId The geoloc payload configuration identifier. Required if the payload type is Geolocation, else ignored.
      */
-    function setGeolocPayloadConfigId(string $geolocPayloadConfigId)
+    function setGeolocPayloadConfigId(?string $geolocPayloadConfigId)
     {
         $this->geolocPayloadConfigId = $geolocPayloadConfigId;
     }
     /**
      * @return string The geoloc payload configuration identifier. Required if the payload type is Geolocation, else ignored.
      */
-    function getGeolocPayloadConfigId() : string
+    function getGeolocPayloadConfigId() : ?string
     {
         return $this->geolocPayloadConfigId;
     }
     /**
-     * @param bool automaticRenewal Allows the automatic renewal of devices attached to this device type
+     * @param bool $automaticRenewal Allows the automatic renewal of devices attached to this device type
      */
-    function setAutomaticRenewal(bool $automaticRenewal)
+    function setAutomaticRenewal(?bool $automaticRenewal)
     {
         $this->automaticRenewal = $automaticRenewal;
     }
     /**
      * @return bool Allows the automatic renewal of devices attached to this device type
      */
-    function getAutomaticRenewal() : bool
+    function getAutomaticRenewal() : ?bool
     {
         return $this->automaticRenewal;
     }

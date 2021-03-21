@@ -2,46 +2,47 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\object;
-class ReplaceResponse
+use Arimac\Sigfox\Definition\ReplaceResponse\Status;
+use Arimac\Sigfox\Definition;
+class ReplaceResponse extends Definition
 {
     /**
      * The total number of devices to be replaced
      *
      * @var int
      */
-    protected int $total;
+    protected ?int $total = null;
     /**
      * The information about the devices already processed
      *
-     * @var object
+     * @var ReplaceResponse\Status
      */
-    protected object $status;
+    protected ?ReplaceResponse\Status $status = null;
     /**
-     * @param int total The total number of devices to be replaced
+     * @param int $total The total number of devices to be replaced
      */
-    function setTotal(int $total)
+    function setTotal(?int $total)
     {
         $this->total = $total;
     }
     /**
      * @return int The total number of devices to be replaced
      */
-    function getTotal() : int
+    function getTotal() : ?int
     {
         return $this->total;
     }
     /**
-     * @param object status The information about the devices already processed
+     * @param ReplaceResponse\Status $status The information about the devices already processed
      */
-    function setStatus(object $status)
+    function setStatus(?ReplaceResponse\Status $status)
     {
         $this->status = $status;
     }
     /**
-     * @return object The information about the devices already processed
+     * @return ReplaceResponse\Status The information about the devices already processed
      */
-    function getStatus() : object
+    function getStatus() : ?ReplaceResponse\Status
     {
         return $this->status;
     }

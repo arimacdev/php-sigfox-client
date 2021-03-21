@@ -2,11 +2,13 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 /**
  * Defines the device's common properties for reading or creation (not update)
  */
-class CommonDevice
+class CommonDevice extends Definition
 {
+    protected $required = array('id', 'name');
     /**
      * The device's identifier (hexadecimal format)
      *
@@ -20,7 +22,7 @@ class CommonDevice
      */
     protected string $name;
     /**
-     * @param string id The device's identifier (hexadecimal format)
+     * @param string $id The device's identifier (hexadecimal format)
      */
     function setId(string $id)
     {
@@ -34,7 +36,7 @@ class CommonDevice
         return $this->id;
     }
     /**
-     * @param string name The device's name
+     * @param string $name The device's name
      */
     function setName(string $name)
     {

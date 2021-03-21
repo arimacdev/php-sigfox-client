@@ -2,62 +2,62 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\Actions;
-class MinSite
+use Arimac\Sigfox\Definition;
+class MinSite extends Definition
 {
     /**
      * The site's identifier
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /**
      * The site's name
      *
      * @var string
      */
-    protected string $name;
-    /** @var Actions */
-    protected Actions $actions;
+    protected ?string $name = null;
+    /** @var string[] */
+    protected ?array $actions = null;
     /**
-     * @param string id The site's identifier
+     * @param string $id The site's identifier
      */
-    function setId(string $id)
+    function setId(?string $id)
     {
         $this->id = $id;
     }
     /**
      * @return string The site's identifier
      */
-    function getId() : string
+    function getId() : ?string
     {
         return $this->id;
     }
     /**
-     * @param string name The site's name
+     * @param string $name The site's name
      */
-    function setName(string $name)
+    function setName(?string $name)
     {
         $this->name = $name;
     }
     /**
      * @return string The site's name
      */
-    function getName() : string
+    function getName() : ?string
     {
         return $this->name;
     }
     /**
-     * @param Actions actions
+     * @param string[] actions
      */
-    function setActions(Actions $actions)
+    function setActions(?array $actions)
     {
         $this->actions = $actions;
     }
     /**
-     * @return Actions actions
+     * @return string[] actions
      */
-    function getActions() : Actions
+    function getActions() : ?array
     {
         return $this->actions;
     }

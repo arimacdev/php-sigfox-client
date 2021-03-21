@@ -11,38 +11,38 @@ class ProductCertificate extends RadioCertificate
      *
      * @var ProductCertificateRadioConfiguration[]
      */
-    protected array $radioConfigurations;
+    protected ?array $radioConfigurations = null;
     /**
      * The product certificate has repeater function or not
      *
      * @var bool
      */
-    protected bool $devKit;
+    protected ?bool $devKit = null;
     /**
-     * @param ProductCertificateRadioConfiguration[] radioConfigurations Radio configurations available for this certificate
+     * @param ProductCertificateRadioConfiguration[] $radioConfigurations Radio configurations available for this certificate
      */
-    function setRadioConfigurations(array $radioConfigurations)
+    function setRadioConfigurations(?array $radioConfigurations)
     {
         $this->radioConfigurations = $radioConfigurations;
     }
     /**
      * @return ProductCertificateRadioConfiguration[] Radio configurations available for this certificate
      */
-    function getRadioConfigurations() : array
+    function getRadioConfigurations() : ?array
     {
         return $this->radioConfigurations;
     }
     /**
-     * @param bool devKit The product certificate has repeater function or not
+     * @param bool $devKit The product certificate has repeater function or not
      */
-    function setDevKit(bool $devKit)
+    function setDevKit(?bool $devKit)
     {
         $this->devKit = $devKit;
     }
     /**
      * @return bool The product certificate has repeater function or not
      */
-    function getDevKit() : bool
+    function getDevKit() : ?bool
     {
         return $this->devKit;
     }

@@ -2,10 +2,11 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 /**
  * Defines the properties of certificate radio configurations
  */
-class RadioConfiguration
+class RadioConfiguration extends Definition
 {
     /** RC1 */
     public const ID_RC1 = 0;
@@ -23,6 +24,7 @@ class RadioConfiguration
     public const ID_RC6 = 6;
     /** RC7 */
     public const ID_RC7 = 7;
+    protected $required = array('id');
     /**
      * The radio configuration identifier
      * - `RadioConfiguration::ID_RC1`
@@ -38,7 +40,7 @@ class RadioConfiguration
      */
     protected int $id;
     /**
-     * @param int id The radio configuration identifier
+     * @param int $id The radio configuration identifier
      * - `RadioConfiguration::ID_RC1`
      * - `RadioConfiguration::ID_RC2`
      * - `RadioConfiguration::ID_RC3`

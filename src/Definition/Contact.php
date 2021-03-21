@@ -10,18 +10,18 @@ class Contact extends BaseContact
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /**
-     * @param string id The contact's identifier
+     * @param string $id The contact's identifier
      */
-    function setId(string $id)
+    function setId(?string $id)
     {
         $this->id = $id;
     }
     /**
      * @return string The contact's identifier
      */
-    function getId() : string
+    function getId() : ?string
     {
         return $this->id;
     }

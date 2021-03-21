@@ -2,45 +2,46 @@
 
 namespace Arimac\Sigfox\Definition;
 
-class LatLng
+use Arimac\Sigfox\Definition;
+class LatLng extends Definition
 {
     /**
      * The latitude in degrees.
      *
-     * @var int
+     * @var float
      */
-    protected int $lat;
+    protected ?float $lat = null;
     /**
      * The longitude in degrees.
      *
-     * @var int
+     * @var float
      */
-    protected int $lng;
+    protected ?float $lng = null;
     /**
-     * @param int lat The latitude in degrees.
+     * @param float $lat The latitude in degrees.
      */
-    function setLat(int $lat)
+    function setLat(?float $lat)
     {
         $this->lat = $lat;
     }
     /**
-     * @return int The latitude in degrees.
+     * @return float The latitude in degrees.
      */
-    function getLat() : int
+    function getLat() : ?float
     {
         return $this->lat;
     }
     /**
-     * @param int lng The longitude in degrees.
+     * @param float $lng The longitude in degrees.
      */
-    function setLng(int $lng)
+    function setLng(?float $lng)
     {
         $this->lng = $lng;
     }
     /**
-     * @return int The longitude in degrees.
+     * @return float The longitude in degrees.
      */
-    function getLng() : int
+    function getLng() : ?float
     {
         return $this->lng;
     }

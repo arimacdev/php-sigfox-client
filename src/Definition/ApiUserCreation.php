@@ -2,11 +2,13 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 /**
  * Defines the API user properties for creation
  */
-class ApiUserCreation
+class ApiUserCreation extends Definition
 {
+    protected $required = array('groupId', 'name', 'profileIds', 'timezone');
     /**
      * The group identifer
      *
@@ -32,7 +34,7 @@ class ApiUserCreation
      */
     protected array $profileIds;
     /**
-     * @param string groupId The group identifer
+     * @param string $groupId The group identifer
      */
     function setGroupId(string $groupId)
     {
@@ -46,7 +48,7 @@ class ApiUserCreation
         return $this->groupId;
     }
     /**
-     * @param string name The API user name
+     * @param string $name The API user name
      */
     function setName(string $name)
     {
@@ -60,7 +62,7 @@ class ApiUserCreation
         return $this->name;
     }
     /**
-     * @param string timezone The API user timezone as a Java TimeZone ID ("full name" version only, like "America/Costa_Rica")
+     * @param string $timezone The API user timezone as a Java TimeZone ID ("full name" version only, like "America/Costa_Rica")
      */
     function setTimezone(string $timezone)
     {
@@ -74,7 +76,7 @@ class ApiUserCreation
         return $this->timezone;
     }
     /**
-     * @param string[] profileIds The API user profiles
+     * @param string[] $profileIds The API user profiles
      */
     function setProfileIds(array $profileIds)
     {

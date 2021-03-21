@@ -26,7 +26,7 @@ class LanSubscription extends InternetSubscription
      *
      * @var int
      */
-    protected int $networkType;
+    protected ?int $networkType = null;
     /**
      * Subscription connection type
      * - `LanSubscription::ETH_CONNECTION_TYPE_DHCP`
@@ -34,26 +34,26 @@ class LanSubscription extends InternetSubscription
      *
      * @var int
      */
-    protected int $ethConnectionType;
+    protected ?int $ethConnectionType = null;
     /**
      * The addressing of this internet subscription. This field can be unset when updating.
      *
      * @var string
      */
-    protected string $addressing;
+    protected ?string $addressing = null;
     /**
      * Comments about the connection of this internet subscription. This field can be unset when updating.
      *
-     * @var int
+     * @var float
      */
-    protected int $connectionComments;
+    protected ?float $connectionComments = null;
     /**
-     * @param int networkType Subscription network type
+     * @param int $networkType Subscription network type
      * - `LanSubscription::NETWORK_TYPE_COMPANY`
      * - `LanSubscription::NETWORK_TYPE_OTHER`
      * - `LanSubscription::NETWORK_TYPE_RESIDENT`
      */
-    function setNetworkType(int $networkType)
+    function setNetworkType(?int $networkType)
     {
         $this->networkType = $networkType;
     }
@@ -63,16 +63,16 @@ class LanSubscription extends InternetSubscription
      * - `LanSubscription::NETWORK_TYPE_OTHER`
      * - `LanSubscription::NETWORK_TYPE_RESIDENT`
      */
-    function getNetworkType() : int
+    function getNetworkType() : ?int
     {
         return $this->networkType;
     }
     /**
-     * @param int ethConnectionType Subscription connection type
+     * @param int $ethConnectionType Subscription connection type
      * - `LanSubscription::ETH_CONNECTION_TYPE_DHCP`
      * - `LanSubscription::ETH_CONNECTION_TYPE_STATIC`
      */
-    function setEthConnectionType(int $ethConnectionType)
+    function setEthConnectionType(?int $ethConnectionType)
     {
         $this->ethConnectionType = $ethConnectionType;
     }
@@ -81,35 +81,35 @@ class LanSubscription extends InternetSubscription
      * - `LanSubscription::ETH_CONNECTION_TYPE_DHCP`
      * - `LanSubscription::ETH_CONNECTION_TYPE_STATIC`
      */
-    function getEthConnectionType() : int
+    function getEthConnectionType() : ?int
     {
         return $this->ethConnectionType;
     }
     /**
-     * @param string addressing The addressing of this internet subscription. This field can be unset when updating.
+     * @param string $addressing The addressing of this internet subscription. This field can be unset when updating.
      */
-    function setAddressing(string $addressing)
+    function setAddressing(?string $addressing)
     {
         $this->addressing = $addressing;
     }
     /**
      * @return string The addressing of this internet subscription. This field can be unset when updating.
      */
-    function getAddressing() : string
+    function getAddressing() : ?string
     {
         return $this->addressing;
     }
     /**
-     * @param int connectionComments Comments about the connection of this internet subscription. This field can be unset when updating.
+     * @param float $connectionComments Comments about the connection of this internet subscription. This field can be unset when updating.
      */
-    function setConnectionComments(int $connectionComments)
+    function setConnectionComments(?float $connectionComments)
     {
         $this->connectionComments = $connectionComments;
     }
     /**
-     * @return int Comments about the connection of this internet subscription. This field can be unset when updating.
+     * @return float Comments about the connection of this internet subscription. This field can be unset when updating.
      */
-    function getConnectionComments() : int
+    function getConnectionComments() : ?float
     {
         return $this->connectionComments;
     }
