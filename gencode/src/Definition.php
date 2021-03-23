@@ -13,25 +13,12 @@ use PhpParser\Node\Scalar\LNumber;
 use PhpParser\Node\Stmt\Class_ as StmtClass_;
 use PhpParser\Node\Stmt\ClassConst;
 use PhpParser\Node\Stmt\Return_;
-use PhpParser\PrettyPrinter;
 
-use function Arimac\Sigfox\GenCode\Utils\camelToUnderscore;
 use function Arimac\Sigfox\GenCode\Utils\defToName;
 use function Arimac\Sigfox\GenCode\Utils\extractEnumFieldsFromDescription;
 
-class Definition
+class Definition extends ClassExt
 {
-    /** @var BuilderFactory **/
-    protected $factory;
-
-    /** @var Namespace_ **/
-    protected $namespace;
-
-    /** @var Class_ **/
-    protected $class;
-
-    protected $name;
-
     protected $forceTraits = [
         "BillableGroup",
         "CallbackEmail",
@@ -39,8 +26,6 @@ class Definition
         "ProfileIds",
         "SingleDeviceFields"
     ];
-
-    protected $namespaceName;
 
     public function __construct(string $namespaceName, string $name, ?string $description = null)
     {
@@ -56,21 +41,6 @@ class Definition
         if ($description) {
             $this->class->setDocComment($this->formatDocComment("class", $description));
         }
-    }
-
-    public function getClassName(): string
-    {
-        return $this->name;
-    }
-
-    public function getContents(): string
-    {
-
-        $this->namespace->addStmt($this->class);
-        $node = $this->namespace->getNode();
-        $stmts = array($node);
-        $prettyPrinter = new PrettyPrinter\Standard();
-        return $prettyPrinter->prettyPrintFile($stmts);
     }
 
     protected function setArrayProperty(string $propertyName, array $items)
@@ -91,7 +61,7 @@ class Definition
         $this->setArrayProperty("objects", $objects);
     }
 
-    public function addProperty(string $name, string $type, bool $optional, ?string $message = null)
+    public function addProperty(string $name, string $type, ?string $message = null, bool $optional= true)
     {
         $property = $this->factory->property($name);
         $docType = $type;
@@ -103,7 +73,7 @@ class Definition
             $property->setDefault(null);
         }
         if ($message) {
-            $property->setDocComment($this->formatDocComment("property", $message, $name, [["var", $docType]]));
+            $property->setDocComment($this->formatDocComment("property", $message, [["var", $docType]], $name));
         } else {
             $property->setDocComment("/** @var $docType */");
         }
@@ -116,7 +86,7 @@ class Definition
         $param->setType($optional ? new NullableType($type) : $type);
         $method->addParam($param);
         if ($message) {
-            $method->setDocComment($this->formatDocComment("setter", "@param $docType \$$name " . $message, $name));
+            $method->setDocComment($this->formatDocComment("setter", "@param $docType \$$name " . $message, [], $name));
         } else {
             $method->setDocComment("/**\n * @param $docType $name\n */");
         }
@@ -128,28 +98,13 @@ class Definition
         $method = $this->factory->method("get" . ucfirst($name));
         $method->setReturnType($optional ? new NullableType($type) : $type);
         if ($message) {
-            $method->setDocComment($this->formatDocComment("getter", "@return $docType " . $message, $name));
+            $method->setDocComment($this->formatDocComment("getter", "@return $docType " . $message, [], $name));
         } else {
             $method->setDocComment("/**\n * @return $docType $name\n */");
         }
         $expression = new Return_(new Variable("this->$name"));
         $method->addStmt($expression);
         $this->class->addStmt($method);
-    }
-
-    public function addUse($namespace, $name)
-    {
-        $this->namespace->addStmt($this->factory->use("$namespace\\" . $name));
-    }
-
-    public function extend(string $namespace, string $name)
-    {
-        $this->addUse($namespace, $name);
-        if (in_array($name, $this->forceTraits)) {
-            $this->class->addStmt($this->factory->useTrait($name));
-        } else {
-            $this->class->extend($name);
-        }
     }
 
     public static function fromArray($namespace, $name, array $definition): Definition
@@ -175,29 +130,11 @@ class Definition
         return $defClass;
     }
 
-    public function getNamespace(): string
-    {
-        return $this->namespaceName;
-    }
-
-    public function save()
-    {
-        $namespaceSlices = explode("\\", $this->namespaceName);
-        array_shift($namespaceSlices);
-        array_shift($namespaceSlices);
-        $dir = dirname(__DIR__) . "/../src/";
-        foreach ($namespaceSlices as $folder) {
-            $dir .= $folder . "/";
-            @mkdir($dir);
-        }
-        file_put_contents($dir . $this->getClassName() . ".php", $this->getContents());
-    }
-
     protected function formatDocComment(
         string $type,
         string $message,
+        $docCommentParams = [],
         ?string $name = null,
-        $docCommentParams = []
     ): string {
         $message = trim($message);
 

@@ -2,8 +2,10 @@
 <?php
 
 use Arimac\Sigfox\GenCode\Definition;
+use Arimac\Sigfox\GenCode\Repository;
 use cebe\openapi\Reader;
 
+use function Arimac\Sigfox\GenCode\Utils\dashToCamel;
 use function Arimac\Sigfox\GenCode\Utils\defToName;
 use function Arimac\Sigfox\GenCode\Utils\rrmdir;
 
@@ -83,8 +85,8 @@ function addProperties(Definition $defClass, $definition)
                     $defClass->addProperty(
                         $propertyName,
                         typeCast($defClass, $defName, $propertyAttr),
-                        !in_array($propertyName, $required),
-                        $propertyAttr["description"] ?? null
+                        $propertyAttr["description"] ?? null,
+                        !in_array($propertyName, $required)
                     );
                 } else if (count($propertyAttr["properties"])) {
                     $propertyDefClass = Definition::fromArray(
@@ -98,15 +100,15 @@ function addProperties(Definition $defClass, $definition)
                     $defClass->addProperty(
                         $propertyName,
                         $propertyDefClass->getClassName(),
-                        !in_array($propertyName, $required),
-                        $propertyAttr["description"] ?? null
+                        $propertyAttr["description"] ?? null,
+                        !in_array($propertyName, $required)
                     );
                 } else {
                     $defClass->addProperty(
                         $propertyName,
                         "array",
-                        !in_array($propertyName, $required),
-                        $propertyAttr["description"] ?? null
+                        $propertyAttr["description"] ?? null,
+                        !in_array($propertyName, $required)
                     );
                 }
             } else if (
@@ -125,15 +127,15 @@ function addProperties(Definition $defClass, $definition)
                 $defClass->addProperty(
                     $propertyName,
                     $propertyDefClass->getClassName() . "[]",
+                    $propertyAttr["description"] ?? null,
                     !in_array($propertyName, $required),
-                    $propertyAttr["description"] ?? null
                 );
             } else if (isset($propertyAttr["type"])) {
                 $defClass->addProperty(
                     $propertyName,
                     typeCast($defClass, $propertyAttr["type"], $propertyAttr),
-                    !in_array($propertyName, $required),
-                    $propertyAttr["description"] ?? null
+                    $propertyAttr["description"] ?? null,
+                    !in_array($propertyName, $required)
                 );
             } else if (isset($propertyAttr["\$ref"])) {
                 $defName = defToName($propertyAttr["\$ref"]);
@@ -143,8 +145,8 @@ function addProperties(Definition $defClass, $definition)
                 $defClass->addProperty(
                     $propertyName,
                     typeCast($defClass, $defName, $propertyAttr),
-                    !in_array($propertyName, $required),
-                    $propertyAttr["description"] ?? null
+                    $propertyAttr["description"] ?? null,
+                    !in_array($propertyName, $required)
                 );
             }
         }
@@ -161,4 +163,32 @@ foreach ($openapi->definitions as $key => $definition) {
         $defClass = Definition::fromArray("Arimac\\Sigfox\\Definition", $name, $definition);
         $defClass->save();
     }
+}
+
+$repositories = [];
+foreach($openapi->paths as $key=> $path){
+    $slices = explode("/",$key);
+    $repoName = "";
+    foreach($slices as $slice){
+        if($slice!==""){
+            $repoNameSclice = "";
+            $parameter = false;
+            if(substr($slice, 0, 1)==="{"){
+                $parameter = true;
+                $repoNameSclice = dashToCamel(substr($slice,1,strlen($slice)-2));
+            } else {
+                $repoNameSclice = dashToCamel($slice);
+            }
+            $repoName .= $repoNameSclice;
+
+            if(!isset($repositories[$repoName])){
+                $repository = new Repository("Arimac\\Sigfox\\Repository", $repoName);
+                $repositories[$repoName] = $repository;
+            }
+        }
+    }
+}
+
+foreach($repositories as $repoName=> $repo){
+    $repo->save();
 }

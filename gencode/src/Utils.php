@@ -22,6 +22,15 @@ function camelToUnderscore(string $str): string
     return strtoupper(preg_replace('/(?<=\\w)(?=[A-Z])/', "_$1", $str));
 }
 
+function dashToCamel(string $str): string
+{
+    $slices = explode("-", $str);
+    $slices = array_map(function($slice){
+        return ucfirst($slice);
+    }, $slices);
+    return preg_replace("/[^A-Za-z]/","",implode("",$slices));
+}
+
 function defToName(string $defStr): string
 {
     return ucfirst(substr($defStr, 14));
