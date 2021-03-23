@@ -132,7 +132,7 @@ class Definition extends ClassExt
 
     protected function formatDocComment(
         string $type,
-        string $message,
+        ?string $message = null,
         $docCommentParams = [],
         ?string $name = null,
     ): string {

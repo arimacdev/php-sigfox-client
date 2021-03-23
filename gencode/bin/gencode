@@ -4,6 +4,7 @@
 use Arimac\Sigfox\GenCode\Definition;
 use Arimac\Sigfox\GenCode\Repository;
 use cebe\openapi\Reader;
+use cebe\openapi\spec\PathItem;
 
 use function Arimac\Sigfox\GenCode\Utils\dashToCamel;
 use function Arimac\Sigfox\GenCode\Utils\defToName;
@@ -25,6 +26,23 @@ mkdir($dir . "/../src/Definition");
 $openapi = Reader::readFromJsonFile($openapiFileLocation);
 
 $simpleAlias = ["Resources", "Resource", "Actions", "Action"];
+
+function primitiveTypeCast(string $type): string {
+    switch ($type) {
+        case "integer":
+            return "int";
+        case "number":
+                return "float";
+        case "boolean":
+            return "bool";
+        case "string":
+            return "string";
+        case "array":
+            return "array";
+        default:
+            return $type;
+    }
+}
 
 function typeCast(Definition $defClass, string $type, array $obj = []): string
 {
@@ -165,29 +183,69 @@ foreach ($openapi->definitions as $key => $definition) {
     }
 }
 
+/** @var Repository[] **/
 $repositories = [];
+/** @var PathItem $path **/
 foreach($openapi->paths as $key=> $path){
     $slices = explode("/",$key);
     $repoName = "";
+    $operation = $path->get??$path->post??$path->put??$path->delete;
+    $params = $operation->parameters;
+    $pathParams = [];
+    foreach($params as $param){
+        if($param->in==="path"){
+            $type = $param->getSerializableData()->type??"string";
+            $description = $param->description;
+            $pathParams[$param->name] = [
+                "type"=> primitiveTypeCast($type),
+                "description"=>$description
+            ]; 
+        } 
+    }
     foreach($slices as $slice){
         if($slice!==""){
-            $repoNameSclice = "";
+            $repoNameSlice = "";
             $parameter = false;
             if(substr($slice, 0, 1)==="{"){
                 $parameter = true;
-                $repoNameSclice = dashToCamel(substr($slice,1,strlen($slice)-2));
+                $repoNameSlice = dashToCamel(substr($slice,1,strlen($slice)-2));
             } else {
-                $repoNameSclice = dashToCamel($slice);
+                $repoNameSlice = dashToCamel($slice);
             }
-            $repoName .= $repoNameSclice;
+            $previousRepoName = $repoName;
+            $repoName .= $repoNameSlice;
 
             if(!isset($repositories[$repoName])){
                 $repository = new Repository("Arimac\\Sigfox\\Repository", $repoName);
+                /** @var Repository **/
+                $prevRepository = $repositories[$previousRepoName]??null;
                 $repositories[$repoName] = $repository;
+
+                $properties =$prevRepository? $prevRepository->getProperties():[];
+
+                if($parameter){
+                    /** @var Repository **/
+                    $prevRepository->addUse("Arimac\\Sigfox\\Repository",$repoName);
+                    $paramName = lcfirst($repoNameSlice);
+                    $type = $pathParams[$paramName]["type"];
+                    $description = $pathParams[$paramName]["description"];
+
+                    $properties[] = [$paramName, $type, $description];
+                    $prevRepository->addFindMethod(
+                        $paramName, 
+                        $type, 
+                        $repoName, 
+                        $description
+                    );
+                }
+
+                if(count($properties)){
+                    $repository->addConstructor($properties);
+                }
             }
         }
     }
-}
+;}
 
 foreach($repositories as $repoName=> $repo){
     $repo->save();

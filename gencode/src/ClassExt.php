@@ -34,11 +34,28 @@ class ClassExt {
 
     protected function formatDocComment(
         string $type,
-        string $message,
+        ?string $message=null,
         $docCommentParams = [],
         ?string $name = null,
     ): string {
-        return $message;
+        if($message){
+            $lines = explode("\n", $message);
+            $formatted = implode("\n * ", $lines);
+            $formatted = "/**\n * $formatted\n";
+            if(count($docCommentParams)){
+                $formatted .= " *\n";
+            }
+        } else {
+            $formatted = "/**\n";
+        }
+
+        if (count($docCommentParams) > 0) {
+            foreach ($docCommentParams as $comment) {
+                $formatted .= " * @" . $comment[0] . " " . $comment[1] . "\n";
+            }
+        }
+
+        return $formatted . " */";
     }
 
     public function getContents(): string
