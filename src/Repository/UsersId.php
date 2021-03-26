@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository\UsersIdProfiles;
 class UsersId
 {
     /**
@@ -16,5 +17,12 @@ class UsersId
     function __construct(string $id)
     {
         $this->id = $id;
+    }
+    /**
+     * @return UsersIdProfiles
+     */
+    public function profiles() : UsersIdProfiles
+    {
+        return new UsersIdProfiles($this->id);
     }
 }

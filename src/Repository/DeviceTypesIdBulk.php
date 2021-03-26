@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository\DeviceTypesIdBulkRestart;
 class DeviceTypesIdBulk
 {
     /**
@@ -16,5 +17,12 @@ class DeviceTypesIdBulk
     function __construct(string $id)
     {
         $this->id = $id;
+    }
+    /**
+     * @return DeviceTypesIdBulkRestart
+     */
+    public function restart() : DeviceTypesIdBulkRestart
+    {
+        return new DeviceTypesIdBulkRestart($this->id);
     }
 }

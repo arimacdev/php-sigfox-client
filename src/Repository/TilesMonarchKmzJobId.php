@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository\TilesMonarchKmzJobIdTileskmz;
 class TilesMonarchKmzJobId
 {
     /**
@@ -16,5 +17,12 @@ class TilesMonarchKmzJobId
     function __construct(string $jobId)
     {
         $this->jobId = $jobId;
+    }
+    /**
+     * @return TilesMonarchKmzJobIdTileskmz
+     */
+    public function tileskmz() : TilesMonarchKmzJobIdTileskmz
+    {
+        return new TilesMonarchKmzJobIdTileskmz($this->jobId);
     }
 }

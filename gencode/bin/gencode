@@ -27,12 +27,13 @@ $openapi = Reader::readFromJsonFile($openapiFileLocation);
 
 $simpleAlias = ["Resources", "Resource", "Actions", "Action"];
 
-function primitiveTypeCast(string $type): string {
+function primitiveTypeCast(string $type): string
+{
     switch ($type) {
         case "integer":
             return "int";
         case "number":
-                return "float";
+            return "float";
         case "boolean":
             return "bool";
         case "string":
@@ -186,67 +187,74 @@ foreach ($openapi->definitions as $key => $definition) {
 /** @var Repository[] **/
 $repositories = [];
 /** @var PathItem $path **/
-foreach($openapi->paths as $key=> $path){
-    $slices = explode("/",$key);
+foreach ($openapi->paths as $key => $path) {
+    $slices = explode("/", $key);
     $repoName = "";
-    $operation = $path->get??$path->post??$path->put??$path->delete;
+    $operation = $path->get ?? $path->post ?? $path->put ?? $path->delete;
     $params = $operation->parameters;
     $pathParams = [];
-    foreach($params as $param){
-        if($param->in==="path"){
-            $type = $param->getSerializableData()->type??"string";
+    foreach ($params as $param) {
+        if ($param->in === "path") {
+            $type = $param->getSerializableData()->type ?? "string";
             $description = $param->description;
             $pathParams[$param->name] = [
-                "type"=> primitiveTypeCast($type),
-                "description"=>$description
-            ]; 
-        } 
+                "type" => primitiveTypeCast($type),
+                "description" => $description
+            ];
+        }
     }
-    foreach($slices as $slice){
-        if($slice!==""){
+    foreach ($slices as $slice) {
+        if ($slice !== "") {
             $repoNameSlice = "";
             $parameter = false;
-            if(substr($slice, 0, 1)==="{"){
+            if (substr($slice, 0, 1) === "{") {
                 $parameter = true;
-                $repoNameSlice = dashToCamel(substr($slice,1,strlen($slice)-2));
+                $repoNameSlice = dashToCamel(substr($slice, 1, strlen($slice) - 2));
             } else {
                 $repoNameSlice = dashToCamel($slice);
             }
             $previousRepoName = $repoName;
             $repoName .= $repoNameSlice;
 
-            if(!isset($repositories[$repoName])){
+            if (!isset($repositories[$repoName])) {
                 $repository = new Repository("Arimac\\Sigfox\\Repository", $repoName);
                 /** @var Repository **/
-                $prevRepository = $repositories[$previousRepoName]??null;
+                $prevRepository = $repositories[$previousRepoName] ?? null;
                 $repositories[$repoName] = $repository;
 
-                $properties =$prevRepository? $prevRepository->getProperties():[];
+                $properties = $prevRepository ? $prevRepository->getProperties() : [];
 
-                if($parameter){
+                if ($parameter) {
                     /** @var Repository **/
-                    $prevRepository->addUse("Arimac\\Sigfox\\Repository",$repoName);
+                    $prevRepository->addUse("Arimac\\Sigfox\\Repository", $repoName);
+
+
                     $paramName = lcfirst($repoNameSlice);
                     $type = $pathParams[$paramName]["type"];
                     $description = $pathParams[$paramName]["description"];
 
                     $properties[] = [$paramName, $type, $description];
                     $prevRepository->addFindMethod(
-                        $paramName, 
-                        $type, 
-                        $repoName, 
+                        $paramName,
+                        $type,
+                        $repoName,
                         $description
                     );
+                } else if ($prevRepository) {
+                    /** @var Repository **/
+                    $prevRepository->addUse("Arimac\\Sigfox\\Repository", $repoName);
+                    $methodName = lcfirst($repoNameSlice);
+                    $prevRepository->addRepositoryMethod($methodName, $repoName);
                 }
 
-                if(count($properties)){
+                if (count($properties)) {
                     $repository->addConstructor($properties);
                 }
             }
         }
-    }
-;}
+    };
+}
 
-foreach($repositories as $repoName=> $repo){
+foreach ($repositories as $repoName => $repo) {
     $repo->save();
 }

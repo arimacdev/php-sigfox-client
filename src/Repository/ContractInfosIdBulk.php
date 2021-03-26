@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository\ContractInfosIdBulkRestart;
 class ContractInfosIdBulk
 {
     /**
@@ -16,5 +17,12 @@ class ContractInfosIdBulk
     function __construct(string $id)
     {
         $this->id = $id;
+    }
+    /**
+     * @return ContractInfosIdBulkRestart
+     */
+    public function restart() : ContractInfosIdBulkRestart
+    {
+        return new ContractInfosIdBulkRestart($this->id);
     }
 }

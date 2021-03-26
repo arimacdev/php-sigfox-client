@@ -2,6 +2,8 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository\DevicesIdCertificateModem;
+use Arimac\Sigfox\Repository\DevicesIdCertificateProduct;
 class DevicesIdCertificate
 {
     /**
@@ -16,5 +18,19 @@ class DevicesIdCertificate
     function __construct(string $id)
     {
         $this->id = $id;
+    }
+    /**
+     * @return DevicesIdCertificateModem
+     */
+    public function modem() : DevicesIdCertificateModem
+    {
+        return new DevicesIdCertificateModem($this->id);
+    }
+    /**
+     * @return DevicesIdCertificateProduct
+     */
+    public function product() : DevicesIdCertificateProduct
+    {
+        return new DevicesIdCertificateProduct($this->id);
     }
 }

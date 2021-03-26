@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository\DevicesIdMessagesMetric;
 class DevicesIdMessages
 {
     /**
@@ -16,5 +17,12 @@ class DevicesIdMessages
     function __construct(string $id)
     {
         $this->id = $id;
+    }
+    /**
+     * @return DevicesIdMessagesMetric
+     */
+    public function metric() : DevicesIdMessagesMetric
+    {
+        return new DevicesIdMessagesMetric($this->id);
     }
 }

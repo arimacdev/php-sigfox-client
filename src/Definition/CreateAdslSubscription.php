@@ -2,11 +2,11 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\InternetSubscription;
+use Arimac\Sigfox\Definition\CreateInternetSubscription;
 /**
  * Information about ADSL internet subscription
  */
-class AdslSubscription extends InternetSubscription
+class CreateAdslSubscription extends CreateInternetSubscription
 {
     /** REQUEST */
     public const CONNECTION_STATUS_REQUEST = 0;
@@ -16,9 +16,9 @@ class AdslSubscription extends InternetSubscription
     public const CONNECTION_STATUS_ACTIVATED = 2;
     /**
      * Subscription connection status
-     * - `AdslSubscription::CONNECTION_STATUS_REQUEST`
-     * - `AdslSubscription::CONNECTION_STATUS_INSTALLED`
-     * - `AdslSubscription::CONNECTION_STATUS_ACTIVATED`
+     * - `CreateAdslSubscription::CONNECTION_STATUS_REQUEST`
+     * - `CreateAdslSubscription::CONNECTION_STATUS_INSTALLED`
+     * - `CreateAdslSubscription::CONNECTION_STATUS_ACTIVATED`
      *
      * @var int
      */
@@ -97,9 +97,9 @@ class AdslSubscription extends InternetSubscription
     protected ?string $pair = null;
     /**
      * @param int $connectionStatus Subscription connection status
-     * - `AdslSubscription::CONNECTION_STATUS_REQUEST`
-     * - `AdslSubscription::CONNECTION_STATUS_INSTALLED`
-     * - `AdslSubscription::CONNECTION_STATUS_ACTIVATED`
+     * - `CreateAdslSubscription::CONNECTION_STATUS_REQUEST`
+     * - `CreateAdslSubscription::CONNECTION_STATUS_INSTALLED`
+     * - `CreateAdslSubscription::CONNECTION_STATUS_ACTIVATED`
      */
     function setConnectionStatus(?int $connectionStatus)
     {
@@ -107,9 +107,9 @@ class AdslSubscription extends InternetSubscription
     }
     /**
      * @return int Subscription connection status
-     * - `AdslSubscription::CONNECTION_STATUS_REQUEST`
-     * - `AdslSubscription::CONNECTION_STATUS_INSTALLED`
-     * - `AdslSubscription::CONNECTION_STATUS_ACTIVATED`
+     * - `CreateAdslSubscription::CONNECTION_STATUS_REQUEST`
+     * - `CreateAdslSubscription::CONNECTION_STATUS_INSTALLED`
+     * - `CreateAdslSubscription::CONNECTION_STATUS_ACTIVATED`
      */
     function getConnectionStatus() : ?int
     {

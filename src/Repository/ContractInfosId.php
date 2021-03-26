@@ -2,6 +2,8 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository\ContractInfosIdBulk;
+use Arimac\Sigfox\Repository\ContractInfosIdDevices;
 class ContractInfosId
 {
     /**
@@ -16,5 +18,19 @@ class ContractInfosId
     function __construct(string $id)
     {
         $this->id = $id;
+    }
+    /**
+     * @return ContractInfosIdBulk
+     */
+    public function bulk() : ContractInfosIdBulk
+    {
+        return new ContractInfosIdBulk($this->id);
+    }
+    /**
+     * @return ContractInfosIdDevices
+     */
+    public function devices() : ContractInfosIdDevices
+    {
+        return new ContractInfosIdDevices($this->id);
     }
 }
