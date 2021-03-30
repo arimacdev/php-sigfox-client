@@ -23,4 +23,14 @@ class UsersIdProfilesProfileId
         $this->id = $id;
         $this->profileId = $profileId;
     }
+    /**
+     * Delete profiles or a given profile associated to the groupId
+     *
+     * @param int $request
+     * @return int
+     */
+    function delete(int $request) : int
+    {
+        return $this->client->request('delete', '/users/{id}/profiles/{profileId}', $request, 'int');
+    }
 }

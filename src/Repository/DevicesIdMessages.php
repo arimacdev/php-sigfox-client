@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\DevicesIdMessagesMetric;
 class DevicesIdMessages
 {
     /**
@@ -19,10 +18,43 @@ class DevicesIdMessages
         $this->id = $id;
     }
     /**
-     * @return DevicesIdMessagesMetric
+     * Retrieve a list of messages for a given device according to request filters, with a 3-day history.
+     *
+     * @param int $request
+     * @return int
      */
-    public function metric() : DevicesIdMessagesMetric
+    function list(int $request) : int
     {
-        return new DevicesIdMessagesMetric($this->id);
+        return $this->client->request('get', '/devices/{id}/messages', $request, 'int');
+    }
+    /**
+     * Return the number of messages for a given device, for the last day, last week and last month.
+     *
+     * @param int $request
+     * @return int
+     */
+    function metric(int $request) : int
+    {
+        return $this->client->request('get', '/devices/{id}/messages/metric', $request, 'int');
+    }
+    /**
+     * Retrieve a list of location data of a device according to request filters.
+     *
+     * @param int $request
+     * @return int
+     */
+    function locations(int $request) : int
+    {
+        return $this->client->request('get', '/devices/{id}/locations', $request, 'int');
+    }
+    /**
+     * Set an unsubscription date for the device's token.
+     *
+     * @param int $request
+     * @return int
+     */
+    function unsubscribe(int $request) : int
+    {
+        return $this->client->request('put', '/devices/{id}/unsubscribe', $request, 'int');
     }
 }

@@ -2,8 +2,6 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\DevicesIdCertificateModem;
-use Arimac\Sigfox\Repository\DevicesIdCertificateProduct;
 class DevicesIdCertificate
 {
     /**
@@ -20,17 +18,33 @@ class DevicesIdCertificate
         $this->id = $id;
     }
     /**
-     * @return DevicesIdCertificateModem
+     * Retrieve the modem certificate associated with a device.
+     *
+     * @param int $request
+     * @return int
      */
-    public function modem() : DevicesIdCertificateModem
+    function modem(int $request) : int
     {
-        return new DevicesIdCertificateModem($this->id);
+        return $this->client->request('get', '/devices/{id}/certificate/modem', $request, 'int');
     }
     /**
-     * @return DevicesIdCertificateProduct
+     * Retrieve the product certificate associated with a device already registered.
+     *
+     * @param int $request
+     * @return int
      */
-    public function product() : DevicesIdCertificateProduct
+    function product(int $request) : int
     {
-        return new DevicesIdCertificateProduct($this->id);
+        return $this->client->request('get', '/devices/{id}/certificate/product', $request, 'int');
+    }
+    /**
+     * Retrieve the product certificate associated with a given device ID and PAC, when the device has not already been created on the portal, only in CRA
+     *
+     * @param int $request
+     * @return int
+     */
+    function productCertificate(int $request) : int
+    {
+        return $this->client->request('get', '/devices/{id}/product-certificate', $request, 'int');
     }
 }

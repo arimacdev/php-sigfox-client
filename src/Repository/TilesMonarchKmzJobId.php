@@ -19,6 +19,16 @@ class TilesMonarchKmzJobId
         $this->jobId = $jobId;
     }
     /**
+     * Retrieve Sigfox Monarch coverage kmz computation from asynchronous job status
+     *
+     * @param int $request
+     * @return int
+     */
+    function get(int $request) : int
+    {
+        return $this->client->request('get', '/tiles/monarch/kmz/{jobId}', $request, 'int');
+    }
+    /**
      * @return TilesMonarchKmzJobIdTileskmz
      */
     public function tileskmz() : TilesMonarchKmzJobIdTileskmz

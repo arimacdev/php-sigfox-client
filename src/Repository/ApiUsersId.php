@@ -3,7 +3,6 @@
 namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Repository\ApiUsersIdProfiles;
-use Arimac\Sigfox\Repository\ApiUsersIdRenewCredential;
 class ApiUsersId
 {
     /**
@@ -20,17 +19,40 @@ class ApiUsersId
         $this->id = $id;
     }
     /**
+     * Retrieve information about a given API user.
+     *
+     * @param int $request
+     * @return int
+     */
+    function get(int $request) : int
+    {
+        return $this->client->request('get', '/api-users/{id}', $request, 'int');
+    }
+    /**
+     * Update information about a given API user.
+     *
+     * @param int $request
+     * @return int
+     */
+    function update(int $request) : int
+    {
+        return $this->client->request('put', '/api-users/{id}', $request, 'int');
+    }
+    /**
+     * Delete a given API user.
+     *
+     * @param int $request
+     * @return int
+     */
+    function delete(int $request) : int
+    {
+        return $this->client->request('delete', '/api-users/{id}', $request, 'int');
+    }
+    /**
      * @return ApiUsersIdProfiles
      */
     public function profiles() : ApiUsersIdProfiles
     {
         return new ApiUsersIdProfiles($this->id);
-    }
-    /**
-     * @return ApiUsersIdRenewCredential
-     */
-    public function renewCredential() : ApiUsersIdRenewCredential
-    {
-        return new ApiUsersIdRenewCredential($this->id);
     }
 }

@@ -186,10 +186,18 @@ foreach ($openapi->definitions as $key => $definition) {
 
 /** @var Repository[] **/
 $repositories = [];
+
+$rules = json_decode(file_get_contents($dir."/rules.json"), true);
+
 /** @var PathItem $path **/
 foreach ($openapi->paths as $key => $path) {
+    $endpoint = $key;
+    if(isset($rules[$key]["eat"])){
+        $key = substr($key, 0, strlen($key)- strlen($rules[$key]["eat"]));
+    }
     $slices = explode("/", $key);
     $repoName = "";
+    $requestMethods = array_keys(get_object_vars($path->getSerializableData()));
     $operation = $path->get ?? $path->post ?? $path->put ?? $path->delete;
     $params = $operation->parameters;
     $pathParams = [];
@@ -203,6 +211,7 @@ foreach ($openapi->paths as $key => $path) {
             ];
         }
     }
+
     foreach ($slices as $slice) {
         if ($slice !== "") {
             $repoNameSlice = "";
@@ -252,7 +261,13 @@ foreach ($openapi->paths as $key => $path) {
                 }
             }
         }
-    };
+    }
+
+    foreach($requestMethods as $requestMethod){
+        $methodName = $rules[$endpoint]["methodNames"][$requestMethod];
+        $description = $path->$requestMethod->description;
+        $repository->addRequestMethod($methodName, $requestMethod, $endpoint, "int", "int", $description);
+    }
 }
 
 foreach ($repositories as $repoName => $repo) {

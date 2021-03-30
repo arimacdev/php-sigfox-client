@@ -3,8 +3,6 @@
 namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Repository\DevicesBulkJobId;
-use Arimac\Sigfox\Repository\DevicesBulkTransfer;
-use Arimac\Sigfox\Repository\DevicesBulkReplace;
 use Arimac\Sigfox\Repository\DevicesBulkRestart;
 use Arimac\Sigfox\Repository\DevicesBulkSuspend;
 use Arimac\Sigfox\Repository\DevicesBulkResume;
@@ -12,26 +10,32 @@ use Arimac\Sigfox\Repository\DevicesBulkUnsubscribe;
 class DevicesBulk
 {
     /**
+     * Update or edit multiple devices with asynchronous job.
+     *
+     * @param int $request
+     * @return int
+     */
+    function update(int $request) : int
+    {
+        return $this->client->request('put', '/devices/bulk', $request, 'int');
+    }
+    /**
+     * Create multiple new devices with asynchronous job
+     *
+     * @param int $request
+     * @return int
+     */
+    function create(int $request) : int
+    {
+        return $this->client->request('post', '/devices/bulk', $request, 'int');
+    }
+    /**
      * @param string $jobId The job identifier (hexadecimal format)
      * @return DevicesBulkJobId
      */
     public function find(string $jobId) : DevicesBulkJobId
     {
         return new DevicesBulkJobId($jobId);
-    }
-    /**
-     * @return DevicesBulkTransfer
-     */
-    public function transfer() : DevicesBulkTransfer
-    {
-        return new DevicesBulkTransfer();
-    }
-    /**
-     * @return DevicesBulkReplace
-     */
-    public function replace() : DevicesBulkReplace
-    {
-        return new DevicesBulkReplace();
     }
     /**
      * @return DevicesBulkRestart

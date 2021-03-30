@@ -29,4 +29,24 @@ class DevicesIdConsumptionYearMonth
         $this->year = $year;
         $this->month = $month;
     }
+    /**
+     * Retrieve a device's consumption for a given month during a given year.
+     *
+     * @param int $request
+     * @return int
+     */
+    function get(int $request) : int
+    {
+        return $this->client->request('get', '/devices/{id}/consumption/{year}/{month}', $request, 'int');
+    }
+    /**
+     * Disable sequence number check for the next message.
+     *
+     * @param int $request
+     * @return int
+     */
+    function disengage(int $request) : int
+    {
+        return $this->client->request('post', '/devices/{id}/disengage', $request, 'int');
+    }
 }

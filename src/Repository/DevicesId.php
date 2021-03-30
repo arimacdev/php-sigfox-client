@@ -2,14 +2,9 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\DevicesIdCallbacksNotDelivered;
 use Arimac\Sigfox\Repository\DevicesIdCertificate;
-use Arimac\Sigfox\Repository\DevicesIdProductCertificate;
 use Arimac\Sigfox\Repository\DevicesIdConsumption;
-use Arimac\Sigfox\Repository\DevicesIdDisengage;
 use Arimac\Sigfox\Repository\DevicesIdMessages;
-use Arimac\Sigfox\Repository\DevicesIdLocations;
-use Arimac\Sigfox\Repository\DevicesIdUnsubscribe;
 class DevicesId
 {
     /**
@@ -26,11 +21,44 @@ class DevicesId
         $this->id = $id;
     }
     /**
-     * @return DevicesIdCallbacksNotDelivered
+     * Retrieve information about a given device.
+     *
+     * @param int $request
+     * @return int
      */
-    public function callbacksNotDelivered() : DevicesIdCallbacksNotDelivered
+    function get(int $request) : int
     {
-        return new DevicesIdCallbacksNotDelivered($this->id);
+        return $this->client->request('get', '/devices/{id}', $request, 'int');
+    }
+    /**
+     * Update a given device.
+     *
+     * @param int $request
+     * @return int
+     */
+    function update(int $request) : int
+    {
+        return $this->client->request('put', '/devices/{id}', $request, 'int');
+    }
+    /**
+     * Delete a given device.
+     *
+     * @param int $request
+     * @return int
+     */
+    function delete(int $request) : int
+    {
+        return $this->client->request('delete', '/devices/{id}', $request, 'int');
+    }
+    /**
+     * Retrieve a list of undelivered callbacks and errors for a given device, in reverse chronological order (most recent message first).
+     *
+     * @param int $request
+     * @return int
+     */
+    function callbacksNotDelivered(int $request) : int
+    {
+        return $this->client->request('get', '/devices/{id}/callbacks-not-delivered', $request, 'int');
     }
     /**
      * @return DevicesIdCertificate
@@ -40,13 +68,6 @@ class DevicesId
         return new DevicesIdCertificate($this->id);
     }
     /**
-     * @return DevicesIdProductCertificate
-     */
-    public function productCertificate() : DevicesIdProductCertificate
-    {
-        return new DevicesIdProductCertificate($this->id);
-    }
-    /**
      * @return DevicesIdConsumption
      */
     public function consumption() : DevicesIdConsumption
@@ -54,31 +75,10 @@ class DevicesId
         return new DevicesIdConsumption($this->id);
     }
     /**
-     * @return DevicesIdDisengage
-     */
-    public function disengage() : DevicesIdDisengage
-    {
-        return new DevicesIdDisengage($this->id);
-    }
-    /**
      * @return DevicesIdMessages
      */
     public function messages() : DevicesIdMessages
     {
         return new DevicesIdMessages($this->id);
-    }
-    /**
-     * @return DevicesIdLocations
-     */
-    public function locations() : DevicesIdLocations
-    {
-        return new DevicesIdLocations($this->id);
-    }
-    /**
-     * @return DevicesIdUnsubscribe
-     */
-    public function unsubscribe() : DevicesIdUnsubscribe
-    {
-        return new DevicesIdUnsubscribe($this->id);
     }
 }

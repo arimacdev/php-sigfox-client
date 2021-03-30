@@ -25,10 +25,20 @@ class DevicesIdConsumptionYear
         $this->year = $year;
     }
     /**
+     * Retrieve a device's consumption for a given year.
+     *
+     * @param int $request
+     * @return int
+     */
+    function get(int $request) : int
+    {
+        return $this->client->request('get', '/devices/{id}/consumption/{year}', $request, 'int');
+    }
+    /**
      * @param int $month The month of consumption
      * @return DevicesIdConsumptionYearMonth
      */
-    public function find(int $month) : DevicesIdConsumptionYearMonth
+    public function month(int $month) : DevicesIdConsumptionYearMonth
     {
         return new DevicesIdConsumptionYearMonth($this->id, $this->year, $month);
     }

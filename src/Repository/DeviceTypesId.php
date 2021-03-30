@@ -2,11 +2,7 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\DeviceTypesIdMessages;
-use Arimac\Sigfox\Repository\DeviceTypesIdCallbacksNotDelivered;
 use Arimac\Sigfox\Repository\DeviceTypesIdCallbacks;
-use Arimac\Sigfox\Repository\DeviceTypesIdDisengage;
-use Arimac\Sigfox\Repository\DeviceTypesIdBulk;
 class DeviceTypesId
 {
     /**
@@ -23,18 +19,54 @@ class DeviceTypesId
         $this->id = $id;
     }
     /**
-     * @return DeviceTypesIdMessages
+     * Retrieve information about a device type.
+     *
+     * @param int $request
+     * @return int
      */
-    public function messages() : DeviceTypesIdMessages
+    function get(int $request) : int
     {
-        return new DeviceTypesIdMessages($this->id);
+        return $this->client->request('get', '/device-types/{id}', $request, 'int');
     }
     /**
-     * @return DeviceTypesIdCallbacksNotDelivered
+     * Update a given device type.
+     *
+     * @param int $request
+     * @return int
      */
-    public function callbacksNotDelivered() : DeviceTypesIdCallbacksNotDelivered
+    function update(int $request) : int
     {
-        return new DeviceTypesIdCallbacksNotDelivered($this->id);
+        return $this->client->request('put', '/device-types/{id}', $request, 'int');
+    }
+    /**
+     * Delete a given device type.
+     *
+     * @param int $request
+     * @return int
+     */
+    function delete(int $request) : int
+    {
+        return $this->client->request('delete', '/device-types/{id}', $request, 'int');
+    }
+    /**
+     * Retrieve a list of messages for a given device types with a 3-day history.
+     *
+     * @param int $request
+     * @return int
+     */
+    function messages(int $request) : int
+    {
+        return $this->client->request('get', '/device-types/{id}/messages', $request, 'int');
+    }
+    /**
+     * Retrieve a list of undelivered callback messages for a given device types.
+     *
+     * @param int $request
+     * @return int
+     */
+    function callbacksNotDelivered(int $request) : int
+    {
+        return $this->client->request('get', '/device-types/{id}/callbacks-not-delivered', $request, 'int');
     }
     /**
      * @return DeviceTypesIdCallbacks
@@ -42,19 +74,5 @@ class DeviceTypesId
     public function callbacks() : DeviceTypesIdCallbacks
     {
         return new DeviceTypesIdCallbacks($this->id);
-    }
-    /**
-     * @return DeviceTypesIdDisengage
-     */
-    public function disengage() : DeviceTypesIdDisengage
-    {
-        return new DeviceTypesIdDisengage($this->id);
-    }
-    /**
-     * @return DeviceTypesIdBulk
-     */
-    public function bulk() : DeviceTypesIdBulk
-    {
-        return new DeviceTypesIdBulk($this->id);
     }
 }

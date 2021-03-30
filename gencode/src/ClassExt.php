@@ -36,10 +36,10 @@ class ClassExt {
         string $type,
         ?string $message=null,
         $docCommentParams = [],
-        ?string $name = null,
+        ?string $name = null
     ): string {
         if($message){
-            $lines = explode("\n", $message);
+            $lines = explode("\n", trim( $message));
             $formatted = implode("\n * ", $lines);
             $formatted = "/**\n * $formatted\n";
             if(count($docCommentParams)){

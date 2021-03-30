@@ -19,6 +19,16 @@ class UsersIdProfiles
         $this->id = $id;
     }
     /**
+     * add user roles to a user.
+     *
+     * @param int $request
+     * @return int
+     */
+    function addRoles(int $request) : int
+    {
+        return $this->client->request('put', '/users/{id}/profiles', $request, 'int');
+    }
+    /**
      * @param string $profileId The profile identifier
      * @return UsersIdProfilesProfileId
      */

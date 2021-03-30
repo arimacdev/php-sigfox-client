@@ -19,6 +19,26 @@ class DeviceTypesIdCallbacks
         $this->id = $id;
     }
     /**
+     * Retrieve a list of callbacks for a given device type according to visibility permissions and request filters.
+     *
+     * @param int $request
+     * @return int
+     */
+    function list(int $request) : int
+    {
+        return $this->client->request('get', '/device-types/{id}/callbacks', $request, 'int');
+    }
+    /**
+     * Create a new callback for a given device type.
+     *
+     * @param int $request
+     * @return int
+     */
+    function create(int $request) : int
+    {
+        return $this->client->request('post', '/device-types/{id}/callbacks', $request, 'int');
+    }
+    /**
      * @param string $callbackId The Callback identifier
      * @return DeviceTypesIdCallbacksCallbackId
      */

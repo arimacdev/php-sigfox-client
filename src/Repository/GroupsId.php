@@ -2,8 +2,6 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\GroupsIdCallbacksNotDelivered;
-use Arimac\Sigfox\Repository\GroupsIdGeolocPayloads;
 class GroupsId
 {
     /**
@@ -20,17 +18,53 @@ class GroupsId
         $this->id = $id;
     }
     /**
-     * @return GroupsIdCallbacksNotDelivered
+     * Retrieve information about a given group.
+     *
+     * @param int $request
+     * @return int
      */
-    public function callbacksNotDelivered() : GroupsIdCallbacksNotDelivered
+    function get(int $request) : int
     {
-        return new GroupsIdCallbacksNotDelivered($this->id);
+        return $this->client->request('get', '/groups/{id}', $request, 'int');
     }
     /**
-     * @return GroupsIdGeolocPayloads
+     * Update a given group.
+     *
+     * @param int $request
+     * @return int
      */
-    public function geolocPayloads() : GroupsIdGeolocPayloads
+    function update(int $request) : int
     {
-        return new GroupsIdGeolocPayloads($this->id);
+        return $this->client->request('put', '/groups/{id}', $request, 'int');
+    }
+    /**
+     * Delete a given group.
+     *
+     * @param int $request
+     * @return int
+     */
+    function delete(int $request) : int
+    {
+        return $this->client->request('delete', '/groups/{id}', $request, 'int');
+    }
+    /**
+     * Retrieve a list of undelivered callbacks and errors for a given group, in reverse chronological order (most recent message first).
+     *
+     * @param int $request
+     * @return int
+     */
+    function callbacksNotDelivered(int $request) : int
+    {
+        return $this->client->request('get', '/groups/{id}/callbacks-not-delivered', $request, 'int');
+    }
+    /**
+     * Retrieve a list of geolocation payload according to request filters.
+     *
+     * @param int $request
+     * @return int
+     */
+    function geolocationPayloads(int $request) : int
+    {
+        return $this->client->request('get', '/groups/{id}/geoloc-payloads', $request, 'int');
     }
 }

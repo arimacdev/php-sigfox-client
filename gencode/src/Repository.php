@@ -4,10 +4,14 @@ namespace Arimac\Sigfox\GenCode;
 
 use PhpParser\Node\Arg;
 use PhpParser\Node\Expr\Assign;
+use PhpParser\Node\Expr\FuncCall;
 use PhpParser\Node\Expr\New_;
 use PhpParser\Node\Expr\Variable;
 use PhpParser\Node\Name;
 use PhpParser\Node\Param;
+use PhpParser\Node\Scalar\String_;
+use PhpParser\Node\Stmt\ClassMethod;
+use PhpParser\Node\Stmt\Function_;
 use PhpParser\Node\Stmt\Return_;
 
 class Repository extends ClassExt
@@ -21,7 +25,11 @@ class Repository extends ClassExt
         string $returnType,
         ?string $message = null
     ) {
-        $method = $this->factory->method("find");
+        $methodName = "find";
+        if(in_array($name,["year", "month"])){
+            $methodName = $name;
+        }
+        $method = $this->factory->method($methodName);
         $method->addParam(new Param(new Variable($name), null, $type));
         $method->setReturnType($returnType);
         $method->makePublic();
@@ -108,6 +116,37 @@ class Repository extends ClassExt
             ]
         ));
         $this->class->addStmt($method);
+    }
+
+    public function addRequestMethod(
+        string $methodName, 
+        string $requestMethod, 
+        string $endpoint,
+        string $requestType,
+        string $responseType,
+        ?string $message = null
+    ){
+        $method = $this->factory->method($methodName);
+        $param = $this->factory->param("request");
+        $param->setType($requestType);
+        $method->addParam($param);
+        $method->setReturnType($responseType);
+        $method->setDocComment($this->formatDocComment("request", $message, [
+            ["param", "$requestType \$request"],
+            ["return", $responseType]
+        ]));
+
+        $stmt = new Return_(new FuncCall(new Name("\$this->client->request"),[
+            new String_($requestMethod),
+            new String_($endpoint),
+            new Variable("request"),
+            new String_($responseType)
+        ]));
+
+        $method->addStmt($stmt);
+
+        $this->class->addStmt($method);
+        
     }
 
     public function getProperties(): array

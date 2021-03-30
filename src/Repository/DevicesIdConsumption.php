@@ -22,7 +22,7 @@ class DevicesIdConsumption
      * @param int $year The year of consumption
      * @return DevicesIdConsumptionYear
      */
-    public function find(int $year) : DevicesIdConsumptionYear
+    public function year(int $year) : DevicesIdConsumptionYear
     {
         return new DevicesIdConsumptionYear($this->id, $year);
     }

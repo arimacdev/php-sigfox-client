@@ -19,6 +19,16 @@ class ApiUsersIdProfiles
         $this->id = $id;
     }
     /**
+     * Associate new profiles to a given API user.
+     *
+     * @param int $request
+     * @return int
+     */
+    function update(int $request) : int
+    {
+        return $this->client->request('put', '/api-users/{id}/profiles', $request, 'int');
+    }
+    /**
      * @param string $profileId The profile identifier
      * @return ApiUsersIdProfilesProfileId
      */

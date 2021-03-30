@@ -1,0 +1,460 @@
+{
+    "\/api-users\/": {
+        "methodNames": {
+            "get": "list",
+            "post": "create"
+        }
+    },
+    "\/api-users\/{id}": {
+        "methodNames": {
+            "get": "get",
+            "put": "update",
+            "delete": "delete"
+        }
+    },
+    "\/api-users\/{id}\/profiles": {
+        "methodNames": {
+            "put": "update"
+        }
+    },
+    "\/api-users\/{id}\/profiles\/{profileId}": {
+        "methodNames": {
+            "delete": "delete"
+        }
+    },
+    "\/api-users\/{id}\/renew-credential": {
+        "eat": "\/renew-credential",
+        "methodNames": {
+            "put": "renewCredential"
+        }
+    },
+    "\/contract-infos\/": {
+        "methodNames": {
+            "get": "list"
+        }
+    },
+    "\/contract-infos\/{id}": {
+        "methodNames": {
+            "get": "get"
+        }
+    },
+    "\/contract-infos\/{id}\/bulk\/restart": {
+        "eat":"\/bulk\/restart",
+        "asyncCreations":{
+            "post":{
+                "path":"\/contract-infos\/bulk\/restart\/{jobId}",
+                "method":"get",
+                "jobId":"jobId"
+            }
+        },
+        "methodNames": {
+            "post": "bulkRestart"
+        }
+    },
+    "\/contract-infos\/bulk\/restart\/{jobId}": {
+        "methodNames": {
+            "get": "getStatus"
+        }
+    },
+    "\/contract-infos\/{id}\/devices": {
+        "eat":"\/devices",
+        "methodNames": {
+            "get": "devices"
+        }
+    },
+    "\/coverages\/global\/predictions": {
+        "methodNames": {
+            "get": "getOne",
+            "post": "get"
+        }
+    },
+    "\/coverages\/global\/predictions\/bulk": {
+        "eat":"\/bulk",
+        "asyncCreations":{
+            "post":{
+                "path": "\/coverages\/global\/predictions\/bulk\/{jobId}",
+                "method": "get",
+                "jobId": "jobId"
+            }
+        },
+        "methodNames": {
+            "post": "bulk"
+        }
+    },
+    "\/coverages\/global\/predictions\/bulk\/{jobId}": {
+        "methodNames": {
+            "get": "getStatus"
+        }
+    },
+    "\/coverages\/operators\/redundancy": {
+        "eat":"\/operators\/redundancy",
+        "methodNames": {
+            "get": "operatorsRedundancy"
+        }
+    },
+    "\/devices\/": {
+        "methodNames": {
+            "get": "list",
+            "post": "create"
+        }
+    },
+    "\/devices\/{id}": {
+        "methodNames": {
+            "get": "get",
+            "put": "update",
+            "delete": "delete"
+        }
+    },
+    "\/devices\/{id}\/callbacks-not-delivered": {
+        "eat":"\/callbacks-not-delivered",
+        "methodNames": {
+            "get": "callbacksNotDelivered"
+        }
+    },
+    "\/devices\/{id}\/certificate\/modem": {
+        "eat":"\/modem",
+        "methodNames": {
+            "get": "modem"
+        }
+    },
+    "\/devices\/{id}\/certificate\/product": {
+        "eat":"\/product",
+        "methodNames": {
+            "get": "product"
+        }
+    },
+    "\/devices\/{id}\/product-certificate": {
+        "eat":"\/product-certificate",
+        "methodNames": {
+            "get": "productCertificate"
+        }
+    },
+    "\/devices\/{id}\/consumption\/{year}": {
+        "methodNames": {
+            "get": "get"
+        }
+    },
+    "\/devices\/{id}\/consumption\/{year}\/{month}": {
+        "methodNames": {
+            "get": "get"
+        }
+    },
+    "\/devices\/{id}\/disengage": {
+        "eat": "\/disengage",
+        "methodNames": {
+            "post": "disengage"
+        }
+    },
+    "\/devices\/{id}\/messages": {
+        "methodNames": {
+            "get": "list"
+        }
+    },
+    "\/devices\/{id}\/messages\/metric": {
+        "eat":"\/metric",
+        "methodNames": {
+            "get": "metric"
+        }
+    },
+    "\/devices\/{id}\/locations": {
+        "eat":"\/locations",
+        "methodNames": {
+            "get": "locations"
+        }
+    },
+    "\/devices\/{id}\/unsubscribe": {
+        "eat":"\/unsubscribe",
+        "methodNames": {
+            "put": "unsubscribe"
+        }
+    },
+    "\/devices\/bulk": {
+        "asyncCreations":{
+            "put": {
+                "path":"\/devices\/bulk\/{jobId}",
+                "method":"get",
+                "jobId": "jobId"
+            },
+            "post":{
+                "path":"\/devices\/bulk\/{jobId}",
+                "method":"get",
+                "jobId":"jobId"
+            }
+        },
+        "methodNames": {
+            "put": "update",
+            "post": "create"
+        }
+    },
+    "\/devices\/bulk\/{jobId}": {
+        "methodNames": {
+            "get": "get"
+        }
+    },
+    "\/devices\/bulk\/transfer": {
+        "eat":"\/transfer",
+        "asyncCreations":{
+            "post":{
+                "path":"\/devices\/bulk\/{jobId}",
+                "method":"get",
+                "jobId":"jobId"
+            }
+        },
+        "methodNames": {
+            "post": "transfer"
+        }
+    },
+    "\/devices\/bulk\/replace": {
+        "eat":"\/replace",
+        "methodNames": {
+            "post": "replace"
+        }
+    },
+    "\/devices\/bulk\/restart": {
+        "eat":"\/restart",
+        "asyncCreations":{
+            "post":{
+                "path":"\/devices\/bulk\/restart\/{jobId}",
+                "method":"get",
+                "jobId":"jobId"
+            }
+        },
+        "methodNames": {
+            "post": "restart"
+        }
+    },
+    "\/devices\/bulk\/restart\/{jobId}": {
+        "methodNames": {
+            "get": "get"
+        }
+    },
+    "\/devices\/bulk\/suspend": {
+        "eat":"suspend",
+        "asyncCreations":{
+            "post": {
+                "path":"\/devices\/bulk\/suspend\/{jobId}",
+                "method":"get",
+                "jobId":"jobId"
+            }
+        },
+        "methodNames": {
+            "post": "suspend"
+        }
+    },
+    "\/devices\/bulk\/suspend\/{jobId}": {
+        "methodNames": {
+            "get": "get"
+        }
+    },
+    "\/devices\/bulk\/resume": {
+        "eat":"\/resume",
+        "asyncCreations":{
+            "post":{
+                "path":"\/devices\/bulk\/resume\/{jobId}",
+                "method":"get",
+                "jobId":"jobId"
+            }
+        },
+        "methodNames": {
+            "post": "resume"
+        }
+    },
+    "\/devices\/bulk\/resume\/{jobId}": {
+        "methodNames": {
+            "get": "get"
+        }
+    },
+    "\/devices\/bulk\/unsubscribe": {
+        "eat":"\/unsubscribe",
+        "asyncCreations":{
+            "post":{
+                "path":"\/devices\/bulk\/unsubscribe\/{jobId}",
+                "method":"get",
+                "jobId":"jobId"
+            }
+        },
+        "methodNames": {
+            "post": "unsubscribe"
+        }
+    },
+    "\/devices\/bulk\/unsubscribe\/{jobId}": {
+        "methodNames": {
+            "get": "get"
+        }
+    },
+    "\/device-types\/": {
+        "methodNames": {
+            "get": "list",
+            "post": "create"
+        }
+    },
+    "\/device-types\/{id}": {
+        "methodNames": {
+            "get": "get",
+            "put": "update",
+            "delete": "delete"
+        }
+    },
+    "\/device-types\/{id}\/messages": {
+        "eat":"\/messages",
+        "methodNames": {
+            "get": "messages"
+        }
+    },
+    "\/device-types\/{id}\/callbacks-not-delivered": {
+        "eat":"\/callbacks-not-delivered",
+        "methodNames": {
+            "get": "callbacksNotDelivered"
+        }
+    },
+    "\/device-types\/{id}\/callbacks": {
+        "methodNames": {
+            "get": "list",
+            "post": "create"
+        }
+    },
+    "\/device-types\/{id}\/callbacks\/{callbackId}": {
+        "methodNames": {
+            "put": "update",
+            "delete": "delete"
+        }
+    },
+    "\/device-types\/{id}\/callbacks\/{callbackId}\/enable": {
+        "eat":"\/enable",
+        "methodNames": {
+            "put": "enable"
+        }
+    },
+    "\/device-types\/{id}\/callbacks\/{callbackId}\/downlink": {
+        "eat":"\/downlink",
+        "methodNames": {
+            "put": "setDownlink"
+        }
+    },
+    "\/device-types\/{id}\/callbacks\/{callbackId}\/callbacks-not-delivered": {
+        "eat":"\/callbacks-not-delivered",
+        "methodNames": {
+            "get": "callbacksNotDelivered"
+        }
+    },
+    "\/device-types\/{id}\/disengage": {
+        "eat":"\/disengage",
+        "methodNames": {
+            "put": "disengage"
+        }
+    },
+    "\/device-types\/{id}\/bulk\/restart": {
+        "eat":"\/bulk\/restart",
+        "asyncCreations":{
+            "post":{
+                "path":"\/device-types\/bulk\/restart\/{jobId}",
+                "method":"get",
+                "jobId":"jobId"
+            }
+        },
+        "methodNames": {
+            "post": "bulkRestart"
+        }
+    },
+    "\/device-types\/bulk\/restart\/{jobId}": {
+        "methodNames": {
+            "get": "get"
+        }
+    },
+    "\/groups\/": {
+        "methodNames": {
+            "get": "list",
+            "post": "create"
+        }
+    },
+    "\/groups\/{id}": {
+        "methodNames": {
+            "get": "get",
+            "put": "update",
+            "delete": "delete"
+        }
+    },
+    "\/groups\/{id}\/callbacks-not-delivered": {
+        "eat":"\/callbacks-not-delivered",
+        "methodNames": {
+            "get": "callbacksNotDelivered"
+        }
+    },
+    "\/groups\/{id}\/geoloc-payloads": {
+        "eat":"\/geoloc-payloads",
+        "methodNames": {
+            "get": "geolocationPayloads"
+        }
+    },
+    "\/profiles\/": {
+        "methodNames": {
+            "get": "list"
+        }
+    },
+    "\/profiles\/{id}": {
+        "methodNames": {
+            "get": "get"
+        }
+    },
+    "\/tiles\/monarch": {
+        "methodNames": {
+            "get": "get"
+        }
+    },
+    "\/tiles\/monarch\/kmz": {
+        "asyncCreations":{
+            "post":{
+                "path":"\/tiles\/monarch\/kmz\/{jobId}",
+                "method":"get",
+                "jobId":"jobId"
+            }
+        },
+        "methodNames": {
+            "post": "startAsync"
+        }
+    },
+    "\/tiles\/monarch\/kmz\/{jobId}": {
+        "methodNames": {
+            "get": "get"
+        }
+    },
+    "\/tiles\/monarch\/kmz\/{jobId}\/tiles.kmz": {
+        "methodNames": {
+            "get": "getCoverage"
+        }
+    },
+    "\/tiles\/public-coverage": {
+        "methodNames": {
+            "get": "get"
+        }
+    },
+    "\/tiles\/public-coverage\/kmz\/tiles.kmz": {
+        "eat":"\/kmz\/tiles.kmz",
+        "methodNames": {
+            "get": "kmzTitles"
+        }
+    },
+    "\/users\/": {
+        "methodNames": {
+            "get": "list",
+            "post": "create"
+        }
+    },
+    "\/users\/{id}": {
+        "methodNames": {
+            "get": "get",
+            "put": "update",
+            "delete": "delete"
+        }
+    },
+    "\/users\/{id}\/profiles": {
+        "methodNames": {
+            "put": "addRoles"
+        }
+    },
+    "\/users\/{id}\/profiles\/{profileId}": {
+        "methodNames": {
+            "delete": "delete"
+        }
+    }
+}

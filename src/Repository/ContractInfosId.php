@@ -2,8 +2,6 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\ContractInfosIdBulk;
-use Arimac\Sigfox\Repository\ContractInfosIdDevices;
 class ContractInfosId
 {
     /**
@@ -20,17 +18,23 @@ class ContractInfosId
         $this->id = $id;
     }
     /**
-     * @return ContractInfosIdBulk
+     * Retrieve information about a given contract.
+     *
+     * @param int $request
+     * @return int
      */
-    public function bulk() : ContractInfosIdBulk
+    function get(int $request) : int
     {
-        return new ContractInfosIdBulk($this->id);
+        return $this->client->request('get', '/contract-infos/{id}', $request, 'int');
     }
     /**
-     * @return ContractInfosIdDevices
+     * Create an async job to restart the devices associated to a contract.
+     *
+     * @param int $request
+     * @return int
      */
-    public function devices() : ContractInfosIdDevices
+    function bulkRestart(int $request) : int
     {
-        return new ContractInfosIdDevices($this->id);
+        return $this->client->request('post', '/contract-infos/{id}/bulk/restart', $request, 'int');
     }
 }

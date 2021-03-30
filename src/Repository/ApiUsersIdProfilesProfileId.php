@@ -23,4 +23,24 @@ class ApiUsersIdProfilesProfileId
         $this->id = $id;
         $this->profileId = $profileId;
     }
+    /**
+     * Delete a profile to a given API user.
+     *
+     * @param int $request
+     * @return int
+     */
+    function delete(int $request) : int
+    {
+        return $this->client->request('delete', '/api-users/{id}/profiles/{profileId}', $request, 'int');
+    }
+    /**
+     * Generate a new password for a given API user.
+     *
+     * @param int $request
+     * @return int
+     */
+    function renewCredential(int $request) : int
+    {
+        return $this->client->request('put', '/api-users/{id}/renew-credential', $request, 'int');
+    }
 }
