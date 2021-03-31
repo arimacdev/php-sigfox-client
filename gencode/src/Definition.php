@@ -19,6 +19,8 @@ use function Arimac\Sigfox\GenCode\Utils\extractEnumFieldsFromDescription;
 
 class Definition extends ClassExt
 {
+    protected $getter = true;
+
     protected $forceTraits = [
         "BillableGroup",
         "CallbackEmail",
@@ -61,7 +63,7 @@ class Definition extends ClassExt
         $this->setArrayProperty("objects", $objects);
     }
 
-    public function addProperty(string $name, string $type, ?string $message = null, bool $optional= true)
+    public function addProperty(string $name, string $type, ?string $message = null, bool $optional = true)
     {
         $property = $this->factory->property($name);
         $docType = $type;
@@ -95,21 +97,23 @@ class Definition extends ClassExt
         $this->class->addStmt($method);
 
         // Getter
-        $method = $this->factory->method("get" . ucfirst($name));
-        $method->setReturnType($optional ? new NullableType($type) : $type);
-        if ($message) {
-            $method->setDocComment($this->formatDocComment("getter", "@return $docType " . $message, [], $name));
-        } else {
-            $method->setDocComment("/**\n * @return $docType $name\n */");
+        if ($this->getter) {
+            $method = $this->factory->method("get" . ucfirst($name));
+            $method->setReturnType($optional ? new NullableType($type) : $type);
+            if ($message) {
+                $method->setDocComment($this->formatDocComment("getter", "@return $docType " . $message, [], $name));
+            } else {
+                $method->setDocComment("/**\n * @return $docType $name\n */");
+            }
+            $expression = new Return_(new Variable("this->$name"));
+            $method->addStmt($expression);
+            $this->class->addStmt($method);
         }
-        $expression = new Return_(new Variable("this->$name"));
-        $method->addStmt($expression);
-        $this->class->addStmt($method);
     }
 
-    public static function fromArray($namespace, $name, array $definition): Definition
+    public static function fromArray($namespace, $name, array $definition): self
     {
-        $defClass = new Definition($namespace, $name, $definition["description"] ?? null);
+        $defClass = new static($namespace, $name, $definition["description"] ?? null);
         addProperties($defClass, $definition);
 
         $extended = false;
@@ -134,7 +138,7 @@ class Definition extends ClassExt
         string $type,
         ?string $message = null,
         $docCommentParams = [],
-        ?string $name = null,
+        ?string $name = null
     ): string {
         $message = trim($message);
 

@@ -11,19 +11,19 @@ class DevicesIdConsumptionYearMonth
     /**
      * The year of consumption
      */
-    protected int $year;
+    protected string $year;
     /**
      * The month of consumption
      */
-    protected int $month;
+    protected string $month;
     /**
      * Creating the repository
      *
      * @param string $id The Device identifier (hexadecimal format)
-     * @param int $year The year of consumption
-     * @param int $month The month of consumption
+     * @param string $year The year of consumption
+     * @param string $month The month of consumption
      */
-    function __construct(string $id, int $year, int $month)
+    function __construct(string $id, string $year, string $month)
     {
         $this->id = $id;
         $this->year = $year;

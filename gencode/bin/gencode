@@ -3,6 +3,7 @@
 
 use Arimac\Sigfox\GenCode\Definition;
 use Arimac\Sigfox\GenCode\Repository;
+use Arimac\Sigfox\GenCode\Request;
 use cebe\openapi\Reader;
 use cebe\openapi\spec\PathItem;
 
@@ -23,7 +24,7 @@ if (!file_exists($openapiFileLocation)) {
 rrmdir($dir . "/../src/Definition");
 mkdir($dir . "/../src/Definition");
 
-$openapi = Reader::readFromJsonFile($openapiFileLocation);
+$openapi = json_decode( file_get_contents($openapiFileLocation) , true);
 
 $simpleAlias = ["Resources", "Resource", "Actions", "Action"];
 
@@ -175,7 +176,7 @@ function addProperties(Definition $defClass, $definition)
     }
 }
 
-foreach ($openapi->definitions as $key => $definition) {
+foreach ($openapi["definitions"] as $key => $definition) {
     $name = ucfirst($key);
     if (!in_array($name, $simpleAlias)) {
 
@@ -187,25 +188,27 @@ foreach ($openapi->definitions as $key => $definition) {
 /** @var Repository[] **/
 $repositories = [];
 
-$rules = json_decode(file_get_contents($dir."/rules.json"), true);
+$rules = json_decode(file_get_contents($dir . "/rules.json"), true);
 
-/** @var PathItem $path **/
-foreach ($openapi->paths as $key => $path) {
+foreach ($openapi["paths"] as $key => $path) {
     $endpoint = $key;
-    if(isset($rules[$key]["eat"])){
-        $key = substr($key, 0, strlen($key)- strlen($rules[$key]["eat"]));
+    if (isset($rules[$key]["eat"])) {
+        $key = substr($key, 0, strlen($key) - strlen($rules[$key]["eat"]));
     }
     $slices = explode("/", $key);
     $repoName = "";
-    $requestMethods = array_keys(get_object_vars($path->getSerializableData()));
-    $operation = $path->get ?? $path->post ?? $path->put ?? $path->delete;
-    $params = $operation->parameters;
+    $requestMethods = array_keys($path);
+    $requestMethods = array_filter($requestMethods, function($method){
+        return $method!="parameters"; 
+    });
+    $operation = $path[$requestMethods[0]];
+    $params = isset($operation["parameters"])? $operation["parameters"]: [];
     $pathParams = [];
     foreach ($params as $param) {
-        if ($param->in === "path") {
-            $type = $param->getSerializableData()->type ?? "string";
-            $description = $param->description;
-            $pathParams[$param->name] = [
+        if ($param["in"] === "path") {
+            $type = $param["typ"] ?? "string";
+            $description = $param["description"];
+            $pathParams[$param["name"]] = [
                 "type" => primitiveTypeCast($type),
                 "description" => $description
             ];
@@ -263,9 +266,57 @@ foreach ($openapi->paths as $key => $path) {
         }
     }
 
-    foreach($requestMethods as $requestMethod){
+    foreach ($requestMethods as $requestMethod) {
         $methodName = $rules[$endpoint]["methodNames"][$requestMethod];
-        $description = $path->$requestMethod->description;
+        $description = $path[$requestMethod]["description"];
+
+        $requestClassName = $repoName . ucfirst(strtolower($requestMethod));
+
+        $operation = $path[$requestMethod];
+
+        $fakeObject = [
+            "type" => "object",
+            "properties" => []
+        ];
+
+        $query = [];
+        $body = [];
+        $required = [];
+        $parameters = isset($operation["parameters"])? $operation["parameters"]: [];
+        foreach ($operation["parameters"] as $parameter) {
+            $in = $parameter["in"];
+            $name = $parameter["name"];
+            if ($in != "path") {
+                array_push($$in, $name );
+                $fakeObject["properties"][$name] = $parameter;
+                if(isset($parameter["schema"])){
+                    $fakeObject["properties"][$name]["type"] = "object";
+                    $fakeObject["properties"][$name]["properties"] = [];
+                    $fakeObject["properties"][$name]["allOf"] = $parameter["schema"];
+                }
+                if(isset($parameter["required"])&&$parameter["required"]) {
+                    $required[] = $name;
+                }
+            }
+        }
+
+        if(count($required)){
+            $fakeObject["required"] = $required;
+        }
+
+        if (count($fakeObject["properties"])) {
+            /** @var Request **/
+            $definition = Request::fromArray("Arimac\\Sigfox\\Request", $requestClassName, $fakeObject);
+            if(count($body)){
+                $definition->setBody($body); 
+            }
+            if(count($query)){
+                $definition->setQuery($query);
+            }
+            $definition->save();
+        }
+
+
         $repository->addRequestMethod($methodName, $requestMethod, $endpoint, "int", "int", $description);
     }
 }

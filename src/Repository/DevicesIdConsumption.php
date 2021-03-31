@@ -19,10 +19,10 @@ class DevicesIdConsumption
         $this->id = $id;
     }
     /**
-     * @param int $year The year of consumption
+     * @param string $year The year of consumption
      * @return DevicesIdConsumptionYear
      */
-    public function year(int $year) : DevicesIdConsumptionYear
+    public function year(string $year) : DevicesIdConsumptionYear
     {
         return new DevicesIdConsumptionYear($this->id, $year);
     }

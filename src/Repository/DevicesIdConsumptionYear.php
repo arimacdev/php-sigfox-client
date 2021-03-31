@@ -12,14 +12,14 @@ class DevicesIdConsumptionYear
     /**
      * The year of consumption
      */
-    protected int $year;
+    protected string $year;
     /**
      * Creating the repository
      *
      * @param string $id The Device identifier (hexadecimal format)
-     * @param int $year The year of consumption
+     * @param string $year The year of consumption
      */
-    function __construct(string $id, int $year)
+    function __construct(string $id, string $year)
     {
         $this->id = $id;
         $this->year = $year;
@@ -35,10 +35,10 @@ class DevicesIdConsumptionYear
         return $this->client->request('get', '/devices/{id}/consumption/{year}', $request, 'int');
     }
     /**
-     * @param int $month The month of consumption
+     * @param string $month The month of consumption
      * @return DevicesIdConsumptionYearMonth
      */
-    public function month(int $month) : DevicesIdConsumptionYearMonth
+    public function month(string $month) : DevicesIdConsumptionYearMonth
     {
         return new DevicesIdConsumptionYearMonth($this->id, $this->year, $month);
     }

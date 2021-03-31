@@ -10,16 +10,6 @@ use Arimac\Sigfox\Repository\DevicesBulkUnsubscribe;
 class DevicesBulk
 {
     /**
-     * Update or edit multiple devices with asynchronous job.
-     *
-     * @param int $request
-     * @return int
-     */
-    function update(int $request) : int
-    {
-        return $this->client->request('put', '/devices/bulk', $request, 'int');
-    }
-    /**
      * Create multiple new devices with asynchronous job
      *
      * @param int $request
@@ -28,6 +18,16 @@ class DevicesBulk
     function create(int $request) : int
     {
         return $this->client->request('post', '/devices/bulk', $request, 'int');
+    }
+    /**
+     * Update or edit multiple devices with asynchronous job.
+     *
+     * @param int $request
+     * @return int
+     */
+    function update(int $request) : int
+    {
+        return $this->client->request('put', '/devices/bulk', $request, 'int');
     }
     /**
      * @param string $jobId The job identifier (hexadecimal format)
