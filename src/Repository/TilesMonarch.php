@@ -2,18 +2,15 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\TilesMonarchKmz;
 class TilesMonarch
 {
     /**
      * Retrieve the information needed to display Sigfox Monarch service coverage.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function get(int $request) : int
+    public function get() : int
     {
-        return $this->client->request('get', '/tiles/monarch', $request, 'int');
+        return $this->client->request('get', '/tiles/monarch', null, 'int');
     }
     /**
      * @return TilesMonarchKmz

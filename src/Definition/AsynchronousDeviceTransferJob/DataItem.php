@@ -5,13 +5,12 @@ namespace Arimac\Sigfox\Definition\AsynchronousDeviceTransferJob;
 use Arimac\Sigfox\Definition;
 class DataItem extends Definition
 {
-    protected $required = array('id');
     /**
      * The device's identifier (hexadecimal format)
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /**
      * Whether to keep the device history or not
      *
@@ -19,50 +18,74 @@ class DataItem extends Definition
      */
     protected ?bool $keepHistory = null;
     /**
-     * True if the device is activable and can take a token. Not used if the device has already a token and if the transferred is intra-order.
+     * True if the device is activable and can take a token. Not used if the device has already a token and if the
+     * transferred is intra-order.
      *
      * @var bool
      */
     protected ?bool $activable = null;
     /**
+     * Setter for id
+     *
      * @param string $id The device's identifier (hexadecimal format)
+     *
+     * @return self To use in method chains
      */
-    function setId(string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The device's identifier (hexadecimal format)
      */
-    function getId() : string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
+     * Setter for keepHistory
+     *
      * @param bool $keepHistory Whether to keep the device history or not
+     *
+     * @return self To use in method chains
      */
-    function setKeepHistory(?bool $keepHistory)
+    public function setKeepHistory(?bool $keepHistory) : self
     {
         $this->keepHistory = $keepHistory;
+        return $this;
     }
     /**
+     * Getter for keepHistory
+     *
      * @return bool Whether to keep the device history or not
      */
-    function getKeepHistory() : ?bool
+    public function getKeepHistory() : bool
     {
         return $this->keepHistory;
     }
     /**
-     * @param bool $activable True if the device is activable and can take a token. Not used if the device has already a token and if the transferred is intra-order.
+     * Setter for activable
+     *
+     * @param bool $activable True if the device is activable and can take a token. Not used if the device has
+     *                        already a token and if the transferred is intra-order.
+     *
+     * @return self To use in method chains
      */
-    function setActivable(?bool $activable)
+    public function setActivable(?bool $activable) : self
     {
         $this->activable = $activable;
+        return $this;
     }
     /**
-     * @return bool True if the device is activable and can take a token. Not used if the device has already a token and if the transferred is intra-order.
+     * Getter for activable
+     *
+     * @return bool True if the device is activable and can take a token. Not used if the device has already a token
+     *              and if the transferred is intra-order.
      */
-    function getActivable() : ?bool
+    public function getActivable() : bool
     {
         return $this->activable;
     }

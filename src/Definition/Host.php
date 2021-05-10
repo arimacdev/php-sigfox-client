@@ -2,73 +2,107 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\BaseHost;
-use Arimac\Sigfox\Definition\MinGroup;
-use Arimac\Sigfox\Definition\Contact;
+use Arimac\Sigfox\Definition;
 class Host extends BaseHost
 {
-    /** @var MinGroup */
-    protected ?MinGroup $group = null;
-    /** @var Contact[] */
-    protected ?array $contacts = null;
-    /** @var string[] */
-    protected ?array $actions = null;
-    /** @var string[] */
-    protected ?array $resources = null;
-    protected $objects = array('group' => '\\Arimac\\Sigfox\\Definition\\MinGroup');
     /**
-     * @param MinGroup group
+     * @var MinGroup
      */
-    function setGroup(?MinGroup $group)
+    protected ?MinGroup $group = null;
+    /**
+     * @var Contact[]
+     */
+    protected ?array $contacts = null;
+    /**
+     * @var string[]
+     */
+    protected ?array $actions = null;
+    /**
+     * @var string[]
+     */
+    protected ?array $resources = null;
+    protected $serialize = array('group' => MinGroup::class);
+    /**
+     * Setter for group
+     *
+     * @param MinGroup $group
+     *
+     * @return self To use in method chains
+     */
+    public function setGroup(?MinGroup $group) : self
     {
         $this->group = $group;
+        return $this;
     }
     /**
-     * @return MinGroup group
+     * Getter for group
+     *
+     * @return MinGroup
      */
-    function getGroup() : ?MinGroup
+    public function getGroup() : MinGroup
     {
         return $this->group;
     }
     /**
-     * @param Contact[] contacts
+     * Setter for contacts
+     *
+     * @param Contact[] $contacts
+     *
+     * @return self To use in method chains
      */
-    function setContacts(?array $contacts)
+    public function setContacts(?array $contacts) : self
     {
         $this->contacts = $contacts;
+        return $this;
     }
     /**
-     * @return Contact[] contacts
+     * Getter for contacts
+     *
+     * @return Contact[]
      */
-    function getContacts() : ?array
+    public function getContacts() : array
     {
         return $this->contacts;
     }
     /**
-     * @param string[] actions
+     * Setter for actions
+     *
+     * @param string[] $actions
+     *
+     * @return self To use in method chains
      */
-    function setActions(?array $actions)
+    public function setActions(?array $actions) : self
     {
         $this->actions = $actions;
+        return $this;
     }
     /**
-     * @return string[] actions
+     * Getter for actions
+     *
+     * @return string[]
      */
-    function getActions() : ?array
+    public function getActions() : array
     {
         return $this->actions;
     }
     /**
-     * @param string[] resources
+     * Setter for resources
+     *
+     * @param string[] $resources
+     *
+     * @return self To use in method chains
      */
-    function setResources(?array $resources)
+    public function setResources(?array $resources) : self
     {
         $this->resources = $resources;
+        return $this;
     }
     /**
-     * @return string[] resources
+     * Getter for resources
+     *
+     * @return string[]
      */
-    function getResources() : ?array
+    public function getResources() : array
     {
         return $this->resources;
     }

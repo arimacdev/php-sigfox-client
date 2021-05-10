@@ -2,8 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CommonUser;
-use Arimac\Sigfox\Definition\UserRole;
+use Arimac\Sigfox\Definition;
 /**
  * Information about a User
  */
@@ -39,121 +38,183 @@ class User extends CommonUser
      * @var int
      */
     protected ?int $lastLoginTime = null;
-    /** @var UserRole[] */
+    /**
+     * @var UserRole[]
+     */
     protected ?array $userRoles = null;
-    /** @var string[] */
+    /**
+     * @var string[]
+     */
     protected ?array $actions = null;
-    /** @var string[] */
+    /**
+     * @var string[]
+     */
     protected ?array $resources = null;
     /**
+     * Setter for id
+     *
      * @param string $id The user's identifier
+     *
+     * @return self To use in method chains
      */
-    function setId(?string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The user's identifier
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
+     * Setter for email
+     *
      * @param string $email The user's email
+     *
+     * @return self To use in method chains
      */
-    function setEmail(?string $email)
+    public function setEmail(?string $email) : self
     {
         $this->email = $email;
+        return $this;
     }
     /**
+     * Getter for email
+     *
      * @return string The user's email
      */
-    function getEmail() : ?string
+    public function getEmail() : string
     {
         return $this->email;
     }
     /**
+     * Setter for locked
+     *
      * @param bool $locked If the user account is locked or not
+     *
+     * @return self To use in method chains
      */
-    function setLocked(?bool $locked)
+    public function setLocked(?bool $locked) : self
     {
         $this->locked = $locked;
+        return $this;
     }
     /**
+     * Getter for locked
+     *
      * @return bool If the user account is locked or not
      */
-    function getLocked() : ?bool
+    public function getLocked() : bool
     {
         return $this->locked;
     }
     /**
+     * Setter for creationTime
+     *
      * @param int $creationTime The user's creation time (in millisecond since Unix Epoch)
+     *
+     * @return self To use in method chains
      */
-    function setCreationTime(?int $creationTime)
+    public function setCreationTime(?int $creationTime) : self
     {
         $this->creationTime = $creationTime;
+        return $this;
     }
     /**
+     * Getter for creationTime
+     *
      * @return int The user's creation time (in millisecond since Unix Epoch)
      */
-    function getCreationTime() : ?int
+    public function getCreationTime() : int
     {
         return $this->creationTime;
     }
     /**
+     * Setter for lastLoginTime
+     *
      * @param int $lastLoginTime The user's last login time
+     *
+     * @return self To use in method chains
      */
-    function setLastLoginTime(?int $lastLoginTime)
+    public function setLastLoginTime(?int $lastLoginTime) : self
     {
         $this->lastLoginTime = $lastLoginTime;
+        return $this;
     }
     /**
+     * Getter for lastLoginTime
+     *
      * @return int The user's last login time
      */
-    function getLastLoginTime() : ?int
+    public function getLastLoginTime() : int
     {
         return $this->lastLoginTime;
     }
     /**
-     * @param UserRole[] userRoles
+     * Setter for userRoles
+     *
+     * @param UserRole[] $userRoles
+     *
+     * @return self To use in method chains
      */
-    function setUserRoles(?array $userRoles)
+    public function setUserRoles(?array $userRoles) : self
     {
         $this->userRoles = $userRoles;
+        return $this;
     }
     /**
-     * @return UserRole[] userRoles
+     * Getter for userRoles
+     *
+     * @return UserRole[]
      */
-    function getUserRoles() : ?array
+    public function getUserRoles() : array
     {
         return $this->userRoles;
     }
     /**
-     * @param string[] actions
+     * Setter for actions
+     *
+     * @param string[] $actions
+     *
+     * @return self To use in method chains
      */
-    function setActions(?array $actions)
+    public function setActions(?array $actions) : self
     {
         $this->actions = $actions;
+        return $this;
     }
     /**
-     * @return string[] actions
+     * Getter for actions
+     *
+     * @return string[]
      */
-    function getActions() : ?array
+    public function getActions() : array
     {
         return $this->actions;
     }
     /**
-     * @param string[] resources
+     * Setter for resources
+     *
+     * @param string[] $resources
+     *
+     * @return self To use in method chains
      */
-    function setResources(?array $resources)
+    public function setResources(?array $resources) : self
     {
         $this->resources = $resources;
+        return $this;
     }
     /**
-     * @return string[] resources
+     * Getter for resources
+     *
+     * @return string[]
      */
-    function getResources() : ?array
+    public function getResources() : array
     {
         return $this->resources;
     }

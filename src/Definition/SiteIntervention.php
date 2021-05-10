@@ -2,10 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\BaseSiteIntervention;
-use Arimac\Sigfox\Definition\MinSite;
-use Arimac\Sigfox\Definition\MinGroup;
-use Arimac\Sigfox\Definition\MinBaseStation;
+use Arimac\Sigfox\Definition;
 /**
  * Information about intervention
  */
@@ -17,11 +14,17 @@ class SiteIntervention extends BaseSiteIntervention
      * @var string
      */
     protected ?string $id = null;
-    /** @var MinSite */
+    /**
+     * @var MinSite
+     */
     protected ?MinSite $site = null;
-    /** @var MinGroup */
+    /**
+     * @var MinGroup
+     */
     protected ?MinGroup $group = null;
-    /** @var MinBaseStation */
+    /**
+     * @var MinBaseStation
+     */
     protected ?MinBaseStation $baseStation = null;
     /**
      * Date of the creation of this intervention (in milliseconds)
@@ -47,116 +50,172 @@ class SiteIntervention extends BaseSiteIntervention
      * @var string
      */
     protected ?string $lastEditedBy = null;
-    protected $objects = array('site' => '\\Arimac\\Sigfox\\Definition\\MinSite', 'group' => '\\Arimac\\Sigfox\\Definition\\MinGroup', 'baseStation' => '\\Arimac\\Sigfox\\Definition\\MinBaseStation');
+    protected $serialize = array('site' => MinSite::class, 'group' => MinGroup::class, 'baseStation' => MinBaseStation::class);
     /**
+     * Setter for id
+     *
      * @param string $id The intervention's identifier
+     *
+     * @return self To use in method chains
      */
-    function setId(?string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The intervention's identifier
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
-     * @param MinSite site
+     * Setter for site
+     *
+     * @param MinSite $site
+     *
+     * @return self To use in method chains
      */
-    function setSite(?MinSite $site)
+    public function setSite(?MinSite $site) : self
     {
         $this->site = $site;
+        return $this;
     }
     /**
-     * @return MinSite site
+     * Getter for site
+     *
+     * @return MinSite
      */
-    function getSite() : ?MinSite
+    public function getSite() : MinSite
     {
         return $this->site;
     }
     /**
-     * @param MinGroup group
+     * Setter for group
+     *
+     * @param MinGroup $group
+     *
+     * @return self To use in method chains
      */
-    function setGroup(?MinGroup $group)
+    public function setGroup(?MinGroup $group) : self
     {
         $this->group = $group;
+        return $this;
     }
     /**
-     * @return MinGroup group
+     * Getter for group
+     *
+     * @return MinGroup
      */
-    function getGroup() : ?MinGroup
+    public function getGroup() : MinGroup
     {
         return $this->group;
     }
     /**
-     * @param MinBaseStation baseStation
+     * Setter for baseStation
+     *
+     * @param MinBaseStation $baseStation
+     *
+     * @return self To use in method chains
      */
-    function setBaseStation(?MinBaseStation $baseStation)
+    public function setBaseStation(?MinBaseStation $baseStation) : self
     {
         $this->baseStation = $baseStation;
+        return $this;
     }
     /**
-     * @return MinBaseStation baseStation
+     * Getter for baseStation
+     *
+     * @return MinBaseStation
      */
-    function getBaseStation() : ?MinBaseStation
+    public function getBaseStation() : MinBaseStation
     {
         return $this->baseStation;
     }
     /**
+     * Setter for creationTime
+     *
      * @param int $creationTime Date of the creation of this intervention (in milliseconds)
+     *
+     * @return self To use in method chains
      */
-    function setCreationTime(?int $creationTime)
+    public function setCreationTime(?int $creationTime) : self
     {
         $this->creationTime = $creationTime;
+        return $this;
     }
     /**
+     * Getter for creationTime
+     *
      * @return int Date of the creation of this intervention (in milliseconds)
      */
-    function getCreationTime() : ?int
+    public function getCreationTime() : int
     {
         return $this->creationTime;
     }
     /**
+     * Setter for createdBy
+     *
      * @param string $createdBy Identifier of the user who created this intervention
+     *
+     * @return self To use in method chains
      */
-    function setCreatedBy(?string $createdBy)
+    public function setCreatedBy(?string $createdBy) : self
     {
         $this->createdBy = $createdBy;
+        return $this;
     }
     /**
+     * Getter for createdBy
+     *
      * @return string Identifier of the user who created this intervention
      */
-    function getCreatedBy() : ?string
+    public function getCreatedBy() : string
     {
         return $this->createdBy;
     }
     /**
+     * Setter for lastEditedTime
+     *
      * @param int $lastEditedTime Date of the last edition of this intervention (in milliseconds)
+     *
+     * @return self To use in method chains
      */
-    function setLastEditedTime(?int $lastEditedTime)
+    public function setLastEditedTime(?int $lastEditedTime) : self
     {
         $this->lastEditedTime = $lastEditedTime;
+        return $this;
     }
     /**
+     * Getter for lastEditedTime
+     *
      * @return int Date of the last edition of this intervention (in milliseconds)
      */
-    function getLastEditedTime() : ?int
+    public function getLastEditedTime() : int
     {
         return $this->lastEditedTime;
     }
     /**
+     * Setter for lastEditedBy
+     *
      * @param string $lastEditedBy Identifier of the user who last edited this intervention
+     *
+     * @return self To use in method chains
      */
-    function setLastEditedBy(?string $lastEditedBy)
+    public function setLastEditedBy(?string $lastEditedBy) : self
     {
         $this->lastEditedBy = $lastEditedBy;
+        return $this;
     }
     /**
+     * Getter for lastEditedBy
+     *
      * @return string Identifier of the user who last edited this intervention
      */
-    function getLastEditedBy() : ?string
+    public function getLastEditedBy() : string
     {
         return $this->lastEditedBy;
     }

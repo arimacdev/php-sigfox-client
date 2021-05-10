@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\MinMetaRole;
 use Arimac\Sigfox\Definition;
 /**
  * Defines a role entity
@@ -28,44 +27,65 @@ class MinRole extends Definition
      */
     protected ?array $path = null;
     /**
+     * Setter for id
+     *
      * @param string $id The role's identifier
+     *
+     * @return self To use in method chains
      */
-    function setId(?string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The role's identifier
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
+     * Setter for name
+     *
      * @param string $name The role's name
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The role's name
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }
     /**
+     * Setter for path
+     *
      * @param MinMetaRole[] $path The roles's path sorted by descending ancestor (direct parent to farest parent)
+     *
+     * @return self To use in method chains
      */
-    function setPath(?array $path)
+    public function setPath(?array $path) : self
     {
         $this->path = $path;
+        return $this;
     }
     /**
+     * Getter for path
+     *
      * @return MinMetaRole[] The roles's path sorted by descending ancestor (direct parent to farest parent)
      */
-    function getPath() : ?array
+    public function getPath() : array
     {
         return $this->path;
     }

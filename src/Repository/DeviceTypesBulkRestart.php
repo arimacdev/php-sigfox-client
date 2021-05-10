@@ -2,11 +2,13 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\DeviceTypesBulkRestartJobId;
 class DeviceTypesBulkRestart
 {
     /**
+     * Find by jobId
+     *
      * @param string $jobId The job's identidier (hexademical format)
+     *
      * @return DeviceTypesBulkRestartJobId
      */
     public function find(string $jobId) : DeviceTypesBulkRestartJobId

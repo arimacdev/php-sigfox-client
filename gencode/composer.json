@@ -16,10 +16,7 @@
     "autoload": {
         "psr-4": {
             "Arimac\\Sigfox\\GenCode\\": "src/"
-        },
-        "files": [
-            "src/Utils.php"
-        ]
+        }
     },
     "minimum-stability": "dev",
     "require": {

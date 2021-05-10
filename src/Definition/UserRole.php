@@ -2,44 +2,60 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\MinGroup;
-use Arimac\Sigfox\Definition\MinProfile;
 use Arimac\Sigfox\Definition;
 /**
  * Information about User Role
  */
 class UserRole extends Definition
 {
-    /** @var MinGroup */
-    protected ?MinGroup $group = null;
-    /** @var MinProfile */
-    protected ?MinProfile $profile = null;
-    protected $objects = array('group' => '\\Arimac\\Sigfox\\Definition\\MinGroup', 'profile' => '\\Arimac\\Sigfox\\Definition\\MinProfile');
     /**
-     * @param MinGroup group
+     * @var MinGroup
      */
-    function setGroup(?MinGroup $group)
+    protected ?MinGroup $group = null;
+    /**
+     * @var MinProfile
+     */
+    protected ?MinProfile $profile = null;
+    protected $serialize = array('group' => MinGroup::class, 'profile' => MinProfile::class);
+    /**
+     * Setter for group
+     *
+     * @param MinGroup $group
+     *
+     * @return self To use in method chains
+     */
+    public function setGroup(?MinGroup $group) : self
     {
         $this->group = $group;
+        return $this;
     }
     /**
-     * @return MinGroup group
+     * Getter for group
+     *
+     * @return MinGroup
      */
-    function getGroup() : ?MinGroup
+    public function getGroup() : MinGroup
     {
         return $this->group;
     }
     /**
-     * @param MinProfile profile
+     * Setter for profile
+     *
+     * @param MinProfile $profile
+     *
+     * @return self To use in method chains
      */
-    function setProfile(?MinProfile $profile)
+    public function setProfile(?MinProfile $profile) : self
     {
         $this->profile = $profile;
+        return $this;
     }
     /**
-     * @return MinProfile profile
+     * Getter for profile
+     *
+     * @return MinProfile
      */
-    function getProfile() : ?MinProfile
+    public function getProfile() : MinProfile
     {
         return $this->profile;
     }

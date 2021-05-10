@@ -18,30 +18,44 @@ class DataItem extends Definition
      */
     protected ?int $unsubscriptionTime = null;
     /**
+     * Setter for id
+     *
      * @param string $id The device's identifier to unsubscribe (hexadecimal format)
+     *
+     * @return self To use in method chains
      */
-    function setId(?string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The device's identifier to unsubscribe (hexadecimal format)
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
+     * Setter for unsubscriptionTime
+     *
      * @param int $unsubscriptionTime the unsubscription time (in milliseconds since the Unix Epoch)
+     *
+     * @return self To use in method chains
      */
-    function setUnsubscriptionTime(?int $unsubscriptionTime)
+    public function setUnsubscriptionTime(?int $unsubscriptionTime) : self
     {
         $this->unsubscriptionTime = $unsubscriptionTime;
+        return $this;
     }
     /**
+     * Getter for unsubscriptionTime
+     *
      * @return int the unsubscription time (in milliseconds since the Unix Epoch)
      */
-    function getUnsubscriptionTime() : ?int
+    public function getUnsubscriptionTime() : int
     {
         return $this->unsubscriptionTime;
     }

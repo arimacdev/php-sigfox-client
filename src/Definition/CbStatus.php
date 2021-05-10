@@ -30,58 +30,86 @@ class CbStatus extends Definition
      */
     protected ?int $time = null;
     /**
+     * Setter for status
+     *
      * @param int $status http response status
+     *
+     * @return self To use in method chains
      */
-    function setStatus(?int $status)
+    public function setStatus(?int $status) : self
     {
         $this->status = $status;
+        return $this;
     }
     /**
+     * Getter for status
+     *
      * @return int http response status
      */
-    function getStatus() : ?int
+    public function getStatus() : int
     {
         return $this->status;
     }
     /**
+     * Setter for info
+     *
      * @param string $info http response message
+     *
+     * @return self To use in method chains
      */
-    function setInfo(?string $info)
+    public function setInfo(?string $info) : self
     {
         $this->info = $info;
+        return $this;
     }
     /**
+     * Getter for info
+     *
      * @return string http response message
      */
-    function getInfo() : ?string
+    public function getInfo() : string
     {
         return $this->info;
     }
     /**
+     * Setter for cbDef
+     *
      * @param string $cbDef callback definition triggered
+     *
+     * @return self To use in method chains
      */
-    function setCbDef(?string $cbDef)
+    public function setCbDef(?string $cbDef) : self
     {
         $this->cbDef = $cbDef;
+        return $this;
     }
     /**
+     * Getter for cbDef
+     *
      * @return string callback definition triggered
      */
-    function getCbDef() : ?string
+    public function getCbDef() : string
     {
         return $this->cbDef;
     }
     /**
+     * Setter for time
+     *
      * @param int $time time the callback was called (in milliseconds since the Unix Epoch)
+     *
+     * @return self To use in method chains
      */
-    function setTime(?int $time)
+    public function setTime(?int $time) : self
     {
         $this->time = $time;
+        return $this;
     }
     /**
+     * Getter for time
+     *
      * @return int time the callback was called (in milliseconds since the Unix Epoch)
      */
-    function getTime() : ?int
+    public function getTime() : int
     {
         return $this->time;
     }

@@ -2,38 +2,63 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\MinSite;
-use Arimac\Sigfox\Definition\MinHost;
+use Arimac\Sigfox\Definition;
 /**
  * Minimal information about a site linked to a Base Station.
  */
 class SimpleSite extends MinSite
 {
-    /** PROD */
+    /**
+     * PROD
+     */
     public const STATUS_PROD = 0;
-    /** REFUSED */
+    /**
+     * REFUSED
+     */
     public const STATUS_REFUSED = 1;
-    /** INSTALLED */
+    /**
+     * INSTALLED
+     */
     public const STATUS_INSTALLED = 2;
-    /** NOT PLANNED */
+    /**
+     * NOT PLANNED
+     */
     public const STATUS_NOT_PLANNED = 3;
-    /** PRE PROD */
+    /**
+     * PRE PROD
+     */
     public const STATUS_PRE_PROD = 4;
-    /** CANDIDATE */
+    /**
+     * CANDIDATE
+     */
     public const STATUS_CANDIDATE = 5;
-    /** CANCELLED */
+    /**
+     * CANCELLED
+     */
     public const STATUS_CANCELLED = 6;
-    /** CLIENT */
+    /**
+     * CLIENT
+     */
     public const STATUS_CLIENT = 7;
-    /** RD */
+    /**
+     * RD
+     */
     public const STATUS_RD = 8;
-    /** LABO */
+    /**
+     * LABO
+     */
     public const STATUS_LABO = 9;
-    /** INSTALLED CONNECTED ONLY SECONDARY */
+    /**
+     * INSTALLED CONNECTED ONLY SECONDARY
+     */
     public const STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY = 14;
-    /** INSTALLED CONNECTED ONLY PRIMARY */
+    /**
+     * INSTALLED CONNECTED ONLY PRIMARY
+     */
     public const STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY = 15;
-    /** @var MinHost */
+    /**
+     * @var MinHost
+     */
     protected ?MinHost $host = null;
     /**
      * external id of the site where the base station is installed
@@ -43,20 +68,8 @@ class SimpleSite extends MinSite
     protected ?int $candidateExternalId = null;
     /**
      * Site status
-     * - `SimpleSite::STATUS_PROD`
-     * - `SimpleSite::STATUS_REFUSED`
-     * - `SimpleSite::STATUS_INSTALLED`
-     * - `SimpleSite::STATUS_NOT_PLANNED`
-     * - `SimpleSite::STATUS_PRE_PROD`
-     * - `SimpleSite::STATUS_CANDIDATE`
-     * - `SimpleSite::STATUS_CANCELLED`
-     * - `SimpleSite::STATUS_CLIENT`
-     * - `SimpleSite::STATUS_RD`
-     * - `SimpleSite::STATUS_LABO`
-     * - `SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY`
-     * - `SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY`
      *
-     * @var int
+     * @var self::STATUS_*
      */
     protected ?int $status = null;
     /**
@@ -65,100 +78,113 @@ class SimpleSite extends MinSite
      * @var string
      */
     protected ?string $lessorId = null;
-    /** @var string[] */
-    protected ?array $actions = null;
-    protected $objects = array('host' => '\\Arimac\\Sigfox\\Definition\\MinHost');
     /**
-     * @param MinHost host
+     * @var string[]
      */
-    function setHost(?MinHost $host)
+    protected ?array $actions = null;
+    protected $serialize = array('host' => MinHost::class);
+    /**
+     * Setter for host
+     *
+     * @param MinHost $host
+     *
+     * @return self To use in method chains
+     */
+    public function setHost(?MinHost $host) : self
     {
         $this->host = $host;
+        return $this;
     }
     /**
-     * @return MinHost host
+     * Getter for host
+     *
+     * @return MinHost
      */
-    function getHost() : ?MinHost
+    public function getHost() : MinHost
     {
         return $this->host;
     }
     /**
+     * Setter for candidateExternalId
+     *
      * @param int $candidateExternalId external id of the site where the base station is installed
+     *
+     * @return self To use in method chains
      */
-    function setCandidateExternalId(?int $candidateExternalId)
+    public function setCandidateExternalId(?int $candidateExternalId) : self
     {
         $this->candidateExternalId = $candidateExternalId;
+        return $this;
     }
     /**
+     * Getter for candidateExternalId
+     *
      * @return int external id of the site where the base station is installed
      */
-    function getCandidateExternalId() : ?int
+    public function getCandidateExternalId() : int
     {
         return $this->candidateExternalId;
     }
     /**
-     * @param int $status Site status
-     * - `SimpleSite::STATUS_PROD`
-     * - `SimpleSite::STATUS_REFUSED`
-     * - `SimpleSite::STATUS_INSTALLED`
-     * - `SimpleSite::STATUS_NOT_PLANNED`
-     * - `SimpleSite::STATUS_PRE_PROD`
-     * - `SimpleSite::STATUS_CANDIDATE`
-     * - `SimpleSite::STATUS_CANCELLED`
-     * - `SimpleSite::STATUS_CLIENT`
-     * - `SimpleSite::STATUS_RD`
-     * - `SimpleSite::STATUS_LABO`
-     * - `SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY`
-     * - `SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY`
+     * Setter for status
+     *
+     * @param self::STATUS_* $status Site status
+     *
+     * @return self To use in method chains
      */
-    function setStatus(?int $status)
+    public function setStatus(?int $status) : self
     {
         $this->status = $status;
+        return $this;
     }
     /**
-     * @return int Site status
-     * - `SimpleSite::STATUS_PROD`
-     * - `SimpleSite::STATUS_REFUSED`
-     * - `SimpleSite::STATUS_INSTALLED`
-     * - `SimpleSite::STATUS_NOT_PLANNED`
-     * - `SimpleSite::STATUS_PRE_PROD`
-     * - `SimpleSite::STATUS_CANDIDATE`
-     * - `SimpleSite::STATUS_CANCELLED`
-     * - `SimpleSite::STATUS_CLIENT`
-     * - `SimpleSite::STATUS_RD`
-     * - `SimpleSite::STATUS_LABO`
-     * - `SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY`
-     * - `SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY`
+     * Getter for status
+     *
+     * @return self::STATUS_* Site status
      */
-    function getStatus() : ?int
+    public function getStatus() : int
     {
         return $this->status;
     }
     /**
+     * Setter for lessorId
+     *
      * @param string $lessorId id of the lessor of the site where the base station is installed
+     *
+     * @return self To use in method chains
      */
-    function setLessorId(?string $lessorId)
+    public function setLessorId(?string $lessorId) : self
     {
         $this->lessorId = $lessorId;
+        return $this;
     }
     /**
+     * Getter for lessorId
+     *
      * @return string id of the lessor of the site where the base station is installed
      */
-    function getLessorId() : ?string
+    public function getLessorId() : string
     {
         return $this->lessorId;
     }
     /**
-     * @param string[] actions
+     * Setter for actions
+     *
+     * @param string[] $actions
+     *
+     * @return self To use in method chains
      */
-    function setActions(?array $actions)
+    public function setActions(?array $actions) : self
     {
         $this->actions = $actions;
+        return $this;
     }
     /**
-     * @return string[] actions
+     * Getter for actions
+     *
+     * @return string[]
      */
-    function getActions() : ?array
+    public function getActions() : array
     {
         return $this->actions;
     }

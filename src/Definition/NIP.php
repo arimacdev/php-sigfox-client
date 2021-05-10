@@ -2,29 +2,39 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\Group;
+use Arimac\Sigfox\Definition;
 /**
  * Defines the NIP group type properties
  */
 class NIP extends Group
 {
     /**
-     * This is the country ISO code (3 letters from the ISO 3166-1 alpha-3 country code) where the operator manages its network. Only available for SNO and NIP.
+     * This is the country ISO code (3 letters from the ISO 3166-1 alpha-3 country code) where the operator manages
+     * its network. Only available for SNO and NIP.
      *
      * @var string
      */
     protected ?string $countryISOAlpha3 = null;
     /**
-     * @param string $countryISOAlpha3 This is the country ISO code (3 letters from the ISO 3166-1 alpha-3 country code) where the operator manages its network. Only available for SNO and NIP.
+     * Setter for countryISOAlpha3
+     *
+     * @param string $countryISOAlpha3 This is the country ISO code (3 letters from the ISO 3166-1 alpha-3 country
+     *                                 code) where the operator manages its network. Only available for SNO and NIP.
+     *
+     * @return self To use in method chains
      */
-    function setCountryISOAlpha3(?string $countryISOAlpha3)
+    public function setCountryISOAlpha3(?string $countryISOAlpha3) : self
     {
         $this->countryISOAlpha3 = $countryISOAlpha3;
+        return $this;
     }
     /**
-     * @return string This is the country ISO code (3 letters from the ISO 3166-1 alpha-3 country code) where the operator manages its network. Only available for SNO and NIP.
+     * Getter for countryISOAlpha3
+     *
+     * @return string This is the country ISO code (3 letters from the ISO 3166-1 alpha-3 country code) where the
+     *                operator manages its network. Only available for SNO and NIP.
      */
-    function getCountryISOAlpha3() : ?string
+    public function getCountryISOAlpha3() : string
     {
         return $this->countryISOAlpha3;
     }

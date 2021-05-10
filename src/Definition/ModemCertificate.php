@@ -2,12 +2,12 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\RadioCertificate;
-use Arimac\Sigfox\Definition\ModemCertificateRadioConfiguration;
+use Arimac\Sigfox\Definition;
 class ModemCertificate extends RadioCertificate
 {
     /**
      * Radio configurations available for this certificate
+     * 
      *
      * @var ModemCertificateRadioConfiguration[]
      */
@@ -19,30 +19,47 @@ class ModemCertificate extends RadioCertificate
      */
     protected ?bool $repeaterFunction = null;
     /**
-     * @param ModemCertificateRadioConfiguration[] $radioConfigurations Radio configurations available for this certificate
+     * Setter for radioConfigurations
+     *
+     * @param ModemCertificateRadioConfiguration[] $radioConfigurations Radio configurations available for this
+     *                                                                  certificate
+     *                                                                  
+     *
+     * @return self To use in method chains
      */
-    function setRadioConfigurations(?array $radioConfigurations)
+    public function setRadioConfigurations(?array $radioConfigurations) : self
     {
         $this->radioConfigurations = $radioConfigurations;
+        return $this;
     }
     /**
+     * Getter for radioConfigurations
+     *
      * @return ModemCertificateRadioConfiguration[] Radio configurations available for this certificate
+     *                                              
      */
-    function getRadioConfigurations() : ?array
+    public function getRadioConfigurations() : array
     {
         return $this->radioConfigurations;
     }
     /**
+     * Setter for repeaterFunction
+     *
      * @param bool $repeaterFunction The modem certificate has repeater function or not
+     *
+     * @return self To use in method chains
      */
-    function setRepeaterFunction(?bool $repeaterFunction)
+    public function setRepeaterFunction(?bool $repeaterFunction) : self
     {
         $this->repeaterFunction = $repeaterFunction;
+        return $this;
     }
     /**
+     * Getter for repeaterFunction
+     *
      * @return bool The modem certificate has repeater function or not
      */
-    function getRepeaterFunction() : ?bool
+    public function getRepeaterFunction() : bool
     {
         return $this->repeaterFunction;
     }

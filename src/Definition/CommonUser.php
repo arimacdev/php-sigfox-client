@@ -27,44 +27,65 @@ class CommonUser extends Definition
      */
     protected ?string $timezone = null;
     /**
+     * Setter for firstName
+     *
      * @param string $firstName The user's first name
+     *
+     * @return self To use in method chains
      */
-    function setFirstName(?string $firstName)
+    public function setFirstName(?string $firstName) : self
     {
         $this->firstName = $firstName;
+        return $this;
     }
     /**
+     * Getter for firstName
+     *
      * @return string The user's first name
      */
-    function getFirstName() : ?string
+    public function getFirstName() : string
     {
         return $this->firstName;
     }
     /**
+     * Setter for lastName
+     *
      * @param string $lastName The user's last name
+     *
+     * @return self To use in method chains
      */
-    function setLastName(?string $lastName)
+    public function setLastName(?string $lastName) : self
     {
         $this->lastName = $lastName;
+        return $this;
     }
     /**
+     * Getter for lastName
+     *
      * @return string The user's last name
      */
-    function getLastName() : ?string
+    public function getLastName() : string
     {
         return $this->lastName;
     }
     /**
+     * Setter for timezone
+     *
      * @param string $timezone The user's timezone
+     *
+     * @return self To use in method chains
      */
-    function setTimezone(?string $timezone)
+    public function setTimezone(?string $timezone) : self
     {
         $this->timezone = $timezone;
+        return $this;
     }
     /**
+     * Getter for timezone
+     *
      * @return string The user's timezone
      */
-    function getTimezone() : ?string
+    public function getTimezone() : string
     {
         return $this->timezone;
     }

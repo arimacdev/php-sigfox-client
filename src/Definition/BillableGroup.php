@@ -26,44 +26,65 @@ trait BillableGroup
      */
     protected ?int $maxPrototypeAllowed = null;
     /**
+     * Setter for billable
+     *
      * @param bool $billable true if the group is billable
+     *
+     * @return self To use in method chains
      */
-    function setBillable(?bool $billable)
+    public function setBillable(?bool $billable) : self
     {
         $this->billable = $billable;
+        return $this;
     }
     /**
+     * Getter for billable
+     *
      * @return bool true if the group is billable
      */
-    function getBillable() : ?bool
+    public function getBillable() : bool
     {
         return $this->billable;
     }
     /**
+     * Setter for technicalEmail
+     *
      * @param string $technicalEmail The technical contact email
+     *
+     * @return self To use in method chains
      */
-    function setTechnicalEmail(?string $technicalEmail)
+    public function setTechnicalEmail(?string $technicalEmail) : self
     {
         $this->technicalEmail = $technicalEmail;
+        return $this;
     }
     /**
+     * Getter for technicalEmail
+     *
      * @return string The technical contact email
      */
-    function getTechnicalEmail() : ?string
+    public function getTechnicalEmail() : string
     {
         return $this->technicalEmail;
     }
     /**
+     * Setter for maxPrototypeAllowed
+     *
      * @param int $maxPrototypeAllowed Number of prototypes allowed. Accessible only for groups under SO
+     *
+     * @return self To use in method chains
      */
-    function setMaxPrototypeAllowed(?int $maxPrototypeAllowed)
+    public function setMaxPrototypeAllowed(?int $maxPrototypeAllowed) : self
     {
         $this->maxPrototypeAllowed = $maxPrototypeAllowed;
+        return $this;
     }
     /**
+     * Getter for maxPrototypeAllowed
+     *
      * @return int Number of prototypes allowed. Accessible only for groups under SO
      */
-    function getMaxPrototypeAllowed() : ?int
+    public function getMaxPrototypeAllowed() : int
     {
         return $this->maxPrototypeAllowed;
     }

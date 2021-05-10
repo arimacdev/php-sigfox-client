@@ -2,51 +2,46 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\UsersIdProfiles;
+use Arimac\Sigfox\Request\UsersIdGet;
+use Arimac\Sigfox\Request\UsersIdUpdate;
 class UsersId
 {
     /**
      * The User identifier
      */
-    protected string $id;
+    protected ?string $id;
     /**
      * Creating the repository
      *
      * @param string $id The User identifier
      */
-    function __construct(string $id)
+    public function __construct(string $id)
     {
         $this->id = $id;
     }
     /**
      * Retrieve information about a given user. The id can also be the user's email address.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function get(int $request) : int
+    public function get(UsersIdGet $request) : int
     {
-        return $this->client->request('get', '/users/{id}', $request, 'int');
+        return $this->client->request('get', $this->bindUrlParams('/users/{id}', $this->id), $request, 'int');
     }
     /**
      * Update a given user.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function update(int $request) : int
+    public function update(UsersIdUpdate $request) : int
     {
-        return $this->client->request('put', '/users/{id}', $request, 'int');
+        return $this->client->request('put', $this->bindUrlParams('/users/{id}', $this->id), $request, 'int');
     }
     /**
      * Delete a given user.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function delete(int $request) : int
+    public function delete() : int
     {
-        return $this->client->request('delete', '/users/{id}', $request, 'int');
+        return $this->client->request('delete', $this->bindUrlParams('/users/{id}', $this->id), null, 'int');
     }
     /**
      * @return UsersIdProfiles

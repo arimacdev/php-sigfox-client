@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CallbackMedium;
 use Arimac\Sigfox\Definition;
 class ErrorMessages extends Definition
 {
@@ -48,7 +47,9 @@ class ErrorMessages extends Definition
      * @var string
      */
     protected ?string $message = null;
-    /** @var CallbackMedium */
+    /**
+     * @var CallbackMedium
+     */
     protected ?CallbackMedium $callback = null;
     /**
      * All the parameters which have served to build the callback, see callback definitions for an exhaustive list.
@@ -56,130 +57,195 @@ class ErrorMessages extends Definition
      * @var array
      */
     protected ?array $parameters = null;
-    protected $objects = array('callback' => '\\Arimac\\Sigfox\\Definition\\CallbackMedium');
+    protected $serialize = array('callback' => CallbackMedium::class);
     /**
+     * Setter for deviceId
+     *
      * @param string $deviceId Device identifier
+     *
+     * @return self To use in method chains
      */
-    function setDeviceId(?string $deviceId)
+    public function setDeviceId(?string $deviceId) : self
     {
         $this->deviceId = $deviceId;
+        return $this;
     }
     /**
+     * Getter for deviceId
+     *
      * @return string Device identifier
      */
-    function getDeviceId() : ?string
+    public function getDeviceId() : string
     {
         return $this->deviceId;
     }
     /**
+     * Setter for deviceTypeId
+     *
      * @param string $deviceTypeId Device type identifier
+     *
+     * @return self To use in method chains
      */
-    function setDeviceTypeId(?string $deviceTypeId)
+    public function setDeviceTypeId(?string $deviceTypeId) : self
     {
         $this->deviceTypeId = $deviceTypeId;
+        return $this;
     }
     /**
+     * Getter for deviceTypeId
+     *
      * @return string Device type identifier
      */
-    function getDeviceTypeId() : ?string
+    public function getDeviceTypeId() : string
     {
         return $this->deviceTypeId;
     }
     /**
+     * Setter for time
+     *
      * @param int $time Timestamp of the message (posix format)
+     *
+     * @return self To use in method chains
      */
-    function setTime(?int $time)
+    public function setTime(?int $time) : self
     {
         $this->time = $time;
+        return $this;
     }
     /**
+     * Getter for time
+     *
      * @return int Timestamp of the message (posix format)
      */
-    function getTime() : ?int
+    public function getTime() : int
     {
         return $this->time;
     }
     /**
+     * Setter for data
+     *
      * @param string $data Data message
+     *
+     * @return self To use in method chains
      */
-    function setData(?string $data)
+    public function setData(?string $data) : self
     {
         $this->data = $data;
+        return $this;
     }
     /**
+     * Getter for data
+     *
      * @return string Data message
      */
-    function getData() : ?string
+    public function getData() : string
     {
         return $this->data;
     }
     /**
+     * Setter for snr
+     *
      * @param string $snr The SNR of the messages received by the network so far.
+     *
+     * @return self To use in method chains
      */
-    function setSnr(?string $snr)
+    public function setSnr(?string $snr) : self
     {
         $this->snr = $snr;
+        return $this;
     }
     /**
+     * Getter for snr
+     *
      * @return string The SNR of the messages received by the network so far.
      */
-    function getSnr() : ?string
+    public function getSnr() : string
     {
         return $this->snr;
     }
     /**
+     * Setter for status
+     *
      * @param string $status Contains the callback response status.
+     *
+     * @return self To use in method chains
      */
-    function setStatus(?string $status)
+    public function setStatus(?string $status) : self
     {
         $this->status = $status;
+        return $this;
     }
     /**
+     * Getter for status
+     *
      * @return string Contains the callback response status.
      */
-    function getStatus() : ?string
+    public function getStatus() : string
     {
         return $this->status;
     }
     /**
+     * Setter for message
+     *
      * @param string $message Contains additional information on the response.
+     *
+     * @return self To use in method chains
      */
-    function setMessage(?string $message)
+    public function setMessage(?string $message) : self
     {
         $this->message = $message;
+        return $this;
     }
     /**
+     * Getter for message
+     *
      * @return string Contains additional information on the response.
      */
-    function getMessage() : ?string
+    public function getMessage() : string
     {
         return $this->message;
     }
     /**
-     * @param CallbackMedium callback
+     * Setter for callback
+     *
+     * @param CallbackMedium $callback
+     *
+     * @return self To use in method chains
      */
-    function setCallback(?CallbackMedium $callback)
+    public function setCallback(?CallbackMedium $callback) : self
     {
         $this->callback = $callback;
+        return $this;
     }
     /**
-     * @return CallbackMedium callback
+     * Getter for callback
+     *
+     * @return CallbackMedium
      */
-    function getCallback() : ?CallbackMedium
+    public function getCallback() : CallbackMedium
     {
         return $this->callback;
     }
     /**
-     * @param array $parameters All the parameters which have served to build the callback, see callback definitions for an exhaustive list.
+     * Setter for parameters
+     *
+     * @param array $parameters All the parameters which have served to build the callback, see callback definitions
+     *                          for an exhaustive list.
+     *
+     * @return self To use in method chains
      */
-    function setParameters(?array $parameters)
+    public function setParameters(?array $parameters) : self
     {
         $this->parameters = $parameters;
+        return $this;
     }
     /**
-     * @return array All the parameters which have served to build the callback, see callback definitions for an exhaustive list.
+     * Getter for parameters
+     *
+     * @return array All the parameters which have served to build the callback, see callback definitions for an
+     *               exhaustive list.
      */
-    function getParameters() : ?array
+    public function getParameters() : array
     {
         return $this->parameters;
     }

@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\ReplaceResponse\Status;
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Definition\ReplaceResponse\Status;
 class ReplaceResponse extends Definition
 {
     /**
@@ -18,31 +18,46 @@ class ReplaceResponse extends Definition
      * @var Status
      */
     protected ?Status $status = null;
+    protected $serialize = array('status' => Status::class);
     /**
+     * Setter for total
+     *
      * @param int $total The total number of devices to be replaced
+     *
+     * @return self To use in method chains
      */
-    function setTotal(?int $total)
+    public function setTotal(?int $total) : self
     {
         $this->total = $total;
+        return $this;
     }
     /**
+     * Getter for total
+     *
      * @return int The total number of devices to be replaced
      */
-    function getTotal() : ?int
+    public function getTotal() : int
     {
         return $this->total;
     }
     /**
+     * Setter for status
+     *
      * @param Status $status The information about the devices already processed
+     *
+     * @return self To use in method chains
      */
-    function setStatus(?Status $status)
+    public function setStatus(?Status $status) : self
     {
         $this->status = $status;
+        return $this;
     }
     /**
+     * Getter for status
+     *
      * @return Status The information about the devices already processed
      */
-    function getStatus() : ?Status
+    public function getStatus() : Status
     {
         return $this->status;
     }

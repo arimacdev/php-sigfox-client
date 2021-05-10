@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CommonContractInfo;
+use Arimac\Sigfox\Definition;
 class ContractInfoUpdate extends CommonContractInfo
 {
     /**
@@ -18,30 +18,44 @@ class ContractInfoUpdate extends CommonContractInfo
      */
     protected ?array $blacklistedTerritories = null;
     /**
+     * Setter for orderName
+     *
      * @param string $orderName The order name, if any. This field can be unset when updating.
+     *
+     * @return self To use in method chains
      */
-    function setOrderName(?string $orderName)
+    public function setOrderName(?string $orderName) : self
     {
         $this->orderName = $orderName;
+        return $this;
     }
     /**
+     * Getter for orderName
+     *
      * @return string The order name, if any. This field can be unset when updating.
      */
-    function getOrderName() : ?string
+    public function getOrderName() : string
     {
         return $this->orderName;
     }
     /**
+     * Setter for blacklistedTerritories
+     *
      * @param string[] $blacklistedTerritories The list of "blacklisted" territories, as an array of NIP group IDs.
+     *
+     * @return self To use in method chains
      */
-    function setBlacklistedTerritories(?array $blacklistedTerritories)
+    public function setBlacklistedTerritories(?array $blacklistedTerritories) : self
     {
         $this->blacklistedTerritories = $blacklistedTerritories;
+        return $this;
     }
     /**
+     * Getter for blacklistedTerritories
+     *
      * @return string[] The list of "blacklisted" territories, as an array of NIP group IDs.
      */
-    function getBlacklistedTerritories() : ?array
+    public function getBlacklistedTerritories() : array
     {
         return $this->blacklistedTerritories;
     }

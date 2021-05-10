@@ -18,30 +18,44 @@ class BaseGeolocation extends Definition
      */
     protected ?string $name = null;
     /**
+     * Setter for id
+     *
      * @param string $id Geolocation payload's id
+     *
+     * @return self To use in method chains
      */
-    function setId(?string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string Geolocation payload's id
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
+     * Setter for name
+     *
      * @param string $name Geolocation payload's name
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string Geolocation payload's name
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }

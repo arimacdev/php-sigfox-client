@@ -2,15 +2,15 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CommonApiUser;
-use Arimac\Sigfox\Definition\MinGroup;
-use Arimac\Sigfox\Definition\MinProfile;
+use Arimac\Sigfox\Definition;
 /**
  * Defines the API user properties
  */
 class ApiUser extends CommonApiUser
 {
-    /** @var MinGroup */
+    /**
+     * @var MinGroup
+     */
     protected ?MinGroup $group = null;
     /**
      * The creation time since epoch
@@ -30,108 +30,163 @@ class ApiUser extends CommonApiUser
      * @var string
      */
     protected ?string $accessToken = null;
-    /** @var MinProfile[] */
-    protected ?array $profiles = null;
-    /** @var string[] */
-    protected ?array $actions = null;
-    /** @var string[] */
-    protected ?array $resources = null;
-    protected $objects = array('group' => '\\Arimac\\Sigfox\\Definition\\MinGroup');
     /**
-     * @param MinGroup group
+     * @var MinProfile[]
      */
-    function setGroup(?MinGroup $group)
+    protected ?array $profiles = null;
+    /**
+     * @var string[]
+     */
+    protected ?array $actions = null;
+    /**
+     * @var string[]
+     */
+    protected ?array $resources = null;
+    protected $serialize = array('group' => MinGroup::class);
+    /**
+     * Setter for group
+     *
+     * @param MinGroup $group
+     *
+     * @return self To use in method chains
+     */
+    public function setGroup(?MinGroup $group) : self
     {
         $this->group = $group;
+        return $this;
     }
     /**
-     * @return MinGroup group
+     * Getter for group
+     *
+     * @return MinGroup
      */
-    function getGroup() : ?MinGroup
+    public function getGroup() : MinGroup
     {
         return $this->group;
     }
     /**
+     * Setter for creationTime
+     *
      * @param int $creationTime The creation time since epoch
+     *
+     * @return self To use in method chains
      */
-    function setCreationTime(?int $creationTime)
+    public function setCreationTime(?int $creationTime) : self
     {
         $this->creationTime = $creationTime;
+        return $this;
     }
     /**
+     * Getter for creationTime
+     *
      * @return int The creation time since epoch
      */
-    function getCreationTime() : ?int
+    public function getCreationTime() : int
     {
         return $this->creationTime;
     }
     /**
+     * Setter for id
+     *
      * @param string $id The API user identifier
+     *
+     * @return self To use in method chains
      */
-    function setId(?string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The API user identifier
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
+     * Setter for accessToken
+     *
      * @param string $accessToken The API user access token (password)
+     *
+     * @return self To use in method chains
      */
-    function setAccessToken(?string $accessToken)
+    public function setAccessToken(?string $accessToken) : self
     {
         $this->accessToken = $accessToken;
+        return $this;
     }
     /**
+     * Getter for accessToken
+     *
      * @return string The API user access token (password)
      */
-    function getAccessToken() : ?string
+    public function getAccessToken() : string
     {
         return $this->accessToken;
     }
     /**
-     * @param MinProfile[] profiles
+     * Setter for profiles
+     *
+     * @param MinProfile[] $profiles
+     *
+     * @return self To use in method chains
      */
-    function setProfiles(?array $profiles)
+    public function setProfiles(?array $profiles) : self
     {
         $this->profiles = $profiles;
+        return $this;
     }
     /**
-     * @return MinProfile[] profiles
+     * Getter for profiles
+     *
+     * @return MinProfile[]
      */
-    function getProfiles() : ?array
+    public function getProfiles() : array
     {
         return $this->profiles;
     }
     /**
-     * @param string[] actions
+     * Setter for actions
+     *
+     * @param string[] $actions
+     *
+     * @return self To use in method chains
      */
-    function setActions(?array $actions)
+    public function setActions(?array $actions) : self
     {
         $this->actions = $actions;
+        return $this;
     }
     /**
-     * @return string[] actions
+     * Getter for actions
+     *
+     * @return string[]
      */
-    function getActions() : ?array
+    public function getActions() : array
     {
         return $this->actions;
     }
     /**
-     * @param string[] resources
+     * Setter for resources
+     *
+     * @param string[] $resources
+     *
+     * @return self To use in method chains
      */
-    function setResources(?array $resources)
+    public function setResources(?array $resources) : self
     {
         $this->resources = $resources;
+        return $this;
     }
     /**
-     * @return string[] resources
+     * Getter for resources
+     *
+     * @return string[]
      */
-    function getResources() : ?array
+    public function getResources() : array
     {
         return $this->resources;
     }

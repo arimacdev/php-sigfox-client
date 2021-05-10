@@ -2,63 +2,56 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\DevicesIdCertificate;
-use Arimac\Sigfox\Repository\DevicesIdConsumption;
-use Arimac\Sigfox\Repository\DevicesIdMessages;
+use Arimac\Sigfox\Request\DevicesIdGet;
+use Arimac\Sigfox\Request\DevicesIdUpdate;
+use Arimac\Sigfox\Request\DevicesIdCallbacksNotDelivered;
 class DevicesId
 {
     /**
      * The Device identifier (hexadecimal format)
      */
-    protected string $id;
+    protected ?string $id;
     /**
      * Creating the repository
      *
      * @param string $id The Device identifier (hexadecimal format)
      */
-    function __construct(string $id)
+    public function __construct(string $id)
     {
         $this->id = $id;
     }
     /**
      * Retrieve information about a given device.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function get(int $request) : int
+    public function get(DevicesIdGet $request) : int
     {
-        return $this->client->request('get', '/devices/{id}', $request, 'int');
+        return $this->client->request('get', $this->bindUrlParams('/devices/{id}', $this->id), $request, 'int');
     }
     /**
      * Update a given device.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function update(int $request) : int
+    public function update(DevicesIdUpdate $request) : int
     {
-        return $this->client->request('put', '/devices/{id}', $request, 'int');
+        return $this->client->request('put', $this->bindUrlParams('/devices/{id}', $this->id), $request, 'int');
     }
     /**
      * Delete a given device.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function delete(int $request) : int
+    public function delete() : int
     {
-        return $this->client->request('delete', '/devices/{id}', $request, 'int');
+        return $this->client->request('delete', $this->bindUrlParams('/devices/{id}', $this->id), null, 'int');
     }
     /**
-     * Retrieve a list of undelivered callbacks and errors for a given device, in reverse chronological order (most recent message first).
-     *
-     * @param int $request
-     * @return int
+     * Retrieve a list of undelivered callbacks and errors for a given device, in reverse chronological order (most
+     * recent message first).
+     * 
      */
-    function callbacksNotDelivered(int $request) : int
+    public function callbacksNotDelivered(DevicesIdCallbacksNotDelivered $request) : int
     {
-        return $this->client->request('get', '/devices/{id}/callbacks-not-delivered', $request, 'int');
+        return $this->client->request('get', $this->bindUrlParams('/devices/{id}/callbacks-not-delivered', $this->id), $request, 'int');
     }
     /**
      * @return DevicesIdCertificate

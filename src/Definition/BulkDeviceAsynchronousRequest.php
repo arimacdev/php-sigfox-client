@@ -2,22 +2,22 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CertificateUpdate;
-use Arimac\Sigfox\Definition\BulkDeviceAsynchronousRequest\DataItem;
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Definition\BulkDeviceAsynchronousRequest\DataItem;
 /**
  * Defines the the common information shared by the devices created in an ansychronous bulk request
  */
 class BulkDeviceAsynchronousRequest extends Definition
 {
-    protected $required = array('deviceTypeId');
     /**
      * The identifier of the device type under which the new devices will be created
      *
      * @var string
      */
-    protected string $deviceTypeId;
-    /** @var CertificateUpdate */
+    protected ?string $deviceTypeId = null;
+    /**
+     * @var CertificateUpdate
+     */
     protected ?CertificateUpdate $productCertificate = null;
     /**
      * Value describing if the devices are prototypes
@@ -31,76 +31,113 @@ class BulkDeviceAsynchronousRequest extends Definition
      * @var string
      */
     protected ?string $prefix = null;
-    /** @var DataItem[] */
-    protected ?array $data = null;
-    protected $objects = array('productCertificate' => '\\Arimac\\Sigfox\\Definition\\CertificateUpdate');
     /**
-     * @param string $deviceTypeId The identifier of the device type under which the new devices will be created
+     * @var DataItem[]
      */
-    function setDeviceTypeId(string $deviceTypeId)
+    protected ?array $data = null;
+    protected $serialize = array('productCertificate' => CertificateUpdate::class);
+    /**
+     * Setter for deviceTypeId
+     *
+     * @param string $deviceTypeId The identifier of the device type under which the new devices will be created
+     *
+     * @return self To use in method chains
+     */
+    public function setDeviceTypeId(?string $deviceTypeId) : self
     {
         $this->deviceTypeId = $deviceTypeId;
+        return $this;
     }
     /**
+     * Getter for deviceTypeId
+     *
      * @return string The identifier of the device type under which the new devices will be created
      */
-    function getDeviceTypeId() : string
+    public function getDeviceTypeId() : string
     {
         return $this->deviceTypeId;
     }
     /**
-     * @param CertificateUpdate productCertificate
+     * Setter for productCertificate
+     *
+     * @param CertificateUpdate $productCertificate
+     *
+     * @return self To use in method chains
      */
-    function setProductCertificate(?CertificateUpdate $productCertificate)
+    public function setProductCertificate(?CertificateUpdate $productCertificate) : self
     {
         $this->productCertificate = $productCertificate;
+        return $this;
     }
     /**
-     * @return CertificateUpdate productCertificate
+     * Getter for productCertificate
+     *
+     * @return CertificateUpdate
      */
-    function getProductCertificate() : ?CertificateUpdate
+    public function getProductCertificate() : CertificateUpdate
     {
         return $this->productCertificate;
     }
     /**
+     * Setter for prototype
+     *
      * @param bool $prototype Value describing if the devices are prototypes
+     *
+     * @return self To use in method chains
      */
-    function setPrototype(?bool $prototype)
+    public function setPrototype(?bool $prototype) : self
     {
         $this->prototype = $prototype;
+        return $this;
     }
     /**
+     * Getter for prototype
+     *
      * @return bool Value describing if the devices are prototypes
      */
-    function getPrototype() : ?bool
+    public function getPrototype() : bool
     {
         return $this->prototype;
     }
     /**
+     * Setter for prefix
+     *
      * @param string $prefix Prefix to used in device name
+     *
+     * @return self To use in method chains
      */
-    function setPrefix(?string $prefix)
+    public function setPrefix(?string $prefix) : self
     {
         $this->prefix = $prefix;
+        return $this;
     }
     /**
+     * Getter for prefix
+     *
      * @return string Prefix to used in device name
      */
-    function getPrefix() : ?string
+    public function getPrefix() : string
     {
         return $this->prefix;
     }
     /**
-     * @param DataItem[] data
+     * Setter for data
+     *
+     * @param DataItem[] $data
+     *
+     * @return self To use in method chains
      */
-    function setData(?array $data)
+    public function setData(?array $data) : self
     {
         $this->data = $data;
+        return $this;
     }
     /**
-     * @return DataItem[] data
+     * Getter for data
+     *
+     * @return DataItem[]
      */
-    function getData() : ?array
+    public function getData() : array
     {
         return $this->data;
     }

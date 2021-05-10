@@ -2,95 +2,84 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdUpdate;
+use Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdEnable;
+use Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered;
 class DeviceTypesIdCallbacksCallbackId
 {
     /**
      * The Device Type identifier (hexademical format)
      */
-    protected string $id;
+    protected ?string $id;
     /**
      * The Callback identifier
      */
-    protected string $callbackId;
+    protected ?string $callbackId;
     /**
      * Creating the repository
      *
      * @param string $id The Device Type identifier (hexademical format)
      * @param string $callbackId The Callback identifier
      */
-    function __construct(string $id, string $callbackId)
+    public function __construct(string $id, string $callbackId)
     {
         $this->id = $id;
         $this->callbackId = $callbackId;
     }
     /**
      * Update a callback for a given device type
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function update(int $request) : int
+    public function update(DeviceTypesIdCallbacksCallbackIdUpdate $request) : int
     {
-        return $this->client->request('put', '/device-types/{id}/callbacks/{callbackId}', $request, 'int');
+        return $this->client->request('put', $this->bindUrlParams('/device-types/{id}/callbacks/{callbackId}', $this->id, $this->callbackId), $request, 'int');
     }
     /**
      * Delete a callback for a given device type.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function delete(int $request) : int
+    public function delete() : int
     {
-        return $this->client->request('delete', '/device-types/{id}/callbacks/{callbackId}', $request, 'int');
+        return $this->client->request('delete', $this->bindUrlParams('/device-types/{id}/callbacks/{callbackId}', $this->id, $this->callbackId), null, 'int');
     }
     /**
      * Enable or disable a callback for a given device type.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function enable(int $request) : int
+    public function enable(DeviceTypesIdCallbacksCallbackIdEnable $request) : int
     {
-        return $this->client->request('put', '/device-types/{id}/callbacks/{callbackId}/enable', $request, 'int');
+        return $this->client->request('put', $this->bindUrlParams('/device-types/{id}/callbacks/{callbackId}/enable', $this->id, $this->callbackId), $request, 'int');
     }
     /**
-     * Selects a downlink callback for a device type. The callback will be selected as the downlink one, the one that was previously selected will no longer be used for downlink.
-     *
-     * @param int $request
-     * @return int
+     * Selects a downlink callback for a device type. The callback will be selected as the downlink one, the one that was
+     * previously selected will no longer be used for downlink.
+     * 
      */
-    function setDownlink(int $request) : int
+    public function setDownlink() : int
     {
-        return $this->client->request('put', '/device-types/{id}/callbacks/{callbackId}/downlink', $request, 'int');
+        return $this->client->request('put', $this->bindUrlParams('/device-types/{id}/callbacks/{callbackId}/downlink', $this->id, $this->callbackId), null, 'int');
     }
     /**
      * Retrieve the last device message error associated with this callback.
-     *
-     * @param int $request
-     * @return int
      */
-    function callbacksNotDelivered(int $request) : int
+    public function callbacksNotDelivered(DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered $request) : int
     {
-        return $this->client->request('get', '/device-types/{id}/callbacks/{callbackId}/callbacks-not-delivered', $request, 'int');
+        return $this->client->request('get', $this->bindUrlParams('/device-types/{id}/callbacks/{callbackId}/callbacks-not-delivered', $this->id, $this->callbackId), $request, 'int');
     }
     /**
      * Disable the sequence number check for the next message of each device of a device type.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function disengage(int $request) : int
+    public function disengage() : int
     {
-        return $this->client->request('put', '/device-types/{id}/disengage', $request, 'int');
+        return $this->client->request('put', $this->bindUrlParams('/device-types/{id}/disengage', $this->id, $this->callbackId), null, 'int');
     }
     /**
      * Restart the devices of a device type with a asynchronous job.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function bulkRestart(int $request) : int
+    public function bulkRestart() : int
     {
-        return $this->client->request('post', '/device-types/{id}/bulk/restart', $request, 'int');
+        return $this->client->request('post', $this->bindUrlParams('/device-types/{id}/bulk/restart', $this->id, $this->callbackId), null, 'int');
     }
 }

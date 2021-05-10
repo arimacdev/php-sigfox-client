@@ -7,40 +7,36 @@ class ApiUsersIdProfilesProfileId
     /**
      * The API user identifier
      */
-    protected string $id;
+    protected ?string $id;
     /**
      * The profile identifier
      */
-    protected string $profileId;
+    protected ?string $profileId;
     /**
      * Creating the repository
      *
      * @param string $id The API user identifier
      * @param string $profileId The profile identifier
      */
-    function __construct(string $id, string $profileId)
+    public function __construct(string $id, string $profileId)
     {
         $this->id = $id;
         $this->profileId = $profileId;
     }
     /**
      * Delete a profile to a given API user.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function delete(int $request) : int
+    public function delete() : int
     {
-        return $this->client->request('delete', '/api-users/{id}/profiles/{profileId}', $request, 'int');
+        return $this->client->request('delete', $this->bindUrlParams('/api-users/{id}/profiles/{profileId}', $this->id, $this->profileId), null, 'int');
     }
     /**
      * Generate a new password for a given API user.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function renewCredential(int $request) : int
+    public function renewCredential() : int
     {
-        return $this->client->request('put', '/api-users/{id}/renew-credential', $request, 'int');
+        return $this->client->request('put', $this->bindUrlParams('/api-users/{id}/renew-credential', $this->id, $this->profileId), null, 'int');
     }
 }

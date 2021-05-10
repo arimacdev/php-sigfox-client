@@ -3,60 +3,35 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Definition\GlobalCoverageRequest;
+/**
+ * Get the coverage margins for multiple points, for each redundancy level.
+ * Sigfox recommends to:
+ *   -use the bulk endpoint instead when requesting a large number of locations
+ *   -not request more than 200 locations at a time
+ *   -wait for the result to be returned before requesting again (avoid multithreading)
+ * For more information please refer to the [Global Coverage API
+ * article](https://support.sigfox.com/docs/global-coverage-api).
+ * 
+ */
 class CoveragesGlobalPredictionsGet extends Definition
 {
-    protected $required = array('lat', 'lng');
     /**
-     * the latitude
+     * @var GlobalCoverageRequest
+     */
+    protected ?GlobalCoverageRequest $payload = null;
+    protected $serialize = array('payload' => GlobalCoverageRequest::class);
+    protected $body = array('payload');
+    /**
+     * Setter for payload
      *
-     * @var float
-     */
-    protected float $lat;
-    /**
-     * the longitude
+     * @param GlobalCoverageRequest $payload
      *
-     * @var float
+     * @return self To use in method chains
      */
-    protected float $lng;
-    /**
-     * The radius of the area in which the coverage results are averaged and returned for a selected location, in meters.
-     *
-     * @var int
-     */
-    protected ?int $radius = null;
-    /**
-     * the id of a group to include its operator in the global coverage
-     *
-     * @var string
-     */
-    protected ?string $groupId = null;
-    protected $query = array('lat', 'lng', 'radius', 'groupId');
-    /**
-     * @param float $lat the latitude
-     */
-    function setLat(float $lat)
+    public function setPayload(?GlobalCoverageRequest $payload) : self
     {
-        $this->lat = $lat;
-    }
-    /**
-     * @param float $lng the longitude
-     */
-    function setLng(float $lng)
-    {
-        $this->lng = $lng;
-    }
-    /**
-     * @param int $radius The radius of the area in which the coverage results are averaged and returned for a selected location, in meters.
-     */
-    function setRadius(?int $radius)
-    {
-        $this->radius = $radius;
-    }
-    /**
-     * @param string $groupId the id of a group to include its operator in the global coverage
-     */
-    function setGroupId(?string $groupId)
-    {
-        $this->groupId = $groupId;
+        $this->payload = $payload;
+        return $this;
     }
 }

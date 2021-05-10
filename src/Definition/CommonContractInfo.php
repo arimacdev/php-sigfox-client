@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CommonContractInfo\OptionsItem;
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Definition\CommonContractInfo\OptionsItem;
 /**
  * Defines a contract common properties
  */
@@ -70,162 +70,245 @@ class CommonContractInfo extends Definition
      */
     protected ?int $renewalDuration = null;
     /**
-     * The activated premium options. Given options will be merged with existing options in contract. In order to delete a single option use "/{id}/options" API.
+     * The activated premium options. Given options will be merged with existing options in contract. In order to
+     * delete a single option use "/{id}/options" API.
      *
      * @var OptionsItem[]
      */
     protected ?array $options = null;
     /**
+     * Setter for name
+     *
      * @param string $name The contract name
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The contract name
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }
     /**
-     * @param int $activationEndTime The activation end time (in milliseconds) of the contract. 0 means no activation time limit.
+     * Setter for activationEndTime
+     *
+     * @param int $activationEndTime The activation end time (in milliseconds) of the contract. 0 means no activation
+     *                               time limit.
+     *
+     * @return self To use in method chains
      */
-    function setActivationEndTime(?int $activationEndTime)
+    public function setActivationEndTime(?int $activationEndTime) : self
     {
         $this->activationEndTime = $activationEndTime;
+        return $this;
     }
     /**
+     * Getter for activationEndTime
+     *
      * @return int The activation end time (in milliseconds) of the contract. 0 means no activation time limit.
      */
-    function getActivationEndTime() : ?int
+    public function getActivationEndTime() : int
     {
         return $this->activationEndTime;
     }
     /**
-     * @param int $communicationEndTime The end time (in milliseconds) of the communication. 0 means no communication time limit.
+     * Setter for communicationEndTime
+     *
+     * @param int $communicationEndTime The end time (in milliseconds) of the communication. 0 means no communication
+     *                                  time limit.
+     *
+     * @return self To use in method chains
      */
-    function setCommunicationEndTime(?int $communicationEndTime)
+    public function setCommunicationEndTime(?int $communicationEndTime) : self
     {
         $this->communicationEndTime = $communicationEndTime;
+        return $this;
     }
     /**
+     * Getter for communicationEndTime
+     *
      * @return int The end time (in milliseconds) of the communication. 0 means no communication time limit.
      */
-    function getCommunicationEndTime() : ?int
+    public function getCommunicationEndTime() : int
     {
         return $this->communicationEndTime;
     }
     /**
+     * Setter for bidir
+     *
      * @param bool $bidir True if the contract info is bidirectional.
+     *
+     * @return self To use in method chains
      */
-    function setBidir(?bool $bidir)
+    public function setBidir(?bool $bidir) : self
     {
         $this->bidir = $bidir;
+        return $this;
     }
     /**
+     * Getter for bidir
+     *
      * @return bool True if the contract info is bidirectional.
      */
-    function getBidir() : ?bool
+    public function getBidir() : bool
     {
         return $this->bidir;
     }
     /**
+     * Setter for highPriorityDownlink
+     *
      * @param bool $highPriorityDownlink True if all downlinks are high priority.
+     *
+     * @return self To use in method chains
      */
-    function setHighPriorityDownlink(?bool $highPriorityDownlink)
+    public function setHighPriorityDownlink(?bool $highPriorityDownlink) : self
     {
         $this->highPriorityDownlink = $highPriorityDownlink;
+        return $this;
     }
     /**
+     * Getter for highPriorityDownlink
+     *
      * @return bool True if all downlinks are high priority.
      */
-    function getHighPriorityDownlink() : ?bool
+    public function getHighPriorityDownlink() : bool
     {
         return $this->highPriorityDownlink;
     }
     /**
+     * Setter for maxUplinkFrames
+     *
      * @param int $maxUplinkFrames The maximum number of uplink frames.
+     *
+     * @return self To use in method chains
      */
-    function setMaxUplinkFrames(?int $maxUplinkFrames)
+    public function setMaxUplinkFrames(?int $maxUplinkFrames) : self
     {
         $this->maxUplinkFrames = $maxUplinkFrames;
+        return $this;
     }
     /**
+     * Getter for maxUplinkFrames
+     *
      * @return int The maximum number of uplink frames.
      */
-    function getMaxUplinkFrames() : ?int
+    public function getMaxUplinkFrames() : int
     {
         return $this->maxUplinkFrames;
     }
     /**
+     * Setter for maxDownlinkFrames
+     *
      * @param int $maxDownlinkFrames The maximum number of downlink frames.
+     *
+     * @return self To use in method chains
      */
-    function setMaxDownlinkFrames(?int $maxDownlinkFrames)
+    public function setMaxDownlinkFrames(?int $maxDownlinkFrames) : self
     {
         $this->maxDownlinkFrames = $maxDownlinkFrames;
+        return $this;
     }
     /**
+     * Getter for maxDownlinkFrames
+     *
      * @return int The maximum number of downlink frames.
      */
-    function getMaxDownlinkFrames() : ?int
+    public function getMaxDownlinkFrames() : int
     {
         return $this->maxDownlinkFrames;
     }
     /**
-     * @param int $maxTokens The maximum number of tokens for this contract. Either 0 (unlimited) or a positive number.
+     * Setter for maxTokens
+     *
+     * @param int $maxTokens The maximum number of tokens for this contract. Either 0 (unlimited) or a positive
+     *                       number.
+     *
+     * @return self To use in method chains
      */
-    function setMaxTokens(?int $maxTokens)
+    public function setMaxTokens(?int $maxTokens) : self
     {
         $this->maxTokens = $maxTokens;
+        return $this;
     }
     /**
+     * Getter for maxTokens
+     *
      * @return int The maximum number of tokens for this contract. Either 0 (unlimited) or a positive number.
      */
-    function getMaxTokens() : ?int
+    public function getMaxTokens() : int
     {
         return $this->maxTokens;
     }
     /**
+     * Setter for automaticRenewal
+     *
      * @param bool $automaticRenewal True if automatic renewal is allowed.
+     *
+     * @return self To use in method chains
      */
-    function setAutomaticRenewal(?bool $automaticRenewal)
+    public function setAutomaticRenewal(?bool $automaticRenewal) : self
     {
         $this->automaticRenewal = $automaticRenewal;
+        return $this;
     }
     /**
+     * Getter for automaticRenewal
+     *
      * @return bool True if automatic renewal is allowed.
      */
-    function getAutomaticRenewal() : ?bool
+    public function getAutomaticRenewal() : bool
     {
         return $this->automaticRenewal;
     }
     /**
+     * Setter for renewalDuration
+     *
      * @param int $renewalDuration The renewal duration in months.
+     *
+     * @return self To use in method chains
      */
-    function setRenewalDuration(?int $renewalDuration)
+    public function setRenewalDuration(?int $renewalDuration) : self
     {
         $this->renewalDuration = $renewalDuration;
+        return $this;
     }
     /**
+     * Getter for renewalDuration
+     *
      * @return int The renewal duration in months.
      */
-    function getRenewalDuration() : ?int
+    public function getRenewalDuration() : int
     {
         return $this->renewalDuration;
     }
     /**
-     * @param OptionsItem[] $options The activated premium options. Given options will be merged with existing options in contract. In order to delete a single option use "/{id}/options" API.
+     * Setter for options
+     *
+     * @param OptionsItem[] $options The activated premium options. Given options will be merged with existing
+     *                               options in contract. In order to delete a single option use "/{id}/options" API.
+     *
+     * @return self To use in method chains
      */
-    function setOptions(?array $options)
+    public function setOptions(?array $options) : self
     {
         $this->options = $options;
+        return $this;
     }
     /**
-     * @return OptionsItem[] The activated premium options. Given options will be merged with existing options in contract. In order to delete a single option use "/{id}/options" API.
+     * Getter for options
+     *
+     * @return OptionsItem[] The activated premium options. Given options will be merged with existing options in
+     *                       contract. In order to delete a single option use "/{id}/options" API.
      */
-    function getOptions() : ?array
+    public function getOptions() : array
     {
         return $this->options;
     }

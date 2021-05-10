@@ -2,67 +2,104 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CommonDevice;
-use Arimac\Sigfox\Definition\MinDeviceType;
-use Arimac\Sigfox\Definition\MinContractInfo;
-use Arimac\Sigfox\Definition\MinGroup;
-use Arimac\Sigfox\Definition\Certificate;
-use Arimac\Sigfox\Definition\Certificate;
-use Arimac\Sigfox\Definition\DeviceLocation;
-use Arimac\Sigfox\Definition\LastComputedLocation;
-use Arimac\Sigfox\Definition\Token;
+use Arimac\Sigfox\Definition;
 /**
  * Defines the device's properties
  */
 class Device extends CommonDevice
 {
-    /** LIMIT */
+    /**
+     * LIMIT
+     */
     public const LQI_LIMIT = 0;
-    /** AVERAGE */
+    /**
+     * AVERAGE
+     */
     public const LQI_AVERAGE = 1;
-    /** GOOD */
+    /**
+     * GOOD
+     */
     public const LQI_GOOD = 2;
-    /** EXCELLENT */
+    /**
+     * EXCELLENT
+     */
     public const LQI_EXCELLENT = 3;
-    /** NA */
+    /**
+     * NA
+     */
     public const LQI_NA = 4;
-    /** OK */
+    /**
+     * OK
+     */
     public const STATE_OK = 0;
-    /** DEAD */
+    /**
+     * DEAD
+     */
     public const STATE_DEAD = 1;
-    /** OFF_CONTRACT */
+    /**
+     * OFF_CONTRACT
+     */
     public const STATE_OFF_CONTRACT = 2;
-    /** DISABLED */
+    /**
+     * DISABLED
+     */
     public const STATE_DISABLED = 3;
-    /** WARN */
+    /**
+     * WARN
+     */
     public const STATE_WARN = 4;
-    /** DELETED */
+    /**
+     * DELETED
+     */
     public const STATE_DELETED = 5;
-    /** SUSPENDED */
+    /**
+     * SUSPENDED
+     */
     public const STATE_SUSPENDED = 6;
-    /** NOT_ACTIVABLE */
+    /**
+     * NOT_ACTIVABLE
+     */
     public const STATE_NOT_ACTIVABLE = 7;
-    /** NO */
+    /**
+     * NO
+     */
     public const COM_STATE_NO = 0;
-    /** OK */
+    /**
+     * OK
+     */
     public const COM_STATE_OK = 1;
-    /** WARN */
+    /**
+     * WARN
+     */
     public const COM_STATE_WARN = 2;
-    /** KO */
+    /**
+     * KO
+     */
     public const COM_STATE_KO = 3;
-    /** (na) */
-    public const COM_STATE_ = 4;
-    /** NOT_SEEN */
+    /**
+     * (na)
+     */
+    public const COM_STATE_NA = 4;
+    /**
+     * NOT_SEEN
+     */
     public const COM_STATE_NOT_SEEN = 5;
-    /** ALLOWED */
+    /**
+     * ALLOWED
+     */
     public const AUTOMATIC_RENEWAL_STATUS_ALLOWED = 0;
-    /** NOT_ALLOWED */
+    /**
+     * NOT_ALLOWED
+     */
     public const AUTOMATIC_RENEWAL_STATUS_NOT_ALLOWED = 1;
-    /** RENEWED */
+    /**
+     * RENEWED
+     */
     public const AUTOMATIC_RENEWAL_STATUS_RENEWED = 2;
-    /** ENDED */
+    /**
+     * ENDED
+     */
     public const AUTOMATIC_RENEWAL_STATUS_ENDED = 3;
-    protected $required = array('automaticRenewal', 'comState', 'creationTime', 'pac', 'state');
     /**
      * Can the device communicate using satellite communication
      *
@@ -81,13 +118,21 @@ class Device extends CommonDevice
      * @var int
      */
     protected ?int $messageModulo = null;
-    /** @var MinDeviceType */
+    /**
+     * @var MinDeviceType
+     */
     protected ?MinDeviceType $deviceType = null;
-    /** @var MinContractInfo */
+    /**
+     * @var MinContractInfo
+     */
     protected ?MinContractInfo $contract = null;
-    /** @var MinGroup */
+    /**
+     * @var MinGroup
+     */
     protected ?MinGroup $group = null;
-    /** @var Certificate */
+    /**
+     * @var Certificate
+     */
     protected ?Certificate $modemCertificate = null;
     /**
      * The device is a prototype
@@ -95,21 +140,28 @@ class Device extends CommonDevice
      * @var bool
      */
     protected ?bool $prototype = null;
-    /** @var Certificate */
+    /**
+     * @var Certificate
+     */
     protected ?Certificate $productCertificate = null;
-    /** @var DeviceLocation */
+    /**
+     * @var DeviceLocation
+     */
     protected ?DeviceLocation $location = null;
-    /** @var LastComputedLocation */
+    /**
+     * @var LastComputedLocation
+     */
     protected ?LastComputedLocation $lastComputedLocation = null;
     /**
      * The device's PAC (Porting Access Code)
      *
      * @var string
      */
-    protected string $pac;
+    protected ?string $pac = null;
     /**
      * The last device's sequence number.
      * Absent if the device has never communicated or if the SIGFOX message protocol is V0
+     * 
      *
      * @var int
      */
@@ -117,6 +169,7 @@ class Device extends CommonDevice
     /**
      * The last trashed device's sequence number.
      * Absent if there is no message trashed or if the SIGFOX message protocol is V0
+     * 
      *
      * @var int
      */
@@ -129,13 +182,8 @@ class Device extends CommonDevice
     protected ?int $lastCom = null;
     /**
      * Link Quality Indicator
-     * - `Device::LQI_LIMIT`
-     * - `Device::LQI_AVERAGE`
-     * - `Device::LQI_GOOD`
-     * - `Device::LQI_EXCELLENT`
-     * - `Device::LQI_NA`
      *
-     * @var int
+     * @var self::LQI_*
      */
     protected ?int $lqi = null;
     /**
@@ -149,34 +197,22 @@ class Device extends CommonDevice
      *
      * @var int
      */
-    protected int $creationTime;
+    protected ?int $creationTime = null;
     /**
      * State of this device.
-     * - `Device::STATE_OK`
-     * - `Device::STATE_DEAD`
-     * - `Device::STATE_OFF_CONTRACT`
-     * - `Device::STATE_DISABLED`
-     * - `Device::STATE_WARN`
-     * - `Device::STATE_DELETED`
-     * - `Device::STATE_SUSPENDED`
-     * - `Device::STATE_NOT_ACTIVABLE`
      *
-     * @var int
+     * @var self::STATE_*
      */
-    protected int $state;
+    protected ?int $state = null;
     /**
      * Communication state of this device.
-     * - `Device::COM_STATE_NO`
-     * - `Device::COM_STATE_OK`
-     * - `Device::COM_STATE_WARN`
-     * - `Device::COM_STATE_KO`
-     * - `Device::COM_STATE_`
-     * - `Device::COM_STATE_NOT_SEEN`
      *
-     * @var int
+     * @var self::COM_STATE_*
      */
-    protected int $comState;
-    /** @var Token */
+    protected ?int $comState = null;
+    /**
+     * @var Token
+     */
     protected ?Token $token = null;
     /**
      * The device's unsubscription time (in milliseconds since the Unix Epoch)
@@ -207,15 +243,11 @@ class Device extends CommonDevice
      *
      * @var bool
      */
-    protected bool $automaticRenewal;
+    protected ?bool $automaticRenewal = null;
     /**
      * Computed automatic renewal status.
-     * - `Device::AUTOMATIC_RENEWAL_STATUS_ALLOWED`
-     * - `Device::AUTOMATIC_RENEWAL_STATUS_NOT_ALLOWED`
-     * - `Device::AUTOMATIC_RENEWAL_STATUS_RENEWED`
-     * - `Device::AUTOMATIC_RENEWAL_STATUS_ENDED`
      *
-     * @var int
+     * @var self::AUTOMATIC_RENEWAL_STATUS_*
      */
     protected ?int $automaticRenewalStatus = null;
     /**
@@ -224,478 +256,650 @@ class Device extends CommonDevice
      * @var bool
      */
     protected ?bool $activable = null;
-    /** @var string[] */
-    protected ?array $actions = null;
-    /** @var string[] */
-    protected ?array $resources = null;
-    protected $objects = array('deviceType' => '\\Arimac\\Sigfox\\Definition\\MinDeviceType', 'contract' => '\\Arimac\\Sigfox\\Definition\\MinContractInfo', 'group' => '\\Arimac\\Sigfox\\Definition\\MinGroup', 'modemCertificate' => '\\Arimac\\Sigfox\\Definition\\Certificate', 'productCertificate' => '\\Arimac\\Sigfox\\Definition\\Certificate', 'location' => '\\Arimac\\Sigfox\\Definition\\DeviceLocation', 'lastComputedLocation' => '\\Arimac\\Sigfox\\Definition\\LastComputedLocation', 'token' => '\\Arimac\\Sigfox\\Definition\\Token');
     /**
-     * @param bool $satelliteCapable Can the device communicate using satellite communication
+     * @var string[]
      */
-    function setSatelliteCapable(?bool $satelliteCapable)
+    protected ?array $actions = null;
+    /**
+     * @var string[]
+     */
+    protected ?array $resources = null;
+    protected $serialize = array('deviceType' => MinDeviceType::class, 'contract' => MinContractInfo::class, 'group' => MinGroup::class, 'modemCertificate' => Certificate::class, 'productCertificate' => Certificate::class, 'location' => DeviceLocation::class, 'lastComputedLocation' => LastComputedLocation::class, 'token' => Token::class);
+    /**
+     * Setter for satelliteCapable
+     *
+     * @param bool $satelliteCapable Can the device communicate using satellite communication
+     *
+     * @return self To use in method chains
+     */
+    public function setSatelliteCapable(?bool $satelliteCapable) : self
     {
         $this->satelliteCapable = $satelliteCapable;
+        return $this;
     }
     /**
+     * Getter for satelliteCapable
+     *
      * @return bool Can the device communicate using satellite communication
      */
-    function getSatelliteCapable() : ?bool
+    public function getSatelliteCapable() : bool
     {
         return $this->satelliteCapable;
     }
     /**
+     * Setter for repeater
+     *
      * @param bool $repeater Has the device repeater function
+     *
+     * @return self To use in method chains
      */
-    function setRepeater(?bool $repeater)
+    public function setRepeater(?bool $repeater) : self
     {
         $this->repeater = $repeater;
+        return $this;
     }
     /**
+     * Getter for repeater
+     *
      * @return bool Has the device repeater function
      */
-    function getRepeater() : ?bool
+    public function getRepeater() : bool
     {
         return $this->repeater;
     }
     /**
+     * Setter for messageModulo
+     *
      * @param int $messageModulo The message modulo
+     *
+     * @return self To use in method chains
      */
-    function setMessageModulo(?int $messageModulo)
+    public function setMessageModulo(?int $messageModulo) : self
     {
         $this->messageModulo = $messageModulo;
+        return $this;
     }
     /**
+     * Getter for messageModulo
+     *
      * @return int The message modulo
      */
-    function getMessageModulo() : ?int
+    public function getMessageModulo() : int
     {
         return $this->messageModulo;
     }
     /**
-     * @param MinDeviceType deviceType
+     * Setter for deviceType
+     *
+     * @param MinDeviceType $deviceType
+     *
+     * @return self To use in method chains
      */
-    function setDeviceType(?MinDeviceType $deviceType)
+    public function setDeviceType(?MinDeviceType $deviceType) : self
     {
         $this->deviceType = $deviceType;
+        return $this;
     }
     /**
-     * @return MinDeviceType deviceType
+     * Getter for deviceType
+     *
+     * @return MinDeviceType
      */
-    function getDeviceType() : ?MinDeviceType
+    public function getDeviceType() : MinDeviceType
     {
         return $this->deviceType;
     }
     /**
-     * @param MinContractInfo contract
+     * Setter for contract
+     *
+     * @param MinContractInfo $contract
+     *
+     * @return self To use in method chains
      */
-    function setContract(?MinContractInfo $contract)
+    public function setContract(?MinContractInfo $contract) : self
     {
         $this->contract = $contract;
+        return $this;
     }
     /**
-     * @return MinContractInfo contract
+     * Getter for contract
+     *
+     * @return MinContractInfo
      */
-    function getContract() : ?MinContractInfo
+    public function getContract() : MinContractInfo
     {
         return $this->contract;
     }
     /**
-     * @param MinGroup group
+     * Setter for group
+     *
+     * @param MinGroup $group
+     *
+     * @return self To use in method chains
      */
-    function setGroup(?MinGroup $group)
+    public function setGroup(?MinGroup $group) : self
     {
         $this->group = $group;
+        return $this;
     }
     /**
-     * @return MinGroup group
+     * Getter for group
+     *
+     * @return MinGroup
      */
-    function getGroup() : ?MinGroup
+    public function getGroup() : MinGroup
     {
         return $this->group;
     }
     /**
-     * @param Certificate modemCertificate
+     * Setter for modemCertificate
+     *
+     * @param Certificate $modemCertificate
+     *
+     * @return self To use in method chains
      */
-    function setModemCertificate(?Certificate $modemCertificate)
+    public function setModemCertificate(?Certificate $modemCertificate) : self
     {
         $this->modemCertificate = $modemCertificate;
+        return $this;
     }
     /**
-     * @return Certificate modemCertificate
+     * Getter for modemCertificate
+     *
+     * @return Certificate
      */
-    function getModemCertificate() : ?Certificate
+    public function getModemCertificate() : Certificate
     {
         return $this->modemCertificate;
     }
     /**
+     * Setter for prototype
+     *
      * @param bool $prototype The device is a prototype
+     *
+     * @return self To use in method chains
      */
-    function setPrototype(?bool $prototype)
+    public function setPrototype(?bool $prototype) : self
     {
         $this->prototype = $prototype;
+        return $this;
     }
     /**
+     * Getter for prototype
+     *
      * @return bool The device is a prototype
      */
-    function getPrototype() : ?bool
+    public function getPrototype() : bool
     {
         return $this->prototype;
     }
     /**
-     * @param Certificate productCertificate
+     * Setter for productCertificate
+     *
+     * @param Certificate $productCertificate
+     *
+     * @return self To use in method chains
      */
-    function setProductCertificate(?Certificate $productCertificate)
+    public function setProductCertificate(?Certificate $productCertificate) : self
     {
         $this->productCertificate = $productCertificate;
+        return $this;
     }
     /**
-     * @return Certificate productCertificate
+     * Getter for productCertificate
+     *
+     * @return Certificate
      */
-    function getProductCertificate() : ?Certificate
+    public function getProductCertificate() : Certificate
     {
         return $this->productCertificate;
     }
     /**
-     * @param DeviceLocation location
+     * Setter for location
+     *
+     * @param DeviceLocation $location
+     *
+     * @return self To use in method chains
      */
-    function setLocation(?DeviceLocation $location)
+    public function setLocation(?DeviceLocation $location) : self
     {
         $this->location = $location;
+        return $this;
     }
     /**
-     * @return DeviceLocation location
+     * Getter for location
+     *
+     * @return DeviceLocation
      */
-    function getLocation() : ?DeviceLocation
+    public function getLocation() : DeviceLocation
     {
         return $this->location;
     }
     /**
-     * @param LastComputedLocation lastComputedLocation
+     * Setter for lastComputedLocation
+     *
+     * @param LastComputedLocation $lastComputedLocation
+     *
+     * @return self To use in method chains
      */
-    function setLastComputedLocation(?LastComputedLocation $lastComputedLocation)
+    public function setLastComputedLocation(?LastComputedLocation $lastComputedLocation) : self
     {
         $this->lastComputedLocation = $lastComputedLocation;
+        return $this;
     }
     /**
-     * @return LastComputedLocation lastComputedLocation
+     * Getter for lastComputedLocation
+     *
+     * @return LastComputedLocation
      */
-    function getLastComputedLocation() : ?LastComputedLocation
+    public function getLastComputedLocation() : LastComputedLocation
     {
         return $this->lastComputedLocation;
     }
     /**
+     * Setter for pac
+     *
      * @param string $pac The device's PAC (Porting Access Code)
+     *
+     * @return self To use in method chains
      */
-    function setPac(string $pac)
+    public function setPac(?string $pac) : self
     {
         $this->pac = $pac;
+        return $this;
     }
     /**
+     * Getter for pac
+     *
      * @return string The device's PAC (Porting Access Code)
      */
-    function getPac() : string
+    public function getPac() : string
     {
         return $this->pac;
     }
     /**
+     * Setter for sequenceNumber
+     *
      * @param int $sequenceNumber The last device's sequence number.
-     * Absent if the device has never communicated or if the SIGFOX message protocol is V0
+     *                            Absent if the device has never communicated or if the SIGFOX message protocol is V0
+     *                            
+     *
+     * @return self To use in method chains
      */
-    function setSequenceNumber(?int $sequenceNumber)
+    public function setSequenceNumber(?int $sequenceNumber) : self
     {
         $this->sequenceNumber = $sequenceNumber;
+        return $this;
     }
     /**
+     * Getter for sequenceNumber
+     *
      * @return int The last device's sequence number.
-     * Absent if the device has never communicated or if the SIGFOX message protocol is V0
+     *             Absent if the device has never communicated or if the SIGFOX message protocol is V0
+     *             
      */
-    function getSequenceNumber() : ?int
+    public function getSequenceNumber() : int
     {
         return $this->sequenceNumber;
     }
     /**
+     * Setter for trashSequenceNumber
+     *
      * @param int $trashSequenceNumber The last trashed device's sequence number.
-     * Absent if there is no message trashed or if the SIGFOX message protocol is V0
+     *                                 Absent if there is no message trashed or if the SIGFOX message protocol is V0
+     *                                 
+     *
+     * @return self To use in method chains
      */
-    function setTrashSequenceNumber(?int $trashSequenceNumber)
+    public function setTrashSequenceNumber(?int $trashSequenceNumber) : self
     {
         $this->trashSequenceNumber = $trashSequenceNumber;
+        return $this;
     }
     /**
+     * Getter for trashSequenceNumber
+     *
      * @return int The last trashed device's sequence number.
-     * Absent if there is no message trashed or if the SIGFOX message protocol is V0
+     *             Absent if there is no message trashed or if the SIGFOX message protocol is V0
+     *             
      */
-    function getTrashSequenceNumber() : ?int
+    public function getTrashSequenceNumber() : int
     {
         return $this->trashSequenceNumber;
     }
     /**
+     * Setter for lastCom
+     *
      * @param int $lastCom The last time (in milliseconds since the Unix Epoch) the device has communicated
+     *
+     * @return self To use in method chains
      */
-    function setLastCom(?int $lastCom)
+    public function setLastCom(?int $lastCom) : self
     {
         $this->lastCom = $lastCom;
+        return $this;
     }
     /**
+     * Getter for lastCom
+     *
      * @return int The last time (in milliseconds since the Unix Epoch) the device has communicated
      */
-    function getLastCom() : ?int
+    public function getLastCom() : int
     {
         return $this->lastCom;
     }
     /**
-     * @param int $lqi Link Quality Indicator
-     * - `Device::LQI_LIMIT`
-     * - `Device::LQI_AVERAGE`
-     * - `Device::LQI_GOOD`
-     * - `Device::LQI_EXCELLENT`
-     * - `Device::LQI_NA`
+     * Setter for lqi
+     *
+     * @param self::LQI_* $lqi Link Quality Indicator
+     *
+     * @return self To use in method chains
      */
-    function setLqi(?int $lqi)
+    public function setLqi(?int $lqi) : self
     {
         $this->lqi = $lqi;
+        return $this;
     }
     /**
-     * @return int Link Quality Indicator
-     * - `Device::LQI_LIMIT`
-     * - `Device::LQI_AVERAGE`
-     * - `Device::LQI_GOOD`
-     * - `Device::LQI_EXCELLENT`
-     * - `Device::LQI_NA`
+     * Getter for lqi
+     *
+     * @return self::LQI_* Link Quality Indicator
      */
-    function getLqi() : ?int
+    public function getLqi() : int
     {
         return $this->lqi;
     }
     /**
+     * Setter for activationTime
+     *
      * @param int $activationTime The device's activation time (in milliseconds since the Unix Epoch)
+     *
+     * @return self To use in method chains
      */
-    function setActivationTime(?int $activationTime)
+    public function setActivationTime(?int $activationTime) : self
     {
         $this->activationTime = $activationTime;
+        return $this;
     }
     /**
+     * Getter for activationTime
+     *
      * @return int The device's activation time (in milliseconds since the Unix Epoch)
      */
-    function getActivationTime() : ?int
+    public function getActivationTime() : int
     {
         return $this->activationTime;
     }
     /**
+     * Setter for creationTime
+     *
      * @param int $creationTime The device's provisionning time (in milliseconds since the Unix Epoch)
+     *
+     * @return self To use in method chains
      */
-    function setCreationTime(int $creationTime)
+    public function setCreationTime(?int $creationTime) : self
     {
         $this->creationTime = $creationTime;
+        return $this;
     }
     /**
+     * Getter for creationTime
+     *
      * @return int The device's provisionning time (in milliseconds since the Unix Epoch)
      */
-    function getCreationTime() : int
+    public function getCreationTime() : int
     {
         return $this->creationTime;
     }
     /**
-     * @param int $state State of this device.
-     * - `Device::STATE_OK`
-     * - `Device::STATE_DEAD`
-     * - `Device::STATE_OFF_CONTRACT`
-     * - `Device::STATE_DISABLED`
-     * - `Device::STATE_WARN`
-     * - `Device::STATE_DELETED`
-     * - `Device::STATE_SUSPENDED`
-     * - `Device::STATE_NOT_ACTIVABLE`
+     * Setter for state
+     *
+     * @param self::STATE_* $state State of this device.
+     *
+     * @return self To use in method chains
      */
-    function setState(int $state)
+    public function setState(?int $state) : self
     {
         $this->state = $state;
+        return $this;
     }
     /**
-     * @return int State of this device.
-     * - `Device::STATE_OK`
-     * - `Device::STATE_DEAD`
-     * - `Device::STATE_OFF_CONTRACT`
-     * - `Device::STATE_DISABLED`
-     * - `Device::STATE_WARN`
-     * - `Device::STATE_DELETED`
-     * - `Device::STATE_SUSPENDED`
-     * - `Device::STATE_NOT_ACTIVABLE`
+     * Getter for state
+     *
+     * @return self::STATE_* State of this device.
      */
-    function getState() : int
+    public function getState() : int
     {
         return $this->state;
     }
     /**
-     * @param int $comState Communication state of this device.
-     * - `Device::COM_STATE_NO`
-     * - `Device::COM_STATE_OK`
-     * - `Device::COM_STATE_WARN`
-     * - `Device::COM_STATE_KO`
-     * - `Device::COM_STATE_`
-     * - `Device::COM_STATE_NOT_SEEN`
+     * Setter for comState
+     *
+     * @param self::COM_STATE_* $comState Communication state of this device.
+     *
+     * @return self To use in method chains
      */
-    function setComState(int $comState)
+    public function setComState(?int $comState) : self
     {
         $this->comState = $comState;
+        return $this;
     }
     /**
-     * @return int Communication state of this device.
-     * - `Device::COM_STATE_NO`
-     * - `Device::COM_STATE_OK`
-     * - `Device::COM_STATE_WARN`
-     * - `Device::COM_STATE_KO`
-     * - `Device::COM_STATE_`
-     * - `Device::COM_STATE_NOT_SEEN`
+     * Getter for comState
+     *
+     * @return self::COM_STATE_* Communication state of this device.
      */
-    function getComState() : int
+    public function getComState() : int
     {
         return $this->comState;
     }
     /**
-     * @param Token token
+     * Setter for token
+     *
+     * @param Token $token
+     *
+     * @return self To use in method chains
      */
-    function setToken(?Token $token)
+    public function setToken(?Token $token) : self
     {
         $this->token = $token;
+        return $this;
     }
     /**
-     * @return Token token
+     * Getter for token
+     *
+     * @return Token
      */
-    function getToken() : ?Token
+    public function getToken() : Token
     {
         return $this->token;
     }
     /**
+     * Setter for unsubscriptionTime
+     *
      * @param int $unsubscriptionTime The device's unsubscription time (in milliseconds since the Unix Epoch)
+     *
+     * @return self To use in method chains
      */
-    function setUnsubscriptionTime(?int $unsubscriptionTime)
+    public function setUnsubscriptionTime(?int $unsubscriptionTime) : self
     {
         $this->unsubscriptionTime = $unsubscriptionTime;
+        return $this;
     }
     /**
+     * Getter for unsubscriptionTime
+     *
      * @return int The device's unsubscription time (in milliseconds since the Unix Epoch)
      */
-    function getUnsubscriptionTime() : ?int
+    public function getUnsubscriptionTime() : int
     {
         return $this->unsubscriptionTime;
     }
     /**
+     * Setter for createdBy
+     *
      * @param string $createdBy The id of device's creator user
+     *
+     * @return self To use in method chains
      */
-    function setCreatedBy(?string $createdBy)
+    public function setCreatedBy(?string $createdBy) : self
     {
         $this->createdBy = $createdBy;
+        return $this;
     }
     /**
+     * Getter for createdBy
+     *
      * @return string The id of device's creator user
      */
-    function getCreatedBy() : ?string
+    public function getCreatedBy() : string
     {
         return $this->createdBy;
     }
     /**
+     * Setter for lastEditionTime
+     *
      * @param int $lastEditionTime Date of the last edition of this device (in milliseconds since the Unix Epoch)
+     *
+     * @return self To use in method chains
      */
-    function setLastEditionTime(?int $lastEditionTime)
+    public function setLastEditionTime(?int $lastEditionTime) : self
     {
         $this->lastEditionTime = $lastEditionTime;
+        return $this;
     }
     /**
+     * Getter for lastEditionTime
+     *
      * @return int Date of the last edition of this device (in milliseconds since the Unix Epoch)
      */
-    function getLastEditionTime() : ?int
+    public function getLastEditionTime() : int
     {
         return $this->lastEditionTime;
     }
     /**
+     * Setter for lastEditedBy
+     *
      * @param string $lastEditedBy The id of device's last editor user
+     *
+     * @return self To use in method chains
      */
-    function setLastEditedBy(?string $lastEditedBy)
+    public function setLastEditedBy(?string $lastEditedBy) : self
     {
         $this->lastEditedBy = $lastEditedBy;
+        return $this;
     }
     /**
+     * Getter for lastEditedBy
+     *
      * @return string The id of device's last editor user
      */
-    function getLastEditedBy() : ?string
+    public function getLastEditedBy() : string
     {
         return $this->lastEditedBy;
     }
     /**
+     * Setter for automaticRenewal
+     *
      * @param bool $automaticRenewal Allow token renewal ?
+     *
+     * @return self To use in method chains
      */
-    function setAutomaticRenewal(bool $automaticRenewal)
+    public function setAutomaticRenewal(?bool $automaticRenewal) : self
     {
         $this->automaticRenewal = $automaticRenewal;
+        return $this;
     }
     /**
+     * Getter for automaticRenewal
+     *
      * @return bool Allow token renewal ?
      */
-    function getAutomaticRenewal() : bool
+    public function getAutomaticRenewal() : bool
     {
         return $this->automaticRenewal;
     }
     /**
-     * @param int $automaticRenewalStatus Computed automatic renewal status.
-     * - `Device::AUTOMATIC_RENEWAL_STATUS_ALLOWED`
-     * - `Device::AUTOMATIC_RENEWAL_STATUS_NOT_ALLOWED`
-     * - `Device::AUTOMATIC_RENEWAL_STATUS_RENEWED`
-     * - `Device::AUTOMATIC_RENEWAL_STATUS_ENDED`
+     * Setter for automaticRenewalStatus
+     *
+     * @param self::AUTOMATIC_RENEWAL_STATUS_* $automaticRenewalStatus Computed automatic renewal status.
+     *
+     * @return self To use in method chains
      */
-    function setAutomaticRenewalStatus(?int $automaticRenewalStatus)
+    public function setAutomaticRenewalStatus(?int $automaticRenewalStatus) : self
     {
         $this->automaticRenewalStatus = $automaticRenewalStatus;
+        return $this;
     }
     /**
-     * @return int Computed automatic renewal status.
-     * - `Device::AUTOMATIC_RENEWAL_STATUS_ALLOWED`
-     * - `Device::AUTOMATIC_RENEWAL_STATUS_NOT_ALLOWED`
-     * - `Device::AUTOMATIC_RENEWAL_STATUS_RENEWED`
-     * - `Device::AUTOMATIC_RENEWAL_STATUS_ENDED`
+     * Getter for automaticRenewalStatus
+     *
+     * @return self::AUTOMATIC_RENEWAL_STATUS_* Computed automatic renewal status.
      */
-    function getAutomaticRenewalStatus() : ?int
+    public function getAutomaticRenewalStatus() : int
     {
         return $this->automaticRenewalStatus;
     }
     /**
+     * Setter for activable
+     *
      * @param bool $activable true if the device is activable and can take a token
+     *
+     * @return self To use in method chains
      */
-    function setActivable(?bool $activable)
+    public function setActivable(?bool $activable) : self
     {
         $this->activable = $activable;
+        return $this;
     }
     /**
+     * Getter for activable
+     *
      * @return bool true if the device is activable and can take a token
      */
-    function getActivable() : ?bool
+    public function getActivable() : bool
     {
         return $this->activable;
     }
     /**
-     * @param string[] actions
+     * Setter for actions
+     *
+     * @param string[] $actions
+     *
+     * @return self To use in method chains
      */
-    function setActions(?array $actions)
+    public function setActions(?array $actions) : self
     {
         $this->actions = $actions;
+        return $this;
     }
     /**
-     * @return string[] actions
+     * Getter for actions
+     *
+     * @return string[]
      */
-    function getActions() : ?array
+    public function getActions() : array
     {
         return $this->actions;
     }
     /**
-     * @param string[] resources
+     * Setter for resources
+     *
+     * @param string[] $resources
+     *
+     * @return self To use in method chains
      */
-    function setResources(?array $resources)
+    public function setResources(?array $resources) : self
     {
         $this->resources = $resources;
+        return $this;
     }
     /**
-     * @return string[] resources
+     * Getter for resources
+     *
+     * @return string[]
      */
-    function getResources() : ?array
+    public function getResources() : array
     {
         return $this->resources;
     }

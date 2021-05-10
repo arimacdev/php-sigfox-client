@@ -8,44 +8,57 @@ use Arimac\Sigfox\Definition;
  */
 class CommonDevice extends Definition
 {
-    protected $required = array('id', 'name');
     /**
      * The device's identifier (hexadecimal format)
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /**
      * The device's name
      *
      * @var string
      */
-    protected string $name;
+    protected ?string $name = null;
     /**
+     * Setter for id
+     *
      * @param string $id The device's identifier (hexadecimal format)
+     *
+     * @return self To use in method chains
      */
-    function setId(string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The device's identifier (hexadecimal format)
      */
-    function getId() : string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
+     * Setter for name
+     *
      * @param string $name The device's name
+     *
+     * @return self To use in method chains
      */
-    function setName(string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The device's name
      */
-    function getName() : string
+    public function getName() : string
     {
         return $this->name;
     }

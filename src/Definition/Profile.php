@@ -2,8 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\MinGroup;
-use Arimac\Sigfox\Definition\MinRole;
 use Arimac\Sigfox\Definition;
 class Profile extends Definition
 {
@@ -19,7 +17,9 @@ class Profile extends Definition
      * @var string
      */
     protected ?string $name = null;
-    /** @var MinGroup */
+    /**
+     * @var MinGroup
+     */
     protected ?MinGroup $group = null;
     /**
      * Lists the role contained in this profile.
@@ -27,92 +27,138 @@ class Profile extends Definition
      * @var MinRole[]
      */
     protected ?array $roles = null;
-    /** @var string[] */
-    protected ?array $actions = null;
-    /** @var string[] */
-    protected ?array $resources = null;
-    protected $objects = array('group' => '\\Arimac\\Sigfox\\Definition\\MinGroup');
     /**
-     * @param string $id The profiler identifier
+     * @var string[]
      */
-    function setId(?string $id)
+    protected ?array $actions = null;
+    /**
+     * @var string[]
+     */
+    protected ?array $resources = null;
+    protected $serialize = array('group' => MinGroup::class);
+    /**
+     * Setter for id
+     *
+     * @param string $id The profiler identifier
+     *
+     * @return self To use in method chains
+     */
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The profiler identifier
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
+     * Setter for name
+     *
      * @param string $name The profile name
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The profile name
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }
     /**
-     * @param MinGroup group
+     * Setter for group
+     *
+     * @param MinGroup $group
+     *
+     * @return self To use in method chains
      */
-    function setGroup(?MinGroup $group)
+    public function setGroup(?MinGroup $group) : self
     {
         $this->group = $group;
+        return $this;
     }
     /**
-     * @return MinGroup group
+     * Getter for group
+     *
+     * @return MinGroup
      */
-    function getGroup() : ?MinGroup
+    public function getGroup() : MinGroup
     {
         return $this->group;
     }
     /**
+     * Setter for roles
+     *
      * @param MinRole[] $roles Lists the role contained in this profile.
+     *
+     * @return self To use in method chains
      */
-    function setRoles(?array $roles)
+    public function setRoles(?array $roles) : self
     {
         $this->roles = $roles;
+        return $this;
     }
     /**
+     * Getter for roles
+     *
      * @return MinRole[] Lists the role contained in this profile.
      */
-    function getRoles() : ?array
+    public function getRoles() : array
     {
         return $this->roles;
     }
     /**
-     * @param string[] actions
+     * Setter for actions
+     *
+     * @param string[] $actions
+     *
+     * @return self To use in method chains
      */
-    function setActions(?array $actions)
+    public function setActions(?array $actions) : self
     {
         $this->actions = $actions;
+        return $this;
     }
     /**
-     * @return string[] actions
+     * Getter for actions
+     *
+     * @return string[]
      */
-    function getActions() : ?array
+    public function getActions() : array
     {
         return $this->actions;
     }
     /**
-     * @param string[] resources
+     * Setter for resources
+     *
+     * @param string[] $resources
+     *
+     * @return self To use in method chains
      */
-    function setResources(?array $resources)
+    public function setResources(?array $resources) : self
     {
         $this->resources = $resources;
+        return $this;
     }
     /**
-     * @return string[] resources
+     * Getter for resources
+     *
+     * @return string[]
      */
-    function getResources() : ?array
+    public function getResources() : array
     {
         return $this->resources;
     }

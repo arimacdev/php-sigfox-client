@@ -2,29 +2,28 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Request\ProfilesIdGet;
 class ProfilesId
 {
     /**
      * The Profile identifier
      */
-    protected string $id;
+    protected ?string $id;
     /**
      * Creating the repository
      *
      * @param string $id The Profile identifier
      */
-    function __construct(string $id)
+    public function __construct(string $id)
     {
         $this->id = $id;
     }
     /**
      * Retrieve information about a given profile.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function get(int $request) : int
+    public function get(ProfilesIdGet $request) : int
     {
-        return $this->client->request('get', '/profiles/{id}', $request, 'int');
+        return $this->client->request('get', $this->bindUrlParams('/profiles/{id}', $this->id), $request, 'int');
     }
 }

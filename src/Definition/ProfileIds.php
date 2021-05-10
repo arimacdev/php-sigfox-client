@@ -7,19 +7,28 @@ namespace Arimac\Sigfox\Definition;
  */
 trait ProfileIds
 {
-    /** @var string[] */
+    /**
+     * @var string[]
+     */
     protected ?array $profileId = null;
     /**
-     * @param string[] profileId
+     * Setter for profileId
+     *
+     * @param string[] $profileId
+     *
+     * @return self To use in method chains
      */
-    function setProfileId(?array $profileId)
+    public function setProfileId(?array $profileId) : self
     {
         $this->profileId = $profileId;
+        return $this;
     }
     /**
-     * @return string[] profileId
+     * Getter for profileId
+     *
+     * @return string[]
      */
-    function getProfileId() : ?array
+    public function getProfileId() : array
     {
         return $this->profileId;
     }

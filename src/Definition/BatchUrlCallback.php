@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\Callback;
+use Arimac\Sigfox\Definition;
 /**
  * Defines the properties needed to create a batch url callback
  */
@@ -27,44 +27,65 @@ class BatchUrlCallback extends Callback
      */
     protected ?string $linePattern = null;
     /**
+     * Setter for url
+     *
      * @param string $url The callback's url
+     *
+     * @return self To use in method chains
      */
-    function setUrl(?string $url)
+    public function setUrl(?string $url) : self
     {
         $this->url = $url;
+        return $this;
     }
     /**
+     * Getter for url
+     *
      * @return string The callback's url
      */
-    function getUrl() : ?string
+    public function getUrl() : string
     {
         return $this->url;
     }
     /**
+     * Setter for httpMethod
+     *
      * @param string $httpMethod The http method used to send a callback
+     *
+     * @return self To use in method chains
      */
-    function setHttpMethod(?string $httpMethod)
+    public function setHttpMethod(?string $httpMethod) : self
     {
         $this->httpMethod = $httpMethod;
+        return $this;
     }
     /**
+     * Getter for httpMethod
+     *
      * @return string The http method used to send a callback
      */
-    function getHttpMethod() : ?string
+    public function getHttpMethod() : string
     {
         return $this->httpMethod;
     }
     /**
+     * Setter for linePattern
+     *
      * @param string $linePattern The line pattern representing a message.
+     *
+     * @return self To use in method chains
      */
-    function setLinePattern(?string $linePattern)
+    public function setLinePattern(?string $linePattern) : self
     {
         $this->linePattern = $linePattern;
+        return $this;
     }
     /**
+     * Getter for linePattern
+     *
      * @return string The line pattern representing a message.
      */
-    function getLinePattern() : ?string
+    public function getLinePattern() : string
     {
         return $this->linePattern;
     }

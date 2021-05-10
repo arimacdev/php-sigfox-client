@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition\ReplaceResponse;
 
-use Arimac\Sigfox\Definition\JobError;
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Definition\JobError;
 /**
  * The information about the devices already processed
  */
@@ -22,30 +22,44 @@ class Status extends Definition
      */
     protected ?int $success = null;
     /**
+     * Setter for errors
+     *
      * @param JobError[] $errors reasons of each errors
+     *
+     * @return self To use in method chains
      */
-    function setErrors(?array $errors)
+    public function setErrors(?array $errors) : self
     {
         $this->errors = $errors;
+        return $this;
     }
     /**
+     * Getter for errors
+     *
      * @return JobError[] reasons of each errors
      */
-    function getErrors() : ?array
+    public function getErrors() : array
     {
         return $this->errors;
     }
     /**
+     * Setter for success
+     *
      * @param int $success The number of devices successfully replaced
+     *
+     * @return self To use in method chains
      */
-    function setSuccess(?int $success)
+    public function setSuccess(?int $success) : self
     {
         $this->success = $success;
+        return $this;
     }
     /**
+     * Getter for success
+     *
      * @return int The number of devices successfully replaced
      */
-    function getSuccess() : ?int
+    public function getSuccess() : int
     {
         return $this->success;
     }

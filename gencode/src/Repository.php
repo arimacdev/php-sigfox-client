@@ -10,143 +10,142 @@ use PhpParser\Node\Expr\Variable;
 use PhpParser\Node\Name;
 use PhpParser\Node\Param;
 use PhpParser\Node\Scalar\String_;
-use PhpParser\Node\Stmt\ClassMethod;
-use PhpParser\Node\Stmt\Function_;
 use PhpParser\Node\Stmt\Return_;
 
-class Repository extends ClassExt
+class Repository extends Class_
 {
-
     protected array $properties = [];
 
     public function addFindMethod(
         string $name,
         string $type,
         string $returnType,
-        ?string $message = null
+        ?string $docComment = null
     ) {
+        $returnType = $this->useType($returnType);
         $methodName = "find";
-        if(in_array($name,["year", "month"])){
+        if (in_array($name, ["year", "month"])) {
             $methodName = $name;
         }
-        $method = $this->factory->method($methodName);
-        $method->addParam(new Param(new Variable($name), null, $type));
-        $method->setReturnType($returnType);
-        $method->makePublic();
 
         $args = array_map(function ($property) {
             return new Arg(new Variable("this->" . $property[0]));
         }, $this->properties);
         $args[] = new Arg(new Variable($name));
-        $method->addStmt(new Return_(new New_(
-            new Name($returnType),
-            $args
-        )));
-        if ($message) {
-            $method->setDocComment($this->formatDocComment(
-                "method",
-                null,
-                [
-                    ["param", "$type \$$name $message"],
-                    ["return", "$returnType"]
-                ]
-            ));
-        }
-        $this->class->addStmt($method);
+
+        $this->addMethod(
+            $methodName,
+            [new Param(new Variable($name), null, $type)],
+            [new Return_(new New_(
+                new Name($returnType),
+                $args
+            ))],
+            $returnType,
+            $docComment
+        );
     }
 
     public function addConstructor(array $parameters)
     {
         $this->properties = $parameters;
 
-        $method = $this->factory->method("__construct");
+        $params = [];
+        $stmts = [];
         foreach ($parameters as $param) {
-            $method->addParam(new Param(new Variable($param[0]), null, $param[1]));
-            $property = $this->factory->property($param[0]);
-            $property->setType($param[1]);
-            if (isset($param[2])) {
-                $property->setDocComment($this->formatDocComment(
-                    "property",
-                    $param[2]
-                ));
-            }
-            $property->makeProtected();
-            $this->class->addStmt($property);
+            $params[] = new Param(new Variable($param[0]), null, $param[1]);
 
-            $method->addStmt(new Assign(
+            $this->addProperty($param[0], $param[1], $param[2]?Helper::normalizeDocComment($param[2],2):null);
+
+            $stmts[] = new Assign(
                 new Variable("this->" . $param[0]),
                 new Variable($param[0])
-            ));
+            );
         }
-        $method->setDocComment($this->formatDocComment(
-            "method",
-            "Creating the repository",
-            array_map(function ($parameters) {
-                $docComment = $parameters[2] ?? null;
-                $name = $parameters[0];
-                $type = $parameters[1];
-                if ($docComment) {
-                    return ["param", "$type \$$name $docComment"];
-                } else {
-                    return ["param", "$type \$$name"];
-                }
-            }, $parameters)
-        ));
-        $this->class->addStmt($method);
+
+        $this->addMethod(
+            "__construct",
+            $params,
+            $stmts,
+            null,
+            Helper::normalizeDocComment(
+                "Creating the repository",
+                array_map(function ($parameters) {
+                    $docComment = $parameters[2] ?? null;
+                    $name = $parameters[0];
+                    $type = $parameters[1];
+                    if ($docComment) {
+                        return ["param", "$type \$$name $docComment"];
+                    } else {
+                        return ["param", "$type \$$name"];
+                    }
+                }, $parameters),
+                2
+            )
+        );
     }
 
     public function addRepositoryMethod(string $methodName, string $returnType)
     {
-        $method = $this->factory->method($methodName);
-        $method->setReturnType($returnType);
-        $method->makePublic();
-
+        $returnType = $this->useType($returnType);
         $args = array_map(function ($property) {
             return new Arg(new Variable("this->" . $property[0]));
         }, $this->properties);
-        $method->addStmt(new Return_(new New_(
-            new Name($returnType),
-            $args
-        )));
-        $method->setDocComment($this->formatDocComment(
-            "method",
-            null,
+
+        $this->addMethod(
+            $methodName,
+            [],
             [
-                ["return", "$returnType"]
-            ]
-        ));
-        $this->class->addStmt($method);
+                new Return_(new New_(
+                    new Name($returnType),
+                    $args
+                ))
+            ],
+            $returnType,
+            Helper::normalizeDocComment([["return", $returnType]], 2)
+        );
     }
 
     public function addRequestMethod(
-        string $methodName, 
-        string $requestMethod, 
+        string $methodName,
+        string $requestMethod,
         string $endpoint,
-        string $requestType,
         string $responseType,
-        ?string $message = null
-    ){
-        $method = $this->factory->method($methodName);
-        $param = $this->factory->param("request");
-        $param->setType($requestType);
-        $method->addParam($param);
-        $method->setReturnType($responseType);
-        $method->setDocComment($this->formatDocComment("request", $message, [
-            ["param", "$requestType \$request"],
-            ["return", $responseType]
-        ]));
+        ?string $requestType = null,
+        ?string $docComment = null
+    ) {
 
-        $stmt = new Return_(new FuncCall(new Name("\$this->client->request"),[
+        $endpoint = new String_($endpoint);
+        if (count($this->properties)) {
+            $params = [$endpoint];
+            foreach ($this->properties as $property) {
+                $name = $property[0];
+                array_push($params, new Variable("this->$name"));
+            }
+            $endpoint = new FuncCall(new Name("\$this->bindUrlParams"), $params);
+        }
+
+        $args = [
             new String_($requestMethod),
-            new String_($endpoint),
-            new Variable("request"),
-            new String_($responseType)
-        ]));
+            $endpoint,
+        ];
 
-        $method->addStmt($stmt);
+        $params = [];
 
-        $this->class->addStmt($method);
-        
+        if (isset($requestType)) {
+            $requestType = $this->useType($requestType);
+            $param = $this->factory->param("request");
+            $param->setType($this->useType($requestType));
+            $params[] = $param;
+            array_push($args, new Variable("request"));
+        } else {
+            array_push($args, $this->factory->val(null));
+        }
+        array_push($args, new String_($responseType));
+
+        $stmts = [new Return_(new FuncCall(new Name("\$this->client->request"), $args))];
+
+
+        $this->addMethod($methodName, $params, $stmts, $responseType, $docComment);
     }
 
     public function getProperties(): array

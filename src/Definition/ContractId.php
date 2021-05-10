@@ -8,24 +8,30 @@ use Arimac\Sigfox\Definition;
  */
 class ContractId extends Definition
 {
-    protected $required = array('id');
     /**
      * The contract's id
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /**
+     * Setter for id
+     *
      * @param string $id The contract's id
+     *
+     * @return self To use in method chains
      */
-    function setId(string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The contract's id
      */
-    function getId() : string
+    public function getId() : string
     {
         return $this->id;
     }

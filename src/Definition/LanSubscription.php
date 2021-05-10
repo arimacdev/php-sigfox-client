@@ -2,37 +2,42 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\InternetSubscription;
+use Arimac\Sigfox\Definition;
 /**
  * Information about LAN internet subscription
  */
 class LanSubscription extends InternetSubscription
 {
-    /** COMPANY */
+    /**
+     * COMPANY
+     */
     public const NETWORK_TYPE_COMPANY = 0;
-    /** OTHER */
+    /**
+     * OTHER
+     */
     public const NETWORK_TYPE_OTHER = 1;
-    /** RESIDENT */
+    /**
+     * RESIDENT
+     */
     public const NETWORK_TYPE_RESIDENT = 2;
-    /** DHCP */
+    /**
+     * DHCP
+     */
     public const ETH_CONNECTION_TYPE_DHCP = 0;
-    /** STATIC */
+    /**
+     * STATIC
+     */
     public const ETH_CONNECTION_TYPE_STATIC = 1;
     /**
      * Subscription network type
-     * - `LanSubscription::NETWORK_TYPE_COMPANY`
-     * - `LanSubscription::NETWORK_TYPE_OTHER`
-     * - `LanSubscription::NETWORK_TYPE_RESIDENT`
      *
-     * @var int
+     * @var self::NETWORK_TYPE_*
      */
     protected ?int $networkType = null;
     /**
      * Subscription connection type
-     * - `LanSubscription::ETH_CONNECTION_TYPE_DHCP`
-     * - `LanSubscription::ETH_CONNECTION_TYPE_STATIC`
      *
-     * @var int
+     * @var self::ETH_CONNECTION_TYPE_*
      */
     protected ?int $ethConnectionType = null;
     /**
@@ -44,72 +49,92 @@ class LanSubscription extends InternetSubscription
     /**
      * Comments about the connection of this internet subscription. This field can be unset when updating.
      *
-     * @var float
+     * @var int
      */
-    protected ?float $connectionComments = null;
+    protected ?int $connectionComments = null;
     /**
-     * @param int $networkType Subscription network type
-     * - `LanSubscription::NETWORK_TYPE_COMPANY`
-     * - `LanSubscription::NETWORK_TYPE_OTHER`
-     * - `LanSubscription::NETWORK_TYPE_RESIDENT`
+     * Setter for networkType
+     *
+     * @param self::NETWORK_TYPE_* $networkType Subscription network type
+     *
+     * @return self To use in method chains
      */
-    function setNetworkType(?int $networkType)
+    public function setNetworkType(?int $networkType) : self
     {
         $this->networkType = $networkType;
+        return $this;
     }
     /**
-     * @return int Subscription network type
-     * - `LanSubscription::NETWORK_TYPE_COMPANY`
-     * - `LanSubscription::NETWORK_TYPE_OTHER`
-     * - `LanSubscription::NETWORK_TYPE_RESIDENT`
+     * Getter for networkType
+     *
+     * @return self::NETWORK_TYPE_* Subscription network type
      */
-    function getNetworkType() : ?int
+    public function getNetworkType() : int
     {
         return $this->networkType;
     }
     /**
-     * @param int $ethConnectionType Subscription connection type
-     * - `LanSubscription::ETH_CONNECTION_TYPE_DHCP`
-     * - `LanSubscription::ETH_CONNECTION_TYPE_STATIC`
+     * Setter for ethConnectionType
+     *
+     * @param self::ETH_CONNECTION_TYPE_* $ethConnectionType Subscription connection type
+     *
+     * @return self To use in method chains
      */
-    function setEthConnectionType(?int $ethConnectionType)
+    public function setEthConnectionType(?int $ethConnectionType) : self
     {
         $this->ethConnectionType = $ethConnectionType;
+        return $this;
     }
     /**
-     * @return int Subscription connection type
-     * - `LanSubscription::ETH_CONNECTION_TYPE_DHCP`
-     * - `LanSubscription::ETH_CONNECTION_TYPE_STATIC`
+     * Getter for ethConnectionType
+     *
+     * @return self::ETH_CONNECTION_TYPE_* Subscription connection type
      */
-    function getEthConnectionType() : ?int
+    public function getEthConnectionType() : int
     {
         return $this->ethConnectionType;
     }
     /**
+     * Setter for addressing
+     *
      * @param string $addressing The addressing of this internet subscription. This field can be unset when updating.
+     *
+     * @return self To use in method chains
      */
-    function setAddressing(?string $addressing)
+    public function setAddressing(?string $addressing) : self
     {
         $this->addressing = $addressing;
+        return $this;
     }
     /**
+     * Getter for addressing
+     *
      * @return string The addressing of this internet subscription. This field can be unset when updating.
      */
-    function getAddressing() : ?string
+    public function getAddressing() : string
     {
         return $this->addressing;
     }
     /**
-     * @param float $connectionComments Comments about the connection of this internet subscription. This field can be unset when updating.
+     * Setter for connectionComments
+     *
+     * @param int $connectionComments Comments about the connection of this internet subscription. This field can be
+     *                                unset when updating.
+     *
+     * @return self To use in method chains
      */
-    function setConnectionComments(?float $connectionComments)
+    public function setConnectionComments(?int $connectionComments) : self
     {
         $this->connectionComments = $connectionComments;
+        return $this;
     }
     /**
-     * @return float Comments about the connection of this internet subscription. This field can be unset when updating.
+     * Getter for connectionComments
+     *
+     * @return int Comments about the connection of this internet subscription. This field can be unset when
+     *             updating.
      */
-    function getConnectionComments() : ?float
+    public function getConnectionComments() : int
     {
         return $this->connectionComments;
     }

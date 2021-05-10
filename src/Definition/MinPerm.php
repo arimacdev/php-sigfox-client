@@ -21,30 +21,44 @@ class MinPerm extends Definition
      */
     protected ?string $name = null;
     /**
+     * Setter for code
+     *
      * @param int $code The permission's code
+     *
+     * @return self To use in method chains
      */
-    function setCode(?int $code)
+    public function setCode(?int $code) : self
     {
         $this->code = $code;
+        return $this;
     }
     /**
+     * Getter for code
+     *
      * @return int The permission's code
      */
-    function getCode() : ?int
+    public function getCode() : int
     {
         return $this->code;
     }
     /**
+     * Setter for name
+     *
      * @param string $name The permission's name
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The permission's name
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }

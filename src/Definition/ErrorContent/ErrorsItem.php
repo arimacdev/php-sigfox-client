@@ -7,61 +7,91 @@ class ErrorsItem extends Definition
 {
     /**
      * Describe where the problem occurred. Can be from body, query or path.
+     * 
      *
      * @var string
      */
     protected ?string $type = null;
     /**
      * Name of the field or parameter where the specific error occurred.
+     * 
      *
      * @var string
      */
     protected ?string $field = null;
     /**
      * Readable specific error for the previously defined field.
+     * 
      *
      * @var string
      */
     protected ?string $message = null;
     /**
+     * Setter for type
+     *
      * @param string $type Describe where the problem occurred. Can be from body, query or path.
+     *                     
+     *
+     * @return self To use in method chains
      */
-    function setType(?string $type)
+    public function setType(?string $type) : self
     {
         $this->type = $type;
+        return $this;
     }
     /**
+     * Getter for type
+     *
      * @return string Describe where the problem occurred. Can be from body, query or path.
+     *                
      */
-    function getType() : ?string
+    public function getType() : string
     {
         return $this->type;
     }
     /**
+     * Setter for field
+     *
      * @param string $field Name of the field or parameter where the specific error occurred.
+     *                      
+     *
+     * @return self To use in method chains
      */
-    function setField(?string $field)
+    public function setField(?string $field) : self
     {
         $this->field = $field;
+        return $this;
     }
     /**
+     * Getter for field
+     *
      * @return string Name of the field or parameter where the specific error occurred.
+     *                
      */
-    function getField() : ?string
+    public function getField() : string
     {
         return $this->field;
     }
     /**
+     * Setter for message
+     *
      * @param string $message Readable specific error for the previously defined field.
+     *                        
+     *
+     * @return self To use in method chains
      */
-    function setMessage(?string $message)
+    public function setMessage(?string $message) : self
     {
         $this->message = $message;
+        return $this;
     }
     /**
+     * Getter for message
+     *
      * @return string Readable specific error for the previously defined field.
+     *                
      */
-    function getMessage() : ?string
+    public function getMessage() : string
     {
         return $this->message;
     }

@@ -7,24 +7,22 @@ class DeviceTypesBulkRestartJobId
     /**
      * The job's identidier (hexademical format)
      */
-    protected string $jobId;
+    protected ?string $jobId;
     /**
      * Creating the repository
      *
      * @param string $jobId The job's identidier (hexademical format)
      */
-    function __construct(string $jobId)
+    public function __construct(string $jobId)
     {
         $this->jobId = $jobId;
     }
     /**
      * Retrieve the async job status of a device type's asynchronous job for a restart devices action.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function get(int $request) : int
+    public function get() : int
     {
-        return $this->client->request('get', '/device-types/bulk/restart/{jobId}', $request, 'int');
+        return $this->client->request('get', $this->bindUrlParams('/device-types/bulk/restart/{jobId}', $this->jobId), null, 'int');
     }
 }

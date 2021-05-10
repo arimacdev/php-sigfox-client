@@ -2,17 +2,16 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\SingleDeviceFields;
-class DeviceEditionBulk
+use Arimac\Sigfox\Definition;
+class DeviceEditionBulk extends Definition
 {
     use SingleDeviceFields;
-    protected $required = array('id');
     /**
      * The device's identifier (hexadecimal format)
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /**
      * The name of the device
      *
@@ -20,30 +19,44 @@ class DeviceEditionBulk
      */
     protected ?string $name = null;
     /**
+     * Setter for id
+     *
      * @param string $id The device's identifier (hexadecimal format)
+     *
+     * @return self To use in method chains
      */
-    function setId(string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The device's identifier (hexadecimal format)
      */
-    function getId() : string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
+     * Setter for name
+     *
      * @param string $name The name of the device
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The name of the device
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }

@@ -8,21 +8,24 @@ use Arimac\Sigfox\Definition;
  */
 class Token extends Definition
 {
-    /** OK */
+    /**
+     * OK
+     */
     public const STATE_OK = 0;
-    /** OFF_CONTRACT */
+    /**
+     * OFF_CONTRACT
+     */
     public const STATE_OFF_CONTRACT = 1;
-    /** NA_FOR_API */
+    /**
+     * NA_FOR_API
+     */
     public const STATE_NA_FOR_API = 2;
-    /** INVALID_TOKEN */
+    /**
+     * INVALID_TOKEN
+     */
     public const STATE_INVALID_TOKEN = 3;
     /**
-     * - `Token::STATE_OK`
-     * - `Token::STATE_OFF_CONTRACT`
-     * - `Token::STATE_NA_FOR_API`
-     * - `Token::STATE_INVALID_TOKEN`
-     *
-     * @var int
+     * @var self::STATE_*
      */
     protected ?int $state = null;
     /**
@@ -31,6 +34,7 @@ class Token extends Definition
      * - Off Contract
      * - Not applicable for API
      * - Invalid
+     * 
      *
      * @var string
      */
@@ -54,86 +58,117 @@ class Token extends Definition
      */
     protected ?int $freeMessagesSent = null;
     /**
-     * @param int $state - 0 -> OK
-     * - `Token::STATE_OFF_CONTRACT`
-     * - `Token::STATE_NA_FOR_API`
-     * - `Token::STATE_INVALID_TOKEN`
+     * Setter for state
+     *
+     * @param self::STATE_* $state
+     *
+     * @return self To use in method chains
      */
-    function setState(?int $state)
+    public function setState(?int $state) : self
     {
         $this->state = $state;
+        return $this;
     }
     /**
-     * @return int - 0 -> OK
-     * - `Token::STATE_OFF_CONTRACT`
-     * - `Token::STATE_NA_FOR_API`
-     * - `Token::STATE_INVALID_TOKEN`
+     * Getter for state
+     *
+     * @return self::STATE_*
      */
-    function getState() : ?int
+    public function getState() : int
     {
         return $this->state;
     }
     /**
+     * Setter for detailMessage
+     *
      * @param string $detailMessage Token state description
-     * - Valid
-     * - Off Contract
-     * - Not applicable for API
-     * - Invalid
+     *                              - Valid
+     *                              - Off Contract
+     *                              - Not applicable for API
+     *                              - Invalid
+     *                              
+     *
+     * @return self To use in method chains
      */
-    function setDetailMessage(?string $detailMessage)
+    public function setDetailMessage(?string $detailMessage) : self
     {
         $this->detailMessage = $detailMessage;
+        return $this;
     }
     /**
+     * Getter for detailMessage
+     *
      * @return string Token state description
-     * - Valid
-     * - Off Contract
-     * - Not applicable for API
-     * - Invalid
+     *                - Valid
+     *                - Off Contract
+     *                - Not applicable for API
+     *                - Invalid
+     *                
      */
-    function getDetailMessage() : ?string
+    public function getDetailMessage() : string
     {
         return $this->detailMessage;
     }
     /**
+     * Setter for end
+     *
      * @param int $end The device's communication end time (in milliseconds since the Unix Epoch)
+     *
+     * @return self To use in method chains
      */
-    function setEnd(?int $end)
+    public function setEnd(?int $end) : self
     {
         $this->end = $end;
+        return $this;
     }
     /**
+     * Getter for end
+     *
      * @return int The device's communication end time (in milliseconds since the Unix Epoch)
      */
-    function getEnd() : ?int
+    public function getEnd() : int
     {
         return $this->end;
     }
     /**
+     * Setter for freeMessages
+     *
      * @param int $freeMessages The number of free messages left for this token
+     *
+     * @return self To use in method chains
      */
-    function setFreeMessages(?int $freeMessages)
+    public function setFreeMessages(?int $freeMessages) : self
     {
         $this->freeMessages = $freeMessages;
+        return $this;
     }
     /**
+     * Getter for freeMessages
+     *
      * @return int The number of free messages left for this token
      */
-    function getFreeMessages() : ?int
+    public function getFreeMessages() : int
     {
         return $this->freeMessages;
     }
     /**
+     * Setter for freeMessagesSent
+     *
      * @param int $freeMessagesSent The number of free messages already sent for this token
+     *
+     * @return self To use in method chains
      */
-    function setFreeMessagesSent(?int $freeMessagesSent)
+    public function setFreeMessagesSent(?int $freeMessagesSent) : self
     {
         $this->freeMessagesSent = $freeMessagesSent;
+        return $this;
     }
     /**
+     * Getter for freeMessagesSent
+     *
      * @return int The number of free messages already sent for this token
      */
-    function getFreeMessagesSent() : ?int
+    public function getFreeMessagesSent() : int
     {
         return $this->freeMessagesSent;
     }

@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition\AvailableEntitiesResponse;
 
-use Arimac\Sigfox\Definition\AvailableEntitiesResponse\OperatorsItem\OperatorForecastsItem;
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Definition\AvailableEntitiesResponse\OperatorsItem\OperatorForecastsItem;
 class OperatorsItem extends Definition
 {
     /**
@@ -31,7 +31,8 @@ class OperatorsItem extends Definition
      */
     protected ?int $operatorMaxDb = null;
     /**
-     * The standard capability of the operator (0 for BAND800, 1 for BAND900), used to choose the device class attenuation value.
+     * The standard capability of the operator (0 for BAND800, 1 for BAND900), used to choose the device class
+     * attenuation value.
      *
      * @var int
      */
@@ -42,103 +43,156 @@ class OperatorsItem extends Definition
      * @var OperatorForecastsItem[]
      */
     protected ?array $operatorForecasts = null;
-    /** @var string[] */
+    /**
+     * @var string[]
+     */
     protected ?array $actions = null;
     /**
+     * Setter for operatorId
+     *
      * @param string $operatorId The identifier of the operator.
+     *
+     * @return self To use in method chains
      */
-    function setOperatorId(?string $operatorId)
+    public function setOperatorId(?string $operatorId) : self
     {
         $this->operatorId = $operatorId;
+        return $this;
     }
     /**
+     * Getter for operatorId
+     *
      * @return string The identifier of the operator.
      */
-    function getOperatorId() : ?string
+    public function getOperatorId() : string
     {
         return $this->operatorId;
     }
     /**
+     * Setter for operatorName
+     *
      * @param string $operatorName The name of the operator.
+     *
+     * @return self To use in method chains
      */
-    function setOperatorName(?string $operatorName)
+    public function setOperatorName(?string $operatorName) : self
     {
         $this->operatorName = $operatorName;
+        return $this;
     }
     /**
+     * Getter for operatorName
+     *
      * @return string The name of the operator.
      */
-    function getOperatorName() : ?string
+    public function getOperatorName() : string
     {
         return $this->operatorName;
     }
     /**
+     * Setter for operatorMinDb
+     *
      * @param int $operatorMinDb The minimal sensitivity for the operator (in dBm).
+     *
+     * @return self To use in method chains
      */
-    function setOperatorMinDb(?int $operatorMinDb)
+    public function setOperatorMinDb(?int $operatorMinDb) : self
     {
         $this->operatorMinDb = $operatorMinDb;
+        return $this;
     }
     /**
+     * Getter for operatorMinDb
+     *
      * @return int The minimal sensitivity for the operator (in dBm).
      */
-    function getOperatorMinDb() : ?int
+    public function getOperatorMinDb() : int
     {
         return $this->operatorMinDb;
     }
     /**
+     * Setter for operatorMaxDb
+     *
      * @param int $operatorMaxDb The maximal sensitivity for the operator (in dBm).
+     *
+     * @return self To use in method chains
      */
-    function setOperatorMaxDb(?int $operatorMaxDb)
+    public function setOperatorMaxDb(?int $operatorMaxDb) : self
     {
         $this->operatorMaxDb = $operatorMaxDb;
+        return $this;
     }
     /**
+     * Getter for operatorMaxDb
+     *
      * @return int The maximal sensitivity for the operator (in dBm).
      */
-    function getOperatorMaxDb() : ?int
+    public function getOperatorMaxDb() : int
     {
         return $this->operatorMaxDb;
     }
     /**
-     * @param int $operatorStandard The standard capability of the operator (0 for BAND800, 1 for BAND900), used to choose the device class attenuation value.
+     * Setter for operatorStandard
+     *
+     * @param int $operatorStandard The standard capability of the operator (0 for BAND800, 1 for BAND900), used to
+     *                              choose the device class attenuation value.
+     *
+     * @return self To use in method chains
      */
-    function setOperatorStandard(?int $operatorStandard)
+    public function setOperatorStandard(?int $operatorStandard) : self
     {
         $this->operatorStandard = $operatorStandard;
+        return $this;
     }
     /**
-     * @return int The standard capability of the operator (0 for BAND800, 1 for BAND900), used to choose the device class attenuation value.
+     * Getter for operatorStandard
+     *
+     * @return int The standard capability of the operator (0 for BAND800, 1 for BAND900), used to choose the device
+     *             class attenuation value.
      */
-    function getOperatorStandard() : ?int
+    public function getOperatorStandard() : int
     {
         return $this->operatorStandard;
     }
     /**
+     * Setter for operatorForecasts
+     *
      * @param OperatorForecastsItem[] $operatorForecasts Array of all the operator forecast radio planning infos.
+     *
+     * @return self To use in method chains
      */
-    function setOperatorForecasts(?array $operatorForecasts)
+    public function setOperatorForecasts(?array $operatorForecasts) : self
     {
         $this->operatorForecasts = $operatorForecasts;
+        return $this;
     }
     /**
+     * Getter for operatorForecasts
+     *
      * @return OperatorForecastsItem[] Array of all the operator forecast radio planning infos.
      */
-    function getOperatorForecasts() : ?array
+    public function getOperatorForecasts() : array
     {
         return $this->operatorForecasts;
     }
     /**
-     * @param string[] actions
+     * Setter for actions
+     *
+     * @param string[] $actions
+     *
+     * @return self To use in method chains
      */
-    function setActions(?array $actions)
+    public function setActions(?array $actions) : self
     {
         $this->actions = $actions;
+        return $this;
     }
     /**
-     * @return string[] actions
+     * Getter for actions
+     *
+     * @return string[]
      */
-    function getActions() : ?array
+    public function getActions() : array
     {
         return $this->actions;
     }

@@ -2,25 +2,28 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CreateInternetSubscription;
+use Arimac\Sigfox\Definition;
 /**
  * Information about ADSL internet subscription
  */
 class CreateAdslSubscription extends CreateInternetSubscription
 {
-    /** REQUEST */
+    /**
+     * REQUEST
+     */
     public const CONNECTION_STATUS_REQUEST = 0;
-    /** INSTALLED */
+    /**
+     * INSTALLED
+     */
     public const CONNECTION_STATUS_INSTALLED = 1;
-    /** ACTIVATED */
+    /**
+     * ACTIVATED
+     */
     public const CONNECTION_STATUS_ACTIVATED = 2;
     /**
      * Subscription connection status
-     * - `CreateAdslSubscription::CONNECTION_STATUS_REQUEST`
-     * - `CreateAdslSubscription::CONNECTION_STATUS_INSTALLED`
-     * - `CreateAdslSubscription::CONNECTION_STATUS_ACTIVATED`
      *
-     * @var int
+     * @var self::CONNECTION_STATUS_*
      */
     protected ?int $connectionStatus = null;
     /**
@@ -96,190 +99,280 @@ class CreateAdslSubscription extends CreateInternetSubscription
      */
     protected ?string $pair = null;
     /**
-     * @param int $connectionStatus Subscription connection status
-     * - `CreateAdslSubscription::CONNECTION_STATUS_REQUEST`
-     * - `CreateAdslSubscription::CONNECTION_STATUS_INSTALLED`
-     * - `CreateAdslSubscription::CONNECTION_STATUS_ACTIVATED`
+     * Setter for connectionStatus
+     *
+     * @param self::CONNECTION_STATUS_* $connectionStatus Subscription connection status
+     *
+     * @return self To use in method chains
      */
-    function setConnectionStatus(?int $connectionStatus)
+    public function setConnectionStatus(?int $connectionStatus) : self
     {
         $this->connectionStatus = $connectionStatus;
+        return $this;
     }
     /**
-     * @return int Subscription connection status
-     * - `CreateAdslSubscription::CONNECTION_STATUS_REQUEST`
-     * - `CreateAdslSubscription::CONNECTION_STATUS_INSTALLED`
-     * - `CreateAdslSubscription::CONNECTION_STATUS_ACTIVATED`
+     * Getter for connectionStatus
+     *
+     * @return self::CONNECTION_STATUS_* Subscription connection status
      */
-    function getConnectionStatus() : ?int
+    public function getConnectionStatus() : int
     {
         return $this->connectionStatus;
     }
     /**
-     * @param string $internetAccount The internet account of this internet subscription. This field can be unset when updating.
+     * Setter for internetAccount
+     *
+     * @param string $internetAccount The internet account of this internet subscription. This field can be unset
+     *                                when updating.
+     *
+     * @return self To use in method chains
      */
-    function setInternetAccount(?string $internetAccount)
+    public function setInternetAccount(?string $internetAccount) : self
     {
         $this->internetAccount = $internetAccount;
+        return $this;
     }
     /**
+     * Getter for internetAccount
+     *
      * @return string The internet account of this internet subscription. This field can be unset when updating.
      */
-    function getInternetAccount() : ?string
+    public function getInternetAccount() : string
     {
         return $this->internetAccount;
     }
     /**
-     * @param string $orderNumber The order number of this internet subscription. This field can be unset when updating.
+     * Setter for orderNumber
+     *
+     * @param string $orderNumber The order number of this internet subscription. This field can be unset when
+     *                            updating.
+     *
+     * @return self To use in method chains
      */
-    function setOrderNumber(?string $orderNumber)
+    public function setOrderNumber(?string $orderNumber) : self
     {
         $this->orderNumber = $orderNumber;
+        return $this;
     }
     /**
+     * Getter for orderNumber
+     *
      * @return string The order number of this internet subscription. This field can be unset when updating.
      */
-    function getOrderNumber() : ?string
+    public function getOrderNumber() : string
     {
         return $this->orderNumber;
     }
     /**
+     * Setter for interfaceLogin
+     *
      * @param string $interfaceLogin The interface login of this internet subscription
+     *
+     * @return self To use in method chains
      */
-    function setInterfaceLogin(?string $interfaceLogin)
+    public function setInterfaceLogin(?string $interfaceLogin) : self
     {
         $this->interfaceLogin = $interfaceLogin;
+        return $this;
     }
     /**
+     * Getter for interfaceLogin
+     *
      * @return string The interface login of this internet subscription
      */
-    function getInterfaceLogin() : ?string
+    public function getInterfaceLogin() : string
     {
         return $this->interfaceLogin;
     }
     /**
+     * Setter for interfacePassword
+     *
      * @param string $interfacePassword The interface password of this internet subscription
+     *
+     * @return self To use in method chains
      */
-    function setInterfacePassword(?string $interfacePassword)
+    public function setInterfacePassword(?string $interfacePassword) : self
     {
         $this->interfacePassword = $interfacePassword;
+        return $this;
     }
     /**
+     * Getter for interfacePassword
+     *
      * @return string The interface password of this internet subscription
      */
-    function getInterfacePassword() : ?string
+    public function getInterfacePassword() : string
     {
         return $this->interfacePassword;
     }
     /**
+     * Setter for adslLogin
+     *
      * @param string $adslLogin The adsl login of this internet subscription. This field can be unset when updating.
+     *
+     * @return self To use in method chains
      */
-    function setAdslLogin(?string $adslLogin)
+    public function setAdslLogin(?string $adslLogin) : self
     {
         $this->adslLogin = $adslLogin;
+        return $this;
     }
     /**
+     * Getter for adslLogin
+     *
      * @return string The adsl login of this internet subscription. This field can be unset when updating.
      */
-    function getAdslLogin() : ?string
+    public function getAdslLogin() : string
     {
         return $this->adslLogin;
     }
     /**
-     * @param string $adslPassword The adsl password of this internet subscription. This field can be unset when updating.
+     * Setter for adslPassword
+     *
+     * @param string $adslPassword The adsl password of this internet subscription. This field can be unset when
+     *                             updating.
+     *
+     * @return self To use in method chains
      */
-    function setAdslPassword(?string $adslPassword)
+    public function setAdslPassword(?string $adslPassword) : self
     {
         $this->adslPassword = $adslPassword;
+        return $this;
     }
     /**
+     * Getter for adslPassword
+     *
      * @return string The adsl password of this internet subscription. This field can be unset when updating.
      */
-    function getAdslPassword() : ?string
+    public function getAdslPassword() : string
     {
         return $this->adslPassword;
     }
     /**
+     * Setter for lineNumber
+     *
      * @param string $lineNumber The line number of this internet subscription
+     *
+     * @return self To use in method chains
      */
-    function setLineNumber(?string $lineNumber)
+    public function setLineNumber(?string $lineNumber) : self
     {
         $this->lineNumber = $lineNumber;
+        return $this;
     }
     /**
+     * Getter for lineNumber
+     *
      * @return string The line number of this internet subscription
      */
-    function getLineNumber() : ?string
+    public function getLineNumber() : string
     {
         return $this->lineNumber;
     }
     /**
+     * Setter for modem
+     *
      * @param string $modem The modem of this internet subscription
+     *
+     * @return self To use in method chains
      */
-    function setModem(?string $modem)
+    public function setModem(?string $modem) : self
     {
         $this->modem = $modem;
+        return $this;
     }
     /**
+     * Getter for modem
+     *
      * @return string The modem of this internet subscription
      */
-    function getModem() : ?string
+    public function getModem() : string
     {
         return $this->modem;
     }
     /**
+     * Setter for modemSerialNumber
+     *
      * @param string $modemSerialNumber The serial number of the modem of this internet subscription
+     *
+     * @return self To use in method chains
      */
-    function setModemSerialNumber(?string $modemSerialNumber)
+    public function setModemSerialNumber(?string $modemSerialNumber) : self
     {
         $this->modemSerialNumber = $modemSerialNumber;
+        return $this;
     }
     /**
+     * Getter for modemSerialNumber
+     *
      * @return string The serial number of the modem of this internet subscription
      */
-    function getModemSerialNumber() : ?string
+    public function getModemSerialNumber() : string
     {
         return $this->modemSerialNumber;
     }
     /**
-     * @param string $jumperStrip The jumper strip of this internet subscription. This field can be unset when updating.
+     * Setter for jumperStrip
+     *
+     * @param string $jumperStrip The jumper strip of this internet subscription. This field can be unset when
+     *                            updating.
+     *
+     * @return self To use in method chains
      */
-    function setJumperStrip(?string $jumperStrip)
+    public function setJumperStrip(?string $jumperStrip) : self
     {
         $this->jumperStrip = $jumperStrip;
+        return $this;
     }
     /**
+     * Getter for jumperStrip
+     *
      * @return string The jumper strip of this internet subscription. This field can be unset when updating.
      */
-    function getJumperStrip() : ?string
+    public function getJumperStrip() : string
     {
         return $this->jumperStrip;
     }
     /**
-     * @param string $jumperBlock The jumper block of this internet subscription. This field can be unset when updating.
+     * Setter for jumperBlock
+     *
+     * @param string $jumperBlock The jumper block of this internet subscription. This field can be unset when
+     *                            updating.
+     *
+     * @return self To use in method chains
      */
-    function setJumperBlock(?string $jumperBlock)
+    public function setJumperBlock(?string $jumperBlock) : self
     {
         $this->jumperBlock = $jumperBlock;
+        return $this;
     }
     /**
+     * Getter for jumperBlock
+     *
      * @return string The jumper block of this internet subscription. This field can be unset when updating.
      */
-    function getJumperBlock() : ?string
+    public function getJumperBlock() : string
     {
         return $this->jumperBlock;
     }
     /**
+     * Setter for pair
+     *
      * @param string $pair The pair of this internet subscription. This field can be unset when updating.
+     *
+     * @return self To use in method chains
      */
-    function setPair(?string $pair)
+    public function setPair(?string $pair) : self
     {
         $this->pair = $pair;
+        return $this;
     }
     /**
+     * Getter for pair
+     *
      * @return string The pair of this internet subscription. This field can be unset when updating.
      */
-    function getPair() : ?string
+    public function getPair() : string
     {
         return $this->pair;
     }

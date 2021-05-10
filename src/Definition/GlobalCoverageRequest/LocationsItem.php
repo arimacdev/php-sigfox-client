@@ -5,44 +5,57 @@ namespace Arimac\Sigfox\Definition\GlobalCoverageRequest;
 use Arimac\Sigfox\Definition;
 class LocationsItem extends Definition
 {
-    protected $required = array('lat', 'lng');
     /**
      * A latitude in degrees. Must be between -90° and 90°.
      *
-     * @var float
+     * @var int
      */
-    protected float $lat;
+    protected ?int $lat = null;
     /**
      * A longitude in degrees. Must be between -180° and 180°.
      *
-     * @var float
+     * @var int
      */
-    protected float $lng;
+    protected ?int $lng = null;
     /**
-     * @param float $lat A latitude in degrees. Must be between -90° and 90°.
+     * Setter for lat
+     *
+     * @param int $lat A latitude in degrees. Must be between -90° and 90°.
+     *
+     * @return self To use in method chains
      */
-    function setLat(float $lat)
+    public function setLat(?int $lat) : self
     {
         $this->lat = $lat;
+        return $this;
     }
     /**
-     * @return float A latitude in degrees. Must be between -90° and 90°.
+     * Getter for lat
+     *
+     * @return int A latitude in degrees. Must be between -90° and 90°.
      */
-    function getLat() : float
+    public function getLat() : int
     {
         return $this->lat;
     }
     /**
-     * @param float $lng A longitude in degrees. Must be between -180° and 180°.
+     * Setter for lng
+     *
+     * @param int $lng A longitude in degrees. Must be between -180° and 180°.
+     *
+     * @return self To use in method chains
      */
-    function setLng(float $lng)
+    public function setLng(?int $lng) : self
     {
         $this->lng = $lng;
+        return $this;
     }
     /**
-     * @return float A longitude in degrees. Must be between -180° and 180°.
+     * Getter for lng
+     *
+     * @return int A longitude in degrees. Must be between -180° and 180°.
      */
-    function getLng() : float
+    public function getLng() : int
     {
         return $this->lng;
     }

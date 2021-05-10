@@ -1,0 +1,3050 @@
+{
+    "Arimac\\Sigfox\\Definition\\MinGroup": {
+        "type": {
+            "SO": {
+                "value": 0,
+                "comment": "SO"
+            },
+            "OTHER": {
+                "value": 2,
+                "comment": "Other"
+            },
+            "SVNO": {
+                "value": 5,
+                "comment": "SVNO"
+            },
+            "PARTNERS": {
+                "value": 6,
+                "comment": "Partners"
+            },
+            "NIP": {
+                "value": 7,
+                "comment": "NIP"
+            },
+            "DIST": {
+                "value": 8,
+                "comment": "DIST"
+            },
+            "CHANNEL": {
+                "value": 9,
+                "comment": "Channel"
+            },
+            "STARTER": {
+                "value": 10,
+                "comment": "Starter"
+            },
+            "PARTNER": {
+                "value": 11,
+                "comment": "Partner"
+            },
+            "comment": "Group's type"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\CellularConnectivityForBs": {
+        "state": {
+            "ACTIVE": {
+                "value": 0,
+                "comment": "ACTIVE"
+            },
+            "PASSIVE": {
+                "value": 1,
+                "comment": "PASSIVE"
+            },
+            "PENDING": {
+                "value": 2,
+                "comment": "PENDING (new configuration to synchronize with the base station)"
+            },
+            "REJECTED": {
+                "value": 3,
+                "comment": "REJECTED"
+            },
+            "DELETING": {
+                "value": 4,
+                "comment": "DELETING"
+            },
+            "comment": "State of a cellular connectivity configuration"
+        },
+        "syncStatus": {
+            "OK": {
+                "value": 0,
+                "comment": "OK (the conf is synchronized)"
+            },
+            "TO_BE_SENT": {
+                "value": 1,
+                "comment": "TO_BE_SENT (the conf has to be synchronized)"
+            },
+            "SENT": {
+                "value": 2,
+                "comment": "SENT (the conf is currently send to the base station)"
+            },
+            "comment": "Synchronisation status of a cellular connectivity configuration"
+        },
+        "lastSwitchErrorStatus": {
+            "SUCCESS": {
+                "value": 0,
+                "comment": "SUCCESS"
+            },
+            "BAD_GSM_PIN": {
+                "value": 1,
+                "comment": "BAD_GSM_PIN"
+            },
+            "TOO_MANY_PIN_TRIES": {
+                "value": 2,
+                "comment": "TOO_MANY_PIN_TRIES"
+            },
+            "VPN_ESTABLISHMENT_IMPOSSIBLE": {
+                "value": 3,
+                "comment": "VPN_ESTABLISHMENT_IMPOSSIBLE"
+            },
+            "NETWORK_REJECTED": {
+                "value": 4,
+                "comment": "NETWORK_REJECTED"
+            },
+            "UNKNOWN": {
+                "value": 5,
+                "comment": "UNKNOWN"
+            },
+            "comment": "Error status returned after a connectivity config switch"
+        },
+        "lastSetconfErrorStatus": {
+            "SUCCESS": {
+                "value": 0,
+                "comment": "SUCCESS"
+            },
+            "BAD_FORMAT": {
+                "value": 1,
+                "comment": "BAD_FORMAT"
+            },
+            "EXISTING_CONFIG": {
+                "value": 2,
+                "comment": "EXISTING_CONFIG"
+            },
+            "TOO_MANY_CONFIG": {
+                "value": 3,
+                "comment": "TOO_MANY_CONFIG"
+            },
+            "CONFIG_ID_CONFLICT": {
+                "value": 4,
+                "comment": "CONFIG_ID_CONFLICT"
+            },
+            "UNKNOWN": {
+                "value": 5,
+                "comment": "UNKNOWN"
+            },
+            "comment": "Error status returned after a connectivity config creation\/edition"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\EthernetConnectivityForBs": {
+        "state": {
+            "ACTIVE": {
+                "value": 0,
+                "comment": "ACTIVE"
+            },
+            "PASSIVE": {
+                "value": 1,
+                "comment": "PASSIVE"
+            },
+            "PENDING": {
+                "value": 2,
+                "comment": "PENDING (new configuration to synchronize with the base station)"
+            },
+            "REJECTED": {
+                "value": 3,
+                "comment": "REJECTED"
+            },
+            "DELETING": {
+                "value": 4,
+                "comment": "DELETING"
+            },
+            "comment": "State of an ethernet connectivity configuration"
+        },
+        "syncStatus": {
+            "OK": {
+                "value": 0,
+                "comment": "OK (the conf is synchronized)"
+            },
+            "TO_BE_SENT": {
+                "value": 1,
+                "comment": "TO_BE_SENT (the conf has to be synchronized)"
+            },
+            "SENT": {
+                "value": 2,
+                "comment": "SENT (the conf is currently send to the base station)"
+            },
+            "comment": "Synchronisation status of an ethernet connectivity configuration"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\BaseStation": {
+        "connectionType": {
+            "ETH": {
+                "value": 0,
+                "comment": "ETH"
+            },
+            "GSM": {
+                "value": 1,
+                "comment": "GSM"
+            },
+            "comment": "Base station connection type."
+        },
+        "communicationState": {
+            "NO": {
+                "value": 0,
+                "comment": "NO"
+            },
+            "OK": {
+                "value": 1,
+                "comment": "OK"
+            },
+            "WARN": {
+                "value": 2,
+                "comment": "WARN"
+            },
+            "KO": {
+                "value": 3,
+                "comment": "KO"
+            },
+            "OK_KO": {
+                "value": 4,
+                "comment": "OK KO"
+            },
+            "comment": "Base station communication state."
+        },
+        "state": {
+            "NO": {
+                "value": 0,
+                "comment": "NO"
+            },
+            "OK": {
+                "value": 1,
+                "comment": "OK"
+            },
+            "WARN": {
+                "value": 2,
+                "comment": "WARN"
+            },
+            "KO": {
+                "value": 3,
+                "comment": "KO"
+            },
+            "OK_KO": {
+                "value": 4,
+                "comment": "OK KO"
+            },
+            "comment": "Base station state."
+        },
+        "lifecycleStatus": {
+            "STOCK": {
+                "value": 0,
+                "comment": "STOCK"
+            },
+            "PROD": {
+                "value": 1,
+                "comment": "PROD"
+            },
+            "MAINTENANCE": {
+                "value": 2,
+                "comment": "MAINTENANCE"
+            },
+            "DEAD": {
+                "value": 3,
+                "comment": "DEAD"
+            },
+            "comment": "Base station lifecycle status"
+        },
+        "protocol": {
+            "V0": {
+                "value": 1,
+                "comment": "V0"
+            },
+            "V1": {
+                "value": 2,
+                "comment": "V1"
+            },
+            "BOTH": {
+                "value": 3,
+                "comment": "BOTH"
+            },
+            "comment": "Base station protocol."
+        },
+        "preAmp1": {
+            "LNA": {
+                "value": 0,
+                "comment": "LNA"
+            },
+            "BYPASS": {
+                "value": 1,
+                "comment": "BYPASS"
+            },
+            "ATTEND": {
+                "value": 2,
+                "comment": "ATTEND"
+            },
+            "comment": "Base station pre amp 1."
+        },
+        "preAmp2": {
+            "LNA": {
+                "value": 0,
+                "comment": "LNA"
+            },
+            "BYPASS": {
+                "value": 1,
+                "comment": "BYPASS"
+            },
+            "ATTEND": {
+                "value": 2,
+                "comment": "ATTEND"
+            },
+            "comment": "Base station pre amp 2."
+        },
+        "RAMLog": {
+            "YES": {
+                "value": 0,
+                "comment": "YES"
+            },
+            "NO": {
+                "value": 1,
+                "comment": "NO"
+            },
+            "AUTO": {
+                "value": 2,
+                "comment": "AUTO"
+            },
+            "DROP": {
+                "value": 3,
+                "comment": "DROP"
+            },
+            "comment": "Base station RAM log."
+        },
+        "wwanMode": {
+            "NONE": {
+                "value": 0,
+                "comment": "NONE"
+            },
+            "AUTO": {
+                "value": 1,
+                "comment": "AUTO"
+            },
+            "WCDMA": {
+                "value": 2,
+                "comment": "WCDMA"
+            },
+            "WCDMA_PREF": {
+                "value": 3,
+                "comment": "WCDMA_PREF"
+            },
+            "GPRS_PREF": {
+                "value": 4,
+                "comment": "GPRS_PREF"
+            },
+            "GPRS": {
+                "value": 5,
+                "comment": "GPRS"
+            },
+            "comment": "Base station WWAN mode."
+        },
+        "bitRate": {
+            "BIT_RATE_100_BS": {
+                "value": 0,
+                "comment": "bit rate 100 b\/s"
+            },
+            "BIT_RATE_600_BS": {
+                "value": 1,
+                "comment": "bit rate 600 b\/s"
+            },
+            "comment": "Base station bit rate."
+        },
+        "mastEquipment": {
+            "OTHER": {
+                "value": 0,
+                "comment": "OTHER"
+            },
+            "LNA_V2_SBS_868_P": {
+                "value": 1,
+                "comment": "LNA_V2_SBS_868_P"
+            },
+            "LNA_V2_SBS_902_P": {
+                "value": 2,
+                "comment": "LNA_V2_SBS_902_P"
+            },
+            "LNA_V2_NB_SBS_868_P": {
+                "value": 3,
+                "comment": "LNA_V2_NB_SBS_868_P"
+            },
+            "LNA_V1_SBS_868_P": {
+                "value": 4,
+                "comment": "LNA_V1_SBS_868_P"
+            },
+            "LNA_V2_SBS_920_P": {
+                "value": 5,
+                "comment": "LNA_V2_SBS_920_P"
+            },
+            "LNA_V2_SBS_923_P": {
+                "value": 6,
+                "comment": "LNA_V2_SBS_923_P"
+            },
+            "MINI": {
+                "value": 7,
+                "comment": "MINI"
+            },
+            "LNA_V4_867": {
+                "value": 8,
+                "comment": "LNA_V4_867"
+            },
+            "LNA_V4_915": {
+                "value": 9,
+                "comment": "LNA_V4_915"
+            },
+            "LNAC_867": {
+                "value": 10,
+                "comment": "LNAC_867"
+            },
+            "LNAC_868": {
+                "value": 11,
+                "comment": "LNAC_868"
+            },
+            "LNAC_902": {
+                "value": 12,
+                "comment": "LNAC_902"
+            },
+            "LNAC_916_TX": {
+                "value": 13,
+                "comment": "LNAC_916_TX"
+            },
+            "LNAC_921": {
+                "value": 14,
+                "comment": "LNAC_921"
+            },
+            "LNAC_921_TX": {
+                "value": 15,
+                "comment": "LNAC_921_TX"
+            },
+            "LNAC_922_TX": {
+                "value": 16,
+                "comment": "LNAC_922_TX"
+            },
+            "LNA_V3_SBS_868_P": {
+                "value": 17,
+                "comment": "LNA_V3_SBS_868_P"
+            },
+            "LNA_V3_SBS_902_P": {
+                "value": 18,
+                "comment": "LNA_V3_SBS_902_P"
+            },
+            "LNA_V3_SBS_920_P": {
+                "value": 19,
+                "comment": "LNA_V3_SBS_920_P"
+            },
+            "LNA_V3_SBS_923_P": {
+                "value": 20,
+                "comment": "LNA_V3_SBS_923_P"
+            },
+            "NONE": {
+                "value": 21,
+                "comment": "NONE"
+            },
+            "LNAC_868_TX": {
+                "value": 22,
+                "comment": "LNAC_868_TX"
+            },
+            "comment": "LNA version of the base station. Mini stations have type 7 -> MINI. Mini Access Stations have type 21."
+        },
+        "cavityFilterVersion": {
+            "NONE": {
+                "value": -1,
+                "comment": "None"
+            },
+            "OTHER": {
+                "value": 0,
+                "comment": "Other"
+            },
+            "ETSI_868MHZ_MATECH": {
+                "value": 1,
+                "comment": "ETSI 868MHz (Matech)"
+            },
+            "ETSI_868MHZ_ELHYTE": {
+                "value": 2,
+                "comment": "ETSI 868MHz (Elhyte)"
+            },
+            "FCC_905MHZ_MATECH": {
+                "value": 3,
+                "comment": "FCC 905MHz (Matech)"
+            },
+            "FCC_905MHZ_ELHYTE": {
+                "value": 4,
+                "comment": "FCC 905MHz (Elhyte)"
+            },
+            "FCC_920MHZ": {
+                "value": 5,
+                "comment": "FCC 920MHz"
+            },
+            "FCC_923MHZ": {
+                "value": 6,
+                "comment": "FCC 923MHz"
+            },
+            "FCC_922_5MHZ": {
+                "value": 7,
+                "comment": "FCC 922.5MHz"
+            },
+            "ETSI_867MHZ_MATECH": {
+                "value": 8,
+                "comment": "ETSI 867MHz (Matech)"
+            },
+            "ETSI_867MHZ_TECHNIWAVE": {
+                "value": 9,
+                "comment": "ETSI 867MHz (Techniwave)"
+            },
+            "comment": "Cavity filter version of the base station."
+        },
+        "antennaLocationCode": {
+            "OUTDOOR": {
+                "value": 0,
+                "comment": "OUTDOOR"
+            },
+            "INDOOR": {
+                "value": 1,
+                "comment": "INDOOR"
+            },
+            "comment": "Antenna location."
+        },
+        "serviceCoverage": {
+            "GLOBAL": {
+                "value": 0,
+                "comment": "GLOBAL"
+            },
+            "CUSTOMER": {
+                "value": 1,
+                "comment": "CUSTOMER"
+            },
+            "comment": "Service coverage (for Mini base station)"
+        },
+        "geolocComputation": {
+            "DEFAULT": {
+                "value": 0,
+                "comment": "DEFAULT"
+            },
+            "ENABLED": {
+                "value": 1,
+                "comment": "ENABLED"
+            },
+            "DISABLED": {
+                "value": 2,
+                "comment": "DISABLED"
+            },
+            "comment": "Defines whether the Base Station should contribute to the Sigfox Network location service."
+        },
+        "geolocGlobalStateOfContribution": {
+            "NOT_CONTRIBUTING": {
+                "value": 0,
+                "comment": "Not contributing"
+            },
+            "CURRENTLY_CONTRIBUTING": {
+                "value": 1,
+                "comment": "Currently contributing"
+            },
+            "GREY_LISTED": {
+                "value": 2,
+                "comment": "Grey listed"
+            },
+            "BLACK_LISTED": {
+                "value": 3,
+                "comment": "Black listed"
+            },
+            "NOT_AVAILABLE": {
+                "value": 4,
+                "comment": "Contribution status not available for the moment"
+            },
+            "comment": "The status, computed by the geolocation services, of the Base Station's contribution to the Sigfox Network location service."
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\MinHwFamily": {
+        "id": {
+            "STANDARD": {
+                "value": 0,
+                "comment": "STANDARD"
+            },
+            "MINI": {
+                "value": 1,
+                "comment": "MINI"
+            },
+            "ACCESS_STATION_MINI": {
+                "value": 2,
+                "comment": "ACCESS STATION MINI"
+            },
+            "ACCESS_STATION_MICRO": {
+                "value": 3,
+                "comment": "ACCESS STATION MICRO"
+            },
+            "comment": "Base station hardware family id."
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\SimpleSite": {
+        "status": {
+            "PROD": {
+                "value": 0,
+                "comment": "PROD"
+            },
+            "REFUSED": {
+                "value": 1,
+                "comment": "REFUSED"
+            },
+            "INSTALLED": {
+                "value": 2,
+                "comment": "INSTALLED"
+            },
+            "NOT_PLANNED": {
+                "value": 3,
+                "comment": "NOT PLANNED"
+            },
+            "PRE_PROD": {
+                "value": 4,
+                "comment": "PRE PROD"
+            },
+            "CANDIDATE": {
+                "value": 5,
+                "comment": "CANDIDATE"
+            },
+            "CANCELLED": {
+                "value": 6,
+                "comment": "CANCELLED"
+            },
+            "CLIENT": {
+                "value": 7,
+                "comment": "CLIENT"
+            },
+            "RD": {
+                "value": 8,
+                "comment": "RD"
+            },
+            "LABO": {
+                "value": 9,
+                "comment": "LABO"
+            },
+            "INSTALLED_CONNECTED_ONLY_SECONDARY": {
+                "value": 14,
+                "comment": "INSTALLED CONNECTED ONLY SECONDARY"
+            },
+            "INSTALLED_CONNECTED_ONLY_PRIMARY": {
+                "value": 15,
+                "comment": "INSTALLED CONNECTED ONLY PRIMARY"
+            },
+            "comment": "Site status"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\CellularConnectivityBase": {
+        "source": {
+            "REMOTE": {
+                "value": 0,
+                "comment": "REMOTE (Configuration provided by Cloud)"
+            },
+            "OTHERS": {
+                "value": 1,
+                "comment": "OTHERS (From shell console and other origins)"
+            },
+            "DEFAULT": {
+                "value": 2,
+                "comment": "DEFAULT (Auto-Generated)"
+            },
+            "TOOLS": {
+                "value": 3,
+                "comment": "TOOLS (Factory, AAT or secure-control)"
+            },
+            "comment": "Configuration origin of the connectivity"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\EthernetConnectivityBase": {
+        "type": {
+            "STATIC": {
+                "value": 1,
+                "comment": "STATIC"
+            },
+            "PARTLY_DYNAMIC": {
+                "value": 2,
+                "comment": "PARTLY_DYNAMIC"
+            },
+            "comment": "Token's type of an ethernet connectivity configuration"
+        },
+        "source": {
+            "REMOTE": {
+                "value": 0,
+                "comment": "REMOTE (Configuration provided by Cloud)"
+            },
+            "OTHERS": {
+                "value": 1,
+                "comment": "OTHERS (From shell console and other origins)"
+            },
+            "DEFAULT": {
+                "value": 2,
+                "comment": "DEFAULT (Auto-Generated)"
+            },
+            "TOOLS": {
+                "value": 3,
+                "comment": "TOOLS (Factory, AAT or secure-control)"
+            },
+            "comment": "Configuration origin of the connectivity"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\DeviceMessage": {
+        "lqi": {
+            "LIMIT": {
+                "value": 0,
+                "comment": "LIMIT"
+            },
+            "AVERAGE": {
+                "value": 1,
+                "comment": "AVERAGE"
+            },
+            "GOOD": {
+                "value": 2,
+                "comment": "GOOD"
+            },
+            "EXCELLENT": {
+                "value": 3,
+                "comment": "EXCELLENT"
+            },
+            "NA": {
+                "value": 4,
+                "comment": "NA"
+            },
+            "comment": "link quality indicator"
+        },
+        "lqiRepeaters": {
+            "LIMIT": {
+                "value": 0,
+                "comment": "LIMIT"
+            },
+            "AVERAGE": {
+                "value": 1,
+                "comment": "AVERAGE"
+            },
+            "GOOD": {
+                "value": 2,
+                "comment": "GOOD"
+            },
+            "EXCELLENT": {
+                "value": 3,
+                "comment": "EXCELLENT"
+            },
+            "NA": {
+                "value": 4,
+                "comment": "NA"
+            },
+            "comment": "link quality indicator for repeated message"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\ComputedLocation": {
+        "source": {
+            "RSSI_AND_POSITION_OF_THE_STATION": {
+                "value": 0,
+                "comment": "computed using RSSI and position of the station (legacy)"
+            },
+            "THE_GPS_DATA_INSIDE_THE_PAYLOAD": {
+                "value": 1,
+                "comment": "computed using the GPS data inside the payload"
+            },
+            "NETWORK_LOCATION": {
+                "value": 2,
+                "comment": "computed using Network location"
+            },
+            "POI_LOCATION": {
+                "value": 3,
+                "comment": "computed using PoI location"
+            },
+            "HD_NETWORK_LOCATION": {
+                "value": 4,
+                "comment": "computed using HD network location"
+            },
+            "PRIVATE_DATABASE_LOCATION": {
+                "value": 5,
+                "comment": "computed using private database location"
+            },
+            "WIFI_LOCATION": {
+                "value": 6,
+                "comment": "computed using WiFi location"
+            },
+            "PROXIMITY_LOCATION": {
+                "value": 7,
+                "comment": "computed using Proximity location"
+            },
+            "comment": "Define how the location has been computed:"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\MinBaseStationWithType": {
+        "resourceType": {
+            "SBS": {
+                "value": 0,
+                "comment": "SBS"
+            },
+            "NAP": {
+                "value": 1,
+                "comment": "NAP"
+            },
+            "comment": "Resource type."
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\JobError": {
+        "type": {
+            "ENTITY": {
+                "value": 0,
+                "comment": "ENTITY"
+            },
+            "SYSTEM": {
+                "value": 1,
+                "comment": "SYSTEM"
+            },
+            "comment": "Error type"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\ContractInfoCreate": {
+        "pricingModel": {
+            "PRICING_MODEL_V1": {
+                "value": 1,
+                "comment": "Pricing model verion 1"
+            },
+            "PRICING_MODEL_V2": {
+                "value": 2,
+                "comment": "Pricing model verion 2"
+            },
+            "PRICING_MODEL_V3": {
+                "value": 3,
+                "comment": "Pricing model verion 3"
+            },
+            "comment": "The pricing model used by this contract info."
+        },
+        "subscriptionPlan": {
+            "FREE_ORDER": {
+                "value": 0,
+                "comment": "Free order"
+            },
+            "PAYG": {
+                "value": 1,
+                "comment": "Pay As You Grow (PAYG)"
+            },
+            "CVP": {
+                "value": 2,
+                "comment": "Committed Volume Plan (CVP)"
+            },
+            "CVP_FLEX": {
+                "value": 3,
+                "comment": "Flexible Committed Volume Plan (CVP Flex)"
+            },
+            "PACK": {
+                "value": 4,
+                "comment": "PACK"
+            },
+            "DEVKIT": {
+                "value": 5,
+                "comment": "DevKit"
+            },
+            "ACTIVATE": {
+                "value": 5,
+                "comment": "Activate"
+            },
+            "comment": "The contract info subscription plan."
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\ContractInfo": {
+        "pricingModel": {
+            "PRICING_MODEL_V1": {
+                "value": 1,
+                "comment": "Pricing model verion 1"
+            },
+            "PRICING_MODEL_V2": {
+                "value": 2,
+                "comment": "Pricing model verion 2"
+            },
+            "PRICING_MODEL_V3": {
+                "value": 3,
+                "comment": "Pricing model verion 3"
+            },
+            "comment": "The pricing model used by this contract info."
+        },
+        "subscriptionPlan": {
+            "FREE_ORDER": {
+                "value": 0,
+                "comment": "Free order"
+            },
+            "PAYG": {
+                "value": 1,
+                "comment": "Pay As You Grow (PAYG)"
+            },
+            "CVP": {
+                "value": 2,
+                "comment": "Committed Volume Plan (CVP)"
+            },
+            "CVP_FLEX": {
+                "value": 3,
+                "comment": "Flexible Committed Volume Plan (CVP Flex)"
+            },
+            "comment": "The contract info subscription plan."
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\Device": {
+        "lqi": {
+            "LIMIT": {
+                "value": 0,
+                "comment": "LIMIT"
+            },
+            "AVERAGE": {
+                "value": 1,
+                "comment": "AVERAGE"
+            },
+            "GOOD": {
+                "value": 2,
+                "comment": "GOOD"
+            },
+            "EXCELLENT": {
+                "value": 3,
+                "comment": "EXCELLENT"
+            },
+            "NA": {
+                "value": 4,
+                "comment": "NA"
+            },
+            "comment": "Link Quality Indicator"
+        },
+        "state": {
+            "OK": {
+                "value": 0,
+                "comment": "OK"
+            },
+            "DEAD": {
+                "value": 1,
+                "comment": "DEAD"
+            },
+            "OFF_CONTRACT": {
+                "value": 2,
+                "comment": "OFF_CONTRACT"
+            },
+            "DISABLED": {
+                "value": 3,
+                "comment": "DISABLED"
+            },
+            "WARN": {
+                "value": 4,
+                "comment": "WARN"
+            },
+            "DELETED": {
+                "value": 5,
+                "comment": "DELETED"
+            },
+            "SUSPENDED": {
+                "value": 6,
+                "comment": "SUSPENDED"
+            },
+            "NOT_ACTIVABLE": {
+                "value": 7,
+                "comment": "NOT_ACTIVABLE"
+            },
+            "comment": "State of this device."
+        },
+        "comState": {
+            "NO": {
+                "value": 0,
+                "comment": "NO"
+            },
+            "OK": {
+                "value": 1,
+                "comment": "OK"
+            },
+            "WARN": {
+                "value": 2,
+                "comment": "WARN"
+            },
+            "KO": {
+                "value": 3,
+                "comment": "KO"
+            },
+            "NA": {
+                "value": 4,
+                "comment": "(na)"
+            },
+            "NOT_SEEN": {
+                "value": 5,
+                "comment": "NOT_SEEN"
+            },
+            "comment": "Communication state of this device."
+        },
+        "automaticRenewalStatus": {
+            "ALLOWED": {
+                "value": 0,
+                "comment": "ALLOWED"
+            },
+            "NOT_ALLOWED": {
+                "value": 1,
+                "comment": "NOT_ALLOWED"
+            },
+            "RENEWED": {
+                "value": 2,
+                "comment": "RENEWED"
+            },
+            "ENDED": {
+                "value": 3,
+                "comment": "ENDED"
+            },
+            "comment": "Computed automatic renewal status."
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\LastComputedLocation": {
+        "sourceCode": {
+            "RSSI_AND_POSITION_OF_THE_STATION": {
+                "value": 0,
+                "comment": "computed using RSSI and position of the station (legacy)"
+            },
+            "THE_GPS_DATA_INSIDE_THE_PAYLOAD": {
+                "value": 1,
+                "comment": "computed using the GPS data inside the payload"
+            },
+            "NETWORK_LOCATION": {
+                "value": 2,
+                "comment": "computed using Network location"
+            },
+            "POI_LOCATION": {
+                "value": 3,
+                "comment": "computed using PoI location"
+            },
+            "HD_NETWORK_LOCATION": {
+                "value": 4,
+                "comment": "computed using HD network location"
+            },
+            "PRIVATE_DATABASE_LOCATION": {
+                "value": 5,
+                "comment": "computed using private database location"
+            },
+            "WIFI_LOCATION": {
+                "value": 6,
+                "comment": "computed using WiFi location"
+            },
+            "PROXIMITY_LOCATION": {
+                "value": 7,
+                "comment": "computed using Proximity location"
+            },
+            "comment": "Define how the location has been computed:"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\Token": {
+        "state": {
+            "OK": {
+                "value": 0,
+                "comment": "OK"
+            },
+            "OFF_CONTRACT": {
+                "value": 1,
+                "comment": "OFF_CONTRACT"
+            },
+            "NA_FOR_API": {
+                "value": 2,
+                "comment": "NA_FOR_API"
+            },
+            "INVALID_TOKEN": {
+                "value": 3,
+                "comment": "INVALID_TOKEN"
+            },
+            "comment": ""
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\CommonCertificate": {
+        "status": {
+            "ONGOING": {
+                "value": 0,
+                "comment": "ongoing"
+            },
+            "FINALIZED": {
+                "value": 1,
+                "comment": "finalized"
+            },
+            "comment": "The certificate's status code"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\RadioConfiguration": {
+        "id": {
+            "RC1": {
+                "value": 0,
+                "comment": "RC1"
+            },
+            "RC2": {
+                "value": 1,
+                "comment": "RC2"
+            },
+            "RC3": {
+                "value": 2,
+                "comment": "RC3"
+            },
+            "RC101": {
+                "value": 3,
+                "comment": "RC101"
+            },
+            "RC4": {
+                "value": 4,
+                "comment": "RC4"
+            },
+            "RC5": {
+                "value": 5,
+                "comment": "RC5"
+            },
+            "RC6": {
+                "value": 6,
+                "comment": "RC6"
+            },
+            "RC7": {
+                "value": 7,
+                "comment": "RC7"
+            },
+            "comment": "The radio configuration identifier"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\ProductCertificateRadioConfiguration": {
+        "uplinkClass": {
+            "U0": {
+                "value": 0,
+                "comment": "U0"
+            },
+            "U1": {
+                "value": 1,
+                "comment": "U1"
+            },
+            "U2": {
+                "value": 2,
+                "comment": "U2"
+            },
+            "U3": {
+                "value": 3,
+                "comment": "U3"
+            },
+            "D0": {
+                "value": 4,
+                "comment": "D0"
+            },
+            "D1": {
+                "value": 5,
+                "comment": "D1"
+            },
+            "D2": {
+                "value": 6,
+                "comment": "D2"
+            },
+            "D3": {
+                "value": 7,
+                "comment": "D3"
+            },
+            "comment": "The device uplink class"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\RadioCertificate": {
+        "modes": {
+            "UPLINK_ONLY": {
+                "value": "0",
+                "comment": "Uplink only"
+            },
+            "UPLINK_AND_DOWNLINK": {
+                "value": 1,
+                "comment": "Uplink and downlink"
+            },
+            "comment": "The certificate's mode code"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\BaseDeviceType": {
+        "downlinkMode": {
+            "DIRECT": {
+                "value": 0,
+                "comment": "DIRECT"
+            },
+            "CALLBACK": {
+                "value": 1,
+                "comment": "CALLBACK"
+            },
+            "NONE": {
+                "value": 2,
+                "comment": "NONE"
+            },
+            "MANAGED": {
+                "value": 3,
+                "comment": "MANAGED"
+            },
+            "comment": "The downlink mode to use for the devices of this device type"
+        },
+        "payloadType": {
+            "REGULAR": {
+                "value": 2,
+                "comment": "Regular (raw payload)"
+            },
+            "CUSTOM_GRAMMAR": {
+                "value": 3,
+                "comment": "Custom grammar"
+            },
+            "GEOLOCATION": {
+                "value": 4,
+                "comment": "Geolocation"
+            },
+            "DISPLAY_IN_ASCII": {
+                "value": 5,
+                "comment": "Display in ASCII"
+            },
+            "RADIO_PLANNING_FRAME": {
+                "value": 6,
+                "comment": "Radio planning frame"
+            },
+            "SENSITV2": {
+                "value": 9,
+                "comment": "Sensitv2"
+            },
+            "comment": "The payload type"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\DeviceType": {
+        "downlinkMode": {
+            "DIRECT": {
+                "value": 0,
+                "comment": "DIRECT"
+            },
+            "CALLBACK": {
+                "value": 1,
+                "comment": "CALLBACK"
+            },
+            "NONE": {
+                "value": 2,
+                "comment": "NONE"
+            },
+            "MANAGED": {
+                "value": 3,
+                "comment": "MANAGED"
+            },
+            "comment": "The downlink mode to use for the devices of this device type."
+        },
+        "payloadType": {
+            "REGULAR": {
+                "value": 2,
+                "comment": "Regular (raw payload)"
+            },
+            "CUSTOM_GRAMMAR": {
+                "value": 3,
+                "comment": "Custom grammar"
+            },
+            "GEOLOCATION": {
+                "value": 4,
+                "comment": "Geolocation"
+            },
+            "DISPLAY_IN_ASCII": {
+                "value": 5,
+                "comment": "Display in ASCII"
+            },
+            "RADIO_PLANNING_FRAME": {
+                "value": 6,
+                "comment": "Radio planning frame"
+            },
+            "SENSITV2": {
+                "value": 9,
+                "comment": "Sensitv2"
+            },
+            "comment": "The payload type"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\DeviceTypeUpdate": {
+        "payloadType": {
+            "REGULAR": {
+                "value": 2,
+                "comment": "Regular (raw payload)"
+            },
+            "CUSTOM_GRAMMAR": {
+                "value": 3,
+                "comment": "Custom grammar"
+            },
+            "GEOLOCATION": {
+                "value": 4,
+                "comment": "Geolocation"
+            },
+            "DISPLAY_IN_ASCII": {
+                "value": 5,
+                "comment": "Display in ASCII"
+            },
+            "RADIO_PLANNING_FRAME": {
+                "value": 6,
+                "comment": "Radio planning frame"
+            },
+            "SENSITV2": {
+                "value": 9,
+                "comment": "Sensitv2"
+            },
+            "comment": "The payload type"
+        },
+        "downlinkMode": {
+            "DIRECT": {
+                "value": 0,
+                "comment": "DIRECT"
+            },
+            "CALLBACK": {
+                "value": 1,
+                "comment": "CALLBACK"
+            },
+            "NONE": {
+                "value": 2,
+                "comment": "NONE"
+            },
+            "MANAGED": {
+                "value": 3,
+                "comment": "MANAGED"
+            },
+            "comment": "The downlink mode to use for the devices of this device type."
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\Callback": {
+        "callbackType": {
+            "DATA": {
+                "value": 0,
+                "comment": "DATA callback delivering uplink messages to a customer platform."
+            },
+            "SERVICE": {
+                "value": 1,
+                "comment": "SERVICE callback to enable additional services (see subtypes)."
+            },
+            "ERROR": {
+                "value": 2,
+                "comment": "ERROR callback to ease troubleshooting in case of communication failure."
+            },
+            "comment": "The callback's type."
+        },
+        "callbackSubtype": {
+            "STATUS": {
+                "value": 0,
+                "comment": "STATUS callback sending information about the status of a device (available for SERVICE callbacks)"
+            },
+            "GEOLOC": {
+                "value": 1,
+                "comment": "GEOLOC callback is deprecated and can no be longer be created or edited. This callback is in a read only state to allow for migration to a DATA_ADVANCED callback"
+            },
+            "UPLINK": {
+                "value": 2,
+                "comment": "UPLINK callback for an uplink message (available for DATA callbacks)"
+            },
+            "BIDIR": {
+                "value": 3,
+                "comment": "BIDIR callback for a bidirectional message (available for DATA callbacks)"
+            },
+            "ACKNOWLEDGE": {
+                "value": 4,
+                "comment": "ACKNOWLEDGE callback sent on a downlink acknowledged message (available for SERVICE callbacks)"
+            },
+            "REPEATER": {
+                "value": 5,
+                "comment": "REPEATER callback triggered when a repeater sends an OOB (available for SERVICE callbacks)"
+            },
+            "DATA_ADVANCED": {
+                "value": 6,
+                "comment": "DATA_ADVANCED callback sent on a message that can be geolocated (available for SERVICE callbacks)"
+            },
+            "comment": "The callback's subtype. The subtype must be valid against its type."
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\CreateCallback": {
+        "callbackType": {
+            "DATA": {
+                "value": 0,
+                "comment": "DATA callback delivering uplink messages to a customer platform."
+            },
+            "SERVICE": {
+                "value": 1,
+                "comment": "SERVICE callback to enable additional services (see subtypes)."
+            },
+            "ERROR": {
+                "value": 2,
+                "comment": "ERROR callback to ease troubleshooting in case of communication failure."
+            },
+            "comment": "The callback's type."
+        },
+        "callbackSubtype": {
+            "STATUS": {
+                "value": 0,
+                "comment": "STATUS callback sending information about the status of a device (available for SERVICE callbacks)"
+            },
+            "GEOLOC": {
+                "value": 1,
+                "comment": "GEOLOC callback is deprecated and can no be longer be created or edited. This callback is in a read only state to allow for migration to a DATA_ADVANCED callback"
+            },
+            "UPLINK": {
+                "value": 2,
+                "comment": "UPLINK callback for an uplink message (available for DATA callbacks)"
+            },
+            "BIDIR": {
+                "value": 3,
+                "comment": "BIDIR callback for a bidirectional message (available for DATA callbacks)"
+            },
+            "ACKNOWLEDGE": {
+                "value": 4,
+                "comment": "ACKNOWLEDGE callback sent on a downlink acknowledged message (available for SERVICE callbacks)"
+            },
+            "REPEATER": {
+                "value": 5,
+                "comment": "REPEATER callback triggered when a repeater sends an OOB (available for SERVICE callbacks)"
+            },
+            "DATA_ADVANCED": {
+                "value": 6,
+                "comment": "DATA_ADVANCED callback sent on a message that can be geolocated (available for SERVICE callbacks)"
+            },
+            "comment": "The callback's subtype. The subtype must be valid against its type."
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\UpdateCallback": {
+        "callbackType": {
+            "DATA": {
+                "value": 0,
+                "comment": "DATA callback delivering uplink messages to a customer platform."
+            },
+            "SERVICE": {
+                "value": 1,
+                "comment": "SERVICE callback to enable additional services (see subtypes)."
+            },
+            "ERROR": {
+                "value": 2,
+                "comment": "ERROR callback to ease troubleshooting in case of communication failure."
+            },
+            "comment": "The callback's type."
+        },
+        "callbackSubtype": {
+            "STATUS": {
+                "value": 0,
+                "comment": "STATUS callback sending information about the status of a device (available for SERVICE callbacks)"
+            },
+            "GEOLOC": {
+                "value": 1,
+                "comment": "GEOLOC callback is deprecated and can no be longer be created or edited. This callback is in a read only state to allow for migration to a DATA_ADVANCED callback"
+            },
+            "UPLINK": {
+                "value": 2,
+                "comment": "UPLINK callback for an uplink message (available for DATA callbacks)"
+            },
+            "BIDIR": {
+                "value": 3,
+                "comment": "BIDIR callback for a bidirectional message (available for DATA callbacks)"
+            },
+            "ACKNOWLEDGE": {
+                "value": 4,
+                "comment": "ACKNOWLEDGE callback sent on a downlink acknowledged message (available for SERVICE callbacks)"
+            },
+            "REPEATER": {
+                "value": 5,
+                "comment": "REPEATER callback triggered when a repeater sends an OOB (available for SERVICE callbacks)"
+            },
+            "DATA_ADVANCED": {
+                "value": 6,
+                "comment": "DATA_ADVANCED callback sent on a message that can be geolocated (available for SERVICE callbacks)"
+            },
+            "comment": "The callback's subtype. The subtype must be valid against its type."
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\CommonGroupCreate": {
+        "type": {
+            "SO": {
+                "value": 0,
+                "comment": "SO"
+            },
+            "OTHER": {
+                "value": 2,
+                "comment": "Other"
+            },
+            "SVNO": {
+                "value": 5,
+                "comment": "SVNO"
+            },
+            "PARTNERS": {
+                "value": 6,
+                "comment": "Partners"
+            },
+            "NIP": {
+                "value": 7,
+                "comment": "NIP"
+            },
+            "DIST": {
+                "value": 8,
+                "comment": "DIST"
+            },
+            "CHANNEL": {
+                "value": 9,
+                "comment": "Channel"
+            },
+            "STARTER": {
+                "value": 10,
+                "comment": "Starter"
+            },
+            "PARTNER": {
+                "value": 11,
+                "comment": "Partner"
+            },
+            "comment": "Group's type:"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\CommonGroupUpdate": {
+        "type": {
+            "SO": {
+                "value": 0,
+                "comment": "SO"
+            },
+            "OTHER": {
+                "value": 2,
+                "comment": "Other"
+            },
+            "SVNO": {
+                "value": 5,
+                "comment": "SVNO"
+            },
+            "PARTNERS": {
+                "value": 6,
+                "comment": "Partners"
+            },
+            "NIP": {
+                "value": 7,
+                "comment": "NIP"
+            },
+            "DIST": {
+                "value": 8,
+                "comment": "DIST"
+            },
+            "CHANNEL": {
+                "value": 9,
+                "comment": "Channel"
+            },
+            "STARTER": {
+                "value": 10,
+                "comment": "Starter"
+            },
+            "PARTNER": {
+                "value": 11,
+                "comment": "Partner"
+            },
+            "comment": "- Group's type"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\Group": {
+        "type": {
+            "SO": {
+                "value": 0,
+                "comment": "SO"
+            },
+            "BASIC": {
+                "value": 2,
+                "comment": "Basic"
+            },
+            "SVNO": {
+                "value": 5,
+                "comment": "SVNO"
+            },
+            "PARTNERS": {
+                "value": 6,
+                "comment": "Partners"
+            },
+            "NIP": {
+                "value": 7,
+                "comment": "NIP"
+            },
+            "DIST": {
+                "value": 8,
+                "comment": "DIST"
+            },
+            "CHANNEL": {
+                "value": 9,
+                "comment": "Channel"
+            },
+            "STARTER": {
+                "value": 10,
+                "comment": "Starter"
+            },
+            "PARTNER": {
+                "value": 11,
+                "comment": "Partner"
+            },
+            "comment": "Group's type"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\CommonRole": {
+        "type": {
+            "ROLE": {
+                "value": 0,
+                "comment": "ROLE"
+            },
+            "META_EMPTY": {
+                "value": 1,
+                "comment": "META_EMPTY"
+            },
+            "META": {
+                "value": 2,
+                "comment": "META"
+            },
+            "comment": "Token's type of role"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\InternetSubscription": {
+        "type": {
+            "GSM": {
+                "value": 0,
+                "comment": "GSM"
+            },
+            "ADSL": {
+                "value": 1,
+                "comment": "ADSL"
+            },
+            "SATELLITE": {
+                "value": 2,
+                "comment": "SATELLITE"
+            },
+            "LAN": {
+                "value": 3,
+                "comment": "LAN"
+            },
+            "WIFI": {
+                "value": 4,
+                "comment": "WIFI"
+            },
+            "comment": "Internet subscription type"
+        },
+        "priority": {
+            "PRIMARY": {
+                "value": 0,
+                "comment": "PRIMARY"
+            },
+            "SECONDARY": {
+                "value": 1,
+                "comment": "SECONDARY"
+            },
+            "TERMINATED": {
+                "value": 2,
+                "comment": "TERMINATED"
+            },
+            "comment": "Internet subscription priority."
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\GsmSubscription": {
+        "gsmConnectionType": {
+            "DONGLE_USB": {
+                "value": 0,
+                "comment": "DONGLE_USB"
+            },
+            "ROUTER_ETH": {
+                "value": 1,
+                "comment": "ROUTER_ETH"
+            },
+            "comment": "GSM subscription connection type"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\SatSubscription": {
+        "connectionStatus": {
+            "REQUEST": {
+                "value": 0,
+                "comment": "REQUEST"
+            },
+            "CREDENTIALS_PROVIDED": {
+                "value": 1,
+                "comment": "CREDENTIALS PROVIDED"
+            },
+            "KIT_RECEIVED": {
+                "value": 2,
+                "comment": "KIT RECEIVED"
+            },
+            "comment": "Subscription connection status"
+        },
+        "rType": {
+            "HEATING": {
+                "value": 0,
+                "comment": "HEATING"
+            },
+            "STANDARD": {
+                "value": 1,
+                "comment": "STANDARD"
+            },
+            "comment": "Subscription receiver type"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\LanSubscription": {
+        "networkType": {
+            "COMPANY": {
+                "value": 0,
+                "comment": "COMPANY"
+            },
+            "OTHER": {
+                "value": 1,
+                "comment": "OTHER"
+            },
+            "RESIDENT": {
+                "value": 2,
+                "comment": "RESIDENT"
+            },
+            "comment": "Subscription network type"
+        },
+        "ethConnectionType": {
+            "DHCP": {
+                "value": 0,
+                "comment": "DHCP"
+            },
+            "STATIC": {
+                "value": 1,
+                "comment": "STATIC"
+            },
+            "comment": "Subscription connection type"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\CreateInternetSubscription": {
+        "type": {
+            "GSM": {
+                "value": 0,
+                "comment": "GSM"
+            },
+            "ADSL": {
+                "value": 1,
+                "comment": "ADSL"
+            },
+            "SATELLITE": {
+                "value": 2,
+                "comment": "SATELLITE"
+            },
+            "LAN": {
+                "value": 3,
+                "comment": "LAN"
+            },
+            "WIFI": {
+                "value": 4,
+                "comment": "WIFI"
+            },
+            "comment": "Internet subscription type"
+        },
+        "priority": {
+            "PRIMARY": {
+                "value": 0,
+                "comment": "PRIMARY"
+            },
+            "SECONDARY": {
+                "value": 1,
+                "comment": "SECONDARY"
+            },
+            "TERMINATED": {
+                "value": 2,
+                "comment": "TERMINATED"
+            },
+            "comment": "Internet subscription priority."
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\CreateAdslSubscription": {
+        "connectionStatus": {
+            "REQUEST": {
+                "value": 0,
+                "comment": "REQUEST"
+            },
+            "INSTALLED": {
+                "value": 1,
+                "comment": "INSTALLED"
+            },
+            "ACTIVATED": {
+                "value": 2,
+                "comment": "ACTIVATED"
+            },
+            "comment": "Subscription connection status"
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\CreateSatSubscription": {
+        "connectionStatus": {
+            "REQUEST": {
+                "value": 0,
+                "comment": "REQUEST"
+            },
+            "CREDENTIALS_PROVIDED": {
+                "value": 1,
+                "comment": "CREDENTIALS PROVIDED"
+            },
+            "KIT_RECEIVED": {
+                "value": 2,
+                "comment": "KIT RECEIVED"
+            },
+            "comment": "Subscription connection status"
+        },
+        "rType": {
+            "HEATING": {
+                "value": 0,
+                "comment": "HEATING"
+            },
+            "STANDARD": {
+                "value": 1,
+                "comment": "Subscription receiver type"
+            }
+        },
+        "Arimac\\Sigfox\\Definition\\UpdateInternetSubscription": {
+            "type": {
+                "GSM": {
+                    "value": 0,
+                    "comment": "GSM"
+                },
+                "ADSL": {
+                    "value": 1,
+                    "comment": "ADSL"
+                },
+                "SATELLITE": {
+                    "value": 2,
+                    "comment": "SATELLITE"
+                },
+                "LAN": {
+                    "value": 3,
+                    "comment": "LAN"
+                },
+                "WIFI": {
+                    "value": 4,
+                    "comment": "WIFI"
+                },
+                "comment": "Internet subscription type"
+            },
+            "priority": {
+                "PRIMARY": {
+                    "value": 0,
+                    "comment": "PRIMARY"
+                },
+                "SECONDARY": {
+                    "value": 1,
+                    "comment": "SECONDARY"
+                },
+                "TERMINATED": {
+                    "value": 2,
+                    "comment": "TERMINATED"
+                },
+                "comment": "Internet subscription priority."
+            }
+        },
+        "Arimac\\Sigfox\\Definition\\BaseSiteConvention": {
+            "status": {
+                "AT_SIGFOX": {
+                    "value": 0,
+                    "comment": "AT SIGFOX"
+                },
+                "AT_HOST": {
+                    "value": 1,
+                    "comment": "AT HOST"
+                },
+                "SIGNED_SIGFOX": {
+                    "value": 2,
+                    "comment": "SIGNED SIGFOX"
+                },
+                "SIGNED_HOST": {
+                    "value": 3,
+                    "comment": "SIGNED HOST"
+                },
+                "SIGNED_BOTH": {
+                    "value": 4,
+                    "comment": "SIGNED BOTH"
+                },
+                "comment": "Convention status."
+            },
+            "type": {
+                "CONDOMINIUM": {
+                    "value": 0,
+                    "comment": "CONDOMINIUM"
+                },
+                "INDIVIDUAL": {
+                    "value": 1,
+                    "comment": "INDIVIDUAL"
+                },
+                "SOCIAL_HOUSING_AUTHORITY": {
+                    "value": 2,
+                    "comment": "SOCIAL HOUSING AUTHORITY"
+                },
+                "ASSOCIATION": {
+                    "value": 3,
+                    "comment": "ASSOCIATION"
+                },
+                "COMPANY": {
+                    "value": 4,
+                    "comment": "COMPANY"
+                },
+                "comment": "Convention status."
+            }
+        },
+        "Arimac\\Sigfox\\Definition\\BaseSiteIntervention": {
+            "equipmentsToChange": {
+                "ANTENNA": {
+                    "value": 0,
+                    "comment": "ANTENNA"
+                },
+                "BASE_STATION": {
+                    "value": 1,
+                    "comment": "BASE STATION"
+                },
+                "LNA": {
+                    "value": 2,
+                    "comment": "LNA"
+                },
+                "FEEDER": {
+                    "value": 3,
+                    "comment": "FEEDER"
+                },
+                "ADSL_MODEM": {
+                    "value": 4,
+                    "comment": "ADSL MODEM"
+                },
+                "NETWORK_CABLE": {
+                    "value": 5,
+                    "comment": "NETWORK CABLE"
+                },
+                "SURGE": {
+                    "value": 6,
+                    "comment": "SURGE"
+                },
+                "WATERPROOFNESS": {
+                    "value": 7,
+                    "comment": "WATERPROOFNESS"
+                },
+                "SAT_DEMOD": {
+                    "value": 8,
+                    "comment": "SAT DEMOD"
+                },
+                "SAT_LNB": {
+                    "value": 9,
+                    "comment": "SAT LNB"
+                },
+                "SAT_DISH": {
+                    "value": 10,
+                    "comment": "SAT DISH"
+                },
+                "SAT_POWER_SUPPLY": {
+                    "value": 11,
+                    "comment": "SAT POWER SUPPLY"
+                },
+                "INVERTER": {
+                    "value": 12,
+                    "comment": "INVERTER"
+                },
+                "KEY_3G": {
+                    "value": 13,
+                    "comment": "KEY 3G"
+                },
+                "CIRCUIT_BREAKER": {
+                    "value": 14,
+                    "comment": "CIRCUIT BREAKER"
+                },
+                "ROUTER_3G": {
+                    "value": 15,
+                    "comment": "ROUTER 3G"
+                },
+                "comment": "List of equipment to change for this intervention"
+            },
+            "type": {
+                "OTHER": {
+                    "value": 0,
+                    "comment": "OTHER"
+                },
+                "PRE_VISIT": {
+                    "value": 1,
+                    "comment": "PRE VISIT"
+                },
+                "ANTENNA_INSTALLATION": {
+                    "value": 2,
+                    "comment": "ANTENNA INSTALLATION"
+                },
+                "TELECOM_LINE_INSTALLATION": {
+                    "value": 3,
+                    "comment": "TELECOM LINE INSTALLATION"
+                },
+                "SITE_SEARCH": {
+                    "value": 4,
+                    "comment": "SITE SEARCH"
+                },
+                "SAT_INSTALLATION": {
+                    "value": 5,
+                    "comment": "SAT INSTALLATION"
+                },
+                "ELECTRICAL": {
+                    "value": 6,
+                    "comment": "ELECTRICAL"
+                },
+                "DISMANTLING": {
+                    "value": 7,
+                    "comment": "DISMANTLING"
+                },
+                "comment": "Convention status."
+            }
+        },
+        "Arimac\\Sigfox\\Definition\\BaseSite": {
+            "status": {
+                "PROD": {
+                    "value": 0,
+                    "comment": "PROD"
+                },
+                "REFUSED": {
+                    "value": 1,
+                    "comment": "REFUSED"
+                },
+                "INSTALLED": {
+                    "value": 2,
+                    "comment": "INSTALLED"
+                },
+                "NOT_PLANNED": {
+                    "value": 3,
+                    "comment": "NOT PLANNED"
+                },
+                "PRE_PROD": {
+                    "value": 4,
+                    "comment": "PRE PROD"
+                },
+                "CANDIDATE": {
+                    "value": 5,
+                    "comment": "CANDIDATE"
+                },
+                "CANCELLED": {
+                    "value": 6,
+                    "comment": "CANCELLED"
+                },
+                "CLIENT": {
+                    "value": 7,
+                    "comment": "CLIENT"
+                },
+                "RD": {
+                    "value": 8,
+                    "comment": "RD"
+                },
+                "LABO": {
+                    "value": 9,
+                    "comment": "LABO"
+                },
+                "INSTALLED_CONNECTED_ONLY_SECONDARY": {
+                    "value": 14,
+                    "comment": "INSTALLED CONNECTED ONLY SECONDARY"
+                },
+                "INSTALLED_CONNECTED_ONLY_PRIMARY": {
+                    "value": 15,
+                    "comment": "INSTALLED CONNECTED ONLY PRIMARY"
+                },
+                "comment": "Site status:"
+            },
+            "stationInstallation": {
+                "INDOOR_WITHOUT_CABINET": {
+                    "value": 0,
+                    "comment": "INDOOR WITHOUT CABINET"
+                },
+                "OUTDOOR_WITH_CABINET": {
+                    "value": 1,
+                    "comment": "OUTDOOR WITH CABINET"
+                },
+                "INDOOR_WITH_CABINET": {
+                    "value": 2,
+                    "comment": "INDOOR WITH CABINET"
+                },
+                "OUTDOOR_WITHOUT_CABINET": {
+                    "value": 3,
+                    "comment": "OUTDOOR WITHOUT CABINET"
+                },
+                "comment": "Station installation:"
+            },
+            "inverterInfo": {
+                "NONE": {
+                    "value": 0,
+                    "comment": "NONE"
+                },
+                "AC_POWER_HOST": {
+                    "value": 1,
+                    "comment": "AC POWER HOST"
+                },
+                "AC_POWER_HOST_INVERTER": {
+                    "value": 2,
+                    "comment": "AC POWER HOST INVERTER"
+                },
+                "AC_POWER_SIGFOX_INVERTER": {
+                    "value": 3,
+                    "comment": "AC POWER SIGFOX INVERTER"
+                },
+                "DC_POWER_HOST_48V": {
+                    "value": 4,
+                    "comment": "DC POWER HOST 48V"
+                },
+                "DC_POWER_SOLAR": {
+                    "value": 5,
+                    "comment": "DC POWER SOLAR"
+                },
+                "comment": "Inverter type:"
+            }
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\Antenna": {
+        "model": {
+            "debug": [
+                "Antenna model of the station. E.g. \"CXL 900-3LW\", \"CXL 900-6LW\" , \"\" -> NONE ..."
+            ],
+            "comment": "Antenna model of the station. E.g. \"CXL 900-3LW\", \"CXL 900-6LW\" , \"\" -> NONE ..."
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\UpdateInternetSubscription": {
+        "type": {
+            "GSM": {
+                "value": 0,
+                "comment": "GSM"
+            },
+            "ADSL": {
+                "value": 1,
+                "comment": "ADSL"
+            },
+            "SATELLITE": {
+                "value": 2,
+                "comment": "SATELLITE"
+            },
+            "LAN": {
+                "value": 3,
+                "comment": "LAN"
+            },
+            "WIFI": {
+                "value": 4,
+                "comment": "WIFI"
+            },
+            "comment": "Internet subscription type"
+        },
+        "priority": {
+            "PRIMARY": {
+                "value": 0,
+                "comment": "PRIMARY"
+            },
+            "SECONDARY": {
+                "value": 1,
+                "comment": "SECONDARY"
+            },
+            "TERMINATED": {
+                "value": 2,
+                "comment": "TERMINATED"
+            },
+            "comment": "Internet subscription priority."
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\BaseSiteConvention": {
+        "status": {
+            "AT_SIGFOX": {
+                "value": 0,
+                "comment": "AT SIGFOX"
+            },
+            "AT_HOST": {
+                "value": 1,
+                "comment": "AT HOST"
+            },
+            "SIGNED_SIGFOX": {
+                "value": 2,
+                "comment": "SIGNED SIGFOX"
+            },
+            "SIGNED_HOST": {
+                "value": 3,
+                "comment": "SIGNED HOST"
+            },
+            "SIGNED_BOTH": {
+                "value": 4,
+                "comment": "SIGNED BOTH"
+            },
+            "comment": "Convention status."
+        },
+        "type": {
+            "CONDOMINIUM": {
+                "value": 0,
+                "comment": "CONDOMINIUM"
+            },
+            "INDIVIDUAL": {
+                "value": 1,
+                "comment": "INDIVIDUAL"
+            },
+            "SOCIAL_HOUSING_AUTHORITY": {
+                "value": 2,
+                "comment": "SOCIAL HOUSING AUTHORITY"
+            },
+            "ASSOCIATION": {
+                "value": 3,
+                "comment": "ASSOCIATION"
+            },
+            "COMPANY": {
+                "value": 4,
+                "comment": "COMPANY"
+            },
+            "comment": "Convention status."
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\BaseSiteIntervention": {
+        "equipmentsToChange": {
+            "ANTENNA": {
+                "value": 0,
+                "comment": "ANTENNA"
+            },
+            "BASE_STATION": {
+                "value": 1,
+                "comment": "BASE STATION"
+            },
+            "LNA": {
+                "value": 2,
+                "comment": "LNA"
+            },
+            "FEEDER": {
+                "value": 3,
+                "comment": "FEEDER"
+            },
+            "ADSL_MODEM": {
+                "value": 4,
+                "comment": "ADSL MODEM"
+            },
+            "NETWORK_CABLE": {
+                "value": 5,
+                "comment": "NETWORK CABLE"
+            },
+            "SURGE": {
+                "value": 6,
+                "comment": "SURGE"
+            },
+            "WATERPROOFNESS": {
+                "value": 7,
+                "comment": "WATERPROOFNESS"
+            },
+            "SAT_DEMOD": {
+                "value": 8,
+                "comment": "SAT DEMOD"
+            },
+            "SAT_LNB": {
+                "value": 9,
+                "comment": "SAT LNB"
+            },
+            "SAT_DISH": {
+                "value": 10,
+                "comment": "SAT DISH"
+            },
+            "SAT_POWER_SUPPLY": {
+                "value": 11,
+                "comment": "SAT POWER SUPPLY"
+            },
+            "INVERTER": {
+                "value": 12,
+                "comment": "INVERTER"
+            },
+            "KEY_3G": {
+                "value": 13,
+                "comment": "KEY 3G"
+            },
+            "CIRCUIT_BREAKER": {
+                "value": 14,
+                "comment": "CIRCUIT BREAKER"
+            },
+            "ROUTER_3G": {
+                "value": 15,
+                "comment": "ROUTER 3G"
+            },
+            "comment": "List of equipment to change for this intervention"
+        },
+        "type": {
+            "OTHER": {
+                "value": 0,
+                "comment": "OTHER"
+            },
+            "PRE_VISIT": {
+                "value": 1,
+                "comment": "PRE VISIT"
+            },
+            "ANTENNA_INSTALLATION": {
+                "value": 2,
+                "comment": "ANTENNA INSTALLATION"
+            },
+            "TELECOM_LINE_INSTALLATION": {
+                "value": 3,
+                "comment": "TELECOM LINE INSTALLATION"
+            },
+            "SITE_SEARCH": {
+                "value": 4,
+                "comment": "SITE SEARCH"
+            },
+            "SAT_INSTALLATION": {
+                "value": 5,
+                "comment": "SAT INSTALLATION"
+            },
+            "ELECTRICAL": {
+                "value": 6,
+                "comment": "ELECTRICAL"
+            },
+            "DISMANTLING": {
+                "value": 7,
+                "comment": "DISMANTLING"
+            },
+            "comment": "Convention status."
+        }
+    },
+    "Arimac\\Sigfox\\Definition\\BaseSite": {
+        "status": {
+            "PROD": {
+                "value": 0,
+                "comment": "PROD"
+            },
+            "REFUSED": {
+                "value": 1,
+                "comment": "REFUSED"
+            },
+            "INSTALLED": {
+                "value": 2,
+                "comment": "INSTALLED"
+            },
+            "NOT_PLANNED": {
+                "value": 3,
+                "comment": "NOT PLANNED"
+            },
+            "PRE_PROD": {
+                "value": 4,
+                "comment": "PRE PROD"
+            },
+            "CANDIDATE": {
+                "value": 5,
+                "comment": "CANDIDATE"
+            },
+            "CANCELLED": {
+                "value": 6,
+                "comment": "CANCELLED"
+            },
+            "CLIENT": {
+                "value": 7,
+                "comment": "CLIENT"
+            },
+            "RD": {
+                "value": 8,
+                "comment": "RD"
+            },
+            "LABO": {
+                "value": 9,
+                "comment": "LABO"
+            },
+            "INSTALLED_CONNECTED_ONLY_SECONDARY": {
+                "value": 14,
+                "comment": "INSTALLED CONNECTED ONLY SECONDARY"
+            },
+            "INSTALLED_CONNECTED_ONLY_PRIMARY": {
+                "value": 15,
+                "comment": "INSTALLED CONNECTED ONLY PRIMARY"
+            },
+            "comment": "Site status:"
+        },
+        "stationInstallation": {
+            "INDOOR_WITHOUT_CABINET": {
+                "value": 0,
+                "comment": "INDOOR WITHOUT CABINET"
+            },
+            "OUTDOOR_WITH_CABINET": {
+                "value": 1,
+                "comment": "OUTDOOR WITH CABINET"
+            },
+            "INDOOR_WITH_CABINET": {
+                "value": 2,
+                "comment": "INDOOR WITH CABINET"
+            },
+            "OUTDOOR_WITHOUT_CABINET": {
+                "value": 3,
+                "comment": "OUTDOOR WITHOUT CABINET"
+            },
+            "comment": "Station installation:"
+        },
+        "inverterInfo": {
+            "NONE": {
+                "value": 0,
+                "comment": "NONE"
+            },
+            "AC_POWER_HOST": {
+                "value": 1,
+                "comment": "AC POWER HOST"
+            },
+            "AC_POWER_HOST_INVERTER": {
+                "value": 2,
+                "comment": "AC POWER HOST INVERTER"
+            },
+            "AC_POWER_SIGFOX_INVERTER": {
+                "value": 3,
+                "comment": "AC POWER SIGFOX INVERTER"
+            },
+            "DC_POWER_HOST_48V": {
+                "value": 4,
+                "comment": "DC POWER HOST 48V"
+            },
+            "DC_POWER_SOLAR": {
+                "value": 5,
+                "comment": "DC POWER SOLAR"
+            },
+            "comment": "Inverter type:"
+        }
+    },
+    "Arimac\\Sigfox\\Request\\UserCreationGet": {
+        "2": {
+            "BASIC": {
+                "value": 2,
+                "comment": "BASIC"
+            },
+            "CHANNEL": {
+                "value": 9,
+                "comment": "CHANNEL"
+            },
+            "debug": [
+                "Searches for contracts that are attached to a specific group type.",
+                "- 2 -> BASIC",
+                "- 9 -> CHANNEL",
+                ""
+            ],
+            "comment": "Searches for contracts that are attached to a specific group type."
+        },
+        "10": {
+            "PRICING_MODEL_V1": {
+                "value": 1,
+                "comment": "Pricing model v1"
+            },
+            "PRICING_MODEL_V2": {
+                "value": 2,
+                "comment": "Pricing model v2"
+            },
+            "PRICING_MODEL_V3": {
+                "value": 3,
+                "comment": "Pricing model v3"
+            },
+            "debug": [
+                "Searches for contracts with a given pricing model ",
+                "1 -> Pricing model v1",
+                "2 -> Pricing model v2",
+                "3 -> Pricing model v3",
+                ""
+            ],
+            "comment": "Searches for contracts with a given pricing model"
+        },
+        "11": {
+            "FREE_ORDER": {
+                "value": 0,
+                "comment": "Free order"
+            },
+            "PAY_AS_YOU_GROW": {
+                "value": 1,
+                "comment": "Pay As You Grow (PAYG)"
+            },
+            "COMMITTED_VOLUME_PLAN": {
+                "value": 2,
+                "comment": "Committed Volume Plan (CVP)"
+            },
+            "FLEXIBLE_COMMITTED_VOLUME_PLAN": {
+                "value": 3,
+                "comment": "Flexible Committed Volume Plan (CVP Flex)"
+            },
+            "PACK": {
+                "value": 4,
+                "comment": "PACK"
+            },
+            "DEVKIT": {
+                "value": 5,
+                "comment": "DevKit"
+            },
+            "ACTIVATE": {
+                "value": 6,
+                "comment": "Activate"
+            },
+            "debug": [
+                "Searches for contracts with the given subscription plan:",
+                "0 -> Free order",
+                "1 -> Pay As You Grow (PAYG)",
+                "2 -> Committed Volume Plan (CVP)",
+                "3 -> Flexible Committed Volume Plan (CVP Flex)",
+                "4 -> PACK",
+                "5 -> DevKit",
+                "6 -> Activate",
+                ""
+            ],
+            "comment": "Searches for contracts with the given subscription plan:"
+        },
+        "4": {
+            "REGULAR": {
+                "value": 2,
+                "comment": "Regular (raw payload)"
+            },
+            "CUSTOM_GRAMMAR": {
+                "value": 3,
+                "comment": "Custom grammar"
+            },
+            "GEOLOCATION": {
+                "value": 4,
+                "comment": "Geolocation"
+            },
+            "DISPLAY_IN_ASCII": {
+                "value": 5,
+                "comment": "Display in ASCII"
+            },
+            "RADIO_PLANNING_FRAME": {
+                "value": 6,
+                "comment": "Radio planning frame"
+            },
+            "SENSITV2": {
+                "value": 9,
+                "comment": "Sensitv2"
+            },
+            "debug": [
+                "Searches device types by payload type",
+                "  - 2 -> Regular (raw payload)",
+                "  - 3 -> Custom grammar",
+                "  - 4 -> Geolocation",
+                "  - 5 -> Display in ASCII",
+                "  - 6 -> Radio planning frame",
+                "  - 9 -> Sensitv2",
+                ""
+            ],
+            "comment": "Searches device types by payload type"
+        },
+        "3": {
+            "SO": {
+                "value": 0,
+                "comment": "SO"
+            },
+            "OTHER": {
+                "value": 2,
+                "comment": "Other"
+            },
+            "SVNO": {
+                "value": 5,
+                "comment": "SVNO"
+            },
+            "PARTNERS": {
+                "value": 6,
+                "comment": "Partners"
+            },
+            "NIP": {
+                "value": 7,
+                "comment": "NIP"
+            },
+            "DIST": {
+                "value": 8,
+                "comment": "DIST"
+            },
+            "CHANNEL": {
+                "value": 9,
+                "comment": "Channel"
+            },
+            "STARTER": {
+                "value": 10,
+                "comment": "Starter"
+            },
+            "PARTNER": {
+                "value": 11,
+                "comment": "Partner"
+            },
+            "debug": [
+                "Group's type",
+                "- 0 -> SO",
+                "- 2 -> Other",
+                "- 5 -> SVNO",
+                "- 6 -> Partners",
+                "- 7 -> NIP",
+                "- 8 -> DIST",
+                "- 9 -> Channel",
+                "- 10 -> Starter",
+                "- 11 -> Partner",
+                ""
+            ],
+            "comment": "Group's type"
+        },
+        "groupType": {
+            "BASIC": {
+                "value": 2,
+                "comment": "BASIC"
+            },
+            "CHANNEL": {
+                "value": 9,
+                "comment": "CHANNEL"
+            },
+            "debug": [
+                "Searches for contracts that are attached to a specific group type.",
+                "- 2 -> BASIC",
+                "- 9 -> CHANNEL",
+                ""
+            ],
+            "comment": "Searches for contracts that are attached to a specific group type."
+        },
+        "pricingModel": {
+            "PRICING_MODEL_V1": {
+                "value": 1,
+                "comment": "Pricing model v1"
+            },
+            "PRICING_MODEL_V2": {
+                "value": 2,
+                "comment": "Pricing model v2"
+            },
+            "PRICING_MODEL_V3": {
+                "value": 3,
+                "comment": "Pricing model v3"
+            },
+            "debug": [
+                "Searches for contracts with a given pricing model ",
+                "1 -> Pricing model v1",
+                "2 -> Pricing model v2",
+                "3 -> Pricing model v3",
+                ""
+            ],
+            "comment": "Searches for contracts with a given pricing model"
+        },
+        "subscriptionPlan": {
+            "FREE_ORDER": {
+                "value": 0,
+                "comment": "Free order"
+            },
+            "PAY_AS_YOU_GROW": {
+                "value": 1,
+                "comment": "Pay As You Grow (PAYG)"
+            },
+            "COMMITTED_VOLUME_PLAN": {
+                "value": 2,
+                "comment": "Committed Volume Plan (CVP)"
+            },
+            "FLEXIBLE_COMMITTED_VOLUME_PLAN": {
+                "value": 3,
+                "comment": "Flexible Committed Volume Plan (CVP Flex)"
+            },
+            "PACK": {
+                "value": 4,
+                "comment": "PACK"
+            },
+            "DEVKIT": {
+                "value": 5,
+                "comment": "DevKit"
+            },
+            "ACTIVATE": {
+                "value": 6,
+                "comment": "Activate"
+            },
+            "debug": [
+                "Searches for contracts with the given subscription plan:",
+                "0 -> Free order",
+                "1 -> Pay As You Grow (PAYG)",
+                "2 -> Committed Volume Plan (CVP)",
+                "3 -> Flexible Committed Volume Plan (CVP Flex)",
+                "4 -> PACK",
+                "5 -> DevKit",
+                "6 -> Activate",
+                ""
+            ],
+            "comment": "Searches for contracts with the given subscription plan:"
+        },
+        "payloadType": {
+            "REGULAR": {
+                "value": 2,
+                "comment": "Regular (raw payload)"
+            },
+            "CUSTOM_GRAMMAR": {
+                "value": 3,
+                "comment": "Custom grammar"
+            },
+            "GEOLOCATION": {
+                "value": 4,
+                "comment": "Geolocation"
+            },
+            "DISPLAY_IN_ASCII": {
+                "value": 5,
+                "comment": "Display in ASCII"
+            },
+            "RADIO_PLANNING_FRAME": {
+                "value": 6,
+                "comment": "Radio planning frame"
+            },
+            "SENSITV2": {
+                "value": 9,
+                "comment": "Sensitv2"
+            },
+            "debug": [
+                "Searches device types by payload type",
+                "  - 2 -> Regular (raw payload)",
+                "  - 3 -> Custom grammar",
+                "  - 4 -> Geolocation",
+                "  - 5 -> Display in ASCII",
+                "  - 6 -> Radio planning frame",
+                "  - 9 -> Sensitv2",
+                ""
+            ],
+            "comment": "Searches device types by payload type"
+        },
+        "types": {
+            "SO": {
+                "value": 0,
+                "comment": "SO"
+            },
+            "OTHER": {
+                "value": 2,
+                "comment": "Other"
+            },
+            "SVNO": {
+                "value": 5,
+                "comment": "SVNO"
+            },
+            "PARTNERS": {
+                "value": 6,
+                "comment": "Partners"
+            },
+            "NIP": {
+                "value": 7,
+                "comment": "NIP"
+            },
+            "DIST": {
+                "value": 8,
+                "comment": "DIST"
+            },
+            "CHANNEL": {
+                "value": 9,
+                "comment": "Channel"
+            },
+            "STARTER": {
+                "value": 10,
+                "comment": "Starter"
+            },
+            "PARTNER": {
+                "value": 11,
+                "comment": "Partner"
+            },
+            "debug": [
+                "Group's type",
+                "- 0 -> SO",
+                "- 2 -> Other",
+                "- 5 -> SVNO",
+                "- 6 -> Partners",
+                "- 7 -> NIP",
+                "- 8 -> DIST",
+                "- 9 -> Channel",
+                "- 10 -> Starter",
+                "- 11 -> Partner",
+                ""
+            ],
+            "comment": "Group's type"
+        }
+    },
+    "Arimac\\Sigfox\\Request\\ContractInfosGet": {
+        "groupType": {
+            "BASIC": {
+                "value": 2,
+                "comment": "BASIC"
+            },
+            "CHANNEL": {
+                "value": 9,
+                "comment": "CHANNEL"
+            },
+            "debug": [
+                "Searches for contracts that are attached to a specific group type.",
+                "- 2 -> BASIC",
+                "- 9 -> CHANNEL",
+                ""
+            ],
+            "comment": "Searches for contracts that are attached to a specific group type."
+        },
+        "pricingModel": {
+            "PRICING_MODEL_V1": {
+                "value": 1,
+                "comment": "Pricing model v1"
+            },
+            "PRICING_MODEL_V2": {
+                "value": 2,
+                "comment": "Pricing model v2"
+            },
+            "PRICING_MODEL_V3": {
+                "value": 3,
+                "comment": "Pricing model v3"
+            },
+            "debug": [
+                "Searches for contracts with a given pricing model ",
+                "1 -> Pricing model v1",
+                "2 -> Pricing model v2",
+                "3 -> Pricing model v3",
+                ""
+            ],
+            "comment": "Searches for contracts with a given pricing model"
+        },
+        "subscriptionPlan": {
+            "FREE_ORDER": {
+                "value": 0,
+                "comment": "Free order"
+            },
+            "PAY_AS_YOU_GROW": {
+                "value": 1,
+                "comment": "Pay As You Grow (PAYG)"
+            },
+            "COMMITTED_VOLUME_PLAN": {
+                "value": 2,
+                "comment": "Committed Volume Plan (CVP)"
+            },
+            "FLEXIBLE_COMMITTED_VOLUME_PLAN": {
+                "value": 3,
+                "comment": "Flexible Committed Volume Plan (CVP Flex)"
+            },
+            "PACK": {
+                "value": 4,
+                "comment": "PACK"
+            },
+            "DEVKIT": {
+                "value": 5,
+                "comment": "DevKit"
+            },
+            "ACTIVATE": {
+                "value": 6,
+                "comment": "Activate"
+            },
+            "debug": [
+                "Searches for contracts with the given subscription plan:",
+                "0 -> Free order",
+                "1 -> Pay As You Grow (PAYG)",
+                "2 -> Committed Volume Plan (CVP)",
+                "3 -> Flexible Committed Volume Plan (CVP Flex)",
+                "4 -> PACK",
+                "5 -> DevKit",
+                "6 -> Activate",
+                ""
+            ],
+            "comment": "Searches for contracts with the given subscription plan:"
+        }
+    },
+    "Arimac\\Sigfox\\Request\\DeviceTypesGet": {
+        "payloadType": {
+            "REGULAR": {
+                "value": 2,
+                "comment": "Regular (raw payload)"
+            },
+            "CUSTOM_GRAMMAR": {
+                "value": 3,
+                "comment": "Custom grammar"
+            },
+            "GEOLOCATION": {
+                "value": 4,
+                "comment": "Geolocation"
+            },
+            "DISPLAY_IN_ASCII": {
+                "value": 5,
+                "comment": "Display in ASCII"
+            },
+            "RADIO_PLANNING_FRAME": {
+                "value": 6,
+                "comment": "Radio planning frame"
+            },
+            "SENSITV2": {
+                "value": 9,
+                "comment": "Sensitv2"
+            },
+            "debug": [
+                "Searches device types by payload type",
+                "  - 2 -> Regular (raw payload)",
+                "  - 3 -> Custom grammar",
+                "  - 4 -> Geolocation",
+                "  - 5 -> Display in ASCII",
+                "  - 6 -> Radio planning frame",
+                "  - 9 -> Sensitv2",
+                ""
+            ],
+            "comment": "Searches device types by payload type"
+        }
+    },
+    "Arimac\\Sigfox\\Request\\GroupsGet": {
+        "types": {
+            "SO": {
+                "value": 0,
+                "comment": "SO"
+            },
+            "OTHER": {
+                "value": 2,
+                "comment": "Other"
+            },
+            "SVNO": {
+                "value": 5,
+                "comment": "SVNO"
+            },
+            "PARTNERS": {
+                "value": 6,
+                "comment": "Partners"
+            },
+            "NIP": {
+                "value": 7,
+                "comment": "NIP"
+            },
+            "DIST": {
+                "value": 8,
+                "comment": "DIST"
+            },
+            "CHANNEL": {
+                "value": 9,
+                "comment": "Channel"
+            },
+            "STARTER": {
+                "value": 10,
+                "comment": "Starter"
+            },
+            "PARTNER": {
+                "value": 11,
+                "comment": "Partner"
+            },
+            "debug": [
+                "Group's type",
+                "- 0 -> SO",
+                "- 2 -> Other",
+                "- 5 -> SVNO",
+                "- 6 -> Partners",
+                "- 7 -> NIP",
+                "- 8 -> DIST",
+                "- 9 -> Channel",
+                "- 10 -> Starter",
+                "- 11 -> Partner",
+                ""
+            ],
+            "comment": "Group's type"
+        }
+    },
+    "Arimac\\Sigfox\\Request\\ContractInfosList": {
+        "groupType": {
+            "BASIC": {
+                "value": 2,
+                "comment": "BASIC"
+            },
+            "CHANNEL": {
+                "value": 9,
+                "comment": "CHANNEL"
+            },
+            "debug": [
+                "Searches for contracts that are attached to a specific group type.",
+                "- 2 -> BASIC",
+                "- 9 -> CHANNEL",
+                ""
+            ],
+            "comment": "Searches for contracts that are attached to a specific group type."
+        },
+        "pricingModel": {
+            "PRICING_MODEL_V1": {
+                "value": 1,
+                "comment": "Pricing model v1"
+            },
+            "PRICING_MODEL_V2": {
+                "value": 2,
+                "comment": "Pricing model v2"
+            },
+            "PRICING_MODEL_V3": {
+                "value": 3,
+                "comment": "Pricing model v3"
+            },
+            "debug": [
+                "Searches for contracts with a given pricing model ",
+                "1 -> Pricing model v1",
+                "2 -> Pricing model v2",
+                "3 -> Pricing model v3",
+                ""
+            ],
+            "comment": "Searches for contracts with a given pricing model"
+        },
+        "subscriptionPlan": {
+            "FREE_ORDER": {
+                "value": 0,
+                "comment": "Free order"
+            },
+            "PAY_AS_YOU_GROW": {
+                "value": 1,
+                "comment": "Pay As You Grow (PAYG)"
+            },
+            "COMMITTED_VOLUME_PLAN": {
+                "value": 2,
+                "comment": "Committed Volume Plan (CVP)"
+            },
+            "FLEXIBLE_COMMITTED_VOLUME_PLAN": {
+                "value": 3,
+                "comment": "Flexible Committed Volume Plan (CVP Flex)"
+            },
+            "PACK": {
+                "value": 4,
+                "comment": "PACK"
+            },
+            "DEVKIT": {
+                "value": 5,
+                "comment": "DevKit"
+            },
+            "ACTIVATE": {
+                "value": 6,
+                "comment": "Activate"
+            },
+            "debug": [
+                "Searches for contracts with the given subscription plan:",
+                "0 -> Free order",
+                "1 -> Pay As You Grow (PAYG)",
+                "2 -> Committed Volume Plan (CVP)",
+                "3 -> Flexible Committed Volume Plan (CVP Flex)",
+                "4 -> PACK",
+                "5 -> DevKit",
+                "6 -> Activate",
+                ""
+            ],
+            "comment": "Searches for contracts with the given subscription plan:"
+        }
+    },
+    "Arimac\\Sigfox\\Request\\DeviceTypesList": {
+        "payloadType": {
+            "REGULAR": {
+                "value": 2,
+                "comment": "Regular (raw payload)"
+            },
+            "CUSTOM_GRAMMAR": {
+                "value": 3,
+                "comment": "Custom grammar"
+            },
+            "GEOLOCATION": {
+                "value": 4,
+                "comment": "Geolocation"
+            },
+            "DISPLAY_IN_ASCII": {
+                "value": 5,
+                "comment": "Display in ASCII"
+            },
+            "RADIO_PLANNING_FRAME": {
+                "value": 6,
+                "comment": "Radio planning frame"
+            },
+            "SENSITV2": {
+                "value": 9,
+                "comment": "Sensitv2"
+            },
+            "debug": [
+                "Searches device types by payload type",
+                "  - 2 -> Regular (raw payload)",
+                "  - 3 -> Custom grammar",
+                "  - 4 -> Geolocation",
+                "  - 5 -> Display in ASCII",
+                "  - 6 -> Radio planning frame",
+                "  - 9 -> Sensitv2",
+                ""
+            ],
+            "comment": "Searches device types by payload type"
+        }
+    },
+    "Arimac\\Sigfox\\Request\\GroupsList": {
+        "types": {
+            "SO": {
+                "value": 0,
+                "comment": "SO"
+            },
+            "OTHER": {
+                "value": 2,
+                "comment": "Other"
+            },
+            "SVNO": {
+                "value": 5,
+                "comment": "SVNO"
+            },
+            "PARTNERS": {
+                "value": 6,
+                "comment": "Partners"
+            },
+            "NIP": {
+                "value": 7,
+                "comment": "NIP"
+            },
+            "DIST": {
+                "value": 8,
+                "comment": "DIST"
+            },
+            "CHANNEL": {
+                "value": 9,
+                "comment": "Channel"
+            },
+            "STARTER": {
+                "value": 10,
+                "comment": "Starter"
+            },
+            "PARTNER": {
+                "value": 11,
+                "comment": "Partner"
+            },
+            "debug": [
+                "Group's type",
+                "- 0 -> SO",
+                "- 2 -> Other",
+                "- 5 -> SVNO",
+                "- 6 -> Partners",
+                "- 7 -> NIP",
+                "- 8 -> DIST",
+                "- 9 -> Channel",
+                "- 10 -> Starter",
+                "- 11 -> Partner",
+                ""
+            ],
+            "comment": "Group's type"
+        }
+    }
+}

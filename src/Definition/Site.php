@@ -2,11 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\BaseSite;
-use Arimac\Sigfox\Definition\MinHost;
-use Arimac\Sigfox\Definition\MinMaintenance;
-use Arimac\Sigfox\Definition\MinGroup;
-use Arimac\Sigfox\Definition\InternetSubscription;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\Site\LocationItem;
 class Site extends BaseSite
 {
@@ -16,11 +12,17 @@ class Site extends BaseSite
      * @var string
      */
     protected ?string $id = null;
-    /** @var MinHost */
+    /**
+     * @var MinHost
+     */
     protected ?MinHost $host = null;
-    /** @var MinMaintenance */
+    /**
+     * @var MinMaintenance
+     */
     protected ?MinMaintenance $maintenance = null;
-    /** @var MinGroup */
+    /**
+     * @var MinGroup
+     */
     protected ?MinGroup $group = null;
     /**
      * the number of base station installed on this site
@@ -28,7 +30,9 @@ class Site extends BaseSite
      * @var int
      */
     protected ?int $basestationCount = null;
-    /** @var InternetSubscription */
+    /**
+     * @var InternetSubscription
+     */
     protected ?InternetSubscription $primaryInternetSubscription = null;
     /**
      * the external identifier of the site as a candidate
@@ -37,7 +41,8 @@ class Site extends BaseSite
      */
     protected ?int $candidateExternalId = null;
     /**
-     * ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department available for some countries).
+     * ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department
+     * available for some countries).
      *
      * @var LocationItem[]
      */
@@ -66,204 +71,308 @@ class Site extends BaseSite
      * @var string
      */
     protected ?string $lastEditedBy = null;
-    /** @var string[] */
-    protected ?array $actions = null;
-    /** @var string[] */
-    protected ?array $resources = null;
-    protected $objects = array('host' => '\\Arimac\\Sigfox\\Definition\\MinHost', 'maintenance' => '\\Arimac\\Sigfox\\Definition\\MinMaintenance', 'group' => '\\Arimac\\Sigfox\\Definition\\MinGroup', 'primaryInternetSubscription' => '\\Arimac\\Sigfox\\Definition\\InternetSubscription');
     /**
-     * @param string $id The site's identifier
+     * @var string[]
      */
-    function setId(?string $id)
+    protected ?array $actions = null;
+    /**
+     * @var string[]
+     */
+    protected ?array $resources = null;
+    protected $serialize = array('host' => MinHost::class, 'maintenance' => MinMaintenance::class, 'group' => MinGroup::class, 'primaryInternetSubscription' => InternetSubscription::class);
+    /**
+     * Setter for id
+     *
+     * @param string $id The site's identifier
+     *
+     * @return self To use in method chains
+     */
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The site's identifier
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
-     * @param MinHost host
+     * Setter for host
+     *
+     * @param MinHost $host
+     *
+     * @return self To use in method chains
      */
-    function setHost(?MinHost $host)
+    public function setHost(?MinHost $host) : self
     {
         $this->host = $host;
+        return $this;
     }
     /**
-     * @return MinHost host
+     * Getter for host
+     *
+     * @return MinHost
      */
-    function getHost() : ?MinHost
+    public function getHost() : MinHost
     {
         return $this->host;
     }
     /**
-     * @param MinMaintenance maintenance
+     * Setter for maintenance
+     *
+     * @param MinMaintenance $maintenance
+     *
+     * @return self To use in method chains
      */
-    function setMaintenance(?MinMaintenance $maintenance)
+    public function setMaintenance(?MinMaintenance $maintenance) : self
     {
         $this->maintenance = $maintenance;
+        return $this;
     }
     /**
-     * @return MinMaintenance maintenance
+     * Getter for maintenance
+     *
+     * @return MinMaintenance
      */
-    function getMaintenance() : ?MinMaintenance
+    public function getMaintenance() : MinMaintenance
     {
         return $this->maintenance;
     }
     /**
-     * @param MinGroup group
+     * Setter for group
+     *
+     * @param MinGroup $group
+     *
+     * @return self To use in method chains
      */
-    function setGroup(?MinGroup $group)
+    public function setGroup(?MinGroup $group) : self
     {
         $this->group = $group;
+        return $this;
     }
     /**
-     * @return MinGroup group
+     * Getter for group
+     *
+     * @return MinGroup
      */
-    function getGroup() : ?MinGroup
+    public function getGroup() : MinGroup
     {
         return $this->group;
     }
     /**
+     * Setter for basestationCount
+     *
      * @param int $basestationCount the number of base station installed on this site
+     *
+     * @return self To use in method chains
      */
-    function setBasestationCount(?int $basestationCount)
+    public function setBasestationCount(?int $basestationCount) : self
     {
         $this->basestationCount = $basestationCount;
+        return $this;
     }
     /**
+     * Getter for basestationCount
+     *
      * @return int the number of base station installed on this site
      */
-    function getBasestationCount() : ?int
+    public function getBasestationCount() : int
     {
         return $this->basestationCount;
     }
     /**
-     * @param InternetSubscription primaryInternetSubscription
+     * Setter for primaryInternetSubscription
+     *
+     * @param InternetSubscription $primaryInternetSubscription
+     *
+     * @return self To use in method chains
      */
-    function setPrimaryInternetSubscription(?InternetSubscription $primaryInternetSubscription)
+    public function setPrimaryInternetSubscription(?InternetSubscription $primaryInternetSubscription) : self
     {
         $this->primaryInternetSubscription = $primaryInternetSubscription;
+        return $this;
     }
     /**
-     * @return InternetSubscription primaryInternetSubscription
+     * Getter for primaryInternetSubscription
+     *
+     * @return InternetSubscription
      */
-    function getPrimaryInternetSubscription() : ?InternetSubscription
+    public function getPrimaryInternetSubscription() : InternetSubscription
     {
         return $this->primaryInternetSubscription;
     }
     /**
+     * Setter for candidateExternalId
+     *
      * @param int $candidateExternalId the external identifier of the site as a candidate
+     *
+     * @return self To use in method chains
      */
-    function setCandidateExternalId(?int $candidateExternalId)
+    public function setCandidateExternalId(?int $candidateExternalId) : self
     {
         $this->candidateExternalId = $candidateExternalId;
+        return $this;
     }
     /**
+     * Getter for candidateExternalId
+     *
      * @return int the external identifier of the site as a candidate
      */
-    function getCandidateExternalId() : ?int
+    public function getCandidateExternalId() : int
     {
         return $this->candidateExternalId;
     }
     /**
-     * @param LocationItem[] $location ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department available for some countries).
+     * Setter for location
+     *
+     * @param LocationItem[] $location ISO 3166-1 UN M.49 country code of the site location. The first code is the
+     *                                 country (region and department available for some countries).
+     *
+     * @return self To use in method chains
      */
-    function setLocation(?array $location)
+    public function setLocation(?array $location) : self
     {
         $this->location = $location;
+        return $this;
     }
     /**
-     * @return LocationItem[] ISO 3166-1 UN M.49 country code of the site location. The first code is the country (region and department available for some countries).
+     * Getter for location
+     *
+     * @return LocationItem[] ISO 3166-1 UN M.49 country code of the site location. The first code is the country
+     *                        (region and department available for some countries).
      */
-    function getLocation() : ?array
+    public function getLocation() : array
     {
         return $this->location;
     }
     /**
+     * Setter for creationTime
+     *
      * @param int $creationTime Date of the creation of this site (in milliseconds)
+     *
+     * @return self To use in method chains
      */
-    function setCreationTime(?int $creationTime)
+    public function setCreationTime(?int $creationTime) : self
     {
         $this->creationTime = $creationTime;
+        return $this;
     }
     /**
+     * Getter for creationTime
+     *
      * @return int Date of the creation of this site (in milliseconds)
      */
-    function getCreationTime() : ?int
+    public function getCreationTime() : int
     {
         return $this->creationTime;
     }
     /**
+     * Setter for createdBy
+     *
      * @param string $createdBy Identifier of the user who created this site
+     *
+     * @return self To use in method chains
      */
-    function setCreatedBy(?string $createdBy)
+    public function setCreatedBy(?string $createdBy) : self
     {
         $this->createdBy = $createdBy;
+        return $this;
     }
     /**
+     * Getter for createdBy
+     *
      * @return string Identifier of the user who created this site
      */
-    function getCreatedBy() : ?string
+    public function getCreatedBy() : string
     {
         return $this->createdBy;
     }
     /**
+     * Setter for lastEditedTime
+     *
      * @param int $lastEditedTime Date of the last edition of this site (in milliseconds)
+     *
+     * @return self To use in method chains
      */
-    function setLastEditedTime(?int $lastEditedTime)
+    public function setLastEditedTime(?int $lastEditedTime) : self
     {
         $this->lastEditedTime = $lastEditedTime;
+        return $this;
     }
     /**
+     * Getter for lastEditedTime
+     *
      * @return int Date of the last edition of this site (in milliseconds)
      */
-    function getLastEditedTime() : ?int
+    public function getLastEditedTime() : int
     {
         return $this->lastEditedTime;
     }
     /**
+     * Setter for lastEditedBy
+     *
      * @param string $lastEditedBy Identifier of the user who last edited this site
+     *
+     * @return self To use in method chains
      */
-    function setLastEditedBy(?string $lastEditedBy)
+    public function setLastEditedBy(?string $lastEditedBy) : self
     {
         $this->lastEditedBy = $lastEditedBy;
+        return $this;
     }
     /**
+     * Getter for lastEditedBy
+     *
      * @return string Identifier of the user who last edited this site
      */
-    function getLastEditedBy() : ?string
+    public function getLastEditedBy() : string
     {
         return $this->lastEditedBy;
     }
     /**
-     * @param string[] actions
+     * Setter for actions
+     *
+     * @param string[] $actions
+     *
+     * @return self To use in method chains
      */
-    function setActions(?array $actions)
+    public function setActions(?array $actions) : self
     {
         $this->actions = $actions;
+        return $this;
     }
     /**
-     * @return string[] actions
+     * Getter for actions
+     *
+     * @return string[]
      */
-    function getActions() : ?array
+    public function getActions() : array
     {
         return $this->actions;
     }
     /**
-     * @param string[] resources
+     * Setter for resources
+     *
+     * @param string[] $resources
+     *
+     * @return self To use in method chains
      */
-    function setResources(?array $resources)
+    public function setResources(?array $resources) : self
     {
         $this->resources = $resources;
+        return $this;
     }
     /**
-     * @return string[] resources
+     * Getter for resources
+     *
+     * @return string[]
      */
-    function getResources() : ?array
+    public function getResources() : array
     {
         return $this->resources;
     }

@@ -5,41 +5,51 @@ namespace Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition;
 class CellularConnectivityBase extends Definition
 {
-    /** REMOTE (Configuration provided by Cloud) */
+    /**
+     * REMOTE (Configuration provided by Cloud)
+     */
     public const SOURCE_REMOTE = 0;
-    /** OTHERS (From shell console and other origins) */
+    /**
+     * OTHERS (From shell console and other origins)
+     */
     public const SOURCE_OTHERS = 1;
-    /** DEFAULT (Auto-Generated) */
+    /**
+     * DEFAULT (Auto-Generated)
+     */
     public const SOURCE_DEFAULT = 2;
-    /** TOOLS (Factory, AAT or secure-control) */
+    /**
+     * TOOLS (Factory, AAT or secure-control)
+     */
     public const SOURCE_TOOLS = 3;
-    protected $required = array('apn', 'name');
     /**
      * The name of the configuration
      *
      * @var string
      */
-    protected string $name;
+    protected ?string $name = null;
     /**
      * The APN used to connect to the base station with this cellular connectivity configuration
      *
      * @var string
      */
-    protected string $apn;
+    protected ?string $apn = null;
     /**
-     * The username used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     * The username used to connect to the base station with this cellular connectivity configuration. This field can
+     * be unset by setting the value as an empty string.
      *
      * @var string
      */
     protected ?string $username = null;
     /**
-     * The password used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     * The password used to connect to the base station with this cellular connectivity configuration. This field can
+     * be unset by setting the value as an empty string.
      *
      * @var string
      */
     protected ?string $password = null;
     /**
-     * The PIN used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     * The PIN used to connect to the base station with this cellular connectivity configuration. This field can be
+     * unset by setting the value as an empty string.
      *
      * @var string
      */
@@ -52,117 +62,160 @@ class CellularConnectivityBase extends Definition
     protected ?bool $roaming = null;
     /**
      * Configuration origin of the connectivity
-     * - `CellularConnectivityBase::SOURCE_REMOTE`
-     * - `CellularConnectivityBase::SOURCE_OTHERS`
-     * - `CellularConnectivityBase::SOURCE_DEFAULT`
-     * - `CellularConnectivityBase::SOURCE_TOOLS`
      *
-     * @var int
+     * @var self::SOURCE_*
      */
     protected ?int $source = null;
     /**
+     * Setter for name
+     *
      * @param string $name The name of the configuration
+     *
+     * @return self To use in method chains
      */
-    function setName(string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The name of the configuration
      */
-    function getName() : string
+    public function getName() : string
     {
         return $this->name;
     }
     /**
+     * Setter for apn
+     *
      * @param string $apn The APN used to connect to the base station with this cellular connectivity configuration
+     *
+     * @return self To use in method chains
      */
-    function setApn(string $apn)
+    public function setApn(?string $apn) : self
     {
         $this->apn = $apn;
+        return $this;
     }
     /**
+     * Getter for apn
+     *
      * @return string The APN used to connect to the base station with this cellular connectivity configuration
      */
-    function getApn() : string
+    public function getApn() : string
     {
         return $this->apn;
     }
     /**
-     * @param string $username The username used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     * Setter for username
+     *
+     * @param string $username The username used to connect to the base station with this cellular connectivity
+     *                         configuration. This field can be unset by setting the value as an empty string.
+     *
+     * @return self To use in method chains
      */
-    function setUsername(?string $username)
+    public function setUsername(?string $username) : self
     {
         $this->username = $username;
+        return $this;
     }
     /**
-     * @return string The username used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     * Getter for username
+     *
+     * @return string The username used to connect to the base station with this cellular connectivity configuration.
+     *                This field can be unset by setting the value as an empty string.
      */
-    function getUsername() : ?string
+    public function getUsername() : string
     {
         return $this->username;
     }
     /**
-     * @param string $password The password used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     * Setter for password
+     *
+     * @param string $password The password used to connect to the base station with this cellular connectivity
+     *                         configuration. This field can be unset by setting the value as an empty string.
+     *
+     * @return self To use in method chains
      */
-    function setPassword(?string $password)
+    public function setPassword(?string $password) : self
     {
         $this->password = $password;
+        return $this;
     }
     /**
-     * @return string The password used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     * Getter for password
+     *
+     * @return string The password used to connect to the base station with this cellular connectivity configuration.
+     *                This field can be unset by setting the value as an empty string.
      */
-    function getPassword() : ?string
+    public function getPassword() : string
     {
         return $this->password;
     }
     /**
-     * @param string $pin The PIN used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     * Setter for pin
+     *
+     * @param string $pin The PIN used to connect to the base station with this cellular connectivity configuration.
+     *                    This field can be unset by setting the value as an empty string.
+     *
+     * @return self To use in method chains
      */
-    function setPin(?string $pin)
+    public function setPin(?string $pin) : self
     {
         $this->pin = $pin;
+        return $this;
     }
     /**
-     * @return string The PIN used to connect to the base station with this cellular connectivity configuration. This field can be unset by setting the value as an empty string.
+     * Getter for pin
+     *
+     * @return string The PIN used to connect to the base station with this cellular connectivity configuration. This
+     *                field can be unset by setting the value as an empty string.
      */
-    function getPin() : ?string
+    public function getPin() : string
     {
         return $this->pin;
     }
     /**
+     * Setter for roaming
+     *
      * @param bool $roaming Indicates if the cellular connectivity is registered on a roaming network.
+     *
+     * @return self To use in method chains
      */
-    function setRoaming(?bool $roaming)
+    public function setRoaming(?bool $roaming) : self
     {
         $this->roaming = $roaming;
+        return $this;
     }
     /**
+     * Getter for roaming
+     *
      * @return bool Indicates if the cellular connectivity is registered on a roaming network.
      */
-    function getRoaming() : ?bool
+    public function getRoaming() : bool
     {
         return $this->roaming;
     }
     /**
-     * @param int $source Configuration origin of the connectivity
-     * - `CellularConnectivityBase::SOURCE_REMOTE`
-     * - `CellularConnectivityBase::SOURCE_OTHERS`
-     * - `CellularConnectivityBase::SOURCE_DEFAULT`
-     * - `CellularConnectivityBase::SOURCE_TOOLS`
+     * Setter for source
+     *
+     * @param self::SOURCE_* $source Configuration origin of the connectivity
+     *
+     * @return self To use in method chains
      */
-    function setSource(?int $source)
+    public function setSource(?int $source) : self
     {
         $this->source = $source;
+        return $this;
     }
     /**
-     * @return int Configuration origin of the connectivity
-     * - `CellularConnectivityBase::SOURCE_REMOTE`
-     * - `CellularConnectivityBase::SOURCE_OTHERS`
-     * - `CellularConnectivityBase::SOURCE_DEFAULT`
-     * - `CellularConnectivityBase::SOURCE_TOOLS`
+     * Getter for source
+     *
+     * @return self::SOURCE_* Configuration origin of the connectivity
      */
-    function getSource() : ?int
+    public function getSource() : int
     {
         return $this->source;
     }

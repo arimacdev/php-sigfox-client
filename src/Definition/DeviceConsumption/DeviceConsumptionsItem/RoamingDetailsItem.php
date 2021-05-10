@@ -30,58 +30,86 @@ class RoamingDetailsItem extends Definition
      */
     protected ?int $territoryRoamingDownlinkFrameCount = null;
     /**
+     * Setter for territory
+     *
      * @param string $territory Country of the Operator (3 letters from the ISO 3166-1 alpha-3 country code).
+     *
+     * @return self To use in method chains
      */
-    function setTerritory(?string $territory)
+    public function setTerritory(?string $territory) : self
     {
         $this->territory = $territory;
+        return $this;
     }
     /**
+     * Getter for territory
+     *
      * @return string Country of the Operator (3 letters from the ISO 3166-1 alpha-3 country code).
      */
-    function getTerritory() : ?string
+    public function getTerritory() : string
     {
         return $this->territory;
     }
     /**
+     * Setter for operator
+     *
      * @param string $operator Name of the Operator
+     *
+     * @return self To use in method chains
      */
-    function setOperator(?string $operator)
+    public function setOperator(?string $operator) : self
     {
         $this->operator = $operator;
+        return $this;
     }
     /**
+     * Getter for operator
+     *
      * @return string Name of the Operator
      */
-    function getOperator() : ?string
+    public function getOperator() : string
     {
         return $this->operator;
     }
     /**
+     * Setter for territoryRoamingFrameCount
+     *
      * @param int $territoryRoamingFrameCount Number of uplink roaming messages this day for this operator
+     *
+     * @return self To use in method chains
      */
-    function setTerritoryRoamingFrameCount(?int $territoryRoamingFrameCount)
+    public function setTerritoryRoamingFrameCount(?int $territoryRoamingFrameCount) : self
     {
         $this->territoryRoamingFrameCount = $territoryRoamingFrameCount;
+        return $this;
     }
     /**
+     * Getter for territoryRoamingFrameCount
+     *
      * @return int Number of uplink roaming messages this day for this operator
      */
-    function getTerritoryRoamingFrameCount() : ?int
+    public function getTerritoryRoamingFrameCount() : int
     {
         return $this->territoryRoamingFrameCount;
     }
     /**
+     * Setter for territoryRoamingDownlinkFrameCount
+     *
      * @param int $territoryRoamingDownlinkFrameCount Number of downlink roaming messages this day for this operator
+     *
+     * @return self To use in method chains
      */
-    function setTerritoryRoamingDownlinkFrameCount(?int $territoryRoamingDownlinkFrameCount)
+    public function setTerritoryRoamingDownlinkFrameCount(?int $territoryRoamingDownlinkFrameCount) : self
     {
         $this->territoryRoamingDownlinkFrameCount = $territoryRoamingDownlinkFrameCount;
+        return $this;
     }
     /**
+     * Getter for territoryRoamingDownlinkFrameCount
+     *
      * @return int Number of downlink roaming messages this day for this operator
      */
-    function getTerritoryRoamingDownlinkFrameCount() : ?int
+    public function getTerritoryRoamingDownlinkFrameCount() : int
     {
         return $this->territoryRoamingDownlinkFrameCount;
     }

@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\Bounds;
 use Arimac\Sigfox\Definition;
 /**
  * Defines tiles reference to display on web map
@@ -21,48 +20,71 @@ class TilesResponse extends Definition
      * @var string
      */
     protected ?string $tmsTemplateUrl = null;
-    /** @var Bounds */
-    protected ?Bounds $bounds = null;
-    protected $objects = array('bounds' => '\\Arimac\\Sigfox\\Definition\\Bounds');
     /**
-     * @param string $baseImgUrl The tiles base image url
+     * @var Bounds
      */
-    function setBaseImgUrl(?string $baseImgUrl)
+    protected ?Bounds $bounds = null;
+    protected $serialize = array('bounds' => Bounds::class);
+    /**
+     * Setter for baseImgUrl
+     *
+     * @param string $baseImgUrl The tiles base image url
+     *
+     * @return self To use in method chains
+     */
+    public function setBaseImgUrl(?string $baseImgUrl) : self
     {
         $this->baseImgUrl = $baseImgUrl;
+        return $this;
     }
     /**
+     * Getter for baseImgUrl
+     *
      * @return string The tiles base image url
      */
-    function getBaseImgUrl() : ?string
+    public function getBaseImgUrl() : string
     {
         return $this->baseImgUrl;
     }
     /**
+     * Setter for tmsTemplateUrl
+     *
      * @param string $tmsTemplateUrl The TMS template url
+     *
+     * @return self To use in method chains
      */
-    function setTmsTemplateUrl(?string $tmsTemplateUrl)
+    public function setTmsTemplateUrl(?string $tmsTemplateUrl) : self
     {
         $this->tmsTemplateUrl = $tmsTemplateUrl;
+        return $this;
     }
     /**
+     * Getter for tmsTemplateUrl
+     *
      * @return string The TMS template url
      */
-    function getTmsTemplateUrl() : ?string
+    public function getTmsTemplateUrl() : string
     {
         return $this->tmsTemplateUrl;
     }
     /**
-     * @param Bounds bounds
+     * Setter for bounds
+     *
+     * @param Bounds $bounds
+     *
+     * @return self To use in method chains
      */
-    function setBounds(?Bounds $bounds)
+    public function setBounds(?Bounds $bounds) : self
     {
         $this->bounds = $bounds;
+        return $this;
     }
     /**
-     * @return Bounds bounds
+     * Getter for bounds
+     *
+     * @return Bounds
      */
-    function getBounds() : ?Bounds
+    public function getBounds() : Bounds
     {
         return $this->bounds;
     }

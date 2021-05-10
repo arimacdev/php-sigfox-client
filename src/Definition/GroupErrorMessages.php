@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\GroupCallbackMedium;
 use Arimac\Sigfox\Definition;
 class GroupErrorMessages extends Definition
 {
@@ -54,7 +53,9 @@ class GroupErrorMessages extends Definition
      * @var string
      */
     protected ?string $message = null;
-    /** @var GroupCallbackMedium */
+    /**
+     * @var GroupCallbackMedium
+     */
     protected ?GroupCallbackMedium $callback = null;
     /**
      * All the parameters which have served to build the callback, see callback doc for an exhaustive list.
@@ -62,144 +63,216 @@ class GroupErrorMessages extends Definition
      * @var array
      */
     protected ?array $parameters = null;
-    protected $objects = array('callback' => '\\Arimac\\Sigfox\\Definition\\GroupCallbackMedium');
+    protected $serialize = array('callback' => GroupCallbackMedium::class);
     /**
+     * Setter for device
+     *
      * @param string $device Device identifier
+     *
+     * @return self To use in method chains
      */
-    function setDevice(?string $device)
+    public function setDevice(?string $device) : self
     {
         $this->device = $device;
+        return $this;
     }
     /**
+     * Getter for device
+     *
      * @return string Device identifier
      */
-    function getDevice() : ?string
+    public function getDevice() : string
     {
         return $this->device;
     }
     /**
+     * Setter for deviceUrl
+     *
      * @param string $deviceUrl Url to the device
+     *
+     * @return self To use in method chains
      */
-    function setDeviceUrl(?string $deviceUrl)
+    public function setDeviceUrl(?string $deviceUrl) : self
     {
         $this->deviceUrl = $deviceUrl;
+        return $this;
     }
     /**
+     * Getter for deviceUrl
+     *
      * @return string Url to the device
      */
-    function getDeviceUrl() : ?string
+    public function getDeviceUrl() : string
     {
         return $this->deviceUrl;
     }
     /**
+     * Setter for deviceType
+     *
      * @param string $deviceType Device type identifier
+     *
+     * @return self To use in method chains
      */
-    function setDeviceType(?string $deviceType)
+    public function setDeviceType(?string $deviceType) : self
     {
         $this->deviceType = $deviceType;
+        return $this;
     }
     /**
+     * Getter for deviceType
+     *
      * @return string Device type identifier
      */
-    function getDeviceType() : ?string
+    public function getDeviceType() : string
     {
         return $this->deviceType;
     }
     /**
+     * Setter for time
+     *
      * @param int $time Timestamp of the message (posix format)
+     *
+     * @return self To use in method chains
      */
-    function setTime(?int $time)
+    public function setTime(?int $time) : self
     {
         $this->time = $time;
+        return $this;
     }
     /**
+     * Getter for time
+     *
      * @return int Timestamp of the message (posix format)
      */
-    function getTime() : ?int
+    public function getTime() : int
     {
         return $this->time;
     }
     /**
+     * Setter for data
+     *
      * @param string $data Data message
+     *
+     * @return self To use in method chains
      */
-    function setData(?string $data)
+    public function setData(?string $data) : self
     {
         $this->data = $data;
+        return $this;
     }
     /**
+     * Getter for data
+     *
      * @return string Data message
      */
-    function getData() : ?string
+    public function getData() : string
     {
         return $this->data;
     }
     /**
+     * Setter for snr
+     *
      * @param string $snr The SNR of the messages received by the network so far
+     *
+     * @return self To use in method chains
      */
-    function setSnr(?string $snr)
+    public function setSnr(?string $snr) : self
     {
         $this->snr = $snr;
+        return $this;
     }
     /**
+     * Getter for snr
+     *
      * @return string The SNR of the messages received by the network so far
      */
-    function getSnr() : ?string
+    public function getSnr() : string
     {
         return $this->snr;
     }
     /**
+     * Setter for status
+     *
      * @param string $status Contains the callback response status.
+     *
+     * @return self To use in method chains
      */
-    function setStatus(?string $status)
+    public function setStatus(?string $status) : self
     {
         $this->status = $status;
+        return $this;
     }
     /**
+     * Getter for status
+     *
      * @return string Contains the callback response status.
      */
-    function getStatus() : ?string
+    public function getStatus() : string
     {
         return $this->status;
     }
     /**
+     * Setter for message
+     *
      * @param string $message Contains additional information on the response.
+     *
+     * @return self To use in method chains
      */
-    function setMessage(?string $message)
+    public function setMessage(?string $message) : self
     {
         $this->message = $message;
+        return $this;
     }
     /**
+     * Getter for message
+     *
      * @return string Contains additional information on the response.
      */
-    function getMessage() : ?string
+    public function getMessage() : string
     {
         return $this->message;
     }
     /**
-     * @param GroupCallbackMedium callback
+     * Setter for callback
+     *
+     * @param GroupCallbackMedium $callback
+     *
+     * @return self To use in method chains
      */
-    function setCallback(?GroupCallbackMedium $callback)
+    public function setCallback(?GroupCallbackMedium $callback) : self
     {
         $this->callback = $callback;
+        return $this;
     }
     /**
-     * @return GroupCallbackMedium callback
+     * Getter for callback
+     *
+     * @return GroupCallbackMedium
      */
-    function getCallback() : ?GroupCallbackMedium
+    public function getCallback() : GroupCallbackMedium
     {
         return $this->callback;
     }
     /**
-     * @param array $parameters All the parameters which have served to build the callback, see callback doc for an exhaustive list.
+     * Setter for parameters
+     *
+     * @param array $parameters All the parameters which have served to build the callback, see callback doc for an
+     *                          exhaustive list.
+     *
+     * @return self To use in method chains
      */
-    function setParameters(?array $parameters)
+    public function setParameters(?array $parameters) : self
     {
         $this->parameters = $parameters;
+        return $this;
     }
     /**
-     * @return array All the parameters which have served to build the callback, see callback doc for an exhaustive list.
+     * Getter for parameters
+     *
+     * @return array All the parameters which have served to build the callback, see callback doc for an exhaustive
+     *               list.
      */
-    function getParameters() : ?array
+    public function getParameters() : array
     {
         return $this->parameters;
     }

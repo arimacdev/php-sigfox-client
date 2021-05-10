@@ -8,13 +8,12 @@ use Arimac\Sigfox\Definition;
  */
 class DataItem extends Definition
 {
-    protected $required = array('id');
     /**
      * The device's identifier (hexadecimal format)
      *
      * @var string
      */
-    protected string $id;
+    protected ?string $id = null;
     /**
      * The device's PAC (Porting Access Code)
      *
@@ -30,15 +29,15 @@ class DataItem extends Definition
     /**
      * The device's provided latitude
      *
-     * @var float
+     * @var int
      */
-    protected ?float $lat = null;
+    protected ?int $lat = null;
     /**
      * The device's provided longitude
      *
-     * @var float
+     * @var int
      */
-    protected ?float $lng = null;
+    protected ?int $lng = null;
     /**
      * Value describing if the device is permitted to automatically renew its token
      *
@@ -52,100 +51,149 @@ class DataItem extends Definition
      */
     protected ?bool $activable = null;
     /**
+     * Setter for id
+     *
      * @param string $id The device's identifier (hexadecimal format)
+     *
+     * @return self To use in method chains
      */
-    function setId(string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The device's identifier (hexadecimal format)
      */
-    function getId() : string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
+     * Setter for pac
+     *
      * @param string $pac The device's PAC (Porting Access Code)
+     *
+     * @return self To use in method chains
      */
-    function setPac(?string $pac)
+    public function setPac(?string $pac) : self
     {
         $this->pac = $pac;
+        return $this;
     }
     /**
+     * Getter for pac
+     *
      * @return string The device's PAC (Porting Access Code)
      */
-    function getPac() : ?string
+    public function getPac() : string
     {
         return $this->pac;
     }
     /**
+     * Setter for name
+     *
      * @param string $name The device's name
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The device's name
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }
     /**
-     * @param float $lat The device's provided latitude
+     * Setter for lat
+     *
+     * @param int $lat The device's provided latitude
+     *
+     * @return self To use in method chains
      */
-    function setLat(?float $lat)
+    public function setLat(?int $lat) : self
     {
         $this->lat = $lat;
+        return $this;
     }
     /**
-     * @return float The device's provided latitude
+     * Getter for lat
+     *
+     * @return int The device's provided latitude
      */
-    function getLat() : ?float
+    public function getLat() : int
     {
         return $this->lat;
     }
     /**
-     * @param float $lng The device's provided longitude
+     * Setter for lng
+     *
+     * @param int $lng The device's provided longitude
+     *
+     * @return self To use in method chains
      */
-    function setLng(?float $lng)
+    public function setLng(?int $lng) : self
     {
         $this->lng = $lng;
+        return $this;
     }
     /**
-     * @return float The device's provided longitude
+     * Getter for lng
+     *
+     * @return int The device's provided longitude
      */
-    function getLng() : ?float
+    public function getLng() : int
     {
         return $this->lng;
     }
     /**
+     * Setter for automaticRenewal
+     *
      * @param bool $automaticRenewal Value describing if the device is permitted to automatically renew its token
+     *
+     * @return self To use in method chains
      */
-    function setAutomaticRenewal(?bool $automaticRenewal)
+    public function setAutomaticRenewal(?bool $automaticRenewal) : self
     {
         $this->automaticRenewal = $automaticRenewal;
+        return $this;
     }
     /**
+     * Getter for automaticRenewal
+     *
      * @return bool Value describing if the device is permitted to automatically renew its token
      */
-    function getAutomaticRenewal() : ?bool
+    public function getAutomaticRenewal() : bool
     {
         return $this->automaticRenewal;
     }
     /**
+     * Setter for activable
+     *
      * @param bool $activable Value describing if the devices are activable and can recover a token
+     *
+     * @return self To use in method chains
      */
-    function setActivable(?bool $activable)
+    public function setActivable(?bool $activable) : self
     {
         $this->activable = $activable;
+        return $this;
     }
     /**
+     * Getter for activable
+     *
      * @return bool Value describing if the devices are activable and can recover a token
      */
-    function getActivable() : ?bool
+    public function getActivable() : bool
     {
         return $this->activable;
     }

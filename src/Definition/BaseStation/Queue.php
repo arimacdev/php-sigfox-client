@@ -15,39 +15,58 @@ class Queue extends Definition
      * The number of messages sent to back-end by the base station.
      * A high difference between in and out values may suggest either connectivity problems with the back-end,
      * or too many messages received at once by the station
+     * 
      *
      * @var int
      */
     protected ?int $out = null;
     /**
+     * Setter for in
+     *
      * @param int $in The number of messages handled by the base station
+     *
+     * @return self To use in method chains
      */
-    function setIn(?int $in)
+    public function setIn(?int $in) : self
     {
         $this->in = $in;
+        return $this;
     }
     /**
+     * Getter for in
+     *
      * @return int The number of messages handled by the base station
      */
-    function getIn() : ?int
+    public function getIn() : int
     {
         return $this->in;
     }
     /**
+     * Setter for out
+     *
      * @param int $out The number of messages sent to back-end by the base station.
-     * A high difference between in and out values may suggest either connectivity problems with the back-end,
-     * or too many messages received at once by the station
+     *                 A high difference between in and out values may suggest either connectivity problems with the
+     *                 back-end,
+     *                 or too many messages received at once by the station
+     *                 
+     *
+     * @return self To use in method chains
      */
-    function setOut(?int $out)
+    public function setOut(?int $out) : self
     {
         $this->out = $out;
+        return $this;
     }
     /**
+     * Getter for out
+     *
      * @return int The number of messages sent to back-end by the base station.
-     * A high difference between in and out values may suggest either connectivity problems with the back-end,
-     * or too many messages received at once by the station
+     *             A high difference between in and out values may suggest either connectivity problems with the
+     *             back-end,
+     *             or too many messages received at once by the station
+     *             
      */
-    function getOut() : ?int
+    public function getOut() : int
     {
         return $this->out;
     }

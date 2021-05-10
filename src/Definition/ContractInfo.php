@@ -2,15 +2,40 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CommonContractInfo;
-use Arimac\Sigfox\Definition\MinGroup;
-use Arimac\Sigfox\Definition\MinContractInfo;
-use Arimac\Sigfox\Definition\MinGroup;
+use Arimac\Sigfox\Definition;
 /**
  * Defines all the contract properties.
  */
 class ContractInfo extends CommonContractInfo
 {
+    /**
+     * Pricing model verion 1
+     */
+    public const PRICING_MODEL_PRICING_MODEL_V1 = 1;
+    /**
+     * Pricing model verion 2
+     */
+    public const PRICING_MODEL_PRICING_MODEL_V2 = 2;
+    /**
+     * Pricing model verion 3
+     */
+    public const PRICING_MODEL_PRICING_MODEL_V3 = 3;
+    /**
+     * Free order
+     */
+    public const SUBSCRIPTION_PLAN_FREE_ORDER = 0;
+    /**
+     * Pay As You Grow (PAYG)
+     */
+    public const SUBSCRIPTION_PLAN_PAYG = 1;
+    /**
+     * Committed Volume Plan (CVP)
+     */
+    public const SUBSCRIPTION_PLAN_CVP = 2;
+    /**
+     * Flexible Committed Volume Plan (CVP Flex)
+     */
+    public const SUBSCRIPTION_PLAN_CVP_FLEX = 3;
     /**
      * The contract ID.
      *
@@ -19,6 +44,7 @@ class ContractInfo extends CommonContractInfo
     protected ?string $id = null;
     /**
      * The contract external ID. It's used to identify the contract info in EDRs.
+     * 
      *
      * @var string
      */
@@ -29,14 +55,18 @@ class ContractInfo extends CommonContractInfo
      * @var string
      */
     protected ?string $userId = null;
-    /** @var MinGroup */
+    /**
+     * @var MinGroup
+     */
     protected ?MinGroup $group = null;
-    /** @var MinContractInfo */
+    /**
+     * @var MinContractInfo
+     */
     protected ?MinContractInfo $order = null;
     /**
-     * The pricing model used by this contract info. - 1 -> Pricing model version 1. - 2 -> Pricing model version 2. - 3 -> Pricing model version 3.
+     * The pricing model used by this contract info.
      *
-     * @var int
+     * @var self::PRICING_MODEL_*
      */
     protected ?int $pricingModel = null;
     /**
@@ -76,9 +106,9 @@ class ContractInfo extends CommonContractInfo
      */
     protected ?string $timezone = null;
     /**
-     * The contract info subscription plan. - 0 -> Free order - 1 -> Pay As You Grow (PAYG) - 2 -> Committed Volume Plan (CVP) - 3 -> Flexible Committed Volume Plan (CVP Flex)
+     * The contract info subscription plan.
      *
-     * @var int
+     * @var self::SUBSCRIPTION_PLAN_*
      */
     protected ?int $subscriptionPlan = null;
     /**
@@ -105,242 +135,365 @@ class ContractInfo extends CommonContractInfo
      * @var int
      */
     protected ?int $tokensUsed = null;
-    protected $objects = array('group' => '\\Arimac\\Sigfox\\Definition\\MinGroup', 'order' => '\\Arimac\\Sigfox\\Definition\\MinContractInfo');
+    protected $serialize = array('group' => MinGroup::class, 'order' => MinContractInfo::class);
     /**
+     * Setter for id
+     *
      * @param string $id The contract ID.
+     *
+     * @return self To use in method chains
      */
-    function setId(?string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The contract ID.
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
+     * Setter for contractId
+     *
      * @param string $contractId The contract external ID. It's used to identify the contract info in EDRs.
+     *                           
+     *
+     * @return self To use in method chains
      */
-    function setContractId(?string $contractId)
+    public function setContractId(?string $contractId) : self
     {
         $this->contractId = $contractId;
+        return $this;
     }
     /**
+     * Getter for contractId
+     *
      * @return string The contract external ID. It's used to identify the contract info in EDRs.
+     *                
      */
-    function getContractId() : ?string
+    public function getContractId() : string
     {
         return $this->contractId;
     }
     /**
+     * Setter for userId
+     *
      * @param string $userId The ID of the user who created the contract in BSS.
+     *
+     * @return self To use in method chains
      */
-    function setUserId(?string $userId)
+    public function setUserId(?string $userId) : self
     {
         $this->userId = $userId;
+        return $this;
     }
     /**
+     * Getter for userId
+     *
      * @return string The ID of the user who created the contract in BSS.
      */
-    function getUserId() : ?string
+    public function getUserId() : string
     {
         return $this->userId;
     }
     /**
-     * @param MinGroup group
+     * Setter for group
+     *
+     * @param MinGroup $group
+     *
+     * @return self To use in method chains
      */
-    function setGroup(?MinGroup $group)
+    public function setGroup(?MinGroup $group) : self
     {
         $this->group = $group;
+        return $this;
     }
     /**
-     * @return MinGroup group
+     * Getter for group
+     *
+     * @return MinGroup
      */
-    function getGroup() : ?MinGroup
+    public function getGroup() : MinGroup
     {
         return $this->group;
     }
     /**
-     * @param MinContractInfo order
+     * Setter for order
+     *
+     * @param MinContractInfo $order
+     *
+     * @return self To use in method chains
      */
-    function setOrder(?MinContractInfo $order)
+    public function setOrder(?MinContractInfo $order) : self
     {
         $this->order = $order;
+        return $this;
     }
     /**
-     * @return MinContractInfo order
+     * Getter for order
+     *
+     * @return MinContractInfo
      */
-    function getOrder() : ?MinContractInfo
+    public function getOrder() : MinContractInfo
     {
         return $this->order;
     }
     /**
-     * @param int $pricingModel The pricing model used by this contract info. - 1 -> Pricing model version 1. - 2 -> Pricing model version 2. - 3 -> Pricing model version 3.
+     * Setter for pricingModel
+     *
+     * @param self::PRICING_MODEL_* $pricingModel The pricing model used by this contract info.
+     *
+     * @return self To use in method chains
      */
-    function setPricingModel(?int $pricingModel)
+    public function setPricingModel(?int $pricingModel) : self
     {
         $this->pricingModel = $pricingModel;
+        return $this;
     }
     /**
-     * @return int The pricing model used by this contract info. - 1 -> Pricing model version 1. - 2 -> Pricing model version 2. - 3 -> Pricing model version 3.
+     * Getter for pricingModel
+     *
+     * @return self::PRICING_MODEL_* The pricing model used by this contract info.
      */
-    function getPricingModel() : ?int
+    public function getPricingModel() : int
     {
         return $this->pricingModel;
     }
     /**
+     * Setter for createdBy
+     *
      * @param string $createdBy The user id of contract's creator
+     *
+     * @return self To use in method chains
      */
-    function setCreatedBy(?string $createdBy)
+    public function setCreatedBy(?string $createdBy) : self
     {
         $this->createdBy = $createdBy;
+        return $this;
     }
     /**
+     * Getter for createdBy
+     *
      * @return string The user id of contract's creator
      */
-    function getCreatedBy() : ?string
+    public function getCreatedBy() : string
     {
         return $this->createdBy;
     }
     /**
+     * Setter for lastEditionTime
+     *
      * @param int $lastEditionTime Creation date of this contract (timestamp in milliseconds since Unix Epoch)
+     *
+     * @return self To use in method chains
      */
-    function setLastEditionTime(?int $lastEditionTime)
+    public function setLastEditionTime(?int $lastEditionTime) : self
     {
         $this->lastEditionTime = $lastEditionTime;
+        return $this;
     }
     /**
+     * Getter for lastEditionTime
+     *
      * @return int Creation date of this contract (timestamp in milliseconds since Unix Epoch)
      */
-    function getLastEditionTime() : ?int
+    public function getLastEditionTime() : int
     {
         return $this->lastEditionTime;
     }
     /**
+     * Setter for creationTime
+     *
      * @param int $creationTime Creation date of this contract (timestamp in milliseconds since Unix Epoch)
+     *
+     * @return self To use in method chains
      */
-    function setCreationTime(?int $creationTime)
+    public function setCreationTime(?int $creationTime) : self
     {
         $this->creationTime = $creationTime;
+        return $this;
     }
     /**
+     * Getter for creationTime
+     *
      * @return int Creation date of this contract (timestamp in milliseconds since Unix Epoch)
      */
-    function getCreationTime() : ?int
+    public function getCreationTime() : int
     {
         return $this->creationTime;
     }
     /**
+     * Setter for lastEditedBy
+     *
      * @param string $lastEditedBy The user id of the contract last editor
+     *
+     * @return self To use in method chains
      */
-    function setLastEditedBy(?string $lastEditedBy)
+    public function setLastEditedBy(?string $lastEditedBy) : self
     {
         $this->lastEditedBy = $lastEditedBy;
+        return $this;
     }
     /**
+     * Getter for lastEditedBy
+     *
      * @return string The user id of the contract last editor
      */
-    function getLastEditedBy() : ?string
+    public function getLastEditedBy() : string
     {
         return $this->lastEditedBy;
     }
     /**
+     * Setter for startTime
+     *
      * @param int $startTime The start time (in milliseconds) of the contract
+     *
+     * @return self To use in method chains
      */
-    function setStartTime(?int $startTime)
+    public function setStartTime(?int $startTime) : self
     {
         $this->startTime = $startTime;
+        return $this;
     }
     /**
+     * Getter for startTime
+     *
      * @return int The start time (in milliseconds) of the contract
      */
-    function getStartTime() : ?int
+    public function getStartTime() : int
     {
         return $this->startTime;
     }
     /**
-     * @param string $timezone The contract timezone name as a Java TimeZone ID ("full name" version only, like "America/Costa_Rica").
+     * Setter for timezone
+     *
+     * @param string $timezone The contract timezone name as a Java TimeZone ID ("full name" version only, like
+     *                         "America/Costa_Rica").
+     *
+     * @return self To use in method chains
      */
-    function setTimezone(?string $timezone)
+    public function setTimezone(?string $timezone) : self
     {
         $this->timezone = $timezone;
+        return $this;
     }
     /**
-     * @return string The contract timezone name as a Java TimeZone ID ("full name" version only, like "America/Costa_Rica").
+     * Getter for timezone
+     *
+     * @return string The contract timezone name as a Java TimeZone ID ("full name" version only, like
+     *                "America/Costa_Rica").
      */
-    function getTimezone() : ?string
+    public function getTimezone() : string
     {
         return $this->timezone;
     }
     /**
-     * @param int $subscriptionPlan The contract info subscription plan. - 0 -> Free order - 1 -> Pay As You Grow (PAYG) - 2 -> Committed Volume Plan (CVP) - 3 -> Flexible Committed Volume Plan (CVP Flex)
+     * Setter for subscriptionPlan
+     *
+     * @param self::SUBSCRIPTION_PLAN_* $subscriptionPlan The contract info subscription plan.
+     *
+     * @return self To use in method chains
      */
-    function setSubscriptionPlan(?int $subscriptionPlan)
+    public function setSubscriptionPlan(?int $subscriptionPlan) : self
     {
         $this->subscriptionPlan = $subscriptionPlan;
+        return $this;
     }
     /**
-     * @return int The contract info subscription plan. - 0 -> Free order - 1 -> Pay As You Grow (PAYG) - 2 -> Committed Volume Plan (CVP) - 3 -> Flexible Committed Volume Plan (CVP Flex)
+     * Getter for subscriptionPlan
+     *
+     * @return self::SUBSCRIPTION_PLAN_* The contract info subscription plan.
      */
-    function getSubscriptionPlan() : ?int
+    public function getSubscriptionPlan() : int
     {
         return $this->subscriptionPlan;
     }
     /**
+     * Setter for tokenDuration
+     *
      * @param int $tokenDuration The token duration in months. Must be >= 0. 0 means unlimited time.
+     *
+     * @return self To use in method chains
      */
-    function setTokenDuration(?int $tokenDuration)
+    public function setTokenDuration(?int $tokenDuration) : self
     {
         $this->tokenDuration = $tokenDuration;
+        return $this;
     }
     /**
+     * Getter for tokenDuration
+     *
      * @return int The token duration in months. Must be >= 0. 0 means unlimited time.
      */
-    function getTokenDuration() : ?int
+    public function getTokenDuration() : int
     {
         return $this->tokenDuration;
     }
     /**
+     * Setter for blacklistedTerritories
+     *
      * @param MinGroup[] $blacklistedTerritories The list of "blacklisted" territories, as an array of NIP groups.
+     *
+     * @return self To use in method chains
      */
-    function setBlacklistedTerritories(?array $blacklistedTerritories)
+    public function setBlacklistedTerritories(?array $blacklistedTerritories) : self
     {
         $this->blacklistedTerritories = $blacklistedTerritories;
+        return $this;
     }
     /**
+     * Getter for blacklistedTerritories
+     *
      * @return MinGroup[] The list of "blacklisted" territories, as an array of NIP groups.
      */
-    function getBlacklistedTerritories() : ?array
+    public function getBlacklistedTerritories() : array
     {
         return $this->blacklistedTerritories;
     }
     /**
+     * Setter for tokensInUse
+     *
      * @param int $tokensInUse The number of tokens in use.
+     *
+     * @return self To use in method chains
      */
-    function setTokensInUse(?int $tokensInUse)
+    public function setTokensInUse(?int $tokensInUse) : self
     {
         $this->tokensInUse = $tokensInUse;
+        return $this;
     }
     /**
+     * Getter for tokensInUse
+     *
      * @return int The number of tokens in use.
      */
-    function getTokensInUse() : ?int
+    public function getTokensInUse() : int
     {
         return $this->tokensInUse;
     }
     /**
+     * Setter for tokensUsed
+     *
      * @param int $tokensUsed The number of tokens used (expired or revoked).
+     *
+     * @return self To use in method chains
      */
-    function setTokensUsed(?int $tokensUsed)
+    public function setTokensUsed(?int $tokensUsed) : self
     {
         $this->tokensUsed = $tokensUsed;
+        return $this;
     }
     /**
+     * Getter for tokensUsed
+     *
      * @return int The number of tokens used (expired or revoked).
      */
-    function getTokensUsed() : ?int
+    public function getTokensUsed() : int
     {
         return $this->tokensUsed;
     }

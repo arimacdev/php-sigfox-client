@@ -2,24 +2,22 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CommonDevice;
-use Arimac\Sigfox\Definition\SingleDeviceFields;
+use Arimac\Sigfox\Definition;
 class DeviceCreationJob extends CommonDevice
 {
     use SingleDeviceFields;
-    protected $required = array('deviceTypeId', 'pac');
     /**
      * The device type's identifier this device is affected
      *
      * @var string
      */
-    protected string $deviceTypeId;
+    protected ?string $deviceTypeId = null;
     /**
      * The device's PAC (Porting Access Code)
      *
      * @var string
      */
-    protected string $pac;
+    protected ?string $pac = null;
     /**
      * Set to true if the device is a prototype
      *
@@ -41,110 +39,159 @@ class DeviceCreationJob extends CommonDevice
     /**
      * The device's provided latitude
      *
-     * @var float
+     * @var int
      */
-    protected ?float $lat = null;
+    protected ?int $lat = null;
     /**
      * The device's provided longitude
      *
-     * @var float
+     * @var int
      */
-    protected ?float $lng = null;
+    protected ?int $lng = null;
     /**
+     * Setter for deviceTypeId
+     *
      * @param string $deviceTypeId The device type's identifier this device is affected
+     *
+     * @return self To use in method chains
      */
-    function setDeviceTypeId(string $deviceTypeId)
+    public function setDeviceTypeId(?string $deviceTypeId) : self
     {
         $this->deviceTypeId = $deviceTypeId;
+        return $this;
     }
     /**
+     * Getter for deviceTypeId
+     *
      * @return string The device type's identifier this device is affected
      */
-    function getDeviceTypeId() : string
+    public function getDeviceTypeId() : string
     {
         return $this->deviceTypeId;
     }
     /**
+     * Setter for pac
+     *
      * @param string $pac The device's PAC (Porting Access Code)
+     *
+     * @return self To use in method chains
      */
-    function setPac(string $pac)
+    public function setPac(?string $pac) : self
     {
         $this->pac = $pac;
+        return $this;
     }
     /**
+     * Getter for pac
+     *
      * @return string The device's PAC (Porting Access Code)
      */
-    function getPac() : string
+    public function getPac() : string
     {
         return $this->pac;
     }
     /**
+     * Setter for prototype
+     *
      * @param bool $prototype Set to true if the device is a prototype
+     *
+     * @return self To use in method chains
      */
-    function setPrototype(?bool $prototype)
+    public function setPrototype(?bool $prototype) : self
     {
         $this->prototype = $prototype;
+        return $this;
     }
     /**
+     * Getter for prototype
+     *
      * @return bool Set to true if the device is a prototype
      */
-    function getPrototype() : ?bool
+    public function getPrototype() : bool
     {
         return $this->prototype;
     }
     /**
+     * Setter for automaticRenewal
+     *
      * @param bool $automaticRenewal Subscribtion to automatic token renewal
+     *
+     * @return self To use in method chains
      */
-    function setAutomaticRenewal(?bool $automaticRenewal)
+    public function setAutomaticRenewal(?bool $automaticRenewal) : self
     {
         $this->automaticRenewal = $automaticRenewal;
+        return $this;
     }
     /**
+     * Getter for automaticRenewal
+     *
      * @return bool Subscribtion to automatic token renewal
      */
-    function getAutomaticRenewal() : ?bool
+    public function getAutomaticRenewal() : bool
     {
         return $this->automaticRenewal;
     }
     /**
+     * Setter for activable
+     *
      * @param bool $activable The device is activable and can take a token
+     *
+     * @return self To use in method chains
      */
-    function setActivable(?bool $activable)
+    public function setActivable(?bool $activable) : self
     {
         $this->activable = $activable;
+        return $this;
     }
     /**
+     * Getter for activable
+     *
      * @return bool The device is activable and can take a token
      */
-    function getActivable() : ?bool
+    public function getActivable() : bool
     {
         return $this->activable;
     }
     /**
-     * @param float $lat The device's provided latitude
+     * Setter for lat
+     *
+     * @param int $lat The device's provided latitude
+     *
+     * @return self To use in method chains
      */
-    function setLat(?float $lat)
+    public function setLat(?int $lat) : self
     {
         $this->lat = $lat;
+        return $this;
     }
     /**
-     * @return float The device's provided latitude
+     * Getter for lat
+     *
+     * @return int The device's provided latitude
      */
-    function getLat() : ?float
+    public function getLat() : int
     {
         return $this->lat;
     }
     /**
-     * @param float $lng The device's provided longitude
+     * Setter for lng
+     *
+     * @param int $lng The device's provided longitude
+     *
+     * @return self To use in method chains
      */
-    function setLng(?float $lng)
+    public function setLng(?int $lng) : self
     {
         $this->lng = $lng;
+        return $this;
     }
     /**
-     * @return float The device's provided longitude
+     * Getter for lng
+     *
+     * @return int The device's provided longitude
      */
-    function getLng() : ?float
+    public function getLng() : int
     {
         return $this->lng;
     }

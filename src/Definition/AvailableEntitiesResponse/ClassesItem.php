@@ -24,44 +24,65 @@ class ClassesItem extends Definition
      */
     protected ?array $attenuation = null;
     /**
+     * Setter for id
+     *
      * @param int $id The Id of the device class.
+     *
+     * @return self To use in method chains
      */
-    function setId(?int $id)
+    public function setId(?int $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return int The Id of the device class.
      */
-    function getId() : ?int
+    public function getId() : int
     {
         return $this->id;
     }
     /**
+     * Setter for name
+     *
      * @param string $name The name of the device class.
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The name of the device class.
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }
     /**
+     * Setter for attenuation
+     *
      * @param int[] $attenuation The mean attenuation associated for calculation (in dB).
+     *
+     * @return self To use in method chains
      */
-    function setAttenuation(?array $attenuation)
+    public function setAttenuation(?array $attenuation) : self
     {
         $this->attenuation = $attenuation;
+        return $this;
     }
     /**
+     * Getter for attenuation
+     *
      * @return int[] The mean attenuation associated for calculation (in dB).
      */
-    function getAttenuation() : ?array
+    public function getAttenuation() : array
     {
         return $this->attenuation;
     }

@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\UpdateCallback;
+use Arimac\Sigfox\Definition;
 /**
  * Defines the properties needed to create an email callback
  */
@@ -27,44 +27,65 @@ class UpdateEmailCallback extends UpdateCallback
      */
     protected ?string $message = null;
     /**
+     * Setter for subject
+     *
      * @param string $subject The subject of the email.
+     *
+     * @return self To use in method chains
      */
-    function setSubject(?string $subject)
+    public function setSubject(?string $subject) : self
     {
         $this->subject = $subject;
+        return $this;
     }
     /**
+     * Getter for subject
+     *
      * @return string The subject of the email.
      */
-    function getSubject() : ?string
+    public function getSubject() : string
     {
         return $this->subject;
     }
     /**
+     * Setter for recipient
+     *
      * @param string $recipient The recipient of the email.
+     *
+     * @return self To use in method chains
      */
-    function setRecipient(?string $recipient)
+    public function setRecipient(?string $recipient) : self
     {
         $this->recipient = $recipient;
+        return $this;
     }
     /**
+     * Getter for recipient
+     *
      * @return string The recipient of the email.
      */
-    function getRecipient() : ?string
+    public function getRecipient() : string
     {
         return $this->recipient;
     }
     /**
+     * Setter for message
+     *
      * @param string $message the content of the message.
+     *
+     * @return self To use in method chains
      */
-    function setMessage(?string $message)
+    public function setMessage(?string $message) : self
     {
         $this->message = $message;
+        return $this;
     }
     /**
+     * Getter for message
+     *
      * @return string the content of the message.
      */
-    function getMessage() : ?string
+    public function getMessage() : string
     {
         return $this->message;
     }

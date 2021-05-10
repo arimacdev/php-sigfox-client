@@ -3,6 +3,10 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+/**
+ * Delete profiles or a given profile associated to the groupId
+ * 
+ */
 class UsersIdProfilesProfileIdDelete extends Definition
 {
     /**
@@ -13,10 +17,15 @@ class UsersIdProfilesProfileIdDelete extends Definition
     protected ?string $groupId = null;
     protected $query = array('groupId');
     /**
+     * Setter for groupId
+     *
      * @param string $groupId The group identifier
+     *
+     * @return self To use in method chains
      */
-    function setGroupId(?string $groupId)
+    public function setGroupId(?string $groupId) : self
     {
         $this->groupId = $groupId;
+        return $this;
     }
 }

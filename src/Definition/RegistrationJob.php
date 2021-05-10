@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\RegistrationJob\Status;
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Definition\RegistrationJob\Status;
 /**
  * information about a multiple registrations job
  */
@@ -45,87 +45,130 @@ class RegistrationJob extends Definition
      * @var Status
      */
     protected ?Status $status = null;
+    protected $serialize = array('status' => Status::class);
     /**
+     * Setter for jobDone
+     *
      * @param bool $jobDone If the job is finished or not
+     *
+     * @return self To use in method chains
      */
-    function setJobDone(?bool $jobDone)
+    public function setJobDone(?bool $jobDone) : self
     {
         $this->jobDone = $jobDone;
+        return $this;
     }
     /**
+     * Getter for jobDone
+     *
      * @return bool If the job is finished or not
      */
-    function getJobDone() : ?bool
+    public function getJobDone() : bool
     {
         return $this->jobDone;
     }
     /**
+     * Setter for operatorId
+     *
      * @param string $operatorId the operator's  idenfier (hexadecimal format)
+     *
+     * @return self To use in method chains
      */
-    function setOperatorId(?string $operatorId)
+    public function setOperatorId(?string $operatorId) : self
     {
         $this->operatorId = $operatorId;
+        return $this;
     }
     /**
+     * Getter for operatorId
+     *
      * @return string the operator's  idenfier (hexadecimal format)
      */
-    function getOperatorId() : ?string
+    public function getOperatorId() : string
     {
         return $this->operatorId;
     }
     /**
+     * Setter for name
+     *
      * @param string $name the name of the registration job
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string the name of the registration job
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }
     /**
+     * Setter for description
+     *
      * @param string $description the description of the registration job
+     *
+     * @return self To use in method chains
      */
-    function setDescription(?string $description)
+    public function setDescription(?string $description) : self
     {
         $this->description = $description;
+        return $this;
     }
     /**
+     * Getter for description
+     *
      * @return string the description of the registration job
      */
-    function getDescription() : ?string
+    public function getDescription() : string
     {
         return $this->description;
     }
     /**
+     * Setter for total
+     *
      * @param int $total the total number of base stations given to be created
+     *
+     * @return self To use in method chains
      */
-    function setTotal(?int $total)
+    public function setTotal(?int $total) : self
     {
         $this->total = $total;
+        return $this;
     }
     /**
+     * Getter for total
+     *
      * @return int the total number of base stations given to be created
      */
-    function getTotal() : ?int
+    public function getTotal() : int
     {
         return $this->total;
     }
     /**
+     * Setter for status
+     *
      * @param Status $status the informations about the base stations already treated
+     *
+     * @return self To use in method chains
      */
-    function setStatus(?Status $status)
+    public function setStatus(?Status $status) : self
     {
         $this->status = $status;
+        return $this;
     }
     /**
+     * Getter for status
+     *
      * @return Status the informations about the base stations already treated
      */
-    function getStatus() : ?Status
+    public function getStatus() : Status
     {
         return $this->status;
     }

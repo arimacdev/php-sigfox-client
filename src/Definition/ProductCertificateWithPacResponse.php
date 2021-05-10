@@ -2,9 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CommonCertificate;
-use Arimac\Sigfox\Definition\RadioConfiguration;
-use Arimac\Sigfox\Definition\ProductCertificateRadioConfiguration;
+use Arimac\Sigfox\Definition;
 class ProductCertificateWithPacResponse extends CommonCertificate
 {
     /**
@@ -61,161 +59,242 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      * @var int[]
      */
     protected ?array $modes = null;
-    /** @var RadioConfiguration[] */
+    /**
+     * @var RadioConfiguration[]
+     */
     protected ?array $standards = null;
-    /** @var ProductCertificateRadioConfiguration[] */
+    /**
+     * @var ProductCertificateRadioConfiguration[]
+     */
     protected ?array $standardCfgs = null;
     /**
+     * Setter for externalId
+     *
      * @param string $externalId External Id of the certificate
+     *
+     * @return self To use in method chains
      */
-    function setExternalId(?string $externalId)
+    public function setExternalId(?string $externalId) : self
     {
         $this->externalId = $externalId;
+        return $this;
     }
     /**
+     * Getter for externalId
+     *
      * @return string External Id of the certificate
      */
-    function getExternalId() : ?string
+    public function getExternalId() : string
     {
         return $this->externalId;
     }
     /**
+     * Setter for certificateCode
+     *
      * @param int $certificateCode Certificate's code
+     *
+     * @return self To use in method chains
      */
-    function setCertificateCode(?int $certificateCode)
+    public function setCertificateCode(?int $certificateCode) : self
     {
         $this->certificateCode = $certificateCode;
+        return $this;
     }
     /**
+     * Getter for certificateCode
+     *
      * @return int Certificate's code
      */
-    function getCertificateCode() : ?int
+    public function getCertificateCode() : int
     {
         return $this->certificateCode;
     }
     /**
+     * Setter for certificateIndex
+     *
      * @param int $certificateIndex Certificate's index
+     *
+     * @return self To use in method chains
      */
-    function setCertificateIndex(?int $certificateIndex)
+    public function setCertificateIndex(?int $certificateIndex) : self
     {
         $this->certificateIndex = $certificateIndex;
+        return $this;
     }
     /**
+     * Getter for certificateIndex
+     *
      * @return int Certificate's index
      */
-    function getCertificateIndex() : ?int
+    public function getCertificateIndex() : int
     {
         return $this->certificateIndex;
     }
     /**
+     * Setter for qualificationTime
+     *
      * @param int $qualificationTime Date of qualification (in milliseconds since the Unix Epoch)
+     *
+     * @return self To use in method chains
      */
-    function setQualificationTime(?int $qualificationTime)
+    public function setQualificationTime(?int $qualificationTime) : self
     {
         $this->qualificationTime = $qualificationTime;
+        return $this;
     }
     /**
+     * Getter for qualificationTime
+     *
      * @return int Date of qualification (in milliseconds since the Unix Epoch)
      */
-    function getQualificationTime() : ?int
+    public function getQualificationTime() : int
     {
         return $this->qualificationTime;
     }
     /**
+     * Setter for reportNumber
+     *
      * @param string $reportNumber Report number
+     *
+     * @return self To use in method chains
      */
-    function setReportNumber(?string $reportNumber)
+    public function setReportNumber(?string $reportNumber) : self
     {
         $this->reportNumber = $reportNumber;
+        return $this;
     }
     /**
+     * Getter for reportNumber
+     *
      * @return string Report number
      */
-    function getReportNumber() : ?string
+    public function getReportNumber() : string
     {
         return $this->reportNumber;
     }
     /**
+     * Setter for inputSensitivity
+     *
      * @param int $inputSensitivity Input sensitivity
+     *
+     * @return self To use in method chains
      */
-    function setInputSensitivity(?int $inputSensitivity)
+    public function setInputSensitivity(?int $inputSensitivity) : self
     {
         $this->inputSensitivity = $inputSensitivity;
+        return $this;
     }
     /**
+     * Getter for inputSensitivity
+     *
      * @return int Input sensitivity
      */
-    function getInputSensitivity() : ?int
+    public function getInputSensitivity() : int
     {
         return $this->inputSensitivity;
     }
     /**
+     * Setter for encryptionPayload
+     *
      * @param bool $encryptionPayload true if the payload will be encrypted
+     *
+     * @return self To use in method chains
      */
-    function setEncryptionPayload(?bool $encryptionPayload)
+    public function setEncryptionPayload(?bool $encryptionPayload) : self
     {
         $this->encryptionPayload = $encryptionPayload;
+        return $this;
     }
     /**
+     * Getter for encryptionPayload
+     *
      * @return bool true if the payload will be encrypted
      */
-    function getEncryptionPayload() : ?bool
+    public function getEncryptionPayload() : bool
     {
         return $this->encryptionPayload;
     }
     /**
+     * Setter for devKit
+     *
      * @param bool $devKit DevKit Flag
+     *
+     * @return self To use in method chains
      */
-    function setDevKit(?bool $devKit)
+    public function setDevKit(?bool $devKit) : self
     {
         $this->devKit = $devKit;
+        return $this;
     }
     /**
+     * Getter for devKit
+     *
      * @return bool DevKit Flag
      */
-    function getDevKit() : ?bool
+    public function getDevKit() : bool
     {
         return $this->devKit;
     }
     /**
+     * Setter for modes
+     *
      * @param int[] $modes List of modes of the certificate [1=DOWNLINK, 2=MONARCH]
+     *
+     * @return self To use in method chains
      */
-    function setModes(?array $modes)
+    public function setModes(?array $modes) : self
     {
         $this->modes = $modes;
+        return $this;
     }
     /**
+     * Getter for modes
+     *
      * @return int[] List of modes of the certificate [1=DOWNLINK, 2=MONARCH]
      */
-    function getModes() : ?array
+    public function getModes() : array
     {
         return $this->modes;
     }
     /**
-     * @param RadioConfiguration[] standards
+     * Setter for standards
+     *
+     * @param RadioConfiguration[] $standards
+     *
+     * @return self To use in method chains
      */
-    function setStandards(?array $standards)
+    public function setStandards(?array $standards) : self
     {
         $this->standards = $standards;
+        return $this;
     }
     /**
-     * @return RadioConfiguration[] standards
+     * Getter for standards
+     *
+     * @return RadioConfiguration[]
      */
-    function getStandards() : ?array
+    public function getStandards() : array
     {
         return $this->standards;
     }
     /**
-     * @param ProductCertificateRadioConfiguration[] standardCfgs
+     * Setter for standardCfgs
+     *
+     * @param ProductCertificateRadioConfiguration[] $standardCfgs
+     *
+     * @return self To use in method chains
      */
-    function setStandardCfgs(?array $standardCfgs)
+    public function setStandardCfgs(?array $standardCfgs) : self
     {
         $this->standardCfgs = $standardCfgs;
+        return $this;
     }
     /**
-     * @return ProductCertificateRadioConfiguration[] standardCfgs
+     * Getter for standardCfgs
+     *
+     * @return ProductCertificateRadioConfiguration[]
      */
-    function getStandardCfgs() : ?array
+    public function getStandardCfgs() : array
     {
         return $this->standardCfgs;
     }

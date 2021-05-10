@@ -12,16 +12,23 @@ class TokenUnsubscribe extends Definition
      */
     protected ?int $unsubscriptionTime = null;
     /**
+     * Setter for unsubscriptionTime
+     *
      * @param int $unsubscriptionTime Timestamp of token unsubscription date (in milliseconds since the Unix Epoch)
+     *
+     * @return self To use in method chains
      */
-    function setUnsubscriptionTime(?int $unsubscriptionTime)
+    public function setUnsubscriptionTime(?int $unsubscriptionTime) : self
     {
         $this->unsubscriptionTime = $unsubscriptionTime;
+        return $this;
     }
     /**
+     * Getter for unsubscriptionTime
+     *
      * @return int Timestamp of token unsubscription date (in milliseconds since the Unix Epoch)
      */
-    function getUnsubscriptionTime() : ?int
+    public function getUnsubscriptionTime() : int
     {
         return $this->unsubscriptionTime;
     }

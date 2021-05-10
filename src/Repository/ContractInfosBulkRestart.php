@@ -2,11 +2,13 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\ContractInfosBulkRestartJobId;
 class ContractInfosBulkRestart
 {
     /**
+     * Find by jobId
+     *
      * @param string $jobId The job identidier (hexademical format)
+     *
      * @return ContractInfosBulkRestartJobId
      */
     public function find(string $jobId) : ContractInfosBulkRestartJobId

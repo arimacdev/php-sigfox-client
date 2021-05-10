@@ -18,30 +18,44 @@ class DataItem extends Definition
      */
     protected ?string $targetDeviceId = null;
     /**
+     * Setter for deviceId
+     *
      * @param string $deviceId The device's identifier to replace (hexadecimal format)
+     *
+     * @return self To use in method chains
      */
-    function setDeviceId(?string $deviceId)
+    public function setDeviceId(?string $deviceId) : self
     {
         $this->deviceId = $deviceId;
+        return $this;
     }
     /**
+     * Getter for deviceId
+     *
      * @return string The device's identifier to replace (hexadecimal format)
      */
-    function getDeviceId() : ?string
+    public function getDeviceId() : string
     {
         return $this->deviceId;
     }
     /**
+     * Setter for targetDeviceId
+     *
      * @param string $targetDeviceId The target device's identifier (hexadecimal format)
+     *
+     * @return self To use in method chains
      */
-    function setTargetDeviceId(?string $targetDeviceId)
+    public function setTargetDeviceId(?string $targetDeviceId) : self
     {
         $this->targetDeviceId = $targetDeviceId;
+        return $this;
     }
     /**
+     * Getter for targetDeviceId
+     *
      * @return string The target device's identifier (hexadecimal format)
      */
-    function getTargetDeviceId() : ?string
+    public function getTargetDeviceId() : string
     {
         return $this->targetDeviceId;
     }

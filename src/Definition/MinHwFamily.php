@@ -8,22 +8,26 @@ use Arimac\Sigfox\Definition;
  */
 class MinHwFamily extends Definition
 {
-    /** STANDARD */
+    /**
+     * STANDARD
+     */
     public const ID_STANDARD = 0;
-    /** MINI */
+    /**
+     * MINI
+     */
     public const ID_MINI = 1;
-    /** ACCESS STATION MINI */
+    /**
+     * ACCESS STATION MINI
+     */
     public const ID_ACCESS_STATION_MINI = 2;
-    /** ACCESS STATION MICRO */
+    /**
+     * ACCESS STATION MICRO
+     */
     public const ID_ACCESS_STATION_MICRO = 3;
     /**
      * Base station hardware family id.
-     * - `MinHwFamily::ID_STANDARD`
-     * - `MinHwFamily::ID_MINI`
-     * - `MinHwFamily::ID_ACCESS_STATION_MINI`
-     * - `MinHwFamily::ID_ACCESS_STATION_MICRO`
      *
-     * @var int
+     * @var self::ID_*
      */
     protected ?int $id = null;
     /**
@@ -33,38 +37,44 @@ class MinHwFamily extends Definition
      */
     protected ?string $name = null;
     /**
-     * @param int $id Base station hardware family id.
-     * - `MinHwFamily::ID_STANDARD`
-     * - `MinHwFamily::ID_MINI`
-     * - `MinHwFamily::ID_ACCESS_STATION_MINI`
-     * - `MinHwFamily::ID_ACCESS_STATION_MICRO`
+     * Setter for id
+     *
+     * @param self::ID_* $id Base station hardware family id.
+     *
+     * @return self To use in method chains
      */
-    function setId(?int $id)
+    public function setId(?int $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
-     * @return int Base station hardware family id.
-     * - `MinHwFamily::ID_STANDARD`
-     * - `MinHwFamily::ID_MINI`
-     * - `MinHwFamily::ID_ACCESS_STATION_MINI`
-     * - `MinHwFamily::ID_ACCESS_STATION_MICRO`
+     * Getter for id
+     *
+     * @return self::ID_* Base station hardware family id.
      */
-    function getId() : ?int
+    public function getId() : int
     {
         return $this->id;
     }
     /**
+     * Setter for name
+     *
      * @param string $name The hardware family's name
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The hardware family's name
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }

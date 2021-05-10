@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\GlobalCoverageBulkResponse\ResultsItem;
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Definition\GlobalCoverageBulkResponse\ResultsItem;
 /**
  * Returned data for Bulk Global Coverage API
  */
@@ -28,44 +28,65 @@ class GlobalCoverageBulkResponse extends Definition
      */
     protected ?array $results = null;
     /**
+     * Setter for jobDone
+     *
      * @param bool $jobDone If the job is completed or not
+     *
+     * @return self To use in method chains
      */
-    function setJobDone(?bool $jobDone)
+    public function setJobDone(?bool $jobDone) : self
     {
         $this->jobDone = $jobDone;
+        return $this;
     }
     /**
+     * Getter for jobDone
+     *
      * @return bool If the job is completed or not
      */
-    function getJobDone() : ?bool
+    public function getJobDone() : bool
     {
         return $this->jobDone;
     }
     /**
+     * Setter for time
+     *
      * @param int $time the statistics creation time (in milliseconds since the Unix Epoch)
+     *
+     * @return self To use in method chains
      */
-    function setTime(?int $time)
+    public function setTime(?int $time) : self
     {
         $this->time = $time;
+        return $this;
     }
     /**
+     * Getter for time
+     *
      * @return int the statistics creation time (in milliseconds since the Unix Epoch)
      */
-    function getTime() : ?int
+    public function getTime() : int
     {
         return $this->time;
     }
     /**
+     * Setter for results
+     *
      * @param ResultsItem[] $results An array containing the response for each point.
+     *
+     * @return self To use in method chains
      */
-    function setResults(?array $results)
+    public function setResults(?array $results) : self
     {
         $this->results = $results;
+        return $this;
     }
     /**
+     * Getter for results
+     *
      * @return ResultsItem[] An array containing the response for each point.
      */
-    function getResults() : ?array
+    public function getResults() : array
     {
         return $this->results;
     }

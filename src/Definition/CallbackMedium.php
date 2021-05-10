@@ -2,8 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CallbackEmail;
-use Arimac\Sigfox\Definition\CallbackHTTP;
+use Arimac\Sigfox\Definition;
 class CallbackMedium extends CallbackHTTP
 {
     use CallbackEmail;

@@ -2,29 +2,43 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\EthernetConnectivityBase;
-use Arimac\Sigfox\Definition\MinGroup;
-use Arimac\Sigfox\Definition\MinBaseStation;
+use Arimac\Sigfox\Definition;
 /**
  * Ethernet connectivity configuration for a base station.
  */
 class EthernetConnectivityForBs extends EthernetConnectivityBase
 {
-    /** ACTIVE */
+    /**
+     * ACTIVE
+     */
     public const STATE_ACTIVE = 0;
-    /** PASSIVE */
+    /**
+     * PASSIVE
+     */
     public const STATE_PASSIVE = 1;
-    /** PENDING (new configuration to synchronize with the base station) */
+    /**
+     * PENDING (new configuration to synchronize with the base station)
+     */
     public const STATE_PENDING = 2;
-    /** REJECTED */
+    /**
+     * REJECTED
+     */
     public const STATE_REJECTED = 3;
-    /** DELETING */
+    /**
+     * DELETING
+     */
     public const STATE_DELETING = 4;
-    /** OK (the conf is synchronized) */
+    /**
+     * OK (the conf is synchronized)
+     */
     public const SYNC_STATUS_OK = 0;
-    /** TO_BE_SENT (the conf has to be synchronized) */
+    /**
+     * TO_BE_SENT (the conf has to be synchronized)
+     */
     public const SYNC_STATUS_TO_BE_SENT = 1;
-    /** SENT (the conf is currently send to the base station) */
+    /**
+     * SENT (the conf is currently send to the base station)
+     */
     public const SYNC_STATUS_SENT = 2;
     /**
      * The group's identifier
@@ -32,146 +46,179 @@ class EthernetConnectivityForBs extends EthernetConnectivityBase
      * @var string
      */
     protected ?string $id = null;
-    /** @var MinGroup */
+    /**
+     * @var MinGroup
+     */
     protected ?MinGroup $group = null;
-    /** @var MinBaseStation */
+    /**
+     * @var MinBaseStation
+     */
     protected ?MinBaseStation $baseStation = null;
     /**
      * State of an ethernet connectivity configuration
-     * - `EthernetConnectivityForBs::STATE_ACTIVE`
-     * - `EthernetConnectivityForBs::STATE_PASSIVE`
-     * - `EthernetConnectivityForBs::STATE_PENDING`
-     * - `EthernetConnectivityForBs::STATE_REJECTED`
-     * - `EthernetConnectivityForBs::STATE_DELETING`
      *
-     * @var int
+     * @var self::STATE_*
      */
     protected ?int $state = null;
     /**
      * Synchronisation status of an ethernet connectivity configuration
-     * - `EthernetConnectivityForBs::SYNC_STATUS_OK`
-     * - `EthernetConnectivityForBs::SYNC_STATUS_TO_BE_SENT`
-     * - `EthernetConnectivityForBs::SYNC_STATUS_SENT`
      *
-     * @var int
+     * @var self::SYNC_STATUS_*
      */
     protected ?int $syncStatus = null;
-    /** @var string[] */
-    protected ?array $actions = null;
-    /** @var string[] */
-    protected ?array $resources = null;
-    protected $objects = array('group' => '\\Arimac\\Sigfox\\Definition\\MinGroup', 'baseStation' => '\\Arimac\\Sigfox\\Definition\\MinBaseStation');
     /**
-     * @param string $id The group's identifier
+     * @var string[]
      */
-    function setId(?string $id)
+    protected ?array $actions = null;
+    /**
+     * @var string[]
+     */
+    protected ?array $resources = null;
+    protected $serialize = array('group' => MinGroup::class, 'baseStation' => MinBaseStation::class);
+    /**
+     * Setter for id
+     *
+     * @param string $id The group's identifier
+     *
+     * @return self To use in method chains
+     */
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The group's identifier
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
-     * @param MinGroup group
+     * Setter for group
+     *
+     * @param MinGroup $group
+     *
+     * @return self To use in method chains
      */
-    function setGroup(?MinGroup $group)
+    public function setGroup(?MinGroup $group) : self
     {
         $this->group = $group;
+        return $this;
     }
     /**
-     * @return MinGroup group
+     * Getter for group
+     *
+     * @return MinGroup
      */
-    function getGroup() : ?MinGroup
+    public function getGroup() : MinGroup
     {
         return $this->group;
     }
     /**
-     * @param MinBaseStation baseStation
+     * Setter for baseStation
+     *
+     * @param MinBaseStation $baseStation
+     *
+     * @return self To use in method chains
      */
-    function setBaseStation(?MinBaseStation $baseStation)
+    public function setBaseStation(?MinBaseStation $baseStation) : self
     {
         $this->baseStation = $baseStation;
+        return $this;
     }
     /**
-     * @return MinBaseStation baseStation
+     * Getter for baseStation
+     *
+     * @return MinBaseStation
      */
-    function getBaseStation() : ?MinBaseStation
+    public function getBaseStation() : MinBaseStation
     {
         return $this->baseStation;
     }
     /**
-     * @param int $state State of an ethernet connectivity configuration
-     * - `EthernetConnectivityForBs::STATE_ACTIVE`
-     * - `EthernetConnectivityForBs::STATE_PASSIVE`
-     * - `EthernetConnectivityForBs::STATE_PENDING`
-     * - `EthernetConnectivityForBs::STATE_REJECTED`
-     * - `EthernetConnectivityForBs::STATE_DELETING`
+     * Setter for state
+     *
+     * @param self::STATE_* $state State of an ethernet connectivity configuration
+     *
+     * @return self To use in method chains
      */
-    function setState(?int $state)
+    public function setState(?int $state) : self
     {
         $this->state = $state;
+        return $this;
     }
     /**
-     * @return int State of an ethernet connectivity configuration
-     * - `EthernetConnectivityForBs::STATE_ACTIVE`
-     * - `EthernetConnectivityForBs::STATE_PASSIVE`
-     * - `EthernetConnectivityForBs::STATE_PENDING`
-     * - `EthernetConnectivityForBs::STATE_REJECTED`
-     * - `EthernetConnectivityForBs::STATE_DELETING`
+     * Getter for state
+     *
+     * @return self::STATE_* State of an ethernet connectivity configuration
      */
-    function getState() : ?int
+    public function getState() : int
     {
         return $this->state;
     }
     /**
-     * @param int $syncStatus Synchronisation status of an ethernet connectivity configuration
-     * - `EthernetConnectivityForBs::SYNC_STATUS_OK`
-     * - `EthernetConnectivityForBs::SYNC_STATUS_TO_BE_SENT`
-     * - `EthernetConnectivityForBs::SYNC_STATUS_SENT`
+     * Setter for syncStatus
+     *
+     * @param self::SYNC_STATUS_* $syncStatus Synchronisation status of an ethernet connectivity configuration
+     *
+     * @return self To use in method chains
      */
-    function setSyncStatus(?int $syncStatus)
+    public function setSyncStatus(?int $syncStatus) : self
     {
         $this->syncStatus = $syncStatus;
+        return $this;
     }
     /**
-     * @return int Synchronisation status of an ethernet connectivity configuration
-     * - `EthernetConnectivityForBs::SYNC_STATUS_OK`
-     * - `EthernetConnectivityForBs::SYNC_STATUS_TO_BE_SENT`
-     * - `EthernetConnectivityForBs::SYNC_STATUS_SENT`
+     * Getter for syncStatus
+     *
+     * @return self::SYNC_STATUS_* Synchronisation status of an ethernet connectivity configuration
      */
-    function getSyncStatus() : ?int
+    public function getSyncStatus() : int
     {
         return $this->syncStatus;
     }
     /**
-     * @param string[] actions
+     * Setter for actions
+     *
+     * @param string[] $actions
+     *
+     * @return self To use in method chains
      */
-    function setActions(?array $actions)
+    public function setActions(?array $actions) : self
     {
         $this->actions = $actions;
+        return $this;
     }
     /**
-     * @return string[] actions
+     * Getter for actions
+     *
+     * @return string[]
      */
-    function getActions() : ?array
+    public function getActions() : array
     {
         return $this->actions;
     }
     /**
-     * @param string[] resources
+     * Setter for resources
+     *
+     * @param string[] $resources
+     *
+     * @return self To use in method chains
      */
-    function setResources(?array $resources)
+    public function setResources(?array $resources) : self
     {
         $this->resources = $resources;
+        return $this;
     }
     /**
-     * @return string[] resources
+     * Getter for resources
+     *
+     * @return string[]
      */
-    function getResources() : ?array
+    public function getResources() : array
     {
         return $this->resources;
     }

@@ -18,30 +18,44 @@ class MinHost extends Definition
      */
     protected ?string $name = null;
     /**
+     * Setter for id
+     *
      * @param string $id The host's identifier
+     *
+     * @return self To use in method chains
      */
-    function setId(?string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The host's identifier
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
+     * Setter for name
+     *
      * @param string $name The host's name
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The host's name
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }

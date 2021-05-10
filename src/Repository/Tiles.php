@@ -2,8 +2,6 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\TilesMonarch;
-use Arimac\Sigfox\Repository\TilesPublicCoverage;
 class Tiles
 {
     /**

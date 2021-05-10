@@ -2,9 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CommonRole;
-use Arimac\Sigfox\Definition\MinPerm;
-use Arimac\Sigfox\Definition\MinMetaRole;
+use Arimac\Sigfox\Definition;
 /**
  * Information about a Role
  */
@@ -28,77 +26,116 @@ class Role extends CommonRole
      * @var MinMetaRole[]
      */
     protected ?array $path = null;
-    /** @var string[] */
+    /**
+     * @var string[]
+     */
     protected ?array $actions = null;
-    /** @var string[] */
+    /**
+     * @var string[]
+     */
     protected ?array $resources = null;
     /**
+     * Setter for id
+     *
      * @param string $id The role's identifier
+     *
+     * @return self To use in method chains
      */
-    function setId(?string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The role's identifier
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
+     * Setter for perms
+     *
      * @param MinPerm[] $perms the permisions included in this role
+     *
+     * @return self To use in method chains
      */
-    function setPerms(?array $perms)
+    public function setPerms(?array $perms) : self
     {
         $this->perms = $perms;
+        return $this;
     }
     /**
+     * Getter for perms
+     *
      * @return MinPerm[] the permisions included in this role
      */
-    function getPerms() : ?array
+    public function getPerms() : array
     {
         return $this->perms;
     }
     /**
+     * Setter for path
+     *
      * @param MinMetaRole[] $path The roles's path sorted by descending ancestor (direct parent to farest parent)
+     *
+     * @return self To use in method chains
      */
-    function setPath(?array $path)
+    public function setPath(?array $path) : self
     {
         $this->path = $path;
+        return $this;
     }
     /**
+     * Getter for path
+     *
      * @return MinMetaRole[] The roles's path sorted by descending ancestor (direct parent to farest parent)
      */
-    function getPath() : ?array
+    public function getPath() : array
     {
         return $this->path;
     }
     /**
-     * @param string[] actions
+     * Setter for actions
+     *
+     * @param string[] $actions
+     *
+     * @return self To use in method chains
      */
-    function setActions(?array $actions)
+    public function setActions(?array $actions) : self
     {
         $this->actions = $actions;
+        return $this;
     }
     /**
-     * @return string[] actions
+     * Getter for actions
+     *
+     * @return string[]
      */
-    function getActions() : ?array
+    public function getActions() : array
     {
         return $this->actions;
     }
     /**
-     * @param string[] resources
+     * Setter for resources
+     *
+     * @param string[] $resources
+     *
+     * @return self To use in method chains
      */
-    function setResources(?array $resources)
+    public function setResources(?array $resources) : self
     {
         $this->resources = $resources;
+        return $this;
     }
     /**
-     * @return string[] resources
+     * Getter for resources
+     *
+     * @return string[]
      */
-    function getResources() : ?array
+    public function getResources() : array
     {
         return $this->resources;
     }

@@ -2,20 +2,18 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\BaseDeviceType;
-use Arimac\Sigfox\Definition\ContractId;
+use Arimac\Sigfox\Definition;
 /**
  * Defines the device type's properties that can or lust be be included during creation
  */
 class DeviceTypeCreate extends BaseDeviceType
 {
-    protected $required = array('contracts', 'groupId');
     /**
      * The device type's group identifier
      *
      * @var string
      */
-    protected string $groupId;
+    protected ?string $groupId = null;
     /**
      * The device type's contract identifier
      *
@@ -27,7 +25,7 @@ class DeviceTypeCreate extends BaseDeviceType
      *
      * @var ContractId[]
      */
-    protected array $contracts;
+    protected ?array $contracts = null;
     /**
      * The geoloc payload configuration identifier. Required if the payload type is Geolocation, else ignored.
      *
@@ -35,58 +33,88 @@ class DeviceTypeCreate extends BaseDeviceType
      */
     protected ?string $geolocPayloadConfigId = null;
     /**
+     * Setter for groupId
+     *
      * @param string $groupId The device type's group identifier
+     *
+     * @return self To use in method chains
      */
-    function setGroupId(string $groupId)
+    public function setGroupId(?string $groupId) : self
     {
         $this->groupId = $groupId;
+        return $this;
     }
     /**
+     * Getter for groupId
+     *
      * @return string The device type's group identifier
      */
-    function getGroupId() : string
+    public function getGroupId() : string
     {
         return $this->groupId;
     }
     /**
+     * Setter for contractId
+     *
      * @param string $contractId The device type's contract identifier
+     *
+     * @return self To use in method chains
      */
-    function setContractId(?string $contractId)
+    public function setContractId(?string $contractId) : self
     {
         $this->contractId = $contractId;
+        return $this;
     }
     /**
+     * Getter for contractId
+     *
      * @return string The device type's contract identifier
      */
-    function getContractId() : ?string
+    public function getContractId() : string
     {
         return $this->contractId;
     }
     /**
+     * Setter for contracts
+     *
      * @param ContractId[] $contracts The device type's contract identifiers
+     *
+     * @return self To use in method chains
      */
-    function setContracts(array $contracts)
+    public function setContracts(?array $contracts) : self
     {
         $this->contracts = $contracts;
+        return $this;
     }
     /**
+     * Getter for contracts
+     *
      * @return ContractId[] The device type's contract identifiers
      */
-    function getContracts() : array
+    public function getContracts() : array
     {
         return $this->contracts;
     }
     /**
-     * @param string $geolocPayloadConfigId The geoloc payload configuration identifier. Required if the payload type is Geolocation, else ignored.
+     * Setter for geolocPayloadConfigId
+     *
+     * @param string $geolocPayloadConfigId The geoloc payload configuration identifier. Required if the payload type
+     *                                      is Geolocation, else ignored.
+     *
+     * @return self To use in method chains
      */
-    function setGeolocPayloadConfigId(?string $geolocPayloadConfigId)
+    public function setGeolocPayloadConfigId(?string $geolocPayloadConfigId) : self
     {
         $this->geolocPayloadConfigId = $geolocPayloadConfigId;
+        return $this;
     }
     /**
-     * @return string The geoloc payload configuration identifier. Required if the payload type is Geolocation, else ignored.
+     * Getter for geolocPayloadConfigId
+     *
+     * @return string The geoloc payload configuration identifier. Required if the payload type is Geolocation, else
+     *                ignored.
      */
-    function getGeolocPayloadConfigId() : ?string
+    public function getGeolocPayloadConfigId() : string
     {
         return $this->geolocPayloadConfigId;
     }

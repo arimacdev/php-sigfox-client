@@ -5,9 +5,13 @@ namespace Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition;
 class JobError extends Definition
 {
-    /** ENTITY */
+    /**
+     * ENTITY
+     */
     public const TYPE_ENTITY = 0;
-    /** SYSTEM */
+    /**
+     * SYSTEM
+     */
     public const TYPE_SYSTEM = 1;
     /**
      * the hex id of the entity that has an error
@@ -23,55 +27,70 @@ class JobError extends Definition
     protected ?string $message = null;
     /**
      * Error type
-     * - `JobError::TYPE_ENTITY`
-     * - `JobError::TYPE_SYSTEM`
      *
-     * @var int
+     * @var self::TYPE_*
      */
     protected ?int $type = null;
     /**
+     * Setter for entity
+     *
      * @param string $entity the hex id of the entity that has an error
+     *
+     * @return self To use in method chains
      */
-    function setEntity(?string $entity)
+    public function setEntity(?string $entity) : self
     {
         $this->entity = $entity;
+        return $this;
     }
     /**
+     * Getter for entity
+     *
      * @return string the hex id of the entity that has an error
      */
-    function getEntity() : ?string
+    public function getEntity() : string
     {
         return $this->entity;
     }
     /**
+     * Setter for message
+     *
      * @param string $message the message of the error
+     *
+     * @return self To use in method chains
      */
-    function setMessage(?string $message)
+    public function setMessage(?string $message) : self
     {
         $this->message = $message;
+        return $this;
     }
     /**
+     * Getter for message
+     *
      * @return string the message of the error
      */
-    function getMessage() : ?string
+    public function getMessage() : string
     {
         return $this->message;
     }
     /**
-     * @param int $type Error type
-     * - `JobError::TYPE_ENTITY`
-     * - `JobError::TYPE_SYSTEM`
+     * Setter for type
+     *
+     * @param self::TYPE_* $type Error type
+     *
+     * @return self To use in method chains
      */
-    function setType(?int $type)
+    public function setType(?int $type) : self
     {
         $this->type = $type;
+        return $this;
     }
     /**
-     * @return int Error type
-     * - `JobError::TYPE_ENTITY`
-     * - `JobError::TYPE_SYSTEM`
+     * Getter for type
+     *
+     * @return self::TYPE_* Error type
      */
-    function getType() : ?int
+    public function getType() : int
     {
         return $this->type;
     }

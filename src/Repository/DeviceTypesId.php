@@ -2,71 +2,64 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\DeviceTypesIdCallbacks;
+use Arimac\Sigfox\Request\DeviceTypesIdGet;
+use Arimac\Sigfox\Request\DeviceTypesIdUpdate;
+use Arimac\Sigfox\Request\DeviceTypesIdMessages;
+use Arimac\Sigfox\Request\DeviceTypesIdCallbacksNotDelivered;
 class DeviceTypesId
 {
     /**
      * The Device Type identifier (hexademical format)
      */
-    protected string $id;
+    protected ?string $id;
     /**
      * Creating the repository
      *
      * @param string $id The Device Type identifier (hexademical format)
      */
-    function __construct(string $id)
+    public function __construct(string $id)
     {
         $this->id = $id;
     }
     /**
      * Retrieve information about a device type.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function get(int $request) : int
+    public function get(DeviceTypesIdGet $request) : int
     {
-        return $this->client->request('get', '/device-types/{id}', $request, 'int');
+        return $this->client->request('get', $this->bindUrlParams('/device-types/{id}', $this->id), $request, 'int');
     }
     /**
      * Update a given device type.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function update(int $request) : int
+    public function update(DeviceTypesIdUpdate $request) : int
     {
-        return $this->client->request('put', '/device-types/{id}', $request, 'int');
+        return $this->client->request('put', $this->bindUrlParams('/device-types/{id}', $this->id), $request, 'int');
     }
     /**
      * Delete a given device type.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function delete(int $request) : int
+    public function delete() : int
     {
-        return $this->client->request('delete', '/device-types/{id}', $request, 'int');
+        return $this->client->request('delete', $this->bindUrlParams('/device-types/{id}', $this->id), null, 'int');
     }
     /**
      * Retrieve a list of messages for a given device types with a 3-day history.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function messages(int $request) : int
+    public function messages(DeviceTypesIdMessages $request) : int
     {
-        return $this->client->request('get', '/device-types/{id}/messages', $request, 'int');
+        return $this->client->request('get', $this->bindUrlParams('/device-types/{id}/messages', $this->id), $request, 'int');
     }
     /**
      * Retrieve a list of undelivered callback messages for a given device types.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function callbacksNotDelivered(int $request) : int
+    public function callbacksNotDelivered(DeviceTypesIdCallbacksNotDelivered $request) : int
     {
-        return $this->client->request('get', '/device-types/{id}/callbacks-not-delivered', $request, 'int');
+        return $this->client->request('get', $this->bindUrlParams('/device-types/{id}/callbacks-not-delivered', $this->id), $request, 'int');
     }
     /**
      * @return DeviceTypesIdCallbacks

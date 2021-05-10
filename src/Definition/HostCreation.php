@@ -2,27 +2,33 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\BaseHost;
+use Arimac\Sigfox\Definition;
 class HostCreation extends BaseHost
 {
-    protected $required = array('groupId');
     /**
      * identifier of the group of this host
      *
      * @var string
      */
-    protected string $groupId;
+    protected ?string $groupId = null;
     /**
+     * Setter for groupId
+     *
      * @param string $groupId identifier of the group of this host
+     *
+     * @return self To use in method chains
      */
-    function setGroupId(string $groupId)
+    public function setGroupId(?string $groupId) : self
     {
         $this->groupId = $groupId;
+        return $this;
     }
     /**
+     * Getter for groupId
+     *
      * @return string identifier of the group of this host
      */
-    function getGroupId() : string
+    public function getGroupId() : string
     {
         return $this->groupId;
     }

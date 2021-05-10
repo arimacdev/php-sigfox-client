@@ -12,16 +12,23 @@ class BaseHost extends Definition
      */
     protected ?string $name = null;
     /**
+     * Setter for name
+     *
      * @param string $name The host's name
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The host's name
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }

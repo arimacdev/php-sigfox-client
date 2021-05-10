@@ -12,16 +12,23 @@ class CertificateUpdate extends Definition
      */
     protected ?string $key = null;
     /**
+     * Setter for key
+     *
      * @param string $key The certificate name
+     *
+     * @return self To use in method chains
      */
-    function setKey(?string $key)
+    public function setKey(?string $key) : self
     {
         $this->key = $key;
+        return $this;
     }
     /**
+     * Getter for key
+     *
      * @return string The certificate name
      */
-    function getKey() : ?string
+    public function getKey() : string
     {
         return $this->key;
     }

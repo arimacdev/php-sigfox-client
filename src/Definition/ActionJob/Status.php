@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition\ActionJob;
 
-use Arimac\Sigfox\Definition\JobError;
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Definition\JobError;
 /**
  * the informations about the devices already treated
  */
@@ -34,58 +34,86 @@ class Status extends Definition
      */
     protected ?array $errors = null;
     /**
+     * Setter for total
+     *
      * @param int $total the total number of devices given
+     *
+     * @return self To use in method chains
      */
-    function setTotal(?int $total)
+    public function setTotal(?int $total) : self
     {
         $this->total = $total;
+        return $this;
     }
     /**
+     * Getter for total
+     *
      * @return int the total number of devices given
      */
-    function getTotal() : ?int
+    public function getTotal() : int
     {
         return $this->total;
     }
     /**
+     * Setter for nbSuccess
+     *
      * @param int $nbSuccess the number of devices successfully changed
+     *
+     * @return self To use in method chains
      */
-    function setNbSuccess(?int $nbSuccess)
+    public function setNbSuccess(?int $nbSuccess) : self
     {
         $this->nbSuccess = $nbSuccess;
+        return $this;
     }
     /**
+     * Getter for nbSuccess
+     *
      * @return int the number of devices successfully changed
      */
-    function getNbSuccess() : ?int
+    public function getNbSuccess() : int
     {
         return $this->nbSuccess;
     }
     /**
+     * Setter for nbErrors
+     *
      * @param int $nbErrors the number of devices unsuccessfully changed
+     *
+     * @return self To use in method chains
      */
-    function setNbErrors(?int $nbErrors)
+    public function setNbErrors(?int $nbErrors) : self
     {
         $this->nbErrors = $nbErrors;
+        return $this;
     }
     /**
+     * Getter for nbErrors
+     *
      * @return int the number of devices unsuccessfully changed
      */
-    function getNbErrors() : ?int
+    public function getNbErrors() : int
     {
         return $this->nbErrors;
     }
     /**
+     * Setter for errors
+     *
      * @param JobError[] $errors reasons of each errors
+     *
+     * @return self To use in method chains
      */
-    function setErrors(?array $errors)
+    public function setErrors(?array $errors) : self
     {
         $this->errors = $errors;
+        return $this;
     }
     /**
+     * Getter for errors
+     *
      * @return JobError[] reasons of each errors
      */
-    function getErrors() : ?array
+    public function getErrors() : array
     {
         return $this->errors;
     }

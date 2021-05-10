@@ -2,8 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\GroupCallbackEmail;
-use Arimac\Sigfox\Definition\GroupCallbackHTTP;
+use Arimac\Sigfox\Definition;
 /**
  * Callback types
  */

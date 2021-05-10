@@ -2,11 +2,13 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\DevicesBulkUnsubscribeJobId;
 class DevicesBulkUnsubscribe
 {
     /**
+     * Find by jobId
+     *
      * @param string $jobId The job identifier (hexadecimal format)
+     *
      * @return DevicesBulkUnsubscribeJobId
      */
     public function find(string $jobId) : DevicesBulkUnsubscribeJobId

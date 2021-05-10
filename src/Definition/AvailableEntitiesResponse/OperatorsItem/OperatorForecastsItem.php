@@ -8,9 +8,9 @@ class OperatorForecastsItem extends Definition
     /**
      * The identifier of the radio planning.
      *
-     * @var float
+     * @var int
      */
-    protected ?float $id = null;
+    protected ?int $id = null;
     /**
      * The name of the simulation.
      *
@@ -18,30 +18,44 @@ class OperatorForecastsItem extends Definition
      */
     protected ?string $name = null;
     /**
-     * @param float $id The identifier of the radio planning.
+     * Setter for id
+     *
+     * @param int $id The identifier of the radio planning.
+     *
+     * @return self To use in method chains
      */
-    function setId(?float $id)
+    public function setId(?int $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
-     * @return float The identifier of the radio planning.
+     * Getter for id
+     *
+     * @return int The identifier of the radio planning.
      */
-    function getId() : ?float
+    public function getId() : int
     {
         return $this->id;
     }
     /**
+     * Setter for name
+     *
      * @param string $name The name of the simulation.
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The name of the simulation.
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }

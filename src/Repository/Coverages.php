@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\CoveragesGlobal;
 class Coverages
 {
     /**

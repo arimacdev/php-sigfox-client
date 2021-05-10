@@ -2,35 +2,31 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\DevicesBulkJobId;
-use Arimac\Sigfox\Repository\DevicesBulkRestart;
-use Arimac\Sigfox\Repository\DevicesBulkSuspend;
-use Arimac\Sigfox\Repository\DevicesBulkResume;
-use Arimac\Sigfox\Repository\DevicesBulkUnsubscribe;
+use Arimac\Sigfox\Request\DevicesBulkCreate;
+use Arimac\Sigfox\Request\DevicesBulkUpdate;
 class DevicesBulk
 {
     /**
      * Create multiple new devices with asynchronous job
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function create(int $request) : int
+    public function create(DevicesBulkCreate $request) : int
     {
         return $this->client->request('post', '/devices/bulk', $request, 'int');
     }
     /**
      * Update or edit multiple devices with asynchronous job.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function update(int $request) : int
+    public function update(DevicesBulkUpdate $request) : int
     {
         return $this->client->request('put', '/devices/bulk', $request, 'int');
     }
     /**
+     * Find by jobId
+     *
      * @param string $jobId The job identifier (hexadecimal format)
+     *
      * @return DevicesBulkJobId
      */
     public function find(string $jobId) : DevicesBulkJobId

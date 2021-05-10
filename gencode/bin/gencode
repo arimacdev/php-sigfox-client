@@ -2,14 +2,12 @@
 <?php
 
 use Arimac\Sigfox\GenCode\Definition;
+use Arimac\Sigfox\GenCode\Config\EnumFields;
+use Arimac\Sigfox\GenCode\Config\MethodNames;
+use Arimac\Sigfox\GenCode\Config\RewriteRules;
+use Arimac\Sigfox\GenCode\Helper;
 use Arimac\Sigfox\GenCode\Repository;
 use Arimac\Sigfox\GenCode\Request;
-use cebe\openapi\Reader;
-use cebe\openapi\spec\PathItem;
-
-use function Arimac\Sigfox\GenCode\Utils\dashToCamel;
-use function Arimac\Sigfox\GenCode\Utils\defToName;
-use function Arimac\Sigfox\GenCode\Utils\rrmdir;
 
 $dir = dirname(__DIR__);
 
@@ -21,181 +19,41 @@ if (!file_exists($openapiFileLocation)) {
     file_put_contents($openapiFileLocation, fopen($openapiUrl, 'r'));
 }
 
-rrmdir($dir . "/../src/Definition");
+Helper::rrmdir($dir . "/../src/Definition");
 mkdir($dir . "/../src/Definition");
 
 $openapi = json_decode( file_get_contents($openapiFileLocation) , true);
 
+EnumFields::initialize();
+RewriteRules::initialize();
+MethodNames::initialize();
+
 $simpleAlias = ["Resources", "Resource", "Actions", "Action"];
 
-function primitiveTypeCast(string $type): string
-{
-    switch ($type) {
-        case "integer":
-            return "int";
-        case "number":
-            return "float";
-        case "boolean":
-            return "bool";
-        case "string":
-            return "string";
-        case "array":
-            return "array";
-        default:
-            return $type;
-    }
-}
-
-function typeCast(Definition $defClass, string $type, array $obj = []): string
-{
-    switch ($type) {
-        case "integer":
-            return "int";
-        case "number":
-            if (isset($obj["format"]) && $obj["format"] == "double") {
-                return "float";
-            }
-            return "int";
-        case "boolean":
-            return "bool";
-        case "string":
-            return "string";
-        case "Actions":
-            return "string[]";
-        case "Resources":
-            return "string[]";
-        case "Action":
-            return "string";
-        case "Resource":
-            return "string";
-        case "array":
-            $items = $obj["items"];
-            if (isset($items["\$ref"])) {
-                $definition = defToName($items["\$ref"]);
-                $defClass->addUse("Arimac\\Sigfox\\Definition", $definition);
-                return $definition . "[]";
-            } else if ($items["type"] != "object") {
-                return typeCast($defClass, $items["type"], $items) . "[]";
-            }
-        default:
-            $defClass->addUse($defClass->getNamespace(), $type);
-            return $type;
-    }
-}
-
-function addProperties(Definition $defClass, $definition)
-{
-    if (isset($definition["properties"]) && isset($definition["type"]) && $definition["type"] == "object") {
-        $required = $definition["required"] ?? [];
-        if (isset($definition['required'])) {
-            $defClass->setRequired($definition['required']);
-        }
-        $objects = [];
-        foreach ($definition["properties"] as $propertyName => $propertyAttr) {
-            if (isset($propertyAttr["type"]) && $propertyAttr["type"] == "object") {
-                if (
-                    isset($propertyAttr["allOf"]) &&
-                    count($propertyAttr["allOf"]) == 1 &&
-                    isset($propertyAttr["allOf"][0]["\$ref"])
-                ) {
-                    $defName = defToName($propertyAttr["allOf"][0]["\$ref"]);
-                    if (!in_array($defName, ["Resources", "Resource", "Actions", "Action"])) {
-                        $objects[$propertyName] = "\\Arimac\\Sigfox\\Definition\\$defName";
-                    }
-                    $defClass->addProperty(
-                        $propertyName,
-                        typeCast($defClass, $defName, $propertyAttr),
-                        $propertyAttr["description"] ?? null,
-                        !in_array($propertyName, $required)
-                    );
-                } else if (count($propertyAttr["properties"])) {
-                    $propertyDefClass = Definition::fromArray(
-                        $defClass->getNamespace() . "\\" . $defClass->getClassName(),
-                        ucfirst($propertyName),
-                        $propertyAttr
-                    );
-                    $propertyDefClass->save();
-
-                    $defClass->addUse($defClass->getNamespace() . "\\" . $defClass->getClassName(), $propertyDefClass->getClassName());
-                    $defClass->addProperty(
-                        $propertyName,
-                        $propertyDefClass->getClassName(),
-                        $propertyAttr["description"] ?? null,
-                        !in_array($propertyName, $required)
-                    );
-                } else {
-                    $defClass->addProperty(
-                        $propertyName,
-                        "array",
-                        $propertyAttr["description"] ?? null,
-                        !in_array($propertyName, $required)
-                    );
-                }
-            } else if (
-                isset($propertyAttr["type"]) &&
-                $propertyAttr["type"] == "array" &&
-                isset($propertyAttr["items"]["type"]) &&
-                $propertyAttr["items"]["type"] == "object"
-            ) {
-                $propertyDefClass = Definition::fromArray(
-                    $defClass->getNamespace() . "\\" . $defClass->getClassName(),
-                    ucfirst($propertyName) . "Item",
-                    $propertyAttr["items"]
-                );
-                $propertyDefClass->save();
-                $defClass->addUse($defClass->getNamespace() . "\\" . $defClass->getClassName(), $propertyDefClass->getClassName());
-                $defClass->addProperty(
-                    $propertyName,
-                    $propertyDefClass->getClassName() . "[]",
-                    $propertyAttr["description"] ?? null,
-                    !in_array($propertyName, $required),
-                );
-            } else if (isset($propertyAttr["type"])) {
-                $defClass->addProperty(
-                    $propertyName,
-                    typeCast($defClass, $propertyAttr["type"], $propertyAttr),
-                    $propertyAttr["description"] ?? null,
-                    !in_array($propertyName, $required)
-                );
-            } else if (isset($propertyAttr["\$ref"])) {
-                $defName = defToName($propertyAttr["\$ref"]);
-                if (!in_array($defName, ["Resources", "Resource", "Actions", "Action"])) {
-                    $objects[$propertyName] = "\\Arimac\\Sigfox\\Definition\\$defName";
-                }
-                $defClass->addProperty(
-                    $propertyName,
-                    typeCast($defClass, $defName, $propertyAttr),
-                    $propertyAttr["description"] ?? null,
-                    !in_array($propertyName, $required)
-                );
-            }
-        }
-        if (count($objects)) {
-            $defClass->setObjects($objects);
-        }
-    }
-}
 
 foreach ($openapi["definitions"] as $key => $definition) {
     $name = ucfirst($key);
     if (!in_array($name, $simpleAlias)) {
+        $defClass = Definition::fromArray("Arimac\\Sigfox\\Definition\\$name", $definition);
+    }
+}
 
-        $defClass = Definition::fromArray("Arimac\\Sigfox\\Definition", $name, $definition);
-        $defClass->save();
+foreach ($openapi["paths"] as $endpoint => $operations){
+    $rewrite = RewriteRules::rewrite($endpoint);
+    foreach($operations as $method=> $operation){
+        if($method!=="parameters"){
+            $methodName = MethodNames::getMethodName($endpoint, $method, $operation["description"]);
+        }
     }
 }
 
 /** @var Repository[] **/
+
 $repositories = [];
 
-$rules = json_decode(file_get_contents($dir . "/rules.json"), true);
-
-foreach ($openapi["paths"] as $key => $path) {
-    $endpoint = $key;
-    if (isset($rules[$key]["eat"])) {
-        $key = substr($key, 0, strlen($key) - strlen($rules[$key]["eat"]));
-    }
-    $slices = explode("/", $key);
+foreach ($openapi["paths"] as $endpoint => $path) {
+    $rewrite = RewriteRules::rewrite($endpoint);
+    $slices = explode("/", $rewrite);
     $repoName = "";
     $requestMethods = array_keys($path);
     $requestMethods = array_filter($requestMethods, function($method){
@@ -209,7 +67,7 @@ foreach ($openapi["paths"] as $key => $path) {
             $type = $param["typ"] ?? "string";
             $description = $param["description"];
             $pathParams[$param["name"]] = [
-                "type" => primitiveTypeCast($type),
+                "type" => Helper::toPHPValue($type),
                 "description" => $description
             ];
         }
@@ -221,9 +79,9 @@ foreach ($openapi["paths"] as $key => $path) {
             $parameter = false;
             if (substr($slice, 0, 1) === "{") {
                 $parameter = true;
-                $repoNameSlice = dashToCamel(substr($slice, 1, strlen($slice) - 2));
+                $repoNameSlice = Helper::dashToCamel(substr($slice, 1, strlen($slice) - 2));
             } else {
-                $repoNameSlice = dashToCamel($slice);
+                $repoNameSlice = Helper::dashToCamel($slice);
             }
             $previousRepoName = $repoName;
             $repoName .= $repoNameSlice;
@@ -237,10 +95,6 @@ foreach ($openapi["paths"] as $key => $path) {
                 $properties = $prevRepository ? $prevRepository->getProperties() : [];
 
                 if ($parameter) {
-                    /** @var Repository **/
-                    $prevRepository->addUse("Arimac\\Sigfox\\Repository", $repoName);
-
-
                     $paramName = lcfirst($repoNameSlice);
                     $type = $pathParams[$paramName]["type"];
                     $description = $pathParams[$paramName]["description"];
@@ -249,14 +103,18 @@ foreach ($openapi["paths"] as $key => $path) {
                     $prevRepository->addFindMethod(
                         $paramName,
                         $type,
-                        $repoName,
-                        $description
+                        "Arimac\\Sigfox\\Repository\\$repoName",
+                        Helper::normalizeDocComment(
+                            "Find by $paramName", 
+                            [
+                                ["param", "$type", "\$$paramName", $description],
+                                ["return","$repoName", null ]
+                            ]
+                        )
                     );
                 } else if ($prevRepository) {
-                    /** @var Repository **/
-                    $prevRepository->addUse("Arimac\\Sigfox\\Repository", $repoName);
                     $methodName = lcfirst($repoNameSlice);
-                    $prevRepository->addRepositoryMethod($methodName, $repoName);
+                    $prevRepository->addRepositoryMethod($methodName,"Arimac\\Sigfox\\Repository\\". $repoName);
                 }
 
                 if (count($properties)) {
@@ -267,60 +125,30 @@ foreach ($openapi["paths"] as $key => $path) {
     }
 
     foreach ($requestMethods as $requestMethod) {
-        $methodName = $rules[$endpoint]["methodNames"][$requestMethod];
         $description = $path[$requestMethod]["description"];
+        $methodName = MethodNames::getMethodName($endpoint, $requestMethod, $description);
 
-        $requestClassName = $repoName . ucfirst(strtolower($requestMethod));
+        $requestClassName = $repoName . ucfirst($methodName);
 
         $operation = $path[$requestMethod];
 
-        $fakeObject = [
-            "type" => "object",
-            "properties" => []
-        ];
+        $requestType = Request::fromArray("Arimac\\Sigfox\\Request\\$requestClassName", $operation);
 
-        $query = [];
-        $body = [];
-        $required = [];
-        $parameters = isset($operation["parameters"])? $operation["parameters"]: [];
-        foreach ($operation["parameters"] as $parameter) {
-            $in = $parameter["in"];
-            $name = $parameter["name"];
-            if ($in != "path") {
-                array_push($$in, $name );
-                $fakeObject["properties"][$name] = $parameter;
-                if(isset($parameter["schema"])){
-                    $fakeObject["properties"][$name]["type"] = "object";
-                    $fakeObject["properties"][$name]["properties"] = [];
-                    $fakeObject["properties"][$name]["allOf"] = $parameter["schema"];
-                }
-                if(isset($parameter["required"])&&$parameter["required"]) {
-                    $required[] = $name;
-                }
-            }
-        }
-
-        if(count($required)){
-            $fakeObject["required"] = $required;
-        }
-
-        if (count($fakeObject["properties"])) {
-            /** @var Request **/
-            $definition = Request::fromArray("Arimac\\Sigfox\\Request", $requestClassName, $fakeObject);
-            if(count($body)){
-                $definition->setBody($body); 
-            }
-            if(count($query)){
-                $definition->setQuery($query);
-            }
-            $definition->save();
-        }
-
-
-        $repository->addRequestMethod($methodName, $requestMethod, $endpoint, "int", "int", $description);
+        $repository->addRequestMethod(
+            $methodName, 
+            $requestMethod, 
+            $endpoint, 
+            "int", 
+            $requestType==="null"?null:$requestType, 
+            Helper::normalizeDocComment($description)
+        );
     }
 }
 
 foreach ($repositories as $repoName => $repo) {
     $repo->save();
 }
+
+EnumFields::save();
+RewriteRules::save();
+MethodNames::save();

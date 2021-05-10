@@ -8,40 +8,54 @@ class LatLng extends Definition
     /**
      * The latitude in degrees.
      *
-     * @var float
+     * @var int
      */
-    protected ?float $lat = null;
+    protected ?int $lat = null;
     /**
      * The longitude in degrees.
      *
-     * @var float
+     * @var int
      */
-    protected ?float $lng = null;
+    protected ?int $lng = null;
     /**
-     * @param float $lat The latitude in degrees.
+     * Setter for lat
+     *
+     * @param int $lat The latitude in degrees.
+     *
+     * @return self To use in method chains
      */
-    function setLat(?float $lat)
+    public function setLat(?int $lat) : self
     {
         $this->lat = $lat;
+        return $this;
     }
     /**
-     * @return float The latitude in degrees.
+     * Getter for lat
+     *
+     * @return int The latitude in degrees.
      */
-    function getLat() : ?float
+    public function getLat() : int
     {
         return $this->lat;
     }
     /**
-     * @param float $lng The longitude in degrees.
+     * Setter for lng
+     *
+     * @param int $lng The longitude in degrees.
+     *
+     * @return self To use in method chains
      */
-    function setLng(?float $lng)
+    public function setLng(?int $lng) : self
     {
         $this->lng = $lng;
+        return $this;
     }
     /**
-     * @return float The longitude in degrees.
+     * Getter for lng
+     *
+     * @return int The longitude in degrees.
      */
-    function getLng() : ?float
+    public function getLng() : int
     {
         return $this->lng;
     }

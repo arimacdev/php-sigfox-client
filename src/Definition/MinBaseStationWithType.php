@@ -8,9 +8,13 @@ use Arimac\Sigfox\Definition;
  */
 class MinBaseStationWithType extends Definition
 {
-    /** SBS */
+    /**
+     * SBS
+     */
     public const RESOURCE_TYPE_SBS = 0;
-    /** NAP */
+    /**
+     * NAP
+     */
     public const RESOURCE_TYPE_NAP = 1;
     /**
      * The base station identifier in hexadecimal
@@ -26,71 +30,95 @@ class MinBaseStationWithType extends Definition
     protected ?string $name = null;
     /**
      * Resource type.
-     * - `MinBaseStationWithType::RESOURCE_TYPE_SBS`
-     * - `MinBaseStationWithType::RESOURCE_TYPE_NAP`
      *
-     * @var int
+     * @var self::RESOURCE_TYPE_*
      */
     protected ?int $resourceType = null;
-    /** @var string[] */
+    /**
+     * @var string[]
+     */
     protected ?array $actions = null;
     /**
+     * Setter for id
+     *
      * @param string $id The base station identifier in hexadecimal
+     *
+     * @return self To use in method chains
      */
-    function setId(?string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The base station identifier in hexadecimal
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
+     * Setter for name
+     *
      * @param string $name The base station name
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The base station name
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }
     /**
-     * @param int $resourceType Resource type.
-     * - `MinBaseStationWithType::RESOURCE_TYPE_SBS`
-     * - `MinBaseStationWithType::RESOURCE_TYPE_NAP`
+     * Setter for resourceType
+     *
+     * @param self::RESOURCE_TYPE_* $resourceType Resource type.
+     *
+     * @return self To use in method chains
      */
-    function setResourceType(?int $resourceType)
+    public function setResourceType(?int $resourceType) : self
     {
         $this->resourceType = $resourceType;
+        return $this;
     }
     /**
-     * @return int Resource type.
-     * - `MinBaseStationWithType::RESOURCE_TYPE_SBS`
-     * - `MinBaseStationWithType::RESOURCE_TYPE_NAP`
+     * Getter for resourceType
+     *
+     * @return self::RESOURCE_TYPE_* Resource type.
      */
-    function getResourceType() : ?int
+    public function getResourceType() : int
     {
         return $this->resourceType;
     }
     /**
-     * @param string[] actions
+     * Setter for actions
+     *
+     * @param string[] $actions
+     *
+     * @return self To use in method chains
      */
-    function setActions(?array $actions)
+    public function setActions(?array $actions) : self
     {
         $this->actions = $actions;
+        return $this;
     }
     /**
-     * @return string[] actions
+     * Getter for actions
+     *
+     * @return string[]
      */
-    function getActions() : ?array
+    public function getActions() : array
     {
         return $this->actions;
     }

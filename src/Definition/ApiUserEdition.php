@@ -2,8 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CommonApiUser;
-use Arimac\Sigfox\Definition\ProfileIds;
+use Arimac\Sigfox\Definition;
 /**
  * Defines the API user properties to be modified
  */

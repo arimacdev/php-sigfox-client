@@ -2,39 +2,36 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Request\ContractInfosIdGet;
 class ContractInfosId
 {
     /**
      * The Contract identifier
      */
-    protected string $id;
+    protected ?string $id;
     /**
      * Creating the repository
      *
      * @param string $id The Contract identifier
      */
-    function __construct(string $id)
+    public function __construct(string $id)
     {
         $this->id = $id;
     }
     /**
      * Retrieve information about a given contract.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function get(int $request) : int
+    public function get(ContractInfosIdGet $request) : int
     {
-        return $this->client->request('get', '/contract-infos/{id}', $request, 'int');
+        return $this->client->request('get', $this->bindUrlParams('/contract-infos/{id}', $this->id), $request, 'int');
     }
     /**
      * Create an async job to restart the devices associated to a contract.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function bulkRestart(int $request) : int
+    public function bulkRestart() : int
     {
-        return $this->client->request('post', '/contract-infos/{id}/bulk/restart', $request, 'int');
+        return $this->client->request('post', $this->bindUrlParams('/contract-infos/{id}/bulk/restart', $this->id), null, 'int');
     }
 }

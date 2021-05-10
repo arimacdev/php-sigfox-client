@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\ActionJob\Status;
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Definition\ActionJob\Status;
 class ActionJob extends Definition
 {
     /**
@@ -18,31 +18,46 @@ class ActionJob extends Definition
      * @var Status
      */
     protected ?Status $status = null;
+    protected $serialize = array('status' => Status::class);
     /**
+     * Setter for jobDone
+     *
      * @param bool $jobDone If the job is finished or not
+     *
+     * @return self To use in method chains
      */
-    function setJobDone(?bool $jobDone)
+    public function setJobDone(?bool $jobDone) : self
     {
         $this->jobDone = $jobDone;
+        return $this;
     }
     /**
+     * Getter for jobDone
+     *
      * @return bool If the job is finished or not
      */
-    function getJobDone() : ?bool
+    public function getJobDone() : bool
     {
         return $this->jobDone;
     }
     /**
+     * Setter for status
+     *
      * @param Status $status the informations about the devices already treated
+     *
+     * @return self To use in method chains
      */
-    function setStatus(?Status $status)
+    public function setStatus(?Status $status) : self
     {
         $this->status = $status;
+        return $this;
     }
     /**
+     * Getter for status
+     *
      * @return Status the informations about the devices already treated
      */
-    function getStatus() : ?Status
+    public function getStatus() : Status
     {
         return $this->status;
     }

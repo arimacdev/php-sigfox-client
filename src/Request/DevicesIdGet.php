@@ -3,72 +3,49 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+/**
+ * Retrieve information about a given device.
+ * 
+ */
 class DevicesIdGet extends Definition
 {
     /**
-     * if true, the method return also the location from out of band Messages
+     * if true, we return the list of actions and resources the user has access
      *
      * @var bool
      */
-    protected ?bool $oob = null;
+    protected ?bool $authorizations = null;
     /**
-     * Starting timestamp (in milliseconds since the Unix Epoch)
+     * Defines the other available fields to be returned in the response.
+     * 
      *
-     * @var int
+     * @var string
      */
-    protected ?int $since = null;
+    protected ?string $fields = null;
+    protected $query = array('authorizations', 'fields');
     /**
-     * Ending timestamp (in milliseconds since the Unix Epoch)
+     * Setter for authorizations
      *
-     * @var int
-     */
-    protected ?int $before = null;
-    /**
-     * The maximum number of items to return
+     * @param bool $authorizations if true, we return the list of actions and resources the user has access
      *
-     * @var int
+     * @return self To use in method chains
      */
-    protected ?int $limit = null;
-    /**
-     * The number of items to skip
-     *
-     * @var int
-     */
-    protected ?int $offset = null;
-    protected $query = array('oob', 'since', 'before', 'limit', 'offset');
-    /**
-     * @param bool $oob if true, the method return also the location from out of band Messages
-     */
-    function setOob(?bool $oob)
+    public function setAuthorizations(?bool $authorizations) : self
     {
-        $this->oob = $oob;
+        $this->authorizations = $authorizations;
+        return $this;
     }
     /**
-     * @param int $since Starting timestamp (in milliseconds since the Unix Epoch)
+     * Setter for fields
+     *
+     * @param string $fields Defines the other available fields to be returned in the response.
+     *                       
+     *
+     * @return self To use in method chains
      */
-    function setSince(?int $since)
+    public function setFields(?string $fields) : self
     {
-        $this->since = $since;
-    }
-    /**
-     * @param int $before Ending timestamp (in milliseconds since the Unix Epoch)
-     */
-    function setBefore(?int $before)
-    {
-        $this->before = $before;
-    }
-    /**
-     * @param int $limit The maximum number of items to return
-     */
-    function setLimit(?int $limit)
-    {
-        $this->limit = $limit;
-    }
-    /**
-     * @param int $offset The number of items to skip
-     */
-    function setOffset(?int $offset)
-    {
-        $this->offset = $offset;
+        $this->fields = $fields;
+        return $this;
     }
 }

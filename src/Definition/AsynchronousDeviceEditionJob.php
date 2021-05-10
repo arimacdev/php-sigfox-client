@@ -2,24 +2,31 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\DeviceEditionBulk;
 use Arimac\Sigfox\Definition;
 class AsynchronousDeviceEditionJob extends Definition
 {
-    protected $required = array('data');
-    /** @var DeviceEditionBulk[] */
-    protected array $data;
     /**
-     * @param DeviceEditionBulk[] data
+     * @var DeviceEditionBulk[]
      */
-    function setData(array $data)
+    protected ?array $data = null;
+    /**
+     * Setter for data
+     *
+     * @param DeviceEditionBulk[] $data
+     *
+     * @return self To use in method chains
+     */
+    public function setData(?array $data) : self
     {
         $this->data = $data;
+        return $this;
     }
     /**
-     * @return DeviceEditionBulk[] data
+     * Getter for data
+     *
+     * @return DeviceEditionBulk[]
      */
-    function getData() : array
+    public function getData() : array
     {
         return $this->data;
     }

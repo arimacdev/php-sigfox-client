@@ -6,22 +6,36 @@ use Arimac\Sigfox\Definition;
 class KmzCreatePublicRequest extends Definition
 {
     /**
-     * The coverage mode for coverage display.  Outdoor is for 0dB margin and Indoor for 20 dB margin U1, U2 and U3 are for product class (1U, 2U and 3U), 0U is considered by default.
+     * The coverage mode for coverage display.  Outdoor is for 0dB margin and Indoor for 20 dB margin U1, U2 and U3
+     * are for product class (1U, 2U and 3U), 0U is considered by default.
+     * 
      *
      * @var string
      */
     protected ?string $coverageMode = null;
     /**
-     * @param string $coverageMode The coverage mode for coverage display.  Outdoor is for 0dB margin and Indoor for 20 dB margin U1, U2 and U3 are for product class (1U, 2U and 3U), 0U is considered by default.
+     * Setter for coverageMode
+     *
+     * @param string $coverageMode The coverage mode for coverage display.  Outdoor is for 0dB margin and Indoor for
+     *                             20 dB margin U1, U2 and U3 are for product class (1U, 2U and 3U), 0U is considered
+     *                             by default.
+     *                             
+     *
+     * @return self To use in method chains
      */
-    function setCoverageMode(?string $coverageMode)
+    public function setCoverageMode(?string $coverageMode) : self
     {
         $this->coverageMode = $coverageMode;
+        return $this;
     }
     /**
-     * @return string The coverage mode for coverage display.  Outdoor is for 0dB margin and Indoor for 20 dB margin U1, U2 and U3 are for product class (1U, 2U and 3U), 0U is considered by default.
+     * Getter for coverageMode
+     *
+     * @return string The coverage mode for coverage display.  Outdoor is for 0dB margin and Indoor for 20 dB margin
+     *                U1, U2 and U3 are for product class (1U, 2U and 3U), 0U is considered by default.
+     *                
      */
-    function getCoverageMode() : ?string
+    public function getCoverageMode() : string
     {
         return $this->coverageMode;
     }

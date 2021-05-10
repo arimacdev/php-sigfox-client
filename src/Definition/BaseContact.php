@@ -8,13 +8,12 @@ use Arimac\Sigfox\Definition;
  */
 class BaseContact extends Definition
 {
-    protected $required = array('name');
     /**
      * The contact's name
      *
      * @var string
      */
-    protected string $name;
+    protected ?string $name = null;
     /**
      * The contact's email. This field can be unset when updating.
      *
@@ -22,13 +21,15 @@ class BaseContact extends Definition
      */
     protected ?string $email = null;
     /**
-     * The contact's phone number must be in the international format with no spaces between numbers (+country code - number). This field can be unset when updating.
+     * The contact's phone number must be in the international format with no spaces between numbers (+country code -
+     * number). This field can be unset when updating.
      *
      * @var string
      */
     protected ?string $phoneNumber = null;
     /**
-     * The contact's mobile phone number must be in the international format with no spaces between numbers (+country code - number). This field can be unset when updating.
+     * The contact's mobile phone number must be in the international format with no spaces between numbers (+country
+     * code - number). This field can be unset when updating.
      *
      * @var string
      */
@@ -45,119 +46,184 @@ class BaseContact extends Definition
      * @var string
      */
     protected ?string $description = null;
-    /** @var string[] */
+    /**
+     * @var string[]
+     */
     protected ?array $actions = null;
-    /** @var string[] */
+    /**
+     * @var string[]
+     */
     protected ?array $resources = null;
     /**
+     * Setter for name
+     *
      * @param string $name The contact's name
+     *
+     * @return self To use in method chains
      */
-    function setName(string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The contact's name
      */
-    function getName() : string
+    public function getName() : string
     {
         return $this->name;
     }
     /**
+     * Setter for email
+     *
      * @param string $email The contact's email. This field can be unset when updating.
+     *
+     * @return self To use in method chains
      */
-    function setEmail(?string $email)
+    public function setEmail(?string $email) : self
     {
         $this->email = $email;
+        return $this;
     }
     /**
+     * Getter for email
+     *
      * @return string The contact's email. This field can be unset when updating.
      */
-    function getEmail() : ?string
+    public function getEmail() : string
     {
         return $this->email;
     }
     /**
-     * @param string $phoneNumber The contact's phone number must be in the international format with no spaces between numbers (+country code - number). This field can be unset when updating.
+     * Setter for phoneNumber
+     *
+     * @param string $phoneNumber The contact's phone number must be in the international format with no spaces
+     *                            between numbers (+country code - number). This field can be unset when updating.
+     *
+     * @return self To use in method chains
      */
-    function setPhoneNumber(?string $phoneNumber)
+    public function setPhoneNumber(?string $phoneNumber) : self
     {
         $this->phoneNumber = $phoneNumber;
+        return $this;
     }
     /**
-     * @return string The contact's phone number must be in the international format with no spaces between numbers (+country code - number). This field can be unset when updating.
+     * Getter for phoneNumber
+     *
+     * @return string The contact's phone number must be in the international format with no spaces between numbers
+     *                (+country code - number). This field can be unset when updating.
      */
-    function getPhoneNumber() : ?string
+    public function getPhoneNumber() : string
     {
         return $this->phoneNumber;
     }
     /**
-     * @param string $mobilePhoneNumber The contact's mobile phone number must be in the international format with no spaces between numbers (+country code - number). This field can be unset when updating.
+     * Setter for mobilePhoneNumber
+     *
+     * @param string $mobilePhoneNumber The contact's mobile phone number must be in the international format with no
+     *                                  spaces between numbers (+country code - number). This field can be unset when
+     *                                  updating.
+     *
+     * @return self To use in method chains
      */
-    function setMobilePhoneNumber(?string $mobilePhoneNumber)
+    public function setMobilePhoneNumber(?string $mobilePhoneNumber) : self
     {
         $this->mobilePhoneNumber = $mobilePhoneNumber;
+        return $this;
     }
     /**
-     * @return string The contact's mobile phone number must be in the international format with no spaces between numbers (+country code - number). This field can be unset when updating.
+     * Getter for mobilePhoneNumber
+     *
+     * @return string The contact's mobile phone number must be in the international format with no spaces between
+     *                numbers (+country code - number). This field can be unset when updating.
      */
-    function getMobilePhoneNumber() : ?string
+    public function getMobilePhoneNumber() : string
     {
         return $this->mobilePhoneNumber;
     }
     /**
+     * Setter for address
+     *
      * @param string $address The contact's address
+     *
+     * @return self To use in method chains
      */
-    function setAddress(?string $address)
+    public function setAddress(?string $address) : self
     {
         $this->address = $address;
+        return $this;
     }
     /**
+     * Getter for address
+     *
      * @return string The contact's address
      */
-    function getAddress() : ?string
+    public function getAddress() : string
     {
         return $this->address;
     }
     /**
+     * Setter for description
+     *
      * @param string $description The contact's description
+     *
+     * @return self To use in method chains
      */
-    function setDescription(?string $description)
+    public function setDescription(?string $description) : self
     {
         $this->description = $description;
+        return $this;
     }
     /**
+     * Getter for description
+     *
      * @return string The contact's description
      */
-    function getDescription() : ?string
+    public function getDescription() : string
     {
         return $this->description;
     }
     /**
-     * @param string[] actions
+     * Setter for actions
+     *
+     * @param string[] $actions
+     *
+     * @return self To use in method chains
      */
-    function setActions(?array $actions)
+    public function setActions(?array $actions) : self
     {
         $this->actions = $actions;
+        return $this;
     }
     /**
-     * @return string[] actions
+     * Getter for actions
+     *
+     * @return string[]
      */
-    function getActions() : ?array
+    public function getActions() : array
     {
         return $this->actions;
     }
     /**
-     * @param string[] resources
+     * Setter for resources
+     *
+     * @param string[] $resources
+     *
+     * @return self To use in method chains
      */
-    function setResources(?array $resources)
+    public function setResources(?array $resources) : self
     {
         $this->resources = $resources;
+        return $this;
     }
     /**
-     * @return string[] resources
+     * Getter for resources
+     *
+     * @return string[]
      */
-    function getResources() : ?array
+    public function getResources() : array
     {
         return $this->resources;
     }

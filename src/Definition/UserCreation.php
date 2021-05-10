@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\UserUpdate;
+use Arimac\Sigfox\Definition;
 /**
  * User information for creation
  */
@@ -21,30 +21,44 @@ class UserCreation extends UserUpdate
      */
     protected ?bool $sendWelcomeEmail = null;
     /**
+     * Setter for email
+     *
      * @param string $email The user's email
+     *
+     * @return self To use in method chains
      */
-    function setEmail(?string $email)
+    public function setEmail(?string $email) : self
     {
         $this->email = $email;
+        return $this;
     }
     /**
+     * Getter for email
+     *
      * @return string The user's email
      */
-    function getEmail() : ?string
+    public function getEmail() : string
     {
         return $this->email;
     }
     /**
+     * Setter for sendWelcomeEmail
+     *
      * @param bool $sendWelcomeEmail Send an email to the user to create/change is password
+     *
+     * @return self To use in method chains
      */
-    function setSendWelcomeEmail(?bool $sendWelcomeEmail)
+    public function setSendWelcomeEmail(?bool $sendWelcomeEmail) : self
     {
         $this->sendWelcomeEmail = $sendWelcomeEmail;
+        return $this;
     }
     /**
+     * Getter for sendWelcomeEmail
+     *
      * @return bool Send an email to the user to create/change is password
      */
-    function getSendWelcomeEmail() : ?bool
+    public function getSendWelcomeEmail() : bool
     {
         return $this->sendWelcomeEmail;
     }

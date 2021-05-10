@@ -8,23 +8,41 @@ use Arimac\Sigfox\Definition;
  */
 class CommonGroupUpdate extends Definition
 {
-    /** SO */
+    /**
+     * SO
+     */
     public const TYPE_SO = 0;
-    /** Other */
+    /**
+     * Other
+     */
     public const TYPE_OTHER = 2;
-    /** SVNO */
+    /**
+     * SVNO
+     */
     public const TYPE_SVNO = 5;
-    /** Partners */
+    /**
+     * Partners
+     */
     public const TYPE_PARTNERS = 6;
-    /** NIP */
+    /**
+     * NIP
+     */
     public const TYPE_NIP = 7;
-    /** DIST */
+    /**
+     * DIST
+     */
     public const TYPE_DIST = 8;
-    /** Channel */
+    /**
+     * Channel
+     */
     public const TYPE_CHANNEL = 9;
-    /** Starter */
+    /**
+     * Starter
+     */
     public const TYPE_STARTER = 10;
-    /** Partner */
+    /**
+     * Partner
+     */
     public const TYPE_PARTNER = 11;
     /**
      * The group's name
@@ -40,17 +58,8 @@ class CommonGroupUpdate extends Definition
     protected ?string $description = null;
     /**
      * - Group's type
-     * - `CommonGroupUpdate::TYPE_SO`
-     * - `CommonGroupUpdate::TYPE_OTHER`
-     * - `CommonGroupUpdate::TYPE_SVNO`
-     * - `CommonGroupUpdate::TYPE_PARTNERS`
-     * - `CommonGroupUpdate::TYPE_NIP`
-     * - `CommonGroupUpdate::TYPE_DIST`
-     * - `CommonGroupUpdate::TYPE_CHANNEL`
-     * - `CommonGroupUpdate::TYPE_STARTER`
-     * - `CommonGroupUpdate::TYPE_PARTNER`
      *
-     * @var int
+     * @var self::TYPE_*
      */
     protected ?int $type = null;
     /**
@@ -60,76 +69,86 @@ class CommonGroupUpdate extends Definition
      */
     protected ?string $timezone = null;
     /**
+     * Setter for name
+     *
      * @param string $name The group's name
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The group's name
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }
     /**
+     * Setter for description
+     *
      * @param string $description The group's description
+     *
+     * @return self To use in method chains
      */
-    function setDescription(?string $description)
+    public function setDescription(?string $description) : self
     {
         $this->description = $description;
+        return $this;
     }
     /**
+     * Getter for description
+     *
      * @return string The group's description
      */
-    function getDescription() : ?string
+    public function getDescription() : string
     {
         return $this->description;
     }
     /**
-     * @param int $type - Group's type
-     * - `CommonGroupUpdate::TYPE_SO`
-     * - `CommonGroupUpdate::TYPE_OTHER`
-     * - `CommonGroupUpdate::TYPE_SVNO`
-     * - `CommonGroupUpdate::TYPE_PARTNERS`
-     * - `CommonGroupUpdate::TYPE_NIP`
-     * - `CommonGroupUpdate::TYPE_DIST`
-     * - `CommonGroupUpdate::TYPE_CHANNEL`
-     * - `CommonGroupUpdate::TYPE_STARTER`
-     * - `CommonGroupUpdate::TYPE_PARTNER`
+     * Setter for type
+     *
+     * @param self::TYPE_* $type - Group's type
+     *
+     * @return self To use in method chains
      */
-    function setType(?int $type)
+    public function setType(?int $type) : self
     {
         $this->type = $type;
+        return $this;
     }
     /**
-     * @return int - Group's type
-     * - `CommonGroupUpdate::TYPE_SO`
-     * - `CommonGroupUpdate::TYPE_OTHER`
-     * - `CommonGroupUpdate::TYPE_SVNO`
-     * - `CommonGroupUpdate::TYPE_PARTNERS`
-     * - `CommonGroupUpdate::TYPE_NIP`
-     * - `CommonGroupUpdate::TYPE_DIST`
-     * - `CommonGroupUpdate::TYPE_CHANNEL`
-     * - `CommonGroupUpdate::TYPE_STARTER`
-     * - `CommonGroupUpdate::TYPE_PARTNER`
+     * Getter for type
+     *
+     * @return self::TYPE_* - Group's type
      */
-    function getType() : ?int
+    public function getType() : int
     {
         return $this->type;
     }
     /**
+     * Setter for timezone
+     *
      * @param string $timezone The timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
+     *
+     * @return self To use in method chains
      */
-    function setTimezone(?string $timezone)
+    public function setTimezone(?string $timezone) : self
     {
         $this->timezone = $timezone;
+        return $this;
     }
     /**
+     * Getter for timezone
+     *
      * @return string The timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
      */
-    function getTimezone() : ?string
+    public function getTimezone() : string
     {
         return $this->timezone;
     }

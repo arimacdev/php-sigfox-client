@@ -2,49 +2,56 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CreateInternetSubscription;
+use Arimac\Sigfox\Definition;
 /**
  * Information about satellite internet subscription
  */
 class CreateSatSubscription extends CreateInternetSubscription
 {
-    /** REQUEST */
+    /**
+     * REQUEST
+     */
     public const CONNECTION_STATUS_REQUEST = 0;
-    /** CREDENTIALS PROVIDED */
+    /**
+     * CREDENTIALS PROVIDED
+     */
     public const CONNECTION_STATUS_CREDENTIALS_PROVIDED = 1;
-    /** KIT RECEIVED */
+    /**
+     * KIT RECEIVED
+     */
     public const CONNECTION_STATUS_KIT_RECEIVED = 2;
-    /** HEATING */
+    /**
+     * HEATING
+     */
     public const R_TYPE_HEATING = 0;
-    /** STANDARD */
+    /**
+     * Subscription receiver type
+     */
     public const R_TYPE_STANDARD = 1;
     /**
      * Subscription connection status
-     * - `CreateSatSubscription::CONNECTION_STATUS_REQUEST`
-     * - `CreateSatSubscription::CONNECTION_STATUS_CREDENTIALS_PROVIDED`
-     * - `CreateSatSubscription::CONNECTION_STATUS_KIT_RECEIVED`
      *
-     * @var int
+     * @var self::CONNECTION_STATUS_*
      */
     protected ?int $connectionStatus = null;
     /**
      * The altitude of the satellite of this internet subscription
      *
-     * @var float
+     * @var int
      */
-    protected ?float $altitude = null;
+    protected ?int $altitude = null;
     /**
      * The azimuth of the satellite of this internet subscription
      *
-     * @var float
+     * @var int
      */
-    protected ?float $azimuth = null;
+    protected ?int $azimuth = null;
     /**
      * The polarization of the satellite of this internet subscription
      *
-     * @var float
+     * @var int
      */
-    protected ?float $polarization = null;
+    protected ?int $polarization = null;
     /**
      * The order number of this internet subscription
      *
@@ -77,159 +84,228 @@ class CreateSatSubscription extends CreateInternetSubscription
     protected ?string $password = null;
     /**
      * Subscription receiver type
-     * - `CreateSatSubscription::R_TYPE_HEATING`
-     * - `CreateSatSubscription::R_TYPE_STANDARD`
+     * - 0 -> HEATING
+     * - 1 -> STANDARD
+     * 
      *
-     * @var int
+     * @var self::R_TYPE_*
      */
     protected ?int $rType = null;
     /**
-     * @param int $connectionStatus Subscription connection status
-     * - `CreateSatSubscription::CONNECTION_STATUS_REQUEST`
-     * - `CreateSatSubscription::CONNECTION_STATUS_CREDENTIALS_PROVIDED`
-     * - `CreateSatSubscription::CONNECTION_STATUS_KIT_RECEIVED`
+     * Setter for connectionStatus
+     *
+     * @param self::CONNECTION_STATUS_* $connectionStatus Subscription connection status
+     *
+     * @return self To use in method chains
      */
-    function setConnectionStatus(?int $connectionStatus)
+    public function setConnectionStatus(?int $connectionStatus) : self
     {
         $this->connectionStatus = $connectionStatus;
+        return $this;
     }
     /**
-     * @return int Subscription connection status
-     * - `CreateSatSubscription::CONNECTION_STATUS_REQUEST`
-     * - `CreateSatSubscription::CONNECTION_STATUS_CREDENTIALS_PROVIDED`
-     * - `CreateSatSubscription::CONNECTION_STATUS_KIT_RECEIVED`
+     * Getter for connectionStatus
+     *
+     * @return self::CONNECTION_STATUS_* Subscription connection status
      */
-    function getConnectionStatus() : ?int
+    public function getConnectionStatus() : int
     {
         return $this->connectionStatus;
     }
     /**
-     * @param float $altitude The altitude of the satellite of this internet subscription
+     * Setter for altitude
+     *
+     * @param int $altitude The altitude of the satellite of this internet subscription
+     *
+     * @return self To use in method chains
      */
-    function setAltitude(?float $altitude)
+    public function setAltitude(?int $altitude) : self
     {
         $this->altitude = $altitude;
+        return $this;
     }
     /**
-     * @return float The altitude of the satellite of this internet subscription
+     * Getter for altitude
+     *
+     * @return int The altitude of the satellite of this internet subscription
      */
-    function getAltitude() : ?float
+    public function getAltitude() : int
     {
         return $this->altitude;
     }
     /**
-     * @param float $azimuth The azimuth of the satellite of this internet subscription
+     * Setter for azimuth
+     *
+     * @param int $azimuth The azimuth of the satellite of this internet subscription
+     *
+     * @return self To use in method chains
      */
-    function setAzimuth(?float $azimuth)
+    public function setAzimuth(?int $azimuth) : self
     {
         $this->azimuth = $azimuth;
+        return $this;
     }
     /**
-     * @return float The azimuth of the satellite of this internet subscription
+     * Getter for azimuth
+     *
+     * @return int The azimuth of the satellite of this internet subscription
      */
-    function getAzimuth() : ?float
+    public function getAzimuth() : int
     {
         return $this->azimuth;
     }
     /**
-     * @param float $polarization The polarization of the satellite of this internet subscription
+     * Setter for polarization
+     *
+     * @param int $polarization The polarization of the satellite of this internet subscription
+     *
+     * @return self To use in method chains
      */
-    function setPolarization(?float $polarization)
+    public function setPolarization(?int $polarization) : self
     {
         $this->polarization = $polarization;
+        return $this;
     }
     /**
-     * @return float The polarization of the satellite of this internet subscription
+     * Getter for polarization
+     *
+     * @return int The polarization of the satellite of this internet subscription
      */
-    function getPolarization() : ?float
+    public function getPolarization() : int
     {
         return $this->polarization;
     }
     /**
+     * Setter for orderNumber
+     *
      * @param string $orderNumber The order number of this internet subscription
+     *
+     * @return self To use in method chains
      */
-    function setOrderNumber(?string $orderNumber)
+    public function setOrderNumber(?string $orderNumber) : self
     {
         $this->orderNumber = $orderNumber;
+        return $this;
     }
     /**
+     * Getter for orderNumber
+     *
      * @return string The order number of this internet subscription
      */
-    function getOrderNumber() : ?string
+    public function getOrderNumber() : string
     {
         return $this->orderNumber;
     }
     /**
-     * @param string $locationCode The location code of this internet subscription. This field can be unset when updating.
+     * Setter for locationCode
+     *
+     * @param string $locationCode The location code of this internet subscription. This field can be unset when
+     *                             updating.
+     *
+     * @return self To use in method chains
      */
-    function setLocationCode(?string $locationCode)
+    public function setLocationCode(?string $locationCode) : self
     {
         $this->locationCode = $locationCode;
+        return $this;
     }
     /**
+     * Getter for locationCode
+     *
      * @return string The location code of this internet subscription. This field can be unset when updating.
      */
-    function getLocationCode() : ?string
+    public function getLocationCode() : string
     {
         return $this->locationCode;
     }
     /**
-     * @param string $clusterCode The cluster code of this internet subscription. This field can be unset when updating.
+     * Setter for clusterCode
+     *
+     * @param string $clusterCode The cluster code of this internet subscription. This field can be unset when
+     *                            updating.
+     *
+     * @return self To use in method chains
      */
-    function setClusterCode(?string $clusterCode)
+    public function setClusterCode(?string $clusterCode) : self
     {
         $this->clusterCode = $clusterCode;
+        return $this;
     }
     /**
+     * Getter for clusterCode
+     *
      * @return string The cluster code of this internet subscription. This field can be unset when updating.
      */
-    function getClusterCode() : ?string
+    public function getClusterCode() : string
     {
         return $this->clusterCode;
     }
     /**
+     * Setter for login
+     *
      * @param string $login The login of this internet subscription. This field can be unset when updating.
+     *
+     * @return self To use in method chains
      */
-    function setLogin(?string $login)
+    public function setLogin(?string $login) : self
     {
         $this->login = $login;
+        return $this;
     }
     /**
+     * Getter for login
+     *
      * @return string The login of this internet subscription. This field can be unset when updating.
      */
-    function getLogin() : ?string
+    public function getLogin() : string
     {
         return $this->login;
     }
     /**
+     * Setter for password
+     *
      * @param string $password The password of this internet subscription. This field can be unset when updating.
+     *
+     * @return self To use in method chains
      */
-    function setPassword(?string $password)
+    public function setPassword(?string $password) : self
     {
         $this->password = $password;
+        return $this;
     }
     /**
+     * Getter for password
+     *
      * @return string The password of this internet subscription. This field can be unset when updating.
      */
-    function getPassword() : ?string
+    public function getPassword() : string
     {
         return $this->password;
     }
     /**
-     * @param int $rType Subscription receiver type
-     * - `CreateSatSubscription::R_TYPE_HEATING`
-     * - `CreateSatSubscription::R_TYPE_STANDARD`
+     * Setter for rType
+     *
+     * @param self::R_TYPE_* $rType Subscription receiver type
+     *                              - 0 -> HEATING
+     *                              - 1 -> STANDARD
+     *                              
+     *
+     * @return self To use in method chains
      */
-    function setRType(?int $rType)
+    public function setRType(?int $rType) : self
     {
         $this->rType = $rType;
+        return $this;
     }
     /**
-     * @return int Subscription receiver type
-     * - `CreateSatSubscription::R_TYPE_HEATING`
-     * - `CreateSatSubscription::R_TYPE_STANDARD`
+     * Getter for rType
+     *
+     * @return self::R_TYPE_* Subscription receiver type
+     *                        - 0 -> HEATING
+     *                        - 1 -> STANDARD
+     *                        
      */
-    function getRType() : ?int
+    public function getRType() : int
     {
         return $this->rType;
     }

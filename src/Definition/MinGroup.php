@@ -8,23 +8,41 @@ use Arimac\Sigfox\Definition;
  */
 class MinGroup extends Definition
 {
-    /** SO */
+    /**
+     * SO
+     */
     public const TYPE_SO = 0;
-    /** Other */
+    /**
+     * Other
+     */
     public const TYPE_OTHER = 2;
-    /** SVNO */
+    /**
+     * SVNO
+     */
     public const TYPE_SVNO = 5;
-    /** Partners */
+    /**
+     * Partners
+     */
     public const TYPE_PARTNERS = 6;
-    /** NIP */
+    /**
+     * NIP
+     */
     public const TYPE_NIP = 7;
-    /** DIST */
+    /**
+     * DIST
+     */
     public const TYPE_DIST = 8;
-    /** Channel */
+    /**
+     * Channel
+     */
     public const TYPE_CHANNEL = 9;
-    /** Starter */
+    /**
+     * Starter
+     */
     public const TYPE_STARTER = 10;
-    /** Partner */
+    /**
+     * Partner
+     */
     public const TYPE_PARTNER = 11;
     /**
      * The group identifier
@@ -40,17 +58,8 @@ class MinGroup extends Definition
     protected ?string $name = null;
     /**
      * Group's type
-     * - `MinGroup::TYPE_SO`
-     * - `MinGroup::TYPE_OTHER`
-     * - `MinGroup::TYPE_SVNO`
-     * - `MinGroup::TYPE_PARTNERS`
-     * - `MinGroup::TYPE_NIP`
-     * - `MinGroup::TYPE_DIST`
-     * - `MinGroup::TYPE_CHANNEL`
-     * - `MinGroup::TYPE_STARTER`
-     * - `MinGroup::TYPE_PARTNER`
      *
-     * @var int
+     * @var self::TYPE_*
      */
     protected ?int $type = null;
     /**
@@ -59,109 +68,137 @@ class MinGroup extends Definition
      * @var int
      */
     protected ?int $level = null;
-    /** @var string[] */
+    /**
+     * @var string[]
+     */
     protected ?array $actions = null;
-    /** @var string[] */
+    /**
+     * @var string[]
+     */
     protected ?array $resources = null;
     /**
+     * Setter for id
+     *
      * @param string $id The group identifier
+     *
+     * @return self To use in method chains
      */
-    function setId(?string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The group identifier
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
+     * Setter for name
+     *
      * @param string $name The group name
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The group name
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }
     /**
-     * @param int $type Group's type
-     * - `MinGroup::TYPE_SO`
-     * - `MinGroup::TYPE_OTHER`
-     * - `MinGroup::TYPE_SVNO`
-     * - `MinGroup::TYPE_PARTNERS`
-     * - `MinGroup::TYPE_NIP`
-     * - `MinGroup::TYPE_DIST`
-     * - `MinGroup::TYPE_CHANNEL`
-     * - `MinGroup::TYPE_STARTER`
-     * - `MinGroup::TYPE_PARTNER`
+     * Setter for type
+     *
+     * @param self::TYPE_* $type Group's type
+     *
+     * @return self To use in method chains
      */
-    function setType(?int $type)
+    public function setType(?int $type) : self
     {
         $this->type = $type;
+        return $this;
     }
     /**
-     * @return int Group's type
-     * - `MinGroup::TYPE_SO`
-     * - `MinGroup::TYPE_OTHER`
-     * - `MinGroup::TYPE_SVNO`
-     * - `MinGroup::TYPE_PARTNERS`
-     * - `MinGroup::TYPE_NIP`
-     * - `MinGroup::TYPE_DIST`
-     * - `MinGroup::TYPE_CHANNEL`
-     * - `MinGroup::TYPE_STARTER`
-     * - `MinGroup::TYPE_PARTNER`
+     * Getter for type
+     *
+     * @return self::TYPE_* Group's type
      */
-    function getType() : ?int
+    public function getType() : int
     {
         return $this->type;
     }
     /**
+     * Setter for level
+     *
      * @param int $level The depth level of the group in hierarchy
+     *
+     * @return self To use in method chains
      */
-    function setLevel(?int $level)
+    public function setLevel(?int $level) : self
     {
         $this->level = $level;
+        return $this;
     }
     /**
+     * Getter for level
+     *
      * @return int The depth level of the group in hierarchy
      */
-    function getLevel() : ?int
+    public function getLevel() : int
     {
         return $this->level;
     }
     /**
-     * @param string[] actions
+     * Setter for actions
+     *
+     * @param string[] $actions
+     *
+     * @return self To use in method chains
      */
-    function setActions(?array $actions)
+    public function setActions(?array $actions) : self
     {
         $this->actions = $actions;
+        return $this;
     }
     /**
-     * @return string[] actions
+     * Getter for actions
+     *
+     * @return string[]
      */
-    function getActions() : ?array
+    public function getActions() : array
     {
         return $this->actions;
     }
     /**
-     * @param string[] resources
+     * Setter for resources
+     *
+     * @param string[] $resources
+     *
+     * @return self To use in method chains
      */
-    function setResources(?array $resources)
+    public function setResources(?array $resources) : self
     {
         $this->resources = $resources;
+        return $this;
     }
     /**
-     * @return string[] resources
+     * Getter for resources
+     *
+     * @return string[]
      */
-    function getResources() : ?array
+    public function getResources() : array
     {
         return $this->resources;
     }

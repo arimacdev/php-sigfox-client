@@ -8,11 +8,17 @@ use Arimac\Sigfox\Definition;
  */
 class CommonRole extends Definition
 {
-    /** ROLE */
+    /**
+     * ROLE
+     */
     public const TYPE_ROLE = 0;
-    /** META_EMPTY */
+    /**
+     * META_EMPTY
+     */
     public const TYPE_META_EMPTY = 1;
-    /** META */
+    /**
+     * META
+     */
     public const TYPE_META = 2;
     /**
      * the role's name
@@ -22,44 +28,49 @@ class CommonRole extends Definition
     protected ?string $name = null;
     /**
      * Token's type of role
-     * - `CommonRole::TYPE_ROLE`
-     * - `CommonRole::TYPE_META_EMPTY`
-     * - `CommonRole::TYPE_META`
      *
-     * @var int
+     * @var self::TYPE_*
      */
     protected ?int $type = null;
     /**
+     * Setter for name
+     *
      * @param string $name the role's name
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string the role's name
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }
     /**
-     * @param int $type Token's type of role
-     * - `CommonRole::TYPE_ROLE`
-     * - `CommonRole::TYPE_META_EMPTY`
-     * - `CommonRole::TYPE_META`
+     * Setter for type
+     *
+     * @param self::TYPE_* $type Token's type of role
+     *
+     * @return self To use in method chains
      */
-    function setType(?int $type)
+    public function setType(?int $type) : self
     {
         $this->type = $type;
+        return $this;
     }
     /**
-     * @return int Token's type of role
-     * - `CommonRole::TYPE_ROLE`
-     * - `CommonRole::TYPE_META_EMPTY`
-     * - `CommonRole::TYPE_META`
+     * Getter for type
+     *
+     * @return self::TYPE_* Token's type of role
      */
-    function getType() : ?int
+    public function getType() : int
     {
         return $this->type;
     }

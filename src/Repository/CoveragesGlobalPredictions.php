@@ -2,18 +2,19 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\CoveragesGlobalPredictionsBulk;
+use Arimac\Sigfox\Request\CoveragesGlobalPredictionsGetOne;
+use Arimac\Sigfox\Request\CoveragesGlobalPredictionsGet;
+use Arimac\Sigfox\Request\CoveragesGlobalPredictionsBulk;
 class CoveragesGlobalPredictions
 {
     /**
      * Get coverage margins for a selected latitude and longitude, for each
      * redundancy level.
-     * For more information please refer to the [Global Coverage API article](https://support.sigfox.com/docs/global-coverage-api).
-     *
-     * @param int $request
-     * @return int
+     * For more information please refer to the [Global Coverage API
+     * article](https://support.sigfox.com/docs/global-coverage-api).
+     * 
      */
-    function getOne(int $request) : int
+    public function getOne(CoveragesGlobalPredictionsGetOne $request) : int
     {
         return $this->client->request('get', '/coverages/global/predictions', $request, 'int');
     }
@@ -23,23 +24,21 @@ class CoveragesGlobalPredictions
      *   -use the bulk endpoint instead when requesting a large number of locations
      *   -not request more than 200 locations at a time
      *   -wait for the result to be returned before requesting again (avoid multithreading)
-     * For more information please refer to the [Global Coverage API article](https://support.sigfox.com/docs/global-coverage-api).
-     *
-     * @param int $request
-     * @return int
+     * For more information please refer to the [Global Coverage API
+     * article](https://support.sigfox.com/docs/global-coverage-api).
+     * 
      */
-    function get(int $request) : int
+    public function get(CoveragesGlobalPredictionsGet $request) : int
     {
         return $this->client->request('post', '/coverages/global/predictions', $request, 'int');
     }
     /**
      * Starting the computation of the coverage margins for multiple points, for each redundancy level.
-     * For more information please refer to the [Global Coverage API article](https://support.sigfox.com/docs/global-coverage-api).
-     *
-     * @param int $request
-     * @return int
+     * For more information please refer to the [Global Coverage API
+     * article](https://support.sigfox.com/docs/global-coverage-api).
+     * 
      */
-    function bulk(int $request) : int
+    public function bulk(CoveragesGlobalPredictionsBulk $request) : int
     {
         return $this->client->request('post', '/coverages/global/predictions/bulk', $request, 'int');
     }

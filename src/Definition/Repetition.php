@@ -20,15 +20,15 @@ class Repetition extends Definition
     /**
      * the best signal of all repetitions for this base station
      *
-     * @var float
+     * @var int
      */
-    protected ?float $snr = null;
+    protected ?int $snr = null;
     /**
      * the frequency at which the message has been received (in Hz)
      *
-     * @var float
+     * @var int
      */
-    protected ?float $freq = null;
+    protected ?int $freq = null;
     /**
      * if this repetition has been propagated by a repeater
      *
@@ -36,72 +36,107 @@ class Repetition extends Definition
      */
     protected ?bool $repeated = null;
     /**
+     * Setter for nseq
+     *
      * @param int $nseq nseq of the repetition
+     *
+     * @return self To use in method chains
      */
-    function setNseq(?int $nseq)
+    public function setNseq(?int $nseq) : self
     {
         $this->nseq = $nseq;
+        return $this;
     }
     /**
+     * Getter for nseq
+     *
      * @return int nseq of the repetition
      */
-    function getNseq() : ?int
+    public function getNseq() : int
     {
         return $this->nseq;
     }
     /**
+     * Setter for rssi
+     *
      * @param int $rssi Received Signal Strength Indication (in dBm – Float value with two maximum fraction digits)
+     *
+     * @return self To use in method chains
      */
-    function setRssi(?int $rssi)
+    public function setRssi(?int $rssi) : self
     {
         $this->rssi = $rssi;
+        return $this;
     }
     /**
+     * Getter for rssi
+     *
      * @return int Received Signal Strength Indication (in dBm – Float value with two maximum fraction digits)
      */
-    function getRssi() : ?int
+    public function getRssi() : int
     {
         return $this->rssi;
     }
     /**
-     * @param float $snr the best signal of all repetitions for this base station
+     * Setter for snr
+     *
+     * @param int $snr the best signal of all repetitions for this base station
+     *
+     * @return self To use in method chains
      */
-    function setSnr(?float $snr)
+    public function setSnr(?int $snr) : self
     {
         $this->snr = $snr;
+        return $this;
     }
     /**
-     * @return float the best signal of all repetitions for this base station
+     * Getter for snr
+     *
+     * @return int the best signal of all repetitions for this base station
      */
-    function getSnr() : ?float
+    public function getSnr() : int
     {
         return $this->snr;
     }
     /**
-     * @param float $freq the frequency at which the message has been received (in Hz)
+     * Setter for freq
+     *
+     * @param int $freq the frequency at which the message has been received (in Hz)
+     *
+     * @return self To use in method chains
      */
-    function setFreq(?float $freq)
+    public function setFreq(?int $freq) : self
     {
         $this->freq = $freq;
+        return $this;
     }
     /**
-     * @return float the frequency at which the message has been received (in Hz)
+     * Getter for freq
+     *
+     * @return int the frequency at which the message has been received (in Hz)
      */
-    function getFreq() : ?float
+    public function getFreq() : int
     {
         return $this->freq;
     }
     /**
+     * Setter for repeated
+     *
      * @param bool $repeated if this repetition has been propagated by a repeater
+     *
+     * @return self To use in method chains
      */
-    function setRepeated(?bool $repeated)
+    public function setRepeated(?bool $repeated) : self
     {
         $this->repeated = $repeated;
+        return $this;
     }
     /**
+     * Getter for repeated
+     *
      * @return bool if this repetition has been propagated by a repeater
      */
-    function getRepeated() : ?bool
+    public function getRepeated() : bool
     {
         return $this->repeated;
     }

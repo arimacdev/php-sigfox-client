@@ -20,30 +20,44 @@ trait CallbackEmail
      */
     protected ?string $message = null;
     /**
+     * Setter for subject
+     *
      * @param string $subject The subject of the email to be sent
+     *
+     * @return self To use in method chains
      */
-    function setSubject(?string $subject)
+    public function setSubject(?string $subject) : self
     {
         $this->subject = $subject;
+        return $this;
     }
     /**
+     * Getter for subject
+     *
      * @return string The subject of the email to be sent
      */
-    function getSubject() : ?string
+    public function getSubject() : string
     {
         return $this->subject;
     }
     /**
+     * Setter for message
+     *
      * @param string $message The body of the email to be sent
+     *
+     * @return self To use in method chains
      */
-    function setMessage(?string $message)
+    public function setMessage(?string $message) : self
     {
         $this->message = $message;
+        return $this;
     }
     /**
+     * Getter for message
+     *
      * @return string The body of the email to be sent
      */
-    function getMessage() : ?string
+    public function getMessage() : string
     {
         return $this->message;
     }

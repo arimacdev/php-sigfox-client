@@ -2,9 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\BaseSiteConvention;
-use Arimac\Sigfox\Definition\MinSite;
-use Arimac\Sigfox\Definition\MinGroup;
+use Arimac\Sigfox\Definition;
 /**
  * information about convention
  */
@@ -16,50 +14,75 @@ class SiteConvention extends BaseSiteConvention
      * @var string
      */
     protected ?string $id = null;
-    /** @var MinSite */
-    protected ?MinSite $site = null;
-    /** @var MinGroup */
-    protected ?MinGroup $group = null;
-    protected $objects = array('site' => '\\Arimac\\Sigfox\\Definition\\MinSite', 'group' => '\\Arimac\\Sigfox\\Definition\\MinGroup');
     /**
-     * @param string $id The convention's identifier
+     * @var MinSite
      */
-    function setId(?string $id)
+    protected ?MinSite $site = null;
+    /**
+     * @var MinGroup
+     */
+    protected ?MinGroup $group = null;
+    protected $serialize = array('site' => MinSite::class, 'group' => MinGroup::class);
+    /**
+     * Setter for id
+     *
+     * @param string $id The convention's identifier
+     *
+     * @return self To use in method chains
+     */
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The convention's identifier
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
-     * @param MinSite site
+     * Setter for site
+     *
+     * @param MinSite $site
+     *
+     * @return self To use in method chains
      */
-    function setSite(?MinSite $site)
+    public function setSite(?MinSite $site) : self
     {
         $this->site = $site;
+        return $this;
     }
     /**
-     * @return MinSite site
+     * Getter for site
+     *
+     * @return MinSite
      */
-    function getSite() : ?MinSite
+    public function getSite() : MinSite
     {
         return $this->site;
     }
     /**
-     * @param MinGroup group
+     * Setter for group
+     *
+     * @param MinGroup $group
+     *
+     * @return self To use in method chains
      */
-    function setGroup(?MinGroup $group)
+    public function setGroup(?MinGroup $group) : self
     {
         $this->group = $group;
+        return $this;
     }
     /**
-     * @return MinGroup group
+     * Getter for group
+     *
+     * @return MinGroup
      */
-    function getGroup() : ?MinGroup
+    public function getGroup() : MinGroup
     {
         return $this->group;
     }

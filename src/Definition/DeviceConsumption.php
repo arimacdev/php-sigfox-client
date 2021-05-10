@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\DeviceConsumption\DeviceConsumptionsItem;
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Definition\DeviceConsumption\DeviceConsumptionsItem;
 /**
  * The consumption for this device
  */
@@ -22,30 +22,44 @@ class DeviceConsumption extends Definition
      */
     protected ?array $deviceConsumptions = null;
     /**
+     * Setter for id
+     *
      * @param int $id Identifier of the device consumption
+     *
+     * @return self To use in method chains
      */
-    function setId(?int $id)
+    public function setId(?int $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return int Identifier of the device consumption
      */
-    function getId() : ?int
+    public function getId() : int
     {
         return $this->id;
     }
     /**
+     * Setter for deviceConsumptions
+     *
      * @param DeviceConsumptionsItem[] $deviceConsumptions Consumption of a device
+     *
+     * @return self To use in method chains
      */
-    function setDeviceConsumptions(?array $deviceConsumptions)
+    public function setDeviceConsumptions(?array $deviceConsumptions) : self
     {
         $this->deviceConsumptions = $deviceConsumptions;
+        return $this;
     }
     /**
+     * Getter for deviceConsumptions
+     *
      * @return DeviceConsumptionsItem[] Consumption of a device
      */
-    function getDeviceConsumptions() : ?array
+    public function getDeviceConsumptions() : array
     {
         return $this->deviceConsumptions;
     }

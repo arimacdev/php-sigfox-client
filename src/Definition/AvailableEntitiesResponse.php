@@ -2,9 +2,9 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\AvailableEntitiesResponse\OperatorsItem;
 use Arimac\Sigfox\Definition\AvailableEntitiesResponse\ClassesItem;
-use Arimac\Sigfox\Definition;
 /**
  * Returned data for Service Coverage Available Entities API
  */
@@ -22,47 +22,70 @@ class AvailableEntitiesResponse extends Definition
      * @var ClassesItem[]
      */
     protected ?array $classes = null;
-    /** @var string[] */
+    /**
+     * @var string[]
+     */
     protected ?array $actions = null;
     /**
+     * Setter for operators
+     *
      * @param OperatorsItem[] $operators Array of operators infos and their forecast radio planning infos
+     *
+     * @return self To use in method chains
      */
-    function setOperators(?array $operators)
+    public function setOperators(?array $operators) : self
     {
         $this->operators = $operators;
+        return $this;
     }
     /**
+     * Getter for operators
+     *
      * @return OperatorsItem[] Array of operators infos and their forecast radio planning infos
      */
-    function getOperators() : ?array
+    public function getOperators() : array
     {
         return $this->operators;
     }
     /**
+     * Setter for classes
+     *
      * @param ClassesItem[] $classes Array of device class infos.
+     *
+     * @return self To use in method chains
      */
-    function setClasses(?array $classes)
+    public function setClasses(?array $classes) : self
     {
         $this->classes = $classes;
+        return $this;
     }
     /**
+     * Getter for classes
+     *
      * @return ClassesItem[] Array of device class infos.
      */
-    function getClasses() : ?array
+    public function getClasses() : array
     {
         return $this->classes;
     }
     /**
-     * @param string[] actions
+     * Setter for actions
+     *
+     * @param string[] $actions
+     *
+     * @return self To use in method chains
      */
-    function setActions(?array $actions)
+    public function setActions(?array $actions) : self
     {
         $this->actions = $actions;
+        return $this;
     }
     /**
-     * @return string[] actions
+     * Getter for actions
+     *
+     * @return string[]
      */
-    function getActions() : ?array
+    public function getActions() : array
     {
         return $this->actions;
     }

@@ -8,84 +8,113 @@ use Arimac\Sigfox\Definition;
  */
 class ApiUserCreation extends Definition
 {
-    protected $required = array('groupId', 'name', 'profileIds', 'timezone');
     /**
      * The group identifer
      *
      * @var string
      */
-    protected string $groupId;
+    protected ?string $groupId = null;
     /**
      * The API user name
      *
      * @var string
      */
-    protected string $name;
+    protected ?string $name = null;
     /**
      * The API user timezone as a Java TimeZone ID ("full name" version only, like "America/Costa_Rica")
      *
      * @var string
      */
-    protected string $timezone;
+    protected ?string $timezone = null;
     /**
      * The API user profiles
      *
      * @var string[]
      */
-    protected array $profileIds;
+    protected ?array $profileIds = null;
     /**
+     * Setter for groupId
+     *
      * @param string $groupId The group identifer
+     *
+     * @return self To use in method chains
      */
-    function setGroupId(string $groupId)
+    public function setGroupId(?string $groupId) : self
     {
         $this->groupId = $groupId;
+        return $this;
     }
     /**
+     * Getter for groupId
+     *
      * @return string The group identifer
      */
-    function getGroupId() : string
+    public function getGroupId() : string
     {
         return $this->groupId;
     }
     /**
+     * Setter for name
+     *
      * @param string $name The API user name
+     *
+     * @return self To use in method chains
      */
-    function setName(string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The API user name
      */
-    function getName() : string
+    public function getName() : string
     {
         return $this->name;
     }
     /**
-     * @param string $timezone The API user timezone as a Java TimeZone ID ("full name" version only, like "America/Costa_Rica")
+     * Setter for timezone
+     *
+     * @param string $timezone The API user timezone as a Java TimeZone ID ("full name" version only, like
+     *                         "America/Costa_Rica")
+     *
+     * @return self To use in method chains
      */
-    function setTimezone(string $timezone)
+    public function setTimezone(?string $timezone) : self
     {
         $this->timezone = $timezone;
+        return $this;
     }
     /**
-     * @return string The API user timezone as a Java TimeZone ID ("full name" version only, like "America/Costa_Rica")
+     * Getter for timezone
+     *
+     * @return string The API user timezone as a Java TimeZone ID ("full name" version only, like
+     *                "America/Costa_Rica")
      */
-    function getTimezone() : string
+    public function getTimezone() : string
     {
         return $this->timezone;
     }
     /**
+     * Setter for profileIds
+     *
      * @param string[] $profileIds The API user profiles
+     *
+     * @return self To use in method chains
      */
-    function setProfileIds(array $profileIds)
+    public function setProfileIds(?array $profileIds) : self
     {
         $this->profileIds = $profileIds;
+        return $this;
     }
     /**
+     * Getter for profileIds
+     *
      * @return string[] The API user profiles
      */
-    function getProfileIds() : array
+    public function getProfileIds() : array
     {
         return $this->profileIds;
     }

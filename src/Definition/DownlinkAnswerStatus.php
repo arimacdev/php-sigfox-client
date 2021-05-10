@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\MinBaseStationWithType;
 use Arimac\Sigfox\Definition;
 class DownlinkAnswerStatus extends Definition
 {
@@ -15,9 +14,9 @@ class DownlinkAnswerStatus extends Definition
     /**
      * planned downlink power as it was computed by the backend
      *
-     * @var float
+     * @var int
      */
-    protected ?float $plannedPower = null;
+    protected ?int $plannedPower = null;
     /**
      * response content, hex encoded
      *
@@ -36,74 +35,109 @@ class DownlinkAnswerStatus extends Definition
      * @var string
      */
     protected ?string $country = null;
-    protected $objects = array('baseStation' => '\\Arimac\\Sigfox\\Definition\\MinBaseStationWithType');
+    protected $serialize = array('baseStation' => MinBaseStationWithType::class);
     /**
+     * Setter for baseStation
+     *
      * @param MinBaseStationWithType $baseStation base station to send downlink message
+     *
+     * @return self To use in method chains
      */
-    function setBaseStation(?MinBaseStationWithType $baseStation)
+    public function setBaseStation(?MinBaseStationWithType $baseStation) : self
     {
         $this->baseStation = $baseStation;
+        return $this;
     }
     /**
+     * Getter for baseStation
+     *
      * @return MinBaseStationWithType base station to send downlink message
      */
-    function getBaseStation() : ?MinBaseStationWithType
+    public function getBaseStation() : MinBaseStationWithType
     {
         return $this->baseStation;
     }
     /**
-     * @param float $plannedPower planned downlink power as it was computed by the backend
+     * Setter for plannedPower
+     *
+     * @param int $plannedPower planned downlink power as it was computed by the backend
+     *
+     * @return self To use in method chains
      */
-    function setPlannedPower(?float $plannedPower)
+    public function setPlannedPower(?int $plannedPower) : self
     {
         $this->plannedPower = $plannedPower;
+        return $this;
     }
     /**
-     * @return float planned downlink power as it was computed by the backend
+     * Getter for plannedPower
+     *
+     * @return int planned downlink power as it was computed by the backend
      */
-    function getPlannedPower() : ?float
+    public function getPlannedPower() : int
     {
         return $this->plannedPower;
     }
     /**
+     * Setter for data
+     *
      * @param string $data response content, hex encoded
+     *
+     * @return self To use in method chains
      */
-    function setData(?string $data)
+    public function setData(?string $data) : self
     {
         $this->data = $data;
+        return $this;
     }
     /**
+     * Getter for data
+     *
      * @return string response content, hex encoded
      */
-    function getData() : ?string
+    public function getData() : string
     {
         return $this->data;
     }
     /**
+     * Setter for operator
+     *
      * @param string $operator name of the first operator which received the message as roaming
+     *
+     * @return self To use in method chains
      */
-    function setOperator(?string $operator)
+    public function setOperator(?string $operator) : self
     {
         $this->operator = $operator;
+        return $this;
     }
     /**
+     * Getter for operator
+     *
      * @return string name of the first operator which received the message as roaming
      */
-    function getOperator() : ?string
+    public function getOperator() : string
     {
         return $this->operator;
     }
     /**
+     * Setter for country
+     *
      * @param string $country country of the operator
+     *
+     * @return self To use in method chains
      */
-    function setCountry(?string $country)
+    public function setCountry(?string $country) : self
     {
         $this->country = $country;
+        return $this;
     }
     /**
+     * Getter for country
+     *
      * @return string country of the operator
      */
-    function getCountry() : ?string
+    public function getCountry() : string
     {
         return $this->country;
     }

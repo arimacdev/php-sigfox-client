@@ -2,30 +2,47 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\MinGroup;
 use Arimac\Sigfox\Definition;
 /**
  * Defines the group's generic properties
  */
 class Group extends Definition
 {
-    /** SO */
+    /**
+     * SO
+     */
     public const TYPE_SO = 0;
-    /** Basic */
+    /**
+     * Basic
+     */
     public const TYPE_BASIC = 2;
-    /** SVNO */
+    /**
+     * SVNO
+     */
     public const TYPE_SVNO = 5;
-    /** Partners */
+    /**
+     * Partners
+     */
     public const TYPE_PARTNERS = 6;
-    /** NIP */
+    /**
+     * NIP
+     */
     public const TYPE_NIP = 7;
-    /** DIST */
+    /**
+     * DIST
+     */
     public const TYPE_DIST = 8;
-    /** Channel */
+    /**
+     * Channel
+     */
     public const TYPE_CHANNEL = 9;
-    /** Starter */
+    /**
+     * Starter
+     */
     public const TYPE_STARTER = 10;
-    /** Partner */
+    /**
+     * Partner
+     */
     public const TYPE_PARTNER = 11;
     /**
      * The group's name
@@ -41,17 +58,8 @@ class Group extends Definition
     protected ?string $description = null;
     /**
      * Group's type
-     * - `Group::TYPE_SO`
-     * - `Group::TYPE_BASIC`
-     * - `Group::TYPE_SVNO`
-     * - `Group::TYPE_PARTNERS`
-     * - `Group::TYPE_NIP`
-     * - `Group::TYPE_DIST`
-     * - `Group::TYPE_CHANNEL`
-     * - `Group::TYPE_STARTER`
-     * - `Group::TYPE_PARTNER`
      *
-     * @var int
+     * @var self::TYPE_*
      */
     protected ?int $type = null;
     /**
@@ -73,7 +81,8 @@ class Group extends Definition
      */
     protected ?string $nameCI = null;
     /**
-     * The group's path sorted by descending ancestor {id} (direct parent to farthest parent), restricted to the groups visible by the API user
+     * The group's path sorted by descending ancestor {id} (direct parent to farthest parent), restricted to the
+     * groups visible by the API user
      *
      * @var MinGroup[]
      */
@@ -96,177 +105,240 @@ class Group extends Definition
      * @var bool
      */
     protected ?bool $leaf = null;
-    /** @var string[] */
+    /**
+     * @var string[]
+     */
     protected ?array $actions = null;
     /**
+     * Setter for name
+     *
      * @param string $name The group's name
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The group's name
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }
     /**
+     * Setter for description
+     *
      * @param string $description The group's description
+     *
+     * @return self To use in method chains
      */
-    function setDescription(?string $description)
+    public function setDescription(?string $description) : self
     {
         $this->description = $description;
+        return $this;
     }
     /**
+     * Getter for description
+     *
      * @return string The group's description
      */
-    function getDescription() : ?string
+    public function getDescription() : string
     {
         return $this->description;
     }
     /**
-     * @param int $type Group's type
-     * - `Group::TYPE_SO`
-     * - `Group::TYPE_BASIC`
-     * - `Group::TYPE_SVNO`
-     * - `Group::TYPE_PARTNERS`
-     * - `Group::TYPE_NIP`
-     * - `Group::TYPE_DIST`
-     * - `Group::TYPE_CHANNEL`
-     * - `Group::TYPE_STARTER`
-     * - `Group::TYPE_PARTNER`
+     * Setter for type
+     *
+     * @param self::TYPE_* $type Group's type
+     *
+     * @return self To use in method chains
      */
-    function setType(?int $type)
+    public function setType(?int $type) : self
     {
         $this->type = $type;
+        return $this;
     }
     /**
-     * @return int Group's type
-     * - `Group::TYPE_SO`
-     * - `Group::TYPE_BASIC`
-     * - `Group::TYPE_SVNO`
-     * - `Group::TYPE_PARTNERS`
-     * - `Group::TYPE_NIP`
-     * - `Group::TYPE_DIST`
-     * - `Group::TYPE_CHANNEL`
-     * - `Group::TYPE_STARTER`
-     * - `Group::TYPE_PARTNER`
+     * Getter for type
+     *
+     * @return self::TYPE_* Group's type
      */
-    function getType() : ?int
+    public function getType() : int
     {
         return $this->type;
     }
     /**
+     * Setter for timezone
+     *
      * @param string $timezone The timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
+     *
+     * @return self To use in method chains
      */
-    function setTimezone(?string $timezone)
+    public function setTimezone(?string $timezone) : self
     {
         $this->timezone = $timezone;
+        return $this;
     }
     /**
+     * Getter for timezone
+     *
      * @return string The timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
      */
-    function getTimezone() : ?string
+    public function getTimezone() : string
     {
         return $this->timezone;
     }
     /**
+     * Setter for id
+     *
      * @param string $id The group's identifier
+     *
+     * @return self To use in method chains
      */
-    function setId(?string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The group's identifier
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
+     * Setter for nameCI
+     *
      * @param string $nameCI The group's name to ascii and lowercase
+     *
+     * @return self To use in method chains
      */
-    function setNameCI(?string $nameCI)
+    public function setNameCI(?string $nameCI) : self
     {
         $this->nameCI = $nameCI;
+        return $this;
     }
     /**
+     * Getter for nameCI
+     *
      * @return string The group's name to ascii and lowercase
      */
-    function getNameCI() : ?string
+    public function getNameCI() : string
     {
         return $this->nameCI;
     }
     /**
-     * @param MinGroup[] $path The group's path sorted by descending ancestor {id} (direct parent to farthest parent), restricted to the groups visible by the API user
+     * Setter for path
+     *
+     * @param MinGroup[] $path The group's path sorted by descending ancestor {id} (direct parent to farthest
+     *                         parent), restricted to the groups visible by the API user
+     *
+     * @return self To use in method chains
      */
-    function setPath(?array $path)
+    public function setPath(?array $path) : self
     {
         $this->path = $path;
+        return $this;
     }
     /**
-     * @return MinGroup[] The group's path sorted by descending ancestor {id} (direct parent to farthest parent), restricted to the groups visible by the API user
+     * Getter for path
+     *
+     * @return MinGroup[] The group's path sorted by descending ancestor {id} (direct parent to farthest parent),
+     *                    restricted to the groups visible by the API user
      */
-    function getPath() : ?array
+    public function getPath() : array
     {
         return $this->path;
     }
     /**
+     * Setter for createdBy
+     *
      * @param string $createdBy The user id of the group's creator
+     *
+     * @return self To use in method chains
      */
-    function setCreatedBy(?string $createdBy)
+    public function setCreatedBy(?string $createdBy) : self
     {
         $this->createdBy = $createdBy;
+        return $this;
     }
     /**
+     * Getter for createdBy
+     *
      * @return string The user id of the group's creator
      */
-    function getCreatedBy() : ?string
+    public function getCreatedBy() : string
     {
         return $this->createdBy;
     }
     /**
+     * Setter for creationTime
+     *
      * @param int $creationTime The creation date of the group (timestamp in milliseconds since Unix Epoch)
+     *
+     * @return self To use in method chains
      */
-    function setCreationTime(?int $creationTime)
+    public function setCreationTime(?int $creationTime) : self
     {
         $this->creationTime = $creationTime;
+        return $this;
     }
     /**
+     * Getter for creationTime
+     *
      * @return int The creation date of the group (timestamp in milliseconds since Unix Epoch)
      */
-    function getCreationTime() : ?int
+    public function getCreationTime() : int
     {
         return $this->creationTime;
     }
     /**
+     * Setter for leaf
+     *
      * @param bool $leaf true if the group is leaf
+     *
+     * @return self To use in method chains
      */
-    function setLeaf(?bool $leaf)
+    public function setLeaf(?bool $leaf) : self
     {
         $this->leaf = $leaf;
+        return $this;
     }
     /**
+     * Getter for leaf
+     *
      * @return bool true if the group is leaf
      */
-    function getLeaf() : ?bool
+    public function getLeaf() : bool
     {
         return $this->leaf;
     }
     /**
-     * @param string[] actions
+     * Setter for actions
+     *
+     * @param string[] $actions
+     *
+     * @return self To use in method chains
      */
-    function setActions(?array $actions)
+    public function setActions(?array $actions) : self
     {
         $this->actions = $actions;
+        return $this;
     }
     /**
-     * @return string[] actions
+     * Getter for actions
+     *
+     * @return string[]
      */
-    function getActions() : ?array
+    public function getActions() : array
     {
         return $this->actions;
     }

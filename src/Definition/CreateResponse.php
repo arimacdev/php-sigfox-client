@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\BaseResponse;
+use Arimac\Sigfox\Definition;
 /**
  * Generic information about user create operation
  */
@@ -15,16 +15,23 @@ class CreateResponse extends BaseResponse
      */
     protected ?string $id = null;
     /**
+     * Setter for id
+     *
      * @param string $id The user's identifier
+     *
+     * @return self To use in method chains
      */
-    function setId(?string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The user's identifier
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }

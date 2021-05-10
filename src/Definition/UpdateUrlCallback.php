@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\UpdateCallback;
+use Arimac\Sigfox\Definition;
 /**
  * Defines the properties needed to create a url callback
  */
@@ -33,78 +33,122 @@ class UpdateUrlCallback extends UpdateCallback
      */
     protected ?bool $sendSni = null;
     /**
-     * The body template of the request. Only if httpMethpd is set to POST or PUT. It can contain predefined and custom variables. Mandatory for URL callbacks. This field can be unset when updating.
+     * The body template of the request. Only if httpMethpd is set to POST or PUT. It can contain predefined and
+     * custom variables. Mandatory for URL callbacks. This field can be unset when updating.
      *
      * @var string
      */
     protected ?string $bodyTemplate = null;
     /**
+     * Setter for url
+     *
      * @param string $url The callback's url
+     *
+     * @return self To use in method chains
      */
-    function setUrl(?string $url)
+    public function setUrl(?string $url) : self
     {
         $this->url = $url;
+        return $this;
     }
     /**
+     * Getter for url
+     *
      * @return string The callback's url
      */
-    function getUrl() : ?string
+    public function getUrl() : string
     {
         return $this->url;
     }
     /**
+     * Setter for httpMethod
+     *
      * @param string $httpMethod The http method used to send a callback
+     *
+     * @return self To use in method chains
      */
-    function setHttpMethod(?string $httpMethod)
+    public function setHttpMethod(?string $httpMethod) : self
     {
         $this->httpMethod = $httpMethod;
+        return $this;
     }
     /**
+     * Getter for httpMethod
+     *
      * @return string The http method used to send a callback
      */
-    function getHttpMethod() : ?string
+    public function getHttpMethod() : string
     {
         return $this->httpMethod;
     }
     /**
-     * @param array $headers The headers of the http request to send, as an object with key:value. This field can be unset when updating.
+     * Setter for headers
+     *
+     * @param array $headers The headers of the http request to send, as an object with key:value. This field can be
+     *                       unset when updating.
+     *
+     * @return self To use in method chains
      */
-    function setHeaders(?array $headers)
+    public function setHeaders(?array $headers) : self
     {
         $this->headers = $headers;
+        return $this;
     }
     /**
-     * @return array The headers of the http request to send, as an object with key:value. This field can be unset when updating.
+     * Getter for headers
+     *
+     * @return array The headers of the http request to send, as an object with key:value. This field can be unset
+     *               when updating.
      */
-    function getHeaders() : ?array
+    public function getHeaders() : array
     {
         return $this->headers;
     }
     /**
-     * @param bool $sendSni Send SNI (Server Name Indication) for SSL/TLS connections. Used by BATCH_URL and URL callbacks (optional).
+     * Setter for sendSni
+     *
+     * @param bool $sendSni Send SNI (Server Name Indication) for SSL/TLS connections. Used by BATCH_URL and URL
+     *                      callbacks (optional).
+     *
+     * @return self To use in method chains
      */
-    function setSendSni(?bool $sendSni)
+    public function setSendSni(?bool $sendSni) : self
     {
         $this->sendSni = $sendSni;
+        return $this;
     }
     /**
-     * @return bool Send SNI (Server Name Indication) for SSL/TLS connections. Used by BATCH_URL and URL callbacks (optional).
+     * Getter for sendSni
+     *
+     * @return bool Send SNI (Server Name Indication) for SSL/TLS connections. Used by BATCH_URL and URL callbacks
+     *              (optional).
      */
-    function getSendSni() : ?bool
+    public function getSendSni() : bool
     {
         return $this->sendSni;
     }
     /**
-     * @param string $bodyTemplate The body template of the request. Only if httpMethpd is set to POST or PUT. It can contain predefined and custom variables. Mandatory for URL callbacks. This field can be unset when updating.
+     * Setter for bodyTemplate
+     *
+     * @param string $bodyTemplate The body template of the request. Only if httpMethpd is set to POST or PUT. It can
+     *                             contain predefined and custom variables. Mandatory for URL callbacks. This field
+     *                             can be unset when updating.
+     *
+     * @return self To use in method chains
      */
-    function setBodyTemplate(?string $bodyTemplate)
+    public function setBodyTemplate(?string $bodyTemplate) : self
     {
         $this->bodyTemplate = $bodyTemplate;
+        return $this;
     }
     /**
-     * @return string The body template of the request. Only if httpMethpd is set to POST or PUT. It can contain predefined and custom variables. Mandatory for URL callbacks. This field can be unset when updating.
+     * Getter for bodyTemplate
+     *
+     * @return string The body template of the request. Only if httpMethpd is set to POST or PUT. It can contain
+     *                predefined and custom variables. Mandatory for URL callbacks. This field can be unset when
+     *                updating.
      */
-    function getBodyTemplate() : ?string
+    public function getBodyTemplate() : string
     {
         return $this->bodyTemplate;
     }

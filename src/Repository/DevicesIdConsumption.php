@@ -2,24 +2,26 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\DevicesIdConsumptionYear;
 class DevicesIdConsumption
 {
     /**
      * The Device identifier (hexadecimal format)
      */
-    protected string $id;
+    protected ?string $id;
     /**
      * Creating the repository
      *
      * @param string $id The Device identifier (hexadecimal format)
      */
-    function __construct(string $id)
+    public function __construct(string $id)
     {
         $this->id = $id;
     }
     /**
+     * Find by year
+     *
      * @param string $year The year of consumption
+     *
      * @return DevicesIdConsumptionYear
      */
     public function year(string $year) : DevicesIdConsumptionYear

@@ -2,89 +2,95 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\RadioConfiguration;
+use Arimac\Sigfox\Definition;
 /**
  * Defines the properties of a product certificate radio configuration
  */
 class ProductCertificateRadioConfiguration extends RadioConfiguration
 {
-    /** U0 */
+    /**
+     * U0
+     */
     public const UPLINK_CLASS_U0 = 0;
-    /** U1 */
+    /**
+     * U1
+     */
     public const UPLINK_CLASS_U1 = 1;
-    /** U2 */
+    /**
+     * U2
+     */
     public const UPLINK_CLASS_U2 = 2;
-    /** U3 */
+    /**
+     * U3
+     */
     public const UPLINK_CLASS_U3 = 3;
-    /** D0 */
+    /**
+     * D0
+     */
     public const UPLINK_CLASS_D0 = 4;
-    /** D1 */
+    /**
+     * D1
+     */
     public const UPLINK_CLASS_D1 = 5;
-    /** D2 */
+    /**
+     * D2
+     */
     public const UPLINK_CLASS_D2 = 6;
-    /** D3 */
+    /**
+     * D3
+     */
     public const UPLINK_CLASS_D3 = 7;
     /**
      * The device uplink class
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U0`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U1`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U2`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U3`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D0`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D1`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D2`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D3`
      *
-     * @var int
+     * @var self::UPLINK_CLASS_*
      */
     protected ?int $uplinkClass = null;
     /**
      * Maximum radiated power EIRP (dBm)
      *
-     * @var float
+     * @var int
      */
-    protected ?float $maxEirp = null;
+    protected ?int $maxEirp = null;
     /**
-     * @param int $uplinkClass The device uplink class
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U0`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U1`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U2`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U3`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D0`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D1`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D2`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D3`
+     * Setter for uplinkClass
+     *
+     * @param self::UPLINK_CLASS_* $uplinkClass The device uplink class
+     *
+     * @return self To use in method chains
      */
-    function setUplinkClass(?int $uplinkClass)
+    public function setUplinkClass(?int $uplinkClass) : self
     {
         $this->uplinkClass = $uplinkClass;
+        return $this;
     }
     /**
-     * @return int The device uplink class
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U0`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U1`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U2`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_U3`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D0`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D1`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D2`
-     * - `ProductCertificateRadioConfiguration::UPLINK_CLASS_D3`
+     * Getter for uplinkClass
+     *
+     * @return self::UPLINK_CLASS_* The device uplink class
      */
-    function getUplinkClass() : ?int
+    public function getUplinkClass() : int
     {
         return $this->uplinkClass;
     }
     /**
-     * @param float $maxEirp Maximum radiated power EIRP (dBm)
+     * Setter for maxEirp
+     *
+     * @param int $maxEirp Maximum radiated power EIRP (dBm)
+     *
+     * @return self To use in method chains
      */
-    function setMaxEirp(?float $maxEirp)
+    public function setMaxEirp(?int $maxEirp) : self
     {
         $this->maxEirp = $maxEirp;
+        return $this;
     }
     /**
-     * @return float Maximum radiated power EIRP (dBm)
+     * Getter for maxEirp
+     *
+     * @return int Maximum radiated power EIRP (dBm)
      */
-    function getMaxEirp() : ?float
+    public function getMaxEirp() : int
     {
         return $this->maxEirp;
     }

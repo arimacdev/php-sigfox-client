@@ -15,16 +15,25 @@ class RedundancyResponse extends Definition
      */
     protected ?int $redundancy = null;
     /**
-     * @param int $redundancy The base station redundancy, 0 = none, 1 = 1 base station, 2 = 2 base stations, 3 = 3 base stations or more
+     * Setter for redundancy
+     *
+     * @param int $redundancy The base station redundancy, 0 = none, 1 = 1 base station, 2 = 2 base stations, 3 = 3
+     *                        base stations or more
+     *
+     * @return self To use in method chains
      */
-    function setRedundancy(?int $redundancy)
+    public function setRedundancy(?int $redundancy) : self
     {
         $this->redundancy = $redundancy;
+        return $this;
     }
     /**
-     * @return int The base station redundancy, 0 = none, 1 = 1 base station, 2 = 2 base stations, 3 = 3 base stations or more
+     * Getter for redundancy
+     *
+     * @return int The base station redundancy, 0 = none, 1 = 1 base station, 2 = 2 base stations, 3 = 3 base
+     *             stations or more
      */
-    function getRedundancy() : ?int
+    public function getRedundancy() : int
     {
         return $this->redundancy;
     }

@@ -3,59 +3,49 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+/**
+ * Retrieve information about a given contract.
+ * 
+ */
 class ContractInfosIdGet extends Definition
 {
     /**
-     * Returns only devices of the given device type
-     *
-     * @var string
-     */
-    protected ?string $deviceTypeId = null;
-    /**
      * Defines the other available fields to be returned in the response.
+     * 
      *
      * @var string
      */
     protected ?string $fields = null;
     /**
-     * The maximum number of items to return
+     * if true, we return the list of actions and resources the user has access
      *
-     * @var int
+     * @var bool
      */
-    protected ?int $limit = null;
+    protected ?bool $authorizations = null;
+    protected $query = array('fields', 'authorizations');
     /**
-     * Token representing the page to retrieve
+     * Setter for fields
      *
-     * @var string
-     */
-    protected ?string $pageId = null;
-    protected $query = array('deviceTypeId', 'fields', 'limit', 'pageId');
-    /**
-     * @param string $deviceTypeId Returns only devices of the given device type
-     */
-    function setDeviceTypeId(?string $deviceTypeId)
-    {
-        $this->deviceTypeId = $deviceTypeId;
-    }
-    /**
      * @param string $fields Defines the other available fields to be returned in the response.
+     *                       
+     *
+     * @return self To use in method chains
      */
-    function setFields(?string $fields)
+    public function setFields(?string $fields) : self
     {
         $this->fields = $fields;
+        return $this;
     }
     /**
-     * @param int $limit The maximum number of items to return
+     * Setter for authorizations
+     *
+     * @param bool $authorizations if true, we return the list of actions and resources the user has access
+     *
+     * @return self To use in method chains
      */
-    function setLimit(?int $limit)
+    public function setAuthorizations(?bool $authorizations) : self
     {
-        $this->limit = $limit;
-    }
-    /**
-     * @param string $pageId Token representing the page to retrieve
-     */
-    function setPageId(?string $pageId)
-    {
-        $this->pageId = $pageId;
+        $this->authorizations = $authorizations;
+        return $this;
     }
 }

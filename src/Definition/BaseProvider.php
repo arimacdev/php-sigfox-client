@@ -14,34 +14,48 @@ class BaseProvider extends Definition
     /**
      * The provider's annual cost. This field can be unset when updating.
      *
-     * @var float
+     * @var int
      */
-    protected ?float $annualCost = null;
+    protected ?int $annualCost = null;
     /**
+     * Setter for name
+     *
      * @param string $name The provider's name
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The provider's name
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }
     /**
-     * @param float $annualCost The provider's annual cost. This field can be unset when updating.
+     * Setter for annualCost
+     *
+     * @param int $annualCost The provider's annual cost. This field can be unset when updating.
+     *
+     * @return self To use in method chains
      */
-    function setAnnualCost(?float $annualCost)
+    public function setAnnualCost(?int $annualCost) : self
     {
         $this->annualCost = $annualCost;
+        return $this;
     }
     /**
-     * @return float The provider's annual cost. This field can be unset when updating.
+     * Getter for annualCost
+     *
+     * @return int The provider's annual cost. This field can be unset when updating.
      */
-    function getAnnualCost() : ?float
+    public function getAnnualCost() : int
     {
         return $this->annualCost;
     }

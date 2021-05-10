@@ -2,44 +2,59 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\AsynchronousDeviceTransferJob\DataItem;
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Definition\AsynchronousDeviceTransferJob\DataItem;
 class AsynchronousDeviceTransferJob extends Definition
 {
-    protected $required = array('deviceTypeId');
     /**
      * The device type where new devices will be transfered
      *
      * @var string
      */
-    protected string $deviceTypeId;
-    /** @var DataItem[] */
+    protected ?string $deviceTypeId = null;
+    /**
+     * @var DataItem[]
+     */
     protected ?array $data = null;
     /**
+     * Setter for deviceTypeId
+     *
      * @param string $deviceTypeId The device type where new devices will be transfered
+     *
+     * @return self To use in method chains
      */
-    function setDeviceTypeId(string $deviceTypeId)
+    public function setDeviceTypeId(?string $deviceTypeId) : self
     {
         $this->deviceTypeId = $deviceTypeId;
+        return $this;
     }
     /**
+     * Getter for deviceTypeId
+     *
      * @return string The device type where new devices will be transfered
      */
-    function getDeviceTypeId() : string
+    public function getDeviceTypeId() : string
     {
         return $this->deviceTypeId;
     }
     /**
-     * @param DataItem[] data
+     * Setter for data
+     *
+     * @param DataItem[] $data
+     *
+     * @return self To use in method chains
      */
-    function setData(?array $data)
+    public function setData(?array $data) : self
     {
         $this->data = $data;
+        return $this;
     }
     /**
-     * @return DataItem[] data
+     * Getter for data
+     *
+     * @return DataItem[]
      */
-    function getData() : ?array
+    public function getData() : array
     {
         return $this->data;
     }

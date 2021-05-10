@@ -2,31 +2,44 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\MinProvider;
-use Arimac\Sigfox\Definition\MinContact;
 use Arimac\Sigfox\Definition;
 /**
  * Generic internet subscription information
  */
 class CreateInternetSubscription extends Definition
 {
-    /** GSM */
+    /**
+     * GSM
+     */
     public const TYPE_GSM = 0;
-    /** ADSL */
+    /**
+     * ADSL
+     */
     public const TYPE_ADSL = 1;
-    /** SATELLITE */
+    /**
+     * SATELLITE
+     */
     public const TYPE_SATELLITE = 2;
-    /** LAN */
+    /**
+     * LAN
+     */
     public const TYPE_LAN = 3;
-    /** WIFI */
+    /**
+     * WIFI
+     */
     public const TYPE_WIFI = 4;
-    /** PRIMARY */
+    /**
+     * PRIMARY
+     */
     public const PRIORITY_PRIMARY = 0;
-    /** SECONDARY */
+    /**
+     * SECONDARY
+     */
     public const PRIORITY_SECONDARY = 1;
-    /** TERMINATED */
+    /**
+     * TERMINATED
+     */
     public const PRIORITY_TERMINATED = 2;
-    protected $required = array('priority', 'startTime', 'type');
     /**
      * The identifier of this internet subscription
      *
@@ -35,24 +48,16 @@ class CreateInternetSubscription extends Definition
     protected ?string $id = null;
     /**
      * Internet subscription type
-     * - `CreateInternetSubscription::TYPE_GSM`
-     * - `CreateInternetSubscription::TYPE_ADSL`
-     * - `CreateInternetSubscription::TYPE_SATELLITE`
-     * - `CreateInternetSubscription::TYPE_LAN`
-     * - `CreateInternetSubscription::TYPE_WIFI`
      *
-     * @var int
+     * @var self::TYPE_*
      */
-    protected int $type;
+    protected ?int $type = null;
     /**
      * Internet subscription priority.
-     * - `CreateInternetSubscription::PRIORITY_PRIMARY`
-     * - `CreateInternetSubscription::PRIORITY_SECONDARY`
-     * - `CreateInternetSubscription::PRIORITY_TERMINATED`
      *
-     * @var int
+     * @var self::PRIORITY_*
      */
-    protected int $priority;
+    protected ?int $priority = null;
     /**
      * The comments about this internet subscription. This field can be unset when updating.
      *
@@ -64,143 +69,187 @@ class CreateInternetSubscription extends Definition
      *
      * @var int
      */
-    protected int $startTime;
+    protected ?int $startTime = null;
     /**
      * The end time this internet subscription. This field can be unset when updating.
      *
      * @var int
      */
     protected ?int $endTime = null;
-    /** @var MinProvider */
-    protected ?MinProvider $provider = null;
-    /** @var MinContact[] */
-    protected ?array $contacts = null;
-    protected $objects = array('provider' => '\\Arimac\\Sigfox\\Definition\\MinProvider');
     /**
-     * @param string $id The identifier of this internet subscription
+     * @var MinProvider
      */
-    function setId(?string $id)
+    protected ?MinProvider $provider = null;
+    /**
+     * @var MinContact[]
+     */
+    protected ?array $contacts = null;
+    protected $serialize = array('provider' => MinProvider::class);
+    /**
+     * Setter for id
+     *
+     * @param string $id The identifier of this internet subscription
+     *
+     * @return self To use in method chains
+     */
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The identifier of this internet subscription
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
-     * @param int $type Internet subscription type
-     * - `CreateInternetSubscription::TYPE_GSM`
-     * - `CreateInternetSubscription::TYPE_ADSL`
-     * - `CreateInternetSubscription::TYPE_SATELLITE`
-     * - `CreateInternetSubscription::TYPE_LAN`
-     * - `CreateInternetSubscription::TYPE_WIFI`
+     * Setter for type
+     *
+     * @param self::TYPE_* $type Internet subscription type
+     *
+     * @return self To use in method chains
      */
-    function setType(int $type)
+    public function setType(?int $type) : self
     {
         $this->type = $type;
+        return $this;
     }
     /**
-     * @return int Internet subscription type
-     * - `CreateInternetSubscription::TYPE_GSM`
-     * - `CreateInternetSubscription::TYPE_ADSL`
-     * - `CreateInternetSubscription::TYPE_SATELLITE`
-     * - `CreateInternetSubscription::TYPE_LAN`
-     * - `CreateInternetSubscription::TYPE_WIFI`
+     * Getter for type
+     *
+     * @return self::TYPE_* Internet subscription type
      */
-    function getType() : int
+    public function getType() : int
     {
         return $this->type;
     }
     /**
-     * @param int $priority Internet subscription priority.
-     * - `CreateInternetSubscription::PRIORITY_PRIMARY`
-     * - `CreateInternetSubscription::PRIORITY_SECONDARY`
-     * - `CreateInternetSubscription::PRIORITY_TERMINATED`
+     * Setter for priority
+     *
+     * @param self::PRIORITY_* $priority Internet subscription priority.
+     *
+     * @return self To use in method chains
      */
-    function setPriority(int $priority)
+    public function setPriority(?int $priority) : self
     {
         $this->priority = $priority;
+        return $this;
     }
     /**
-     * @return int Internet subscription priority.
-     * - `CreateInternetSubscription::PRIORITY_PRIMARY`
-     * - `CreateInternetSubscription::PRIORITY_SECONDARY`
-     * - `CreateInternetSubscription::PRIORITY_TERMINATED`
+     * Getter for priority
+     *
+     * @return self::PRIORITY_* Internet subscription priority.
      */
-    function getPriority() : int
+    public function getPriority() : int
     {
         return $this->priority;
     }
     /**
+     * Setter for comments
+     *
      * @param string $comments The comments about this internet subscription. This field can be unset when updating.
+     *
+     * @return self To use in method chains
      */
-    function setComments(?string $comments)
+    public function setComments(?string $comments) : self
     {
         $this->comments = $comments;
+        return $this;
     }
     /**
+     * Getter for comments
+     *
      * @return string The comments about this internet subscription. This field can be unset when updating.
      */
-    function getComments() : ?string
+    public function getComments() : string
     {
         return $this->comments;
     }
     /**
+     * Setter for startTime
+     *
      * @param int $startTime The start time of this internet subscription
+     *
+     * @return self To use in method chains
      */
-    function setStartTime(int $startTime)
+    public function setStartTime(?int $startTime) : self
     {
         $this->startTime = $startTime;
+        return $this;
     }
     /**
+     * Getter for startTime
+     *
      * @return int The start time of this internet subscription
      */
-    function getStartTime() : int
+    public function getStartTime() : int
     {
         return $this->startTime;
     }
     /**
+     * Setter for endTime
+     *
      * @param int $endTime The end time this internet subscription. This field can be unset when updating.
+     *
+     * @return self To use in method chains
      */
-    function setEndTime(?int $endTime)
+    public function setEndTime(?int $endTime) : self
     {
         $this->endTime = $endTime;
+        return $this;
     }
     /**
+     * Getter for endTime
+     *
      * @return int The end time this internet subscription. This field can be unset when updating.
      */
-    function getEndTime() : ?int
+    public function getEndTime() : int
     {
         return $this->endTime;
     }
     /**
-     * @param MinProvider provider
+     * Setter for provider
+     *
+     * @param MinProvider $provider
+     *
+     * @return self To use in method chains
      */
-    function setProvider(?MinProvider $provider)
+    public function setProvider(?MinProvider $provider) : self
     {
         $this->provider = $provider;
+        return $this;
     }
     /**
-     * @return MinProvider provider
+     * Getter for provider
+     *
+     * @return MinProvider
      */
-    function getProvider() : ?MinProvider
+    public function getProvider() : MinProvider
     {
         return $this->provider;
     }
     /**
-     * @param MinContact[] contacts
+     * Setter for contacts
+     *
+     * @param MinContact[] $contacts
+     *
+     * @return self To use in method chains
      */
-    function setContacts(?array $contacts)
+    public function setContacts(?array $contacts) : self
     {
         $this->contacts = $contacts;
+        return $this;
     }
     /**
-     * @return MinContact[] contacts
+     * Getter for contacts
+     *
+     * @return MinContact[]
      */
-    function getContacts() : ?array
+    public function getContacts() : array
     {
         return $this->contacts;
     }

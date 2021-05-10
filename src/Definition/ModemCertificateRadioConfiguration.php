@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\RadioConfiguration;
+use Arimac\Sigfox\Definition;
 /**
  * Defines the properties of a product certificate radio configuration
  */
@@ -11,9 +11,9 @@ class ModemCertificateRadioConfiguration extends RadioConfiguration
     /**
      * Output conducted power (dBm)
      *
-     * @var float
+     * @var int
      */
-    protected ?float $outputPower = null;
+    protected ?int $outputPower = null;
     /**
      * Balanced link budget
      *
@@ -21,30 +21,44 @@ class ModemCertificateRadioConfiguration extends RadioConfiguration
      */
     protected ?bool $balancedLinkBudget = null;
     /**
-     * @param float $outputPower Output conducted power (dBm)
+     * Setter for outputPower
+     *
+     * @param int $outputPower Output conducted power (dBm)
+     *
+     * @return self To use in method chains
      */
-    function setOutputPower(?float $outputPower)
+    public function setOutputPower(?int $outputPower) : self
     {
         $this->outputPower = $outputPower;
+        return $this;
     }
     /**
-     * @return float Output conducted power (dBm)
+     * Getter for outputPower
+     *
+     * @return int Output conducted power (dBm)
      */
-    function getOutputPower() : ?float
+    public function getOutputPower() : int
     {
         return $this->outputPower;
     }
     /**
+     * Setter for balancedLinkBudget
+     *
      * @param bool $balancedLinkBudget Balanced link budget
+     *
+     * @return self To use in method chains
      */
-    function setBalancedLinkBudget(?bool $balancedLinkBudget)
+    public function setBalancedLinkBudget(?bool $balancedLinkBudget) : self
     {
         $this->balancedLinkBudget = $balancedLinkBudget;
+        return $this;
     }
     /**
+     * Getter for balancedLinkBudget
+     *
      * @return bool Balanced link budget
      */
-    function getBalancedLinkBudget() : ?bool
+    public function getBalancedLinkBudget() : bool
     {
         return $this->balancedLinkBudget;
     }

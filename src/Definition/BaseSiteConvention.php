@@ -8,32 +8,52 @@ use Arimac\Sigfox\Definition;
  */
 class BaseSiteConvention extends Definition
 {
-    /** AT SIGFOX */
+    /**
+     * AT SIGFOX
+     */
     public const STATUS_AT_SIGFOX = 0;
-    /** AT HOST */
+    /**
+     * AT HOST
+     */
     public const STATUS_AT_HOST = 1;
-    /** SIGNED SIGFOX */
+    /**
+     * SIGNED SIGFOX
+     */
     public const STATUS_SIGNED_SIGFOX = 2;
-    /** SIGNED HOST */
+    /**
+     * SIGNED HOST
+     */
     public const STATUS_SIGNED_HOST = 3;
-    /** SIGNED BOTH */
+    /**
+     * SIGNED BOTH
+     */
     public const STATUS_SIGNED_BOTH = 4;
-    /** CONDOMINIUM */
+    /**
+     * CONDOMINIUM
+     */
     public const TYPE_CONDOMINIUM = 0;
-    /** INDIVIDUAL */
+    /**
+     * INDIVIDUAL
+     */
     public const TYPE_INDIVIDUAL = 1;
-    /** SOCIAL HOUSING AUTHORITY */
+    /**
+     * SOCIAL HOUSING AUTHORITY
+     */
     public const TYPE_SOCIAL_HOUSING_AUTHORITY = 2;
-    /** ASSOCIATION */
+    /**
+     * ASSOCIATION
+     */
     public const TYPE_ASSOCIATION = 3;
-    /** COMPANY */
+    /**
+     * COMPANY
+     */
     public const TYPE_COMPANY = 4;
     /**
      * The annual cost of this convention
      *
-     * @var float
+     * @var int
      */
-    protected ?float $annualCost = null;
+    protected ?int $annualCost = null;
     /**
      * The comments of this convention
      *
@@ -67,174 +87,207 @@ class BaseSiteConvention extends Definition
     /**
      * The annual cost of the maintenance of this convention
      *
-     * @var float
+     * @var int
      */
-    protected ?float $maintenanceAnnualCost = null;
+    protected ?int $maintenanceAnnualCost = null;
     /**
      * Convention status.
-     * - `BaseSiteConvention::STATUS_AT_SIGFOX`
-     * - `BaseSiteConvention::STATUS_AT_HOST`
-     * - `BaseSiteConvention::STATUS_SIGNED_SIGFOX`
-     * - `BaseSiteConvention::STATUS_SIGNED_HOST`
-     * - `BaseSiteConvention::STATUS_SIGNED_BOTH`
      *
-     * @var int
+     * @var self::STATUS_*
      */
     protected ?int $status = null;
     /**
      * Convention status.
-     * - `BaseSiteConvention::TYPE_CONDOMINIUM`
-     * - `BaseSiteConvention::TYPE_INDIVIDUAL`
-     * - `BaseSiteConvention::TYPE_SOCIAL_HOUSING_AUTHORITY`
-     * - `BaseSiteConvention::TYPE_ASSOCIATION`
-     * - `BaseSiteConvention::TYPE_COMPANY`
      *
-     * @var int
+     * @var self::TYPE_*
      */
     protected ?int $type = null;
     /**
-     * @param float $annualCost The annual cost of this convention
+     * Setter for annualCost
+     *
+     * @param int $annualCost The annual cost of this convention
+     *
+     * @return self To use in method chains
      */
-    function setAnnualCost(?float $annualCost)
+    public function setAnnualCost(?int $annualCost) : self
     {
         $this->annualCost = $annualCost;
+        return $this;
     }
     /**
-     * @return float The annual cost of this convention
+     * Getter for annualCost
+     *
+     * @return int The annual cost of this convention
      */
-    function getAnnualCost() : ?float
+    public function getAnnualCost() : int
     {
         return $this->annualCost;
     }
     /**
+     * Setter for comments
+     *
      * @param string $comments The comments of this convention
+     *
+     * @return self To use in method chains
      */
-    function setComments(?string $comments)
+    public function setComments(?string $comments) : self
     {
         $this->comments = $comments;
+        return $this;
     }
     /**
+     * Getter for comments
+     *
      * @return string The comments of this convention
      */
-    function getComments() : ?string
+    public function getComments() : string
     {
         return $this->comments;
     }
     /**
+     * Setter for startTime
+     *
      * @param int $startTime The start time of this convention
+     *
+     * @return self To use in method chains
      */
-    function setStartTime(?int $startTime)
+    public function setStartTime(?int $startTime) : self
     {
         $this->startTime = $startTime;
+        return $this;
     }
     /**
+     * Getter for startTime
+     *
      * @return int The start time of this convention
      */
-    function getStartTime() : ?int
+    public function getStartTime() : int
     {
         return $this->startTime;
     }
     /**
+     * Setter for endTime
+     *
      * @param int $endTime The end time of this convention
+     *
+     * @return self To use in method chains
      */
-    function setEndTime(?int $endTime)
+    public function setEndTime(?int $endTime) : self
     {
         $this->endTime = $endTime;
+        return $this;
     }
     /**
+     * Getter for endTime
+     *
      * @return int The end time of this convention
      */
-    function getEndTime() : ?int
+    public function getEndTime() : int
     {
         return $this->endTime;
     }
     /**
+     * Setter for contractReference
+     *
      * @param string $contractReference The bss contract reference of this convention
+     *
+     * @return self To use in method chains
      */
-    function setContractReference(?string $contractReference)
+    public function setContractReference(?string $contractReference) : self
     {
         $this->contractReference = $contractReference;
+        return $this;
     }
     /**
+     * Getter for contractReference
+     *
      * @return string The bss contract reference of this convention
      */
-    function getContractReference() : ?string
+    public function getContractReference() : string
     {
         return $this->contractReference;
     }
     /**
+     * Setter for maintenance
+     *
      * @param bool $maintenance is this convention in maintenance
+     *
+     * @return self To use in method chains
      */
-    function setMaintenance(?bool $maintenance)
+    public function setMaintenance(?bool $maintenance) : self
     {
         $this->maintenance = $maintenance;
+        return $this;
     }
     /**
+     * Getter for maintenance
+     *
      * @return bool is this convention in maintenance
      */
-    function getMaintenance() : ?bool
+    public function getMaintenance() : bool
     {
         return $this->maintenance;
     }
     /**
-     * @param float $maintenanceAnnualCost The annual cost of the maintenance of this convention
+     * Setter for maintenanceAnnualCost
+     *
+     * @param int $maintenanceAnnualCost The annual cost of the maintenance of this convention
+     *
+     * @return self To use in method chains
      */
-    function setMaintenanceAnnualCost(?float $maintenanceAnnualCost)
+    public function setMaintenanceAnnualCost(?int $maintenanceAnnualCost) : self
     {
         $this->maintenanceAnnualCost = $maintenanceAnnualCost;
+        return $this;
     }
     /**
-     * @return float The annual cost of the maintenance of this convention
+     * Getter for maintenanceAnnualCost
+     *
+     * @return int The annual cost of the maintenance of this convention
      */
-    function getMaintenanceAnnualCost() : ?float
+    public function getMaintenanceAnnualCost() : int
     {
         return $this->maintenanceAnnualCost;
     }
     /**
-     * @param int $status Convention status.
-     * - `BaseSiteConvention::STATUS_AT_SIGFOX`
-     * - `BaseSiteConvention::STATUS_AT_HOST`
-     * - `BaseSiteConvention::STATUS_SIGNED_SIGFOX`
-     * - `BaseSiteConvention::STATUS_SIGNED_HOST`
-     * - `BaseSiteConvention::STATUS_SIGNED_BOTH`
+     * Setter for status
+     *
+     * @param self::STATUS_* $status Convention status.
+     *
+     * @return self To use in method chains
      */
-    function setStatus(?int $status)
+    public function setStatus(?int $status) : self
     {
         $this->status = $status;
+        return $this;
     }
     /**
-     * @return int Convention status.
-     * - `BaseSiteConvention::STATUS_AT_SIGFOX`
-     * - `BaseSiteConvention::STATUS_AT_HOST`
-     * - `BaseSiteConvention::STATUS_SIGNED_SIGFOX`
-     * - `BaseSiteConvention::STATUS_SIGNED_HOST`
-     * - `BaseSiteConvention::STATUS_SIGNED_BOTH`
+     * Getter for status
+     *
+     * @return self::STATUS_* Convention status.
      */
-    function getStatus() : ?int
+    public function getStatus() : int
     {
         return $this->status;
     }
     /**
-     * @param int $type Convention status.
-     * - `BaseSiteConvention::TYPE_CONDOMINIUM`
-     * - `BaseSiteConvention::TYPE_INDIVIDUAL`
-     * - `BaseSiteConvention::TYPE_SOCIAL_HOUSING_AUTHORITY`
-     * - `BaseSiteConvention::TYPE_ASSOCIATION`
-     * - `BaseSiteConvention::TYPE_COMPANY`
+     * Setter for type
+     *
+     * @param self::TYPE_* $type Convention status.
+     *
+     * @return self To use in method chains
      */
-    function setType(?int $type)
+    public function setType(?int $type) : self
     {
         $this->type = $type;
+        return $this;
     }
     /**
-     * @return int Convention status.
-     * - `BaseSiteConvention::TYPE_CONDOMINIUM`
-     * - `BaseSiteConvention::TYPE_INDIVIDUAL`
-     * - `BaseSiteConvention::TYPE_SOCIAL_HOUSING_AUTHORITY`
-     * - `BaseSiteConvention::TYPE_ASSOCIATION`
-     * - `BaseSiteConvention::TYPE_COMPANY`
+     * Getter for type
+     *
+     * @return self::TYPE_* Convention status.
      */
-    function getType() : ?int
+    public function getType() : int
     {
         return $this->type;
     }

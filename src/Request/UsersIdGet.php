@@ -3,10 +3,15 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+/**
+ * Retrieve information about a given user. The id can also be the user's email address.
+ * 
+ */
 class UsersIdGet extends Definition
 {
     /**
      * Defines the other available fields to be returned in the response.
+     * 
      *
      * @var string
      */
@@ -19,17 +24,28 @@ class UsersIdGet extends Definition
     protected ?bool $authorizations = null;
     protected $query = array('fields', 'authorizations');
     /**
+     * Setter for fields
+     *
      * @param string $fields Defines the other available fields to be returned in the response.
+     *                       
+     *
+     * @return self To use in method chains
      */
-    function setFields(?string $fields)
+    public function setFields(?string $fields) : self
     {
         $this->fields = $fields;
+        return $this;
     }
     /**
+     * Setter for authorizations
+     *
      * @param bool $authorizations if true, we return the list of actions and resources the user has access
+     *
+     * @return self To use in method chains
      */
-    function setAuthorizations(?bool $authorizations)
+    public function setAuthorizations(?bool $authorizations) : self
     {
         $this->authorizations = $authorizations;
+        return $this;
     }
 }

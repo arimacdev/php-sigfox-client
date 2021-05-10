@@ -7,15 +7,15 @@ class DevicesIdConsumptionYearMonth
     /**
      * The Device identifier (hexadecimal format)
      */
-    protected string $id;
+    protected ?string $id;
     /**
      * The year of consumption
      */
-    protected string $year;
+    protected ?string $year;
     /**
      * The month of consumption
      */
-    protected string $month;
+    protected ?string $month;
     /**
      * Creating the repository
      *
@@ -23,7 +23,7 @@ class DevicesIdConsumptionYearMonth
      * @param string $year The year of consumption
      * @param string $month The month of consumption
      */
-    function __construct(string $id, string $year, string $month)
+    public function __construct(string $id, string $year, string $month)
     {
         $this->id = $id;
         $this->year = $year;
@@ -31,22 +31,18 @@ class DevicesIdConsumptionYearMonth
     }
     /**
      * Retrieve a device's consumption for a given month during a given year.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function get(int $request) : int
+    public function get() : int
     {
-        return $this->client->request('get', '/devices/{id}/consumption/{year}/{month}', $request, 'int');
+        return $this->client->request('get', $this->bindUrlParams('/devices/{id}/consumption/{year}/{month}', $this->id, $this->year, $this->month), null, 'int');
     }
     /**
      * Disable sequence number check for the next message.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function disengage(int $request) : int
+    public function disengage() : int
     {
-        return $this->client->request('post', '/devices/{id}/disengage', $request, 'int');
+        return $this->client->request('post', $this->bindUrlParams('/devices/{id}/disengage', $this->id, $this->year, $this->month), null, 'int');
     }
 }

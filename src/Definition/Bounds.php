@@ -2,44 +2,60 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\LatLng;
-use Arimac\Sigfox\Definition\LatLng;
 use Arimac\Sigfox\Definition;
 /**
  * Geographics bounds
  */
 class Bounds extends Definition
 {
-    /** @var LatLng */
-    protected ?LatLng $sw = null;
-    /** @var LatLng */
-    protected ?LatLng $ne = null;
-    protected $objects = array('sw' => '\\Arimac\\Sigfox\\Definition\\LatLng', 'ne' => '\\Arimac\\Sigfox\\Definition\\LatLng');
     /**
-     * @param LatLng sw
+     * @var LatLng
      */
-    function setSw(?LatLng $sw)
+    protected ?LatLng $sw = null;
+    /**
+     * @var LatLng
+     */
+    protected ?LatLng $ne = null;
+    protected $serialize = array('sw' => LatLng::class, 'ne' => LatLng::class);
+    /**
+     * Setter for sw
+     *
+     * @param LatLng $sw
+     *
+     * @return self To use in method chains
+     */
+    public function setSw(?LatLng $sw) : self
     {
         $this->sw = $sw;
+        return $this;
     }
     /**
-     * @return LatLng sw
+     * Getter for sw
+     *
+     * @return LatLng
      */
-    function getSw() : ?LatLng
+    public function getSw() : LatLng
     {
         return $this->sw;
     }
     /**
-     * @param LatLng ne
+     * Setter for ne
+     *
+     * @param LatLng $ne
+     *
+     * @return self To use in method chains
      */
-    function setNe(?LatLng $ne)
+    public function setNe(?LatLng $ne) : self
     {
         $this->ne = $ne;
+        return $this;
     }
     /**
-     * @return LatLng ne
+     * Getter for ne
+     *
+     * @return LatLng
      */
-    function getNe() : ?LatLng
+    public function getNe() : LatLng
     {
         return $this->ne;
     }

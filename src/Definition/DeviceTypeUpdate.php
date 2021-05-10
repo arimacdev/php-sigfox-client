@@ -2,43 +2,56 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\BaseDeviceType;
-use Arimac\Sigfox\Definition\ContractId;
+use Arimac\Sigfox\Definition;
 /**
  * Defines the device type's properties
  */
 class DeviceTypeUpdate extends BaseDeviceType
 {
-    /** Regular (raw payload) */
+    /**
+     * Regular (raw payload)
+     */
     public const PAYLOAD_TYPE_REGULAR = 2;
-    /** Custom grammar */
+    /**
+     * Custom grammar
+     */
     public const PAYLOAD_TYPE_CUSTOM_GRAMMAR = 3;
-    /** Geolocation */
+    /**
+     * Geolocation
+     */
     public const PAYLOAD_TYPE_GEOLOCATION = 4;
-    /** Display in ASCII */
+    /**
+     * Display in ASCII
+     */
     public const PAYLOAD_TYPE_DISPLAY_IN_ASCII = 5;
-    /** Radio planning frame */
+    /**
+     * Radio planning frame
+     */
     public const PAYLOAD_TYPE_RADIO_PLANNING_FRAME = 6;
-    /** Sensitv2 */
+    /**
+     * Sensitv2
+     */
     public const PAYLOAD_TYPE_SENSITV2 = 9;
-    /** DIRECT */
+    /**
+     * DIRECT
+     */
     public const DOWNLINK_MODE_DIRECT = 0;
-    /** CALLBACK */
+    /**
+     * CALLBACK
+     */
     public const DOWNLINK_MODE_CALLBACK = 1;
-    /** NONE */
+    /**
+     * NONE
+     */
     public const DOWNLINK_MODE_NONE = 2;
-    /** MANAGED */
+    /**
+     * MANAGED
+     */
     public const DOWNLINK_MODE_MANAGED = 3;
     /**
      * The payload type
-     * - `DeviceTypeUpdate::PAYLOAD_TYPE_REGULAR`
-     * - `DeviceTypeUpdate::PAYLOAD_TYPE_CUSTOM_GRAMMAR`
-     * - `DeviceTypeUpdate::PAYLOAD_TYPE_GEOLOCATION`
-     * - `DeviceTypeUpdate::PAYLOAD_TYPE_DISPLAY_IN_ASCII`
-     * - `DeviceTypeUpdate::PAYLOAD_TYPE_RADIO_PLANNING_FRAME`
-     * - `DeviceTypeUpdate::PAYLOAD_TYPE_SENSITV2`
      *
-     * @var int
+     * @var self::PAYLOAD_TYPE_*
      */
     protected ?int $payloadType = null;
     /**
@@ -49,17 +62,14 @@ class DeviceTypeUpdate extends BaseDeviceType
     protected ?string $payloadConfig = null;
     /**
      * The downlink mode to use for the devices of this device type.
-     * - `DeviceTypeUpdate::DOWNLINK_MODE_DIRECT`
-     * - `DeviceTypeUpdate::DOWNLINK_MODE_CALLBACK`
-     * - `DeviceTypeUpdate::DOWNLINK_MODE_NONE`
-     * - `DeviceTypeUpdate::DOWNLINK_MODE_MANAGED`
      *
-     * @var int
+     * @var self::DOWNLINK_MODE_*
      */
     protected ?int $downlinkMode = null;
     /**
      * Downlink data to be sent to the devices of this device type if downlinkMode is equal to 0.
      * It must be an 8 byte length message given in hexadecimal string format.
+     * 
      *
      * @var string
      */
@@ -95,150 +105,200 @@ class DeviceTypeUpdate extends BaseDeviceType
      */
     protected ?bool $automaticRenewal = null;
     /**
-     * @param int $payloadType The payload type
-     * - `DeviceTypeUpdate::PAYLOAD_TYPE_REGULAR`
-     * - `DeviceTypeUpdate::PAYLOAD_TYPE_CUSTOM_GRAMMAR`
-     * - `DeviceTypeUpdate::PAYLOAD_TYPE_GEOLOCATION`
-     * - `DeviceTypeUpdate::PAYLOAD_TYPE_DISPLAY_IN_ASCII`
-     * - `DeviceTypeUpdate::PAYLOAD_TYPE_RADIO_PLANNING_FRAME`
-     * - `DeviceTypeUpdate::PAYLOAD_TYPE_SENSITV2`
+     * Setter for payloadType
+     *
+     * @param self::PAYLOAD_TYPE_* $payloadType The payload type
+     *
+     * @return self To use in method chains
      */
-    function setPayloadType(?int $payloadType)
+    public function setPayloadType(?int $payloadType) : self
     {
         $this->payloadType = $payloadType;
+        return $this;
     }
     /**
-     * @return int The payload type
-     * - `DeviceTypeUpdate::PAYLOAD_TYPE_REGULAR`
-     * - `DeviceTypeUpdate::PAYLOAD_TYPE_CUSTOM_GRAMMAR`
-     * - `DeviceTypeUpdate::PAYLOAD_TYPE_GEOLOCATION`
-     * - `DeviceTypeUpdate::PAYLOAD_TYPE_DISPLAY_IN_ASCII`
-     * - `DeviceTypeUpdate::PAYLOAD_TYPE_RADIO_PLANNING_FRAME`
-     * - `DeviceTypeUpdate::PAYLOAD_TYPE_SENSITV2`
+     * Getter for payloadType
+     *
+     * @return self::PAYLOAD_TYPE_* The payload type
      */
-    function getPayloadType() : ?int
+    public function getPayloadType() : int
     {
         return $this->payloadType;
     }
     /**
+     * Setter for payloadConfig
+     *
      * @param string $payloadConfig The payload configuration. Required if the payload type is Custom, else ignored.
+     *
+     * @return self To use in method chains
      */
-    function setPayloadConfig(?string $payloadConfig)
+    public function setPayloadConfig(?string $payloadConfig) : self
     {
         $this->payloadConfig = $payloadConfig;
+        return $this;
     }
     /**
+     * Getter for payloadConfig
+     *
      * @return string The payload configuration. Required if the payload type is Custom, else ignored.
      */
-    function getPayloadConfig() : ?string
+    public function getPayloadConfig() : string
     {
         return $this->payloadConfig;
     }
     /**
-     * @param int $downlinkMode The downlink mode to use for the devices of this device type.
-     * - `DeviceTypeUpdate::DOWNLINK_MODE_DIRECT`
-     * - `DeviceTypeUpdate::DOWNLINK_MODE_CALLBACK`
-     * - `DeviceTypeUpdate::DOWNLINK_MODE_NONE`
-     * - `DeviceTypeUpdate::DOWNLINK_MODE_MANAGED`
+     * Setter for downlinkMode
+     *
+     * @param self::DOWNLINK_MODE_* $downlinkMode The downlink mode to use for the devices of this device type.
+     *
+     * @return self To use in method chains
      */
-    function setDownlinkMode(?int $downlinkMode)
+    public function setDownlinkMode(?int $downlinkMode) : self
     {
         $this->downlinkMode = $downlinkMode;
+        return $this;
     }
     /**
-     * @return int The downlink mode to use for the devices of this device type.
-     * - `DeviceTypeUpdate::DOWNLINK_MODE_DIRECT`
-     * - `DeviceTypeUpdate::DOWNLINK_MODE_CALLBACK`
-     * - `DeviceTypeUpdate::DOWNLINK_MODE_NONE`
-     * - `DeviceTypeUpdate::DOWNLINK_MODE_MANAGED`
+     * Getter for downlinkMode
+     *
+     * @return self::DOWNLINK_MODE_* The downlink mode to use for the devices of this device type.
      */
-    function getDownlinkMode() : ?int
+    public function getDownlinkMode() : int
     {
         return $this->downlinkMode;
     }
     /**
-     * @param string $downlinkDataString Downlink data to be sent to the devices of this device type if downlinkMode is equal to 0.
-     * It must be an 8 byte length message given in hexadecimal string format.
+     * Setter for downlinkDataString
+     *
+     * @param string $downlinkDataString Downlink data to be sent to the devices of this device type if downlinkMode
+     *                                   is equal to 0.
+     *                                   It must be an 8 byte length message given in hexadecimal string format.
+     *                                   
+     *
+     * @return self To use in method chains
      */
-    function setDownlinkDataString(?string $downlinkDataString)
+    public function setDownlinkDataString(?string $downlinkDataString) : self
     {
         $this->downlinkDataString = $downlinkDataString;
+        return $this;
     }
     /**
+     * Getter for downlinkDataString
+     *
      * @return string Downlink data to be sent to the devices of this device type if downlinkMode is equal to 0.
-     * It must be an 8 byte length message given in hexadecimal string format.
+     *                It must be an 8 byte length message given in hexadecimal string format.
+     *                
      */
-    function getDownlinkDataString() : ?string
+    public function getDownlinkDataString() : string
     {
         return $this->downlinkDataString;
     }
     /**
+     * Setter for description
+     *
      * @param string $description The device types's description
+     *
+     * @return self To use in method chains
      */
-    function setDescription(?string $description)
+    public function setDescription(?string $description) : self
     {
         $this->description = $description;
+        return $this;
     }
     /**
+     * Getter for description
+     *
      * @return string The device types's description
      */
-    function getDescription() : ?string
+    public function getDescription() : string
     {
         return $this->description;
     }
     /**
-     * @param string $contractId The device type's contract identifier (must be on the same group than the device type)
+     * Setter for contractId
+     *
+     * @param string $contractId The device type's contract identifier (must be on the same group than the device
+     *                           type)
+     *
+     * @return self To use in method chains
      */
-    function setContractId(?string $contractId)
+    public function setContractId(?string $contractId) : self
     {
         $this->contractId = $contractId;
+        return $this;
     }
     /**
+     * Getter for contractId
+     *
      * @return string The device type's contract identifier (must be on the same group than the device type)
      */
-    function getContractId() : ?string
+    public function getContractId() : string
     {
         return $this->contractId;
     }
     /**
-     * @param ContractId[] $contracts The device type's contract identifiers (must be on the same group than the device type)
+     * Setter for contracts
+     *
+     * @param ContractId[] $contracts The device type's contract identifiers (must be on the same group than the
+     *                                device type)
+     *
+     * @return self To use in method chains
      */
-    function setContracts(?array $contracts)
+    public function setContracts(?array $contracts) : self
     {
         $this->contracts = $contracts;
+        return $this;
     }
     /**
+     * Getter for contracts
+     *
      * @return ContractId[] The device type's contract identifiers (must be on the same group than the device type)
      */
-    function getContracts() : ?array
+    public function getContracts() : array
     {
         return $this->contracts;
     }
     /**
-     * @param string $geolocPayloadConfigId The geoloc payload configuration identifier. Required if the payload type is Geolocation, else ignored.
+     * Setter for geolocPayloadConfigId
+     *
+     * @param string $geolocPayloadConfigId The geoloc payload configuration identifier. Required if the payload type
+     *                                      is Geolocation, else ignored.
+     *
+     * @return self To use in method chains
      */
-    function setGeolocPayloadConfigId(?string $geolocPayloadConfigId)
+    public function setGeolocPayloadConfigId(?string $geolocPayloadConfigId) : self
     {
         $this->geolocPayloadConfigId = $geolocPayloadConfigId;
+        return $this;
     }
     /**
-     * @return string The geoloc payload configuration identifier. Required if the payload type is Geolocation, else ignored.
+     * Getter for geolocPayloadConfigId
+     *
+     * @return string The geoloc payload configuration identifier. Required if the payload type is Geolocation, else
+     *                ignored.
      */
-    function getGeolocPayloadConfigId() : ?string
+    public function getGeolocPayloadConfigId() : string
     {
         return $this->geolocPayloadConfigId;
     }
     /**
+     * Setter for automaticRenewal
+     *
      * @param bool $automaticRenewal Allows the automatic renewal of devices attached to this device type
+     *
+     * @return self To use in method chains
      */
-    function setAutomaticRenewal(?bool $automaticRenewal)
+    public function setAutomaticRenewal(?bool $automaticRenewal) : self
     {
         $this->automaticRenewal = $automaticRenewal;
+        return $this;
     }
     /**
+     * Getter for automaticRenewal
+     *
      * @return bool Allows the automatic renewal of devices attached to this device type
      */
-    function getAutomaticRenewal() : ?bool
+    public function getAutomaticRenewal() : bool
     {
         return $this->automaticRenewal;
     }

@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\ComputedLocation;
+use Arimac\Sigfox\Definition;
 class DeviceLocation_2 extends ComputedLocation
 {
     /**
@@ -18,30 +18,44 @@ class DeviceLocation_2 extends ComputedLocation
      */
     protected ?bool $valid = null;
     /**
+     * Setter for time
+     *
      * @param int $time Timestamp of the message (in milliseconds since the Unix Epoch)
+     *
+     * @return self To use in method chains
      */
-    function setTime(?int $time)
+    public function setTime(?int $time) : self
     {
         $this->time = $time;
+        return $this;
     }
     /**
+     * Getter for time
+     *
      * @return int Timestamp of the message (in milliseconds since the Unix Epoch)
      */
-    function getTime() : ?int
+    public function getTime() : int
     {
         return $this->time;
     }
     /**
+     * Setter for valid
+     *
      * @param bool $valid true, if a valid estimation for this message is available (GPS or RSSI)
+     *
+     * @return self To use in method chains
      */
-    function setValid(?bool $valid)
+    public function setValid(?bool $valid) : self
     {
         $this->valid = $valid;
+        return $this;
     }
     /**
+     * Getter for valid
+     *
      * @return bool true, if a valid estimation for this message is available (GPS or RSSI)
      */
-    function getValid() : ?bool
+    public function getValid() : bool
     {
         return $this->valid;
     }

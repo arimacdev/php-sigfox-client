@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CommonRole;
+use Arimac\Sigfox\Definition;
 class RoleCreate extends CommonRole
 {
     /**
@@ -18,30 +18,44 @@ class RoleCreate extends CommonRole
      */
     protected ?array $perms = null;
     /**
+     * Setter for parentRoleId
+     *
      * @param string $parentRoleId The role's parent's identifier
+     *
+     * @return self To use in method chains
      */
-    function setParentRoleId(?string $parentRoleId)
+    public function setParentRoleId(?string $parentRoleId) : self
     {
         $this->parentRoleId = $parentRoleId;
+        return $this;
     }
     /**
+     * Getter for parentRoleId
+     *
      * @return string The role's parent's identifier
      */
-    function getParentRoleId() : ?string
+    public function getParentRoleId() : string
     {
         return $this->parentRoleId;
     }
     /**
+     * Setter for perms
+     *
      * @param int[] $perms the permisions included in this role, if the role is not META or META_EMPTY type,
+     *
+     * @return self To use in method chains
      */
-    function setPerms(?array $perms)
+    public function setPerms(?array $perms) : self
     {
         $this->perms = $perms;
+        return $this;
     }
     /**
+     * Getter for perms
+     *
      * @return int[] the permisions included in this role, if the role is not META or META_EMPTY type,
      */
-    function getPerms() : ?array
+    public function getPerms() : array
     {
         return $this->perms;
     }

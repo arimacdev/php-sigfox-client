@@ -3,59 +3,49 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+/**
+ * Retrieve information about a device type.
+ * 
+ */
 class DeviceTypesIdGet extends Definition
 {
     /**
-     * Starting timestamp (in milliseconds since Unix Epoch).
+     * if true, we return the list of actions and resources the user has access
      *
-     * @var int
+     * @var bool
      */
-    protected ?int $since = null;
+    protected ?bool $authorizations = null;
     /**
-     * Ending timestamp (in milliseconds since Unix Epoch).
+     * Defines the other available API user's fields to be returned in the response.
+     * 
      *
-     * @var int
+     * @var string
      */
-    protected ?int $before = null;
+    protected ?string $fields = null;
+    protected $query = array('authorizations', 'fields');
     /**
-     * Defines the maximum number of items to return
+     * Setter for authorizations
      *
-     * @var int
-     */
-    protected ?int $limit = null;
-    /**
-     * Defines the number of items to skip
+     * @param bool $authorizations if true, we return the list of actions and resources the user has access
      *
-     * @var int
+     * @return self To use in method chains
      */
-    protected ?int $offset = null;
-    protected $query = array('since', 'before', 'limit', 'offset');
-    /**
-     * @param int $since Starting timestamp (in milliseconds since Unix Epoch).
-     */
-    function setSince(?int $since)
+    public function setAuthorizations(?bool $authorizations) : self
     {
-        $this->since = $since;
+        $this->authorizations = $authorizations;
+        return $this;
     }
     /**
-     * @param int $before Ending timestamp (in milliseconds since Unix Epoch).
+     * Setter for fields
+     *
+     * @param string $fields Defines the other available API user's fields to be returned in the response.
+     *                       
+     *
+     * @return self To use in method chains
      */
-    function setBefore(?int $before)
+    public function setFields(?string $fields) : self
     {
-        $this->before = $before;
-    }
-    /**
-     * @param int $limit Defines the maximum number of items to return
-     */
-    function setLimit(?int $limit)
-    {
-        $this->limit = $limit;
-    }
-    /**
-     * @param int $offset Defines the number of items to skip
-     */
-    function setOffset(?int $offset)
-    {
-        $this->offset = $offset;
+        $this->fields = $fields;
+        return $this;
     }
 }

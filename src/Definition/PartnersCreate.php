@@ -2,8 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CommonGroupCreate;
-use Arimac\Sigfox\Definition\BillableGroup;
+use Arimac\Sigfox\Definition;
 /**
  * Defines the Partners group's create properties
  */

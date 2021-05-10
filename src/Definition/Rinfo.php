@@ -2,9 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\MinBaseStationWithType;
-use Arimac\Sigfox\Definition\Repetition;
-use Arimac\Sigfox\Definition\CbStatus;
 use Arimac\Sigfox\Definition;
 class Rinfo extends Definition
 {
@@ -29,45 +26,45 @@ class Rinfo extends Definition
     /**
      * The latitude of the base station that has received the message.
      *
-     * @var float
+     * @var int
      */
-    protected ?float $lat = null;
+    protected ?int $lat = null;
     /**
      * The longitude of the base station that has received the message.
      *
-     * @var float
+     * @var int
      */
-    protected ?float $lng = null;
+    protected ?int $lng = null;
     /**
      * the delay (in second) between sending and receiving the message, may not be present.
      *
-     * @var float
+     * @var int
      */
-    protected ?float $delay = null;
+    protected ?int $delay = null;
     /**
      * the best signal of all repetitions for this base station
      *
-     * @var float
+     * @var int
      */
-    protected ?float $snr = null;
+    protected ?int $snr = null;
     /**
      * the best signal of all repetitions for this base station coming from repeaters
      *
-     * @var float
+     * @var int
      */
-    protected ?float $snrRepeaters = null;
+    protected ?int $snrRepeaters = null;
     /**
      * the frequency at which the message has been received (in Hz)
      *
-     * @var float
+     * @var int
      */
-    protected ?float $freq = null;
+    protected ?int $freq = null;
     /**
      * the frequency at which the message has been received (in Hz) form repeaters
      *
-     * @var float
+     * @var int
      */
-    protected ?float $freqRepeaters = null;
+    protected ?int $freqRepeaters = null;
     /**
      * number of repetitions sent by the base station
      *
@@ -86,186 +83,279 @@ class Rinfo extends Definition
      * @var CbStatus[]
      */
     protected ?array $cbStatus = null;
-    protected $objects = array('baseStation' => '\\Arimac\\Sigfox\\Definition\\MinBaseStationWithType');
+    protected $serialize = array('baseStation' => MinBaseStationWithType::class);
     /**
+     * Setter for baseStation
+     *
      * @param MinBaseStationWithType $baseStation Name and Id of the base station which has received the message.
+     *
+     * @return self To use in method chains
      */
-    function setBaseStation(?MinBaseStationWithType $baseStation)
+    public function setBaseStation(?MinBaseStationWithType $baseStation) : self
     {
         $this->baseStation = $baseStation;
+        return $this;
     }
     /**
+     * Getter for baseStation
+     *
      * @return MinBaseStationWithType Name and Id of the base station which has received the message.
      */
-    function getBaseStation() : ?MinBaseStationWithType
+    public function getBaseStation() : MinBaseStationWithType
     {
         return $this->baseStation;
     }
     /**
+     * Setter for rssi
+     *
      * @param int $rssi Received Signal Strength Indication (in dBm – Float value with two maximum fraction digits)
+     *
+     * @return self To use in method chains
      */
-    function setRssi(?int $rssi)
+    public function setRssi(?int $rssi) : self
     {
         $this->rssi = $rssi;
+        return $this;
     }
     /**
+     * Getter for rssi
+     *
      * @return int Received Signal Strength Indication (in dBm – Float value with two maximum fraction digits)
      */
-    function getRssi() : ?int
+    public function getRssi() : int
     {
         return $this->rssi;
     }
     /**
-     * @param int $rssiRepeaters Received Signal Strength Indication from repeaters (in dBm – Float value with two maximum fraction digits)
+     * Setter for rssiRepeaters
+     *
+     * @param int $rssiRepeaters Received Signal Strength Indication from repeaters (in dBm – Float value with two
+     *                           maximum fraction digits)
+     *
+     * @return self To use in method chains
      */
-    function setRssiRepeaters(?int $rssiRepeaters)
+    public function setRssiRepeaters(?int $rssiRepeaters) : self
     {
         $this->rssiRepeaters = $rssiRepeaters;
+        return $this;
     }
     /**
-     * @return int Received Signal Strength Indication from repeaters (in dBm – Float value with two maximum fraction digits)
+     * Getter for rssiRepeaters
+     *
+     * @return int Received Signal Strength Indication from repeaters (in dBm – Float value with two maximum
+     *             fraction digits)
      */
-    function getRssiRepeaters() : ?int
+    public function getRssiRepeaters() : int
     {
         return $this->rssiRepeaters;
     }
     /**
-     * @param float $lat The latitude of the base station that has received the message.
+     * Setter for lat
+     *
+     * @param int $lat The latitude of the base station that has received the message.
+     *
+     * @return self To use in method chains
      */
-    function setLat(?float $lat)
+    public function setLat(?int $lat) : self
     {
         $this->lat = $lat;
+        return $this;
     }
     /**
-     * @return float The latitude of the base station that has received the message.
+     * Getter for lat
+     *
+     * @return int The latitude of the base station that has received the message.
      */
-    function getLat() : ?float
+    public function getLat() : int
     {
         return $this->lat;
     }
     /**
-     * @param float $lng The longitude of the base station that has received the message.
+     * Setter for lng
+     *
+     * @param int $lng The longitude of the base station that has received the message.
+     *
+     * @return self To use in method chains
      */
-    function setLng(?float $lng)
+    public function setLng(?int $lng) : self
     {
         $this->lng = $lng;
+        return $this;
     }
     /**
-     * @return float The longitude of the base station that has received the message.
+     * Getter for lng
+     *
+     * @return int The longitude of the base station that has received the message.
      */
-    function getLng() : ?float
+    public function getLng() : int
     {
         return $this->lng;
     }
     /**
-     * @param float $delay the delay (in second) between sending and receiving the message, may not be present.
+     * Setter for delay
+     *
+     * @param int $delay the delay (in second) between sending and receiving the message, may not be present.
+     *
+     * @return self To use in method chains
      */
-    function setDelay(?float $delay)
+    public function setDelay(?int $delay) : self
     {
         $this->delay = $delay;
+        return $this;
     }
     /**
-     * @return float the delay (in second) between sending and receiving the message, may not be present.
+     * Getter for delay
+     *
+     * @return int the delay (in second) between sending and receiving the message, may not be present.
      */
-    function getDelay() : ?float
+    public function getDelay() : int
     {
         return $this->delay;
     }
     /**
-     * @param float $snr the best signal of all repetitions for this base station
+     * Setter for snr
+     *
+     * @param int $snr the best signal of all repetitions for this base station
+     *
+     * @return self To use in method chains
      */
-    function setSnr(?float $snr)
+    public function setSnr(?int $snr) : self
     {
         $this->snr = $snr;
+        return $this;
     }
     /**
-     * @return float the best signal of all repetitions for this base station
+     * Getter for snr
+     *
+     * @return int the best signal of all repetitions for this base station
      */
-    function getSnr() : ?float
+    public function getSnr() : int
     {
         return $this->snr;
     }
     /**
-     * @param float $snrRepeaters the best signal of all repetitions for this base station coming from repeaters
+     * Setter for snrRepeaters
+     *
+     * @param int $snrRepeaters the best signal of all repetitions for this base station coming from repeaters
+     *
+     * @return self To use in method chains
      */
-    function setSnrRepeaters(?float $snrRepeaters)
+    public function setSnrRepeaters(?int $snrRepeaters) : self
     {
         $this->snrRepeaters = $snrRepeaters;
+        return $this;
     }
     /**
-     * @return float the best signal of all repetitions for this base station coming from repeaters
+     * Getter for snrRepeaters
+     *
+     * @return int the best signal of all repetitions for this base station coming from repeaters
      */
-    function getSnrRepeaters() : ?float
+    public function getSnrRepeaters() : int
     {
         return $this->snrRepeaters;
     }
     /**
-     * @param float $freq the frequency at which the message has been received (in Hz)
+     * Setter for freq
+     *
+     * @param int $freq the frequency at which the message has been received (in Hz)
+     *
+     * @return self To use in method chains
      */
-    function setFreq(?float $freq)
+    public function setFreq(?int $freq) : self
     {
         $this->freq = $freq;
+        return $this;
     }
     /**
-     * @return float the frequency at which the message has been received (in Hz)
+     * Getter for freq
+     *
+     * @return int the frequency at which the message has been received (in Hz)
      */
-    function getFreq() : ?float
+    public function getFreq() : int
     {
         return $this->freq;
     }
     /**
-     * @param float $freqRepeaters the frequency at which the message has been received (in Hz) form repeaters
+     * Setter for freqRepeaters
+     *
+     * @param int $freqRepeaters the frequency at which the message has been received (in Hz) form repeaters
+     *
+     * @return self To use in method chains
      */
-    function setFreqRepeaters(?float $freqRepeaters)
+    public function setFreqRepeaters(?int $freqRepeaters) : self
     {
         $this->freqRepeaters = $freqRepeaters;
+        return $this;
     }
     /**
-     * @return float the frequency at which the message has been received (in Hz) form repeaters
+     * Getter for freqRepeaters
+     *
+     * @return int the frequency at which the message has been received (in Hz) form repeaters
      */
-    function getFreqRepeaters() : ?float
+    public function getFreqRepeaters() : int
     {
         return $this->freqRepeaters;
     }
     /**
+     * Setter for rep
+     *
      * @param int $rep number of repetitions sent by the base station
+     *
+     * @return self To use in method chains
      */
-    function setRep(?int $rep)
+    public function setRep(?int $rep) : self
     {
         $this->rep = $rep;
+        return $this;
     }
     /**
+     * Getter for rep
+     *
      * @return int number of repetitions sent by the base station
      */
-    function getRep() : ?int
+    public function getRep() : int
     {
         return $this->rep;
     }
     /**
+     * Setter for repetitions
+     *
      * @param Repetition[] $repetitions detail of the repetitions
+     *
+     * @return self To use in method chains
      */
-    function setRepetitions(?array $repetitions)
+    public function setRepetitions(?array $repetitions) : self
     {
         $this->repetitions = $repetitions;
+        return $this;
     }
     /**
+     * Getter for repetitions
+     *
      * @return Repetition[] detail of the repetitions
      */
-    function getRepetitions() : ?array
+    public function getRepetitions() : array
     {
         return $this->repetitions;
     }
     /**
+     * Setter for cbStatus
+     *
      * @param CbStatus[] $cbStatus list of callback status for this reception
+     *
+     * @return self To use in method chains
      */
-    function setCbStatus(?array $cbStatus)
+    public function setCbStatus(?array $cbStatus) : self
     {
         $this->cbStatus = $cbStatus;
+        return $this;
     }
     /**
+     * Getter for cbStatus
+     *
      * @return CbStatus[] list of callback status for this reception
      */
-    function getCbStatus() : ?array
+    public function getCbStatus() : array
     {
         return $this->cbStatus;
     }

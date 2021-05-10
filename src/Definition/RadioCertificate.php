@@ -2,13 +2,21 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CommonCertificate;
+use Arimac\Sigfox\Definition;
 class RadioCertificate extends CommonCertificate
 {
     /**
-     * The certificate's mode code (0 -> Uplink only, 1 -> Uplink and downlink)
+     * Uplink only
+     */
+    public const MODES_UPLINK_ONLY = '0';
+    /**
+     * Uplink and downlink
+     */
+    public const MODES_UPLINK_AND_DOWNLINK = 1;
+    /**
+     * The certificate's mode code
      *
-     * @var int[]
+     * @var self::MODES_*[]
      */
     protected ?array $modes = null;
     /**
@@ -18,30 +26,44 @@ class RadioCertificate extends CommonCertificate
      */
     protected ?int $inputSensitivity = null;
     /**
-     * @param int[] $modes The certificate's mode code (0 -> Uplink only, 1 -> Uplink and downlink)
+     * Setter for modes
+     *
+     * @param self::MODES_*[] $modes The certificate's mode code
+     *
+     * @return self To use in method chains
      */
-    function setModes(?array $modes)
+    public function setModes(?array $modes) : self
     {
         $this->modes = $modes;
+        return $this;
     }
     /**
-     * @return int[] The certificate's mode code (0 -> Uplink only, 1 -> Uplink and downlink)
+     * Getter for modes
+     *
+     * @return self::MODES_*[] The certificate's mode code
      */
-    function getModes() : ?array
+    public function getModes() : array
     {
         return $this->modes;
     }
     /**
+     * Setter for inputSensitivity
+     *
      * @param int $inputSensitivity The certificate's input sensitivity
+     *
+     * @return self To use in method chains
      */
-    function setInputSensitivity(?int $inputSensitivity)
+    public function setInputSensitivity(?int $inputSensitivity) : self
     {
         $this->inputSensitivity = $inputSensitivity;
+        return $this;
     }
     /**
+     * Getter for inputSensitivity
+     *
      * @return int The certificate's input sensitivity
      */
-    function getInputSensitivity() : ?int
+    public function getInputSensitivity() : int
     {
         return $this->inputSensitivity;
     }

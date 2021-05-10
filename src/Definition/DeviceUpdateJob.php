@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\SingleDeviceFields;
-class DeviceUpdateJob
+use Arimac\Sigfox\Definition;
+class DeviceUpdateJob extends Definition
 {
     use SingleDeviceFields;
     /**
@@ -13,16 +13,23 @@ class DeviceUpdateJob
      */
     protected ?string $name = null;
     /**
+     * Setter for name
+     *
      * @param string $name The device's name
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The device's name
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }

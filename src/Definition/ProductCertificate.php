@@ -2,12 +2,12 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\RadioCertificate;
-use Arimac\Sigfox\Definition\ProductCertificateRadioConfiguration;
+use Arimac\Sigfox\Definition;
 class ProductCertificate extends RadioCertificate
 {
     /**
      * Radio configurations available for this certificate
+     * 
      *
      * @var ProductCertificateRadioConfiguration[]
      */
@@ -19,30 +19,47 @@ class ProductCertificate extends RadioCertificate
      */
     protected ?bool $devKit = null;
     /**
-     * @param ProductCertificateRadioConfiguration[] $radioConfigurations Radio configurations available for this certificate
+     * Setter for radioConfigurations
+     *
+     * @param ProductCertificateRadioConfiguration[] $radioConfigurations Radio configurations available for this
+     *                                                                    certificate
+     *                                                                    
+     *
+     * @return self To use in method chains
      */
-    function setRadioConfigurations(?array $radioConfigurations)
+    public function setRadioConfigurations(?array $radioConfigurations) : self
     {
         $this->radioConfigurations = $radioConfigurations;
+        return $this;
     }
     /**
+     * Getter for radioConfigurations
+     *
      * @return ProductCertificateRadioConfiguration[] Radio configurations available for this certificate
+     *                                                
      */
-    function getRadioConfigurations() : ?array
+    public function getRadioConfigurations() : array
     {
         return $this->radioConfigurations;
     }
     /**
+     * Setter for devKit
+     *
      * @param bool $devKit The product certificate has repeater function or not
+     *
+     * @return self To use in method chains
      */
-    function setDevKit(?bool $devKit)
+    public function setDevKit(?bool $devKit) : self
     {
         $this->devKit = $devKit;
+        return $this;
     }
     /**
+     * Getter for devKit
+     *
      * @return bool The product certificate has repeater function or not
      */
-    function getDevKit() : ?bool
+    public function getDevKit() : bool
     {
         return $this->devKit;
     }

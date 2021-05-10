@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CertificateUpdate;
 trait SingleDeviceFields
 {
     /**
@@ -20,16 +19,18 @@ trait SingleDeviceFields
     /**
      * The device's provided latitude
      *
-     * @var float
+     * @var int
      */
-    protected ?float $lat = null;
+    protected ?int $lat = null;
     /**
      * The device's provided longitude
      *
-     * @var float
+     * @var int
      */
-    protected ?float $lng = null;
-    /** @var CertificateUpdate */
+    protected ?int $lng = null;
+    /**
+     * @var CertificateUpdate
+     */
     protected ?CertificateUpdate $productCertificate = null;
     /**
      * If the device is a prototype or not
@@ -37,88 +38,131 @@ trait SingleDeviceFields
      * @var bool
      */
     protected ?bool $prototype = null;
-    protected $objects = array('productCertificate' => '\\Arimac\\Sigfox\\Definition\\CertificateUpdate');
+    protected $serialize = array('productCertificate' => CertificateUpdate::class);
     /**
-     * @param bool $activable true if the device is activable and can take a token. Not used if the device has already a token
+     * Setter for activable
+     *
+     * @param bool $activable true if the device is activable and can take a token. Not used if the device has
+     *                        already a token
+     *
+     * @return self To use in method chains
      */
-    function setActivable(?bool $activable)
+    public function setActivable(?bool $activable) : self
     {
         $this->activable = $activable;
+        return $this;
     }
     /**
+     * Getter for activable
+     *
      * @return bool true if the device is activable and can take a token. Not used if the device has already a token
      */
-    function getActivable() : ?bool
+    public function getActivable() : bool
     {
         return $this->activable;
     }
     /**
+     * Setter for automaticRenewal
+     *
      * @param bool $automaticRenewal Allow token renewal ?
+     *
+     * @return self To use in method chains
      */
-    function setAutomaticRenewal(?bool $automaticRenewal)
+    public function setAutomaticRenewal(?bool $automaticRenewal) : self
     {
         $this->automaticRenewal = $automaticRenewal;
+        return $this;
     }
     /**
+     * Getter for automaticRenewal
+     *
      * @return bool Allow token renewal ?
      */
-    function getAutomaticRenewal() : ?bool
+    public function getAutomaticRenewal() : bool
     {
         return $this->automaticRenewal;
     }
     /**
-     * @param float $lat The device's provided latitude
+     * Setter for lat
+     *
+     * @param int $lat The device's provided latitude
+     *
+     * @return self To use in method chains
      */
-    function setLat(?float $lat)
+    public function setLat(?int $lat) : self
     {
         $this->lat = $lat;
+        return $this;
     }
     /**
-     * @return float The device's provided latitude
+     * Getter for lat
+     *
+     * @return int The device's provided latitude
      */
-    function getLat() : ?float
+    public function getLat() : int
     {
         return $this->lat;
     }
     /**
-     * @param float $lng The device's provided longitude
+     * Setter for lng
+     *
+     * @param int $lng The device's provided longitude
+     *
+     * @return self To use in method chains
      */
-    function setLng(?float $lng)
+    public function setLng(?int $lng) : self
     {
         $this->lng = $lng;
+        return $this;
     }
     /**
-     * @return float The device's provided longitude
+     * Getter for lng
+     *
+     * @return int The device's provided longitude
      */
-    function getLng() : ?float
+    public function getLng() : int
     {
         return $this->lng;
     }
     /**
-     * @param CertificateUpdate productCertificate
+     * Setter for productCertificate
+     *
+     * @param CertificateUpdate $productCertificate
+     *
+     * @return self To use in method chains
      */
-    function setProductCertificate(?CertificateUpdate $productCertificate)
+    public function setProductCertificate(?CertificateUpdate $productCertificate) : self
     {
         $this->productCertificate = $productCertificate;
+        return $this;
     }
     /**
-     * @return CertificateUpdate productCertificate
+     * Getter for productCertificate
+     *
+     * @return CertificateUpdate
      */
-    function getProductCertificate() : ?CertificateUpdate
+    public function getProductCertificate() : CertificateUpdate
     {
         return $this->productCertificate;
     }
     /**
+     * Setter for prototype
+     *
      * @param bool $prototype If the device is a prototype or not
+     *
+     * @return self To use in method chains
      */
-    function setPrototype(?bool $prototype)
+    public function setPrototype(?bool $prototype) : self
     {
         $this->prototype = $prototype;
+        return $this;
     }
     /**
+     * Getter for prototype
+     *
      * @return bool If the device is a prototype or not
      */
-    function getPrototype() : ?bool
+    public function getPrototype() : bool
     {
         return $this->prototype;
     }

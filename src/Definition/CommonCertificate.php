@@ -2,14 +2,20 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\MinGroup;
 use Arimac\Sigfox\Definition;
 /**
  * Defines the common properties of a certificate
  */
 class CommonCertificate extends Definition
 {
-    protected $required = array('name');
+    /**
+     * ongoing
+     */
+    public const STATUS_ONGOING = 0;
+    /**
+     * finalized
+     */
+    public const STATUS_FINALIZED = 1;
     /**
      * The certificate's identifier
      *
@@ -21,11 +27,11 @@ class CommonCertificate extends Definition
      *
      * @var string
      */
-    protected string $name;
+    protected ?string $name = null;
     /**
-     * The certificate's status code (0 -> ongoing, 1 -> finalized)
+     * The certificate's status code
      *
-     * @var int
+     * @var self::STATUS_*
      */
     protected ?int $status = null;
     /**
@@ -34,7 +40,9 @@ class CommonCertificate extends Definition
      * @var string
      */
     protected ?string $key = null;
-    /** @var MinGroup */
+    /**
+     * @var MinGroup
+     */
     protected ?MinGroup $manufacturer = null;
     /**
      * The certificate's version
@@ -48,102 +56,151 @@ class CommonCertificate extends Definition
      * @var string
      */
     protected ?string $description = null;
-    protected $objects = array('manufacturer' => '\\Arimac\\Sigfox\\Definition\\MinGroup');
+    protected $serialize = array('manufacturer' => MinGroup::class);
     /**
+     * Setter for id
+     *
      * @param string $id The certificate's identifier
+     *
+     * @return self To use in method chains
      */
-    function setId(?string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The certificate's identifier
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
+     * Setter for name
+     *
      * @param string $name The certificate's name
+     *
+     * @return self To use in method chains
      */
-    function setName(string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The certificate's name
      */
-    function getName() : string
+    public function getName() : string
     {
         return $this->name;
     }
     /**
-     * @param int $status The certificate's status code (0 -> ongoing, 1 -> finalized)
+     * Setter for status
+     *
+     * @param self::STATUS_* $status The certificate's status code
+     *
+     * @return self To use in method chains
      */
-    function setStatus(?int $status)
+    public function setStatus(?int $status) : self
     {
         $this->status = $status;
+        return $this;
     }
     /**
-     * @return int The certificate's status code (0 -> ongoing, 1 -> finalized)
+     * Getter for status
+     *
+     * @return self::STATUS_* The certificate's status code
      */
-    function getStatus() : ?int
+    public function getStatus() : int
     {
         return $this->status;
     }
     /**
+     * Setter for key
+     *
      * @param string $key The certificate's key
+     *
+     * @return self To use in method chains
      */
-    function setKey(?string $key)
+    public function setKey(?string $key) : self
     {
         $this->key = $key;
+        return $this;
     }
     /**
+     * Getter for key
+     *
      * @return string The certificate's key
      */
-    function getKey() : ?string
+    public function getKey() : string
     {
         return $this->key;
     }
     /**
-     * @param MinGroup manufacturer
+     * Setter for manufacturer
+     *
+     * @param MinGroup $manufacturer
+     *
+     * @return self To use in method chains
      */
-    function setManufacturer(?MinGroup $manufacturer)
+    public function setManufacturer(?MinGroup $manufacturer) : self
     {
         $this->manufacturer = $manufacturer;
+        return $this;
     }
     /**
-     * @return MinGroup manufacturer
+     * Getter for manufacturer
+     *
+     * @return MinGroup
      */
-    function getManufacturer() : ?MinGroup
+    public function getManufacturer() : MinGroup
     {
         return $this->manufacturer;
     }
     /**
+     * Setter for version
+     *
      * @param string $version The certificate's version
+     *
+     * @return self To use in method chains
      */
-    function setVersion(?string $version)
+    public function setVersion(?string $version) : self
     {
         $this->version = $version;
+        return $this;
     }
     /**
+     * Getter for version
+     *
      * @return string The certificate's version
      */
-    function getVersion() : ?string
+    public function getVersion() : string
     {
         return $this->version;
     }
     /**
+     * Setter for description
+     *
      * @param string $description The certificate description
+     *
+     * @return self To use in method chains
      */
-    function setDescription(?string $description)
+    public function setDescription(?string $description) : self
     {
         $this->description = $description;
+        return $this;
     }
     /**
+     * Getter for description
+     *
      * @return string The certificate description
      */
-    function getDescription() : ?string
+    public function getDescription() : string
     {
         return $this->description;
     }

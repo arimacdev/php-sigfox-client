@@ -2,8 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\Group;
-use Arimac\Sigfox\Definition\BillableGroup;
+use Arimac\Sigfox\Definition;
 /**
  * Defines the Partners group type properties
  */
@@ -17,16 +16,23 @@ class Partners extends Group
      */
     protected ?int $currentPrototypeCount = null;
     /**
+     * Setter for currentPrototypeCount
+     *
      * @param int $currentPrototypeCount Number of prototype registered. Accessible only for groups under SO
+     *
+     * @return self To use in method chains
      */
-    function setCurrentPrototypeCount(?int $currentPrototypeCount)
+    public function setCurrentPrototypeCount(?int $currentPrototypeCount) : self
     {
         $this->currentPrototypeCount = $currentPrototypeCount;
+        return $this;
     }
     /**
+     * Getter for currentPrototypeCount
+     *
      * @return int Number of prototype registered. Accessible only for groups under SO
      */
-    function getCurrentPrototypeCount() : ?int
+    public function getCurrentPrototypeCount() : int
     {
         return $this->currentPrototypeCount;
     }

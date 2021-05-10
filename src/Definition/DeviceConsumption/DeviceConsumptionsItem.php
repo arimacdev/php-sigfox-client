@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition\DeviceConsumption;
 
-use Arimac\Sigfox\Definition\DeviceConsumption\DeviceConsumptionsItem\RoamingDetailsItem;
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Definition\DeviceConsumption\DeviceConsumptionsItem\RoamingDetailsItem;
 class DeviceConsumptionsItem extends Definition
 {
     /**
@@ -30,75 +30,112 @@ class DeviceConsumptionsItem extends Definition
      * @var int
      */
     protected ?int $roamingDownlinkFrameCount = null;
-    /** @var RoamingDetailsItem[] */
+    /**
+     * @var RoamingDetailsItem[]
+     */
     protected ?array $roamingDetails = null;
     /**
+     * Setter for frameCount
+     *
      * @param int $frameCount Number of uplink messages this day
+     *
+     * @return self To use in method chains
      */
-    function setFrameCount(?int $frameCount)
+    public function setFrameCount(?int $frameCount) : self
     {
         $this->frameCount = $frameCount;
+        return $this;
     }
     /**
+     * Getter for frameCount
+     *
      * @return int Number of uplink messages this day
      */
-    function getFrameCount() : ?int
+    public function getFrameCount() : int
     {
         return $this->frameCount;
     }
     /**
+     * Setter for downlinkFrameCount
+     *
      * @param int $downlinkFrameCount Number of downlink messages this day
+     *
+     * @return self To use in method chains
      */
-    function setDownlinkFrameCount(?int $downlinkFrameCount)
+    public function setDownlinkFrameCount(?int $downlinkFrameCount) : self
     {
         $this->downlinkFrameCount = $downlinkFrameCount;
+        return $this;
     }
     /**
+     * Getter for downlinkFrameCount
+     *
      * @return int Number of downlink messages this day
      */
-    function getDownlinkFrameCount() : ?int
+    public function getDownlinkFrameCount() : int
     {
         return $this->downlinkFrameCount;
     }
     /**
+     * Setter for roamingFrameCount
+     *
      * @param int $roamingFrameCount Number of uplink roaming messages this day
+     *
+     * @return self To use in method chains
      */
-    function setRoamingFrameCount(?int $roamingFrameCount)
+    public function setRoamingFrameCount(?int $roamingFrameCount) : self
     {
         $this->roamingFrameCount = $roamingFrameCount;
+        return $this;
     }
     /**
+     * Getter for roamingFrameCount
+     *
      * @return int Number of uplink roaming messages this day
      */
-    function getRoamingFrameCount() : ?int
+    public function getRoamingFrameCount() : int
     {
         return $this->roamingFrameCount;
     }
     /**
+     * Setter for roamingDownlinkFrameCount
+     *
      * @param int $roamingDownlinkFrameCount Number of downlink roaming messages this day
+     *
+     * @return self To use in method chains
      */
-    function setRoamingDownlinkFrameCount(?int $roamingDownlinkFrameCount)
+    public function setRoamingDownlinkFrameCount(?int $roamingDownlinkFrameCount) : self
     {
         $this->roamingDownlinkFrameCount = $roamingDownlinkFrameCount;
+        return $this;
     }
     /**
+     * Getter for roamingDownlinkFrameCount
+     *
      * @return int Number of downlink roaming messages this day
      */
-    function getRoamingDownlinkFrameCount() : ?int
+    public function getRoamingDownlinkFrameCount() : int
     {
         return $this->roamingDownlinkFrameCount;
     }
     /**
-     * @param RoamingDetailsItem[] roamingDetails
+     * Setter for roamingDetails
+     *
+     * @param RoamingDetailsItem[] $roamingDetails
+     *
+     * @return self To use in method chains
      */
-    function setRoamingDetails(?array $roamingDetails)
+    public function setRoamingDetails(?array $roamingDetails) : self
     {
         $this->roamingDetails = $roamingDetails;
+        return $this;
     }
     /**
-     * @return RoamingDetailsItem[] roamingDetails
+     * Getter for roamingDetails
+     *
+     * @return RoamingDetailsItem[]
      */
-    function getRoamingDetails() : ?array
+    public function getRoamingDetails() : array
     {
         return $this->roamingDetails;
     }

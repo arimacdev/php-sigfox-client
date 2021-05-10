@@ -2,7 +2,9 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\BulkDeviceAsynchronousRequest;
+use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Extendable;
 class AsynchronousDeviceCreationJob extends BulkDeviceAsynchronousRequest
 {
+    use Extendable;
 }

@@ -2,32 +2,31 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\DeviceTypesId;
-use Arimac\Sigfox\Repository\DeviceTypesBulk;
+use Arimac\Sigfox\Request\DeviceTypesList;
+use Arimac\Sigfox\Request\DeviceTypesCreate;
 class DeviceTypes
 {
     /**
      * Retrieve a list of device types according to visibility permissions and request filters.
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function list(int $request) : int
+    public function list(DeviceTypesList $request) : int
     {
         return $this->client->request('get', '/device-types/', $request, 'int');
     }
     /**
      * Create a new device type
-     *
-     * @param int $request
-     * @return int
+     * 
      */
-    function create(int $request) : int
+    public function create(DeviceTypesCreate $request) : int
     {
         return $this->client->request('post', '/device-types/', $request, 'int');
     }
     /**
+     * Find by id
+     *
      * @param string $id The Device Type identifier (hexademical format)
+     *
      * @return DeviceTypesId
      */
     public function find(string $id) : DeviceTypesId

@@ -2,11 +2,13 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository\CoveragesGlobalPredictionsBulkJobId;
 class CoveragesGlobalPredictionsBulk
 {
     /**
+     * Find by jobId
+     *
      * @param string $jobId The job's identifier (hexademical format)
+     *
      * @return CoveragesGlobalPredictionsBulkJobId
      */
     public function find(string $jobId) : CoveragesGlobalPredictionsBulkJobId

@@ -5,149 +5,174 @@ namespace Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition;
 class CommonGroupCreate extends Definition
 {
-    /** SO */
+    /**
+     * SO
+     */
     public const TYPE_SO = 0;
-    /** Other */
+    /**
+     * Other
+     */
     public const TYPE_OTHER = 2;
-    /** SVNO */
+    /**
+     * SVNO
+     */
     public const TYPE_SVNO = 5;
-    /** Partners */
+    /**
+     * Partners
+     */
     public const TYPE_PARTNERS = 6;
-    /** NIP */
+    /**
+     * NIP
+     */
     public const TYPE_NIP = 7;
-    /** DIST */
+    /**
+     * DIST
+     */
     public const TYPE_DIST = 8;
-    /** Channel */
+    /**
+     * Channel
+     */
     public const TYPE_CHANNEL = 9;
-    /** Starter */
+    /**
+     * Starter
+     */
     public const TYPE_STARTER = 10;
-    /** Partner */
+    /**
+     * Partner
+     */
     public const TYPE_PARTNER = 11;
-    protected $required = array('description', 'name', 'parentId', 'timezone', 'type');
     /**
      * The group's name
      *
      * @var string
      */
-    protected string $name;
+    protected ?string $name = null;
     /**
      * The group's description
      *
      * @var string
      */
-    protected string $description;
+    protected ?string $description = null;
     /**
      * Group's type:
-     * - `CommonGroupCreate::TYPE_SO`
-     * - `CommonGroupCreate::TYPE_OTHER`
-     * - `CommonGroupCreate::TYPE_SVNO`
-     * - `CommonGroupCreate::TYPE_PARTNERS`
-     * - `CommonGroupCreate::TYPE_NIP`
-     * - `CommonGroupCreate::TYPE_DIST`
-     * - `CommonGroupCreate::TYPE_CHANNEL`
-     * - `CommonGroupCreate::TYPE_STARTER`
-     * - `CommonGroupCreate::TYPE_PARTNER`
      *
-     * @var int
+     * @var self::TYPE_*
      */
-    protected int $type;
+    protected ?int $type = null;
     /**
      * The group's timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
      *
      * @var string
      */
-    protected string $timezone;
+    protected ?string $timezone = null;
     /**
      * The parent group id
      *
      * @var string
      */
-    protected string $parentId;
+    protected ?string $parentId = null;
     /**
+     * Setter for name
+     *
      * @param string $name The group's name
+     *
+     * @return self To use in method chains
      */
-    function setName(string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The group's name
      */
-    function getName() : string
+    public function getName() : string
     {
         return $this->name;
     }
     /**
+     * Setter for description
+     *
      * @param string $description The group's description
+     *
+     * @return self To use in method chains
      */
-    function setDescription(string $description)
+    public function setDescription(?string $description) : self
     {
         $this->description = $description;
+        return $this;
     }
     /**
+     * Getter for description
+     *
      * @return string The group's description
      */
-    function getDescription() : string
+    public function getDescription() : string
     {
         return $this->description;
     }
     /**
-     * @param int $type Group's type:
-     * - `CommonGroupCreate::TYPE_SO`
-     * - `CommonGroupCreate::TYPE_OTHER`
-     * - `CommonGroupCreate::TYPE_SVNO`
-     * - `CommonGroupCreate::TYPE_PARTNERS`
-     * - `CommonGroupCreate::TYPE_NIP`
-     * - `CommonGroupCreate::TYPE_DIST`
-     * - `CommonGroupCreate::TYPE_CHANNEL`
-     * - `CommonGroupCreate::TYPE_STARTER`
-     * - `CommonGroupCreate::TYPE_PARTNER`
+     * Setter for type
+     *
+     * @param self::TYPE_* $type Group's type:
+     *
+     * @return self To use in method chains
      */
-    function setType(int $type)
+    public function setType(?int $type) : self
     {
         $this->type = $type;
+        return $this;
     }
     /**
-     * @return int Group's type:
-     * - `CommonGroupCreate::TYPE_SO`
-     * - `CommonGroupCreate::TYPE_OTHER`
-     * - `CommonGroupCreate::TYPE_SVNO`
-     * - `CommonGroupCreate::TYPE_PARTNERS`
-     * - `CommonGroupCreate::TYPE_NIP`
-     * - `CommonGroupCreate::TYPE_DIST`
-     * - `CommonGroupCreate::TYPE_CHANNEL`
-     * - `CommonGroupCreate::TYPE_STARTER`
-     * - `CommonGroupCreate::TYPE_PARTNER`
+     * Getter for type
+     *
+     * @return self::TYPE_* Group's type:
      */
-    function getType() : int
+    public function getType() : int
     {
         return $this->type;
     }
     /**
+     * Setter for timezone
+     *
      * @param string $timezone The group's timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
+     *
+     * @return self To use in method chains
      */
-    function setTimezone(string $timezone)
+    public function setTimezone(?string $timezone) : self
     {
         $this->timezone = $timezone;
+        return $this;
     }
     /**
+     * Getter for timezone
+     *
      * @return string The group's timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
      */
-    function getTimezone() : string
+    public function getTimezone() : string
     {
         return $this->timezone;
     }
     /**
+     * Setter for parentId
+     *
      * @param string $parentId The parent group id
+     *
+     * @return self To use in method chains
      */
-    function setParentId(string $parentId)
+    public function setParentId(?string $parentId) : self
     {
         $this->parentId = $parentId;
+        return $this;
     }
     /**
+     * Getter for parentId
+     *
      * @return string The parent group id
      */
-    function getParentId() : string
+    public function getParentId() : string
     {
         return $this->parentId;
     }

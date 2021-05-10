@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CommonGroupCreate;
+use Arimac\Sigfox\Definition;
 /**
  * Defines the SVNO group's create properties
  */
@@ -15,16 +15,25 @@ class SVNOCreate extends CommonGroupCreate
      */
     protected ?string $networkOperatorId = null;
     /**
-     * @param string $networkOperatorId SNO or NIP group id for a DIST & SVNO  group. This field is mandatory for DIST & SVNO group creation.
+     * Setter for networkOperatorId
+     *
+     * @param string $networkOperatorId SNO or NIP group id for a DIST & SVNO  group. This field is mandatory for
+     *                                  DIST & SVNO group creation.
+     *
+     * @return self To use in method chains
      */
-    function setNetworkOperatorId(?string $networkOperatorId)
+    public function setNetworkOperatorId(?string $networkOperatorId) : self
     {
         $this->networkOperatorId = $networkOperatorId;
+        return $this;
     }
     /**
-     * @return string SNO or NIP group id for a DIST & SVNO  group. This field is mandatory for DIST & SVNO group creation.
+     * Getter for networkOperatorId
+     *
+     * @return string SNO or NIP group id for a DIST & SVNO  group. This field is mandatory for DIST & SVNO group
+     *                creation.
      */
-    function getNetworkOperatorId() : ?string
+    public function getNetworkOperatorId() : string
     {
         return $this->networkOperatorId;
     }

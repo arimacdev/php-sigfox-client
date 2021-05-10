@@ -2,32 +2,48 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\CommonDevice;
-use Arimac\Sigfox\Definition\ComputedLocation;
-use Arimac\Sigfox\Definition\Rinfo;
-use Arimac\Sigfox\Definition\DownlinkAnswerStatus;
 use Arimac\Sigfox\Definition;
 class DeviceMessage extends Definition
 {
-    /** LIMIT */
+    /**
+     * LIMIT
+     */
     public const LQI_LIMIT = 0;
-    /** AVERAGE */
+    /**
+     * AVERAGE
+     */
     public const LQI_AVERAGE = 1;
-    /** GOOD */
+    /**
+     * GOOD
+     */
     public const LQI_GOOD = 2;
-    /** EXCELLENT */
+    /**
+     * EXCELLENT
+     */
     public const LQI_EXCELLENT = 3;
-    /** NA */
+    /**
+     * NA
+     */
     public const LQI_NA = 4;
-    /** LIMIT */
+    /**
+     * LIMIT
+     */
     public const LQI_REPEATERS_LIMIT = 0;
-    /** AVERAGE */
+    /**
+     * AVERAGE
+     */
     public const LQI_REPEATERS_AVERAGE = 1;
-    /** GOOD */
+    /**
+     * GOOD
+     */
     public const LQI_REPEATERS_GOOD = 2;
-    /** EXCELLENT */
+    /**
+     * EXCELLENT
+     */
     public const LQI_REPEATERS_EXCELLENT = 3;
-    /** NA */
+    /**
+     * NA
+     */
     public const LQI_REPEATERS_NA = 4;
     /**
      * Defines a device message
@@ -55,24 +71,14 @@ class DeviceMessage extends Definition
     protected ?bool $ackRequired = null;
     /**
      * link quality indicator
-     * - `DeviceMessage::LQI_LIMIT`
-     * - `DeviceMessage::LQI_AVERAGE`
-     * - `DeviceMessage::LQI_GOOD`
-     * - `DeviceMessage::LQI_EXCELLENT`
-     * - `DeviceMessage::LQI_NA`
      *
-     * @var int
+     * @var self::LQI_*
      */
     protected ?int $lqi = null;
     /**
      * link quality indicator for repeated message
-     * - `DeviceMessage::LQI_REPEATERS_LIMIT`
-     * - `DeviceMessage::LQI_REPEATERS_AVERAGE`
-     * - `DeviceMessage::LQI_REPEATERS_GOOD`
-     * - `DeviceMessage::LQI_REPEATERS_EXCELLENT`
-     * - `DeviceMessage::LQI_REPEATERS_NA`
      *
-     * @var int
+     * @var self::LQI_REPEATERS_*
      */
     protected ?int $lqiRepeaters = null;
     /**
@@ -87,9 +93,13 @@ class DeviceMessage extends Definition
      * @var int
      */
     protected ?int $nbFrames = null;
-    /** @var ComputedLocation[] */
+    /**
+     * @var ComputedLocation[]
+     */
     protected ?array $computedLocation = null;
-    /** @var Rinfo[] */
+    /**
+     * @var Rinfo[]
+     */
     protected ?array $rinfos = null;
     /**
      * the last callback status for this reception
@@ -97,178 +107,236 @@ class DeviceMessage extends Definition
      * @var DownlinkAnswerStatus
      */
     protected ?DownlinkAnswerStatus $downlinkAnswerStatus = null;
-    protected $objects = array('device' => '\\Arimac\\Sigfox\\Definition\\CommonDevice', 'downlinkAnswerStatus' => '\\Arimac\\Sigfox\\Definition\\DownlinkAnswerStatus');
+    protected $serialize = array('device' => CommonDevice::class, 'downlinkAnswerStatus' => DownlinkAnswerStatus::class);
     /**
+     * Setter for device
+     *
      * @param CommonDevice $device Defines a device message
+     *
+     * @return self To use in method chains
      */
-    function setDevice(?CommonDevice $device)
+    public function setDevice(?CommonDevice $device) : self
     {
         $this->device = $device;
+        return $this;
     }
     /**
+     * Getter for device
+     *
      * @return CommonDevice Defines a device message
      */
-    function getDevice() : ?CommonDevice
+    public function getDevice() : CommonDevice
     {
         return $this->device;
     }
     /**
+     * Setter for time
+     *
      * @param int $time Timestamp of the message (in milliseconds since the Unix Epoch)
+     *
+     * @return self To use in method chains
      */
-    function setTime(?int $time)
+    public function setTime(?int $time) : self
     {
         $this->time = $time;
+        return $this;
     }
     /**
+     * Getter for time
+     *
      * @return int Timestamp of the message (in milliseconds since the Unix Epoch)
      */
-    function getTime() : ?int
+    public function getTime() : int
     {
         return $this->time;
     }
     /**
+     * Setter for data
+     *
      * @param string $data message content, hex encoded
+     *
+     * @return self To use in method chains
      */
-    function setData(?string $data)
+    public function setData(?string $data) : self
     {
         $this->data = $data;
+        return $this;
     }
     /**
+     * Getter for data
+     *
      * @return string message content, hex encoded
      */
-    function getData() : ?string
+    public function getData() : string
     {
         return $this->data;
     }
     /**
+     * Setter for ackRequired
+     *
      * @param bool $ackRequired true if an acknowledge is required
+     *
+     * @return self To use in method chains
      */
-    function setAckRequired(?bool $ackRequired)
+    public function setAckRequired(?bool $ackRequired) : self
     {
         $this->ackRequired = $ackRequired;
+        return $this;
     }
     /**
+     * Getter for ackRequired
+     *
      * @return bool true if an acknowledge is required
      */
-    function getAckRequired() : ?bool
+    public function getAckRequired() : bool
     {
         return $this->ackRequired;
     }
     /**
-     * @param int $lqi link quality indicator
-     * - `DeviceMessage::LQI_LIMIT`
-     * - `DeviceMessage::LQI_AVERAGE`
-     * - `DeviceMessage::LQI_GOOD`
-     * - `DeviceMessage::LQI_EXCELLENT`
-     * - `DeviceMessage::LQI_NA`
+     * Setter for lqi
+     *
+     * @param self::LQI_* $lqi link quality indicator
+     *
+     * @return self To use in method chains
      */
-    function setLqi(?int $lqi)
+    public function setLqi(?int $lqi) : self
     {
         $this->lqi = $lqi;
+        return $this;
     }
     /**
-     * @return int link quality indicator
-     * - `DeviceMessage::LQI_LIMIT`
-     * - `DeviceMessage::LQI_AVERAGE`
-     * - `DeviceMessage::LQI_GOOD`
-     * - `DeviceMessage::LQI_EXCELLENT`
-     * - `DeviceMessage::LQI_NA`
+     * Getter for lqi
+     *
+     * @return self::LQI_* link quality indicator
      */
-    function getLqi() : ?int
+    public function getLqi() : int
     {
         return $this->lqi;
     }
     /**
-     * @param int $lqiRepeaters link quality indicator for repeated message
-     * - `DeviceMessage::LQI_REPEATERS_LIMIT`
-     * - `DeviceMessage::LQI_REPEATERS_AVERAGE`
-     * - `DeviceMessage::LQI_REPEATERS_GOOD`
-     * - `DeviceMessage::LQI_REPEATERS_EXCELLENT`
-     * - `DeviceMessage::LQI_REPEATERS_NA`
+     * Setter for lqiRepeaters
+     *
+     * @param self::LQI_REPEATERS_* $lqiRepeaters link quality indicator for repeated message
+     *
+     * @return self To use in method chains
      */
-    function setLqiRepeaters(?int $lqiRepeaters)
+    public function setLqiRepeaters(?int $lqiRepeaters) : self
     {
         $this->lqiRepeaters = $lqiRepeaters;
+        return $this;
     }
     /**
-     * @return int link quality indicator for repeated message
-     * - `DeviceMessage::LQI_REPEATERS_LIMIT`
-     * - `DeviceMessage::LQI_REPEATERS_AVERAGE`
-     * - `DeviceMessage::LQI_REPEATERS_GOOD`
-     * - `DeviceMessage::LQI_REPEATERS_EXCELLENT`
-     * - `DeviceMessage::LQI_REPEATERS_NA`
+     * Getter for lqiRepeaters
+     *
+     * @return self::LQI_REPEATERS_* link quality indicator for repeated message
      */
-    function getLqiRepeaters() : ?int
+    public function getLqiRepeaters() : int
     {
         return $this->lqiRepeaters;
     }
     /**
+     * Setter for seqNumber
+     *
      * @param int $seqNumber the sequence number for this message, may not be present when device uses VO protocol
+     *
+     * @return self To use in method chains
      */
-    function setSeqNumber(?int $seqNumber)
+    public function setSeqNumber(?int $seqNumber) : self
     {
         $this->seqNumber = $seqNumber;
+        return $this;
     }
     /**
+     * Getter for seqNumber
+     *
      * @return int the sequence number for this message, may not be present when device uses VO protocol
      */
-    function getSeqNumber() : ?int
+    public function getSeqNumber() : int
     {
         return $this->seqNumber;
     }
     /**
-     * @param int $nbFrames nbFrames can be 1 or 3. This value represents an expected number of frames sent by the device.
+     * Setter for nbFrames
+     *
+     * @param int $nbFrames nbFrames can be 1 or 3. This value represents an expected number of frames sent by the
+     *                      device.
+     *
+     * @return self To use in method chains
      */
-    function setNbFrames(?int $nbFrames)
+    public function setNbFrames(?int $nbFrames) : self
     {
         $this->nbFrames = $nbFrames;
+        return $this;
     }
     /**
+     * Getter for nbFrames
+     *
      * @return int nbFrames can be 1 or 3. This value represents an expected number of frames sent by the device.
      */
-    function getNbFrames() : ?int
+    public function getNbFrames() : int
     {
         return $this->nbFrames;
     }
     /**
-     * @param ComputedLocation[] computedLocation
+     * Setter for computedLocation
+     *
+     * @param ComputedLocation[] $computedLocation
+     *
+     * @return self To use in method chains
      */
-    function setComputedLocation(?array $computedLocation)
+    public function setComputedLocation(?array $computedLocation) : self
     {
         $this->computedLocation = $computedLocation;
+        return $this;
     }
     /**
-     * @return ComputedLocation[] computedLocation
+     * Getter for computedLocation
+     *
+     * @return ComputedLocation[]
      */
-    function getComputedLocation() : ?array
+    public function getComputedLocation() : array
     {
         return $this->computedLocation;
     }
     /**
-     * @param Rinfo[] rinfos
+     * Setter for rinfos
+     *
+     * @param Rinfo[] $rinfos
+     *
+     * @return self To use in method chains
      */
-    function setRinfos(?array $rinfos)
+    public function setRinfos(?array $rinfos) : self
     {
         $this->rinfos = $rinfos;
+        return $this;
     }
     /**
-     * @return Rinfo[] rinfos
+     * Getter for rinfos
+     *
+     * @return Rinfo[]
      */
-    function getRinfos() : ?array
+    public function getRinfos() : array
     {
         return $this->rinfos;
     }
     /**
+     * Setter for downlinkAnswerStatus
+     *
      * @param DownlinkAnswerStatus $downlinkAnswerStatus the last callback status for this reception
+     *
+     * @return self To use in method chains
      */
-    function setDownlinkAnswerStatus(?DownlinkAnswerStatus $downlinkAnswerStatus)
+    public function setDownlinkAnswerStatus(?DownlinkAnswerStatus $downlinkAnswerStatus) : self
     {
         $this->downlinkAnswerStatus = $downlinkAnswerStatus;
+        return $this;
     }
     /**
+     * Getter for downlinkAnswerStatus
+     *
      * @return DownlinkAnswerStatus the last callback status for this reception
      */
-    function getDownlinkAnswerStatus() : ?DownlinkAnswerStatus
+    public function getDownlinkAnswerStatus() : DownlinkAnswerStatus
     {
         return $this->downlinkAnswerStatus;
     }

@@ -21,30 +21,44 @@ class Certificate extends Definition
      */
     protected ?string $key = null;
     /**
+     * Setter for id
+     *
      * @param string $id The product certificate's identifier
+     *
+     * @return self To use in method chains
      */
-    function setId(?string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The product certificate's identifier
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
+     * Setter for key
+     *
      * @param string $key The product certificate's name
+     *
+     * @return self To use in method chains
      */
-    function setKey(?string $key)
+    public function setKey(?string $key) : self
     {
         $this->key = $key;
+        return $this;
     }
     /**
+     * Getter for key
+     *
      * @return string The product certificate's name
      */
-    function getKey() : ?string
+    public function getKey() : string
     {
         return $this->key;
     }

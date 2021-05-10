@@ -21,30 +21,44 @@ class CommonApiUser extends Definition
      */
     protected ?string $timezone = null;
     /**
+     * Setter for name
+     *
      * @param string $name The API user name
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The API user name
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }
     /**
+     * Setter for timezone
+     *
      * @param string $timezone The API user timezone
+     *
+     * @return self To use in method chains
      */
-    function setTimezone(?string $timezone)
+    public function setTimezone(?string $timezone) : self
     {
         $this->timezone = $timezone;
+        return $this;
     }
     /**
+     * Getter for timezone
+     *
      * @return string The API user timezone
      */
-    function getTimezone() : ?string
+    public function getTimezone() : string
     {
         return $this->timezone;
     }

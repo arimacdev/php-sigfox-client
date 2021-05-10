@@ -2,15 +2,19 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition\InternetSubscription;
+use Arimac\Sigfox\Definition;
 /**
  * Information about cellular internet subscription
  */
 class GsmSubscription extends InternetSubscription
 {
-    /** DONGLE_USB */
+    /**
+     * DONGLE_USB
+     */
     public const GSM_CONNECTION_TYPE_DONGLE_USB = 0;
-    /** ROUTER_ETH */
+    /**
+     * ROUTER_ETH
+     */
     public const GSM_CONNECTION_TYPE_ROUTER_ETH = 1;
     /**
      * The data number of this internet subscription. This field can be unset when updating.
@@ -44,97 +48,135 @@ class GsmSubscription extends InternetSubscription
     protected ?string $modemSerialNumber = null;
     /**
      * GSM subscription connection type
-     * - `GsmSubscription::GSM_CONNECTION_TYPE_DONGLE_USB`
-     * - `GsmSubscription::GSM_CONNECTION_TYPE_ROUTER_ETH`
      *
-     * @var int
+     * @var self::GSM_CONNECTION_TYPE_*
      */
     protected ?int $gsmConnectionType = null;
     /**
-     * @param string $dataNumber The data number of this internet subscription. This field can be unset when updating.
+     * Setter for dataNumber
+     *
+     * @param string $dataNumber The data number of this internet subscription. This field can be unset when
+     *                           updating.
+     *
+     * @return self To use in method chains
      */
-    function setDataNumber(?string $dataNumber)
+    public function setDataNumber(?string $dataNumber) : self
     {
         $this->dataNumber = $dataNumber;
+        return $this;
     }
     /**
+     * Getter for dataNumber
+     *
      * @return string The data number of this internet subscription. This field can be unset when updating.
      */
-    function getDataNumber() : ?string
+    public function getDataNumber() : string
     {
         return $this->dataNumber;
     }
     /**
-     * @param string $simCardNumber The sim card number of this internet subscription. This field can be unset when updating.
+     * Setter for simCardNumber
+     *
+     * @param string $simCardNumber The sim card number of this internet subscription. This field can be unset when
+     *                              updating.
+     *
+     * @return self To use in method chains
      */
-    function setSimCardNumber(?string $simCardNumber)
+    public function setSimCardNumber(?string $simCardNumber) : self
     {
         $this->simCardNumber = $simCardNumber;
+        return $this;
     }
     /**
+     * Getter for simCardNumber
+     *
      * @return string The sim card number of this internet subscription. This field can be unset when updating.
      */
-    function getSimCardNumber() : ?string
+    public function getSimCardNumber() : string
     {
         return $this->simCardNumber;
     }
     /**
+     * Setter for imei
+     *
      * @param string $imei The IMEI of this internet subscription. This field can be unset when updating.
+     *
+     * @return self To use in method chains
      */
-    function setImei(?string $imei)
+    public function setImei(?string $imei) : self
     {
         $this->imei = $imei;
+        return $this;
     }
     /**
+     * Getter for imei
+     *
      * @return string The IMEI of this internet subscription. This field can be unset when updating.
      */
-    function getImei() : ?string
+    public function getImei() : string
     {
         return $this->imei;
     }
     /**
+     * Setter for modem
+     *
      * @param string $modem The modem of this internet subscription. This field can be unset when updating.
+     *
+     * @return self To use in method chains
      */
-    function setModem(?string $modem)
+    public function setModem(?string $modem) : self
     {
         $this->modem = $modem;
+        return $this;
     }
     /**
+     * Getter for modem
+     *
      * @return string The modem of this internet subscription. This field can be unset when updating.
      */
-    function getModem() : ?string
+    public function getModem() : string
     {
         return $this->modem;
     }
     /**
+     * Setter for modemSerialNumber
+     *
      * @param string $modemSerialNumber The serial number of the modem of this internet subscription
+     *
+     * @return self To use in method chains
      */
-    function setModemSerialNumber(?string $modemSerialNumber)
+    public function setModemSerialNumber(?string $modemSerialNumber) : self
     {
         $this->modemSerialNumber = $modemSerialNumber;
+        return $this;
     }
     /**
+     * Getter for modemSerialNumber
+     *
      * @return string The serial number of the modem of this internet subscription
      */
-    function getModemSerialNumber() : ?string
+    public function getModemSerialNumber() : string
     {
         return $this->modemSerialNumber;
     }
     /**
-     * @param int $gsmConnectionType GSM subscription connection type
-     * - `GsmSubscription::GSM_CONNECTION_TYPE_DONGLE_USB`
-     * - `GsmSubscription::GSM_CONNECTION_TYPE_ROUTER_ETH`
+     * Setter for gsmConnectionType
+     *
+     * @param self::GSM_CONNECTION_TYPE_* $gsmConnectionType GSM subscription connection type
+     *
+     * @return self To use in method chains
      */
-    function setGsmConnectionType(?int $gsmConnectionType)
+    public function setGsmConnectionType(?int $gsmConnectionType) : self
     {
         $this->gsmConnectionType = $gsmConnectionType;
+        return $this;
     }
     /**
-     * @return int GSM subscription connection type
-     * - `GsmSubscription::GSM_CONNECTION_TYPE_DONGLE_USB`
-     * - `GsmSubscription::GSM_CONNECTION_TYPE_ROUTER_ETH`
+     * Getter for gsmConnectionType
+     *
+     * @return self::GSM_CONNECTION_TYPE_* GSM subscription connection type
      */
-    function getGsmConnectionType() : ?int
+    public function getGsmConnectionType() : int
     {
         return $this->gsmConnectionType;
     }

@@ -38,89 +38,134 @@ class CityArea extends Definition
      * @var bool
      */
     protected ?bool $deploymentKpiReport = null;
-    /** @var string[] */
+    /**
+     * @var string[]
+     */
     protected ?array $actions = null;
     /**
+     * Setter for id
+     *
      * @param string $id The city area's identifier
+     *
+     * @return self To use in method chains
      */
-    function setId(?string $id)
+    public function setId(?string $id) : self
     {
         $this->id = $id;
+        return $this;
     }
     /**
+     * Getter for id
+     *
      * @return string The city area's identifier
      */
-    function getId() : ?string
+    public function getId() : string
     {
         return $this->id;
     }
     /**
+     * Setter for name
+     *
      * @param string $name The city area's name
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string The city area's name
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }
     /**
+     * Setter for groupId
+     *
      * @param string $groupId The city area operator's identifier
+     *
+     * @return self To use in method chains
      */
-    function setGroupId(?string $groupId)
+    public function setGroupId(?string $groupId) : self
     {
         $this->groupId = $groupId;
+        return $this;
     }
     /**
+     * Getter for groupId
+     *
      * @return string The city area operator's identifier
      */
-    function getGroupId() : ?string
+    public function getGroupId() : string
     {
         return $this->groupId;
     }
     /**
+     * Setter for readOnly
+     *
      * @param bool $readOnly true if the city area is not editable by an operator user.
+     *
+     * @return self To use in method chains
      */
-    function setReadOnly(?bool $readOnly)
+    public function setReadOnly(?bool $readOnly) : self
     {
         $this->readOnly = $readOnly;
+        return $this;
     }
     /**
+     * Getter for readOnly
+     *
      * @return bool true if the city area is not editable by an operator user.
      */
-    function getReadOnly() : ?bool
+    public function getReadOnly() : bool
     {
         return $this->readOnly;
     }
     /**
-     * @param bool $deploymentKpiReport true if the city area is included in the monthly deployement kpi report of the operator.
+     * Setter for deploymentKpiReport
+     *
+     * @param bool $deploymentKpiReport true if the city area is included in the monthly deployement kpi report of
+     *                                  the operator.
+     *
+     * @return self To use in method chains
      */
-    function setDeploymentKpiReport(?bool $deploymentKpiReport)
+    public function setDeploymentKpiReport(?bool $deploymentKpiReport) : self
     {
         $this->deploymentKpiReport = $deploymentKpiReport;
+        return $this;
     }
     /**
+     * Getter for deploymentKpiReport
+     *
      * @return bool true if the city area is included in the monthly deployement kpi report of the operator.
      */
-    function getDeploymentKpiReport() : ?bool
+    public function getDeploymentKpiReport() : bool
     {
         return $this->deploymentKpiReport;
     }
     /**
-     * @param string[] actions
+     * Setter for actions
+     *
+     * @param string[] $actions
+     *
+     * @return self To use in method chains
      */
-    function setActions(?array $actions)
+    public function setActions(?array $actions) : self
     {
         $this->actions = $actions;
+        return $this;
     }
     /**
-     * @return string[] actions
+     * Getter for actions
+     *
+     * @return string[]
      */
-    function getActions() : ?array
+    public function getActions() : array
     {
         return $this->actions;
     }

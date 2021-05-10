@@ -18,30 +18,44 @@ class LocationItem extends Definition
      */
     protected ?string $name = null;
     /**
+     * Setter for code
+     *
      * @param int $code location code
+     *
+     * @return self To use in method chains
      */
-    function setCode(?int $code)
+    public function setCode(?int $code) : self
     {
         $this->code = $code;
+        return $this;
     }
     /**
+     * Getter for code
+     *
      * @return int location code
      */
-    function getCode() : ?int
+    public function getCode() : int
     {
         return $this->code;
     }
     /**
+     * Setter for name
+     *
      * @param string $name location name
+     *
+     * @return self To use in method chains
      */
-    function setName(?string $name)
+    public function setName(?string $name) : self
     {
         $this->name = $name;
+        return $this;
     }
     /**
+     * Getter for name
+     *
      * @return string location name
      */
-    function getName() : ?string
+    public function getName() : string
     {
         return $this->name;
     }
