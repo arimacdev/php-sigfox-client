@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve information about a given contract.
  * 
@@ -22,7 +23,9 @@ class ContractInfosIdGet extends Definition
      * @var bool
      */
     protected ?bool $authorizations = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'fields', 'string'), new PrimitiveSerializer(self::class, 'authorizations', 'bool'));
     protected $query = array('fields', 'authorizations');
+    protected $validations = array('fields' => array('required', 'in:group(name\\,type\\,level),order(name),blacklistedTerritories(group(name\\,type\\,level))'), 'authorizations' => array('required'));
     /**
      * Setter for fields
      *

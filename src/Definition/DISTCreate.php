@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the DIST group's create properties
  */
@@ -14,6 +15,7 @@ class DISTCreate extends CommonGroupCreate
      * @var string
      */
     protected ?string $networkOperatorId = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'networkOperatorId', 'string'));
     /**
      * Setter for networkOperatorId
      *

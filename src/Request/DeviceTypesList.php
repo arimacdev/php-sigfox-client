@@ -3,12 +3,38 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Retrieve a list of device types according to visibility permissions and request filters.
  * 
  */
 class DeviceTypesList extends Definition
 {
+    /**
+     * Regular (raw payload)
+     */
+    public const PAYLOAD_TYPE_REGULAR = 2;
+    /**
+     * Custom grammar
+     */
+    public const PAYLOAD_TYPE_CUSTOM_GRAMMAR = 3;
+    /**
+     * Geolocation
+     */
+    public const PAYLOAD_TYPE_GEOLOCATION = 4;
+    /**
+     * Display in ASCII
+     */
+    public const PAYLOAD_TYPE_DISPLAY_IN_ASCII = 5;
+    /**
+     * Radio planning frame
+     */
+    public const PAYLOAD_TYPE_RADIO_PLANNING_FRAME = 6;
+    /**
+     * Sensitv2
+     */
+    public const PAYLOAD_TYPE_SENSITV2 = 9;
     /**
      * Search returns all Device Type names containing the value. Example: ?name=sig
      * 
@@ -38,15 +64,8 @@ class DeviceTypesList extends Definition
     protected ?string $contractId = null;
     /**
      * Searches device types by payload type
-     *   - 2 -> Regular (raw payload)
-     *   - 3 -> Custom grammar
-     *   - 4 -> Geolocation
-     *   - 5 -> Display in ASCII
-     *   - 6 -> Radio planning frame
-     *   - 9 -> Sensitv2
-     * 
      *
-     * @var int
+     * @var self::PAYLOAD_TYPE_*
      */
     protected ?int $payloadType = null;
     /**
@@ -86,7 +105,9 @@ class DeviceTypesList extends Definition
      * @var string
      */
     protected ?string $pageId = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new ArraySerializer(self::class, 'groupIds', new PrimitiveSerializer(self::class, 'groupIds', 'string')), new PrimitiveSerializer(self::class, 'deep', 'bool'), new PrimitiveSerializer(self::class, 'contractId', 'string'), new PrimitiveSerializer(self::class, 'payloadType', 'int'), new PrimitiveSerializer(self::class, 'authorizations', 'bool'), new PrimitiveSerializer(self::class, 'sort', 'string'), new PrimitiveSerializer(self::class, 'fields', 'string'), new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'offset', 'int'), new PrimitiveSerializer(self::class, 'pageId', 'string'));
     protected $query = array('name', 'groupIds', 'deep', 'contractId', 'payloadType', 'authorizations', 'sort', 'fields', 'limit', 'offset', 'pageId');
+    protected $validations = array('name' => array('required'), 'groupIds' => array('required'), 'deep' => array('required'), 'contractId' => array('required'), 'payloadType' => array('required'), 'authorizations' => array('required'), 'sort' => array('required', 'in:id,-id,name,-name'), 'fields' => array('required', 'in:group(name\\,type\\,level),contract(name),geolocPayloadConfig(name)'), 'limit' => array('required'), 'offset' => array('required'), 'pageId' => array('required'));
     /**
      * Setter for name
      *
@@ -141,14 +162,7 @@ class DeviceTypesList extends Definition
     /**
      * Setter for payloadType
      *
-     * @param int $payloadType Searches device types by payload type
-     *                           - 2 -> Regular (raw payload)
-     *                           - 3 -> Custom grammar
-     *                           - 4 -> Geolocation
-     *                           - 5 -> Display in ASCII
-     *                           - 6 -> Radio planning frame
-     *                           - 9 -> Sensitv2
-     *                         
+     * @param self::PAYLOAD_TYPE_* $payloadType Searches device types by payload type
      *
      * @return self To use in method chains
      */

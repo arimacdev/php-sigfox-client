@@ -2,68 +2,26 @@
 
 namespace Arimac\Sigfox;
 
-use Arimac\Sigfox\Exception\MissingRequiredPropertyException;
-use Arimac\Sigfox\Exception\WrongTypeException;
+use Arimac\Sigfox\Serializer\Impl\Definition as SerializeDefinition;
 
-class Definition
+class Definition implements SerializeDefinition
 {
-    protected $required = [];
 
-    protected $objects = [];
+    protected array $required = [];
 
-    public function __serialize(): array
+    protected array $validations = [];
+
+    protected array $serialize = [];
+
+    protected bool $extendable = false;
+
+    function getSerializeMetaData(): array
     {
-        $vars = get_object_vars($this);
-        $data = [];
-        foreach ($vars as $key => $default) {
-            if ($key !== "required") {
-                if (isset($default)) {
-                    $val = $default;
-                    if (in_array($key, $this->objects)) {
-                        $val = $default->__serialize();
-                    }
-                    $data[$key] = $val;
-                } else if (in_array($key, $this->required)) {
-                    throw new MissingRequiredPropertyException(get_class($this), $this->required, $key);
-                }
-            }
-        }
-        return $data;
+        return $this->serialize;
     }
 
-    public function __unserialize(array $data): void
+    function isExtendable(): bool
     {
-        $vars = get_object_vars($this);
-        foreach ($vars as $key => $default) {
-            if ($key !== "required") {
-                if (isset($data[$key])) {
-                    $val = $data[$key];
-                    if (in_array($key, array_keys($this->objects))) {
-                        if (is_array($val)) {
-                            $val = $this->objects[$key]::fromArray($val);
-                        } else if (!($val instanceof $this->objects[$key])) {
-                            throw new WrongTypeException($key);
-                        }
-                    }
-                    try {
-                        $this->$key = $val;
-                    } catch (\Exception $e) {
-                        throw new WrongTypeException($key);
-                    }
-                }
-                if (isset($default)) {
-                    $this->key = $default;
-                } else if (in_array($key, $this->required)) {
-                    throw new MissingRequiredPropertyException(get_class($this), $this->required, $key);
-                }
-            }
-        }
-    }
-
-    public static function fromArray(array $data): self
-    {
-        $obj = new static();
-        $obj->__unserialize($data);
-        return $obj;
+        return $this->extendable;
     }
 }

@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 class ErrorMessages extends Definition
 {
     /**
@@ -57,7 +59,7 @@ class ErrorMessages extends Definition
      * @var array
      */
     protected ?array $parameters = null;
-    protected $serialize = array('callback' => CallbackMedium::class);
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'deviceId', 'string'), new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), new PrimitiveSerializer(self::class, 'time', 'int'), new PrimitiveSerializer(self::class, 'data', 'string'), new PrimitiveSerializer(self::class, 'snr', 'string'), new PrimitiveSerializer(self::class, 'status', 'string'), new PrimitiveSerializer(self::class, 'message', 'string'), new ClassSerializer(self::class, 'callback', CallbackMedium::class), new PrimitiveSerializer(self::class, 'parameters', 'array'));
     /**
      * Setter for deviceId
      *

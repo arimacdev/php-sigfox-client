@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition\AsynchronousDeviceTransferJob;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class DataItem extends Definition
 {
     /**
@@ -24,6 +25,8 @@ class DataItem extends Definition
      * @var bool
      */
     protected ?bool $activable = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'keepHistory', 'bool'), new PrimitiveSerializer(self::class, 'activable', 'bool'));
+    protected $validations = array('id' => array('required'));
     /**
      * Setter for id
      *

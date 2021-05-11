@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Defines tiles reference to display on web map
  */
@@ -24,7 +26,7 @@ class TilesResponse extends Definition
      * @var Bounds
      */
     protected ?Bounds $bounds = null;
-    protected $serialize = array('bounds' => Bounds::class);
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'baseImgUrl', 'string'), new PrimitiveSerializer(self::class, 'tmsTemplateUrl', 'string'), new ClassSerializer(self::class, 'bounds', Bounds::class));
     /**
      * Setter for baseImgUrl
      *

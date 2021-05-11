@@ -24,7 +24,7 @@ class DeviceTypesIdCallbacks
      */
     public function list() : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/device-types/{id}/callbacks', $this->id), null, 'int');
+        return $this->client->request('get', $this->bind('/device-types/{id}/callbacks', $this->id), null, 'int');
     }
     /**
      * Create a new callback for a given device type.
@@ -32,7 +32,7 @@ class DeviceTypesIdCallbacks
      */
     public function create(DeviceTypesIdCallbacksCreate $request) : int
     {
-        return $this->client->request('post', $this->bindUrlParams('/device-types/{id}/callbacks', $this->id), $request, 'int');
+        return $this->client->request('post', $this->bind('/device-types/{id}/callbacks', $this->id), $request, 'int');
     }
     /**
      * Find by callbackId

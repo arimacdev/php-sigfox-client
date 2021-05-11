@@ -4,6 +4,9 @@ namespace Arimac\Sigfox\Definition\AvailableEntitiesResponse;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\AvailableEntitiesResponse\OperatorsItem\OperatorForecastsItem;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 class OperatorsItem extends Definition
 {
     /**
@@ -47,6 +50,7 @@ class OperatorsItem extends Definition
      * @var string[]
      */
     protected ?array $actions = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'operatorId', 'string'), new PrimitiveSerializer(self::class, 'operatorName', 'string'), new PrimitiveSerializer(self::class, 'operatorMinDb', 'int'), new PrimitiveSerializer(self::class, 'operatorMaxDb', 'int'), new PrimitiveSerializer(self::class, 'operatorStandard', 'int'), new ArraySerializer(self::class, 'operatorForecasts', new ClassSerializer(self::class, 'operatorForecasts', OperatorForecastsItem::class)), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
     /**
      * Setter for operatorId
      *

@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the properties needed to create a batch url callback
  */
@@ -26,6 +27,8 @@ class CreateEmailCallback extends CreateCallback
      * @var string
      */
     protected ?string $message = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'subject', 'string'), new PrimitiveSerializer(self::class, 'recipient', 'string'), new PrimitiveSerializer(self::class, 'message', 'string'));
+    protected $validations = array('recipient' => array('required'));
     /**
      * Setter for subject
      *

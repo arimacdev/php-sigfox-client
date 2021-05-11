@@ -3,6 +3,9 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Defines the device's properties
  */
@@ -264,7 +267,7 @@ class Device extends CommonDevice
      * @var string[]
      */
     protected ?array $resources = null;
-    protected $serialize = array('deviceType' => MinDeviceType::class, 'contract' => MinContractInfo::class, 'group' => MinGroup::class, 'modemCertificate' => Certificate::class, 'productCertificate' => Certificate::class, 'location' => DeviceLocation::class, 'lastComputedLocation' => LastComputedLocation::class, 'token' => Token::class);
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'satelliteCapable', 'bool'), new PrimitiveSerializer(self::class, 'repeater', 'bool'), new PrimitiveSerializer(self::class, 'messageModulo', 'int'), new ClassSerializer(self::class, 'deviceType', MinDeviceType::class), new ClassSerializer(self::class, 'contract', MinContractInfo::class), new ClassSerializer(self::class, 'group', MinGroup::class), new ClassSerializer(self::class, 'modemCertificate', Certificate::class), new PrimitiveSerializer(self::class, 'prototype', 'bool'), new ClassSerializer(self::class, 'productCertificate', Certificate::class), new ClassSerializer(self::class, 'location', DeviceLocation::class), new ClassSerializer(self::class, 'lastComputedLocation', LastComputedLocation::class), new PrimitiveSerializer(self::class, 'pac', 'string'), new PrimitiveSerializer(self::class, 'sequenceNumber', 'int'), new PrimitiveSerializer(self::class, 'trashSequenceNumber', 'int'), new PrimitiveSerializer(self::class, 'lastCom', 'int'), new PrimitiveSerializer(self::class, 'lqi', 'int'), new PrimitiveSerializer(self::class, 'activationTime', 'int'), new PrimitiveSerializer(self::class, 'creationTime', 'int'), new PrimitiveSerializer(self::class, 'state', 'int'), new PrimitiveSerializer(self::class, 'comState', 'int'), new ClassSerializer(self::class, 'token', Token::class), new PrimitiveSerializer(self::class, 'unsubscriptionTime', 'int'), new PrimitiveSerializer(self::class, 'createdBy', 'string'), new PrimitiveSerializer(self::class, 'lastEditionTime', 'int'), new PrimitiveSerializer(self::class, 'lastEditedBy', 'string'), new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'), new PrimitiveSerializer(self::class, 'automaticRenewalStatus', 'int'), new PrimitiveSerializer(self::class, 'activable', 'bool'), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     /**
      * Setter for satelliteCapable
      *

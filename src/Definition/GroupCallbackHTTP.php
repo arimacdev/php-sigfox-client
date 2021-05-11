@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Callback of HTTP type
  */
@@ -44,6 +45,7 @@ class GroupCallbackHTTP extends Definition
      * @var string
      */
     protected ?string $error = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'url', 'string'), new PrimitiveSerializer(self::class, 'headers', 'array'), new PrimitiveSerializer(self::class, 'body', 'string'), new PrimitiveSerializer(self::class, 'contentType', 'string'), new PrimitiveSerializer(self::class, 'method', 'string'), new PrimitiveSerializer(self::class, 'error', 'string'));
     /**
      * Setter for url
      *

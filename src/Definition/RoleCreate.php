@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 class RoleCreate extends CommonRole
 {
     /**
@@ -17,6 +19,7 @@ class RoleCreate extends CommonRole
      * @var int[]
      */
     protected ?array $perms = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'parentRoleId', 'string'), new ArraySerializer(self::class, 'perms', new PrimitiveSerializer(self::class, 'perms', 'int')));
     /**
      * Setter for parentRoleId
      *

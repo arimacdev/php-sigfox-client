@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class DeviceUpdateJob extends Definition
 {
     use SingleDeviceFields;
@@ -12,6 +13,7 @@ class DeviceUpdateJob extends Definition
      * @var string
      */
     protected ?string $name = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'));
     /**
      * Setter for name
      *

@@ -3,6 +3,9 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class ModemCertificate extends RadioCertificate
 {
     /**
@@ -18,6 +21,7 @@ class ModemCertificate extends RadioCertificate
      * @var bool
      */
     protected ?bool $repeaterFunction = null;
+    protected $serialize = array(new ArraySerializer(self::class, 'radioConfigurations', new ClassSerializer(self::class, 'radioConfigurations', ModemCertificateRadioConfiguration::class)), new PrimitiveSerializer(self::class, 'repeaterFunction', 'bool'));
     /**
      * Setter for radioConfigurations
      *

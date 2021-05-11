@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Common information about Callback template
  */
@@ -84,6 +85,8 @@ class CreateCallback extends Definition
      * @var bool
      */
     protected ?bool $enabled = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'channel', 'string'), new PrimitiveSerializer(self::class, 'callbackType', 'int'), new PrimitiveSerializer(self::class, 'callbackSubtype', 'int'), new PrimitiveSerializer(self::class, 'payloadConfig', 'string'), new PrimitiveSerializer(self::class, 'enabled', 'bool'));
+    protected $validations = array('channel' => array('required'), 'callbackType' => array('required'), 'callbackSubtype' => array('required'), 'enabled' => array('required'));
     /**
      * Setter for channel
      *

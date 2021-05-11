@@ -5,6 +5,9 @@ namespace Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\AvailableEntitiesResponse\OperatorsItem;
 use Arimac\Sigfox\Definition\AvailableEntitiesResponse\ClassesItem;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Returned data for Service Coverage Available Entities API
  */
@@ -26,6 +29,7 @@ class AvailableEntitiesResponse extends Definition
      * @var string[]
      */
     protected ?array $actions = null;
+    protected $serialize = array(new ArraySerializer(self::class, 'operators', new ClassSerializer(self::class, 'operators', OperatorsItem::class)), new ArraySerializer(self::class, 'classes', new ClassSerializer(self::class, 'classes', ClassesItem::class)), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
     /**
      * Setter for operators
      *

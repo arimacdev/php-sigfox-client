@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\ProfileIds;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Associate new profiles to a given API user.
  */
@@ -15,8 +16,9 @@ class ApiUsersIdProfilesUpdate extends Definition
      * @var ProfileIds
      */
     protected ?ProfileIds $profileIds = null;
-    protected $serialize = array('profileIds' => ProfileIds::class);
+    protected $serialize = array(new ClassSerializer(self::class, 'profileIds', ProfileIds::class));
     protected $body = array('profileIds');
+    protected $validations = array('profileIds' => array('required'));
     /**
      * Setter for profileIds
      *

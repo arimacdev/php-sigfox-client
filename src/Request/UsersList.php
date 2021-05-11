@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Retrieve a list of users according to visibility permissions and request filters.
  * 
@@ -72,7 +74,9 @@ class UsersList extends Definition
      * @var string
      */
     protected ?string $pageId = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'fields', 'string'), new PrimitiveSerializer(self::class, 'text', 'string'), new PrimitiveSerializer(self::class, 'profileId', 'string'), new ArraySerializer(self::class, 'groupIds', new PrimitiveSerializer(self::class, 'groupIds', 'string')), new PrimitiveSerializer(self::class, 'deep', 'bool'), new PrimitiveSerializer(self::class, 'sort', 'string'), new PrimitiveSerializer(self::class, 'authorizations', 'bool'), new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'offset', 'int'), new PrimitiveSerializer(self::class, 'pageId', 'string'));
     protected $query = array('fields', 'text', 'profileId', 'groupIds', 'deep', 'sort', 'authorizations', 'limit', 'offset', 'pageId');
+    protected $validations = array('fields' => array('required', 'in:userRoles(group(name\\,type\\,level\\,bssId\\,customerBssId)\\,profile(name\\,roles(name\\,perms(name))))'), 'text' => array('required'), 'profileId' => array('required'), 'groupIds' => array('required'), 'deep' => array('required'), 'sort' => array('required', 'in:id,-id,name,-name,email,-email'), 'authorizations' => array('required'), 'limit' => array('required'), 'offset' => array('required'), 'pageId' => array('required'));
     /**
      * Setter for fields
      *

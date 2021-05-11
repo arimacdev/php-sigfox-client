@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition\DeviceConsumption\DeviceConsumptionsItem;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class RoamingDetailsItem extends Definition
 {
     /**
@@ -29,6 +30,7 @@ class RoamingDetailsItem extends Definition
      * @var int
      */
     protected ?int $territoryRoamingDownlinkFrameCount = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'territory', 'string'), new PrimitiveSerializer(self::class, 'operator', 'string'), new PrimitiveSerializer(self::class, 'territoryRoamingFrameCount', 'int'), new PrimitiveSerializer(self::class, 'territoryRoamingDownlinkFrameCount', 'int'));
     /**
      * Setter for territory
      *

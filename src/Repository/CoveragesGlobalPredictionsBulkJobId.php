@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Request\CoveragesOperatorsRedundancy;
 class CoveragesGlobalPredictionsBulkJobId
 {
     /**
@@ -26,17 +25,6 @@ class CoveragesGlobalPredictionsBulkJobId
      */
     public function getStatus() : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/coverages/global/predictions/bulk/{jobId}', $this->jobId), null, 'int');
-    }
-    /**
-     * Get operator coverage redundancy for a selected latitude and longitude,
-     * for specific device situation.
-     * For more information please refer to the [Global Coverage API
-     * article](https://support.sigfox.com/docs/global-coverage-api).
-     * 
-     */
-    public function operatorsRedundancy(CoveragesOperatorsRedundancy $request) : int
-    {
-        return $this->client->request('get', $this->bindUrlParams('/coverages/operators/redundancy', $this->jobId), $request, 'int');
+        return $this->client->request('get', $this->bind('/coverages/global/predictions/bulk/{jobId}', $this->jobId), null, 'int');
     }
 }

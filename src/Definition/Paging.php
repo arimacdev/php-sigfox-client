@@ -3,12 +3,14 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class Paging extends Definition
 {
     /**
      * @var string
      */
     protected ?string $next = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'next', 'string'));
     /**
      * Setter for next
      *

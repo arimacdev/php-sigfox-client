@@ -3,6 +3,9 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Defines the device type's properties
  */
@@ -104,6 +107,7 @@ class DeviceTypeUpdate extends BaseDeviceType
      * @var bool
      */
     protected ?bool $automaticRenewal = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'payloadType', 'int'), new PrimitiveSerializer(self::class, 'payloadConfig', 'string'), new PrimitiveSerializer(self::class, 'downlinkMode', 'int'), new PrimitiveSerializer(self::class, 'downlinkDataString', 'string'), new PrimitiveSerializer(self::class, 'description', 'string'), new PrimitiveSerializer(self::class, 'contractId', 'string'), new ArraySerializer(self::class, 'contracts', new ClassSerializer(self::class, 'contracts', ContractId::class)), new PrimitiveSerializer(self::class, 'geolocPayloadConfigId', 'string'), new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'));
     /**
      * Setter for payloadType
      *

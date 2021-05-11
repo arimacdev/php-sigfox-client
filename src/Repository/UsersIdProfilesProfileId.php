@@ -30,6 +30,6 @@ class UsersIdProfilesProfileId
      */
     public function delete(UsersIdProfilesProfileIdDelete $request) : int
     {
-        return $this->client->request('delete', $this->bindUrlParams('/users/{id}/profiles/{profileId}', $this->id, $this->profileId), $request, 'int');
+        return $this->client->request('delete', $this->bind('/users/{id}/profiles/{profileId}', $this->id, $this->profileId), $request, 'int');
     }
 }

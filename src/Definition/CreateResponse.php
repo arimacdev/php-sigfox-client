@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Generic information about user create operation
  */
@@ -14,6 +15,7 @@ class CreateResponse extends BaseResponse
      * @var string
      */
     protected ?string $id = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'));
     /**
      * Setter for id
      *

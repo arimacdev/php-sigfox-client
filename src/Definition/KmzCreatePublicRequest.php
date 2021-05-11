@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class KmzCreatePublicRequest extends Definition
 {
     /**
@@ -13,6 +14,8 @@ class KmzCreatePublicRequest extends Definition
      * @var string
      */
     protected ?string $coverageMode = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'coverageMode', 'string'));
+    protected $validations = array('coverageMode' => array('in:OVERLAP_INDOOR,OVERLAP_OUTDOOR,OVERLAP_INDOOR_U1,OVERLAP_OUTDOOR_U1,OVERLAP_INDOOR_U2,OVERLAP_OUTDOOR_U2,OVERLAP_INDOOR_U3,OVERLAP_OUTDOOR_U3', 'nullable'));
     /**
      * Setter for coverageMode
      *

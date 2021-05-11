@@ -23,7 +23,7 @@ class TilesMonarchKmzJobId
      */
     public function get() : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/tiles/monarch/kmz/{jobId}', $this->jobId), null, 'int');
+        return $this->client->request('get', $this->bind('/tiles/monarch/kmz/{jobId}', $this->jobId), null, 'int');
     }
     /**
      * @return TilesMonarchKmzJobIdTileskmz

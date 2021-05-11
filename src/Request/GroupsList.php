@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Retrieve a list of groups according to visibility permissions and request filters. 
  *   If parentIds is provided, retrieve all direct sub-groups under the given parents. If parentIds is not provided,
@@ -12,6 +14,42 @@ use Arimac\Sigfox\Definition;
  */
 class GroupsList extends Definition
 {
+    /**
+     * SO
+     */
+    public const TYPES_SO = 0;
+    /**
+     * Other
+     */
+    public const TYPES_OTHER = 2;
+    /**
+     * SVNO
+     */
+    public const TYPES_SVNO = 5;
+    /**
+     * Partners
+     */
+    public const TYPES_PARTNERS = 6;
+    /**
+     * NIP
+     */
+    public const TYPES_NIP = 7;
+    /**
+     * DIST
+     */
+    public const TYPES_DIST = 8;
+    /**
+     * Channel
+     */
+    public const TYPES_CHANNEL = 9;
+    /**
+     * Starter
+     */
+    public const TYPES_STARTER = 10;
+    /**
+     * Partner
+     */
+    public const TYPES_PARTNER = 11;
     /**
      * The parent group's identifiers from which the children will be fetched
      *
@@ -32,18 +70,8 @@ class GroupsList extends Definition
     protected ?string $name = null;
     /**
      * Group's type
-     * - 0 -> SO
-     * - 2 -> Other
-     * - 5 -> SVNO
-     * - 6 -> Partners
-     * - 7 -> NIP
-     * - 8 -> DIST
-     * - 9 -> Channel
-     * - 10 -> Starter
-     * - 11 -> Partner
-     * 
      *
-     * @var int[]
+     * @var self::TYPES_*[]
      */
     protected ?array $types = null;
     /**
@@ -90,7 +118,9 @@ class GroupsList extends Definition
      * @var string
      */
     protected ?string $pageId = null;
+    protected $serialize = array(new ArraySerializer(self::class, 'parentIds', new PrimitiveSerializer(self::class, 'parentIds', 'string')), new PrimitiveSerializer(self::class, 'deep', 'bool'), new PrimitiveSerializer(self::class, 'name', 'string'), new ArraySerializer(self::class, 'types', new PrimitiveSerializer(self::class, 'types', 'int')), new PrimitiveSerializer(self::class, 'fields', 'string'), new PrimitiveSerializer(self::class, 'action', 'string'), new PrimitiveSerializer(self::class, 'sort', 'string'), new PrimitiveSerializer(self::class, 'authorizations', 'bool'), new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'offset', 'int'), new PrimitiveSerializer(self::class, 'pageId', 'string'));
     protected $query = array('parentIds', 'deep', 'name', 'types', 'fields', 'action', 'sort', 'authorizations', 'limit', 'offset', 'pageId');
+    protected $validations = array('parentIds' => array('required'), 'deep' => array('required'), 'name' => array('required'), 'types' => array('required'), 'fields' => array('required', 'in:path(name\\,type\\,level)'), 'action' => array('required', 'in:base-stations:create,contract-infos:create,device-types:create,devices:create,hosts:create,maintenances:create,providers:create,sites:create,users:create'), 'sort' => array('required', 'in:id,-id,name,-name'), 'authorizations' => array('required'), 'limit' => array('required'), 'offset' => array('required'), 'pageId' => array('required'));
     /**
      * Setter for parentIds
      *
@@ -130,17 +160,7 @@ class GroupsList extends Definition
     /**
      * Setter for types
      *
-     * @param int[] $types Group's type
-     *                     - 0 -> SO
-     *                     - 2 -> Other
-     *                     - 5 -> SVNO
-     *                     - 6 -> Partners
-     *                     - 7 -> NIP
-     *                     - 8 -> DIST
-     *                     - 9 -> Channel
-     *                     - 10 -> Starter
-     *                     - 11 -> Partner
-     *                     
+     * @param self::TYPES_*[] $types Group's type
      *
      * @return self To use in method chains
      */

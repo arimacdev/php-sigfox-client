@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 class GroupErrorMessages extends Definition
 {
     /**
@@ -63,7 +65,7 @@ class GroupErrorMessages extends Definition
      * @var array
      */
     protected ?array $parameters = null;
-    protected $serialize = array('callback' => GroupCallbackMedium::class);
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'device', 'string'), new PrimitiveSerializer(self::class, 'deviceUrl', 'string'), new PrimitiveSerializer(self::class, 'deviceType', 'string'), new PrimitiveSerializer(self::class, 'time', 'int'), new PrimitiveSerializer(self::class, 'data', 'string'), new PrimitiveSerializer(self::class, 'snr', 'string'), new PrimitiveSerializer(self::class, 'status', 'string'), new PrimitiveSerializer(self::class, 'message', 'string'), new ClassSerializer(self::class, 'callback', GroupCallbackMedium::class), new PrimitiveSerializer(self::class, 'parameters', 'array'));
     /**
      * Setter for device
      *

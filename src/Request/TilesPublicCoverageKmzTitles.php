@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve Sigfox public coverage kmz file from a job. The public coverage is always available and does not require
  * a previous calculation
@@ -40,7 +41,9 @@ class TilesPublicCoverageKmzTitles extends Definition
      * @var int
      */
     protected ?int $east = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'zoom', 'int'), new PrimitiveSerializer(self::class, 'north', 'int'), new PrimitiveSerializer(self::class, 'south', 'int'), new PrimitiveSerializer(self::class, 'west', 'int'), new PrimitiveSerializer(self::class, 'east', 'int'));
     protected $query = array('zoom', 'north', 'south', 'west', 'east');
+    protected $validations = array('zoom' => array('required', 'max:11', 'min:0', 'numeric'), 'north' => array('required', 'max:90', 'min:-90', 'numeric'), 'south' => array('required', 'max:90', 'min:-90', 'numeric'), 'west' => array('required', 'max:180', 'min:-180', 'numeric'), 'east' => array('required', 'max:180', 'min:-180', 'numeric'));
     /**
      * Setter for zoom
      *

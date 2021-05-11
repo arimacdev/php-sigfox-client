@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Contains the token information of the device
  */
@@ -57,6 +58,7 @@ class Token extends Definition
      * @var int
      */
     protected ?int $freeMessagesSent = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'state', 'int'), new PrimitiveSerializer(self::class, 'detailMessage', 'string'), new PrimitiveSerializer(self::class, 'end', 'int'), new PrimitiveSerializer(self::class, 'freeMessages', 'int'), new PrimitiveSerializer(self::class, 'freeMessagesSent', 'int'));
     /**
      * Setter for state
      *

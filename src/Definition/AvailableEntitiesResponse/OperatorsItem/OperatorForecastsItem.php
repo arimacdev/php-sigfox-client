@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition\AvailableEntitiesResponse\OperatorsItem;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class OperatorForecastsItem extends Definition
 {
     /**
@@ -17,6 +18,7 @@ class OperatorForecastsItem extends Definition
      * @var string
      */
     protected ?string $name = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'int'), new PrimitiveSerializer(self::class, 'name', 'string'));
     /**
      * Setter for id
      *

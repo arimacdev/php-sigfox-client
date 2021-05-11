@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the properties needed to create an email callback
  */
@@ -26,6 +27,7 @@ class UpdateEmailCallback extends UpdateCallback
      * @var string
      */
     protected ?string $message = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'subject', 'string'), new PrimitiveSerializer(self::class, 'recipient', 'string'), new PrimitiveSerializer(self::class, 'message', 'string'));
     /**
      * Setter for subject
      *

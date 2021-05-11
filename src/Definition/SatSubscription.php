@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Information about satellite internet subscription
  */
@@ -88,6 +89,7 @@ class SatSubscription extends InternetSubscription
      * @var self::R_TYPE_*
      */
     protected ?int $rType = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'connectionStatus', 'int'), new PrimitiveSerializer(self::class, 'altitude', 'int'), new PrimitiveSerializer(self::class, 'azimuth', 'int'), new PrimitiveSerializer(self::class, 'polarization', 'int'), new PrimitiveSerializer(self::class, 'orderNumber', 'string'), new PrimitiveSerializer(self::class, 'locationCode', 'string'), new PrimitiveSerializer(self::class, 'clusterCode', 'string'), new PrimitiveSerializer(self::class, 'login', 'string'), new PrimitiveSerializer(self::class, 'password', 'string'), new PrimitiveSerializer(self::class, 'rType', 'int'));
     /**
      * Setter for connectionStatus
      *

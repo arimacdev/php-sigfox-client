@@ -2,6 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 trait SingleDeviceFields
 {
     /**
@@ -38,7 +40,7 @@ trait SingleDeviceFields
      * @var bool
      */
     protected ?bool $prototype = null;
-    protected $serialize = array('productCertificate' => CertificateUpdate::class);
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'activable', 'bool'), new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'), new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'), new ClassSerializer(self::class, 'productCertificate', CertificateUpdate::class), new PrimitiveSerializer(self::class, 'prototype', 'bool'));
     /**
      * Setter for activable
      *

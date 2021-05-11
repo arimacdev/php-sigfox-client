@@ -3,6 +3,9 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Defines the device type's properties
  */
@@ -140,7 +143,8 @@ class DeviceType extends BaseDeviceType
      * @var bool
      */
     protected ?bool $automaticRenewal = null;
-    protected $serialize = array('group' => MinGroup::class, 'contract' => MinContractInfo::class, 'geolocPayloadConfig' => GeolocPayloadConfig::class);
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'description', 'string'), new PrimitiveSerializer(self::class, 'downlinkMode', 'int'), new PrimitiveSerializer(self::class, 'downlinkDataString', 'string'), new PrimitiveSerializer(self::class, 'payloadType', 'int'), new PrimitiveSerializer(self::class, 'payloadConfig', 'string'), new ClassSerializer(self::class, 'group', MinGroup::class), new ClassSerializer(self::class, 'contract', MinContractInfo::class), new ArraySerializer(self::class, 'contracts', new ClassSerializer(self::class, 'contracts', MinContractInfo::class)), new ArraySerializer(self::class, 'detachedContracts', new ClassSerializer(self::class, 'detachedContracts', MinContractInfo::class)), new ClassSerializer(self::class, 'geolocPayloadConfig', GeolocPayloadConfig::class), new PrimitiveSerializer(self::class, 'creationTime', 'int'), new PrimitiveSerializer(self::class, 'createdBy', 'string'), new PrimitiveSerializer(self::class, 'lastEditionTime', 'int'), new PrimitiveSerializer(self::class, 'lastEditedBy', 'string'), new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'));
+    protected $validations = array('description' => array('max:300', 'nullable'));
     /**
      * Setter for id
      *

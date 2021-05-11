@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Information about cellular internet subscription
  */
@@ -52,6 +53,7 @@ class GsmSubscription extends InternetSubscription
      * @var self::GSM_CONNECTION_TYPE_*
      */
     protected ?int $gsmConnectionType = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'dataNumber', 'string'), new PrimitiveSerializer(self::class, 'simCardNumber', 'string'), new PrimitiveSerializer(self::class, 'imei', 'string'), new PrimitiveSerializer(self::class, 'modem', 'string'), new PrimitiveSerializer(self::class, 'modemSerialNumber', 'string'), new PrimitiveSerializer(self::class, 'gsmConnectionType', 'int'));
     /**
      * Setter for dataNumber
      *

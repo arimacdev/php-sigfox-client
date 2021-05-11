@@ -24,7 +24,7 @@ class UsersIdProfiles
      */
     public function addRoles(UsersIdProfilesAddRoles $request) : int
     {
-        return $this->client->request('put', $this->bindUrlParams('/users/{id}/profiles', $this->id), $request, 'int');
+        return $this->client->request('put', $this->bind('/users/{id}/profiles', $this->id), $request, 'int');
     }
     /**
      * Find by profileId

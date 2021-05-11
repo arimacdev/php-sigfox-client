@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Code and name of a permission
  */
@@ -20,6 +21,7 @@ class MinPerm extends Definition
      * @var string
      */
     protected ?string $name = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'code', 'int'), new PrimitiveSerializer(self::class, 'name', 'string'));
     /**
      * Setter for code
      *

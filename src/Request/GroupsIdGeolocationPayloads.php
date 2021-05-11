@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of geolocation payload according to request filters.
  * 
@@ -27,7 +28,9 @@ class GroupsIdGeolocationPayloads extends Definition
      * @var string
      */
     protected ?string $pageId = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'offset', 'int'), new PrimitiveSerializer(self::class, 'pageId', 'string'));
     protected $query = array('limit', 'offset', 'pageId');
+    protected $validations = array('limit' => array('required'), 'offset' => array('required'), 'pageId' => array('required'));
     /**
      * Setter for limit
      *

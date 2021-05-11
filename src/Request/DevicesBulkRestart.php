@@ -4,6 +4,8 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\DeviceActionJob;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Restart multiple devices with asynchronous job.
  * 
@@ -22,9 +24,10 @@ class DevicesBulkRestart extends Definition
      * @var string
      */
     protected ?string $groupId = null;
-    protected $serialize = array('devices' => DeviceActionJob::class);
+    protected $serialize = array(new ClassSerializer(self::class, 'devices', DeviceActionJob::class), new PrimitiveSerializer(self::class, 'groupId', 'string'));
     protected $query = array('groupId');
     protected $body = array('devices');
+    protected $validations = array('devices' => array('required'), 'groupId' => array('required'));
     /**
      * Setter for devices
      *

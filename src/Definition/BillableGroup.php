@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the billable group's properties
  */
@@ -25,6 +26,8 @@ trait BillableGroup
      * @var int
      */
     protected ?int $maxPrototypeAllowed = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'billable', 'bool'), new PrimitiveSerializer(self::class, 'technicalEmail', 'string'), new PrimitiveSerializer(self::class, 'maxPrototypeAllowed', 'int'));
+    protected $validations = array('technicalEmail' => array('max:250', 'nullable'));
     /**
      * Setter for billable
      *

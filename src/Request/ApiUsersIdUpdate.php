@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\ApiUserEdition;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Update information about a given API user.
  * 
@@ -16,8 +17,9 @@ class ApiUsersIdUpdate extends Definition
      * @var ApiUserEdition
      */
     protected ?ApiUserEdition $apiUser = null;
-    protected $serialize = array('apiUser' => ApiUserEdition::class);
+    protected $serialize = array(new ClassSerializer(self::class, 'apiUser', ApiUserEdition::class));
     protected $body = array('apiUser');
+    protected $validations = array('apiUser' => array('required'));
     /**
      * Setter for apiUser
      *

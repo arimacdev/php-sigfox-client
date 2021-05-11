@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of devices according to visibility permissions and request filters.
  * 
@@ -34,7 +35,9 @@ class ContractInfosIdDevices extends Definition
      * @var string
      */
     protected ?string $pageId = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), new PrimitiveSerializer(self::class, 'fields', 'string'), new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'pageId', 'string'));
     protected $query = array('deviceTypeId', 'fields', 'limit', 'pageId');
+    protected $validations = array('deviceTypeId' => array('required'), 'fields' => array('required', 'in:deviceType(name),group(name\\,type\\,level\\,bssId\\,customerBssId),contract(name),productCertificate(key),modemCertificate(name)'), 'limit' => array('required'), 'pageId' => array('required'));
     /**
      * Setter for deviceTypeId
      *

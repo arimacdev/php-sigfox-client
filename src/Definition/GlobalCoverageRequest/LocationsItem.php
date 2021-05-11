@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition\GlobalCoverageRequest;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class LocationsItem extends Definition
 {
     /**
@@ -17,6 +18,8 @@ class LocationsItem extends Definition
      * @var int
      */
     protected ?int $lng = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'));
+    protected $validations = array('lat' => array('required'), 'lng' => array('required'));
     /**
      * Setter for lat
      *

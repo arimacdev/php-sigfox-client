@@ -4,6 +4,9 @@ namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\UserUpdate\UserRolesItem;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * User information to be updated
  */
@@ -28,6 +31,7 @@ class UserUpdate extends CommonUser
      * @var string
      */
     protected ?string $maintenances = null;
+    protected $serialize = array(new ArraySerializer(self::class, 'userRoles', new ClassSerializer(self::class, 'userRoles', UserRolesItem::class)), new PrimitiveSerializer(self::class, 'baseStations', 'string'), new PrimitiveSerializer(self::class, 'maintenances', 'string'));
     /**
      * Setter for userRoles
      *

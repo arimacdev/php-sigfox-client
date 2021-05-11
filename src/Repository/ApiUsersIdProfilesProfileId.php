@@ -29,14 +29,6 @@ class ApiUsersIdProfilesProfileId
      */
     public function delete() : int
     {
-        return $this->client->request('delete', $this->bindUrlParams('/api-users/{id}/profiles/{profileId}', $this->id, $this->profileId), null, 'int');
-    }
-    /**
-     * Generate a new password for a given API user.
-     * 
-     */
-    public function renewCredential() : int
-    {
-        return $this->client->request('put', $this->bindUrlParams('/api-users/{id}/renew-credential', $this->id, $this->profileId), null, 'int');
+        return $this->client->request('delete', $this->bind('/api-users/{id}/profiles/{profileId}', $this->id, $this->profileId), null, 'int');
     }
 }

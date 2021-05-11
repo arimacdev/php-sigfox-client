@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\AsynchronousDeviceTransferJob;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Transfer multiple devices to another device type with asynchronous job
  * 
@@ -16,8 +17,9 @@ class DevicesBulkTransfer extends Definition
      * @var AsynchronousDeviceTransferJob
      */
     protected ?AsynchronousDeviceTransferJob $devices = null;
-    protected $serialize = array('devices' => AsynchronousDeviceTransferJob::class);
+    protected $serialize = array(new ClassSerializer(self::class, 'devices', AsynchronousDeviceTransferJob::class));
     protected $body = array('devices');
+    protected $validations = array('devices' => array('required'));
     /**
      * Setter for devices
      *

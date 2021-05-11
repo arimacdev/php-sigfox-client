@@ -3,6 +3,9 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Defines the group's generic properties
  */
@@ -109,6 +112,8 @@ class Group extends Definition
      * @var string[]
      */
     protected ?array $actions = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'description', 'string'), new PrimitiveSerializer(self::class, 'type', 'int'), new PrimitiveSerializer(self::class, 'timezone', 'string'), new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'nameCI', 'string'), new ArraySerializer(self::class, 'path', new ClassSerializer(self::class, 'path', MinGroup::class)), new PrimitiveSerializer(self::class, 'createdBy', 'string'), new PrimitiveSerializer(self::class, 'creationTime', 'int'), new PrimitiveSerializer(self::class, 'leaf', 'bool'), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
+    protected $validations = array('name' => array('max:100', 'min:3', 'nullable'), 'description' => array('max:300', 'nullable'));
     /**
      * Setter for name
      *

@@ -3,6 +3,9 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 class ProductCertificateWithPacResponse extends CommonCertificate
 {
     /**
@@ -67,6 +70,7 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      * @var ProductCertificateRadioConfiguration[]
      */
     protected ?array $standardCfgs = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'externalId', 'string'), new PrimitiveSerializer(self::class, 'certificateCode', 'int'), new PrimitiveSerializer(self::class, 'certificateIndex', 'int'), new PrimitiveSerializer(self::class, 'qualificationTime', 'int'), new PrimitiveSerializer(self::class, 'reportNumber', 'string'), new PrimitiveSerializer(self::class, 'inputSensitivity', 'int'), new PrimitiveSerializer(self::class, 'encryptionPayload', 'bool'), new PrimitiveSerializer(self::class, 'devKit', 'bool'), new ArraySerializer(self::class, 'modes', new PrimitiveSerializer(self::class, 'modes', 'int')), new ArraySerializer(self::class, 'standards', new ClassSerializer(self::class, 'standards', RadioConfiguration::class)), new ArraySerializer(self::class, 'standardCfgs', new ClassSerializer(self::class, 'standardCfgs', ProductCertificateRadioConfiguration::class)));
     /**
      * Setter for externalId
      *

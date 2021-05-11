@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Define the city area's properties
  */
@@ -42,6 +44,7 @@ class CityArea extends Definition
      * @var string[]
      */
     protected ?array $actions = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'groupId', 'string'), new PrimitiveSerializer(self::class, 'readOnly', 'bool'), new PrimitiveSerializer(self::class, 'deploymentKpiReport', 'bool'), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
     /**
      * Setter for id
      *

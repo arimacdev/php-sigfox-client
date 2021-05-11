@@ -3,6 +3,9 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Cellular connectivity configuration for a base station.
  */
@@ -134,7 +137,7 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      * @var string[]
      */
     protected ?array $resources = null;
-    protected $serialize = array('group' => MinGroup::class, 'baseStation' => MinBaseStation::class);
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new ClassSerializer(self::class, 'group', MinGroup::class), new ClassSerializer(self::class, 'baseStation', MinBaseStation::class), new PrimitiveSerializer(self::class, 'state', 'int'), new PrimitiveSerializer(self::class, 'syncStatus', 'int'), new PrimitiveSerializer(self::class, 'lastSwitchErrorStatus', 'int'), new PrimitiveSerializer(self::class, 'lastSetconfErrorStatus', 'int'), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     /**
      * Setter for id
      *

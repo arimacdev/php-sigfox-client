@@ -4,6 +4,9 @@ namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\BulkDeviceAsynchronousRequest\DataItem;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Defines the the common information shared by the devices created in an ansychronous bulk request
  */
@@ -35,7 +38,8 @@ class BulkDeviceAsynchronousRequest extends Definition
      * @var DataItem[]
      */
     protected ?array $data = null;
-    protected $serialize = array('productCertificate' => CertificateUpdate::class);
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), new ClassSerializer(self::class, 'productCertificate', CertificateUpdate::class), new PrimitiveSerializer(self::class, 'prototype', 'bool'), new PrimitiveSerializer(self::class, 'prefix', 'string'), new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', DataItem::class)));
+    protected $validations = array('deviceTypeId' => array('required'), 'prefix' => array('max:40', 'nullable'));
     /**
      * Setter for deviceTypeId
      *

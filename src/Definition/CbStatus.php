@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class CbStatus extends Definition
 {
     /**
@@ -29,6 +30,7 @@ class CbStatus extends Definition
      * @var int
      */
     protected ?int $time = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'status', 'int'), new PrimitiveSerializer(self::class, 'info', 'string'), new PrimitiveSerializer(self::class, 'cbDef', 'string'), new PrimitiveSerializer(self::class, 'time', 'int'));
     /**
      * Setter for status
      *

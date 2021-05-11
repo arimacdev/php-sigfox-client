@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Request\DevicesBulkResume;
 class DevicesBulkSuspendJobId
 {
     /**
@@ -24,14 +23,6 @@ class DevicesBulkSuspendJobId
      */
     public function get() : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/devices/bulk/suspend/{jobId}', $this->jobId), null, 'int');
-    }
-    /**
-     * Resume multiple devices with asynchronous job.
-     * 
-     */
-    public function resume(DevicesBulkResume $request) : int
-    {
-        return $this->client->request('post', $this->bindUrlParams('/devices/bulk/resume', $this->jobId), $request, 'int');
+        return $this->client->request('get', $this->bind('/devices/bulk/suspend/{jobId}', $this->jobId), null, 'int');
     }
 }

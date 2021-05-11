@@ -3,6 +3,9 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Defines the device type's properties that can or lust be be included during creation
  */
@@ -32,6 +35,8 @@ class DeviceTypeCreate extends BaseDeviceType
      * @var string
      */
     protected ?string $geolocPayloadConfigId = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'groupId', 'string'), new PrimitiveSerializer(self::class, 'contractId', 'string'), new ArraySerializer(self::class, 'contracts', new ClassSerializer(self::class, 'contracts', ContractId::class)), new PrimitiveSerializer(self::class, 'geolocPayloadConfigId', 'string'));
+    protected $validations = array('groupId' => array('required'), 'contracts' => array('required'), 'geolocPayloadConfigId' => array('required'));
     /**
      * Setter for groupId
      *

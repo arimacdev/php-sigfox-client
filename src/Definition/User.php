@@ -3,6 +3,9 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Information about a User
  */
@@ -50,6 +53,8 @@ class User extends CommonUser
      * @var string[]
      */
     protected ?array $resources = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'email', 'string'), new PrimitiveSerializer(self::class, 'locked', 'bool'), new PrimitiveSerializer(self::class, 'creationTime', 'int'), new PrimitiveSerializer(self::class, 'lastLoginTime', 'int'), new ArraySerializer(self::class, 'userRoles', new ClassSerializer(self::class, 'userRoles', UserRole::class)), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
+    protected $validations = array('email' => array('max:250', 'nullable'));
     /**
      * Setter for id
      *

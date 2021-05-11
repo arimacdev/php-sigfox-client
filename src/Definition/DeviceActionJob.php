@@ -3,12 +3,16 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 class DeviceActionJob extends Definition
 {
     /**
      * @var string[]
      */
     protected ?array $data = null;
+    protected $serialize = array(new ArraySerializer(self::class, 'data', new PrimitiveSerializer(self::class, 'data', 'string')));
+    protected $validations = array('data' => array('required'));
     /**
      * Setter for data
      *

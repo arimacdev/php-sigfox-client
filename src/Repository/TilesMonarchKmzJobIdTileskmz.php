@@ -24,6 +24,6 @@ class TilesMonarchKmzJobIdTileskmz
      */
     public function getCoverage(TilesMonarchKmzJobIdTileskmzGetCoverage $request) : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/tiles/monarch/kmz/{jobId}/tiles.kmz', $this->jobId), $request, 'int');
+        return $this->client->request('get', $this->bind('/tiles/monarch/kmz/{jobId}/tiles.kmz', $this->jobId), $request, 'int');
     }
 }

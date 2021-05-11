@@ -2,6 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * The API user profile identifier(s)
  */
@@ -11,6 +13,7 @@ trait ProfileIds
      * @var string[]
      */
     protected ?array $profileId = null;
+    protected $serialize = array(new ArraySerializer(self::class, 'profileId', new PrimitiveSerializer(self::class, 'profileId', 'string')));
     /**
      * Setter for profileId
      *

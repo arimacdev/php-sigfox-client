@@ -2363,12 +2363,6 @@
                 "value": 9,
                 "comment": "CHANNEL"
             },
-            "debug": [
-                "Searches for contracts that are attached to a specific group type.",
-                "- 2 -> BASIC",
-                "- 9 -> CHANNEL",
-                ""
-            ],
             "comment": "Searches for contracts that are attached to a specific group type."
         },
         "10": {
@@ -2384,13 +2378,6 @@
                 "value": 3,
                 "comment": "Pricing model v3"
             },
-            "debug": [
-                "Searches for contracts with a given pricing model ",
-                "1 -> Pricing model v1",
-                "2 -> Pricing model v2",
-                "3 -> Pricing model v3",
-                ""
-            ],
             "comment": "Searches for contracts with a given pricing model"
         },
         "11": {
@@ -2422,17 +2409,6 @@
                 "value": 6,
                 "comment": "Activate"
             },
-            "debug": [
-                "Searches for contracts with the given subscription plan:",
-                "0 -> Free order",
-                "1 -> Pay As You Grow (PAYG)",
-                "2 -> Committed Volume Plan (CVP)",
-                "3 -> Flexible Committed Volume Plan (CVP Flex)",
-                "4 -> PACK",
-                "5 -> DevKit",
-                "6 -> Activate",
-                ""
-            ],
             "comment": "Searches for contracts with the given subscription plan:"
         },
         "4": {
@@ -2460,16 +2436,6 @@
                 "value": 9,
                 "comment": "Sensitv2"
             },
-            "debug": [
-                "Searches device types by payload type",
-                "  - 2 -> Regular (raw payload)",
-                "  - 3 -> Custom grammar",
-                "  - 4 -> Geolocation",
-                "  - 5 -> Display in ASCII",
-                "  - 6 -> Radio planning frame",
-                "  - 9 -> Sensitv2",
-                ""
-            ],
             "comment": "Searches device types by payload type"
         },
         "3": {
@@ -2509,19 +2475,6 @@
                 "value": 11,
                 "comment": "Partner"
             },
-            "debug": [
-                "Group's type",
-                "- 0 -> SO",
-                "- 2 -> Other",
-                "- 5 -> SVNO",
-                "- 6 -> Partners",
-                "- 7 -> NIP",
-                "- 8 -> DIST",
-                "- 9 -> Channel",
-                "- 10 -> Starter",
-                "- 11 -> Partner",
-                ""
-            ],
             "comment": "Group's type"
         },
         "groupType": {
@@ -2533,12 +2486,6 @@
                 "value": 9,
                 "comment": "CHANNEL"
             },
-            "debug": [
-                "Searches for contracts that are attached to a specific group type.",
-                "- 2 -> BASIC",
-                "- 9 -> CHANNEL",
-                ""
-            ],
             "comment": "Searches for contracts that are attached to a specific group type."
         },
         "pricingModel": {
@@ -2554,13 +2501,6 @@
                 "value": 3,
                 "comment": "Pricing model v3"
             },
-            "debug": [
-                "Searches for contracts with a given pricing model ",
-                "1 -> Pricing model v1",
-                "2 -> Pricing model v2",
-                "3 -> Pricing model v3",
-                ""
-            ],
             "comment": "Searches for contracts with a given pricing model"
         },
         "subscriptionPlan": {
@@ -2592,17 +2532,6 @@
                 "value": 6,
                 "comment": "Activate"
             },
-            "debug": [
-                "Searches for contracts with the given subscription plan:",
-                "0 -> Free order",
-                "1 -> Pay As You Grow (PAYG)",
-                "2 -> Committed Volume Plan (CVP)",
-                "3 -> Flexible Committed Volume Plan (CVP Flex)",
-                "4 -> PACK",
-                "5 -> DevKit",
-                "6 -> Activate",
-                ""
-            ],
             "comment": "Searches for contracts with the given subscription plan:"
         },
         "payloadType": {
@@ -2630,16 +2559,6 @@
                 "value": 9,
                 "comment": "Sensitv2"
             },
-            "debug": [
-                "Searches device types by payload type",
-                "  - 2 -> Regular (raw payload)",
-                "  - 3 -> Custom grammar",
-                "  - 4 -> Geolocation",
-                "  - 5 -> Display in ASCII",
-                "  - 6 -> Radio planning frame",
-                "  - 9 -> Sensitv2",
-                ""
-            ],
             "comment": "Searches device types by payload type"
         },
         "types": {
@@ -2679,19 +2598,6 @@
                 "value": 11,
                 "comment": "Partner"
             },
-            "debug": [
-                "Group's type",
-                "- 0 -> SO",
-                "- 2 -> Other",
-                "- 5 -> SVNO",
-                "- 6 -> Partners",
-                "- 7 -> NIP",
-                "- 8 -> DIST",
-                "- 9 -> Channel",
-                "- 10 -> Starter",
-                "- 11 -> Partner",
-                ""
-            ],
             "comment": "Group's type"
         }
     },
@@ -2705,12 +2611,6 @@
                 "value": 9,
                 "comment": "CHANNEL"
             },
-            "debug": [
-                "Searches for contracts that are attached to a specific group type.",
-                "- 2 -> BASIC",
-                "- 9 -> CHANNEL",
-                ""
-            ],
             "comment": "Searches for contracts that are attached to a specific group type."
         },
         "pricingModel": {
@@ -2726,13 +2626,6 @@
                 "value": 3,
                 "comment": "Pricing model v3"
             },
-            "debug": [
-                "Searches for contracts with a given pricing model ",
-                "1 -> Pricing model v1",
-                "2 -> Pricing model v2",
-                "3 -> Pricing model v3",
-                ""
-            ],
             "comment": "Searches for contracts with a given pricing model"
         },
         "subscriptionPlan": {
@@ -2764,17 +2657,6 @@
                 "value": 6,
                 "comment": "Activate"
             },
-            "debug": [
-                "Searches for contracts with the given subscription plan:",
-                "0 -> Free order",
-                "1 -> Pay As You Grow (PAYG)",
-                "2 -> Committed Volume Plan (CVP)",
-                "3 -> Flexible Committed Volume Plan (CVP Flex)",
-                "4 -> PACK",
-                "5 -> DevKit",
-                "6 -> Activate",
-                ""
-            ],
             "comment": "Searches for contracts with the given subscription plan:"
         }
     },
@@ -2804,16 +2686,6 @@
                 "value": 9,
                 "comment": "Sensitv2"
             },
-            "debug": [
-                "Searches device types by payload type",
-                "  - 2 -> Regular (raw payload)",
-                "  - 3 -> Custom grammar",
-                "  - 4 -> Geolocation",
-                "  - 5 -> Display in ASCII",
-                "  - 6 -> Radio planning frame",
-                "  - 9 -> Sensitv2",
-                ""
-            ],
             "comment": "Searches device types by payload type"
         }
     },
@@ -2855,19 +2727,6 @@
                 "value": 11,
                 "comment": "Partner"
             },
-            "debug": [
-                "Group's type",
-                "- 0 -> SO",
-                "- 2 -> Other",
-                "- 5 -> SVNO",
-                "- 6 -> Partners",
-                "- 7 -> NIP",
-                "- 8 -> DIST",
-                "- 9 -> Channel",
-                "- 10 -> Starter",
-                "- 11 -> Partner",
-                ""
-            ],
             "comment": "Group's type"
         }
     },
@@ -2881,12 +2740,6 @@
                 "value": 9,
                 "comment": "CHANNEL"
             },
-            "debug": [
-                "Searches for contracts that are attached to a specific group type.",
-                "- 2 -> BASIC",
-                "- 9 -> CHANNEL",
-                ""
-            ],
             "comment": "Searches for contracts that are attached to a specific group type."
         },
         "pricingModel": {
@@ -2902,13 +2755,6 @@
                 "value": 3,
                 "comment": "Pricing model v3"
             },
-            "debug": [
-                "Searches for contracts with a given pricing model ",
-                "1 -> Pricing model v1",
-                "2 -> Pricing model v2",
-                "3 -> Pricing model v3",
-                ""
-            ],
             "comment": "Searches for contracts with a given pricing model"
         },
         "subscriptionPlan": {
@@ -2940,17 +2786,6 @@
                 "value": 6,
                 "comment": "Activate"
             },
-            "debug": [
-                "Searches for contracts with the given subscription plan:",
-                "0 -> Free order",
-                "1 -> Pay As You Grow (PAYG)",
-                "2 -> Committed Volume Plan (CVP)",
-                "3 -> Flexible Committed Volume Plan (CVP Flex)",
-                "4 -> PACK",
-                "5 -> DevKit",
-                "6 -> Activate",
-                ""
-            ],
             "comment": "Searches for contracts with the given subscription plan:"
         }
     },
@@ -2980,16 +2815,6 @@
                 "value": 9,
                 "comment": "Sensitv2"
             },
-            "debug": [
-                "Searches device types by payload type",
-                "  - 2 -> Regular (raw payload)",
-                "  - 3 -> Custom grammar",
-                "  - 4 -> Geolocation",
-                "  - 5 -> Display in ASCII",
-                "  - 6 -> Radio planning frame",
-                "  - 9 -> Sensitv2",
-                ""
-            ],
             "comment": "Searches device types by payload type"
         }
     },
@@ -3031,19 +2856,6 @@
                 "value": 11,
                 "comment": "Partner"
             },
-            "debug": [
-                "Group's type",
-                "- 0 -> SO",
-                "- 2 -> Other",
-                "- 5 -> SVNO",
-                "- 6 -> Partners",
-                "- 7 -> NIP",
-                "- 8 -> DIST",
-                "- 9 -> Channel",
-                "- 10 -> Starter",
-                "- 11 -> Partner",
-                ""
-            ],
             "comment": "Group's type"
         }
     }

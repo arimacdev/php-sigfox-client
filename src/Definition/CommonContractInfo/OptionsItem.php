@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition\CommonContractInfo;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class OptionsItem extends Definition
 {
     /**
@@ -35,6 +36,7 @@ class OptionsItem extends Definition
      * @var array
      */
     protected ?array $parameters = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'parameters', 'array'));
     /**
      * Setter for id
      *

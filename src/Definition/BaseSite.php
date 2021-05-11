@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Generic information about a site
  */
@@ -162,6 +163,8 @@ class BaseSite extends Definition
      * @var int
      */
     protected ?int $lng = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'lessorId', 'string'), new PrimitiveSerializer(self::class, 'address', 'string'), new PrimitiveSerializer(self::class, 'comment', 'string'), new PrimitiveSerializer(self::class, 'status', 'int'), new PrimitiveSerializer(self::class, 'statusComment', 'string'), new PrimitiveSerializer(self::class, 'stationInstallation', 'int'), new PrimitiveSerializer(self::class, 'inverterInfo', 'int'), new PrimitiveSerializer(self::class, 'aerialWorkPlatformAccess', 'bool'), new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'));
+    protected $validations = array('name' => array('max:100', 'nullable'), 'lat' => array('max:90', 'min:-90', 'numeric', 'nullable'), 'lng' => array('max:180', 'min:-180', 'numeric', 'nullable'));
     /**
      * Setter for name
      *

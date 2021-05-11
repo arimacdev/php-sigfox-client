@@ -74,39 +74,16 @@ class Class_
         $isGeneric = substr($type, strlen($type) - 1) === ">";
         // has a namespace
         if ($isArray) {
-            $slices = explode("\\", $type);
-            if (count($slices) > 1) {
-                $arrayName = array_pop($slices);
-                $className = substr($arrayName, 0, strlen($arrayName) - 2);
-
-                $namespace = implode("\\", $slices);
-
-                if ($namespace !== $this->namespaceName) {
-                    $this->addUseStmt($namespace . "\\" . $className);
-                }
-
-                return $arrayName;
-            } else {
-                return $type;
-            }
+            $itemType = substr($type, 0, strlen($type) - 2);
+            $itemType = $this->useType($itemType);
+            
+            return $itemType."[]";
         } else if ($isGeneric) {
-            $slices = explode("<", $type, 1);
+            $slices = explode("<", $type, 2);
             $parentType = $slices[0];
             $childType = substr($slices[1], 0, strlen($slices[1]) - 1);
 
-            $slices = explode("\\", $parentType);
-            if (count($slices)) {
-                $className = array_pop($slices);
-
-                $namespace = implode("\\", $slices);
-
-                if ($namespace !== $this->namespaceName) {
-                    $this->addUseStmt($namespace . "\\" . $className);
-                }
-
-                $parentType = $className;
-            }
-
+            $parentType = $this->useType($parentType);
             $childType = $this->useType($childType);
 
             return "$parentType<$childType>";
@@ -219,14 +196,4 @@ class Class_
         $this->class->addStmt($property);
     }
 
-    public function setSerialize(array $serialize){
-        $this->setArrayProperty(
-            "serialize", 
-            array_map(
-                function($i){
-                    return $this->factory->classConstFetch($i,"class");
-                },
-                $serialize
-            ));
-    }
 }

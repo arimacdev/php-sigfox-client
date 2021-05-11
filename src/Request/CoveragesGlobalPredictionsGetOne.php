@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Get coverage margins for a selected latitude and longitude, for each
  * redundancy level.
@@ -38,7 +39,9 @@ class CoveragesGlobalPredictionsGetOne extends Definition
      * @var string
      */
     protected ?string $groupId = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'), new PrimitiveSerializer(self::class, 'radius', 'int'), new PrimitiveSerializer(self::class, 'groupId', 'string'));
     protected $query = array('lat', 'lng', 'radius', 'groupId');
+    protected $validations = array('lat' => array('required'), 'lng' => array('required'), 'radius' => array('required'), 'groupId' => array('required'));
     /**
      * Setter for lat
      *

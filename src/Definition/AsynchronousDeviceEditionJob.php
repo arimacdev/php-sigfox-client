@@ -3,12 +3,16 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 class AsynchronousDeviceEditionJob extends Definition
 {
     /**
      * @var DeviceEditionBulk[]
      */
     protected ?array $data = null;
+    protected $serialize = array(new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', DeviceEditionBulk::class)));
+    protected $validations = array('data' => array('required'));
     /**
      * Setter for data
      *

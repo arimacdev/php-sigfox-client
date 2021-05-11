@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Information about User Role
  */
@@ -16,7 +17,7 @@ class UserRole extends Definition
      * @var MinProfile
      */
     protected ?MinProfile $profile = null;
-    protected $serialize = array('group' => MinGroup::class, 'profile' => MinProfile::class);
+    protected $serialize = array(new ClassSerializer(self::class, 'group', MinGroup::class), new ClassSerializer(self::class, 'profile', MinProfile::class));
     /**
      * Setter for group
      *

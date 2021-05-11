@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Contains the position of the device
  */
@@ -20,6 +21,7 @@ class DeviceLocation extends Definition
      * @var int
      */
     protected ?int $lng = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'));
     /**
      * Setter for lat
      *

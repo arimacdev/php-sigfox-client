@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Defines the common properties of a certificate
  */
@@ -56,7 +58,8 @@ class CommonCertificate extends Definition
      * @var string
      */
     protected ?string $description = null;
-    protected $serialize = array('manufacturer' => MinGroup::class);
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'status', 'int'), new PrimitiveSerializer(self::class, 'key', 'string'), new ClassSerializer(self::class, 'manufacturer', MinGroup::class), new PrimitiveSerializer(self::class, 'version', 'string'), new PrimitiveSerializer(self::class, 'description', 'string'));
+    protected $validations = array('name' => array('required'));
     /**
      * Setter for id
      *

@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines a product or modem certificate type entity
  */
@@ -20,6 +21,7 @@ class Certificate extends Definition
      * @var string
      */
     protected ?string $key = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'key', 'string'));
     /**
      * Setter for id
      *

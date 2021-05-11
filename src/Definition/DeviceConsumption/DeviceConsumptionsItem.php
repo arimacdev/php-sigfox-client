@@ -4,6 +4,9 @@ namespace Arimac\Sigfox\Definition\DeviceConsumption;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\DeviceConsumption\DeviceConsumptionsItem\RoamingDetailsItem;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 class DeviceConsumptionsItem extends Definition
 {
     /**
@@ -34,6 +37,7 @@ class DeviceConsumptionsItem extends Definition
      * @var RoamingDetailsItem[]
      */
     protected ?array $roamingDetails = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'frameCount', 'int'), new PrimitiveSerializer(self::class, 'downlinkFrameCount', 'int'), new PrimitiveSerializer(self::class, 'roamingFrameCount', 'int'), new PrimitiveSerializer(self::class, 'roamingDownlinkFrameCount', 'int'), new ArraySerializer(self::class, 'roamingDetails', new ClassSerializer(self::class, 'roamingDetails', RoamingDetailsItem::class)));
     /**
      * Setter for frameCount
      *

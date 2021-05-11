@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Generic information about intervention
  */
@@ -170,6 +172,7 @@ class BaseSiteIntervention extends Definition
      * @var self::TYPE_*
      */
     protected ?int $type = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'author', 'string'), new PrimitiveSerializer(self::class, 'comment', 'string'), new ArraySerializer(self::class, 'equipmentsToChange', new PrimitiveSerializer(self::class, 'equipmentsToChange', 'int')), new PrimitiveSerializer(self::class, 'plannedTime', 'int'), new PrimitiveSerializer(self::class, 'interventionTime', 'int'), new PrimitiveSerializer(self::class, 'endTime', 'int'), new PrimitiveSerializer(self::class, 'billCode', 'string'), new PrimitiveSerializer(self::class, 'rtId', 'string'), new PrimitiveSerializer(self::class, 'closed', 'bool'), new PrimitiveSerializer(self::class, 'costs', 'int'), new PrimitiveSerializer(self::class, 'type', 'int'));
     /**
      * Setter for author
      *

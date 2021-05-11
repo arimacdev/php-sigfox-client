@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class LatLng extends Definition
 {
     /**
@@ -17,6 +18,8 @@ class LatLng extends Definition
      * @var int
      */
     protected ?int $lng = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'));
+    protected $validations = array('lat' => array('max:90', 'min:-90', 'numeric', 'nullable'), 'lng' => array('max:180', 'min:-180', 'numeric', 'nullable'));
     /**
      * Setter for lat
      *

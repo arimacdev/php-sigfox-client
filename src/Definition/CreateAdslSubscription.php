@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Information about ADSL internet subscription
  */
@@ -98,6 +99,8 @@ class CreateAdslSubscription extends CreateInternetSubscription
      * @var string
      */
     protected ?string $pair = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'connectionStatus', 'int'), new PrimitiveSerializer(self::class, 'internetAccount', 'string'), new PrimitiveSerializer(self::class, 'orderNumber', 'string'), new PrimitiveSerializer(self::class, 'interfaceLogin', 'string'), new PrimitiveSerializer(self::class, 'interfacePassword', 'string'), new PrimitiveSerializer(self::class, 'adslLogin', 'string'), new PrimitiveSerializer(self::class, 'adslPassword', 'string'), new PrimitiveSerializer(self::class, 'lineNumber', 'string'), new PrimitiveSerializer(self::class, 'modem', 'string'), new PrimitiveSerializer(self::class, 'modemSerialNumber', 'string'), new PrimitiveSerializer(self::class, 'jumperStrip', 'string'), new PrimitiveSerializer(self::class, 'jumperBlock', 'string'), new PrimitiveSerializer(self::class, 'pair', 'string'));
+    protected $validations = array('connectionStatus' => array('required'), 'interfaceLogin' => array('required'), 'interfacePassword' => array('required'), 'modem' => array('required'));
     /**
      * Setter for connectionStatus
      *

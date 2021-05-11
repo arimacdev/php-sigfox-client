@@ -23,7 +23,7 @@ class ApiUsersIdProfiles
      */
     public function update(ApiUsersIdProfilesUpdate $request) : int
     {
-        return $this->client->request('put', $this->bindUrlParams('/api-users/{id}/profiles', $this->id), $request, 'int');
+        return $this->client->request('put', $this->bind('/api-users/{id}/profiles', $this->id), $request, 'int');
     }
     /**
      * Find by profileId

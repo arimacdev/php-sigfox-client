@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class EthernetConnectivityBase extends Definition
 {
     /**
@@ -85,6 +86,8 @@ class EthernetConnectivityBase extends Definition
      * @var self::SOURCE_*
      */
     protected ?int $source = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'type', 'int'), new PrimitiveSerializer(self::class, 'ip', 'string'), new PrimitiveSerializer(self::class, 'mask', 'string'), new PrimitiveSerializer(self::class, 'dns1', 'string'), new PrimitiveSerializer(self::class, 'dns2', 'string'), new PrimitiveSerializer(self::class, 'gateway', 'string'), new PrimitiveSerializer(self::class, 'mtu', 'int'), new PrimitiveSerializer(self::class, 'source', 'int'));
+    protected $validations = array('name' => array('required'), 'type' => array('required'));
     /**
      * Setter for name
      *

@@ -3,6 +3,9 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 class DeviceMessage extends Definition
 {
     /**
@@ -107,7 +110,7 @@ class DeviceMessage extends Definition
      * @var DownlinkAnswerStatus
      */
     protected ?DownlinkAnswerStatus $downlinkAnswerStatus = null;
-    protected $serialize = array('device' => CommonDevice::class, 'downlinkAnswerStatus' => DownlinkAnswerStatus::class);
+    protected $serialize = array(new ClassSerializer(self::class, 'device', CommonDevice::class), new PrimitiveSerializer(self::class, 'time', 'int'), new PrimitiveSerializer(self::class, 'data', 'string'), new PrimitiveSerializer(self::class, 'ackRequired', 'bool'), new PrimitiveSerializer(self::class, 'lqi', 'int'), new PrimitiveSerializer(self::class, 'lqiRepeaters', 'int'), new PrimitiveSerializer(self::class, 'seqNumber', 'int'), new PrimitiveSerializer(self::class, 'nbFrames', 'int'), new ArraySerializer(self::class, 'computedLocation', new ClassSerializer(self::class, 'computedLocation', ComputedLocation::class)), new ArraySerializer(self::class, 'rinfos', new ClassSerializer(self::class, 'rinfos', Rinfo::class)), new ClassSerializer(self::class, 'downlinkAnswerStatus', DownlinkAnswerStatus::class));
     /**
      * Setter for device
      *

@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Callback of type Email
  */
@@ -19,6 +20,7 @@ trait CallbackEmail
      * @var string
      */
     protected ?string $message = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'subject', 'string'), new PrimitiveSerializer(self::class, 'message', 'string'));
     /**
      * Setter for subject
      *

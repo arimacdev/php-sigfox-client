@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition\Site;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class LocationItem extends Definition
 {
     /**
@@ -17,6 +18,7 @@ class LocationItem extends Definition
      * @var string
      */
     protected ?string $name = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'code', 'int'), new PrimitiveSerializer(self::class, 'name', 'string'));
     /**
      * Setter for code
      *

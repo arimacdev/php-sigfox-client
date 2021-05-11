@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition\AsynchronousDeviceReplacementJob;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class DataItem extends Definition
 {
     /**
@@ -17,6 +18,7 @@ class DataItem extends Definition
      * @var string
      */
     protected ?string $targetDeviceId = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'deviceId', 'string'), new PrimitiveSerializer(self::class, 'targetDeviceId', 'string'));
     /**
      * Setter for deviceId
      *

@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the device's common properties for reading or creation (not update)
  */
@@ -20,6 +21,8 @@ class CommonDevice extends Definition
      * @var string
      */
     protected ?string $name = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'));
+    protected $validations = array('id' => array('required'), 'name' => array('required', 'max:100'));
     /**
      * Setter for id
      *

@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Antenna related settings
  */
@@ -44,6 +45,7 @@ class Antenna extends Definition
      * @var int
      */
     protected ?int $tilt = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'model', 'string'), new PrimitiveSerializer(self::class, 'azimuth', 'int'), new PrimitiveSerializer(self::class, 'attenuation', 'int'), new PrimitiveSerializer(self::class, 'attenuationDirect', 'int'), new PrimitiveSerializer(self::class, 'attenuationIndirect', 'int'), new PrimitiveSerializer(self::class, 'tilt', 'int'));
     /**
      * Setter for model
      *

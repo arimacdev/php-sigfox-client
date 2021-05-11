@@ -4,6 +4,9 @@ namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\DeviceConsumption\DeviceConsumptionsItem;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * The consumption for this device
  */
@@ -21,6 +24,7 @@ class DeviceConsumption extends Definition
      * @var DeviceConsumptionsItem[]
      */
     protected ?array $deviceConsumptions = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'int'), new ArraySerializer(self::class, 'deviceConsumptions', new ClassSerializer(self::class, 'deviceConsumptions', DeviceConsumptionsItem::class)));
     /**
      * Setter for id
      *

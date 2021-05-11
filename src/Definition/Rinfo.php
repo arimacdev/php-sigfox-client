@@ -3,6 +3,9 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 class Rinfo extends Definition
 {
     /**
@@ -83,7 +86,7 @@ class Rinfo extends Definition
      * @var CbStatus[]
      */
     protected ?array $cbStatus = null;
-    protected $serialize = array('baseStation' => MinBaseStationWithType::class);
+    protected $serialize = array(new ClassSerializer(self::class, 'baseStation', MinBaseStationWithType::class), new PrimitiveSerializer(self::class, 'rssi', 'int'), new PrimitiveSerializer(self::class, 'rssiRepeaters', 'int'), new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'), new PrimitiveSerializer(self::class, 'delay', 'int'), new PrimitiveSerializer(self::class, 'snr', 'int'), new PrimitiveSerializer(self::class, 'snrRepeaters', 'int'), new PrimitiveSerializer(self::class, 'freq', 'int'), new PrimitiveSerializer(self::class, 'freqRepeaters', 'int'), new PrimitiveSerializer(self::class, 'rep', 'int'), new ArraySerializer(self::class, 'repetitions', new ClassSerializer(self::class, 'repetitions', Repetition::class)), new ArraySerializer(self::class, 'cbStatus', new ClassSerializer(self::class, 'cbStatus', CbStatus::class)));
     /**
      * Setter for baseStation
      *

@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\AsynchronousDeviceCreationJob;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Create multiple new devices with asynchronous job
  * 
@@ -16,8 +17,9 @@ class DevicesBulkCreate extends Definition
      * @var AsynchronousDeviceCreationJob
      */
     protected ?AsynchronousDeviceCreationJob $devices = null;
-    protected $serialize = array('devices' => AsynchronousDeviceCreationJob::class);
+    protected $serialize = array(new ClassSerializer(self::class, 'devices', AsynchronousDeviceCreationJob::class));
     protected $body = array('devices');
+    protected $validations = array('devices' => array('required'));
     /**
      * Setter for devices
      *

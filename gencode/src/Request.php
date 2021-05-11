@@ -43,7 +43,9 @@ class Request extends Definition
                     $className,
                     isset($definition["description"]) ? Helper::normalizeDocComment($definition["description"]) : null
                 );
+
                 $serialize = [];
+                $validations = [];
 
                 foreach ($properties as $property) {
                     $propertyName = $property["name"];
@@ -51,13 +53,12 @@ class Request extends Definition
                     $usedType = $defClass->useType($type);
                     $phpType = Helper::toPHPValue($usedType);
 
-                    // PHP8 Only
-                    if (
-                        str_starts_with($type, "Arimac\\Sigfox") &&
-                        !in_array(substr($type, strlen($type) - 1), ["]", ">"])
-                    ) {
-                        $serialize[$propertyName] =  $phpType;
+                    $validation = self::getValidations($property);
+                    if (count($validation)) {
+                        $validations[$propertyName] = $validation;
                     }
+
+                    $serialize[$propertyName] =  $type;
 
                     $description = null;
                     if (isset($property["description"])) {
@@ -119,6 +120,10 @@ class Request extends Definition
 
                 if (count($body)) {
                     $defClass->setBody($body);
+                }
+
+                if (count($validations)) {
+                    $defClass->setValidations($validations);
                 }
 
                 $defClass->save();

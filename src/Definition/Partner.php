@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines Partner group type properties
  */
@@ -15,6 +16,8 @@ class Partner extends Group
      * @var int
      */
     protected ?int $currentPrototypeCount = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'currentPrototypeCount', 'int'));
+    protected $validations = array('currentPrototypeCount' => array('min:0', 'numeric', 'nullable'));
     /**
      * Setter for currentPrototypeCount
      *

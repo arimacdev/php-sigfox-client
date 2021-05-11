@@ -3,6 +3,9 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class ProductCertificate extends RadioCertificate
 {
     /**
@@ -18,6 +21,7 @@ class ProductCertificate extends RadioCertificate
      * @var bool
      */
     protected ?bool $devKit = null;
+    protected $serialize = array(new ArraySerializer(self::class, 'radioConfigurations', new ClassSerializer(self::class, 'radioConfigurations', ProductCertificateRadioConfiguration::class)), new PrimitiveSerializer(self::class, 'devKit', 'bool'));
     /**
      * Setter for radioConfigurations
      *

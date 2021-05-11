@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Information about LAN internet subscription
  */
@@ -52,6 +53,7 @@ class LanSubscription extends InternetSubscription
      * @var int
      */
     protected ?int $connectionComments = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'networkType', 'int'), new PrimitiveSerializer(self::class, 'ethConnectionType', 'int'), new PrimitiveSerializer(self::class, 'addressing', 'string'), new PrimitiveSerializer(self::class, 'connectionComments', 'int'));
     /**
      * Setter for networkType
      *

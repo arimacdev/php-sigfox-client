@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Information about intervention
  */
@@ -50,7 +52,7 @@ class SiteIntervention extends BaseSiteIntervention
      * @var string
      */
     protected ?string $lastEditedBy = null;
-    protected $serialize = array('site' => MinSite::class, 'group' => MinGroup::class, 'baseStation' => MinBaseStation::class);
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new ClassSerializer(self::class, 'site', MinSite::class), new ClassSerializer(self::class, 'group', MinGroup::class), new ClassSerializer(self::class, 'baseStation', MinBaseStation::class), new PrimitiveSerializer(self::class, 'creationTime', 'int'), new PrimitiveSerializer(self::class, 'createdBy', 'string'), new PrimitiveSerializer(self::class, 'lastEditedTime', 'int'), new PrimitiveSerializer(self::class, 'lastEditedBy', 'string'));
     /**
      * Setter for id
      *

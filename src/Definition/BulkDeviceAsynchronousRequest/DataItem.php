@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition\BulkDeviceAsynchronousRequest;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Describes the individual fields of devices created in an ansynchronous bulk request
  */
@@ -50,6 +51,8 @@ class DataItem extends Definition
      * @var bool
      */
     protected ?bool $activable = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'pac', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'), new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'), new PrimitiveSerializer(self::class, 'activable', 'bool'));
+    protected $validations = array('id' => array('required'));
     /**
      * Setter for id
      *

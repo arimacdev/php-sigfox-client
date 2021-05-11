@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve the product certificate associated with a device already registered.
  * 
@@ -16,7 +17,9 @@ class DevicesIdCertificateProduct extends Definition
      * @var string
      */
     protected ?string $fields = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'fields', 'string'));
     protected $query = array('fields');
+    protected $validations = array('fields' => array('required', 'in:manufacturer(name)'));
     /**
      * Setter for fields
      *

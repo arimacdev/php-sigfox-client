@@ -3,6 +3,9 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Defines all the contract properties.
  */
@@ -135,7 +138,7 @@ class ContractInfo extends CommonContractInfo
      * @var int
      */
     protected ?int $tokensUsed = null;
-    protected $serialize = array('group' => MinGroup::class, 'order' => MinContractInfo::class);
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'contractId', 'string'), new PrimitiveSerializer(self::class, 'userId', 'string'), new ClassSerializer(self::class, 'group', MinGroup::class), new ClassSerializer(self::class, 'order', MinContractInfo::class), new PrimitiveSerializer(self::class, 'pricingModel', 'int'), new PrimitiveSerializer(self::class, 'createdBy', 'string'), new PrimitiveSerializer(self::class, 'lastEditionTime', 'int'), new PrimitiveSerializer(self::class, 'creationTime', 'int'), new PrimitiveSerializer(self::class, 'lastEditedBy', 'string'), new PrimitiveSerializer(self::class, 'startTime', 'int'), new PrimitiveSerializer(self::class, 'timezone', 'string'), new PrimitiveSerializer(self::class, 'subscriptionPlan', 'int'), new PrimitiveSerializer(self::class, 'tokenDuration', 'int'), new ArraySerializer(self::class, 'blacklistedTerritories', new ClassSerializer(self::class, 'blacklistedTerritories', MinGroup::class)), new PrimitiveSerializer(self::class, 'tokensInUse', 'int'), new PrimitiveSerializer(self::class, 'tokensUsed', 'int'));
     /**
      * Setter for id
      *

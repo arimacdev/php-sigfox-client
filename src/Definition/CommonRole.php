@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * generic information about a Role
  */
@@ -32,6 +33,8 @@ class CommonRole extends Definition
      * @var self::TYPE_*
      */
     protected ?int $type = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'type', 'int'));
+    protected $validations = array('name' => array('max:100', 'nullable'));
     /**
      * Setter for name
      *

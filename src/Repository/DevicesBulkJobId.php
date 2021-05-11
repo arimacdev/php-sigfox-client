@@ -2,9 +2,6 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Request\DevicesBulkTransfer;
-use Arimac\Sigfox\Request\DevicesBulkReplace;
-use Arimac\Sigfox\Request\DevicesBulkRestart;
 class DevicesBulkJobId
 {
     /**
@@ -26,30 +23,6 @@ class DevicesBulkJobId
      */
     public function get() : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/devices/bulk/{jobId}', $this->jobId), null, 'int');
-    }
-    /**
-     * Transfer multiple devices to another device type with asynchronous job
-     * 
-     */
-    public function transfer(DevicesBulkTransfer $request) : int
-    {
-        return $this->client->request('post', $this->bindUrlParams('/devices/bulk/transfer', $this->jobId), $request, 'int');
-    }
-    /**
-     * Replace multiple devices (moving tokens from one device to another) with synchronous job
-     * 
-     */
-    public function replace(DevicesBulkReplace $request) : int
-    {
-        return $this->client->request('post', $this->bindUrlParams('/devices/bulk/replace', $this->jobId), $request, 'int');
-    }
-    /**
-     * Restart multiple devices with asynchronous job.
-     * 
-     */
-    public function restart(DevicesBulkRestart $request) : int
-    {
-        return $this->client->request('post', $this->bindUrlParams('/devices/bulk/restart', $this->jobId), $request, 'int');
+        return $this->client->request('get', $this->bind('/devices/bulk/{jobId}', $this->jobId), null, 'int');
     }
 }

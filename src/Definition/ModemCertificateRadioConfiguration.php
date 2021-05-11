@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the properties of a product certificate radio configuration
  */
@@ -20,6 +21,7 @@ class ModemCertificateRadioConfiguration extends RadioConfiguration
      * @var bool
      */
     protected ?bool $balancedLinkBudget = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'outputPower', 'int'), new PrimitiveSerializer(self::class, 'balancedLinkBudget', 'bool'));
     /**
      * Setter for outputPower
      *

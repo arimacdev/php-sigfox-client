@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class CertificateUpdate extends Definition
 {
     /**
@@ -11,6 +12,7 @@ class CertificateUpdate extends Definition
      * @var string
      */
     protected ?string $key = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'key', 'string'));
     /**
      * Setter for key
      *

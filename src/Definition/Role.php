@@ -3,6 +3,9 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Information about a Role
  */
@@ -34,6 +37,7 @@ class Role extends CommonRole
      * @var string[]
      */
     protected ?array $resources = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new ArraySerializer(self::class, 'perms', new ClassSerializer(self::class, 'perms', MinPerm::class)), new ArraySerializer(self::class, 'path', new ClassSerializer(self::class, 'path', MinMetaRole::class)), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     /**
      * Setter for id
      *

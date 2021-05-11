@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\DeviceCreationJob;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Create a new device.
  * 
@@ -16,8 +17,9 @@ class DevicesCreate extends Definition
      * @var DeviceCreationJob
      */
     protected ?DeviceCreationJob $device = null;
-    protected $serialize = array('device' => DeviceCreationJob::class);
+    protected $serialize = array(new ClassSerializer(self::class, 'device', DeviceCreationJob::class));
     protected $body = array('device');
+    protected $validations = array('device' => array('required'));
     /**
      * Setter for device
      *

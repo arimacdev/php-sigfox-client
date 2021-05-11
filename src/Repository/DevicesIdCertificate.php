@@ -4,7 +4,6 @@ namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Request\DevicesIdCertificateModem;
 use Arimac\Sigfox\Request\DevicesIdCertificateProduct;
-use Arimac\Sigfox\Request\DevicesIdProductCertificate;
 class DevicesIdCertificate
 {
     /**
@@ -26,7 +25,7 @@ class DevicesIdCertificate
      */
     public function modem(DevicesIdCertificateModem $request) : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/devices/{id}/certificate/modem', $this->id), $request, 'int');
+        return $this->client->request('get', $this->bind('/devices/{id}/certificate/modem', $this->id), $request, 'int');
     }
     /**
      * Retrieve the product certificate associated with a device already registered.
@@ -34,15 +33,6 @@ class DevicesIdCertificate
      */
     public function product(DevicesIdCertificateProduct $request) : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/devices/{id}/certificate/product', $this->id), $request, 'int');
-    }
-    /**
-     * Retrieve the product certificate associated with a given device ID and PAC, when the device has not already been
-     * created on the portal, only in CRA
-     * 
-     */
-    public function productCertificate(DevicesIdProductCertificate $request) : int
-    {
-        return $this->client->request('get', $this->bindUrlParams('/devices/{id}/product-certificate', $this->id), $request, 'int');
+        return $this->client->request('get', $this->bind('/devices/{id}/certificate/product', $this->id), $request, 'int');
     }
 }

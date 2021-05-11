@@ -23,6 +23,6 @@ class DeviceTypesBulkRestartJobId
      */
     public function get() : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/device-types/bulk/restart/{jobId}', $this->jobId), null, 'int');
+        return $this->client->request('get', $this->bind('/device-types/bulk/restart/{jobId}', $this->jobId), null, 'int');
     }
 }

@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition\BaseStation;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class Queue extends Definition
 {
     /**
@@ -20,6 +21,7 @@ class Queue extends Definition
      * @var int
      */
     protected ?int $out = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'in', 'int'), new PrimitiveSerializer(self::class, 'out', 'int'));
     /**
      * Setter for in
      *

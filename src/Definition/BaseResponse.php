@@ -3,6 +3,9 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Generic information about user operation
  */
@@ -18,6 +21,7 @@ class BaseResponse extends Definition
      * @var UserRole[]
      */
     protected ?array $userRoles = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'message', 'string'), new ArraySerializer(self::class, 'userRoles', new ClassSerializer(self::class, 'userRoles', UserRole::class)));
     /**
      * Setter for message
      *

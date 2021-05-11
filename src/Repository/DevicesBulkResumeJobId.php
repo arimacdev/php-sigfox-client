@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Request\DevicesBulkUnsubscribe;
 class DevicesBulkResumeJobId
 {
     /**
@@ -24,14 +23,6 @@ class DevicesBulkResumeJobId
      */
     public function get() : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/devices/bulk/resume/{jobId}', $this->jobId), null, 'int');
-    }
-    /**
-     * Unsubscribe multiple devices with asynchronous job.
-     * 
-     */
-    public function unsubscribe(DevicesBulkUnsubscribe $request) : int
-    {
-        return $this->client->request('post', $this->bindUrlParams('/devices/bulk/unsubscribe', $this->jobId), $request, 'int');
+        return $this->client->request('get', $this->bind('/devices/bulk/resume/{jobId}', $this->jobId), null, 'int');
     }
 }

@@ -3,6 +3,9 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Minimal information about a site linked to a Base Station.
  */
@@ -82,7 +85,7 @@ class SimpleSite extends MinSite
      * @var string[]
      */
     protected ?array $actions = null;
-    protected $serialize = array('host' => MinHost::class);
+    protected $serialize = array(new ClassSerializer(self::class, 'host', MinHost::class), new PrimitiveSerializer(self::class, 'candidateExternalId', 'int'), new PrimitiveSerializer(self::class, 'status', 'int'), new PrimitiveSerializer(self::class, 'lessorId', 'string'), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
     /**
      * Setter for host
      *

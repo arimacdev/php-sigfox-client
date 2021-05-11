@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Defines the API user properties for creation
  */
@@ -32,6 +34,8 @@ class ApiUserCreation extends Definition
      * @var string[]
      */
     protected ?array $profileIds = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'groupId', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'timezone', 'string'), new ArraySerializer(self::class, 'profileIds', new PrimitiveSerializer(self::class, 'profileIds', 'string')));
+    protected $validations = array('groupId' => array('required'), 'name' => array('required', 'max:100'), 'timezone' => array('required'), 'profileIds' => array('required'));
     /**
      * Setter for groupId
      *

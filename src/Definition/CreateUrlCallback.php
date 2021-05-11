@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the properties needed to create a url callback
  */
@@ -46,6 +47,8 @@ class CreateUrlCallback extends CreateCallback
      * @var string
      */
     protected ?string $contentType = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'url', 'string'), new PrimitiveSerializer(self::class, 'httpMethod', 'string'), new PrimitiveSerializer(self::class, 'headers', 'array'), new PrimitiveSerializer(self::class, 'sendSni', 'bool'), new PrimitiveSerializer(self::class, 'bodyTemplate', 'string'), new PrimitiveSerializer(self::class, 'contentType', 'string'));
+    protected $validations = array('url' => array('required'), 'httpMethod' => array('required', 'in:GET,PUT,POST'));
     /**
      * Setter for url
      *

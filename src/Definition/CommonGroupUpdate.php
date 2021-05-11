@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Generic information for group update
  */
@@ -68,6 +69,8 @@ class CommonGroupUpdate extends Definition
      * @var string
      */
     protected ?string $timezone = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'description', 'string'), new PrimitiveSerializer(self::class, 'type', 'int'), new PrimitiveSerializer(self::class, 'timezone', 'string'));
+    protected $validations = array('name' => array('max:100', 'min:3', 'nullable'), 'description' => array('max:300', 'nullable'));
     /**
      * Setter for name
      *

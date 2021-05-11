@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the properties of a product certificate radio configuration
  */
@@ -52,6 +53,7 @@ class ProductCertificateRadioConfiguration extends RadioConfiguration
      * @var int
      */
     protected ?int $maxEirp = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'uplinkClass', 'int'), new PrimitiveSerializer(self::class, 'maxEirp', 'int'));
     /**
      * Setter for uplinkClass
      *

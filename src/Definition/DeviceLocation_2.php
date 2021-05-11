@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class DeviceLocation_2 extends ComputedLocation
 {
     /**
@@ -17,6 +18,7 @@ class DeviceLocation_2 extends ComputedLocation
      * @var bool
      */
     protected ?bool $valid = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'time', 'int'), new PrimitiveSerializer(self::class, 'valid', 'bool'));
     /**
      * Setter for time
      *

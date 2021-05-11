@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Definition\AvailableEntitiesResponse;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 class ClassesItem extends Definition
 {
     /**
@@ -23,6 +25,7 @@ class ClassesItem extends Definition
      * @var int[]
      */
     protected ?array $attenuation = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'int'), new PrimitiveSerializer(self::class, 'name', 'string'), new ArraySerializer(self::class, 'attenuation', new PrimitiveSerializer(self::class, 'attenuation', 'int')));
     /**
      * Setter for id
      *

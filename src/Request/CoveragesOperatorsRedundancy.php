@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Get operator coverage redundancy for a selected latitude and longitude,
  * for specific device situation.
@@ -47,7 +48,9 @@ class CoveragesOperatorsRedundancy extends Definition
      * @var int
      */
     protected ?int $deviceClassId = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'), new PrimitiveSerializer(self::class, 'operatorId', 'string'), new PrimitiveSerializer(self::class, 'deviceSituation', 'string'), new PrimitiveSerializer(self::class, 'deviceClassId', 'int'));
     protected $query = array('lat', 'lng', 'operatorId', 'deviceSituation', 'deviceClassId');
+    protected $validations = array('lat' => array('required'), 'lng' => array('required'), 'operatorId' => array('required'), 'deviceSituation' => array('required'), 'deviceClassId' => array('required'));
     /**
      * Setter for lat
      *

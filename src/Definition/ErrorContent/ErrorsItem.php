@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition\ErrorContent;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class ErrorsItem extends Definition
 {
     /**
@@ -26,6 +27,7 @@ class ErrorsItem extends Definition
      * @var string
      */
     protected ?string $message = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'type', 'string'), new PrimitiveSerializer(self::class, 'field', 'string'), new PrimitiveSerializer(self::class, 'message', 'string'));
     /**
      * Setter for type
      *

@@ -3,6 +3,9 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Generic internet subscription information
  */
@@ -78,7 +81,7 @@ class UpdateInternetSubscription extends Definition
      * @var MinContact[]
      */
     protected ?array $contacts = null;
-    protected $serialize = array('provider' => MinProvider::class);
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'type', 'int'), new PrimitiveSerializer(self::class, 'priority', 'int'), new PrimitiveSerializer(self::class, 'comments', 'string'), new PrimitiveSerializer(self::class, 'startTime', 'int'), new PrimitiveSerializer(self::class, 'endTime', 'int'), new ClassSerializer(self::class, 'provider', MinProvider::class), new ArraySerializer(self::class, 'contacts', new ClassSerializer(self::class, 'contacts', MinContact::class)));
     /**
      * Setter for type
      *

@@ -121,7 +121,7 @@ class Repository extends Class_
                 $name = $property[0];
                 array_push($params, new Variable("this->$name"));
             }
-            $endpoint = new FuncCall(new Name("\$this->bindUrlParams"), $params);
+            $endpoint = new FuncCall(new Name("\$this->bind"), $params);
         }
 
         $args = [

@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Retrieve a list of devices according to visibility permissions and request filters.
  * 
@@ -88,7 +90,9 @@ class DevicesList extends Definition
      * @var string
      */
     protected ?string $pageId = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new ArraySerializer(self::class, 'groupIds', new PrimitiveSerializer(self::class, 'groupIds', 'string')), new PrimitiveSerializer(self::class, 'deep', 'bool'), new PrimitiveSerializer(self::class, 'authorizations', 'bool'), new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), new PrimitiveSerializer(self::class, 'operatorId', 'string'), new PrimitiveSerializer(self::class, 'sort', 'string'), new PrimitiveSerializer(self::class, 'minId', 'string'), new PrimitiveSerializer(self::class, 'maxId', 'string'), new PrimitiveSerializer(self::class, 'fields', 'string'), new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'offset', 'int'), new PrimitiveSerializer(self::class, 'pageId', 'string'));
     protected $query = array('id', 'groupIds', 'deep', 'authorizations', 'deviceTypeId', 'operatorId', 'sort', 'minId', 'maxId', 'fields', 'limit', 'offset', 'pageId');
+    protected $validations = array('id' => array('required'), 'groupIds' => array('required'), 'deep' => array('required'), 'authorizations' => array('required'), 'deviceTypeId' => array('required'), 'operatorId' => array('required'), 'sort' => array('required', 'in:id,-id,name,-name,lastCom,-lastCom'), 'minId' => array('required'), 'maxId' => array('required'), 'fields' => array('required', 'in:deviceType(name),group(name\\,type\\,level\\,bssId\\,customerBssId),contract(name),productCertificate(key),modemCertificate(key)'), 'limit' => array('required'), 'offset' => array('required'), 'pageId' => array('required'));
     /**
      * Setter for id
      *

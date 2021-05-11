@@ -35,14 +35,6 @@ class DevicesIdConsumptionYearMonth
      */
     public function get() : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/devices/{id}/consumption/{year}/{month}', $this->id, $this->year, $this->month), null, 'int');
-    }
-    /**
-     * Disable sequence number check for the next message.
-     * 
-     */
-    public function disengage() : int
-    {
-        return $this->client->request('post', $this->bindUrlParams('/devices/{id}/disengage', $this->id, $this->year, $this->month), null, 'int');
+        return $this->client->request('get', $this->bind('/devices/{id}/consumption/{year}/{month}', $this->id, $this->year, $this->month), null, 'int');
     }
 }

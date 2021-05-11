@@ -4,6 +4,9 @@ namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\CommonContractInfo\OptionsItem;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Defines a contract common properties
  */
@@ -76,6 +79,8 @@ class CommonContractInfo extends Definition
      * @var OptionsItem[]
      */
     protected ?array $options = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'activationEndTime', 'int'), new PrimitiveSerializer(self::class, 'communicationEndTime', 'int'), new PrimitiveSerializer(self::class, 'bidir', 'bool'), new PrimitiveSerializer(self::class, 'highPriorityDownlink', 'bool'), new PrimitiveSerializer(self::class, 'maxUplinkFrames', 'int'), new PrimitiveSerializer(self::class, 'maxDownlinkFrames', 'int'), new PrimitiveSerializer(self::class, 'maxTokens', 'int'), new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'), new PrimitiveSerializer(self::class, 'renewalDuration', 'int'), new ArraySerializer(self::class, 'options', new ClassSerializer(self::class, 'options', OptionsItem::class)));
+    protected $validations = array('name' => array('max:100', 'nullable'), 'activationEndTime' => array('min:0', 'numeric', 'nullable'), 'communicationEndTime' => array('min:0', 'numeric', 'nullable'), 'maxUplinkFrames' => array('min:0', 'numeric', 'nullable'), 'maxDownlinkFrames' => array('min:0', 'numeric', 'nullable'), 'maxTokens' => array('min:0', 'numeric', 'nullable'), 'renewalDuration' => array('min:0', 'numeric', 'nullable'));
     /**
      * Setter for name
      *

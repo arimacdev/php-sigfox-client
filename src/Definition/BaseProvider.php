@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class BaseProvider extends Definition
 {
     /**
@@ -17,6 +18,7 @@ class BaseProvider extends Definition
      * @var int
      */
     protected ?int $annualCost = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'annualCost', 'int'));
     /**
      * Setter for name
      *

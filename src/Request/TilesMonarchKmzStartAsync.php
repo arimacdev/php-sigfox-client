@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\KmzCreatePublicRequest;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Starting the computation of Sigfox Monarch coverage view for a specific coverage mode. A new computation starts if
  * no other computation, run in the last 24 hours, is available. Otherwise, the existing jobId is returned.
@@ -17,8 +18,9 @@ class TilesMonarchKmzStartAsync extends Definition
      * @var KmzCreatePublicRequest
      */
     protected ?KmzCreatePublicRequest $request = null;
-    protected $serialize = array('request' => KmzCreatePublicRequest::class);
+    protected $serialize = array(new ClassSerializer(self::class, 'request', KmzCreatePublicRequest::class));
     protected $body = array('request');
+    protected $validations = array('request' => array('required'));
     /**
      * Setter for request
      *

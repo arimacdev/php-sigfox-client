@@ -4,6 +4,9 @@ namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\Site\LocationItem;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 class Site extends BaseSite
 {
     /**
@@ -79,7 +82,7 @@ class Site extends BaseSite
      * @var string[]
      */
     protected ?array $resources = null;
-    protected $serialize = array('host' => MinHost::class, 'maintenance' => MinMaintenance::class, 'group' => MinGroup::class, 'primaryInternetSubscription' => InternetSubscription::class);
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new ClassSerializer(self::class, 'host', MinHost::class), new ClassSerializer(self::class, 'maintenance', MinMaintenance::class), new ClassSerializer(self::class, 'group', MinGroup::class), new PrimitiveSerializer(self::class, 'basestationCount', 'int'), new ClassSerializer(self::class, 'primaryInternetSubscription', InternetSubscription::class), new PrimitiveSerializer(self::class, 'candidateExternalId', 'int'), new ArraySerializer(self::class, 'location', new ClassSerializer(self::class, 'location', LocationItem::class)), new PrimitiveSerializer(self::class, 'creationTime', 'int'), new PrimitiveSerializer(self::class, 'createdBy', 'string'), new PrimitiveSerializer(self::class, 'lastEditedTime', 'int'), new PrimitiveSerializer(self::class, 'lastEditedBy', 'string'), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     /**
      * Setter for id
      *

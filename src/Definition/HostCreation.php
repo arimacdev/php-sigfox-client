@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class HostCreation extends BaseHost
 {
     /**
@@ -11,6 +12,7 @@ class HostCreation extends BaseHost
      * @var string
      */
     protected ?string $groupId = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'groupId', 'string'));
     /**
      * Setter for groupId
      *

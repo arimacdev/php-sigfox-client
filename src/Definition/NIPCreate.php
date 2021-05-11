@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the NIP group's create properties
  */
@@ -15,6 +16,7 @@ class NIPCreate extends CommonGroupCreate
      * @var string
      */
     protected ?string $countryISOAlpha3 = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'countryISOAlpha3', 'string'));
     /**
      * Setter for countryISOAlpha3
      *

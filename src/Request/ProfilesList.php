@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of a Group's profiles according to visibility permissions and request filters.
  * 
@@ -46,7 +47,9 @@ class ProfilesList extends Definition
      * @var bool
      */
     protected ?bool $authorizations = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'groupId', 'string'), new PrimitiveSerializer(self::class, 'inherit', 'bool'), new PrimitiveSerializer(self::class, 'fields', 'string'), new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'offset', 'int'), new PrimitiveSerializer(self::class, 'authorizations', 'bool'));
     protected $query = array('groupId', 'inherit', 'fields', 'limit', 'offset', 'authorizations');
+    protected $validations = array('groupId' => array('required'), 'inherit' => array('required'), 'fields' => array('required', 'in:group(name\\,type\\,level),roles(name\\,path(name))'), 'limit' => array('required'), 'offset' => array('required'), 'authorizations' => array('required'));
     /**
      * Setter for groupId
      *

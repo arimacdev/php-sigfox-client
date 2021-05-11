@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition\BulkUnsubscribe;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class DataItem extends Definition
 {
     /**
@@ -17,6 +18,7 @@ class DataItem extends Definition
      * @var int
      */
     protected ?int $unsubscriptionTime = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'unsubscriptionTime', 'int'));
     /**
      * Setter for id
      *

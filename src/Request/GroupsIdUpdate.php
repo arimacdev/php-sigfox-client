@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\CommonGroupUpdate;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Update a given group.
  * 
@@ -16,8 +17,9 @@ class GroupsIdUpdate extends Definition
      * @var CommonGroupUpdate
      */
     protected ?CommonGroupUpdate $group = null;
-    protected $serialize = array('group' => CommonGroupUpdate::class);
+    protected $serialize = array(new ClassSerializer(self::class, 'group', CommonGroupUpdate::class));
     protected $body = array('group');
+    protected $validations = array('group' => array('required'));
     /**
      * Setter for group
      *

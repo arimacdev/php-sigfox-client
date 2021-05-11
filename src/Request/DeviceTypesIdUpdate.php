@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\DeviceTypeUpdate;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Update a given device type.
  * 
@@ -16,8 +17,9 @@ class DeviceTypesIdUpdate extends Definition
      * @var DeviceTypeUpdate
      */
     protected ?DeviceTypeUpdate $deviceType = null;
-    protected $serialize = array('deviceType' => DeviceTypeUpdate::class);
+    protected $serialize = array(new ClassSerializer(self::class, 'deviceType', DeviceTypeUpdate::class));
     protected $body = array('deviceType');
+    protected $validations = array('deviceType' => array('required'));
     /**
      * Setter for deviceType
      *

@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class TokenUnsubscribe extends Definition
 {
     /**
@@ -11,6 +12,7 @@ class TokenUnsubscribe extends Definition
      * @var int
      */
     protected ?int $unsubscriptionTime = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'unsubscriptionTime', 'int'));
     /**
      * Setter for unsubscriptionTime
      *

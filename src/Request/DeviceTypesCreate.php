@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\DeviceTypeCreate;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Create a new device type
  * 
@@ -16,8 +17,9 @@ class DeviceTypesCreate extends Definition
      * @var DeviceTypeCreate
      */
     protected ?DeviceTypeCreate $deviceType = null;
-    protected $serialize = array('deviceType' => DeviceTypeCreate::class);
+    protected $serialize = array(new ClassSerializer(self::class, 'deviceType', DeviceTypeCreate::class));
     protected $body = array('deviceType');
+    protected $validations = array('deviceType' => array('required'));
     /**
      * Setter for deviceType
      *

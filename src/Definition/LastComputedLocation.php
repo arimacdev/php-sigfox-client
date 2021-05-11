@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Contains the estimated position of the device within a circle based on the GPS data or the Sigfox Geolocation
  * service
@@ -71,6 +73,7 @@ class LastComputedLocation extends Definition
      * @var string[]
      */
     protected ?array $placeIds = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'), new PrimitiveSerializer(self::class, 'radius', 'int'), new PrimitiveSerializer(self::class, 'sourceCode', 'int'), new ArraySerializer(self::class, 'placeIds', new PrimitiveSerializer(self::class, 'placeIds', 'string')));
     /**
      * Setter for lat
      *

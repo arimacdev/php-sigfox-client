@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Generic information about convention
  */
@@ -102,6 +103,7 @@ class BaseSiteConvention extends Definition
      * @var self::TYPE_*
      */
     protected ?int $type = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'annualCost', 'int'), new PrimitiveSerializer(self::class, 'comments', 'string'), new PrimitiveSerializer(self::class, 'startTime', 'int'), new PrimitiveSerializer(self::class, 'endTime', 'int'), new PrimitiveSerializer(self::class, 'contractReference', 'string'), new PrimitiveSerializer(self::class, 'maintenance', 'bool'), new PrimitiveSerializer(self::class, 'maintenanceAnnualCost', 'int'), new PrimitiveSerializer(self::class, 'status', 'int'), new PrimitiveSerializer(self::class, 'type', 'int'));
     /**
      * Setter for annualCost
      *

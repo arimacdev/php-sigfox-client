@@ -4,6 +4,9 @@ namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\GlobalCoverageRequest\LocationsItem;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the request to get Global Coverage
  */
@@ -28,6 +31,8 @@ class GlobalCoverageRequest extends Definition
      * @var string
      */
     protected ?string $groupId = null;
+    protected $serialize = array(new ArraySerializer(self::class, 'locations', new ClassSerializer(self::class, 'locations', LocationsItem::class)), new PrimitiveSerializer(self::class, 'radius', 'int'), new PrimitiveSerializer(self::class, 'groupId', 'string'));
+    protected $validations = array('locations' => array('required'));
     /**
      * Setter for locations
      *

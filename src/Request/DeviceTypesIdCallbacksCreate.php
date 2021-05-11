@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\CreateCallback;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Create a new callback for a given device type.
  * 
@@ -14,8 +15,9 @@ class DeviceTypesIdCallbacksCreate extends Definition
      * @var CreateCallback
      */
     protected ?CreateCallback $callback = null;
-    protected $serialize = array('callback' => CreateCallback::class);
+    protected $serialize = array(new ClassSerializer(self::class, 'callback', CreateCallback::class));
     protected $body = array('callback');
+    protected $validations = array('callback' => array('required'));
     /**
      * Setter for callback
      *

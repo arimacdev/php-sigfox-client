@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * add user roles to a user.
  * 
@@ -15,7 +16,9 @@ class UsersIdProfilesAddRoles extends Definition
      * @var array
      */
     protected ?array $userRoles = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'userRoles', 'array'));
     protected $body = array('userRoles');
+    protected $validations = array('userRoles' => array('required'));
     /**
      * Setter for userRoles
      *

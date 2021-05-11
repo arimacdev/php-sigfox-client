@@ -23,6 +23,6 @@ class DevicesBulkUnsubscribeJobId
      */
     public function get() : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/devices/bulk/unsubscribe/{jobId}', $this->jobId), null, 'int');
+        return $this->client->request('get', $this->bind('/devices/bulk/unsubscribe/{jobId}', $this->jobId), null, 'int');
     }
 }

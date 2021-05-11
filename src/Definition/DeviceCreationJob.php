@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class DeviceCreationJob extends CommonDevice
 {
     use SingleDeviceFields;
@@ -48,6 +49,7 @@ class DeviceCreationJob extends CommonDevice
      * @var int
      */
     protected ?int $lng = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), new PrimitiveSerializer(self::class, 'pac', 'string'), new PrimitiveSerializer(self::class, 'prototype', 'bool'), new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'), new PrimitiveSerializer(self::class, 'activable', 'bool'), new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'));
     /**
      * Setter for deviceTypeId
      *

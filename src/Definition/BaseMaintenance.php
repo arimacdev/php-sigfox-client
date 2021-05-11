@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class BaseMaintenance extends Definition
 {
     /**
@@ -11,6 +12,7 @@ class BaseMaintenance extends Definition
      * @var string
      */
     protected ?string $name = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'));
     /**
      * Setter for name
      *

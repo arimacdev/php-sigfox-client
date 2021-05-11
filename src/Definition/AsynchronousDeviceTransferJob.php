@@ -4,6 +4,9 @@ namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\AsynchronousDeviceTransferJob\DataItem;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 class AsynchronousDeviceTransferJob extends Definition
 {
     /**
@@ -16,6 +19,8 @@ class AsynchronousDeviceTransferJob extends Definition
      * @var DataItem[]
      */
     protected ?array $data = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', DataItem::class)));
+    protected $validations = array('deviceTypeId' => array('required'));
     /**
      * Setter for deviceTypeId
      *

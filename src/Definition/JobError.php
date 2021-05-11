@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class JobError extends Definition
 {
     /**
@@ -31,6 +32,7 @@ class JobError extends Definition
      * @var self::TYPE_*
      */
     protected ?int $type = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'entity', 'string'), new PrimitiveSerializer(self::class, 'message', 'string'), new PrimitiveSerializer(self::class, 'type', 'int'));
     /**
      * Setter for entity
      *

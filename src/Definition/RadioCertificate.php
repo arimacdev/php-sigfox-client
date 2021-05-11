@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 class RadioCertificate extends CommonCertificate
 {
     /**
@@ -25,6 +27,7 @@ class RadioCertificate extends CommonCertificate
      * @var int
      */
     protected ?int $inputSensitivity = null;
+    protected $serialize = array(new ArraySerializer(self::class, 'modes', new PrimitiveSerializer(self::class, 'modes', 'int')), new PrimitiveSerializer(self::class, 'inputSensitivity', 'int'));
     /**
      * Setter for modes
      *

@@ -23,10 +23,10 @@ class Definition extends Class_
     ];
 
     protected static $aliases = [
-        "Action"=> "string",
-        "Actions"=> "string[]",
-        "Resource"=> "string[]",
-        "Resources"=> "string[]"
+        "Action" => "string",
+        "Actions" => "string[]",
+        "Resource" => "string[]",
+        "Resources" => "string[]"
     ];
 
     public function __construct(string $namespaceName, string $name, ?string $docComment = null)
@@ -46,14 +46,87 @@ class Definition extends Class_
         }
     }
 
-    public function setRequired(array $required)
+    public function setValidations(array $validations)
     {
-        $this->setArrayProperty("required", $required);
+        $this->setArrayProperty("validations", $validations);
     }
 
-    public function setObjects(array $objects)
-    {
-        $this->setArrayProperty("objects", $objects);
+    protected function toSerialize(string $propertyName, string $type){
+        $isArray = substr($type, strlen($type) - 2) === "[]";
+        $isGeneric = substr($type, strlen($type) - 1) === ">";
+        // has a namespace
+        if ($isArray) {
+            $itemType = substr($type, 0, strlen($type) - 2);
+            $itemType = $this->toSerialize($propertyName, $itemType);
+            $this->useType("Arimac\\Sigfox\\Serializer\\ArraySerializer");
+
+            return $this->factory->new(
+                "ArraySerializer",
+                [
+                    $this->factory->classConstFetch("self", "class"),
+                    $this->factory->val($propertyName), 
+                    $itemType
+                ]
+            );
+        } else if ($isGeneric) {
+            $slices = explode("<", $type, 2);
+            $parentType = $slices[0];
+            $childType = substr($slices[1], 0, strlen($slices[1]) - 1);
+
+            $parentType = $this->useType($parentType);
+            $parentType = $this->factory->classConstFetch($parentType, "class");
+            $childType = $this->toSerialize($propertyName, $childType);
+
+            $this->useType("Arimac\\Sigfox\\Serializer\\GenericSerializer");
+            return $this->factory->new(
+                "GenericSerializer", 
+                [
+                    $this->factory->classConstFetch("self", "class"),
+                    $this->factory->val($propertyName),
+                    $parentType,
+                    $childType
+                ]
+            );
+        } else {
+            $slices = explode("\\", $type);
+            if (count($slices) > 1) {
+                $className = $this->useType($type);
+                
+                $this->useType("Arimac\\Sigfox\\Serializer\\ClassSerializer");
+                return $this->factory->new(
+                    "ClassSerializer", 
+                    [
+                        $this->factory->classConstFetch("self", "class"),
+                        $this->factory->val($propertyName), 
+                        $this->factory->classConstFetch($className, "class")
+                    ]
+                );
+            } else {
+
+                $this->useType("Arimac\\Sigfox\\Serializer\\PrimitiveSerializer");
+
+                return $this->factory->new(
+                    "PrimitiveSerializer",
+                    [
+                        $this->factory->classConstFetch("self", "class"),
+                        $this->factory->val($propertyName),
+                        $this->factory->val($type)
+                    ]
+                );
+            }
+        }
+    }
+
+    public function setSerialize(array $serialize){
+        $this->setArrayProperty(
+            "serialize", 
+            array_map(
+                function($i, $propertyName){
+                    return $this->toSerialize($propertyName, $i);
+                },
+                $serialize,
+                array_keys($serialize)
+            ));
     }
 
     public function addSetter(
@@ -79,9 +152,10 @@ class Definition extends Class_
         $this->addMethod("get" . ucfirst($propertyName), [], [$ret], $type, $docComment);
     }
 
-    public function extend(string $name){
+    public function extend(string $name)
+    {
         $name = $this->useType($name);
-        if(in_array($name, $this->forceTraits)){
+        if (in_array($name, $this->forceTraits)) {
             $useTrait = $this->factory->useTrait($name);
             $this->class->addStmt($useTrait);
         } else {
@@ -89,9 +163,40 @@ class Definition extends Class_
         }
     }
 
-    public function addProperty(string $name, string $type, ?string $docComment = null, $value=null)
+    public function addProperty(string $name, string $type, ?string $docComment = null, $value = null)
     {
-        parent::addProperty($name,$type,$docComment, $this->factory->val(null));
+        parent::addProperty($name, $type, $docComment, $this->factory->val(null));
+    }
+
+    protected static function getValidations(array $definition, $required = false): array
+    {
+        $validations = [];
+        if (isset($definition["required"]) || $required) {
+            $validations[] = "required";
+        }
+        if (isset($definition["maximum"])) {
+            $validations[] = "max:" . $definition["maximum"];
+        }
+        if (isset($definition["minimum"])) {
+            $validations[] = "min:" . $definition["minimum"];
+        }
+        if (isset($definition["maximum"]) || isset($definition["minimum"])) {
+            $validations[] = "numeric";
+        }
+
+        if (isset($definition["maxLength"])) {
+            $validations[] = "max:" . $definition["maxLength"];
+        }
+        if (isset($definition["minLength"])) {
+            $validations[] = "min:" . $definition["minLength"];
+        }
+        if (isset($definition["enum"])) {
+            $validations[] = "in:" . implode(",", str_replace(",",'\,', $definition["enum"]));
+        }
+        if(count($validations)&&!in_array("required", $validations)){
+            $validations[] = "nullable";
+        }
+        return $validations;
     }
 
     public static function fromArray(string $name, array $definition): string
@@ -104,7 +209,7 @@ class Definition extends Class_
         $extends = [];
         $extendable = false;
 
-        if (isset($definition["type"])&&!isset($definition["allOf"])) {
+        if (isset($definition["type"]) && !isset($definition["allOf"])) {
             switch ($definition["type"]) {
                 case "object":
                     $properties = $definition["properties"];
@@ -129,41 +234,42 @@ class Definition extends Class_
                     return "int";
             }
         } else if (isset($definition["allOf"])) {
-                foreach ($definition["allOf"] as $allOf) {
-                    if (isset($allOf["type"])) {
-                        if ($allOf["type"] === "object" && isset($allOf["properties"])) {
-                            $properties = array_merge($properties, $allOf["properties"]);
-                        } else if($allOf["type"]==="object") {
-                            $extendable = true;
-
-                        }
-                    } else if (isset($allOf["\$ref"])) {
-                        array_push($extends, $allOf["\$ref"]);
+            foreach ($definition["allOf"] as $allOf) {
+                if (isset($allOf["type"])) {
+                    if ($allOf["type"] === "object" && isset($allOf["properties"])) {
+                        $properties = array_merge($properties, $allOf["properties"]);
+                    } else if ($allOf["type"] === "object") {
+                        $extendable = true;
                     }
+                } else if (isset($allOf["\$ref"])) {
+                    array_push($extends, $allOf["\$ref"]);
                 }
-        } else if (isset($definition["\$ref"])){
+            }
+        } else if (isset($definition["\$ref"])) {
             $defClassName = Helper::defToName($definition["\$ref"]);
-            if(isset(self::$aliases[$defClassName])){
+            if (isset(self::$aliases[$defClassName])) {
                 return self::$aliases[$defClassName];
             }
-            return "Arimac\\Sigfox\\Definition\\".$defClassName;
-        } else if (isset($definition["schema"])&&isset($definition["schema"]["\$ref"])){
+            return "Arimac\\Sigfox\\Definition\\" . $defClassName;
+        } else if (isset($definition["schema"]) && isset($definition["schema"]["\$ref"])) {
             $defClassName = Helper::defToName($definition["schema"]["\$ref"]);
-            if(isset(self::$aliases[$defClassName])){
+            if (isset(self::$aliases[$defClassName])) {
                 return self::$aliases[$defClassName];
             }
-            return "Arimac\\Sigfox\\Definition\\".$defClassName;
-        }
-        
-        if(count($extends)===1&&empty($properties)&&!$extendable){
-            $className = Helper::defToName($extends[0]);
-            return "Arimac\\Sigfox\\Definition\\".$className;
+            return "Arimac\\Sigfox\\Definition\\" . $defClassName;
         }
 
-        if(empty($properties)&&empty($extends)){
+        if (count($extends) === 1 && empty($properties) && !$extendable) {
+            $className = Helper::defToName($extends[0]);
+            return "Arimac\\Sigfox\\Definition\\" . $className;
+        }
+
+        if (empty($properties) && empty($extends)) {
             return "array";
         }
-        
+
+        $required = $definition["required"] ?? null;
+
         $defClass = new static(
             $namespace,
             $className,
@@ -171,54 +277,53 @@ class Definition extends Class_
         );
 
         $serialize = [];
+        $validations = [];
 
-        foreach($properties as $propertyName=> $property){
-            $type = Definition::fromArray($name."\\".ucfirst($propertyName), $property);
+        foreach ($properties as $propertyName => $property) {
+            $type = Definition::fromArray($name . "\\" . ucfirst($propertyName), $property);
             $usedType = $defClass->useType($type);
             $phpType = Helper::toPHPValue($usedType);
 
-            // PHP8 Only
-            if(
-                str_starts_with($type,  "Arimac\\Sigfox")&&
-                !in_array(substr($type, strlen($type)-1),["]",">"])
-            ){
-                $serialize[$propertyName] =  $phpType;
+            $validation = self::getValidations($property, $required ? in_array($propertyName, $required) : false);
+            if (count($validation)) {
+                $validations[$propertyName] = $validation;
             }
 
+            $serialize[$propertyName] =  $type;
+
             $description = null;
-            if(isset($property["description"])){
+            if (isset($property["description"])) {
                 $description = $property["description"];
-                $lines = explode("\n",$description);
-                $fieldsLines = array_filter($lines, function($line){
-                    return substr_count($line,"->");
+                $lines = explode("\n", $description);
+                $fieldsLines = array_filter($lines, function ($line) {
+                    return substr_count($line, "->");
                 });
-                if(count($fieldsLines)){
+                if (count($fieldsLines)) {
                     $constants = EnumFields::getConstants($name, $propertyName, $description);
-                    if($constants){
+                    if ($constants) {
                         $constPrefix = Helper::camelToUnderscore($propertyName);
-                        $usedType =str_replace("int", "self::".$constPrefix."_*", $usedType);
-                        foreach($constants as $constName=>$attr){
-                            if($constName==="comment"){
+                        $usedType = str_replace("int", "self::" . $constPrefix . "_*", $usedType);
+                        foreach ($constants as $constName => $attr) {
+                            if ($constName === "comment") {
                                 $description = $attr;
                             } else {
                                 $defClass->addConst(
-                                    $constPrefix."_".$constName, 
-                                    $attr["value"], 
-                                    isset($attr["comment"])?Helper::normalizeDocComment($attr["comment"],2):null
+                                    $constPrefix . "_" . $constName,
+                                    $attr["value"],
+                                    isset($attr["comment"]) ? Helper::normalizeDocComment($attr["comment"], 2) : null
                                 );
                             }
                         }
                     }
                 }
-
             }
 
             $defClass->addProperty(
-                $propertyName, 
-                $phpType, 
+                $propertyName,
+                $phpType,
                 Helper::normalizeDocComment(
                     $description,
-                    [["var", $usedType ]],
+                    [["var", $usedType]],
                     2
                 )
             );
@@ -228,7 +333,7 @@ class Definition extends Class_
                 Helper::normalizeDocComment(
                     "Setter for $propertyName",
                     [
-                        ["param", $usedType, "\$$propertyName", $description ],
+                        ["param", $usedType, "\$$propertyName", $description],
                         ["return", "self", "To use in method chains"]
                     ],
                     2
@@ -239,23 +344,28 @@ class Definition extends Class_
                 $propertyName,
                 Helper::normalizeDocComment(
                     "Getter for $propertyName",
-                    [["return", $usedType, $description ]],
+                    [["return", $usedType, $description]],
                     2
                 )
             );
         }
 
-        foreach($extends as $extend){
+        foreach ($extends as $extend) {
             $className = Helper::defToName($extend);
-            $defClass->extend("Arimac\\Sigfox\\Definition\\".$className);
+            $defClass->extend("Arimac\\Sigfox\\Definition\\" . $className);
         }
 
-        if($extendable){
+        if ($extendable) {
             $defClass->extend("Arimac\\Sigfox\\Extendable");
+            $defClass->addProperty("extendable", "bool", null, true);
         }
 
-        if(count($serialize)){
+        if (count($serialize)) {
             $defClass->setSerialize($serialize);
+        }
+
+        if (count($validations)) {
+            $defClass->setValidations($validations);
         }
 
         $defClass->save();

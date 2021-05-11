@@ -25,7 +25,7 @@ class UsersId
      */
     public function get(UsersIdGet $request) : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/users/{id}', $this->id), $request, 'int');
+        return $this->client->request('get', $this->bind('/users/{id}', $this->id), $request, 'int');
     }
     /**
      * Update a given user.
@@ -33,7 +33,7 @@ class UsersId
      */
     public function update(UsersIdUpdate $request) : int
     {
-        return $this->client->request('put', $this->bindUrlParams('/users/{id}', $this->id), $request, 'int');
+        return $this->client->request('put', $this->bind('/users/{id}', $this->id), $request, 'int');
     }
     /**
      * Delete a given user.
@@ -41,7 +41,7 @@ class UsersId
      */
     public function delete() : int
     {
-        return $this->client->request('delete', $this->bindUrlParams('/users/{id}', $this->id), null, 'int');
+        return $this->client->request('delete', $this->bind('/users/{id}', $this->id), null, 'int');
     }
     /**
      * @return UsersIdProfiles

@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class Repetition extends Definition
 {
     /**
@@ -35,6 +36,7 @@ class Repetition extends Definition
      * @var bool
      */
     protected ?bool $repeated = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'nseq', 'int'), new PrimitiveSerializer(self::class, 'rssi', 'int'), new PrimitiveSerializer(self::class, 'snr', 'int'), new PrimitiveSerializer(self::class, 'freq', 'int'), new PrimitiveSerializer(self::class, 'repeated', 'bool'));
     /**
      * Setter for nseq
      *

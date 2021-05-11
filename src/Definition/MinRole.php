@@ -3,6 +3,9 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Defines a role entity
  */
@@ -26,6 +29,8 @@ class MinRole extends Definition
      * @var MinMetaRole[]
      */
     protected ?array $path = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'), new ArraySerializer(self::class, 'path', new ClassSerializer(self::class, 'path', MinMetaRole::class)));
+    protected $validations = array('name' => array('max:100', 'nullable'));
     /**
      * Setter for id
      *

@@ -4,6 +4,9 @@ namespace Arimac\Sigfox\Definition\ActionJob;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\JobError;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * the informations about the devices already treated
  */
@@ -33,6 +36,7 @@ class Status extends Definition
      * @var JobError[]
      */
     protected ?array $errors = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'total', 'int'), new PrimitiveSerializer(self::class, 'nbSuccess', 'int'), new PrimitiveSerializer(self::class, 'nbErrors', 'int'), new ArraySerializer(self::class, 'errors', new ClassSerializer(self::class, 'errors', JobError::class)));
     /**
      * Setter for total
      *

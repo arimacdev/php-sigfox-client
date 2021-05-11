@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the properties of certificate radio configurations
  */
@@ -46,6 +47,8 @@ class RadioConfiguration extends Definition
      * @var self::ID_*
      */
     protected ?int $id = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'int'));
+    protected $validations = array('id' => array('required'));
     /**
      * Setter for id
      *

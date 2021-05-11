@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve information about a given device.
  * 
@@ -22,7 +23,9 @@ class DevicesIdGet extends Definition
      * @var string
      */
     protected ?string $fields = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'authorizations', 'bool'), new PrimitiveSerializer(self::class, 'fields', 'string'));
     protected $query = array('authorizations', 'fields');
+    protected $validations = array('authorizations' => array('required'), 'fields' => array('required', 'in:deviceType(name),group(name\\,type\\,level\\,bssId\\,customerBssId),contract(name),productCertificate(key),modemCertificate(key)'));
     /**
      * Setter for authorizations
      *

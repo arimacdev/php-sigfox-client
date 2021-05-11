@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class DownlinkAnswerStatus extends Definition
 {
     /**
@@ -35,7 +37,7 @@ class DownlinkAnswerStatus extends Definition
      * @var string
      */
     protected ?string $country = null;
-    protected $serialize = array('baseStation' => MinBaseStationWithType::class);
+    protected $serialize = array(new ClassSerializer(self::class, 'baseStation', MinBaseStationWithType::class), new PrimitiveSerializer(self::class, 'plannedPower', 'int'), new PrimitiveSerializer(self::class, 'data', 'string'), new PrimitiveSerializer(self::class, 'operator', 'string'), new PrimitiveSerializer(self::class, 'country', 'string'));
     /**
      * Setter for baseStation
      *

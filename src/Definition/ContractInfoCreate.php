@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Defines a contract's common properties for creation
  */
@@ -114,6 +116,8 @@ class ContractInfoCreate extends CommonContractInfo
      * @var string[]
      */
     protected ?array $blacklistedTerritories = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'groupId', 'string'), new PrimitiveSerializer(self::class, 'contractId', 'string'), new PrimitiveSerializer(self::class, 'userId', 'string'), new PrimitiveSerializer(self::class, 'orderId', 'string'), new PrimitiveSerializer(self::class, 'orderName', 'string'), new PrimitiveSerializer(self::class, 'pricingModel', 'int'), new PrimitiveSerializer(self::class, 'startTime', 'int'), new PrimitiveSerializer(self::class, 'timezone', 'string'), new PrimitiveSerializer(self::class, 'subscriptionPlan', 'int'), new PrimitiveSerializer(self::class, 'tokenDuration', 'int'), new ArraySerializer(self::class, 'blacklistedTerritories', new PrimitiveSerializer(self::class, 'blacklistedTerritories', 'string')));
+    protected $validations = array('groupId' => array('required'), 'contractId' => array('required'), 'userId' => array('required'), 'pricingModel' => array('required'), 'startTime' => array('required', 'min:0', 'numeric'), 'timezone' => array('required'), 'subscriptionPlan' => array('required'), 'tokenDuration' => array('required', 'min:0', 'numeric'));
     /**
      * Setter for groupId
      *

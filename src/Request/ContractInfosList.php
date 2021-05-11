@@ -3,12 +3,61 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of contracts according to visibility permissions and request filters.
  * 
  */
 class ContractInfosList extends Definition
 {
+    /**
+     * BASIC
+     */
+    public const GROUP_TYPE_BASIC = 2;
+    /**
+     * CHANNEL
+     */
+    public const GROUP_TYPE_CHANNEL = 9;
+    /**
+     * Pricing model v1
+     */
+    public const PRICING_MODEL_PRICING_MODEL_V1 = 1;
+    /**
+     * Pricing model v2
+     */
+    public const PRICING_MODEL_PRICING_MODEL_V2 = 2;
+    /**
+     * Pricing model v3
+     */
+    public const PRICING_MODEL_PRICING_MODEL_V3 = 3;
+    /**
+     * Free order
+     */
+    public const SUBSCRIPTION_PLAN_FREE_ORDER = 0;
+    /**
+     * Pay As You Grow (PAYG)
+     */
+    public const SUBSCRIPTION_PLAN_PAY_AS_YOU_GROW = 1;
+    /**
+     * Committed Volume Plan (CVP)
+     */
+    public const SUBSCRIPTION_PLAN_COMMITTED_VOLUME_PLAN = 2;
+    /**
+     * Flexible Committed Volume Plan (CVP Flex)
+     */
+    public const SUBSCRIPTION_PLAN_FLEXIBLE_COMMITTED_VOLUME_PLAN = 3;
+    /**
+     * PACK
+     */
+    public const SUBSCRIPTION_PLAN_PACK = 4;
+    /**
+     * DevKit
+     */
+    public const SUBSCRIPTION_PLAN_DEVKIT = 5;
+    /**
+     * Activate
+     */
+    public const SUBSCRIPTION_PLAN_ACTIVATE = 6;
     /**
      * Searches for contracts containing the given text in their name
      *
@@ -23,11 +72,8 @@ class ContractInfosList extends Definition
     protected ?string $groupId = null;
     /**
      * Searches for contracts that are attached to a specific group type.
-     * - 2 -> BASIC
-     * - 9 -> CHANNEL
-     * 
      *
-     * @var int
+     * @var self::GROUP_TYPE_*
      */
     protected ?int $groupType = null;
     /**
@@ -75,27 +121,15 @@ class ContractInfosList extends Definition
      */
     protected ?int $tokenDuration = null;
     /**
-     * Searches for contracts with a given pricing model 
-     * 1 -> Pricing model v1
-     * 2 -> Pricing model v2
-     * 3 -> Pricing model v3
-     * 
+     * Searches for contracts with a given pricing model
      *
-     * @var int
+     * @var self::PRICING_MODEL_*
      */
     protected ?int $pricingModel = null;
     /**
      * Searches for contracts with the given subscription plan:
-     * 0 -> Free order
-     * 1 -> Pay As You Grow (PAYG)
-     * 2 -> Committed Volume Plan (CVP)
-     * 3 -> Flexible Committed Volume Plan (CVP Flex)
-     * 4 -> PACK
-     * 5 -> DevKit
-     * 6 -> Activate
-     * 
      *
-     * @var int
+     * @var self::SUBSCRIPTION_PLAN_*
      */
     protected ?int $subscriptionPlan = null;
     /**
@@ -142,7 +176,9 @@ class ContractInfosList extends Definition
      * @var bool
      */
     protected ?bool $authorizations = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'groupId', 'string'), new PrimitiveSerializer(self::class, 'groupType', 'int'), new PrimitiveSerializer(self::class, 'deep', 'bool'), new PrimitiveSerializer(self::class, 'up', 'bool'), new PrimitiveSerializer(self::class, 'orderIds', 'string'), new PrimitiveSerializer(self::class, 'contractIds', 'string'), new PrimitiveSerializer(self::class, 'fromTime', 'int'), new PrimitiveSerializer(self::class, 'toTime', 'int'), new PrimitiveSerializer(self::class, 'tokenDuration', 'int'), new PrimitiveSerializer(self::class, 'pricingModel', 'int'), new PrimitiveSerializer(self::class, 'subscriptionPlan', 'int'), new PrimitiveSerializer(self::class, 'geolocationMode', 'int'), new PrimitiveSerializer(self::class, 'fields', 'string'), new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'offset', 'int'), new PrimitiveSerializer(self::class, 'pageId', 'string'), new PrimitiveSerializer(self::class, 'authorizations', 'bool'));
     protected $query = array('name', 'groupId', 'groupType', 'deep', 'up', 'orderIds', 'contractIds', 'fromTime', 'toTime', 'tokenDuration', 'pricingModel', 'subscriptionPlan', 'geolocationMode', 'fields', 'limit', 'offset', 'pageId', 'authorizations');
+    protected $validations = array('name' => array('required'), 'groupId' => array('required'), 'groupType' => array('required'), 'deep' => array('required'), 'up' => array('required'), 'orderIds' => array('required'), 'contractIds' => array('required'), 'fromTime' => array('required'), 'toTime' => array('required'), 'tokenDuration' => array('required'), 'pricingModel' => array('required'), 'subscriptionPlan' => array('required'), 'geolocationMode' => array('required'), 'fields' => array('required', 'in:group(name\\,type\\,level),order(name),blacklistedTerritories(group(name\\,type\\,level))'), 'limit' => array('required'), 'offset' => array('required'), 'pageId' => array('required'), 'authorizations' => array('required'));
     /**
      * Setter for name
      *
@@ -170,10 +206,7 @@ class ContractInfosList extends Definition
     /**
      * Setter for groupType
      *
-     * @param int $groupType Searches for contracts that are attached to a specific group type.
-     *                       - 2 -> BASIC
-     *                       - 9 -> CHANNEL
-     *                       
+     * @param self::GROUP_TYPE_* $groupType Searches for contracts that are attached to a specific group type.
      *
      * @return self To use in method chains
      */
@@ -273,11 +306,7 @@ class ContractInfosList extends Definition
     /**
      * Setter for pricingModel
      *
-     * @param int $pricingModel Searches for contracts with a given pricing model 
-     *                          1 -> Pricing model v1
-     *                          2 -> Pricing model v2
-     *                          3 -> Pricing model v3
-     *                          
+     * @param self::PRICING_MODEL_* $pricingModel Searches for contracts with a given pricing model
      *
      * @return self To use in method chains
      */
@@ -289,15 +318,7 @@ class ContractInfosList extends Definition
     /**
      * Setter for subscriptionPlan
      *
-     * @param int $subscriptionPlan Searches for contracts with the given subscription plan:
-     *                              0 -> Free order
-     *                              1 -> Pay As You Grow (PAYG)
-     *                              2 -> Committed Volume Plan (CVP)
-     *                              3 -> Flexible Committed Volume Plan (CVP Flex)
-     *                              4 -> PACK
-     *                              5 -> DevKit
-     *                              6 -> Activate
-     *                              
+     * @param self::SUBSCRIPTION_PLAN_* $subscriptionPlan Searches for contracts with the given subscription plan:
      *
      * @return self To use in method chains
      */

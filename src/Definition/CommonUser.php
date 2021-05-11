@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Generic information about a User
  */
@@ -26,6 +27,8 @@ class CommonUser extends Definition
      * @var string
      */
     protected ?string $timezone = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'firstName', 'string'), new PrimitiveSerializer(self::class, 'lastName', 'string'), new PrimitiveSerializer(self::class, 'timezone', 'string'));
+    protected $validations = array('firstName' => array('max:100', 'nullable'), 'lastName' => array('max:100', 'nullable'));
     /**
      * Setter for firstName
      *

@@ -3,6 +3,9 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Defines the API user properties
  */
@@ -42,7 +45,7 @@ class ApiUser extends CommonApiUser
      * @var string[]
      */
     protected ?array $resources = null;
-    protected $serialize = array('group' => MinGroup::class);
+    protected $serialize = array(new ClassSerializer(self::class, 'group', MinGroup::class), new PrimitiveSerializer(self::class, 'creationTime', 'int'), new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'accessToken', 'string'), new ArraySerializer(self::class, 'profiles', new ClassSerializer(self::class, 'profiles', MinProfile::class)), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     /**
      * Setter for group
      *

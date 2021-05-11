@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Request\ContractInfosIdDevices;
 class ContractInfosBulkRestartJobId
 {
     /**
@@ -24,14 +23,6 @@ class ContractInfosBulkRestartJobId
      */
     public function getStatus() : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/contract-infos/bulk/restart/{jobId}', $this->jobId), null, 'int');
-    }
-    /**
-     * Retrieve a list of devices according to visibility permissions and request filters.
-     * 
-     */
-    public function devices(ContractInfosIdDevices $request) : int
-    {
-        return $this->client->request('get', $this->bindUrlParams('/contract-infos/{id}/devices', $this->jobId), $request, 'int');
+        return $this->client->request('get', $this->bind('/contract-infos/bulk/restart/{jobId}', $this->jobId), null, 'int');
     }
 }

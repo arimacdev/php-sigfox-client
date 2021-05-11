@@ -29,7 +29,7 @@ class DevicesIdConsumptionYear
      */
     public function get() : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/devices/{id}/consumption/{year}', $this->id, $this->year), null, 'int');
+        return $this->client->request('get', $this->bind('/devices/{id}/consumption/{year}', $this->id, $this->year), null, 'int');
     }
     /**
      * Find by month

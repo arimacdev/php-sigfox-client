@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve the last device message error associated with this callback.
  */
@@ -32,7 +33,9 @@ class DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered extends Definition
      * @var int
      */
     protected ?int $offset = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'since', 'int'), new PrimitiveSerializer(self::class, 'before', 'int'), new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'offset', 'int'));
     protected $query = array('since', 'before', 'limit', 'offset');
+    protected $validations = array('since' => array('required'), 'before' => array('required'), 'limit' => array('required'), 'offset' => array('required'));
     /**
      * Setter for since
      *

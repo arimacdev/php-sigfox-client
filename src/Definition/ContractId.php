@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Contract's id
  */
@@ -14,6 +15,8 @@ class ContractId extends Definition
      * @var string
      */
     protected ?string $id = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'));
+    protected $validations = array('id' => array('required'));
     /**
      * Setter for id
      *

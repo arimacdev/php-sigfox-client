@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * When the payload display type is set to Geolocation for a Device Type, the geolocationPayloadConfig represents the
  * format of the payload that the devices will use. Only recognized formats will be displayed. If you have a device
@@ -23,6 +24,7 @@ class GeolocPayloadConfig extends Definition
      * @var string
      */
     protected ?string $name = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'));
     /**
      * Setter for id
      *

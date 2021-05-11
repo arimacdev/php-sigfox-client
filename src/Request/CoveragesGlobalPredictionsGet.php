@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\GlobalCoverageRequest;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Get the coverage margins for multiple points, for each redundancy level.
  * Sigfox recommends to:
@@ -20,8 +21,9 @@ class CoveragesGlobalPredictionsGet extends Definition
      * @var GlobalCoverageRequest
      */
     protected ?GlobalCoverageRequest $payload = null;
-    protected $serialize = array('payload' => GlobalCoverageRequest::class);
+    protected $serialize = array(new ClassSerializer(self::class, 'payload', GlobalCoverageRequest::class));
     protected $body = array('payload');
+    protected $validations = array('payload' => array('required'));
     /**
      * Setter for payload
      *

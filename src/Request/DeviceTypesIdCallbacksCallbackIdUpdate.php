@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\UpdateCallback;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Update a callback for a given device type
  * 
@@ -16,8 +17,9 @@ class DeviceTypesIdCallbacksCallbackIdUpdate extends Definition
      * @var UpdateCallback
      */
     protected ?UpdateCallback $callback = null;
-    protected $serialize = array('callback' => UpdateCallback::class);
+    protected $serialize = array(new ClassSerializer(self::class, 'callback', UpdateCallback::class));
     protected $body = array('callback');
+    protected $validations = array('callback' => array('required'));
     /**
      * Setter for callback
      *

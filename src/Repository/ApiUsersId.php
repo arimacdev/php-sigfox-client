@@ -25,7 +25,7 @@ class ApiUsersId
      */
     public function get(ApiUsersIdGet $request) : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/api-users/{id}', $this->id), $request, 'int');
+        return $this->client->request('get', $this->bind('/api-users/{id}', $this->id), $request, 'int');
     }
     /**
      * Update information about a given API user.
@@ -33,7 +33,7 @@ class ApiUsersId
      */
     public function update(ApiUsersIdUpdate $request) : int
     {
-        return $this->client->request('put', $this->bindUrlParams('/api-users/{id}', $this->id), $request, 'int');
+        return $this->client->request('put', $this->bind('/api-users/{id}', $this->id), $request, 'int');
     }
     /**
      * Delete a given API user.
@@ -41,7 +41,7 @@ class ApiUsersId
      */
     public function delete() : int
     {
-        return $this->client->request('delete', $this->bindUrlParams('/api-users/{id}', $this->id), null, 'int');
+        return $this->client->request('delete', $this->bind('/api-users/{id}', $this->id), null, 'int');
     }
     /**
      * @return ApiUsersIdProfiles
@@ -49,5 +49,13 @@ class ApiUsersId
     public function profiles() : ApiUsersIdProfiles
     {
         return new ApiUsersIdProfiles($this->id);
+    }
+    /**
+     * Generate a new password for a given API user.
+     * 
+     */
+    public function renewCredential() : int
+    {
+        return $this->client->request('put', $this->bind('/api-users/{id}/renew-credential', $this->id), null, 'int');
     }
 }

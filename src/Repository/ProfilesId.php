@@ -24,6 +24,6 @@ class ProfilesId
      */
     public function get(ProfilesIdGet $request) : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/profiles/{id}', $this->id), $request, 'int');
+        return $this->client->request('get', $this->bind('/profiles/{id}', $this->id), $request, 'int');
     }
 }

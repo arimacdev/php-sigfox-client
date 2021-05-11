@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Definition\GlobalCoverageBulkResponse;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 class ResultsItem extends Definition
 {
     /**
@@ -29,6 +31,7 @@ class ResultsItem extends Definition
      * @var int[]
      */
     protected ?array $margins = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'), new PrimitiveSerializer(self::class, 'locationCovered', 'bool'), new ArraySerializer(self::class, 'margins', new PrimitiveSerializer(self::class, 'margins', 'int')));
     /**
      * Setter for lat
      *

@@ -27,7 +27,7 @@ class DeviceTypesId
      */
     public function get(DeviceTypesIdGet $request) : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/device-types/{id}', $this->id), $request, 'int');
+        return $this->client->request('get', $this->bind('/device-types/{id}', $this->id), $request, 'int');
     }
     /**
      * Update a given device type.
@@ -35,7 +35,7 @@ class DeviceTypesId
      */
     public function update(DeviceTypesIdUpdate $request) : int
     {
-        return $this->client->request('put', $this->bindUrlParams('/device-types/{id}', $this->id), $request, 'int');
+        return $this->client->request('put', $this->bind('/device-types/{id}', $this->id), $request, 'int');
     }
     /**
      * Delete a given device type.
@@ -43,7 +43,7 @@ class DeviceTypesId
      */
     public function delete() : int
     {
-        return $this->client->request('delete', $this->bindUrlParams('/device-types/{id}', $this->id), null, 'int');
+        return $this->client->request('delete', $this->bind('/device-types/{id}', $this->id), null, 'int');
     }
     /**
      * Retrieve a list of messages for a given device types with a 3-day history.
@@ -51,7 +51,7 @@ class DeviceTypesId
      */
     public function messages(DeviceTypesIdMessages $request) : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/device-types/{id}/messages', $this->id), $request, 'int');
+        return $this->client->request('get', $this->bind('/device-types/{id}/messages', $this->id), $request, 'int');
     }
     /**
      * Retrieve a list of undelivered callback messages for a given device types.
@@ -59,7 +59,7 @@ class DeviceTypesId
      */
     public function callbacksNotDelivered(DeviceTypesIdCallbacksNotDelivered $request) : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/device-types/{id}/callbacks-not-delivered', $this->id), $request, 'int');
+        return $this->client->request('get', $this->bind('/device-types/{id}/callbacks-not-delivered', $this->id), $request, 'int');
     }
     /**
      * @return DeviceTypesIdCallbacks
@@ -67,5 +67,21 @@ class DeviceTypesId
     public function callbacks() : DeviceTypesIdCallbacks
     {
         return new DeviceTypesIdCallbacks($this->id);
+    }
+    /**
+     * Disable the sequence number check for the next message of each device of a device type.
+     * 
+     */
+    public function disengage() : int
+    {
+        return $this->client->request('put', $this->bind('/device-types/{id}/disengage', $this->id), null, 'int');
+    }
+    /**
+     * Restart the devices of a device type with a asynchronous job.
+     * 
+     */
+    public function bulkRestart() : int
+    {
+        return $this->client->request('post', $this->bind('/device-types/{id}/bulk/restart', $this->id), null, 'int');
     }
 }

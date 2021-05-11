@@ -4,6 +4,9 @@ namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\GlobalCoverageBulkResponse\ResultsItem;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Returned data for Bulk Global Coverage API
  */
@@ -27,6 +30,7 @@ class GlobalCoverageBulkResponse extends Definition
      * @var ResultsItem[]
      */
     protected ?array $results = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'jobDone', 'bool'), new PrimitiveSerializer(self::class, 'time', 'int'), new ArraySerializer(self::class, 'results', new ClassSerializer(self::class, 'results', ResultsItem::class)));
     /**
      * Setter for jobDone
      *

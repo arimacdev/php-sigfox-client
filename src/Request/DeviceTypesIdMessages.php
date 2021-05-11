@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of messages for a given device types with a 3-day history.
  * 
@@ -46,7 +47,9 @@ class DeviceTypesIdMessages extends Definition
      * @var int
      */
     protected ?int $offset = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'fields', 'string'), new PrimitiveSerializer(self::class, 'since', 'int'), new PrimitiveSerializer(self::class, 'before', 'int'), new PrimitiveSerializer(self::class, 'authorizations', 'bool'), new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'offset', 'int'));
     protected $query = array('fields', 'since', 'before', 'authorizations', 'limit', 'offset');
+    protected $validations = array('fields' => array('required', 'in:oob,ackRequired,device(name),rinfos(cbStatus\\,rep\\,repetitions\\,baseStation(name)),downlinkAnswerStatus(baseStation(name))'), 'since' => array('required'), 'before' => array('required'), 'authorizations' => array('required'), 'limit' => array('required'), 'offset' => array('required'));
     /**
      * Setter for fields
      *

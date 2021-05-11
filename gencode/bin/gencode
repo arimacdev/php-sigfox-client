@@ -120,6 +120,8 @@ foreach ($openapi["paths"] as $endpoint => $path) {
                 if (count($properties)) {
                     $repository->addConstructor($properties);
                 }
+            } else {
+                $repository = $repositories[$repoName];
             }
         }
     }
@@ -131,6 +133,13 @@ foreach ($openapi["paths"] as $endpoint => $path) {
         $requestClassName = $repoName . ucfirst($methodName);
 
         $operation = $path[$requestMethod];
+
+        $codes = array_keys($operation["responses"]);
+        $diff = array_diff($codes, ["400","401","403","404","500", "409", "405", "412"]);
+        if (count($diff)>1) {
+            //var_dump($endpoint, $requestMethod);
+        }
+        
 
         $requestType = Request::fromArray("Arimac\\Sigfox\\Request\\$requestClassName", $operation);
 

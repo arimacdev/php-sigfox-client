@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * minimal information about Hardware Family.
  */
@@ -36,6 +37,7 @@ class MinHwFamily extends Definition
      * @var string
      */
     protected ?string $name = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'int'), new PrimitiveSerializer(self::class, 'name', 'string'));
     /**
      * Setter for id
      *

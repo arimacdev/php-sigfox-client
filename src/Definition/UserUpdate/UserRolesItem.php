@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition\UserUpdate;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class UserRolesItem extends Definition
 {
     /**
@@ -17,6 +18,8 @@ class UserRolesItem extends Definition
      * @var string
      */
     protected ?string $profileId = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'groupId', 'string'), new PrimitiveSerializer(self::class, 'profileId', 'string'));
+    protected $validations = array('groupId' => array('required'), 'profileId' => array('required'));
     /**
      * Setter for groupId
      *

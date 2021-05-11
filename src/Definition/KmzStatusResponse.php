@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class KmzStatusResponse extends Definition
 {
     /**
@@ -17,6 +18,7 @@ class KmzStatusResponse extends Definition
      * @var int
      */
     protected ?int $time = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'jobDone', 'bool'), new PrimitiveSerializer(self::class, 'time', 'int'));
     /**
      * Setter for jobDone
      *

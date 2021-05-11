@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Request\ContractInfosIdGet;
+use Arimac\Sigfox\Request\ContractInfosIdDevices;
 class ContractInfosId
 {
     /**
@@ -24,7 +25,7 @@ class ContractInfosId
      */
     public function get(ContractInfosIdGet $request) : int
     {
-        return $this->client->request('get', $this->bindUrlParams('/contract-infos/{id}', $this->id), $request, 'int');
+        return $this->client->request('get', $this->bind('/contract-infos/{id}', $this->id), $request, 'int');
     }
     /**
      * Create an async job to restart the devices associated to a contract.
@@ -32,6 +33,14 @@ class ContractInfosId
      */
     public function bulkRestart() : int
     {
-        return $this->client->request('post', $this->bindUrlParams('/contract-infos/{id}/bulk/restart', $this->id), null, 'int');
+        return $this->client->request('post', $this->bind('/contract-infos/{id}/bulk/restart', $this->id), null, 'int');
+    }
+    /**
+     * Retrieve a list of devices according to visibility permissions and request filters.
+     * 
+     */
+    public function devices(ContractInfosIdDevices $request) : int
+    {
+        return $this->client->request('get', $this->bind('/contract-infos/{id}/devices', $this->id), $request, 'int');
     }
 }

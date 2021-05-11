@@ -4,6 +4,8 @@ namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\RegistrationJobStatus\Status;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 class RegistrationJobStatus extends Definition
 {
     /**
@@ -24,7 +26,7 @@ class RegistrationJobStatus extends Definition
      * @var Status
      */
     protected ?Status $status = null;
-    protected $serialize = array('status' => Status::class);
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'jobDone', 'bool'), new PrimitiveSerializer(self::class, 'total', 'int'), new ClassSerializer(self::class, 'status', Status::class));
     /**
      * Setter for jobDone
      *

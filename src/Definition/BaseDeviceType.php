@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class BaseDeviceType extends Definition
 {
     /**
@@ -102,6 +103,8 @@ class BaseDeviceType extends Definition
      * @var bool
      */
     protected ?bool $automaticRenewal = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'description', 'string'), new PrimitiveSerializer(self::class, 'downlinkMode', 'int'), new PrimitiveSerializer(self::class, 'downlinkDataString', 'string'), new PrimitiveSerializer(self::class, 'payloadType', 'int'), new PrimitiveSerializer(self::class, 'payloadConfig', 'string'), new PrimitiveSerializer(self::class, 'keepAlive', 'int'), new PrimitiveSerializer(self::class, 'alertEmail', 'string'), new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'));
+    protected $validations = array('name' => array('max:100', 'nullable'), 'description' => array('max:300', 'nullable'), 'keepAlive' => array('min:0', 'numeric', 'nullable'), 'alertEmail' => array('max:250', 'nullable'));
     /**
      * Setter for name
      *

@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class CellularConnectivityBase extends Definition
 {
     /**
@@ -66,6 +67,8 @@ class CellularConnectivityBase extends Definition
      * @var self::SOURCE_*
      */
     protected ?int $source = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'apn', 'string'), new PrimitiveSerializer(self::class, 'username', 'string'), new PrimitiveSerializer(self::class, 'password', 'string'), new PrimitiveSerializer(self::class, 'pin', 'string'), new PrimitiveSerializer(self::class, 'roaming', 'bool'), new PrimitiveSerializer(self::class, 'source', 'int'));
+    protected $validations = array('name' => array('required'), 'apn' => array('required'));
     /**
      * Setter for name
      *

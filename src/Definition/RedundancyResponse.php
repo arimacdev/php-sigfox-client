@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Returned data for Service Coverage Redundancy API
  */
@@ -14,6 +15,7 @@ class RedundancyResponse extends Definition
      * @var int
      */
     protected ?int $redundancy = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'redundancy', 'int'));
     /**
      * Setter for redundancy
      *

@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 class ContractInfoUpdate extends CommonContractInfo
 {
     /**
@@ -17,6 +19,7 @@ class ContractInfoUpdate extends CommonContractInfo
      * @var string[]
      */
     protected ?array $blacklistedTerritories = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'orderName', 'string'), new ArraySerializer(self::class, 'blacklistedTerritories', new PrimitiveSerializer(self::class, 'blacklistedTerritories', 'string')));
     /**
      * Setter for orderName
      *

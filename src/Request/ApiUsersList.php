@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Retrieve a list of API users according to visibility permissions and request filters.
  * 
@@ -46,7 +48,9 @@ class ApiUsersList extends Definition
      * @var bool
      */
     protected ?bool $authorizations = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'fields', 'string'), new PrimitiveSerializer(self::class, 'profileId', 'string'), new ArraySerializer(self::class, 'groupIds', new PrimitiveSerializer(self::class, 'groupIds', 'string')), new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'offset', 'int'), new PrimitiveSerializer(self::class, 'authorizations', 'bool'));
     protected $query = array('fields', 'profileId', 'groupIds', 'limit', 'offset', 'authorizations');
+    protected $validations = array('fields' => array('required', 'in:group(name\\,type\\,level\\,bssId\\,customerBssId),profiles(name\\,roles(name\\,perms(name)))'), 'profileId' => array('required'), 'groupIds' => array('required'), 'limit' => array('required'), 'offset' => array('required'), 'authorizations' => array('required'));
     /**
      * Setter for fields
      *

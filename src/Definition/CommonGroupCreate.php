@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class CommonGroupCreate extends Definition
 {
     /**
@@ -71,6 +72,8 @@ class CommonGroupCreate extends Definition
      * @var string
      */
     protected ?string $parentId = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'description', 'string'), new PrimitiveSerializer(self::class, 'type', 'int'), new PrimitiveSerializer(self::class, 'timezone', 'string'), new PrimitiveSerializer(self::class, 'parentId', 'string'));
+    protected $validations = array('name' => array('required', 'max:100', 'min:3'), 'description' => array('required', 'max:300'), 'type' => array('required'), 'timezone' => array('required'), 'parentId' => array('required'));
     /**
      * Setter for name
      *

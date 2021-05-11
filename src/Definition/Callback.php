@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Common information about Callback template
  */
@@ -95,6 +96,7 @@ class Callback extends Definition
      * @var bool
      */
     protected ?bool $dead = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'channel', 'string'), new PrimitiveSerializer(self::class, 'callbackType', 'int'), new PrimitiveSerializer(self::class, 'callbackSubtype', 'int'), new PrimitiveSerializer(self::class, 'payloadConfig', 'string'), new PrimitiveSerializer(self::class, 'enabled', 'bool'), new PrimitiveSerializer(self::class, 'dead', 'bool'));
     /**
      * Setter for id
      *

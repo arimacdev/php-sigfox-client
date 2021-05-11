@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Definition;
 
 use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the properties needed to create a batch url callback
  */
@@ -26,6 +27,8 @@ class UpdatebatchUrlCallback extends UpdateCallback
      * @var string
      */
     protected ?string $linePattern = null;
+    protected $serialize = array(new PrimitiveSerializer(self::class, 'url', 'string'), new PrimitiveSerializer(self::class, 'httpMethod', 'string'), new PrimitiveSerializer(self::class, 'linePattern', 'string'));
+    protected $validations = array('httpMethod' => array('in:GET,PUT,POST', 'nullable'));
     /**
      * Setter for url
      *
