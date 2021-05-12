@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Request\CoveragesOperatorsRedundancy;
+use Arimac\Sigfox\Definition\RedundancyResponse;
 class Coverages
 {
     /**
@@ -19,8 +20,8 @@ class Coverages
      * article](https://support.sigfox.com/docs/global-coverage-api).
      * 
      */
-    public function operatorsRedundancy(CoveragesOperatorsRedundancy $request) : int
+    public function operatorsRedundancy(CoveragesOperatorsRedundancy $request) : RedundancyResponse
     {
-        return $this->client->request('get', '/coverages/operators/redundancy', $request, 'int');
+        return $this->client->request('get', '/coverages/operators/redundancy', $request, RedundancyResponse::class);
     }
 }

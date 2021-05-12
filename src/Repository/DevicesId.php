@@ -3,10 +3,14 @@
 namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Request\DevicesIdGet;
+use Arimac\Sigfox\Definition\Device;
 use Arimac\Sigfox\Request\DevicesIdUpdate;
 use Arimac\Sigfox\Request\DevicesIdCallbacksNotDelivered;
+use Arimac\Sigfox\Response\Generated\DevicesIdCallbacksNotDeliveredResponse;
 use Arimac\Sigfox\Request\DevicesIdProductCertificate;
+use Arimac\Sigfox\Definition\ProductCertificateWithPacResponse;
 use Arimac\Sigfox\Request\DevicesIdLocations;
+use Arimac\Sigfox\Response\Generated\DevicesIdLocationsResponse;
 use Arimac\Sigfox\Request\DevicesIdUnsubscribe;
 class DevicesId
 {
@@ -27,34 +31,34 @@ class DevicesId
      * Retrieve information about a given device.
      * 
      */
-    public function get(DevicesIdGet $request) : int
+    public function get(DevicesIdGet $request) : Device
     {
-        return $this->client->request('get', $this->bind('/devices/{id}', $this->id), $request, 'int');
+        return $this->client->request('get', $this->bind('/devices/{id}', $this->id), $request, Device::class);
     }
     /**
      * Update a given device.
      * 
      */
-    public function update(DevicesIdUpdate $request) : int
+    public function update(DevicesIdUpdate $request)
     {
-        return $this->client->request('put', $this->bind('/devices/{id}', $this->id), $request, 'int');
+        return $this->client->request('put', $this->bind('/devices/{id}', $this->id), $request);
     }
     /**
      * Delete a given device.
      * 
      */
-    public function delete() : int
+    public function delete()
     {
-        return $this->client->request('delete', $this->bind('/devices/{id}', $this->id), null, 'int');
+        return $this->client->request('delete', $this->bind('/devices/{id}', $this->id), null);
     }
     /**
      * Retrieve a list of undelivered callbacks and errors for a given device, in reverse chronological order (most
      * recent message first).
      * 
      */
-    public function callbacksNotDelivered(DevicesIdCallbacksNotDelivered $request) : int
+    public function callbacksNotDelivered(DevicesIdCallbacksNotDelivered $request) : DevicesIdCallbacksNotDeliveredResponse
     {
-        return $this->client->request('get', $this->bind('/devices/{id}/callbacks-not-delivered', $this->id), $request, 'int');
+        return $this->client->request('get', $this->bind('/devices/{id}/callbacks-not-delivered', $this->id), $request, DevicesIdCallbacksNotDeliveredResponse::class);
     }
     /**
      * @return DevicesIdCertificate
@@ -68,9 +72,9 @@ class DevicesId
      * created on the portal, only in CRA
      * 
      */
-    public function productCertificate(DevicesIdProductCertificate $request) : int
+    public function productCertificate(DevicesIdProductCertificate $request) : ProductCertificateWithPacResponse
     {
-        return $this->client->request('get', $this->bind('/devices/{id}/product-certificate', $this->id), $request, 'int');
+        return $this->client->request('get', $this->bind('/devices/{id}/product-certificate', $this->id), $request, ProductCertificateWithPacResponse::class);
     }
     /**
      * @return DevicesIdConsumption
@@ -83,9 +87,9 @@ class DevicesId
      * Disable sequence number check for the next message.
      * 
      */
-    public function disengage() : int
+    public function disengage()
     {
-        return $this->client->request('post', $this->bind('/devices/{id}/disengage', $this->id), null, 'int');
+        return $this->client->request('post', $this->bind('/devices/{id}/disengage', $this->id), null);
     }
     /**
      * @return DevicesIdMessages
@@ -98,16 +102,16 @@ class DevicesId
      * Retrieve a list of location data of a device according to request filters.
      * 
      */
-    public function locations(DevicesIdLocations $request) : int
+    public function locations(DevicesIdLocations $request) : DevicesIdLocationsResponse
     {
-        return $this->client->request('get', $this->bind('/devices/{id}/locations', $this->id), $request, 'int');
+        return $this->client->request('get', $this->bind('/devices/{id}/locations', $this->id), $request, DevicesIdLocationsResponse::class);
     }
     /**
      * Set an unsubscription date for the device's token.
      * 
      */
-    public function unsubscribe(DevicesIdUnsubscribe $request) : int
+    public function unsubscribe(DevicesIdUnsubscribe $request)
     {
-        return $this->client->request('put', $this->bind('/devices/{id}/unsubscribe', $this->id), $request, 'int');
+        return $this->client->request('put', $this->bind('/devices/{id}/unsubscribe', $this->id), $request);
     }
 }

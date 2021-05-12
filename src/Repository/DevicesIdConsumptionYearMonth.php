@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Definition\DeviceConsumption;
 class DevicesIdConsumptionYearMonth
 {
     /**
@@ -33,8 +34,8 @@ class DevicesIdConsumptionYearMonth
      * Retrieve a device's consumption for a given month during a given year.
      * 
      */
-    public function get() : int
+    public function get() : DeviceConsumption
     {
-        return $this->client->request('get', $this->bind('/devices/{id}/consumption/{year}/{month}', $this->id, $this->year, $this->month), null, 'int');
+        return $this->client->request('get', $this->bind('/devices/{id}/consumption/{year}/{month}', $this->id, $this->year, $this->month), null, DeviceConsumption::class);
     }
 }

@@ -109,7 +109,7 @@ class Repository extends Class_
         string $methodName,
         string $requestMethod,
         string $endpoint,
-        string $responseType,
+        ?string $responseType = null,
         ?string $requestType = null,
         ?string $docComment = null
     ) {
@@ -140,7 +140,10 @@ class Repository extends Class_
         } else {
             array_push($args, $this->factory->val(null));
         }
-        array_push($args, new String_($responseType));
+        if(isset($responseType)){
+            $responseType = $this->useType($responseType);
+            array_push($args, $this->factory->classConstFetch($responseType, "class"));
+        }
 
         $stmts = [new Return_(new FuncCall(new Name("\$this->client->request"), $args))];
 

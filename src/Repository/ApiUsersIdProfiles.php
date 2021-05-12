@@ -21,9 +21,9 @@ class ApiUsersIdProfiles
     /**
      * Associate new profiles to a given API user.
      */
-    public function update(ApiUsersIdProfilesUpdate $request) : int
+    public function update(ApiUsersIdProfilesUpdate $request)
     {
-        return $this->client->request('put', $this->bind('/api-users/{id}/profiles', $this->id), $request, 'int');
+        return $this->client->request('put', $this->bind('/api-users/{id}/profiles', $this->id), $request);
     }
     /**
      * Find by profileId

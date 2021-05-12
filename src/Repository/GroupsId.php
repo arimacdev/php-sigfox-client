@@ -3,9 +3,12 @@
 namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Request\GroupsIdGet;
+use Arimac\Sigfox\Definition\Group;
 use Arimac\Sigfox\Request\GroupsIdUpdate;
 use Arimac\Sigfox\Request\GroupsIdCallbacksNotDelivered;
+use Arimac\Sigfox\Response\Generated\GroupsIdCallbacksNotDeliveredResponse;
 use Arimac\Sigfox\Request\GroupsIdGeolocationPayloads;
+use Arimac\Sigfox\Response\Generated\GroupsIdGeolocationPayloadsResponse;
 class GroupsId
 {
     /**
@@ -25,41 +28,41 @@ class GroupsId
      * Retrieve information about a given group.
      * 
      */
-    public function get(GroupsIdGet $request) : int
+    public function get(GroupsIdGet $request) : Group
     {
-        return $this->client->request('get', $this->bind('/groups/{id}', $this->id), $request, 'int');
+        return $this->client->request('get', $this->bind('/groups/{id}', $this->id), $request, Group::class);
     }
     /**
      * Update a given group.
      * 
      */
-    public function update(GroupsIdUpdate $request) : int
+    public function update(GroupsIdUpdate $request)
     {
-        return $this->client->request('put', $this->bind('/groups/{id}', $this->id), $request, 'int');
+        return $this->client->request('put', $this->bind('/groups/{id}', $this->id), $request);
     }
     /**
      * Delete a given group.
      * 
      */
-    public function delete() : int
+    public function delete()
     {
-        return $this->client->request('delete', $this->bind('/groups/{id}', $this->id), null, 'int');
+        return $this->client->request('delete', $this->bind('/groups/{id}', $this->id), null);
     }
     /**
      * Retrieve a list of undelivered callbacks and errors for a given group, in reverse chronological order (most recent
      * message first).
      * 
      */
-    public function callbacksNotDelivered(GroupsIdCallbacksNotDelivered $request) : int
+    public function callbacksNotDelivered(GroupsIdCallbacksNotDelivered $request) : GroupsIdCallbacksNotDeliveredResponse
     {
-        return $this->client->request('get', $this->bind('/groups/{id}/callbacks-not-delivered', $this->id), $request, 'int');
+        return $this->client->request('get', $this->bind('/groups/{id}/callbacks-not-delivered', $this->id), $request, GroupsIdCallbacksNotDeliveredResponse::class);
     }
     /**
      * Retrieve a list of geolocation payload according to request filters.
      * 
      */
-    public function geolocationPayloads(GroupsIdGeolocationPayloads $request) : int
+    public function geolocationPayloads(GroupsIdGeolocationPayloads $request) : GroupsIdGeolocationPayloadsResponse
     {
-        return $this->client->request('get', $this->bind('/groups/{id}/geoloc-payloads', $this->id), $request, 'int');
+        return $this->client->request('get', $this->bind('/groups/{id}/geoloc-payloads', $this->id), $request, GroupsIdGeolocationPayloadsResponse::class);
     }
 }

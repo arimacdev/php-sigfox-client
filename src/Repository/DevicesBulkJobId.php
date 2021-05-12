@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Definition\RegistrationJobStatus;
 class DevicesBulkJobId
 {
     /**
@@ -21,8 +22,8 @@ class DevicesBulkJobId
      * Retrieve the status of an asynchronous job for devices.
      * 
      */
-    public function get() : int
+    public function get() : RegistrationJobStatus
     {
-        return $this->client->request('get', $this->bind('/devices/bulk/{jobId}', $this->jobId), null, 'int');
+        return $this->client->request('get', $this->bind('/devices/bulk/{jobId}', $this->jobId), null, RegistrationJobStatus::class);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Definition\GlobalCoverageBulkResponse;
 class CoveragesGlobalPredictionsBulkJobId
 {
     /**
@@ -23,8 +24,8 @@ class CoveragesGlobalPredictionsBulkJobId
      * article](https://support.sigfox.com/docs/global-coverage-api).
      * 
      */
-    public function getStatus() : int
+    public function getStatus() : GlobalCoverageBulkResponse
     {
-        return $this->client->request('get', $this->bind('/coverages/global/predictions/bulk/{jobId}', $this->jobId), null, 'int');
+        return $this->client->request('get', $this->bind('/coverages/global/predictions/bulk/{jobId}', $this->jobId), null, GlobalCoverageBulkResponse::class);
     }
 }

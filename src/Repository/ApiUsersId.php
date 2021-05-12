@@ -3,7 +3,9 @@
 namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Request\ApiUsersIdGet;
+use Arimac\Sigfox\Definition\ApiUser;
 use Arimac\Sigfox\Request\ApiUsersIdUpdate;
+use Arimac\Sigfox\Response\Generated\ApiUsersIdRenewCredentialResponse;
 class ApiUsersId
 {
     /**
@@ -23,25 +25,25 @@ class ApiUsersId
      * Retrieve information about a given API user.
      * 
      */
-    public function get(ApiUsersIdGet $request) : int
+    public function get(ApiUsersIdGet $request) : ApiUser
     {
-        return $this->client->request('get', $this->bind('/api-users/{id}', $this->id), $request, 'int');
+        return $this->client->request('get', $this->bind('/api-users/{id}', $this->id), $request, ApiUser::class);
     }
     /**
      * Update information about a given API user.
      * 
      */
-    public function update(ApiUsersIdUpdate $request) : int
+    public function update(ApiUsersIdUpdate $request)
     {
-        return $this->client->request('put', $this->bind('/api-users/{id}', $this->id), $request, 'int');
+        return $this->client->request('put', $this->bind('/api-users/{id}', $this->id), $request);
     }
     /**
      * Delete a given API user.
      * 
      */
-    public function delete() : int
+    public function delete()
     {
-        return $this->client->request('delete', $this->bind('/api-users/{id}', $this->id), null, 'int');
+        return $this->client->request('delete', $this->bind('/api-users/{id}', $this->id), null);
     }
     /**
      * @return ApiUsersIdProfiles
@@ -54,8 +56,8 @@ class ApiUsersId
      * Generate a new password for a given API user.
      * 
      */
-    public function renewCredential() : int
+    public function renewCredential() : ApiUsersIdRenewCredentialResponse
     {
-        return $this->client->request('put', $this->bind('/api-users/{id}/renew-credential', $this->id), null, 'int');
+        return $this->client->request('put', $this->bind('/api-users/{id}/renew-credential', $this->id), null, ApiUsersIdRenewCredentialResponse::class);
     }
 }

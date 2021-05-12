@@ -3,7 +3,9 @@
 namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Request\UsersIdGet;
+use Arimac\Sigfox\Definition\User;
 use Arimac\Sigfox\Request\UsersIdUpdate;
+use Arimac\Sigfox\Definition\UpdateResponse;
 class UsersId
 {
     /**
@@ -23,25 +25,25 @@ class UsersId
      * Retrieve information about a given user. The id can also be the user's email address.
      * 
      */
-    public function get(UsersIdGet $request) : int
+    public function get(UsersIdGet $request) : User
     {
-        return $this->client->request('get', $this->bind('/users/{id}', $this->id), $request, 'int');
+        return $this->client->request('get', $this->bind('/users/{id}', $this->id), $request, User::class);
     }
     /**
      * Update a given user.
      * 
      */
-    public function update(UsersIdUpdate $request) : int
+    public function update(UsersIdUpdate $request) : UpdateResponse
     {
-        return $this->client->request('put', $this->bind('/users/{id}', $this->id), $request, 'int');
+        return $this->client->request('put', $this->bind('/users/{id}', $this->id), $request, UpdateResponse::class);
     }
     /**
      * Delete a given user.
      * 
      */
-    public function delete() : int
+    public function delete()
     {
-        return $this->client->request('delete', $this->bind('/users/{id}', $this->id), null, 'int');
+        return $this->client->request('delete', $this->bind('/users/{id}', $this->id), null);
     }
     /**
      * @return UsersIdProfiles

@@ -22,9 +22,9 @@ class UsersIdProfiles
      * add user roles to a user.
      * 
      */
-    public function addRoles(UsersIdProfilesAddRoles $request) : int
+    public function addRoles(UsersIdProfilesAddRoles $request)
     {
-        return $this->client->request('put', $this->bind('/users/{id}/profiles', $this->id), $request, 'int');
+        return $this->client->request('put', $this->bind('/users/{id}/profiles', $this->id), $request);
     }
     /**
      * Find by profileId

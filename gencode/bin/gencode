@@ -134,12 +134,15 @@ foreach ($openapi["paths"] as $endpoint => $path) {
 
         $operation = $path[$requestMethod];
 
-        $codes = array_keys($operation["responses"]);
-        $diff = array_diff($codes, ["400","401","403","404","500", "409", "405", "412"]);
-        if (count($diff)>1) {
-            //var_dump($endpoint, $requestMethod);
+        $responseType=null;
+        foreach($operation["responses"] as $statusCode => $response){
+            if($statusCode<204&&$statusCode>199){
+                if(isset($response["schema"])){
+                    $responseClassName = $requestClassName."Response";
+                    $responseType = Definition::fromArray("Arimac\\Sigfox\\Response\\Generated\\$responseClassName",$response["schema"]);
+                }
+            }
         }
-        
 
         $requestType = Request::fromArray("Arimac\\Sigfox\\Request\\$requestClassName", $operation);
 
@@ -147,7 +150,7 @@ foreach ($openapi["paths"] as $endpoint => $path) {
             $methodName, 
             $requestMethod, 
             $endpoint, 
-            "int", 
+            $responseType, 
             $requestType==="null"?null:$requestType, 
             Helper::normalizeDocComment($description)
         );

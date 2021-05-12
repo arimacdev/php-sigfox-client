@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Definition\ActionJob;
 class DevicesBulkSuspendJobId
 {
     /**
@@ -21,8 +22,8 @@ class DevicesBulkSuspendJobId
      * Retrieve the async job status for a suspend devices action.
      * 
      */
-    public function get() : int
+    public function get() : ActionJob
     {
-        return $this->client->request('get', $this->bind('/devices/bulk/suspend/{jobId}', $this->jobId), null, 'int');
+        return $this->client->request('get', $this->bind('/devices/bulk/suspend/{jobId}', $this->jobId), null, ActionJob::class);
     }
 }

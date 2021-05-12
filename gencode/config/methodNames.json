@@ -37,7 +37,7 @@
         "post": "get"
     },
     "\/coverages\/global\/predictions\/bulk": {
-        "post": "bulk"
+        "post": "calculateBulk"
     },
     "\/coverages\/global\/predictions\/bulk\/{jobId}": {
         "get": "getStatus"

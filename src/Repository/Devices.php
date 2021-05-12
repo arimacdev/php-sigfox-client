@@ -3,24 +3,26 @@
 namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Request\DevicesList;
+use Arimac\Sigfox\Response\Generated\DevicesListResponse;
 use Arimac\Sigfox\Request\DevicesCreate;
+use Arimac\Sigfox\Response\Generated\DevicesCreateResponse;
 class Devices
 {
     /**
      * Retrieve a list of devices according to visibility permissions and request filters.
      * 
      */
-    public function list(DevicesList $request) : int
+    public function list(DevicesList $request) : DevicesListResponse
     {
-        return $this->client->request('get', '/devices/', $request, 'int');
+        return $this->client->request('get', '/devices/', $request, DevicesListResponse::class);
     }
     /**
      * Create a new device.
      * 
      */
-    public function create(DevicesCreate $request) : int
+    public function create(DevicesCreate $request) : DevicesCreateResponse
     {
-        return $this->client->request('post', '/devices/', $request, 'int');
+        return $this->client->request('post', '/devices/', $request, DevicesCreateResponse::class);
     }
     /**
      * Find by id

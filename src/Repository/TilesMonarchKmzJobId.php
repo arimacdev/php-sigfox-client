@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Definition\KmzStatusResponse;
 class TilesMonarchKmzJobId
 {
     /**
@@ -21,9 +22,9 @@ class TilesMonarchKmzJobId
      * Retrieve Sigfox Monarch coverage kmz computation from asynchronous job status
      * 
      */
-    public function get() : int
+    public function get() : KmzStatusResponse
     {
-        return $this->client->request('get', $this->bind('/tiles/monarch/kmz/{jobId}', $this->jobId), null, 'int');
+        return $this->client->request('get', $this->bind('/tiles/monarch/kmz/{jobId}', $this->jobId), null, KmzStatusResponse::class);
     }
     /**
      * @return TilesMonarchKmzJobIdTileskmz

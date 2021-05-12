@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Request\TilesMonarchKmzStartAsync;
+use Arimac\Sigfox\Response\Generated\TilesMonarchKmzStartAsyncResponse;
 class TilesMonarchKmz
 {
     /**
@@ -10,9 +11,9 @@ class TilesMonarchKmz
      * no other computation, run in the last 24 hours, is available. Otherwise, the existing jobId is returned.
      * 
      */
-    public function startAsync(TilesMonarchKmzStartAsync $request) : int
+    public function startAsync(TilesMonarchKmzStartAsync $request) : TilesMonarchKmzStartAsyncResponse
     {
-        return $this->client->request('post', '/tiles/monarch/kmz', $request, 'int');
+        return $this->client->request('post', '/tiles/monarch/kmz', $request, TilesMonarchKmzStartAsyncResponse::class);
     }
     /**
      * Find by jobId

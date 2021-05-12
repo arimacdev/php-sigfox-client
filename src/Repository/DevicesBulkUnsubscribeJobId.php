@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Definition\ActionJob;
 class DevicesBulkUnsubscribeJobId
 {
     /**
@@ -21,8 +22,8 @@ class DevicesBulkUnsubscribeJobId
      * Retrieve the async job status for an unsubscribe devices action.
      * 
      */
-    public function get() : int
+    public function get() : ActionJob
     {
-        return $this->client->request('get', $this->bind('/devices/bulk/unsubscribe/{jobId}', $this->jobId), null, 'int');
+        return $this->client->request('get', $this->bind('/devices/bulk/unsubscribe/{jobId}', $this->jobId), null, ActionJob::class);
     }
 }

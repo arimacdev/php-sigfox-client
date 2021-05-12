@@ -22,8 +22,8 @@ class TilesMonarchKmzJobIdTileskmz
      * Retrieve Sigfox Monarch coverage kmz from a job
      * 
      */
-    public function getCoverage(TilesMonarchKmzJobIdTileskmzGetCoverage $request) : int
+    public function getCoverage(TilesMonarchKmzJobIdTileskmzGetCoverage $request)
     {
-        return $this->client->request('get', $this->bind('/tiles/monarch/kmz/{jobId}/tiles.kmz', $this->jobId), $request, 'int');
+        return $this->client->request('get', $this->bind('/tiles/monarch/kmz/{jobId}/tiles.kmz', $this->jobId), $request);
     }
 }

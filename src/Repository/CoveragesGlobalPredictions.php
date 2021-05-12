@@ -3,8 +3,11 @@
 namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Request\CoveragesGlobalPredictionsGetOne;
+use Arimac\Sigfox\Response\Generated\CoveragesGlobalPredictionsGetOneResponse;
 use Arimac\Sigfox\Request\CoveragesGlobalPredictionsGet;
-use Arimac\Sigfox\Request\CoveragesGlobalPredictionsBulk;
+use Arimac\Sigfox\Definition\GlobalCoverageResponse;
+use Arimac\Sigfox\Request\CoveragesGlobalPredictionsCalculateBulk;
+use Arimac\Sigfox\Response\Generated\CoveragesGlobalPredictionsCalculateBulkResponse;
 class CoveragesGlobalPredictions
 {
     /**
@@ -14,9 +17,9 @@ class CoveragesGlobalPredictions
      * article](https://support.sigfox.com/docs/global-coverage-api).
      * 
      */
-    public function getOne(CoveragesGlobalPredictionsGetOne $request) : int
+    public function getOne(CoveragesGlobalPredictionsGetOne $request) : CoveragesGlobalPredictionsGetOneResponse
     {
-        return $this->client->request('get', '/coverages/global/predictions', $request, 'int');
+        return $this->client->request('get', '/coverages/global/predictions', $request, CoveragesGlobalPredictionsGetOneResponse::class);
     }
     /**
      * Get the coverage margins for multiple points, for each redundancy level.
@@ -28,9 +31,9 @@ class CoveragesGlobalPredictions
      * article](https://support.sigfox.com/docs/global-coverage-api).
      * 
      */
-    public function get(CoveragesGlobalPredictionsGet $request) : int
+    public function get(CoveragesGlobalPredictionsGet $request) : GlobalCoverageResponse
     {
-        return $this->client->request('post', '/coverages/global/predictions', $request, 'int');
+        return $this->client->request('post', '/coverages/global/predictions', $request, GlobalCoverageResponse::class);
     }
     /**
      * Starting the computation of the coverage margins for multiple points, for each redundancy level.
@@ -38,9 +41,9 @@ class CoveragesGlobalPredictions
      * article](https://support.sigfox.com/docs/global-coverage-api).
      * 
      */
-    public function bulk(CoveragesGlobalPredictionsBulk $request) : int
+    public function calculateBulk(CoveragesGlobalPredictionsCalculateBulk $request) : CoveragesGlobalPredictionsCalculateBulkResponse
     {
-        return $this->client->request('post', '/coverages/global/predictions/bulk', $request, 'int');
+        return $this->client->request('post', '/coverages/global/predictions/bulk', $request, CoveragesGlobalPredictionsCalculateBulkResponse::class);
     }
     /**
      * @return CoveragesGlobalPredictionsBulk

@@ -27,8 +27,8 @@ class ApiUsersIdProfilesProfileId
      * Delete a profile to a given API user.
      * 
      */
-    public function delete() : int
+    public function delete()
     {
-        return $this->client->request('delete', $this->bind('/api-users/{id}/profiles/{profileId}', $this->id, $this->profileId), null, 'int');
+        return $this->client->request('delete', $this->bind('/api-users/{id}/profiles/{profileId}', $this->id, $this->profileId), null);
     }
 }

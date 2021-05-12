@@ -3,7 +3,9 @@
 namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Request\GroupsList;
+use Arimac\Sigfox\Response\Generated\GroupsListResponse;
 use Arimac\Sigfox\Request\GroupsCreate;
+use Arimac\Sigfox\Response\Generated\GroupsCreateResponse;
 class Groups
 {
     /**
@@ -13,17 +15,17 @@ class Groups
      *   If deep is true, retrieve all sub-groups under either given parent groups or the API user group.
      * 
      */
-    public function list(GroupsList $request) : int
+    public function list(GroupsList $request) : GroupsListResponse
     {
-        return $this->client->request('get', '/groups/', $request, 'int');
+        return $this->client->request('get', '/groups/', $request, GroupsListResponse::class);
     }
     /**
      * Create a new group.
      * 
      */
-    public function create(GroupsCreate $request) : int
+    public function create(GroupsCreate $request) : GroupsCreateResponse
     {
-        return $this->client->request('post', '/groups/', $request, 'int');
+        return $this->client->request('post', '/groups/', $request, GroupsCreateResponse::class);
     }
     /**
      * Find by id

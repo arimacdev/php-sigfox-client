@@ -28,8 +28,8 @@ class UsersIdProfilesProfileId
      * Delete profiles or a given profile associated to the groupId
      * 
      */
-    public function delete(UsersIdProfilesProfileIdDelete $request) : int
+    public function delete(UsersIdProfilesProfileIdDelete $request)
     {
-        return $this->client->request('delete', $this->bind('/users/{id}/profiles/{profileId}', $this->id, $this->profileId), $request, 'int');
+        return $this->client->request('delete', $this->bind('/users/{id}/profiles/{profileId}', $this->id, $this->profileId), $request);
     }
 }

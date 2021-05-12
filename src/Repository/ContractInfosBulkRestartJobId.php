@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Definition\ActionJob;
 class ContractInfosBulkRestartJobId
 {
     /**
@@ -21,8 +22,8 @@ class ContractInfosBulkRestartJobId
      * Retrieve a contract async job status for restart action.
      * 
      */
-    public function getStatus() : int
+    public function getStatus() : ActionJob
     {
-        return $this->client->request('get', $this->bind('/contract-infos/bulk/restart/{jobId}', $this->jobId), null, 'int');
+        return $this->client->request('get', $this->bind('/contract-infos/bulk/restart/{jobId}', $this->jobId), null, ActionJob::class);
     }
 }

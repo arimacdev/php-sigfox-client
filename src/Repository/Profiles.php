@@ -3,15 +3,16 @@
 namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Request\ProfilesList;
+use Arimac\Sigfox\Response\Generated\ProfilesListResponse;
 class Profiles
 {
     /**
      * Retrieve a list of a Group's profiles according to visibility permissions and request filters.
      * 
      */
-    public function list(ProfilesList $request) : int
+    public function list(ProfilesList $request) : ProfilesListResponse
     {
-        return $this->client->request('get', '/profiles/', $request, 'int');
+        return $this->client->request('get', '/profiles/', $request, ProfilesListResponse::class);
     }
     /**
      * Find by id

@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Request\ProfilesIdGet;
+use Arimac\Sigfox\Definition\Profile;
 class ProfilesId
 {
     /**
@@ -22,8 +23,8 @@ class ProfilesId
      * Retrieve information about a given profile.
      * 
      */
-    public function get(ProfilesIdGet $request) : int
+    public function get(ProfilesIdGet $request) : Profile
     {
-        return $this->client->request('get', $this->bind('/profiles/{id}', $this->id), $request, 'int');
+        return $this->client->request('get', $this->bind('/profiles/{id}', $this->id), $request, Profile::class);
     }
 }
