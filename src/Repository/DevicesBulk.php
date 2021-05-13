@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\DevicesBulkCreate;
 use Arimac\Sigfox\Response\Generated\DevicesBulkCreateResponse;
 use Arimac\Sigfox\Request\DevicesBulkUpdate;
@@ -21,8 +22,20 @@ use Arimac\Sigfox\Response\Generated\DevicesBulkUnsubscribeResponse;
 class DevicesBulk
 {
     /**
+     * The HTTP client
+     */
+    protected ?Client $client;
+    /**
+     * Creating the repository
+     *
+     * @param Client $client The HTTP client
+     */
+    public function __construct(Client $client)
+    {
+        $this->client = $client;
+    }
+    /**
      * Create multiple new devices with asynchronous job
-     * 
      */
     public function create(DevicesBulkCreate $request) : DevicesBulkCreateResponse
     {
@@ -30,7 +43,6 @@ class DevicesBulk
     }
     /**
      * Update or edit multiple devices with asynchronous job.
-     * 
      */
     public function update(DevicesBulkUpdate $request) : DevicesBulkUpdateResponse
     {
@@ -45,11 +57,10 @@ class DevicesBulk
      */
     public function find(string $jobId) : DevicesBulkJobId
     {
-        return new DevicesBulkJobId($jobId);
+        return new DevicesBulkJobId($this->client, $jobId);
     }
     /**
      * Transfer multiple devices to another device type with asynchronous job
-     * 
      */
     public function transfer(DevicesBulkTransfer $request) : DevicesBulkTransferResponse
     {
@@ -57,7 +68,6 @@ class DevicesBulk
     }
     /**
      * Replace multiple devices (moving tokens from one device to another) with synchronous job
-     * 
      */
     public function replace(DevicesBulkReplace $request) : ReplaceResponse
     {
@@ -65,7 +75,6 @@ class DevicesBulk
     }
     /**
      * Restart multiple devices with asynchronous job.
-     * 
      */
     public function restart(DevicesBulkRestart $request) : DevicesBulkRestartResponse
     {
@@ -76,11 +85,10 @@ class DevicesBulk
      */
     public function restart() : DevicesBulkRestart
     {
-        return new DevicesBulkRestart();
+        return new DevicesBulkRestart($this->client);
     }
     /**
      * Suspend multiple devices with asynchronous job
-     * 
      */
     public function suspend(DevicesBulkSuspend $request) : DevicesBulkSuspendResponse
     {
@@ -91,11 +99,10 @@ class DevicesBulk
      */
     public function suspend() : DevicesBulkSuspend
     {
-        return new DevicesBulkSuspend();
+        return new DevicesBulkSuspend($this->client);
     }
     /**
      * Resume multiple devices with asynchronous job.
-     * 
      */
     public function resume(DevicesBulkResume $request) : DevicesBulkResumeResponse
     {
@@ -106,11 +113,10 @@ class DevicesBulk
      */
     public function resume() : DevicesBulkResume
     {
-        return new DevicesBulkResume();
+        return new DevicesBulkResume($this->client);
     }
     /**
      * Unsubscribe multiple devices with asynchronous job.
-     * 
      */
     public function unsubscribe(DevicesBulkUnsubscribe $request) : DevicesBulkUnsubscribeResponse
     {
@@ -121,6 +127,6 @@ class DevicesBulk
      */
     public function unsubscribe() : DevicesBulkUnsubscribe
     {
-        return new DevicesBulkUnsubscribe();
+        return new DevicesBulkUnsubscribe($this->client);
     }
 }

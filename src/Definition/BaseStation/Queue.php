@@ -16,7 +16,6 @@ class Queue extends Definition
      * The number of messages sent to back-end by the base station.
      * A high difference between in and out values may suggest either connectivity problems with the back-end,
      * or too many messages received at once by the station
-     * 
      *
      * @var int
      */

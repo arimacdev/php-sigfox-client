@@ -38,8 +38,11 @@ class EthernetConnectivityBase extends Definition
     protected ?string $name = null;
     /**
      * Token's type of an ethernet connectivity configuration
+     * 
+     * - {@see EthernetConnectivityBase::TYPE_STATIC}
+     * - {@see EthernetConnectivityBase::TYPE_PARTLY_DYNAMIC}
      *
-     * @var self::TYPE_*
+     * @var int
      */
     protected ?int $type = null;
     /**
@@ -82,8 +85,13 @@ class EthernetConnectivityBase extends Definition
     protected ?int $mtu = null;
     /**
      * Configuration origin of the connectivity
+     * 
+     * - {@see EthernetConnectivityBase::SOURCE_REMOTE}
+     * - {@see EthernetConnectivityBase::SOURCE_OTHERS}
+     * - {@see EthernetConnectivityBase::SOURCE_DEFAULT}
+     * - {@see EthernetConnectivityBase::SOURCE_TOOLS}
      *
-     * @var self::SOURCE_*
+     * @var int
      */
     protected ?int $source = null;
     protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'type', 'int'), new PrimitiveSerializer(self::class, 'ip', 'string'), new PrimitiveSerializer(self::class, 'mask', 'string'), new PrimitiveSerializer(self::class, 'dns1', 'string'), new PrimitiveSerializer(self::class, 'dns2', 'string'), new PrimitiveSerializer(self::class, 'gateway', 'string'), new PrimitiveSerializer(self::class, 'mtu', 'int'), new PrimitiveSerializer(self::class, 'source', 'int'));
@@ -112,7 +120,11 @@ class EthernetConnectivityBase extends Definition
     /**
      * Setter for type
      *
-     * @param self::TYPE_* $type Token's type of an ethernet connectivity configuration
+     * @param int $type Token's type of an ethernet connectivity configuration
+     *                  
+     *                  - {@see EthernetConnectivityBase::TYPE_STATIC}
+     *                  - {@see EthernetConnectivityBase::TYPE_PARTLY_DYNAMIC}
+     *                  
      *
      * @return self To use in method chains
      */
@@ -124,7 +136,11 @@ class EthernetConnectivityBase extends Definition
     /**
      * Getter for type
      *
-     * @return self::TYPE_* Token's type of an ethernet connectivity configuration
+     * @return int Token's type of an ethernet connectivity configuration
+     *             
+     *             - {@see EthernetConnectivityBase::TYPE_STATIC}
+     *             - {@see EthernetConnectivityBase::TYPE_PARTLY_DYNAMIC}
+     *             
      */
     public function getType() : int
     {
@@ -263,7 +279,13 @@ class EthernetConnectivityBase extends Definition
     /**
      * Setter for source
      *
-     * @param self::SOURCE_* $source Configuration origin of the connectivity
+     * @param int $source Configuration origin of the connectivity
+     *                    
+     *                    - {@see EthernetConnectivityBase::SOURCE_REMOTE}
+     *                    - {@see EthernetConnectivityBase::SOURCE_OTHERS}
+     *                    - {@see EthernetConnectivityBase::SOURCE_DEFAULT}
+     *                    - {@see EthernetConnectivityBase::SOURCE_TOOLS}
+     *                    
      *
      * @return self To use in method chains
      */
@@ -275,7 +297,13 @@ class EthernetConnectivityBase extends Definition
     /**
      * Getter for source
      *
-     * @return self::SOURCE_* Configuration origin of the connectivity
+     * @return int Configuration origin of the connectivity
+     *             
+     *             - {@see EthernetConnectivityBase::SOURCE_REMOTE}
+     *             - {@see EthernetConnectivityBase::SOURCE_OTHERS}
+     *             - {@see EthernetConnectivityBase::SOURCE_DEFAULT}
+     *             - {@see EthernetConnectivityBase::SOURCE_TOOLS}
+     *             
      */
     public function getSource() : int
     {

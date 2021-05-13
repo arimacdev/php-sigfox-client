@@ -430,8 +430,11 @@ class BaseStation extends Definition
     protected ?int $restartTime = null;
     /**
      * Base station connection type.
+     * 
+     * - {@see BaseStation::CONNECTION_TYPE_ETH}
+     * - {@see BaseStation::CONNECTION_TYPE_GSM}
      *
-     * @var self::CONNECTION_TYPE_*
+     * @var int
      */
     protected ?int $connectionType = null;
     /**
@@ -471,20 +474,37 @@ class BaseStation extends Definition
     protected ?int $lng = null;
     /**
      * Base station communication state.
+     * 
+     * - {@see BaseStation::COMMUNICATION_STATE_NO}
+     * - {@see BaseStation::COMMUNICATION_STATE_OK}
+     * - {@see BaseStation::COMMUNICATION_STATE_WARN}
+     * - {@see BaseStation::COMMUNICATION_STATE_KO}
+     * - {@see BaseStation::COMMUNICATION_STATE_OK_KO}
      *
-     * @var self::COMMUNICATION_STATE_*
+     * @var int
      */
     protected ?int $communicationState = null;
     /**
      * Base station state.
+     * 
+     * - {@see BaseStation::STATE_NO}
+     * - {@see BaseStation::STATE_OK}
+     * - {@see BaseStation::STATE_WARN}
+     * - {@see BaseStation::STATE_KO}
+     * - {@see BaseStation::STATE_OK_KO}
      *
-     * @var self::STATE_*
+     * @var int
      */
     protected ?int $state = null;
     /**
      * Base station lifecycle status
+     * 
+     * - {@see BaseStation::LIFECYCLE_STATUS_STOCK}
+     * - {@see BaseStation::LIFECYCLE_STATUS_PROD}
+     * - {@see BaseStation::LIFECYCLE_STATUS_MAINTENANCE}
+     * - {@see BaseStation::LIFECYCLE_STATUS_DEAD}
      *
-     * @var self::LIFECYCLE_STATUS_*
+     * @var int
      */
     protected ?int $lifecycleStatus = null;
     /**
@@ -565,38 +585,65 @@ class BaseStation extends Definition
     protected ?int $txPowerAmplification = null;
     /**
      * Base station protocol.
+     * 
+     * - {@see BaseStation::PROTOCOL_V0}
+     * - {@see BaseStation::PROTOCOL_V1}
+     * - {@see BaseStation::PROTOCOL_BOTH}
      *
-     * @var self::PROTOCOL_*
+     * @var int
      */
     protected ?int $protocol = null;
     /**
      * Base station pre amp 1.
+     * 
+     * - {@see BaseStation::PRE_AMP1_LNA}
+     * - {@see BaseStation::PRE_AMP1_BYPASS}
+     * - {@see BaseStation::PRE_AMP1_ATTEND}
      *
-     * @var self::PRE_AMP1_*
+     * @var int
      */
     protected ?int $preAmp1 = null;
     /**
      * Base station pre amp 2.
+     * 
+     * - {@see BaseStation::PRE_AMP2_LNA}
+     * - {@see BaseStation::PRE_AMP2_BYPASS}
+     * - {@see BaseStation::PRE_AMP2_ATTEND}
      *
-     * @var self::PRE_AMP2_*
+     * @var int
      */
     protected ?int $preAmp2 = null;
     /**
      * Base station RAM log.
+     * 
+     * - {@see BaseStation::R_A_M_LOG_YES}
+     * - {@see BaseStation::R_A_M_LOG_NO}
+     * - {@see BaseStation::R_A_M_LOG_AUTO}
+     * - {@see BaseStation::R_A_M_LOG_DROP}
      *
-     * @var self::R_A_M_LOG_*
+     * @var int
      */
     protected ?int $RAMLog = null;
     /**
      * Base station WWAN mode.
+     * 
+     * - {@see BaseStation::WWAN_MODE_NONE}
+     * - {@see BaseStation::WWAN_MODE_AUTO}
+     * - {@see BaseStation::WWAN_MODE_WCDMA}
+     * - {@see BaseStation::WWAN_MODE_WCDMA_PREF}
+     * - {@see BaseStation::WWAN_MODE_GPRS_PREF}
+     * - {@see BaseStation::WWAN_MODE_GPRS}
      *
-     * @var self::WWAN_MODE_*
+     * @var int
      */
     protected ?int $wwanMode = null;
     /**
      * Base station bit rate.
+     * 
+     * - {@see BaseStation::BIT_RATE_BIT_RATE_100_BS}
+     * - {@see BaseStation::BIT_RATE_BIT_RATE_600_BS}
      *
-     * @var self::BIT_RATE_*
+     * @var int
      */
     protected ?int $bitRate = null;
     /**
@@ -619,8 +666,32 @@ class BaseStation extends Definition
     protected ?int $splatRadius = null;
     /**
      * LNA version of the base station. Mini stations have type 7 -> MINI. Mini Access Stations have type 21.
+     * 
+     * - {@see BaseStation::MAST_EQUIPMENT_OTHER}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNA_V2_SBS_868_P}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNA_V2_SBS_902_P}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNA_V2_NB_SBS_868_P}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNA_V1_SBS_868_P}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNA_V2_SBS_920_P}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNA_V2_SBS_923_P}
+     * - {@see BaseStation::MAST_EQUIPMENT_MINI}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNA_V4_867}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNA_V4_915}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNAC_867}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNAC_868}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNAC_902}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNAC_916_TX}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNAC_921}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNAC_921_TX}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNAC_922_TX}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNA_V3_SBS_868_P}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNA_V3_SBS_902_P}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNA_V3_SBS_920_P}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNA_V3_SBS_923_P}
+     * - {@see BaseStation::MAST_EQUIPMENT_NONE}
+     * - {@see BaseStation::MAST_EQUIPMENT_LNAC_868_TX}
      *
-     * @var self::MAST_EQUIPMENT_*
+     * @var int
      */
     protected ?int $mastEquipment = null;
     /**
@@ -637,8 +708,20 @@ class BaseStation extends Definition
     protected ?bool $lnaByPass = null;
     /**
      * Cavity filter version of the base station.
+     * 
+     * - {@see BaseStation::CAVITY_FILTER_VERSION_NONE}
+     * - {@see BaseStation::CAVITY_FILTER_VERSION_OTHER}
+     * - {@see BaseStation::CAVITY_FILTER_VERSION_ETSI_868MHZ_MATECH}
+     * - {@see BaseStation::CAVITY_FILTER_VERSION_ETSI_868MHZ_ELHYTE}
+     * - {@see BaseStation::CAVITY_FILTER_VERSION_FCC_905MHZ_MATECH}
+     * - {@see BaseStation::CAVITY_FILTER_VERSION_FCC_905MHZ_ELHYTE}
+     * - {@see BaseStation::CAVITY_FILTER_VERSION_FCC_920MHZ}
+     * - {@see BaseStation::CAVITY_FILTER_VERSION_FCC_923MHZ}
+     * - {@see BaseStation::CAVITY_FILTER_VERSION_FCC_922_5MHZ}
+     * - {@see BaseStation::CAVITY_FILTER_VERSION_ETSI_867MHZ_MATECH}
+     * - {@see BaseStation::CAVITY_FILTER_VERSION_ETSI_867MHZ_TECHNIWAVE}
      *
-     * @var self::CAVITY_FILTER_VERSION_*
+     * @var int
      */
     protected ?int $cavityFilterVersion = null;
     /**
@@ -730,27 +813,43 @@ class BaseStation extends Definition
     protected ?int $powerCapability = null;
     /**
      * Antenna location.
+     * 
+     * - {@see BaseStation::ANTENNA_LOCATION_CODE_OUTDOOR}
+     * - {@see BaseStation::ANTENNA_LOCATION_CODE_INDOOR}
      *
-     * @var self::ANTENNA_LOCATION_CODE_*
+     * @var int
      */
     protected ?int $antennaLocationCode = null;
     /**
      * Service coverage (for Mini base station)
+     * 
+     * - {@see BaseStation::SERVICE_COVERAGE_GLOBAL}
+     * - {@see BaseStation::SERVICE_COVERAGE_CUSTOMER}
      *
-     * @var self::SERVICE_COVERAGE_*
+     * @var int
      */
     protected ?int $serviceCoverage = null;
     /**
      * Defines whether the Base Station should contribute to the Sigfox Network location service.
+     * 
+     * - {@see BaseStation::GEOLOC_COMPUTATION_DEFAULT}
+     * - {@see BaseStation::GEOLOC_COMPUTATION_ENABLED}
+     * - {@see BaseStation::GEOLOC_COMPUTATION_DISABLED}
      *
-     * @var self::GEOLOC_COMPUTATION_*
+     * @var int
      */
     protected ?int $geolocComputation = null;
     /**
      * The status, computed by the geolocation services, of the Base Station's contribution to the Sigfox Network
      * location service.
+     * 
+     * - {@see BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_NOT_CONTRIBUTING}
+     * - {@see BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_CURRENTLY_CONTRIBUTING}
+     * - {@see BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_GREY_LISTED}
+     * - {@see BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_BLACK_LISTED}
+     * - {@see BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_NOT_AVAILABLE}
      *
-     * @var self::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_*
+     * @var int
      */
     protected ?int $geolocGlobalStateOfContribution = null;
     /**
@@ -1076,7 +1175,11 @@ class BaseStation extends Definition
     /**
      * Setter for connectionType
      *
-     * @param self::CONNECTION_TYPE_* $connectionType Base station connection type.
+     * @param int $connectionType Base station connection type.
+     *                            
+     *                            - {@see BaseStation::CONNECTION_TYPE_ETH}
+     *                            - {@see BaseStation::CONNECTION_TYPE_GSM}
+     *                            
      *
      * @return self To use in method chains
      */
@@ -1088,7 +1191,11 @@ class BaseStation extends Definition
     /**
      * Getter for connectionType
      *
-     * @return self::CONNECTION_TYPE_* Base station connection type.
+     * @return int Base station connection type.
+     *             
+     *             - {@see BaseStation::CONNECTION_TYPE_ETH}
+     *             - {@see BaseStation::CONNECTION_TYPE_GSM}
+     *             
      */
     public function getConnectionType() : int
     {
@@ -1225,7 +1332,14 @@ class BaseStation extends Definition
     /**
      * Setter for communicationState
      *
-     * @param self::COMMUNICATION_STATE_* $communicationState Base station communication state.
+     * @param int $communicationState Base station communication state.
+     *                                
+     *                                - {@see BaseStation::COMMUNICATION_STATE_NO}
+     *                                - {@see BaseStation::COMMUNICATION_STATE_OK}
+     *                                - {@see BaseStation::COMMUNICATION_STATE_WARN}
+     *                                - {@see BaseStation::COMMUNICATION_STATE_KO}
+     *                                - {@see BaseStation::COMMUNICATION_STATE_OK_KO}
+     *                                
      *
      * @return self To use in method chains
      */
@@ -1237,7 +1351,14 @@ class BaseStation extends Definition
     /**
      * Getter for communicationState
      *
-     * @return self::COMMUNICATION_STATE_* Base station communication state.
+     * @return int Base station communication state.
+     *             
+     *             - {@see BaseStation::COMMUNICATION_STATE_NO}
+     *             - {@see BaseStation::COMMUNICATION_STATE_OK}
+     *             - {@see BaseStation::COMMUNICATION_STATE_WARN}
+     *             - {@see BaseStation::COMMUNICATION_STATE_KO}
+     *             - {@see BaseStation::COMMUNICATION_STATE_OK_KO}
+     *             
      */
     public function getCommunicationState() : int
     {
@@ -1246,7 +1367,14 @@ class BaseStation extends Definition
     /**
      * Setter for state
      *
-     * @param self::STATE_* $state Base station state.
+     * @param int $state Base station state.
+     *                   
+     *                   - {@see BaseStation::STATE_NO}
+     *                   - {@see BaseStation::STATE_OK}
+     *                   - {@see BaseStation::STATE_WARN}
+     *                   - {@see BaseStation::STATE_KO}
+     *                   - {@see BaseStation::STATE_OK_KO}
+     *                   
      *
      * @return self To use in method chains
      */
@@ -1258,7 +1386,14 @@ class BaseStation extends Definition
     /**
      * Getter for state
      *
-     * @return self::STATE_* Base station state.
+     * @return int Base station state.
+     *             
+     *             - {@see BaseStation::STATE_NO}
+     *             - {@see BaseStation::STATE_OK}
+     *             - {@see BaseStation::STATE_WARN}
+     *             - {@see BaseStation::STATE_KO}
+     *             - {@see BaseStation::STATE_OK_KO}
+     *             
      */
     public function getState() : int
     {
@@ -1267,7 +1402,13 @@ class BaseStation extends Definition
     /**
      * Setter for lifecycleStatus
      *
-     * @param self::LIFECYCLE_STATUS_* $lifecycleStatus Base station lifecycle status
+     * @param int $lifecycleStatus Base station lifecycle status
+     *                             
+     *                             - {@see BaseStation::LIFECYCLE_STATUS_STOCK}
+     *                             - {@see BaseStation::LIFECYCLE_STATUS_PROD}
+     *                             - {@see BaseStation::LIFECYCLE_STATUS_MAINTENANCE}
+     *                             - {@see BaseStation::LIFECYCLE_STATUS_DEAD}
+     *                             
      *
      * @return self To use in method chains
      */
@@ -1279,7 +1420,13 @@ class BaseStation extends Definition
     /**
      * Getter for lifecycleStatus
      *
-     * @return self::LIFECYCLE_STATUS_* Base station lifecycle status
+     * @return int Base station lifecycle status
+     *             
+     *             - {@see BaseStation::LIFECYCLE_STATUS_STOCK}
+     *             - {@see BaseStation::LIFECYCLE_STATUS_PROD}
+     *             - {@see BaseStation::LIFECYCLE_STATUS_MAINTENANCE}
+     *             - {@see BaseStation::LIFECYCLE_STATUS_DEAD}
+     *             
      */
     public function getLifecycleStatus() : int
     {
@@ -1562,7 +1709,12 @@ class BaseStation extends Definition
     /**
      * Setter for protocol
      *
-     * @param self::PROTOCOL_* $protocol Base station protocol.
+     * @param int $protocol Base station protocol.
+     *                      
+     *                      - {@see BaseStation::PROTOCOL_V0}
+     *                      - {@see BaseStation::PROTOCOL_V1}
+     *                      - {@see BaseStation::PROTOCOL_BOTH}
+     *                      
      *
      * @return self To use in method chains
      */
@@ -1574,7 +1726,12 @@ class BaseStation extends Definition
     /**
      * Getter for protocol
      *
-     * @return self::PROTOCOL_* Base station protocol.
+     * @return int Base station protocol.
+     *             
+     *             - {@see BaseStation::PROTOCOL_V0}
+     *             - {@see BaseStation::PROTOCOL_V1}
+     *             - {@see BaseStation::PROTOCOL_BOTH}
+     *             
      */
     public function getProtocol() : int
     {
@@ -1583,7 +1740,12 @@ class BaseStation extends Definition
     /**
      * Setter for preAmp1
      *
-     * @param self::PRE_AMP1_* $preAmp1 Base station pre amp 1.
+     * @param int $preAmp1 Base station pre amp 1.
+     *                     
+     *                     - {@see BaseStation::PRE_AMP1_LNA}
+     *                     - {@see BaseStation::PRE_AMP1_BYPASS}
+     *                     - {@see BaseStation::PRE_AMP1_ATTEND}
+     *                     
      *
      * @return self To use in method chains
      */
@@ -1595,7 +1757,12 @@ class BaseStation extends Definition
     /**
      * Getter for preAmp1
      *
-     * @return self::PRE_AMP1_* Base station pre amp 1.
+     * @return int Base station pre amp 1.
+     *             
+     *             - {@see BaseStation::PRE_AMP1_LNA}
+     *             - {@see BaseStation::PRE_AMP1_BYPASS}
+     *             - {@see BaseStation::PRE_AMP1_ATTEND}
+     *             
      */
     public function getPreAmp1() : int
     {
@@ -1604,7 +1771,12 @@ class BaseStation extends Definition
     /**
      * Setter for preAmp2
      *
-     * @param self::PRE_AMP2_* $preAmp2 Base station pre amp 2.
+     * @param int $preAmp2 Base station pre amp 2.
+     *                     
+     *                     - {@see BaseStation::PRE_AMP2_LNA}
+     *                     - {@see BaseStation::PRE_AMP2_BYPASS}
+     *                     - {@see BaseStation::PRE_AMP2_ATTEND}
+     *                     
      *
      * @return self To use in method chains
      */
@@ -1616,7 +1788,12 @@ class BaseStation extends Definition
     /**
      * Getter for preAmp2
      *
-     * @return self::PRE_AMP2_* Base station pre amp 2.
+     * @return int Base station pre amp 2.
+     *             
+     *             - {@see BaseStation::PRE_AMP2_LNA}
+     *             - {@see BaseStation::PRE_AMP2_BYPASS}
+     *             - {@see BaseStation::PRE_AMP2_ATTEND}
+     *             
      */
     public function getPreAmp2() : int
     {
@@ -1625,7 +1802,13 @@ class BaseStation extends Definition
     /**
      * Setter for RAMLog
      *
-     * @param self::R_A_M_LOG_* $RAMLog Base station RAM log.
+     * @param int $RAMLog Base station RAM log.
+     *                    
+     *                    - {@see BaseStation::R_A_M_LOG_YES}
+     *                    - {@see BaseStation::R_A_M_LOG_NO}
+     *                    - {@see BaseStation::R_A_M_LOG_AUTO}
+     *                    - {@see BaseStation::R_A_M_LOG_DROP}
+     *                    
      *
      * @return self To use in method chains
      */
@@ -1637,7 +1820,13 @@ class BaseStation extends Definition
     /**
      * Getter for RAMLog
      *
-     * @return self::R_A_M_LOG_* Base station RAM log.
+     * @return int Base station RAM log.
+     *             
+     *             - {@see BaseStation::R_A_M_LOG_YES}
+     *             - {@see BaseStation::R_A_M_LOG_NO}
+     *             - {@see BaseStation::R_A_M_LOG_AUTO}
+     *             - {@see BaseStation::R_A_M_LOG_DROP}
+     *             
      */
     public function getRAMLog() : int
     {
@@ -1646,7 +1835,15 @@ class BaseStation extends Definition
     /**
      * Setter for wwanMode
      *
-     * @param self::WWAN_MODE_* $wwanMode Base station WWAN mode.
+     * @param int $wwanMode Base station WWAN mode.
+     *                      
+     *                      - {@see BaseStation::WWAN_MODE_NONE}
+     *                      - {@see BaseStation::WWAN_MODE_AUTO}
+     *                      - {@see BaseStation::WWAN_MODE_WCDMA}
+     *                      - {@see BaseStation::WWAN_MODE_WCDMA_PREF}
+     *                      - {@see BaseStation::WWAN_MODE_GPRS_PREF}
+     *                      - {@see BaseStation::WWAN_MODE_GPRS}
+     *                      
      *
      * @return self To use in method chains
      */
@@ -1658,7 +1855,15 @@ class BaseStation extends Definition
     /**
      * Getter for wwanMode
      *
-     * @return self::WWAN_MODE_* Base station WWAN mode.
+     * @return int Base station WWAN mode.
+     *             
+     *             - {@see BaseStation::WWAN_MODE_NONE}
+     *             - {@see BaseStation::WWAN_MODE_AUTO}
+     *             - {@see BaseStation::WWAN_MODE_WCDMA}
+     *             - {@see BaseStation::WWAN_MODE_WCDMA_PREF}
+     *             - {@see BaseStation::WWAN_MODE_GPRS_PREF}
+     *             - {@see BaseStation::WWAN_MODE_GPRS}
+     *             
      */
     public function getWwanMode() : int
     {
@@ -1667,7 +1872,11 @@ class BaseStation extends Definition
     /**
      * Setter for bitRate
      *
-     * @param self::BIT_RATE_* $bitRate Base station bit rate.
+     * @param int $bitRate Base station bit rate.
+     *                     
+     *                     - {@see BaseStation::BIT_RATE_BIT_RATE_100_BS}
+     *                     - {@see BaseStation::BIT_RATE_BIT_RATE_600_BS}
+     *                     
      *
      * @return self To use in method chains
      */
@@ -1679,7 +1888,11 @@ class BaseStation extends Definition
     /**
      * Getter for bitRate
      *
-     * @return self::BIT_RATE_* Base station bit rate.
+     * @return int Base station bit rate.
+     *             
+     *             - {@see BaseStation::BIT_RATE_BIT_RATE_100_BS}
+     *             - {@see BaseStation::BIT_RATE_BIT_RATE_600_BS}
+     *             
      */
     public function getBitRate() : int
     {
@@ -1751,8 +1964,33 @@ class BaseStation extends Definition
     /**
      * Setter for mastEquipment
      *
-     * @param self::MAST_EQUIPMENT_* $mastEquipment LNA version of the base station. Mini stations have type 7 ->
-     *                                              MINI. Mini Access Stations have type 21.
+     * @param int $mastEquipment LNA version of the base station. Mini stations have type 7 -> MINI. Mini Access
+     *                           Stations have type 21.
+     *                           
+     *                           - {@see BaseStation::MAST_EQUIPMENT_OTHER}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNA_V2_SBS_868_P}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNA_V2_SBS_902_P}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNA_V2_NB_SBS_868_P}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNA_V1_SBS_868_P}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNA_V2_SBS_920_P}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNA_V2_SBS_923_P}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_MINI}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNA_V4_867}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNA_V4_915}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNAC_867}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNAC_868}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNAC_902}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNAC_916_TX}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNAC_921}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNAC_921_TX}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNAC_922_TX}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNA_V3_SBS_868_P}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNA_V3_SBS_902_P}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNA_V3_SBS_920_P}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNA_V3_SBS_923_P}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_NONE}
+     *                           - {@see BaseStation::MAST_EQUIPMENT_LNAC_868_TX}
+     *                           
      *
      * @return self To use in method chains
      */
@@ -1764,8 +2002,33 @@ class BaseStation extends Definition
     /**
      * Getter for mastEquipment
      *
-     * @return self::MAST_EQUIPMENT_* LNA version of the base station. Mini stations have type 7 -> MINI. Mini Access
-     *                                Stations have type 21.
+     * @return int LNA version of the base station. Mini stations have type 7 -> MINI. Mini Access Stations have type
+     *             21.
+     *             
+     *             - {@see BaseStation::MAST_EQUIPMENT_OTHER}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNA_V2_SBS_868_P}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNA_V2_SBS_902_P}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNA_V2_NB_SBS_868_P}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNA_V1_SBS_868_P}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNA_V2_SBS_920_P}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNA_V2_SBS_923_P}
+     *             - {@see BaseStation::MAST_EQUIPMENT_MINI}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNA_V4_867}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNA_V4_915}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNAC_867}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNAC_868}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNAC_902}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNAC_916_TX}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNAC_921}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNAC_921_TX}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNAC_922_TX}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNA_V3_SBS_868_P}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNA_V3_SBS_902_P}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNA_V3_SBS_920_P}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNA_V3_SBS_923_P}
+     *             - {@see BaseStation::MAST_EQUIPMENT_NONE}
+     *             - {@see BaseStation::MAST_EQUIPMENT_LNAC_868_TX}
+     *             
      */
     public function getMastEquipment() : int
     {
@@ -1816,7 +2079,20 @@ class BaseStation extends Definition
     /**
      * Setter for cavityFilterVersion
      *
-     * @param self::CAVITY_FILTER_VERSION_* $cavityFilterVersion Cavity filter version of the base station.
+     * @param int $cavityFilterVersion Cavity filter version of the base station.
+     *                                 
+     *                                 - {@see BaseStation::CAVITY_FILTER_VERSION_NONE}
+     *                                 - {@see BaseStation::CAVITY_FILTER_VERSION_OTHER}
+     *                                 - {@see BaseStation::CAVITY_FILTER_VERSION_ETSI_868MHZ_MATECH}
+     *                                 - {@see BaseStation::CAVITY_FILTER_VERSION_ETSI_868MHZ_ELHYTE}
+     *                                 - {@see BaseStation::CAVITY_FILTER_VERSION_FCC_905MHZ_MATECH}
+     *                                 - {@see BaseStation::CAVITY_FILTER_VERSION_FCC_905MHZ_ELHYTE}
+     *                                 - {@see BaseStation::CAVITY_FILTER_VERSION_FCC_920MHZ}
+     *                                 - {@see BaseStation::CAVITY_FILTER_VERSION_FCC_923MHZ}
+     *                                 - {@see BaseStation::CAVITY_FILTER_VERSION_FCC_922_5MHZ}
+     *                                 - {@see BaseStation::CAVITY_FILTER_VERSION_ETSI_867MHZ_MATECH}
+     *                                 - {@see BaseStation::CAVITY_FILTER_VERSION_ETSI_867MHZ_TECHNIWAVE}
+     *                                 
      *
      * @return self To use in method chains
      */
@@ -1828,7 +2104,20 @@ class BaseStation extends Definition
     /**
      * Getter for cavityFilterVersion
      *
-     * @return self::CAVITY_FILTER_VERSION_* Cavity filter version of the base station.
+     * @return int Cavity filter version of the base station.
+     *             
+     *             - {@see BaseStation::CAVITY_FILTER_VERSION_NONE}
+     *             - {@see BaseStation::CAVITY_FILTER_VERSION_OTHER}
+     *             - {@see BaseStation::CAVITY_FILTER_VERSION_ETSI_868MHZ_MATECH}
+     *             - {@see BaseStation::CAVITY_FILTER_VERSION_ETSI_868MHZ_ELHYTE}
+     *             - {@see BaseStation::CAVITY_FILTER_VERSION_FCC_905MHZ_MATECH}
+     *             - {@see BaseStation::CAVITY_FILTER_VERSION_FCC_905MHZ_ELHYTE}
+     *             - {@see BaseStation::CAVITY_FILTER_VERSION_FCC_920MHZ}
+     *             - {@see BaseStation::CAVITY_FILTER_VERSION_FCC_923MHZ}
+     *             - {@see BaseStation::CAVITY_FILTER_VERSION_FCC_922_5MHZ}
+     *             - {@see BaseStation::CAVITY_FILTER_VERSION_ETSI_867MHZ_MATECH}
+     *             - {@see BaseStation::CAVITY_FILTER_VERSION_ETSI_867MHZ_TECHNIWAVE}
+     *             
      */
     public function getCavityFilterVersion() : int
     {
@@ -2137,7 +2426,11 @@ class BaseStation extends Definition
     /**
      * Setter for antennaLocationCode
      *
-     * @param self::ANTENNA_LOCATION_CODE_* $antennaLocationCode Antenna location.
+     * @param int $antennaLocationCode Antenna location.
+     *                                 
+     *                                 - {@see BaseStation::ANTENNA_LOCATION_CODE_OUTDOOR}
+     *                                 - {@see BaseStation::ANTENNA_LOCATION_CODE_INDOOR}
+     *                                 
      *
      * @return self To use in method chains
      */
@@ -2149,7 +2442,11 @@ class BaseStation extends Definition
     /**
      * Getter for antennaLocationCode
      *
-     * @return self::ANTENNA_LOCATION_CODE_* Antenna location.
+     * @return int Antenna location.
+     *             
+     *             - {@see BaseStation::ANTENNA_LOCATION_CODE_OUTDOOR}
+     *             - {@see BaseStation::ANTENNA_LOCATION_CODE_INDOOR}
+     *             
      */
     public function getAntennaLocationCode() : int
     {
@@ -2158,7 +2455,11 @@ class BaseStation extends Definition
     /**
      * Setter for serviceCoverage
      *
-     * @param self::SERVICE_COVERAGE_* $serviceCoverage Service coverage (for Mini base station)
+     * @param int $serviceCoverage Service coverage (for Mini base station)
+     *                             
+     *                             - {@see BaseStation::SERVICE_COVERAGE_GLOBAL}
+     *                             - {@see BaseStation::SERVICE_COVERAGE_CUSTOMER}
+     *                             
      *
      * @return self To use in method chains
      */
@@ -2170,7 +2471,11 @@ class BaseStation extends Definition
     /**
      * Getter for serviceCoverage
      *
-     * @return self::SERVICE_COVERAGE_* Service coverage (for Mini base station)
+     * @return int Service coverage (for Mini base station)
+     *             
+     *             - {@see BaseStation::SERVICE_COVERAGE_GLOBAL}
+     *             - {@see BaseStation::SERVICE_COVERAGE_CUSTOMER}
+     *             
      */
     public function getServiceCoverage() : int
     {
@@ -2179,8 +2484,13 @@ class BaseStation extends Definition
     /**
      * Setter for geolocComputation
      *
-     * @param self::GEOLOC_COMPUTATION_* $geolocComputation Defines whether the Base Station should contribute to the
-     *                                                      Sigfox Network location service.
+     * @param int $geolocComputation Defines whether the Base Station should contribute to the Sigfox Network
+     *                               location service.
+     *                               
+     *                               - {@see BaseStation::GEOLOC_COMPUTATION_DEFAULT}
+     *                               - {@see BaseStation::GEOLOC_COMPUTATION_ENABLED}
+     *                               - {@see BaseStation::GEOLOC_COMPUTATION_DISABLED}
+     *                               
      *
      * @return self To use in method chains
      */
@@ -2192,8 +2502,12 @@ class BaseStation extends Definition
     /**
      * Getter for geolocComputation
      *
-     * @return self::GEOLOC_COMPUTATION_* Defines whether the Base Station should contribute to the Sigfox Network
-     *                                    location service.
+     * @return int Defines whether the Base Station should contribute to the Sigfox Network location service.
+     *             
+     *             - {@see BaseStation::GEOLOC_COMPUTATION_DEFAULT}
+     *             - {@see BaseStation::GEOLOC_COMPUTATION_ENABLED}
+     *             - {@see BaseStation::GEOLOC_COMPUTATION_DISABLED}
+     *             
      */
     public function getGeolocComputation() : int
     {
@@ -2202,11 +2516,20 @@ class BaseStation extends Definition
     /**
      * Setter for geolocGlobalStateOfContribution
      *
-     * @param self::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_* $geolocGlobalStateOfContribution The status, computed by
-     *                                                                                     the geolocation services,
-     *                                                                                     of the Base Station's
-     *                                                                                     contribution to the Sigfox
-     *                                                                                     Network location service.
+     * @param int $geolocGlobalStateOfContribution The status, computed by the geolocation services, of the Base
+     *                                             Station's contribution to the Sigfox Network location service.
+     *                                             
+     *                                             - {@see
+     *                                             BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_NOT_CONTRIBUTING}
+     *                                             - {@see
+     *                                             BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_CURRENTLY_CONTRIBUTING}
+     *                                             - {@see
+     *                                             BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_GREY_LISTED}
+     *                                             - {@see
+     *                                             BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_BLACK_LISTED}
+     *                                             - {@see
+     *                                             BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_NOT_AVAILABLE}
+     *                                             
      *
      * @return self To use in method chains
      */
@@ -2218,9 +2541,15 @@ class BaseStation extends Definition
     /**
      * Getter for geolocGlobalStateOfContribution
      *
-     * @return self::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_* The status, computed by the geolocation services, of the
-     *                                                     Base Station's contribution to the Sigfox Network location
-     *                                                     service.
+     * @return int The status, computed by the geolocation services, of the Base Station's contribution to the Sigfox
+     *             Network location service.
+     *             
+     *             - {@see BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_NOT_CONTRIBUTING}
+     *             - {@see BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_CURRENTLY_CONTRIBUTING}
+     *             - {@see BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_GREY_LISTED}
+     *             - {@see BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_BLACK_LISTED}
+     *             - {@see BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_NOT_AVAILABLE}
+     *             
      */
     public function getGeolocGlobalStateOfContribution() : int
     {

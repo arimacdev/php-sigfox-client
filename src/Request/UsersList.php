@@ -7,13 +7,11 @@ use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Retrieve a list of users according to visibility permissions and request filters.
- * 
  */
 class UsersList extends Definition
 {
     /**
      * Defines the other available fields to be returned in the response.
-     * 
      *
      * @var string
      */
@@ -45,7 +43,6 @@ class UsersList extends Definition
     /**
      * The field on which the list will be sorted. (field to sort ascending or -field to sort descending)
      * sort by name will sort on lowercase and ascii string version of "<firstName> <lastName>"
-     * 
      *
      * @var string
      */

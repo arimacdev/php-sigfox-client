@@ -123,8 +123,21 @@ class BaseSite extends Definition
     protected ?string $comment = null;
     /**
      * Site status:
+     * 
+     * - {@see BaseSite::STATUS_PROD}
+     * - {@see BaseSite::STATUS_REFUSED}
+     * - {@see BaseSite::STATUS_INSTALLED}
+     * - {@see BaseSite::STATUS_NOT_PLANNED}
+     * - {@see BaseSite::STATUS_PRE_PROD}
+     * - {@see BaseSite::STATUS_CANDIDATE}
+     * - {@see BaseSite::STATUS_CANCELLED}
+     * - {@see BaseSite::STATUS_CLIENT}
+     * - {@see BaseSite::STATUS_RD}
+     * - {@see BaseSite::STATUS_LABO}
+     * - {@see BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY}
+     * - {@see BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY}
      *
-     * @var self::STATUS_*
+     * @var int
      */
     protected ?int $status = null;
     /**
@@ -135,14 +148,26 @@ class BaseSite extends Definition
     protected ?string $statusComment = null;
     /**
      * Station installation:
+     * 
+     * - {@see BaseSite::STATION_INSTALLATION_INDOOR_WITHOUT_CABINET}
+     * - {@see BaseSite::STATION_INSTALLATION_OUTDOOR_WITH_CABINET}
+     * - {@see BaseSite::STATION_INSTALLATION_INDOOR_WITH_CABINET}
+     * - {@see BaseSite::STATION_INSTALLATION_OUTDOOR_WITHOUT_CABINET}
      *
-     * @var self::STATION_INSTALLATION_*
+     * @var int
      */
     protected ?int $stationInstallation = null;
     /**
      * Inverter type:
+     * 
+     * - {@see BaseSite::INVERTER_INFO_NONE}
+     * - {@see BaseSite::INVERTER_INFO_AC_POWER_HOST}
+     * - {@see BaseSite::INVERTER_INFO_AC_POWER_HOST_INVERTER}
+     * - {@see BaseSite::INVERTER_INFO_AC_POWER_SIGFOX_INVERTER}
+     * - {@see BaseSite::INVERTER_INFO_DC_POWER_HOST_48V}
+     * - {@see BaseSite::INVERTER_INFO_DC_POWER_SOLAR}
      *
-     * @var self::INVERTER_INFO_*
+     * @var int
      */
     protected ?int $inverterInfo = null;
     /**
@@ -252,7 +277,21 @@ class BaseSite extends Definition
     /**
      * Setter for status
      *
-     * @param self::STATUS_* $status Site status:
+     * @param int $status Site status:
+     *                    
+     *                    - {@see BaseSite::STATUS_PROD}
+     *                    - {@see BaseSite::STATUS_REFUSED}
+     *                    - {@see BaseSite::STATUS_INSTALLED}
+     *                    - {@see BaseSite::STATUS_NOT_PLANNED}
+     *                    - {@see BaseSite::STATUS_PRE_PROD}
+     *                    - {@see BaseSite::STATUS_CANDIDATE}
+     *                    - {@see BaseSite::STATUS_CANCELLED}
+     *                    - {@see BaseSite::STATUS_CLIENT}
+     *                    - {@see BaseSite::STATUS_RD}
+     *                    - {@see BaseSite::STATUS_LABO}
+     *                    - {@see BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY}
+     *                    - {@see BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY}
+     *                    
      *
      * @return self To use in method chains
      */
@@ -264,7 +303,21 @@ class BaseSite extends Definition
     /**
      * Getter for status
      *
-     * @return self::STATUS_* Site status:
+     * @return int Site status:
+     *             
+     *             - {@see BaseSite::STATUS_PROD}
+     *             - {@see BaseSite::STATUS_REFUSED}
+     *             - {@see BaseSite::STATUS_INSTALLED}
+     *             - {@see BaseSite::STATUS_NOT_PLANNED}
+     *             - {@see BaseSite::STATUS_PRE_PROD}
+     *             - {@see BaseSite::STATUS_CANDIDATE}
+     *             - {@see BaseSite::STATUS_CANCELLED}
+     *             - {@see BaseSite::STATUS_CLIENT}
+     *             - {@see BaseSite::STATUS_RD}
+     *             - {@see BaseSite::STATUS_LABO}
+     *             - {@see BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY}
+     *             - {@see BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY}
+     *             
      */
     public function getStatus() : int
     {
@@ -294,7 +347,13 @@ class BaseSite extends Definition
     /**
      * Setter for stationInstallation
      *
-     * @param self::STATION_INSTALLATION_* $stationInstallation Station installation:
+     * @param int $stationInstallation Station installation:
+     *                                 
+     *                                 - {@see BaseSite::STATION_INSTALLATION_INDOOR_WITHOUT_CABINET}
+     *                                 - {@see BaseSite::STATION_INSTALLATION_OUTDOOR_WITH_CABINET}
+     *                                 - {@see BaseSite::STATION_INSTALLATION_INDOOR_WITH_CABINET}
+     *                                 - {@see BaseSite::STATION_INSTALLATION_OUTDOOR_WITHOUT_CABINET}
+     *                                 
      *
      * @return self To use in method chains
      */
@@ -306,7 +365,13 @@ class BaseSite extends Definition
     /**
      * Getter for stationInstallation
      *
-     * @return self::STATION_INSTALLATION_* Station installation:
+     * @return int Station installation:
+     *             
+     *             - {@see BaseSite::STATION_INSTALLATION_INDOOR_WITHOUT_CABINET}
+     *             - {@see BaseSite::STATION_INSTALLATION_OUTDOOR_WITH_CABINET}
+     *             - {@see BaseSite::STATION_INSTALLATION_INDOOR_WITH_CABINET}
+     *             - {@see BaseSite::STATION_INSTALLATION_OUTDOOR_WITHOUT_CABINET}
+     *             
      */
     public function getStationInstallation() : int
     {
@@ -315,7 +380,15 @@ class BaseSite extends Definition
     /**
      * Setter for inverterInfo
      *
-     * @param self::INVERTER_INFO_* $inverterInfo Inverter type:
+     * @param int $inverterInfo Inverter type:
+     *                          
+     *                          - {@see BaseSite::INVERTER_INFO_NONE}
+     *                          - {@see BaseSite::INVERTER_INFO_AC_POWER_HOST}
+     *                          - {@see BaseSite::INVERTER_INFO_AC_POWER_HOST_INVERTER}
+     *                          - {@see BaseSite::INVERTER_INFO_AC_POWER_SIGFOX_INVERTER}
+     *                          - {@see BaseSite::INVERTER_INFO_DC_POWER_HOST_48V}
+     *                          - {@see BaseSite::INVERTER_INFO_DC_POWER_SOLAR}
+     *                          
      *
      * @return self To use in method chains
      */
@@ -327,7 +400,15 @@ class BaseSite extends Definition
     /**
      * Getter for inverterInfo
      *
-     * @return self::INVERTER_INFO_* Inverter type:
+     * @return int Inverter type:
+     *             
+     *             - {@see BaseSite::INVERTER_INFO_NONE}
+     *             - {@see BaseSite::INVERTER_INFO_AC_POWER_HOST}
+     *             - {@see BaseSite::INVERTER_INFO_AC_POWER_HOST_INVERTER}
+     *             - {@see BaseSite::INVERTER_INFO_AC_POWER_SIGFOX_INVERTER}
+     *             - {@see BaseSite::INVERTER_INFO_DC_POWER_HOST_48V}
+     *             - {@see BaseSite::INVERTER_INFO_DC_POWER_SOLAR}
+     *             
      */
     public function getInverterInfo() : int
     {

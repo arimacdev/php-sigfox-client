@@ -56,8 +56,18 @@ class CommonGroupCreate extends Definition
     protected ?string $description = null;
     /**
      * Group's type:
+     * 
+     * - {@see CommonGroupCreate::TYPE_SO}
+     * - {@see CommonGroupCreate::TYPE_OTHER}
+     * - {@see CommonGroupCreate::TYPE_SVNO}
+     * - {@see CommonGroupCreate::TYPE_PARTNERS}
+     * - {@see CommonGroupCreate::TYPE_NIP}
+     * - {@see CommonGroupCreate::TYPE_DIST}
+     * - {@see CommonGroupCreate::TYPE_CHANNEL}
+     * - {@see CommonGroupCreate::TYPE_STARTER}
+     * - {@see CommonGroupCreate::TYPE_PARTNER}
      *
-     * @var self::TYPE_*
+     * @var int
      */
     protected ?int $type = null;
     /**
@@ -119,7 +129,18 @@ class CommonGroupCreate extends Definition
     /**
      * Setter for type
      *
-     * @param self::TYPE_* $type Group's type:
+     * @param int $type Group's type:
+     *                  
+     *                  - {@see CommonGroupCreate::TYPE_SO}
+     *                  - {@see CommonGroupCreate::TYPE_OTHER}
+     *                  - {@see CommonGroupCreate::TYPE_SVNO}
+     *                  - {@see CommonGroupCreate::TYPE_PARTNERS}
+     *                  - {@see CommonGroupCreate::TYPE_NIP}
+     *                  - {@see CommonGroupCreate::TYPE_DIST}
+     *                  - {@see CommonGroupCreate::TYPE_CHANNEL}
+     *                  - {@see CommonGroupCreate::TYPE_STARTER}
+     *                  - {@see CommonGroupCreate::TYPE_PARTNER}
+     *                  
      *
      * @return self To use in method chains
      */
@@ -131,7 +152,18 @@ class CommonGroupCreate extends Definition
     /**
      * Getter for type
      *
-     * @return self::TYPE_* Group's type:
+     * @return int Group's type:
+     *             
+     *             - {@see CommonGroupCreate::TYPE_SO}
+     *             - {@see CommonGroupCreate::TYPE_OTHER}
+     *             - {@see CommonGroupCreate::TYPE_SVNO}
+     *             - {@see CommonGroupCreate::TYPE_PARTNERS}
+     *             - {@see CommonGroupCreate::TYPE_NIP}
+     *             - {@see CommonGroupCreate::TYPE_DIST}
+     *             - {@see CommonGroupCreate::TYPE_CHANNEL}
+     *             - {@see CommonGroupCreate::TYPE_STARTER}
+     *             - {@see CommonGroupCreate::TYPE_PARTNER}
+     *             
      */
     public function getType() : int
     {

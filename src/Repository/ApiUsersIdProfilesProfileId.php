@@ -2,8 +2,13 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Client\Client;
 class ApiUsersIdProfilesProfileId
 {
+    /**
+     * The HTTP client
+     */
+    protected ?Client $client;
     /**
      * The API user identifier
      */
@@ -15,17 +20,18 @@ class ApiUsersIdProfilesProfileId
     /**
      * Creating the repository
      *
-     * @param string $id The API user identifier
+     * @param Client $client    The HTTP client
+     * @param string $id        The API user identifier
      * @param string $profileId The profile identifier
      */
-    public function __construct(string $id, string $profileId)
+    public function __construct(Client $client, string $id, string $profileId)
     {
+        $this->client = $client;
         $this->id = $id;
         $this->profileId = $profileId;
     }
     /**
      * Delete a profile to a given API user.
-     * 
      */
     public function delete()
     {

@@ -63,8 +63,17 @@ class LastComputedLocation extends Definition
     protected ?int $radius = null;
     /**
      * Define how the location has been computed:
+     * 
+     * - {@see LastComputedLocation::SOURCE_CODE_RSSI_AND_POSITION_OF_THE_STATION}
+     * - {@see LastComputedLocation::SOURCE_CODE_THE_GPS_DATA_INSIDE_THE_PAYLOAD}
+     * - {@see LastComputedLocation::SOURCE_CODE_NETWORK_LOCATION}
+     * - {@see LastComputedLocation::SOURCE_CODE_POI_LOCATION}
+     * - {@see LastComputedLocation::SOURCE_CODE_HD_NETWORK_LOCATION}
+     * - {@see LastComputedLocation::SOURCE_CODE_PRIVATE_DATABASE_LOCATION}
+     * - {@see LastComputedLocation::SOURCE_CODE_WIFI_LOCATION}
+     * - {@see LastComputedLocation::SOURCE_CODE_PROXIMITY_LOCATION}
      *
-     * @var self::SOURCE_CODE_*
+     * @var int
      */
     protected ?int $sourceCode = null;
     /**
@@ -140,7 +149,17 @@ class LastComputedLocation extends Definition
     /**
      * Setter for sourceCode
      *
-     * @param self::SOURCE_CODE_* $sourceCode Define how the location has been computed:
+     * @param int $sourceCode Define how the location has been computed:
+     *                        
+     *                        - {@see LastComputedLocation::SOURCE_CODE_RSSI_AND_POSITION_OF_THE_STATION}
+     *                        - {@see LastComputedLocation::SOURCE_CODE_THE_GPS_DATA_INSIDE_THE_PAYLOAD}
+     *                        - {@see LastComputedLocation::SOURCE_CODE_NETWORK_LOCATION}
+     *                        - {@see LastComputedLocation::SOURCE_CODE_POI_LOCATION}
+     *                        - {@see LastComputedLocation::SOURCE_CODE_HD_NETWORK_LOCATION}
+     *                        - {@see LastComputedLocation::SOURCE_CODE_PRIVATE_DATABASE_LOCATION}
+     *                        - {@see LastComputedLocation::SOURCE_CODE_WIFI_LOCATION}
+     *                        - {@see LastComputedLocation::SOURCE_CODE_PROXIMITY_LOCATION}
+     *                        
      *
      * @return self To use in method chains
      */
@@ -152,7 +171,17 @@ class LastComputedLocation extends Definition
     /**
      * Getter for sourceCode
      *
-     * @return self::SOURCE_CODE_* Define how the location has been computed:
+     * @return int Define how the location has been computed:
+     *             
+     *             - {@see LastComputedLocation::SOURCE_CODE_RSSI_AND_POSITION_OF_THE_STATION}
+     *             - {@see LastComputedLocation::SOURCE_CODE_THE_GPS_DATA_INSIDE_THE_PAYLOAD}
+     *             - {@see LastComputedLocation::SOURCE_CODE_NETWORK_LOCATION}
+     *             - {@see LastComputedLocation::SOURCE_CODE_POI_LOCATION}
+     *             - {@see LastComputedLocation::SOURCE_CODE_HD_NETWORK_LOCATION}
+     *             - {@see LastComputedLocation::SOURCE_CODE_PRIVATE_DATABASE_LOCATION}
+     *             - {@see LastComputedLocation::SOURCE_CODE_WIFI_LOCATION}
+     *             - {@see LastComputedLocation::SOURCE_CODE_PROXIMITY_LOCATION}
+     *             
      */
     public function getSourceCode() : int
     {

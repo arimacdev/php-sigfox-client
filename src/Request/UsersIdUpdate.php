@@ -7,7 +7,6 @@ use Arimac\Sigfox\Definition\UserUpdate;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Update a given user.
- * 
  */
 class UsersIdUpdate extends Definition
 {

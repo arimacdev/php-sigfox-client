@@ -82,8 +82,12 @@ class ContractInfoCreate extends CommonContractInfo
     protected ?string $orderName = null;
     /**
      * The pricing model used by this contract info.
+     * 
+     * - {@see ContractInfoCreate::PRICING_MODEL_PRICING_MODEL_V1}
+     * - {@see ContractInfoCreate::PRICING_MODEL_PRICING_MODEL_V2}
+     * - {@see ContractInfoCreate::PRICING_MODEL_PRICING_MODEL_V3}
      *
-     * @var self::PRICING_MODEL_*
+     * @var int
      */
     protected ?int $pricingModel = null;
     /**
@@ -100,8 +104,16 @@ class ContractInfoCreate extends CommonContractInfo
     protected ?string $timezone = null;
     /**
      * The contract info subscription plan.
+     * 
+     * - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_FREE_ORDER}
+     * - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_PAYG}
+     * - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_CVP}
+     * - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_CVP_FLEX}
+     * - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_PACK}
+     * - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_DEVKIT}
+     * - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_ACTIVATE}
      *
-     * @var self::SUBSCRIPTION_PLAN_*
+     * @var int
      */
     protected ?int $subscriptionPlan = null;
     /**
@@ -226,7 +238,12 @@ class ContractInfoCreate extends CommonContractInfo
     /**
      * Setter for pricingModel
      *
-     * @param self::PRICING_MODEL_* $pricingModel The pricing model used by this contract info.
+     * @param int $pricingModel The pricing model used by this contract info.
+     *                          
+     *                          - {@see ContractInfoCreate::PRICING_MODEL_PRICING_MODEL_V1}
+     *                          - {@see ContractInfoCreate::PRICING_MODEL_PRICING_MODEL_V2}
+     *                          - {@see ContractInfoCreate::PRICING_MODEL_PRICING_MODEL_V3}
+     *                          
      *
      * @return self To use in method chains
      */
@@ -238,7 +255,12 @@ class ContractInfoCreate extends CommonContractInfo
     /**
      * Getter for pricingModel
      *
-     * @return self::PRICING_MODEL_* The pricing model used by this contract info.
+     * @return int The pricing model used by this contract info.
+     *             
+     *             - {@see ContractInfoCreate::PRICING_MODEL_PRICING_MODEL_V1}
+     *             - {@see ContractInfoCreate::PRICING_MODEL_PRICING_MODEL_V2}
+     *             - {@see ContractInfoCreate::PRICING_MODEL_PRICING_MODEL_V3}
+     *             
      */
     public function getPricingModel() : int
     {
@@ -291,7 +313,16 @@ class ContractInfoCreate extends CommonContractInfo
     /**
      * Setter for subscriptionPlan
      *
-     * @param self::SUBSCRIPTION_PLAN_* $subscriptionPlan The contract info subscription plan.
+     * @param int $subscriptionPlan The contract info subscription plan.
+     *                              
+     *                              - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_FREE_ORDER}
+     *                              - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_PAYG}
+     *                              - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_CVP}
+     *                              - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_CVP_FLEX}
+     *                              - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_PACK}
+     *                              - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_DEVKIT}
+     *                              - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_ACTIVATE}
+     *                              
      *
      * @return self To use in method chains
      */
@@ -303,7 +334,16 @@ class ContractInfoCreate extends CommonContractInfo
     /**
      * Getter for subscriptionPlan
      *
-     * @return self::SUBSCRIPTION_PLAN_* The contract info subscription plan.
+     * @return int The contract info subscription plan.
+     *             
+     *             - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_FREE_ORDER}
+     *             - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_PAYG}
+     *             - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_CVP}
+     *             - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_CVP_FLEX}
+     *             - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_PACK}
+     *             - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_DEVKIT}
+     *             - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_ACTIVATE}
+     *             
      */
     public function getSubscriptionPlan() : int
     {

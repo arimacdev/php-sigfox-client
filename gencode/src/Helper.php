@@ -28,8 +28,10 @@ class Helper
         }
         $docComment = "";
         if ($description && $description !== "") {
+            $description = trim($description);
             $lines = explode("\n", $description);
             foreach ($lines as $line) {
+                $line = trim($line);
                 // 4 = tab size, 120 = PSR2 max line width 2 = " *"
                 $allocatedSize = 120 - 4 * ($level - 0) - 2;
                 if (strlen($line) > $allocatedSize) {

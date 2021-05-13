@@ -6,11 +6,10 @@ use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
- * Retrieve a list of groups according to visibility permissions and request filters. 
- *   If parentIds is provided, retrieve all direct sub-groups under the given parents. If parentIds is not provided,
+ * Retrieve a list of groups according to visibility permissions and request filters.
+ * If parentIds is provided, retrieve all direct sub-groups under the given parents. If parentIds is not provided,
  * retrieve all direct sub-groups under the API user's group.
- *   If deep is true, retrieve all sub-groups under either given parent groups or the API user group.
- * 
+ * If deep is true, retrieve all sub-groups under either given parent groups or the API user group.
  */
 class GroupsList extends Definition
 {
@@ -70,20 +69,28 @@ class GroupsList extends Definition
     protected ?string $name = null;
     /**
      * Group's type
+     * 
+     * - {@link GroupsList::TYPES_SO}
+     * - {@link GroupsList::TYPES_OTHER}
+     * - {@link GroupsList::TYPES_SVNO}
+     * - {@link GroupsList::TYPES_PARTNERS}
+     * - {@link GroupsList::TYPES_NIP}
+     * - {@link GroupsList::TYPES_DIST}
+     * - {@link GroupsList::TYPES_CHANNEL}
+     * - {@link GroupsList::TYPES_STARTER}
+     * - {@link GroupsList::TYPES_PARTNER}
      *
-     * @var self::TYPES_*[]
+     * @var int[]
      */
     protected ?array $types = null;
     /**
      * Defines the other available fields to be returned in the response.
-     * 
      *
      * @var string
      */
     protected ?string $fields = null;
     /**
      * Defines a resource:action pair the user has access on groups.
-     * 
      *
      * @var string
      */
@@ -160,7 +167,18 @@ class GroupsList extends Definition
     /**
      * Setter for types
      *
-     * @param self::TYPES_*[] $types Group's type
+     * @param int[] $types Group's type
+     *                     
+     *                     - {@link GroupsList::TYPES_SO}
+     *                     - {@link GroupsList::TYPES_OTHER}
+     *                     - {@link GroupsList::TYPES_SVNO}
+     *                     - {@link GroupsList::TYPES_PARTNERS}
+     *                     - {@link GroupsList::TYPES_NIP}
+     *                     - {@link GroupsList::TYPES_DIST}
+     *                     - {@link GroupsList::TYPES_CHANNEL}
+     *                     - {@link GroupsList::TYPES_STARTER}
+     *                     - {@link GroupsList::TYPES_PARTNER}
+     *                     
      *
      * @return self To use in method chains
      */

@@ -2,8 +2,22 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Client\Client;
 class DevicesBulkSuspend
 {
+    /**
+     * The HTTP client
+     */
+    protected ?Client $client;
+    /**
+     * Creating the repository
+     *
+     * @param Client $client The HTTP client
+     */
+    public function __construct(Client $client)
+    {
+        $this->client = $client;
+    }
     /**
      * Find by jobId
      *
@@ -13,6 +27,6 @@ class DevicesBulkSuspend
      */
     public function find(string $jobId) : DevicesBulkSuspendJobId
     {
-        return new DevicesBulkSuspendJobId($jobId);
+        return new DevicesBulkSuspendJobId($this->client, $jobId);
     }
 }

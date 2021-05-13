@@ -43,8 +43,17 @@ class RadioConfiguration extends Definition
     public const ID_RC7 = 7;
     /**
      * The radio configuration identifier
+     * 
+     * - {@see RadioConfiguration::ID_RC1}
+     * - {@see RadioConfiguration::ID_RC2}
+     * - {@see RadioConfiguration::ID_RC3}
+     * - {@see RadioConfiguration::ID_RC101}
+     * - {@see RadioConfiguration::ID_RC4}
+     * - {@see RadioConfiguration::ID_RC5}
+     * - {@see RadioConfiguration::ID_RC6}
+     * - {@see RadioConfiguration::ID_RC7}
      *
-     * @var self::ID_*
+     * @var int
      */
     protected ?int $id = null;
     protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'int'));
@@ -52,7 +61,17 @@ class RadioConfiguration extends Definition
     /**
      * Setter for id
      *
-     * @param self::ID_* $id The radio configuration identifier
+     * @param int $id The radio configuration identifier
+     *                
+     *                - {@see RadioConfiguration::ID_RC1}
+     *                - {@see RadioConfiguration::ID_RC2}
+     *                - {@see RadioConfiguration::ID_RC3}
+     *                - {@see RadioConfiguration::ID_RC101}
+     *                - {@see RadioConfiguration::ID_RC4}
+     *                - {@see RadioConfiguration::ID_RC5}
+     *                - {@see RadioConfiguration::ID_RC6}
+     *                - {@see RadioConfiguration::ID_RC7}
+     *                
      *
      * @return self To use in method chains
      */
@@ -64,7 +83,17 @@ class RadioConfiguration extends Definition
     /**
      * Getter for id
      *
-     * @return self::ID_* The radio configuration identifier
+     * @return int The radio configuration identifier
+     *             
+     *             - {@see RadioConfiguration::ID_RC1}
+     *             - {@see RadioConfiguration::ID_RC2}
+     *             - {@see RadioConfiguration::ID_RC3}
+     *             - {@see RadioConfiguration::ID_RC101}
+     *             - {@see RadioConfiguration::ID_RC4}
+     *             - {@see RadioConfiguration::ID_RC5}
+     *             - {@see RadioConfiguration::ID_RC6}
+     *             - {@see RadioConfiguration::ID_RC7}
+     *             
      */
     public function getId() : int
     {

@@ -59,14 +59,24 @@ class EthernetConnectivityForBs extends EthernetConnectivityBase
     protected ?MinBaseStation $baseStation = null;
     /**
      * State of an ethernet connectivity configuration
+     * 
+     * - {@see EthernetConnectivityForBs::STATE_ACTIVE}
+     * - {@see EthernetConnectivityForBs::STATE_PASSIVE}
+     * - {@see EthernetConnectivityForBs::STATE_PENDING}
+     * - {@see EthernetConnectivityForBs::STATE_REJECTED}
+     * - {@see EthernetConnectivityForBs::STATE_DELETING}
      *
-     * @var self::STATE_*
+     * @var int
      */
     protected ?int $state = null;
     /**
      * Synchronisation status of an ethernet connectivity configuration
+     * 
+     * - {@see EthernetConnectivityForBs::SYNC_STATUS_OK}
+     * - {@see EthernetConnectivityForBs::SYNC_STATUS_TO_BE_SENT}
+     * - {@see EthernetConnectivityForBs::SYNC_STATUS_SENT}
      *
-     * @var self::SYNC_STATUS_*
+     * @var int
      */
     protected ?int $syncStatus = null;
     /**
@@ -144,7 +154,14 @@ class EthernetConnectivityForBs extends EthernetConnectivityBase
     /**
      * Setter for state
      *
-     * @param self::STATE_* $state State of an ethernet connectivity configuration
+     * @param int $state State of an ethernet connectivity configuration
+     *                   
+     *                   - {@see EthernetConnectivityForBs::STATE_ACTIVE}
+     *                   - {@see EthernetConnectivityForBs::STATE_PASSIVE}
+     *                   - {@see EthernetConnectivityForBs::STATE_PENDING}
+     *                   - {@see EthernetConnectivityForBs::STATE_REJECTED}
+     *                   - {@see EthernetConnectivityForBs::STATE_DELETING}
+     *                   
      *
      * @return self To use in method chains
      */
@@ -156,7 +173,14 @@ class EthernetConnectivityForBs extends EthernetConnectivityBase
     /**
      * Getter for state
      *
-     * @return self::STATE_* State of an ethernet connectivity configuration
+     * @return int State of an ethernet connectivity configuration
+     *             
+     *             - {@see EthernetConnectivityForBs::STATE_ACTIVE}
+     *             - {@see EthernetConnectivityForBs::STATE_PASSIVE}
+     *             - {@see EthernetConnectivityForBs::STATE_PENDING}
+     *             - {@see EthernetConnectivityForBs::STATE_REJECTED}
+     *             - {@see EthernetConnectivityForBs::STATE_DELETING}
+     *             
      */
     public function getState() : int
     {
@@ -165,7 +189,12 @@ class EthernetConnectivityForBs extends EthernetConnectivityBase
     /**
      * Setter for syncStatus
      *
-     * @param self::SYNC_STATUS_* $syncStatus Synchronisation status of an ethernet connectivity configuration
+     * @param int $syncStatus Synchronisation status of an ethernet connectivity configuration
+     *                        
+     *                        - {@see EthernetConnectivityForBs::SYNC_STATUS_OK}
+     *                        - {@see EthernetConnectivityForBs::SYNC_STATUS_TO_BE_SENT}
+     *                        - {@see EthernetConnectivityForBs::SYNC_STATUS_SENT}
+     *                        
      *
      * @return self To use in method chains
      */
@@ -177,7 +206,12 @@ class EthernetConnectivityForBs extends EthernetConnectivityBase
     /**
      * Getter for syncStatus
      *
-     * @return self::SYNC_STATUS_* Synchronisation status of an ethernet connectivity configuration
+     * @return int Synchronisation status of an ethernet connectivity configuration
+     *             
+     *             - {@see EthernetConnectivityForBs::SYNC_STATUS_OK}
+     *             - {@see EthernetConnectivityForBs::SYNC_STATUS_TO_BE_SENT}
+     *             - {@see EthernetConnectivityForBs::SYNC_STATUS_SENT}
+     *             
      */
     public function getSyncStatus() : int
     {

@@ -9,7 +9,6 @@ use Arimac\Sigfox\Serializer\PrimitiveSerializer;
  * for specific device situation.
  * For more information please refer to the [Global Coverage API
  * article](https://support.sigfox.com/docs/global-coverage-api).
- * 
  */
 class CoveragesOperatorsRedundancy extends Definition
 {
@@ -27,7 +26,6 @@ class CoveragesOperatorsRedundancy extends Definition
     protected ?int $lng = null;
     /**
      * The group id related to the operator to get its coverage result. Is required for root sigfox users.
-     * 
      *
      * @var string
      */
@@ -37,7 +35,6 @@ class CoveragesOperatorsRedundancy extends Definition
      * - OUTDOOR, max link budget
      * - INDOOR, link budget with 20dB margin
      * - UNDERGROUND, link budget with 30dB margin
-     * 
      *
      * @var string
      */

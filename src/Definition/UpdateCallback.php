@@ -55,21 +55,32 @@ class UpdateCallback extends Definition
      * - URL
      * - BATCH_URL
      * - EMAIL
-     * 
      *
      * @var string
      */
     protected ?string $channel = null;
     /**
      * The callback's type.
+     * 
+     * - {@see UpdateCallback::CALLBACK_TYPE_DATA}
+     * - {@see UpdateCallback::CALLBACK_TYPE_SERVICE}
+     * - {@see UpdateCallback::CALLBACK_TYPE_ERROR}
      *
-     * @var self::CALLBACK_TYPE_*
+     * @var int
      */
     protected ?int $callbackType = null;
     /**
      * The callback's subtype. The subtype must be valid against its type.
+     * 
+     * - {@see UpdateCallback::CALLBACK_SUBTYPE_STATUS}
+     * - {@see UpdateCallback::CALLBACK_SUBTYPE_GEOLOC}
+     * - {@see UpdateCallback::CALLBACK_SUBTYPE_UPLINK}
+     * - {@see UpdateCallback::CALLBACK_SUBTYPE_BIDIR}
+     * - {@see UpdateCallback::CALLBACK_SUBTYPE_ACKNOWLEDGE}
+     * - {@see UpdateCallback::CALLBACK_SUBTYPE_REPEATER}
+     * - {@see UpdateCallback::CALLBACK_SUBTYPE_DATA_ADVANCED}
      *
-     * @var self::CALLBACK_SUBTYPE_*
+     * @var int
      */
     protected ?int $callbackSubtype = null;
     /**
@@ -117,7 +128,12 @@ class UpdateCallback extends Definition
     /**
      * Setter for callbackType
      *
-     * @param self::CALLBACK_TYPE_* $callbackType The callback's type.
+     * @param int $callbackType The callback's type.
+     *                          
+     *                          - {@see UpdateCallback::CALLBACK_TYPE_DATA}
+     *                          - {@see UpdateCallback::CALLBACK_TYPE_SERVICE}
+     *                          - {@see UpdateCallback::CALLBACK_TYPE_ERROR}
+     *                          
      *
      * @return self To use in method chains
      */
@@ -129,7 +145,12 @@ class UpdateCallback extends Definition
     /**
      * Getter for callbackType
      *
-     * @return self::CALLBACK_TYPE_* The callback's type.
+     * @return int The callback's type.
+     *             
+     *             - {@see UpdateCallback::CALLBACK_TYPE_DATA}
+     *             - {@see UpdateCallback::CALLBACK_TYPE_SERVICE}
+     *             - {@see UpdateCallback::CALLBACK_TYPE_ERROR}
+     *             
      */
     public function getCallbackType() : int
     {
@@ -138,8 +159,16 @@ class UpdateCallback extends Definition
     /**
      * Setter for callbackSubtype
      *
-     * @param self::CALLBACK_SUBTYPE_* $callbackSubtype The callback's subtype. The subtype must be valid against its
-     *                                                  type.
+     * @param int $callbackSubtype The callback's subtype. The subtype must be valid against its type.
+     *                             
+     *                             - {@see UpdateCallback::CALLBACK_SUBTYPE_STATUS}
+     *                             - {@see UpdateCallback::CALLBACK_SUBTYPE_GEOLOC}
+     *                             - {@see UpdateCallback::CALLBACK_SUBTYPE_UPLINK}
+     *                             - {@see UpdateCallback::CALLBACK_SUBTYPE_BIDIR}
+     *                             - {@see UpdateCallback::CALLBACK_SUBTYPE_ACKNOWLEDGE}
+     *                             - {@see UpdateCallback::CALLBACK_SUBTYPE_REPEATER}
+     *                             - {@see UpdateCallback::CALLBACK_SUBTYPE_DATA_ADVANCED}
+     *                             
      *
      * @return self To use in method chains
      */
@@ -151,7 +180,16 @@ class UpdateCallback extends Definition
     /**
      * Getter for callbackSubtype
      *
-     * @return self::CALLBACK_SUBTYPE_* The callback's subtype. The subtype must be valid against its type.
+     * @return int The callback's subtype. The subtype must be valid against its type.
+     *             
+     *             - {@see UpdateCallback::CALLBACK_SUBTYPE_STATUS}
+     *             - {@see UpdateCallback::CALLBACK_SUBTYPE_GEOLOC}
+     *             - {@see UpdateCallback::CALLBACK_SUBTYPE_UPLINK}
+     *             - {@see UpdateCallback::CALLBACK_SUBTYPE_BIDIR}
+     *             - {@see UpdateCallback::CALLBACK_SUBTYPE_ACKNOWLEDGE}
+     *             - {@see UpdateCallback::CALLBACK_SUBTYPE_REPEATER}
+     *             - {@see UpdateCallback::CALLBACK_SUBTYPE_DATA_ADVANCED}
+     *             
      */
     public function getCallbackSubtype() : int
     {

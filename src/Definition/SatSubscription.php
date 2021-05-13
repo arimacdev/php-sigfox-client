@@ -31,8 +31,12 @@ class SatSubscription extends InternetSubscription
     public const R_TYPE_STANDARD = 1;
     /**
      * Subscription connection status
+     * 
+     * - {@see SatSubscription::CONNECTION_STATUS_REQUEST}
+     * - {@see SatSubscription::CONNECTION_STATUS_CREDENTIALS_PROVIDED}
+     * - {@see SatSubscription::CONNECTION_STATUS_KIT_RECEIVED}
      *
-     * @var self::CONNECTION_STATUS_*
+     * @var int
      */
     protected ?int $connectionStatus = null;
     /**
@@ -85,15 +89,23 @@ class SatSubscription extends InternetSubscription
     protected ?string $password = null;
     /**
      * Subscription receiver type
+     * 
+     * - {@see SatSubscription::R_TYPE_HEATING}
+     * - {@see SatSubscription::R_TYPE_STANDARD}
      *
-     * @var self::R_TYPE_*
+     * @var int
      */
     protected ?int $rType = null;
     protected $serialize = array(new PrimitiveSerializer(self::class, 'connectionStatus', 'int'), new PrimitiveSerializer(self::class, 'altitude', 'int'), new PrimitiveSerializer(self::class, 'azimuth', 'int'), new PrimitiveSerializer(self::class, 'polarization', 'int'), new PrimitiveSerializer(self::class, 'orderNumber', 'string'), new PrimitiveSerializer(self::class, 'locationCode', 'string'), new PrimitiveSerializer(self::class, 'clusterCode', 'string'), new PrimitiveSerializer(self::class, 'login', 'string'), new PrimitiveSerializer(self::class, 'password', 'string'), new PrimitiveSerializer(self::class, 'rType', 'int'));
     /**
      * Setter for connectionStatus
      *
-     * @param self::CONNECTION_STATUS_* $connectionStatus Subscription connection status
+     * @param int $connectionStatus Subscription connection status
+     *                              
+     *                              - {@see SatSubscription::CONNECTION_STATUS_REQUEST}
+     *                              - {@see SatSubscription::CONNECTION_STATUS_CREDENTIALS_PROVIDED}
+     *                              - {@see SatSubscription::CONNECTION_STATUS_KIT_RECEIVED}
+     *                              
      *
      * @return self To use in method chains
      */
@@ -105,7 +117,12 @@ class SatSubscription extends InternetSubscription
     /**
      * Getter for connectionStatus
      *
-     * @return self::CONNECTION_STATUS_* Subscription connection status
+     * @return int Subscription connection status
+     *             
+     *             - {@see SatSubscription::CONNECTION_STATUS_REQUEST}
+     *             - {@see SatSubscription::CONNECTION_STATUS_CREDENTIALS_PROVIDED}
+     *             - {@see SatSubscription::CONNECTION_STATUS_KIT_RECEIVED}
+     *             
      */
     public function getConnectionStatus() : int
     {
@@ -284,7 +301,11 @@ class SatSubscription extends InternetSubscription
     /**
      * Setter for rType
      *
-     * @param self::R_TYPE_* $rType Subscription receiver type
+     * @param int $rType Subscription receiver type
+     *                   
+     *                   - {@see SatSubscription::R_TYPE_HEATING}
+     *                   - {@see SatSubscription::R_TYPE_STANDARD}
+     *                   
      *
      * @return self To use in method chains
      */
@@ -296,7 +317,11 @@ class SatSubscription extends InternetSubscription
     /**
      * Getter for rType
      *
-     * @return self::R_TYPE_* Subscription receiver type
+     * @return int Subscription receiver type
+     *             
+     *             - {@see SatSubscription::R_TYPE_HEATING}
+     *             - {@see SatSubscription::R_TYPE_STANDARD}
+     *             
      */
     public function getRType() : int
     {

@@ -32,8 +32,11 @@ class MinBaseStationWithType extends Definition
     protected ?string $name = null;
     /**
      * Resource type.
+     * 
+     * - {@see MinBaseStationWithType::RESOURCE_TYPE_SBS}
+     * - {@see MinBaseStationWithType::RESOURCE_TYPE_NAP}
      *
-     * @var self::RESOURCE_TYPE_*
+     * @var int
      */
     protected ?int $resourceType = null;
     /**
@@ -86,7 +89,11 @@ class MinBaseStationWithType extends Definition
     /**
      * Setter for resourceType
      *
-     * @param self::RESOURCE_TYPE_* $resourceType Resource type.
+     * @param int $resourceType Resource type.
+     *                          
+     *                          - {@see MinBaseStationWithType::RESOURCE_TYPE_SBS}
+     *                          - {@see MinBaseStationWithType::RESOURCE_TYPE_NAP}
+     *                          
      *
      * @return self To use in method chains
      */
@@ -98,7 +105,11 @@ class MinBaseStationWithType extends Definition
     /**
      * Getter for resourceType
      *
-     * @return self::RESOURCE_TYPE_* Resource type.
+     * @return int Resource type.
+     *             
+     *             - {@see MinBaseStationWithType::RESOURCE_TYPE_SBS}
+     *             - {@see MinBaseStationWithType::RESOURCE_TYPE_NAP}
+     *             
      */
     public function getResourceType() : int
     {

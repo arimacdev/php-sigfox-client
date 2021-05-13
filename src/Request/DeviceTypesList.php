@@ -7,7 +7,6 @@ use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Retrieve a list of device types according to visibility permissions and request filters.
- * 
  */
 class DeviceTypesList extends Definition
 {
@@ -37,7 +36,6 @@ class DeviceTypesList extends Definition
     public const PAYLOAD_TYPE_SENSITV2 = 9;
     /**
      * Search returns all Device Type names containing the value. Example: ?name=sig
-     * 
      *
      * @var string
      */
@@ -45,7 +43,6 @@ class DeviceTypesList extends Definition
     /**
      * Search for device types which are attached to a Group. Example:
      * ?groupIds=57309674171c857460043087,57309674171c857460043088
-     * 
      *
      * @var string[]
      */
@@ -64,8 +61,15 @@ class DeviceTypesList extends Definition
     protected ?string $contractId = null;
     /**
      * Searches device types by payload type
+     * 
+     * - {@link DeviceTypesList::PAYLOAD_TYPE_REGULAR}
+     * - {@link DeviceTypesList::PAYLOAD_TYPE_CUSTOM_GRAMMAR}
+     * - {@link DeviceTypesList::PAYLOAD_TYPE_GEOLOCATION}
+     * - {@link DeviceTypesList::PAYLOAD_TYPE_DISPLAY_IN_ASCII}
+     * - {@link DeviceTypesList::PAYLOAD_TYPE_RADIO_PLANNING_FRAME}
+     * - {@link DeviceTypesList::PAYLOAD_TYPE_SENSITV2}
      *
-     * @var self::PAYLOAD_TYPE_*
+     * @var int
      */
     protected ?int $payloadType = null;
     /**
@@ -82,7 +86,6 @@ class DeviceTypesList extends Definition
     protected ?string $sort = null;
     /**
      * Defines the other available API user's fields to be returned in the response.
-     * 
      *
      * @var string
      */
@@ -162,7 +165,15 @@ class DeviceTypesList extends Definition
     /**
      * Setter for payloadType
      *
-     * @param self::PAYLOAD_TYPE_* $payloadType Searches device types by payload type
+     * @param int $payloadType Searches device types by payload type
+     *                         
+     *                         - {@link DeviceTypesList::PAYLOAD_TYPE_REGULAR}
+     *                         - {@link DeviceTypesList::PAYLOAD_TYPE_CUSTOM_GRAMMAR}
+     *                         - {@link DeviceTypesList::PAYLOAD_TYPE_GEOLOCATION}
+     *                         - {@link DeviceTypesList::PAYLOAD_TYPE_DISPLAY_IN_ASCII}
+     *                         - {@link DeviceTypesList::PAYLOAD_TYPE_RADIO_PLANNING_FRAME}
+     *                         - {@link DeviceTypesList::PAYLOAD_TYPE_SENSITV2}
+     *                         
      *
      * @return self To use in method chains
      */

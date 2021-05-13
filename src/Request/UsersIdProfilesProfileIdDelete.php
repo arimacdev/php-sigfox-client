@@ -6,7 +6,6 @@ use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Delete profiles or a given profile associated to the groupId
- * 
  */
 class UsersIdProfilesProfileIdDelete extends Definition
 {

@@ -7,7 +7,6 @@ use Arimac\Sigfox\Definition\DeviceUpdateJob;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Update a given device.
- * 
  */
 class DevicesIdUpdate extends Definition
 {

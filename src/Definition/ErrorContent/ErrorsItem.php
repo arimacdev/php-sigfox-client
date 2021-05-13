@@ -8,21 +8,18 @@ class ErrorsItem extends Definition
 {
     /**
      * Describe where the problem occurred. Can be from body, query or path.
-     * 
      *
      * @var string
      */
     protected ?string $type = null;
     /**
      * Name of the field or parameter where the specific error occurred.
-     * 
      *
      * @var string
      */
     protected ?string $field = null;
     /**
      * Readable specific error for the previously defined field.
-     * 
      *
      * @var string
      */

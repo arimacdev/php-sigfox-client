@@ -7,7 +7,6 @@ use Arimac\Sigfox\Definition\AsynchronousDeviceTransferJob;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Transfer multiple devices to another device type with asynchronous job
- * 
  */
 class DevicesBulkTransfer extends Definition
 {

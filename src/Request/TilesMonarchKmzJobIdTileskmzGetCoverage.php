@@ -6,7 +6,6 @@ use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve Sigfox Monarch coverage kmz from a job
- * 
  */
 class TilesMonarchKmzJobIdTileskmzGetCoverage extends Definition
 {

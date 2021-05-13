@@ -2,9 +2,14 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Definition\KmzStatusResponse;
 class TilesMonarchKmzJobId
 {
+    /**
+     * The HTTP client
+     */
+    protected ?Client $client;
     /**
      * The job's identifier (hexademical format)
      */
@@ -12,15 +17,16 @@ class TilesMonarchKmzJobId
     /**
      * Creating the repository
      *
-     * @param string $jobId The job's identifier (hexademical format)
+     * @param Client $client The HTTP client
+     * @param string $jobId  The job's identifier (hexademical format)
      */
-    public function __construct(string $jobId)
+    public function __construct(Client $client, string $jobId)
     {
+        $this->client = $client;
         $this->jobId = $jobId;
     }
     /**
      * Retrieve Sigfox Monarch coverage kmz computation from asynchronous job status
-     * 
      */
     public function get() : KmzStatusResponse
     {
@@ -31,6 +37,6 @@ class TilesMonarchKmzJobId
      */
     public function tileskmz() : TilesMonarchKmzJobIdTileskmz
     {
-        return new TilesMonarchKmzJobIdTileskmz($this->jobId);
+        return new TilesMonarchKmzJobIdTileskmz($this->client, $this->jobId);
     }
 }

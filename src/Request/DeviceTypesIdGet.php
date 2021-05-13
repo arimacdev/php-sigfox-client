@@ -6,7 +6,6 @@ use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve information about a device type.
- * 
  */
 class DeviceTypesIdGet extends Definition
 {
@@ -18,7 +17,6 @@ class DeviceTypesIdGet extends Definition
     protected ?bool $authorizations = null;
     /**
      * Defines the other available API user's fields to be returned in the response.
-     * 
      *
      * @var string
      */

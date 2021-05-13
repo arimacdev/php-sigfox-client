@@ -6,13 +6,11 @@ use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of messages for a given device types with a 3-day history.
- * 
  */
 class DeviceTypesIdMessages extends Definition
 {
     /**
      * Defines the other available API user's fields to be returned in the response.
-     * 
      *
      * @var string
      */

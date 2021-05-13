@@ -51,14 +51,24 @@ class InternetSubscription extends Definition
     protected ?string $id = null;
     /**
      * Internet subscription type
+     * 
+     * - {@see InternetSubscription::TYPE_GSM}
+     * - {@see InternetSubscription::TYPE_ADSL}
+     * - {@see InternetSubscription::TYPE_SATELLITE}
+     * - {@see InternetSubscription::TYPE_LAN}
+     * - {@see InternetSubscription::TYPE_WIFI}
      *
-     * @var self::TYPE_*
+     * @var int
      */
     protected ?int $type = null;
     /**
      * Internet subscription priority.
+     * 
+     * - {@see InternetSubscription::PRIORITY_PRIMARY}
+     * - {@see InternetSubscription::PRIORITY_SECONDARY}
+     * - {@see InternetSubscription::PRIORITY_TERMINATED}
      *
-     * @var self::PRIORITY_*
+     * @var int
      */
     protected ?int $priority = null;
     /**
@@ -120,7 +130,14 @@ class InternetSubscription extends Definition
     /**
      * Setter for type
      *
-     * @param self::TYPE_* $type Internet subscription type
+     * @param int $type Internet subscription type
+     *                  
+     *                  - {@see InternetSubscription::TYPE_GSM}
+     *                  - {@see InternetSubscription::TYPE_ADSL}
+     *                  - {@see InternetSubscription::TYPE_SATELLITE}
+     *                  - {@see InternetSubscription::TYPE_LAN}
+     *                  - {@see InternetSubscription::TYPE_WIFI}
+     *                  
      *
      * @return self To use in method chains
      */
@@ -132,7 +149,14 @@ class InternetSubscription extends Definition
     /**
      * Getter for type
      *
-     * @return self::TYPE_* Internet subscription type
+     * @return int Internet subscription type
+     *             
+     *             - {@see InternetSubscription::TYPE_GSM}
+     *             - {@see InternetSubscription::TYPE_ADSL}
+     *             - {@see InternetSubscription::TYPE_SATELLITE}
+     *             - {@see InternetSubscription::TYPE_LAN}
+     *             - {@see InternetSubscription::TYPE_WIFI}
+     *             
      */
     public function getType() : int
     {
@@ -141,7 +165,12 @@ class InternetSubscription extends Definition
     /**
      * Setter for priority
      *
-     * @param self::PRIORITY_* $priority Internet subscription priority.
+     * @param int $priority Internet subscription priority.
+     *                      
+     *                      - {@see InternetSubscription::PRIORITY_PRIMARY}
+     *                      - {@see InternetSubscription::PRIORITY_SECONDARY}
+     *                      - {@see InternetSubscription::PRIORITY_TERMINATED}
+     *                      
      *
      * @return self To use in method chains
      */
@@ -153,7 +182,12 @@ class InternetSubscription extends Definition
     /**
      * Getter for priority
      *
-     * @return self::PRIORITY_* Internet subscription priority.
+     * @return int Internet subscription priority.
+     *             
+     *             - {@see InternetSubscription::PRIORITY_PRIMARY}
+     *             - {@see InternetSubscription::PRIORITY_SECONDARY}
+     *             - {@see InternetSubscription::PRIORITY_TERMINATED}
+     *             
      */
     public function getPriority() : int
     {

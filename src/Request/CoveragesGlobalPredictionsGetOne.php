@@ -9,7 +9,6 @@ use Arimac\Sigfox\Serializer\PrimitiveSerializer;
  * redundancy level.
  * For more information please refer to the [Global Coverage API
  * article](https://support.sigfox.com/docs/global-coverage-api).
- * 
  */
 class CoveragesGlobalPredictionsGetOne extends Definition
 {
@@ -28,7 +27,6 @@ class CoveragesGlobalPredictionsGetOne extends Definition
     /**
      * The radius of the area in which the coverage results are averaged and returned for a selected location, in
      * meters.
-     * 
      *
      * @var int
      */

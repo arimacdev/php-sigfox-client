@@ -59,8 +59,18 @@ class CommonGroupUpdate extends Definition
     protected ?string $description = null;
     /**
      * - Group's type
+     * 
+     * - {@see CommonGroupUpdate::TYPE_SO}
+     * - {@see CommonGroupUpdate::TYPE_OTHER}
+     * - {@see CommonGroupUpdate::TYPE_SVNO}
+     * - {@see CommonGroupUpdate::TYPE_PARTNERS}
+     * - {@see CommonGroupUpdate::TYPE_NIP}
+     * - {@see CommonGroupUpdate::TYPE_DIST}
+     * - {@see CommonGroupUpdate::TYPE_CHANNEL}
+     * - {@see CommonGroupUpdate::TYPE_STARTER}
+     * - {@see CommonGroupUpdate::TYPE_PARTNER}
      *
-     * @var self::TYPE_*
+     * @var int
      */
     protected ?int $type = null;
     /**
@@ -116,7 +126,18 @@ class CommonGroupUpdate extends Definition
     /**
      * Setter for type
      *
-     * @param self::TYPE_* $type - Group's type
+     * @param int $type - Group's type
+     *                  
+     *                  - {@see CommonGroupUpdate::TYPE_SO}
+     *                  - {@see CommonGroupUpdate::TYPE_OTHER}
+     *                  - {@see CommonGroupUpdate::TYPE_SVNO}
+     *                  - {@see CommonGroupUpdate::TYPE_PARTNERS}
+     *                  - {@see CommonGroupUpdate::TYPE_NIP}
+     *                  - {@see CommonGroupUpdate::TYPE_DIST}
+     *                  - {@see CommonGroupUpdate::TYPE_CHANNEL}
+     *                  - {@see CommonGroupUpdate::TYPE_STARTER}
+     *                  - {@see CommonGroupUpdate::TYPE_PARTNER}
+     *                  
      *
      * @return self To use in method chains
      */
@@ -128,7 +149,18 @@ class CommonGroupUpdate extends Definition
     /**
      * Getter for type
      *
-     * @return self::TYPE_* - Group's type
+     * @return int - Group's type
+     *             
+     *             - {@see CommonGroupUpdate::TYPE_SO}
+     *             - {@see CommonGroupUpdate::TYPE_OTHER}
+     *             - {@see CommonGroupUpdate::TYPE_SVNO}
+     *             - {@see CommonGroupUpdate::TYPE_PARTNERS}
+     *             - {@see CommonGroupUpdate::TYPE_NIP}
+     *             - {@see CommonGroupUpdate::TYPE_DIST}
+     *             - {@see CommonGroupUpdate::TYPE_CHANNEL}
+     *             - {@see CommonGroupUpdate::TYPE_STARTER}
+     *             - {@see CommonGroupUpdate::TYPE_PARTNER}
+     *             
      */
     public function getType() : int
     {

@@ -8,7 +8,6 @@ use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Update or edit multiple devices with asynchronous job.
- * 
  */
 class DevicesBulkUpdate extends Definition
 {

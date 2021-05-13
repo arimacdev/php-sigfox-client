@@ -6,13 +6,11 @@ use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve the modem certificate associated with a device.
- * 
  */
 class DevicesIdCertificateModem extends Definition
 {
     /**
      * Defines the other available fields to be returned in the response.
-     * 
      *
      * @var string
      */

@@ -29,8 +29,12 @@ class CommonRole extends Definition
     protected ?string $name = null;
     /**
      * Token's type of role
+     * 
+     * - {@see CommonRole::TYPE_ROLE}
+     * - {@see CommonRole::TYPE_META_EMPTY}
+     * - {@see CommonRole::TYPE_META}
      *
-     * @var self::TYPE_*
+     * @var int
      */
     protected ?int $type = null;
     protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'type', 'int'));
@@ -59,7 +63,12 @@ class CommonRole extends Definition
     /**
      * Setter for type
      *
-     * @param self::TYPE_* $type Token's type of role
+     * @param int $type Token's type of role
+     *                  
+     *                  - {@see CommonRole::TYPE_ROLE}
+     *                  - {@see CommonRole::TYPE_META_EMPTY}
+     *                  - {@see CommonRole::TYPE_META}
+     *                  
      *
      * @return self To use in method chains
      */
@@ -71,7 +80,12 @@ class CommonRole extends Definition
     /**
      * Getter for type
      *
-     * @return self::TYPE_* Token's type of role
+     * @return int Token's type of role
+     *             
+     *             - {@see CommonRole::TYPE_ROLE}
+     *             - {@see CommonRole::TYPE_META_EMPTY}
+     *             - {@see CommonRole::TYPE_META}
+     *             
      */
     public function getType() : int
     {

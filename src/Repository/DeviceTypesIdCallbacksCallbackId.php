@@ -2,12 +2,17 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdUpdate;
 use Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdEnable;
 use Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered;
 use Arimac\Sigfox\Definition\ErrorMessages;
 class DeviceTypesIdCallbacksCallbackId
 {
+    /**
+     * The HTTP client
+     */
+    protected ?Client $client;
     /**
      * The Device Type identifier (hexademical format)
      */
@@ -19,17 +24,18 @@ class DeviceTypesIdCallbacksCallbackId
     /**
      * Creating the repository
      *
-     * @param string $id The Device Type identifier (hexademical format)
+     * @param Client $client     The HTTP client
+     * @param string $id         The Device Type identifier (hexademical format)
      * @param string $callbackId The Callback identifier
      */
-    public function __construct(string $id, string $callbackId)
+    public function __construct(Client $client, string $id, string $callbackId)
     {
+        $this->client = $client;
         $this->id = $id;
         $this->callbackId = $callbackId;
     }
     /**
      * Update a callback for a given device type
-     * 
      */
     public function update(DeviceTypesIdCallbacksCallbackIdUpdate $request)
     {
@@ -37,7 +43,6 @@ class DeviceTypesIdCallbacksCallbackId
     }
     /**
      * Delete a callback for a given device type.
-     * 
      */
     public function delete()
     {
@@ -45,7 +50,6 @@ class DeviceTypesIdCallbacksCallbackId
     }
     /**
      * Enable or disable a callback for a given device type.
-     * 
      */
     public function enable(DeviceTypesIdCallbacksCallbackIdEnable $request)
     {
@@ -54,7 +58,6 @@ class DeviceTypesIdCallbacksCallbackId
     /**
      * Selects a downlink callback for a device type. The callback will be selected as the downlink one, the one that was
      * previously selected will no longer be used for downlink.
-     * 
      */
     public function setDownlink()
     {

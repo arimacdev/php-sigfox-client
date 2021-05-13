@@ -63,8 +63,17 @@ class ComputedLocation extends Definition
     protected ?int $radius = null;
     /**
      * Define how the location has been computed:
+     * 
+     * - {@see ComputedLocation::SOURCE_RSSI_AND_POSITION_OF_THE_STATION}
+     * - {@see ComputedLocation::SOURCE_THE_GPS_DATA_INSIDE_THE_PAYLOAD}
+     * - {@see ComputedLocation::SOURCE_NETWORK_LOCATION}
+     * - {@see ComputedLocation::SOURCE_POI_LOCATION}
+     * - {@see ComputedLocation::SOURCE_HD_NETWORK_LOCATION}
+     * - {@see ComputedLocation::SOURCE_PRIVATE_DATABASE_LOCATION}
+     * - {@see ComputedLocation::SOURCE_WIFI_LOCATION}
+     * - {@see ComputedLocation::SOURCE_PROXIMITY_LOCATION}
      *
-     * @var self::SOURCE_*
+     * @var int
      */
     protected ?int $source = null;
     /**
@@ -140,7 +149,17 @@ class ComputedLocation extends Definition
     /**
      * Setter for source
      *
-     * @param self::SOURCE_* $source Define how the location has been computed:
+     * @param int $source Define how the location has been computed:
+     *                    
+     *                    - {@see ComputedLocation::SOURCE_RSSI_AND_POSITION_OF_THE_STATION}
+     *                    - {@see ComputedLocation::SOURCE_THE_GPS_DATA_INSIDE_THE_PAYLOAD}
+     *                    - {@see ComputedLocation::SOURCE_NETWORK_LOCATION}
+     *                    - {@see ComputedLocation::SOURCE_POI_LOCATION}
+     *                    - {@see ComputedLocation::SOURCE_HD_NETWORK_LOCATION}
+     *                    - {@see ComputedLocation::SOURCE_PRIVATE_DATABASE_LOCATION}
+     *                    - {@see ComputedLocation::SOURCE_WIFI_LOCATION}
+     *                    - {@see ComputedLocation::SOURCE_PROXIMITY_LOCATION}
+     *                    
      *
      * @return self To use in method chains
      */
@@ -152,7 +171,17 @@ class ComputedLocation extends Definition
     /**
      * Getter for source
      *
-     * @return self::SOURCE_* Define how the location has been computed:
+     * @return int Define how the location has been computed:
+     *             
+     *             - {@see ComputedLocation::SOURCE_RSSI_AND_POSITION_OF_THE_STATION}
+     *             - {@see ComputedLocation::SOURCE_THE_GPS_DATA_INSIDE_THE_PAYLOAD}
+     *             - {@see ComputedLocation::SOURCE_NETWORK_LOCATION}
+     *             - {@see ComputedLocation::SOURCE_POI_LOCATION}
+     *             - {@see ComputedLocation::SOURCE_HD_NETWORK_LOCATION}
+     *             - {@see ComputedLocation::SOURCE_PRIVATE_DATABASE_LOCATION}
+     *             - {@see ComputedLocation::SOURCE_WIFI_LOCATION}
+     *             - {@see ComputedLocation::SOURCE_PROXIMITY_LOCATION}
+     *             
      */
     public function getSource() : int
     {

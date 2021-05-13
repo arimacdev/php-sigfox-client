@@ -8,12 +8,11 @@ use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Get the coverage margins for multiple points, for each redundancy level.
  * Sigfox recommends to:
- *   -use the bulk endpoint instead when requesting a large number of locations
- *   -not request more than 200 locations at a time
- *   -wait for the result to be returned before requesting again (avoid multithreading)
+ * -use the bulk endpoint instead when requesting a large number of locations
+ * -not request more than 200 locations at a time
+ * -wait for the result to be returned before requesting again (avoid multithreading)
  * For more information please refer to the [Global Coverage API
  * article](https://support.sigfox.com/docs/global-coverage-api).
- * 
  */
 class CoveragesGlobalPredictionsGet extends Definition
 {

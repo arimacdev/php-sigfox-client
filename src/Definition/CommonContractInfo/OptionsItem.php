@@ -16,22 +16,21 @@ class OptionsItem extends Definition
     /**
      * The parameters of the premium options. The available parameters are the following:
      * payloadEncryption:
-     *   level: 0 (DEVICE_TO_SIGFOX_CLOUD, default), 1 (END_TO_END), 2 (CUSTOMER)
-     *   secureStorage: true or false (default)
+     * level: 0 (DEVICE_TO_SIGFOX_CLOUD, default), 1 (END_TO_END), 2 (CUSTOMER)
+     * secureStorage: true or false (default)
      * geolocation:
-     *   level: 1 (ATLAS, default), 2 (ATLAS_WIFI), 4 (ATLAS_POV), 5 (ATLAS_BUBBLE), 6 (ATLAS_WIFI_PRIVATEDB)
+     * level: 1 (ATLAS, default), 2 (ATLAS_WIFI), 4 (ATLAS_POV), 5 (ATLAS_BUBBLE), 6 (ATLAS_WIFI_PRIVATEDB)
      * cognition:
-     *   level: 0 (MONARCH, default)
+     * level: 0 (MONARCH, default)
      * testFrames:
-     *   nb: 1 - 25 (default=1)
-     *   duration (in months): 0 (illimited, default) or number of months
+     * nb: 1 - 25 (default=1)
+     * duration (in months): 0 (illimited, default) or number of months
      * networkMetadata:
-     *   (none)
+     * (none)
      * messageHistory:
-     *   duration: 0 (3 days), 1 (30 days)
+     * duration: 0 (3 days), 1 (30 days)
      * satellite:
-     *   (none)
-     * 
+     * (none)
      *
      * @var array
      */

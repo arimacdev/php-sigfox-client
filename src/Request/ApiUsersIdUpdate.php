@@ -7,7 +7,6 @@ use Arimac\Sigfox\Definition\ApiUserEdition;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Update information about a given API user.
- * 
  */
 class ApiUsersIdUpdate extends Definition
 {

@@ -7,7 +7,6 @@ use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve Sigfox public coverage kmz file from a job. The public coverage is always available and does not require
  * a previous calculation
- * 
  */
 class TilesPublicCoverageKmzTitles extends Definition
 {

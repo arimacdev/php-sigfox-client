@@ -2,8 +2,13 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Client\Client;
 class DevicesIdConsumption
 {
+    /**
+     * The HTTP client
+     */
+    protected ?Client $client;
     /**
      * The Device identifier (hexadecimal format)
      */
@@ -11,10 +16,12 @@ class DevicesIdConsumption
     /**
      * Creating the repository
      *
-     * @param string $id The Device identifier (hexadecimal format)
+     * @param Client $client The HTTP client
+     * @param string $id     The Device identifier (hexadecimal format)
      */
-    public function __construct(string $id)
+    public function __construct(Client $client, string $id)
     {
+        $this->client = $client;
         $this->id = $id;
     }
     /**
@@ -26,6 +33,6 @@ class DevicesIdConsumption
      */
     public function year(string $year) : DevicesIdConsumptionYear
     {
-        return new DevicesIdConsumptionYear($this->id, $year);
+        return new DevicesIdConsumptionYear($this->client, $this->id, $year);
     }
 }

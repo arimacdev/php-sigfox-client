@@ -28,8 +28,11 @@ class JobError extends Definition
     protected ?string $message = null;
     /**
      * Error type
+     * 
+     * - {@see JobError::TYPE_ENTITY}
+     * - {@see JobError::TYPE_SYSTEM}
      *
-     * @var self::TYPE_*
+     * @var int
      */
     protected ?int $type = null;
     protected $serialize = array(new PrimitiveSerializer(self::class, 'entity', 'string'), new PrimitiveSerializer(self::class, 'message', 'string'), new PrimitiveSerializer(self::class, 'type', 'int'));
@@ -78,7 +81,11 @@ class JobError extends Definition
     /**
      * Setter for type
      *
-     * @param self::TYPE_* $type Error type
+     * @param int $type Error type
+     *                  
+     *                  - {@see JobError::TYPE_ENTITY}
+     *                  - {@see JobError::TYPE_SYSTEM}
+     *                  
      *
      * @return self To use in method chains
      */
@@ -90,7 +97,11 @@ class JobError extends Definition
     /**
      * Getter for type
      *
-     * @return self::TYPE_* Error type
+     * @return int Error type
+     *             
+     *             - {@see JobError::TYPE_ENTITY}
+     *             - {@see JobError::TYPE_SYSTEM}
+     *             
      */
     public function getType() : int
     {

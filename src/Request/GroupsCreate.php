@@ -7,7 +7,6 @@ use Arimac\Sigfox\Definition\CommonGroupCreate;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Create a new group.
- * 
  */
 class GroupsCreate extends Definition
 {

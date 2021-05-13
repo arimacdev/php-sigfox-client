@@ -7,7 +7,6 @@ use Arimac\Sigfox\Definition\AsynchronousDeviceCreationJob;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Create multiple new devices with asynchronous job
- * 
  */
 class DevicesBulkCreate extends Definition
 {

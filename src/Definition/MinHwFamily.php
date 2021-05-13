@@ -27,8 +27,13 @@ class MinHwFamily extends Definition
     public const ID_ACCESS_STATION_MICRO = 3;
     /**
      * Base station hardware family id.
+     * 
+     * - {@see MinHwFamily::ID_STANDARD}
+     * - {@see MinHwFamily::ID_MINI}
+     * - {@see MinHwFamily::ID_ACCESS_STATION_MINI}
+     * - {@see MinHwFamily::ID_ACCESS_STATION_MICRO}
      *
-     * @var self::ID_*
+     * @var int
      */
     protected ?int $id = null;
     /**
@@ -41,7 +46,13 @@ class MinHwFamily extends Definition
     /**
      * Setter for id
      *
-     * @param self::ID_* $id Base station hardware family id.
+     * @param int $id Base station hardware family id.
+     *                
+     *                - {@see MinHwFamily::ID_STANDARD}
+     *                - {@see MinHwFamily::ID_MINI}
+     *                - {@see MinHwFamily::ID_ACCESS_STATION_MINI}
+     *                - {@see MinHwFamily::ID_ACCESS_STATION_MICRO}
+     *                
      *
      * @return self To use in method chains
      */
@@ -53,7 +64,13 @@ class MinHwFamily extends Definition
     /**
      * Getter for id
      *
-     * @return self::ID_* Base station hardware family id.
+     * @return int Base station hardware family id.
+     *             
+     *             - {@see MinHwFamily::ID_STANDARD}
+     *             - {@see MinHwFamily::ID_MINI}
+     *             - {@see MinHwFamily::ID_ACCESS_STATION_MINI}
+     *             - {@see MinHwFamily::ID_ACCESS_STATION_MICRO}
+     *             
      */
     public function getId() : int
     {

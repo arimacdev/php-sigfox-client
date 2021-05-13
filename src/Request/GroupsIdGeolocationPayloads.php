@@ -6,7 +6,6 @@ use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of geolocation payload according to request filters.
- * 
  */
 class GroupsIdGeolocationPayloads extends Definition
 {

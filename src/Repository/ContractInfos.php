@@ -2,13 +2,26 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\ContractInfosList;
 use Arimac\Sigfox\Response\Generated\ContractInfosListResponse;
 class ContractInfos
 {
     /**
+     * The HTTP client
+     */
+    protected ?Client $client;
+    /**
+     * Creating the repository
+     *
+     * @param Client $client The HTTP client
+     */
+    public function __construct(Client $client)
+    {
+        $this->client = $client;
+    }
+    /**
      * Retrieve a list of contracts according to visibility permissions and request filters.
-     * 
      */
     public function list(ContractInfosList $request) : ContractInfosListResponse
     {
@@ -23,13 +36,13 @@ class ContractInfos
      */
     public function find(string $id) : ContractInfosId
     {
-        return new ContractInfosId($id);
+        return new ContractInfosId($this->client, $id);
     }
     /**
      * @return ContractInfosBulk
      */
     public function bulk() : ContractInfosBulk
     {
-        return new ContractInfosBulk();
+        return new ContractInfosBulk($this->client);
     }
 }

@@ -26,7 +26,12 @@ class Token extends Definition
      */
     public const STATE_INVALID_TOKEN = 3;
     /**
-     * @var self::STATE_*
+     * - {@see Token::STATE_OK}
+     * - {@see Token::STATE_OFF_CONTRACT}
+     * - {@see Token::STATE_NA_FOR_API}
+     * - {@see Token::STATE_INVALID_TOKEN}
+     *
+     * @var int
      */
     protected ?int $state = null;
     /**
@@ -35,7 +40,6 @@ class Token extends Definition
      * - Off Contract
      * - Not applicable for API
      * - Invalid
-     * 
      *
      * @var string
      */
@@ -62,7 +66,13 @@ class Token extends Definition
     /**
      * Setter for state
      *
-     * @param self::STATE_* $state
+     * @param int $state 
+     *                   
+     *                   - {@see Token::STATE_OK}
+     *                   - {@see Token::STATE_OFF_CONTRACT}
+     *                   - {@see Token::STATE_NA_FOR_API}
+     *                   - {@see Token::STATE_INVALID_TOKEN}
+     *                   
      *
      * @return self To use in method chains
      */
@@ -74,7 +84,13 @@ class Token extends Definition
     /**
      * Getter for state
      *
-     * @return self::STATE_*
+     * @return int 
+     *             
+     *             - {@see Token::STATE_OK}
+     *             - {@see Token::STATE_OFF_CONTRACT}
+     *             - {@see Token::STATE_NA_FOR_API}
+     *             - {@see Token::STATE_INVALID_TOKEN}
+     *             
      */
     public function getState() : int
     {

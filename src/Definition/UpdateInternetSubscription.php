@@ -45,14 +45,24 @@ class UpdateInternetSubscription extends Definition
     public const PRIORITY_TERMINATED = 2;
     /**
      * Internet subscription type
+     * 
+     * - {@see UpdateInternetSubscription::TYPE_GSM}
+     * - {@see UpdateInternetSubscription::TYPE_ADSL}
+     * - {@see UpdateInternetSubscription::TYPE_SATELLITE}
+     * - {@see UpdateInternetSubscription::TYPE_LAN}
+     * - {@see UpdateInternetSubscription::TYPE_WIFI}
      *
-     * @var self::TYPE_*
+     * @var int
      */
     protected ?int $type = null;
     /**
      * Internet subscription priority.
+     * 
+     * - {@see UpdateInternetSubscription::PRIORITY_PRIMARY}
+     * - {@see UpdateInternetSubscription::PRIORITY_SECONDARY}
+     * - {@see UpdateInternetSubscription::PRIORITY_TERMINATED}
      *
-     * @var self::PRIORITY_*
+     * @var int
      */
     protected ?int $priority = null;
     /**
@@ -85,7 +95,14 @@ class UpdateInternetSubscription extends Definition
     /**
      * Setter for type
      *
-     * @param self::TYPE_* $type Internet subscription type
+     * @param int $type Internet subscription type
+     *                  
+     *                  - {@see UpdateInternetSubscription::TYPE_GSM}
+     *                  - {@see UpdateInternetSubscription::TYPE_ADSL}
+     *                  - {@see UpdateInternetSubscription::TYPE_SATELLITE}
+     *                  - {@see UpdateInternetSubscription::TYPE_LAN}
+     *                  - {@see UpdateInternetSubscription::TYPE_WIFI}
+     *                  
      *
      * @return self To use in method chains
      */
@@ -97,7 +114,14 @@ class UpdateInternetSubscription extends Definition
     /**
      * Getter for type
      *
-     * @return self::TYPE_* Internet subscription type
+     * @return int Internet subscription type
+     *             
+     *             - {@see UpdateInternetSubscription::TYPE_GSM}
+     *             - {@see UpdateInternetSubscription::TYPE_ADSL}
+     *             - {@see UpdateInternetSubscription::TYPE_SATELLITE}
+     *             - {@see UpdateInternetSubscription::TYPE_LAN}
+     *             - {@see UpdateInternetSubscription::TYPE_WIFI}
+     *             
      */
     public function getType() : int
     {
@@ -106,7 +130,12 @@ class UpdateInternetSubscription extends Definition
     /**
      * Setter for priority
      *
-     * @param self::PRIORITY_* $priority Internet subscription priority.
+     * @param int $priority Internet subscription priority.
+     *                      
+     *                      - {@see UpdateInternetSubscription::PRIORITY_PRIMARY}
+     *                      - {@see UpdateInternetSubscription::PRIORITY_SECONDARY}
+     *                      - {@see UpdateInternetSubscription::PRIORITY_TERMINATED}
+     *                      
      *
      * @return self To use in method chains
      */
@@ -118,7 +147,12 @@ class UpdateInternetSubscription extends Definition
     /**
      * Getter for priority
      *
-     * @return self::PRIORITY_* Internet subscription priority.
+     * @return int Internet subscription priority.
+     *             
+     *             - {@see UpdateInternetSubscription::PRIORITY_PRIMARY}
+     *             - {@see UpdateInternetSubscription::PRIORITY_SECONDARY}
+     *             - {@see UpdateInternetSubscription::PRIORITY_TERMINATED}
+     *             
      */
     public function getPriority() : int
     {

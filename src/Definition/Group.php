@@ -61,8 +61,18 @@ class Group extends Definition
     protected ?string $description = null;
     /**
      * Group's type
+     * 
+     * - {@see Group::TYPE_SO}
+     * - {@see Group::TYPE_BASIC}
+     * - {@see Group::TYPE_SVNO}
+     * - {@see Group::TYPE_PARTNERS}
+     * - {@see Group::TYPE_NIP}
+     * - {@see Group::TYPE_DIST}
+     * - {@see Group::TYPE_CHANNEL}
+     * - {@see Group::TYPE_STARTER}
+     * - {@see Group::TYPE_PARTNER}
      *
-     * @var self::TYPE_*
+     * @var int
      */
     protected ?int $type = null;
     /**
@@ -159,7 +169,18 @@ class Group extends Definition
     /**
      * Setter for type
      *
-     * @param self::TYPE_* $type Group's type
+     * @param int $type Group's type
+     *                  
+     *                  - {@see Group::TYPE_SO}
+     *                  - {@see Group::TYPE_BASIC}
+     *                  - {@see Group::TYPE_SVNO}
+     *                  - {@see Group::TYPE_PARTNERS}
+     *                  - {@see Group::TYPE_NIP}
+     *                  - {@see Group::TYPE_DIST}
+     *                  - {@see Group::TYPE_CHANNEL}
+     *                  - {@see Group::TYPE_STARTER}
+     *                  - {@see Group::TYPE_PARTNER}
+     *                  
      *
      * @return self To use in method chains
      */
@@ -171,7 +192,18 @@ class Group extends Definition
     /**
      * Getter for type
      *
-     * @return self::TYPE_* Group's type
+     * @return int Group's type
+     *             
+     *             - {@see Group::TYPE_SO}
+     *             - {@see Group::TYPE_BASIC}
+     *             - {@see Group::TYPE_SVNO}
+     *             - {@see Group::TYPE_PARTNERS}
+     *             - {@see Group::TYPE_NIP}
+     *             - {@see Group::TYPE_DIST}
+     *             - {@see Group::TYPE_CHANNEL}
+     *             - {@see Group::TYPE_STARTER}
+     *             - {@see Group::TYPE_PARTNER}
+     *             
      */
     public function getType() : int
     {

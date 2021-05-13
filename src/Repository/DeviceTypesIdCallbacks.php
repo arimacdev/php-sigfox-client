@@ -2,11 +2,16 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Response\Generated\DeviceTypesIdCallbacksListResponse;
 use Arimac\Sigfox\Request\DeviceTypesIdCallbacksCreate;
 use Arimac\Sigfox\Response\Generated\DeviceTypesIdCallbacksCreateResponse;
 class DeviceTypesIdCallbacks
 {
+    /**
+     * The HTTP client
+     */
+    protected ?Client $client;
     /**
      * The Device Type identifier (hexademical format)
      */
@@ -14,15 +19,16 @@ class DeviceTypesIdCallbacks
     /**
      * Creating the repository
      *
-     * @param string $id The Device Type identifier (hexademical format)
+     * @param Client $client The HTTP client
+     * @param string $id     The Device Type identifier (hexademical format)
      */
-    public function __construct(string $id)
+    public function __construct(Client $client, string $id)
     {
+        $this->client = $client;
         $this->id = $id;
     }
     /**
      * Retrieve a list of callbacks for a given device type according to visibility permissions and request filters.
-     * 
      */
     public function list() : DeviceTypesIdCallbacksListResponse
     {
@@ -30,7 +36,6 @@ class DeviceTypesIdCallbacks
     }
     /**
      * Create a new callback for a given device type.
-     * 
      */
     public function create(DeviceTypesIdCallbacksCreate $request) : DeviceTypesIdCallbacksCreateResponse
     {
@@ -45,6 +50,6 @@ class DeviceTypesIdCallbacks
      */
     public function find(string $callbackId) : DeviceTypesIdCallbacksCallbackId
     {
-        return new DeviceTypesIdCallbacksCallbackId($this->id, $callbackId);
+        return new DeviceTypesIdCallbacksCallbackId($this->client, $this->id, $callbackId);
     }
 }

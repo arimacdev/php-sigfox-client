@@ -71,8 +71,21 @@ class SimpleSite extends MinSite
     protected ?int $candidateExternalId = null;
     /**
      * Site status
+     * 
+     * - {@see SimpleSite::STATUS_PROD}
+     * - {@see SimpleSite::STATUS_REFUSED}
+     * - {@see SimpleSite::STATUS_INSTALLED}
+     * - {@see SimpleSite::STATUS_NOT_PLANNED}
+     * - {@see SimpleSite::STATUS_PRE_PROD}
+     * - {@see SimpleSite::STATUS_CANDIDATE}
+     * - {@see SimpleSite::STATUS_CANCELLED}
+     * - {@see SimpleSite::STATUS_CLIENT}
+     * - {@see SimpleSite::STATUS_RD}
+     * - {@see SimpleSite::STATUS_LABO}
+     * - {@see SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY}
+     * - {@see SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY}
      *
-     * @var self::STATUS_*
+     * @var int
      */
     protected ?int $status = null;
     /**
@@ -131,7 +144,21 @@ class SimpleSite extends MinSite
     /**
      * Setter for status
      *
-     * @param self::STATUS_* $status Site status
+     * @param int $status Site status
+     *                    
+     *                    - {@see SimpleSite::STATUS_PROD}
+     *                    - {@see SimpleSite::STATUS_REFUSED}
+     *                    - {@see SimpleSite::STATUS_INSTALLED}
+     *                    - {@see SimpleSite::STATUS_NOT_PLANNED}
+     *                    - {@see SimpleSite::STATUS_PRE_PROD}
+     *                    - {@see SimpleSite::STATUS_CANDIDATE}
+     *                    - {@see SimpleSite::STATUS_CANCELLED}
+     *                    - {@see SimpleSite::STATUS_CLIENT}
+     *                    - {@see SimpleSite::STATUS_RD}
+     *                    - {@see SimpleSite::STATUS_LABO}
+     *                    - {@see SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY}
+     *                    - {@see SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY}
+     *                    
      *
      * @return self To use in method chains
      */
@@ -143,7 +170,21 @@ class SimpleSite extends MinSite
     /**
      * Getter for status
      *
-     * @return self::STATUS_* Site status
+     * @return int Site status
+     *             
+     *             - {@see SimpleSite::STATUS_PROD}
+     *             - {@see SimpleSite::STATUS_REFUSED}
+     *             - {@see SimpleSite::STATUS_INSTALLED}
+     *             - {@see SimpleSite::STATUS_NOT_PLANNED}
+     *             - {@see SimpleSite::STATUS_PRE_PROD}
+     *             - {@see SimpleSite::STATUS_CANDIDATE}
+     *             - {@see SimpleSite::STATUS_CANCELLED}
+     *             - {@see SimpleSite::STATUS_CLIENT}
+     *             - {@see SimpleSite::STATUS_RD}
+     *             - {@see SimpleSite::STATUS_LABO}
+     *             - {@see SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY}
+     *             - {@see SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY}
+     *             
      */
     public function getStatus() : int
     {

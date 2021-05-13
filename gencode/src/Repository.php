@@ -31,6 +31,7 @@ class Repository extends Class_
         $args = array_map(function ($property) {
             return new Arg(new Variable("this->" . $property[0]));
         }, $this->properties);
+        array_unshift($args, new Arg(new Variable("this->client")));
         $args[] = new Arg(new Variable($name));
 
         $this->addMethod(
@@ -51,6 +52,19 @@ class Repository extends Class_
 
         $params = [];
         $stmts = [];
+
+        $this->useType("Arimac\\Sigfox\\Client\\Client");
+        $this->addProperty(
+            "client",
+            "Client",
+            Helper::normalizeDocComment("The HTTP client",2)
+        );
+        $params[] = new Param(new Variable("client"), null, "Client");
+        $stmts[] = new Assign(
+                new Variable("this->client"),
+                new Variable("client")
+            );
+
         foreach ($parameters as $param) {
             $params[] = new Param(new Variable($param[0]), null, $param[1]);
 
@@ -62,6 +76,17 @@ class Repository extends Class_
             );
         }
 
+        $docblockTags = array_map(function ($parameters) {
+                    $docComment = $parameters[2] ?? null;
+                    $name = $parameters[0];
+                    $type = $parameters[1];
+                    if ($docComment) {
+                        return ["param", $type, "\$$name",$docComment];
+                    } else {
+                        return ["param", $type, "\$$name", null];
+                    }
+        }, $parameters);
+        array_unshift($docblockTags, ["param", "Client", "\$client", "The HTTP client"]);
         $this->addMethod(
             "__construct",
             $params,
@@ -69,16 +94,7 @@ class Repository extends Class_
             null,
             Helper::normalizeDocComment(
                 "Creating the repository",
-                array_map(function ($parameters) {
-                    $docComment = $parameters[2] ?? null;
-                    $name = $parameters[0];
-                    $type = $parameters[1];
-                    if ($docComment) {
-                        return ["param", "$type \$$name $docComment"];
-                    } else {
-                        return ["param", "$type \$$name"];
-                    }
-                }, $parameters),
+                $docblockTags,
                 2
             )
         );
@@ -90,6 +106,7 @@ class Repository extends Class_
         $args = array_map(function ($property) {
             return new Arg(new Variable("this->" . $property[0]));
         }, $this->properties);
+        array_unshift($args, new Arg(new Variable("this->client")));
 
         $this->addMethod(
             $methodName,

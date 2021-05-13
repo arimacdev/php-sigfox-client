@@ -7,7 +7,6 @@ use Arimac\Sigfox\Definition\TokenUnsubscribe;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Set an unsubscription date for the device's token.
- * 
  */
 class DevicesIdUnsubscribe extends Definition
 {

@@ -6,13 +6,11 @@ use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve information about a given contract.
- * 
  */
 class ContractInfosIdGet extends Definition
 {
     /**
      * Defines the other available fields to be returned in the response.
-     * 
      *
      * @var string
      */

@@ -23,8 +23,12 @@ class CreateAdslSubscription extends CreateInternetSubscription
     public const CONNECTION_STATUS_ACTIVATED = 2;
     /**
      * Subscription connection status
+     * 
+     * - {@see CreateAdslSubscription::CONNECTION_STATUS_REQUEST}
+     * - {@see CreateAdslSubscription::CONNECTION_STATUS_INSTALLED}
+     * - {@see CreateAdslSubscription::CONNECTION_STATUS_ACTIVATED}
      *
-     * @var self::CONNECTION_STATUS_*
+     * @var int
      */
     protected ?int $connectionStatus = null;
     /**
@@ -104,7 +108,12 @@ class CreateAdslSubscription extends CreateInternetSubscription
     /**
      * Setter for connectionStatus
      *
-     * @param self::CONNECTION_STATUS_* $connectionStatus Subscription connection status
+     * @param int $connectionStatus Subscription connection status
+     *                              
+     *                              - {@see CreateAdslSubscription::CONNECTION_STATUS_REQUEST}
+     *                              - {@see CreateAdslSubscription::CONNECTION_STATUS_INSTALLED}
+     *                              - {@see CreateAdslSubscription::CONNECTION_STATUS_ACTIVATED}
+     *                              
      *
      * @return self To use in method chains
      */
@@ -116,7 +125,12 @@ class CreateAdslSubscription extends CreateInternetSubscription
     /**
      * Getter for connectionStatus
      *
-     * @return self::CONNECTION_STATUS_* Subscription connection status
+     * @return int Subscription connection status
+     *             
+     *             - {@see CreateAdslSubscription::CONNECTION_STATUS_REQUEST}
+     *             - {@see CreateAdslSubscription::CONNECTION_STATUS_INSTALLED}
+     *             - {@see CreateAdslSubscription::CONNECTION_STATUS_ACTIVATED}
+     *             
      */
     public function getConnectionStatus() : int
     {

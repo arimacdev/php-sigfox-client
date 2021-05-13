@@ -7,7 +7,6 @@ use Arimac\Sigfox\Definition\DeviceTypeCreate;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Create a new device type
- * 
  */
 class DeviceTypesCreate extends Definition
 {

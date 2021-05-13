@@ -93,14 +93,26 @@ class BaseSiteConvention extends Definition
     protected ?int $maintenanceAnnualCost = null;
     /**
      * Convention status.
+     * 
+     * - {@see BaseSiteConvention::STATUS_AT_SIGFOX}
+     * - {@see BaseSiteConvention::STATUS_AT_HOST}
+     * - {@see BaseSiteConvention::STATUS_SIGNED_SIGFOX}
+     * - {@see BaseSiteConvention::STATUS_SIGNED_HOST}
+     * - {@see BaseSiteConvention::STATUS_SIGNED_BOTH}
      *
-     * @var self::STATUS_*
+     * @var int
      */
     protected ?int $status = null;
     /**
      * Convention status.
+     * 
+     * - {@see BaseSiteConvention::TYPE_CONDOMINIUM}
+     * - {@see BaseSiteConvention::TYPE_INDIVIDUAL}
+     * - {@see BaseSiteConvention::TYPE_SOCIAL_HOUSING_AUTHORITY}
+     * - {@see BaseSiteConvention::TYPE_ASSOCIATION}
+     * - {@see BaseSiteConvention::TYPE_COMPANY}
      *
-     * @var self::TYPE_*
+     * @var int
      */
     protected ?int $type = null;
     protected $serialize = array(new PrimitiveSerializer(self::class, 'annualCost', 'int'), new PrimitiveSerializer(self::class, 'comments', 'string'), new PrimitiveSerializer(self::class, 'startTime', 'int'), new PrimitiveSerializer(self::class, 'endTime', 'int'), new PrimitiveSerializer(self::class, 'contractReference', 'string'), new PrimitiveSerializer(self::class, 'maintenance', 'bool'), new PrimitiveSerializer(self::class, 'maintenanceAnnualCost', 'int'), new PrimitiveSerializer(self::class, 'status', 'int'), new PrimitiveSerializer(self::class, 'type', 'int'));
@@ -254,7 +266,14 @@ class BaseSiteConvention extends Definition
     /**
      * Setter for status
      *
-     * @param self::STATUS_* $status Convention status.
+     * @param int $status Convention status.
+     *                    
+     *                    - {@see BaseSiteConvention::STATUS_AT_SIGFOX}
+     *                    - {@see BaseSiteConvention::STATUS_AT_HOST}
+     *                    - {@see BaseSiteConvention::STATUS_SIGNED_SIGFOX}
+     *                    - {@see BaseSiteConvention::STATUS_SIGNED_HOST}
+     *                    - {@see BaseSiteConvention::STATUS_SIGNED_BOTH}
+     *                    
      *
      * @return self To use in method chains
      */
@@ -266,7 +285,14 @@ class BaseSiteConvention extends Definition
     /**
      * Getter for status
      *
-     * @return self::STATUS_* Convention status.
+     * @return int Convention status.
+     *             
+     *             - {@see BaseSiteConvention::STATUS_AT_SIGFOX}
+     *             - {@see BaseSiteConvention::STATUS_AT_HOST}
+     *             - {@see BaseSiteConvention::STATUS_SIGNED_SIGFOX}
+     *             - {@see BaseSiteConvention::STATUS_SIGNED_HOST}
+     *             - {@see BaseSiteConvention::STATUS_SIGNED_BOTH}
+     *             
      */
     public function getStatus() : int
     {
@@ -275,7 +301,14 @@ class BaseSiteConvention extends Definition
     /**
      * Setter for type
      *
-     * @param self::TYPE_* $type Convention status.
+     * @param int $type Convention status.
+     *                  
+     *                  - {@see BaseSiteConvention::TYPE_CONDOMINIUM}
+     *                  - {@see BaseSiteConvention::TYPE_INDIVIDUAL}
+     *                  - {@see BaseSiteConvention::TYPE_SOCIAL_HOUSING_AUTHORITY}
+     *                  - {@see BaseSiteConvention::TYPE_ASSOCIATION}
+     *                  - {@see BaseSiteConvention::TYPE_COMPANY}
+     *                  
      *
      * @return self To use in method chains
      */
@@ -287,7 +320,14 @@ class BaseSiteConvention extends Definition
     /**
      * Getter for type
      *
-     * @return self::TYPE_* Convention status.
+     * @return int Convention status.
+     *             
+     *             - {@see BaseSiteConvention::TYPE_CONDOMINIUM}
+     *             - {@see BaseSiteConvention::TYPE_INDIVIDUAL}
+     *             - {@see BaseSiteConvention::TYPE_SOCIAL_HOUSING_AUTHORITY}
+     *             - {@see BaseSiteConvention::TYPE_ASSOCIATION}
+     *             - {@see BaseSiteConvention::TYPE_COMPANY}
+     *             
      */
     public function getType() : int
     {

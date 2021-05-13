@@ -43,8 +43,17 @@ class ProductCertificateRadioConfiguration extends RadioConfiguration
     public const UPLINK_CLASS_D3 = 7;
     /**
      * The device uplink class
+     * 
+     * - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_U0}
+     * - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_U1}
+     * - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_U2}
+     * - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_U3}
+     * - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_D0}
+     * - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_D1}
+     * - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_D2}
+     * - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_D3}
      *
-     * @var self::UPLINK_CLASS_*
+     * @var int
      */
     protected ?int $uplinkClass = null;
     /**
@@ -57,7 +66,17 @@ class ProductCertificateRadioConfiguration extends RadioConfiguration
     /**
      * Setter for uplinkClass
      *
-     * @param self::UPLINK_CLASS_* $uplinkClass The device uplink class
+     * @param int $uplinkClass The device uplink class
+     *                         
+     *                         - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_U0}
+     *                         - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_U1}
+     *                         - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_U2}
+     *                         - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_U3}
+     *                         - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_D0}
+     *                         - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_D1}
+     *                         - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_D2}
+     *                         - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_D3}
+     *                         
      *
      * @return self To use in method chains
      */
@@ -69,7 +88,17 @@ class ProductCertificateRadioConfiguration extends RadioConfiguration
     /**
      * Getter for uplinkClass
      *
-     * @return self::UPLINK_CLASS_* The device uplink class
+     * @return int The device uplink class
+     *             
+     *             - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_U0}
+     *             - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_U1}
+     *             - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_U2}
+     *             - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_U3}
+     *             - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_D0}
+     *             - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_D1}
+     *             - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_D2}
+     *             - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_D3}
+     *             
      */
     public function getUplinkClass() : int
     {

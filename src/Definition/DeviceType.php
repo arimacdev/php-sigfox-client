@@ -65,22 +65,33 @@ class DeviceType extends BaseDeviceType
     protected ?string $description = null;
     /**
      * The downlink mode to use for the devices of this device type.
+     * 
+     * - {@see DeviceType::DOWNLINK_MODE_DIRECT}
+     * - {@see DeviceType::DOWNLINK_MODE_CALLBACK}
+     * - {@see DeviceType::DOWNLINK_MODE_NONE}
+     * - {@see DeviceType::DOWNLINK_MODE_MANAGED}
      *
-     * @var self::DOWNLINK_MODE_*
+     * @var int
      */
     protected ?int $downlinkMode = null;
     /**
      * Downlink data to be sent to the devices of this device type if downlinkMode is equal to 0.
      * It must be an 8 byte length message given in hexadecimal string format.
-     * 
      *
      * @var string
      */
     protected ?string $downlinkDataString = null;
     /**
      * The payload type
+     * 
+     * - {@see DeviceType::PAYLOAD_TYPE_REGULAR}
+     * - {@see DeviceType::PAYLOAD_TYPE_CUSTOM_GRAMMAR}
+     * - {@see DeviceType::PAYLOAD_TYPE_GEOLOCATION}
+     * - {@see DeviceType::PAYLOAD_TYPE_DISPLAY_IN_ASCII}
+     * - {@see DeviceType::PAYLOAD_TYPE_RADIO_PLANNING_FRAME}
+     * - {@see DeviceType::PAYLOAD_TYPE_SENSITV2}
      *
-     * @var self::PAYLOAD_TYPE_*
+     * @var int
      */
     protected ?int $payloadType = null;
     /**
@@ -190,7 +201,13 @@ class DeviceType extends BaseDeviceType
     /**
      * Setter for downlinkMode
      *
-     * @param self::DOWNLINK_MODE_* $downlinkMode The downlink mode to use for the devices of this device type.
+     * @param int $downlinkMode The downlink mode to use for the devices of this device type.
+     *                          
+     *                          - {@see DeviceType::DOWNLINK_MODE_DIRECT}
+     *                          - {@see DeviceType::DOWNLINK_MODE_CALLBACK}
+     *                          - {@see DeviceType::DOWNLINK_MODE_NONE}
+     *                          - {@see DeviceType::DOWNLINK_MODE_MANAGED}
+     *                          
      *
      * @return self To use in method chains
      */
@@ -202,7 +219,13 @@ class DeviceType extends BaseDeviceType
     /**
      * Getter for downlinkMode
      *
-     * @return self::DOWNLINK_MODE_* The downlink mode to use for the devices of this device type.
+     * @return int The downlink mode to use for the devices of this device type.
+     *             
+     *             - {@see DeviceType::DOWNLINK_MODE_DIRECT}
+     *             - {@see DeviceType::DOWNLINK_MODE_CALLBACK}
+     *             - {@see DeviceType::DOWNLINK_MODE_NONE}
+     *             - {@see DeviceType::DOWNLINK_MODE_MANAGED}
+     *             
      */
     public function getDownlinkMode() : int
     {
@@ -237,7 +260,15 @@ class DeviceType extends BaseDeviceType
     /**
      * Setter for payloadType
      *
-     * @param self::PAYLOAD_TYPE_* $payloadType The payload type
+     * @param int $payloadType The payload type
+     *                         
+     *                         - {@see DeviceType::PAYLOAD_TYPE_REGULAR}
+     *                         - {@see DeviceType::PAYLOAD_TYPE_CUSTOM_GRAMMAR}
+     *                         - {@see DeviceType::PAYLOAD_TYPE_GEOLOCATION}
+     *                         - {@see DeviceType::PAYLOAD_TYPE_DISPLAY_IN_ASCII}
+     *                         - {@see DeviceType::PAYLOAD_TYPE_RADIO_PLANNING_FRAME}
+     *                         - {@see DeviceType::PAYLOAD_TYPE_SENSITV2}
+     *                         
      *
      * @return self To use in method chains
      */
@@ -249,7 +280,15 @@ class DeviceType extends BaseDeviceType
     /**
      * Getter for payloadType
      *
-     * @return self::PAYLOAD_TYPE_* The payload type
+     * @return int The payload type
+     *             
+     *             - {@see DeviceType::PAYLOAD_TYPE_REGULAR}
+     *             - {@see DeviceType::PAYLOAD_TYPE_CUSTOM_GRAMMAR}
+     *             - {@see DeviceType::PAYLOAD_TYPE_GEOLOCATION}
+     *             - {@see DeviceType::PAYLOAD_TYPE_DISPLAY_IN_ASCII}
+     *             - {@see DeviceType::PAYLOAD_TYPE_RADIO_PLANNING_FRAME}
+     *             - {@see DeviceType::PAYLOAD_TYPE_SENSITV2}
+     *             
      */
     public function getPayloadType() : int
     {

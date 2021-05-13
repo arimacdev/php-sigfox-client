@@ -32,8 +32,11 @@ class CommonCertificate extends Definition
     protected ?string $name = null;
     /**
      * The certificate's status code
+     * 
+     * - {@see CommonCertificate::STATUS_ONGOING}
+     * - {@see CommonCertificate::STATUS_FINALIZED}
      *
-     * @var self::STATUS_*
+     * @var int
      */
     protected ?int $status = null;
     /**
@@ -105,7 +108,11 @@ class CommonCertificate extends Definition
     /**
      * Setter for status
      *
-     * @param self::STATUS_* $status The certificate's status code
+     * @param int $status The certificate's status code
+     *                    
+     *                    - {@see CommonCertificate::STATUS_ONGOING}
+     *                    - {@see CommonCertificate::STATUS_FINALIZED}
+     *                    
      *
      * @return self To use in method chains
      */
@@ -117,7 +124,11 @@ class CommonCertificate extends Definition
     /**
      * Getter for status
      *
-     * @return self::STATUS_* The certificate's status code
+     * @return int The certificate's status code
+     *             
+     *             - {@see CommonCertificate::STATUS_ONGOING}
+     *             - {@see CommonCertificate::STATUS_FINALIZED}
+     *             
      */
     public function getStatus() : int
     {

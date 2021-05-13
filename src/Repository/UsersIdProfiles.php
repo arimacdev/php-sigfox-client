@@ -2,9 +2,14 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\UsersIdProfilesAddRoles;
 class UsersIdProfiles
 {
+    /**
+     * The HTTP client
+     */
+    protected ?Client $client;
     /**
      * The User identifier
      */
@@ -12,15 +17,16 @@ class UsersIdProfiles
     /**
      * Creating the repository
      *
-     * @param string $id The User identifier
+     * @param Client $client The HTTP client
+     * @param string $id     The User identifier
      */
-    public function __construct(string $id)
+    public function __construct(Client $client, string $id)
     {
+        $this->client = $client;
         $this->id = $id;
     }
     /**
      * add user roles to a user.
-     * 
      */
     public function addRoles(UsersIdProfilesAddRoles $request)
     {
@@ -35,6 +41,6 @@ class UsersIdProfiles
      */
     public function find(string $profileId) : UsersIdProfilesProfileId
     {
-        return new UsersIdProfilesProfileId($this->id, $profileId);
+        return new UsersIdProfilesProfileId($this->client, $this->id, $profileId);
     }
 }

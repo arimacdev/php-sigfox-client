@@ -17,8 +17,11 @@ class RadioCertificate extends CommonCertificate
     public const MODES_UPLINK_AND_DOWNLINK = 1;
     /**
      * The certificate's mode code
+     * 
+     * - {@see RadioCertificate::MODES_UPLINK_ONLY}
+     * - {@see RadioCertificate::MODES_UPLINK_AND_DOWNLINK}
      *
-     * @var self::MODES_*[]
+     * @var int[]
      */
     protected ?array $modes = null;
     /**
@@ -31,7 +34,11 @@ class RadioCertificate extends CommonCertificate
     /**
      * Setter for modes
      *
-     * @param self::MODES_*[] $modes The certificate's mode code
+     * @param int[] $modes The certificate's mode code
+     *                     
+     *                     - {@see RadioCertificate::MODES_UPLINK_ONLY}
+     *                     - {@see RadioCertificate::MODES_UPLINK_AND_DOWNLINK}
+     *                     
      *
      * @return self To use in method chains
      */
@@ -43,7 +50,11 @@ class RadioCertificate extends CommonCertificate
     /**
      * Getter for modes
      *
-     * @return self::MODES_*[] The certificate's mode code
+     * @return int[] The certificate's mode code
+     *               
+     *               - {@see RadioCertificate::MODES_UPLINK_ONLY}
+     *               - {@see RadioCertificate::MODES_UPLINK_AND_DOWNLINK}
+     *               
      */
     public function getModes() : array
     {

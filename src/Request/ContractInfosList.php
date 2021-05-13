@@ -6,7 +6,6 @@ use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of contracts according to visibility permissions and request filters.
- * 
  */
 class ContractInfosList extends Definition
 {
@@ -72,8 +71,11 @@ class ContractInfosList extends Definition
     protected ?string $groupId = null;
     /**
      * Searches for contracts that are attached to a specific group type.
+     * 
+     * - {@link ContractInfosList::GROUP_TYPE_BASIC}
+     * - {@link ContractInfosList::GROUP_TYPE_CHANNEL}
      *
-     * @var self::GROUP_TYPE_*
+     * @var int
      */
     protected ?int $groupType = null;
     /**
@@ -122,14 +124,26 @@ class ContractInfosList extends Definition
     protected ?int $tokenDuration = null;
     /**
      * Searches for contracts with a given pricing model
+     * 
+     * - {@link ContractInfosList::PRICING_MODEL_PRICING_MODEL_V1}
+     * - {@link ContractInfosList::PRICING_MODEL_PRICING_MODEL_V2}
+     * - {@link ContractInfosList::PRICING_MODEL_PRICING_MODEL_V3}
      *
-     * @var self::PRICING_MODEL_*
+     * @var int
      */
     protected ?int $pricingModel = null;
     /**
      * Searches for contracts with the given subscription plan:
+     * 
+     * - {@link ContractInfosList::SUBSCRIPTION_PLAN_FREE_ORDER}
+     * - {@link ContractInfosList::SUBSCRIPTION_PLAN_PAY_AS_YOU_GROW}
+     * - {@link ContractInfosList::SUBSCRIPTION_PLAN_COMMITTED_VOLUME_PLAN}
+     * - {@link ContractInfosList::SUBSCRIPTION_PLAN_FLEXIBLE_COMMITTED_VOLUME_PLAN}
+     * - {@link ContractInfosList::SUBSCRIPTION_PLAN_PACK}
+     * - {@link ContractInfosList::SUBSCRIPTION_PLAN_DEVKIT}
+     * - {@link ContractInfosList::SUBSCRIPTION_PLAN_ACTIVATE}
      *
-     * @var self::SUBSCRIPTION_PLAN_*
+     * @var int
      */
     protected ?int $subscriptionPlan = null;
     /**
@@ -140,14 +154,12 @@ class ContractInfosList extends Definition
      * 4 (ATLAS_POV)
      * 5 (ATLAS_BUBBLE)
      * 6 (ATLAS_WIFI_PRIVATEDB)
-     * 
      *
      * @var int
      */
     protected ?int $geolocationMode = null;
     /**
      * Defines the other available fields to be returned in the response.
-     * 
      *
      * @var string
      */
@@ -206,7 +218,11 @@ class ContractInfosList extends Definition
     /**
      * Setter for groupType
      *
-     * @param self::GROUP_TYPE_* $groupType Searches for contracts that are attached to a specific group type.
+     * @param int $groupType Searches for contracts that are attached to a specific group type.
+     *                       
+     *                       - {@link ContractInfosList::GROUP_TYPE_BASIC}
+     *                       - {@link ContractInfosList::GROUP_TYPE_CHANNEL}
+     *                       
      *
      * @return self To use in method chains
      */
@@ -306,7 +322,12 @@ class ContractInfosList extends Definition
     /**
      * Setter for pricingModel
      *
-     * @param self::PRICING_MODEL_* $pricingModel Searches for contracts with a given pricing model
+     * @param int $pricingModel Searches for contracts with a given pricing model
+     *                          
+     *                          - {@link ContractInfosList::PRICING_MODEL_PRICING_MODEL_V1}
+     *                          - {@link ContractInfosList::PRICING_MODEL_PRICING_MODEL_V2}
+     *                          - {@link ContractInfosList::PRICING_MODEL_PRICING_MODEL_V3}
+     *                          
      *
      * @return self To use in method chains
      */
@@ -318,7 +339,16 @@ class ContractInfosList extends Definition
     /**
      * Setter for subscriptionPlan
      *
-     * @param self::SUBSCRIPTION_PLAN_* $subscriptionPlan Searches for contracts with the given subscription plan:
+     * @param int $subscriptionPlan Searches for contracts with the given subscription plan:
+     *                              
+     *                              - {@link ContractInfosList::SUBSCRIPTION_PLAN_FREE_ORDER}
+     *                              - {@link ContractInfosList::SUBSCRIPTION_PLAN_PAY_AS_YOU_GROW}
+     *                              - {@link ContractInfosList::SUBSCRIPTION_PLAN_COMMITTED_VOLUME_PLAN}
+     *                              - {@link ContractInfosList::SUBSCRIPTION_PLAN_FLEXIBLE_COMMITTED_VOLUME_PLAN}
+     *                              - {@link ContractInfosList::SUBSCRIPTION_PLAN_PACK}
+     *                              - {@link ContractInfosList::SUBSCRIPTION_PLAN_DEVKIT}
+     *                              - {@link ContractInfosList::SUBSCRIPTION_PLAN_ACTIVATE}
+     *                              
      *
      * @return self To use in method chains
      */

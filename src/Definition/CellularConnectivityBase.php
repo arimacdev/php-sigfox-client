@@ -63,8 +63,13 @@ class CellularConnectivityBase extends Definition
     protected ?bool $roaming = null;
     /**
      * Configuration origin of the connectivity
+     * 
+     * - {@see CellularConnectivityBase::SOURCE_REMOTE}
+     * - {@see CellularConnectivityBase::SOURCE_OTHERS}
+     * - {@see CellularConnectivityBase::SOURCE_DEFAULT}
+     * - {@see CellularConnectivityBase::SOURCE_TOOLS}
      *
-     * @var self::SOURCE_*
+     * @var int
      */
     protected ?int $source = null;
     protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'apn', 'string'), new PrimitiveSerializer(self::class, 'username', 'string'), new PrimitiveSerializer(self::class, 'password', 'string'), new PrimitiveSerializer(self::class, 'pin', 'string'), new PrimitiveSerializer(self::class, 'roaming', 'bool'), new PrimitiveSerializer(self::class, 'source', 'int'));
@@ -204,7 +209,13 @@ class CellularConnectivityBase extends Definition
     /**
      * Setter for source
      *
-     * @param self::SOURCE_* $source Configuration origin of the connectivity
+     * @param int $source Configuration origin of the connectivity
+     *                    
+     *                    - {@see CellularConnectivityBase::SOURCE_REMOTE}
+     *                    - {@see CellularConnectivityBase::SOURCE_OTHERS}
+     *                    - {@see CellularConnectivityBase::SOURCE_DEFAULT}
+     *                    - {@see CellularConnectivityBase::SOURCE_TOOLS}
+     *                    
      *
      * @return self To use in method chains
      */
@@ -216,7 +227,13 @@ class CellularConnectivityBase extends Definition
     /**
      * Getter for source
      *
-     * @return self::SOURCE_* Configuration origin of the connectivity
+     * @return int Configuration origin of the connectivity
+     *             
+     *             - {@see CellularConnectivityBase::SOURCE_REMOTE}
+     *             - {@see CellularConnectivityBase::SOURCE_OTHERS}
+     *             - {@see CellularConnectivityBase::SOURCE_DEFAULT}
+     *             - {@see CellularConnectivityBase::SOURCE_TOOLS}
+     *             
      */
     public function getSource() : int
     {

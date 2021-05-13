@@ -7,7 +7,6 @@ use Arimac\Sigfox\Definition\ApiUserCreation;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Create a new API user.
- * 
  */
 class ApiUsersCreate extends Definition
 {

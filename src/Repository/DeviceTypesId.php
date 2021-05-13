@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\DeviceTypesIdGet;
 use Arimac\Sigfox\Definition\DeviceType;
 use Arimac\Sigfox\Request\DeviceTypesIdUpdate;
@@ -13,21 +14,26 @@ use Arimac\Sigfox\Response\Generated\DeviceTypesIdBulkRestartResponse;
 class DeviceTypesId
 {
     /**
+     * The HTTP client
+     */
+    protected ?Client $client;
+    /**
      * The Device Type identifier (hexademical format)
      */
     protected ?string $id;
     /**
      * Creating the repository
      *
-     * @param string $id The Device Type identifier (hexademical format)
+     * @param Client $client The HTTP client
+     * @param string $id     The Device Type identifier (hexademical format)
      */
-    public function __construct(string $id)
+    public function __construct(Client $client, string $id)
     {
+        $this->client = $client;
         $this->id = $id;
     }
     /**
      * Retrieve information about a device type.
-     * 
      */
     public function get(DeviceTypesIdGet $request) : DeviceType
     {
@@ -35,7 +41,6 @@ class DeviceTypesId
     }
     /**
      * Update a given device type.
-     * 
      */
     public function update(DeviceTypesIdUpdate $request)
     {
@@ -43,7 +48,6 @@ class DeviceTypesId
     }
     /**
      * Delete a given device type.
-     * 
      */
     public function delete()
     {
@@ -51,7 +55,6 @@ class DeviceTypesId
     }
     /**
      * Retrieve a list of messages for a given device types with a 3-day history.
-     * 
      */
     public function messages(DeviceTypesIdMessages $request) : DeviceTypesIdMessagesResponse
     {
@@ -59,7 +62,6 @@ class DeviceTypesId
     }
     /**
      * Retrieve a list of undelivered callback messages for a given device types.
-     * 
      */
     public function callbacksNotDelivered(DeviceTypesIdCallbacksNotDelivered $request) : DeviceTypesIdCallbacksNotDeliveredResponse
     {
@@ -70,11 +72,10 @@ class DeviceTypesId
      */
     public function callbacks() : DeviceTypesIdCallbacks
     {
-        return new DeviceTypesIdCallbacks($this->id);
+        return new DeviceTypesIdCallbacks($this->client, $this->id);
     }
     /**
      * Disable the sequence number check for the next message of each device of a device type.
-     * 
      */
     public function disengage()
     {
@@ -82,7 +83,6 @@ class DeviceTypesId
     }
     /**
      * Restart the devices of a device type with a asynchronous job.
-     * 
      */
     public function bulkRestart() : DeviceTypesIdBulkRestartResponse
     {

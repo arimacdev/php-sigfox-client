@@ -10,7 +10,6 @@ class ProductCertificate extends RadioCertificate
 {
     /**
      * Radio configurations available for this certificate
-     * 
      *
      * @var ProductCertificateRadioConfiguration[]
      */

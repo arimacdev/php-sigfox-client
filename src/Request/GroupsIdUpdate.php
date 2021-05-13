@@ -7,7 +7,6 @@ use Arimac\Sigfox\Definition\CommonGroupUpdate;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Update a given group.
- * 
  */
 class GroupsIdUpdate extends Definition
 {

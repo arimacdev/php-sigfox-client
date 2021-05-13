@@ -7,7 +7,6 @@ use Arimac\Sigfox\Definition\CreateCallback;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Create a new callback for a given device type.
- * 
  */
 class DeviceTypesIdCallbacksCreate extends Definition
 {

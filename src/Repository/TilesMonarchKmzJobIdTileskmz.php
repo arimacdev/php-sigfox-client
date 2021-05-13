@@ -2,9 +2,14 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\TilesMonarchKmzJobIdTileskmzGetCoverage;
 class TilesMonarchKmzJobIdTileskmz
 {
+    /**
+     * The HTTP client
+     */
+    protected ?Client $client;
     /**
      * The job's identifier (hexademical format)
      */
@@ -12,15 +17,16 @@ class TilesMonarchKmzJobIdTileskmz
     /**
      * Creating the repository
      *
-     * @param string $jobId The job's identifier (hexademical format)
+     * @param Client $client The HTTP client
+     * @param string $jobId  The job's identifier (hexademical format)
      */
-    public function __construct(string $jobId)
+    public function __construct(Client $client, string $jobId)
     {
+        $this->client = $client;
         $this->jobId = $jobId;
     }
     /**
      * Retrieve Sigfox Monarch coverage kmz from a job
-     * 
      */
     public function getCoverage(TilesMonarchKmzJobIdTileskmzGetCoverage $request)
     {

@@ -2,10 +2,15 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\ProfilesIdGet;
 use Arimac\Sigfox\Definition\Profile;
 class ProfilesId
 {
+    /**
+     * The HTTP client
+     */
+    protected ?Client $client;
     /**
      * The Profile identifier
      */
@@ -13,15 +18,16 @@ class ProfilesId
     /**
      * Creating the repository
      *
-     * @param string $id The Profile identifier
+     * @param Client $client The HTTP client
+     * @param string $id     The Profile identifier
      */
-    public function __construct(string $id)
+    public function __construct(Client $client, string $id)
     {
+        $this->client = $client;
         $this->id = $id;
     }
     /**
      * Retrieve information about a given profile.
-     * 
      */
     public function get(ProfilesIdGet $request) : Profile
     {

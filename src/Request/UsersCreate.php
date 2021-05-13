@@ -7,7 +7,6 @@ use Arimac\Sigfox\Definition\UserCreation;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Create a new user.
- * 
  */
 class UsersCreate extends Definition
 {

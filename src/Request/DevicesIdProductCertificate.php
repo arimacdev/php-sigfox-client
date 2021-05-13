@@ -7,7 +7,6 @@ use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve the product certificate associated with a given device ID and PAC, when the device has not already been
  * created on the portal, only in CRA
- * 
  */
 class DevicesIdProductCertificate extends Definition
 {

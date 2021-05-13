@@ -71,11 +71,11 @@ class Request extends Definition
                             $constants = EnumFields::getConstants($name, $propertyName, $description);
                             if ($constants) {
                                 $constPrefix = Helper::camelToUnderscore($propertyName);
-                                $usedType = str_replace("int", "self::" . $constPrefix . "_*", $usedType);
+                                $description = isset($constants["comment"])?$constants["comment"]."\n":"";
+                                $description .="\n";
                                 foreach ($constants as $constName => $attr) {
-                                    if ($constName === "comment") {
-                                        $description = $attr;
-                                    } else {
+                                    if ($constName !== "comment") {
+                                        $description .= "- {@link $className::$constPrefix"."_$constName}\n";
                                         $defClass->addConst(
                                             $constPrefix . "_" . $constName,
                                             $attr["value"],

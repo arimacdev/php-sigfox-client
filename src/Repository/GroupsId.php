@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\GroupsIdGet;
 use Arimac\Sigfox\Definition\Group;
 use Arimac\Sigfox\Request\GroupsIdUpdate;
@@ -12,21 +13,26 @@ use Arimac\Sigfox\Response\Generated\GroupsIdGeolocationPayloadsResponse;
 class GroupsId
 {
     /**
+     * The HTTP client
+     */
+    protected ?Client $client;
+    /**
      * The Group identifier
      */
     protected ?string $id;
     /**
      * Creating the repository
      *
-     * @param string $id The Group identifier
+     * @param Client $client The HTTP client
+     * @param string $id     The Group identifier
      */
-    public function __construct(string $id)
+    public function __construct(Client $client, string $id)
     {
+        $this->client = $client;
         $this->id = $id;
     }
     /**
      * Retrieve information about a given group.
-     * 
      */
     public function get(GroupsIdGet $request) : Group
     {
@@ -34,7 +40,6 @@ class GroupsId
     }
     /**
      * Update a given group.
-     * 
      */
     public function update(GroupsIdUpdate $request)
     {
@@ -42,7 +47,6 @@ class GroupsId
     }
     /**
      * Delete a given group.
-     * 
      */
     public function delete()
     {
@@ -51,7 +55,6 @@ class GroupsId
     /**
      * Retrieve a list of undelivered callbacks and errors for a given group, in reverse chronological order (most recent
      * message first).
-     * 
      */
     public function callbacksNotDelivered(GroupsIdCallbacksNotDelivered $request) : GroupsIdCallbacksNotDeliveredResponse
     {
@@ -59,7 +62,6 @@ class GroupsId
     }
     /**
      * Retrieve a list of geolocation payload according to request filters.
-     * 
      */
     public function geolocationPayloads(GroupsIdGeolocationPayloads $request) : GroupsIdGeolocationPayloadsResponse
     {

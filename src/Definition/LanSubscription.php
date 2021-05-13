@@ -31,14 +31,21 @@ class LanSubscription extends InternetSubscription
     public const ETH_CONNECTION_TYPE_STATIC = 1;
     /**
      * Subscription network type
+     * 
+     * - {@see LanSubscription::NETWORK_TYPE_COMPANY}
+     * - {@see LanSubscription::NETWORK_TYPE_OTHER}
+     * - {@see LanSubscription::NETWORK_TYPE_RESIDENT}
      *
-     * @var self::NETWORK_TYPE_*
+     * @var int
      */
     protected ?int $networkType = null;
     /**
      * Subscription connection type
+     * 
+     * - {@see LanSubscription::ETH_CONNECTION_TYPE_DHCP}
+     * - {@see LanSubscription::ETH_CONNECTION_TYPE_STATIC}
      *
-     * @var self::ETH_CONNECTION_TYPE_*
+     * @var int
      */
     protected ?int $ethConnectionType = null;
     /**
@@ -57,7 +64,12 @@ class LanSubscription extends InternetSubscription
     /**
      * Setter for networkType
      *
-     * @param self::NETWORK_TYPE_* $networkType Subscription network type
+     * @param int $networkType Subscription network type
+     *                         
+     *                         - {@see LanSubscription::NETWORK_TYPE_COMPANY}
+     *                         - {@see LanSubscription::NETWORK_TYPE_OTHER}
+     *                         - {@see LanSubscription::NETWORK_TYPE_RESIDENT}
+     *                         
      *
      * @return self To use in method chains
      */
@@ -69,7 +81,12 @@ class LanSubscription extends InternetSubscription
     /**
      * Getter for networkType
      *
-     * @return self::NETWORK_TYPE_* Subscription network type
+     * @return int Subscription network type
+     *             
+     *             - {@see LanSubscription::NETWORK_TYPE_COMPANY}
+     *             - {@see LanSubscription::NETWORK_TYPE_OTHER}
+     *             - {@see LanSubscription::NETWORK_TYPE_RESIDENT}
+     *             
      */
     public function getNetworkType() : int
     {
@@ -78,7 +95,11 @@ class LanSubscription extends InternetSubscription
     /**
      * Setter for ethConnectionType
      *
-     * @param self::ETH_CONNECTION_TYPE_* $ethConnectionType Subscription connection type
+     * @param int $ethConnectionType Subscription connection type
+     *                               
+     *                               - {@see LanSubscription::ETH_CONNECTION_TYPE_DHCP}
+     *                               - {@see LanSubscription::ETH_CONNECTION_TYPE_STATIC}
+     *                               
      *
      * @return self To use in method chains
      */
@@ -90,7 +111,11 @@ class LanSubscription extends InternetSubscription
     /**
      * Getter for ethConnectionType
      *
-     * @return self::ETH_CONNECTION_TYPE_* Subscription connection type
+     * @return int Subscription connection type
+     *             
+     *             - {@see LanSubscription::ETH_CONNECTION_TYPE_DHCP}
+     *             - {@see LanSubscription::ETH_CONNECTION_TYPE_STATIC}
+     *             
      */
     public function getEthConnectionType() : int
     {

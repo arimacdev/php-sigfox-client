@@ -8,7 +8,6 @@ use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Suspend multiple devices with asynchronous job
- * 
  */
 class DevicesBulkSuspend extends Definition
 {

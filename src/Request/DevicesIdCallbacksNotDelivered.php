@@ -7,7 +7,6 @@ use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of undelivered callbacks and errors for a given device, in reverse chronological order (most
  * recent message first).
- * 
  */
 class DevicesIdCallbacksNotDelivered extends Definition
 {

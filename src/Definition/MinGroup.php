@@ -60,8 +60,18 @@ class MinGroup extends Definition
     protected ?string $name = null;
     /**
      * Group's type
+     * 
+     * - {@see MinGroup::TYPE_SO}
+     * - {@see MinGroup::TYPE_OTHER}
+     * - {@see MinGroup::TYPE_SVNO}
+     * - {@see MinGroup::TYPE_PARTNERS}
+     * - {@see MinGroup::TYPE_NIP}
+     * - {@see MinGroup::TYPE_DIST}
+     * - {@see MinGroup::TYPE_CHANNEL}
+     * - {@see MinGroup::TYPE_STARTER}
+     * - {@see MinGroup::TYPE_PARTNER}
      *
-     * @var self::TYPE_*
+     * @var int
      */
     protected ?int $type = null;
     /**
@@ -125,7 +135,18 @@ class MinGroup extends Definition
     /**
      * Setter for type
      *
-     * @param self::TYPE_* $type Group's type
+     * @param int $type Group's type
+     *                  
+     *                  - {@see MinGroup::TYPE_SO}
+     *                  - {@see MinGroup::TYPE_OTHER}
+     *                  - {@see MinGroup::TYPE_SVNO}
+     *                  - {@see MinGroup::TYPE_PARTNERS}
+     *                  - {@see MinGroup::TYPE_NIP}
+     *                  - {@see MinGroup::TYPE_DIST}
+     *                  - {@see MinGroup::TYPE_CHANNEL}
+     *                  - {@see MinGroup::TYPE_STARTER}
+     *                  - {@see MinGroup::TYPE_PARTNER}
+     *                  
      *
      * @return self To use in method chains
      */
@@ -137,7 +158,18 @@ class MinGroup extends Definition
     /**
      * Getter for type
      *
-     * @return self::TYPE_* Group's type
+     * @return int Group's type
+     *             
+     *             - {@see MinGroup::TYPE_SO}
+     *             - {@see MinGroup::TYPE_OTHER}
+     *             - {@see MinGroup::TYPE_SVNO}
+     *             - {@see MinGroup::TYPE_PARTNERS}
+     *             - {@see MinGroup::TYPE_NIP}
+     *             - {@see MinGroup::TYPE_DIST}
+     *             - {@see MinGroup::TYPE_CHANNEL}
+     *             - {@see MinGroup::TYPE_STARTER}
+     *             - {@see MinGroup::TYPE_PARTNER}
+     *             
      */
     public function getType() : int
     {

@@ -74,14 +74,26 @@ class DeviceMessage extends Definition
     protected ?bool $ackRequired = null;
     /**
      * link quality indicator
+     * 
+     * - {@see DeviceMessage::LQI_LIMIT}
+     * - {@see DeviceMessage::LQI_AVERAGE}
+     * - {@see DeviceMessage::LQI_GOOD}
+     * - {@see DeviceMessage::LQI_EXCELLENT}
+     * - {@see DeviceMessage::LQI_NA}
      *
-     * @var self::LQI_*
+     * @var int
      */
     protected ?int $lqi = null;
     /**
      * link quality indicator for repeated message
+     * 
+     * - {@see DeviceMessage::LQI_REPEATERS_LIMIT}
+     * - {@see DeviceMessage::LQI_REPEATERS_AVERAGE}
+     * - {@see DeviceMessage::LQI_REPEATERS_GOOD}
+     * - {@see DeviceMessage::LQI_REPEATERS_EXCELLENT}
+     * - {@see DeviceMessage::LQI_REPEATERS_NA}
      *
-     * @var self::LQI_REPEATERS_*
+     * @var int
      */
     protected ?int $lqiRepeaters = null;
     /**
@@ -198,7 +210,14 @@ class DeviceMessage extends Definition
     /**
      * Setter for lqi
      *
-     * @param self::LQI_* $lqi link quality indicator
+     * @param int $lqi link quality indicator
+     *                 
+     *                 - {@see DeviceMessage::LQI_LIMIT}
+     *                 - {@see DeviceMessage::LQI_AVERAGE}
+     *                 - {@see DeviceMessage::LQI_GOOD}
+     *                 - {@see DeviceMessage::LQI_EXCELLENT}
+     *                 - {@see DeviceMessage::LQI_NA}
+     *                 
      *
      * @return self To use in method chains
      */
@@ -210,7 +229,14 @@ class DeviceMessage extends Definition
     /**
      * Getter for lqi
      *
-     * @return self::LQI_* link quality indicator
+     * @return int link quality indicator
+     *             
+     *             - {@see DeviceMessage::LQI_LIMIT}
+     *             - {@see DeviceMessage::LQI_AVERAGE}
+     *             - {@see DeviceMessage::LQI_GOOD}
+     *             - {@see DeviceMessage::LQI_EXCELLENT}
+     *             - {@see DeviceMessage::LQI_NA}
+     *             
      */
     public function getLqi() : int
     {
@@ -219,7 +245,14 @@ class DeviceMessage extends Definition
     /**
      * Setter for lqiRepeaters
      *
-     * @param self::LQI_REPEATERS_* $lqiRepeaters link quality indicator for repeated message
+     * @param int $lqiRepeaters link quality indicator for repeated message
+     *                          
+     *                          - {@see DeviceMessage::LQI_REPEATERS_LIMIT}
+     *                          - {@see DeviceMessage::LQI_REPEATERS_AVERAGE}
+     *                          - {@see DeviceMessage::LQI_REPEATERS_GOOD}
+     *                          - {@see DeviceMessage::LQI_REPEATERS_EXCELLENT}
+     *                          - {@see DeviceMessage::LQI_REPEATERS_NA}
+     *                          
      *
      * @return self To use in method chains
      */
@@ -231,7 +264,14 @@ class DeviceMessage extends Definition
     /**
      * Getter for lqiRepeaters
      *
-     * @return self::LQI_REPEATERS_* link quality indicator for repeated message
+     * @return int link quality indicator for repeated message
+     *             
+     *             - {@see DeviceMessage::LQI_REPEATERS_LIMIT}
+     *             - {@see DeviceMessage::LQI_REPEATERS_AVERAGE}
+     *             - {@see DeviceMessage::LQI_REPEATERS_GOOD}
+     *             - {@see DeviceMessage::LQI_REPEATERS_EXCELLENT}
+     *             - {@see DeviceMessage::LQI_REPEATERS_NA}
+     *             
      */
     public function getLqiRepeaters() : int
     {

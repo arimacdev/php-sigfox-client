@@ -7,13 +7,11 @@ use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Retrieve a list of API users according to visibility permissions and request filters.
- * 
  */
 class ApiUsersList extends Definition
 {
     /**
      * Defines the other available fields to be returned in the response.
-     * 
      *
      * @var string
      */

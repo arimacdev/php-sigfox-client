@@ -164,7 +164,6 @@ class Device extends CommonDevice
     /**
      * The last device's sequence number.
      * Absent if the device has never communicated or if the SIGFOX message protocol is V0
-     * 
      *
      * @var int
      */
@@ -172,7 +171,6 @@ class Device extends CommonDevice
     /**
      * The last trashed device's sequence number.
      * Absent if there is no message trashed or if the SIGFOX message protocol is V0
-     * 
      *
      * @var int
      */
@@ -185,8 +183,14 @@ class Device extends CommonDevice
     protected ?int $lastCom = null;
     /**
      * Link Quality Indicator
+     * 
+     * - {@see Device::LQI_LIMIT}
+     * - {@see Device::LQI_AVERAGE}
+     * - {@see Device::LQI_GOOD}
+     * - {@see Device::LQI_EXCELLENT}
+     * - {@see Device::LQI_NA}
      *
-     * @var self::LQI_*
+     * @var int
      */
     protected ?int $lqi = null;
     /**
@@ -203,14 +207,30 @@ class Device extends CommonDevice
     protected ?int $creationTime = null;
     /**
      * State of this device.
+     * 
+     * - {@see Device::STATE_OK}
+     * - {@see Device::STATE_DEAD}
+     * - {@see Device::STATE_OFF_CONTRACT}
+     * - {@see Device::STATE_DISABLED}
+     * - {@see Device::STATE_WARN}
+     * - {@see Device::STATE_DELETED}
+     * - {@see Device::STATE_SUSPENDED}
+     * - {@see Device::STATE_NOT_ACTIVABLE}
      *
-     * @var self::STATE_*
+     * @var int
      */
     protected ?int $state = null;
     /**
      * Communication state of this device.
+     * 
+     * - {@see Device::COM_STATE_NO}
+     * - {@see Device::COM_STATE_OK}
+     * - {@see Device::COM_STATE_WARN}
+     * - {@see Device::COM_STATE_KO}
+     * - {@see Device::COM_STATE_NA}
+     * - {@see Device::COM_STATE_NOT_SEEN}
      *
-     * @var self::COM_STATE_*
+     * @var int
      */
     protected ?int $comState = null;
     /**
@@ -249,8 +269,13 @@ class Device extends CommonDevice
     protected ?bool $automaticRenewal = null;
     /**
      * Computed automatic renewal status.
+     * 
+     * - {@see Device::AUTOMATIC_RENEWAL_STATUS_ALLOWED}
+     * - {@see Device::AUTOMATIC_RENEWAL_STATUS_NOT_ALLOWED}
+     * - {@see Device::AUTOMATIC_RENEWAL_STATUS_RENEWED}
+     * - {@see Device::AUTOMATIC_RENEWAL_STATUS_ENDED}
      *
-     * @var self::AUTOMATIC_RENEWAL_STATUS_*
+     * @var int
      */
     protected ?int $automaticRenewalStatus = null;
     /**
@@ -594,7 +619,14 @@ class Device extends CommonDevice
     /**
      * Setter for lqi
      *
-     * @param self::LQI_* $lqi Link Quality Indicator
+     * @param int $lqi Link Quality Indicator
+     *                 
+     *                 - {@see Device::LQI_LIMIT}
+     *                 - {@see Device::LQI_AVERAGE}
+     *                 - {@see Device::LQI_GOOD}
+     *                 - {@see Device::LQI_EXCELLENT}
+     *                 - {@see Device::LQI_NA}
+     *                 
      *
      * @return self To use in method chains
      */
@@ -606,7 +638,14 @@ class Device extends CommonDevice
     /**
      * Getter for lqi
      *
-     * @return self::LQI_* Link Quality Indicator
+     * @return int Link Quality Indicator
+     *             
+     *             - {@see Device::LQI_LIMIT}
+     *             - {@see Device::LQI_AVERAGE}
+     *             - {@see Device::LQI_GOOD}
+     *             - {@see Device::LQI_EXCELLENT}
+     *             - {@see Device::LQI_NA}
+     *             
      */
     public function getLqi() : int
     {
@@ -657,7 +696,17 @@ class Device extends CommonDevice
     /**
      * Setter for state
      *
-     * @param self::STATE_* $state State of this device.
+     * @param int $state State of this device.
+     *                   
+     *                   - {@see Device::STATE_OK}
+     *                   - {@see Device::STATE_DEAD}
+     *                   - {@see Device::STATE_OFF_CONTRACT}
+     *                   - {@see Device::STATE_DISABLED}
+     *                   - {@see Device::STATE_WARN}
+     *                   - {@see Device::STATE_DELETED}
+     *                   - {@see Device::STATE_SUSPENDED}
+     *                   - {@see Device::STATE_NOT_ACTIVABLE}
+     *                   
      *
      * @return self To use in method chains
      */
@@ -669,7 +718,17 @@ class Device extends CommonDevice
     /**
      * Getter for state
      *
-     * @return self::STATE_* State of this device.
+     * @return int State of this device.
+     *             
+     *             - {@see Device::STATE_OK}
+     *             - {@see Device::STATE_DEAD}
+     *             - {@see Device::STATE_OFF_CONTRACT}
+     *             - {@see Device::STATE_DISABLED}
+     *             - {@see Device::STATE_WARN}
+     *             - {@see Device::STATE_DELETED}
+     *             - {@see Device::STATE_SUSPENDED}
+     *             - {@see Device::STATE_NOT_ACTIVABLE}
+     *             
      */
     public function getState() : int
     {
@@ -678,7 +737,15 @@ class Device extends CommonDevice
     /**
      * Setter for comState
      *
-     * @param self::COM_STATE_* $comState Communication state of this device.
+     * @param int $comState Communication state of this device.
+     *                      
+     *                      - {@see Device::COM_STATE_NO}
+     *                      - {@see Device::COM_STATE_OK}
+     *                      - {@see Device::COM_STATE_WARN}
+     *                      - {@see Device::COM_STATE_KO}
+     *                      - {@see Device::COM_STATE_NA}
+     *                      - {@see Device::COM_STATE_NOT_SEEN}
+     *                      
      *
      * @return self To use in method chains
      */
@@ -690,7 +757,15 @@ class Device extends CommonDevice
     /**
      * Getter for comState
      *
-     * @return self::COM_STATE_* Communication state of this device.
+     * @return int Communication state of this device.
+     *             
+     *             - {@see Device::COM_STATE_NO}
+     *             - {@see Device::COM_STATE_OK}
+     *             - {@see Device::COM_STATE_WARN}
+     *             - {@see Device::COM_STATE_KO}
+     *             - {@see Device::COM_STATE_NA}
+     *             - {@see Device::COM_STATE_NOT_SEEN}
+     *             
      */
     public function getComState() : int
     {
@@ -825,7 +900,13 @@ class Device extends CommonDevice
     /**
      * Setter for automaticRenewalStatus
      *
-     * @param self::AUTOMATIC_RENEWAL_STATUS_* $automaticRenewalStatus Computed automatic renewal status.
+     * @param int $automaticRenewalStatus Computed automatic renewal status.
+     *                                    
+     *                                    - {@see Device::AUTOMATIC_RENEWAL_STATUS_ALLOWED}
+     *                                    - {@see Device::AUTOMATIC_RENEWAL_STATUS_NOT_ALLOWED}
+     *                                    - {@see Device::AUTOMATIC_RENEWAL_STATUS_RENEWED}
+     *                                    - {@see Device::AUTOMATIC_RENEWAL_STATUS_ENDED}
+     *                                    
      *
      * @return self To use in method chains
      */
@@ -837,7 +918,13 @@ class Device extends CommonDevice
     /**
      * Getter for automaticRenewalStatus
      *
-     * @return self::AUTOMATIC_RENEWAL_STATUS_* Computed automatic renewal status.
+     * @return int Computed automatic renewal status.
+     *             
+     *             - {@see Device::AUTOMATIC_RENEWAL_STATUS_ALLOWED}
+     *             - {@see Device::AUTOMATIC_RENEWAL_STATUS_NOT_ALLOWED}
+     *             - {@see Device::AUTOMATIC_RENEWAL_STATUS_RENEWED}
+     *             - {@see Device::AUTOMATIC_RENEWAL_STATUS_ENDED}
+     *             
      */
     public function getAutomaticRenewalStatus() : int
     {

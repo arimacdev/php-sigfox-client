@@ -10,7 +10,6 @@ class ModemCertificate extends RadioCertificate
 {
     /**
      * Radio configurations available for this certificate
-     * 
      *
      * @var ModemCertificateRadioConfiguration[]
      */

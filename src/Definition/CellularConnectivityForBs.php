@@ -107,26 +107,50 @@ class CellularConnectivityForBs extends CellularConnectivityBase
     protected ?MinBaseStation $baseStation = null;
     /**
      * State of a cellular connectivity configuration
+     * 
+     * - {@see CellularConnectivityForBs::STATE_ACTIVE}
+     * - {@see CellularConnectivityForBs::STATE_PASSIVE}
+     * - {@see CellularConnectivityForBs::STATE_PENDING}
+     * - {@see CellularConnectivityForBs::STATE_REJECTED}
+     * - {@see CellularConnectivityForBs::STATE_DELETING}
      *
-     * @var self::STATE_*
+     * @var int
      */
     protected ?int $state = null;
     /**
      * Synchronisation status of a cellular connectivity configuration
+     * 
+     * - {@see CellularConnectivityForBs::SYNC_STATUS_OK}
+     * - {@see CellularConnectivityForBs::SYNC_STATUS_TO_BE_SENT}
+     * - {@see CellularConnectivityForBs::SYNC_STATUS_SENT}
      *
-     * @var self::SYNC_STATUS_*
+     * @var int
      */
     protected ?int $syncStatus = null;
     /**
      * Error status returned after a connectivity config switch
+     * 
+     * - {@see CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_SUCCESS}
+     * - {@see CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_BAD_GSM_PIN}
+     * - {@see CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_TOO_MANY_PIN_TRIES}
+     * - {@see CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_VPN_ESTABLISHMENT_IMPOSSIBLE}
+     * - {@see CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_NETWORK_REJECTED}
+     * - {@see CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_UNKNOWN}
      *
-     * @var self::LAST_SWITCH_ERROR_STATUS_*
+     * @var int
      */
     protected ?int $lastSwitchErrorStatus = null;
     /**
      * Error status returned after a connectivity config creation/edition
+     * 
+     * - {@see CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_SUCCESS}
+     * - {@see CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_BAD_FORMAT}
+     * - {@see CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_EXISTING_CONFIG}
+     * - {@see CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_TOO_MANY_CONFIG}
+     * - {@see CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_CONFIG_ID_CONFLICT}
+     * - {@see CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_UNKNOWN}
      *
-     * @var self::LAST_SETCONF_ERROR_STATUS_*
+     * @var int
      */
     protected ?int $lastSetconfErrorStatus = null;
     /**
@@ -204,7 +228,14 @@ class CellularConnectivityForBs extends CellularConnectivityBase
     /**
      * Setter for state
      *
-     * @param self::STATE_* $state State of a cellular connectivity configuration
+     * @param int $state State of a cellular connectivity configuration
+     *                   
+     *                   - {@see CellularConnectivityForBs::STATE_ACTIVE}
+     *                   - {@see CellularConnectivityForBs::STATE_PASSIVE}
+     *                   - {@see CellularConnectivityForBs::STATE_PENDING}
+     *                   - {@see CellularConnectivityForBs::STATE_REJECTED}
+     *                   - {@see CellularConnectivityForBs::STATE_DELETING}
+     *                   
      *
      * @return self To use in method chains
      */
@@ -216,7 +247,14 @@ class CellularConnectivityForBs extends CellularConnectivityBase
     /**
      * Getter for state
      *
-     * @return self::STATE_* State of a cellular connectivity configuration
+     * @return int State of a cellular connectivity configuration
+     *             
+     *             - {@see CellularConnectivityForBs::STATE_ACTIVE}
+     *             - {@see CellularConnectivityForBs::STATE_PASSIVE}
+     *             - {@see CellularConnectivityForBs::STATE_PENDING}
+     *             - {@see CellularConnectivityForBs::STATE_REJECTED}
+     *             - {@see CellularConnectivityForBs::STATE_DELETING}
+     *             
      */
     public function getState() : int
     {
@@ -225,7 +263,12 @@ class CellularConnectivityForBs extends CellularConnectivityBase
     /**
      * Setter for syncStatus
      *
-     * @param self::SYNC_STATUS_* $syncStatus Synchronisation status of a cellular connectivity configuration
+     * @param int $syncStatus Synchronisation status of a cellular connectivity configuration
+     *                        
+     *                        - {@see CellularConnectivityForBs::SYNC_STATUS_OK}
+     *                        - {@see CellularConnectivityForBs::SYNC_STATUS_TO_BE_SENT}
+     *                        - {@see CellularConnectivityForBs::SYNC_STATUS_SENT}
+     *                        
      *
      * @return self To use in method chains
      */
@@ -237,7 +280,12 @@ class CellularConnectivityForBs extends CellularConnectivityBase
     /**
      * Getter for syncStatus
      *
-     * @return self::SYNC_STATUS_* Synchronisation status of a cellular connectivity configuration
+     * @return int Synchronisation status of a cellular connectivity configuration
+     *             
+     *             - {@see CellularConnectivityForBs::SYNC_STATUS_OK}
+     *             - {@see CellularConnectivityForBs::SYNC_STATUS_TO_BE_SENT}
+     *             - {@see CellularConnectivityForBs::SYNC_STATUS_SENT}
+     *             
      */
     public function getSyncStatus() : int
     {
@@ -246,8 +294,18 @@ class CellularConnectivityForBs extends CellularConnectivityBase
     /**
      * Setter for lastSwitchErrorStatus
      *
-     * @param self::LAST_SWITCH_ERROR_STATUS_* $lastSwitchErrorStatus Error status returned after a connectivity
-     *                                                                config switch
+     * @param int $lastSwitchErrorStatus Error status returned after a connectivity config switch
+     *                                   
+     *                                   - {@see CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_SUCCESS}
+     *                                   - {@see CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_BAD_GSM_PIN}
+     *                                   - {@see
+     *                                   CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_TOO_MANY_PIN_TRIES}
+     *                                   - {@see
+     *                                   CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_VPN_ESTABLISHMENT_IMPOSSIBLE}
+     *                                   - {@see
+     *                                   CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_NETWORK_REJECTED}
+     *                                   - {@see CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_UNKNOWN}
+     *                                   
      *
      * @return self To use in method chains
      */
@@ -259,7 +317,15 @@ class CellularConnectivityForBs extends CellularConnectivityBase
     /**
      * Getter for lastSwitchErrorStatus
      *
-     * @return self::LAST_SWITCH_ERROR_STATUS_* Error status returned after a connectivity config switch
+     * @return int Error status returned after a connectivity config switch
+     *             
+     *             - {@see CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_SUCCESS}
+     *             - {@see CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_BAD_GSM_PIN}
+     *             - {@see CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_TOO_MANY_PIN_TRIES}
+     *             - {@see CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_VPN_ESTABLISHMENT_IMPOSSIBLE}
+     *             - {@see CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_NETWORK_REJECTED}
+     *             - {@see CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_UNKNOWN}
+     *             
      */
     public function getLastSwitchErrorStatus() : int
     {
@@ -268,8 +334,18 @@ class CellularConnectivityForBs extends CellularConnectivityBase
     /**
      * Setter for lastSetconfErrorStatus
      *
-     * @param self::LAST_SETCONF_ERROR_STATUS_* $lastSetconfErrorStatus Error status returned after a connectivity
-     *                                                                  config creation/edition
+     * @param int $lastSetconfErrorStatus Error status returned after a connectivity config creation/edition
+     *                                    
+     *                                    - {@see CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_SUCCESS}
+     *                                    - {@see CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_BAD_FORMAT}
+     *                                    - {@see
+     *                                    CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_EXISTING_CONFIG}
+     *                                    - {@see
+     *                                    CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_TOO_MANY_CONFIG}
+     *                                    - {@see
+     *                                    CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_CONFIG_ID_CONFLICT}
+     *                                    - {@see CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_UNKNOWN}
+     *                                    
      *
      * @return self To use in method chains
      */
@@ -281,7 +357,15 @@ class CellularConnectivityForBs extends CellularConnectivityBase
     /**
      * Getter for lastSetconfErrorStatus
      *
-     * @return self::LAST_SETCONF_ERROR_STATUS_* Error status returned after a connectivity config creation/edition
+     * @return int Error status returned after a connectivity config creation/edition
+     *             
+     *             - {@see CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_SUCCESS}
+     *             - {@see CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_BAD_FORMAT}
+     *             - {@see CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_EXISTING_CONFIG}
+     *             - {@see CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_TOO_MANY_CONFIG}
+     *             - {@see CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_CONFIG_ID_CONFLICT}
+     *             - {@see CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_UNKNOWN}
+     *             
      */
     public function getLastSetconfErrorStatus() : int
     {

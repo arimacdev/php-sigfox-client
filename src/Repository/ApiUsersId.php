@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\ApiUsersIdGet;
 use Arimac\Sigfox\Definition\ApiUser;
 use Arimac\Sigfox\Request\ApiUsersIdUpdate;
@@ -9,21 +10,26 @@ use Arimac\Sigfox\Response\Generated\ApiUsersIdRenewCredentialResponse;
 class ApiUsersId
 {
     /**
+     * The HTTP client
+     */
+    protected ?Client $client;
+    /**
      * The API user identifier
      */
     protected ?string $id;
     /**
      * Creating the repository
      *
-     * @param string $id The API user identifier
+     * @param Client $client The HTTP client
+     * @param string $id     The API user identifier
      */
-    public function __construct(string $id)
+    public function __construct(Client $client, string $id)
     {
+        $this->client = $client;
         $this->id = $id;
     }
     /**
      * Retrieve information about a given API user.
-     * 
      */
     public function get(ApiUsersIdGet $request) : ApiUser
     {
@@ -31,7 +37,6 @@ class ApiUsersId
     }
     /**
      * Update information about a given API user.
-     * 
      */
     public function update(ApiUsersIdUpdate $request)
     {
@@ -39,7 +44,6 @@ class ApiUsersId
     }
     /**
      * Delete a given API user.
-     * 
      */
     public function delete()
     {
@@ -50,11 +54,10 @@ class ApiUsersId
      */
     public function profiles() : ApiUsersIdProfiles
     {
-        return new ApiUsersIdProfiles($this->id);
+        return new ApiUsersIdProfiles($this->client, $this->id);
     }
     /**
      * Generate a new password for a given API user.
-     * 
      */
     public function renewCredential() : ApiUsersIdRenewCredentialResponse
     {

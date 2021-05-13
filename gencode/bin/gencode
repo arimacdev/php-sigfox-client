@@ -1,6 +1,7 @@
 #!/usr/bin/env php
 <?php
 
+use Arimac\Sigfox\GenCode\Client;
 use Arimac\Sigfox\GenCode\Definition;
 use Arimac\Sigfox\GenCode\Config\EnumFields;
 use Arimac\Sigfox\GenCode\Config\MethodNames;
@@ -20,6 +21,10 @@ if (!file_exists($openapiFileLocation)) {
 }
 
 Helper::rrmdir($dir . "/../src/Definition");
+Helper::rrmdir($dir."/../src/Repository");
+Helper::rrmdir($dir."/../src/Request");
+Helper::rrmdir($dir."/../src/Response/Generated");
+unlink($dir."/../src/Sigfox.php");
 mkdir($dir . "/../src/Definition");
 
 $openapi = json_decode( file_get_contents($openapiFileLocation) , true);
@@ -51,6 +56,8 @@ foreach ($openapi["paths"] as $endpoint => $operations){
 
 $repositories = [];
 
+$client = new Client("Arimac\\Sigfox", "Sigfox", Helper::normalizeDocComment("Client for sigfox API"));
+
 foreach ($openapi["paths"] as $endpoint => $path) {
     $rewrite = RewriteRules::rewrite($endpoint);
     $slices = explode("/", $rewrite);
@@ -73,7 +80,7 @@ foreach ($openapi["paths"] as $endpoint => $path) {
         }
     }
 
-    foreach ($slices as $slice) {
+    foreach ($slices as $key=> $slice) {
         if ($slice !== "") {
             $repoNameSlice = "";
             $parameter = false;
@@ -82,6 +89,9 @@ foreach ($openapi["paths"] as $endpoint => $path) {
                 $repoNameSlice = Helper::dashToCamel(substr($slice, 1, strlen($slice) - 2));
             } else {
                 $repoNameSlice = Helper::dashToCamel($slice);
+            }
+            if($key===1){
+                $client->addRepositoryMethod(lcfirst($repoNameSlice), "Arimac\\Sigfox\\Repository\\$repoNameSlice");
             }
             $previousRepoName = $repoName;
             $repoName .= $repoNameSlice;
@@ -117,9 +127,7 @@ foreach ($openapi["paths"] as $endpoint => $path) {
                     $prevRepository->addRepositoryMethod($methodName,"Arimac\\Sigfox\\Repository\\". $repoName);
                 }
 
-                if (count($properties)) {
                     $repository->addConstructor($properties);
-                }
             } else {
                 $repository = $repositories[$repoName];
             }
@@ -156,6 +164,8 @@ foreach ($openapi["paths"] as $endpoint => $path) {
         );
     }
 }
+
+$client->save();
 
 foreach ($repositories as $repoName => $repo) {
     $repo->save();

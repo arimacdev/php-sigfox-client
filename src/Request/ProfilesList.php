@@ -6,7 +6,6 @@ use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of a Group's profiles according to visibility permissions and request filters.
- * 
  */
 class ProfilesList extends Definition
 {
@@ -24,7 +23,6 @@ class ProfilesList extends Definition
     protected ?bool $inherit = null;
     /**
      * Defines the other available fields to be returned in the response.
-     * 
      *
      * @var string
      */

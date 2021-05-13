@@ -6,7 +6,6 @@ use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Enable or disable a callback for a given device type.
- * 
  */
 class DeviceTypesIdCallbacksCallbackIdEnable extends Definition
 {

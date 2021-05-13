@@ -8,7 +8,6 @@ use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Unsubscribe multiple devices with asynchronous job.
- * 
  */
 class DevicesBulkUnsubscribe extends Definition
 {

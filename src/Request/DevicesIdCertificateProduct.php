@@ -6,13 +6,11 @@ use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve the product certificate associated with a device already registered.
- * 
  */
 class DevicesIdCertificateProduct extends Definition
 {
     /**
      * Defines the other available fields to be returned in the response.
-     * 
      *
      * @var string
      */

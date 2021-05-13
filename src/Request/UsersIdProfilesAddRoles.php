@@ -6,7 +6,6 @@ use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * add user roles to a user.
- * 
  */
 class UsersIdProfilesAddRoles extends Definition
 {

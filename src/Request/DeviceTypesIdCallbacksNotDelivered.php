@@ -6,7 +6,6 @@ use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of undelivered callback messages for a given device types.
- * 
  */
 class DeviceTypesIdCallbacksNotDelivered extends Definition
 {

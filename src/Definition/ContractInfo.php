@@ -47,7 +47,6 @@ class ContractInfo extends CommonContractInfo
     protected ?string $id = null;
     /**
      * The contract external ID. It's used to identify the contract info in EDRs.
-     * 
      *
      * @var string
      */
@@ -68,8 +67,12 @@ class ContractInfo extends CommonContractInfo
     protected ?MinContractInfo $order = null;
     /**
      * The pricing model used by this contract info.
+     * 
+     * - {@see ContractInfo::PRICING_MODEL_PRICING_MODEL_V1}
+     * - {@see ContractInfo::PRICING_MODEL_PRICING_MODEL_V2}
+     * - {@see ContractInfo::PRICING_MODEL_PRICING_MODEL_V3}
      *
-     * @var self::PRICING_MODEL_*
+     * @var int
      */
     protected ?int $pricingModel = null;
     /**
@@ -110,8 +113,13 @@ class ContractInfo extends CommonContractInfo
     protected ?string $timezone = null;
     /**
      * The contract info subscription plan.
+     * 
+     * - {@see ContractInfo::SUBSCRIPTION_PLAN_FREE_ORDER}
+     * - {@see ContractInfo::SUBSCRIPTION_PLAN_PAYG}
+     * - {@see ContractInfo::SUBSCRIPTION_PLAN_CVP}
+     * - {@see ContractInfo::SUBSCRIPTION_PLAN_CVP_FLEX}
      *
-     * @var self::SUBSCRIPTION_PLAN_*
+     * @var int
      */
     protected ?int $subscriptionPlan = null;
     /**
@@ -249,7 +257,12 @@ class ContractInfo extends CommonContractInfo
     /**
      * Setter for pricingModel
      *
-     * @param self::PRICING_MODEL_* $pricingModel The pricing model used by this contract info.
+     * @param int $pricingModel The pricing model used by this contract info.
+     *                          
+     *                          - {@see ContractInfo::PRICING_MODEL_PRICING_MODEL_V1}
+     *                          - {@see ContractInfo::PRICING_MODEL_PRICING_MODEL_V2}
+     *                          - {@see ContractInfo::PRICING_MODEL_PRICING_MODEL_V3}
+     *                          
      *
      * @return self To use in method chains
      */
@@ -261,7 +274,12 @@ class ContractInfo extends CommonContractInfo
     /**
      * Getter for pricingModel
      *
-     * @return self::PRICING_MODEL_* The pricing model used by this contract info.
+     * @return int The pricing model used by this contract info.
+     *             
+     *             - {@see ContractInfo::PRICING_MODEL_PRICING_MODEL_V1}
+     *             - {@see ContractInfo::PRICING_MODEL_PRICING_MODEL_V2}
+     *             - {@see ContractInfo::PRICING_MODEL_PRICING_MODEL_V3}
+     *             
      */
     public function getPricingModel() : int
     {
@@ -398,7 +416,13 @@ class ContractInfo extends CommonContractInfo
     /**
      * Setter for subscriptionPlan
      *
-     * @param self::SUBSCRIPTION_PLAN_* $subscriptionPlan The contract info subscription plan.
+     * @param int $subscriptionPlan The contract info subscription plan.
+     *                              
+     *                              - {@see ContractInfo::SUBSCRIPTION_PLAN_FREE_ORDER}
+     *                              - {@see ContractInfo::SUBSCRIPTION_PLAN_PAYG}
+     *                              - {@see ContractInfo::SUBSCRIPTION_PLAN_CVP}
+     *                              - {@see ContractInfo::SUBSCRIPTION_PLAN_CVP_FLEX}
+     *                              
      *
      * @return self To use in method chains
      */
@@ -410,7 +434,13 @@ class ContractInfo extends CommonContractInfo
     /**
      * Getter for subscriptionPlan
      *
-     * @return self::SUBSCRIPTION_PLAN_* The contract info subscription plan.
+     * @return int The contract info subscription plan.
+     *             
+     *             - {@see ContractInfo::SUBSCRIPTION_PLAN_FREE_ORDER}
+     *             - {@see ContractInfo::SUBSCRIPTION_PLAN_PAYG}
+     *             - {@see ContractInfo::SUBSCRIPTION_PLAN_CVP}
+     *             - {@see ContractInfo::SUBSCRIPTION_PLAN_CVP_FLEX}
+     *             
      */
     public function getSubscriptionPlan() : int
     {

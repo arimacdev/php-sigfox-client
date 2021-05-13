@@ -6,7 +6,6 @@ use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of location data of a device according to request filters.
- * 
  */
 class DevicesIdLocations extends Definition
 {

@@ -120,8 +120,25 @@ class BaseSiteIntervention extends Definition
     protected ?string $comment = null;
     /**
      * List of equipment to change for this intervention
+     * 
+     * - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ANTENNA}
+     * - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_BASE_STATION}
+     * - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_LNA}
+     * - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_FEEDER}
+     * - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ADSL_MODEM}
+     * - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_NETWORK_CABLE}
+     * - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SURGE}
+     * - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_WATERPROOFNESS}
+     * - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_DEMOD}
+     * - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_LNB}
+     * - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_DISH}
+     * - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_POWER_SUPPLY}
+     * - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_INVERTER}
+     * - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_KEY_3G}
+     * - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_CIRCUIT_BREAKER}
+     * - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ROUTER_3G}
      *
-     * @var self::EQUIPMENTS_TO_CHANGE_*[]
+     * @var int[]
      */
     protected ?array $equipmentsToChange = null;
     /**
@@ -168,8 +185,17 @@ class BaseSiteIntervention extends Definition
     protected ?int $costs = null;
     /**
      * Convention status.
+     * 
+     * - {@see BaseSiteIntervention::TYPE_OTHER}
+     * - {@see BaseSiteIntervention::TYPE_PRE_VISIT}
+     * - {@see BaseSiteIntervention::TYPE_ANTENNA_INSTALLATION}
+     * - {@see BaseSiteIntervention::TYPE_TELECOM_LINE_INSTALLATION}
+     * - {@see BaseSiteIntervention::TYPE_SITE_SEARCH}
+     * - {@see BaseSiteIntervention::TYPE_SAT_INSTALLATION}
+     * - {@see BaseSiteIntervention::TYPE_ELECTRICAL}
+     * - {@see BaseSiteIntervention::TYPE_DISMANTLING}
      *
-     * @var self::TYPE_*
+     * @var int
      */
     protected ?int $type = null;
     protected $serialize = array(new PrimitiveSerializer(self::class, 'author', 'string'), new PrimitiveSerializer(self::class, 'comment', 'string'), new ArraySerializer(self::class, 'equipmentsToChange', new PrimitiveSerializer(self::class, 'equipmentsToChange', 'int')), new PrimitiveSerializer(self::class, 'plannedTime', 'int'), new PrimitiveSerializer(self::class, 'interventionTime', 'int'), new PrimitiveSerializer(self::class, 'endTime', 'int'), new PrimitiveSerializer(self::class, 'billCode', 'string'), new PrimitiveSerializer(self::class, 'rtId', 'string'), new PrimitiveSerializer(self::class, 'closed', 'bool'), new PrimitiveSerializer(self::class, 'costs', 'int'), new PrimitiveSerializer(self::class, 'type', 'int'));
@@ -218,7 +244,25 @@ class BaseSiteIntervention extends Definition
     /**
      * Setter for equipmentsToChange
      *
-     * @param self::EQUIPMENTS_TO_CHANGE_*[] $equipmentsToChange List of equipment to change for this intervention
+     * @param int[] $equipmentsToChange List of equipment to change for this intervention
+     *                                  
+     *                                  - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ANTENNA}
+     *                                  - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_BASE_STATION}
+     *                                  - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_LNA}
+     *                                  - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_FEEDER}
+     *                                  - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ADSL_MODEM}
+     *                                  - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_NETWORK_CABLE}
+     *                                  - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SURGE}
+     *                                  - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_WATERPROOFNESS}
+     *                                  - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_DEMOD}
+     *                                  - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_LNB}
+     *                                  - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_DISH}
+     *                                  - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_POWER_SUPPLY}
+     *                                  - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_INVERTER}
+     *                                  - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_KEY_3G}
+     *                                  - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_CIRCUIT_BREAKER}
+     *                                  - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ROUTER_3G}
+     *                                  
      *
      * @return self To use in method chains
      */
@@ -230,7 +274,25 @@ class BaseSiteIntervention extends Definition
     /**
      * Getter for equipmentsToChange
      *
-     * @return self::EQUIPMENTS_TO_CHANGE_*[] List of equipment to change for this intervention
+     * @return int[] List of equipment to change for this intervention
+     *               
+     *               - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ANTENNA}
+     *               - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_BASE_STATION}
+     *               - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_LNA}
+     *               - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_FEEDER}
+     *               - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ADSL_MODEM}
+     *               - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_NETWORK_CABLE}
+     *               - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SURGE}
+     *               - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_WATERPROOFNESS}
+     *               - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_DEMOD}
+     *               - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_LNB}
+     *               - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_DISH}
+     *               - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_SAT_POWER_SUPPLY}
+     *               - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_INVERTER}
+     *               - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_KEY_3G}
+     *               - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_CIRCUIT_BREAKER}
+     *               - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ROUTER_3G}
+     *               
      */
     public function getEquipmentsToChange() : array
     {
@@ -386,7 +448,17 @@ class BaseSiteIntervention extends Definition
     /**
      * Setter for type
      *
-     * @param self::TYPE_* $type Convention status.
+     * @param int $type Convention status.
+     *                  
+     *                  - {@see BaseSiteIntervention::TYPE_OTHER}
+     *                  - {@see BaseSiteIntervention::TYPE_PRE_VISIT}
+     *                  - {@see BaseSiteIntervention::TYPE_ANTENNA_INSTALLATION}
+     *                  - {@see BaseSiteIntervention::TYPE_TELECOM_LINE_INSTALLATION}
+     *                  - {@see BaseSiteIntervention::TYPE_SITE_SEARCH}
+     *                  - {@see BaseSiteIntervention::TYPE_SAT_INSTALLATION}
+     *                  - {@see BaseSiteIntervention::TYPE_ELECTRICAL}
+     *                  - {@see BaseSiteIntervention::TYPE_DISMANTLING}
+     *                  
      *
      * @return self To use in method chains
      */
@@ -398,7 +470,17 @@ class BaseSiteIntervention extends Definition
     /**
      * Getter for type
      *
-     * @return self::TYPE_* Convention status.
+     * @return int Convention status.
+     *             
+     *             - {@see BaseSiteIntervention::TYPE_OTHER}
+     *             - {@see BaseSiteIntervention::TYPE_PRE_VISIT}
+     *             - {@see BaseSiteIntervention::TYPE_ANTENNA_INSTALLATION}
+     *             - {@see BaseSiteIntervention::TYPE_TELECOM_LINE_INSTALLATION}
+     *             - {@see BaseSiteIntervention::TYPE_SITE_SEARCH}
+     *             - {@see BaseSiteIntervention::TYPE_SAT_INSTALLATION}
+     *             - {@see BaseSiteIntervention::TYPE_ELECTRICAL}
+     *             - {@see BaseSiteIntervention::TYPE_DISMANTLING}
+     *             
      */
     public function getType() : int
     {

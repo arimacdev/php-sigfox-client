@@ -7,7 +7,6 @@ use Arimac\Sigfox\Definition\DeviceTypeUpdate;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Update a given device type.
- * 
  */
 class DeviceTypesIdUpdate extends Definition
 {

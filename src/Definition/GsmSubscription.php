@@ -49,8 +49,11 @@ class GsmSubscription extends InternetSubscription
     protected ?string $modemSerialNumber = null;
     /**
      * GSM subscription connection type
+     * 
+     * - {@see GsmSubscription::GSM_CONNECTION_TYPE_DONGLE_USB}
+     * - {@see GsmSubscription::GSM_CONNECTION_TYPE_ROUTER_ETH}
      *
-     * @var self::GSM_CONNECTION_TYPE_*
+     * @var int
      */
     protected ?int $gsmConnectionType = null;
     protected $serialize = array(new PrimitiveSerializer(self::class, 'dataNumber', 'string'), new PrimitiveSerializer(self::class, 'simCardNumber', 'string'), new PrimitiveSerializer(self::class, 'imei', 'string'), new PrimitiveSerializer(self::class, 'modem', 'string'), new PrimitiveSerializer(self::class, 'modemSerialNumber', 'string'), new PrimitiveSerializer(self::class, 'gsmConnectionType', 'int'));
@@ -164,7 +167,11 @@ class GsmSubscription extends InternetSubscription
     /**
      * Setter for gsmConnectionType
      *
-     * @param self::GSM_CONNECTION_TYPE_* $gsmConnectionType GSM subscription connection type
+     * @param int $gsmConnectionType GSM subscription connection type
+     *                               
+     *                               - {@see GsmSubscription::GSM_CONNECTION_TYPE_DONGLE_USB}
+     *                               - {@see GsmSubscription::GSM_CONNECTION_TYPE_ROUTER_ETH}
+     *                               
      *
      * @return self To use in method chains
      */
@@ -176,7 +183,11 @@ class GsmSubscription extends InternetSubscription
     /**
      * Getter for gsmConnectionType
      *
-     * @return self::GSM_CONNECTION_TYPE_* GSM subscription connection type
+     * @return int GSM subscription connection type
+     *             
+     *             - {@see GsmSubscription::GSM_CONNECTION_TYPE_DONGLE_USB}
+     *             - {@see GsmSubscription::GSM_CONNECTION_TYPE_ROUTER_ETH}
+     *             
      */
     public function getGsmConnectionType() : int
     {

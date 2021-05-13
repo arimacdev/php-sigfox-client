@@ -9,7 +9,6 @@ use Arimac\Sigfox\Serializer\ClassSerializer;
  * Starting the computation of the coverage margins for multiple points, for each redundancy level.
  * For more information please refer to the [Global Coverage API
  * article](https://support.sigfox.com/docs/global-coverage-api).
- * 
  */
 class CoveragesGlobalPredictionsCalculateBulk extends Definition
 {

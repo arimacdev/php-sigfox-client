@@ -2,9 +2,14 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\ApiUsersIdProfilesUpdate;
 class ApiUsersIdProfiles
 {
+    /**
+     * The HTTP client
+     */
+    protected ?Client $client;
     /**
      * The API user identifier
      */
@@ -12,10 +17,12 @@ class ApiUsersIdProfiles
     /**
      * Creating the repository
      *
-     * @param string $id The API user identifier
+     * @param Client $client The HTTP client
+     * @param string $id     The API user identifier
      */
-    public function __construct(string $id)
+    public function __construct(Client $client, string $id)
     {
+        $this->client = $client;
         $this->id = $id;
     }
     /**
@@ -34,6 +41,6 @@ class ApiUsersIdProfiles
      */
     public function find(string $profileId) : ApiUsersIdProfilesProfileId
     {
-        return new ApiUsersIdProfilesProfileId($this->id, $profileId);
+        return new ApiUsersIdProfilesProfileId($this->client, $this->id, $profileId);
     }
 }

@@ -8,7 +8,6 @@ use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Resume multiple devices with asynchronous job.
- * 
  */
 class DevicesBulkResume extends Definition
 {

@@ -2,9 +2,14 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Definition\DeviceConsumption;
 class DevicesIdConsumptionYear
 {
+    /**
+     * The HTTP client
+     */
+    protected ?Client $client;
     /**
      * The Device identifier (hexadecimal format)
      */
@@ -16,17 +21,18 @@ class DevicesIdConsumptionYear
     /**
      * Creating the repository
      *
-     * @param string $id The Device identifier (hexadecimal format)
-     * @param string $year The year of consumption
+     * @param Client $client The HTTP client
+     * @param string $id     The Device identifier (hexadecimal format)
+     * @param string $year   The year of consumption
      */
-    public function __construct(string $id, string $year)
+    public function __construct(Client $client, string $id, string $year)
     {
+        $this->client = $client;
         $this->id = $id;
         $this->year = $year;
     }
     /**
      * Retrieve a device's consumption for a given year.
-     * 
      */
     public function get() : DeviceConsumption
     {
@@ -41,6 +47,6 @@ class DevicesIdConsumptionYear
      */
     public function month(string $month) : DevicesIdConsumptionYearMonth
     {
-        return new DevicesIdConsumptionYearMonth($this->id, $this->year, $month);
+        return new DevicesIdConsumptionYearMonth($this->client, $this->id, $this->year, $month);
     }
 }

@@ -2,9 +2,14 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Definition\ActionJob;
 class DevicesBulkResumeJobId
 {
+    /**
+     * The HTTP client
+     */
+    protected ?Client $client;
     /**
      * The job identifier (hexadecimal format)
      */
@@ -12,15 +17,16 @@ class DevicesBulkResumeJobId
     /**
      * Creating the repository
      *
-     * @param string $jobId The job identifier (hexadecimal format)
+     * @param Client $client The HTTP client
+     * @param string $jobId  The job identifier (hexadecimal format)
      */
-    public function __construct(string $jobId)
+    public function __construct(Client $client, string $jobId)
     {
+        $this->client = $client;
         $this->jobId = $jobId;
     }
     /**
      * Retrieve the async job status for a resume devices action.
-     * 
      */
     public function get() : ActionJob
     {

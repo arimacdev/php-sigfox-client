@@ -7,7 +7,6 @@ use Arimac\Sigfox\Definition\AsynchronousDeviceReplacementJob;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Replace multiple devices (moving tokens from one device to another) with synchronous job
- * 
  */
 class DevicesBulkReplace extends Definition
 {

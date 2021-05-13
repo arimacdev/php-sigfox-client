@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\CoveragesGlobalPredictionsGetOne;
 use Arimac\Sigfox\Response\Generated\CoveragesGlobalPredictionsGetOneResponse;
 use Arimac\Sigfox\Request\CoveragesGlobalPredictionsGet;
@@ -11,11 +12,23 @@ use Arimac\Sigfox\Response\Generated\CoveragesGlobalPredictionsCalculateBulkResp
 class CoveragesGlobalPredictions
 {
     /**
+     * The HTTP client
+     */
+    protected ?Client $client;
+    /**
+     * Creating the repository
+     *
+     * @param Client $client The HTTP client
+     */
+    public function __construct(Client $client)
+    {
+        $this->client = $client;
+    }
+    /**
      * Get coverage margins for a selected latitude and longitude, for each
      * redundancy level.
      * For more information please refer to the [Global Coverage API
      * article](https://support.sigfox.com/docs/global-coverage-api).
-     * 
      */
     public function getOne(CoveragesGlobalPredictionsGetOne $request) : CoveragesGlobalPredictionsGetOneResponse
     {
@@ -24,12 +37,11 @@ class CoveragesGlobalPredictions
     /**
      * Get the coverage margins for multiple points, for each redundancy level.
      * Sigfox recommends to:
-     *   -use the bulk endpoint instead when requesting a large number of locations
-     *   -not request more than 200 locations at a time
-     *   -wait for the result to be returned before requesting again (avoid multithreading)
+     * -use the bulk endpoint instead when requesting a large number of locations
+     * -not request more than 200 locations at a time
+     * -wait for the result to be returned before requesting again (avoid multithreading)
      * For more information please refer to the [Global Coverage API
      * article](https://support.sigfox.com/docs/global-coverage-api).
-     * 
      */
     public function get(CoveragesGlobalPredictionsGet $request) : GlobalCoverageResponse
     {
@@ -39,7 +51,6 @@ class CoveragesGlobalPredictions
      * Starting the computation of the coverage margins for multiple points, for each redundancy level.
      * For more information please refer to the [Global Coverage API
      * article](https://support.sigfox.com/docs/global-coverage-api).
-     * 
      */
     public function calculateBulk(CoveragesGlobalPredictionsCalculateBulk $request) : CoveragesGlobalPredictionsCalculateBulkResponse
     {
@@ -50,6 +61,6 @@ class CoveragesGlobalPredictions
      */
     public function bulk() : CoveragesGlobalPredictionsBulk
     {
-        return new CoveragesGlobalPredictionsBulk();
+        return new CoveragesGlobalPredictionsBulk($this->client);
     }
 }

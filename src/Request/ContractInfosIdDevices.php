@@ -6,7 +6,6 @@ use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of devices according to visibility permissions and request filters.
- * 
  */
 class ContractInfosIdDevices extends Definition
 {
@@ -18,7 +17,6 @@ class ContractInfosIdDevices extends Definition
     protected ?string $deviceTypeId = null;
     /**
      * Defines the other available fields to be returned in the response.
-     * 
      *
      * @var string
      */
