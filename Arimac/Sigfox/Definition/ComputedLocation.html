@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Arimac\Sigfox\Definition\ComputedLocation | Sigfox Client API</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/doctum.css">
+        <link rel="stylesheet" type="text/css" href="../../../fonts/doctum-font.css">
+        <script src="../../../js/jquery-3.5.1.slim.min.js"></script>
+        <script async defer src="../../../js/bootstrap.min.js"></script>
+        <script src="../../../js/typeahead.min.js"></script>
+        <script src="../../../doctum.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    </head>
+
+    <body id="class" data-name="class:Arimac_Sigfox_Definition_ComputedLocation" data-root-path="../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <form id="search-form" action="../../../search.html">
+            <span class="icon icon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../index.html">Sigfox Client API</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../classes.html">Classes</a></li>
+                    <li><a href="../../../namespaces.html">Namespaces</a></li>
+                    <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../Arimac.html">Arimac</a></li><li class="backslash">\</li><li><a href="../../../Arimac/Sigfox.html">Sigfox</a></li><li class="backslash">\</li><li><a href="../../../Arimac/Sigfox/Definition.html">Definition</a></li><li class="backslash">\</li><li>ComputedLocation</li>
+            </ol>
+        </div>
+                <div id="page-content">
+    <div class="page-header">
+        <h1>ComputedLocation    
+            </h1>
+    </div>
+
+    
+    <p>        class
+    <strong>ComputedLocation</strong>        extends <a href="../../../Arimac/Sigfox/Definition.html"><abbr title="Arimac\Sigfox\Definition">Definition</abbr></a>
+</p>
+
+        
+    
+        
+
+            <div class="description">
+            <p><p>Contains the estimated position of the device within a circle based on the GPS data or the Sigfox Geolocation
+service</p></p>                    </div>
+            
+        
+            <h2>Constants</h2>    <table class="table table-condensed">
+                    <tr>
+                <td>
+                                                                                                                        SOURCE_RSSI_AND_POSITION_OF_THE_STATION
+                                    </td>
+                <td class="last">
+                    <p><em><p>computed using RSSI and position of the station (legacy)</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        SOURCE_THE_GPS_DATA_INSIDE_THE_PAYLOAD
+                                    </td>
+                <td class="last">
+                    <p><em><p>computed using the GPS data inside the payload</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        SOURCE_NETWORK_LOCATION
+                                    </td>
+                <td class="last">
+                    <p><em><p>computed using Network location</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        SOURCE_POI_LOCATION
+                                    </td>
+                <td class="last">
+                    <p><em><p>computed using PoI location</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        SOURCE_HD_NETWORK_LOCATION
+                                    </td>
+                <td class="last">
+                    <p><em><p>computed using HD network location</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        SOURCE_PRIVATE_DATABASE_LOCATION
+                                    </td>
+                <td class="last">
+                    <p><em><p>computed using private database location</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        SOURCE_WIFI_LOCATION
+                                    </td>
+                <td class="last">
+                    <p><em><p>computed using WiFi location</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        SOURCE_PROXIMITY_LOCATION
+                                    </td>
+                <td class="last">
+                    <p><em><p>computed using Proximity location</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+            </table>
+
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_required">
+                                        protected                                        
+                                                                                
+                                    </td>
+                <td>$required</td>
+                <td class="last"></td>
+                <td><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition.html#property_required">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_validations">
+                                        protected                                        
+                                                                                
+                                    </td>
+                <td>$validations</td>
+                <td class="last"></td>
+                <td><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition.html#property_validations">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_serialize">
+                                        protected                                        
+                                                                                
+                                    </td>
+                <td>$serialize</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_extendable">
+                                        protected                                        
+                                                                                
+                                    </td>
+                <td>$extendable</td>
+                <td class="last"></td>
+                <td><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition.html#property_extendable">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_lat">
+                                        protected                                        int
+                                                                                
+                                    </td>
+                <td>$lat</td>
+                <td class="last"><p>The device's estimated latitude</p></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_lng">
+                                        protected                                        int
+                                                                                
+                                    </td>
+                <td>$lng</td>
+                <td class="last"><p>The device's estimated longitude</p></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_radius">
+                                        protected                                        int
+                                                                                
+                                    </td>
+                <td>$radius</td>
+                <td class="last"><p>The radius of the circle (meters)</p></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_source">
+                                        protected                                        int
+                                                                                
+                                    </td>
+                <td>$source</td>
+                <td class="last"><p>Define how the location has been computed:</p></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_placeIds">
+                                        protected                                        string[]
+                                                                                
+                                    </td>
+                <td>$placeIds</td>
+                <td class="last"><p>The place ids computed by the Sigfox Geolocation service</p></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getSerializeMetaData">getSerializeMetaData</a>()
+        
+                                            <p><p>Returning all meta data to serialize and deserialize objects</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition.html#method_getSerializeMetaData">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_isExtendable">isExtendable</a>()
+        
+                                            <p><p>Returning the weather the class is extendable or not</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition.html#method_isExtendable">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html"><abbr title="Arimac\Sigfox\Definition\ComputedLocation">ComputedLocation</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setLat">setLat</a>(int|null $lat)
+        
+                                            <p><p>Setter for lat</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getLat">getLat</a>()
+        
+                                            <p><p>Getter for lat</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html"><abbr title="Arimac\Sigfox\Definition\ComputedLocation">ComputedLocation</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setLng">setLng</a>(int|null $lng)
+        
+                                            <p><p>Setter for lng</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getLng">getLng</a>()
+        
+                                            <p><p>Getter for lng</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html"><abbr title="Arimac\Sigfox\Definition\ComputedLocation">ComputedLocation</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setRadius">setRadius</a>(int|null $radius)
+        
+                                            <p><p>Setter for radius</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getRadius">getRadius</a>()
+        
+                                            <p><p>Getter for radius</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html"><abbr title="Arimac\Sigfox\Definition\ComputedLocation">ComputedLocation</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setSource">setSource</a>(int|null $source)
+        
+                                            <p><p>Setter for source</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getSource">getSource</a>()
+        
+                                            <p><p>Getter for source</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html"><abbr title="Arimac\Sigfox\Definition\ComputedLocation">ComputedLocation</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setPlaceIds">setPlaceIds</a>(array|null $placeIds)
+        
+                                            <p><p>Setter for placeIds</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getPlaceIds">getPlaceIds</a>()
+        
+                                            <p><p>Getter for placeIds</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_getSerializeMetaData">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition.html#method_getSerializeMetaData">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a> at line 18</div>
+        <code>                    array
+    <strong>getSerializeMetaData</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Returning all meta data to serialize and deserialize objects</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isExtendable">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition.html#method_isExtendable">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a> at line 23</div>
+        <code>                    bool
+    <strong>isExtendable</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Returning the weather the class is extendable or not</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLat">
+        <div class="location">at line 93</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html"><abbr title="Arimac\Sigfox\Definition\ComputedLocation">ComputedLocation</abbr></a>
+    <strong>setLat</strong>(int|null $lat)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for lat</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int|null</td>
+                <td>$lat</td>
+                <td><p>The device's estimated latitude</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html"><abbr title="Arimac\Sigfox\Definition\ComputedLocation">ComputedLocation</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLat">
+        <div class="location">at line 103</div>
+        <code>                    int
+    <strong>getLat</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for lat</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td><p>The device's estimated latitude</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLng">
+        <div class="location">at line 114</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html"><abbr title="Arimac\Sigfox\Definition\ComputedLocation">ComputedLocation</abbr></a>
+    <strong>setLng</strong>(int|null $lng)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for lng</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int|null</td>
+                <td>$lng</td>
+                <td><p>The device's estimated longitude</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html"><abbr title="Arimac\Sigfox\Definition\ComputedLocation">ComputedLocation</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLng">
+        <div class="location">at line 124</div>
+        <code>                    int
+    <strong>getLng</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for lng</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td><p>The device's estimated longitude</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setRadius">
+        <div class="location">at line 135</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html"><abbr title="Arimac\Sigfox\Definition\ComputedLocation">ComputedLocation</abbr></a>
+    <strong>setRadius</strong>(int|null $radius)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for radius</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int|null</td>
+                <td>$radius</td>
+                <td><p>The radius of the circle (meters)</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html"><abbr title="Arimac\Sigfox\Definition\ComputedLocation">ComputedLocation</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getRadius">
+        <div class="location">at line 145</div>
+        <code>                    int
+    <strong>getRadius</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for radius</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td><p>The radius of the circle (meters)</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setSource">
+        <div class="location">at line 166</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html"><abbr title="Arimac\Sigfox\Definition\ComputedLocation">ComputedLocation</abbr></a>
+    <strong>setSource</strong>(int|null $source)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for source</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int|null</td>
+                <td>$source</td>
+                <td><p>Define how the location has been computed:</p>
+<ul>
+<li>{<a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html">\Arimac\Sigfox\Definition\ComputedLocation::SOURCE_RSSI_AND_POSITION_OF_THE_STATION}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html">\Arimac\Sigfox\Definition\ComputedLocation::SOURCE_THE_GPS_DATA_INSIDE_THE_PAYLOAD}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html">\Arimac\Sigfox\Definition\ComputedLocation::SOURCE_NETWORK_LOCATION}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html">\Arimac\Sigfox\Definition\ComputedLocation::SOURCE_POI_LOCATION}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html">\Arimac\Sigfox\Definition\ComputedLocation::SOURCE_HD_NETWORK_LOCATION}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html">\Arimac\Sigfox\Definition\ComputedLocation::SOURCE_PRIVATE_DATABASE_LOCATION}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html">\Arimac\Sigfox\Definition\ComputedLocation::SOURCE_WIFI_LOCATION}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html">\Arimac\Sigfox\Definition\ComputedLocation::SOURCE_PROXIMITY_LOCATION}</a></li>
+</ul></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html"><abbr title="Arimac\Sigfox\Definition\ComputedLocation">ComputedLocation</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getSource">
+        <div class="location">at line 186</div>
+        <code>                    int
+    <strong>getSource</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for source</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td><p>Define how the location has been computed:</p>
+<ul>
+<li>{<a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html">\Arimac\Sigfox\Definition\ComputedLocation::SOURCE_RSSI_AND_POSITION_OF_THE_STATION}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html">\Arimac\Sigfox\Definition\ComputedLocation::SOURCE_THE_GPS_DATA_INSIDE_THE_PAYLOAD}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html">\Arimac\Sigfox\Definition\ComputedLocation::SOURCE_NETWORK_LOCATION}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html">\Arimac\Sigfox\Definition\ComputedLocation::SOURCE_POI_LOCATION}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html">\Arimac\Sigfox\Definition\ComputedLocation::SOURCE_HD_NETWORK_LOCATION}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html">\Arimac\Sigfox\Definition\ComputedLocation::SOURCE_PRIVATE_DATABASE_LOCATION}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html">\Arimac\Sigfox\Definition\ComputedLocation::SOURCE_WIFI_LOCATION}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html">\Arimac\Sigfox\Definition\ComputedLocation::SOURCE_PROXIMITY_LOCATION}</a></li>
+</ul></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setPlaceIds">
+        <div class="location">at line 197</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html"><abbr title="Arimac\Sigfox\Definition\ComputedLocation">ComputedLocation</abbr></a>
+    <strong>setPlaceIds</strong>(array|null $placeIds)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for placeIds</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array|null</td>
+                <td>$placeIds</td>
+                <td><p>The place ids computed by the Sigfox Geolocation service</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/ComputedLocation.html"><abbr title="Arimac\Sigfox\Definition\ComputedLocation">ComputedLocation</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getPlaceIds">
+        <div class="location">at line 207</div>
+        <code>                    array
+    <strong>getPlaceIds</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for placeIds</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td><p>The place ids computed by the Sigfox Geolocation service</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+</div><div id="footer">
+        Generated by <a href="https://github.com/code-lts/doctum">Doctum, a API Documentation generator and fork of Sami</a>.</div></div>
+    </div>
+    </body>
+
+</html>

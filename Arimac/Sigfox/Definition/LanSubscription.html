@@ -1,0 +1,1895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Arimac\Sigfox\Definition\LanSubscription | Sigfox Client API</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/doctum.css">
+        <link rel="stylesheet" type="text/css" href="../../../fonts/doctum-font.css">
+        <script src="../../../js/jquery-3.5.1.slim.min.js"></script>
+        <script async defer src="../../../js/bootstrap.min.js"></script>
+        <script src="../../../js/typeahead.min.js"></script>
+        <script src="../../../doctum.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    </head>
+
+    <body id="class" data-name="class:Arimac_Sigfox_Definition_LanSubscription" data-root-path="../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <form id="search-form" action="../../../search.html">
+            <span class="icon icon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../index.html">Sigfox Client API</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../classes.html">Classes</a></li>
+                    <li><a href="../../../namespaces.html">Namespaces</a></li>
+                    <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../Arimac.html">Arimac</a></li><li class="backslash">\</li><li><a href="../../../Arimac/Sigfox.html">Sigfox</a></li><li class="backslash">\</li><li><a href="../../../Arimac/Sigfox/Definition.html">Definition</a></li><li class="backslash">\</li><li>LanSubscription</li>
+            </ol>
+        </div>
+                <div id="page-content">
+    <div class="page-header">
+        <h1>LanSubscription    
+            </h1>
+    </div>
+
+    
+    <p>        class
+    <strong>LanSubscription</strong>        extends <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+</p>
+
+        
+    
+        
+
+            <div class="description">
+            <p><p>Information about LAN internet subscription</p></p>                    </div>
+            
+        
+            <h2>Constants</h2>    <table class="table table-condensed">
+                    <tr>
+                <td>
+                                                                                                                        TYPE_GSM
+                                    </td>
+                <td class="last">
+                    <p><em><p>GSM</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        TYPE_ADSL
+                                    </td>
+                <td class="last">
+                    <p><em><p>ADSL</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        TYPE_SATELLITE
+                                    </td>
+                <td class="last">
+                    <p><em><p>SATELLITE</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        TYPE_LAN
+                                    </td>
+                <td class="last">
+                    <p><em><p>LAN</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        TYPE_WIFI
+                                    </td>
+                <td class="last">
+                    <p><em><p>WIFI</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        PRIORITY_PRIMARY
+                                    </td>
+                <td class="last">
+                    <p><em><p>PRIMARY</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        PRIORITY_SECONDARY
+                                    </td>
+                <td class="last">
+                    <p><em><p>SECONDARY</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        PRIORITY_TERMINATED
+                                    </td>
+                <td class="last">
+                    <p><em><p>TERMINATED</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        NETWORK_TYPE_COMPANY
+                                    </td>
+                <td class="last">
+                    <p><em><p>COMPANY</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        NETWORK_TYPE_OTHER
+                                    </td>
+                <td class="last">
+                    <p><em><p>OTHER</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        NETWORK_TYPE_RESIDENT
+                                    </td>
+                <td class="last">
+                    <p><em><p>RESIDENT</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        ETH_CONNECTION_TYPE_DHCP
+                                    </td>
+                <td class="last">
+                    <p><em><p>DHCP</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        ETH_CONNECTION_TYPE_STATIC
+                                    </td>
+                <td class="last">
+                    <p><em><p>STATIC</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+            </table>
+
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_required">
+                                        protected                                        
+                                                                                
+                                    </td>
+                <td>$required</td>
+                <td class="last"></td>
+                <td><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition.html#property_required">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_validations">
+                                        protected                                        
+                                                                                
+                                    </td>
+                <td>$validations</td>
+                <td class="last"></td>
+                <td><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition.html#property_validations">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_serialize">
+                                        protected                                        
+                                                                                
+                                    </td>
+                <td>$serialize</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_extendable">
+                                        protected                                        
+                                                                                
+                                    </td>
+                <td>$extendable</td>
+                <td class="last"></td>
+                <td><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition.html#property_extendable">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_id">
+                                        protected                                        string
+                                                                                
+                                    </td>
+                <td>$id</td>
+                <td class="last"><p>The identifier of this internet subscription</p></td>
+                <td><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#property_id">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_type">
+                                        protected                                        int
+                                                                                
+                                    </td>
+                <td>$type</td>
+                <td class="last"><p>Internet subscription type</p></td>
+                <td><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#property_type">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_priority">
+                                        protected                                        int
+                                                                                
+                                    </td>
+                <td>$priority</td>
+                <td class="last"><p>Internet subscription priority.</p></td>
+                <td><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#property_priority">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_comments">
+                                        protected                                        string
+                                                                                
+                                    </td>
+                <td>$comments</td>
+                <td class="last"><p>The comments about this internet subscription. This field can be unset when updating.</p></td>
+                <td><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#property_comments">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_startTime">
+                                        protected                                        int
+                                                                                
+                                    </td>
+                <td>$startTime</td>
+                <td class="last"><p>The start time of this internet subscription</p></td>
+                <td><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#property_startTime">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_endTime">
+                                        protected                                        int
+                                                                                
+                                    </td>
+                <td>$endTime</td>
+                <td class="last"><p>The end time this internet subscription. This field can be unset when updating.</p></td>
+                <td><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#property_endTime">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_provider">
+                                        protected                                        <a href="../../../Arimac/Sigfox/Definition/MinProvider.html"><abbr title="Arimac\Sigfox\Definition\MinProvider">MinProvider</abbr></a>
+                                                                                
+                                    </td>
+                <td>$provider</td>
+                <td class="last"></td>
+                <td><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#property_provider">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_contacts">
+                                        protected                                        <a href="../../../Arimac/Sigfox/Definition/MinContact.html"><abbr title="Arimac\Sigfox\Definition\MinContact">MinContact</abbr></a>[]
+                                                                                
+                                    </td>
+                <td>$contacts</td>
+                <td class="last"></td>
+                <td><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#property_contacts">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_actions">
+                                        protected                                        string[]
+                                                                                
+                                    </td>
+                <td>$actions</td>
+                <td class="last"></td>
+                <td><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#property_actions">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_resources">
+                                        protected                                        string[]
+                                                                                
+                                    </td>
+                <td>$resources</td>
+                <td class="last"></td>
+                <td><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#property_resources">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_networkType">
+                                        protected                                        int
+                                                                                
+                                    </td>
+                <td>$networkType</td>
+                <td class="last"><p>Subscription network type</p></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_ethConnectionType">
+                                        protected                                        int
+                                                                                
+                                    </td>
+                <td>$ethConnectionType</td>
+                <td class="last"><p>Subscription connection type</p></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_addressing">
+                                        protected                                        string
+                                                                                
+                                    </td>
+                <td>$addressing</td>
+                <td class="last"><p>The addressing of this internet subscription. This field can be unset when updating.</p></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_connectionComments">
+                                        protected                                        int
+                                                                                
+                                    </td>
+                <td>$connectionComments</td>
+                <td class="last"><p>Comments about the connection of this internet subscription. This field can be unset when updating.</p></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getSerializeMetaData">getSerializeMetaData</a>()
+        
+                                            <p><p>Returning all meta data to serialize and deserialize objects</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition.html#method_getSerializeMetaData">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_isExtendable">isExtendable</a>()
+        
+                                            <p><p>Returning the weather the class is extendable or not</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition.html#method_isExtendable">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setId">setId</a>(string|null $id)
+        
+                                            <p><p>Setter for id</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setId">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getId">getId</a>()
+        
+                                            <p><p>Getter for id</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getId">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setType">setType</a>(int|null $type)
+        
+                                            <p><p>Setter for type</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setType">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getType">getType</a>()
+        
+                                            <p><p>Getter for type</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getType">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setPriority">setPriority</a>(int|null $priority)
+        
+                                            <p><p>Setter for priority</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setPriority">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getPriority">getPriority</a>()
+        
+                                            <p><p>Getter for priority</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getPriority">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setComments">setComments</a>(string|null $comments)
+        
+                                            <p><p>Setter for comments</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setComments">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getComments">getComments</a>()
+        
+                                            <p><p>Getter for comments</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getComments">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setStartTime">setStartTime</a>(int|null $startTime)
+        
+                                            <p><p>Setter for startTime</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setStartTime">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getStartTime">getStartTime</a>()
+        
+                                            <p><p>Getter for startTime</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getStartTime">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setEndTime">setEndTime</a>(int|null $endTime)
+        
+                                            <p><p>Setter for endTime</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setEndTime">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getEndTime">getEndTime</a>()
+        
+                                            <p><p>Getter for endTime</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getEndTime">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setProvider">setProvider</a>(<abbr title="Arimac\Sigfox\Definition\Arimac\Sigfox\Definition\MinProvider">MinProvider</abbr>|null $provider)
+        
+                                            <p><p>Setter for provider</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setProvider">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/MinProvider.html"><abbr title="Arimac\Sigfox\Definition\MinProvider">MinProvider</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getProvider">getProvider</a>()
+        
+                                            <p><p>Getter for provider</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getProvider">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setContacts">setContacts</a>(array|null $contacts)
+        
+                                            <p><p>Setter for contacts</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setContacts">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getContacts">getContacts</a>()
+        
+                                            <p><p>Getter for contacts</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getContacts">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setActions">setActions</a>(array|null $actions)
+        
+                                            <p><p>Setter for actions</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setActions">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getActions">getActions</a>()
+        
+                                            <p><p>Getter for actions</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getActions">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setResources">setResources</a>(array|null $resources)
+        
+                                            <p><p>Setter for resources</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setResources">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getResources">getResources</a>()
+        
+                                            <p><p>Getter for resources</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getResources">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/LanSubscription.html"><abbr title="Arimac\Sigfox\Definition\LanSubscription">LanSubscription</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setNetworkType">setNetworkType</a>(int|null $networkType)
+        
+                                            <p><p>Setter for networkType</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getNetworkType">getNetworkType</a>()
+        
+                                            <p><p>Getter for networkType</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/LanSubscription.html"><abbr title="Arimac\Sigfox\Definition\LanSubscription">LanSubscription</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setEthConnectionType">setEthConnectionType</a>(int|null $ethConnectionType)
+        
+                                            <p><p>Setter for ethConnectionType</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getEthConnectionType">getEthConnectionType</a>()
+        
+                                            <p><p>Getter for ethConnectionType</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/LanSubscription.html"><abbr title="Arimac\Sigfox\Definition\LanSubscription">LanSubscription</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setAddressing">setAddressing</a>(string|null $addressing)
+        
+                                            <p><p>Setter for addressing</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getAddressing">getAddressing</a>()
+        
+                                            <p><p>Getter for addressing</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/LanSubscription.html"><abbr title="Arimac\Sigfox\Definition\LanSubscription">LanSubscription</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setConnectionComments">setConnectionComments</a>(int|null $connectionComments)
+        
+                                            <p><p>Setter for connectionComments</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getConnectionComments">getConnectionComments</a>()
+        
+                                            <p><p>Getter for connectionComments</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_getSerializeMetaData">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition.html#method_getSerializeMetaData">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a> at line 18</div>
+        <code>                    array
+    <strong>getSerializeMetaData</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Returning all meta data to serialize and deserialize objects</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isExtendable">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition.html#method_isExtendable">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a> at line 23</div>
+        <code>                    bool
+    <strong>isExtendable</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Returning the weather the class is extendable or not</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setId">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setId">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 116</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+    <strong>setId</strong>(string|null $id)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for id</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|null</td>
+                <td>$id</td>
+                <td><p>The identifier of this internet subscription</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getId">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getId">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 126</div>
+        <code>                    string
+    <strong>getId</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for id</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td><p>The identifier of this internet subscription</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setType">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setType">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 144</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+    <strong>setType</strong>(int|null $type)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for type</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int|null</td>
+                <td>$type</td>
+                <td><p>Internet subscription type</p>
+<ul>
+<li>{<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html">\Arimac\Sigfox\Definition\InternetSubscription::TYPE_GSM}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html">\Arimac\Sigfox\Definition\InternetSubscription::TYPE_ADSL}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html">\Arimac\Sigfox\Definition\InternetSubscription::TYPE_SATELLITE}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html">\Arimac\Sigfox\Definition\InternetSubscription::TYPE_LAN}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html">\Arimac\Sigfox\Definition\InternetSubscription::TYPE_WIFI}</a></li>
+</ul></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getType">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getType">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 161</div>
+        <code>                    int
+    <strong>getType</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for type</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td><p>Internet subscription type</p>
+<ul>
+<li>{<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html">\Arimac\Sigfox\Definition\InternetSubscription::TYPE_GSM}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html">\Arimac\Sigfox\Definition\InternetSubscription::TYPE_ADSL}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html">\Arimac\Sigfox\Definition\InternetSubscription::TYPE_SATELLITE}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html">\Arimac\Sigfox\Definition\InternetSubscription::TYPE_LAN}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html">\Arimac\Sigfox\Definition\InternetSubscription::TYPE_WIFI}</a></li>
+</ul></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setPriority">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setPriority">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 177</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+    <strong>setPriority</strong>(int|null $priority)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for priority</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int|null</td>
+                <td>$priority</td>
+                <td><p>Internet subscription priority.</p>
+<ul>
+<li>{<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html">\Arimac\Sigfox\Definition\InternetSubscription::PRIORITY_PRIMARY}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html">\Arimac\Sigfox\Definition\InternetSubscription::PRIORITY_SECONDARY}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html">\Arimac\Sigfox\Definition\InternetSubscription::PRIORITY_TERMINATED}</a></li>
+</ul></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getPriority">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getPriority">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 192</div>
+        <code>                    int
+    <strong>getPriority</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for priority</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td><p>Internet subscription priority.</p>
+<ul>
+<li>{<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html">\Arimac\Sigfox\Definition\InternetSubscription::PRIORITY_PRIMARY}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html">\Arimac\Sigfox\Definition\InternetSubscription::PRIORITY_SECONDARY}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html">\Arimac\Sigfox\Definition\InternetSubscription::PRIORITY_TERMINATED}</a></li>
+</ul></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setComments">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setComments">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 203</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+    <strong>setComments</strong>(string|null $comments)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for comments</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|null</td>
+                <td>$comments</td>
+                <td><p>The comments about this internet subscription. This field can be unset when updating.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getComments">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getComments">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 213</div>
+        <code>                    string
+    <strong>getComments</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for comments</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td><p>The comments about this internet subscription. This field can be unset when updating.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setStartTime">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setStartTime">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 224</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+    <strong>setStartTime</strong>(int|null $startTime)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for startTime</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int|null</td>
+                <td>$startTime</td>
+                <td><p>The start time of this internet subscription</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getStartTime">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getStartTime">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 234</div>
+        <code>                    int
+    <strong>getStartTime</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for startTime</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td><p>The start time of this internet subscription</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setEndTime">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setEndTime">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 245</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+    <strong>setEndTime</strong>(int|null $endTime)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for endTime</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int|null</td>
+                <td>$endTime</td>
+                <td><p>The end time this internet subscription. This field can be unset when updating.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getEndTime">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getEndTime">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 255</div>
+        <code>                    int
+    <strong>getEndTime</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for endTime</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td><p>The end time this internet subscription. This field can be unset when updating.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setProvider">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setProvider">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 266</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+    <strong>setProvider</strong>(<abbr title="Arimac\Sigfox\Definition\Arimac\Sigfox\Definition\MinProvider">MinProvider</abbr>|null $provider)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for provider</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><abbr title="Arimac\Sigfox\Definition\Arimac\Sigfox\Definition\MinProvider">MinProvider</abbr>|null</td>
+                <td>$provider</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getProvider">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getProvider">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 276</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/MinProvider.html"><abbr title="Arimac\Sigfox\Definition\MinProvider">MinProvider</abbr></a>
+    <strong>getProvider</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for provider</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/MinProvider.html"><abbr title="Arimac\Sigfox\Definition\MinProvider">MinProvider</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setContacts">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setContacts">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 287</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+    <strong>setContacts</strong>(array|null $contacts)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for contacts</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array|null</td>
+                <td>$contacts</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getContacts">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getContacts">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 297</div>
+        <code>                    array
+    <strong>getContacts</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for contacts</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setActions">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setActions">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 308</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+    <strong>setActions</strong>(array|null $actions)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for actions</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array|null</td>
+                <td>$actions</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getActions">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getActions">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 318</div>
+        <code>                    array
+    <strong>getActions</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for actions</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setResources">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_setResources">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 329</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a>
+    <strong>setResources</strong>(array|null $resources)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for resources</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>array|null</td>
+                <td>$resources</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html"><abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getResources">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition/InternetSubscription.html#method_getResources">
+<abbr title="Arimac\Sigfox\Definition\InternetSubscription">InternetSubscription</abbr></a> at line 339</div>
+        <code>                    array
+    <strong>getResources</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for resources</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setNetworkType">
+        <div class="location">at line 76</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/LanSubscription.html"><abbr title="Arimac\Sigfox\Definition\LanSubscription">LanSubscription</abbr></a>
+    <strong>setNetworkType</strong>(int|null $networkType)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for networkType</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int|null</td>
+                <td>$networkType</td>
+                <td><p>Subscription network type</p>
+<ul>
+<li>{<a href="../../../Arimac/Sigfox/Definition/LanSubscription.html">\Arimac\Sigfox\Definition\LanSubscription::NETWORK_TYPE_COMPANY}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/LanSubscription.html">\Arimac\Sigfox\Definition\LanSubscription::NETWORK_TYPE_OTHER}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/LanSubscription.html">\Arimac\Sigfox\Definition\LanSubscription::NETWORK_TYPE_RESIDENT}</a></li>
+</ul></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/LanSubscription.html"><abbr title="Arimac\Sigfox\Definition\LanSubscription">LanSubscription</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getNetworkType">
+        <div class="location">at line 91</div>
+        <code>                    int
+    <strong>getNetworkType</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for networkType</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td><p>Subscription network type</p>
+<ul>
+<li>{<a href="../../../Arimac/Sigfox/Definition/LanSubscription.html">\Arimac\Sigfox\Definition\LanSubscription::NETWORK_TYPE_COMPANY}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/LanSubscription.html">\Arimac\Sigfox\Definition\LanSubscription::NETWORK_TYPE_OTHER}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/LanSubscription.html">\Arimac\Sigfox\Definition\LanSubscription::NETWORK_TYPE_RESIDENT}</a></li>
+</ul></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setEthConnectionType">
+        <div class="location">at line 106</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/LanSubscription.html"><abbr title="Arimac\Sigfox\Definition\LanSubscription">LanSubscription</abbr></a>
+    <strong>setEthConnectionType</strong>(int|null $ethConnectionType)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for ethConnectionType</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int|null</td>
+                <td>$ethConnectionType</td>
+                <td><p>Subscription connection type</p>
+<ul>
+<li>{<a href="../../../Arimac/Sigfox/Definition/LanSubscription.html">\Arimac\Sigfox\Definition\LanSubscription::ETH_CONNECTION_TYPE_DHCP}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/LanSubscription.html">\Arimac\Sigfox\Definition\LanSubscription::ETH_CONNECTION_TYPE_STATIC}</a></li>
+</ul></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/LanSubscription.html"><abbr title="Arimac\Sigfox\Definition\LanSubscription">LanSubscription</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getEthConnectionType">
+        <div class="location">at line 120</div>
+        <code>                    int
+    <strong>getEthConnectionType</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for ethConnectionType</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td><p>Subscription connection type</p>
+<ul>
+<li>{<a href="../../../Arimac/Sigfox/Definition/LanSubscription.html">\Arimac\Sigfox\Definition\LanSubscription::ETH_CONNECTION_TYPE_DHCP}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/LanSubscription.html">\Arimac\Sigfox\Definition\LanSubscription::ETH_CONNECTION_TYPE_STATIC}</a></li>
+</ul></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setAddressing">
+        <div class="location">at line 131</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/LanSubscription.html"><abbr title="Arimac\Sigfox\Definition\LanSubscription">LanSubscription</abbr></a>
+    <strong>setAddressing</strong>(string|null $addressing)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for addressing</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|null</td>
+                <td>$addressing</td>
+                <td><p>The addressing of this internet subscription. This field can be unset when updating.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/LanSubscription.html"><abbr title="Arimac\Sigfox\Definition\LanSubscription">LanSubscription</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAddressing">
+        <div class="location">at line 141</div>
+        <code>                    string
+    <strong>getAddressing</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for addressing</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td><p>The addressing of this internet subscription. This field can be unset when updating.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setConnectionComments">
+        <div class="location">at line 153</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/LanSubscription.html"><abbr title="Arimac\Sigfox\Definition\LanSubscription">LanSubscription</abbr></a>
+    <strong>setConnectionComments</strong>(int|null $connectionComments)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for connectionComments</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int|null</td>
+                <td>$connectionComments</td>
+                <td><p>Comments about the connection of this internet subscription. This field can be
+unset when updating.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/LanSubscription.html"><abbr title="Arimac\Sigfox\Definition\LanSubscription">LanSubscription</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getConnectionComments">
+        <div class="location">at line 164</div>
+        <code>                    int
+    <strong>getConnectionComments</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for connectionComments</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td><p>Comments about the connection of this internet subscription. This field can be unset when
+updating.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+</div><div id="footer">
+        Generated by <a href="https://github.com/code-lts/doctum">Doctum, a API Documentation generator and fork of Sami</a>.</div></div>
+    </div>
+    </body>
+
+</html>

@@ -1,0 +1,1628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Arimac\Sigfox\Definition\BaseSite | Sigfox Client API</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/doctum.css">
+        <link rel="stylesheet" type="text/css" href="../../../fonts/doctum-font.css">
+        <script src="../../../js/jquery-3.5.1.slim.min.js"></script>
+        <script async defer src="../../../js/bootstrap.min.js"></script>
+        <script src="../../../js/typeahead.min.js"></script>
+        <script src="../../../doctum.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    </head>
+
+    <body id="class" data-name="class:Arimac_Sigfox_Definition_BaseSite" data-root-path="../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <form id="search-form" action="../../../search.html">
+            <span class="icon icon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../index.html">Sigfox Client API</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../classes.html">Classes</a></li>
+                    <li><a href="../../../namespaces.html">Namespaces</a></li>
+                    <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../Arimac.html">Arimac</a></li><li class="backslash">\</li><li><a href="../../../Arimac/Sigfox.html">Sigfox</a></li><li class="backslash">\</li><li><a href="../../../Arimac/Sigfox/Definition.html">Definition</a></li><li class="backslash">\</li><li>BaseSite</li>
+            </ol>
+        </div>
+                <div id="page-content">
+    <div class="page-header">
+        <h1>BaseSite    
+            </h1>
+    </div>
+
+    
+    <p>        class
+    <strong>BaseSite</strong>        extends <a href="../../../Arimac/Sigfox/Definition.html"><abbr title="Arimac\Sigfox\Definition">Definition</abbr></a>
+</p>
+
+        
+    
+        
+
+            <div class="description">
+            <p><p>Generic information about a site</p></p>                    </div>
+            
+        
+            <h2>Constants</h2>    <table class="table table-condensed">
+                    <tr>
+                <td>
+                                                                                                                        STATUS_PROD
+                                    </td>
+                <td class="last">
+                    <p><em><p>PROD</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        STATUS_REFUSED
+                                    </td>
+                <td class="last">
+                    <p><em><p>REFUSED</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        STATUS_INSTALLED
+                                    </td>
+                <td class="last">
+                    <p><em><p>INSTALLED</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        STATUS_NOT_PLANNED
+                                    </td>
+                <td class="last">
+                    <p><em><p>NOT PLANNED</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        STATUS_PRE_PROD
+                                    </td>
+                <td class="last">
+                    <p><em><p>PRE PROD</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        STATUS_CANDIDATE
+                                    </td>
+                <td class="last">
+                    <p><em><p>CANDIDATE</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        STATUS_CANCELLED
+                                    </td>
+                <td class="last">
+                    <p><em><p>CANCELLED</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        STATUS_CLIENT
+                                    </td>
+                <td class="last">
+                    <p><em><p>CLIENT</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        STATUS_RD
+                                    </td>
+                <td class="last">
+                    <p><em><p>RD</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        STATUS_LABO
+                                    </td>
+                <td class="last">
+                    <p><em><p>LABO</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY
+                                    </td>
+                <td class="last">
+                    <p><em><p>INSTALLED CONNECTED ONLY SECONDARY</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY
+                                    </td>
+                <td class="last">
+                    <p><em><p>INSTALLED CONNECTED ONLY PRIMARY</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        STATION_INSTALLATION_INDOOR_WITHOUT_CABINET
+                                    </td>
+                <td class="last">
+                    <p><em><p>INDOOR WITHOUT CABINET</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        STATION_INSTALLATION_OUTDOOR_WITH_CABINET
+                                    </td>
+                <td class="last">
+                    <p><em><p>OUTDOOR WITH CABINET</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        STATION_INSTALLATION_INDOOR_WITH_CABINET
+                                    </td>
+                <td class="last">
+                    <p><em><p>INDOOR WITH CABINET</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        STATION_INSTALLATION_OUTDOOR_WITHOUT_CABINET
+                                    </td>
+                <td class="last">
+                    <p><em><p>OUTDOOR WITHOUT CABINET</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        INVERTER_INFO_NONE
+                                    </td>
+                <td class="last">
+                    <p><em><p>NONE</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        INVERTER_INFO_AC_POWER_HOST
+                                    </td>
+                <td class="last">
+                    <p><em><p>AC POWER HOST</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        INVERTER_INFO_AC_POWER_HOST_INVERTER
+                                    </td>
+                <td class="last">
+                    <p><em><p>AC POWER HOST INVERTER</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        INVERTER_INFO_AC_POWER_SIGFOX_INVERTER
+                                    </td>
+                <td class="last">
+                    <p><em><p>AC POWER SIGFOX INVERTER</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        INVERTER_INFO_DC_POWER_HOST_48V
+                                    </td>
+                <td class="last">
+                    <p><em><p>DC POWER HOST 48V</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+                    <tr>
+                <td>
+                                                                                                                        INVERTER_INFO_DC_POWER_SOLAR
+                                    </td>
+                <td class="last">
+                    <p><em><p>DC POWER SOLAR</p></em></p>
+                    <p></p>
+                </td>
+            </tr>
+            </table>
+
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_required">
+                                        protected                                        
+                                                                                
+                                    </td>
+                <td>$required</td>
+                <td class="last"></td>
+                <td><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition.html#property_required">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_validations">
+                                        protected                                        
+                                                                                
+                                    </td>
+                <td>$validations</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_serialize">
+                                        protected                                        
+                                                                                
+                                    </td>
+                <td>$serialize</td>
+                <td class="last"></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_extendable">
+                                        protected                                        
+                                                                                
+                                    </td>
+                <td>$extendable</td>
+                <td class="last"></td>
+                <td><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition.html#property_extendable">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a></small></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_name">
+                                        protected                                        string
+                                                                                
+                                    </td>
+                <td>$name</td>
+                <td class="last"><p>The site's name</p></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_lessorId">
+                                        protected                                        string
+                                                                                
+                                    </td>
+                <td>$lessorId</td>
+                <td class="last"><p>The lessor identifier of the site. This field can be unset when updating.</p></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_address">
+                                        protected                                        string
+                                                                                
+                                    </td>
+                <td>$address</td>
+                <td class="last"><p>The address of the site</p></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_comment">
+                                        protected                                        string
+                                                                                
+                                    </td>
+                <td>$comment</td>
+                <td class="last"><p>Comment about the site. This field can be unset when updating.</p></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_status">
+                                        protected                                        int
+                                                                                
+                                    </td>
+                <td>$status</td>
+                <td class="last"><p>Site status:</p></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_statusComment">
+                                        protected                                        string
+                                                                                
+                                    </td>
+                <td>$statusComment</td>
+                <td class="last"><p>The comment of the status of the site. This field can be unset when updating.</p></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_stationInstallation">
+                                        protected                                        int
+                                                                                
+                                    </td>
+                <td>$stationInstallation</td>
+                <td class="last"><p>Station installation:</p></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_inverterInfo">
+                                        protected                                        int
+                                                                                
+                                    </td>
+                <td>$inverterInfo</td>
+                <td class="last"><p>Inverter type:</p></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_aerialWorkPlatformAccess">
+                                        protected                                        bool
+                                                                                
+                                    </td>
+                <td>$aerialWorkPlatformAccess</td>
+                <td class="last"><p>is the site access to the aerial work platform</p></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_lat">
+                                        protected                                        int
+                                                                                
+                                    </td>
+                <td>$lat</td>
+                <td class="last"><p>the site's latitude</p></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_lng">
+                                        protected                                        int
+                                                                                
+                                    </td>
+                <td>$lng</td>
+                <td class="last"><p>the site's longitutde</p></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    array
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getSerializeMetaData">getSerializeMetaData</a>()
+        
+                                            <p><p>Returning all meta data to serialize and deserialize objects</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition.html#method_getSerializeMetaData">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_isExtendable">isExtendable</a>()
+        
+                                            <p><p>Returning the weather the class is extendable or not</p></p>                </div>
+                <div class="col-md-2"><small>from&nbsp;<a href="../../../Arimac/Sigfox/Definition.html#method_isExtendable">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a></small></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setName">setName</a>(string|null $name)
+        
+                                            <p><p>Setter for name</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getName">getName</a>()
+        
+                                            <p><p>Getter for name</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setLessorId">setLessorId</a>(string|null $lessorId)
+        
+                                            <p><p>Setter for lessorId</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getLessorId">getLessorId</a>()
+        
+                                            <p><p>Getter for lessorId</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setAddress">setAddress</a>(string|null $address)
+        
+                                            <p><p>Setter for address</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getAddress">getAddress</a>()
+        
+                                            <p><p>Getter for address</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setComment">setComment</a>(string|null $comment)
+        
+                                            <p><p>Setter for comment</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getComment">getComment</a>()
+        
+                                            <p><p>Getter for comment</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setStatus">setStatus</a>(int|null $status)
+        
+                                            <p><p>Setter for status</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getStatus">getStatus</a>()
+        
+                                            <p><p>Getter for status</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setStatusComment">setStatusComment</a>(string|null $statusComment)
+        
+                                            <p><p>Setter for statusComment</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    string
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getStatusComment">getStatusComment</a>()
+        
+                                            <p><p>Getter for statusComment</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setStationInstallation">setStationInstallation</a>(int|null $stationInstallation)
+        
+                                            <p><p>Setter for stationInstallation</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getStationInstallation">getStationInstallation</a>()
+        
+                                            <p><p>Getter for stationInstallation</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setInverterInfo">setInverterInfo</a>(int|null $inverterInfo)
+        
+                                            <p><p>Setter for inverterInfo</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getInverterInfo">getInverterInfo</a>()
+        
+                                            <p><p>Getter for inverterInfo</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setAerialWorkPlatformAccess">setAerialWorkPlatformAccess</a>(bool|null $aerialWorkPlatformAccess)
+        
+                                            <p><p>Setter for aerialWorkPlatformAccess</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    bool
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getAerialWorkPlatformAccess">getAerialWorkPlatformAccess</a>()
+        
+                                            <p><p>Getter for aerialWorkPlatformAccess</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setLat">setLat</a>(int|null $lat)
+        
+                                            <p><p>Setter for lat</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getLat">getLat</a>()
+        
+                                            <p><p>Getter for lat</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_setLng">setLng</a>(int|null $lng)
+        
+                                            <p><p>Setter for lng</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    int
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_getLng">getLng</a>()
+        
+                                            <p><p>Getter for lng</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method_getSerializeMetaData">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition.html#method_getSerializeMetaData">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a> at line 18</div>
+        <code>                    array
+    <strong>getSerializeMetaData</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Returning all meta data to serialize and deserialize objects</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>array</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_isExtendable">
+        <div class="location">in <a href="../../../Arimac/Sigfox/Definition.html#method_isExtendable">
+<abbr title="Arimac\Sigfox\Definition">Definition</abbr></a> at line 23</div>
+        <code>                    bool
+    <strong>isExtendable</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Returning the weather the class is extendable or not</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setName">
+        <div class="location">at line 200</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+    <strong>setName</strong>(string|null $name)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for name</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|null</td>
+                <td>$name</td>
+                <td><p>The site's name</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getName">
+        <div class="location">at line 210</div>
+        <code>                    string
+    <strong>getName</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for name</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td><p>The site's name</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLessorId">
+        <div class="location">at line 221</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+    <strong>setLessorId</strong>(string|null $lessorId)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for lessorId</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|null</td>
+                <td>$lessorId</td>
+                <td><p>The lessor identifier of the site. This field can be unset when updating.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLessorId">
+        <div class="location">at line 231</div>
+        <code>                    string
+    <strong>getLessorId</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for lessorId</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td><p>The lessor identifier of the site. This field can be unset when updating.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setAddress">
+        <div class="location">at line 242</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+    <strong>setAddress</strong>(string|null $address)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for address</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|null</td>
+                <td>$address</td>
+                <td><p>The address of the site</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAddress">
+        <div class="location">at line 252</div>
+        <code>                    string
+    <strong>getAddress</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for address</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td><p>The address of the site</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setComment">
+        <div class="location">at line 263</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+    <strong>setComment</strong>(string|null $comment)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for comment</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|null</td>
+                <td>$comment</td>
+                <td><p>Comment about the site. This field can be unset when updating.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getComment">
+        <div class="location">at line 273</div>
+        <code>                    string
+    <strong>getComment</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for comment</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td><p>Comment about the site. This field can be unset when updating.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setStatus">
+        <div class="location">at line 298</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+    <strong>setStatus</strong>(int|null $status)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for status</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int|null</td>
+                <td>$status</td>
+                <td><p>Site status:</p>
+<ul>
+<li>{<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_PROD}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_REFUSED}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_INSTALLED}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_NOT_PLANNED}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_PRE_PROD}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_CANDIDATE}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_CANCELLED}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_CLIENT}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_RD}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_LABO}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY}</a></li>
+</ul></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getStatus">
+        <div class="location">at line 322</div>
+        <code>                    int
+    <strong>getStatus</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for status</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td><p>Site status:</p>
+<ul>
+<li>{<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_PROD}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_REFUSED}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_INSTALLED}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_NOT_PLANNED}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_PRE_PROD}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_CANDIDATE}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_CANCELLED}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_CLIENT}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_RD}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_LABO}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_SECONDARY}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY}</a></li>
+</ul></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setStatusComment">
+        <div class="location">at line 333</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+    <strong>setStatusComment</strong>(string|null $statusComment)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for statusComment</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>string|null</td>
+                <td>$statusComment</td>
+                <td><p>The comment of the status of the site. This field can be unset when updating.</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getStatusComment">
+        <div class="location">at line 343</div>
+        <code>                    string
+    <strong>getStatusComment</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for statusComment</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>string</td>
+            <td><p>The comment of the status of the site. This field can be unset when updating.</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setStationInstallation">
+        <div class="location">at line 360</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+    <strong>setStationInstallation</strong>(int|null $stationInstallation)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for stationInstallation</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int|null</td>
+                <td>$stationInstallation</td>
+                <td><p>Station installation:</p>
+<ul>
+<li>{<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATION_INSTALLATION_INDOOR_WITHOUT_CABINET}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATION_INSTALLATION_OUTDOOR_WITH_CABINET}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATION_INSTALLATION_INDOOR_WITH_CABINET}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATION_INSTALLATION_OUTDOOR_WITHOUT_CABINET}</a></li>
+</ul></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getStationInstallation">
+        <div class="location">at line 376</div>
+        <code>                    int
+    <strong>getStationInstallation</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for stationInstallation</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td><p>Station installation:</p>
+<ul>
+<li>{<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATION_INSTALLATION_INDOOR_WITHOUT_CABINET}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATION_INSTALLATION_OUTDOOR_WITH_CABINET}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATION_INSTALLATION_INDOOR_WITH_CABINET}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::STATION_INSTALLATION_OUTDOOR_WITHOUT_CABINET}</a></li>
+</ul></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setInverterInfo">
+        <div class="location">at line 395</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+    <strong>setInverterInfo</strong>(int|null $inverterInfo)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for inverterInfo</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int|null</td>
+                <td>$inverterInfo</td>
+                <td><p>Inverter type:</p>
+<ul>
+<li>{<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::INVERTER_INFO_NONE}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::INVERTER_INFO_AC_POWER_HOST}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::INVERTER_INFO_AC_POWER_HOST_INVERTER}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::INVERTER_INFO_AC_POWER_SIGFOX_INVERTER}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::INVERTER_INFO_DC_POWER_HOST_48V}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::INVERTER_INFO_DC_POWER_SOLAR}</a></li>
+</ul></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getInverterInfo">
+        <div class="location">at line 413</div>
+        <code>                    int
+    <strong>getInverterInfo</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for inverterInfo</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td><p>Inverter type:</p>
+<ul>
+<li>{<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::INVERTER_INFO_NONE}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::INVERTER_INFO_AC_POWER_HOST}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::INVERTER_INFO_AC_POWER_HOST_INVERTER}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::INVERTER_INFO_AC_POWER_SIGFOX_INVERTER}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::INVERTER_INFO_DC_POWER_HOST_48V}
+-</a> {<a href="../../../Arimac/Sigfox/Definition/BaseSite.html">\Arimac\Sigfox\Definition\BaseSite::INVERTER_INFO_DC_POWER_SOLAR}</a></li>
+</ul></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setAerialWorkPlatformAccess">
+        <div class="location">at line 424</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+    <strong>setAerialWorkPlatformAccess</strong>(bool|null $aerialWorkPlatformAccess)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for aerialWorkPlatformAccess</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>bool|null</td>
+                <td>$aerialWorkPlatformAccess</td>
+                <td><p>is the site access to the aerial work platform</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getAerialWorkPlatformAccess">
+        <div class="location">at line 434</div>
+        <code>                    bool
+    <strong>getAerialWorkPlatformAccess</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for aerialWorkPlatformAccess</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>bool</td>
+            <td><p>is the site access to the aerial work platform</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLat">
+        <div class="location">at line 445</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+    <strong>setLat</strong>(int|null $lat)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for lat</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int|null</td>
+                <td>$lat</td>
+                <td><p>the site's latitude</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLat">
+        <div class="location">at line 455</div>
+        <code>                    int
+    <strong>getLat</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for lat</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td><p>the site's latitude</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_setLng">
+        <div class="location">at line 466</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a>
+    <strong>setLng</strong>(int|null $lng)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Setter for lng</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td>int|null</td>
+                <td>$lng</td>
+                <td><p>the site's longitutde</p></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/BaseSite.html"><abbr title="Arimac\Sigfox\Definition\BaseSite">BaseSite</abbr></a></td>
+            <td><p>To use in method chains</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_getLng">
+        <div class="location">at line 476</div>
+        <code>                    int
+    <strong>getLng</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Getter for lng</p></p>                        
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td>int</td>
+            <td><p>the site's longitutde</p></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+</div><div id="footer">
+        Generated by <a href="https://github.com/code-lts/doctum">Doctum, a API Documentation generator and fork of Sami</a>.</div></div>
+    </div>
+    </body>
+
+</html>

@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow, all" />
+    <title>Arimac\Sigfox\Repository\DevicesId | Sigfox Client API</title>
+
+            <link rel="stylesheet" type="text/css" href="../../../css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" type="text/css" href="../../../css/doctum.css">
+        <link rel="stylesheet" type="text/css" href="../../../fonts/doctum-font.css">
+        <script src="../../../js/jquery-3.5.1.slim.min.js"></script>
+        <script async defer src="../../../js/bootstrap.min.js"></script>
+        <script src="../../../js/typeahead.min.js"></script>
+        <script src="../../../doctum.js"></script>
+        <meta name="MobileOptimized" content="width">
+        <meta name="HandheldFriendly" content="true">
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+
+    </head>
+
+    <body id="class" data-name="class:Arimac_Sigfox_Repository_DevicesId" data-root-path="../../../">
+            <div id="content">
+        <div id="left-column">
+                <div id="control-panel">
+                <form id="search-form" action="../../../search.html">
+            <span class="icon icon-search"></span>
+            <input name="search"
+                   class="typeahead form-control"
+                   type="search"
+                   placeholder="Search">
+        </form>
+    </div>
+
+                <div id="api-tree"></div>
+
+        </div>
+        <div id="right-column">
+                <nav id="site-nav" class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-elements">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="../../../index.html">Sigfox Client API</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-elements">
+                <ul class="nav navbar-nav">
+                    <li><a href="../../../classes.html">Classes</a></li>
+                    <li><a href="../../../namespaces.html">Namespaces</a></li>
+                    <li><a href="../../../interfaces.html">Interfaces</a></li>
+                    <li><a href="../../../traits.html">Traits</a></li>
+                    <li><a href="../../../doc-index.html">Index</a></li>
+                    <li><a href="../../../search.html">Search</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+                        <div class="namespace-breadcrumbs">
+            <ol class="breadcrumb">
+                <li><span class="label label-default">class</span></li>
+                        <li><a href="../../../Arimac.html">Arimac</a></li><li class="backslash">\</li><li><a href="../../../Arimac/Sigfox.html">Sigfox</a></li><li class="backslash">\</li><li><a href="../../../Arimac/Sigfox/Repository.html">Repository</a></li><li class="backslash">\</li><li>DevicesId</li>
+            </ol>
+        </div>
+                <div id="page-content">
+    <div class="page-header">
+        <h1>DevicesId    
+            </h1>
+    </div>
+
+    
+    <p>        class
+    <strong>DevicesId</strong>
+</p>
+
+        
+    
+        
+
+            
+        
+    
+            <h2>Properties</h2>
+
+            <table class="table table-condensed">
+                    <tr>
+                <td class="type" id="property_client">
+                                        protected                                        
+                                                                                
+                                    </td>
+                <td>$client</td>
+                <td class="last"><p>The HTTP client</p></td>
+                <td></td>
+            </tr>
+                    <tr>
+                <td class="type" id="property_id">
+                                        protected                                        
+                                                                                
+                                    </td>
+                <td>$id</td>
+                <td class="last"><p>The Device identifier (hexadecimal format)</p></td>
+                <td></td>
+            </tr>
+            </table>
+
+    
+            <h2>Methods</h2>
+
+            <div class="container-fluid underlined">
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8">
+                    <a href="#method___construct">__construct</a>(<a href="../../../Arimac/Sigfox/Client/Client.html"><abbr title="Arimac\Sigfox\Client\Client">Client</abbr></a> $client, string $id)
+        
+                                            <p><p>Creating the repository</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/Device.html"><abbr title="Arimac\Sigfox\Definition\Device">Device</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_get">get</a>(<a href="../../../Arimac/Sigfox/Request/DevicesIdGet.html"><abbr title="Arimac\Sigfox\Request\DevicesIdGet">DevicesIdGet</abbr></a> $request)
+        
+                                            <p><p>Retrieve information about a given device.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_update">update</a>(<a href="../../../Arimac/Sigfox/Request/DevicesIdUpdate.html"><abbr title="Arimac\Sigfox\Request\DevicesIdUpdate">DevicesIdUpdate</abbr></a> $request)
+        
+                                            <p><p>Update a given device.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_delete">delete</a>()
+        
+                                            <p><p>Delete a given device.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Response/Generated/DevicesIdCallbacksNotDeliveredResponse.html"><abbr title="Arimac\Sigfox\Response\Generated\DevicesIdCallbacksNotDeliveredResponse">DevicesIdCallbacksNotDeliveredResponse</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_callbacksNotDelivered">callbacksNotDelivered</a>(<a href="../../../Arimac/Sigfox/Request/DevicesIdCallbacksNotDelivered.html"><abbr title="Arimac\Sigfox\Request\DevicesIdCallbacksNotDelivered">DevicesIdCallbacksNotDelivered</abbr></a> $request)
+        
+                                            <p><p>Retrieve a list of undelivered callbacks and errors for a given device, in reverse chronological order (most
+recent message first).</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Repository/DevicesIdCertificate.html"><abbr title="Arimac\Sigfox\Repository\DevicesIdCertificate">DevicesIdCertificate</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_certificate">certificate</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Definition/ProductCertificateWithPacResponse.html"><abbr title="Arimac\Sigfox\Definition\ProductCertificateWithPacResponse">ProductCertificateWithPacResponse</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_productCertificate">productCertificate</a>(<a href="../../../Arimac/Sigfox/Request/DevicesIdProductCertificate.html"><abbr title="Arimac\Sigfox\Request\DevicesIdProductCertificate">DevicesIdProductCertificate</abbr></a> $request)
+        
+                                            <p><p>Retrieve the product certificate associated with a given device ID and PAC, when the device has not already been
+created on the portal, only in CRA</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Repository/DevicesIdConsumption.html"><abbr title="Arimac\Sigfox\Repository\DevicesIdConsumption">DevicesIdConsumption</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_consumption">consumption</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_disengage">disengage</a>()
+        
+                                            <p><p>Disable sequence number check for the next message.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Repository/DevicesIdMessages.html"><abbr title="Arimac\Sigfox\Repository\DevicesIdMessages">DevicesIdMessages</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_messages">messages</a>()
+        
+                                            <p class="no-description">No description</p>
+                                    </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    <a href="../../../Arimac/Sigfox/Response/Generated/DevicesIdLocationsResponse.html"><abbr title="Arimac\Sigfox\Response\Generated\DevicesIdLocationsResponse">DevicesIdLocationsResponse</abbr></a>
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_locations">locations</a>(<a href="../../../Arimac/Sigfox/Request/DevicesIdLocations.html"><abbr title="Arimac\Sigfox\Request\DevicesIdLocations">DevicesIdLocations</abbr></a> $request)
+        
+                                            <p><p>Retrieve a list of location data of a device according to request filters.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+                    <div class="row">
+                <div class="col-md-2 type">
+                    
+                </div>
+                <div class="col-md-8">
+                    <a href="#method_unsubscribe">unsubscribe</a>(<a href="../../../Arimac/Sigfox/Request/DevicesIdUnsubscribe.html"><abbr title="Arimac\Sigfox\Request\DevicesIdUnsubscribe">DevicesIdUnsubscribe</abbr></a> $request)
+        
+                                            <p><p>Set an unsubscription date for the device's token.</p></p>                </div>
+                <div class="col-md-2"></div>
+            </div>
+            </div>
+
+
+        <h2>Details</h2>
+
+            <div id="method-details">
+                    <div class="method-item">
+                    <h3 id="method___construct">
+        <div class="location">at line 32</div>
+        <code>                    
+    <strong>__construct</strong>(<a href="../../../Arimac/Sigfox/Client/Client.html"><abbr title="Arimac\Sigfox\Client\Client">Client</abbr></a> $client, string $id)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Creating the repository</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Arimac/Sigfox/Client/Client.html"><abbr title="Arimac\Sigfox\Client\Client">Client</abbr></a></td>
+                <td>$client</td>
+                <td><p>The HTTP client</p></td>
+            </tr>
+                    <tr>
+                <td>string</td>
+                <td>$id</td>
+                <td><p>The Device identifier (hexadecimal format)</p></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_get">
+        <div class="location">at line 40</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/Device.html"><abbr title="Arimac\Sigfox\Definition\Device">Device</abbr></a>
+    <strong>get</strong>(<a href="../../../Arimac/Sigfox/Request/DevicesIdGet.html"><abbr title="Arimac\Sigfox\Request\DevicesIdGet">DevicesIdGet</abbr></a> $request)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Retrieve information about a given device.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Arimac/Sigfox/Request/DevicesIdGet.html"><abbr title="Arimac\Sigfox\Request\DevicesIdGet">DevicesIdGet</abbr></a></td>
+                <td>$request</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/Device.html"><abbr title="Arimac\Sigfox\Definition\Device">Device</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_update">
+        <div class="location">at line 47</div>
+        <code>                    
+    <strong>update</strong>(<a href="../../../Arimac/Sigfox/Request/DevicesIdUpdate.html"><abbr title="Arimac\Sigfox\Request\DevicesIdUpdate">DevicesIdUpdate</abbr></a> $request)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Update a given device.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Arimac/Sigfox/Request/DevicesIdUpdate.html"><abbr title="Arimac\Sigfox\Request\DevicesIdUpdate">DevicesIdUpdate</abbr></a></td>
+                <td>$request</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_delete">
+        <div class="location">at line 54</div>
+        <code>                    
+    <strong>delete</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Delete a given device.</p></p>                        
+        </div>
+        <div class="tags">
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_callbacksNotDelivered">
+        <div class="location">at line 62</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Response/Generated/DevicesIdCallbacksNotDeliveredResponse.html"><abbr title="Arimac\Sigfox\Response\Generated\DevicesIdCallbacksNotDeliveredResponse">DevicesIdCallbacksNotDeliveredResponse</abbr></a>
+    <strong>callbacksNotDelivered</strong>(<a href="../../../Arimac/Sigfox/Request/DevicesIdCallbacksNotDelivered.html"><abbr title="Arimac\Sigfox\Request\DevicesIdCallbacksNotDelivered">DevicesIdCallbacksNotDelivered</abbr></a> $request)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Retrieve a list of undelivered callbacks and errors for a given device, in reverse chronological order (most
+recent message first).</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Arimac/Sigfox/Request/DevicesIdCallbacksNotDelivered.html"><abbr title="Arimac\Sigfox\Request\DevicesIdCallbacksNotDelivered">DevicesIdCallbacksNotDelivered</abbr></a></td>
+                <td>$request</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Response/Generated/DevicesIdCallbacksNotDeliveredResponse.html"><abbr title="Arimac\Sigfox\Response\Generated\DevicesIdCallbacksNotDeliveredResponse">DevicesIdCallbacksNotDeliveredResponse</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_certificate">
+        <div class="location">at line 69</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Repository/DevicesIdCertificate.html"><abbr title="Arimac\Sigfox\Repository\DevicesIdCertificate">DevicesIdCertificate</abbr></a>
+    <strong>certificate</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p class="no-description">No description</p>
+                    
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Repository/DevicesIdCertificate.html"><abbr title="Arimac\Sigfox\Repository\DevicesIdCertificate">DevicesIdCertificate</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_productCertificate">
+        <div class="location">at line 77</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Definition/ProductCertificateWithPacResponse.html"><abbr title="Arimac\Sigfox\Definition\ProductCertificateWithPacResponse">ProductCertificateWithPacResponse</abbr></a>
+    <strong>productCertificate</strong>(<a href="../../../Arimac/Sigfox/Request/DevicesIdProductCertificate.html"><abbr title="Arimac\Sigfox\Request\DevicesIdProductCertificate">DevicesIdProductCertificate</abbr></a> $request)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Retrieve the product certificate associated with a given device ID and PAC, when the device has not already been
+created on the portal, only in CRA</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Arimac/Sigfox/Request/DevicesIdProductCertificate.html"><abbr title="Arimac\Sigfox\Request\DevicesIdProductCertificate">DevicesIdProductCertificate</abbr></a></td>
+                <td>$request</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Definition/ProductCertificateWithPacResponse.html"><abbr title="Arimac\Sigfox\Definition\ProductCertificateWithPacResponse">ProductCertificateWithPacResponse</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_consumption">
+        <div class="location">at line 84</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Repository/DevicesIdConsumption.html"><abbr title="Arimac\Sigfox\Repository\DevicesIdConsumption">DevicesIdConsumption</abbr></a>
+    <strong>consumption</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p class="no-description">No description</p>
+                    
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Repository/DevicesIdConsumption.html"><abbr title="Arimac\Sigfox\Repository\DevicesIdConsumption">DevicesIdConsumption</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_disengage">
+        <div class="location">at line 91</div>
+        <code>                    
+    <strong>disengage</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Disable sequence number check for the next message.</p></p>                        
+        </div>
+        <div class="tags">
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_messages">
+        <div class="location">at line 98</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Repository/DevicesIdMessages.html"><abbr title="Arimac\Sigfox\Repository\DevicesIdMessages">DevicesIdMessages</abbr></a>
+    <strong>messages</strong>()
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p class="no-description">No description</p>
+                    
+        </div>
+        <div class="tags">
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Repository/DevicesIdMessages.html"><abbr title="Arimac\Sigfox\Repository\DevicesIdMessages">DevicesIdMessages</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_locations">
+        <div class="location">at line 105</div>
+        <code>                    <a href="../../../Arimac/Sigfox/Response/Generated/DevicesIdLocationsResponse.html"><abbr title="Arimac\Sigfox\Response\Generated\DevicesIdLocationsResponse">DevicesIdLocationsResponse</abbr></a>
+    <strong>locations</strong>(<a href="../../../Arimac/Sigfox/Request/DevicesIdLocations.html"><abbr title="Arimac\Sigfox\Request\DevicesIdLocations">DevicesIdLocations</abbr></a> $request)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Retrieve a list of location data of a device according to request filters.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Arimac/Sigfox/Request/DevicesIdLocations.html"><abbr title="Arimac\Sigfox\Request\DevicesIdLocations">DevicesIdLocations</abbr></a></td>
+                <td>$request</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+                            <h4>Return Value</h4>
+
+                    <table class="table table-condensed">
+        <tr>
+            <td><a href="../../../Arimac/Sigfox/Response/Generated/DevicesIdLocationsResponse.html"><abbr title="Arimac\Sigfox\Response\Generated\DevicesIdLocationsResponse">DevicesIdLocationsResponse</abbr></a></td>
+            <td></td>
+        </tr>
+    </table>
+
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+                    <div class="method-item">
+                    <h3 id="method_unsubscribe">
+        <div class="location">at line 112</div>
+        <code>                    
+    <strong>unsubscribe</strong>(<a href="../../../Arimac/Sigfox/Request/DevicesIdUnsubscribe.html"><abbr title="Arimac\Sigfox\Request\DevicesIdUnsubscribe">DevicesIdUnsubscribe</abbr></a> $request)
+        </code>
+    </h3>
+    <div class="details">    
+    
+            
+
+        <div class="method-description">
+                            <p><p>Set an unsubscription date for the device's token.</p></p>                        
+        </div>
+        <div class="tags">
+                            <h4>Parameters</h4>
+
+                    <table class="table table-condensed">
+                    <tr>
+                <td><a href="../../../Arimac/Sigfox/Request/DevicesIdUnsubscribe.html"><abbr title="Arimac\Sigfox\Request\DevicesIdUnsubscribe">DevicesIdUnsubscribe</abbr></a></td>
+                <td>$request</td>
+                <td></td>
+            </tr>
+            </table>
+
+            
+            
+            
+            
+                    </div>
+    </div>
+
+            </div>
+            </div>
+
+    
+</div><div id="footer">
+        Generated by <a href="https://github.com/code-lts/doctum">Doctum, a API Documentation generator and fork of Sami</a>.</div></div>
+    </div>
+    </body>
+
+</html>
