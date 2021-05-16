@@ -16086,6 +16086,11 @@ Search.appendIndex(
             "summary": "list\u0020of\u0020maintenance\u0020ids\u0020corresponding\u0020to\u0020the\u0020userRoles\u0020with\u0020site\u0020limited\u0020access\u0020granted",
             "url": "classes/Arimac-Sigfox-Definition-UserUpdate.html#property_maintenances"
         },                {
+            "fqsen": "\\Arimac\\Sigfox\\Definition",
+            "name": "Definition",
+            "summary": "",
+            "url": "classes/Arimac-Sigfox-Definition.html"
+        },                {
             "fqsen": "\\Arimac\\Sigfox\\Exception\\DeserializeException",
             "name": "DeserializeException",
             "summary": "Deserialization\u0020exceptions.",
@@ -20231,6 +20236,11 @@ Search.appendIndex(
             "summary": "Token\u0020representing\u0020the\u0020page\u0020to\u0020retrieve",
             "url": "classes/Arimac-Sigfox-Request-UsersList.html#property_pageId"
         },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request",
+            "name": "Request",
+            "summary": "",
+            "url": "classes/Arimac-Sigfox-Request.html"
+        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersCreateResponse",
             "name": "ApiUsersCreateResponse",
             "summary": "",
@@ -21340,16 +21350,6 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "Creating\u0020a\u0020Sigfox\u0020client\u0020instance",
             "url": "classes/Arimac-Sigfox-SigfoxExt.html#method___construct"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition",
-            "name": "Definition",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request",
-            "name": "Request",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request.html"
         },                {
             "fqsen": "\\",
             "name": "\\",
