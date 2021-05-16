@@ -16366,16 +16366,6 @@ Search.appendIndex(
             "summary": "Returning\u0020the\u0020body\u0020of\u0020the\u0020response",
             "url": "classes/Arimac-Sigfox-Exception-UnexpectedResponseException.html#method_getBody"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Helper",
-            "name": "Helper",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Helper.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Helper\u003A\u003AarrayFilterKeys\u0028\u0029",
-            "name": "arrayFilterKeys",
-            "summary": "Filter\u0020only\u0020required\u0020keys\u0020from\u0020a\u0020large\u0020array",
-            "url": "classes/Arimac-Sigfox-Helper.html#method_arrayFilterKeys"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsers",
             "name": "ApiUsers",
             "summary": "",
