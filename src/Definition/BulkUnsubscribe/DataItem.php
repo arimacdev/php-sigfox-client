@@ -18,7 +18,6 @@ class DataItem extends Definition
      * @var int
      */
     protected ?int $unsubscriptionTime = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'unsubscriptionTime', 'int'));
     /**
      * Setter for id
      *
@@ -36,7 +35,7 @@ class DataItem extends Definition
      *
      * @return string The device's identifier to unsubscribe (hexadecimal format)
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -57,8 +56,15 @@ class DataItem extends Definition
      *
      * @return int the unsubscription time (in milliseconds since the Unix Epoch)
      */
-    public function getUnsubscriptionTime() : int
+    public function getUnsubscriptionTime() : ?int
     {
         return $this->unsubscriptionTime;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'unsubscriptionTime' => new PrimitiveSerializer(self::class, 'unsubscriptionTime', 'int'));
     }
 }

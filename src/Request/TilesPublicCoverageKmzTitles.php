@@ -2,13 +2,13 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve Sigfox public coverage kmz file from a job. The public coverage is always available and does not require
  * a previous calculation
  */
-class TilesPublicCoverageKmzTitles extends Definition
+class TilesPublicCoverageKmzTitles extends Request
 {
     /**
      * The zoom level used to generate kmz file
@@ -40,9 +40,8 @@ class TilesPublicCoverageKmzTitles extends Definition
      * @var int
      */
     protected ?int $east = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'zoom', 'int'), new PrimitiveSerializer(self::class, 'north', 'int'), new PrimitiveSerializer(self::class, 'south', 'int'), new PrimitiveSerializer(self::class, 'west', 'int'), new PrimitiveSerializer(self::class, 'east', 'int'));
-    protected $query = array('zoom', 'north', 'south', 'west', 'east');
-    protected $validations = array('zoom' => array('required', 'max:11', 'min:0', 'numeric'), 'north' => array('required', 'max:90', 'min:-90', 'numeric'), 'south' => array('required', 'max:90', 'min:-90', 'numeric'), 'west' => array('required', 'max:180', 'min:-180', 'numeric'), 'east' => array('required', 'max:180', 'min:-180', 'numeric'));
+    protected array $query = array('zoom', 'north', 'south', 'west', 'east');
+    protected array $validations = array('zoom' => array('required', 'max:11', 'min:0', 'numeric'), 'north' => array('required', 'max:90', 'min:-90', 'numeric'), 'south' => array('required', 'max:90', 'min:-90', 'numeric'), 'west' => array('required', 'max:180', 'min:-180', 'numeric'), 'east' => array('required', 'max:180', 'min:-180', 'numeric'));
     /**
      * Setter for zoom
      *
@@ -54,6 +53,15 @@ class TilesPublicCoverageKmzTitles extends Definition
     {
         $this->zoom = $zoom;
         return $this;
+    }
+    /**
+     * Getter for zoom
+     *
+     * @return int The zoom level used to generate kmz file
+     */
+    public function getZoom() : ?int
+    {
+        return $this->zoom;
     }
     /**
      * Setter for north
@@ -68,6 +76,15 @@ class TilesPublicCoverageKmzTitles extends Definition
         return $this;
     }
     /**
+     * Getter for north
+     *
+     * @return int The north boundary to extract coverage
+     */
+    public function getNorth() : ?int
+    {
+        return $this->north;
+    }
+    /**
      * Setter for south
      *
      * @param int $south The south boundary to extract coverage
@@ -78,6 +95,15 @@ class TilesPublicCoverageKmzTitles extends Definition
     {
         $this->south = $south;
         return $this;
+    }
+    /**
+     * Getter for south
+     *
+     * @return int The south boundary to extract coverage
+     */
+    public function getSouth() : ?int
+    {
+        return $this->south;
     }
     /**
      * Setter for west
@@ -92,6 +118,15 @@ class TilesPublicCoverageKmzTitles extends Definition
         return $this;
     }
     /**
+     * Getter for west
+     *
+     * @return int The west boundary to extract coverage
+     */
+    public function getWest() : ?int
+    {
+        return $this->west;
+    }
+    /**
      * Setter for east
      *
      * @param int $east The east boundary to extract coverage
@@ -102,5 +137,21 @@ class TilesPublicCoverageKmzTitles extends Definition
     {
         $this->east = $east;
         return $this;
+    }
+    /**
+     * Getter for east
+     *
+     * @return int The east boundary to extract coverage
+     */
+    public function getEast() : ?int
+    {
+        return $this->east;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('zoom' => new PrimitiveSerializer(self::class, 'zoom', 'int'), 'north' => new PrimitiveSerializer(self::class, 'north', 'int'), 'south' => new PrimitiveSerializer(self::class, 'south', 'int'), 'west' => new PrimitiveSerializer(self::class, 'west', 'int'), 'east' => new PrimitiveSerializer(self::class, 'east', 'int'));
     }
 }

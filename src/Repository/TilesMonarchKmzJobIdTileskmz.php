@@ -2,9 +2,10 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\TilesMonarchKmzJobIdTileskmzGetCoverage;
-class TilesMonarchKmzJobIdTileskmz
+class TilesMonarchKmzJobIdTileskmz extends Repository
 {
     /**
      * The HTTP client
@@ -27,9 +28,11 @@ class TilesMonarchKmzJobIdTileskmz
     }
     /**
      * Retrieve Sigfox Monarch coverage kmz from a job
+     *
+     * @param TilesMonarchKmzJobIdTileskmzGetCoverage $request The query and body parameters to pass
      */
     public function getCoverage(TilesMonarchKmzJobIdTileskmzGetCoverage $request)
     {
-        return $this->client->request('get', $this->bind('/tiles/monarch/kmz/{jobId}/tiles.kmz', $this->jobId), $request);
+        return $this->client->call('get', $this->bind('/tiles/monarch/kmz/{jobId}/tiles.kmz', $this->jobId), $request);
     }
 }

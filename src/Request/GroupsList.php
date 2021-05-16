@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
@@ -11,7 +11,7 @@ use Arimac\Sigfox\Serializer\ArraySerializer;
  * retrieve all direct sub-groups under the API user's group.
  * If deep is true, retrieve all sub-groups under either given parent groups or the API user group.
  */
-class GroupsList extends Definition
+class GroupsList extends Request
 {
     /**
      * SO
@@ -70,15 +70,15 @@ class GroupsList extends Definition
     /**
      * Group's type
      * 
-     * - {@link GroupsList::TYPES_SO}
-     * - {@link GroupsList::TYPES_OTHER}
-     * - {@link GroupsList::TYPES_SVNO}
-     * - {@link GroupsList::TYPES_PARTNERS}
-     * - {@link GroupsList::TYPES_NIP}
-     * - {@link GroupsList::TYPES_DIST}
-     * - {@link GroupsList::TYPES_CHANNEL}
-     * - {@link GroupsList::TYPES_STARTER}
-     * - {@link GroupsList::TYPES_PARTNER}
+     * - {@see GroupsList::TYPES_SO}
+     * - {@see GroupsList::TYPES_OTHER}
+     * - {@see GroupsList::TYPES_SVNO}
+     * - {@see GroupsList::TYPES_PARTNERS}
+     * - {@see GroupsList::TYPES_NIP}
+     * - {@see GroupsList::TYPES_DIST}
+     * - {@see GroupsList::TYPES_CHANNEL}
+     * - {@see GroupsList::TYPES_STARTER}
+     * - {@see GroupsList::TYPES_PARTNER}
      *
      * @var int[]
      */
@@ -125,9 +125,8 @@ class GroupsList extends Definition
      * @var string
      */
     protected ?string $pageId = null;
-    protected $serialize = array(new ArraySerializer(self::class, 'parentIds', new PrimitiveSerializer(self::class, 'parentIds', 'string')), new PrimitiveSerializer(self::class, 'deep', 'bool'), new PrimitiveSerializer(self::class, 'name', 'string'), new ArraySerializer(self::class, 'types', new PrimitiveSerializer(self::class, 'types', 'int')), new PrimitiveSerializer(self::class, 'fields', 'string'), new PrimitiveSerializer(self::class, 'action', 'string'), new PrimitiveSerializer(self::class, 'sort', 'string'), new PrimitiveSerializer(self::class, 'authorizations', 'bool'), new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'offset', 'int'), new PrimitiveSerializer(self::class, 'pageId', 'string'));
-    protected $query = array('parentIds', 'deep', 'name', 'types', 'fields', 'action', 'sort', 'authorizations', 'limit', 'offset', 'pageId');
-    protected $validations = array('parentIds' => array('required'), 'deep' => array('required'), 'name' => array('required'), 'types' => array('required'), 'fields' => array('required', 'in:path(name\\,type\\,level)'), 'action' => array('required', 'in:base-stations:create,contract-infos:create,device-types:create,devices:create,hosts:create,maintenances:create,providers:create,sites:create,users:create'), 'sort' => array('required', 'in:id,-id,name,-name'), 'authorizations' => array('required'), 'limit' => array('required'), 'offset' => array('required'), 'pageId' => array('required'));
+    protected array $query = array('parentIds', 'deep', 'name', 'types', 'fields', 'action', 'sort', 'authorizations', 'limit', 'offset', 'pageId');
+    protected array $validations = array('fields' => array('in:path(name\\,type\\,level)', 'nullable'), 'action' => array('in:base-stations:create,contract-infos:create,device-types:create,devices:create,hosts:create,maintenances:create,providers:create,sites:create,users:create', 'nullable'), 'sort' => array('in:id,-id,name,-name', 'nullable'));
     /**
      * Setter for parentIds
      *
@@ -139,6 +138,15 @@ class GroupsList extends Definition
     {
         $this->parentIds = $parentIds;
         return $this;
+    }
+    /**
+     * Getter for parentIds
+     *
+     * @return string[] The parent group's identifiers from which the children will be fetched
+     */
+    public function getParentIds() : ?array
+    {
+        return $this->parentIds;
     }
     /**
      * Setter for deep
@@ -153,6 +161,15 @@ class GroupsList extends Definition
         return $this;
     }
     /**
+     * Getter for deep
+     *
+     * @return bool Retrieve all sub-groups
+     */
+    public function getDeep() : ?bool
+    {
+        return $this->deep;
+    }
+    /**
      * Setter for name
      *
      * @param string $name Searches for groups containing the given text in their name
@@ -165,19 +182,28 @@ class GroupsList extends Definition
         return $this;
     }
     /**
+     * Getter for name
+     *
+     * @return string Searches for groups containing the given text in their name
+     */
+    public function getName() : ?string
+    {
+        return $this->name;
+    }
+    /**
      * Setter for types
      *
      * @param int[] $types Group's type
      *                     
-     *                     - {@link GroupsList::TYPES_SO}
-     *                     - {@link GroupsList::TYPES_OTHER}
-     *                     - {@link GroupsList::TYPES_SVNO}
-     *                     - {@link GroupsList::TYPES_PARTNERS}
-     *                     - {@link GroupsList::TYPES_NIP}
-     *                     - {@link GroupsList::TYPES_DIST}
-     *                     - {@link GroupsList::TYPES_CHANNEL}
-     *                     - {@link GroupsList::TYPES_STARTER}
-     *                     - {@link GroupsList::TYPES_PARTNER}
+     *                     - {@see GroupsList::TYPES_SO}
+     *                     - {@see GroupsList::TYPES_OTHER}
+     *                     - {@see GroupsList::TYPES_SVNO}
+     *                     - {@see GroupsList::TYPES_PARTNERS}
+     *                     - {@see GroupsList::TYPES_NIP}
+     *                     - {@see GroupsList::TYPES_DIST}
+     *                     - {@see GroupsList::TYPES_CHANNEL}
+     *                     - {@see GroupsList::TYPES_STARTER}
+     *                     - {@see GroupsList::TYPES_PARTNER}
      *                     
      *
      * @return self To use in method chains
@@ -186,6 +212,26 @@ class GroupsList extends Definition
     {
         $this->types = $types;
         return $this;
+    }
+    /**
+     * Getter for types
+     *
+     * @return int[] Group's type
+     *               
+     *               - {@see GroupsList::TYPES_SO}
+     *               - {@see GroupsList::TYPES_OTHER}
+     *               - {@see GroupsList::TYPES_SVNO}
+     *               - {@see GroupsList::TYPES_PARTNERS}
+     *               - {@see GroupsList::TYPES_NIP}
+     *               - {@see GroupsList::TYPES_DIST}
+     *               - {@see GroupsList::TYPES_CHANNEL}
+     *               - {@see GroupsList::TYPES_STARTER}
+     *               - {@see GroupsList::TYPES_PARTNER}
+     *               
+     */
+    public function getTypes() : ?array
+    {
+        return $this->types;
     }
     /**
      * Setter for fields
@@ -201,6 +247,16 @@ class GroupsList extends Definition
         return $this;
     }
     /**
+     * Getter for fields
+     *
+     * @return string Defines the other available fields to be returned in the response.
+     *                
+     */
+    public function getFields() : ?string
+    {
+        return $this->fields;
+    }
+    /**
      * Setter for action
      *
      * @param string $action Defines a resource:action pair the user has access on groups.
@@ -212,6 +268,16 @@ class GroupsList extends Definition
     {
         $this->action = $action;
         return $this;
+    }
+    /**
+     * Getter for action
+     *
+     * @return string Defines a resource:action pair the user has access on groups.
+     *                
+     */
+    public function getAction() : ?string
+    {
+        return $this->action;
     }
     /**
      * Setter for sort
@@ -227,6 +293,16 @@ class GroupsList extends Definition
         return $this;
     }
     /**
+     * Getter for sort
+     *
+     * @return string The field on which the list will be sorted. (field to sort ascending or -field to sort
+     *                descending)
+     */
+    public function getSort() : ?string
+    {
+        return $this->sort;
+    }
+    /**
      * Setter for authorizations
      *
      * @param bool $authorizations if true, we return the list of actions and resources the user has access
@@ -237,6 +313,15 @@ class GroupsList extends Definition
     {
         $this->authorizations = $authorizations;
         return $this;
+    }
+    /**
+     * Getter for authorizations
+     *
+     * @return bool if true, we return the list of actions and resources the user has access
+     */
+    public function getAuthorizations() : ?bool
+    {
+        return $this->authorizations;
     }
     /**
      * Setter for limit
@@ -251,6 +336,15 @@ class GroupsList extends Definition
         return $this;
     }
     /**
+     * Getter for limit
+     *
+     * @return int The maximum number of items to return
+     */
+    public function getLimit() : ?int
+    {
+        return $this->limit;
+    }
+    /**
      * Setter for offset
      *
      * @param int $offset The number of items to skip
@@ -263,6 +357,15 @@ class GroupsList extends Definition
         return $this;
     }
     /**
+     * Getter for offset
+     *
+     * @return int The number of items to skip
+     */
+    public function getOffset() : ?int
+    {
+        return $this->offset;
+    }
+    /**
      * Setter for pageId
      *
      * @param string $pageId Token representing the page to retrieve
@@ -273,5 +376,21 @@ class GroupsList extends Definition
     {
         $this->pageId = $pageId;
         return $this;
+    }
+    /**
+     * Getter for pageId
+     *
+     * @return string Token representing the page to retrieve
+     */
+    public function getPageId() : ?string
+    {
+        return $this->pageId;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('parentIds' => new ArraySerializer(self::class, 'parentIds', new PrimitiveSerializer(self::class, 'parentIds', 'string')), 'deep' => new PrimitiveSerializer(self::class, 'deep', 'bool'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'types' => new ArraySerializer(self::class, 'types', new PrimitiveSerializer(self::class, 'types', 'int')), 'fields' => new PrimitiveSerializer(self::class, 'fields', 'string'), 'action' => new PrimitiveSerializer(self::class, 'action', 'string'), 'sort' => new PrimitiveSerializer(self::class, 'sort', 'string'), 'authorizations' => new PrimitiveSerializer(self::class, 'authorizations', 'bool'), 'limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'offset' => new PrimitiveSerializer(self::class, 'offset', 'int'), 'pageId' => new PrimitiveSerializer(self::class, 'pageId', 'string'));
     }
 }

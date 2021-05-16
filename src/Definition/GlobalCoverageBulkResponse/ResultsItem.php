@@ -31,7 +31,6 @@ class ResultsItem extends Definition
      * @var int[]
      */
     protected ?array $margins = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'), new PrimitiveSerializer(self::class, 'locationCovered', 'bool'), new ArraySerializer(self::class, 'margins', new PrimitiveSerializer(self::class, 'margins', 'int')));
     /**
      * Setter for lat
      *
@@ -49,7 +48,7 @@ class ResultsItem extends Definition
      *
      * @return int The latitude in degrees.
      */
-    public function getLat() : int
+    public function getLat() : ?int
     {
         return $this->lat;
     }
@@ -70,7 +69,7 @@ class ResultsItem extends Definition
      *
      * @return int The longitude in degrees.
      */
-    public function getLng() : int
+    public function getLng() : ?int
     {
         return $this->lng;
     }
@@ -91,7 +90,7 @@ class ResultsItem extends Definition
      *
      * @return bool True, if the requested location is considered covered.
      */
-    public function getLocationCovered() : bool
+    public function getLocationCovered() : ?bool
     {
         return $this->locationCovered;
     }
@@ -112,8 +111,15 @@ class ResultsItem extends Definition
      *
      * @return int[] The margins values (dB) for redundancy level 1, 2 and 3.
      */
-    public function getMargins() : array
+    public function getMargins() : ?array
     {
         return $this->margins;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('lat' => new PrimitiveSerializer(self::class, 'lat', 'int'), 'lng' => new PrimitiveSerializer(self::class, 'lng', 'int'), 'locationCovered' => new PrimitiveSerializer(self::class, 'locationCovered', 'bool'), 'margins' => new ArraySerializer(self::class, 'margins', new PrimitiveSerializer(self::class, 'margins', 'int')));
     }
 }

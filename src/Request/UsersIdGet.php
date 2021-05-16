@@ -2,12 +2,12 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve information about a given user. The id can also be the user's email address.
  */
-class UsersIdGet extends Definition
+class UsersIdGet extends Request
 {
     /**
      * Defines the other available fields to be returned in the response.
@@ -21,9 +21,8 @@ class UsersIdGet extends Definition
      * @var bool
      */
     protected ?bool $authorizations = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'fields', 'string'), new PrimitiveSerializer(self::class, 'authorizations', 'bool'));
-    protected $query = array('fields', 'authorizations');
-    protected $validations = array('fields' => array('required', 'in:userRoles(group(name\\,type\\,level\\,bssId\\,customerBssId)\\,profile(name\\,roles(name\\,perms(name))))'), 'authorizations' => array('required'));
+    protected array $query = array('fields', 'authorizations');
+    protected array $validations = array('fields' => array('in:userRoles(group(name\\,type\\,level\\,bssId\\,customerBssId)\\,profile(name\\,roles(name\\,perms(name))))', 'nullable'));
     /**
      * Setter for fields
      *
@@ -38,6 +37,16 @@ class UsersIdGet extends Definition
         return $this;
     }
     /**
+     * Getter for fields
+     *
+     * @return string Defines the other available fields to be returned in the response.
+     *                
+     */
+    public function getFields() : ?string
+    {
+        return $this->fields;
+    }
+    /**
      * Setter for authorizations
      *
      * @param bool $authorizations if true, we return the list of actions and resources the user has access
@@ -48,5 +57,21 @@ class UsersIdGet extends Definition
     {
         $this->authorizations = $authorizations;
         return $this;
+    }
+    /**
+     * Getter for authorizations
+     *
+     * @return bool if true, we return the list of actions and resources the user has access
+     */
+    public function getAuthorizations() : ?bool
+    {
+        return $this->authorizations;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('fields' => new PrimitiveSerializer(self::class, 'fields', 'string'), 'authorizations' => new PrimitiveSerializer(self::class, 'authorizations', 'bool'));
     }
 }

@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
@@ -13,7 +14,6 @@ trait ProfileIds
      * @var string[]
      */
     protected ?array $profileId = null;
-    protected $serialize = array(new ArraySerializer(self::class, 'profileId', new PrimitiveSerializer(self::class, 'profileId', 'string')));
     /**
      * Setter for profileId
      *
@@ -31,8 +31,15 @@ trait ProfileIds
      *
      * @return string[]
      */
-    public function getProfileId() : array
+    public function getProfileId() : ?array
     {
         return $this->profileId;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('profileId' => new ArraySerializer(self::class, 'profileId', new PrimitiveSerializer(self::class, 'profileId', 'string')));
     }
 }

@@ -6,9 +6,18 @@ use Arimac\Sigfox\Definition\ErrorContent;
 use Arimac\Sigfox\Definition\ErrorContent\ErrorsItem;
 use Throwable;
 
+/**
+ * HTTP 400 Bad Request error
+ */
 class BadRequestException extends ResponseException {
     protected ErrorContent $innerContent;
 
+    /**
+     * Initializing the exception
+     *
+     * @param ErrorContent $innerContent Response content
+     * @param Throwable    $prev         Previous exception
+     */
     public function __construct(
         ErrorContent $innerContent,
         Throwable $prev = null

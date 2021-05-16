@@ -122,7 +122,6 @@ class DeviceMessage extends Definition
      * @var DownlinkAnswerStatus
      */
     protected ?DownlinkAnswerStatus $downlinkAnswerStatus = null;
-    protected $serialize = array(new ClassSerializer(self::class, 'device', CommonDevice::class), new PrimitiveSerializer(self::class, 'time', 'int'), new PrimitiveSerializer(self::class, 'data', 'string'), new PrimitiveSerializer(self::class, 'ackRequired', 'bool'), new PrimitiveSerializer(self::class, 'lqi', 'int'), new PrimitiveSerializer(self::class, 'lqiRepeaters', 'int'), new PrimitiveSerializer(self::class, 'seqNumber', 'int'), new PrimitiveSerializer(self::class, 'nbFrames', 'int'), new ArraySerializer(self::class, 'computedLocation', new ClassSerializer(self::class, 'computedLocation', ComputedLocation::class)), new ArraySerializer(self::class, 'rinfos', new ClassSerializer(self::class, 'rinfos', Rinfo::class)), new ClassSerializer(self::class, 'downlinkAnswerStatus', DownlinkAnswerStatus::class));
     /**
      * Setter for device
      *
@@ -140,7 +139,7 @@ class DeviceMessage extends Definition
      *
      * @return CommonDevice Defines a device message
      */
-    public function getDevice() : CommonDevice
+    public function getDevice() : ?CommonDevice
     {
         return $this->device;
     }
@@ -161,7 +160,7 @@ class DeviceMessage extends Definition
      *
      * @return int Timestamp of the message (in milliseconds since the Unix Epoch)
      */
-    public function getTime() : int
+    public function getTime() : ?int
     {
         return $this->time;
     }
@@ -182,7 +181,7 @@ class DeviceMessage extends Definition
      *
      * @return string message content, hex encoded
      */
-    public function getData() : string
+    public function getData() : ?string
     {
         return $this->data;
     }
@@ -203,7 +202,7 @@ class DeviceMessage extends Definition
      *
      * @return bool true if an acknowledge is required
      */
-    public function getAckRequired() : bool
+    public function getAckRequired() : ?bool
     {
         return $this->ackRequired;
     }
@@ -238,7 +237,7 @@ class DeviceMessage extends Definition
      *             - {@see DeviceMessage::LQI_NA}
      *             
      */
-    public function getLqi() : int
+    public function getLqi() : ?int
     {
         return $this->lqi;
     }
@@ -273,7 +272,7 @@ class DeviceMessage extends Definition
      *             - {@see DeviceMessage::LQI_REPEATERS_NA}
      *             
      */
-    public function getLqiRepeaters() : int
+    public function getLqiRepeaters() : ?int
     {
         return $this->lqiRepeaters;
     }
@@ -294,7 +293,7 @@ class DeviceMessage extends Definition
      *
      * @return int the sequence number for this message, may not be present when device uses VO protocol
      */
-    public function getSeqNumber() : int
+    public function getSeqNumber() : ?int
     {
         return $this->seqNumber;
     }
@@ -316,7 +315,7 @@ class DeviceMessage extends Definition
      *
      * @return int nbFrames can be 1 or 3. This value represents an expected number of frames sent by the device.
      */
-    public function getNbFrames() : int
+    public function getNbFrames() : ?int
     {
         return $this->nbFrames;
     }
@@ -337,7 +336,7 @@ class DeviceMessage extends Definition
      *
      * @return ComputedLocation[]
      */
-    public function getComputedLocation() : array
+    public function getComputedLocation() : ?array
     {
         return $this->computedLocation;
     }
@@ -358,7 +357,7 @@ class DeviceMessage extends Definition
      *
      * @return Rinfo[]
      */
-    public function getRinfos() : array
+    public function getRinfos() : ?array
     {
         return $this->rinfos;
     }
@@ -379,8 +378,15 @@ class DeviceMessage extends Definition
      *
      * @return DownlinkAnswerStatus the last callback status for this reception
      */
-    public function getDownlinkAnswerStatus() : DownlinkAnswerStatus
+    public function getDownlinkAnswerStatus() : ?DownlinkAnswerStatus
     {
         return $this->downlinkAnswerStatus;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('device' => new ClassSerializer(self::class, 'device', CommonDevice::class), 'time' => new PrimitiveSerializer(self::class, 'time', 'int'), 'data' => new PrimitiveSerializer(self::class, 'data', 'string'), 'ackRequired' => new PrimitiveSerializer(self::class, 'ackRequired', 'bool'), 'lqi' => new PrimitiveSerializer(self::class, 'lqi', 'int'), 'lqiRepeaters' => new PrimitiveSerializer(self::class, 'lqiRepeaters', 'int'), 'seqNumber' => new PrimitiveSerializer(self::class, 'seqNumber', 'int'), 'nbFrames' => new PrimitiveSerializer(self::class, 'nbFrames', 'int'), 'computedLocation' => new ArraySerializer(self::class, 'computedLocation', new ClassSerializer(self::class, 'computedLocation', ComputedLocation::class)), 'rinfos' => new ArraySerializer(self::class, 'rinfos', new ClassSerializer(self::class, 'rinfos', Rinfo::class)), 'downlinkAnswerStatus' => new ClassSerializer(self::class, 'downlinkAnswerStatus', DownlinkAnswerStatus::class));
     }
 }

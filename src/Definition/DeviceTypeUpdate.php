@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -118,7 +117,6 @@ class DeviceTypeUpdate extends BaseDeviceType
      * @var bool
      */
     protected ?bool $automaticRenewal = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'payloadType', 'int'), new PrimitiveSerializer(self::class, 'payloadConfig', 'string'), new PrimitiveSerializer(self::class, 'downlinkMode', 'int'), new PrimitiveSerializer(self::class, 'downlinkDataString', 'string'), new PrimitiveSerializer(self::class, 'description', 'string'), new PrimitiveSerializer(self::class, 'contractId', 'string'), new ArraySerializer(self::class, 'contracts', new ClassSerializer(self::class, 'contracts', ContractId::class)), new PrimitiveSerializer(self::class, 'geolocPayloadConfigId', 'string'), new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'));
     /**
      * Setter for payloadType
      *
@@ -152,7 +150,7 @@ class DeviceTypeUpdate extends BaseDeviceType
      *             - {@see DeviceTypeUpdate::PAYLOAD_TYPE_SENSITV2}
      *             
      */
-    public function getPayloadType() : int
+    public function getPayloadType() : ?int
     {
         return $this->payloadType;
     }
@@ -173,7 +171,7 @@ class DeviceTypeUpdate extends BaseDeviceType
      *
      * @return string The payload configuration. Required if the payload type is Custom, else ignored.
      */
-    public function getPayloadConfig() : string
+    public function getPayloadConfig() : ?string
     {
         return $this->payloadConfig;
     }
@@ -206,7 +204,7 @@ class DeviceTypeUpdate extends BaseDeviceType
      *             - {@see DeviceTypeUpdate::DOWNLINK_MODE_MANAGED}
      *             
      */
-    public function getDownlinkMode() : int
+    public function getDownlinkMode() : ?int
     {
         return $this->downlinkMode;
     }
@@ -232,7 +230,7 @@ class DeviceTypeUpdate extends BaseDeviceType
      *                It must be an 8 byte length message given in hexadecimal string format.
      *                
      */
-    public function getDownlinkDataString() : string
+    public function getDownlinkDataString() : ?string
     {
         return $this->downlinkDataString;
     }
@@ -253,7 +251,7 @@ class DeviceTypeUpdate extends BaseDeviceType
      *
      * @return string The device types's description
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
@@ -275,7 +273,7 @@ class DeviceTypeUpdate extends BaseDeviceType
      *
      * @return string The device type's contract identifier (must be on the same group than the device type)
      */
-    public function getContractId() : string
+    public function getContractId() : ?string
     {
         return $this->contractId;
     }
@@ -297,7 +295,7 @@ class DeviceTypeUpdate extends BaseDeviceType
      *
      * @return ContractId[] The device type's contract identifiers (must be on the same group than the device type)
      */
-    public function getContracts() : array
+    public function getContracts() : ?array
     {
         return $this->contracts;
     }
@@ -320,7 +318,7 @@ class DeviceTypeUpdate extends BaseDeviceType
      * @return string The geoloc payload configuration identifier. Required if the payload type is Geolocation, else
      *                ignored.
      */
-    public function getGeolocPayloadConfigId() : string
+    public function getGeolocPayloadConfigId() : ?string
     {
         return $this->geolocPayloadConfigId;
     }
@@ -341,8 +339,15 @@ class DeviceTypeUpdate extends BaseDeviceType
      *
      * @return bool Allows the automatic renewal of devices attached to this device type
      */
-    public function getAutomaticRenewal() : bool
+    public function getAutomaticRenewal() : ?bool
     {
         return $this->automaticRenewal;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('payloadType' => new PrimitiveSerializer(self::class, 'payloadType', 'int'), 'payloadConfig' => new PrimitiveSerializer(self::class, 'payloadConfig', 'string'), 'downlinkMode' => new PrimitiveSerializer(self::class, 'downlinkMode', 'int'), 'downlinkDataString' => new PrimitiveSerializer(self::class, 'downlinkDataString', 'string'), 'description' => new PrimitiveSerializer(self::class, 'description', 'string'), 'contractId' => new PrimitiveSerializer(self::class, 'contractId', 'string'), 'contracts' => new ArraySerializer(self::class, 'contracts', new ClassSerializer(self::class, 'contracts', ContractId::class)), 'geolocPayloadConfigId' => new PrimitiveSerializer(self::class, 'geolocPayloadConfigId', 'string'), 'automaticRenewal' => new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'));
     }
 }

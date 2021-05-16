@@ -21,8 +21,7 @@ class MinMetaRole extends Definition
      * @var string
      */
     protected ?string $name = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'));
-    protected $validations = array('name' => array('max:100', 'nullable'));
+    protected array $validations = array('name' => array('max:100', 'nullable'));
     /**
      * Setter for id
      *
@@ -40,7 +39,7 @@ class MinMetaRole extends Definition
      *
      * @return string The meta role's identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -61,8 +60,15 @@ class MinMetaRole extends Definition
      *
      * @return string The meta role's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'));
     }
 }

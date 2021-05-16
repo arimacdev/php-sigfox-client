@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -37,7 +36,6 @@ class Role extends CommonRole
      * @var string[]
      */
     protected ?array $resources = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new ArraySerializer(self::class, 'perms', new ClassSerializer(self::class, 'perms', MinPerm::class)), new ArraySerializer(self::class, 'path', new ClassSerializer(self::class, 'path', MinMetaRole::class)), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     /**
      * Setter for id
      *
@@ -55,7 +53,7 @@ class Role extends CommonRole
      *
      * @return string The role's identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -76,7 +74,7 @@ class Role extends CommonRole
      *
      * @return MinPerm[] the permisions included in this role
      */
-    public function getPerms() : array
+    public function getPerms() : ?array
     {
         return $this->perms;
     }
@@ -97,7 +95,7 @@ class Role extends CommonRole
      *
      * @return MinMetaRole[] The roles's path sorted by descending ancestor (direct parent to farest parent)
      */
-    public function getPath() : array
+    public function getPath() : ?array
     {
         return $this->path;
     }
@@ -118,7 +116,7 @@ class Role extends CommonRole
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
     }
@@ -139,8 +137,15 @@ class Role extends CommonRole
      *
      * @return string[]
      */
-    public function getResources() : array
+    public function getResources() : ?array
     {
         return $this->resources;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'perms' => new ArraySerializer(self::class, 'perms', new ClassSerializer(self::class, 'perms', MinPerm::class)), 'path' => new ArraySerializer(self::class, 'path', new ClassSerializer(self::class, 'path', MinMetaRole::class)), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     }
 }

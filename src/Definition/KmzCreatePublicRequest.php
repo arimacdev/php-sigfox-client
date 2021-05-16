@@ -13,8 +13,7 @@ class KmzCreatePublicRequest extends Definition
      * @var string
      */
     protected ?string $coverageMode = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'coverageMode', 'string'));
-    protected $validations = array('coverageMode' => array('in:OVERLAP_INDOOR,OVERLAP_OUTDOOR,OVERLAP_INDOOR_U1,OVERLAP_OUTDOOR_U1,OVERLAP_INDOOR_U2,OVERLAP_OUTDOOR_U2,OVERLAP_INDOOR_U3,OVERLAP_OUTDOOR_U3', 'nullable'));
+    protected array $validations = array('coverageMode' => array('in:OVERLAP_INDOOR,OVERLAP_OUTDOOR,OVERLAP_INDOOR_U1,OVERLAP_OUTDOOR_U1,OVERLAP_INDOOR_U2,OVERLAP_OUTDOOR_U2,OVERLAP_INDOOR_U3,OVERLAP_OUTDOOR_U3', 'nullable'));
     /**
      * Setter for coverageMode
      *
@@ -37,8 +36,15 @@ class KmzCreatePublicRequest extends Definition
      *                U1, U2 and U3 are for product class (1U, 2U and 3U), 0U is considered by default.
      *                
      */
-    public function getCoverageMode() : string
+    public function getCoverageMode() : ?string
     {
         return $this->coverageMode;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('coverageMode' => new PrimitiveSerializer(self::class, 'coverageMode', 'string'));
     }
 }

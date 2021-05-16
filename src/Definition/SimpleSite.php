@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -98,7 +97,6 @@ class SimpleSite extends MinSite
      * @var string[]
      */
     protected ?array $actions = null;
-    protected $serialize = array(new ClassSerializer(self::class, 'host', MinHost::class), new PrimitiveSerializer(self::class, 'candidateExternalId', 'int'), new PrimitiveSerializer(self::class, 'status', 'int'), new PrimitiveSerializer(self::class, 'lessorId', 'string'), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
     /**
      * Setter for host
      *
@@ -116,7 +114,7 @@ class SimpleSite extends MinSite
      *
      * @return MinHost
      */
-    public function getHost() : MinHost
+    public function getHost() : ?MinHost
     {
         return $this->host;
     }
@@ -137,7 +135,7 @@ class SimpleSite extends MinSite
      *
      * @return int external id of the site where the base station is installed
      */
-    public function getCandidateExternalId() : int
+    public function getCandidateExternalId() : ?int
     {
         return $this->candidateExternalId;
     }
@@ -186,7 +184,7 @@ class SimpleSite extends MinSite
      *             - {@see SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY}
      *             
      */
-    public function getStatus() : int
+    public function getStatus() : ?int
     {
         return $this->status;
     }
@@ -207,7 +205,7 @@ class SimpleSite extends MinSite
      *
      * @return string id of the lessor of the site where the base station is installed
      */
-    public function getLessorId() : string
+    public function getLessorId() : ?string
     {
         return $this->lessorId;
     }
@@ -228,8 +226,15 @@ class SimpleSite extends MinSite
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('host' => new ClassSerializer(self::class, 'host', MinHost::class), 'candidateExternalId' => new PrimitiveSerializer(self::class, 'candidateExternalId', 'int'), 'status' => new PrimitiveSerializer(self::class, 'status', 'int'), 'lessorId' => new PrimitiveSerializer(self::class, 'lessorId', 'string'), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
     }
 }

@@ -6,10 +6,20 @@ use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Serializer\Impl\Definition;
 use stdClass;
 
+/**
+ * Serializing and deserializing class instances
+ */
 class ClassSerializer extends Serializer
 {
     protected string $name;
 
+    /**
+     * Initializing the serializer
+     *
+     * @param string $className    Name of the class that property exist. For error reporting purposes
+     * @param string $propertyName Name of the property. For error reporting purposes
+     * @param string $name         The class name
+     */
     public function __construct(string $className, string $propertyName, string $name)
     {
         parent::__construct($className, $propertyName);
@@ -17,6 +27,9 @@ class ClassSerializer extends Serializer
         $this->name = $name;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function serialize($value)
     {
         if (is_null($value)) {
@@ -64,6 +77,9 @@ class ClassSerializer extends Serializer
         return $obj;
     }
 
+    /**
+     * @inheritdoc
+     */
     public function deserialize($value)
     {
         if (is_null($value)) {
@@ -94,6 +110,9 @@ class ClassSerializer extends Serializer
         return $arr;
     }
 
+    /**
+     * @inheritdoc
+     */
     protected function getType(): string
     {
         return $this->name;

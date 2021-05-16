@@ -15,7 +15,6 @@ class RedundancyResponse extends Definition
      * @var int
      */
     protected ?int $redundancy = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'redundancy', 'int'));
     /**
      * Setter for redundancy
      *
@@ -35,8 +34,15 @@ class RedundancyResponse extends Definition
      * @return int The base station redundancy, 0 = none, 1 = 1 base station, 2 = 2 base stations, 3 = 3 base
      *             stations or more
      */
-    public function getRedundancy() : int
+    public function getRedundancy() : ?int
     {
         return $this->redundancy;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('redundancy' => new PrimitiveSerializer(self::class, 'redundancy', 'int'));
     }
 }

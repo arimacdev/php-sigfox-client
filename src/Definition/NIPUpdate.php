@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the NIP group's update properties
@@ -16,7 +15,6 @@ class NIPUpdate extends CommonGroupUpdate
      * @var string
      */
     protected ?string $countryISOAlpha3 = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'countryISOAlpha3', 'string'));
     /**
      * Setter for countryISOAlpha3
      *
@@ -36,8 +34,15 @@ class NIPUpdate extends CommonGroupUpdate
      * @return string This is the country ISO code (3 letters from the ISO 3166-1 alpha-3 country code) where the
      *                operator manages its network. Only available for SO and NIP.
      */
-    public function getCountryISOAlpha3() : string
+    public function getCountryISOAlpha3() : ?string
     {
         return $this->countryISOAlpha3;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('countryISOAlpha3' => new PrimitiveSerializer(self::class, 'countryISOAlpha3', 'string'));
     }
 }

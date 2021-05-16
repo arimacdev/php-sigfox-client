@@ -36,7 +36,6 @@ class Repetition extends Definition
      * @var bool
      */
     protected ?bool $repeated = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'nseq', 'int'), new PrimitiveSerializer(self::class, 'rssi', 'int'), new PrimitiveSerializer(self::class, 'snr', 'int'), new PrimitiveSerializer(self::class, 'freq', 'int'), new PrimitiveSerializer(self::class, 'repeated', 'bool'));
     /**
      * Setter for nseq
      *
@@ -54,7 +53,7 @@ class Repetition extends Definition
      *
      * @return int nseq of the repetition
      */
-    public function getNseq() : int
+    public function getNseq() : ?int
     {
         return $this->nseq;
     }
@@ -75,7 +74,7 @@ class Repetition extends Definition
      *
      * @return int Received Signal Strength Indication (in dBm – Float value with two maximum fraction digits)
      */
-    public function getRssi() : int
+    public function getRssi() : ?int
     {
         return $this->rssi;
     }
@@ -96,7 +95,7 @@ class Repetition extends Definition
      *
      * @return int the best signal of all repetitions for this base station
      */
-    public function getSnr() : int
+    public function getSnr() : ?int
     {
         return $this->snr;
     }
@@ -117,7 +116,7 @@ class Repetition extends Definition
      *
      * @return int the frequency at which the message has been received (in Hz)
      */
-    public function getFreq() : int
+    public function getFreq() : ?int
     {
         return $this->freq;
     }
@@ -138,8 +137,15 @@ class Repetition extends Definition
      *
      * @return bool if this repetition has been propagated by a repeater
      */
-    public function getRepeated() : bool
+    public function getRepeated() : ?bool
     {
         return $this->repeated;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('nseq' => new PrimitiveSerializer(self::class, 'nseq', 'int'), 'rssi' => new PrimitiveSerializer(self::class, 'rssi', 'int'), 'snr' => new PrimitiveSerializer(self::class, 'snr', 'int'), 'freq' => new PrimitiveSerializer(self::class, 'freq', 'int'), 'repeated' => new PrimitiveSerializer(self::class, 'repeated', 'bool'));
     }
 }

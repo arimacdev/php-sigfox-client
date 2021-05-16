@@ -26,7 +26,6 @@ class TilesResponse extends Definition
      * @var Bounds
      */
     protected ?Bounds $bounds = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'baseImgUrl', 'string'), new PrimitiveSerializer(self::class, 'tmsTemplateUrl', 'string'), new ClassSerializer(self::class, 'bounds', Bounds::class));
     /**
      * Setter for baseImgUrl
      *
@@ -44,7 +43,7 @@ class TilesResponse extends Definition
      *
      * @return string The tiles base image url
      */
-    public function getBaseImgUrl() : string
+    public function getBaseImgUrl() : ?string
     {
         return $this->baseImgUrl;
     }
@@ -65,7 +64,7 @@ class TilesResponse extends Definition
      *
      * @return string The TMS template url
      */
-    public function getTmsTemplateUrl() : string
+    public function getTmsTemplateUrl() : ?string
     {
         return $this->tmsTemplateUrl;
     }
@@ -86,8 +85,15 @@ class TilesResponse extends Definition
      *
      * @return Bounds
      */
-    public function getBounds() : Bounds
+    public function getBounds() : ?Bounds
     {
         return $this->bounds;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('baseImgUrl' => new PrimitiveSerializer(self::class, 'baseImgUrl', 'string'), 'tmsTemplateUrl' => new PrimitiveSerializer(self::class, 'tmsTemplateUrl', 'string'), 'bounds' => new ClassSerializer(self::class, 'bounds', Bounds::class));
     }
 }

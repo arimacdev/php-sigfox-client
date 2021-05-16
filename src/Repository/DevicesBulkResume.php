@@ -2,8 +2,9 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
-class DevicesBulkResume
+class DevicesBulkResume extends Repository
 {
     /**
      * The HTTP client

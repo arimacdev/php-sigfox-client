@@ -36,7 +36,6 @@ class Perm extends Definition
      * @var string[]
      */
     protected ?array $resources = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'code', 'int'), new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'description', 'string'), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     /**
      * Setter for code
      *
@@ -54,7 +53,7 @@ class Perm extends Definition
      *
      * @return int The permission's code
      */
-    public function getCode() : int
+    public function getCode() : ?int
     {
         return $this->code;
     }
@@ -75,7 +74,7 @@ class Perm extends Definition
      *
      * @return string The permission's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -96,7 +95,7 @@ class Perm extends Definition
      *
      * @return string The permission's description (in english)
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
@@ -117,7 +116,7 @@ class Perm extends Definition
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
     }
@@ -138,8 +137,15 @@ class Perm extends Definition
      *
      * @return string[]
      */
-    public function getResources() : array
+    public function getResources() : ?array
     {
         return $this->resources;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('code' => new PrimitiveSerializer(self::class, 'code', 'int'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'description' => new PrimitiveSerializer(self::class, 'description', 'string'), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     }
 }

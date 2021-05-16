@@ -51,8 +51,7 @@ class DataItem extends Definition
      * @var bool
      */
     protected ?bool $activable = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'pac', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'), new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'), new PrimitiveSerializer(self::class, 'activable', 'bool'));
-    protected $validations = array('id' => array('required'));
+    protected array $validations = array('id' => array('required'));
     /**
      * Setter for id
      *
@@ -70,7 +69,7 @@ class DataItem extends Definition
      *
      * @return string The device's identifier (hexadecimal format)
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -91,7 +90,7 @@ class DataItem extends Definition
      *
      * @return string The device's PAC (Porting Access Code)
      */
-    public function getPac() : string
+    public function getPac() : ?string
     {
         return $this->pac;
     }
@@ -112,7 +111,7 @@ class DataItem extends Definition
      *
      * @return string The device's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -133,7 +132,7 @@ class DataItem extends Definition
      *
      * @return int The device's provided latitude
      */
-    public function getLat() : int
+    public function getLat() : ?int
     {
         return $this->lat;
     }
@@ -154,7 +153,7 @@ class DataItem extends Definition
      *
      * @return int The device's provided longitude
      */
-    public function getLng() : int
+    public function getLng() : ?int
     {
         return $this->lng;
     }
@@ -175,7 +174,7 @@ class DataItem extends Definition
      *
      * @return bool Value describing if the device is permitted to automatically renew its token
      */
-    public function getAutomaticRenewal() : bool
+    public function getAutomaticRenewal() : ?bool
     {
         return $this->automaticRenewal;
     }
@@ -196,8 +195,15 @@ class DataItem extends Definition
      *
      * @return bool Value describing if the devices are activable and can recover a token
      */
-    public function getActivable() : bool
+    public function getActivable() : ?bool
     {
         return $this->activable;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'pac' => new PrimitiveSerializer(self::class, 'pac', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'lat' => new PrimitiveSerializer(self::class, 'lat', 'int'), 'lng' => new PrimitiveSerializer(self::class, 'lng', 'int'), 'automaticRenewal' => new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'), 'activable' => new PrimitiveSerializer(self::class, 'activable', 'bool'));
     }
 }

@@ -21,8 +21,7 @@ class CommonDevice extends Definition
      * @var string
      */
     protected ?string $name = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'));
-    protected $validations = array('id' => array('required'), 'name' => array('required', 'max:100'));
+    protected array $validations = array('id' => array('required'), 'name' => array('required', 'max:100'));
     /**
      * Setter for id
      *
@@ -40,7 +39,7 @@ class CommonDevice extends Definition
      *
      * @return string The device's identifier (hexadecimal format)
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -61,8 +60,15 @@ class CommonDevice extends Definition
      *
      * @return string The device's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'));
     }
 }

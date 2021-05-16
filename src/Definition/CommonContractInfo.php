@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\CommonContractInfo\OptionsItem;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -79,8 +79,7 @@ class CommonContractInfo extends Definition
      * @var OptionsItem[]
      */
     protected ?array $options = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'activationEndTime', 'int'), new PrimitiveSerializer(self::class, 'communicationEndTime', 'int'), new PrimitiveSerializer(self::class, 'bidir', 'bool'), new PrimitiveSerializer(self::class, 'highPriorityDownlink', 'bool'), new PrimitiveSerializer(self::class, 'maxUplinkFrames', 'int'), new PrimitiveSerializer(self::class, 'maxDownlinkFrames', 'int'), new PrimitiveSerializer(self::class, 'maxTokens', 'int'), new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'), new PrimitiveSerializer(self::class, 'renewalDuration', 'int'), new ArraySerializer(self::class, 'options', new ClassSerializer(self::class, 'options', OptionsItem::class)));
-    protected $validations = array('name' => array('max:100', 'nullable'), 'activationEndTime' => array('min:0', 'numeric', 'nullable'), 'communicationEndTime' => array('min:0', 'numeric', 'nullable'), 'maxUplinkFrames' => array('min:0', 'numeric', 'nullable'), 'maxDownlinkFrames' => array('min:0', 'numeric', 'nullable'), 'maxTokens' => array('min:0', 'numeric', 'nullable'), 'renewalDuration' => array('min:0', 'numeric', 'nullable'));
+    protected array $validations = array('name' => array('max:100', 'nullable'), 'activationEndTime' => array('min:0', 'numeric', 'nullable'), 'communicationEndTime' => array('min:0', 'numeric', 'nullable'), 'maxUplinkFrames' => array('min:0', 'numeric', 'nullable'), 'maxDownlinkFrames' => array('min:0', 'numeric', 'nullable'), 'maxTokens' => array('min:0', 'numeric', 'nullable'), 'renewalDuration' => array('min:0', 'numeric', 'nullable'));
     /**
      * Setter for name
      *
@@ -98,7 +97,7 @@ class CommonContractInfo extends Definition
      *
      * @return string The contract name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -120,7 +119,7 @@ class CommonContractInfo extends Definition
      *
      * @return int The activation end time (in milliseconds) of the contract. 0 means no activation time limit.
      */
-    public function getActivationEndTime() : int
+    public function getActivationEndTime() : ?int
     {
         return $this->activationEndTime;
     }
@@ -142,7 +141,7 @@ class CommonContractInfo extends Definition
      *
      * @return int The end time (in milliseconds) of the communication. 0 means no communication time limit.
      */
-    public function getCommunicationEndTime() : int
+    public function getCommunicationEndTime() : ?int
     {
         return $this->communicationEndTime;
     }
@@ -163,7 +162,7 @@ class CommonContractInfo extends Definition
      *
      * @return bool True if the contract info is bidirectional.
      */
-    public function getBidir() : bool
+    public function getBidir() : ?bool
     {
         return $this->bidir;
     }
@@ -184,7 +183,7 @@ class CommonContractInfo extends Definition
      *
      * @return bool True if all downlinks are high priority.
      */
-    public function getHighPriorityDownlink() : bool
+    public function getHighPriorityDownlink() : ?bool
     {
         return $this->highPriorityDownlink;
     }
@@ -205,7 +204,7 @@ class CommonContractInfo extends Definition
      *
      * @return int The maximum number of uplink frames.
      */
-    public function getMaxUplinkFrames() : int
+    public function getMaxUplinkFrames() : ?int
     {
         return $this->maxUplinkFrames;
     }
@@ -226,7 +225,7 @@ class CommonContractInfo extends Definition
      *
      * @return int The maximum number of downlink frames.
      */
-    public function getMaxDownlinkFrames() : int
+    public function getMaxDownlinkFrames() : ?int
     {
         return $this->maxDownlinkFrames;
     }
@@ -248,7 +247,7 @@ class CommonContractInfo extends Definition
      *
      * @return int The maximum number of tokens for this contract. Either 0 (unlimited) or a positive number.
      */
-    public function getMaxTokens() : int
+    public function getMaxTokens() : ?int
     {
         return $this->maxTokens;
     }
@@ -269,7 +268,7 @@ class CommonContractInfo extends Definition
      *
      * @return bool True if automatic renewal is allowed.
      */
-    public function getAutomaticRenewal() : bool
+    public function getAutomaticRenewal() : ?bool
     {
         return $this->automaticRenewal;
     }
@@ -290,7 +289,7 @@ class CommonContractInfo extends Definition
      *
      * @return int The renewal duration in months.
      */
-    public function getRenewalDuration() : int
+    public function getRenewalDuration() : ?int
     {
         return $this->renewalDuration;
     }
@@ -313,8 +312,15 @@ class CommonContractInfo extends Definition
      * @return OptionsItem[] The activated premium options. Given options will be merged with existing options in
      *                       contract. In order to delete a single option use "/{id}/options" API.
      */
-    public function getOptions() : array
+    public function getOptions() : ?array
     {
         return $this->options;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'activationEndTime' => new PrimitiveSerializer(self::class, 'activationEndTime', 'int'), 'communicationEndTime' => new PrimitiveSerializer(self::class, 'communicationEndTime', 'int'), 'bidir' => new PrimitiveSerializer(self::class, 'bidir', 'bool'), 'highPriorityDownlink' => new PrimitiveSerializer(self::class, 'highPriorityDownlink', 'bool'), 'maxUplinkFrames' => new PrimitiveSerializer(self::class, 'maxUplinkFrames', 'int'), 'maxDownlinkFrames' => new PrimitiveSerializer(self::class, 'maxDownlinkFrames', 'int'), 'maxTokens' => new PrimitiveSerializer(self::class, 'maxTokens', 'int'), 'automaticRenewal' => new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'), 'renewalDuration' => new PrimitiveSerializer(self::class, 'renewalDuration', 'int'), 'options' => new ArraySerializer(self::class, 'options', new ClassSerializer(self::class, 'options', OptionsItem::class)));
     }
 }

@@ -12,7 +12,6 @@ class ApiUsersIdRenewCredentialResponse extends Definition
      * @var string
      */
     protected ?string $accessToken = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'accessToken', 'string'));
     /**
      * Setter for accessToken
      *
@@ -30,8 +29,15 @@ class ApiUsersIdRenewCredentialResponse extends Definition
      *
      * @return string The new API user's acces token (password)
      */
-    public function getAccessToken() : string
+    public function getAccessToken() : ?string
     {
         return $this->accessToken;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('accessToken' => new PrimitiveSerializer(self::class, 'accessToken', 'string'));
     }
 }

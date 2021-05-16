@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -35,8 +34,7 @@ class DeviceTypeCreate extends BaseDeviceType
      * @var string
      */
     protected ?string $geolocPayloadConfigId = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'groupId', 'string'), new PrimitiveSerializer(self::class, 'contractId', 'string'), new ArraySerializer(self::class, 'contracts', new ClassSerializer(self::class, 'contracts', ContractId::class)), new PrimitiveSerializer(self::class, 'geolocPayloadConfigId', 'string'));
-    protected $validations = array('groupId' => array('required'), 'contracts' => array('required'), 'geolocPayloadConfigId' => array('required'));
+    protected array $validations = array('groupId' => array('required'), 'contracts' => array('required'), 'geolocPayloadConfigId' => array('required'));
     /**
      * Setter for groupId
      *
@@ -54,7 +52,7 @@ class DeviceTypeCreate extends BaseDeviceType
      *
      * @return string The device type's group identifier
      */
-    public function getGroupId() : string
+    public function getGroupId() : ?string
     {
         return $this->groupId;
     }
@@ -75,7 +73,7 @@ class DeviceTypeCreate extends BaseDeviceType
      *
      * @return string The device type's contract identifier
      */
-    public function getContractId() : string
+    public function getContractId() : ?string
     {
         return $this->contractId;
     }
@@ -96,7 +94,7 @@ class DeviceTypeCreate extends BaseDeviceType
      *
      * @return ContractId[] The device type's contract identifiers
      */
-    public function getContracts() : array
+    public function getContracts() : ?array
     {
         return $this->contracts;
     }
@@ -119,8 +117,15 @@ class DeviceTypeCreate extends BaseDeviceType
      * @return string The geoloc payload configuration identifier. Required if the payload type is Geolocation, else
      *                ignored.
      */
-    public function getGeolocPayloadConfigId() : string
+    public function getGeolocPayloadConfigId() : ?string
     {
         return $this->geolocPayloadConfigId;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'), 'contractId' => new PrimitiveSerializer(self::class, 'contractId', 'string'), 'contracts' => new ArraySerializer(self::class, 'contracts', new ClassSerializer(self::class, 'contracts', ContractId::class)), 'geolocPayloadConfigId' => new PrimitiveSerializer(self::class, 'geolocPayloadConfigId', 'string'));
     }
 }

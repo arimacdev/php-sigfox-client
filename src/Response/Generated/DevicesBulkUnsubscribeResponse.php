@@ -12,7 +12,6 @@ class DevicesBulkUnsubscribeResponse extends Definition
      * @var string
      */
     protected ?string $jobId = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'jobId', 'string'));
     /**
      * Setter for jobId
      *
@@ -30,8 +29,15 @@ class DevicesBulkUnsubscribeResponse extends Definition
      *
      * @return string jobId (to use in job status request)
      */
-    public function getJobId() : string
+    public function getJobId() : ?string
     {
         return $this->jobId;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('jobId' => new PrimitiveSerializer(self::class, 'jobId', 'string'));
     }
 }

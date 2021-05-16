@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the properties needed to create an email callback
@@ -27,7 +26,6 @@ class UpdateEmailCallback extends UpdateCallback
      * @var string
      */
     protected ?string $message = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'subject', 'string'), new PrimitiveSerializer(self::class, 'recipient', 'string'), new PrimitiveSerializer(self::class, 'message', 'string'));
     /**
      * Setter for subject
      *
@@ -45,7 +43,7 @@ class UpdateEmailCallback extends UpdateCallback
      *
      * @return string The subject of the email.
      */
-    public function getSubject() : string
+    public function getSubject() : ?string
     {
         return $this->subject;
     }
@@ -66,7 +64,7 @@ class UpdateEmailCallback extends UpdateCallback
      *
      * @return string The recipient of the email.
      */
-    public function getRecipient() : string
+    public function getRecipient() : ?string
     {
         return $this->recipient;
     }
@@ -87,8 +85,15 @@ class UpdateEmailCallback extends UpdateCallback
      *
      * @return string the content of the message.
      */
-    public function getMessage() : string
+    public function getMessage() : ?string
     {
         return $this->message;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('subject' => new PrimitiveSerializer(self::class, 'subject', 'string'), 'recipient' => new PrimitiveSerializer(self::class, 'recipient', 'string'), 'message' => new PrimitiveSerializer(self::class, 'message', 'string'));
     }
 }

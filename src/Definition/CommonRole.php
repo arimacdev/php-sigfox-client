@@ -37,8 +37,7 @@ class CommonRole extends Definition
      * @var int
      */
     protected ?int $type = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'type', 'int'));
-    protected $validations = array('name' => array('max:100', 'nullable'));
+    protected array $validations = array('name' => array('max:100', 'nullable'));
     /**
      * Setter for name
      *
@@ -56,7 +55,7 @@ class CommonRole extends Definition
      *
      * @return string the role's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -87,8 +86,15 @@ class CommonRole extends Definition
      *             - {@see CommonRole::TYPE_META}
      *             
      */
-    public function getType() : int
+    public function getType() : ?int
     {
         return $this->type;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'type' => new PrimitiveSerializer(self::class, 'type', 'int'));
     }
 }

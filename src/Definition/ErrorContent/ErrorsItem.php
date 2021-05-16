@@ -24,7 +24,6 @@ class ErrorsItem extends Definition
      * @var string
      */
     protected ?string $message = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'type', 'string'), new PrimitiveSerializer(self::class, 'field', 'string'), new PrimitiveSerializer(self::class, 'message', 'string'));
     /**
      * Setter for type
      *
@@ -44,7 +43,7 @@ class ErrorsItem extends Definition
      * @return string Describe where the problem occurred. Can be from body, query or path.
      *                
      */
-    public function getType() : string
+    public function getType() : ?string
     {
         return $this->type;
     }
@@ -67,7 +66,7 @@ class ErrorsItem extends Definition
      * @return string Name of the field or parameter where the specific error occurred.
      *                
      */
-    public function getField() : string
+    public function getField() : ?string
     {
         return $this->field;
     }
@@ -90,8 +89,15 @@ class ErrorsItem extends Definition
      * @return string Readable specific error for the previously defined field.
      *                
      */
-    public function getMessage() : string
+    public function getMessage() : ?string
     {
         return $this->message;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('type' => new PrimitiveSerializer(self::class, 'type', 'string'), 'field' => new PrimitiveSerializer(self::class, 'field', 'string'), 'message' => new PrimitiveSerializer(self::class, 'message', 'string'));
     }
 }

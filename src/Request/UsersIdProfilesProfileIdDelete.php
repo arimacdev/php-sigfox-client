@@ -2,12 +2,12 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Delete profiles or a given profile associated to the groupId
  */
-class UsersIdProfilesProfileIdDelete extends Definition
+class UsersIdProfilesProfileIdDelete extends Request
 {
     /**
      * The group identifier
@@ -15,9 +15,7 @@ class UsersIdProfilesProfileIdDelete extends Definition
      * @var string
      */
     protected ?string $groupId = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'groupId', 'string'));
-    protected $query = array('groupId');
-    protected $validations = array('groupId' => array('required'));
+    protected array $query = array('groupId');
     /**
      * Setter for groupId
      *
@@ -29,5 +27,21 @@ class UsersIdProfilesProfileIdDelete extends Definition
     {
         $this->groupId = $groupId;
         return $this;
+    }
+    /**
+     * Getter for groupId
+     *
+     * @return string The group identifier
+     */
+    public function getGroupId() : ?string
+    {
+        return $this->groupId;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'));
     }
 }

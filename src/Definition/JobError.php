@@ -35,7 +35,6 @@ class JobError extends Definition
      * @var int
      */
     protected ?int $type = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'entity', 'string'), new PrimitiveSerializer(self::class, 'message', 'string'), new PrimitiveSerializer(self::class, 'type', 'int'));
     /**
      * Setter for entity
      *
@@ -53,7 +52,7 @@ class JobError extends Definition
      *
      * @return string the hex id of the entity that has an error
      */
-    public function getEntity() : string
+    public function getEntity() : ?string
     {
         return $this->entity;
     }
@@ -74,7 +73,7 @@ class JobError extends Definition
      *
      * @return string the message of the error
      */
-    public function getMessage() : string
+    public function getMessage() : ?string
     {
         return $this->message;
     }
@@ -103,8 +102,15 @@ class JobError extends Definition
      *             - {@see JobError::TYPE_SYSTEM}
      *             
      */
-    public function getType() : int
+    public function getType() : ?int
     {
         return $this->type;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('entity' => new PrimitiveSerializer(self::class, 'entity', 'string'), 'message' => new PrimitiveSerializer(self::class, 'message', 'string'), 'type' => new PrimitiveSerializer(self::class, 'type', 'int'));
     }
 }

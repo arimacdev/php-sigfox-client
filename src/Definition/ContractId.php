@@ -15,8 +15,7 @@ class ContractId extends Definition
      * @var string
      */
     protected ?string $id = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'));
-    protected $validations = array('id' => array('required'));
+    protected array $validations = array('id' => array('required'));
     /**
      * Setter for id
      *
@@ -34,8 +33,15 @@ class ContractId extends Definition
      *
      * @return string The contract's id
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'));
     }
 }

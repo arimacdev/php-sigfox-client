@@ -105,7 +105,6 @@ class InternetSubscription extends Definition
      * @var string[]
      */
     protected ?array $resources = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'type', 'int'), new PrimitiveSerializer(self::class, 'priority', 'int'), new PrimitiveSerializer(self::class, 'comments', 'string'), new PrimitiveSerializer(self::class, 'startTime', 'int'), new PrimitiveSerializer(self::class, 'endTime', 'int'), new ClassSerializer(self::class, 'provider', MinProvider::class), new ArraySerializer(self::class, 'contacts', new ClassSerializer(self::class, 'contacts', MinContact::class)), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     /**
      * Setter for id
      *
@@ -123,7 +122,7 @@ class InternetSubscription extends Definition
      *
      * @return string The identifier of this internet subscription
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -158,7 +157,7 @@ class InternetSubscription extends Definition
      *             - {@see InternetSubscription::TYPE_WIFI}
      *             
      */
-    public function getType() : int
+    public function getType() : ?int
     {
         return $this->type;
     }
@@ -189,7 +188,7 @@ class InternetSubscription extends Definition
      *             - {@see InternetSubscription::PRIORITY_TERMINATED}
      *             
      */
-    public function getPriority() : int
+    public function getPriority() : ?int
     {
         return $this->priority;
     }
@@ -210,7 +209,7 @@ class InternetSubscription extends Definition
      *
      * @return string The comments about this internet subscription. This field can be unset when updating.
      */
-    public function getComments() : string
+    public function getComments() : ?string
     {
         return $this->comments;
     }
@@ -231,7 +230,7 @@ class InternetSubscription extends Definition
      *
      * @return int The start time of this internet subscription
      */
-    public function getStartTime() : int
+    public function getStartTime() : ?int
     {
         return $this->startTime;
     }
@@ -252,7 +251,7 @@ class InternetSubscription extends Definition
      *
      * @return int The end time this internet subscription. This field can be unset when updating.
      */
-    public function getEndTime() : int
+    public function getEndTime() : ?int
     {
         return $this->endTime;
     }
@@ -273,7 +272,7 @@ class InternetSubscription extends Definition
      *
      * @return MinProvider
      */
-    public function getProvider() : MinProvider
+    public function getProvider() : ?MinProvider
     {
         return $this->provider;
     }
@@ -294,7 +293,7 @@ class InternetSubscription extends Definition
      *
      * @return MinContact[]
      */
-    public function getContacts() : array
+    public function getContacts() : ?array
     {
         return $this->contacts;
     }
@@ -315,7 +314,7 @@ class InternetSubscription extends Definition
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
     }
@@ -336,8 +335,15 @@ class InternetSubscription extends Definition
      *
      * @return string[]
      */
-    public function getResources() : array
+    public function getResources() : ?array
     {
         return $this->resources;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'type' => new PrimitiveSerializer(self::class, 'type', 'int'), 'priority' => new PrimitiveSerializer(self::class, 'priority', 'int'), 'comments' => new PrimitiveSerializer(self::class, 'comments', 'string'), 'startTime' => new PrimitiveSerializer(self::class, 'startTime', 'int'), 'endTime' => new PrimitiveSerializer(self::class, 'endTime', 'int'), 'provider' => new ClassSerializer(self::class, 'provider', MinProvider::class), 'contacts' => new ArraySerializer(self::class, 'contacts', new ClassSerializer(self::class, 'contacts', MinContact::class)), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     }
 }

@@ -2,12 +2,12 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of geolocation payload according to request filters.
  */
-class GroupsIdGeolocationPayloads extends Definition
+class GroupsIdGeolocationPayloads extends Request
 {
     /**
      * The maximum number of items to return
@@ -27,9 +27,7 @@ class GroupsIdGeolocationPayloads extends Definition
      * @var string
      */
     protected ?string $pageId = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'offset', 'int'), new PrimitiveSerializer(self::class, 'pageId', 'string'));
-    protected $query = array('limit', 'offset', 'pageId');
-    protected $validations = array('limit' => array('required'), 'offset' => array('required'), 'pageId' => array('required'));
+    protected array $query = array('limit', 'offset', 'pageId');
     /**
      * Setter for limit
      *
@@ -41,6 +39,15 @@ class GroupsIdGeolocationPayloads extends Definition
     {
         $this->limit = $limit;
         return $this;
+    }
+    /**
+     * Getter for limit
+     *
+     * @return int The maximum number of items to return
+     */
+    public function getLimit() : ?int
+    {
+        return $this->limit;
     }
     /**
      * Setter for offset
@@ -55,6 +62,15 @@ class GroupsIdGeolocationPayloads extends Definition
         return $this;
     }
     /**
+     * Getter for offset
+     *
+     * @return int The number of items to skip
+     */
+    public function getOffset() : ?int
+    {
+        return $this->offset;
+    }
+    /**
      * Setter for pageId
      *
      * @param string $pageId Token representing the page to retrieve
@@ -65,5 +81,21 @@ class GroupsIdGeolocationPayloads extends Definition
     {
         $this->pageId = $pageId;
         return $this;
+    }
+    /**
+     * Getter for pageId
+     *
+     * @return string Token representing the page to retrieve
+     */
+    public function getPageId() : ?string
+    {
+        return $this->pageId;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'offset' => new PrimitiveSerializer(self::class, 'offset', 'int'), 'pageId' => new PrimitiveSerializer(self::class, 'pageId', 'string'));
     }
 }

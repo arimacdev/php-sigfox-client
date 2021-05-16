@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class DeviceCreationJob extends CommonDevice
 {
@@ -49,7 +48,6 @@ class DeviceCreationJob extends CommonDevice
      * @var int
      */
     protected ?int $lng = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), new PrimitiveSerializer(self::class, 'pac', 'string'), new PrimitiveSerializer(self::class, 'prototype', 'bool'), new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'), new PrimitiveSerializer(self::class, 'activable', 'bool'), new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'));
     /**
      * Setter for deviceTypeId
      *
@@ -67,7 +65,7 @@ class DeviceCreationJob extends CommonDevice
      *
      * @return string The device type's identifier this device is affected
      */
-    public function getDeviceTypeId() : string
+    public function getDeviceTypeId() : ?string
     {
         return $this->deviceTypeId;
     }
@@ -88,7 +86,7 @@ class DeviceCreationJob extends CommonDevice
      *
      * @return string The device's PAC (Porting Access Code)
      */
-    public function getPac() : string
+    public function getPac() : ?string
     {
         return $this->pac;
     }
@@ -109,7 +107,7 @@ class DeviceCreationJob extends CommonDevice
      *
      * @return bool Set to true if the device is a prototype
      */
-    public function getPrototype() : bool
+    public function getPrototype() : ?bool
     {
         return $this->prototype;
     }
@@ -130,7 +128,7 @@ class DeviceCreationJob extends CommonDevice
      *
      * @return bool Subscribtion to automatic token renewal
      */
-    public function getAutomaticRenewal() : bool
+    public function getAutomaticRenewal() : ?bool
     {
         return $this->automaticRenewal;
     }
@@ -151,7 +149,7 @@ class DeviceCreationJob extends CommonDevice
      *
      * @return bool The device is activable and can take a token
      */
-    public function getActivable() : bool
+    public function getActivable() : ?bool
     {
         return $this->activable;
     }
@@ -172,7 +170,7 @@ class DeviceCreationJob extends CommonDevice
      *
      * @return int The device's provided latitude
      */
-    public function getLat() : int
+    public function getLat() : ?int
     {
         return $this->lat;
     }
@@ -193,8 +191,15 @@ class DeviceCreationJob extends CommonDevice
      *
      * @return int The device's provided longitude
      */
-    public function getLng() : int
+    public function getLng() : ?int
     {
         return $this->lng;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('deviceTypeId' => new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), 'pac' => new PrimitiveSerializer(self::class, 'pac', 'string'), 'prototype' => new PrimitiveSerializer(self::class, 'prototype', 'bool'), 'automaticRenewal' => new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'), 'activable' => new PrimitiveSerializer(self::class, 'activable', 'bool'), 'lat' => new PrimitiveSerializer(self::class, 'lat', 'int'), 'lng' => new PrimitiveSerializer(self::class, 'lng', 'int'));
     }
 }

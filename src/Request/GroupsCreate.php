@@ -2,21 +2,20 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Definition\CommonGroupCreate;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Create a new group.
  */
-class GroupsCreate extends Definition
+class GroupsCreate extends Request
 {
     /**
      * @var CommonGroupCreate
      */
     protected ?CommonGroupCreate $group = null;
-    protected $serialize = array(new ClassSerializer(self::class, 'group', CommonGroupCreate::class));
-    protected $body = array('group');
-    protected $validations = array('group' => array('required'));
+    protected array $body = array('group');
+    protected array $validations = array('group' => array('required'));
     /**
      * Setter for group
      *
@@ -28,5 +27,21 @@ class GroupsCreate extends Definition
     {
         $this->group = $group;
         return $this;
+    }
+    /**
+     * Getter for group
+     *
+     * @return CommonGroupCreate
+     */
+    public function getGroup() : ?CommonGroupCreate
+    {
+        return $this->group;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('group' => new ClassSerializer(self::class, 'group', CommonGroupCreate::class));
     }
 }

@@ -14,7 +14,22 @@
             "Arimac\\Sigfox\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+            "Arimac\\Sigfox\\Test\\": "tests/"
+        }
+    },
     "minimum-stability": "dev",
+    "scripts": {
+        "phpdoc": "php72 ./phpDocumentor.phar -d src/ -t doc/build",
+        "gh-pages": "gh-pages --repo https://github.com/arimacdev/php-sigfox-client --dist doc/build --branch gh-pages",
+        "gencode": "./gencode/bin/gencode",
+        "phpunit": "./vendor/bin/phpunit"
+    },
+    "require": {
+        "guzzlehttp/guzzle": "7.*"
+    },
     "require-dev": {
+        "phpunit/phpunit": "10.0.x-dev"
     }
 }

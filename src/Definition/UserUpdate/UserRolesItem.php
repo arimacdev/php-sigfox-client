@@ -18,8 +18,7 @@ class UserRolesItem extends Definition
      * @var string
      */
     protected ?string $profileId = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'groupId', 'string'), new PrimitiveSerializer(self::class, 'profileId', 'string'));
-    protected $validations = array('groupId' => array('required'), 'profileId' => array('required'));
+    protected array $validations = array('groupId' => array('required'), 'profileId' => array('required'));
     /**
      * Setter for groupId
      *
@@ -37,7 +36,7 @@ class UserRolesItem extends Definition
      *
      * @return string The group identifier on which the user will have the permissions set
      */
-    public function getGroupId() : string
+    public function getGroupId() : ?string
     {
         return $this->groupId;
     }
@@ -58,8 +57,15 @@ class UserRolesItem extends Definition
      *
      * @return string The profile identifier giving permissions to the user
      */
-    public function getProfileId() : string
+    public function getProfileId() : ?string
     {
         return $this->profileId;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'), 'profileId' => new PrimitiveSerializer(self::class, 'profileId', 'string'));
     }
 }

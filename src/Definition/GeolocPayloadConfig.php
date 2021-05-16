@@ -24,7 +24,6 @@ class GeolocPayloadConfig extends Definition
      * @var string
      */
     protected ?string $name = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'));
     /**
      * Setter for id
      *
@@ -42,7 +41,7 @@ class GeolocPayloadConfig extends Definition
      *
      * @return string Geolocation payload id
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -63,8 +62,15 @@ class GeolocPayloadConfig extends Definition
      *
      * @return string Geolocation payload name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'));
     }
 }

@@ -65,7 +65,6 @@ class GroupErrorMessages extends Definition
      * @var array
      */
     protected ?array $parameters = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'device', 'string'), new PrimitiveSerializer(self::class, 'deviceUrl', 'string'), new PrimitiveSerializer(self::class, 'deviceType', 'string'), new PrimitiveSerializer(self::class, 'time', 'int'), new PrimitiveSerializer(self::class, 'data', 'string'), new PrimitiveSerializer(self::class, 'snr', 'string'), new PrimitiveSerializer(self::class, 'status', 'string'), new PrimitiveSerializer(self::class, 'message', 'string'), new ClassSerializer(self::class, 'callback', GroupCallbackMedium::class), new PrimitiveSerializer(self::class, 'parameters', 'array'));
     /**
      * Setter for device
      *
@@ -83,7 +82,7 @@ class GroupErrorMessages extends Definition
      *
      * @return string Device identifier
      */
-    public function getDevice() : string
+    public function getDevice() : ?string
     {
         return $this->device;
     }
@@ -104,7 +103,7 @@ class GroupErrorMessages extends Definition
      *
      * @return string Url to the device
      */
-    public function getDeviceUrl() : string
+    public function getDeviceUrl() : ?string
     {
         return $this->deviceUrl;
     }
@@ -125,7 +124,7 @@ class GroupErrorMessages extends Definition
      *
      * @return string Device type identifier
      */
-    public function getDeviceType() : string
+    public function getDeviceType() : ?string
     {
         return $this->deviceType;
     }
@@ -146,7 +145,7 @@ class GroupErrorMessages extends Definition
      *
      * @return int Timestamp of the message (posix format)
      */
-    public function getTime() : int
+    public function getTime() : ?int
     {
         return $this->time;
     }
@@ -167,7 +166,7 @@ class GroupErrorMessages extends Definition
      *
      * @return string Data message
      */
-    public function getData() : string
+    public function getData() : ?string
     {
         return $this->data;
     }
@@ -188,7 +187,7 @@ class GroupErrorMessages extends Definition
      *
      * @return string The SNR of the messages received by the network so far
      */
-    public function getSnr() : string
+    public function getSnr() : ?string
     {
         return $this->snr;
     }
@@ -209,7 +208,7 @@ class GroupErrorMessages extends Definition
      *
      * @return string Contains the callback response status.
      */
-    public function getStatus() : string
+    public function getStatus() : ?string
     {
         return $this->status;
     }
@@ -230,7 +229,7 @@ class GroupErrorMessages extends Definition
      *
      * @return string Contains additional information on the response.
      */
-    public function getMessage() : string
+    public function getMessage() : ?string
     {
         return $this->message;
     }
@@ -251,7 +250,7 @@ class GroupErrorMessages extends Definition
      *
      * @return GroupCallbackMedium
      */
-    public function getCallback() : GroupCallbackMedium
+    public function getCallback() : ?GroupCallbackMedium
     {
         return $this->callback;
     }
@@ -274,8 +273,15 @@ class GroupErrorMessages extends Definition
      * @return array All the parameters which have served to build the callback, see callback doc for an exhaustive
      *               list.
      */
-    public function getParameters() : array
+    public function getParameters() : ?array
     {
         return $this->parameters;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('device' => new PrimitiveSerializer(self::class, 'device', 'string'), 'deviceUrl' => new PrimitiveSerializer(self::class, 'deviceUrl', 'string'), 'deviceType' => new PrimitiveSerializer(self::class, 'deviceType', 'string'), 'time' => new PrimitiveSerializer(self::class, 'time', 'int'), 'data' => new PrimitiveSerializer(self::class, 'data', 'string'), 'snr' => new PrimitiveSerializer(self::class, 'snr', 'string'), 'status' => new PrimitiveSerializer(self::class, 'status', 'string'), 'message' => new PrimitiveSerializer(self::class, 'message', 'string'), 'callback' => new ClassSerializer(self::class, 'callback', GroupCallbackMedium::class), 'parameters' => new PrimitiveSerializer(self::class, 'parameters', 'array'));
     }
 }

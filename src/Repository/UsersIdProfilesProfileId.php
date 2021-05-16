@@ -2,9 +2,10 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\UsersIdProfilesProfileIdDelete;
-class UsersIdProfilesProfileId
+class UsersIdProfilesProfileId extends Repository
 {
     /**
      * The HTTP client
@@ -33,9 +34,13 @@ class UsersIdProfilesProfileId
     }
     /**
      * Delete profiles or a given profile associated to the groupId
+     *
+     * @param string|undefined $groupId The group identifier
      */
-    public function delete(UsersIdProfilesProfileIdDelete $request)
+    public function delete(?string $groupId)
     {
-        return $this->client->request('delete', $this->bind('/users/{id}/profiles/{profileId}', $this->id, $this->profileId), $request);
+        $request = new UsersIdProfilesProfileIdDelete();
+        $request->setGroupId($groupId);
+        return $this->client->call('delete', $this->bind('/users/{id}/profiles/{profileId}', $this->id, $this->profileId), $request);
     }
 }

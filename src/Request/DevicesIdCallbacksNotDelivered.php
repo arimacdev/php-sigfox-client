@@ -2,13 +2,13 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of undelivered callbacks and errors for a given device, in reverse chronological order (most
  * recent message first).
  */
-class DevicesIdCallbacksNotDelivered extends Definition
+class DevicesIdCallbacksNotDelivered extends Request
 {
     /**
      * Starting timestamp (in milliseconds since the Unix Epoch)
@@ -34,9 +34,7 @@ class DevicesIdCallbacksNotDelivered extends Definition
      * @var int
      */
     protected ?int $offset = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'since', 'int'), new PrimitiveSerializer(self::class, 'before', 'int'), new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'offset', 'int'));
-    protected $query = array('since', 'before', 'limit', 'offset');
-    protected $validations = array('since' => array('required'), 'before' => array('required'), 'limit' => array('required'), 'offset' => array('required'));
+    protected array $query = array('since', 'before', 'limit', 'offset');
     /**
      * Setter for since
      *
@@ -48,6 +46,15 @@ class DevicesIdCallbacksNotDelivered extends Definition
     {
         $this->since = $since;
         return $this;
+    }
+    /**
+     * Getter for since
+     *
+     * @return int Starting timestamp (in milliseconds since the Unix Epoch)
+     */
+    public function getSince() : ?int
+    {
+        return $this->since;
     }
     /**
      * Setter for before
@@ -62,6 +69,15 @@ class DevicesIdCallbacksNotDelivered extends Definition
         return $this;
     }
     /**
+     * Getter for before
+     *
+     * @return int Ending timestamp (in milliseconds since the Unix Epoch)
+     */
+    public function getBefore() : ?int
+    {
+        return $this->before;
+    }
+    /**
      * Setter for limit
      *
      * @param int $limit The maximum number of items to return
@@ -74,6 +90,15 @@ class DevicesIdCallbacksNotDelivered extends Definition
         return $this;
     }
     /**
+     * Getter for limit
+     *
+     * @return int The maximum number of items to return
+     */
+    public function getLimit() : ?int
+    {
+        return $this->limit;
+    }
+    /**
      * Setter for offset
      *
      * @param int $offset The number of items to skip
@@ -84,5 +109,21 @@ class DevicesIdCallbacksNotDelivered extends Definition
     {
         $this->offset = $offset;
         return $this;
+    }
+    /**
+     * Getter for offset
+     *
+     * @return int The number of items to skip
+     */
+    public function getOffset() : ?int
+    {
+        return $this->offset;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('since' => new PrimitiveSerializer(self::class, 'since', 'int'), 'before' => new PrimitiveSerializer(self::class, 'before', 'int'), 'limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'offset' => new PrimitiveSerializer(self::class, 'offset', 'int'));
     }
 }

@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Get operator coverage redundancy for a selected latitude and longitude,
@@ -10,7 +10,7 @@ use Arimac\Sigfox\Serializer\PrimitiveSerializer;
  * For more information please refer to the [Global Coverage API
  * article](https://support.sigfox.com/docs/global-coverage-api).
  */
-class CoveragesOperatorsRedundancy extends Definition
+class CoveragesOperatorsRedundancy extends Request
 {
     /**
      * the latitude
@@ -45,9 +45,8 @@ class CoveragesOperatorsRedundancy extends Definition
      * @var int
      */
     protected ?int $deviceClassId = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'), new PrimitiveSerializer(self::class, 'operatorId', 'string'), new PrimitiveSerializer(self::class, 'deviceSituation', 'string'), new PrimitiveSerializer(self::class, 'deviceClassId', 'int'));
-    protected $query = array('lat', 'lng', 'operatorId', 'deviceSituation', 'deviceClassId');
-    protected $validations = array('lat' => array('required'), 'lng' => array('required'), 'operatorId' => array('required'), 'deviceSituation' => array('required'), 'deviceClassId' => array('required'));
+    protected array $query = array('lat', 'lng', 'operatorId', 'deviceSituation', 'deviceClassId');
+    protected array $validations = array('lat' => array('required'), 'lng' => array('required'));
     /**
      * Setter for lat
      *
@@ -59,6 +58,15 @@ class CoveragesOperatorsRedundancy extends Definition
     {
         $this->lat = $lat;
         return $this;
+    }
+    /**
+     * Getter for lat
+     *
+     * @return int the latitude
+     */
+    public function getLat() : ?int
+    {
+        return $this->lat;
     }
     /**
      * Setter for lng
@@ -73,6 +81,15 @@ class CoveragesOperatorsRedundancy extends Definition
         return $this;
     }
     /**
+     * Getter for lng
+     *
+     * @return int the longitude
+     */
+    public function getLng() : ?int
+    {
+        return $this->lng;
+    }
+    /**
      * Setter for operatorId
      *
      * @param string $operatorId The group id related to the operator to get its coverage result. Is required for
@@ -85,6 +102,17 @@ class CoveragesOperatorsRedundancy extends Definition
     {
         $this->operatorId = $operatorId;
         return $this;
+    }
+    /**
+     * Getter for operatorId
+     *
+     * @return string The group id related to the operator to get its coverage result. Is required for root sigfox
+     *                users.
+     *                
+     */
+    public function getOperatorId() : ?string
+    {
+        return $this->operatorId;
     }
     /**
      * Setter for deviceSituation
@@ -103,6 +131,19 @@ class CoveragesOperatorsRedundancy extends Definition
         return $this;
     }
     /**
+     * Getter for deviceSituation
+     *
+     * @return string The coverage mode.
+     *                - OUTDOOR, max link budget
+     *                - INDOOR, link budget with 20dB margin
+     *                - UNDERGROUND, link budget with 30dB margin
+     *                
+     */
+    public function getDeviceSituation() : ?string
+    {
+        return $this->deviceSituation;
+    }
+    /**
      * Setter for deviceClassId
      *
      * @param int $deviceClassId The product uplink class from 0 to 3 (0U to 3U).
@@ -113,5 +154,21 @@ class CoveragesOperatorsRedundancy extends Definition
     {
         $this->deviceClassId = $deviceClassId;
         return $this;
+    }
+    /**
+     * Getter for deviceClassId
+     *
+     * @return int The product uplink class from 0 to 3 (0U to 3U).
+     */
+    public function getDeviceClassId() : ?int
+    {
+        return $this->deviceClassId;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('lat' => new PrimitiveSerializer(self::class, 'lat', 'int'), 'lng' => new PrimitiveSerializer(self::class, 'lng', 'int'), 'operatorId' => new PrimitiveSerializer(self::class, 'operatorId', 'string'), 'deviceSituation' => new PrimitiveSerializer(self::class, 'deviceSituation', 'string'), 'deviceClassId' => new PrimitiveSerializer(self::class, 'deviceClassId', 'int'));
     }
 }

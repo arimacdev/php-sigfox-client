@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
@@ -52,7 +51,6 @@ class SiteIntervention extends BaseSiteIntervention
      * @var string
      */
     protected ?string $lastEditedBy = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new ClassSerializer(self::class, 'site', MinSite::class), new ClassSerializer(self::class, 'group', MinGroup::class), new ClassSerializer(self::class, 'baseStation', MinBaseStation::class), new PrimitiveSerializer(self::class, 'creationTime', 'int'), new PrimitiveSerializer(self::class, 'createdBy', 'string'), new PrimitiveSerializer(self::class, 'lastEditedTime', 'int'), new PrimitiveSerializer(self::class, 'lastEditedBy', 'string'));
     /**
      * Setter for id
      *
@@ -70,7 +68,7 @@ class SiteIntervention extends BaseSiteIntervention
      *
      * @return string The intervention's identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -91,7 +89,7 @@ class SiteIntervention extends BaseSiteIntervention
      *
      * @return MinSite
      */
-    public function getSite() : MinSite
+    public function getSite() : ?MinSite
     {
         return $this->site;
     }
@@ -112,7 +110,7 @@ class SiteIntervention extends BaseSiteIntervention
      *
      * @return MinGroup
      */
-    public function getGroup() : MinGroup
+    public function getGroup() : ?MinGroup
     {
         return $this->group;
     }
@@ -133,7 +131,7 @@ class SiteIntervention extends BaseSiteIntervention
      *
      * @return MinBaseStation
      */
-    public function getBaseStation() : MinBaseStation
+    public function getBaseStation() : ?MinBaseStation
     {
         return $this->baseStation;
     }
@@ -154,7 +152,7 @@ class SiteIntervention extends BaseSiteIntervention
      *
      * @return int Date of the creation of this intervention (in milliseconds)
      */
-    public function getCreationTime() : int
+    public function getCreationTime() : ?int
     {
         return $this->creationTime;
     }
@@ -175,7 +173,7 @@ class SiteIntervention extends BaseSiteIntervention
      *
      * @return string Identifier of the user who created this intervention
      */
-    public function getCreatedBy() : string
+    public function getCreatedBy() : ?string
     {
         return $this->createdBy;
     }
@@ -196,7 +194,7 @@ class SiteIntervention extends BaseSiteIntervention
      *
      * @return int Date of the last edition of this intervention (in milliseconds)
      */
-    public function getLastEditedTime() : int
+    public function getLastEditedTime() : ?int
     {
         return $this->lastEditedTime;
     }
@@ -217,8 +215,15 @@ class SiteIntervention extends BaseSiteIntervention
      *
      * @return string Identifier of the user who last edited this intervention
      */
-    public function getLastEditedBy() : string
+    public function getLastEditedBy() : ?string
     {
         return $this->lastEditedBy;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'site' => new ClassSerializer(self::class, 'site', MinSite::class), 'group' => new ClassSerializer(self::class, 'group', MinGroup::class), 'baseStation' => new ClassSerializer(self::class, 'baseStation', MinBaseStation::class), 'creationTime' => new PrimitiveSerializer(self::class, 'creationTime', 'int'), 'createdBy' => new PrimitiveSerializer(self::class, 'createdBy', 'string'), 'lastEditedTime' => new PrimitiveSerializer(self::class, 'lastEditedTime', 'int'), 'lastEditedBy' => new PrimitiveSerializer(self::class, 'lastEditedBy', 'string'));
     }
 }

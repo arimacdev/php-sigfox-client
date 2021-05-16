@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the properties of a product certificate radio configuration
@@ -62,7 +61,6 @@ class ProductCertificateRadioConfiguration extends RadioConfiguration
      * @var int
      */
     protected ?int $maxEirp = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'uplinkClass', 'int'), new PrimitiveSerializer(self::class, 'maxEirp', 'int'));
     /**
      * Setter for uplinkClass
      *
@@ -100,7 +98,7 @@ class ProductCertificateRadioConfiguration extends RadioConfiguration
      *             - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_D3}
      *             
      */
-    public function getUplinkClass() : int
+    public function getUplinkClass() : ?int
     {
         return $this->uplinkClass;
     }
@@ -121,8 +119,15 @@ class ProductCertificateRadioConfiguration extends RadioConfiguration
      *
      * @return int Maximum radiated power EIRP (dBm)
      */
-    public function getMaxEirp() : int
+    public function getMaxEirp() : ?int
     {
         return $this->maxEirp;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('uplinkClass' => new PrimitiveSerializer(self::class, 'uplinkClass', 'int'), 'maxEirp' => new PrimitiveSerializer(self::class, 'maxEirp', 'int'));
     }
 }

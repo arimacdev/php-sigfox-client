@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the DIST group's create properties
@@ -15,7 +14,6 @@ class DISTCreate extends CommonGroupCreate
      * @var string
      */
     protected ?string $networkOperatorId = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'networkOperatorId', 'string'));
     /**
      * Setter for networkOperatorId
      *
@@ -35,8 +33,15 @@ class DISTCreate extends CommonGroupCreate
      * @return string SO or NIP group id for a DIST & SVNO  group. This field is mandatory for DIST & SVNO group
      *                creation.
      */
-    public function getNetworkOperatorId() : string
+    public function getNetworkOperatorId() : ?string
     {
         return $this->networkOperatorId;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('networkOperatorId' => new PrimitiveSerializer(self::class, 'networkOperatorId', 'string'));
     }
 }

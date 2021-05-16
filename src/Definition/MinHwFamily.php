@@ -42,7 +42,6 @@ class MinHwFamily extends Definition
      * @var string
      */
     protected ?string $name = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'int'), new PrimitiveSerializer(self::class, 'name', 'string'));
     /**
      * Setter for id
      *
@@ -72,7 +71,7 @@ class MinHwFamily extends Definition
      *             - {@see MinHwFamily::ID_ACCESS_STATION_MICRO}
      *             
      */
-    public function getId() : int
+    public function getId() : ?int
     {
         return $this->id;
     }
@@ -93,8 +92,15 @@ class MinHwFamily extends Definition
      *
      * @return string The hardware family's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'int'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'));
     }
 }

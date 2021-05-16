@@ -10,7 +10,6 @@ class Paging extends Definition
      * @var string
      */
     protected ?string $next = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'next', 'string'));
     /**
      * Setter for next
      *
@@ -28,8 +27,15 @@ class Paging extends Definition
      *
      * @return string
      */
-    public function getNext() : string
+    public function getNext() : ?string
     {
         return $this->next;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('next' => new PrimitiveSerializer(self::class, 'next', 'string'));
     }
 }

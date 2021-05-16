@@ -2,21 +2,20 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Definition\CreateCallback;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Create a new callback for a given device type.
  */
-class DeviceTypesIdCallbacksCreate extends Definition
+class DeviceTypesIdCallbacksCreate extends Request
 {
     /**
      * @var CreateCallback
      */
     protected ?CreateCallback $callback = null;
-    protected $serialize = array(new ClassSerializer(self::class, 'callback', CreateCallback::class));
-    protected $body = array('callback');
-    protected $validations = array('callback' => array('required'));
+    protected array $body = array('callback');
+    protected array $validations = array('callback' => array('required'));
     /**
      * Setter for callback
      *
@@ -28,5 +27,21 @@ class DeviceTypesIdCallbacksCreate extends Definition
     {
         $this->callback = $callback;
         return $this;
+    }
+    /**
+     * Getter for callback
+     *
+     * @return CreateCallback
+     */
+    public function getCallback() : ?CreateCallback
+    {
+        return $this->callback;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('callback' => new ClassSerializer(self::class, 'callback', CreateCallback::class));
     }
 }

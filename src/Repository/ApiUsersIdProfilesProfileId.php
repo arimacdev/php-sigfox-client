@@ -2,8 +2,9 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
-class ApiUsersIdProfilesProfileId
+class ApiUsersIdProfilesProfileId extends Repository
 {
     /**
      * The HTTP client
@@ -35,6 +36,6 @@ class ApiUsersIdProfilesProfileId
      */
     public function delete()
     {
-        return $this->client->request('delete', $this->bind('/api-users/{id}/profiles/{profileId}', $this->id, $this->profileId), null);
+        return $this->client->call('delete', $this->bind('/api-users/{id}/profiles/{profileId}', $this->id, $this->profileId), null);
     }
 }

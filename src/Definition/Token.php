@@ -62,7 +62,6 @@ class Token extends Definition
      * @var int
      */
     protected ?int $freeMessagesSent = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'state', 'int'), new PrimitiveSerializer(self::class, 'detailMessage', 'string'), new PrimitiveSerializer(self::class, 'end', 'int'), new PrimitiveSerializer(self::class, 'freeMessages', 'int'), new PrimitiveSerializer(self::class, 'freeMessagesSent', 'int'));
     /**
      * Setter for state
      *
@@ -92,7 +91,7 @@ class Token extends Definition
      *             - {@see Token::STATE_INVALID_TOKEN}
      *             
      */
-    public function getState() : int
+    public function getState() : ?int
     {
         return $this->state;
     }
@@ -123,7 +122,7 @@ class Token extends Definition
      *                - Invalid
      *                
      */
-    public function getDetailMessage() : string
+    public function getDetailMessage() : ?string
     {
         return $this->detailMessage;
     }
@@ -144,7 +143,7 @@ class Token extends Definition
      *
      * @return int The device's communication end time (in milliseconds since the Unix Epoch)
      */
-    public function getEnd() : int
+    public function getEnd() : ?int
     {
         return $this->end;
     }
@@ -165,7 +164,7 @@ class Token extends Definition
      *
      * @return int The number of free messages left for this token
      */
-    public function getFreeMessages() : int
+    public function getFreeMessages() : ?int
     {
         return $this->freeMessages;
     }
@@ -186,8 +185,15 @@ class Token extends Definition
      *
      * @return int The number of free messages already sent for this token
      */
-    public function getFreeMessagesSent() : int
+    public function getFreeMessagesSent() : ?int
     {
         return $this->freeMessagesSent;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('state' => new PrimitiveSerializer(self::class, 'state', 'int'), 'detailMessage' => new PrimitiveSerializer(self::class, 'detailMessage', 'string'), 'end' => new PrimitiveSerializer(self::class, 'end', 'int'), 'freeMessages' => new PrimitiveSerializer(self::class, 'freeMessages', 'int'), 'freeMessagesSent' => new PrimitiveSerializer(self::class, 'freeMessagesSent', 'int'));
     }
 }

@@ -21,7 +21,6 @@ class Certificate extends Definition
      * @var string
      */
     protected ?string $key = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'key', 'string'));
     /**
      * Setter for id
      *
@@ -39,7 +38,7 @@ class Certificate extends Definition
      *
      * @return string The product certificate's identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -60,8 +59,15 @@ class Certificate extends Definition
      *
      * @return string The product certificate's name
      */
-    public function getKey() : string
+    public function getKey() : ?string
     {
         return $this->key;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'key' => new PrimitiveSerializer(self::class, 'key', 'string'));
     }
 }

@@ -2,10 +2,11 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\ProfilesIdGet;
 use Arimac\Sigfox\Definition\Profile;
-class ProfilesId
+class ProfilesId extends Repository
 {
     /**
      * The HTTP client
@@ -28,9 +29,13 @@ class ProfilesId
     }
     /**
      * Retrieve information about a given profile.
+     *
+     * @param ProfilesIdGet $request The query and body parameters to pass
+     *
+     * @return Profile
      */
-    public function get(ProfilesIdGet $request) : Profile
+    public function get(?ProfilesIdGet $request = null) : Profile
     {
-        return $this->client->request('get', $this->bind('/profiles/{id}', $this->id), $request, Profile::class);
+        return $this->client->call('get', $this->bind('/profiles/{id}', $this->id), $request, Profile::class);
     }
 }

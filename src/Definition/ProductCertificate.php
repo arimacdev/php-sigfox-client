@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
@@ -20,7 +19,6 @@ class ProductCertificate extends RadioCertificate
      * @var bool
      */
     protected ?bool $devKit = null;
-    protected $serialize = array(new ArraySerializer(self::class, 'radioConfigurations', new ClassSerializer(self::class, 'radioConfigurations', ProductCertificateRadioConfiguration::class)), new PrimitiveSerializer(self::class, 'devKit', 'bool'));
     /**
      * Setter for radioConfigurations
      *
@@ -41,7 +39,7 @@ class ProductCertificate extends RadioCertificate
      * @return ProductCertificateRadioConfiguration[] Radio configurations available for this certificate
      *                                                
      */
-    public function getRadioConfigurations() : array
+    public function getRadioConfigurations() : ?array
     {
         return $this->radioConfigurations;
     }
@@ -62,8 +60,15 @@ class ProductCertificate extends RadioCertificate
      *
      * @return bool The product certificate has repeater function or not
      */
-    public function getDevKit() : bool
+    public function getDevKit() : ?bool
     {
         return $this->devKit;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('radioConfigurations' => new ArraySerializer(self::class, 'radioConfigurations', new ClassSerializer(self::class, 'radioConfigurations', ProductCertificateRadioConfiguration::class)), 'devKit' => new PrimitiveSerializer(self::class, 'devKit', 'bool'));
     }
 }

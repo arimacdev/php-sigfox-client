@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\ErrorContent\ErrorsItem;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -24,7 +24,6 @@ class ErrorContent extends Definition
      * @var ErrorsItem[]
      */
     protected ?array $errors = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'message', 'string'), new ArraySerializer(self::class, 'errors', new ClassSerializer(self::class, 'errors', ErrorsItem::class)));
     /**
      * Setter for message
      *
@@ -42,7 +41,7 @@ class ErrorContent extends Definition
      *
      * @return string General error message
      */
-    public function getMessage() : string
+    public function getMessage() : ?string
     {
         return $this->message;
     }
@@ -63,8 +62,15 @@ class ErrorContent extends Definition
      *
      * @return ErrorsItem[] List of errors that occured during request
      */
-    public function getErrors() : array
+    public function getErrors() : ?array
     {
         return $this->errors;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('message' => new PrimitiveSerializer(self::class, 'message', 'string'), 'errors' => new ArraySerializer(self::class, 'errors', new ClassSerializer(self::class, 'errors', ErrorsItem::class)));
     }
 }

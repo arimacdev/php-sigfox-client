@@ -2,12 +2,14 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\DeviceTypesList;
 use Arimac\Sigfox\Response\Generated\DeviceTypesListResponse;
+use Arimac\Sigfox\Definition\DeviceTypeCreate;
 use Arimac\Sigfox\Request\DeviceTypesCreate;
 use Arimac\Sigfox\Response\Generated\DeviceTypesCreateResponse;
-class DeviceTypes
+class DeviceTypes extends Repository
 {
     /**
      * The HTTP client
@@ -24,17 +26,27 @@ class DeviceTypes
     }
     /**
      * Retrieve a list of device types according to visibility permissions and request filters.
+     *
+     * @param DeviceTypesList $request The query and body parameters to pass
+     *
+     * @return DeviceTypesListResponse
      */
-    public function list(DeviceTypesList $request) : DeviceTypesListResponse
+    public function list(?DeviceTypesList $request = null) : DeviceTypesListResponse
     {
-        return $this->client->request('get', '/device-types/', $request, DeviceTypesListResponse::class);
+        return $this->client->call('get', '/device-types/', $request, DeviceTypesListResponse::class);
     }
     /**
      * Create a new device type
+     *
+     * @param DeviceTypeCreate $deviceType The device type to create
+     *
+     * @return DeviceTypesCreateResponse
      */
-    public function create(DeviceTypesCreate $request) : DeviceTypesCreateResponse
+    public function create(DeviceTypeCreate $deviceType) : DeviceTypesCreateResponse
     {
-        return $this->client->request('post', '/device-types/', $request, DeviceTypesCreateResponse::class);
+        $request = new DeviceTypesCreate();
+        $request->setDeviceType($deviceType);
+        return $this->client->call('post', '/device-types/', $request, DeviceTypesCreateResponse::class);
     }
     /**
      * Find by id

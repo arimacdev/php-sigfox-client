@@ -198,7 +198,6 @@ class BaseSiteIntervention extends Definition
      * @var int
      */
     protected ?int $type = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'author', 'string'), new PrimitiveSerializer(self::class, 'comment', 'string'), new ArraySerializer(self::class, 'equipmentsToChange', new PrimitiveSerializer(self::class, 'equipmentsToChange', 'int')), new PrimitiveSerializer(self::class, 'plannedTime', 'int'), new PrimitiveSerializer(self::class, 'interventionTime', 'int'), new PrimitiveSerializer(self::class, 'endTime', 'int'), new PrimitiveSerializer(self::class, 'billCode', 'string'), new PrimitiveSerializer(self::class, 'rtId', 'string'), new PrimitiveSerializer(self::class, 'closed', 'bool'), new PrimitiveSerializer(self::class, 'costs', 'int'), new PrimitiveSerializer(self::class, 'type', 'int'));
     /**
      * Setter for author
      *
@@ -216,7 +215,7 @@ class BaseSiteIntervention extends Definition
      *
      * @return string The author of this intervention
      */
-    public function getAuthor() : string
+    public function getAuthor() : ?string
     {
         return $this->author;
     }
@@ -237,7 +236,7 @@ class BaseSiteIntervention extends Definition
      *
      * @return string The comment about this intervention
      */
-    public function getComment() : string
+    public function getComment() : ?string
     {
         return $this->comment;
     }
@@ -294,7 +293,7 @@ class BaseSiteIntervention extends Definition
      *               - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ROUTER_3G}
      *               
      */
-    public function getEquipmentsToChange() : array
+    public function getEquipmentsToChange() : ?array
     {
         return $this->equipmentsToChange;
     }
@@ -315,7 +314,7 @@ class BaseSiteIntervention extends Definition
      *
      * @return int The planned time of this intervention
      */
-    public function getPlannedTime() : int
+    public function getPlannedTime() : ?int
     {
         return $this->plannedTime;
     }
@@ -336,7 +335,7 @@ class BaseSiteIntervention extends Definition
      *
      * @return int The time of this intervention
      */
-    public function getInterventionTime() : int
+    public function getInterventionTime() : ?int
     {
         return $this->interventionTime;
     }
@@ -357,7 +356,7 @@ class BaseSiteIntervention extends Definition
      *
      * @return int The end time of this intervention
      */
-    public function getEndTime() : int
+    public function getEndTime() : ?int
     {
         return $this->endTime;
     }
@@ -378,7 +377,7 @@ class BaseSiteIntervention extends Definition
      *
      * @return string The bill code of this intervention
      */
-    public function getBillCode() : string
+    public function getBillCode() : ?string
     {
         return $this->billCode;
     }
@@ -399,7 +398,7 @@ class BaseSiteIntervention extends Definition
      *
      * @return string The request tracker identifier of this intervention
      */
-    public function getRtId() : string
+    public function getRtId() : ?string
     {
         return $this->rtId;
     }
@@ -420,7 +419,7 @@ class BaseSiteIntervention extends Definition
      *
      * @return bool is this intervention closed
      */
-    public function getClosed() : bool
+    public function getClosed() : ?bool
     {
         return $this->closed;
     }
@@ -441,7 +440,7 @@ class BaseSiteIntervention extends Definition
      *
      * @return int The costs of this intervention
      */
-    public function getCosts() : int
+    public function getCosts() : ?int
     {
         return $this->costs;
     }
@@ -482,8 +481,15 @@ class BaseSiteIntervention extends Definition
      *             - {@see BaseSiteIntervention::TYPE_DISMANTLING}
      *             
      */
-    public function getType() : int
+    public function getType() : ?int
     {
         return $this->type;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('author' => new PrimitiveSerializer(self::class, 'author', 'string'), 'comment' => new PrimitiveSerializer(self::class, 'comment', 'string'), 'equipmentsToChange' => new ArraySerializer(self::class, 'equipmentsToChange', new PrimitiveSerializer(self::class, 'equipmentsToChange', 'int')), 'plannedTime' => new PrimitiveSerializer(self::class, 'plannedTime', 'int'), 'interventionTime' => new PrimitiveSerializer(self::class, 'interventionTime', 'int'), 'endTime' => new PrimitiveSerializer(self::class, 'endTime', 'int'), 'billCode' => new PrimitiveSerializer(self::class, 'billCode', 'string'), 'rtId' => new PrimitiveSerializer(self::class, 'rtId', 'string'), 'closed' => new PrimitiveSerializer(self::class, 'closed', 'bool'), 'costs' => new PrimitiveSerializer(self::class, 'costs', 'int'), 'type' => new PrimitiveSerializer(self::class, 'type', 'int'));
     }
 }

@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * User information for creation
@@ -21,8 +20,7 @@ class UserCreation extends UserUpdate
      * @var bool
      */
     protected ?bool $sendWelcomeEmail = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'email', 'string'), new PrimitiveSerializer(self::class, 'sendWelcomeEmail', 'bool'));
-    protected $validations = array('email' => array('required', 'max:250'));
+    protected array $validations = array('email' => array('required', 'max:250'));
     /**
      * Setter for email
      *
@@ -40,7 +38,7 @@ class UserCreation extends UserUpdate
      *
      * @return string The user's email
      */
-    public function getEmail() : string
+    public function getEmail() : ?string
     {
         return $this->email;
     }
@@ -61,8 +59,15 @@ class UserCreation extends UserUpdate
      *
      * @return bool Send an email to the user to create/change is password
      */
-    public function getSendWelcomeEmail() : bool
+    public function getSendWelcomeEmail() : ?bool
     {
         return $this->sendWelcomeEmail;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('email' => new PrimitiveSerializer(self::class, 'email', 'string'), 'sendWelcomeEmail' => new PrimitiveSerializer(self::class, 'sendWelcomeEmail', 'bool'));
     }
 }

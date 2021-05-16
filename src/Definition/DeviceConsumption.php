@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\DeviceConsumption\DeviceConsumptionsItem;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -24,7 +24,6 @@ class DeviceConsumption extends Definition
      * @var DeviceConsumptionsItem[]
      */
     protected ?array $deviceConsumptions = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'int'), new ArraySerializer(self::class, 'deviceConsumptions', new ClassSerializer(self::class, 'deviceConsumptions', DeviceConsumptionsItem::class)));
     /**
      * Setter for id
      *
@@ -42,7 +41,7 @@ class DeviceConsumption extends Definition
      *
      * @return int Identifier of the device consumption
      */
-    public function getId() : int
+    public function getId() : ?int
     {
         return $this->id;
     }
@@ -63,8 +62,15 @@ class DeviceConsumption extends Definition
      *
      * @return DeviceConsumptionsItem[] Consumption of a device
      */
-    public function getDeviceConsumptions() : array
+    public function getDeviceConsumptions() : ?array
     {
         return $this->deviceConsumptions;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'int'), 'deviceConsumptions' => new ArraySerializer(self::class, 'deviceConsumptions', new ClassSerializer(self::class, 'deviceConsumptions', DeviceConsumptionsItem::class)));
     }
 }

@@ -11,8 +11,7 @@ class AsynchronousDeviceEditionJob extends Definition
      * @var DeviceEditionBulk[]
      */
     protected ?array $data = null;
-    protected $serialize = array(new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', DeviceEditionBulk::class)));
-    protected $validations = array('data' => array('required'));
+    protected array $validations = array('data' => array('required'));
     /**
      * Setter for data
      *
@@ -30,8 +29,15 @@ class AsynchronousDeviceEditionJob extends Definition
      *
      * @return DeviceEditionBulk[]
      */
-    public function getData() : array
+    public function getData() : ?array
     {
         return $this->data;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('data' => new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', DeviceEditionBulk::class)));
     }
 }

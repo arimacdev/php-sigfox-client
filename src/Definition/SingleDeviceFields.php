@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 trait SingleDeviceFields
@@ -40,7 +41,6 @@ trait SingleDeviceFields
      * @var bool
      */
     protected ?bool $prototype = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'activable', 'bool'), new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'), new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'), new ClassSerializer(self::class, 'productCertificate', CertificateUpdate::class), new PrimitiveSerializer(self::class, 'prototype', 'bool'));
     /**
      * Setter for activable
      *
@@ -59,7 +59,7 @@ trait SingleDeviceFields
      *
      * @return bool true if the device is activable and can take a token. Not used if the device has already a token
      */
-    public function getActivable() : bool
+    public function getActivable() : ?bool
     {
         return $this->activable;
     }
@@ -80,7 +80,7 @@ trait SingleDeviceFields
      *
      * @return bool Allow token renewal ?
      */
-    public function getAutomaticRenewal() : bool
+    public function getAutomaticRenewal() : ?bool
     {
         return $this->automaticRenewal;
     }
@@ -101,7 +101,7 @@ trait SingleDeviceFields
      *
      * @return int The device's provided latitude
      */
-    public function getLat() : int
+    public function getLat() : ?int
     {
         return $this->lat;
     }
@@ -122,7 +122,7 @@ trait SingleDeviceFields
      *
      * @return int The device's provided longitude
      */
-    public function getLng() : int
+    public function getLng() : ?int
     {
         return $this->lng;
     }
@@ -143,7 +143,7 @@ trait SingleDeviceFields
      *
      * @return CertificateUpdate
      */
-    public function getProductCertificate() : CertificateUpdate
+    public function getProductCertificate() : ?CertificateUpdate
     {
         return $this->productCertificate;
     }
@@ -164,8 +164,15 @@ trait SingleDeviceFields
      *
      * @return bool If the device is a prototype or not
      */
-    public function getPrototype() : bool
+    public function getPrototype() : ?bool
     {
         return $this->prototype;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('activable' => new PrimitiveSerializer(self::class, 'activable', 'bool'), 'automaticRenewal' => new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'), 'lat' => new PrimitiveSerializer(self::class, 'lat', 'int'), 'lng' => new PrimitiveSerializer(self::class, 'lng', 'int'), 'productCertificate' => new ClassSerializer(self::class, 'productCertificate', CertificateUpdate::class), 'prototype' => new PrimitiveSerializer(self::class, 'prototype', 'bool'));
     }
 }

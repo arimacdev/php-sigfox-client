@@ -2,9 +2,9 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\AvailableEntitiesResponse\OperatorsItem;
 use Arimac\Sigfox\Definition\AvailableEntitiesResponse\ClassesItem;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
@@ -29,7 +29,6 @@ class AvailableEntitiesResponse extends Definition
      * @var string[]
      */
     protected ?array $actions = null;
-    protected $serialize = array(new ArraySerializer(self::class, 'operators', new ClassSerializer(self::class, 'operators', OperatorsItem::class)), new ArraySerializer(self::class, 'classes', new ClassSerializer(self::class, 'classes', ClassesItem::class)), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
     /**
      * Setter for operators
      *
@@ -47,7 +46,7 @@ class AvailableEntitiesResponse extends Definition
      *
      * @return OperatorsItem[] Array of operators infos and their forecast radio planning infos
      */
-    public function getOperators() : array
+    public function getOperators() : ?array
     {
         return $this->operators;
     }
@@ -68,7 +67,7 @@ class AvailableEntitiesResponse extends Definition
      *
      * @return ClassesItem[] Array of device class infos.
      */
-    public function getClasses() : array
+    public function getClasses() : ?array
     {
         return $this->classes;
     }
@@ -89,8 +88,15 @@ class AvailableEntitiesResponse extends Definition
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('operators' => new ArraySerializer(self::class, 'operators', new ClassSerializer(self::class, 'operators', OperatorsItem::class)), 'classes' => new ArraySerializer(self::class, 'classes', new ClassSerializer(self::class, 'classes', ClassesItem::class)), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
     }
 }

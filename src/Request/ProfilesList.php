@@ -2,12 +2,12 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of a Group's profiles according to visibility permissions and request filters.
  */
-class ProfilesList extends Definition
+class ProfilesList extends Request
 {
     /**
      * The group's identifier
@@ -45,9 +45,8 @@ class ProfilesList extends Definition
      * @var bool
      */
     protected ?bool $authorizations = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'groupId', 'string'), new PrimitiveSerializer(self::class, 'inherit', 'bool'), new PrimitiveSerializer(self::class, 'fields', 'string'), new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'offset', 'int'), new PrimitiveSerializer(self::class, 'authorizations', 'bool'));
-    protected $query = array('groupId', 'inherit', 'fields', 'limit', 'offset', 'authorizations');
-    protected $validations = array('groupId' => array('required'), 'inherit' => array('required'), 'fields' => array('required', 'in:group(name\\,type\\,level),roles(name\\,path(name))'), 'limit' => array('required'), 'offset' => array('required'), 'authorizations' => array('required'));
+    protected array $query = array('groupId', 'inherit', 'fields', 'limit', 'offset', 'authorizations');
+    protected array $validations = array('groupId' => array('required'), 'fields' => array('in:group(name\\,type\\,level),roles(name\\,path(name))', 'nullable'));
     /**
      * Setter for groupId
      *
@@ -61,6 +60,15 @@ class ProfilesList extends Definition
         return $this;
     }
     /**
+     * Getter for groupId
+     *
+     * @return string The group's identifier
+     */
+    public function getGroupId() : ?string
+    {
+        return $this->groupId;
+    }
+    /**
      * Setter for inherit
      *
      * @param bool $inherit also returns profiles inherited from parent's group
@@ -71,6 +79,15 @@ class ProfilesList extends Definition
     {
         $this->inherit = $inherit;
         return $this;
+    }
+    /**
+     * Getter for inherit
+     *
+     * @return bool also returns profiles inherited from parent's group
+     */
+    public function getInherit() : ?bool
+    {
+        return $this->inherit;
     }
     /**
      * Setter for fields
@@ -86,6 +103,16 @@ class ProfilesList extends Definition
         return $this;
     }
     /**
+     * Getter for fields
+     *
+     * @return string Defines the other available fields to be returned in the response.
+     *                
+     */
+    public function getFields() : ?string
+    {
+        return $this->fields;
+    }
+    /**
      * Setter for limit
      *
      * @param int $limit The maximum number of items to return
@@ -96,6 +123,15 @@ class ProfilesList extends Definition
     {
         $this->limit = $limit;
         return $this;
+    }
+    /**
+     * Getter for limit
+     *
+     * @return int The maximum number of items to return
+     */
+    public function getLimit() : ?int
+    {
+        return $this->limit;
     }
     /**
      * Setter for offset
@@ -110,6 +146,15 @@ class ProfilesList extends Definition
         return $this;
     }
     /**
+     * Getter for offset
+     *
+     * @return int The number of items to skip
+     */
+    public function getOffset() : ?int
+    {
+        return $this->offset;
+    }
+    /**
      * Setter for authorizations
      *
      * @param bool $authorizations if true, return the list of actions and resources the user has access
@@ -120,5 +165,21 @@ class ProfilesList extends Definition
     {
         $this->authorizations = $authorizations;
         return $this;
+    }
+    /**
+     * Getter for authorizations
+     *
+     * @return bool if true, return the list of actions and resources the user has access
+     */
+    public function getAuthorizations() : ?bool
+    {
+        return $this->authorizations;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'), 'inherit' => new PrimitiveSerializer(self::class, 'inherit', 'bool'), 'fields' => new PrimitiveSerializer(self::class, 'fields', 'string'), 'limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'offset' => new PrimitiveSerializer(self::class, 'offset', 'int'), 'authorizations' => new PrimitiveSerializer(self::class, 'authorizations', 'bool'));
     }
 }

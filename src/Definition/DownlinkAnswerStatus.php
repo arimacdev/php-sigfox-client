@@ -37,7 +37,6 @@ class DownlinkAnswerStatus extends Definition
      * @var string
      */
     protected ?string $country = null;
-    protected $serialize = array(new ClassSerializer(self::class, 'baseStation', MinBaseStationWithType::class), new PrimitiveSerializer(self::class, 'plannedPower', 'int'), new PrimitiveSerializer(self::class, 'data', 'string'), new PrimitiveSerializer(self::class, 'operator', 'string'), new PrimitiveSerializer(self::class, 'country', 'string'));
     /**
      * Setter for baseStation
      *
@@ -55,7 +54,7 @@ class DownlinkAnswerStatus extends Definition
      *
      * @return MinBaseStationWithType base station to send downlink message
      */
-    public function getBaseStation() : MinBaseStationWithType
+    public function getBaseStation() : ?MinBaseStationWithType
     {
         return $this->baseStation;
     }
@@ -76,7 +75,7 @@ class DownlinkAnswerStatus extends Definition
      *
      * @return int planned downlink power as it was computed by the backend
      */
-    public function getPlannedPower() : int
+    public function getPlannedPower() : ?int
     {
         return $this->plannedPower;
     }
@@ -97,7 +96,7 @@ class DownlinkAnswerStatus extends Definition
      *
      * @return string response content, hex encoded
      */
-    public function getData() : string
+    public function getData() : ?string
     {
         return $this->data;
     }
@@ -118,7 +117,7 @@ class DownlinkAnswerStatus extends Definition
      *
      * @return string name of the first operator which received the message as roaming
      */
-    public function getOperator() : string
+    public function getOperator() : ?string
     {
         return $this->operator;
     }
@@ -139,8 +138,15 @@ class DownlinkAnswerStatus extends Definition
      *
      * @return string country of the operator
      */
-    public function getCountry() : string
+    public function getCountry() : ?string
     {
         return $this->country;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('baseStation' => new ClassSerializer(self::class, 'baseStation', MinBaseStationWithType::class), 'plannedPower' => new PrimitiveSerializer(self::class, 'plannedPower', 'int'), 'data' => new PrimitiveSerializer(self::class, 'data', 'string'), 'operator' => new PrimitiveSerializer(self::class, 'operator', 'string'), 'country' => new PrimitiveSerializer(self::class, 'country', 'string'));
     }
 }

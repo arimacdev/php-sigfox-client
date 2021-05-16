@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\ReplaceResponse\Status;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 class ReplaceResponse extends Definition
@@ -20,7 +20,6 @@ class ReplaceResponse extends Definition
      * @var Status
      */
     protected ?Status $status = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'total', 'int'), new ClassSerializer(self::class, 'status', Status::class));
     /**
      * Setter for total
      *
@@ -38,7 +37,7 @@ class ReplaceResponse extends Definition
      *
      * @return int The total number of devices to be replaced
      */
-    public function getTotal() : int
+    public function getTotal() : ?int
     {
         return $this->total;
     }
@@ -59,8 +58,15 @@ class ReplaceResponse extends Definition
      *
      * @return Status The information about the devices already processed
      */
-    public function getStatus() : Status
+    public function getStatus() : ?Status
     {
         return $this->status;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('total' => new PrimitiveSerializer(self::class, 'total', 'int'), 'status' => new ClassSerializer(self::class, 'status', Status::class));
     }
 }

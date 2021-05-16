@@ -188,8 +188,7 @@ class BaseSite extends Definition
      * @var int
      */
     protected ?int $lng = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'lessorId', 'string'), new PrimitiveSerializer(self::class, 'address', 'string'), new PrimitiveSerializer(self::class, 'comment', 'string'), new PrimitiveSerializer(self::class, 'status', 'int'), new PrimitiveSerializer(self::class, 'statusComment', 'string'), new PrimitiveSerializer(self::class, 'stationInstallation', 'int'), new PrimitiveSerializer(self::class, 'inverterInfo', 'int'), new PrimitiveSerializer(self::class, 'aerialWorkPlatformAccess', 'bool'), new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'));
-    protected $validations = array('name' => array('max:100', 'nullable'), 'lat' => array('max:90', 'min:-90', 'numeric', 'nullable'), 'lng' => array('max:180', 'min:-180', 'numeric', 'nullable'));
+    protected array $validations = array('name' => array('max:100', 'nullable'), 'lat' => array('max:90', 'min:-90', 'numeric', 'nullable'), 'lng' => array('max:180', 'min:-180', 'numeric', 'nullable'));
     /**
      * Setter for name
      *
@@ -207,7 +206,7 @@ class BaseSite extends Definition
      *
      * @return string The site's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -228,7 +227,7 @@ class BaseSite extends Definition
      *
      * @return string The lessor identifier of the site. This field can be unset when updating.
      */
-    public function getLessorId() : string
+    public function getLessorId() : ?string
     {
         return $this->lessorId;
     }
@@ -249,7 +248,7 @@ class BaseSite extends Definition
      *
      * @return string The address of the site
      */
-    public function getAddress() : string
+    public function getAddress() : ?string
     {
         return $this->address;
     }
@@ -270,7 +269,7 @@ class BaseSite extends Definition
      *
      * @return string Comment about the site. This field can be unset when updating.
      */
-    public function getComment() : string
+    public function getComment() : ?string
     {
         return $this->comment;
     }
@@ -319,7 +318,7 @@ class BaseSite extends Definition
      *             - {@see BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY}
      *             
      */
-    public function getStatus() : int
+    public function getStatus() : ?int
     {
         return $this->status;
     }
@@ -340,7 +339,7 @@ class BaseSite extends Definition
      *
      * @return string The comment of the status of the site. This field can be unset when updating.
      */
-    public function getStatusComment() : string
+    public function getStatusComment() : ?string
     {
         return $this->statusComment;
     }
@@ -373,7 +372,7 @@ class BaseSite extends Definition
      *             - {@see BaseSite::STATION_INSTALLATION_OUTDOOR_WITHOUT_CABINET}
      *             
      */
-    public function getStationInstallation() : int
+    public function getStationInstallation() : ?int
     {
         return $this->stationInstallation;
     }
@@ -410,7 +409,7 @@ class BaseSite extends Definition
      *             - {@see BaseSite::INVERTER_INFO_DC_POWER_SOLAR}
      *             
      */
-    public function getInverterInfo() : int
+    public function getInverterInfo() : ?int
     {
         return $this->inverterInfo;
     }
@@ -431,7 +430,7 @@ class BaseSite extends Definition
      *
      * @return bool is the site access to the aerial work platform
      */
-    public function getAerialWorkPlatformAccess() : bool
+    public function getAerialWorkPlatformAccess() : ?bool
     {
         return $this->aerialWorkPlatformAccess;
     }
@@ -452,7 +451,7 @@ class BaseSite extends Definition
      *
      * @return int the site's latitude
      */
-    public function getLat() : int
+    public function getLat() : ?int
     {
         return $this->lat;
     }
@@ -473,8 +472,15 @@ class BaseSite extends Definition
      *
      * @return int the site's longitutde
      */
-    public function getLng() : int
+    public function getLng() : ?int
     {
         return $this->lng;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'lessorId' => new PrimitiveSerializer(self::class, 'lessorId', 'string'), 'address' => new PrimitiveSerializer(self::class, 'address', 'string'), 'comment' => new PrimitiveSerializer(self::class, 'comment', 'string'), 'status' => new PrimitiveSerializer(self::class, 'status', 'int'), 'statusComment' => new PrimitiveSerializer(self::class, 'statusComment', 'string'), 'stationInstallation' => new PrimitiveSerializer(self::class, 'stationInstallation', 'int'), 'inverterInfo' => new PrimitiveSerializer(self::class, 'inverterInfo', 'int'), 'aerialWorkPlatformAccess' => new PrimitiveSerializer(self::class, 'aerialWorkPlatformAccess', 'bool'), 'lat' => new PrimitiveSerializer(self::class, 'lat', 'int'), 'lng' => new PrimitiveSerializer(self::class, 'lng', 'int'));
     }
 }

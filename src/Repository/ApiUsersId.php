@@ -2,12 +2,14 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\ApiUsersIdGet;
 use Arimac\Sigfox\Definition\ApiUser;
+use Arimac\Sigfox\Definition\ApiUserEdition;
 use Arimac\Sigfox\Request\ApiUsersIdUpdate;
 use Arimac\Sigfox\Response\Generated\ApiUsersIdRenewCredentialResponse;
-class ApiUsersId
+class ApiUsersId extends Repository
 {
     /**
      * The HTTP client
@@ -30,24 +32,32 @@ class ApiUsersId
     }
     /**
      * Retrieve information about a given API user.
+     *
+     * @param ApiUsersIdGet $request The query and body parameters to pass
+     *
+     * @return ApiUser
      */
-    public function get(ApiUsersIdGet $request) : ApiUser
+    public function get(?ApiUsersIdGet $request = null) : ApiUser
     {
-        return $this->client->request('get', $this->bind('/api-users/{id}', $this->id), $request, ApiUser::class);
+        return $this->client->call('get', $this->bind('/api-users/{id}', $this->id), $request, ApiUser::class);
     }
     /**
      * Update information about a given API user.
+     *
+     * @param ApiUserEdition $apiUser The information to update
      */
-    public function update(ApiUsersIdUpdate $request)
+    public function update(ApiUserEdition $apiUser)
     {
-        return $this->client->request('put', $this->bind('/api-users/{id}', $this->id), $request);
+        $request = new ApiUsersIdUpdate();
+        $request->setApiUser($apiUser);
+        return $this->client->call('put', $this->bind('/api-users/{id}', $this->id), $request);
     }
     /**
      * Delete a given API user.
      */
     public function delete()
     {
-        return $this->client->request('delete', $this->bind('/api-users/{id}', $this->id), null);
+        return $this->client->call('delete', $this->bind('/api-users/{id}', $this->id), null);
     }
     /**
      * @return ApiUsersIdProfiles
@@ -58,9 +68,11 @@ class ApiUsersId
     }
     /**
      * Generate a new password for a given API user.
+     *
+     * @return ApiUsersIdRenewCredentialResponse
      */
     public function renewCredential() : ApiUsersIdRenewCredentialResponse
     {
-        return $this->client->request('put', $this->bind('/api-users/{id}/renew-credential', $this->id), null, ApiUsersIdRenewCredentialResponse::class);
+        return $this->client->call('put', $this->bind('/api-users/{id}/renew-credential', $this->id), null, ApiUsersIdRenewCredentialResponse::class);
     }
 }

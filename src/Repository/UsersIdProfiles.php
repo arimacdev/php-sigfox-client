@@ -2,9 +2,10 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\UsersIdProfilesAddRoles;
-class UsersIdProfiles
+class UsersIdProfiles extends Repository
 {
     /**
      * The HTTP client
@@ -27,10 +28,14 @@ class UsersIdProfiles
     }
     /**
      * add user roles to a user.
+     *
+     * @param array $userRoles user roles array to add
      */
-    public function addRoles(UsersIdProfilesAddRoles $request)
+    public function addRoles(array $userRoles)
     {
-        return $this->client->request('put', $this->bind('/users/{id}/profiles', $this->id), $request);
+        $request = new UsersIdProfilesAddRoles();
+        $request->setUserRoles($userRoles);
+        return $this->client->call('put', $this->bind('/users/{id}/profiles', $this->id), $request);
     }
     /**
      * Find by profileId

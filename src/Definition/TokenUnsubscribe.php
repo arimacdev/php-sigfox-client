@@ -12,7 +12,6 @@ class TokenUnsubscribe extends Definition
      * @var int
      */
     protected ?int $unsubscriptionTime = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'unsubscriptionTime', 'int'));
     /**
      * Setter for unsubscriptionTime
      *
@@ -30,8 +29,15 @@ class TokenUnsubscribe extends Definition
      *
      * @return int Timestamp of token unsubscription date (in milliseconds since the Unix Epoch)
      */
-    public function getUnsubscriptionTime() : int
+    public function getUnsubscriptionTime() : ?int
     {
         return $this->unsubscriptionTime;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('unsubscriptionTime' => new PrimitiveSerializer(self::class, 'unsubscriptionTime', 'int'));
     }
 }

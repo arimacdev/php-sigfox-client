@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\RegistrationJobStatus\Status;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 class RegistrationJobStatus extends Definition
@@ -26,7 +26,6 @@ class RegistrationJobStatus extends Definition
      * @var Status
      */
     protected ?Status $status = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'jobDone', 'bool'), new PrimitiveSerializer(self::class, 'total', 'int'), new ClassSerializer(self::class, 'status', Status::class));
     /**
      * Setter for jobDone
      *
@@ -44,7 +43,7 @@ class RegistrationJobStatus extends Definition
      *
      * @return bool If the job is finished or not
      */
-    public function getJobDone() : bool
+    public function getJobDone() : ?bool
     {
         return $this->jobDone;
     }
@@ -65,7 +64,7 @@ class RegistrationJobStatus extends Definition
      *
      * @return int The total number of devices given to be created
      */
-    public function getTotal() : int
+    public function getTotal() : ?int
     {
         return $this->total;
     }
@@ -86,8 +85,15 @@ class RegistrationJobStatus extends Definition
      *
      * @return Status The information about the devices already processed
      */
-    public function getStatus() : Status
+    public function getStatus() : ?Status
     {
         return $this->status;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('jobDone' => new PrimitiveSerializer(self::class, 'jobDone', 'bool'), 'total' => new PrimitiveSerializer(self::class, 'total', 'int'), 'status' => new ClassSerializer(self::class, 'status', Status::class));
     }
 }

@@ -18,8 +18,7 @@ class LocationsItem extends Definition
      * @var int
      */
     protected ?int $lng = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'));
-    protected $validations = array('lat' => array('required'), 'lng' => array('required'));
+    protected array $validations = array('lat' => array('required'), 'lng' => array('required'));
     /**
      * Setter for lat
      *
@@ -37,7 +36,7 @@ class LocationsItem extends Definition
      *
      * @return int A latitude in degrees. Must be between -90° and 90°.
      */
-    public function getLat() : int
+    public function getLat() : ?int
     {
         return $this->lat;
     }
@@ -58,8 +57,15 @@ class LocationsItem extends Definition
      *
      * @return int A longitude in degrees. Must be between -180° and 180°.
      */
-    public function getLng() : int
+    public function getLng() : ?int
     {
         return $this->lng;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('lat' => new PrimitiveSerializer(self::class, 'lat', 'int'), 'lng' => new PrimitiveSerializer(self::class, 'lng', 'int'));
     }
 }

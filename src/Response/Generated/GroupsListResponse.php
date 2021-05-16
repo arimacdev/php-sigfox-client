@@ -2,9 +2,9 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\Group;
 use Arimac\Sigfox\Definition\Paging;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 class GroupsListResponse extends Definition
@@ -17,7 +17,6 @@ class GroupsListResponse extends Definition
      * @var Paging
      */
     protected ?Paging $paging = null;
-    protected $serialize = array(new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', Group::class)), new ClassSerializer(self::class, 'paging', Paging::class));
     /**
      * Setter for data
      *
@@ -35,7 +34,7 @@ class GroupsListResponse extends Definition
      *
      * @return Group[]
      */
-    public function getData() : array
+    public function getData() : ?array
     {
         return $this->data;
     }
@@ -56,8 +55,15 @@ class GroupsListResponse extends Definition
      *
      * @return Paging
      */
-    public function getPaging() : Paging
+    public function getPaging() : ?Paging
     {
         return $this->paging;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('data' => new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', Group::class)), 'paging' => new ClassSerializer(self::class, 'paging', Paging::class));
     }
 }

@@ -19,7 +19,6 @@ class CoveragesGlobalPredictionsGetOneResponse extends Definition
      * @var int[]
      */
     protected ?array $margins = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'locationCovered', 'bool'), new ArraySerializer(self::class, 'margins', new PrimitiveSerializer(self::class, 'margins', 'int')));
     /**
      * Setter for locationCovered
      *
@@ -37,7 +36,7 @@ class CoveragesGlobalPredictionsGetOneResponse extends Definition
      *
      * @return bool True, if the requested location is considered covered.
      */
-    public function getLocationCovered() : bool
+    public function getLocationCovered() : ?bool
     {
         return $this->locationCovered;
     }
@@ -58,8 +57,15 @@ class CoveragesGlobalPredictionsGetOneResponse extends Definition
      *
      * @return int[] Margins
      */
-    public function getMargins() : array
+    public function getMargins() : ?array
     {
         return $this->margins;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('locationCovered' => new PrimitiveSerializer(self::class, 'locationCovered', 'bool'), 'margins' => new ArraySerializer(self::class, 'margins', new PrimitiveSerializer(self::class, 'margins', 'int')));
     }
 }

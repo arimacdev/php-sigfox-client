@@ -96,8 +96,7 @@ class CreateCallback extends Definition
      * @var bool
      */
     protected ?bool $enabled = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'channel', 'string'), new PrimitiveSerializer(self::class, 'callbackType', 'int'), new PrimitiveSerializer(self::class, 'callbackSubtype', 'int'), new PrimitiveSerializer(self::class, 'payloadConfig', 'string'), new PrimitiveSerializer(self::class, 'enabled', 'bool'));
-    protected $validations = array('channel' => array('required'), 'callbackType' => array('required'), 'callbackSubtype' => array('required'), 'enabled' => array('required'));
+    protected array $validations = array('channel' => array('required'), 'callbackType' => array('required'), 'callbackSubtype' => array('required'), 'enabled' => array('required'));
     /**
      * Setter for channel
      *
@@ -123,7 +122,7 @@ class CreateCallback extends Definition
      *                - EMAIL
      *                
      */
-    public function getChannel() : string
+    public function getChannel() : ?string
     {
         return $this->channel;
     }
@@ -154,7 +153,7 @@ class CreateCallback extends Definition
      *             - {@see CreateCallback::CALLBACK_TYPE_ERROR}
      *             
      */
-    public function getCallbackType() : int
+    public function getCallbackType() : ?int
     {
         return $this->callbackType;
     }
@@ -193,7 +192,7 @@ class CreateCallback extends Definition
      *             - {@see CreateCallback::CALLBACK_SUBTYPE_DATA_ADVANCED}
      *             
      */
-    public function getCallbackSubtype() : int
+    public function getCallbackSubtype() : ?int
     {
         return $this->callbackSubtype;
     }
@@ -216,7 +215,7 @@ class CreateCallback extends Definition
      * @return string The custom payload configuration. Only for DATA and DATA_ADVANCED callbacks. This field can be
      *                unset when updating.
      */
-    public function getPayloadConfig() : string
+    public function getPayloadConfig() : ?string
     {
         return $this->payloadConfig;
     }
@@ -237,8 +236,15 @@ class CreateCallback extends Definition
      *
      * @return bool True to enable the callback, otherwise false
      */
-    public function getEnabled() : bool
+    public function getEnabled() : ?bool
     {
         return $this->enabled;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('channel' => new PrimitiveSerializer(self::class, 'channel', 'string'), 'callbackType' => new PrimitiveSerializer(self::class, 'callbackType', 'int'), 'callbackSubtype' => new PrimitiveSerializer(self::class, 'callbackSubtype', 'int'), 'payloadConfig' => new PrimitiveSerializer(self::class, 'payloadConfig', 'string'), 'enabled' => new PrimitiveSerializer(self::class, 'enabled', 'bool'));
     }
 }

@@ -59,7 +59,6 @@ class ErrorMessages extends Definition
      * @var array
      */
     protected ?array $parameters = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'deviceId', 'string'), new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), new PrimitiveSerializer(self::class, 'time', 'int'), new PrimitiveSerializer(self::class, 'data', 'string'), new PrimitiveSerializer(self::class, 'snr', 'string'), new PrimitiveSerializer(self::class, 'status', 'string'), new PrimitiveSerializer(self::class, 'message', 'string'), new ClassSerializer(self::class, 'callback', CallbackMedium::class), new PrimitiveSerializer(self::class, 'parameters', 'array'));
     /**
      * Setter for deviceId
      *
@@ -77,7 +76,7 @@ class ErrorMessages extends Definition
      *
      * @return string Device identifier
      */
-    public function getDeviceId() : string
+    public function getDeviceId() : ?string
     {
         return $this->deviceId;
     }
@@ -98,7 +97,7 @@ class ErrorMessages extends Definition
      *
      * @return string Device type identifier
      */
-    public function getDeviceTypeId() : string
+    public function getDeviceTypeId() : ?string
     {
         return $this->deviceTypeId;
     }
@@ -119,7 +118,7 @@ class ErrorMessages extends Definition
      *
      * @return int Timestamp of the message (posix format)
      */
-    public function getTime() : int
+    public function getTime() : ?int
     {
         return $this->time;
     }
@@ -140,7 +139,7 @@ class ErrorMessages extends Definition
      *
      * @return string Data message
      */
-    public function getData() : string
+    public function getData() : ?string
     {
         return $this->data;
     }
@@ -161,7 +160,7 @@ class ErrorMessages extends Definition
      *
      * @return string The SNR of the messages received by the network so far.
      */
-    public function getSnr() : string
+    public function getSnr() : ?string
     {
         return $this->snr;
     }
@@ -182,7 +181,7 @@ class ErrorMessages extends Definition
      *
      * @return string Contains the callback response status.
      */
-    public function getStatus() : string
+    public function getStatus() : ?string
     {
         return $this->status;
     }
@@ -203,7 +202,7 @@ class ErrorMessages extends Definition
      *
      * @return string Contains additional information on the response.
      */
-    public function getMessage() : string
+    public function getMessage() : ?string
     {
         return $this->message;
     }
@@ -224,7 +223,7 @@ class ErrorMessages extends Definition
      *
      * @return CallbackMedium
      */
-    public function getCallback() : CallbackMedium
+    public function getCallback() : ?CallbackMedium
     {
         return $this->callback;
     }
@@ -247,8 +246,15 @@ class ErrorMessages extends Definition
      * @return array All the parameters which have served to build the callback, see callback definitions for an
      *               exhaustive list.
      */
-    public function getParameters() : array
+    public function getParameters() : ?array
     {
         return $this->parameters;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('deviceId' => new PrimitiveSerializer(self::class, 'deviceId', 'string'), 'deviceTypeId' => new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), 'time' => new PrimitiveSerializer(self::class, 'time', 'int'), 'data' => new PrimitiveSerializer(self::class, 'data', 'string'), 'snr' => new PrimitiveSerializer(self::class, 'snr', 'string'), 'status' => new PrimitiveSerializer(self::class, 'status', 'string'), 'message' => new PrimitiveSerializer(self::class, 'message', 'string'), 'callback' => new ClassSerializer(self::class, 'callback', CallbackMedium::class), 'parameters' => new PrimitiveSerializer(self::class, 'parameters', 'array'));
     }
 }

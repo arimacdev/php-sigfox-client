@@ -88,8 +88,7 @@ class MinGroup extends Definition
      * @var string[]
      */
     protected ?array $resources = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'type', 'int'), new PrimitiveSerializer(self::class, 'level', 'int'), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
-    protected $validations = array('name' => array('max:100', 'min:3', 'nullable'));
+    protected array $validations = array('name' => array('max:100', 'min:3', 'nullable'));
     /**
      * Setter for id
      *
@@ -107,7 +106,7 @@ class MinGroup extends Definition
      *
      * @return string The group identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -128,7 +127,7 @@ class MinGroup extends Definition
      *
      * @return string The group name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -171,7 +170,7 @@ class MinGroup extends Definition
      *             - {@see MinGroup::TYPE_PARTNER}
      *             
      */
-    public function getType() : int
+    public function getType() : ?int
     {
         return $this->type;
     }
@@ -192,7 +191,7 @@ class MinGroup extends Definition
      *
      * @return int The depth level of the group in hierarchy
      */
-    public function getLevel() : int
+    public function getLevel() : ?int
     {
         return $this->level;
     }
@@ -213,7 +212,7 @@ class MinGroup extends Definition
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
     }
@@ -234,8 +233,15 @@ class MinGroup extends Definition
      *
      * @return string[]
      */
-    public function getResources() : array
+    public function getResources() : ?array
     {
         return $this->resources;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'type' => new PrimitiveSerializer(self::class, 'type', 'int'), 'level' => new PrimitiveSerializer(self::class, 'level', 'int'), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     }
 }

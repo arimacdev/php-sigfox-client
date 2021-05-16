@@ -56,8 +56,7 @@ class BaseContact extends Definition
      * @var string[]
      */
     protected ?array $resources = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'email', 'string'), new PrimitiveSerializer(self::class, 'phoneNumber', 'string'), new PrimitiveSerializer(self::class, 'mobilePhoneNumber', 'string'), new PrimitiveSerializer(self::class, 'address', 'string'), new PrimitiveSerializer(self::class, 'description', 'string'), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
-    protected $validations = array('name' => array('required'), 'email' => array('max:250', 'nullable'));
+    protected array $validations = array('name' => array('required'), 'email' => array('max:250', 'nullable'));
     /**
      * Setter for name
      *
@@ -75,7 +74,7 @@ class BaseContact extends Definition
      *
      * @return string The contact's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -96,7 +95,7 @@ class BaseContact extends Definition
      *
      * @return string The contact's email. This field can be unset when updating.
      */
-    public function getEmail() : string
+    public function getEmail() : ?string
     {
         return $this->email;
     }
@@ -119,7 +118,7 @@ class BaseContact extends Definition
      * @return string The contact's phone number must be in the international format with no spaces between numbers
      *                (+country code - number). This field can be unset when updating.
      */
-    public function getPhoneNumber() : string
+    public function getPhoneNumber() : ?string
     {
         return $this->phoneNumber;
     }
@@ -143,7 +142,7 @@ class BaseContact extends Definition
      * @return string The contact's mobile phone number must be in the international format with no spaces between
      *                numbers (+country code - number). This field can be unset when updating.
      */
-    public function getMobilePhoneNumber() : string
+    public function getMobilePhoneNumber() : ?string
     {
         return $this->mobilePhoneNumber;
     }
@@ -164,7 +163,7 @@ class BaseContact extends Definition
      *
      * @return string The contact's address
      */
-    public function getAddress() : string
+    public function getAddress() : ?string
     {
         return $this->address;
     }
@@ -185,7 +184,7 @@ class BaseContact extends Definition
      *
      * @return string The contact's description
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
@@ -206,7 +205,7 @@ class BaseContact extends Definition
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
     }
@@ -227,8 +226,15 @@ class BaseContact extends Definition
      *
      * @return string[]
      */
-    public function getResources() : array
+    public function getResources() : ?array
     {
         return $this->resources;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'email' => new PrimitiveSerializer(self::class, 'email', 'string'), 'phoneNumber' => new PrimitiveSerializer(self::class, 'phoneNumber', 'string'), 'mobilePhoneNumber' => new PrimitiveSerializer(self::class, 'mobilePhoneNumber', 'string'), 'address' => new PrimitiveSerializer(self::class, 'address', 'string'), 'description' => new PrimitiveSerializer(self::class, 'description', 'string'), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     }
 }

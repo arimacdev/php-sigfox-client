@@ -2,13 +2,13 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Definition\ProfileIds;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Associate new profiles to a given API user.
  */
-class ApiUsersIdProfilesUpdate extends Definition
+class ApiUsersIdProfilesUpdate extends Request
 {
     /**
      * The API profile to update
@@ -16,9 +16,8 @@ class ApiUsersIdProfilesUpdate extends Definition
      * @var ProfileIds
      */
     protected ?ProfileIds $profileIds = null;
-    protected $serialize = array(new ClassSerializer(self::class, 'profileIds', ProfileIds::class));
-    protected $body = array('profileIds');
-    protected $validations = array('profileIds' => array('required'));
+    protected array $body = array('profileIds');
+    protected array $validations = array('profileIds' => array('required'));
     /**
      * Setter for profileIds
      *
@@ -30,5 +29,21 @@ class ApiUsersIdProfilesUpdate extends Definition
     {
         $this->profileIds = $profileIds;
         return $this;
+    }
+    /**
+     * Getter for profileIds
+     *
+     * @return ProfileIds The API profile to update
+     */
+    public function getProfileIds() : ?ProfileIds
+    {
+        return $this->profileIds;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('profileIds' => new ClassSerializer(self::class, 'profileIds', ProfileIds::class));
     }
 }

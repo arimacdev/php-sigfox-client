@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition\ActionJob;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\JobError;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -36,7 +36,6 @@ class Status extends Definition
      * @var JobError[]
      */
     protected ?array $errors = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'total', 'int'), new PrimitiveSerializer(self::class, 'nbSuccess', 'int'), new PrimitiveSerializer(self::class, 'nbErrors', 'int'), new ArraySerializer(self::class, 'errors', new ClassSerializer(self::class, 'errors', JobError::class)));
     /**
      * Setter for total
      *
@@ -54,7 +53,7 @@ class Status extends Definition
      *
      * @return int the total number of devices given
      */
-    public function getTotal() : int
+    public function getTotal() : ?int
     {
         return $this->total;
     }
@@ -75,7 +74,7 @@ class Status extends Definition
      *
      * @return int the number of devices successfully changed
      */
-    public function getNbSuccess() : int
+    public function getNbSuccess() : ?int
     {
         return $this->nbSuccess;
     }
@@ -96,7 +95,7 @@ class Status extends Definition
      *
      * @return int the number of devices unsuccessfully changed
      */
-    public function getNbErrors() : int
+    public function getNbErrors() : ?int
     {
         return $this->nbErrors;
     }
@@ -117,8 +116,15 @@ class Status extends Definition
      *
      * @return JobError[] reasons of each errors
      */
-    public function getErrors() : array
+    public function getErrors() : ?array
     {
         return $this->errors;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('total' => new PrimitiveSerializer(self::class, 'total', 'int'), 'nbSuccess' => new PrimitiveSerializer(self::class, 'nbSuccess', 'int'), 'nbErrors' => new PrimitiveSerializer(self::class, 'nbErrors', 'int'), 'errors' => new ArraySerializer(self::class, 'errors', new ClassSerializer(self::class, 'errors', JobError::class)));
     }
 }

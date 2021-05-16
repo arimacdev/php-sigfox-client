@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -161,7 +160,6 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      * @var string[]
      */
     protected ?array $resources = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new ClassSerializer(self::class, 'group', MinGroup::class), new ClassSerializer(self::class, 'baseStation', MinBaseStation::class), new PrimitiveSerializer(self::class, 'state', 'int'), new PrimitiveSerializer(self::class, 'syncStatus', 'int'), new PrimitiveSerializer(self::class, 'lastSwitchErrorStatus', 'int'), new PrimitiveSerializer(self::class, 'lastSetconfErrorStatus', 'int'), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     /**
      * Setter for id
      *
@@ -179,7 +177,7 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *
      * @return string The group's identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -200,7 +198,7 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *
      * @return MinGroup
      */
-    public function getGroup() : MinGroup
+    public function getGroup() : ?MinGroup
     {
         return $this->group;
     }
@@ -221,7 +219,7 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *
      * @return MinBaseStation
      */
-    public function getBaseStation() : MinBaseStation
+    public function getBaseStation() : ?MinBaseStation
     {
         return $this->baseStation;
     }
@@ -256,7 +254,7 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *             - {@see CellularConnectivityForBs::STATE_DELETING}
      *             
      */
-    public function getState() : int
+    public function getState() : ?int
     {
         return $this->state;
     }
@@ -287,7 +285,7 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *             - {@see CellularConnectivityForBs::SYNC_STATUS_SENT}
      *             
      */
-    public function getSyncStatus() : int
+    public function getSyncStatus() : ?int
     {
         return $this->syncStatus;
     }
@@ -327,7 +325,7 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *             - {@see CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_UNKNOWN}
      *             
      */
-    public function getLastSwitchErrorStatus() : int
+    public function getLastSwitchErrorStatus() : ?int
     {
         return $this->lastSwitchErrorStatus;
     }
@@ -367,7 +365,7 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *             - {@see CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_UNKNOWN}
      *             
      */
-    public function getLastSetconfErrorStatus() : int
+    public function getLastSetconfErrorStatus() : ?int
     {
         return $this->lastSetconfErrorStatus;
     }
@@ -388,7 +386,7 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
     }
@@ -409,8 +407,15 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *
      * @return string[]
      */
-    public function getResources() : array
+    public function getResources() : ?array
     {
         return $this->resources;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'group' => new ClassSerializer(self::class, 'group', MinGroup::class), 'baseStation' => new ClassSerializer(self::class, 'baseStation', MinBaseStation::class), 'state' => new PrimitiveSerializer(self::class, 'state', 'int'), 'syncStatus' => new PrimitiveSerializer(self::class, 'syncStatus', 'int'), 'lastSwitchErrorStatus' => new PrimitiveSerializer(self::class, 'lastSwitchErrorStatus', 'int'), 'lastSetconfErrorStatus' => new PrimitiveSerializer(self::class, 'lastSetconfErrorStatus', 'int'), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     }
 }

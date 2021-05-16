@@ -2,9 +2,10 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Definition\ActionJob;
-class DeviceTypesBulkRestartJobId
+class DeviceTypesBulkRestartJobId extends Repository
 {
     /**
      * The HTTP client
@@ -27,9 +28,11 @@ class DeviceTypesBulkRestartJobId
     }
     /**
      * Retrieve the async job status of a device type's asynchronous job for a restart devices action.
+     *
+     * @return ActionJob
      */
     public function get() : ActionJob
     {
-        return $this->client->request('get', $this->bind('/device-types/bulk/restart/{jobId}', $this->jobId), null, ActionJob::class);
+        return $this->client->call('get', $this->bind('/device-types/bulk/restart/{jobId}', $this->jobId), null, ActionJob::class);
     }
 }

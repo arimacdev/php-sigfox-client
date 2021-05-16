@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 class RoleCreate extends CommonRole
@@ -19,7 +18,6 @@ class RoleCreate extends CommonRole
      * @var int[]
      */
     protected ?array $perms = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'parentRoleId', 'string'), new ArraySerializer(self::class, 'perms', new PrimitiveSerializer(self::class, 'perms', 'int')));
     /**
      * Setter for parentRoleId
      *
@@ -37,7 +35,7 @@ class RoleCreate extends CommonRole
      *
      * @return string The role's parent's identifier
      */
-    public function getParentRoleId() : string
+    public function getParentRoleId() : ?string
     {
         return $this->parentRoleId;
     }
@@ -58,8 +56,15 @@ class RoleCreate extends CommonRole
      *
      * @return int[] the permisions included in this role, if the role is not META or META_EMPTY type,
      */
-    public function getPerms() : array
+    public function getPerms() : ?array
     {
         return $this->perms;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('parentRoleId' => new PrimitiveSerializer(self::class, 'parentRoleId', 'string'), 'perms' => new ArraySerializer(self::class, 'perms', new PrimitiveSerializer(self::class, 'perms', 'int')));
     }
 }

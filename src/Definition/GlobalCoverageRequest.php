@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\GlobalCoverageRequest\LocationsItem;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
@@ -31,8 +31,7 @@ class GlobalCoverageRequest extends Definition
      * @var string
      */
     protected ?string $groupId = null;
-    protected $serialize = array(new ArraySerializer(self::class, 'locations', new ClassSerializer(self::class, 'locations', LocationsItem::class)), new PrimitiveSerializer(self::class, 'radius', 'int'), new PrimitiveSerializer(self::class, 'groupId', 'string'));
-    protected $validations = array('locations' => array('required'));
+    protected array $validations = array('locations' => array('required'));
     /**
      * Setter for locations
      *
@@ -50,7 +49,7 @@ class GlobalCoverageRequest extends Definition
      *
      * @return LocationsItem[] An array of positions. Valid locations have two properties, lat and lng.
      */
-    public function getLocations() : array
+    public function getLocations() : ?array
     {
         return $this->locations;
     }
@@ -73,7 +72,7 @@ class GlobalCoverageRequest extends Definition
      * @return int The radius of the area in which the coverage results are averaged and returned for a selected
      *             location, in meters.
      */
-    public function getRadius() : int
+    public function getRadius() : ?int
     {
         return $this->radius;
     }
@@ -96,8 +95,15 @@ class GlobalCoverageRequest extends Definition
      * @return string The id of a group to include its operator in the global coverage, in case it is not a public
      *                operator.
      */
-    public function getGroupId() : string
+    public function getGroupId() : ?string
     {
         return $this->groupId;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('locations' => new ArraySerializer(self::class, 'locations', new ClassSerializer(self::class, 'locations', LocationsItem::class)), 'radius' => new PrimitiveSerializer(self::class, 'radius', 'int'), 'groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'));
     }
 }

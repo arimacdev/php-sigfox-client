@@ -18,7 +18,6 @@ class KmzStatusResponse extends Definition
      * @var int
      */
     protected ?int $time = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'jobDone', 'bool'), new PrimitiveSerializer(self::class, 'time', 'int'));
     /**
      * Setter for jobDone
      *
@@ -36,7 +35,7 @@ class KmzStatusResponse extends Definition
      *
      * @return bool If the job is completed or not
      */
-    public function getJobDone() : bool
+    public function getJobDone() : ?bool
     {
         return $this->jobDone;
     }
@@ -57,8 +56,15 @@ class KmzStatusResponse extends Definition
      *
      * @return int the kmz layer creation time (in milliseconds since the Unix Epoch)
      */
-    public function getTime() : int
+    public function getTime() : ?int
     {
         return $this->time;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('jobDone' => new PrimitiveSerializer(self::class, 'jobDone', 'bool'), 'time' => new PrimitiveSerializer(self::class, 'time', 'int'));
     }
 }

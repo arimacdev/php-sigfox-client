@@ -2,13 +2,13 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Definition\AsynchronousDeviceTransferJob;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Transfer multiple devices to another device type with asynchronous job
  */
-class DevicesBulkTransfer extends Definition
+class DevicesBulkTransfer extends Request
 {
     /**
      * The devices to move
@@ -16,9 +16,8 @@ class DevicesBulkTransfer extends Definition
      * @var AsynchronousDeviceTransferJob
      */
     protected ?AsynchronousDeviceTransferJob $devices = null;
-    protected $serialize = array(new ClassSerializer(self::class, 'devices', AsynchronousDeviceTransferJob::class));
-    protected $body = array('devices');
-    protected $validations = array('devices' => array('required'));
+    protected array $body = array('devices');
+    protected array $validations = array('devices' => array('required'));
     /**
      * Setter for devices
      *
@@ -30,5 +29,21 @@ class DevicesBulkTransfer extends Definition
     {
         $this->devices = $devices;
         return $this;
+    }
+    /**
+     * Getter for devices
+     *
+     * @return AsynchronousDeviceTransferJob The devices to move
+     */
+    public function getDevices() : ?AsynchronousDeviceTransferJob
+    {
+        return $this->devices;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('devices' => new ClassSerializer(self::class, 'devices', AsynchronousDeviceTransferJob::class));
     }
 }

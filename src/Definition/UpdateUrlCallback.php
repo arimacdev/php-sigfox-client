@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the properties needed to create a url callback
@@ -40,8 +39,7 @@ class UpdateUrlCallback extends UpdateCallback
      * @var string
      */
     protected ?string $bodyTemplate = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'url', 'string'), new PrimitiveSerializer(self::class, 'httpMethod', 'string'), new PrimitiveSerializer(self::class, 'headers', 'array'), new PrimitiveSerializer(self::class, 'sendSni', 'bool'), new PrimitiveSerializer(self::class, 'bodyTemplate', 'string'));
-    protected $validations = array('httpMethod' => array('in:GET,PUT,POST', 'nullable'));
+    protected array $validations = array('httpMethod' => array('in:GET,PUT,POST', 'nullable'));
     /**
      * Setter for url
      *
@@ -59,7 +57,7 @@ class UpdateUrlCallback extends UpdateCallback
      *
      * @return string The callback's url
      */
-    public function getUrl() : string
+    public function getUrl() : ?string
     {
         return $this->url;
     }
@@ -80,7 +78,7 @@ class UpdateUrlCallback extends UpdateCallback
      *
      * @return string The http method used to send a callback
      */
-    public function getHttpMethod() : string
+    public function getHttpMethod() : ?string
     {
         return $this->httpMethod;
     }
@@ -103,7 +101,7 @@ class UpdateUrlCallback extends UpdateCallback
      * @return array The headers of the http request to send, as an object with key:value. This field can be unset
      *               when updating.
      */
-    public function getHeaders() : array
+    public function getHeaders() : ?array
     {
         return $this->headers;
     }
@@ -126,7 +124,7 @@ class UpdateUrlCallback extends UpdateCallback
      * @return bool Send SNI (Server Name Indication) for SSL/TLS connections. Used by BATCH_URL and URL callbacks
      *              (optional).
      */
-    public function getSendSni() : bool
+    public function getSendSni() : ?bool
     {
         return $this->sendSni;
     }
@@ -151,8 +149,15 @@ class UpdateUrlCallback extends UpdateCallback
      *                predefined and custom variables. Mandatory for URL callbacks. This field can be unset when
      *                updating.
      */
-    public function getBodyTemplate() : string
+    public function getBodyTemplate() : ?string
     {
         return $this->bodyTemplate;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('url' => new PrimitiveSerializer(self::class, 'url', 'string'), 'httpMethod' => new PrimitiveSerializer(self::class, 'httpMethod', 'string'), 'headers' => new PrimitiveSerializer(self::class, 'headers', 'array'), 'sendSni' => new PrimitiveSerializer(self::class, 'sendSni', 'bool'), 'bodyTemplate' => new PrimitiveSerializer(self::class, 'bodyTemplate', 'string'));
     }
 }

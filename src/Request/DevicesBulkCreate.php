@@ -2,13 +2,13 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Definition\AsynchronousDeviceCreationJob;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Create multiple new devices with asynchronous job
  */
-class DevicesBulkCreate extends Definition
+class DevicesBulkCreate extends Request
 {
     /**
      * The devices to create
@@ -16,9 +16,8 @@ class DevicesBulkCreate extends Definition
      * @var AsynchronousDeviceCreationJob
      */
     protected ?AsynchronousDeviceCreationJob $devices = null;
-    protected $serialize = array(new ClassSerializer(self::class, 'devices', AsynchronousDeviceCreationJob::class));
-    protected $body = array('devices');
-    protected $validations = array('devices' => array('required'));
+    protected array $body = array('devices');
+    protected array $validations = array('devices' => array('required'));
     /**
      * Setter for devices
      *
@@ -30,5 +29,21 @@ class DevicesBulkCreate extends Definition
     {
         $this->devices = $devices;
         return $this;
+    }
+    /**
+     * Getter for devices
+     *
+     * @return AsynchronousDeviceCreationJob The devices to create
+     */
+    public function getDevices() : ?AsynchronousDeviceCreationJob
+    {
+        return $this->devices;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('devices' => new ClassSerializer(self::class, 'devices', AsynchronousDeviceCreationJob::class));
     }
 }

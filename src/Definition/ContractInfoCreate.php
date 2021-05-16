@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
@@ -128,8 +127,7 @@ class ContractInfoCreate extends CommonContractInfo
      * @var string[]
      */
     protected ?array $blacklistedTerritories = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'groupId', 'string'), new PrimitiveSerializer(self::class, 'contractId', 'string'), new PrimitiveSerializer(self::class, 'userId', 'string'), new PrimitiveSerializer(self::class, 'orderId', 'string'), new PrimitiveSerializer(self::class, 'orderName', 'string'), new PrimitiveSerializer(self::class, 'pricingModel', 'int'), new PrimitiveSerializer(self::class, 'startTime', 'int'), new PrimitiveSerializer(self::class, 'timezone', 'string'), new PrimitiveSerializer(self::class, 'subscriptionPlan', 'int'), new PrimitiveSerializer(self::class, 'tokenDuration', 'int'), new ArraySerializer(self::class, 'blacklistedTerritories', new PrimitiveSerializer(self::class, 'blacklistedTerritories', 'string')));
-    protected $validations = array('groupId' => array('required'), 'contractId' => array('required'), 'userId' => array('required'), 'pricingModel' => array('required'), 'startTime' => array('required', 'min:0', 'numeric'), 'timezone' => array('required'), 'subscriptionPlan' => array('required'), 'tokenDuration' => array('required', 'min:0', 'numeric'));
+    protected array $validations = array('groupId' => array('required'), 'contractId' => array('required'), 'userId' => array('required'), 'pricingModel' => array('required'), 'startTime' => array('required', 'min:0', 'numeric'), 'timezone' => array('required'), 'subscriptionPlan' => array('required'), 'tokenDuration' => array('required', 'min:0', 'numeric'));
     /**
      * Setter for groupId
      *
@@ -147,7 +145,7 @@ class ContractInfoCreate extends CommonContractInfo
      *
      * @return string ID of group associated with the contact
      */
-    public function getGroupId() : string
+    public function getGroupId() : ?string
     {
         return $this->groupId;
     }
@@ -168,7 +166,7 @@ class ContractInfoCreate extends CommonContractInfo
      *
      * @return string The contract external ID. It's used to identify the contract in EDRs.
      */
-    public function getContractId() : string
+    public function getContractId() : ?string
     {
         return $this->contractId;
     }
@@ -189,7 +187,7 @@ class ContractInfoCreate extends CommonContractInfo
      *
      * @return string The ID of the user who created the contract in BSS.
      */
-    public function getUserId() : string
+    public function getUserId() : ?string
     {
         return $this->userId;
     }
@@ -210,7 +208,7 @@ class ContractInfoCreate extends CommonContractInfo
      *
      * @return string The order ID (hex), if any.
      */
-    public function getOrderId() : string
+    public function getOrderId() : ?string
     {
         return $this->orderId;
     }
@@ -231,7 +229,7 @@ class ContractInfoCreate extends CommonContractInfo
      *
      * @return string The order name, if any
      */
-    public function getOrderName() : string
+    public function getOrderName() : ?string
     {
         return $this->orderName;
     }
@@ -262,7 +260,7 @@ class ContractInfoCreate extends CommonContractInfo
      *             - {@see ContractInfoCreate::PRICING_MODEL_PRICING_MODEL_V3}
      *             
      */
-    public function getPricingModel() : int
+    public function getPricingModel() : ?int
     {
         return $this->pricingModel;
     }
@@ -283,7 +281,7 @@ class ContractInfoCreate extends CommonContractInfo
      *
      * @return int The start time (in milliseconds) of the contract
      */
-    public function getStartTime() : int
+    public function getStartTime() : ?int
     {
         return $this->startTime;
     }
@@ -306,7 +304,7 @@ class ContractInfoCreate extends CommonContractInfo
      * @return string The contract timezone name as a Java TimeZone ID ("full name" version only, like
      *                "America/Costa_Rica").
      */
-    public function getTimezone() : string
+    public function getTimezone() : ?string
     {
         return $this->timezone;
     }
@@ -345,7 +343,7 @@ class ContractInfoCreate extends CommonContractInfo
      *             - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_ACTIVATE}
      *             
      */
-    public function getSubscriptionPlan() : int
+    public function getSubscriptionPlan() : ?int
     {
         return $this->subscriptionPlan;
     }
@@ -366,7 +364,7 @@ class ContractInfoCreate extends CommonContractInfo
      *
      * @return int The token duration in months. Must be >= 0, if 0 unlimited token duration.
      */
-    public function getTokenDuration() : int
+    public function getTokenDuration() : ?int
     {
         return $this->tokenDuration;
     }
@@ -387,8 +385,15 @@ class ContractInfoCreate extends CommonContractInfo
      *
      * @return string[] The list of "blacklisted" territories, as an array of NIP group IDs.
      */
-    public function getBlacklistedTerritories() : array
+    public function getBlacklistedTerritories() : ?array
     {
         return $this->blacklistedTerritories;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'), 'contractId' => new PrimitiveSerializer(self::class, 'contractId', 'string'), 'userId' => new PrimitiveSerializer(self::class, 'userId', 'string'), 'orderId' => new PrimitiveSerializer(self::class, 'orderId', 'string'), 'orderName' => new PrimitiveSerializer(self::class, 'orderName', 'string'), 'pricingModel' => new PrimitiveSerializer(self::class, 'pricingModel', 'int'), 'startTime' => new PrimitiveSerializer(self::class, 'startTime', 'int'), 'timezone' => new PrimitiveSerializer(self::class, 'timezone', 'string'), 'subscriptionPlan' => new PrimitiveSerializer(self::class, 'subscriptionPlan', 'int'), 'tokenDuration' => new PrimitiveSerializer(self::class, 'tokenDuration', 'int'), 'blacklistedTerritories' => new ArraySerializer(self::class, 'blacklistedTerritories', new PrimitiveSerializer(self::class, 'blacklistedTerritories', 'string')));
     }
 }

@@ -2,12 +2,12 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of location data of a device according to request filters.
  */
-class DevicesIdLocations extends Definition
+class DevicesIdLocations extends Request
 {
     /**
      * if true, the method return also the location from out of band Messages
@@ -39,9 +39,7 @@ class DevicesIdLocations extends Definition
      * @var int
      */
     protected ?int $offset = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'oob', 'bool'), new PrimitiveSerializer(self::class, 'since', 'int'), new PrimitiveSerializer(self::class, 'before', 'int'), new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'offset', 'int'));
-    protected $query = array('oob', 'since', 'before', 'limit', 'offset');
-    protected $validations = array('oob' => array('required'), 'since' => array('required'), 'before' => array('required'), 'limit' => array('required'), 'offset' => array('required'));
+    protected array $query = array('oob', 'since', 'before', 'limit', 'offset');
     /**
      * Setter for oob
      *
@@ -53,6 +51,15 @@ class DevicesIdLocations extends Definition
     {
         $this->oob = $oob;
         return $this;
+    }
+    /**
+     * Getter for oob
+     *
+     * @return bool if true, the method return also the location from out of band Messages
+     */
+    public function getOob() : ?bool
+    {
+        return $this->oob;
     }
     /**
      * Setter for since
@@ -67,6 +74,15 @@ class DevicesIdLocations extends Definition
         return $this;
     }
     /**
+     * Getter for since
+     *
+     * @return int Starting timestamp (in milliseconds since the Unix Epoch)
+     */
+    public function getSince() : ?int
+    {
+        return $this->since;
+    }
+    /**
      * Setter for before
      *
      * @param int $before Ending timestamp (in milliseconds since the Unix Epoch)
@@ -77,6 +93,15 @@ class DevicesIdLocations extends Definition
     {
         $this->before = $before;
         return $this;
+    }
+    /**
+     * Getter for before
+     *
+     * @return int Ending timestamp (in milliseconds since the Unix Epoch)
+     */
+    public function getBefore() : ?int
+    {
+        return $this->before;
     }
     /**
      * Setter for limit
@@ -91,6 +116,15 @@ class DevicesIdLocations extends Definition
         return $this;
     }
     /**
+     * Getter for limit
+     *
+     * @return int The maximum number of items to return
+     */
+    public function getLimit() : ?int
+    {
+        return $this->limit;
+    }
+    /**
      * Setter for offset
      *
      * @param int $offset The number of items to skip
@@ -101,5 +135,21 @@ class DevicesIdLocations extends Definition
     {
         $this->offset = $offset;
         return $this;
+    }
+    /**
+     * Getter for offset
+     *
+     * @return int The number of items to skip
+     */
+    public function getOffset() : ?int
+    {
+        return $this->offset;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('oob' => new PrimitiveSerializer(self::class, 'oob', 'bool'), 'since' => new PrimitiveSerializer(self::class, 'since', 'int'), 'before' => new PrimitiveSerializer(self::class, 'before', 'int'), 'limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'offset' => new PrimitiveSerializer(self::class, 'offset', 'int'));
     }
 }

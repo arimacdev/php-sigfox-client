@@ -14,7 +14,7 @@ use Arimac\Sigfox\Repository\Users;
 /**
  * Client for sigfox API
  */
-class Sigfox
+class Sigfox extends SigfoxExt
 {
     /**
      * @return ApiUsers

@@ -2,13 +2,13 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Definition\DeviceUpdateJob;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Update a given device.
  */
-class DevicesIdUpdate extends Definition
+class DevicesIdUpdate extends Request
 {
     /**
      * The device to update
@@ -16,9 +16,8 @@ class DevicesIdUpdate extends Definition
      * @var DeviceUpdateJob
      */
     protected ?DeviceUpdateJob $device = null;
-    protected $serialize = array(new ClassSerializer(self::class, 'device', DeviceUpdateJob::class));
-    protected $body = array('device');
-    protected $validations = array('device' => array('required'));
+    protected array $body = array('device');
+    protected array $validations = array('device' => array('required'));
     /**
      * Setter for device
      *
@@ -30,5 +29,21 @@ class DevicesIdUpdate extends Definition
     {
         $this->device = $device;
         return $this;
+    }
+    /**
+     * Getter for device
+     *
+     * @return DeviceUpdateJob The device to update
+     */
+    public function getDevice() : ?DeviceUpdateJob
+    {
+        return $this->device;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('device' => new ClassSerializer(self::class, 'device', DeviceUpdateJob::class));
     }
 }

@@ -122,8 +122,7 @@ class Group extends Definition
      * @var string[]
      */
     protected ?array $actions = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'description', 'string'), new PrimitiveSerializer(self::class, 'type', 'int'), new PrimitiveSerializer(self::class, 'timezone', 'string'), new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'nameCI', 'string'), new ArraySerializer(self::class, 'path', new ClassSerializer(self::class, 'path', MinGroup::class)), new PrimitiveSerializer(self::class, 'createdBy', 'string'), new PrimitiveSerializer(self::class, 'creationTime', 'int'), new PrimitiveSerializer(self::class, 'leaf', 'bool'), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
-    protected $validations = array('name' => array('max:100', 'min:3', 'nullable'), 'description' => array('max:300', 'nullable'));
+    protected array $validations = array('name' => array('max:100', 'min:3', 'nullable'), 'description' => array('max:300', 'nullable'));
     /**
      * Setter for name
      *
@@ -141,7 +140,7 @@ class Group extends Definition
      *
      * @return string The group's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -162,7 +161,7 @@ class Group extends Definition
      *
      * @return string The group's description
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
@@ -205,7 +204,7 @@ class Group extends Definition
      *             - {@see Group::TYPE_PARTNER}
      *             
      */
-    public function getType() : int
+    public function getType() : ?int
     {
         return $this->type;
     }
@@ -226,7 +225,7 @@ class Group extends Definition
      *
      * @return string The timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
      */
-    public function getTimezone() : string
+    public function getTimezone() : ?string
     {
         return $this->timezone;
     }
@@ -247,7 +246,7 @@ class Group extends Definition
      *
      * @return string The group's identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -268,7 +267,7 @@ class Group extends Definition
      *
      * @return string The group's name to ascii and lowercase
      */
-    public function getNameCI() : string
+    public function getNameCI() : ?string
     {
         return $this->nameCI;
     }
@@ -291,7 +290,7 @@ class Group extends Definition
      * @return MinGroup[] The group's path sorted by descending ancestor {id} (direct parent to farthest parent),
      *                    restricted to the groups visible by the API user
      */
-    public function getPath() : array
+    public function getPath() : ?array
     {
         return $this->path;
     }
@@ -312,7 +311,7 @@ class Group extends Definition
      *
      * @return string The user id of the group's creator
      */
-    public function getCreatedBy() : string
+    public function getCreatedBy() : ?string
     {
         return $this->createdBy;
     }
@@ -333,7 +332,7 @@ class Group extends Definition
      *
      * @return int The creation date of the group (timestamp in milliseconds since Unix Epoch)
      */
-    public function getCreationTime() : int
+    public function getCreationTime() : ?int
     {
         return $this->creationTime;
     }
@@ -354,7 +353,7 @@ class Group extends Definition
      *
      * @return bool true if the group is leaf
      */
-    public function getLeaf() : bool
+    public function getLeaf() : ?bool
     {
         return $this->leaf;
     }
@@ -375,8 +374,15 @@ class Group extends Definition
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'description' => new PrimitiveSerializer(self::class, 'description', 'string'), 'type' => new PrimitiveSerializer(self::class, 'type', 'int'), 'timezone' => new PrimitiveSerializer(self::class, 'timezone', 'string'), 'id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'nameCI' => new PrimitiveSerializer(self::class, 'nameCI', 'string'), 'path' => new ArraySerializer(self::class, 'path', new ClassSerializer(self::class, 'path', MinGroup::class)), 'createdBy' => new PrimitiveSerializer(self::class, 'createdBy', 'string'), 'creationTime' => new PrimitiveSerializer(self::class, 'creationTime', 'int'), 'leaf' => new PrimitiveSerializer(self::class, 'leaf', 'bool'), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
     }
 }

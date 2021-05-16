@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Definition\GlobalCoverageRequest;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
@@ -10,15 +10,14 @@ use Arimac\Sigfox\Serializer\ClassSerializer;
  * For more information please refer to the [Global Coverage API
  * article](https://support.sigfox.com/docs/global-coverage-api).
  */
-class CoveragesGlobalPredictionsCalculateBulk extends Definition
+class CoveragesGlobalPredictionsCalculateBulk extends Request
 {
     /**
      * @var GlobalCoverageRequest
      */
     protected ?GlobalCoverageRequest $payload = null;
-    protected $serialize = array(new ClassSerializer(self::class, 'payload', GlobalCoverageRequest::class));
-    protected $body = array('payload');
-    protected $validations = array('payload' => array('required'));
+    protected array $body = array('payload');
+    protected array $validations = array('payload' => array('required'));
     /**
      * Setter for payload
      *
@@ -30,5 +29,21 @@ class CoveragesGlobalPredictionsCalculateBulk extends Definition
     {
         $this->payload = $payload;
         return $this;
+    }
+    /**
+     * Getter for payload
+     *
+     * @return GlobalCoverageRequest
+     */
+    public function getPayload() : ?GlobalCoverageRequest
+    {
+        return $this->payload;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('payload' => new ClassSerializer(self::class, 'payload', GlobalCoverageRequest::class));
     }
 }

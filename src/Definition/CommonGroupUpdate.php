@@ -79,8 +79,7 @@ class CommonGroupUpdate extends Definition
      * @var string
      */
     protected ?string $timezone = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'description', 'string'), new PrimitiveSerializer(self::class, 'type', 'int'), new PrimitiveSerializer(self::class, 'timezone', 'string'));
-    protected $validations = array('name' => array('max:100', 'min:3', 'nullable'), 'description' => array('max:300', 'nullable'));
+    protected array $validations = array('name' => array('max:100', 'min:3', 'nullable'), 'description' => array('max:300', 'nullable'));
     /**
      * Setter for name
      *
@@ -98,7 +97,7 @@ class CommonGroupUpdate extends Definition
      *
      * @return string The group's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -119,7 +118,7 @@ class CommonGroupUpdate extends Definition
      *
      * @return string The group's description
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
@@ -162,7 +161,7 @@ class CommonGroupUpdate extends Definition
      *             - {@see CommonGroupUpdate::TYPE_PARTNER}
      *             
      */
-    public function getType() : int
+    public function getType() : ?int
     {
         return $this->type;
     }
@@ -183,8 +182,15 @@ class CommonGroupUpdate extends Definition
      *
      * @return string The timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
      */
-    public function getTimezone() : string
+    public function getTimezone() : ?string
     {
         return $this->timezone;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'description' => new PrimitiveSerializer(self::class, 'description', 'string'), 'type' => new PrimitiveSerializer(self::class, 'type', 'int'), 'timezone' => new PrimitiveSerializer(self::class, 'timezone', 'string'));
     }
 }

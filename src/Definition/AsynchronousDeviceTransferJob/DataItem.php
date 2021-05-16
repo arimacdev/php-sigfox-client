@@ -25,8 +25,7 @@ class DataItem extends Definition
      * @var bool
      */
     protected ?bool $activable = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'keepHistory', 'bool'), new PrimitiveSerializer(self::class, 'activable', 'bool'));
-    protected $validations = array('id' => array('required'));
+    protected array $validations = array('id' => array('required'));
     /**
      * Setter for id
      *
@@ -44,7 +43,7 @@ class DataItem extends Definition
      *
      * @return string The device's identifier (hexadecimal format)
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -65,7 +64,7 @@ class DataItem extends Definition
      *
      * @return bool Whether to keep the device history or not
      */
-    public function getKeepHistory() : bool
+    public function getKeepHistory() : ?bool
     {
         return $this->keepHistory;
     }
@@ -88,8 +87,15 @@ class DataItem extends Definition
      * @return bool True if the device is activable and can take a token. Not used if the device has already a token
      *              and if the transferred is intra-order.
      */
-    public function getActivable() : bool
+    public function getActivable() : ?bool
     {
         return $this->activable;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'keepHistory' => new PrimitiveSerializer(self::class, 'keepHistory', 'bool'), 'activable' => new PrimitiveSerializer(self::class, 'activable', 'bool'));
     }
 }

@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the properties needed to create a batch url callback
@@ -27,8 +26,7 @@ class CreateEmailCallback extends CreateCallback
      * @var string
      */
     protected ?string $message = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'subject', 'string'), new PrimitiveSerializer(self::class, 'recipient', 'string'), new PrimitiveSerializer(self::class, 'message', 'string'));
-    protected $validations = array('recipient' => array('required'));
+    protected array $validations = array('recipient' => array('required'));
     /**
      * Setter for subject
      *
@@ -46,7 +44,7 @@ class CreateEmailCallback extends CreateCallback
      *
      * @return string The subject of the email.
      */
-    public function getSubject() : string
+    public function getSubject() : ?string
     {
         return $this->subject;
     }
@@ -67,7 +65,7 @@ class CreateEmailCallback extends CreateCallback
      *
      * @return string The recipient of the email.
      */
-    public function getRecipient() : string
+    public function getRecipient() : ?string
     {
         return $this->recipient;
     }
@@ -88,8 +86,15 @@ class CreateEmailCallback extends CreateCallback
      *
      * @return string the content of the message.
      */
-    public function getMessage() : string
+    public function getMessage() : ?string
     {
         return $this->message;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('subject' => new PrimitiveSerializer(self::class, 'subject', 'string'), 'recipient' => new PrimitiveSerializer(self::class, 'recipient', 'string'), 'message' => new PrimitiveSerializer(self::class, 'message', 'string'));
     }
 }

@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\UserUpdate\UserRolesItem;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -31,7 +30,6 @@ class UserUpdate extends CommonUser
      * @var string
      */
     protected ?string $maintenances = null;
-    protected $serialize = array(new ArraySerializer(self::class, 'userRoles', new ClassSerializer(self::class, 'userRoles', UserRolesItem::class)), new PrimitiveSerializer(self::class, 'baseStations', 'string'), new PrimitiveSerializer(self::class, 'maintenances', 'string'));
     /**
      * Setter for userRoles
      *
@@ -49,7 +47,7 @@ class UserUpdate extends CommonUser
      *
      * @return UserRolesItem[] Defines the rights of the user
      */
-    public function getUserRoles() : array
+    public function getUserRoles() : ?array
     {
         return $this->userRoles;
     }
@@ -72,7 +70,7 @@ class UserUpdate extends CommonUser
      * @return string list of base station ids (Comma-separated values in hexadecimal format) corresponding to the
      *                userRoles with tap limited access granted
      */
-    public function getBaseStations() : string
+    public function getBaseStations() : ?string
     {
         return $this->baseStations;
     }
@@ -94,8 +92,15 @@ class UserUpdate extends CommonUser
      *
      * @return string list of maintenance ids corresponding to the userRoles with site limited access granted
      */
-    public function getMaintenances() : string
+    public function getMaintenances() : ?string
     {
         return $this->maintenances;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('userRoles' => new ArraySerializer(self::class, 'userRoles', new ClassSerializer(self::class, 'userRoles', UserRolesItem::class)), 'baseStations' => new PrimitiveSerializer(self::class, 'baseStations', 'string'), 'maintenances' => new PrimitiveSerializer(self::class, 'maintenances', 'string'));
     }
 }

@@ -12,7 +12,6 @@ class DeviceTypesIdCallbacksCreateResponse extends Definition
      * @var string
      */
     protected ?string $id = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'));
     /**
      * Setter for id
      *
@@ -30,8 +29,15 @@ class DeviceTypesIdCallbacksCreateResponse extends Definition
      *
      * @return string The callback's identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'));
     }
 }

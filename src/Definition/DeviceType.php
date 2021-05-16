@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -154,8 +153,7 @@ class DeviceType extends BaseDeviceType
      * @var bool
      */
     protected ?bool $automaticRenewal = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'description', 'string'), new PrimitiveSerializer(self::class, 'downlinkMode', 'int'), new PrimitiveSerializer(self::class, 'downlinkDataString', 'string'), new PrimitiveSerializer(self::class, 'payloadType', 'int'), new PrimitiveSerializer(self::class, 'payloadConfig', 'string'), new ClassSerializer(self::class, 'group', MinGroup::class), new ClassSerializer(self::class, 'contract', MinContractInfo::class), new ArraySerializer(self::class, 'contracts', new ClassSerializer(self::class, 'contracts', MinContractInfo::class)), new ArraySerializer(self::class, 'detachedContracts', new ClassSerializer(self::class, 'detachedContracts', MinContractInfo::class)), new ClassSerializer(self::class, 'geolocPayloadConfig', GeolocPayloadConfig::class), new PrimitiveSerializer(self::class, 'creationTime', 'int'), new PrimitiveSerializer(self::class, 'createdBy', 'string'), new PrimitiveSerializer(self::class, 'lastEditionTime', 'int'), new PrimitiveSerializer(self::class, 'lastEditedBy', 'string'), new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'));
-    protected $validations = array('description' => array('max:300', 'nullable'));
+    protected array $validations = array('description' => array('max:300', 'nullable'));
     /**
      * Setter for id
      *
@@ -173,7 +171,7 @@ class DeviceType extends BaseDeviceType
      *
      * @return string The device type's identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -194,7 +192,7 @@ class DeviceType extends BaseDeviceType
      *
      * @return string The device type's description
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
@@ -227,7 +225,7 @@ class DeviceType extends BaseDeviceType
      *             - {@see DeviceType::DOWNLINK_MODE_MANAGED}
      *             
      */
-    public function getDownlinkMode() : int
+    public function getDownlinkMode() : ?int
     {
         return $this->downlinkMode;
     }
@@ -253,7 +251,7 @@ class DeviceType extends BaseDeviceType
      *                It must be an 8 byte length message given in hexadecimal string format.
      *                
      */
-    public function getDownlinkDataString() : string
+    public function getDownlinkDataString() : ?string
     {
         return $this->downlinkDataString;
     }
@@ -290,7 +288,7 @@ class DeviceType extends BaseDeviceType
      *             - {@see DeviceType::PAYLOAD_TYPE_SENSITV2}
      *             
      */
-    public function getPayloadType() : int
+    public function getPayloadType() : ?int
     {
         return $this->payloadType;
     }
@@ -311,7 +309,7 @@ class DeviceType extends BaseDeviceType
      *
      * @return string The payload configuration. Required if the payload type is Custom, else ignored.
      */
-    public function getPayloadConfig() : string
+    public function getPayloadConfig() : ?string
     {
         return $this->payloadConfig;
     }
@@ -332,7 +330,7 @@ class DeviceType extends BaseDeviceType
      *
      * @return MinGroup
      */
-    public function getGroup() : MinGroup
+    public function getGroup() : ?MinGroup
     {
         return $this->group;
     }
@@ -353,7 +351,7 @@ class DeviceType extends BaseDeviceType
      *
      * @return MinContractInfo
      */
-    public function getContract() : MinContractInfo
+    public function getContract() : ?MinContractInfo
     {
         return $this->contract;
     }
@@ -374,7 +372,7 @@ class DeviceType extends BaseDeviceType
      *
      * @return MinContractInfo[] The list of the contracts associated with the device type
      */
-    public function getContracts() : array
+    public function getContracts() : ?array
     {
         return $this->contracts;
     }
@@ -397,7 +395,7 @@ class DeviceType extends BaseDeviceType
      * @return MinContractInfo[] The list of the contracts that were associated with the device type at some point,
      *                           but are not anymore.
      */
-    public function getDetachedContracts() : array
+    public function getDetachedContracts() : ?array
     {
         return $this->detachedContracts;
     }
@@ -418,7 +416,7 @@ class DeviceType extends BaseDeviceType
      *
      * @return GeolocPayloadConfig
      */
-    public function getGeolocPayloadConfig() : GeolocPayloadConfig
+    public function getGeolocPayloadConfig() : ?GeolocPayloadConfig
     {
         return $this->geolocPayloadConfig;
     }
@@ -439,7 +437,7 @@ class DeviceType extends BaseDeviceType
      *
      * @return int Date of the creation of this device type (in milliseconds)
      */
-    public function getCreationTime() : int
+    public function getCreationTime() : ?int
     {
         return $this->creationTime;
     }
@@ -460,7 +458,7 @@ class DeviceType extends BaseDeviceType
      *
      * @return string Identifier of the user who created this device type
      */
-    public function getCreatedBy() : string
+    public function getCreatedBy() : ?string
     {
         return $this->createdBy;
     }
@@ -481,7 +479,7 @@ class DeviceType extends BaseDeviceType
      *
      * @return int Date of the last edition of this device type (in milliseconds)
      */
-    public function getLastEditionTime() : int
+    public function getLastEditionTime() : ?int
     {
         return $this->lastEditionTime;
     }
@@ -502,7 +500,7 @@ class DeviceType extends BaseDeviceType
      *
      * @return string Identifier of the user who last edited this device type
      */
-    public function getLastEditedBy() : string
+    public function getLastEditedBy() : ?string
     {
         return $this->lastEditedBy;
     }
@@ -523,8 +521,15 @@ class DeviceType extends BaseDeviceType
      *
      * @return bool Allows the automatic renewal of devices attached to this device type
      */
-    public function getAutomaticRenewal() : bool
+    public function getAutomaticRenewal() : ?bool
     {
         return $this->automaticRenewal;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'description' => new PrimitiveSerializer(self::class, 'description', 'string'), 'downlinkMode' => new PrimitiveSerializer(self::class, 'downlinkMode', 'int'), 'downlinkDataString' => new PrimitiveSerializer(self::class, 'downlinkDataString', 'string'), 'payloadType' => new PrimitiveSerializer(self::class, 'payloadType', 'int'), 'payloadConfig' => new PrimitiveSerializer(self::class, 'payloadConfig', 'string'), 'group' => new ClassSerializer(self::class, 'group', MinGroup::class), 'contract' => new ClassSerializer(self::class, 'contract', MinContractInfo::class), 'contracts' => new ArraySerializer(self::class, 'contracts', new ClassSerializer(self::class, 'contracts', MinContractInfo::class)), 'detachedContracts' => new ArraySerializer(self::class, 'detachedContracts', new ClassSerializer(self::class, 'detachedContracts', MinContractInfo::class)), 'geolocPayloadConfig' => new ClassSerializer(self::class, 'geolocPayloadConfig', GeolocPayloadConfig::class), 'creationTime' => new PrimitiveSerializer(self::class, 'creationTime', 'int'), 'createdBy' => new PrimitiveSerializer(self::class, 'createdBy', 'string'), 'lastEditionTime' => new PrimitiveSerializer(self::class, 'lastEditionTime', 'int'), 'lastEditedBy' => new PrimitiveSerializer(self::class, 'lastEditedBy', 'string'), 'automaticRenewal' => new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'));
     }
 }

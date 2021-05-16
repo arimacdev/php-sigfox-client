@@ -30,7 +30,6 @@ class CbStatus extends Definition
      * @var int
      */
     protected ?int $time = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'status', 'int'), new PrimitiveSerializer(self::class, 'info', 'string'), new PrimitiveSerializer(self::class, 'cbDef', 'string'), new PrimitiveSerializer(self::class, 'time', 'int'));
     /**
      * Setter for status
      *
@@ -48,7 +47,7 @@ class CbStatus extends Definition
      *
      * @return int http response status
      */
-    public function getStatus() : int
+    public function getStatus() : ?int
     {
         return $this->status;
     }
@@ -69,7 +68,7 @@ class CbStatus extends Definition
      *
      * @return string http response message
      */
-    public function getInfo() : string
+    public function getInfo() : ?string
     {
         return $this->info;
     }
@@ -90,7 +89,7 @@ class CbStatus extends Definition
      *
      * @return string callback definition triggered
      */
-    public function getCbDef() : string
+    public function getCbDef() : ?string
     {
         return $this->cbDef;
     }
@@ -111,8 +110,15 @@ class CbStatus extends Definition
      *
      * @return int time the callback was called (in milliseconds since the Unix Epoch)
      */
-    public function getTime() : int
+    public function getTime() : ?int
     {
         return $this->time;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('status' => new PrimitiveSerializer(self::class, 'status', 'int'), 'info' => new PrimitiveSerializer(self::class, 'info', 'string'), 'cbDef' => new PrimitiveSerializer(self::class, 'cbDef', 'string'), 'time' => new PrimitiveSerializer(self::class, 'time', 'int'));
     }
 }

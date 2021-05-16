@@ -114,8 +114,7 @@ class BaseDeviceType extends Definition
      * @var bool
      */
     protected ?bool $automaticRenewal = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'description', 'string'), new PrimitiveSerializer(self::class, 'downlinkMode', 'int'), new PrimitiveSerializer(self::class, 'downlinkDataString', 'string'), new PrimitiveSerializer(self::class, 'payloadType', 'int'), new PrimitiveSerializer(self::class, 'payloadConfig', 'string'), new PrimitiveSerializer(self::class, 'keepAlive', 'int'), new PrimitiveSerializer(self::class, 'alertEmail', 'string'), new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'));
-    protected $validations = array('name' => array('max:100', 'nullable'), 'description' => array('max:300', 'nullable'), 'keepAlive' => array('min:0', 'numeric', 'nullable'), 'alertEmail' => array('max:250', 'nullable'));
+    protected array $validations = array('name' => array('max:100', 'nullable'), 'description' => array('max:300', 'nullable'), 'keepAlive' => array('min:0', 'numeric', 'nullable'), 'alertEmail' => array('max:250', 'nullable'));
     /**
      * Setter for name
      *
@@ -133,7 +132,7 @@ class BaseDeviceType extends Definition
      *
      * @return string The device type's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -154,7 +153,7 @@ class BaseDeviceType extends Definition
      *
      * @return string The device type's description
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
@@ -187,7 +186,7 @@ class BaseDeviceType extends Definition
      *             - {@see BaseDeviceType::DOWNLINK_MODE_MANAGED}
      *             
      */
-    public function getDownlinkMode() : int
+    public function getDownlinkMode() : ?int
     {
         return $this->downlinkMode;
     }
@@ -213,7 +212,7 @@ class BaseDeviceType extends Definition
      *                It must be an 8 byte length message given in hexadecimal string format.
      *                
      */
-    public function getDownlinkDataString() : string
+    public function getDownlinkDataString() : ?string
     {
         return $this->downlinkDataString;
     }
@@ -250,7 +249,7 @@ class BaseDeviceType extends Definition
      *             - {@see BaseDeviceType::PAYLOAD_TYPE_SENSITV2}
      *             
      */
-    public function getPayloadType() : int
+    public function getPayloadType() : ?int
     {
         return $this->payloadType;
     }
@@ -271,7 +270,7 @@ class BaseDeviceType extends Definition
      *
      * @return string The payload configuration. Required if the payload type is Custom, else ignored.
      */
-    public function getPayloadConfig() : string
+    public function getPayloadConfig() : ?string
     {
         return $this->payloadConfig;
     }
@@ -292,7 +291,7 @@ class BaseDeviceType extends Definition
      *
      * @return int Keep alive period in seconds (0 to not keep alive else 1800 second minimum)
      */
-    public function getKeepAlive() : int
+    public function getKeepAlive() : ?int
     {
         return $this->keepAlive;
     }
@@ -315,7 +314,7 @@ class BaseDeviceType extends Definition
      * @return string Email address to contact in case of problems occurring while executing a callback. This field
      *                can be unset when updating.
      */
-    public function getAlertEmail() : string
+    public function getAlertEmail() : ?string
     {
         return $this->alertEmail;
     }
@@ -336,8 +335,15 @@ class BaseDeviceType extends Definition
      *
      * @return bool Allows the automatic renewal of devices attached to this device type
      */
-    public function getAutomaticRenewal() : bool
+    public function getAutomaticRenewal() : ?bool
     {
         return $this->automaticRenewal;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'description' => new PrimitiveSerializer(self::class, 'description', 'string'), 'downlinkMode' => new PrimitiveSerializer(self::class, 'downlinkMode', 'int'), 'downlinkDataString' => new PrimitiveSerializer(self::class, 'downlinkDataString', 'string'), 'payloadType' => new PrimitiveSerializer(self::class, 'payloadType', 'int'), 'payloadConfig' => new PrimitiveSerializer(self::class, 'payloadConfig', 'string'), 'keepAlive' => new PrimitiveSerializer(self::class, 'keepAlive', 'int'), 'alertEmail' => new PrimitiveSerializer(self::class, 'alertEmail', 'string'), 'automaticRenewal' => new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'));
     }
 }

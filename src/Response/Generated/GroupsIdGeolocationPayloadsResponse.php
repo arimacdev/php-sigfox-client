@@ -2,9 +2,9 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\BaseGeolocation;
 use Arimac\Sigfox\Definition\Paging;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 class GroupsIdGeolocationPayloadsResponse extends Definition
@@ -17,7 +17,6 @@ class GroupsIdGeolocationPayloadsResponse extends Definition
      * @var Paging
      */
     protected ?Paging $paging = null;
-    protected $serialize = array(new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', BaseGeolocation::class)), new ClassSerializer(self::class, 'paging', Paging::class));
     /**
      * Setter for data
      *
@@ -35,7 +34,7 @@ class GroupsIdGeolocationPayloadsResponse extends Definition
      *
      * @return BaseGeolocation[]
      */
-    public function getData() : array
+    public function getData() : ?array
     {
         return $this->data;
     }
@@ -56,8 +55,15 @@ class GroupsIdGeolocationPayloadsResponse extends Definition
      *
      * @return Paging
      */
-    public function getPaging() : Paging
+    public function getPaging() : ?Paging
     {
         return $this->paging;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('data' => new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', BaseGeolocation::class)), 'paging' => new ClassSerializer(self::class, 'paging', Paging::class));
     }
 }

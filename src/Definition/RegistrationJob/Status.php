@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition\RegistrationJob;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\JobError;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
@@ -24,7 +24,6 @@ class Status extends Definition
      * @var int
      */
     protected ?int $success = null;
-    protected $serialize = array(new ArraySerializer(self::class, 'errors', new ClassSerializer(self::class, 'errors', JobError::class)), new PrimitiveSerializer(self::class, 'success', 'int'));
     /**
      * Setter for errors
      *
@@ -42,7 +41,7 @@ class Status extends Definition
      *
      * @return JobError[] reasons of each errors
      */
-    public function getErrors() : array
+    public function getErrors() : ?array
     {
         return $this->errors;
     }
@@ -63,8 +62,15 @@ class Status extends Definition
      *
      * @return int the number of base stations successfully created or transferred
      */
-    public function getSuccess() : int
+    public function getSuccess() : ?int
     {
         return $this->success;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('errors' => new ArraySerializer(self::class, 'errors', new ClassSerializer(self::class, 'errors', JobError::class)), 'success' => new PrimitiveSerializer(self::class, 'success', 'int'));
     }
 }

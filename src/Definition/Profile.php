@@ -38,7 +38,6 @@ class Profile extends Definition
      * @var string[]
      */
     protected ?array $resources = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'), new ClassSerializer(self::class, 'group', MinGroup::class), new ArraySerializer(self::class, 'roles', new ClassSerializer(self::class, 'roles', MinRole::class)), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     /**
      * Setter for id
      *
@@ -56,7 +55,7 @@ class Profile extends Definition
      *
      * @return string The profiler identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -77,7 +76,7 @@ class Profile extends Definition
      *
      * @return string The profile name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -98,7 +97,7 @@ class Profile extends Definition
      *
      * @return MinGroup
      */
-    public function getGroup() : MinGroup
+    public function getGroup() : ?MinGroup
     {
         return $this->group;
     }
@@ -119,7 +118,7 @@ class Profile extends Definition
      *
      * @return MinRole[] Lists the role contained in this profile.
      */
-    public function getRoles() : array
+    public function getRoles() : ?array
     {
         return $this->roles;
     }
@@ -140,7 +139,7 @@ class Profile extends Definition
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
     }
@@ -161,8 +160,15 @@ class Profile extends Definition
      *
      * @return string[]
      */
-    public function getResources() : array
+    public function getResources() : ?array
     {
         return $this->resources;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'group' => new ClassSerializer(self::class, 'group', MinGroup::class), 'roles' => new ArraySerializer(self::class, 'roles', new ClassSerializer(self::class, 'roles', MinRole::class)), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     }
 }

@@ -2,12 +2,12 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of messages for a given device types with a 3-day history.
  */
-class DeviceTypesIdMessages extends Definition
+class DeviceTypesIdMessages extends Request
 {
     /**
      * Defines the other available API user's fields to be returned in the response.
@@ -45,9 +45,8 @@ class DeviceTypesIdMessages extends Definition
      * @var int
      */
     protected ?int $offset = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'fields', 'string'), new PrimitiveSerializer(self::class, 'since', 'int'), new PrimitiveSerializer(self::class, 'before', 'int'), new PrimitiveSerializer(self::class, 'authorizations', 'bool'), new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'offset', 'int'));
-    protected $query = array('fields', 'since', 'before', 'authorizations', 'limit', 'offset');
-    protected $validations = array('fields' => array('required', 'in:oob,ackRequired,device(name),rinfos(cbStatus\\,rep\\,repetitions\\,baseStation(name)),downlinkAnswerStatus(baseStation(name))'), 'since' => array('required'), 'before' => array('required'), 'authorizations' => array('required'), 'limit' => array('required'), 'offset' => array('required'));
+    protected array $query = array('fields', 'since', 'before', 'authorizations', 'limit', 'offset');
+    protected array $validations = array('fields' => array('in:oob,ackRequired,device(name),rinfos(cbStatus\\,rep\\,repetitions\\,baseStation(name)),downlinkAnswerStatus(baseStation(name))', 'nullable'));
     /**
      * Setter for fields
      *
@@ -62,6 +61,16 @@ class DeviceTypesIdMessages extends Definition
         return $this;
     }
     /**
+     * Getter for fields
+     *
+     * @return string Defines the other available API user's fields to be returned in the response.
+     *                
+     */
+    public function getFields() : ?string
+    {
+        return $this->fields;
+    }
+    /**
      * Setter for since
      *
      * @param int $since Starting timestamp (in milliseconds since Unix Epoch).
@@ -72,6 +81,15 @@ class DeviceTypesIdMessages extends Definition
     {
         $this->since = $since;
         return $this;
+    }
+    /**
+     * Getter for since
+     *
+     * @return int Starting timestamp (in milliseconds since Unix Epoch).
+     */
+    public function getSince() : ?int
+    {
+        return $this->since;
     }
     /**
      * Setter for before
@@ -86,6 +104,15 @@ class DeviceTypesIdMessages extends Definition
         return $this;
     }
     /**
+     * Getter for before
+     *
+     * @return int Ending timestamp (in milliseconds since Unix Epoch).
+     */
+    public function getBefore() : ?int
+    {
+        return $this->before;
+    }
+    /**
      * Setter for authorizations
      *
      * @param bool $authorizations if true, we return the list of actions and resources the user has access
@@ -96,6 +123,15 @@ class DeviceTypesIdMessages extends Definition
     {
         $this->authorizations = $authorizations;
         return $this;
+    }
+    /**
+     * Getter for authorizations
+     *
+     * @return bool if true, we return the list of actions and resources the user has access
+     */
+    public function getAuthorizations() : ?bool
+    {
+        return $this->authorizations;
     }
     /**
      * Setter for limit
@@ -110,6 +146,15 @@ class DeviceTypesIdMessages extends Definition
         return $this;
     }
     /**
+     * Getter for limit
+     *
+     * @return int Defines the maximum number of items to return
+     */
+    public function getLimit() : ?int
+    {
+        return $this->limit;
+    }
+    /**
      * Setter for offset
      *
      * @param int $offset Defines the number of items to skip
@@ -120,5 +165,21 @@ class DeviceTypesIdMessages extends Definition
     {
         $this->offset = $offset;
         return $this;
+    }
+    /**
+     * Getter for offset
+     *
+     * @return int Defines the number of items to skip
+     */
+    public function getOffset() : ?int
+    {
+        return $this->offset;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('fields' => new PrimitiveSerializer(self::class, 'fields', 'string'), 'since' => new PrimitiveSerializer(self::class, 'since', 'int'), 'before' => new PrimitiveSerializer(self::class, 'before', 'int'), 'authorizations' => new PrimitiveSerializer(self::class, 'authorizations', 'bool'), 'limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'offset' => new PrimitiveSerializer(self::class, 'offset', 'int'));
     }
 }

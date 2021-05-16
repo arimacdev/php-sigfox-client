@@ -24,8 +24,7 @@ Helper::rrmdir($dir . "/../src/Definition");
 Helper::rrmdir($dir."/../src/Repository");
 Helper::rrmdir($dir."/../src/Request");
 Helper::rrmdir($dir."/../src/Response/Generated");
-unlink($dir."/../src/Sigfox.php");
-mkdir($dir . "/../src/Definition");
+@unlink($dir."/../src/Sigfox.php");
 
 $openapi = json_decode( file_get_contents($openapiFileLocation) , true);
 
@@ -34,7 +33,6 @@ RewriteRules::initialize();
 MethodNames::initialize();
 
 $simpleAlias = ["Resources", "Resource", "Actions", "Action"];
-
 
 foreach ($openapi["definitions"] as $key => $definition) {
     $name = ucfirst($key);
@@ -57,6 +55,7 @@ foreach ($openapi["paths"] as $endpoint => $operations){
 $repositories = [];
 
 $client = new Client("Arimac\\Sigfox", "Sigfox", Helper::normalizeDocComment("Client for sigfox API"));
+$client->extend("Arimac\\Sigfox\\SigfoxExt");
 
 foreach ($openapi["paths"] as $endpoint => $path) {
     $rewrite = RewriteRules::rewrite($endpoint);
@@ -98,6 +97,7 @@ foreach ($openapi["paths"] as $endpoint => $path) {
 
             if (!isset($repositories[$repoName])) {
                 $repository = new Repository("Arimac\\Sigfox\\Repository", $repoName);
+                $repository->extend("Arimac\\Sigfox\\Repository");
                 /** @var Repository **/
                 $prevRepository = $repositories[$previousRepoName] ?? null;
                 $repositories[$repoName] = $repository;
@@ -152,15 +152,22 @@ foreach ($openapi["paths"] as $endpoint => $path) {
             }
         }
 
-        $requestType = Request::fromArray("Arimac\\Sigfox\\Request\\$requestClassName", $operation);
+        $request = Request::fromArray("Arimac\\Sigfox\\Request\\$requestClassName", $operation);
+        $requestType = null;
+        $properties = [];
+        if($request){
+            $requestType = $request->getNamespace()."\\".$request->getClassName();
+            $properties = $request->getProperties();
+        }
 
         $repository->addRequestMethod(
             $methodName, 
             $requestMethod, 
             $endpoint, 
             $responseType, 
-            $requestType==="null"?null:$requestType, 
-            Helper::normalizeDocComment($description)
+            $requestType, 
+            $description,
+            $properties
         );
     }
 }

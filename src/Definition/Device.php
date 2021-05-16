@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -292,7 +291,6 @@ class Device extends CommonDevice
      * @var string[]
      */
     protected ?array $resources = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'satelliteCapable', 'bool'), new PrimitiveSerializer(self::class, 'repeater', 'bool'), new PrimitiveSerializer(self::class, 'messageModulo', 'int'), new ClassSerializer(self::class, 'deviceType', MinDeviceType::class), new ClassSerializer(self::class, 'contract', MinContractInfo::class), new ClassSerializer(self::class, 'group', MinGroup::class), new ClassSerializer(self::class, 'modemCertificate', Certificate::class), new PrimitiveSerializer(self::class, 'prototype', 'bool'), new ClassSerializer(self::class, 'productCertificate', Certificate::class), new ClassSerializer(self::class, 'location', DeviceLocation::class), new ClassSerializer(self::class, 'lastComputedLocation', LastComputedLocation::class), new PrimitiveSerializer(self::class, 'pac', 'string'), new PrimitiveSerializer(self::class, 'sequenceNumber', 'int'), new PrimitiveSerializer(self::class, 'trashSequenceNumber', 'int'), new PrimitiveSerializer(self::class, 'lastCom', 'int'), new PrimitiveSerializer(self::class, 'lqi', 'int'), new PrimitiveSerializer(self::class, 'activationTime', 'int'), new PrimitiveSerializer(self::class, 'creationTime', 'int'), new PrimitiveSerializer(self::class, 'state', 'int'), new PrimitiveSerializer(self::class, 'comState', 'int'), new ClassSerializer(self::class, 'token', Token::class), new PrimitiveSerializer(self::class, 'unsubscriptionTime', 'int'), new PrimitiveSerializer(self::class, 'createdBy', 'string'), new PrimitiveSerializer(self::class, 'lastEditionTime', 'int'), new PrimitiveSerializer(self::class, 'lastEditedBy', 'string'), new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'), new PrimitiveSerializer(self::class, 'automaticRenewalStatus', 'int'), new PrimitiveSerializer(self::class, 'activable', 'bool'), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     /**
      * Setter for satelliteCapable
      *
@@ -310,7 +308,7 @@ class Device extends CommonDevice
      *
      * @return bool Can the device communicate using satellite communication
      */
-    public function getSatelliteCapable() : bool
+    public function getSatelliteCapable() : ?bool
     {
         return $this->satelliteCapable;
     }
@@ -331,7 +329,7 @@ class Device extends CommonDevice
      *
      * @return bool Has the device repeater function
      */
-    public function getRepeater() : bool
+    public function getRepeater() : ?bool
     {
         return $this->repeater;
     }
@@ -352,7 +350,7 @@ class Device extends CommonDevice
      *
      * @return int The message modulo
      */
-    public function getMessageModulo() : int
+    public function getMessageModulo() : ?int
     {
         return $this->messageModulo;
     }
@@ -373,7 +371,7 @@ class Device extends CommonDevice
      *
      * @return MinDeviceType
      */
-    public function getDeviceType() : MinDeviceType
+    public function getDeviceType() : ?MinDeviceType
     {
         return $this->deviceType;
     }
@@ -394,7 +392,7 @@ class Device extends CommonDevice
      *
      * @return MinContractInfo
      */
-    public function getContract() : MinContractInfo
+    public function getContract() : ?MinContractInfo
     {
         return $this->contract;
     }
@@ -415,7 +413,7 @@ class Device extends CommonDevice
      *
      * @return MinGroup
      */
-    public function getGroup() : MinGroup
+    public function getGroup() : ?MinGroup
     {
         return $this->group;
     }
@@ -436,7 +434,7 @@ class Device extends CommonDevice
      *
      * @return Certificate
      */
-    public function getModemCertificate() : Certificate
+    public function getModemCertificate() : ?Certificate
     {
         return $this->modemCertificate;
     }
@@ -457,7 +455,7 @@ class Device extends CommonDevice
      *
      * @return bool The device is a prototype
      */
-    public function getPrototype() : bool
+    public function getPrototype() : ?bool
     {
         return $this->prototype;
     }
@@ -478,7 +476,7 @@ class Device extends CommonDevice
      *
      * @return Certificate
      */
-    public function getProductCertificate() : Certificate
+    public function getProductCertificate() : ?Certificate
     {
         return $this->productCertificate;
     }
@@ -499,7 +497,7 @@ class Device extends CommonDevice
      *
      * @return DeviceLocation
      */
-    public function getLocation() : DeviceLocation
+    public function getLocation() : ?DeviceLocation
     {
         return $this->location;
     }
@@ -520,7 +518,7 @@ class Device extends CommonDevice
      *
      * @return LastComputedLocation
      */
-    public function getLastComputedLocation() : LastComputedLocation
+    public function getLastComputedLocation() : ?LastComputedLocation
     {
         return $this->lastComputedLocation;
     }
@@ -541,7 +539,7 @@ class Device extends CommonDevice
      *
      * @return string The device's PAC (Porting Access Code)
      */
-    public function getPac() : string
+    public function getPac() : ?string
     {
         return $this->pac;
     }
@@ -566,7 +564,7 @@ class Device extends CommonDevice
      *             Absent if the device has never communicated or if the SIGFOX message protocol is V0
      *             
      */
-    public function getSequenceNumber() : int
+    public function getSequenceNumber() : ?int
     {
         return $this->sequenceNumber;
     }
@@ -591,7 +589,7 @@ class Device extends CommonDevice
      *             Absent if there is no message trashed or if the SIGFOX message protocol is V0
      *             
      */
-    public function getTrashSequenceNumber() : int
+    public function getTrashSequenceNumber() : ?int
     {
         return $this->trashSequenceNumber;
     }
@@ -612,7 +610,7 @@ class Device extends CommonDevice
      *
      * @return int The last time (in milliseconds since the Unix Epoch) the device has communicated
      */
-    public function getLastCom() : int
+    public function getLastCom() : ?int
     {
         return $this->lastCom;
     }
@@ -647,7 +645,7 @@ class Device extends CommonDevice
      *             - {@see Device::LQI_NA}
      *             
      */
-    public function getLqi() : int
+    public function getLqi() : ?int
     {
         return $this->lqi;
     }
@@ -668,7 +666,7 @@ class Device extends CommonDevice
      *
      * @return int The device's activation time (in milliseconds since the Unix Epoch)
      */
-    public function getActivationTime() : int
+    public function getActivationTime() : ?int
     {
         return $this->activationTime;
     }
@@ -689,7 +687,7 @@ class Device extends CommonDevice
      *
      * @return int The device's provisionning time (in milliseconds since the Unix Epoch)
      */
-    public function getCreationTime() : int
+    public function getCreationTime() : ?int
     {
         return $this->creationTime;
     }
@@ -730,7 +728,7 @@ class Device extends CommonDevice
      *             - {@see Device::STATE_NOT_ACTIVABLE}
      *             
      */
-    public function getState() : int
+    public function getState() : ?int
     {
         return $this->state;
     }
@@ -767,7 +765,7 @@ class Device extends CommonDevice
      *             - {@see Device::COM_STATE_NOT_SEEN}
      *             
      */
-    public function getComState() : int
+    public function getComState() : ?int
     {
         return $this->comState;
     }
@@ -788,7 +786,7 @@ class Device extends CommonDevice
      *
      * @return Token
      */
-    public function getToken() : Token
+    public function getToken() : ?Token
     {
         return $this->token;
     }
@@ -809,7 +807,7 @@ class Device extends CommonDevice
      *
      * @return int The device's unsubscription time (in milliseconds since the Unix Epoch)
      */
-    public function getUnsubscriptionTime() : int
+    public function getUnsubscriptionTime() : ?int
     {
         return $this->unsubscriptionTime;
     }
@@ -830,7 +828,7 @@ class Device extends CommonDevice
      *
      * @return string The id of device's creator user
      */
-    public function getCreatedBy() : string
+    public function getCreatedBy() : ?string
     {
         return $this->createdBy;
     }
@@ -851,7 +849,7 @@ class Device extends CommonDevice
      *
      * @return int Date of the last edition of this device (in milliseconds since the Unix Epoch)
      */
-    public function getLastEditionTime() : int
+    public function getLastEditionTime() : ?int
     {
         return $this->lastEditionTime;
     }
@@ -872,7 +870,7 @@ class Device extends CommonDevice
      *
      * @return string The id of device's last editor user
      */
-    public function getLastEditedBy() : string
+    public function getLastEditedBy() : ?string
     {
         return $this->lastEditedBy;
     }
@@ -893,7 +891,7 @@ class Device extends CommonDevice
      *
      * @return bool Allow token renewal ?
      */
-    public function getAutomaticRenewal() : bool
+    public function getAutomaticRenewal() : ?bool
     {
         return $this->automaticRenewal;
     }
@@ -926,7 +924,7 @@ class Device extends CommonDevice
      *             - {@see Device::AUTOMATIC_RENEWAL_STATUS_ENDED}
      *             
      */
-    public function getAutomaticRenewalStatus() : int
+    public function getAutomaticRenewalStatus() : ?int
     {
         return $this->automaticRenewalStatus;
     }
@@ -947,7 +945,7 @@ class Device extends CommonDevice
      *
      * @return bool true if the device is activable and can take a token
      */
-    public function getActivable() : bool
+    public function getActivable() : ?bool
     {
         return $this->activable;
     }
@@ -968,7 +966,7 @@ class Device extends CommonDevice
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
     }
@@ -989,8 +987,15 @@ class Device extends CommonDevice
      *
      * @return string[]
      */
-    public function getResources() : array
+    public function getResources() : ?array
     {
         return $this->resources;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('satelliteCapable' => new PrimitiveSerializer(self::class, 'satelliteCapable', 'bool'), 'repeater' => new PrimitiveSerializer(self::class, 'repeater', 'bool'), 'messageModulo' => new PrimitiveSerializer(self::class, 'messageModulo', 'int'), 'deviceType' => new ClassSerializer(self::class, 'deviceType', MinDeviceType::class), 'contract' => new ClassSerializer(self::class, 'contract', MinContractInfo::class), 'group' => new ClassSerializer(self::class, 'group', MinGroup::class), 'modemCertificate' => new ClassSerializer(self::class, 'modemCertificate', Certificate::class), 'prototype' => new PrimitiveSerializer(self::class, 'prototype', 'bool'), 'productCertificate' => new ClassSerializer(self::class, 'productCertificate', Certificate::class), 'location' => new ClassSerializer(self::class, 'location', DeviceLocation::class), 'lastComputedLocation' => new ClassSerializer(self::class, 'lastComputedLocation', LastComputedLocation::class), 'pac' => new PrimitiveSerializer(self::class, 'pac', 'string'), 'sequenceNumber' => new PrimitiveSerializer(self::class, 'sequenceNumber', 'int'), 'trashSequenceNumber' => new PrimitiveSerializer(self::class, 'trashSequenceNumber', 'int'), 'lastCom' => new PrimitiveSerializer(self::class, 'lastCom', 'int'), 'lqi' => new PrimitiveSerializer(self::class, 'lqi', 'int'), 'activationTime' => new PrimitiveSerializer(self::class, 'activationTime', 'int'), 'creationTime' => new PrimitiveSerializer(self::class, 'creationTime', 'int'), 'state' => new PrimitiveSerializer(self::class, 'state', 'int'), 'comState' => new PrimitiveSerializer(self::class, 'comState', 'int'), 'token' => new ClassSerializer(self::class, 'token', Token::class), 'unsubscriptionTime' => new PrimitiveSerializer(self::class, 'unsubscriptionTime', 'int'), 'createdBy' => new PrimitiveSerializer(self::class, 'createdBy', 'string'), 'lastEditionTime' => new PrimitiveSerializer(self::class, 'lastEditionTime', 'int'), 'lastEditedBy' => new PrimitiveSerializer(self::class, 'lastEditedBy', 'string'), 'automaticRenewal' => new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'), 'automaticRenewalStatus' => new PrimitiveSerializer(self::class, 'automaticRenewalStatus', 'int'), 'activable' => new PrimitiveSerializer(self::class, 'activable', 'bool'), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     }
 }

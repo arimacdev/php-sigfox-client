@@ -2,13 +2,13 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Definition\DeviceCreationJob;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Create a new device.
  */
-class DevicesCreate extends Definition
+class DevicesCreate extends Request
 {
     /**
      * The device to create
@@ -16,9 +16,8 @@ class DevicesCreate extends Definition
      * @var DeviceCreationJob
      */
     protected ?DeviceCreationJob $device = null;
-    protected $serialize = array(new ClassSerializer(self::class, 'device', DeviceCreationJob::class));
-    protected $body = array('device');
-    protected $validations = array('device' => array('required'));
+    protected array $body = array('device');
+    protected array $validations = array('device' => array('required'));
     /**
      * Setter for device
      *
@@ -30,5 +29,21 @@ class DevicesCreate extends Definition
     {
         $this->device = $device;
         return $this;
+    }
+    /**
+     * Getter for device
+     *
+     * @return DeviceCreationJob The device to create
+     */
+    public function getDevice() : ?DeviceCreationJob
+    {
+        return $this->device;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('device' => new ClassSerializer(self::class, 'device', DeviceCreationJob::class));
     }
 }

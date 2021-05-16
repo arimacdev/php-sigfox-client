@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition\AvailableEntitiesResponse;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\AvailableEntitiesResponse\OperatorsItem\OperatorForecastsItem;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -50,7 +50,6 @@ class OperatorsItem extends Definition
      * @var string[]
      */
     protected ?array $actions = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'operatorId', 'string'), new PrimitiveSerializer(self::class, 'operatorName', 'string'), new PrimitiveSerializer(self::class, 'operatorMinDb', 'int'), new PrimitiveSerializer(self::class, 'operatorMaxDb', 'int'), new PrimitiveSerializer(self::class, 'operatorStandard', 'int'), new ArraySerializer(self::class, 'operatorForecasts', new ClassSerializer(self::class, 'operatorForecasts', OperatorForecastsItem::class)), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
     /**
      * Setter for operatorId
      *
@@ -68,7 +67,7 @@ class OperatorsItem extends Definition
      *
      * @return string The identifier of the operator.
      */
-    public function getOperatorId() : string
+    public function getOperatorId() : ?string
     {
         return $this->operatorId;
     }
@@ -89,7 +88,7 @@ class OperatorsItem extends Definition
      *
      * @return string The name of the operator.
      */
-    public function getOperatorName() : string
+    public function getOperatorName() : ?string
     {
         return $this->operatorName;
     }
@@ -110,7 +109,7 @@ class OperatorsItem extends Definition
      *
      * @return int The minimal sensitivity for the operator (in dBm).
      */
-    public function getOperatorMinDb() : int
+    public function getOperatorMinDb() : ?int
     {
         return $this->operatorMinDb;
     }
@@ -131,7 +130,7 @@ class OperatorsItem extends Definition
      *
      * @return int The maximal sensitivity for the operator (in dBm).
      */
-    public function getOperatorMaxDb() : int
+    public function getOperatorMaxDb() : ?int
     {
         return $this->operatorMaxDb;
     }
@@ -154,7 +153,7 @@ class OperatorsItem extends Definition
      * @return int The standard capability of the operator (0 for BAND800, 1 for BAND900), used to choose the device
      *             class attenuation value.
      */
-    public function getOperatorStandard() : int
+    public function getOperatorStandard() : ?int
     {
         return $this->operatorStandard;
     }
@@ -175,7 +174,7 @@ class OperatorsItem extends Definition
      *
      * @return OperatorForecastsItem[] Array of all the operator forecast radio planning infos.
      */
-    public function getOperatorForecasts() : array
+    public function getOperatorForecasts() : ?array
     {
         return $this->operatorForecasts;
     }
@@ -196,8 +195,15 @@ class OperatorsItem extends Definition
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('operatorId' => new PrimitiveSerializer(self::class, 'operatorId', 'string'), 'operatorName' => new PrimitiveSerializer(self::class, 'operatorName', 'string'), 'operatorMinDb' => new PrimitiveSerializer(self::class, 'operatorMinDb', 'int'), 'operatorMaxDb' => new PrimitiveSerializer(self::class, 'operatorMaxDb', 'int'), 'operatorStandard' => new PrimitiveSerializer(self::class, 'operatorStandard', 'int'), 'operatorForecasts' => new ArraySerializer(self::class, 'operatorForecasts', new ClassSerializer(self::class, 'operatorForecasts', OperatorForecastsItem::class)), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
     }
 }

@@ -2,14 +2,14 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Definition\AsynchronousDeviceEditionJob;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Update or edit multiple devices with asynchronous job.
  */
-class DevicesBulkUpdate extends Definition
+class DevicesBulkUpdate extends Request
 {
     /**
      * The devices to edit
@@ -23,10 +23,9 @@ class DevicesBulkUpdate extends Definition
      * @var string
      */
     protected ?string $groupId = null;
-    protected $serialize = array(new ClassSerializer(self::class, 'devices', AsynchronousDeviceEditionJob::class), new PrimitiveSerializer(self::class, 'groupId', 'string'));
-    protected $query = array('groupId');
-    protected $body = array('devices');
-    protected $validations = array('devices' => array('required'), 'groupId' => array('required'));
+    protected array $query = array('groupId');
+    protected array $body = array('devices');
+    protected array $validations = array('devices' => array('required'));
     /**
      * Setter for devices
      *
@@ -40,6 +39,15 @@ class DevicesBulkUpdate extends Definition
         return $this;
     }
     /**
+     * Getter for devices
+     *
+     * @return AsynchronousDeviceEditionJob The devices to edit
+     */
+    public function getDevices() : ?AsynchronousDeviceEditionJob
+    {
+        return $this->devices;
+    }
+    /**
      * Setter for groupId
      *
      * @param string $groupId Group Identifier use to create the devices
@@ -50,5 +58,21 @@ class DevicesBulkUpdate extends Definition
     {
         $this->groupId = $groupId;
         return $this;
+    }
+    /**
+     * Getter for groupId
+     *
+     * @return string Group Identifier use to create the devices
+     */
+    public function getGroupId() : ?string
+    {
+        return $this->groupId;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('devices' => new ClassSerializer(self::class, 'devices', AsynchronousDeviceEditionJob::class), 'groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'));
     }
 }

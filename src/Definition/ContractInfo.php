@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -146,7 +145,6 @@ class ContractInfo extends CommonContractInfo
      * @var int
      */
     protected ?int $tokensUsed = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'contractId', 'string'), new PrimitiveSerializer(self::class, 'userId', 'string'), new ClassSerializer(self::class, 'group', MinGroup::class), new ClassSerializer(self::class, 'order', MinContractInfo::class), new PrimitiveSerializer(self::class, 'pricingModel', 'int'), new PrimitiveSerializer(self::class, 'createdBy', 'string'), new PrimitiveSerializer(self::class, 'lastEditionTime', 'int'), new PrimitiveSerializer(self::class, 'creationTime', 'int'), new PrimitiveSerializer(self::class, 'lastEditedBy', 'string'), new PrimitiveSerializer(self::class, 'startTime', 'int'), new PrimitiveSerializer(self::class, 'timezone', 'string'), new PrimitiveSerializer(self::class, 'subscriptionPlan', 'int'), new PrimitiveSerializer(self::class, 'tokenDuration', 'int'), new ArraySerializer(self::class, 'blacklistedTerritories', new ClassSerializer(self::class, 'blacklistedTerritories', MinGroup::class)), new PrimitiveSerializer(self::class, 'tokensInUse', 'int'), new PrimitiveSerializer(self::class, 'tokensUsed', 'int'));
     /**
      * Setter for id
      *
@@ -164,7 +162,7 @@ class ContractInfo extends CommonContractInfo
      *
      * @return string The contract ID.
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -187,7 +185,7 @@ class ContractInfo extends CommonContractInfo
      * @return string The contract external ID. It's used to identify the contract info in EDRs.
      *                
      */
-    public function getContractId() : string
+    public function getContractId() : ?string
     {
         return $this->contractId;
     }
@@ -208,7 +206,7 @@ class ContractInfo extends CommonContractInfo
      *
      * @return string The ID of the user who created the contract in BSS.
      */
-    public function getUserId() : string
+    public function getUserId() : ?string
     {
         return $this->userId;
     }
@@ -229,7 +227,7 @@ class ContractInfo extends CommonContractInfo
      *
      * @return MinGroup
      */
-    public function getGroup() : MinGroup
+    public function getGroup() : ?MinGroup
     {
         return $this->group;
     }
@@ -250,7 +248,7 @@ class ContractInfo extends CommonContractInfo
      *
      * @return MinContractInfo
      */
-    public function getOrder() : MinContractInfo
+    public function getOrder() : ?MinContractInfo
     {
         return $this->order;
     }
@@ -281,7 +279,7 @@ class ContractInfo extends CommonContractInfo
      *             - {@see ContractInfo::PRICING_MODEL_PRICING_MODEL_V3}
      *             
      */
-    public function getPricingModel() : int
+    public function getPricingModel() : ?int
     {
         return $this->pricingModel;
     }
@@ -302,7 +300,7 @@ class ContractInfo extends CommonContractInfo
      *
      * @return string The user id of contract's creator
      */
-    public function getCreatedBy() : string
+    public function getCreatedBy() : ?string
     {
         return $this->createdBy;
     }
@@ -323,7 +321,7 @@ class ContractInfo extends CommonContractInfo
      *
      * @return int Creation date of this contract (timestamp in milliseconds since Unix Epoch)
      */
-    public function getLastEditionTime() : int
+    public function getLastEditionTime() : ?int
     {
         return $this->lastEditionTime;
     }
@@ -344,7 +342,7 @@ class ContractInfo extends CommonContractInfo
      *
      * @return int Creation date of this contract (timestamp in milliseconds since Unix Epoch)
      */
-    public function getCreationTime() : int
+    public function getCreationTime() : ?int
     {
         return $this->creationTime;
     }
@@ -365,7 +363,7 @@ class ContractInfo extends CommonContractInfo
      *
      * @return string The user id of the contract last editor
      */
-    public function getLastEditedBy() : string
+    public function getLastEditedBy() : ?string
     {
         return $this->lastEditedBy;
     }
@@ -386,7 +384,7 @@ class ContractInfo extends CommonContractInfo
      *
      * @return int The start time (in milliseconds) of the contract
      */
-    public function getStartTime() : int
+    public function getStartTime() : ?int
     {
         return $this->startTime;
     }
@@ -409,7 +407,7 @@ class ContractInfo extends CommonContractInfo
      * @return string The contract timezone name as a Java TimeZone ID ("full name" version only, like
      *                "America/Costa_Rica").
      */
-    public function getTimezone() : string
+    public function getTimezone() : ?string
     {
         return $this->timezone;
     }
@@ -442,7 +440,7 @@ class ContractInfo extends CommonContractInfo
      *             - {@see ContractInfo::SUBSCRIPTION_PLAN_CVP_FLEX}
      *             
      */
-    public function getSubscriptionPlan() : int
+    public function getSubscriptionPlan() : ?int
     {
         return $this->subscriptionPlan;
     }
@@ -463,7 +461,7 @@ class ContractInfo extends CommonContractInfo
      *
      * @return int The token duration in months. Must be >= 0. 0 means unlimited time.
      */
-    public function getTokenDuration() : int
+    public function getTokenDuration() : ?int
     {
         return $this->tokenDuration;
     }
@@ -484,7 +482,7 @@ class ContractInfo extends CommonContractInfo
      *
      * @return MinGroup[] The list of "blacklisted" territories, as an array of NIP groups.
      */
-    public function getBlacklistedTerritories() : array
+    public function getBlacklistedTerritories() : ?array
     {
         return $this->blacklistedTerritories;
     }
@@ -505,7 +503,7 @@ class ContractInfo extends CommonContractInfo
      *
      * @return int The number of tokens in use.
      */
-    public function getTokensInUse() : int
+    public function getTokensInUse() : ?int
     {
         return $this->tokensInUse;
     }
@@ -526,8 +524,15 @@ class ContractInfo extends CommonContractInfo
      *
      * @return int The number of tokens used (expired or revoked).
      */
-    public function getTokensUsed() : int
+    public function getTokensUsed() : ?int
     {
         return $this->tokensUsed;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'contractId' => new PrimitiveSerializer(self::class, 'contractId', 'string'), 'userId' => new PrimitiveSerializer(self::class, 'userId', 'string'), 'group' => new ClassSerializer(self::class, 'group', MinGroup::class), 'order' => new ClassSerializer(self::class, 'order', MinContractInfo::class), 'pricingModel' => new PrimitiveSerializer(self::class, 'pricingModel', 'int'), 'createdBy' => new PrimitiveSerializer(self::class, 'createdBy', 'string'), 'lastEditionTime' => new PrimitiveSerializer(self::class, 'lastEditionTime', 'int'), 'creationTime' => new PrimitiveSerializer(self::class, 'creationTime', 'int'), 'lastEditedBy' => new PrimitiveSerializer(self::class, 'lastEditedBy', 'string'), 'startTime' => new PrimitiveSerializer(self::class, 'startTime', 'int'), 'timezone' => new PrimitiveSerializer(self::class, 'timezone', 'string'), 'subscriptionPlan' => new PrimitiveSerializer(self::class, 'subscriptionPlan', 'int'), 'tokenDuration' => new PrimitiveSerializer(self::class, 'tokenDuration', 'int'), 'blacklistedTerritories' => new ArraySerializer(self::class, 'blacklistedTerritories', new ClassSerializer(self::class, 'blacklistedTerritories', MinGroup::class)), 'tokensInUse' => new PrimitiveSerializer(self::class, 'tokensInUse', 'int'), 'tokensUsed' => new PrimitiveSerializer(self::class, 'tokensUsed', 'int'));
     }
 }

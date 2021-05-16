@@ -17,7 +17,6 @@ class UserRole extends Definition
      * @var MinProfile
      */
     protected ?MinProfile $profile = null;
-    protected $serialize = array(new ClassSerializer(self::class, 'group', MinGroup::class), new ClassSerializer(self::class, 'profile', MinProfile::class));
     /**
      * Setter for group
      *
@@ -35,7 +34,7 @@ class UserRole extends Definition
      *
      * @return MinGroup
      */
-    public function getGroup() : MinGroup
+    public function getGroup() : ?MinGroup
     {
         return $this->group;
     }
@@ -56,8 +55,15 @@ class UserRole extends Definition
      *
      * @return MinProfile
      */
-    public function getProfile() : MinProfile
+    public function getProfile() : ?MinProfile
     {
         return $this->profile;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('group' => new ClassSerializer(self::class, 'group', MinGroup::class), 'profile' => new ClassSerializer(self::class, 'profile', MinProfile::class));
     }
 }

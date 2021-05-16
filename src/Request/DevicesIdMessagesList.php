@@ -2,12 +2,12 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of messages for a given device according to request filters, with a 3-day history.
  */
-class DevicesIdMessagesList extends Definition
+class DevicesIdMessagesList extends Request
 {
     /**
      * Defines the other available fields to be returned in the response.
@@ -39,9 +39,8 @@ class DevicesIdMessagesList extends Definition
      * @var int
      */
     protected ?int $offset = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'fields', 'string'), new PrimitiveSerializer(self::class, 'since', 'int'), new PrimitiveSerializer(self::class, 'before', 'int'), new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'offset', 'int'));
-    protected $query = array('fields', 'since', 'before', 'limit', 'offset');
-    protected $validations = array('fields' => array('required', 'in:oob,ackRequired,device(name),rinfos(cbStatus\\,rep\\,repetitions\\,baseStation(name)),downlinkAnswerStatus(baseStation(name))'), 'since' => array('required'), 'before' => array('required'), 'limit' => array('required'), 'offset' => array('required'));
+    protected array $query = array('fields', 'since', 'before', 'limit', 'offset');
+    protected array $validations = array('fields' => array('in:oob,ackRequired,device(name),rinfos(cbStatus\\,rep\\,repetitions\\,baseStation(name)),downlinkAnswerStatus(baseStation(name))', 'nullable'));
     /**
      * Setter for fields
      *
@@ -56,6 +55,16 @@ class DevicesIdMessagesList extends Definition
         return $this;
     }
     /**
+     * Getter for fields
+     *
+     * @return string Defines the other available fields to be returned in the response.
+     *                
+     */
+    public function getFields() : ?string
+    {
+        return $this->fields;
+    }
+    /**
      * Setter for since
      *
      * @param int $since Starting timestamp (in milliseconds since the Unix Epoch)
@@ -66,6 +75,15 @@ class DevicesIdMessagesList extends Definition
     {
         $this->since = $since;
         return $this;
+    }
+    /**
+     * Getter for since
+     *
+     * @return int Starting timestamp (in milliseconds since the Unix Epoch)
+     */
+    public function getSince() : ?int
+    {
+        return $this->since;
     }
     /**
      * Setter for before
@@ -80,6 +98,15 @@ class DevicesIdMessagesList extends Definition
         return $this;
     }
     /**
+     * Getter for before
+     *
+     * @return int Ending timestamp (in milliseconds since the Unix Epoch)
+     */
+    public function getBefore() : ?int
+    {
+        return $this->before;
+    }
+    /**
      * Setter for limit
      *
      * @param int $limit The maximum number of items to return
@@ -92,6 +119,15 @@ class DevicesIdMessagesList extends Definition
         return $this;
     }
     /**
+     * Getter for limit
+     *
+     * @return int The maximum number of items to return
+     */
+    public function getLimit() : ?int
+    {
+        return $this->limit;
+    }
+    /**
      * Setter for offset
      *
      * @param int $offset The number of items to skip
@@ -102,5 +138,21 @@ class DevicesIdMessagesList extends Definition
     {
         $this->offset = $offset;
         return $this;
+    }
+    /**
+     * Getter for offset
+     *
+     * @return int The number of items to skip
+     */
+    public function getOffset() : ?int
+    {
+        return $this->offset;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('fields' => new PrimitiveSerializer(self::class, 'fields', 'string'), 'since' => new PrimitiveSerializer(self::class, 'since', 'int'), 'before' => new PrimitiveSerializer(self::class, 'before', 'int'), 'limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'offset' => new PrimitiveSerializer(self::class, 'offset', 'int'));
     }
 }

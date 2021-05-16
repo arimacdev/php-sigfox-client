@@ -107,7 +107,6 @@ class Callback extends Definition
      * @var bool
      */
     protected ?bool $dead = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'channel', 'string'), new PrimitiveSerializer(self::class, 'callbackType', 'int'), new PrimitiveSerializer(self::class, 'callbackSubtype', 'int'), new PrimitiveSerializer(self::class, 'payloadConfig', 'string'), new PrimitiveSerializer(self::class, 'enabled', 'bool'), new PrimitiveSerializer(self::class, 'dead', 'bool'));
     /**
      * Setter for id
      *
@@ -125,7 +124,7 @@ class Callback extends Definition
      *
      * @return string The callback's identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -154,7 +153,7 @@ class Callback extends Definition
      *                - EMAIL
      *                
      */
-    public function getChannel() : string
+    public function getChannel() : ?string
     {
         return $this->channel;
     }
@@ -185,7 +184,7 @@ class Callback extends Definition
      *             - {@see Callback::CALLBACK_TYPE_ERROR}
      *             
      */
-    public function getCallbackType() : int
+    public function getCallbackType() : ?int
     {
         return $this->callbackType;
     }
@@ -224,7 +223,7 @@ class Callback extends Definition
      *             - {@see Callback::CALLBACK_SUBTYPE_DATA_ADVANCED}
      *             
      */
-    public function getCallbackSubtype() : int
+    public function getCallbackSubtype() : ?int
     {
         return $this->callbackSubtype;
     }
@@ -247,7 +246,7 @@ class Callback extends Definition
      * @return string The custom payload configuration. Only for DATA callbacks. This field can be unset when
      *                updating.
      */
-    public function getPayloadConfig() : string
+    public function getPayloadConfig() : ?string
     {
         return $this->payloadConfig;
     }
@@ -268,7 +267,7 @@ class Callback extends Definition
      *
      * @return bool True to enable the callback, otherwise false
      */
-    public function getEnabled() : bool
+    public function getEnabled() : ?bool
     {
         return $this->enabled;
     }
@@ -289,8 +288,15 @@ class Callback extends Definition
      *
      * @return bool True if last use of the callback fails, otherwise false
      */
-    public function getDead() : bool
+    public function getDead() : ?bool
     {
         return $this->dead;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'channel' => new PrimitiveSerializer(self::class, 'channel', 'string'), 'callbackType' => new PrimitiveSerializer(self::class, 'callbackType', 'int'), 'callbackSubtype' => new PrimitiveSerializer(self::class, 'callbackSubtype', 'int'), 'payloadConfig' => new PrimitiveSerializer(self::class, 'payloadConfig', 'string'), 'enabled' => new PrimitiveSerializer(self::class, 'enabled', 'bool'), 'dead' => new PrimitiveSerializer(self::class, 'dead', 'bool'));
     }
 }

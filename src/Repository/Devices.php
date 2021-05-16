@@ -2,12 +2,14 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\DevicesList;
 use Arimac\Sigfox\Response\Generated\DevicesListResponse;
+use Arimac\Sigfox\Definition\DeviceCreationJob;
 use Arimac\Sigfox\Request\DevicesCreate;
 use Arimac\Sigfox\Response\Generated\DevicesCreateResponse;
-class Devices
+class Devices extends Repository
 {
     /**
      * The HTTP client
@@ -24,17 +26,27 @@ class Devices
     }
     /**
      * Retrieve a list of devices according to visibility permissions and request filters.
+     *
+     * @param DevicesList $request The query and body parameters to pass
+     *
+     * @return DevicesListResponse
      */
-    public function list(DevicesList $request) : DevicesListResponse
+    public function list(?DevicesList $request = null) : DevicesListResponse
     {
-        return $this->client->request('get', '/devices/', $request, DevicesListResponse::class);
+        return $this->client->call('get', '/devices/', $request, DevicesListResponse::class);
     }
     /**
      * Create a new device.
+     *
+     * @param DeviceCreationJob $device The device to create
+     *
+     * @return DevicesCreateResponse
      */
-    public function create(DevicesCreate $request) : DevicesCreateResponse
+    public function create(DeviceCreationJob $device) : DevicesCreateResponse
     {
-        return $this->client->request('post', '/devices/', $request, DevicesCreateResponse::class);
+        $request = new DevicesCreate();
+        $request->setDevice($device);
+        return $this->client->call('post', '/devices/', $request, DevicesCreateResponse::class);
     }
     /**
      * Find by id

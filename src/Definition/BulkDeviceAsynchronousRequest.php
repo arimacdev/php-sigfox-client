@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\BulkDeviceAsynchronousRequest\DataItem;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -38,8 +38,7 @@ class BulkDeviceAsynchronousRequest extends Definition
      * @var DataItem[]
      */
     protected ?array $data = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), new ClassSerializer(self::class, 'productCertificate', CertificateUpdate::class), new PrimitiveSerializer(self::class, 'prototype', 'bool'), new PrimitiveSerializer(self::class, 'prefix', 'string'), new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', DataItem::class)));
-    protected $validations = array('deviceTypeId' => array('required'), 'prefix' => array('max:40', 'nullable'));
+    protected array $validations = array('deviceTypeId' => array('required'), 'prefix' => array('max:40', 'nullable'));
     /**
      * Setter for deviceTypeId
      *
@@ -57,7 +56,7 @@ class BulkDeviceAsynchronousRequest extends Definition
      *
      * @return string The identifier of the device type under which the new devices will be created
      */
-    public function getDeviceTypeId() : string
+    public function getDeviceTypeId() : ?string
     {
         return $this->deviceTypeId;
     }
@@ -78,7 +77,7 @@ class BulkDeviceAsynchronousRequest extends Definition
      *
      * @return CertificateUpdate
      */
-    public function getProductCertificate() : CertificateUpdate
+    public function getProductCertificate() : ?CertificateUpdate
     {
         return $this->productCertificate;
     }
@@ -99,7 +98,7 @@ class BulkDeviceAsynchronousRequest extends Definition
      *
      * @return bool Value describing if the devices are prototypes
      */
-    public function getPrototype() : bool
+    public function getPrototype() : ?bool
     {
         return $this->prototype;
     }
@@ -120,7 +119,7 @@ class BulkDeviceAsynchronousRequest extends Definition
      *
      * @return string Prefix to used in device name
      */
-    public function getPrefix() : string
+    public function getPrefix() : ?string
     {
         return $this->prefix;
     }
@@ -141,8 +140,15 @@ class BulkDeviceAsynchronousRequest extends Definition
      *
      * @return DataItem[]
      */
-    public function getData() : array
+    public function getData() : ?array
     {
         return $this->data;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('deviceTypeId' => new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), 'productCertificate' => new ClassSerializer(self::class, 'productCertificate', CertificateUpdate::class), 'prototype' => new PrimitiveSerializer(self::class, 'prototype', 'bool'), 'prefix' => new PrimitiveSerializer(self::class, 'prefix', 'string'), 'data' => new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', DataItem::class)));
     }
 }

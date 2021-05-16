@@ -2054,7 +2054,14 @@
             }
         }
     },
-    "Arimac\\Sigfox\\Definition\\Antenna": [],
+    "Arimac\\Sigfox\\Definition\\Antenna": {
+        "model": {
+            "debug": [
+                "Antenna model of the station. E.g. \"CXL 900-3LW\", \"CXL 900-6LW\" , \"\" -> NONE ..."
+            ],
+            "comment": "Antenna model of the station. E.g. \"CXL 900-3LW\", \"CXL 900-6LW\" , \"\" -> NONE ..."
+        }
+    },
     "Arimac\\Sigfox\\Definition\\UpdateInternetSubscription": {
         "type": {
             "GSM": {

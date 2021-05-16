@@ -17,7 +17,6 @@ class Bounds extends Definition
      * @var LatLng
      */
     protected ?LatLng $ne = null;
-    protected $serialize = array(new ClassSerializer(self::class, 'sw', LatLng::class), new ClassSerializer(self::class, 'ne', LatLng::class));
     /**
      * Setter for sw
      *
@@ -35,7 +34,7 @@ class Bounds extends Definition
      *
      * @return LatLng
      */
-    public function getSw() : LatLng
+    public function getSw() : ?LatLng
     {
         return $this->sw;
     }
@@ -56,8 +55,15 @@ class Bounds extends Definition
      *
      * @return LatLng
      */
-    public function getNe() : LatLng
+    public function getNe() : ?LatLng
     {
         return $this->ne;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('sw' => new ClassSerializer(self::class, 'sw', LatLng::class), 'ne' => new ClassSerializer(self::class, 'ne', LatLng::class));
     }
 }

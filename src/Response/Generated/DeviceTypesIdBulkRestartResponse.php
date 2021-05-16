@@ -12,7 +12,6 @@ class DeviceTypesIdBulkRestartResponse extends Definition
      * @var string
      */
     protected ?string $jobId = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'jobId', 'string'));
     /**
      * Setter for jobId
      *
@@ -30,8 +29,15 @@ class DeviceTypesIdBulkRestartResponse extends Definition
      *
      * @return string jobId so that the customer is able to request job status
      */
-    public function getJobId() : string
+    public function getJobId() : ?string
     {
         return $this->jobId;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('jobId' => new PrimitiveSerializer(self::class, 'jobId', 'string'));
     }
 }

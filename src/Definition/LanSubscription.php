@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Information about LAN internet subscription
@@ -60,7 +59,6 @@ class LanSubscription extends InternetSubscription
      * @var int
      */
     protected ?int $connectionComments = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'networkType', 'int'), new PrimitiveSerializer(self::class, 'ethConnectionType', 'int'), new PrimitiveSerializer(self::class, 'addressing', 'string'), new PrimitiveSerializer(self::class, 'connectionComments', 'int'));
     /**
      * Setter for networkType
      *
@@ -88,7 +86,7 @@ class LanSubscription extends InternetSubscription
      *             - {@see LanSubscription::NETWORK_TYPE_RESIDENT}
      *             
      */
-    public function getNetworkType() : int
+    public function getNetworkType() : ?int
     {
         return $this->networkType;
     }
@@ -117,7 +115,7 @@ class LanSubscription extends InternetSubscription
      *             - {@see LanSubscription::ETH_CONNECTION_TYPE_STATIC}
      *             
      */
-    public function getEthConnectionType() : int
+    public function getEthConnectionType() : ?int
     {
         return $this->ethConnectionType;
     }
@@ -138,7 +136,7 @@ class LanSubscription extends InternetSubscription
      *
      * @return string The addressing of this internet subscription. This field can be unset when updating.
      */
-    public function getAddressing() : string
+    public function getAddressing() : ?string
     {
         return $this->addressing;
     }
@@ -161,8 +159,15 @@ class LanSubscription extends InternetSubscription
      * @return int Comments about the connection of this internet subscription. This field can be unset when
      *             updating.
      */
-    public function getConnectionComments() : int
+    public function getConnectionComments() : ?int
     {
         return $this->connectionComments;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('networkType' => new PrimitiveSerializer(self::class, 'networkType', 'int'), 'ethConnectionType' => new PrimitiveSerializer(self::class, 'ethConnectionType', 'int'), 'addressing' => new PrimitiveSerializer(self::class, 'addressing', 'string'), 'connectionComments' => new PrimitiveSerializer(self::class, 'connectionComments', 'int'));
     }
 }

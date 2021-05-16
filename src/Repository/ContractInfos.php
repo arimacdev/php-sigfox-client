@@ -2,10 +2,11 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\ContractInfosList;
 use Arimac\Sigfox\Response\Generated\ContractInfosListResponse;
-class ContractInfos
+class ContractInfos extends Repository
 {
     /**
      * The HTTP client
@@ -22,10 +23,14 @@ class ContractInfos
     }
     /**
      * Retrieve a list of contracts according to visibility permissions and request filters.
+     *
+     * @param ContractInfosList $request The query and body parameters to pass
+     *
+     * @return ContractInfosListResponse
      */
-    public function list(ContractInfosList $request) : ContractInfosListResponse
+    public function list(?ContractInfosList $request = null) : ContractInfosListResponse
     {
-        return $this->client->request('get', '/contract-infos/', $request, ContractInfosListResponse::class);
+        return $this->client->call('get', '/contract-infos/', $request, ContractInfosListResponse::class);
     }
     /**
      * Find by id

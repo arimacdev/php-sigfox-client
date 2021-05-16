@@ -2,9 +2,10 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Definition\TilesResponse;
-class TilesMonarch
+class TilesMonarch extends Repository
 {
     /**
      * The HTTP client
@@ -21,10 +22,12 @@ class TilesMonarch
     }
     /**
      * Retrieve the information needed to display Sigfox Monarch service coverage.
+     *
+     * @return TilesResponse
      */
     public function get() : TilesResponse
     {
-        return $this->client->request('get', '/tiles/monarch', null, TilesResponse::class);
+        return $this->client->call('get', '/tiles/monarch', null, TilesResponse::class);
     }
     /**
      * @return TilesMonarchKmz

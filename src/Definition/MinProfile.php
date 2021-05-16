@@ -26,8 +26,7 @@ class MinProfile extends Definition
      * @var string[]
      */
     protected ?array $actions = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
-    protected $validations = array('name' => array('max:100', 'nullable'));
+    protected array $validations = array('name' => array('max:100', 'nullable'));
     /**
      * Setter for id
      *
@@ -45,7 +44,7 @@ class MinProfile extends Definition
      *
      * @return string The profile's identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -66,7 +65,7 @@ class MinProfile extends Definition
      *
      * @return string The profile's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -87,8 +86,15 @@ class MinProfile extends Definition
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
     }
 }

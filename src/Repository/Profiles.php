@@ -2,10 +2,11 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\ProfilesList;
 use Arimac\Sigfox\Response\Generated\ProfilesListResponse;
-class Profiles
+class Profiles extends Repository
 {
     /**
      * The HTTP client
@@ -22,10 +23,14 @@ class Profiles
     }
     /**
      * Retrieve a list of a Group's profiles according to visibility permissions and request filters.
+     *
+     * @param ProfilesList $request The query and body parameters to pass
+     *
+     * @return ProfilesListResponse
      */
     public function list(ProfilesList $request) : ProfilesListResponse
     {
-        return $this->client->request('get', '/profiles/', $request, ProfilesListResponse::class);
+        return $this->client->call('get', '/profiles/', $request, ProfilesListResponse::class);
     }
     /**
      * Find by id

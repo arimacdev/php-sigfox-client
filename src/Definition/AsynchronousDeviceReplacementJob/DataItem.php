@@ -18,7 +18,6 @@ class DataItem extends Definition
      * @var string
      */
     protected ?string $targetDeviceId = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'deviceId', 'string'), new PrimitiveSerializer(self::class, 'targetDeviceId', 'string'));
     /**
      * Setter for deviceId
      *
@@ -36,7 +35,7 @@ class DataItem extends Definition
      *
      * @return string The device's identifier to replace (hexadecimal format)
      */
-    public function getDeviceId() : string
+    public function getDeviceId() : ?string
     {
         return $this->deviceId;
     }
@@ -57,8 +56,15 @@ class DataItem extends Definition
      *
      * @return string The target device's identifier (hexadecimal format)
      */
-    public function getTargetDeviceId() : string
+    public function getTargetDeviceId() : ?string
     {
         return $this->targetDeviceId;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('deviceId' => new PrimitiveSerializer(self::class, 'deviceId', 'string'), 'targetDeviceId' => new PrimitiveSerializer(self::class, 'targetDeviceId', 'string'));
     }
 }

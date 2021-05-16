@@ -2,9 +2,10 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Definition\GlobalCoverageBulkResponse;
-class CoveragesGlobalPredictionsBulkJobId
+class CoveragesGlobalPredictionsBulkJobId extends Repository
 {
     /**
      * The HTTP client
@@ -29,9 +30,11 @@ class CoveragesGlobalPredictionsBulkJobId
      * Retrieve coverage predictions computation from asynchronous job status and results.
      * For more information please refer to the [Global Coverage API
      * article](https://support.sigfox.com/docs/global-coverage-api).
+     *
+     * @return GlobalCoverageBulkResponse
      */
     public function getStatus() : GlobalCoverageBulkResponse
     {
-        return $this->client->request('get', $this->bind('/coverages/global/predictions/bulk/{jobId}', $this->jobId), null, GlobalCoverageBulkResponse::class);
+        return $this->client->call('get', $this->bind('/coverages/global/predictions/bulk/{jobId}', $this->jobId), null, GlobalCoverageBulkResponse::class);
     }
 }

@@ -18,7 +18,6 @@ class BaseProvider extends Definition
      * @var int
      */
     protected ?int $annualCost = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'annualCost', 'int'));
     /**
      * Setter for name
      *
@@ -36,7 +35,7 @@ class BaseProvider extends Definition
      *
      * @return string The provider's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -57,8 +56,15 @@ class BaseProvider extends Definition
      *
      * @return int The provider's annual cost. This field can be unset when updating.
      */
-    public function getAnnualCost() : int
+    public function getAnnualCost() : ?int
     {
         return $this->annualCost;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'annualCost' => new PrimitiveSerializer(self::class, 'annualCost', 'int'));
     }
 }

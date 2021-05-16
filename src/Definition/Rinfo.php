@@ -86,7 +86,6 @@ class Rinfo extends Definition
      * @var CbStatus[]
      */
     protected ?array $cbStatus = null;
-    protected $serialize = array(new ClassSerializer(self::class, 'baseStation', MinBaseStationWithType::class), new PrimitiveSerializer(self::class, 'rssi', 'int'), new PrimitiveSerializer(self::class, 'rssiRepeaters', 'int'), new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'), new PrimitiveSerializer(self::class, 'delay', 'int'), new PrimitiveSerializer(self::class, 'snr', 'int'), new PrimitiveSerializer(self::class, 'snrRepeaters', 'int'), new PrimitiveSerializer(self::class, 'freq', 'int'), new PrimitiveSerializer(self::class, 'freqRepeaters', 'int'), new PrimitiveSerializer(self::class, 'rep', 'int'), new ArraySerializer(self::class, 'repetitions', new ClassSerializer(self::class, 'repetitions', Repetition::class)), new ArraySerializer(self::class, 'cbStatus', new ClassSerializer(self::class, 'cbStatus', CbStatus::class)));
     /**
      * Setter for baseStation
      *
@@ -104,7 +103,7 @@ class Rinfo extends Definition
      *
      * @return MinBaseStationWithType Name and Id of the base station which has received the message.
      */
-    public function getBaseStation() : MinBaseStationWithType
+    public function getBaseStation() : ?MinBaseStationWithType
     {
         return $this->baseStation;
     }
@@ -125,7 +124,7 @@ class Rinfo extends Definition
      *
      * @return int Received Signal Strength Indication (in dBm – Float value with two maximum fraction digits)
      */
-    public function getRssi() : int
+    public function getRssi() : ?int
     {
         return $this->rssi;
     }
@@ -148,7 +147,7 @@ class Rinfo extends Definition
      * @return int Received Signal Strength Indication from repeaters (in dBm – Float value with two maximum
      *             fraction digits)
      */
-    public function getRssiRepeaters() : int
+    public function getRssiRepeaters() : ?int
     {
         return $this->rssiRepeaters;
     }
@@ -169,7 +168,7 @@ class Rinfo extends Definition
      *
      * @return int The latitude of the base station that has received the message.
      */
-    public function getLat() : int
+    public function getLat() : ?int
     {
         return $this->lat;
     }
@@ -190,7 +189,7 @@ class Rinfo extends Definition
      *
      * @return int The longitude of the base station that has received the message.
      */
-    public function getLng() : int
+    public function getLng() : ?int
     {
         return $this->lng;
     }
@@ -211,7 +210,7 @@ class Rinfo extends Definition
      *
      * @return int the delay (in second) between sending and receiving the message, may not be present.
      */
-    public function getDelay() : int
+    public function getDelay() : ?int
     {
         return $this->delay;
     }
@@ -232,7 +231,7 @@ class Rinfo extends Definition
      *
      * @return int the best signal of all repetitions for this base station
      */
-    public function getSnr() : int
+    public function getSnr() : ?int
     {
         return $this->snr;
     }
@@ -253,7 +252,7 @@ class Rinfo extends Definition
      *
      * @return int the best signal of all repetitions for this base station coming from repeaters
      */
-    public function getSnrRepeaters() : int
+    public function getSnrRepeaters() : ?int
     {
         return $this->snrRepeaters;
     }
@@ -274,7 +273,7 @@ class Rinfo extends Definition
      *
      * @return int the frequency at which the message has been received (in Hz)
      */
-    public function getFreq() : int
+    public function getFreq() : ?int
     {
         return $this->freq;
     }
@@ -295,7 +294,7 @@ class Rinfo extends Definition
      *
      * @return int the frequency at which the message has been received (in Hz) form repeaters
      */
-    public function getFreqRepeaters() : int
+    public function getFreqRepeaters() : ?int
     {
         return $this->freqRepeaters;
     }
@@ -316,7 +315,7 @@ class Rinfo extends Definition
      *
      * @return int number of repetitions sent by the base station
      */
-    public function getRep() : int
+    public function getRep() : ?int
     {
         return $this->rep;
     }
@@ -337,7 +336,7 @@ class Rinfo extends Definition
      *
      * @return Repetition[] detail of the repetitions
      */
-    public function getRepetitions() : array
+    public function getRepetitions() : ?array
     {
         return $this->repetitions;
     }
@@ -358,8 +357,15 @@ class Rinfo extends Definition
      *
      * @return CbStatus[] list of callback status for this reception
      */
-    public function getCbStatus() : array
+    public function getCbStatus() : ?array
     {
         return $this->cbStatus;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('baseStation' => new ClassSerializer(self::class, 'baseStation', MinBaseStationWithType::class), 'rssi' => new PrimitiveSerializer(self::class, 'rssi', 'int'), 'rssiRepeaters' => new PrimitiveSerializer(self::class, 'rssiRepeaters', 'int'), 'lat' => new PrimitiveSerializer(self::class, 'lat', 'int'), 'lng' => new PrimitiveSerializer(self::class, 'lng', 'int'), 'delay' => new PrimitiveSerializer(self::class, 'delay', 'int'), 'snr' => new PrimitiveSerializer(self::class, 'snr', 'int'), 'snrRepeaters' => new PrimitiveSerializer(self::class, 'snrRepeaters', 'int'), 'freq' => new PrimitiveSerializer(self::class, 'freq', 'int'), 'freqRepeaters' => new PrimitiveSerializer(self::class, 'freqRepeaters', 'int'), 'rep' => new PrimitiveSerializer(self::class, 'rep', 'int'), 'repetitions' => new ArraySerializer(self::class, 'repetitions', new ClassSerializer(self::class, 'repetitions', Repetition::class)), 'cbStatus' => new ArraySerializer(self::class, 'cbStatus', new ClassSerializer(self::class, 'cbStatus', CbStatus::class)));
     }
 }

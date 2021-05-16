@@ -18,7 +18,6 @@ class DevicesBulkCreateResponse extends Definition
      * @var string
      */
     protected ?string $jobId = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'total', 'int'), new PrimitiveSerializer(self::class, 'jobId', 'string'));
     /**
      * Setter for total
      *
@@ -36,7 +35,7 @@ class DevicesBulkCreateResponse extends Definition
      *
      * @return int Number of device to create
      */
-    public function getTotal() : int
+    public function getTotal() : ?int
     {
         return $this->total;
     }
@@ -57,8 +56,15 @@ class DevicesBulkCreateResponse extends Definition
      *
      * @return string jobId (to use in job status request)
      */
-    public function getJobId() : string
+    public function getJobId() : ?string
     {
         return $this->jobId;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('total' => new PrimitiveSerializer(self::class, 'total', 'int'), 'jobId' => new PrimitiveSerializer(self::class, 'jobId', 'string'));
     }
 }

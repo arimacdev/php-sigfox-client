@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -45,7 +44,6 @@ class ApiUser extends CommonApiUser
      * @var string[]
      */
     protected ?array $resources = null;
-    protected $serialize = array(new ClassSerializer(self::class, 'group', MinGroup::class), new PrimitiveSerializer(self::class, 'creationTime', 'int'), new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'accessToken', 'string'), new ArraySerializer(self::class, 'profiles', new ClassSerializer(self::class, 'profiles', MinProfile::class)), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     /**
      * Setter for group
      *
@@ -63,7 +61,7 @@ class ApiUser extends CommonApiUser
      *
      * @return MinGroup
      */
-    public function getGroup() : MinGroup
+    public function getGroup() : ?MinGroup
     {
         return $this->group;
     }
@@ -84,7 +82,7 @@ class ApiUser extends CommonApiUser
      *
      * @return int The creation time since epoch
      */
-    public function getCreationTime() : int
+    public function getCreationTime() : ?int
     {
         return $this->creationTime;
     }
@@ -105,7 +103,7 @@ class ApiUser extends CommonApiUser
      *
      * @return string The API user identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -126,7 +124,7 @@ class ApiUser extends CommonApiUser
      *
      * @return string The API user access token (password)
      */
-    public function getAccessToken() : string
+    public function getAccessToken() : ?string
     {
         return $this->accessToken;
     }
@@ -147,7 +145,7 @@ class ApiUser extends CommonApiUser
      *
      * @return MinProfile[]
      */
-    public function getProfiles() : array
+    public function getProfiles() : ?array
     {
         return $this->profiles;
     }
@@ -168,7 +166,7 @@ class ApiUser extends CommonApiUser
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
     }
@@ -189,8 +187,15 @@ class ApiUser extends CommonApiUser
      *
      * @return string[]
      */
-    public function getResources() : array
+    public function getResources() : ?array
     {
         return $this->resources;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('group' => new ClassSerializer(self::class, 'group', MinGroup::class), 'creationTime' => new PrimitiveSerializer(self::class, 'creationTime', 'int'), 'id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'accessToken' => new PrimitiveSerializer(self::class, 'accessToken', 'string'), 'profiles' => new ArraySerializer(self::class, 'profiles', new ClassSerializer(self::class, 'profiles', MinProfile::class)), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     }
 }

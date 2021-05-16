@@ -2,12 +2,12 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of devices according to visibility permissions and request filters.
  */
-class ContractInfosIdDevices extends Definition
+class ContractInfosIdDevices extends Request
 {
     /**
      * Returns only devices of the given device type
@@ -33,9 +33,8 @@ class ContractInfosIdDevices extends Definition
      * @var string
      */
     protected ?string $pageId = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), new PrimitiveSerializer(self::class, 'fields', 'string'), new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'pageId', 'string'));
-    protected $query = array('deviceTypeId', 'fields', 'limit', 'pageId');
-    protected $validations = array('deviceTypeId' => array('required'), 'fields' => array('required', 'in:deviceType(name),group(name\\,type\\,level\\,bssId\\,customerBssId),contract(name),productCertificate(key),modemCertificate(name)'), 'limit' => array('required'), 'pageId' => array('required'));
+    protected array $query = array('deviceTypeId', 'fields', 'limit', 'pageId');
+    protected array $validations = array('fields' => array('in:deviceType(name),group(name\\,type\\,level\\,bssId\\,customerBssId),contract(name),productCertificate(key),modemCertificate(name)', 'nullable'));
     /**
      * Setter for deviceTypeId
      *
@@ -47,6 +46,15 @@ class ContractInfosIdDevices extends Definition
     {
         $this->deviceTypeId = $deviceTypeId;
         return $this;
+    }
+    /**
+     * Getter for deviceTypeId
+     *
+     * @return string Returns only devices of the given device type
+     */
+    public function getDeviceTypeId() : ?string
+    {
+        return $this->deviceTypeId;
     }
     /**
      * Setter for fields
@@ -62,6 +70,16 @@ class ContractInfosIdDevices extends Definition
         return $this;
     }
     /**
+     * Getter for fields
+     *
+     * @return string Defines the other available fields to be returned in the response.
+     *                
+     */
+    public function getFields() : ?string
+    {
+        return $this->fields;
+    }
+    /**
      * Setter for limit
      *
      * @param int $limit The maximum number of items to return
@@ -74,6 +92,15 @@ class ContractInfosIdDevices extends Definition
         return $this;
     }
     /**
+     * Getter for limit
+     *
+     * @return int The maximum number of items to return
+     */
+    public function getLimit() : ?int
+    {
+        return $this->limit;
+    }
+    /**
      * Setter for pageId
      *
      * @param string $pageId Token representing the page to retrieve
@@ -84,5 +111,21 @@ class ContractInfosIdDevices extends Definition
     {
         $this->pageId = $pageId;
         return $this;
+    }
+    /**
+     * Getter for pageId
+     *
+     * @return string Token representing the page to retrieve
+     */
+    public function getPageId() : ?string
+    {
+        return $this->pageId;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('deviceTypeId' => new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), 'fields' => new PrimitiveSerializer(self::class, 'fields', 'string'), 'limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'pageId' => new PrimitiveSerializer(self::class, 'pageId', 'string'));
     }
 }

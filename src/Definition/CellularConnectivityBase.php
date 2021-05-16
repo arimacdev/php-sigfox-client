@@ -72,8 +72,7 @@ class CellularConnectivityBase extends Definition
      * @var int
      */
     protected ?int $source = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'apn', 'string'), new PrimitiveSerializer(self::class, 'username', 'string'), new PrimitiveSerializer(self::class, 'password', 'string'), new PrimitiveSerializer(self::class, 'pin', 'string'), new PrimitiveSerializer(self::class, 'roaming', 'bool'), new PrimitiveSerializer(self::class, 'source', 'int'));
-    protected $validations = array('name' => array('required'), 'apn' => array('required'));
+    protected array $validations = array('name' => array('required'), 'apn' => array('required'));
     /**
      * Setter for name
      *
@@ -91,7 +90,7 @@ class CellularConnectivityBase extends Definition
      *
      * @return string The name of the configuration
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -112,7 +111,7 @@ class CellularConnectivityBase extends Definition
      *
      * @return string The APN used to connect to the base station with this cellular connectivity configuration
      */
-    public function getApn() : string
+    public function getApn() : ?string
     {
         return $this->apn;
     }
@@ -135,7 +134,7 @@ class CellularConnectivityBase extends Definition
      * @return string The username used to connect to the base station with this cellular connectivity configuration.
      *                This field can be unset by setting the value as an empty string.
      */
-    public function getUsername() : string
+    public function getUsername() : ?string
     {
         return $this->username;
     }
@@ -158,7 +157,7 @@ class CellularConnectivityBase extends Definition
      * @return string The password used to connect to the base station with this cellular connectivity configuration.
      *                This field can be unset by setting the value as an empty string.
      */
-    public function getPassword() : string
+    public function getPassword() : ?string
     {
         return $this->password;
     }
@@ -181,7 +180,7 @@ class CellularConnectivityBase extends Definition
      * @return string The PIN used to connect to the base station with this cellular connectivity configuration. This
      *                field can be unset by setting the value as an empty string.
      */
-    public function getPin() : string
+    public function getPin() : ?string
     {
         return $this->pin;
     }
@@ -202,7 +201,7 @@ class CellularConnectivityBase extends Definition
      *
      * @return bool Indicates if the cellular connectivity is registered on a roaming network.
      */
-    public function getRoaming() : bool
+    public function getRoaming() : ?bool
     {
         return $this->roaming;
     }
@@ -235,8 +234,15 @@ class CellularConnectivityBase extends Definition
      *             - {@see CellularConnectivityBase::SOURCE_TOOLS}
      *             
      */
-    public function getSource() : int
+    public function getSource() : ?int
     {
         return $this->source;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'apn' => new PrimitiveSerializer(self::class, 'apn', 'string'), 'username' => new PrimitiveSerializer(self::class, 'username', 'string'), 'password' => new PrimitiveSerializer(self::class, 'password', 'string'), 'pin' => new PrimitiveSerializer(self::class, 'pin', 'string'), 'roaming' => new PrimitiveSerializer(self::class, 'roaming', 'bool'), 'source' => new PrimitiveSerializer(self::class, 'source', 'int'));
     }
 }

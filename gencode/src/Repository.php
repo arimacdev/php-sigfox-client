@@ -8,6 +8,7 @@ use PhpParser\Node\Expr\FuncCall;
 use PhpParser\Node\Expr\New_;
 use PhpParser\Node\Expr\Variable;
 use PhpParser\Node\Name;
+use PhpParser\Node\NullableType;
 use PhpParser\Node\Param;
 use PhpParser\Node\Scalar\String_;
 use PhpParser\Node\Stmt\Return_;
@@ -128,7 +129,8 @@ class Repository extends Class_
         string $endpoint,
         ?string $responseType = null,
         ?string $requestType = null,
-        ?string $docComment = null
+        ?string $description = null,
+        array $properties = []
     ) {
 
         $endpoint = new String_($endpoint);
@@ -147,11 +149,53 @@ class Repository extends Class_
         ];
 
         $params = [];
+        $stmts = [];
 
-        if (isset($requestType)) {
+        $docBlockTags = [];
+
+        if(count($properties)==1&&$requestType){
+            $propertyName = array_keys($properties)[0];
+
+            $type = $properties[$propertyName][0];
+            $required = $properties[$propertyName][1];
+            $paramDescription = $properties[$propertyName][2];
+
+            $usedType = $this->useType($type);
+
+            array_push($docBlockTags, ["param", $usedType.($required?"":"|undefined"), "\$$propertyName", $paramDescription]);
+            
+            $phpType = Helper::toPHPValue($usedType);
+
             $requestType = $this->useType($requestType);
+
+            if(!$required){
+                $phpType = new NullableType($phpType);
+            }
+            $param = $this->factory->param($propertyName);
+            $param->setType($phpType);
+            $params[] = $param;
+            array_push($stmts, new Assign(new Variable("request"), $this->factory->new($requestType)));
+            array_push($stmts, $this->factory->methodCall(
+                new Variable("request"), 
+                "set".ucfirst($propertyName), 
+                [$this->factory->var($propertyName)]
+            ));
+            array_push($args, new Variable("request"));
+        } else if (isset($requestType)) {
+            $requestType = $this->useType($requestType);
+            array_push($docBlockTags, ["param", $requestType, "\$request", "The query and body parameters to pass"]);
+
+            $required = false;
+            foreach($properties as $propertyName=>$attrs){
+                $required = $required || $attrs[1];
+            }
+
             $param = $this->factory->param("request");
-            $param->setType($this->useType($requestType));
+            if(!$required){
+                $requestType = new NullableType($requestType);
+                $param->setDefault($this->factory->val(null));
+            }
+            $param->setType($requestType);
             $params[] = $param;
             array_push($args, new Variable("request"));
         } else {
@@ -159,13 +203,14 @@ class Repository extends Class_
         }
         if(isset($responseType)){
             $responseType = $this->useType($responseType);
+            array_push($docBlockTags, ["return", $responseType]);
             array_push($args, $this->factory->classConstFetch($responseType, "class"));
         }
 
-        $stmts = [new Return_(new FuncCall(new Name("\$this->client->request"), $args))];
+        $stmts[] = new Return_(new FuncCall(new Name("\$this->client->call"), $args));
 
 
-        $this->addMethod($methodName, $params, $stmts, $responseType, $docComment);
+        $this->addMethod($methodName, $params, $stmts, $responseType, Helper::normalizeDocComment($description, $docBlockTags, 2));
     }
 
     public function getProperties(): array

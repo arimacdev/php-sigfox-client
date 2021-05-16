@@ -2,13 +2,13 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * Retrieve a list of device types according to visibility permissions and request filters.
  */
-class DeviceTypesList extends Definition
+class DeviceTypesList extends Request
 {
     /**
      * Regular (raw payload)
@@ -62,12 +62,12 @@ class DeviceTypesList extends Definition
     /**
      * Searches device types by payload type
      * 
-     * - {@link DeviceTypesList::PAYLOAD_TYPE_REGULAR}
-     * - {@link DeviceTypesList::PAYLOAD_TYPE_CUSTOM_GRAMMAR}
-     * - {@link DeviceTypesList::PAYLOAD_TYPE_GEOLOCATION}
-     * - {@link DeviceTypesList::PAYLOAD_TYPE_DISPLAY_IN_ASCII}
-     * - {@link DeviceTypesList::PAYLOAD_TYPE_RADIO_PLANNING_FRAME}
-     * - {@link DeviceTypesList::PAYLOAD_TYPE_SENSITV2}
+     * - {@see DeviceTypesList::PAYLOAD_TYPE_REGULAR}
+     * - {@see DeviceTypesList::PAYLOAD_TYPE_CUSTOM_GRAMMAR}
+     * - {@see DeviceTypesList::PAYLOAD_TYPE_GEOLOCATION}
+     * - {@see DeviceTypesList::PAYLOAD_TYPE_DISPLAY_IN_ASCII}
+     * - {@see DeviceTypesList::PAYLOAD_TYPE_RADIO_PLANNING_FRAME}
+     * - {@see DeviceTypesList::PAYLOAD_TYPE_SENSITV2}
      *
      * @var int
      */
@@ -108,9 +108,8 @@ class DeviceTypesList extends Definition
      * @var string
      */
     protected ?string $pageId = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new ArraySerializer(self::class, 'groupIds', new PrimitiveSerializer(self::class, 'groupIds', 'string')), new PrimitiveSerializer(self::class, 'deep', 'bool'), new PrimitiveSerializer(self::class, 'contractId', 'string'), new PrimitiveSerializer(self::class, 'payloadType', 'int'), new PrimitiveSerializer(self::class, 'authorizations', 'bool'), new PrimitiveSerializer(self::class, 'sort', 'string'), new PrimitiveSerializer(self::class, 'fields', 'string'), new PrimitiveSerializer(self::class, 'limit', 'int'), new PrimitiveSerializer(self::class, 'offset', 'int'), new PrimitiveSerializer(self::class, 'pageId', 'string'));
-    protected $query = array('name', 'groupIds', 'deep', 'contractId', 'payloadType', 'authorizations', 'sort', 'fields', 'limit', 'offset', 'pageId');
-    protected $validations = array('name' => array('required'), 'groupIds' => array('required'), 'deep' => array('required'), 'contractId' => array('required'), 'payloadType' => array('required'), 'authorizations' => array('required'), 'sort' => array('required', 'in:id,-id,name,-name'), 'fields' => array('required', 'in:group(name\\,type\\,level),contract(name),geolocPayloadConfig(name)'), 'limit' => array('required'), 'offset' => array('required'), 'pageId' => array('required'));
+    protected array $query = array('name', 'groupIds', 'deep', 'contractId', 'payloadType', 'authorizations', 'sort', 'fields', 'limit', 'offset', 'pageId');
+    protected array $validations = array('sort' => array('in:id,-id,name,-name', 'nullable'), 'fields' => array('in:group(name\\,type\\,level),contract(name),geolocPayloadConfig(name)', 'nullable'));
     /**
      * Setter for name
      *
@@ -123,6 +122,16 @@ class DeviceTypesList extends Definition
     {
         $this->name = $name;
         return $this;
+    }
+    /**
+     * Getter for name
+     *
+     * @return string Search returns all Device Type names containing the value. Example: ?name=sig
+     *                
+     */
+    public function getName() : ?string
+    {
+        return $this->name;
     }
     /**
      * Setter for groupIds
@@ -139,6 +148,17 @@ class DeviceTypesList extends Definition
         return $this;
     }
     /**
+     * Getter for groupIds
+     *
+     * @return string[] Search for device types which are attached to a Group. Example:
+     *                  ?groupIds=57309674171c857460043087,57309674171c857460043088
+     *                  
+     */
+    public function getGroupIds() : ?array
+    {
+        return $this->groupIds;
+    }
+    /**
      * Setter for deep
      *
      * @param bool $deep If a group identifier is specified, also includes its subgroups.
@@ -149,6 +169,15 @@ class DeviceTypesList extends Definition
     {
         $this->deep = $deep;
         return $this;
+    }
+    /**
+     * Getter for deep
+     *
+     * @return bool If a group identifier is specified, also includes its subgroups.
+     */
+    public function getDeep() : ?bool
+    {
+        return $this->deep;
     }
     /**
      * Setter for contractId
@@ -163,16 +192,25 @@ class DeviceTypesList extends Definition
         return $this;
     }
     /**
+     * Getter for contractId
+     *
+     * @return string Searches for device types which are attached to the given contract.
+     */
+    public function getContractId() : ?string
+    {
+        return $this->contractId;
+    }
+    /**
      * Setter for payloadType
      *
      * @param int $payloadType Searches device types by payload type
      *                         
-     *                         - {@link DeviceTypesList::PAYLOAD_TYPE_REGULAR}
-     *                         - {@link DeviceTypesList::PAYLOAD_TYPE_CUSTOM_GRAMMAR}
-     *                         - {@link DeviceTypesList::PAYLOAD_TYPE_GEOLOCATION}
-     *                         - {@link DeviceTypesList::PAYLOAD_TYPE_DISPLAY_IN_ASCII}
-     *                         - {@link DeviceTypesList::PAYLOAD_TYPE_RADIO_PLANNING_FRAME}
-     *                         - {@link DeviceTypesList::PAYLOAD_TYPE_SENSITV2}
+     *                         - {@see DeviceTypesList::PAYLOAD_TYPE_REGULAR}
+     *                         - {@see DeviceTypesList::PAYLOAD_TYPE_CUSTOM_GRAMMAR}
+     *                         - {@see DeviceTypesList::PAYLOAD_TYPE_GEOLOCATION}
+     *                         - {@see DeviceTypesList::PAYLOAD_TYPE_DISPLAY_IN_ASCII}
+     *                         - {@see DeviceTypesList::PAYLOAD_TYPE_RADIO_PLANNING_FRAME}
+     *                         - {@see DeviceTypesList::PAYLOAD_TYPE_SENSITV2}
      *                         
      *
      * @return self To use in method chains
@@ -181,6 +219,23 @@ class DeviceTypesList extends Definition
     {
         $this->payloadType = $payloadType;
         return $this;
+    }
+    /**
+     * Getter for payloadType
+     *
+     * @return int Searches device types by payload type
+     *             
+     *             - {@see DeviceTypesList::PAYLOAD_TYPE_REGULAR}
+     *             - {@see DeviceTypesList::PAYLOAD_TYPE_CUSTOM_GRAMMAR}
+     *             - {@see DeviceTypesList::PAYLOAD_TYPE_GEOLOCATION}
+     *             - {@see DeviceTypesList::PAYLOAD_TYPE_DISPLAY_IN_ASCII}
+     *             - {@see DeviceTypesList::PAYLOAD_TYPE_RADIO_PLANNING_FRAME}
+     *             - {@see DeviceTypesList::PAYLOAD_TYPE_SENSITV2}
+     *             
+     */
+    public function getPayloadType() : ?int
+    {
+        return $this->payloadType;
     }
     /**
      * Setter for authorizations
@@ -193,6 +248,15 @@ class DeviceTypesList extends Definition
     {
         $this->authorizations = $authorizations;
         return $this;
+    }
+    /**
+     * Getter for authorizations
+     *
+     * @return bool if true, we return the list of actions and resources the user has access
+     */
+    public function getAuthorizations() : ?bool
+    {
+        return $this->authorizations;
     }
     /**
      * Setter for sort
@@ -208,6 +272,16 @@ class DeviceTypesList extends Definition
         return $this;
     }
     /**
+     * Getter for sort
+     *
+     * @return string The field on which the list will be sorted. (field to sort ascending or -field to sort
+     *                descending).
+     */
+    public function getSort() : ?string
+    {
+        return $this->sort;
+    }
+    /**
      * Setter for fields
      *
      * @param string $fields Defines the other available API user's fields to be returned in the response.
@@ -219,6 +293,16 @@ class DeviceTypesList extends Definition
     {
         $this->fields = $fields;
         return $this;
+    }
+    /**
+     * Getter for fields
+     *
+     * @return string Defines the other available API user's fields to be returned in the response.
+     *                
+     */
+    public function getFields() : ?string
+    {
+        return $this->fields;
     }
     /**
      * Setter for limit
@@ -233,6 +317,15 @@ class DeviceTypesList extends Definition
         return $this;
     }
     /**
+     * Getter for limit
+     *
+     * @return int Defines the maximum number of items to return
+     */
+    public function getLimit() : ?int
+    {
+        return $this->limit;
+    }
+    /**
      * Setter for offset
      *
      * @param int $offset Defines the number of items to skip
@@ -245,6 +338,15 @@ class DeviceTypesList extends Definition
         return $this;
     }
     /**
+     * Getter for offset
+     *
+     * @return int Defines the number of items to skip
+     */
+    public function getOffset() : ?int
+    {
+        return $this->offset;
+    }
+    /**
      * Setter for pageId
      *
      * @param string $pageId Token representing the page to retrieve
@@ -255,5 +357,21 @@ class DeviceTypesList extends Definition
     {
         $this->pageId = $pageId;
         return $this;
+    }
+    /**
+     * Getter for pageId
+     *
+     * @return string Token representing the page to retrieve
+     */
+    public function getPageId() : ?string
+    {
+        return $this->pageId;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'groupIds' => new ArraySerializer(self::class, 'groupIds', new PrimitiveSerializer(self::class, 'groupIds', 'string')), 'deep' => new PrimitiveSerializer(self::class, 'deep', 'bool'), 'contractId' => new PrimitiveSerializer(self::class, 'contractId', 'string'), 'payloadType' => new PrimitiveSerializer(self::class, 'payloadType', 'int'), 'authorizations' => new PrimitiveSerializer(self::class, 'authorizations', 'bool'), 'sort' => new PrimitiveSerializer(self::class, 'sort', 'string'), 'fields' => new PrimitiveSerializer(self::class, 'fields', 'string'), 'limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'offset' => new PrimitiveSerializer(self::class, 'offset', 'int'), 'pageId' => new PrimitiveSerializer(self::class, 'pageId', 'string'));
     }
 }

@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\Callback;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 class DeviceTypesIdCallbacksListResponse extends Definition
@@ -12,7 +12,6 @@ class DeviceTypesIdCallbacksListResponse extends Definition
      * @var Callback[]
      */
     protected ?array $data = null;
-    protected $serialize = array(new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', Callback::class)));
     /**
      * Setter for data
      *
@@ -30,8 +29,15 @@ class DeviceTypesIdCallbacksListResponse extends Definition
      *
      * @return Callback[]
      */
-    public function getData() : array
+    public function getData() : ?array
     {
         return $this->data;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('data' => new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', Callback::class)));
     }
 }

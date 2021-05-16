@@ -2,12 +2,12 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve the modem certificate associated with a device.
  */
-class DevicesIdCertificateModem extends Definition
+class DevicesIdCertificateModem extends Request
 {
     /**
      * Defines the other available fields to be returned in the response.
@@ -15,9 +15,8 @@ class DevicesIdCertificateModem extends Definition
      * @var string
      */
     protected ?string $fields = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'fields', 'string'));
-    protected $query = array('fields');
-    protected $validations = array('fields' => array('required', 'in:manufacturer(name)'));
+    protected array $query = array('fields');
+    protected array $validations = array('fields' => array('in:manufacturer(name)', 'nullable'));
     /**
      * Setter for fields
      *
@@ -30,5 +29,22 @@ class DevicesIdCertificateModem extends Definition
     {
         $this->fields = $fields;
         return $this;
+    }
+    /**
+     * Getter for fields
+     *
+     * @return string Defines the other available fields to be returned in the response.
+     *                
+     */
+    public function getFields() : ?string
+    {
+        return $this->fields;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('fields' => new PrimitiveSerializer(self::class, 'fields', 'string'));
     }
 }

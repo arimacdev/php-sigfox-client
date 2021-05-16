@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\Site\LocationItem;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
@@ -82,7 +81,6 @@ class Site extends BaseSite
      * @var string[]
      */
     protected ?array $resources = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new ClassSerializer(self::class, 'host', MinHost::class), new ClassSerializer(self::class, 'maintenance', MinMaintenance::class), new ClassSerializer(self::class, 'group', MinGroup::class), new PrimitiveSerializer(self::class, 'basestationCount', 'int'), new ClassSerializer(self::class, 'primaryInternetSubscription', InternetSubscription::class), new PrimitiveSerializer(self::class, 'candidateExternalId', 'int'), new ArraySerializer(self::class, 'location', new ClassSerializer(self::class, 'location', LocationItem::class)), new PrimitiveSerializer(self::class, 'creationTime', 'int'), new PrimitiveSerializer(self::class, 'createdBy', 'string'), new PrimitiveSerializer(self::class, 'lastEditedTime', 'int'), new PrimitiveSerializer(self::class, 'lastEditedBy', 'string'), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     /**
      * Setter for id
      *
@@ -100,7 +98,7 @@ class Site extends BaseSite
      *
      * @return string The site's identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -121,7 +119,7 @@ class Site extends BaseSite
      *
      * @return MinHost
      */
-    public function getHost() : MinHost
+    public function getHost() : ?MinHost
     {
         return $this->host;
     }
@@ -142,7 +140,7 @@ class Site extends BaseSite
      *
      * @return MinMaintenance
      */
-    public function getMaintenance() : MinMaintenance
+    public function getMaintenance() : ?MinMaintenance
     {
         return $this->maintenance;
     }
@@ -163,7 +161,7 @@ class Site extends BaseSite
      *
      * @return MinGroup
      */
-    public function getGroup() : MinGroup
+    public function getGroup() : ?MinGroup
     {
         return $this->group;
     }
@@ -184,7 +182,7 @@ class Site extends BaseSite
      *
      * @return int the number of base station installed on this site
      */
-    public function getBasestationCount() : int
+    public function getBasestationCount() : ?int
     {
         return $this->basestationCount;
     }
@@ -205,7 +203,7 @@ class Site extends BaseSite
      *
      * @return InternetSubscription
      */
-    public function getPrimaryInternetSubscription() : InternetSubscription
+    public function getPrimaryInternetSubscription() : ?InternetSubscription
     {
         return $this->primaryInternetSubscription;
     }
@@ -226,7 +224,7 @@ class Site extends BaseSite
      *
      * @return int the external identifier of the site as a candidate
      */
-    public function getCandidateExternalId() : int
+    public function getCandidateExternalId() : ?int
     {
         return $this->candidateExternalId;
     }
@@ -249,7 +247,7 @@ class Site extends BaseSite
      * @return LocationItem[] ISO 3166-1 UN M.49 country code of the site location. The first code is the country
      *                        (region and department available for some countries).
      */
-    public function getLocation() : array
+    public function getLocation() : ?array
     {
         return $this->location;
     }
@@ -270,7 +268,7 @@ class Site extends BaseSite
      *
      * @return int Date of the creation of this site (in milliseconds)
      */
-    public function getCreationTime() : int
+    public function getCreationTime() : ?int
     {
         return $this->creationTime;
     }
@@ -291,7 +289,7 @@ class Site extends BaseSite
      *
      * @return string Identifier of the user who created this site
      */
-    public function getCreatedBy() : string
+    public function getCreatedBy() : ?string
     {
         return $this->createdBy;
     }
@@ -312,7 +310,7 @@ class Site extends BaseSite
      *
      * @return int Date of the last edition of this site (in milliseconds)
      */
-    public function getLastEditedTime() : int
+    public function getLastEditedTime() : ?int
     {
         return $this->lastEditedTime;
     }
@@ -333,7 +331,7 @@ class Site extends BaseSite
      *
      * @return string Identifier of the user who last edited this site
      */
-    public function getLastEditedBy() : string
+    public function getLastEditedBy() : ?string
     {
         return $this->lastEditedBy;
     }
@@ -354,7 +352,7 @@ class Site extends BaseSite
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
     }
@@ -375,8 +373,15 @@ class Site extends BaseSite
      *
      * @return string[]
      */
-    public function getResources() : array
+    public function getResources() : ?array
     {
         return $this->resources;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'host' => new ClassSerializer(self::class, 'host', MinHost::class), 'maintenance' => new ClassSerializer(self::class, 'maintenance', MinMaintenance::class), 'group' => new ClassSerializer(self::class, 'group', MinGroup::class), 'basestationCount' => new PrimitiveSerializer(self::class, 'basestationCount', 'int'), 'primaryInternetSubscription' => new ClassSerializer(self::class, 'primaryInternetSubscription', InternetSubscription::class), 'candidateExternalId' => new PrimitiveSerializer(self::class, 'candidateExternalId', 'int'), 'location' => new ArraySerializer(self::class, 'location', new ClassSerializer(self::class, 'location', LocationItem::class)), 'creationTime' => new PrimitiveSerializer(self::class, 'creationTime', 'int'), 'createdBy' => new PrimitiveSerializer(self::class, 'createdBy', 'string'), 'lastEditedTime' => new PrimitiveSerializer(self::class, 'lastEditedTime', 'int'), 'lastEditedBy' => new PrimitiveSerializer(self::class, 'lastEditedBy', 'string'), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     }
 }

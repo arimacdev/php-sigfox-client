@@ -43,7 +43,6 @@ class MinBaseStationWithType extends Definition
      * @var string[]
      */
     protected ?array $actions = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'resourceType', 'int'), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
     /**
      * Setter for id
      *
@@ -61,7 +60,7 @@ class MinBaseStationWithType extends Definition
      *
      * @return string The base station identifier in hexadecimal
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -82,7 +81,7 @@ class MinBaseStationWithType extends Definition
      *
      * @return string The base station name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -111,7 +110,7 @@ class MinBaseStationWithType extends Definition
      *             - {@see MinBaseStationWithType::RESOURCE_TYPE_NAP}
      *             
      */
-    public function getResourceType() : int
+    public function getResourceType() : ?int
     {
         return $this->resourceType;
     }
@@ -132,8 +131,15 @@ class MinBaseStationWithType extends Definition
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'resourceType' => new PrimitiveSerializer(self::class, 'resourceType', 'int'), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
     }
 }

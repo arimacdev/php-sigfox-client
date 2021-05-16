@@ -18,8 +18,7 @@ class LatLng extends Definition
      * @var int
      */
     protected ?int $lng = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'));
-    protected $validations = array('lat' => array('max:90', 'min:-90', 'numeric', 'nullable'), 'lng' => array('max:180', 'min:-180', 'numeric', 'nullable'));
+    protected array $validations = array('lat' => array('max:90', 'min:-90', 'numeric', 'nullable'), 'lng' => array('max:180', 'min:-180', 'numeric', 'nullable'));
     /**
      * Setter for lat
      *
@@ -37,7 +36,7 @@ class LatLng extends Definition
      *
      * @return int The latitude in degrees.
      */
-    public function getLat() : int
+    public function getLat() : ?int
     {
         return $this->lat;
     }
@@ -58,8 +57,15 @@ class LatLng extends Definition
      *
      * @return int The longitude in degrees.
      */
-    public function getLng() : int
+    public function getLng() : ?int
     {
         return $this->lng;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('lat' => new PrimitiveSerializer(self::class, 'lat', 'int'), 'lng' => new PrimitiveSerializer(self::class, 'lng', 'int'));
     }
 }

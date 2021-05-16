@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\GlobalCoverageBulkResponse\ResultsItem;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -30,7 +30,6 @@ class GlobalCoverageBulkResponse extends Definition
      * @var ResultsItem[]
      */
     protected ?array $results = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'jobDone', 'bool'), new PrimitiveSerializer(self::class, 'time', 'int'), new ArraySerializer(self::class, 'results', new ClassSerializer(self::class, 'results', ResultsItem::class)));
     /**
      * Setter for jobDone
      *
@@ -48,7 +47,7 @@ class GlobalCoverageBulkResponse extends Definition
      *
      * @return bool If the job is completed or not
      */
-    public function getJobDone() : bool
+    public function getJobDone() : ?bool
     {
         return $this->jobDone;
     }
@@ -69,7 +68,7 @@ class GlobalCoverageBulkResponse extends Definition
      *
      * @return int the statistics creation time (in milliseconds since the Unix Epoch)
      */
-    public function getTime() : int
+    public function getTime() : ?int
     {
         return $this->time;
     }
@@ -90,8 +89,15 @@ class GlobalCoverageBulkResponse extends Definition
      *
      * @return ResultsItem[] An array containing the response for each point.
      */
-    public function getResults() : array
+    public function getResults() : ?array
     {
         return $this->results;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('jobDone' => new PrimitiveSerializer(self::class, 'jobDone', 'bool'), 'time' => new PrimitiveSerializer(self::class, 'time', 'int'), 'results' => new ArraySerializer(self::class, 'results', new ClassSerializer(self::class, 'results', ResultsItem::class)));
     }
 }

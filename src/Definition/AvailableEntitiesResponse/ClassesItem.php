@@ -25,7 +25,6 @@ class ClassesItem extends Definition
      * @var int[]
      */
     protected ?array $attenuation = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'int'), new PrimitiveSerializer(self::class, 'name', 'string'), new ArraySerializer(self::class, 'attenuation', new PrimitiveSerializer(self::class, 'attenuation', 'int')));
     /**
      * Setter for id
      *
@@ -43,7 +42,7 @@ class ClassesItem extends Definition
      *
      * @return int The Id of the device class.
      */
-    public function getId() : int
+    public function getId() : ?int
     {
         return $this->id;
     }
@@ -64,7 +63,7 @@ class ClassesItem extends Definition
      *
      * @return string The name of the device class.
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -85,8 +84,15 @@ class ClassesItem extends Definition
      *
      * @return int[] The mean attenuation associated for calculation (in dB).
      */
-    public function getAttenuation() : array
+    public function getAttenuation() : ?array
     {
         return $this->attenuation;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'int'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'attenuation' => new ArraySerializer(self::class, 'attenuation', new PrimitiveSerializer(self::class, 'attenuation', 'int')));
     }
 }

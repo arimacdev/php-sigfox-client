@@ -94,8 +94,7 @@ class EthernetConnectivityBase extends Definition
      * @var int
      */
     protected ?int $source = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'type', 'int'), new PrimitiveSerializer(self::class, 'ip', 'string'), new PrimitiveSerializer(self::class, 'mask', 'string'), new PrimitiveSerializer(self::class, 'dns1', 'string'), new PrimitiveSerializer(self::class, 'dns2', 'string'), new PrimitiveSerializer(self::class, 'gateway', 'string'), new PrimitiveSerializer(self::class, 'mtu', 'int'), new PrimitiveSerializer(self::class, 'source', 'int'));
-    protected $validations = array('name' => array('required'), 'type' => array('required'));
+    protected array $validations = array('name' => array('required'), 'type' => array('required'));
     /**
      * Setter for name
      *
@@ -113,7 +112,7 @@ class EthernetConnectivityBase extends Definition
      *
      * @return string The name of the configuration
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -142,7 +141,7 @@ class EthernetConnectivityBase extends Definition
      *             - {@see EthernetConnectivityBase::TYPE_PARTLY_DYNAMIC}
      *             
      */
-    public function getType() : int
+    public function getType() : ?int
     {
         return $this->type;
     }
@@ -163,7 +162,7 @@ class EthernetConnectivityBase extends Definition
      *
      * @return string IP address of the ethernet connectivity, required if the type is STATIC
      */
-    public function getIp() : string
+    public function getIp() : ?string
     {
         return $this->ip;
     }
@@ -184,7 +183,7 @@ class EthernetConnectivityBase extends Definition
      *
      * @return string Subnet mask of the ethernet connectivity, required if the type is STATIC
      */
-    public function getMask() : string
+    public function getMask() : ?string
     {
         return $this->mask;
     }
@@ -205,7 +204,7 @@ class EthernetConnectivityBase extends Definition
      *
      * @return string DNS n°1 of the ethernet connectivity, required if the type is STATIC
      */
-    public function getDns1() : string
+    public function getDns1() : ?string
     {
         return $this->dns1;
     }
@@ -228,7 +227,7 @@ class EthernetConnectivityBase extends Definition
      * @return string DNS n°2 of the ethernet connectivity, only applicable if the type is STATIC. This field can be
      *                unset by setting the value as an empty string.
      */
-    public function getDns2() : string
+    public function getDns2() : ?string
     {
         return $this->dns2;
     }
@@ -249,7 +248,7 @@ class EthernetConnectivityBase extends Definition
      *
      * @return string Gateway of the ethernet connectivity, required if the type is STATIC
      */
-    public function getGateway() : string
+    public function getGateway() : ?string
     {
         return $this->gateway;
     }
@@ -272,7 +271,7 @@ class EthernetConnectivityBase extends Definition
      * @return int MTU of the ethernet connectivity, required if the type is PARTLY_DYNAMIC. This field can be unset
      *             by setting the value to null.
      */
-    public function getMtu() : int
+    public function getMtu() : ?int
     {
         return $this->mtu;
     }
@@ -305,8 +304,15 @@ class EthernetConnectivityBase extends Definition
      *             - {@see EthernetConnectivityBase::SOURCE_TOOLS}
      *             
      */
-    public function getSource() : int
+    public function getSource() : ?int
     {
         return $this->source;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'type' => new PrimitiveSerializer(self::class, 'type', 'int'), 'ip' => new PrimitiveSerializer(self::class, 'ip', 'string'), 'mask' => new PrimitiveSerializer(self::class, 'mask', 'string'), 'dns1' => new PrimitiveSerializer(self::class, 'dns1', 'string'), 'dns2' => new PrimitiveSerializer(self::class, 'dns2', 'string'), 'gateway' => new PrimitiveSerializer(self::class, 'gateway', 'string'), 'mtu' => new PrimitiveSerializer(self::class, 'mtu', 'int'), 'source' => new PrimitiveSerializer(self::class, 'source', 'int'));
     }
 }

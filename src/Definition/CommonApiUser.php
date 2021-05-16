@@ -21,8 +21,7 @@ class CommonApiUser extends Definition
      * @var string
      */
     protected ?string $timezone = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'timezone', 'string'));
-    protected $validations = array('name' => array('max:100', 'nullable'));
+    protected array $validations = array('name' => array('max:100', 'nullable'));
     /**
      * Setter for name
      *
@@ -40,7 +39,7 @@ class CommonApiUser extends Definition
      *
      * @return string The API user name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -61,8 +60,15 @@ class CommonApiUser extends Definition
      *
      * @return string The API user timezone
      */
-    public function getTimezone() : string
+    public function getTimezone() : ?string
     {
         return $this->timezone;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'timezone' => new PrimitiveSerializer(self::class, 'timezone', 'string'));
     }
 }

@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\GlobalCoverageResponse\DataItem;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
@@ -17,7 +17,6 @@ class GlobalCoverageResponse extends Definition
      * @var DataItem[]
      */
     protected ?array $data = null;
-    protected $serialize = array(new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', DataItem::class)));
     /**
      * Setter for data
      *
@@ -35,8 +34,15 @@ class GlobalCoverageResponse extends Definition
      *
      * @return DataItem[] An array containing the response for each point.
      */
-    public function getData() : array
+    public function getData() : ?array
     {
         return $this->data;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('data' => new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', DataItem::class)));
     }
 }

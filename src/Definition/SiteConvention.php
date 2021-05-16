@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
@@ -24,7 +23,6 @@ class SiteConvention extends BaseSiteConvention
      * @var MinGroup
      */
     protected ?MinGroup $group = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new ClassSerializer(self::class, 'site', MinSite::class), new ClassSerializer(self::class, 'group', MinGroup::class));
     /**
      * Setter for id
      *
@@ -42,7 +40,7 @@ class SiteConvention extends BaseSiteConvention
      *
      * @return string The convention's identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -63,7 +61,7 @@ class SiteConvention extends BaseSiteConvention
      *
      * @return MinSite
      */
-    public function getSite() : MinSite
+    public function getSite() : ?MinSite
     {
         return $this->site;
     }
@@ -84,8 +82,15 @@ class SiteConvention extends BaseSiteConvention
      *
      * @return MinGroup
      */
-    public function getGroup() : MinGroup
+    public function getGroup() : ?MinGroup
     {
         return $this->group;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'site' => new ClassSerializer(self::class, 'site', MinSite::class), 'group' => new ClassSerializer(self::class, 'group', MinGroup::class));
     }
 }

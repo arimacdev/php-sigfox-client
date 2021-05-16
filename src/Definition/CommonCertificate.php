@@ -61,8 +61,7 @@ class CommonCertificate extends Definition
      * @var string
      */
     protected ?string $description = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'status', 'int'), new PrimitiveSerializer(self::class, 'key', 'string'), new ClassSerializer(self::class, 'manufacturer', MinGroup::class), new PrimitiveSerializer(self::class, 'version', 'string'), new PrimitiveSerializer(self::class, 'description', 'string'));
-    protected $validations = array('name' => array('required'));
+    protected array $validations = array('name' => array('required'));
     /**
      * Setter for id
      *
@@ -80,7 +79,7 @@ class CommonCertificate extends Definition
      *
      * @return string The certificate's identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -101,7 +100,7 @@ class CommonCertificate extends Definition
      *
      * @return string The certificate's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -130,7 +129,7 @@ class CommonCertificate extends Definition
      *             - {@see CommonCertificate::STATUS_FINALIZED}
      *             
      */
-    public function getStatus() : int
+    public function getStatus() : ?int
     {
         return $this->status;
     }
@@ -151,7 +150,7 @@ class CommonCertificate extends Definition
      *
      * @return string The certificate's key
      */
-    public function getKey() : string
+    public function getKey() : ?string
     {
         return $this->key;
     }
@@ -172,7 +171,7 @@ class CommonCertificate extends Definition
      *
      * @return MinGroup
      */
-    public function getManufacturer() : MinGroup
+    public function getManufacturer() : ?MinGroup
     {
         return $this->manufacturer;
     }
@@ -193,7 +192,7 @@ class CommonCertificate extends Definition
      *
      * @return string The certificate's version
      */
-    public function getVersion() : string
+    public function getVersion() : ?string
     {
         return $this->version;
     }
@@ -214,8 +213,15 @@ class CommonCertificate extends Definition
      *
      * @return string The certificate description
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'status' => new PrimitiveSerializer(self::class, 'status', 'int'), 'key' => new PrimitiveSerializer(self::class, 'key', 'string'), 'manufacturer' => new ClassSerializer(self::class, 'manufacturer', MinGroup::class), 'version' => new PrimitiveSerializer(self::class, 'version', 'string'), 'description' => new PrimitiveSerializer(self::class, 'description', 'string'));
     }
 }

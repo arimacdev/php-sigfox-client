@@ -2,12 +2,12 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Enable or disable a callback for a given device type.
  */
-class DeviceTypesIdCallbacksCallbackIdEnable extends Definition
+class DeviceTypesIdCallbacksCallbackIdEnable extends Request
 {
     /**
      * True to enable the callback, false to disable it
@@ -15,9 +15,8 @@ class DeviceTypesIdCallbacksCallbackIdEnable extends Definition
      * @var bool
      */
     protected ?bool $enabled = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'enabled', 'bool'));
-    protected $query = array('enabled');
-    protected $validations = array('enabled' => array('required'));
+    protected array $query = array('enabled');
+    protected array $validations = array('enabled' => array('required'));
     /**
      * Setter for enabled
      *
@@ -29,5 +28,21 @@ class DeviceTypesIdCallbacksCallbackIdEnable extends Definition
     {
         $this->enabled = $enabled;
         return $this;
+    }
+    /**
+     * Getter for enabled
+     *
+     * @return bool True to enable the callback, false to disable it
+     */
+    public function getEnabled() : ?bool
+    {
+        return $this->enabled;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('enabled' => new PrimitiveSerializer(self::class, 'enabled', 'bool'));
     }
 }

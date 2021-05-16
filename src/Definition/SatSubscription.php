@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Information about satellite internet subscription
@@ -96,7 +95,6 @@ class SatSubscription extends InternetSubscription
      * @var int
      */
     protected ?int $rType = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'connectionStatus', 'int'), new PrimitiveSerializer(self::class, 'altitude', 'int'), new PrimitiveSerializer(self::class, 'azimuth', 'int'), new PrimitiveSerializer(self::class, 'polarization', 'int'), new PrimitiveSerializer(self::class, 'orderNumber', 'string'), new PrimitiveSerializer(self::class, 'locationCode', 'string'), new PrimitiveSerializer(self::class, 'clusterCode', 'string'), new PrimitiveSerializer(self::class, 'login', 'string'), new PrimitiveSerializer(self::class, 'password', 'string'), new PrimitiveSerializer(self::class, 'rType', 'int'));
     /**
      * Setter for connectionStatus
      *
@@ -124,7 +122,7 @@ class SatSubscription extends InternetSubscription
      *             - {@see SatSubscription::CONNECTION_STATUS_KIT_RECEIVED}
      *             
      */
-    public function getConnectionStatus() : int
+    public function getConnectionStatus() : ?int
     {
         return $this->connectionStatus;
     }
@@ -145,7 +143,7 @@ class SatSubscription extends InternetSubscription
      *
      * @return int The altitude of the satellite of this internet subscription
      */
-    public function getAltitude() : int
+    public function getAltitude() : ?int
     {
         return $this->altitude;
     }
@@ -166,7 +164,7 @@ class SatSubscription extends InternetSubscription
      *
      * @return int The azimuth of the satellite of this internet subscription
      */
-    public function getAzimuth() : int
+    public function getAzimuth() : ?int
     {
         return $this->azimuth;
     }
@@ -187,7 +185,7 @@ class SatSubscription extends InternetSubscription
      *
      * @return int The polarization of the satellite of this internet subscription
      */
-    public function getPolarization() : int
+    public function getPolarization() : ?int
     {
         return $this->polarization;
     }
@@ -208,7 +206,7 @@ class SatSubscription extends InternetSubscription
      *
      * @return string The order number of this internet subscription
      */
-    public function getOrderNumber() : string
+    public function getOrderNumber() : ?string
     {
         return $this->orderNumber;
     }
@@ -230,7 +228,7 @@ class SatSubscription extends InternetSubscription
      *
      * @return string The location code of this internet subscription. This field can be unset when updating.
      */
-    public function getLocationCode() : string
+    public function getLocationCode() : ?string
     {
         return $this->locationCode;
     }
@@ -252,7 +250,7 @@ class SatSubscription extends InternetSubscription
      *
      * @return string The cluster code of this internet subscription. This field can be unset when updating.
      */
-    public function getClusterCode() : string
+    public function getClusterCode() : ?string
     {
         return $this->clusterCode;
     }
@@ -273,7 +271,7 @@ class SatSubscription extends InternetSubscription
      *
      * @return string The login of this internet subscription. This field can be unset when updating.
      */
-    public function getLogin() : string
+    public function getLogin() : ?string
     {
         return $this->login;
     }
@@ -294,7 +292,7 @@ class SatSubscription extends InternetSubscription
      *
      * @return string The password of this internet subscription. This field can be unset when updating.
      */
-    public function getPassword() : string
+    public function getPassword() : ?string
     {
         return $this->password;
     }
@@ -323,8 +321,15 @@ class SatSubscription extends InternetSubscription
      *             - {@see SatSubscription::R_TYPE_STANDARD}
      *             
      */
-    public function getRType() : int
+    public function getRType() : ?int
     {
         return $this->rType;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('connectionStatus' => new PrimitiveSerializer(self::class, 'connectionStatus', 'int'), 'altitude' => new PrimitiveSerializer(self::class, 'altitude', 'int'), 'azimuth' => new PrimitiveSerializer(self::class, 'azimuth', 'int'), 'polarization' => new PrimitiveSerializer(self::class, 'polarization', 'int'), 'orderNumber' => new PrimitiveSerializer(self::class, 'orderNumber', 'string'), 'locationCode' => new PrimitiveSerializer(self::class, 'locationCode', 'string'), 'clusterCode' => new PrimitiveSerializer(self::class, 'clusterCode', 'string'), 'login' => new PrimitiveSerializer(self::class, 'login', 'string'), 'password' => new PrimitiveSerializer(self::class, 'password', 'string'), 'rType' => new PrimitiveSerializer(self::class, 'rType', 'int'));
     }
 }

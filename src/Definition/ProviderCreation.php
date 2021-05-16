@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 class ProviderCreation extends BaseProvider
 {
@@ -12,7 +11,6 @@ class ProviderCreation extends BaseProvider
      * @var string
      */
     protected ?string $groupId = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'groupId', 'string'));
     /**
      * Setter for groupId
      *
@@ -30,8 +28,15 @@ class ProviderCreation extends BaseProvider
      *
      * @return string identifier of the group of this provider
      */
-    public function getGroupId() : string
+    public function getGroupId() : ?string
     {
         return $this->groupId;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'));
     }
 }

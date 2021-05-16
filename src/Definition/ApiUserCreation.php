@@ -34,8 +34,7 @@ class ApiUserCreation extends Definition
      * @var string[]
      */
     protected ?array $profileIds = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'groupId', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'timezone', 'string'), new ArraySerializer(self::class, 'profileIds', new PrimitiveSerializer(self::class, 'profileIds', 'string')));
-    protected $validations = array('groupId' => array('required'), 'name' => array('required', 'max:100'), 'timezone' => array('required'), 'profileIds' => array('required'));
+    protected array $validations = array('groupId' => array('required'), 'name' => array('required', 'max:100'), 'timezone' => array('required'), 'profileIds' => array('required'));
     /**
      * Setter for groupId
      *
@@ -53,7 +52,7 @@ class ApiUserCreation extends Definition
      *
      * @return string The group identifer
      */
-    public function getGroupId() : string
+    public function getGroupId() : ?string
     {
         return $this->groupId;
     }
@@ -74,7 +73,7 @@ class ApiUserCreation extends Definition
      *
      * @return string The API user name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -97,7 +96,7 @@ class ApiUserCreation extends Definition
      * @return string The API user timezone as a Java TimeZone ID ("full name" version only, like
      *                "America/Costa_Rica")
      */
-    public function getTimezone() : string
+    public function getTimezone() : ?string
     {
         return $this->timezone;
     }
@@ -118,8 +117,15 @@ class ApiUserCreation extends Definition
      *
      * @return string[] The API user profiles
      */
-    public function getProfileIds() : array
+    public function getProfileIds() : ?array
     {
         return $this->profileIds;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'timezone' => new PrimitiveSerializer(self::class, 'timezone', 'string'), 'profileIds' => new ArraySerializer(self::class, 'profileIds', new PrimitiveSerializer(self::class, 'profileIds', 'string')));
     }
 }

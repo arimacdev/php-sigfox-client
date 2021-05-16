@@ -82,8 +82,7 @@ class CommonGroupCreate extends Definition
      * @var string
      */
     protected ?string $parentId = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'description', 'string'), new PrimitiveSerializer(self::class, 'type', 'int'), new PrimitiveSerializer(self::class, 'timezone', 'string'), new PrimitiveSerializer(self::class, 'parentId', 'string'));
-    protected $validations = array('name' => array('required', 'max:100', 'min:3'), 'description' => array('required', 'max:300'), 'type' => array('required'), 'timezone' => array('required'), 'parentId' => array('required'));
+    protected array $validations = array('name' => array('required', 'max:100', 'min:3'), 'description' => array('required', 'max:300'), 'type' => array('required'), 'timezone' => array('required'), 'parentId' => array('required'));
     /**
      * Setter for name
      *
@@ -101,7 +100,7 @@ class CommonGroupCreate extends Definition
      *
      * @return string The group's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -122,7 +121,7 @@ class CommonGroupCreate extends Definition
      *
      * @return string The group's description
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
@@ -165,7 +164,7 @@ class CommonGroupCreate extends Definition
      *             - {@see CommonGroupCreate::TYPE_PARTNER}
      *             
      */
-    public function getType() : int
+    public function getType() : ?int
     {
         return $this->type;
     }
@@ -186,7 +185,7 @@ class CommonGroupCreate extends Definition
      *
      * @return string The group's timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
      */
-    public function getTimezone() : string
+    public function getTimezone() : ?string
     {
         return $this->timezone;
     }
@@ -207,8 +206,15 @@ class CommonGroupCreate extends Definition
      *
      * @return string The parent group id
      */
-    public function getParentId() : string
+    public function getParentId() : ?string
     {
         return $this->parentId;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'description' => new PrimitiveSerializer(self::class, 'description', 'string'), 'type' => new PrimitiveSerializer(self::class, 'type', 'int'), 'timezone' => new PrimitiveSerializer(self::class, 'timezone', 'string'), 'parentId' => new PrimitiveSerializer(self::class, 'parentId', 'string'));
     }
 }

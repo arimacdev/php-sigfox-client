@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
@@ -20,7 +19,6 @@ class ModemCertificate extends RadioCertificate
      * @var bool
      */
     protected ?bool $repeaterFunction = null;
-    protected $serialize = array(new ArraySerializer(self::class, 'radioConfigurations', new ClassSerializer(self::class, 'radioConfigurations', ModemCertificateRadioConfiguration::class)), new PrimitiveSerializer(self::class, 'repeaterFunction', 'bool'));
     /**
      * Setter for radioConfigurations
      *
@@ -41,7 +39,7 @@ class ModemCertificate extends RadioCertificate
      * @return ModemCertificateRadioConfiguration[] Radio configurations available for this certificate
      *                                              
      */
-    public function getRadioConfigurations() : array
+    public function getRadioConfigurations() : ?array
     {
         return $this->radioConfigurations;
     }
@@ -62,8 +60,15 @@ class ModemCertificate extends RadioCertificate
      *
      * @return bool The modem certificate has repeater function or not
      */
-    public function getRepeaterFunction() : bool
+    public function getRepeaterFunction() : ?bool
     {
         return $this->repeaterFunction;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('radioConfigurations' => new ArraySerializer(self::class, 'radioConfigurations', new ClassSerializer(self::class, 'radioConfigurations', ModemCertificateRadioConfiguration::class)), 'repeaterFunction' => new PrimitiveSerializer(self::class, 'repeaterFunction', 'bool'));
     }
 }

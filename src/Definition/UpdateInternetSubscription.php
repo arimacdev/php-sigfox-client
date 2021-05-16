@@ -91,7 +91,6 @@ class UpdateInternetSubscription extends Definition
      * @var MinContact[]
      */
     protected ?array $contacts = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'type', 'int'), new PrimitiveSerializer(self::class, 'priority', 'int'), new PrimitiveSerializer(self::class, 'comments', 'string'), new PrimitiveSerializer(self::class, 'startTime', 'int'), new PrimitiveSerializer(self::class, 'endTime', 'int'), new ClassSerializer(self::class, 'provider', MinProvider::class), new ArraySerializer(self::class, 'contacts', new ClassSerializer(self::class, 'contacts', MinContact::class)));
     /**
      * Setter for type
      *
@@ -123,7 +122,7 @@ class UpdateInternetSubscription extends Definition
      *             - {@see UpdateInternetSubscription::TYPE_WIFI}
      *             
      */
-    public function getType() : int
+    public function getType() : ?int
     {
         return $this->type;
     }
@@ -154,7 +153,7 @@ class UpdateInternetSubscription extends Definition
      *             - {@see UpdateInternetSubscription::PRIORITY_TERMINATED}
      *             
      */
-    public function getPriority() : int
+    public function getPriority() : ?int
     {
         return $this->priority;
     }
@@ -175,7 +174,7 @@ class UpdateInternetSubscription extends Definition
      *
      * @return string The comments about this internet subscription. This field can be unset when updating.
      */
-    public function getComments() : string
+    public function getComments() : ?string
     {
         return $this->comments;
     }
@@ -196,7 +195,7 @@ class UpdateInternetSubscription extends Definition
      *
      * @return int The start time of this internet subscription
      */
-    public function getStartTime() : int
+    public function getStartTime() : ?int
     {
         return $this->startTime;
     }
@@ -217,7 +216,7 @@ class UpdateInternetSubscription extends Definition
      *
      * @return int The end time this internet subscription. This field can be unset when updating.
      */
-    public function getEndTime() : int
+    public function getEndTime() : ?int
     {
         return $this->endTime;
     }
@@ -238,7 +237,7 @@ class UpdateInternetSubscription extends Definition
      *
      * @return MinProvider
      */
-    public function getProvider() : MinProvider
+    public function getProvider() : ?MinProvider
     {
         return $this->provider;
     }
@@ -259,8 +258,15 @@ class UpdateInternetSubscription extends Definition
      *
      * @return MinContact[]
      */
-    public function getContacts() : array
+    public function getContacts() : ?array
     {
         return $this->contacts;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('type' => new PrimitiveSerializer(self::class, 'type', 'int'), 'priority' => new PrimitiveSerializer(self::class, 'priority', 'int'), 'comments' => new PrimitiveSerializer(self::class, 'comments', 'string'), 'startTime' => new PrimitiveSerializer(self::class, 'startTime', 'int'), 'endTime' => new PrimitiveSerializer(self::class, 'endTime', 'int'), 'provider' => new ClassSerializer(self::class, 'provider', MinProvider::class), 'contacts' => new ArraySerializer(self::class, 'contacts', new ClassSerializer(self::class, 'contacts', MinContact::class)));
     }
 }

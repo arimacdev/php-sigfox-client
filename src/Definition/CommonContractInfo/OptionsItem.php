@@ -35,7 +35,6 @@ class OptionsItem extends Definition
      * @var array
      */
     protected ?array $parameters = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'parameters', 'array'));
     /**
      * Setter for id
      *
@@ -55,7 +54,7 @@ class OptionsItem extends Definition
      * @return string The premium option id (messageHistory, payloadEncryption, geolocation, cognition, testFrames,
      *                networkMetadata, satellite)
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -112,8 +111,15 @@ class OptionsItem extends Definition
      *                 (none)
      *               
      */
-    public function getParameters() : array
+    public function getParameters() : ?array
     {
         return $this->parameters;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'parameters' => new PrimitiveSerializer(self::class, 'parameters', 'array'));
     }
 }

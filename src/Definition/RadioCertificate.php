@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 class RadioCertificate extends CommonCertificate
@@ -30,7 +29,6 @@ class RadioCertificate extends CommonCertificate
      * @var int
      */
     protected ?int $inputSensitivity = null;
-    protected $serialize = array(new ArraySerializer(self::class, 'modes', new PrimitiveSerializer(self::class, 'modes', 'int')), new PrimitiveSerializer(self::class, 'inputSensitivity', 'int'));
     /**
      * Setter for modes
      *
@@ -56,7 +54,7 @@ class RadioCertificate extends CommonCertificate
      *               - {@see RadioCertificate::MODES_UPLINK_AND_DOWNLINK}
      *               
      */
-    public function getModes() : array
+    public function getModes() : ?array
     {
         return $this->modes;
     }
@@ -77,8 +75,15 @@ class RadioCertificate extends CommonCertificate
      *
      * @return int The certificate's input sensitivity
      */
-    public function getInputSensitivity() : int
+    public function getInputSensitivity() : ?int
     {
         return $this->inputSensitivity;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('modes' => new ArraySerializer(self::class, 'modes', new PrimitiveSerializer(self::class, 'modes', 'int')), 'inputSensitivity' => new PrimitiveSerializer(self::class, 'inputSensitivity', 'int'));
     }
 }

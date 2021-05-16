@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -53,8 +52,7 @@ class User extends CommonUser
      * @var string[]
      */
     protected ?array $resources = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'email', 'string'), new PrimitiveSerializer(self::class, 'locked', 'bool'), new PrimitiveSerializer(self::class, 'creationTime', 'int'), new PrimitiveSerializer(self::class, 'lastLoginTime', 'int'), new ArraySerializer(self::class, 'userRoles', new ClassSerializer(self::class, 'userRoles', UserRole::class)), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
-    protected $validations = array('email' => array('max:250', 'nullable'));
+    protected array $validations = array('email' => array('max:250', 'nullable'));
     /**
      * Setter for id
      *
@@ -72,7 +70,7 @@ class User extends CommonUser
      *
      * @return string The user's identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -93,7 +91,7 @@ class User extends CommonUser
      *
      * @return string The user's email
      */
-    public function getEmail() : string
+    public function getEmail() : ?string
     {
         return $this->email;
     }
@@ -114,7 +112,7 @@ class User extends CommonUser
      *
      * @return bool If the user account is locked or not
      */
-    public function getLocked() : bool
+    public function getLocked() : ?bool
     {
         return $this->locked;
     }
@@ -135,7 +133,7 @@ class User extends CommonUser
      *
      * @return int The user's creation time (in millisecond since Unix Epoch)
      */
-    public function getCreationTime() : int
+    public function getCreationTime() : ?int
     {
         return $this->creationTime;
     }
@@ -156,7 +154,7 @@ class User extends CommonUser
      *
      * @return int The user's last login time
      */
-    public function getLastLoginTime() : int
+    public function getLastLoginTime() : ?int
     {
         return $this->lastLoginTime;
     }
@@ -177,7 +175,7 @@ class User extends CommonUser
      *
      * @return UserRole[]
      */
-    public function getUserRoles() : array
+    public function getUserRoles() : ?array
     {
         return $this->userRoles;
     }
@@ -198,7 +196,7 @@ class User extends CommonUser
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
     }
@@ -219,8 +217,15 @@ class User extends CommonUser
      *
      * @return string[]
      */
-    public function getResources() : array
+    public function getResources() : ?array
     {
         return $this->resources;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'email' => new PrimitiveSerializer(self::class, 'email', 'string'), 'locked' => new PrimitiveSerializer(self::class, 'locked', 'bool'), 'creationTime' => new PrimitiveSerializer(self::class, 'creationTime', 'int'), 'lastLoginTime' => new PrimitiveSerializer(self::class, 'lastLoginTime', 'int'), 'userRoles' => new ArraySerializer(self::class, 'userRoles', new ClassSerializer(self::class, 'userRoles', UserRole::class)), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     }
 }

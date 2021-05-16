@@ -38,7 +38,6 @@ class Definition extends Class_
             $this->class = $this->factory->trait($name);
         } else {
             $this->class = $this->factory->class($name);
-            $this->extend("Arimac\\Sigfox\\Definition");
         }
         $this->name = $name;
         if ($docComment) {
@@ -118,15 +117,18 @@ class Definition extends Class_
     }
 
     public function setSerialize(array $serialize){
-        $this->setArrayProperty(
-            "serialize", 
-            array_map(
-                function($i, $propertyName){
-                    return $this->toSerialize($propertyName, $i);
-                },
-                $serialize,
-                array_keys($serialize)
-            ));
+        $serializers = [];
+        foreach($serialize as $propertyName => $type){
+            $serializers[$propertyName] = $this->toSerialize($propertyName, $type);
+        }
+        
+        $this->addMethod(
+            "getSerializeMetaData",
+            [],
+            [new Return_($this->factory->val($serializers))],
+            "array",
+            Helper::normalizeDocComment([["inheritdoc",null]])
+        );
     }
 
     public function addSetter(
@@ -149,17 +151,21 @@ class Definition extends Class_
         ?string $docComment = null
     ) {
         $ret = new Return_(new Variable("this->$propertyName"));
-        $this->addMethod("get" . ucfirst($propertyName), [], [$ret], $type, $docComment);
+        $this->addMethod("get" . ucfirst($propertyName), [], [$ret], new NullableType($type), $docComment);
     }
 
-    public function extend(string $name)
+    public function extend(string $name): bool
     {
         $name = $this->useType($name);
         if (in_array($name, $this->forceTraits)) {
             $useTrait = $this->factory->useTrait($name);
             $this->class->addStmt($useTrait);
+            return false;
         } else {
-            $this->class->extend($name);
+            if(!in_array($this->name, $this->forceTraits)){
+                $this->class->extend($name);
+            }
+            return true;
         }
     }
 
@@ -171,7 +177,7 @@ class Definition extends Class_
     protected static function getValidations(array $definition, $required = false): array
     {
         $validations = [];
-        if (isset($definition["required"]) || $required) {
+        if ((isset($definition["required"])&&$definition["required"]) || $required) {
             $validations[] = "required";
         }
         if (isset($definition["maximum"])) {
@@ -199,7 +205,7 @@ class Definition extends Class_
         return $validations;
     }
 
-    public static function fromArray(string $name, array $definition): string
+    public static function fromArray(string $name, array $definition)
     {
         $slices = explode("\\", $name);
         $className = array_pop($slices);
@@ -350,9 +356,14 @@ class Definition extends Class_
             );
         }
 
+        $extended = false;
         foreach ($extends as $extend) {
             $className = Helper::defToName($extend);
-            $defClass->extend("Arimac\\Sigfox\\Definition\\" . $className);
+            $extended =$defClass->extend("Arimac\\Sigfox\\Definition\\" . $className) || $extended;
+        }
+
+        if(!$extended){
+            $defClass->extend("Arimac\\Sigfox\\Definition");
         }
 
         if ($extendable) {

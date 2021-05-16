@@ -2,9 +2,9 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\BaseStation\LocationItem;
 use Arimac\Sigfox\Definition\BaseStation\Queue;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -874,8 +874,7 @@ class BaseStation extends Definition
      * @var string[]
      */
     protected ?array $resources = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'versionCurrent', 'string'), new PrimitiveSerializer(self::class, 'hwVersion', 'string'), new ClassSerializer(self::class, 'group', MinGroup::class), new PrimitiveSerializer(self::class, 'firstCommissioningTime', 'int'), new PrimitiveSerializer(self::class, 'commissioningTime', 'int'), new PrimitiveSerializer(self::class, 'decommissioningTime', 'int'), new PrimitiveSerializer(self::class, 'operatingDays', 'int'), new PrimitiveSerializer(self::class, 'manufacturerDeliveryTime', 'int'), new PrimitiveSerializer(self::class, 'warrantyTime', 'int'), new PrimitiveSerializer(self::class, 'lastCommunicationTime', 'int'), new PrimitiveSerializer(self::class, 'lastPingTime', 'int'), new PrimitiveSerializer(self::class, 'restartTime', 'int'), new PrimitiveSerializer(self::class, 'connectionType', 'int'), new PrimitiveSerializer(self::class, 'description', 'string'), new ArraySerializer(self::class, 'location', new ClassSerializer(self::class, 'location', LocationItem::class)), new ClassSerializer(self::class, 'hwFamily', MinHwFamily::class), new PrimitiveSerializer(self::class, 'keepAlive', 'int'), new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'), new PrimitiveSerializer(self::class, 'communicationState', 'int'), new PrimitiveSerializer(self::class, 'state', 'int'), new PrimitiveSerializer(self::class, 'lifecycleStatus', 'int'), new ClassSerializer(self::class, 'queue', Queue::class), new PrimitiveSerializer(self::class, 'muted', 'bool'), new PrimitiveSerializer(self::class, 'transmissionAuthorized', 'bool'), new PrimitiveSerializer(self::class, 'downlinkEnabled', 'bool'), new PrimitiveSerializer(self::class, 'installer', 'string'), new PrimitiveSerializer(self::class, 'creationTime', 'int'), new PrimitiveSerializer(self::class, 'createdBy', 'string'), new PrimitiveSerializer(self::class, 'lastEditionTime', 'int'), new PrimitiveSerializer(self::class, 'lastEditedBy', 'string'), new PrimitiveSerializer(self::class, 'baseFrequency', 'int'), new PrimitiveSerializer(self::class, 'downlinkCenterFrequency', 'int'), new PrimitiveSerializer(self::class, 'macroChannel', 'int'), new PrimitiveSerializer(self::class, 'txPowerAmplification', 'int'), new PrimitiveSerializer(self::class, 'protocol', 'int'), new PrimitiveSerializer(self::class, 'preAmp1', 'int'), new PrimitiveSerializer(self::class, 'preAmp2', 'int'), new PrimitiveSerializer(self::class, 'RAMLog', 'int'), new PrimitiveSerializer(self::class, 'wwanMode', 'int'), new PrimitiveSerializer(self::class, 'bitRate', 'int'), new PrimitiveSerializer(self::class, 'globalCoverageEnable', 'bool'), new PrimitiveSerializer(self::class, 'elevation', 'int'), new PrimitiveSerializer(self::class, 'splatRadius', 'int'), new PrimitiveSerializer(self::class, 'mastEquipment', 'int'), new PrimitiveSerializer(self::class, 'mastEquipmentDescription', 'string'), new PrimitiveSerializer(self::class, 'lnaByPass', 'bool'), new PrimitiveSerializer(self::class, 'cavityFilterVersion', 'int'), new PrimitiveSerializer(self::class, 'cavityFilterVersionDescription', 'string'), new PrimitiveSerializer(self::class, 'environmentLoss', 'int'), new PrimitiveSerializer(self::class, 'cableLoss', 'int'), new PrimitiveSerializer(self::class, 'antennaGain', 'int'), new PrimitiveSerializer(self::class, 'antennaNoiseFigure', 'int'), new PrimitiveSerializer(self::class, 'antennaInsertionLoss', 'int'), new PrimitiveSerializer(self::class, 'antennaMaxAdmissiblePower', 'int'), new PrimitiveSerializer(self::class, 'gainFlag', 'bool'), new PrimitiveSerializer(self::class, 'mastEquipmentGain', 'int'), new PrimitiveSerializer(self::class, 'mastEquipmentNoiseFigure', 'int'), new PrimitiveSerializer(self::class, 'lnaInsertionLoss', 'int'), new PrimitiveSerializer(self::class, 'cavityFilterInsertionLoss', 'int'), new PrimitiveSerializer(self::class, 'txPowerMargin', 'int'), new PrimitiveSerializer(self::class, 'powerCapability', 'int'), new PrimitiveSerializer(self::class, 'antennaLocationCode', 'int'), new PrimitiveSerializer(self::class, 'serviceCoverage', 'int'), new PrimitiveSerializer(self::class, 'geolocComputation', 'int'), new PrimitiveSerializer(self::class, 'geolocGlobalStateOfContribution', 'int'), new ClassSerializer(self::class, 'antenna', Antenna::class), new ArraySerializer(self::class, 'availableConnections', new PrimitiveSerializer(self::class, 'availableConnections', 'int')), new PrimitiveSerializer(self::class, 'makerCode', 'string'), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
-    protected $validations = array('macroChannel' => array('min:0', 'numeric', 'nullable'), 'txPowerMargin' => array('max:20', 'min:-20', 'numeric', 'nullable'));
+    protected array $validations = array('macroChannel' => array('min:0', 'numeric', 'nullable'), 'txPowerMargin' => array('max:20', 'min:-20', 'numeric', 'nullable'));
     /**
      * Setter for id
      *
@@ -893,7 +892,7 @@ class BaseStation extends Definition
      *
      * @return string The base station's identifier (hexadecimal format)
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -914,7 +913,7 @@ class BaseStation extends Definition
      *
      * @return string The base station's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -935,7 +934,7 @@ class BaseStation extends Definition
      *
      * @return string The current version of the software installed on this base station
      */
-    public function getVersionCurrent() : string
+    public function getVersionCurrent() : ?string
     {
         return $this->versionCurrent;
     }
@@ -956,7 +955,7 @@ class BaseStation extends Definition
      *
      * @return string The current version of the hardware of this base station
      */
-    public function getHwVersion() : string
+    public function getHwVersion() : ?string
     {
         return $this->hwVersion;
     }
@@ -977,7 +976,7 @@ class BaseStation extends Definition
      *
      * @return MinGroup
      */
-    public function getGroup() : MinGroup
+    public function getGroup() : ?MinGroup
     {
         return $this->group;
     }
@@ -998,7 +997,7 @@ class BaseStation extends Definition
      *
      * @return int The first commissioning time of the station (in milliseconds)
      */
-    public function getFirstCommissioningTime() : int
+    public function getFirstCommissioningTime() : ?int
     {
         return $this->firstCommissioningTime;
     }
@@ -1019,7 +1018,7 @@ class BaseStation extends Definition
      *
      * @return int The commissioning time of the station (in milliseconds)
      */
-    public function getCommissioningTime() : int
+    public function getCommissioningTime() : ?int
     {
         return $this->commissioningTime;
     }
@@ -1040,7 +1039,7 @@ class BaseStation extends Definition
      *
      * @return int The decommissioning time of the station (in milliseconds)
      */
-    public function getDecommissioningTime() : int
+    public function getDecommissioningTime() : ?int
     {
         return $this->decommissioningTime;
     }
@@ -1063,7 +1062,7 @@ class BaseStation extends Definition
      * @return int The number of operating days of the station. To present if the station was not decommissioned, or
      *             to decommisioning time otherwise
      */
-    public function getOperatingDays() : int
+    public function getOperatingDays() : ?int
     {
         return $this->operatingDays;
     }
@@ -1084,7 +1083,7 @@ class BaseStation extends Definition
      *
      * @return int Date of the delivery made by the manufacturer for this base station
      */
-    public function getManufacturerDeliveryTime() : int
+    public function getManufacturerDeliveryTime() : ?int
     {
         return $this->manufacturerDeliveryTime;
     }
@@ -1105,7 +1104,7 @@ class BaseStation extends Definition
      *
      * @return int Date of the beginning of the warranty for this base station
      */
-    public function getWarrantyTime() : int
+    public function getWarrantyTime() : ?int
     {
         return $this->warrantyTime;
     }
@@ -1126,7 +1125,7 @@ class BaseStation extends Definition
      *
      * @return int Date of the last communication made with this base station
      */
-    public function getLastCommunicationTime() : int
+    public function getLastCommunicationTime() : ?int
     {
         return $this->lastCommunicationTime;
     }
@@ -1147,7 +1146,7 @@ class BaseStation extends Definition
      *
      * @return int Date of the last PING received from this base station
      */
-    public function getLastPingTime() : int
+    public function getLastPingTime() : ?int
     {
         return $this->lastPingTime;
     }
@@ -1168,7 +1167,7 @@ class BaseStation extends Definition
      *
      * @return int Date of the last restart of this base station
      */
-    public function getRestartTime() : int
+    public function getRestartTime() : ?int
     {
         return $this->restartTime;
     }
@@ -1197,7 +1196,7 @@ class BaseStation extends Definition
      *             - {@see BaseStation::CONNECTION_TYPE_GSM}
      *             
      */
-    public function getConnectionType() : int
+    public function getConnectionType() : ?int
     {
         return $this->connectionType;
     }
@@ -1218,7 +1217,7 @@ class BaseStation extends Definition
      *
      * @return string Description of the base station
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
@@ -1241,7 +1240,7 @@ class BaseStation extends Definition
      * @return LocationItem[] ISO 3166-1 UN M.49 country code of the site location. The first code is the country
      *                        (region and department available for some countries).
      */
-    public function getLocation() : array
+    public function getLocation() : ?array
     {
         return $this->location;
     }
@@ -1262,7 +1261,7 @@ class BaseStation extends Definition
      *
      * @return MinHwFamily
      */
-    public function getHwFamily() : MinHwFamily
+    public function getHwFamily() : ?MinHwFamily
     {
         return $this->hwFamily;
     }
@@ -1283,7 +1282,7 @@ class BaseStation extends Definition
      *
      * @return int Number of seconds the base station keep alive
      */
-    public function getKeepAlive() : int
+    public function getKeepAlive() : ?int
     {
         return $this->keepAlive;
     }
@@ -1304,7 +1303,7 @@ class BaseStation extends Definition
      *
      * @return int The base station's latitude
      */
-    public function getLat() : int
+    public function getLat() : ?int
     {
         return $this->lat;
     }
@@ -1325,7 +1324,7 @@ class BaseStation extends Definition
      *
      * @return int The base station's longitude
      */
-    public function getLng() : int
+    public function getLng() : ?int
     {
         return $this->lng;
     }
@@ -1360,7 +1359,7 @@ class BaseStation extends Definition
      *             - {@see BaseStation::COMMUNICATION_STATE_OK_KO}
      *             
      */
-    public function getCommunicationState() : int
+    public function getCommunicationState() : ?int
     {
         return $this->communicationState;
     }
@@ -1395,7 +1394,7 @@ class BaseStation extends Definition
      *             - {@see BaseStation::STATE_OK_KO}
      *             
      */
-    public function getState() : int
+    public function getState() : ?int
     {
         return $this->state;
     }
@@ -1428,7 +1427,7 @@ class BaseStation extends Definition
      *             - {@see BaseStation::LIFECYCLE_STATUS_DEAD}
      *             
      */
-    public function getLifecycleStatus() : int
+    public function getLifecycleStatus() : ?int
     {
         return $this->lifecycleStatus;
     }
@@ -1449,7 +1448,7 @@ class BaseStation extends Definition
      *
      * @return Queue
      */
-    public function getQueue() : Queue
+    public function getQueue() : ?Queue
     {
         return $this->queue;
     }
@@ -1470,7 +1469,7 @@ class BaseStation extends Definition
      *
      * @return bool true if the base station is muted
      */
-    public function getMuted() : bool
+    public function getMuted() : ?bool
     {
         return $this->muted;
     }
@@ -1491,7 +1490,7 @@ class BaseStation extends Definition
      *
      * @return bool true if the transmission is authorized on this base station
      */
-    public function getTransmissionAuthorized() : bool
+    public function getTransmissionAuthorized() : ?bool
     {
         return $this->transmissionAuthorized;
     }
@@ -1512,7 +1511,7 @@ class BaseStation extends Definition
      *
      * @return bool true if the downlink is enabled on this base station
      */
-    public function getDownlinkEnabled() : bool
+    public function getDownlinkEnabled() : ?bool
     {
         return $this->downlinkEnabled;
     }
@@ -1533,7 +1532,7 @@ class BaseStation extends Definition
      *
      * @return string Name if the installer of this base station
      */
-    public function getInstaller() : string
+    public function getInstaller() : ?string
     {
         return $this->installer;
     }
@@ -1554,7 +1553,7 @@ class BaseStation extends Definition
      *
      * @return int Date of the creation of the base station (in milliseconds since Unix Epoch)
      */
-    public function getCreationTime() : int
+    public function getCreationTime() : ?int
     {
         return $this->creationTime;
     }
@@ -1575,7 +1574,7 @@ class BaseStation extends Definition
      *
      * @return string Id of the user who created this base station
      */
-    public function getCreatedBy() : string
+    public function getCreatedBy() : ?string
     {
         return $this->createdBy;
     }
@@ -1597,7 +1596,7 @@ class BaseStation extends Definition
      *
      * @return int Date of the last modification made on this base station (in milliseconds since Unix Epoch)
      */
-    public function getLastEditionTime() : int
+    public function getLastEditionTime() : ?int
     {
         return $this->lastEditionTime;
     }
@@ -1618,7 +1617,7 @@ class BaseStation extends Definition
      *
      * @return string Id of the user who edited this base station for the last time
      */
-    public function getLastEditedBy() : string
+    public function getLastEditedBy() : ?string
     {
         return $this->lastEditedBy;
     }
@@ -1639,7 +1638,7 @@ class BaseStation extends Definition
      *
      * @return int Uplink base frequency of this base station (in Hz)
      */
-    public function getBaseFrequency() : int
+    public function getBaseFrequency() : ?int
     {
         return $this->baseFrequency;
     }
@@ -1660,7 +1659,7 @@ class BaseStation extends Definition
      *
      * @return int Downlink center frequency of this base station (in Hz)
      */
-    public function getDownlinkCenterFrequency() : int
+    public function getDownlinkCenterFrequency() : ?int
     {
         return $this->downlinkCenterFrequency;
     }
@@ -1681,7 +1680,7 @@ class BaseStation extends Definition
      *
      * @return int Macro channel of this base station (in Hz)
      */
-    public function getMacroChannel() : int
+    public function getMacroChannel() : ?int
     {
         return $this->macroChannel;
     }
@@ -1702,7 +1701,7 @@ class BaseStation extends Definition
      *
      * @return int TX power amplification of this base station (in %)
      */
-    public function getTxPowerAmplification() : int
+    public function getTxPowerAmplification() : ?int
     {
         return $this->txPowerAmplification;
     }
@@ -1733,7 +1732,7 @@ class BaseStation extends Definition
      *             - {@see BaseStation::PROTOCOL_BOTH}
      *             
      */
-    public function getProtocol() : int
+    public function getProtocol() : ?int
     {
         return $this->protocol;
     }
@@ -1764,7 +1763,7 @@ class BaseStation extends Definition
      *             - {@see BaseStation::PRE_AMP1_ATTEND}
      *             
      */
-    public function getPreAmp1() : int
+    public function getPreAmp1() : ?int
     {
         return $this->preAmp1;
     }
@@ -1795,7 +1794,7 @@ class BaseStation extends Definition
      *             - {@see BaseStation::PRE_AMP2_ATTEND}
      *             
      */
-    public function getPreAmp2() : int
+    public function getPreAmp2() : ?int
     {
         return $this->preAmp2;
     }
@@ -1828,7 +1827,7 @@ class BaseStation extends Definition
      *             - {@see BaseStation::R_A_M_LOG_DROP}
      *             
      */
-    public function getRAMLog() : int
+    public function getRAMLog() : ?int
     {
         return $this->RAMLog;
     }
@@ -1865,7 +1864,7 @@ class BaseStation extends Definition
      *             - {@see BaseStation::WWAN_MODE_GPRS}
      *             
      */
-    public function getWwanMode() : int
+    public function getWwanMode() : ?int
     {
         return $this->wwanMode;
     }
@@ -1894,7 +1893,7 @@ class BaseStation extends Definition
      *             - {@see BaseStation::BIT_RATE_BIT_RATE_600_BS}
      *             
      */
-    public function getBitRate() : int
+    public function getBitRate() : ?int
     {
         return $this->bitRate;
     }
@@ -1915,7 +1914,7 @@ class BaseStation extends Definition
      *
      * @return bool true if the base station is available for the global coverage computation
      */
-    public function getGlobalCoverageEnable() : bool
+    public function getGlobalCoverageEnable() : ?bool
     {
         return $this->globalCoverageEnable;
     }
@@ -1936,7 +1935,7 @@ class BaseStation extends Definition
      *
      * @return int Antenna height of the base station (in m)
      */
-    public function getElevation() : int
+    public function getElevation() : ?int
     {
         return $this->elevation;
     }
@@ -1957,7 +1956,7 @@ class BaseStation extends Definition
      *
      * @return int Radius of the base station (in km)
      */
-    public function getSplatRadius() : int
+    public function getSplatRadius() : ?int
     {
         return $this->splatRadius;
     }
@@ -2030,7 +2029,7 @@ class BaseStation extends Definition
      *             - {@see BaseStation::MAST_EQUIPMENT_LNAC_868_TX}
      *             
      */
-    public function getMastEquipment() : int
+    public function getMastEquipment() : ?int
     {
         return $this->mastEquipment;
     }
@@ -2051,7 +2050,7 @@ class BaseStation extends Definition
      *
      * @return string The base station's mast equipment description
      */
-    public function getMastEquipmentDescription() : string
+    public function getMastEquipmentDescription() : ?string
     {
         return $this->mastEquipmentDescription;
     }
@@ -2072,7 +2071,7 @@ class BaseStation extends Definition
      *
      * @return bool true if the LNA is by-passed
      */
-    public function getLnaByPass() : bool
+    public function getLnaByPass() : ?bool
     {
         return $this->lnaByPass;
     }
@@ -2119,7 +2118,7 @@ class BaseStation extends Definition
      *             - {@see BaseStation::CAVITY_FILTER_VERSION_ETSI_867MHZ_TECHNIWAVE}
      *             
      */
-    public function getCavityFilterVersion() : int
+    public function getCavityFilterVersion() : ?int
     {
         return $this->cavityFilterVersion;
     }
@@ -2140,7 +2139,7 @@ class BaseStation extends Definition
      *
      * @return string The base station's cavity filter version description
      */
-    public function getCavityFilterVersionDescription() : string
+    public function getCavityFilterVersionDescription() : ?string
     {
         return $this->cavityFilterVersionDescription;
     }
@@ -2161,7 +2160,7 @@ class BaseStation extends Definition
      *
      * @return int Environment loss of this base station (in dB)
      */
-    public function getEnvironmentLoss() : int
+    public function getEnvironmentLoss() : ?int
     {
         return $this->environmentLoss;
     }
@@ -2182,7 +2181,7 @@ class BaseStation extends Definition
      *
      * @return int Cable loss of this base station (in dB)
      */
-    public function getCableLoss() : int
+    public function getCableLoss() : ?int
     {
         return $this->cableLoss;
     }
@@ -2203,7 +2202,7 @@ class BaseStation extends Definition
      *
      * @return int Antenna gain of this base station (in dB).
      */
-    public function getAntennaGain() : int
+    public function getAntennaGain() : ?int
     {
         return $this->antennaGain;
     }
@@ -2226,7 +2225,7 @@ class BaseStation extends Definition
      * @return int Antenna noise figure of this base station (in dB). This setting is only relevant when an antenna
      *             with a filter is installed.
      */
-    public function getAntennaNoiseFigure() : int
+    public function getAntennaNoiseFigure() : ?int
     {
         return $this->antennaNoiseFigure;
     }
@@ -2249,7 +2248,7 @@ class BaseStation extends Definition
      * @return int Antenna insertion loss of this base station (in dB). This setting is only relevant when an antenna
      *             with a filter is installed.
      */
-    public function getAntennaInsertionLoss() : int
+    public function getAntennaInsertionLoss() : ?int
     {
         return $this->antennaInsertionLoss;
     }
@@ -2272,7 +2271,7 @@ class BaseStation extends Definition
      * @return int Antenna max admissible power of this base station (in dBm). This setting is only relevant when an
      *             antenna with a filter is installed.
      */
-    public function getAntennaMaxAdmissiblePower() : int
+    public function getAntennaMaxAdmissiblePower() : ?int
     {
         return $this->antennaMaxAdmissiblePower;
     }
@@ -2293,7 +2292,7 @@ class BaseStation extends Definition
      *
      * @return bool true if the base station has a gain flag
      */
-    public function getGainFlag() : bool
+    public function getGainFlag() : ?bool
     {
         return $this->gainFlag;
     }
@@ -2314,7 +2313,7 @@ class BaseStation extends Definition
      *
      * @return int Mast equipment gain of this base station (in dB)
      */
-    public function getMastEquipmentGain() : int
+    public function getMastEquipmentGain() : ?int
     {
         return $this->mastEquipmentGain;
     }
@@ -2335,7 +2334,7 @@ class BaseStation extends Definition
      *
      * @return int Mast equipment noise figure of this base station (in dB)
      */
-    public function getMastEquipmentNoiseFigure() : int
+    public function getMastEquipmentNoiseFigure() : ?int
     {
         return $this->mastEquipmentNoiseFigure;
     }
@@ -2356,7 +2355,7 @@ class BaseStation extends Definition
      *
      * @return int LNA insertion loss of this base station (in dB)
      */
-    public function getLnaInsertionLoss() : int
+    public function getLnaInsertionLoss() : ?int
     {
         return $this->lnaInsertionLoss;
     }
@@ -2377,7 +2376,7 @@ class BaseStation extends Definition
      *
      * @return int Cavity filter insertion loss of this base station (in dB)
      */
-    public function getCavityFilterInsertionLoss() : int
+    public function getCavityFilterInsertionLoss() : ?int
     {
         return $this->cavityFilterInsertionLoss;
     }
@@ -2398,7 +2397,7 @@ class BaseStation extends Definition
      *
      * @return int TX power margin of this base station (in dBm)
      */
-    public function getTxPowerMargin() : int
+    public function getTxPowerMargin() : ?int
     {
         return $this->txPowerMargin;
     }
@@ -2419,7 +2418,7 @@ class BaseStation extends Definition
      *
      * @return int power capability of this base station (in dBm)
      */
-    public function getPowerCapability() : int
+    public function getPowerCapability() : ?int
     {
         return $this->powerCapability;
     }
@@ -2448,7 +2447,7 @@ class BaseStation extends Definition
      *             - {@see BaseStation::ANTENNA_LOCATION_CODE_INDOOR}
      *             
      */
-    public function getAntennaLocationCode() : int
+    public function getAntennaLocationCode() : ?int
     {
         return $this->antennaLocationCode;
     }
@@ -2477,7 +2476,7 @@ class BaseStation extends Definition
      *             - {@see BaseStation::SERVICE_COVERAGE_CUSTOMER}
      *             
      */
-    public function getServiceCoverage() : int
+    public function getServiceCoverage() : ?int
     {
         return $this->serviceCoverage;
     }
@@ -2509,7 +2508,7 @@ class BaseStation extends Definition
      *             - {@see BaseStation::GEOLOC_COMPUTATION_DISABLED}
      *             
      */
-    public function getGeolocComputation() : int
+    public function getGeolocComputation() : ?int
     {
         return $this->geolocComputation;
     }
@@ -2551,7 +2550,7 @@ class BaseStation extends Definition
      *             - {@see BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_NOT_AVAILABLE}
      *             
      */
-    public function getGeolocGlobalStateOfContribution() : int
+    public function getGeolocGlobalStateOfContribution() : ?int
     {
         return $this->geolocGlobalStateOfContribution;
     }
@@ -2572,7 +2571,7 @@ class BaseStation extends Definition
      *
      * @return Antenna
      */
-    public function getAntenna() : Antenna
+    public function getAntenna() : ?Antenna
     {
         return $this->antenna;
     }
@@ -2593,7 +2592,7 @@ class BaseStation extends Definition
      *
      * @return int[]
      */
-    public function getAvailableConnections() : array
+    public function getAvailableConnections() : ?array
     {
         return $this->availableConnections;
     }
@@ -2614,7 +2613,7 @@ class BaseStation extends Definition
      *
      * @return string the base station’s marker code
      */
-    public function getMakerCode() : string
+    public function getMakerCode() : ?string
     {
         return $this->makerCode;
     }
@@ -2635,7 +2634,7 @@ class BaseStation extends Definition
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
     }
@@ -2656,8 +2655,15 @@ class BaseStation extends Definition
      *
      * @return string[]
      */
-    public function getResources() : array
+    public function getResources() : ?array
     {
         return $this->resources;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'versionCurrent' => new PrimitiveSerializer(self::class, 'versionCurrent', 'string'), 'hwVersion' => new PrimitiveSerializer(self::class, 'hwVersion', 'string'), 'group' => new ClassSerializer(self::class, 'group', MinGroup::class), 'firstCommissioningTime' => new PrimitiveSerializer(self::class, 'firstCommissioningTime', 'int'), 'commissioningTime' => new PrimitiveSerializer(self::class, 'commissioningTime', 'int'), 'decommissioningTime' => new PrimitiveSerializer(self::class, 'decommissioningTime', 'int'), 'operatingDays' => new PrimitiveSerializer(self::class, 'operatingDays', 'int'), 'manufacturerDeliveryTime' => new PrimitiveSerializer(self::class, 'manufacturerDeliveryTime', 'int'), 'warrantyTime' => new PrimitiveSerializer(self::class, 'warrantyTime', 'int'), 'lastCommunicationTime' => new PrimitiveSerializer(self::class, 'lastCommunicationTime', 'int'), 'lastPingTime' => new PrimitiveSerializer(self::class, 'lastPingTime', 'int'), 'restartTime' => new PrimitiveSerializer(self::class, 'restartTime', 'int'), 'connectionType' => new PrimitiveSerializer(self::class, 'connectionType', 'int'), 'description' => new PrimitiveSerializer(self::class, 'description', 'string'), 'location' => new ArraySerializer(self::class, 'location', new ClassSerializer(self::class, 'location', LocationItem::class)), 'hwFamily' => new ClassSerializer(self::class, 'hwFamily', MinHwFamily::class), 'keepAlive' => new PrimitiveSerializer(self::class, 'keepAlive', 'int'), 'lat' => new PrimitiveSerializer(self::class, 'lat', 'int'), 'lng' => new PrimitiveSerializer(self::class, 'lng', 'int'), 'communicationState' => new PrimitiveSerializer(self::class, 'communicationState', 'int'), 'state' => new PrimitiveSerializer(self::class, 'state', 'int'), 'lifecycleStatus' => new PrimitiveSerializer(self::class, 'lifecycleStatus', 'int'), 'queue' => new ClassSerializer(self::class, 'queue', Queue::class), 'muted' => new PrimitiveSerializer(self::class, 'muted', 'bool'), 'transmissionAuthorized' => new PrimitiveSerializer(self::class, 'transmissionAuthorized', 'bool'), 'downlinkEnabled' => new PrimitiveSerializer(self::class, 'downlinkEnabled', 'bool'), 'installer' => new PrimitiveSerializer(self::class, 'installer', 'string'), 'creationTime' => new PrimitiveSerializer(self::class, 'creationTime', 'int'), 'createdBy' => new PrimitiveSerializer(self::class, 'createdBy', 'string'), 'lastEditionTime' => new PrimitiveSerializer(self::class, 'lastEditionTime', 'int'), 'lastEditedBy' => new PrimitiveSerializer(self::class, 'lastEditedBy', 'string'), 'baseFrequency' => new PrimitiveSerializer(self::class, 'baseFrequency', 'int'), 'downlinkCenterFrequency' => new PrimitiveSerializer(self::class, 'downlinkCenterFrequency', 'int'), 'macroChannel' => new PrimitiveSerializer(self::class, 'macroChannel', 'int'), 'txPowerAmplification' => new PrimitiveSerializer(self::class, 'txPowerAmplification', 'int'), 'protocol' => new PrimitiveSerializer(self::class, 'protocol', 'int'), 'preAmp1' => new PrimitiveSerializer(self::class, 'preAmp1', 'int'), 'preAmp2' => new PrimitiveSerializer(self::class, 'preAmp2', 'int'), 'RAMLog' => new PrimitiveSerializer(self::class, 'RAMLog', 'int'), 'wwanMode' => new PrimitiveSerializer(self::class, 'wwanMode', 'int'), 'bitRate' => new PrimitiveSerializer(self::class, 'bitRate', 'int'), 'globalCoverageEnable' => new PrimitiveSerializer(self::class, 'globalCoverageEnable', 'bool'), 'elevation' => new PrimitiveSerializer(self::class, 'elevation', 'int'), 'splatRadius' => new PrimitiveSerializer(self::class, 'splatRadius', 'int'), 'mastEquipment' => new PrimitiveSerializer(self::class, 'mastEquipment', 'int'), 'mastEquipmentDescription' => new PrimitiveSerializer(self::class, 'mastEquipmentDescription', 'string'), 'lnaByPass' => new PrimitiveSerializer(self::class, 'lnaByPass', 'bool'), 'cavityFilterVersion' => new PrimitiveSerializer(self::class, 'cavityFilterVersion', 'int'), 'cavityFilterVersionDescription' => new PrimitiveSerializer(self::class, 'cavityFilterVersionDescription', 'string'), 'environmentLoss' => new PrimitiveSerializer(self::class, 'environmentLoss', 'int'), 'cableLoss' => new PrimitiveSerializer(self::class, 'cableLoss', 'int'), 'antennaGain' => new PrimitiveSerializer(self::class, 'antennaGain', 'int'), 'antennaNoiseFigure' => new PrimitiveSerializer(self::class, 'antennaNoiseFigure', 'int'), 'antennaInsertionLoss' => new PrimitiveSerializer(self::class, 'antennaInsertionLoss', 'int'), 'antennaMaxAdmissiblePower' => new PrimitiveSerializer(self::class, 'antennaMaxAdmissiblePower', 'int'), 'gainFlag' => new PrimitiveSerializer(self::class, 'gainFlag', 'bool'), 'mastEquipmentGain' => new PrimitiveSerializer(self::class, 'mastEquipmentGain', 'int'), 'mastEquipmentNoiseFigure' => new PrimitiveSerializer(self::class, 'mastEquipmentNoiseFigure', 'int'), 'lnaInsertionLoss' => new PrimitiveSerializer(self::class, 'lnaInsertionLoss', 'int'), 'cavityFilterInsertionLoss' => new PrimitiveSerializer(self::class, 'cavityFilterInsertionLoss', 'int'), 'txPowerMargin' => new PrimitiveSerializer(self::class, 'txPowerMargin', 'int'), 'powerCapability' => new PrimitiveSerializer(self::class, 'powerCapability', 'int'), 'antennaLocationCode' => new PrimitiveSerializer(self::class, 'antennaLocationCode', 'int'), 'serviceCoverage' => new PrimitiveSerializer(self::class, 'serviceCoverage', 'int'), 'geolocComputation' => new PrimitiveSerializer(self::class, 'geolocComputation', 'int'), 'geolocGlobalStateOfContribution' => new PrimitiveSerializer(self::class, 'geolocGlobalStateOfContribution', 'int'), 'antenna' => new ClassSerializer(self::class, 'antenna', Antenna::class), 'availableConnections' => new ArraySerializer(self::class, 'availableConnections', new PrimitiveSerializer(self::class, 'availableConnections', 'int')), 'makerCode' => new PrimitiveSerializer(self::class, 'makerCode', 'string'), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     }
 }

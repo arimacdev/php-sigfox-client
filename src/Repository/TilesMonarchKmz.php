@@ -2,10 +2,12 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
+use Arimac\Sigfox\Definition\KmzCreatePublicRequest;
 use Arimac\Sigfox\Request\TilesMonarchKmzStartAsync;
 use Arimac\Sigfox\Response\Generated\TilesMonarchKmzStartAsyncResponse;
-class TilesMonarchKmz
+class TilesMonarchKmz extends Repository
 {
     /**
      * The HTTP client
@@ -21,12 +23,19 @@ class TilesMonarchKmz
         $this->client = $client;
     }
     /**
-     * Starting the computation of Sigfox Monarch coverage view for a specific coverage mode. A new computation starts if
-     * no other computation, run in the last 24 hours, is available. Otherwise, the existing jobId is returned.
+     * Starting the computation of Sigfox Monarch coverage view for a specific coverage mode. A new computation
+     * starts if no other computation, run in the last 24 hours, is available. Otherwise, the existing jobId is
+     * returned.
+     *
+     * @param KmzCreatePublicRequest $request The computation will be performed with the specified coverage mode
+     *
+     * @return TilesMonarchKmzStartAsyncResponse
      */
-    public function startAsync(TilesMonarchKmzStartAsync $request) : TilesMonarchKmzStartAsyncResponse
+    public function startAsync(KmzCreatePublicRequest $request) : TilesMonarchKmzStartAsyncResponse
     {
-        return $this->client->request('post', '/tiles/monarch/kmz', $request, TilesMonarchKmzStartAsyncResponse::class);
+        $request = new TilesMonarchKmzStartAsync();
+        $request->setRequest($request);
+        return $this->client->call('post', '/tiles/monarch/kmz', $request, TilesMonarchKmzStartAsyncResponse::class);
     }
     /**
      * Find by jobId

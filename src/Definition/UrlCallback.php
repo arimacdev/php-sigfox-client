@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the properties needed to create a url callback
@@ -53,8 +52,7 @@ class UrlCallback extends Callback
      * @var string
      */
     protected ?string $contentType = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'url', 'string'), new PrimitiveSerializer(self::class, 'httpMethod', 'string'), new PrimitiveSerializer(self::class, 'downlinkHook', 'bool'), new PrimitiveSerializer(self::class, 'headers', 'array'), new PrimitiveSerializer(self::class, 'sendSni', 'bool'), new PrimitiveSerializer(self::class, 'bodyTemplate', 'string'), new PrimitiveSerializer(self::class, 'contentType', 'string'));
-    protected $validations = array('httpMethod' => array('in:GET,PUT,POST', 'nullable'));
+    protected array $validations = array('httpMethod' => array('in:GET,PUT,POST', 'nullable'));
     /**
      * Setter for url
      *
@@ -72,7 +70,7 @@ class UrlCallback extends Callback
      *
      * @return string The callback's url
      */
-    public function getUrl() : string
+    public function getUrl() : ?string
     {
         return $this->url;
     }
@@ -93,7 +91,7 @@ class UrlCallback extends Callback
      *
      * @return string The http method used to send a callback
      */
-    public function getHttpMethod() : string
+    public function getHttpMethod() : ?string
     {
         return $this->httpMethod;
     }
@@ -114,7 +112,7 @@ class UrlCallback extends Callback
      *
      * @return bool True if this callback is used for downlink, else false.
      */
-    public function getDownlinkHook() : bool
+    public function getDownlinkHook() : ?bool
     {
         return $this->downlinkHook;
     }
@@ -137,7 +135,7 @@ class UrlCallback extends Callback
      * @return array The headers of the http request to send, as an object with key:value. This field can be unset
      *               when updating.
      */
-    public function getHeaders() : array
+    public function getHeaders() : ?array
     {
         return $this->headers;
     }
@@ -160,7 +158,7 @@ class UrlCallback extends Callback
      * @return bool Send SNI (Server Name Indication) for SSL/TLS connections. Used by BATCH_URL and URL callbacks
      *              (optional).
      */
-    public function getSendSni() : bool
+    public function getSendSni() : ?bool
     {
         return $this->sendSni;
     }
@@ -185,7 +183,7 @@ class UrlCallback extends Callback
      *                predefined and custom variables. Mandatory for URL callbacks. This field can be unset when
      *                updating.
      */
-    public function getBodyTemplate() : string
+    public function getBodyTemplate() : ?string
     {
         return $this->bodyTemplate;
     }
@@ -208,8 +206,15 @@ class UrlCallback extends Callback
      * @return string The body media type of the request, only if httpMethpd is set to POST or PUT. This field can be
      *                unset when updating.
      */
-    public function getContentType() : string
+    public function getContentType() : ?string
     {
         return $this->contentType;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('url' => new PrimitiveSerializer(self::class, 'url', 'string'), 'httpMethod' => new PrimitiveSerializer(self::class, 'httpMethod', 'string'), 'downlinkHook' => new PrimitiveSerializer(self::class, 'downlinkHook', 'bool'), 'headers' => new PrimitiveSerializer(self::class, 'headers', 'array'), 'sendSni' => new PrimitiveSerializer(self::class, 'sendSni', 'bool'), 'bodyTemplate' => new PrimitiveSerializer(self::class, 'bodyTemplate', 'string'), 'contentType' => new PrimitiveSerializer(self::class, 'contentType', 'string'));
     }
 }

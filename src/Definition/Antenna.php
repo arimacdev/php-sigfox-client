@@ -45,7 +45,6 @@ class Antenna extends Definition
      * @var int
      */
     protected ?int $tilt = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'model', 'string'), new PrimitiveSerializer(self::class, 'azimuth', 'int'), new PrimitiveSerializer(self::class, 'attenuation', 'int'), new PrimitiveSerializer(self::class, 'attenuationDirect', 'int'), new PrimitiveSerializer(self::class, 'attenuationIndirect', 'int'), new PrimitiveSerializer(self::class, 'tilt', 'int'));
     /**
      * Setter for model
      *
@@ -63,7 +62,7 @@ class Antenna extends Definition
      *
      * @return string Antenna model of the station. E.g. "CXL 900-3LW", "CXL 900-6LW" , "" -> NONE ...
      */
-    public function getModel() : string
+    public function getModel() : ?string
     {
         return $this->model;
     }
@@ -84,7 +83,7 @@ class Antenna extends Definition
      *
      * @return int The base station's azimuth (in °)
      */
-    public function getAzimuth() : int
+    public function getAzimuth() : ?int
     {
         return $this->azimuth;
     }
@@ -105,7 +104,7 @@ class Antenna extends Definition
      *
      * @return int The base station's attenuation signal (in %)
      */
-    public function getAttenuation() : int
+    public function getAttenuation() : ?int
     {
         return $this->attenuation;
     }
@@ -127,7 +126,7 @@ class Antenna extends Definition
      *
      * @return int The base station's attenuation direct (in °). This field can be unset when updating.
      */
-    public function getAttenuationDirect() : int
+    public function getAttenuationDirect() : ?int
     {
         return $this->attenuationDirect;
     }
@@ -149,7 +148,7 @@ class Antenna extends Definition
      *
      * @return int The base station's attenuation indirect (in °). This field can be unset when updating.
      */
-    public function getAttenuationIndirect() : int
+    public function getAttenuationIndirect() : ?int
     {
         return $this->attenuationIndirect;
     }
@@ -170,8 +169,15 @@ class Antenna extends Definition
      *
      * @return int The base station's tilt
      */
-    public function getTilt() : int
+    public function getTilt() : ?int
     {
         return $this->tilt;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('model' => new PrimitiveSerializer(self::class, 'model', 'string'), 'azimuth' => new PrimitiveSerializer(self::class, 'azimuth', 'int'), 'attenuation' => new PrimitiveSerializer(self::class, 'attenuation', 'int'), 'attenuationDirect' => new PrimitiveSerializer(self::class, 'attenuationDirect', 'int'), 'attenuationIndirect' => new PrimitiveSerializer(self::class, 'attenuationIndirect', 'int'), 'tilt' => new PrimitiveSerializer(self::class, 'tilt', 'int'));
     }
 }

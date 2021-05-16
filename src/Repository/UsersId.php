@@ -2,12 +2,14 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\UsersIdGet;
 use Arimac\Sigfox\Definition\User;
+use Arimac\Sigfox\Definition\UserUpdate;
 use Arimac\Sigfox\Request\UsersIdUpdate;
 use Arimac\Sigfox\Definition\UpdateResponse;
-class UsersId
+class UsersId extends Repository
 {
     /**
      * The HTTP client
@@ -30,24 +32,34 @@ class UsersId
     }
     /**
      * Retrieve information about a given user. The id can also be the user's email address.
+     *
+     * @param UsersIdGet $request The query and body parameters to pass
+     *
+     * @return User
      */
-    public function get(UsersIdGet $request) : User
+    public function get(?UsersIdGet $request = null) : User
     {
-        return $this->client->request('get', $this->bind('/users/{id}', $this->id), $request, User::class);
+        return $this->client->call('get', $this->bind('/users/{id}', $this->id), $request, User::class);
     }
     /**
      * Update a given user.
+     *
+     * @param UserUpdate $user The user to update
+     *
+     * @return UpdateResponse
      */
-    public function update(UsersIdUpdate $request) : UpdateResponse
+    public function update(UserUpdate $user) : UpdateResponse
     {
-        return $this->client->request('put', $this->bind('/users/{id}', $this->id), $request, UpdateResponse::class);
+        $request = new UsersIdUpdate();
+        $request->setUser($user);
+        return $this->client->call('put', $this->bind('/users/{id}', $this->id), $request, UpdateResponse::class);
     }
     /**
      * Delete a given user.
      */
     public function delete()
     {
-        return $this->client->request('delete', $this->bind('/users/{id}', $this->id), null);
+        return $this->client->call('delete', $this->bind('/users/{id}', $this->id), null);
     }
     /**
      * @return UsersIdProfiles

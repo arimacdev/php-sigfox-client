@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
@@ -70,7 +69,6 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      * @var ProductCertificateRadioConfiguration[]
      */
     protected ?array $standardCfgs = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'externalId', 'string'), new PrimitiveSerializer(self::class, 'certificateCode', 'int'), new PrimitiveSerializer(self::class, 'certificateIndex', 'int'), new PrimitiveSerializer(self::class, 'qualificationTime', 'int'), new PrimitiveSerializer(self::class, 'reportNumber', 'string'), new PrimitiveSerializer(self::class, 'inputSensitivity', 'int'), new PrimitiveSerializer(self::class, 'encryptionPayload', 'bool'), new PrimitiveSerializer(self::class, 'devKit', 'bool'), new ArraySerializer(self::class, 'modes', new PrimitiveSerializer(self::class, 'modes', 'int')), new ArraySerializer(self::class, 'standards', new ClassSerializer(self::class, 'standards', RadioConfiguration::class)), new ArraySerializer(self::class, 'standardCfgs', new ClassSerializer(self::class, 'standardCfgs', ProductCertificateRadioConfiguration::class)));
     /**
      * Setter for externalId
      *
@@ -88,7 +86,7 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @return string External Id of the certificate
      */
-    public function getExternalId() : string
+    public function getExternalId() : ?string
     {
         return $this->externalId;
     }
@@ -109,7 +107,7 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @return int Certificate's code
      */
-    public function getCertificateCode() : int
+    public function getCertificateCode() : ?int
     {
         return $this->certificateCode;
     }
@@ -130,7 +128,7 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @return int Certificate's index
      */
-    public function getCertificateIndex() : int
+    public function getCertificateIndex() : ?int
     {
         return $this->certificateIndex;
     }
@@ -151,7 +149,7 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @return int Date of qualification (in milliseconds since the Unix Epoch)
      */
-    public function getQualificationTime() : int
+    public function getQualificationTime() : ?int
     {
         return $this->qualificationTime;
     }
@@ -172,7 +170,7 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @return string Report number
      */
-    public function getReportNumber() : string
+    public function getReportNumber() : ?string
     {
         return $this->reportNumber;
     }
@@ -193,7 +191,7 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @return int Input sensitivity
      */
-    public function getInputSensitivity() : int
+    public function getInputSensitivity() : ?int
     {
         return $this->inputSensitivity;
     }
@@ -214,7 +212,7 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @return bool true if the payload will be encrypted
      */
-    public function getEncryptionPayload() : bool
+    public function getEncryptionPayload() : ?bool
     {
         return $this->encryptionPayload;
     }
@@ -235,7 +233,7 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @return bool DevKit Flag
      */
-    public function getDevKit() : bool
+    public function getDevKit() : ?bool
     {
         return $this->devKit;
     }
@@ -256,7 +254,7 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @return int[] List of modes of the certificate [1=DOWNLINK, 2=MONARCH]
      */
-    public function getModes() : array
+    public function getModes() : ?array
     {
         return $this->modes;
     }
@@ -277,7 +275,7 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @return RadioConfiguration[]
      */
-    public function getStandards() : array
+    public function getStandards() : ?array
     {
         return $this->standards;
     }
@@ -298,8 +296,15 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @return ProductCertificateRadioConfiguration[]
      */
-    public function getStandardCfgs() : array
+    public function getStandardCfgs() : ?array
     {
         return $this->standardCfgs;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('externalId' => new PrimitiveSerializer(self::class, 'externalId', 'string'), 'certificateCode' => new PrimitiveSerializer(self::class, 'certificateCode', 'int'), 'certificateIndex' => new PrimitiveSerializer(self::class, 'certificateIndex', 'int'), 'qualificationTime' => new PrimitiveSerializer(self::class, 'qualificationTime', 'int'), 'reportNumber' => new PrimitiveSerializer(self::class, 'reportNumber', 'string'), 'inputSensitivity' => new PrimitiveSerializer(self::class, 'inputSensitivity', 'int'), 'encryptionPayload' => new PrimitiveSerializer(self::class, 'encryptionPayload', 'bool'), 'devKit' => new PrimitiveSerializer(self::class, 'devKit', 'bool'), 'modes' => new ArraySerializer(self::class, 'modes', new PrimitiveSerializer(self::class, 'modes', 'int')), 'standards' => new ArraySerializer(self::class, 'standards', new ClassSerializer(self::class, 'standards', RadioConfiguration::class)), 'standardCfgs' => new ArraySerializer(self::class, 'standardCfgs', new ClassSerializer(self::class, 'standardCfgs', ProductCertificateRadioConfiguration::class)));
     }
 }

@@ -2,12 +2,14 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\ApiUsersList;
 use Arimac\Sigfox\Response\Generated\ApiUsersListResponse;
+use Arimac\Sigfox\Definition\ApiUserCreation;
 use Arimac\Sigfox\Request\ApiUsersCreate;
 use Arimac\Sigfox\Response\Generated\ApiUsersCreateResponse;
-class ApiUsers
+class ApiUsers extends Repository
 {
     /**
      * The HTTP client
@@ -24,17 +26,27 @@ class ApiUsers
     }
     /**
      * Retrieve a list of API users according to visibility permissions and request filters.
+     *
+     * @param ApiUsersList $request The query and body parameters to pass
+     *
+     * @return ApiUsersListResponse
      */
-    public function list(ApiUsersList $request) : ApiUsersListResponse
+    public function list(?ApiUsersList $request = null) : ApiUsersListResponse
     {
-        return $this->client->request('get', '/api-users/', $request, ApiUsersListResponse::class);
+        return $this->client->call('get', '/api-users/', $request, ApiUsersListResponse::class);
     }
     /**
      * Create a new API user.
+     *
+     * @param ApiUserCreation $apiUser
+     *
+     * @return ApiUsersCreateResponse
      */
-    public function create(ApiUsersCreate $request) : ApiUsersCreateResponse
+    public function create(ApiUserCreation $apiUser) : ApiUsersCreateResponse
     {
-        return $this->client->request('post', '/api-users/', $request, ApiUsersCreateResponse::class);
+        $request = new ApiUsersCreate();
+        $request->setApiUser($apiUser);
+        return $this->client->call('post', '/api-users/', $request, ApiUsersCreateResponse::class);
     }
     /**
      * Find by id

@@ -2,9 +2,10 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Definition\DeviceConsumption;
-class DevicesIdConsumptionYearMonth
+class DevicesIdConsumptionYearMonth extends Repository
 {
     /**
      * The HTTP client
@@ -39,9 +40,11 @@ class DevicesIdConsumptionYearMonth
     }
     /**
      * Retrieve a device's consumption for a given month during a given year.
+     *
+     * @return DeviceConsumption
      */
     public function get() : DeviceConsumption
     {
-        return $this->client->request('get', $this->bind('/devices/{id}/consumption/{year}/{month}', $this->id, $this->year, $this->month), null, DeviceConsumption::class);
+        return $this->client->call('get', $this->bind('/devices/{id}/consumption/{year}/{month}', $this->id, $this->year, $this->month), null, DeviceConsumption::class);
     }
 }

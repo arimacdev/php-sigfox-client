@@ -3,10 +3,40 @@
 namespace Arimac\Sigfox\GenCode;
 
 use Arimac\Sigfox\GenCode\Config\EnumFields;
+use PhpParser\BuilderFactory;
 
 class Request extends Definition
 {
     protected $getter = false;
+
+    protected $properties = [];
+
+    public function __construct(string $namespaceName, string $name, ?string $docComment = null)
+    {
+        $this->factory = new BuilderFactory;
+        $this->namespaceName = $namespaceName;
+        $this->namespace = $this->factory->namespace($namespaceName);
+        if (in_array($name, $this->forceTraits)) {
+            $this->class = $this->factory->trait($name);
+        } else {
+            $this->class = $this->factory->class($name);
+            $this->extend("Arimac\\Sigfox\\Request");
+        }
+        $this->name = $name;
+        if ($docComment) {
+            $this->class->setDocComment($docComment);
+        }
+    }
+
+    public function setProperty(string $propertyName, string $type, bool $required, $description)
+    {
+        $this->properties[$propertyName] = [$type, $required, $description];
+    }
+
+    public function getProperties(): array
+    {
+        return $this->properties;
+    }
 
     public function setQuery(array $query)
     {
@@ -18,18 +48,16 @@ class Request extends Definition
         $this->setArrayProperty("body", $body);
     }
 
-    public static function fromArray(string $name, array $definition): string
+    public static function fromArray(string $name, array $definition)
     {
-
         $slices = explode("\\", $name);
         $className = array_pop($slices);
         $namespace = implode("\\", $slices);
 
-        $properties = [];
-
         if (isset($definition["parameters"])) {
             $body = [];
             $query = [];
+            $properties = [];
             foreach ($definition["parameters"] as $parameter) {
                 if ($parameter["in"] === "body" || $parameter["in"] === "query") {
                     $in = $parameter["in"];
@@ -71,11 +99,11 @@ class Request extends Definition
                             $constants = EnumFields::getConstants($name, $propertyName, $description);
                             if ($constants) {
                                 $constPrefix = Helper::camelToUnderscore($propertyName);
-                                $description = isset($constants["comment"])?$constants["comment"]."\n":"";
-                                $description .="\n";
+                                $description = isset($constants["comment"]) ? $constants["comment"] . "\n" : "";
+                                $description .= "\n";
                                 foreach ($constants as $constName => $attr) {
                                     if ($constName !== "comment") {
-                                        $description .= "- {@link $className::$constPrefix"."_$constName}\n";
+                                        $description .= "- {@see $className::$constPrefix" . "_$constName}\n";
                                         $defClass->addConst(
                                             $constPrefix . "_" . $constName,
                                             $attr["value"],
@@ -86,6 +114,8 @@ class Request extends Definition
                             }
                         }
                     }
+
+                    $defClass->setProperty($propertyName, $type, in_array("required", $validation), $description);
 
                     $defClass->addProperty(
                         $propertyName,
@@ -105,6 +135,15 @@ class Request extends Definition
                                 ["param", $usedType, "\$$propertyName", $description],
                                 ["return", "self", "To use in method chains"]
                             ],
+                            2
+                        )
+                    );
+                    $defClass->addGetter(
+                        $phpType,
+                        $propertyName,
+                        Helper::normalizeDocComment(
+                            "Getter for $propertyName",
+                            [["return", $usedType, $description]],
                             2
                         )
                     );
@@ -128,10 +167,10 @@ class Request extends Definition
 
                 $defClass->save();
 
-                return $name;
+                return $defClass;
             }
         }
 
-        return "null";
+        return null;
     }
 }

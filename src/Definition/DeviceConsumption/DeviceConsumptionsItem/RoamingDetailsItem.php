@@ -30,7 +30,6 @@ class RoamingDetailsItem extends Definition
      * @var int
      */
     protected ?int $territoryRoamingDownlinkFrameCount = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'territory', 'string'), new PrimitiveSerializer(self::class, 'operator', 'string'), new PrimitiveSerializer(self::class, 'territoryRoamingFrameCount', 'int'), new PrimitiveSerializer(self::class, 'territoryRoamingDownlinkFrameCount', 'int'));
     /**
      * Setter for territory
      *
@@ -48,7 +47,7 @@ class RoamingDetailsItem extends Definition
      *
      * @return string Country of the Operator (3 letters from the ISO 3166-1 alpha-3 country code).
      */
-    public function getTerritory() : string
+    public function getTerritory() : ?string
     {
         return $this->territory;
     }
@@ -69,7 +68,7 @@ class RoamingDetailsItem extends Definition
      *
      * @return string Name of the Operator
      */
-    public function getOperator() : string
+    public function getOperator() : ?string
     {
         return $this->operator;
     }
@@ -90,7 +89,7 @@ class RoamingDetailsItem extends Definition
      *
      * @return int Number of uplink roaming messages this day for this operator
      */
-    public function getTerritoryRoamingFrameCount() : int
+    public function getTerritoryRoamingFrameCount() : ?int
     {
         return $this->territoryRoamingFrameCount;
     }
@@ -111,8 +110,15 @@ class RoamingDetailsItem extends Definition
      *
      * @return int Number of downlink roaming messages this day for this operator
      */
-    public function getTerritoryRoamingDownlinkFrameCount() : int
+    public function getTerritoryRoamingDownlinkFrameCount() : ?int
     {
         return $this->territoryRoamingDownlinkFrameCount;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('territory' => new PrimitiveSerializer(self::class, 'territory', 'string'), 'operator' => new PrimitiveSerializer(self::class, 'operator', 'string'), 'territoryRoamingFrameCount' => new PrimitiveSerializer(self::class, 'territoryRoamingFrameCount', 'int'), 'territoryRoamingDownlinkFrameCount' => new PrimitiveSerializer(self::class, 'territoryRoamingDownlinkFrameCount', 'int'));
     }
 }

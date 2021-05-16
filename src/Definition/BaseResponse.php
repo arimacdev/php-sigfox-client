@@ -21,7 +21,6 @@ class BaseResponse extends Definition
      * @var UserRole[]
      */
     protected ?array $userRoles = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'message', 'string'), new ArraySerializer(self::class, 'userRoles', new ClassSerializer(self::class, 'userRoles', UserRole::class)));
     /**
      * Setter for message
      *
@@ -39,7 +38,7 @@ class BaseResponse extends Definition
      *
      * @return string Additional information about the operation
      */
-    public function getMessage() : string
+    public function getMessage() : ?string
     {
         return $this->message;
     }
@@ -60,8 +59,15 @@ class BaseResponse extends Definition
      *
      * @return UserRole[]
      */
-    public function getUserRoles() : array
+    public function getUserRoles() : ?array
     {
         return $this->userRoles;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('message' => new PrimitiveSerializer(self::class, 'message', 'string'), 'userRoles' => new ArraySerializer(self::class, 'userRoles', new ClassSerializer(self::class, 'userRoles', UserRole::class)));
     }
 }

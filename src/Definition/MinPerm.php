@@ -21,7 +21,6 @@ class MinPerm extends Definition
      * @var string
      */
     protected ?string $name = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'code', 'int'), new PrimitiveSerializer(self::class, 'name', 'string'));
     /**
      * Setter for code
      *
@@ -39,7 +38,7 @@ class MinPerm extends Definition
      *
      * @return int The permission's code
      */
-    public function getCode() : int
+    public function getCode() : ?int
     {
         return $this->code;
     }
@@ -60,8 +59,15 @@ class MinPerm extends Definition
      *
      * @return string The permission's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('code' => new PrimitiveSerializer(self::class, 'code', 'int'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'));
     }
 }

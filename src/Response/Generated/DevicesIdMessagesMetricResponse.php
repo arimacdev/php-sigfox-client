@@ -24,7 +24,6 @@ class DevicesIdMessagesMetricResponse extends Definition
      * @var int
      */
     protected ?int $lastMonth = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'lastDay', 'int'), new PrimitiveSerializer(self::class, 'lastWeek', 'int'), new PrimitiveSerializer(self::class, 'lastMonth', 'int'));
     /**
      * Setter for lastDay
      *
@@ -42,7 +41,7 @@ class DevicesIdMessagesMetricResponse extends Definition
      *
      * @return int Number of device messages for the last day
      */
-    public function getLastDay() : int
+    public function getLastDay() : ?int
     {
         return $this->lastDay;
     }
@@ -63,7 +62,7 @@ class DevicesIdMessagesMetricResponse extends Definition
      *
      * @return int Number of device messages for the last week
      */
-    public function getLastWeek() : int
+    public function getLastWeek() : ?int
     {
         return $this->lastWeek;
     }
@@ -84,8 +83,15 @@ class DevicesIdMessagesMetricResponse extends Definition
      *
      * @return int Number of device messages for the last month
      */
-    public function getLastMonth() : int
+    public function getLastMonth() : ?int
     {
         return $this->lastMonth;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('lastDay' => new PrimitiveSerializer(self::class, 'lastDay', 'int'), 'lastWeek' => new PrimitiveSerializer(self::class, 'lastWeek', 'int'), 'lastMonth' => new PrimitiveSerializer(self::class, 'lastMonth', 'int'));
     }
 }

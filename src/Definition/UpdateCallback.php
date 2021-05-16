@@ -95,7 +95,6 @@ class UpdateCallback extends Definition
      * @var bool
      */
     protected ?bool $enabled = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'channel', 'string'), new PrimitiveSerializer(self::class, 'callbackType', 'int'), new PrimitiveSerializer(self::class, 'callbackSubtype', 'int'), new PrimitiveSerializer(self::class, 'payloadConfig', 'string'), new PrimitiveSerializer(self::class, 'enabled', 'bool'));
     /**
      * Setter for channel
      *
@@ -121,7 +120,7 @@ class UpdateCallback extends Definition
      *                - EMAIL
      *                
      */
-    public function getChannel() : string
+    public function getChannel() : ?string
     {
         return $this->channel;
     }
@@ -152,7 +151,7 @@ class UpdateCallback extends Definition
      *             - {@see UpdateCallback::CALLBACK_TYPE_ERROR}
      *             
      */
-    public function getCallbackType() : int
+    public function getCallbackType() : ?int
     {
         return $this->callbackType;
     }
@@ -191,7 +190,7 @@ class UpdateCallback extends Definition
      *             - {@see UpdateCallback::CALLBACK_SUBTYPE_DATA_ADVANCED}
      *             
      */
-    public function getCallbackSubtype() : int
+    public function getCallbackSubtype() : ?int
     {
         return $this->callbackSubtype;
     }
@@ -214,7 +213,7 @@ class UpdateCallback extends Definition
      * @return string The custom payload configuration. Only for DATA callbacks. This field can be unset when
      *                updating.
      */
-    public function getPayloadConfig() : string
+    public function getPayloadConfig() : ?string
     {
         return $this->payloadConfig;
     }
@@ -235,8 +234,15 @@ class UpdateCallback extends Definition
      *
      * @return bool True to enable the callback, otherwise false
      */
-    public function getEnabled() : bool
+    public function getEnabled() : ?bool
     {
         return $this->enabled;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('channel' => new PrimitiveSerializer(self::class, 'channel', 'string'), 'callbackType' => new PrimitiveSerializer(self::class, 'callbackType', 'int'), 'callbackSubtype' => new PrimitiveSerializer(self::class, 'callbackSubtype', 'int'), 'payloadConfig' => new PrimitiveSerializer(self::class, 'payloadConfig', 'string'), 'enabled' => new PrimitiveSerializer(self::class, 'enabled', 'bool'));
     }
 }

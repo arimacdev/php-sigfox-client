@@ -82,7 +82,6 @@ class LastComputedLocation extends Definition
      * @var string[]
      */
     protected ?array $placeIds = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'), new PrimitiveSerializer(self::class, 'radius', 'int'), new PrimitiveSerializer(self::class, 'sourceCode', 'int'), new ArraySerializer(self::class, 'placeIds', new PrimitiveSerializer(self::class, 'placeIds', 'string')));
     /**
      * Setter for lat
      *
@@ -100,7 +99,7 @@ class LastComputedLocation extends Definition
      *
      * @return int The device's estimated latitude
      */
-    public function getLat() : int
+    public function getLat() : ?int
     {
         return $this->lat;
     }
@@ -121,7 +120,7 @@ class LastComputedLocation extends Definition
      *
      * @return int The device's estimated longitude
      */
-    public function getLng() : int
+    public function getLng() : ?int
     {
         return $this->lng;
     }
@@ -142,7 +141,7 @@ class LastComputedLocation extends Definition
      *
      * @return int The radius of the circle (meters)
      */
-    public function getRadius() : int
+    public function getRadius() : ?int
     {
         return $this->radius;
     }
@@ -183,7 +182,7 @@ class LastComputedLocation extends Definition
      *             - {@see LastComputedLocation::SOURCE_CODE_PROXIMITY_LOCATION}
      *             
      */
-    public function getSourceCode() : int
+    public function getSourceCode() : ?int
     {
         return $this->sourceCode;
     }
@@ -204,8 +203,15 @@ class LastComputedLocation extends Definition
      *
      * @return string[] The place ids computed by the Sigfox Geolocation service
      */
-    public function getPlaceIds() : array
+    public function getPlaceIds() : ?array
     {
         return $this->placeIds;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('lat' => new PrimitiveSerializer(self::class, 'lat', 'int'), 'lng' => new PrimitiveSerializer(self::class, 'lng', 'int'), 'radius' => new PrimitiveSerializer(self::class, 'radius', 'int'), 'sourceCode' => new PrimitiveSerializer(self::class, 'sourceCode', 'int'), 'placeIds' => new ArraySerializer(self::class, 'placeIds', new PrimitiveSerializer(self::class, 'placeIds', 'string')));
     }
 }

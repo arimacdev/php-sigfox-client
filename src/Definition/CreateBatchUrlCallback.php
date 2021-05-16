@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the properties needed to create a batch url callback
@@ -27,8 +26,7 @@ class CreateBatchUrlCallback extends CreateCallback
      * @var string
      */
     protected ?string $linePattern = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'url', 'string'), new PrimitiveSerializer(self::class, 'httpMethod', 'string'), new PrimitiveSerializer(self::class, 'linePattern', 'string'));
-    protected $validations = array('url' => array('required'), 'httpMethod' => array('required', 'in:GET,PUT,POST'));
+    protected array $validations = array('url' => array('required'), 'httpMethod' => array('required', 'in:GET,PUT,POST'));
     /**
      * Setter for url
      *
@@ -46,7 +44,7 @@ class CreateBatchUrlCallback extends CreateCallback
      *
      * @return string The callback's url
      */
-    public function getUrl() : string
+    public function getUrl() : ?string
     {
         return $this->url;
     }
@@ -67,7 +65,7 @@ class CreateBatchUrlCallback extends CreateCallback
      *
      * @return string The http method used to send a callback
      */
-    public function getHttpMethod() : string
+    public function getHttpMethod() : ?string
     {
         return $this->httpMethod;
     }
@@ -88,8 +86,15 @@ class CreateBatchUrlCallback extends CreateCallback
      *
      * @return string The line pattern representing a message.
      */
-    public function getLinePattern() : string
+    public function getLinePattern() : ?string
     {
         return $this->linePattern;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('url' => new PrimitiveSerializer(self::class, 'url', 'string'), 'httpMethod' => new PrimitiveSerializer(self::class, 'httpMethod', 'string'), 'linePattern' => new PrimitiveSerializer(self::class, 'linePattern', 'string'));
     }
 }

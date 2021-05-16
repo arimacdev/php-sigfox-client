@@ -21,7 +21,6 @@ class DeviceLocation extends Definition
      * @var int
      */
     protected ?int $lng = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'lat', 'int'), new PrimitiveSerializer(self::class, 'lng', 'int'));
     /**
      * Setter for lat
      *
@@ -39,7 +38,7 @@ class DeviceLocation extends Definition
      *
      * @return int The device's estimated latitude
      */
-    public function getLat() : int
+    public function getLat() : ?int
     {
         return $this->lat;
     }
@@ -60,8 +59,15 @@ class DeviceLocation extends Definition
      *
      * @return int The device's estimated longitude
      */
-    public function getLng() : int
+    public function getLng() : ?int
     {
         return $this->lng;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('lat' => new PrimitiveSerializer(self::class, 'lat', 'int'), 'lng' => new PrimitiveSerializer(self::class, 'lng', 'int'));
     }
 }

@@ -2,12 +2,12 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve information about a given device.
  */
-class DevicesIdGet extends Definition
+class DevicesIdGet extends Request
 {
     /**
      * if true, we return the list of actions and resources the user has access
@@ -21,9 +21,8 @@ class DevicesIdGet extends Definition
      * @var string
      */
     protected ?string $fields = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'authorizations', 'bool'), new PrimitiveSerializer(self::class, 'fields', 'string'));
-    protected $query = array('authorizations', 'fields');
-    protected $validations = array('authorizations' => array('required'), 'fields' => array('required', 'in:deviceType(name),group(name\\,type\\,level\\,bssId\\,customerBssId),contract(name),productCertificate(key),modemCertificate(key)'));
+    protected array $query = array('authorizations', 'fields');
+    protected array $validations = array('fields' => array('in:deviceType(name),group(name\\,type\\,level\\,bssId\\,customerBssId),contract(name),productCertificate(key),modemCertificate(key)', 'nullable'));
     /**
      * Setter for authorizations
      *
@@ -37,6 +36,15 @@ class DevicesIdGet extends Definition
         return $this;
     }
     /**
+     * Getter for authorizations
+     *
+     * @return bool if true, we return the list of actions and resources the user has access
+     */
+    public function getAuthorizations() : ?bool
+    {
+        return $this->authorizations;
+    }
+    /**
      * Setter for fields
      *
      * @param string $fields Defines the other available fields to be returned in the response.
@@ -48,5 +56,22 @@ class DevicesIdGet extends Definition
     {
         $this->fields = $fields;
         return $this;
+    }
+    /**
+     * Getter for fields
+     *
+     * @return string Defines the other available fields to be returned in the response.
+     *                
+     */
+    public function getFields() : ?string
+    {
+        return $this->fields;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('authorizations' => new PrimitiveSerializer(self::class, 'authorizations', 'bool'), 'fields' => new PrimitiveSerializer(self::class, 'fields', 'string'));
     }
 }

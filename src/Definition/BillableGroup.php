@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Definition;
 
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the billable group's properties
@@ -26,8 +27,7 @@ trait BillableGroup
      * @var int
      */
     protected ?int $maxPrototypeAllowed = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'billable', 'bool'), new PrimitiveSerializer(self::class, 'technicalEmail', 'string'), new PrimitiveSerializer(self::class, 'maxPrototypeAllowed', 'int'));
-    protected $validations = array('technicalEmail' => array('max:250', 'nullable'));
+    protected array $validations = array('technicalEmail' => array('max:250', 'nullable'));
     /**
      * Setter for billable
      *
@@ -45,7 +45,7 @@ trait BillableGroup
      *
      * @return bool true if the group is billable
      */
-    public function getBillable() : bool
+    public function getBillable() : ?bool
     {
         return $this->billable;
     }
@@ -66,7 +66,7 @@ trait BillableGroup
      *
      * @return string The technical contact email
      */
-    public function getTechnicalEmail() : string
+    public function getTechnicalEmail() : ?string
     {
         return $this->technicalEmail;
     }
@@ -87,8 +87,15 @@ trait BillableGroup
      *
      * @return int Number of prototypes allowed. Accessible only for groups under SO
      */
-    public function getMaxPrototypeAllowed() : int
+    public function getMaxPrototypeAllowed() : ?int
     {
         return $this->maxPrototypeAllowed;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('billable' => new PrimitiveSerializer(self::class, 'billable', 'bool'), 'technicalEmail' => new PrimitiveSerializer(self::class, 'technicalEmail', 'string'), 'maxPrototypeAllowed' => new PrimitiveSerializer(self::class, 'maxPrototypeAllowed', 'int'));
     }
 }

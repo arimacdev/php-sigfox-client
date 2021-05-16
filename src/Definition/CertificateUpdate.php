@@ -12,7 +12,6 @@ class CertificateUpdate extends Definition
      * @var string
      */
     protected ?string $key = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'key', 'string'));
     /**
      * Setter for key
      *
@@ -30,8 +29,15 @@ class CertificateUpdate extends Definition
      *
      * @return string The certificate name
      */
-    public function getKey() : string
+    public function getKey() : ?string
     {
         return $this->key;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('key' => new PrimitiveSerializer(self::class, 'key', 'string'));
     }
 }

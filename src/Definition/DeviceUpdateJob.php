@@ -13,7 +13,6 @@ class DeviceUpdateJob extends Definition
      * @var string
      */
     protected ?string $name = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'name', 'string'));
     /**
      * Setter for name
      *
@@ -31,8 +30,15 @@ class DeviceUpdateJob extends Definition
      *
      * @return string The device's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'));
     }
 }

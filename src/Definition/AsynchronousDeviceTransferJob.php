@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\AsynchronousDeviceTransferJob\DataItem;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -19,8 +19,7 @@ class AsynchronousDeviceTransferJob extends Definition
      * @var DataItem[]
      */
     protected ?array $data = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', DataItem::class)));
-    protected $validations = array('deviceTypeId' => array('required'));
+    protected array $validations = array('deviceTypeId' => array('required'));
     /**
      * Setter for deviceTypeId
      *
@@ -38,7 +37,7 @@ class AsynchronousDeviceTransferJob extends Definition
      *
      * @return string The device type where new devices will be transfered
      */
-    public function getDeviceTypeId() : string
+    public function getDeviceTypeId() : ?string
     {
         return $this->deviceTypeId;
     }
@@ -59,8 +58,15 @@ class AsynchronousDeviceTransferJob extends Definition
      *
      * @return DataItem[]
      */
-    public function getData() : array
+    public function getData() : ?array
     {
         return $this->data;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('deviceTypeId' => new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), 'data' => new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', DataItem::class)));
     }
 }

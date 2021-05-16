@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Defines the Partners group type properties
@@ -16,8 +15,7 @@ class Partners extends Group
      * @var int
      */
     protected ?int $currentPrototypeCount = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'currentPrototypeCount', 'int'));
-    protected $validations = array('currentPrototypeCount' => array('min:0', 'numeric', 'nullable'));
+    protected array $validations = array('currentPrototypeCount' => array('min:0', 'numeric', 'nullable'));
     /**
      * Setter for currentPrototypeCount
      *
@@ -35,8 +33,15 @@ class Partners extends Group
      *
      * @return int Number of prototype registered. Accessible only for groups under SO
      */
-    public function getCurrentPrototypeCount() : int
+    public function getCurrentPrototypeCount() : ?int
     {
         return $this->currentPrototypeCount;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('currentPrototypeCount' => new PrimitiveSerializer(self::class, 'currentPrototypeCount', 'int'));
     }
 }

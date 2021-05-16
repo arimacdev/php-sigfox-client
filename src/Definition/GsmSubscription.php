@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Information about cellular internet subscription
@@ -56,7 +55,6 @@ class GsmSubscription extends InternetSubscription
      * @var int
      */
     protected ?int $gsmConnectionType = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'dataNumber', 'string'), new PrimitiveSerializer(self::class, 'simCardNumber', 'string'), new PrimitiveSerializer(self::class, 'imei', 'string'), new PrimitiveSerializer(self::class, 'modem', 'string'), new PrimitiveSerializer(self::class, 'modemSerialNumber', 'string'), new PrimitiveSerializer(self::class, 'gsmConnectionType', 'int'));
     /**
      * Setter for dataNumber
      *
@@ -75,7 +73,7 @@ class GsmSubscription extends InternetSubscription
      *
      * @return string The data number of this internet subscription. This field can be unset when updating.
      */
-    public function getDataNumber() : string
+    public function getDataNumber() : ?string
     {
         return $this->dataNumber;
     }
@@ -97,7 +95,7 @@ class GsmSubscription extends InternetSubscription
      *
      * @return string The sim card number of this internet subscription. This field can be unset when updating.
      */
-    public function getSimCardNumber() : string
+    public function getSimCardNumber() : ?string
     {
         return $this->simCardNumber;
     }
@@ -118,7 +116,7 @@ class GsmSubscription extends InternetSubscription
      *
      * @return string The IMEI of this internet subscription. This field can be unset when updating.
      */
-    public function getImei() : string
+    public function getImei() : ?string
     {
         return $this->imei;
     }
@@ -139,7 +137,7 @@ class GsmSubscription extends InternetSubscription
      *
      * @return string The modem of this internet subscription. This field can be unset when updating.
      */
-    public function getModem() : string
+    public function getModem() : ?string
     {
         return $this->modem;
     }
@@ -160,7 +158,7 @@ class GsmSubscription extends InternetSubscription
      *
      * @return string The serial number of the modem of this internet subscription
      */
-    public function getModemSerialNumber() : string
+    public function getModemSerialNumber() : ?string
     {
         return $this->modemSerialNumber;
     }
@@ -189,8 +187,15 @@ class GsmSubscription extends InternetSubscription
      *             - {@see GsmSubscription::GSM_CONNECTION_TYPE_ROUTER_ETH}
      *             
      */
-    public function getGsmConnectionType() : int
+    public function getGsmConnectionType() : ?int
     {
         return $this->gsmConnectionType;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('dataNumber' => new PrimitiveSerializer(self::class, 'dataNumber', 'string'), 'simCardNumber' => new PrimitiveSerializer(self::class, 'simCardNumber', 'string'), 'imei' => new PrimitiveSerializer(self::class, 'imei', 'string'), 'modem' => new PrimitiveSerializer(self::class, 'modem', 'string'), 'modemSerialNumber' => new PrimitiveSerializer(self::class, 'modemSerialNumber', 'string'), 'gsmConnectionType' => new PrimitiveSerializer(self::class, 'gsmConnectionType', 'int'));
     }
 }

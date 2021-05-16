@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Generic information about user create operation
@@ -15,7 +14,6 @@ class CreateResponse extends BaseResponse
      * @var string
      */
     protected ?string $id = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'));
     /**
      * Setter for id
      *
@@ -33,8 +31,15 @@ class CreateResponse extends BaseResponse
      *
      * @return string The user's identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'));
     }
 }

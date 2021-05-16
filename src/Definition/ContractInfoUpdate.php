@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 class ContractInfoUpdate extends CommonContractInfo
@@ -19,7 +18,6 @@ class ContractInfoUpdate extends CommonContractInfo
      * @var string[]
      */
     protected ?array $blacklistedTerritories = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'orderName', 'string'), new ArraySerializer(self::class, 'blacklistedTerritories', new PrimitiveSerializer(self::class, 'blacklistedTerritories', 'string')));
     /**
      * Setter for orderName
      *
@@ -37,7 +35,7 @@ class ContractInfoUpdate extends CommonContractInfo
      *
      * @return string The order name, if any. This field can be unset when updating.
      */
-    public function getOrderName() : string
+    public function getOrderName() : ?string
     {
         return $this->orderName;
     }
@@ -58,8 +56,15 @@ class ContractInfoUpdate extends CommonContractInfo
      *
      * @return string[] The list of "blacklisted" territories, as an array of NIP group IDs.
      */
-    public function getBlacklistedTerritories() : array
+    public function getBlacklistedTerritories() : ?array
     {
         return $this->blacklistedTerritories;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('orderName' => new PrimitiveSerializer(self::class, 'orderName', 'string'), 'blacklistedTerritories' => new ArraySerializer(self::class, 'blacklistedTerritories', new PrimitiveSerializer(self::class, 'blacklistedTerritories', 'string')));
     }
 }

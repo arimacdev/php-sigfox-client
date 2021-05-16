@@ -115,7 +115,6 @@ class BaseSiteConvention extends Definition
      * @var int
      */
     protected ?int $type = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'annualCost', 'int'), new PrimitiveSerializer(self::class, 'comments', 'string'), new PrimitiveSerializer(self::class, 'startTime', 'int'), new PrimitiveSerializer(self::class, 'endTime', 'int'), new PrimitiveSerializer(self::class, 'contractReference', 'string'), new PrimitiveSerializer(self::class, 'maintenance', 'bool'), new PrimitiveSerializer(self::class, 'maintenanceAnnualCost', 'int'), new PrimitiveSerializer(self::class, 'status', 'int'), new PrimitiveSerializer(self::class, 'type', 'int'));
     /**
      * Setter for annualCost
      *
@@ -133,7 +132,7 @@ class BaseSiteConvention extends Definition
      *
      * @return int The annual cost of this convention
      */
-    public function getAnnualCost() : int
+    public function getAnnualCost() : ?int
     {
         return $this->annualCost;
     }
@@ -154,7 +153,7 @@ class BaseSiteConvention extends Definition
      *
      * @return string The comments of this convention
      */
-    public function getComments() : string
+    public function getComments() : ?string
     {
         return $this->comments;
     }
@@ -175,7 +174,7 @@ class BaseSiteConvention extends Definition
      *
      * @return int The start time of this convention
      */
-    public function getStartTime() : int
+    public function getStartTime() : ?int
     {
         return $this->startTime;
     }
@@ -196,7 +195,7 @@ class BaseSiteConvention extends Definition
      *
      * @return int The end time of this convention
      */
-    public function getEndTime() : int
+    public function getEndTime() : ?int
     {
         return $this->endTime;
     }
@@ -217,7 +216,7 @@ class BaseSiteConvention extends Definition
      *
      * @return string The bss contract reference of this convention
      */
-    public function getContractReference() : string
+    public function getContractReference() : ?string
     {
         return $this->contractReference;
     }
@@ -238,7 +237,7 @@ class BaseSiteConvention extends Definition
      *
      * @return bool is this convention in maintenance
      */
-    public function getMaintenance() : bool
+    public function getMaintenance() : ?bool
     {
         return $this->maintenance;
     }
@@ -259,7 +258,7 @@ class BaseSiteConvention extends Definition
      *
      * @return int The annual cost of the maintenance of this convention
      */
-    public function getMaintenanceAnnualCost() : int
+    public function getMaintenanceAnnualCost() : ?int
     {
         return $this->maintenanceAnnualCost;
     }
@@ -294,7 +293,7 @@ class BaseSiteConvention extends Definition
      *             - {@see BaseSiteConvention::STATUS_SIGNED_BOTH}
      *             
      */
-    public function getStatus() : int
+    public function getStatus() : ?int
     {
         return $this->status;
     }
@@ -329,8 +328,15 @@ class BaseSiteConvention extends Definition
      *             - {@see BaseSiteConvention::TYPE_COMPANY}
      *             
      */
-    public function getType() : int
+    public function getType() : ?int
     {
         return $this->type;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('annualCost' => new PrimitiveSerializer(self::class, 'annualCost', 'int'), 'comments' => new PrimitiveSerializer(self::class, 'comments', 'string'), 'startTime' => new PrimitiveSerializer(self::class, 'startTime', 'int'), 'endTime' => new PrimitiveSerializer(self::class, 'endTime', 'int'), 'contractReference' => new PrimitiveSerializer(self::class, 'contractReference', 'string'), 'maintenance' => new PrimitiveSerializer(self::class, 'maintenance', 'bool'), 'maintenanceAnnualCost' => new PrimitiveSerializer(self::class, 'maintenanceAnnualCost', 'int'), 'status' => new PrimitiveSerializer(self::class, 'status', 'int'), 'type' => new PrimitiveSerializer(self::class, 'type', 'int'));
     }
 }

@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Information about ADSL internet subscription
@@ -103,8 +102,7 @@ class CreateAdslSubscription extends CreateInternetSubscription
      * @var string
      */
     protected ?string $pair = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'connectionStatus', 'int'), new PrimitiveSerializer(self::class, 'internetAccount', 'string'), new PrimitiveSerializer(self::class, 'orderNumber', 'string'), new PrimitiveSerializer(self::class, 'interfaceLogin', 'string'), new PrimitiveSerializer(self::class, 'interfacePassword', 'string'), new PrimitiveSerializer(self::class, 'adslLogin', 'string'), new PrimitiveSerializer(self::class, 'adslPassword', 'string'), new PrimitiveSerializer(self::class, 'lineNumber', 'string'), new PrimitiveSerializer(self::class, 'modem', 'string'), new PrimitiveSerializer(self::class, 'modemSerialNumber', 'string'), new PrimitiveSerializer(self::class, 'jumperStrip', 'string'), new PrimitiveSerializer(self::class, 'jumperBlock', 'string'), new PrimitiveSerializer(self::class, 'pair', 'string'));
-    protected $validations = array('connectionStatus' => array('required'), 'interfaceLogin' => array('required'), 'interfacePassword' => array('required'), 'modem' => array('required'));
+    protected array $validations = array('connectionStatus' => array('required'), 'interfaceLogin' => array('required'), 'interfacePassword' => array('required'), 'modem' => array('required'));
     /**
      * Setter for connectionStatus
      *
@@ -132,7 +130,7 @@ class CreateAdslSubscription extends CreateInternetSubscription
      *             - {@see CreateAdslSubscription::CONNECTION_STATUS_ACTIVATED}
      *             
      */
-    public function getConnectionStatus() : int
+    public function getConnectionStatus() : ?int
     {
         return $this->connectionStatus;
     }
@@ -154,7 +152,7 @@ class CreateAdslSubscription extends CreateInternetSubscription
      *
      * @return string The internet account of this internet subscription. This field can be unset when updating.
      */
-    public function getInternetAccount() : string
+    public function getInternetAccount() : ?string
     {
         return $this->internetAccount;
     }
@@ -176,7 +174,7 @@ class CreateAdslSubscription extends CreateInternetSubscription
      *
      * @return string The order number of this internet subscription. This field can be unset when updating.
      */
-    public function getOrderNumber() : string
+    public function getOrderNumber() : ?string
     {
         return $this->orderNumber;
     }
@@ -197,7 +195,7 @@ class CreateAdslSubscription extends CreateInternetSubscription
      *
      * @return string The interface login of this internet subscription
      */
-    public function getInterfaceLogin() : string
+    public function getInterfaceLogin() : ?string
     {
         return $this->interfaceLogin;
     }
@@ -218,7 +216,7 @@ class CreateAdslSubscription extends CreateInternetSubscription
      *
      * @return string The interface password of this internet subscription
      */
-    public function getInterfacePassword() : string
+    public function getInterfacePassword() : ?string
     {
         return $this->interfacePassword;
     }
@@ -239,7 +237,7 @@ class CreateAdslSubscription extends CreateInternetSubscription
      *
      * @return string The adsl login of this internet subscription. This field can be unset when updating.
      */
-    public function getAdslLogin() : string
+    public function getAdslLogin() : ?string
     {
         return $this->adslLogin;
     }
@@ -261,7 +259,7 @@ class CreateAdslSubscription extends CreateInternetSubscription
      *
      * @return string The adsl password of this internet subscription. This field can be unset when updating.
      */
-    public function getAdslPassword() : string
+    public function getAdslPassword() : ?string
     {
         return $this->adslPassword;
     }
@@ -282,7 +280,7 @@ class CreateAdslSubscription extends CreateInternetSubscription
      *
      * @return string The line number of this internet subscription
      */
-    public function getLineNumber() : string
+    public function getLineNumber() : ?string
     {
         return $this->lineNumber;
     }
@@ -303,7 +301,7 @@ class CreateAdslSubscription extends CreateInternetSubscription
      *
      * @return string The modem of this internet subscription
      */
-    public function getModem() : string
+    public function getModem() : ?string
     {
         return $this->modem;
     }
@@ -324,7 +322,7 @@ class CreateAdslSubscription extends CreateInternetSubscription
      *
      * @return string The serial number of the modem of this internet subscription
      */
-    public function getModemSerialNumber() : string
+    public function getModemSerialNumber() : ?string
     {
         return $this->modemSerialNumber;
     }
@@ -346,7 +344,7 @@ class CreateAdslSubscription extends CreateInternetSubscription
      *
      * @return string The jumper strip of this internet subscription. This field can be unset when updating.
      */
-    public function getJumperStrip() : string
+    public function getJumperStrip() : ?string
     {
         return $this->jumperStrip;
     }
@@ -368,7 +366,7 @@ class CreateAdslSubscription extends CreateInternetSubscription
      *
      * @return string The jumper block of this internet subscription. This field can be unset when updating.
      */
-    public function getJumperBlock() : string
+    public function getJumperBlock() : ?string
     {
         return $this->jumperBlock;
     }
@@ -389,8 +387,15 @@ class CreateAdslSubscription extends CreateInternetSubscription
      *
      * @return string The pair of this internet subscription. This field can be unset when updating.
      */
-    public function getPair() : string
+    public function getPair() : ?string
     {
         return $this->pair;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('connectionStatus' => new PrimitiveSerializer(self::class, 'connectionStatus', 'int'), 'internetAccount' => new PrimitiveSerializer(self::class, 'internetAccount', 'string'), 'orderNumber' => new PrimitiveSerializer(self::class, 'orderNumber', 'string'), 'interfaceLogin' => new PrimitiveSerializer(self::class, 'interfaceLogin', 'string'), 'interfacePassword' => new PrimitiveSerializer(self::class, 'interfacePassword', 'string'), 'adslLogin' => new PrimitiveSerializer(self::class, 'adslLogin', 'string'), 'adslPassword' => new PrimitiveSerializer(self::class, 'adslPassword', 'string'), 'lineNumber' => new PrimitiveSerializer(self::class, 'lineNumber', 'string'), 'modem' => new PrimitiveSerializer(self::class, 'modem', 'string'), 'modemSerialNumber' => new PrimitiveSerializer(self::class, 'modemSerialNumber', 'string'), 'jumperStrip' => new PrimitiveSerializer(self::class, 'jumperStrip', 'string'), 'jumperBlock' => new PrimitiveSerializer(self::class, 'jumperBlock', 'string'), 'pair' => new PrimitiveSerializer(self::class, 'pair', 'string'));
     }
 }

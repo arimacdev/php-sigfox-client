@@ -2,13 +2,13 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve the product certificate associated with a given device ID and PAC, when the device has not already been
  * created on the portal, only in CRA
  */
-class DevicesIdProductCertificate extends Definition
+class DevicesIdProductCertificate extends Request
 {
     /**
      * The device's PAC (hexadecimal format)
@@ -16,9 +16,8 @@ class DevicesIdProductCertificate extends Definition
      * @var string
      */
     protected ?string $pac = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'pac', 'string'));
-    protected $query = array('pac');
-    protected $validations = array('pac' => array('required'));
+    protected array $query = array('pac');
+    protected array $validations = array('pac' => array('required'));
     /**
      * Setter for pac
      *
@@ -30,5 +29,21 @@ class DevicesIdProductCertificate extends Definition
     {
         $this->pac = $pac;
         return $this;
+    }
+    /**
+     * Getter for pac
+     *
+     * @return string The device's PAC (hexadecimal format)
+     */
+    public function getPac() : ?string
+    {
+        return $this->pac;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('pac' => new PrimitiveSerializer(self::class, 'pac', 'string'));
     }
 }

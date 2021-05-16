@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\RegistrationJob\Status;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
@@ -47,7 +47,6 @@ class RegistrationJob extends Definition
      * @var Status
      */
     protected ?Status $status = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'jobDone', 'bool'), new PrimitiveSerializer(self::class, 'operatorId', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'description', 'string'), new PrimitiveSerializer(self::class, 'total', 'int'), new ClassSerializer(self::class, 'status', Status::class));
     /**
      * Setter for jobDone
      *
@@ -65,7 +64,7 @@ class RegistrationJob extends Definition
      *
      * @return bool If the job is finished or not
      */
-    public function getJobDone() : bool
+    public function getJobDone() : ?bool
     {
         return $this->jobDone;
     }
@@ -86,7 +85,7 @@ class RegistrationJob extends Definition
      *
      * @return string the operator's  idenfier (hexadecimal format)
      */
-    public function getOperatorId() : string
+    public function getOperatorId() : ?string
     {
         return $this->operatorId;
     }
@@ -107,7 +106,7 @@ class RegistrationJob extends Definition
      *
      * @return string the name of the registration job
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -128,7 +127,7 @@ class RegistrationJob extends Definition
      *
      * @return string the description of the registration job
      */
-    public function getDescription() : string
+    public function getDescription() : ?string
     {
         return $this->description;
     }
@@ -149,7 +148,7 @@ class RegistrationJob extends Definition
      *
      * @return int the total number of base stations given to be created
      */
-    public function getTotal() : int
+    public function getTotal() : ?int
     {
         return $this->total;
     }
@@ -170,8 +169,15 @@ class RegistrationJob extends Definition
      *
      * @return Status the informations about the base stations already treated
      */
-    public function getStatus() : Status
+    public function getStatus() : ?Status
     {
         return $this->status;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('jobDone' => new PrimitiveSerializer(self::class, 'jobDone', 'bool'), 'operatorId' => new PrimitiveSerializer(self::class, 'operatorId', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'description' => new PrimitiveSerializer(self::class, 'description', 'string'), 'total' => new PrimitiveSerializer(self::class, 'total', 'int'), 'status' => new ClassSerializer(self::class, 'status', Status::class));
     }
 }

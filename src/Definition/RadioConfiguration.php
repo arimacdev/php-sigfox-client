@@ -56,8 +56,7 @@ class RadioConfiguration extends Definition
      * @var int
      */
     protected ?int $id = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'int'));
-    protected $validations = array('id' => array('required'));
+    protected array $validations = array('id' => array('required'));
     /**
      * Setter for id
      *
@@ -95,8 +94,15 @@ class RadioConfiguration extends Definition
      *             - {@see RadioConfiguration::ID_RC7}
      *             
      */
-    public function getId() : int
+    public function getId() : ?int
     {
         return $this->id;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'int'));
     }
 }

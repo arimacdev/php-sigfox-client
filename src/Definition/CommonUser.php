@@ -27,8 +27,7 @@ class CommonUser extends Definition
      * @var string
      */
     protected ?string $timezone = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'firstName', 'string'), new PrimitiveSerializer(self::class, 'lastName', 'string'), new PrimitiveSerializer(self::class, 'timezone', 'string'));
-    protected $validations = array('firstName' => array('max:100', 'nullable'), 'lastName' => array('max:100', 'nullable'));
+    protected array $validations = array('firstName' => array('max:100', 'nullable'), 'lastName' => array('max:100', 'nullable'));
     /**
      * Setter for firstName
      *
@@ -46,7 +45,7 @@ class CommonUser extends Definition
      *
      * @return string The user's first name
      */
-    public function getFirstName() : string
+    public function getFirstName() : ?string
     {
         return $this->firstName;
     }
@@ -67,7 +66,7 @@ class CommonUser extends Definition
      *
      * @return string The user's last name
      */
-    public function getLastName() : string
+    public function getLastName() : ?string
     {
         return $this->lastName;
     }
@@ -88,8 +87,15 @@ class CommonUser extends Definition
      *
      * @return string The user's timezone
      */
-    public function getTimezone() : string
+    public function getTimezone() : ?string
     {
         return $this->timezone;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('firstName' => new PrimitiveSerializer(self::class, 'firstName', 'string'), 'lastName' => new PrimitiveSerializer(self::class, 'lastName', 'string'), 'timezone' => new PrimitiveSerializer(self::class, 'timezone', 'string'));
     }
 }

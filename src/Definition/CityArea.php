@@ -44,7 +44,6 @@ class CityArea extends Definition
      * @var string[]
      */
     protected ?array $actions = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'), new PrimitiveSerializer(self::class, 'groupId', 'string'), new PrimitiveSerializer(self::class, 'readOnly', 'bool'), new PrimitiveSerializer(self::class, 'deploymentKpiReport', 'bool'), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
     /**
      * Setter for id
      *
@@ -62,7 +61,7 @@ class CityArea extends Definition
      *
      * @return string The city area's identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -83,7 +82,7 @@ class CityArea extends Definition
      *
      * @return string The city area's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -104,7 +103,7 @@ class CityArea extends Definition
      *
      * @return string The city area operator's identifier
      */
-    public function getGroupId() : string
+    public function getGroupId() : ?string
     {
         return $this->groupId;
     }
@@ -125,7 +124,7 @@ class CityArea extends Definition
      *
      * @return bool true if the city area is not editable by an operator user.
      */
-    public function getReadOnly() : bool
+    public function getReadOnly() : ?bool
     {
         return $this->readOnly;
     }
@@ -147,7 +146,7 @@ class CityArea extends Definition
      *
      * @return bool true if the city area is included in the monthly deployement kpi report of the operator.
      */
-    public function getDeploymentKpiReport() : bool
+    public function getDeploymentKpiReport() : ?bool
     {
         return $this->deploymentKpiReport;
     }
@@ -168,8 +167,15 @@ class CityArea extends Definition
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'), 'readOnly' => new PrimitiveSerializer(self::class, 'readOnly', 'bool'), 'deploymentKpiReport' => new PrimitiveSerializer(self::class, 'deploymentKpiReport', 'bool'), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
     }
 }

@@ -2,13 +2,13 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Definition\UserCreation;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Create a new user.
  */
-class UsersCreate extends Definition
+class UsersCreate extends Request
 {
     /**
      * The user to create
@@ -16,9 +16,8 @@ class UsersCreate extends Definition
      * @var UserCreation
      */
     protected ?UserCreation $user = null;
-    protected $serialize = array(new ClassSerializer(self::class, 'user', UserCreation::class));
-    protected $body = array('user');
-    protected $validations = array('user' => array('required'));
+    protected array $body = array('user');
+    protected array $validations = array('user' => array('required'));
     /**
      * Setter for user
      *
@@ -30,5 +29,21 @@ class UsersCreate extends Definition
     {
         $this->user = $user;
         return $this;
+    }
+    /**
+     * Getter for user
+     *
+     * @return UserCreation The user to create
+     */
+    public function getUser() : ?UserCreation
+    {
+        return $this->user;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('user' => new ClassSerializer(self::class, 'user', UserCreation::class));
     }
 }

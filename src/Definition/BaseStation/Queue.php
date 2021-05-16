@@ -20,7 +20,6 @@ class Queue extends Definition
      * @var int
      */
     protected ?int $out = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'in', 'int'), new PrimitiveSerializer(self::class, 'out', 'int'));
     /**
      * Setter for in
      *
@@ -38,7 +37,7 @@ class Queue extends Definition
      *
      * @return int The number of messages handled by the base station
      */
-    public function getIn() : int
+    public function getIn() : ?int
     {
         return $this->in;
     }
@@ -67,8 +66,15 @@ class Queue extends Definition
      *             or too many messages received at once by the station
      *             
      */
-    public function getOut() : int
+    public function getOut() : ?int
     {
         return $this->out;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('in' => new PrimitiveSerializer(self::class, 'in', 'int'), 'out' => new PrimitiveSerializer(self::class, 'out', 'int'));
     }
 }

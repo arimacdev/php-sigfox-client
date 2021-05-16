@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Definition\ActionJob\Status;
+use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 class ActionJob extends Definition
@@ -20,7 +20,6 @@ class ActionJob extends Definition
      * @var Status
      */
     protected ?Status $status = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'jobDone', 'bool'), new ClassSerializer(self::class, 'status', Status::class));
     /**
      * Setter for jobDone
      *
@@ -38,7 +37,7 @@ class ActionJob extends Definition
      *
      * @return bool If the job is finished or not
      */
-    public function getJobDone() : bool
+    public function getJobDone() : ?bool
     {
         return $this->jobDone;
     }
@@ -59,8 +58,15 @@ class ActionJob extends Definition
      *
      * @return Status the informations about the devices already treated
      */
-    public function getStatus() : Status
+    public function getStatus() : ?Status
     {
         return $this->status;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('jobDone' => new PrimitiveSerializer(self::class, 'jobDone', 'bool'), 'status' => new ClassSerializer(self::class, 'status', Status::class));
     }
 }

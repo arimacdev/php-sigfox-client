@@ -29,8 +29,7 @@ class MinRole extends Definition
      * @var MinMetaRole[]
      */
     protected ?array $path = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'id', 'string'), new PrimitiveSerializer(self::class, 'name', 'string'), new ArraySerializer(self::class, 'path', new ClassSerializer(self::class, 'path', MinMetaRole::class)));
-    protected $validations = array('name' => array('max:100', 'nullable'));
+    protected array $validations = array('name' => array('max:100', 'nullable'));
     /**
      * Setter for id
      *
@@ -48,7 +47,7 @@ class MinRole extends Definition
      *
      * @return string The role's identifier
      */
-    public function getId() : string
+    public function getId() : ?string
     {
         return $this->id;
     }
@@ -69,7 +68,7 @@ class MinRole extends Definition
      *
      * @return string The role's name
      */
-    public function getName() : string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -90,8 +89,15 @@ class MinRole extends Definition
      *
      * @return MinMetaRole[] The roles's path sorted by descending ancestor (direct parent to farest parent)
      */
-    public function getPath() : array
+    public function getPath() : ?array
     {
         return $this->path;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'path' => new ArraySerializer(self::class, 'path', new ClassSerializer(self::class, 'path', MinMetaRole::class)));
     }
 }

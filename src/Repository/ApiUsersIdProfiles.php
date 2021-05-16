@@ -2,9 +2,11 @@
 
 namespace Arimac\Sigfox\Repository;
 
+use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
+use Arimac\Sigfox\Definition\ProfileIds;
 use Arimac\Sigfox\Request\ApiUsersIdProfilesUpdate;
-class ApiUsersIdProfiles
+class ApiUsersIdProfiles extends Repository
 {
     /**
      * The HTTP client
@@ -27,10 +29,14 @@ class ApiUsersIdProfiles
     }
     /**
      * Associate new profiles to a given API user.
+     *
+     * @param ProfileIds $profileIds The API profile to update
      */
-    public function update(ApiUsersIdProfilesUpdate $request)
+    public function update(ProfileIds $profileIds)
     {
-        return $this->client->request('put', $this->bind('/api-users/{id}/profiles', $this->id), $request);
+        $request = new ApiUsersIdProfilesUpdate();
+        $request->setProfileIds($profileIds);
+        return $this->client->call('put', $this->bind('/api-users/{id}/profiles', $this->id), $request);
     }
     /**
      * Find by profileId

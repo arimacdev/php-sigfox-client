@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Definition;
 
-use Arimac\Sigfox\Definition;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
@@ -24,7 +23,6 @@ class Provider extends BaseProvider
      * @var string[]
      */
     protected ?array $resources = null;
-    protected $serialize = array(new ClassSerializer(self::class, 'group', MinGroup::class), new ArraySerializer(self::class, 'contacts', new ClassSerializer(self::class, 'contacts', Contact::class)), new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     /**
      * Setter for group
      *
@@ -42,7 +40,7 @@ class Provider extends BaseProvider
      *
      * @return MinGroup
      */
-    public function getGroup() : MinGroup
+    public function getGroup() : ?MinGroup
     {
         return $this->group;
     }
@@ -63,7 +61,7 @@ class Provider extends BaseProvider
      *
      * @return Contact[]
      */
-    public function getContacts() : array
+    public function getContacts() : ?array
     {
         return $this->contacts;
     }
@@ -84,7 +82,7 @@ class Provider extends BaseProvider
      *
      * @return string[]
      */
-    public function getActions() : array
+    public function getActions() : ?array
     {
         return $this->actions;
     }
@@ -105,8 +103,15 @@ class Provider extends BaseProvider
      *
      * @return string[]
      */
-    public function getResources() : array
+    public function getResources() : ?array
     {
         return $this->resources;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('group' => new ClassSerializer(self::class, 'group', MinGroup::class), 'contacts' => new ArraySerializer(self::class, 'contacts', new ClassSerializer(self::class, 'contacts', Contact::class)), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
     }
 }

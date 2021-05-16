@@ -45,7 +45,6 @@ class GroupCallbackHTTP extends Definition
      * @var string
      */
     protected ?string $error = null;
-    protected $serialize = array(new PrimitiveSerializer(self::class, 'url', 'string'), new PrimitiveSerializer(self::class, 'headers', 'array'), new PrimitiveSerializer(self::class, 'body', 'string'), new PrimitiveSerializer(self::class, 'contentType', 'string'), new PrimitiveSerializer(self::class, 'method', 'string'), new PrimitiveSerializer(self::class, 'error', 'string'));
     /**
      * Setter for url
      *
@@ -63,7 +62,7 @@ class GroupCallbackHTTP extends Definition
      *
      * @return string The URL called when this message has been processed
      */
-    public function getUrl() : string
+    public function getUrl() : ?string
     {
         return $this->url;
     }
@@ -84,7 +83,7 @@ class GroupCallbackHTTP extends Definition
      *
      * @return array The headers sent in the request. If no header is defined, this field is not present.
      */
-    public function getHeaders() : array
+    public function getHeaders() : ?array
     {
         return $this->headers;
     }
@@ -105,7 +104,7 @@ class GroupCallbackHTTP extends Definition
      *
      * @return string The body of the request, if any. It is only present if the request method is POST.
      */
-    public function getBody() : string
+    public function getBody() : ?string
     {
         return $this->body;
     }
@@ -126,7 +125,7 @@ class GroupCallbackHTTP extends Definition
      *
      * @return string The content type of the request. It is only present if the request is a POST.
      */
-    public function getContentType() : string
+    public function getContentType() : ?string
     {
         return $this->contentType;
     }
@@ -147,7 +146,7 @@ class GroupCallbackHTTP extends Definition
      *
      * @return string The HTTP method, currently only GET, POST or PUT.
      */
-    public function getMethod() : string
+    public function getMethod() : ?string
     {
         return $this->method;
     }
@@ -168,8 +167,15 @@ class GroupCallbackHTTP extends Definition
      *
      * @return string If there was an error, for instance if the body is JSON and could not be evaluated.
      */
-    public function getError() : string
+    public function getError() : ?string
     {
         return $this->error;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('url' => new PrimitiveSerializer(self::class, 'url', 'string'), 'headers' => new PrimitiveSerializer(self::class, 'headers', 'array'), 'body' => new PrimitiveSerializer(self::class, 'body', 'string'), 'contentType' => new PrimitiveSerializer(self::class, 'contentType', 'string'), 'method' => new PrimitiveSerializer(self::class, 'method', 'string'), 'error' => new PrimitiveSerializer(self::class, 'error', 'string'));
     }
 }

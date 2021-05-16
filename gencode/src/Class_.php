@@ -110,11 +110,7 @@ class Class_
     public function extend(string $name)
     {
         $type = $this->useType($name);
-        if (in_array($type, $this->forceTraits)) {
-            $this->class->addStmt($this->factory->useTrait($type));
-        } else {
-            $this->class->extend($type);
-        }
+        $this->class->extend($type);
     }
 
     public function getNamespace(): string
@@ -172,7 +168,7 @@ class Class_
         string $name,
         array $params,
         $stmts,
-        ?string $returnType = null,
+        $returnType = null,
         ?string $docComment = null
     ) {
         $method = $this->factory->method($name);
@@ -192,6 +188,7 @@ class Class_
     {
         $property = $this->factory->property($propertyName);
         $property->setDefault($items);
+        $property->setType("array");
         $property->makeProtected();
         $this->class->addStmt($property);
     }

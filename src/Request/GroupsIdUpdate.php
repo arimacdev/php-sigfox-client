@@ -2,13 +2,13 @@
 
 namespace Arimac\Sigfox\Request;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Definition\CommonGroupUpdate;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 /**
  * Update a given group.
  */
-class GroupsIdUpdate extends Definition
+class GroupsIdUpdate extends Request
 {
     /**
      * The group to update
@@ -16,9 +16,8 @@ class GroupsIdUpdate extends Definition
      * @var CommonGroupUpdate
      */
     protected ?CommonGroupUpdate $group = null;
-    protected $serialize = array(new ClassSerializer(self::class, 'group', CommonGroupUpdate::class));
-    protected $body = array('group');
-    protected $validations = array('group' => array('required'));
+    protected array $body = array('group');
+    protected array $validations = array('group' => array('required'));
     /**
      * Setter for group
      *
@@ -30,5 +29,21 @@ class GroupsIdUpdate extends Definition
     {
         $this->group = $group;
         return $this;
+    }
+    /**
+     * Getter for group
+     *
+     * @return CommonGroupUpdate The group to update
+     */
+    public function getGroup() : ?CommonGroupUpdate
+    {
+        return $this->group;
+    }
+    /**
+     * @inheritdoc
+     */
+    public function getSerializeMetaData() : array
+    {
+        return array('group' => new ClassSerializer(self::class, 'group', CommonGroupUpdate::class));
     }
 }
