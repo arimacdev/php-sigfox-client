@@ -507,14 +507,38 @@ service</dd>
         <dd>HTTP 405 Method Not Allowed error</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Exception-Response-NotFoundException.html"><abbr title="\Arimac\Sigfox\Exception\Response\NotFoundException">NotFoundException</abbr></a></dt>
         <dd>HTTP 404 Not Found error</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Exception-Response-InternalServerException.html"><abbr title="\Arimac\Sigfox\Exception\Response\InternalServerException">InternalServerException</abbr></a></dt>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Exception-Response-PreconditionFailedException.html"><abbr title="\Arimac\Sigfox\Exception\Response\PreconditionFailedException">PreconditionFailedException</abbr></a></dt>
         <dd>HTTP 412 Precondition Failed error</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Exception-Response-ResponseException.html"><abbr title="\Arimac\Sigfox\Exception\Response\ResponseException">ResponseException</abbr></a></dt>
-        <dd>HTTP errors</dd>
+        <dd>All HTTP errors returning from Sigfox API</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Exception-Response-UnauthorizedException.html"><abbr title="\Arimac\Sigfox\Exception\Response\UnauthorizedException">UnauthorizedException</abbr></a></dt>
         <dd>HTTP 401 Unauthorized error</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Exception-SerializeException.html"><abbr title="\Arimac\Sigfox\Exception\SerializeException">SerializeException</abbr></a></dt>
         <dd>Deserialization exceptions.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-ApiUsersCreate.html"><abbr title="\Arimac\Sigfox\Request\ApiUsersCreate">ApiUsersCreate</abbr></a></dt>
+        <dd>Create a new API user.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-ApiUsersIdGet.html"><abbr title="\Arimac\Sigfox\Request\ApiUsersIdGet">ApiUsersIdGet</abbr></a></dt>
+        <dd>Retrieve information about a given API user.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-ApiUsersIdUpdate.html"><abbr title="\Arimac\Sigfox\Request\ApiUsersIdUpdate">ApiUsersIdUpdate</abbr></a></dt>
+        <dd>Update information about a given API user.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-ApiUsersList.html"><abbr title="\Arimac\Sigfox\Request\ApiUsersList">ApiUsersList</abbr></a></dt>
+        <dd>Retrieve a list of API users according to visibility permissions and request filters.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request.html"><abbr title="\Arimac\Sigfox\Request">Request</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Response-Generated-ApiUsersCreateResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ApiUsersCreateResponse">ApiUsersCreateResponse</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Response-Generated-ApiUsersListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ApiUsersListResponse">ApiUsersListResponse</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Response-PaginatedResponse.html"><abbr title="\Arimac\Sigfox\Response\PaginatedResponse">PaginatedResponse</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-SigfoxExt.html"><abbr title="\Arimac\Sigfox\SigfoxExt">SigfoxExt</abbr></a></dt>
+        <dd>Constructor of the `Sigfox` class.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Exception-SigfoxException.html"><abbr title="\Arimac\Sigfox\Exception\SigfoxException">SigfoxException</abbr></a></dt>
+        <dd>All exceptions that throwing from Sigfox API Client *</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Exception-UnexpectedResponseException.html"><abbr title="\Arimac\Sigfox\Exception\UnexpectedResponseException">UnexpectedResponseException</abbr></a></dt>
+        <dd>Server returned an unexpected response code</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Helper.html"><abbr title="\Arimac\Sigfox\Helper">Helper</abbr></a></dt>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Repository-ApiUsers.html"><abbr title="\Arimac\Sigfox\Repository\ApiUsers">ApiUsers</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Repository-ApiUsersId.html"><abbr title="\Arimac\Sigfox\Repository\ApiUsersId">ApiUsersId</abbr></a></dt>
@@ -619,16 +643,8 @@ service</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Repository-UsersIdProfilesProfileId.html"><abbr title="\Arimac\Sigfox\Repository\UsersIdProfilesProfileId">UsersIdProfilesProfileId</abbr></a></dt>
         <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-ApiUsersCreate.html"><abbr title="\Arimac\Sigfox\Request\ApiUsersCreate">ApiUsersCreate</abbr></a></dt>
-        <dd>Create a new API user.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-ApiUsersIdGet.html"><abbr title="\Arimac\Sigfox\Request\ApiUsersIdGet">ApiUsersIdGet</abbr></a></dt>
-        <dd>Retrieve information about a given API user.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-ApiUsersIdProfilesUpdate.html"><abbr title="\Arimac\Sigfox\Request\ApiUsersIdProfilesUpdate">ApiUsersIdProfilesUpdate</abbr></a></dt>
         <dd>Associate new profiles to a given API user.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-ApiUsersIdUpdate.html"><abbr title="\Arimac\Sigfox\Request\ApiUsersIdUpdate">ApiUsersIdUpdate</abbr></a></dt>
-        <dd>Update information about a given API user.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-ApiUsersList.html"><abbr title="\Arimac\Sigfox\Request\ApiUsersList">ApiUsersList</abbr></a></dt>
-        <dd>Retrieve a list of API users according to visibility permissions and request filters.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-ContractInfosIdDevices.html"><abbr title="\Arimac\Sigfox\Request\ContractInfosIdDevices">ContractInfosIdDevices</abbr></a></dt>
         <dd>Retrieve a list of devices according to visibility permissions and request filters.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-ContractInfosIdGet.html"><abbr title="\Arimac\Sigfox\Request\ContractInfosIdGet">ContractInfosIdGet</abbr></a></dt>
@@ -742,13 +758,7 @@ a previous calculation</dd>
         <dd>Update a given user.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-UsersList.html"><abbr title="\Arimac\Sigfox\Request\UsersList">UsersList</abbr></a></dt>
         <dd>Retrieve a list of users according to visibility permissions and request filters.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request.html"><abbr title="\Arimac\Sigfox\Request">Request</abbr></a></dt>
-        <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Response-Generated-ApiUsersCreateResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ApiUsersCreateResponse">ApiUsersCreateResponse</abbr></a></dt>
-        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Response-Generated-ApiUsersIdRenewCredentialResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ApiUsersIdRenewCredentialResponse">ApiUsersIdRenewCredentialResponse</abbr></a></dt>
-        <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Response-Generated-ApiUsersListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ApiUsersListResponse">ApiUsersListResponse</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Response-Generated-ContractInfosIdBulkRestartResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ContractInfosIdBulkRestartResponse">ContractInfosIdBulkRestartResponse</abbr></a></dt>
         <dd></dd>
@@ -814,12 +824,8 @@ a previous calculation</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Response-Generated-UsersListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\UsersListResponse">UsersListResponse</abbr></a></dt>
         <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Response-PaginatedResponse.html"><abbr title="\Arimac\Sigfox\Response\PaginatedResponse">PaginatedResponse</abbr></a></dt>
-        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Sigfox.html"><abbr title="\Arimac\Sigfox\Sigfox">Sigfox</abbr></a></dt>
         <dd>Client for sigfox API</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-SigfoxExt.html"><abbr title="\Arimac\Sigfox\SigfoxExt">SigfoxExt</abbr></a></dt>
-        <dd>Constructor of the `Sigfox` class.</dd>
     
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/Arimac-Sigfox-Definition-BillableGroup.html"><abbr title="\Arimac\Sigfox\Definition\BillableGroup">BillableGroup</abbr></a></dt>
         <dd>Defines the billable group&#039;s properties</dd>

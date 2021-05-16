@@ -16096,21 +16096,6 @@ Search.appendIndex(
             "summary": "Deserialization\u0020exceptions.",
             "url": "classes/Arimac-Sigfox-Exception-DeserializeException.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\DeserializeException\u003A\u003AgetClassName\u0028\u0029",
-            "name": "getClassName",
-            "summary": "Name\u0020of\u0020the\u0020class\u0020that\u0020the\u0020value\u0020exists",
-            "url": "classes/Arimac-Sigfox-Exception-DeserializeException.html#method_getClassName"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\DeserializeException\u003A\u003AgetPropertyName\u0028\u0029",
-            "name": "getPropertyName",
-            "summary": "Name\u0020of\u0020the\u0020property\u0020that\u0020the\u0020value\u0020exists",
-            "url": "classes/Arimac-Sigfox-Exception-DeserializeException.html#method_getPropertyName"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\DeserializeException\u003A\u003AgetExpectedType\u0028\u0029",
-            "name": "getExpectedType",
-            "summary": "Expected\u0020type\u0020for\u0020the\u0020property",
-            "url": "classes/Arimac-Sigfox-Exception-DeserializeException.html#method_getExpectedType"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\BadRequestException",
             "name": "BadRequestException",
             "summary": "HTTP\u0020400\u0020Bad\u0020Request\u0020error",
@@ -16133,7 +16118,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\InternalServerException",
             "name": "InternalServerException",
-            "summary": "HTTP\u0020412\u0020Precondition\u0020Failed\u0020error",
+            "summary": "HTTP\u0020500\u0020Internal\u0020Server\u0020Error",
             "url": "classes/Arimac-Sigfox-Exception-Response-InternalServerException.html"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\MethodNotAllowedException",
@@ -16151,9 +16136,14 @@ Search.appendIndex(
             "summary": "HTTP\u0020404\u0020Not\u0020Found\u0020error",
             "url": "classes/Arimac-Sigfox-Exception-Response-NotFoundException.html"
         },                {
+            "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\PreconditionFailedException",
+            "name": "PreconditionFailedException",
+            "summary": "HTTP\u0020412\u0020Precondition\u0020Failed\u0020error",
+            "url": "classes/Arimac-Sigfox-Exception-Response-PreconditionFailedException.html"
+        },                {
             "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\ResponseException",
             "name": "ResponseException",
-            "summary": "HTTP\u0020errors",
+            "summary": "All\u0020HTTP\u0020errors\u0020returning\u0020from\u0020Sigfox\u0020API",
             "url": "classes/Arimac-Sigfox-Exception-Response-ResponseException.html"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\UnauthorizedException",
@@ -16166,20 +16156,225 @@ Search.appendIndex(
             "summary": "Deserialization\u0020exceptions.",
             "url": "classes/Arimac-Sigfox-Exception-SerializeException.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\SerializeException\u003A\u003AgetClassName\u0028\u0029",
-            "name": "getClassName",
-            "summary": "Name\u0020of\u0020the\u0020class\u0020that\u0020the\u0020value\u0020exists",
-            "url": "classes/Arimac-Sigfox-Exception-SerializeException.html#method_getClassName"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\SerializeException\u003A\u003AgetPropertyName\u0028\u0029",
-            "name": "getPropertyName",
-            "summary": "Name\u0020of\u0020the\u0020property\u0020that\u0020the\u0020value\u0020exists",
-            "url": "classes/Arimac-Sigfox-Exception-SerializeException.html#method_getPropertyName"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\SerializeException\u003A\u003AgetExpectedType\u0028\u0029",
-            "name": "getExpectedType",
+            "fqsen": "\\Arimac\\Sigfox\\Exception\\SerializeException\u003A\u003AgetExpectedTypes\u0028\u0029",
+            "name": "getExpectedTypes",
             "summary": "Expected\u0020type\u0020for\u0020the\u0020property",
-            "url": "classes/Arimac-Sigfox-Exception-SerializeException.html#method_getExpectedType"
+            "url": "classes/Arimac-Sigfox-Exception-SerializeException.html#method_getExpectedTypes"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Exception\\SerializeException\u003A\u003AgetActualType\u0028\u0029",
+            "name": "getActualType",
+            "summary": "Actual\u0020type\u0020that\u0020user\u0020passed",
+            "url": "classes/Arimac-Sigfox-Exception-SerializeException.html#method_getActualType"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersCreate",
+            "name": "ApiUsersCreate",
+            "summary": "Create\u0020a\u0020new\u0020API\u0020user.",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersCreate.html"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersCreate\u003A\u003AsetApiUser\u0028\u0029",
+            "name": "setApiUser",
+            "summary": "Setter\u0020for\u0020apiUser",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersCreate.html#method_setApiUser"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersCreate\u003A\u003A\u0024apiUser",
+            "name": "apiUser",
+            "summary": "",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersCreate.html#property_apiUser"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdGet",
+            "name": "ApiUsersIdGet",
+            "summary": "Retrieve\u0020information\u0020about\u0020a\u0020given\u0020API\u0020user.",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdGet.html"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdGet\u003A\u003AsetFields\u0028\u0029",
+            "name": "setFields",
+            "summary": "Setter\u0020for\u0020fields",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdGet.html#method_setFields"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdGet\u003A\u003AsetAuthorizations\u0028\u0029",
+            "name": "setAuthorizations",
+            "summary": "Setter\u0020for\u0020authorizations",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdGet.html#method_setAuthorizations"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdGet\u003A\u003A\u0024fields",
+            "name": "fields",
+            "summary": "Defines\u0020the\u0020other\u0020available\u0020fields\u0020to\u0020be\u0020returned\u0020in\u0020the\u0020response.",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdGet.html#property_fields"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdGet\u003A\u003A\u0024authorizations",
+            "name": "authorizations",
+            "summary": "if\u0020true,\u0020return\u0020the\u0020list\u0020of\u0020actions\u0020and\u0020resources\u0020the\u0020user\u0020has\u0020access",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdGet.html#property_authorizations"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdUpdate",
+            "name": "ApiUsersIdUpdate",
+            "summary": "Update\u0020information\u0020about\u0020a\u0020given\u0020API\u0020user.",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdUpdate.html"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdUpdate\u003A\u003AsetApiUser\u0028\u0029",
+            "name": "setApiUser",
+            "summary": "Setter\u0020for\u0020apiUser",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdUpdate.html#method_setApiUser"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdUpdate\u003A\u003A\u0024apiUser",
+            "name": "apiUser",
+            "summary": "The\u0020information\u0020to\u0020update",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdUpdate.html#property_apiUser"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList",
+            "name": "ApiUsersList",
+            "summary": "Retrieve\u0020a\u0020list\u0020of\u0020API\u0020users\u0020according\u0020to\u0020visibility\u0020permissions\u0020and\u0020request\u0020filters.",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003AsetFields\u0028\u0029",
+            "name": "setFields",
+            "summary": "Setter\u0020for\u0020fields",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_setFields"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003AsetProfileId\u0028\u0029",
+            "name": "setProfileId",
+            "summary": "Setter\u0020for\u0020profileId",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_setProfileId"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003AsetGroupIds\u0028\u0029",
+            "name": "setGroupIds",
+            "summary": "Setter\u0020for\u0020groupIds",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_setGroupIds"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003AsetLimit\u0028\u0029",
+            "name": "setLimit",
+            "summary": "Setter\u0020for\u0020limit",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_setLimit"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003AsetOffset\u0028\u0029",
+            "name": "setOffset",
+            "summary": "Setter\u0020for\u0020offset",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_setOffset"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003AsetAuthorizations\u0028\u0029",
+            "name": "setAuthorizations",
+            "summary": "Setter\u0020for\u0020authorizations",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_setAuthorizations"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003A\u0024fields",
+            "name": "fields",
+            "summary": "Defines\u0020the\u0020other\u0020available\u0020fields\u0020to\u0020be\u0020returned\u0020in\u0020the\u0020response.",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#property_fields"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003A\u0024profileId",
+            "name": "profileId",
+            "summary": "Searches\u0020for\u0020API\u0020users\u0020with\u0020the\u0020given\u0020profile",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#property_profileId"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003A\u0024groupIds",
+            "name": "groupIds",
+            "summary": "Searches\u0020for\u0020API\u0020users\u0020who\u0020are\u0020attached\u0020to\u0020the\u0020given\u0020groups",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#property_groupIds"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003A\u0024limit",
+            "name": "limit",
+            "summary": "Defines\u0020the\u0020maximum\u0020number\u0020of\u0020items\u0020to\u0020return",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#property_limit"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003A\u0024offset",
+            "name": "offset",
+            "summary": "Defines\u0020the\u0020number\u0020of\u0020items\u0020to\u0020skip",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#property_offset"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003A\u0024authorizations",
+            "name": "authorizations",
+            "summary": "if\u0020true,\u0020return\u0020the\u0020list\u0020of\u0020actions\u0020and\u0020resources\u0020the\u0020user\u0020has\u0020access",
+            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#property_authorizations"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Request",
+            "name": "Request",
+            "summary": "",
+            "url": "classes/Arimac-Sigfox-Request.html"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersCreateResponse",
+            "name": "ApiUsersCreateResponse",
+            "summary": "",
+            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersCreateResponse.html"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersCreateResponse\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "Getter\u0020for\u0020id",
+            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersCreateResponse.html#method_getId"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersCreateResponse\u003A\u003A\u0024id",
+            "name": "id",
+            "summary": "The\u0020newly\u0020created\u0020API\u0020user\u0020identifier",
+            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersCreateResponse.html#property_id"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersListResponse",
+            "name": "ApiUsersListResponse",
+            "summary": "",
+            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersListResponse.html"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersListResponse\u003A\u003AgetData\u0028\u0029",
+            "name": "getData",
+            "summary": "Getter\u0020for\u0020data",
+            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersListResponse.html#method_getData"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersListResponse\u003A\u003AgetPaging\u0028\u0029",
+            "name": "getPaging",
+            "summary": "Getter\u0020for\u0020paging",
+            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersListResponse.html#method_getPaging"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersListResponse\u003A\u003A\u0024data",
+            "name": "data",
+            "summary": "",
+            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersListResponse.html#property_data"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersListResponse\u003A\u003A\u0024paging",
+            "name": "paging",
+            "summary": "",
+            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersListResponse.html#property_paging"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Response\\PaginatedResponse",
+            "name": "PaginatedResponse",
+            "summary": "",
+            "url": "classes/Arimac-Sigfox-Response-PaginatedResponse.html"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\SigfoxExt",
+            "name": "SigfoxExt",
+            "summary": "Constructor\u0020of\u0020the\u0020\u0060Sigfox\u0060\u0020class.",
+            "url": "classes/Arimac-Sigfox-SigfoxExt.html"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\SigfoxExt\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Creating\u0020a\u0020Sigfox\u0020client\u0020instance",
+            "url": "classes/Arimac-Sigfox-SigfoxExt.html#method___construct"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Exception\\SigfoxException",
+            "name": "SigfoxException",
+            "summary": "All\u0020exceptions\u0020that\u0020throwing\u0020from\u0020Sigfox\u0020API\u0020Client\u0020\u002A",
+            "url": "classes/Arimac-Sigfox-Exception-SigfoxException.html"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Exception\\UnexpectedResponseException",
+            "name": "UnexpectedResponseException",
+            "summary": "Server\u0020returned\u0020an\u0020unexpected\u0020response\u0020code",
+            "url": "classes/Arimac-Sigfox-Exception-UnexpectedResponseException.html"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Exception\\UnexpectedResponseException\u003A\u003AgetStatusCode\u0028\u0029",
+            "name": "getStatusCode",
+            "summary": "Returning\u0020the\u0020HTTP\u0020status\u0020code\u0020of\u0020the\u0020response",
+            "url": "classes/Arimac-Sigfox-Exception-UnexpectedResponseException.html#method_getStatusCode"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Exception\\UnexpectedResponseException\u003A\u003AgetBody\u0028\u0029",
+            "name": "getBody",
+            "summary": "Returning\u0020the\u0020body\u0020of\u0020the\u0020response",
+            "url": "classes/Arimac-Sigfox-Exception-UnexpectedResponseException.html#method_getBody"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Helper",
+            "name": "Helper",
+            "summary": "",
+            "url": "classes/Arimac-Sigfox-Helper.html"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Helper\u003A\u003AarrayFilterKeys\u0028\u0029",
+            "name": "arrayFilterKeys",
+            "summary": "Filter\u0020only\u0020required\u0020keys\u0020from\u0020a\u0020large\u0020array",
+            "url": "classes/Arimac-Sigfox-Helper.html#method_arrayFilterKeys"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsers",
             "name": "ApiUsers",
@@ -17066,61 +17261,6 @@ Search.appendIndex(
             "summary": "Delete\u0020profiles\u0020or\u0020a\u0020given\u0020profile\u0020associated\u0020to\u0020the\u0020groupId",
             "url": "classes/Arimac-Sigfox-Repository-UsersIdProfilesProfileId.html#method_delete"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersCreate",
-            "name": "ApiUsersCreate",
-            "summary": "Create\u0020a\u0020new\u0020API\u0020user.",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersCreate.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersCreate\u003A\u003AsetApiUser\u0028\u0029",
-            "name": "setApiUser",
-            "summary": "Setter\u0020for\u0020apiUser",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersCreate.html#method_setApiUser"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersCreate\u003A\u003AgetApiUser\u0028\u0029",
-            "name": "getApiUser",
-            "summary": "Getter\u0020for\u0020apiUser",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersCreate.html#method_getApiUser"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersCreate\u003A\u003A\u0024apiUser",
-            "name": "apiUser",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersCreate.html#property_apiUser"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdGet",
-            "name": "ApiUsersIdGet",
-            "summary": "Retrieve\u0020information\u0020about\u0020a\u0020given\u0020API\u0020user.",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdGet.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdGet\u003A\u003AsetFields\u0028\u0029",
-            "name": "setFields",
-            "summary": "Setter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdGet.html#method_setFields"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdGet\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "Getter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdGet.html#method_getFields"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdGet\u003A\u003AsetAuthorizations\u0028\u0029",
-            "name": "setAuthorizations",
-            "summary": "Setter\u0020for\u0020authorizations",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdGet.html#method_setAuthorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdGet\u003A\u003AgetAuthorizations\u0028\u0029",
-            "name": "getAuthorizations",
-            "summary": "Getter\u0020for\u0020authorizations",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdGet.html#method_getAuthorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdGet\u003A\u003A\u0024fields",
-            "name": "fields",
-            "summary": "Defines\u0020the\u0020other\u0020available\u0020fields\u0020to\u0020be\u0020returned\u0020in\u0020the\u0020response.",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdGet.html#property_fields"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdGet\u003A\u003A\u0024authorizations",
-            "name": "authorizations",
-            "summary": "if\u0020true,\u0020return\u0020the\u0020list\u0020of\u0020actions\u0020and\u0020resources\u0020the\u0020user\u0020has\u0020access",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdGet.html#property_authorizations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdProfilesUpdate",
             "name": "ApiUsersIdProfilesUpdate",
             "summary": "Associate\u0020new\u0020profiles\u0020to\u0020a\u0020given\u0020API\u0020user.",
@@ -17131,130 +17271,10 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020profileIds",
             "url": "classes/Arimac-Sigfox-Request-ApiUsersIdProfilesUpdate.html#method_setProfileIds"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdProfilesUpdate\u003A\u003AgetProfileIds\u0028\u0029",
-            "name": "getProfileIds",
-            "summary": "Getter\u0020for\u0020profileIds",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdProfilesUpdate.html#method_getProfileIds"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdProfilesUpdate\u003A\u003A\u0024profileIds",
             "name": "profileIds",
             "summary": "The\u0020API\u0020profile\u0020to\u0020update",
             "url": "classes/Arimac-Sigfox-Request-ApiUsersIdProfilesUpdate.html#property_profileIds"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdUpdate",
-            "name": "ApiUsersIdUpdate",
-            "summary": "Update\u0020information\u0020about\u0020a\u0020given\u0020API\u0020user.",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdUpdate.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdUpdate\u003A\u003AsetApiUser\u0028\u0029",
-            "name": "setApiUser",
-            "summary": "Setter\u0020for\u0020apiUser",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdUpdate.html#method_setApiUser"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdUpdate\u003A\u003AgetApiUser\u0028\u0029",
-            "name": "getApiUser",
-            "summary": "Getter\u0020for\u0020apiUser",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdUpdate.html#method_getApiUser"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdUpdate\u003A\u003A\u0024apiUser",
-            "name": "apiUser",
-            "summary": "The\u0020information\u0020to\u0020update",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdUpdate.html#property_apiUser"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList",
-            "name": "ApiUsersList",
-            "summary": "Retrieve\u0020a\u0020list\u0020of\u0020API\u0020users\u0020according\u0020to\u0020visibility\u0020permissions\u0020and\u0020request\u0020filters.",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003AsetFields\u0028\u0029",
-            "name": "setFields",
-            "summary": "Setter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_setFields"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "Getter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_getFields"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003AsetProfileId\u0028\u0029",
-            "name": "setProfileId",
-            "summary": "Setter\u0020for\u0020profileId",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_setProfileId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003AgetProfileId\u0028\u0029",
-            "name": "getProfileId",
-            "summary": "Getter\u0020for\u0020profileId",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_getProfileId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003AsetGroupIds\u0028\u0029",
-            "name": "setGroupIds",
-            "summary": "Setter\u0020for\u0020groupIds",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_setGroupIds"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003AgetGroupIds\u0028\u0029",
-            "name": "getGroupIds",
-            "summary": "Getter\u0020for\u0020groupIds",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_getGroupIds"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003AsetLimit\u0028\u0029",
-            "name": "setLimit",
-            "summary": "Setter\u0020for\u0020limit",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_setLimit"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003AgetLimit\u0028\u0029",
-            "name": "getLimit",
-            "summary": "Getter\u0020for\u0020limit",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_getLimit"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003AsetOffset\u0028\u0029",
-            "name": "setOffset",
-            "summary": "Setter\u0020for\u0020offset",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_setOffset"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003AgetOffset\u0028\u0029",
-            "name": "getOffset",
-            "summary": "Getter\u0020for\u0020offset",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_getOffset"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003AsetAuthorizations\u0028\u0029",
-            "name": "setAuthorizations",
-            "summary": "Setter\u0020for\u0020authorizations",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_setAuthorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003AgetAuthorizations\u0028\u0029",
-            "name": "getAuthorizations",
-            "summary": "Getter\u0020for\u0020authorizations",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_getAuthorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003A\u0024fields",
-            "name": "fields",
-            "summary": "Defines\u0020the\u0020other\u0020available\u0020fields\u0020to\u0020be\u0020returned\u0020in\u0020the\u0020response.",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#property_fields"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003A\u0024profileId",
-            "name": "profileId",
-            "summary": "Searches\u0020for\u0020API\u0020users\u0020with\u0020the\u0020given\u0020profile",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#property_profileId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003A\u0024groupIds",
-            "name": "groupIds",
-            "summary": "Searches\u0020for\u0020API\u0020users\u0020who\u0020are\u0020attached\u0020to\u0020the\u0020given\u0020groups",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#property_groupIds"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003A\u0024limit",
-            "name": "limit",
-            "summary": "Defines\u0020the\u0020maximum\u0020number\u0020of\u0020items\u0020to\u0020return",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#property_limit"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003A\u0024offset",
-            "name": "offset",
-            "summary": "Defines\u0020the\u0020number\u0020of\u0020items\u0020to\u0020skip",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#property_offset"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003A\u0024authorizations",
-            "name": "authorizations",
-            "summary": "if\u0020true,\u0020return\u0020the\u0020list\u0020of\u0020actions\u0020and\u0020resources\u0020the\u0020user\u0020has\u0020access",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#property_authorizations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdDevices",
             "name": "ContractInfosIdDevices",
@@ -17266,40 +17286,20 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020deviceTypeId",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosIdDevices.html#method_setDeviceTypeId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdDevices\u003A\u003AgetDeviceTypeId\u0028\u0029",
-            "name": "getDeviceTypeId",
-            "summary": "Getter\u0020for\u0020deviceTypeId",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosIdDevices.html#method_getDeviceTypeId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdDevices\u003A\u003AsetFields\u0028\u0029",
             "name": "setFields",
             "summary": "Setter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosIdDevices.html#method_setFields"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdDevices\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "Getter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosIdDevices.html#method_getFields"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdDevices\u003A\u003AsetLimit\u0028\u0029",
             "name": "setLimit",
             "summary": "Setter\u0020for\u0020limit",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosIdDevices.html#method_setLimit"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdDevices\u003A\u003AgetLimit\u0028\u0029",
-            "name": "getLimit",
-            "summary": "Getter\u0020for\u0020limit",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosIdDevices.html#method_getLimit"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdDevices\u003A\u003AsetPageId\u0028\u0029",
             "name": "setPageId",
             "summary": "Setter\u0020for\u0020pageId",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosIdDevices.html#method_setPageId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdDevices\u003A\u003AgetPageId\u0028\u0029",
-            "name": "getPageId",
-            "summary": "Getter\u0020for\u0020pageId",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosIdDevices.html#method_getPageId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdDevices\u003A\u003A\u0024deviceTypeId",
             "name": "deviceTypeId",
@@ -17331,20 +17331,10 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosIdGet.html#method_setFields"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdGet\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "Getter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosIdGet.html#method_getFields"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdGet\u003A\u003AsetAuthorizations\u0028\u0029",
             "name": "setAuthorizations",
             "summary": "Setter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosIdGet.html#method_setAuthorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdGet\u003A\u003AgetAuthorizations\u0028\u0029",
-            "name": "getAuthorizations",
-            "summary": "Getter\u0020for\u0020authorizations",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosIdGet.html#method_getAuthorizations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdGet\u003A\u003A\u0024fields",
             "name": "fields",
@@ -17366,180 +17356,90 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020name",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setName"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AgetName\u0028\u0029",
-            "name": "getName",
-            "summary": "Getter\u0020for\u0020name",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getName"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AsetGroupId\u0028\u0029",
             "name": "setGroupId",
             "summary": "Setter\u0020for\u0020groupId",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setGroupId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AgetGroupId\u0028\u0029",
-            "name": "getGroupId",
-            "summary": "Getter\u0020for\u0020groupId",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getGroupId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AsetGroupType\u0028\u0029",
             "name": "setGroupType",
             "summary": "Setter\u0020for\u0020groupType",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setGroupType"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AgetGroupType\u0028\u0029",
-            "name": "getGroupType",
-            "summary": "Getter\u0020for\u0020groupType",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getGroupType"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AsetDeep\u0028\u0029",
             "name": "setDeep",
             "summary": "Setter\u0020for\u0020deep",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setDeep"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AgetDeep\u0028\u0029",
-            "name": "getDeep",
-            "summary": "Getter\u0020for\u0020deep",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getDeep"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AsetUp\u0028\u0029",
             "name": "setUp",
             "summary": "Setter\u0020for\u0020up",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setUp"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AgetUp\u0028\u0029",
-            "name": "getUp",
-            "summary": "Getter\u0020for\u0020up",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getUp"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AsetOrderIds\u0028\u0029",
             "name": "setOrderIds",
             "summary": "Setter\u0020for\u0020orderIds",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setOrderIds"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AgetOrderIds\u0028\u0029",
-            "name": "getOrderIds",
-            "summary": "Getter\u0020for\u0020orderIds",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getOrderIds"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AsetContractIds\u0028\u0029",
             "name": "setContractIds",
             "summary": "Setter\u0020for\u0020contractIds",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setContractIds"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AgetContractIds\u0028\u0029",
-            "name": "getContractIds",
-            "summary": "Getter\u0020for\u0020contractIds",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getContractIds"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AsetFromTime\u0028\u0029",
             "name": "setFromTime",
             "summary": "Setter\u0020for\u0020fromTime",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setFromTime"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AgetFromTime\u0028\u0029",
-            "name": "getFromTime",
-            "summary": "Getter\u0020for\u0020fromTime",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getFromTime"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AsetToTime\u0028\u0029",
             "name": "setToTime",
             "summary": "Setter\u0020for\u0020toTime",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setToTime"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AgetToTime\u0028\u0029",
-            "name": "getToTime",
-            "summary": "Getter\u0020for\u0020toTime",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getToTime"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AsetTokenDuration\u0028\u0029",
             "name": "setTokenDuration",
             "summary": "Setter\u0020for\u0020tokenDuration",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setTokenDuration"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AgetTokenDuration\u0028\u0029",
-            "name": "getTokenDuration",
-            "summary": "Getter\u0020for\u0020tokenDuration",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getTokenDuration"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AsetPricingModel\u0028\u0029",
             "name": "setPricingModel",
             "summary": "Setter\u0020for\u0020pricingModel",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setPricingModel"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AgetPricingModel\u0028\u0029",
-            "name": "getPricingModel",
-            "summary": "Getter\u0020for\u0020pricingModel",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getPricingModel"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AsetSubscriptionPlan\u0028\u0029",
             "name": "setSubscriptionPlan",
             "summary": "Setter\u0020for\u0020subscriptionPlan",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setSubscriptionPlan"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AgetSubscriptionPlan\u0028\u0029",
-            "name": "getSubscriptionPlan",
-            "summary": "Getter\u0020for\u0020subscriptionPlan",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getSubscriptionPlan"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AsetGeolocationMode\u0028\u0029",
             "name": "setGeolocationMode",
             "summary": "Setter\u0020for\u0020geolocationMode",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setGeolocationMode"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AgetGeolocationMode\u0028\u0029",
-            "name": "getGeolocationMode",
-            "summary": "Getter\u0020for\u0020geolocationMode",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getGeolocationMode"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AsetFields\u0028\u0029",
             "name": "setFields",
             "summary": "Setter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setFields"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "Getter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getFields"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AsetLimit\u0028\u0029",
             "name": "setLimit",
             "summary": "Setter\u0020for\u0020limit",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setLimit"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AgetLimit\u0028\u0029",
-            "name": "getLimit",
-            "summary": "Getter\u0020for\u0020limit",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getLimit"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AsetOffset\u0028\u0029",
             "name": "setOffset",
             "summary": "Setter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setOffset"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AgetOffset\u0028\u0029",
-            "name": "getOffset",
-            "summary": "Getter\u0020for\u0020offset",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getOffset"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AsetPageId\u0028\u0029",
             "name": "setPageId",
             "summary": "Setter\u0020for\u0020pageId",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setPageId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AgetPageId\u0028\u0029",
-            "name": "getPageId",
-            "summary": "Getter\u0020for\u0020pageId",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getPageId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AsetAuthorizations\u0028\u0029",
             "name": "setAuthorizations",
             "summary": "Setter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setAuthorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AgetAuthorizations\u0028\u0029",
-            "name": "getAuthorizations",
-            "summary": "Getter\u0020for\u0020authorizations",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getAuthorizations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AGROUP_TYPE_BASIC",
             "name": "GROUP_TYPE_BASIC",
@@ -17701,11 +17601,6 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020payload",
             "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsCalculateBulk.html#method_setPayload"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsCalculateBulk\u003A\u003AgetPayload\u0028\u0029",
-            "name": "getPayload",
-            "summary": "Getter\u0020for\u0020payload",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsCalculateBulk.html#method_getPayload"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsCalculateBulk\u003A\u003A\u0024payload",
             "name": "payload",
             "summary": "",
@@ -17720,11 +17615,6 @@ Search.appendIndex(
             "name": "setPayload",
             "summary": "Setter\u0020for\u0020payload",
             "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGet.html#method_setPayload"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGet\u003A\u003AgetPayload\u0028\u0029",
-            "name": "getPayload",
-            "summary": "Getter\u0020for\u0020payload",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGet.html#method_getPayload"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGet\u003A\u003A\u0024payload",
             "name": "payload",
@@ -17741,40 +17631,20 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020lat",
             "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_setLat"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGetOne\u003A\u003AgetLat\u0028\u0029",
-            "name": "getLat",
-            "summary": "Getter\u0020for\u0020lat",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_getLat"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGetOne\u003A\u003AsetLng\u0028\u0029",
             "name": "setLng",
             "summary": "Setter\u0020for\u0020lng",
             "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_setLng"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGetOne\u003A\u003AgetLng\u0028\u0029",
-            "name": "getLng",
-            "summary": "Getter\u0020for\u0020lng",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_getLng"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGetOne\u003A\u003AsetRadius\u0028\u0029",
             "name": "setRadius",
             "summary": "Setter\u0020for\u0020radius",
             "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_setRadius"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGetOne\u003A\u003AgetRadius\u0028\u0029",
-            "name": "getRadius",
-            "summary": "Getter\u0020for\u0020radius",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_getRadius"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGetOne\u003A\u003AsetGroupId\u0028\u0029",
             "name": "setGroupId",
             "summary": "Setter\u0020for\u0020groupId",
             "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_setGroupId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGetOne\u003A\u003AgetGroupId\u0028\u0029",
-            "name": "getGroupId",
-            "summary": "Getter\u0020for\u0020groupId",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_getGroupId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGetOne\u003A\u003A\u0024lat",
             "name": "lat",
@@ -17806,50 +17676,25 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020lat",
             "url": "classes/Arimac-Sigfox-Request-CoveragesOperatorsRedundancy.html#method_setLat"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesOperatorsRedundancy\u003A\u003AgetLat\u0028\u0029",
-            "name": "getLat",
-            "summary": "Getter\u0020for\u0020lat",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesOperatorsRedundancy.html#method_getLat"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesOperatorsRedundancy\u003A\u003AsetLng\u0028\u0029",
             "name": "setLng",
             "summary": "Setter\u0020for\u0020lng",
             "url": "classes/Arimac-Sigfox-Request-CoveragesOperatorsRedundancy.html#method_setLng"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesOperatorsRedundancy\u003A\u003AgetLng\u0028\u0029",
-            "name": "getLng",
-            "summary": "Getter\u0020for\u0020lng",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesOperatorsRedundancy.html#method_getLng"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesOperatorsRedundancy\u003A\u003AsetOperatorId\u0028\u0029",
             "name": "setOperatorId",
             "summary": "Setter\u0020for\u0020operatorId",
             "url": "classes/Arimac-Sigfox-Request-CoveragesOperatorsRedundancy.html#method_setOperatorId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesOperatorsRedundancy\u003A\u003AgetOperatorId\u0028\u0029",
-            "name": "getOperatorId",
-            "summary": "Getter\u0020for\u0020operatorId",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesOperatorsRedundancy.html#method_getOperatorId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesOperatorsRedundancy\u003A\u003AsetDeviceSituation\u0028\u0029",
             "name": "setDeviceSituation",
             "summary": "Setter\u0020for\u0020deviceSituation",
             "url": "classes/Arimac-Sigfox-Request-CoveragesOperatorsRedundancy.html#method_setDeviceSituation"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesOperatorsRedundancy\u003A\u003AgetDeviceSituation\u0028\u0029",
-            "name": "getDeviceSituation",
-            "summary": "Getter\u0020for\u0020deviceSituation",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesOperatorsRedundancy.html#method_getDeviceSituation"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesOperatorsRedundancy\u003A\u003AsetDeviceClassId\u0028\u0029",
             "name": "setDeviceClassId",
             "summary": "Setter\u0020for\u0020deviceClassId",
             "url": "classes/Arimac-Sigfox-Request-CoveragesOperatorsRedundancy.html#method_setDeviceClassId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesOperatorsRedundancy\u003A\u003AgetDeviceClassId\u0028\u0029",
-            "name": "getDeviceClassId",
-            "summary": "Getter\u0020for\u0020deviceClassId",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesOperatorsRedundancy.html#method_getDeviceClassId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesOperatorsRedundancy\u003A\u003A\u0024lat",
             "name": "lat",
@@ -17886,11 +17731,6 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020devices",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkCreate.html#method_setDevices"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkCreate\u003A\u003AgetDevices\u0028\u0029",
-            "name": "getDevices",
-            "summary": "Getter\u0020for\u0020devices",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkCreate.html#method_getDevices"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkCreate\u003A\u003A\u0024devices",
             "name": "devices",
             "summary": "The\u0020devices\u0020to\u0020create",
@@ -17905,11 +17745,6 @@ Search.appendIndex(
             "name": "setDevicePairs",
             "summary": "Setter\u0020for\u0020devicePairs",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkReplace.html#method_setDevicePairs"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkReplace\u003A\u003AgetDevicePairs\u0028\u0029",
-            "name": "getDevicePairs",
-            "summary": "Getter\u0020for\u0020devicePairs",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkReplace.html#method_getDevicePairs"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkReplace\u003A\u003A\u0024devicePairs",
             "name": "devicePairs",
@@ -17926,20 +17761,10 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020devices",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestart.html#method_setDevices"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestart\u003A\u003AgetDevices\u0028\u0029",
-            "name": "getDevices",
-            "summary": "Getter\u0020for\u0020devices",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestart.html#method_getDevices"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestart\u003A\u003AsetGroupId\u0028\u0029",
             "name": "setGroupId",
             "summary": "Setter\u0020for\u0020groupId",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestart.html#method_setGroupId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestart\u003A\u003AgetGroupId\u0028\u0029",
-            "name": "getGroupId",
-            "summary": "Getter\u0020for\u0020groupId",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestart.html#method_getGroupId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestart\u003A\u003A\u0024devices",
             "name": "devices",
@@ -17961,20 +17786,10 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020devices",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkResume.html#method_setDevices"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResume\u003A\u003AgetDevices\u0028\u0029",
-            "name": "getDevices",
-            "summary": "Getter\u0020for\u0020devices",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkResume.html#method_getDevices"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResume\u003A\u003AsetGroupId\u0028\u0029",
             "name": "setGroupId",
             "summary": "Setter\u0020for\u0020groupId",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkResume.html#method_setGroupId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResume\u003A\u003AgetGroupId\u0028\u0029",
-            "name": "getGroupId",
-            "summary": "Getter\u0020for\u0020groupId",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkResume.html#method_getGroupId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResume\u003A\u003A\u0024devices",
             "name": "devices",
@@ -17996,20 +17811,10 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020devices",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspend.html#method_setDevices"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspend\u003A\u003AgetDevices\u0028\u0029",
-            "name": "getDevices",
-            "summary": "Getter\u0020for\u0020devices",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspend.html#method_getDevices"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspend\u003A\u003AsetGroupId\u0028\u0029",
             "name": "setGroupId",
             "summary": "Setter\u0020for\u0020groupId",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspend.html#method_setGroupId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspend\u003A\u003AgetGroupId\u0028\u0029",
-            "name": "getGroupId",
-            "summary": "Getter\u0020for\u0020groupId",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspend.html#method_getGroupId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspend\u003A\u003A\u0024devices",
             "name": "devices",
@@ -18031,11 +17836,6 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020devices",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkTransfer.html#method_setDevices"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkTransfer\u003A\u003AgetDevices\u0028\u0029",
-            "name": "getDevices",
-            "summary": "Getter\u0020for\u0020devices",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkTransfer.html#method_getDevices"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkTransfer\u003A\u003A\u0024devices",
             "name": "devices",
             "summary": "The\u0020devices\u0020to\u0020move",
@@ -18051,20 +17851,10 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020devices",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribe.html#method_setDevices"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribe\u003A\u003AgetDevices\u0028\u0029",
-            "name": "getDevices",
-            "summary": "Getter\u0020for\u0020devices",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribe.html#method_getDevices"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribe\u003A\u003AsetGroupId\u0028\u0029",
             "name": "setGroupId",
             "summary": "Setter\u0020for\u0020groupId",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribe.html#method_setGroupId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribe\u003A\u003AgetGroupId\u0028\u0029",
-            "name": "getGroupId",
-            "summary": "Getter\u0020for\u0020groupId",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribe.html#method_getGroupId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribe\u003A\u003A\u0024devices",
             "name": "devices",
@@ -18086,20 +17876,10 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020devices",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkUpdate.html#method_setDevices"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUpdate\u003A\u003AgetDevices\u0028\u0029",
-            "name": "getDevices",
-            "summary": "Getter\u0020for\u0020devices",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUpdate.html#method_getDevices"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUpdate\u003A\u003AsetGroupId\u0028\u0029",
             "name": "setGroupId",
             "summary": "Setter\u0020for\u0020groupId",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkUpdate.html#method_setGroupId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUpdate\u003A\u003AgetGroupId\u0028\u0029",
-            "name": "getGroupId",
-            "summary": "Getter\u0020for\u0020groupId",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUpdate.html#method_getGroupId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUpdate\u003A\u003A\u0024devices",
             "name": "devices",
@@ -18121,11 +17901,6 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020device",
             "url": "classes/Arimac-Sigfox-Request-DevicesCreate.html#method_setDevice"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesCreate\u003A\u003AgetDevice\u0028\u0029",
-            "name": "getDevice",
-            "summary": "Getter\u0020for\u0020device",
-            "url": "classes/Arimac-Sigfox-Request-DevicesCreate.html#method_getDevice"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesCreate\u003A\u003A\u0024device",
             "name": "device",
             "summary": "The\u0020device\u0020to\u0020create",
@@ -18141,40 +17916,20 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020since",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdCallbacksNotDelivered.html#method_setSince"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCallbacksNotDelivered\u003A\u003AgetSince\u0028\u0029",
-            "name": "getSince",
-            "summary": "Getter\u0020for\u0020since",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdCallbacksNotDelivered.html#method_getSince"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCallbacksNotDelivered\u003A\u003AsetBefore\u0028\u0029",
             "name": "setBefore",
             "summary": "Setter\u0020for\u0020before",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdCallbacksNotDelivered.html#method_setBefore"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCallbacksNotDelivered\u003A\u003AgetBefore\u0028\u0029",
-            "name": "getBefore",
-            "summary": "Getter\u0020for\u0020before",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdCallbacksNotDelivered.html#method_getBefore"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCallbacksNotDelivered\u003A\u003AsetLimit\u0028\u0029",
             "name": "setLimit",
             "summary": "Setter\u0020for\u0020limit",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdCallbacksNotDelivered.html#method_setLimit"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCallbacksNotDelivered\u003A\u003AgetLimit\u0028\u0029",
-            "name": "getLimit",
-            "summary": "Getter\u0020for\u0020limit",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdCallbacksNotDelivered.html#method_getLimit"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCallbacksNotDelivered\u003A\u003AsetOffset\u0028\u0029",
             "name": "setOffset",
             "summary": "Setter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdCallbacksNotDelivered.html#method_setOffset"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCallbacksNotDelivered\u003A\u003AgetOffset\u0028\u0029",
-            "name": "getOffset",
-            "summary": "Getter\u0020for\u0020offset",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdCallbacksNotDelivered.html#method_getOffset"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCallbacksNotDelivered\u003A\u003A\u0024since",
             "name": "since",
@@ -18206,11 +17961,6 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdCertificateModem.html#method_setFields"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCertificateModem\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "Getter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdCertificateModem.html#method_getFields"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCertificateModem\u003A\u003A\u0024fields",
             "name": "fields",
             "summary": "Defines\u0020the\u0020other\u0020available\u0020fields\u0020to\u0020be\u0020returned\u0020in\u0020the\u0020response.",
@@ -18225,11 +17975,6 @@ Search.appendIndex(
             "name": "setFields",
             "summary": "Setter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdCertificateProduct.html#method_setFields"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCertificateProduct\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "Getter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdCertificateProduct.html#method_getFields"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCertificateProduct\u003A\u003A\u0024fields",
             "name": "fields",
@@ -18246,20 +17991,10 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdGet.html#method_setAuthorizations"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdGet\u003A\u003AgetAuthorizations\u0028\u0029",
-            "name": "getAuthorizations",
-            "summary": "Getter\u0020for\u0020authorizations",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdGet.html#method_getAuthorizations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdGet\u003A\u003AsetFields\u0028\u0029",
             "name": "setFields",
             "summary": "Setter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdGet.html#method_setFields"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdGet\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "Getter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdGet.html#method_getFields"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdGet\u003A\u003A\u0024authorizations",
             "name": "authorizations",
@@ -18281,50 +18016,25 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020oob",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdLocations.html#method_setOob"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdLocations\u003A\u003AgetOob\u0028\u0029",
-            "name": "getOob",
-            "summary": "Getter\u0020for\u0020oob",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdLocations.html#method_getOob"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdLocations\u003A\u003AsetSince\u0028\u0029",
             "name": "setSince",
             "summary": "Setter\u0020for\u0020since",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdLocations.html#method_setSince"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdLocations\u003A\u003AgetSince\u0028\u0029",
-            "name": "getSince",
-            "summary": "Getter\u0020for\u0020since",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdLocations.html#method_getSince"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdLocations\u003A\u003AsetBefore\u0028\u0029",
             "name": "setBefore",
             "summary": "Setter\u0020for\u0020before",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdLocations.html#method_setBefore"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdLocations\u003A\u003AgetBefore\u0028\u0029",
-            "name": "getBefore",
-            "summary": "Getter\u0020for\u0020before",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdLocations.html#method_getBefore"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdLocations\u003A\u003AsetLimit\u0028\u0029",
             "name": "setLimit",
             "summary": "Setter\u0020for\u0020limit",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdLocations.html#method_setLimit"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdLocations\u003A\u003AgetLimit\u0028\u0029",
-            "name": "getLimit",
-            "summary": "Getter\u0020for\u0020limit",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdLocations.html#method_getLimit"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdLocations\u003A\u003AsetOffset\u0028\u0029",
             "name": "setOffset",
             "summary": "Setter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdLocations.html#method_setOffset"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdLocations\u003A\u003AgetOffset\u0028\u0029",
-            "name": "getOffset",
-            "summary": "Getter\u0020for\u0020offset",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdLocations.html#method_getOffset"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdLocations\u003A\u003A\u0024oob",
             "name": "oob",
@@ -18361,50 +18071,25 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdMessagesList.html#method_setFields"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdMessagesList\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "Getter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdMessagesList.html#method_getFields"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdMessagesList\u003A\u003AsetSince\u0028\u0029",
             "name": "setSince",
             "summary": "Setter\u0020for\u0020since",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdMessagesList.html#method_setSince"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdMessagesList\u003A\u003AgetSince\u0028\u0029",
-            "name": "getSince",
-            "summary": "Getter\u0020for\u0020since",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdMessagesList.html#method_getSince"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdMessagesList\u003A\u003AsetBefore\u0028\u0029",
             "name": "setBefore",
             "summary": "Setter\u0020for\u0020before",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdMessagesList.html#method_setBefore"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdMessagesList\u003A\u003AgetBefore\u0028\u0029",
-            "name": "getBefore",
-            "summary": "Getter\u0020for\u0020before",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdMessagesList.html#method_getBefore"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdMessagesList\u003A\u003AsetLimit\u0028\u0029",
             "name": "setLimit",
             "summary": "Setter\u0020for\u0020limit",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdMessagesList.html#method_setLimit"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdMessagesList\u003A\u003AgetLimit\u0028\u0029",
-            "name": "getLimit",
-            "summary": "Getter\u0020for\u0020limit",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdMessagesList.html#method_getLimit"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdMessagesList\u003A\u003AsetOffset\u0028\u0029",
             "name": "setOffset",
             "summary": "Setter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdMessagesList.html#method_setOffset"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdMessagesList\u003A\u003AgetOffset\u0028\u0029",
-            "name": "getOffset",
-            "summary": "Getter\u0020for\u0020offset",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdMessagesList.html#method_getOffset"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdMessagesList\u003A\u003A\u0024fields",
             "name": "fields",
@@ -18441,11 +18126,6 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020pac",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdProductCertificate.html#method_setPac"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdProductCertificate\u003A\u003AgetPac\u0028\u0029",
-            "name": "getPac",
-            "summary": "Getter\u0020for\u0020pac",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdProductCertificate.html#method_getPac"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdProductCertificate\u003A\u003A\u0024pac",
             "name": "pac",
             "summary": "The\u0020device\u0027s\u0020PAC\u0020\u0028hexadecimal\u0020format\u0029",
@@ -18460,11 +18140,6 @@ Search.appendIndex(
             "name": "setUnsubscriptionTime",
             "summary": "Setter\u0020for\u0020unsubscriptionTime",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdUnsubscribe.html#method_setUnsubscriptionTime"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdUnsubscribe\u003A\u003AgetUnsubscriptionTime\u0028\u0029",
-            "name": "getUnsubscriptionTime",
-            "summary": "Getter\u0020for\u0020unsubscriptionTime",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdUnsubscribe.html#method_getUnsubscriptionTime"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdUnsubscribe\u003A\u003A\u0024unsubscriptionTime",
             "name": "unsubscriptionTime",
@@ -18481,11 +18156,6 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020device",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdUpdate.html#method_setDevice"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdUpdate\u003A\u003AgetDevice\u0028\u0029",
-            "name": "getDevice",
-            "summary": "Getter\u0020for\u0020device",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdUpdate.html#method_getDevice"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdUpdate\u003A\u003A\u0024device",
             "name": "device",
             "summary": "The\u0020device\u0020to\u0020update",
@@ -18501,130 +18171,65 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020id",
             "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_setId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AgetId\u0028\u0029",
-            "name": "getId",
-            "summary": "Getter\u0020for\u0020id",
-            "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_getId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AsetGroupIds\u0028\u0029",
             "name": "setGroupIds",
             "summary": "Setter\u0020for\u0020groupIds",
             "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_setGroupIds"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AgetGroupIds\u0028\u0029",
-            "name": "getGroupIds",
-            "summary": "Getter\u0020for\u0020groupIds",
-            "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_getGroupIds"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AsetDeep\u0028\u0029",
             "name": "setDeep",
             "summary": "Setter\u0020for\u0020deep",
             "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_setDeep"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AgetDeep\u0028\u0029",
-            "name": "getDeep",
-            "summary": "Getter\u0020for\u0020deep",
-            "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_getDeep"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AsetAuthorizations\u0028\u0029",
             "name": "setAuthorizations",
             "summary": "Setter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_setAuthorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AgetAuthorizations\u0028\u0029",
-            "name": "getAuthorizations",
-            "summary": "Getter\u0020for\u0020authorizations",
-            "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_getAuthorizations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AsetDeviceTypeId\u0028\u0029",
             "name": "setDeviceTypeId",
             "summary": "Setter\u0020for\u0020deviceTypeId",
             "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_setDeviceTypeId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AgetDeviceTypeId\u0028\u0029",
-            "name": "getDeviceTypeId",
-            "summary": "Getter\u0020for\u0020deviceTypeId",
-            "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_getDeviceTypeId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AsetOperatorId\u0028\u0029",
             "name": "setOperatorId",
             "summary": "Setter\u0020for\u0020operatorId",
             "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_setOperatorId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AgetOperatorId\u0028\u0029",
-            "name": "getOperatorId",
-            "summary": "Getter\u0020for\u0020operatorId",
-            "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_getOperatorId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AsetSort\u0028\u0029",
             "name": "setSort",
             "summary": "Setter\u0020for\u0020sort",
             "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_setSort"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AgetSort\u0028\u0029",
-            "name": "getSort",
-            "summary": "Getter\u0020for\u0020sort",
-            "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_getSort"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AsetMinId\u0028\u0029",
             "name": "setMinId",
             "summary": "Setter\u0020for\u0020minId",
             "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_setMinId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AgetMinId\u0028\u0029",
-            "name": "getMinId",
-            "summary": "Getter\u0020for\u0020minId",
-            "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_getMinId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AsetMaxId\u0028\u0029",
             "name": "setMaxId",
             "summary": "Setter\u0020for\u0020maxId",
             "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_setMaxId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AgetMaxId\u0028\u0029",
-            "name": "getMaxId",
-            "summary": "Getter\u0020for\u0020maxId",
-            "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_getMaxId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AsetFields\u0028\u0029",
             "name": "setFields",
             "summary": "Setter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_setFields"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "Getter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_getFields"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AsetLimit\u0028\u0029",
             "name": "setLimit",
             "summary": "Setter\u0020for\u0020limit",
             "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_setLimit"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AgetLimit\u0028\u0029",
-            "name": "getLimit",
-            "summary": "Getter\u0020for\u0020limit",
-            "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_getLimit"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AsetOffset\u0028\u0029",
             "name": "setOffset",
             "summary": "Setter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_setOffset"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AgetOffset\u0028\u0029",
-            "name": "getOffset",
-            "summary": "Getter\u0020for\u0020offset",
-            "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_getOffset"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AsetPageId\u0028\u0029",
             "name": "setPageId",
             "summary": "Setter\u0020for\u0020pageId",
             "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_setPageId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AgetPageId\u0028\u0029",
-            "name": "getPageId",
-            "summary": "Getter\u0020for\u0020pageId",
-            "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_getPageId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003A\u0024id",
             "name": "id",
@@ -18701,11 +18306,6 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020deviceType",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesCreate.html#method_setDeviceType"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesCreate\u003A\u003AgetDeviceType\u0028\u0029",
-            "name": "getDeviceType",
-            "summary": "Getter\u0020for\u0020deviceType",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesCreate.html#method_getDeviceType"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesCreate\u003A\u003A\u0024deviceType",
             "name": "deviceType",
             "summary": "The\u0020device\u0020type\u0020to\u0020create",
@@ -18721,40 +18321,20 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020since",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html#method_setSince"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered\u003A\u003AgetSince\u0028\u0029",
-            "name": "getSince",
-            "summary": "Getter\u0020for\u0020since",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html#method_getSince"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered\u003A\u003AsetBefore\u0028\u0029",
             "name": "setBefore",
             "summary": "Setter\u0020for\u0020before",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html#method_setBefore"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered\u003A\u003AgetBefore\u0028\u0029",
-            "name": "getBefore",
-            "summary": "Getter\u0020for\u0020before",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html#method_getBefore"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered\u003A\u003AsetLimit\u0028\u0029",
             "name": "setLimit",
             "summary": "Setter\u0020for\u0020limit",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html#method_setLimit"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered\u003A\u003AgetLimit\u0028\u0029",
-            "name": "getLimit",
-            "summary": "Getter\u0020for\u0020limit",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html#method_getLimit"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered\u003A\u003AsetOffset\u0028\u0029",
             "name": "setOffset",
             "summary": "Setter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html#method_setOffset"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered\u003A\u003AgetOffset\u0028\u0029",
-            "name": "getOffset",
-            "summary": "Getter\u0020for\u0020offset",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html#method_getOffset"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered\u003A\u003A\u0024since",
             "name": "since",
@@ -18786,11 +18366,6 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020enabled",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdEnable.html#method_setEnabled"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdEnable\u003A\u003AgetEnabled\u0028\u0029",
-            "name": "getEnabled",
-            "summary": "Getter\u0020for\u0020enabled",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdEnable.html#method_getEnabled"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdEnable\u003A\u003A\u0024enabled",
             "name": "enabled",
             "summary": "True\u0020to\u0020enable\u0020the\u0020callback,\u0020false\u0020to\u0020disable\u0020it",
@@ -18805,11 +18380,6 @@ Search.appendIndex(
             "name": "setCallback",
             "summary": "Setter\u0020for\u0020callback",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdUpdate.html#method_setCallback"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdUpdate\u003A\u003AgetCallback\u0028\u0029",
-            "name": "getCallback",
-            "summary": "Getter\u0020for\u0020callback",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdUpdate.html#method_getCallback"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdUpdate\u003A\u003A\u0024callback",
             "name": "callback",
@@ -18826,11 +18396,6 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020callback",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCreate.html#method_setCallback"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCreate\u003A\u003AgetCallback\u0028\u0029",
-            "name": "getCallback",
-            "summary": "Getter\u0020for\u0020callback",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCreate.html#method_getCallback"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCreate\u003A\u003A\u0024callback",
             "name": "callback",
             "summary": "",
@@ -18846,40 +18411,20 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020since",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#method_setSince"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksNotDelivered\u003A\u003AgetSince\u0028\u0029",
-            "name": "getSince",
-            "summary": "Getter\u0020for\u0020since",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#method_getSince"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksNotDelivered\u003A\u003AsetBefore\u0028\u0029",
             "name": "setBefore",
             "summary": "Setter\u0020for\u0020before",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#method_setBefore"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksNotDelivered\u003A\u003AgetBefore\u0028\u0029",
-            "name": "getBefore",
-            "summary": "Getter\u0020for\u0020before",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#method_getBefore"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksNotDelivered\u003A\u003AsetLimit\u0028\u0029",
             "name": "setLimit",
             "summary": "Setter\u0020for\u0020limit",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#method_setLimit"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksNotDelivered\u003A\u003AgetLimit\u0028\u0029",
-            "name": "getLimit",
-            "summary": "Getter\u0020for\u0020limit",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#method_getLimit"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksNotDelivered\u003A\u003AsetOffset\u0028\u0029",
             "name": "setOffset",
             "summary": "Setter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#method_setOffset"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksNotDelivered\u003A\u003AgetOffset\u0028\u0029",
-            "name": "getOffset",
-            "summary": "Getter\u0020for\u0020offset",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#method_getOffset"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksNotDelivered\u003A\u003A\u0024since",
             "name": "since",
@@ -18911,20 +18456,10 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdGet.html#method_setAuthorizations"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdGet\u003A\u003AgetAuthorizations\u0028\u0029",
-            "name": "getAuthorizations",
-            "summary": "Getter\u0020for\u0020authorizations",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdGet.html#method_getAuthorizations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdGet\u003A\u003AsetFields\u0028\u0029",
             "name": "setFields",
             "summary": "Setter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdGet.html#method_setFields"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdGet\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "Getter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdGet.html#method_getFields"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdGet\u003A\u003A\u0024authorizations",
             "name": "authorizations",
@@ -18946,60 +18481,30 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdMessages.html#method_setFields"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdMessages\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "Getter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdMessages.html#method_getFields"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdMessages\u003A\u003AsetSince\u0028\u0029",
             "name": "setSince",
             "summary": "Setter\u0020for\u0020since",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdMessages.html#method_setSince"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdMessages\u003A\u003AgetSince\u0028\u0029",
-            "name": "getSince",
-            "summary": "Getter\u0020for\u0020since",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdMessages.html#method_getSince"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdMessages\u003A\u003AsetBefore\u0028\u0029",
             "name": "setBefore",
             "summary": "Setter\u0020for\u0020before",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdMessages.html#method_setBefore"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdMessages\u003A\u003AgetBefore\u0028\u0029",
-            "name": "getBefore",
-            "summary": "Getter\u0020for\u0020before",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdMessages.html#method_getBefore"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdMessages\u003A\u003AsetAuthorizations\u0028\u0029",
             "name": "setAuthorizations",
             "summary": "Setter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdMessages.html#method_setAuthorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdMessages\u003A\u003AgetAuthorizations\u0028\u0029",
-            "name": "getAuthorizations",
-            "summary": "Getter\u0020for\u0020authorizations",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdMessages.html#method_getAuthorizations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdMessages\u003A\u003AsetLimit\u0028\u0029",
             "name": "setLimit",
             "summary": "Setter\u0020for\u0020limit",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdMessages.html#method_setLimit"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdMessages\u003A\u003AgetLimit\u0028\u0029",
-            "name": "getLimit",
-            "summary": "Getter\u0020for\u0020limit",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdMessages.html#method_getLimit"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdMessages\u003A\u003AsetOffset\u0028\u0029",
             "name": "setOffset",
             "summary": "Setter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdMessages.html#method_setOffset"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdMessages\u003A\u003AgetOffset\u0028\u0029",
-            "name": "getOffset",
-            "summary": "Getter\u0020for\u0020offset",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdMessages.html#method_getOffset"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdMessages\u003A\u003A\u0024fields",
             "name": "fields",
@@ -19041,11 +18546,6 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020deviceType",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdUpdate.html#method_setDeviceType"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdUpdate\u003A\u003AgetDeviceType\u0028\u0029",
-            "name": "getDeviceType",
-            "summary": "Getter\u0020for\u0020deviceType",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdUpdate.html#method_getDeviceType"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdUpdate\u003A\u003A\u0024deviceType",
             "name": "deviceType",
             "summary": "The\u0020device\u0020type\u0020to\u0020update",
@@ -19061,110 +18561,55 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020name",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_setName"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AgetName\u0028\u0029",
-            "name": "getName",
-            "summary": "Getter\u0020for\u0020name",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getName"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AsetGroupIds\u0028\u0029",
             "name": "setGroupIds",
             "summary": "Setter\u0020for\u0020groupIds",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_setGroupIds"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AgetGroupIds\u0028\u0029",
-            "name": "getGroupIds",
-            "summary": "Getter\u0020for\u0020groupIds",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getGroupIds"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AsetDeep\u0028\u0029",
             "name": "setDeep",
             "summary": "Setter\u0020for\u0020deep",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_setDeep"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AgetDeep\u0028\u0029",
-            "name": "getDeep",
-            "summary": "Getter\u0020for\u0020deep",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getDeep"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AsetContractId\u0028\u0029",
             "name": "setContractId",
             "summary": "Setter\u0020for\u0020contractId",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_setContractId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AgetContractId\u0028\u0029",
-            "name": "getContractId",
-            "summary": "Getter\u0020for\u0020contractId",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getContractId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AsetPayloadType\u0028\u0029",
             "name": "setPayloadType",
             "summary": "Setter\u0020for\u0020payloadType",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_setPayloadType"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AgetPayloadType\u0028\u0029",
-            "name": "getPayloadType",
-            "summary": "Getter\u0020for\u0020payloadType",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getPayloadType"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AsetAuthorizations\u0028\u0029",
             "name": "setAuthorizations",
             "summary": "Setter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_setAuthorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AgetAuthorizations\u0028\u0029",
-            "name": "getAuthorizations",
-            "summary": "Getter\u0020for\u0020authorizations",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getAuthorizations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AsetSort\u0028\u0029",
             "name": "setSort",
             "summary": "Setter\u0020for\u0020sort",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_setSort"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AgetSort\u0028\u0029",
-            "name": "getSort",
-            "summary": "Getter\u0020for\u0020sort",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getSort"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AsetFields\u0028\u0029",
             "name": "setFields",
             "summary": "Setter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_setFields"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "Getter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getFields"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AsetLimit\u0028\u0029",
             "name": "setLimit",
             "summary": "Setter\u0020for\u0020limit",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_setLimit"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AgetLimit\u0028\u0029",
-            "name": "getLimit",
-            "summary": "Getter\u0020for\u0020limit",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getLimit"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AsetOffset\u0028\u0029",
             "name": "setOffset",
             "summary": "Setter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_setOffset"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AgetOffset\u0028\u0029",
-            "name": "getOffset",
-            "summary": "Getter\u0020for\u0020offset",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getOffset"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AsetPageId\u0028\u0029",
             "name": "setPageId",
             "summary": "Setter\u0020for\u0020pageId",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_setPageId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AgetPageId\u0028\u0029",
-            "name": "getPageId",
-            "summary": "Getter\u0020for\u0020pageId",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getPageId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003APAYLOAD_TYPE_REGULAR",
             "name": "PAYLOAD_TYPE_REGULAR",
@@ -19261,11 +18706,6 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020group",
             "url": "classes/Arimac-Sigfox-Request-GroupsCreate.html#method_setGroup"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsCreate\u003A\u003AgetGroup\u0028\u0029",
-            "name": "getGroup",
-            "summary": "Getter\u0020for\u0020group",
-            "url": "classes/Arimac-Sigfox-Request-GroupsCreate.html#method_getGroup"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsCreate\u003A\u003A\u0024group",
             "name": "group",
             "summary": "",
@@ -19281,40 +18721,20 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020since",
             "url": "classes/Arimac-Sigfox-Request-GroupsIdCallbacksNotDelivered.html#method_setSince"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdCallbacksNotDelivered\u003A\u003AgetSince\u0028\u0029",
-            "name": "getSince",
-            "summary": "Getter\u0020for\u0020since",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdCallbacksNotDelivered.html#method_getSince"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdCallbacksNotDelivered\u003A\u003AsetBefore\u0028\u0029",
             "name": "setBefore",
             "summary": "Setter\u0020for\u0020before",
             "url": "classes/Arimac-Sigfox-Request-GroupsIdCallbacksNotDelivered.html#method_setBefore"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdCallbacksNotDelivered\u003A\u003AgetBefore\u0028\u0029",
-            "name": "getBefore",
-            "summary": "Getter\u0020for\u0020before",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdCallbacksNotDelivered.html#method_getBefore"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdCallbacksNotDelivered\u003A\u003AsetLimit\u0028\u0029",
             "name": "setLimit",
             "summary": "Setter\u0020for\u0020limit",
             "url": "classes/Arimac-Sigfox-Request-GroupsIdCallbacksNotDelivered.html#method_setLimit"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdCallbacksNotDelivered\u003A\u003AgetLimit\u0028\u0029",
-            "name": "getLimit",
-            "summary": "Getter\u0020for\u0020limit",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdCallbacksNotDelivered.html#method_getLimit"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdCallbacksNotDelivered\u003A\u003AsetOffset\u0028\u0029",
             "name": "setOffset",
             "summary": "Setter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-GroupsIdCallbacksNotDelivered.html#method_setOffset"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdCallbacksNotDelivered\u003A\u003AgetOffset\u0028\u0029",
-            "name": "getOffset",
-            "summary": "Getter\u0020for\u0020offset",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdCallbacksNotDelivered.html#method_getOffset"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdCallbacksNotDelivered\u003A\u003A\u0024since",
             "name": "since",
@@ -19346,30 +18766,15 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020limit",
             "url": "classes/Arimac-Sigfox-Request-GroupsIdGeolocationPayloads.html#method_setLimit"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdGeolocationPayloads\u003A\u003AgetLimit\u0028\u0029",
-            "name": "getLimit",
-            "summary": "Getter\u0020for\u0020limit",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdGeolocationPayloads.html#method_getLimit"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdGeolocationPayloads\u003A\u003AsetOffset\u0028\u0029",
             "name": "setOffset",
             "summary": "Setter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-GroupsIdGeolocationPayloads.html#method_setOffset"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdGeolocationPayloads\u003A\u003AgetOffset\u0028\u0029",
-            "name": "getOffset",
-            "summary": "Getter\u0020for\u0020offset",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdGeolocationPayloads.html#method_getOffset"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdGeolocationPayloads\u003A\u003AsetPageId\u0028\u0029",
             "name": "setPageId",
             "summary": "Setter\u0020for\u0020pageId",
             "url": "classes/Arimac-Sigfox-Request-GroupsIdGeolocationPayloads.html#method_setPageId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdGeolocationPayloads\u003A\u003AgetPageId\u0028\u0029",
-            "name": "getPageId",
-            "summary": "Getter\u0020for\u0020pageId",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdGeolocationPayloads.html#method_getPageId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdGeolocationPayloads\u003A\u003A\u0024limit",
             "name": "limit",
@@ -19396,20 +18801,10 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-GroupsIdGet.html#method_setFields"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdGet\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "Getter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdGet.html#method_getFields"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdGet\u003A\u003AsetAuthorizations\u0028\u0029",
             "name": "setAuthorizations",
             "summary": "Setter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-GroupsIdGet.html#method_setAuthorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdGet\u003A\u003AgetAuthorizations\u0028\u0029",
-            "name": "getAuthorizations",
-            "summary": "Getter\u0020for\u0020authorizations",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdGet.html#method_getAuthorizations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdGet\u003A\u003A\u0024fields",
             "name": "fields",
@@ -19431,11 +18826,6 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020group",
             "url": "classes/Arimac-Sigfox-Request-GroupsIdUpdate.html#method_setGroup"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdUpdate\u003A\u003AgetGroup\u0028\u0029",
-            "name": "getGroup",
-            "summary": "Getter\u0020for\u0020group",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdUpdate.html#method_getGroup"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdUpdate\u003A\u003A\u0024group",
             "name": "group",
             "summary": "The\u0020group\u0020to\u0020update",
@@ -19451,110 +18841,55 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020parentIds",
             "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_setParentIds"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AgetParentIds\u0028\u0029",
-            "name": "getParentIds",
-            "summary": "Getter\u0020for\u0020parentIds",
-            "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_getParentIds"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AsetDeep\u0028\u0029",
             "name": "setDeep",
             "summary": "Setter\u0020for\u0020deep",
             "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_setDeep"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AgetDeep\u0028\u0029",
-            "name": "getDeep",
-            "summary": "Getter\u0020for\u0020deep",
-            "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_getDeep"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AsetName\u0028\u0029",
             "name": "setName",
             "summary": "Setter\u0020for\u0020name",
             "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_setName"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AgetName\u0028\u0029",
-            "name": "getName",
-            "summary": "Getter\u0020for\u0020name",
-            "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_getName"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AsetTypes\u0028\u0029",
             "name": "setTypes",
             "summary": "Setter\u0020for\u0020types",
             "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_setTypes"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AgetTypes\u0028\u0029",
-            "name": "getTypes",
-            "summary": "Getter\u0020for\u0020types",
-            "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_getTypes"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AsetFields\u0028\u0029",
             "name": "setFields",
             "summary": "Setter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_setFields"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "Getter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_getFields"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AsetAction\u0028\u0029",
             "name": "setAction",
             "summary": "Setter\u0020for\u0020action",
             "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_setAction"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AgetAction\u0028\u0029",
-            "name": "getAction",
-            "summary": "Getter\u0020for\u0020action",
-            "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_getAction"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AsetSort\u0028\u0029",
             "name": "setSort",
             "summary": "Setter\u0020for\u0020sort",
             "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_setSort"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AgetSort\u0028\u0029",
-            "name": "getSort",
-            "summary": "Getter\u0020for\u0020sort",
-            "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_getSort"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AsetAuthorizations\u0028\u0029",
             "name": "setAuthorizations",
             "summary": "Setter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_setAuthorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AgetAuthorizations\u0028\u0029",
-            "name": "getAuthorizations",
-            "summary": "Getter\u0020for\u0020authorizations",
-            "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_getAuthorizations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AsetLimit\u0028\u0029",
             "name": "setLimit",
             "summary": "Setter\u0020for\u0020limit",
             "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_setLimit"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AgetLimit\u0028\u0029",
-            "name": "getLimit",
-            "summary": "Getter\u0020for\u0020limit",
-            "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_getLimit"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AsetOffset\u0028\u0029",
             "name": "setOffset",
             "summary": "Setter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_setOffset"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AgetOffset\u0028\u0029",
-            "name": "getOffset",
-            "summary": "Getter\u0020for\u0020offset",
-            "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_getOffset"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AsetPageId\u0028\u0029",
             "name": "setPageId",
             "summary": "Setter\u0020for\u0020pageId",
             "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_setPageId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AgetPageId\u0028\u0029",
-            "name": "getPageId",
-            "summary": "Getter\u0020for\u0020pageId",
-            "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_getPageId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003ATYPES_SO",
             "name": "TYPES_SO",
@@ -19666,20 +19001,10 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-ProfilesIdGet.html#method_setFields"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesIdGet\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "Getter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-ProfilesIdGet.html#method_getFields"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesIdGet\u003A\u003AsetAuthorizations\u0028\u0029",
             "name": "setAuthorizations",
             "summary": "Setter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-ProfilesIdGet.html#method_setAuthorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesIdGet\u003A\u003AgetAuthorizations\u0028\u0029",
-            "name": "getAuthorizations",
-            "summary": "Getter\u0020for\u0020authorizations",
-            "url": "classes/Arimac-Sigfox-Request-ProfilesIdGet.html#method_getAuthorizations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesIdGet\u003A\u003A\u0024fields",
             "name": "fields",
@@ -19701,60 +19026,30 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020groupId",
             "url": "classes/Arimac-Sigfox-Request-ProfilesList.html#method_setGroupId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesList\u003A\u003AgetGroupId\u0028\u0029",
-            "name": "getGroupId",
-            "summary": "Getter\u0020for\u0020groupId",
-            "url": "classes/Arimac-Sigfox-Request-ProfilesList.html#method_getGroupId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesList\u003A\u003AsetInherit\u0028\u0029",
             "name": "setInherit",
             "summary": "Setter\u0020for\u0020inherit",
             "url": "classes/Arimac-Sigfox-Request-ProfilesList.html#method_setInherit"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesList\u003A\u003AgetInherit\u0028\u0029",
-            "name": "getInherit",
-            "summary": "Getter\u0020for\u0020inherit",
-            "url": "classes/Arimac-Sigfox-Request-ProfilesList.html#method_getInherit"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesList\u003A\u003AsetFields\u0028\u0029",
             "name": "setFields",
             "summary": "Setter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-ProfilesList.html#method_setFields"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesList\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "Getter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-ProfilesList.html#method_getFields"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesList\u003A\u003AsetLimit\u0028\u0029",
             "name": "setLimit",
             "summary": "Setter\u0020for\u0020limit",
             "url": "classes/Arimac-Sigfox-Request-ProfilesList.html#method_setLimit"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesList\u003A\u003AgetLimit\u0028\u0029",
-            "name": "getLimit",
-            "summary": "Getter\u0020for\u0020limit",
-            "url": "classes/Arimac-Sigfox-Request-ProfilesList.html#method_getLimit"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesList\u003A\u003AsetOffset\u0028\u0029",
             "name": "setOffset",
             "summary": "Setter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-ProfilesList.html#method_setOffset"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesList\u003A\u003AgetOffset\u0028\u0029",
-            "name": "getOffset",
-            "summary": "Getter\u0020for\u0020offset",
-            "url": "classes/Arimac-Sigfox-Request-ProfilesList.html#method_getOffset"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesList\u003A\u003AsetAuthorizations\u0028\u0029",
             "name": "setAuthorizations",
             "summary": "Setter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-ProfilesList.html#method_setAuthorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesList\u003A\u003AgetAuthorizations\u0028\u0029",
-            "name": "getAuthorizations",
-            "summary": "Getter\u0020for\u0020authorizations",
-            "url": "classes/Arimac-Sigfox-Request-ProfilesList.html#method_getAuthorizations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesList\u003A\u003A\u0024groupId",
             "name": "groupId",
@@ -19796,50 +19091,25 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020zoom",
             "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_setZoom"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzJobIdTileskmzGetCoverage\u003A\u003AgetZoom\u0028\u0029",
-            "name": "getZoom",
-            "summary": "Getter\u0020for\u0020zoom",
-            "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_getZoom"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzJobIdTileskmzGetCoverage\u003A\u003AsetNorth\u0028\u0029",
             "name": "setNorth",
             "summary": "Setter\u0020for\u0020north",
             "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_setNorth"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzJobIdTileskmzGetCoverage\u003A\u003AgetNorth\u0028\u0029",
-            "name": "getNorth",
-            "summary": "Getter\u0020for\u0020north",
-            "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_getNorth"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzJobIdTileskmzGetCoverage\u003A\u003AsetSouth\u0028\u0029",
             "name": "setSouth",
             "summary": "Setter\u0020for\u0020south",
             "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_setSouth"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzJobIdTileskmzGetCoverage\u003A\u003AgetSouth\u0028\u0029",
-            "name": "getSouth",
-            "summary": "Getter\u0020for\u0020south",
-            "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_getSouth"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzJobIdTileskmzGetCoverage\u003A\u003AsetWest\u0028\u0029",
             "name": "setWest",
             "summary": "Setter\u0020for\u0020west",
             "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_setWest"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzJobIdTileskmzGetCoverage\u003A\u003AgetWest\u0028\u0029",
-            "name": "getWest",
-            "summary": "Getter\u0020for\u0020west",
-            "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_getWest"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzJobIdTileskmzGetCoverage\u003A\u003AsetEast\u0028\u0029",
             "name": "setEast",
             "summary": "Setter\u0020for\u0020east",
             "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_setEast"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzJobIdTileskmzGetCoverage\u003A\u003AgetEast\u0028\u0029",
-            "name": "getEast",
-            "summary": "Getter\u0020for\u0020east",
-            "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_getEast"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzJobIdTileskmzGetCoverage\u003A\u003A\u0024zoom",
             "name": "zoom",
@@ -19876,11 +19146,6 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020request",
             "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzStartAsync.html#method_setRequest"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzStartAsync\u003A\u003AgetRequest\u0028\u0029",
-            "name": "getRequest",
-            "summary": "Getter\u0020for\u0020request",
-            "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzStartAsync.html#method_getRequest"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzStartAsync\u003A\u003A\u0024request",
             "name": "request",
             "summary": "The\u0020computation\u0020will\u0020be\u0020performed\u0020with\u0020the\u0020specified\u0020coverage\u0020mode",
@@ -19896,50 +19161,25 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020zoom",
             "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#method_setZoom"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003AgetZoom\u0028\u0029",
-            "name": "getZoom",
-            "summary": "Getter\u0020for\u0020zoom",
-            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#method_getZoom"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003AsetNorth\u0028\u0029",
             "name": "setNorth",
             "summary": "Setter\u0020for\u0020north",
             "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#method_setNorth"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003AgetNorth\u0028\u0029",
-            "name": "getNorth",
-            "summary": "Getter\u0020for\u0020north",
-            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#method_getNorth"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003AsetSouth\u0028\u0029",
             "name": "setSouth",
             "summary": "Setter\u0020for\u0020south",
             "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#method_setSouth"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003AgetSouth\u0028\u0029",
-            "name": "getSouth",
-            "summary": "Getter\u0020for\u0020south",
-            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#method_getSouth"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003AsetWest\u0028\u0029",
             "name": "setWest",
             "summary": "Setter\u0020for\u0020west",
             "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#method_setWest"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003AgetWest\u0028\u0029",
-            "name": "getWest",
-            "summary": "Getter\u0020for\u0020west",
-            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#method_getWest"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003AsetEast\u0028\u0029",
             "name": "setEast",
             "summary": "Setter\u0020for\u0020east",
             "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#method_setEast"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003AgetEast\u0028\u0029",
-            "name": "getEast",
-            "summary": "Getter\u0020for\u0020east",
-            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#method_getEast"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003A\u0024zoom",
             "name": "zoom",
@@ -19976,11 +19216,6 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020user",
             "url": "classes/Arimac-Sigfox-Request-UsersCreate.html#method_setUser"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersCreate\u003A\u003AgetUser\u0028\u0029",
-            "name": "getUser",
-            "summary": "Getter\u0020for\u0020user",
-            "url": "classes/Arimac-Sigfox-Request-UsersCreate.html#method_getUser"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersCreate\u003A\u003A\u0024user",
             "name": "user",
             "summary": "The\u0020user\u0020to\u0020create",
@@ -19996,20 +19231,10 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-UsersIdGet.html#method_setFields"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdGet\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "Getter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-UsersIdGet.html#method_getFields"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdGet\u003A\u003AsetAuthorizations\u0028\u0029",
             "name": "setAuthorizations",
             "summary": "Setter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-UsersIdGet.html#method_setAuthorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdGet\u003A\u003AgetAuthorizations\u0028\u0029",
-            "name": "getAuthorizations",
-            "summary": "Getter\u0020for\u0020authorizations",
-            "url": "classes/Arimac-Sigfox-Request-UsersIdGet.html#method_getAuthorizations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdGet\u003A\u003A\u0024fields",
             "name": "fields",
@@ -20031,11 +19256,6 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020userRoles",
             "url": "classes/Arimac-Sigfox-Request-UsersIdProfilesAddRoles.html#method_setUserRoles"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdProfilesAddRoles\u003A\u003AgetUserRoles\u0028\u0029",
-            "name": "getUserRoles",
-            "summary": "Getter\u0020for\u0020userRoles",
-            "url": "classes/Arimac-Sigfox-Request-UsersIdProfilesAddRoles.html#method_getUserRoles"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdProfilesAddRoles\u003A\u003A\u0024userRoles",
             "name": "userRoles",
             "summary": "user\u0020roles\u0020array\u0020to\u0020add",
@@ -20050,11 +19270,6 @@ Search.appendIndex(
             "name": "setGroupId",
             "summary": "Setter\u0020for\u0020groupId",
             "url": "classes/Arimac-Sigfox-Request-UsersIdProfilesProfileIdDelete.html#method_setGroupId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdProfilesProfileIdDelete\u003A\u003AgetGroupId\u0028\u0029",
-            "name": "getGroupId",
-            "summary": "Getter\u0020for\u0020groupId",
-            "url": "classes/Arimac-Sigfox-Request-UsersIdProfilesProfileIdDelete.html#method_getGroupId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdProfilesProfileIdDelete\u003A\u003A\u0024groupId",
             "name": "groupId",
@@ -20071,11 +19286,6 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020user",
             "url": "classes/Arimac-Sigfox-Request-UsersIdUpdate.html#method_setUser"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdUpdate\u003A\u003AgetUser\u0028\u0029",
-            "name": "getUser",
-            "summary": "Getter\u0020for\u0020user",
-            "url": "classes/Arimac-Sigfox-Request-UsersIdUpdate.html#method_getUser"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdUpdate\u003A\u003A\u0024user",
             "name": "user",
             "summary": "The\u0020user\u0020to\u0020update",
@@ -20091,100 +19301,50 @@ Search.appendIndex(
             "summary": "Setter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_setFields"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AgetFields\u0028\u0029",
-            "name": "getFields",
-            "summary": "Getter\u0020for\u0020fields",
-            "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_getFields"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AsetText\u0028\u0029",
             "name": "setText",
             "summary": "Setter\u0020for\u0020text",
             "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_setText"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AgetText\u0028\u0029",
-            "name": "getText",
-            "summary": "Getter\u0020for\u0020text",
-            "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_getText"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AsetProfileId\u0028\u0029",
             "name": "setProfileId",
             "summary": "Setter\u0020for\u0020profileId",
             "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_setProfileId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AgetProfileId\u0028\u0029",
-            "name": "getProfileId",
-            "summary": "Getter\u0020for\u0020profileId",
-            "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_getProfileId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AsetGroupIds\u0028\u0029",
             "name": "setGroupIds",
             "summary": "Setter\u0020for\u0020groupIds",
             "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_setGroupIds"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AgetGroupIds\u0028\u0029",
-            "name": "getGroupIds",
-            "summary": "Getter\u0020for\u0020groupIds",
-            "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_getGroupIds"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AsetDeep\u0028\u0029",
             "name": "setDeep",
             "summary": "Setter\u0020for\u0020deep",
             "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_setDeep"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AgetDeep\u0028\u0029",
-            "name": "getDeep",
-            "summary": "Getter\u0020for\u0020deep",
-            "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_getDeep"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AsetSort\u0028\u0029",
             "name": "setSort",
             "summary": "Setter\u0020for\u0020sort",
             "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_setSort"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AgetSort\u0028\u0029",
-            "name": "getSort",
-            "summary": "Getter\u0020for\u0020sort",
-            "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_getSort"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AsetAuthorizations\u0028\u0029",
             "name": "setAuthorizations",
             "summary": "Setter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_setAuthorizations"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AgetAuthorizations\u0028\u0029",
-            "name": "getAuthorizations",
-            "summary": "Getter\u0020for\u0020authorizations",
-            "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_getAuthorizations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AsetLimit\u0028\u0029",
             "name": "setLimit",
             "summary": "Setter\u0020for\u0020limit",
             "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_setLimit"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AgetLimit\u0028\u0029",
-            "name": "getLimit",
-            "summary": "Getter\u0020for\u0020limit",
-            "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_getLimit"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AsetOffset\u0028\u0029",
             "name": "setOffset",
             "summary": "Setter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_setOffset"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AgetOffset\u0028\u0029",
-            "name": "getOffset",
-            "summary": "Getter\u0020for\u0020offset",
-            "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_getOffset"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AsetPageId\u0028\u0029",
             "name": "setPageId",
             "summary": "Setter\u0020for\u0020pageId",
             "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_setPageId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AgetPageId\u0028\u0029",
-            "name": "getPageId",
-            "summary": "Getter\u0020for\u0020pageId",
-            "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_getPageId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003A\u0024fields",
             "name": "fields",
@@ -20236,40 +19396,10 @@ Search.appendIndex(
             "summary": "Token\u0020representing\u0020the\u0020page\u0020to\u0020retrieve",
             "url": "classes/Arimac-Sigfox-Request-UsersList.html#property_pageId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request",
-            "name": "Request",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersCreateResponse",
-            "name": "ApiUsersCreateResponse",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersCreateResponse.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersCreateResponse\u003A\u003AsetId\u0028\u0029",
-            "name": "setId",
-            "summary": "Setter\u0020for\u0020id",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersCreateResponse.html#method_setId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersCreateResponse\u003A\u003AgetId\u0028\u0029",
-            "name": "getId",
-            "summary": "Getter\u0020for\u0020id",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersCreateResponse.html#method_getId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersCreateResponse\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "The\u0020newly\u0020created\u0020API\u0020user\u0020identifier",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersCreateResponse.html#property_id"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersIdRenewCredentialResponse",
             "name": "ApiUsersIdRenewCredentialResponse",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersIdRenewCredentialResponse.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersIdRenewCredentialResponse\u003A\u003AsetAccessToken\u0028\u0029",
-            "name": "setAccessToken",
-            "summary": "Setter\u0020for\u0020accessToken",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersIdRenewCredentialResponse.html#method_setAccessToken"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersIdRenewCredentialResponse\u003A\u003AgetAccessToken\u0028\u0029",
             "name": "getAccessToken",
@@ -20281,50 +19411,10 @@ Search.appendIndex(
             "summary": "The\u0020new\u0020API\u0020user\u0027s\u0020acces\u0020token\u0020\u0028password\u0029",
             "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersIdRenewCredentialResponse.html#property_accessToken"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersListResponse",
-            "name": "ApiUsersListResponse",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersListResponse.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersListResponse\u003A\u003AsetData\u0028\u0029",
-            "name": "setData",
-            "summary": "Setter\u0020for\u0020data",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersListResponse.html#method_setData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersListResponse\u003A\u003AgetData\u0028\u0029",
-            "name": "getData",
-            "summary": "Getter\u0020for\u0020data",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersListResponse.html#method_getData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersListResponse\u003A\u003AsetPaging\u0028\u0029",
-            "name": "setPaging",
-            "summary": "Setter\u0020for\u0020paging",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersListResponse.html#method_setPaging"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersListResponse\u003A\u003AgetPaging\u0028\u0029",
-            "name": "getPaging",
-            "summary": "Getter\u0020for\u0020paging",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersListResponse.html#method_getPaging"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersListResponse\u003A\u003A\u0024data",
-            "name": "data",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersListResponse.html#property_data"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersListResponse\u003A\u003A\u0024paging",
-            "name": "paging",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersListResponse.html#property_paging"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ContractInfosIdBulkRestartResponse",
             "name": "ContractInfosIdBulkRestartResponse",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-ContractInfosIdBulkRestartResponse.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ContractInfosIdBulkRestartResponse\u003A\u003AsetJobId\u0028\u0029",
-            "name": "setJobId",
-            "summary": "Setter\u0020for\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ContractInfosIdBulkRestartResponse.html#method_setJobId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ContractInfosIdBulkRestartResponse\u003A\u003AgetJobId\u0028\u0029",
             "name": "getJobId",
@@ -20341,20 +19431,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-ContractInfosIdDevicesResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ContractInfosIdDevicesResponse\u003A\u003AsetData\u0028\u0029",
-            "name": "setData",
-            "summary": "Setter\u0020for\u0020data",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ContractInfosIdDevicesResponse.html#method_setData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ContractInfosIdDevicesResponse\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Response-Generated-ContractInfosIdDevicesResponse.html#method_getData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ContractInfosIdDevicesResponse\u003A\u003AsetPaging\u0028\u0029",
-            "name": "setPaging",
-            "summary": "Setter\u0020for\u0020paging",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ContractInfosIdDevicesResponse.html#method_setPaging"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ContractInfosIdDevicesResponse\u003A\u003AgetPaging\u0028\u0029",
             "name": "getPaging",
@@ -20376,20 +19456,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-ContractInfosListResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ContractInfosListResponse\u003A\u003AsetData\u0028\u0029",
-            "name": "setData",
-            "summary": "Setter\u0020for\u0020data",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ContractInfosListResponse.html#method_setData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ContractInfosListResponse\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Response-Generated-ContractInfosListResponse.html#method_getData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ContractInfosListResponse\u003A\u003AsetPaging\u0028\u0029",
-            "name": "setPaging",
-            "summary": "Setter\u0020for\u0020paging",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ContractInfosListResponse.html#method_setPaging"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ContractInfosListResponse\u003A\u003AgetPaging\u0028\u0029",
             "name": "getPaging",
@@ -20411,11 +19481,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-CoveragesGlobalPredictionsCalculateBulkResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\CoveragesGlobalPredictionsCalculateBulkResponse\u003A\u003AsetJobId\u0028\u0029",
-            "name": "setJobId",
-            "summary": "Setter\u0020for\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Response-Generated-CoveragesGlobalPredictionsCalculateBulkResponse.html#method_setJobId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\CoveragesGlobalPredictionsCalculateBulkResponse\u003A\u003AgetJobId\u0028\u0029",
             "name": "getJobId",
             "summary": "Getter\u0020for\u0020jobId",
@@ -20431,20 +19496,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-CoveragesGlobalPredictionsGetOneResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\CoveragesGlobalPredictionsGetOneResponse\u003A\u003AsetLocationCovered\u0028\u0029",
-            "name": "setLocationCovered",
-            "summary": "Setter\u0020for\u0020locationCovered",
-            "url": "classes/Arimac-Sigfox-Response-Generated-CoveragesGlobalPredictionsGetOneResponse.html#method_setLocationCovered"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\CoveragesGlobalPredictionsGetOneResponse\u003A\u003AgetLocationCovered\u0028\u0029",
             "name": "getLocationCovered",
             "summary": "Getter\u0020for\u0020locationCovered",
             "url": "classes/Arimac-Sigfox-Response-Generated-CoveragesGlobalPredictionsGetOneResponse.html#method_getLocationCovered"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\CoveragesGlobalPredictionsGetOneResponse\u003A\u003AsetMargins\u0028\u0029",
-            "name": "setMargins",
-            "summary": "Setter\u0020for\u0020margins",
-            "url": "classes/Arimac-Sigfox-Response-Generated-CoveragesGlobalPredictionsGetOneResponse.html#method_setMargins"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\CoveragesGlobalPredictionsGetOneResponse\u003A\u003AgetMargins\u0028\u0029",
             "name": "getMargins",
@@ -20466,20 +19521,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkCreateResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkCreateResponse\u003A\u003AsetTotal\u0028\u0029",
-            "name": "setTotal",
-            "summary": "Setter\u0020for\u0020total",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkCreateResponse.html#method_setTotal"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkCreateResponse\u003A\u003AgetTotal\u0028\u0029",
             "name": "getTotal",
             "summary": "Getter\u0020for\u0020total",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkCreateResponse.html#method_getTotal"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkCreateResponse\u003A\u003AsetJobId\u0028\u0029",
-            "name": "setJobId",
-            "summary": "Setter\u0020for\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkCreateResponse.html#method_setJobId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkCreateResponse\u003A\u003AgetJobId\u0028\u0029",
             "name": "getJobId",
@@ -20501,11 +19546,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkRestartResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkRestartResponse\u003A\u003AsetJobId\u0028\u0029",
-            "name": "setJobId",
-            "summary": "Setter\u0020for\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkRestartResponse.html#method_setJobId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkRestartResponse\u003A\u003AgetJobId\u0028\u0029",
             "name": "getJobId",
             "summary": "Getter\u0020for\u0020jobId",
@@ -20520,11 +19560,6 @@ Search.appendIndex(
             "name": "DevicesBulkResumeResponse",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkResumeResponse.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkResumeResponse\u003A\u003AsetJobId\u0028\u0029",
-            "name": "setJobId",
-            "summary": "Setter\u0020for\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkResumeResponse.html#method_setJobId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkResumeResponse\u003A\u003AgetJobId\u0028\u0029",
             "name": "getJobId",
@@ -20541,11 +19576,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkSuspendResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkSuspendResponse\u003A\u003AsetJobId\u0028\u0029",
-            "name": "setJobId",
-            "summary": "Setter\u0020for\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkSuspendResponse.html#method_setJobId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkSuspendResponse\u003A\u003AgetJobId\u0028\u0029",
             "name": "getJobId",
             "summary": "Getter\u0020for\u0020jobId",
@@ -20561,20 +19591,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkTransferResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkTransferResponse\u003A\u003AsetTotal\u0028\u0029",
-            "name": "setTotal",
-            "summary": "Setter\u0020for\u0020total",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkTransferResponse.html#method_setTotal"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkTransferResponse\u003A\u003AgetTotal\u0028\u0029",
             "name": "getTotal",
             "summary": "Getter\u0020for\u0020total",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkTransferResponse.html#method_getTotal"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkTransferResponse\u003A\u003AsetJobId\u0028\u0029",
-            "name": "setJobId",
-            "summary": "Setter\u0020for\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkTransferResponse.html#method_setJobId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkTransferResponse\u003A\u003AgetJobId\u0028\u0029",
             "name": "getJobId",
@@ -20596,11 +19616,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkUnsubscribeResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkUnsubscribeResponse\u003A\u003AsetJobId\u0028\u0029",
-            "name": "setJobId",
-            "summary": "Setter\u0020for\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkUnsubscribeResponse.html#method_setJobId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkUnsubscribeResponse\u003A\u003AgetJobId\u0028\u0029",
             "name": "getJobId",
             "summary": "Getter\u0020for\u0020jobId",
@@ -20616,20 +19631,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkUpdateResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkUpdateResponse\u003A\u003AsetTotal\u0028\u0029",
-            "name": "setTotal",
-            "summary": "Setter\u0020for\u0020total",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkUpdateResponse.html#method_setTotal"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkUpdateResponse\u003A\u003AgetTotal\u0028\u0029",
             "name": "getTotal",
             "summary": "Getter\u0020for\u0020total",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkUpdateResponse.html#method_getTotal"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkUpdateResponse\u003A\u003AsetJobId\u0028\u0029",
-            "name": "setJobId",
-            "summary": "Setter\u0020for\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkUpdateResponse.html#method_setJobId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkUpdateResponse\u003A\u003AgetJobId\u0028\u0029",
             "name": "getJobId",
@@ -20651,11 +19656,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesCreateResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesCreateResponse\u003A\u003AsetId\u0028\u0029",
-            "name": "setId",
-            "summary": "Setter\u0020for\u0020id",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesCreateResponse.html#method_setId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesCreateResponse\u003A\u003AgetId\u0028\u0029",
             "name": "getId",
             "summary": "Getter\u0020for\u0020id",
@@ -20671,20 +19671,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdCallbacksNotDeliveredResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdCallbacksNotDeliveredResponse\u003A\u003AsetData\u0028\u0029",
-            "name": "setData",
-            "summary": "Setter\u0020for\u0020data",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdCallbacksNotDeliveredResponse.html#method_setData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdCallbacksNotDeliveredResponse\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdCallbacksNotDeliveredResponse.html#method_getData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdCallbacksNotDeliveredResponse\u003A\u003AsetPaging\u0028\u0029",
-            "name": "setPaging",
-            "summary": "Setter\u0020for\u0020paging",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdCallbacksNotDeliveredResponse.html#method_setPaging"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdCallbacksNotDeliveredResponse\u003A\u003AgetPaging\u0028\u0029",
             "name": "getPaging",
@@ -20706,20 +19696,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdLocationsResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdLocationsResponse\u003A\u003AsetData\u0028\u0029",
-            "name": "setData",
-            "summary": "Setter\u0020for\u0020data",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdLocationsResponse.html#method_setData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdLocationsResponse\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdLocationsResponse.html#method_getData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdLocationsResponse\u003A\u003AsetPaging\u0028\u0029",
-            "name": "setPaging",
-            "summary": "Setter\u0020for\u0020paging",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdLocationsResponse.html#method_setPaging"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdLocationsResponse\u003A\u003AgetPaging\u0028\u0029",
             "name": "getPaging",
@@ -20741,20 +19721,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesListResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdMessagesListResponse\u003A\u003AsetData\u0028\u0029",
-            "name": "setData",
-            "summary": "Setter\u0020for\u0020data",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesListResponse.html#method_setData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdMessagesListResponse\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesListResponse.html#method_getData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdMessagesListResponse\u003A\u003AsetPaging\u0028\u0029",
-            "name": "setPaging",
-            "summary": "Setter\u0020for\u0020paging",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesListResponse.html#method_setPaging"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdMessagesListResponse\u003A\u003AgetPaging\u0028\u0029",
             "name": "getPaging",
@@ -20776,30 +19746,15 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesMetricResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdMessagesMetricResponse\u003A\u003AsetLastDay\u0028\u0029",
-            "name": "setLastDay",
-            "summary": "Setter\u0020for\u0020lastDay",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesMetricResponse.html#method_setLastDay"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdMessagesMetricResponse\u003A\u003AgetLastDay\u0028\u0029",
             "name": "getLastDay",
             "summary": "Getter\u0020for\u0020lastDay",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesMetricResponse.html#method_getLastDay"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdMessagesMetricResponse\u003A\u003AsetLastWeek\u0028\u0029",
-            "name": "setLastWeek",
-            "summary": "Setter\u0020for\u0020lastWeek",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesMetricResponse.html#method_setLastWeek"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdMessagesMetricResponse\u003A\u003AgetLastWeek\u0028\u0029",
             "name": "getLastWeek",
             "summary": "Getter\u0020for\u0020lastWeek",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesMetricResponse.html#method_getLastWeek"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdMessagesMetricResponse\u003A\u003AsetLastMonth\u0028\u0029",
-            "name": "setLastMonth",
-            "summary": "Setter\u0020for\u0020lastMonth",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesMetricResponse.html#method_setLastMonth"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdMessagesMetricResponse\u003A\u003AgetLastMonth\u0028\u0029",
             "name": "getLastMonth",
@@ -20826,30 +19781,15 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesListResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesListResponse\u003A\u003AsetData\u0028\u0029",
-            "name": "setData",
-            "summary": "Setter\u0020for\u0020data",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesListResponse.html#method_setData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesListResponse\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesListResponse.html#method_getData"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesListResponse\u003A\u003AsetActions\u0028\u0029",
-            "name": "setActions",
-            "summary": "Setter\u0020for\u0020actions",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesListResponse.html#method_setActions"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesListResponse\u003A\u003AgetActions\u0028\u0029",
             "name": "getActions",
             "summary": "Getter\u0020for\u0020actions",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesListResponse.html#method_getActions"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesListResponse\u003A\u003AsetPaging\u0028\u0029",
-            "name": "setPaging",
-            "summary": "Setter\u0020for\u0020paging",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesListResponse.html#method_setPaging"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesListResponse\u003A\u003AgetPaging\u0028\u0029",
             "name": "getPaging",
@@ -20876,11 +19816,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesCreateResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesCreateResponse\u003A\u003AsetId\u0028\u0029",
-            "name": "setId",
-            "summary": "Setter\u0020for\u0020id",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesCreateResponse.html#method_setId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesCreateResponse\u003A\u003AgetId\u0028\u0029",
             "name": "getId",
             "summary": "Getter\u0020for\u0020id",
@@ -20895,11 +19830,6 @@ Search.appendIndex(
             "name": "DeviceTypesIdBulkRestartResponse",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdBulkRestartResponse.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdBulkRestartResponse\u003A\u003AsetJobId\u0028\u0029",
-            "name": "setJobId",
-            "summary": "Setter\u0020for\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdBulkRestartResponse.html#method_setJobId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdBulkRestartResponse\u003A\u003AgetJobId\u0028\u0029",
             "name": "getJobId",
@@ -20916,11 +19846,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdCallbacksCreateResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdCallbacksCreateResponse\u003A\u003AsetId\u0028\u0029",
-            "name": "setId",
-            "summary": "Setter\u0020for\u0020id",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdCallbacksCreateResponse.html#method_setId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdCallbacksCreateResponse\u003A\u003AgetId\u0028\u0029",
             "name": "getId",
             "summary": "Getter\u0020for\u0020id",
@@ -20935,11 +19860,6 @@ Search.appendIndex(
             "name": "DeviceTypesIdCallbacksListResponse",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdCallbacksListResponse.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdCallbacksListResponse\u003A\u003AsetData\u0028\u0029",
-            "name": "setData",
-            "summary": "Setter\u0020for\u0020data",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdCallbacksListResponse.html#method_setData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdCallbacksListResponse\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
@@ -20956,20 +19876,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdCallbacksNotDeliveredResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdCallbacksNotDeliveredResponse\u003A\u003AsetData\u0028\u0029",
-            "name": "setData",
-            "summary": "Setter\u0020for\u0020data",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdCallbacksNotDeliveredResponse.html#method_setData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdCallbacksNotDeliveredResponse\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdCallbacksNotDeliveredResponse.html#method_getData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdCallbacksNotDeliveredResponse\u003A\u003AsetPaging\u0028\u0029",
-            "name": "setPaging",
-            "summary": "Setter\u0020for\u0020paging",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdCallbacksNotDeliveredResponse.html#method_setPaging"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdCallbacksNotDeliveredResponse\u003A\u003AgetPaging\u0028\u0029",
             "name": "getPaging",
@@ -20991,20 +19901,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdMessagesResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdMessagesResponse\u003A\u003AsetData\u0028\u0029",
-            "name": "setData",
-            "summary": "Setter\u0020for\u0020data",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdMessagesResponse.html#method_setData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdMessagesResponse\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdMessagesResponse.html#method_getData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdMessagesResponse\u003A\u003AsetPaging\u0028\u0029",
-            "name": "setPaging",
-            "summary": "Setter\u0020for\u0020paging",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdMessagesResponse.html#method_setPaging"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdMessagesResponse\u003A\u003AgetPaging\u0028\u0029",
             "name": "getPaging",
@@ -21026,30 +19926,15 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesListResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesListResponse\u003A\u003AsetData\u0028\u0029",
-            "name": "setData",
-            "summary": "Setter\u0020for\u0020data",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesListResponse.html#method_setData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesListResponse\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesListResponse.html#method_getData"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesListResponse\u003A\u003AsetActions\u0028\u0029",
-            "name": "setActions",
-            "summary": "Setter\u0020for\u0020actions",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesListResponse.html#method_setActions"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesListResponse\u003A\u003AgetActions\u0028\u0029",
             "name": "getActions",
             "summary": "Getter\u0020for\u0020actions",
             "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesListResponse.html#method_getActions"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesListResponse\u003A\u003AsetPaging\u0028\u0029",
-            "name": "setPaging",
-            "summary": "Setter\u0020for\u0020paging",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesListResponse.html#method_setPaging"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesListResponse\u003A\u003AgetPaging\u0028\u0029",
             "name": "getPaging",
@@ -21076,11 +19961,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-GroupsCreateResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsCreateResponse\u003A\u003AsetId\u0028\u0029",
-            "name": "setId",
-            "summary": "Setter\u0020for\u0020id",
-            "url": "classes/Arimac-Sigfox-Response-Generated-GroupsCreateResponse.html#method_setId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsCreateResponse\u003A\u003AgetId\u0028\u0029",
             "name": "getId",
             "summary": "Getter\u0020for\u0020id",
@@ -21096,20 +19976,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-GroupsIdCallbacksNotDeliveredResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsIdCallbacksNotDeliveredResponse\u003A\u003AsetData\u0028\u0029",
-            "name": "setData",
-            "summary": "Setter\u0020for\u0020data",
-            "url": "classes/Arimac-Sigfox-Response-Generated-GroupsIdCallbacksNotDeliveredResponse.html#method_setData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsIdCallbacksNotDeliveredResponse\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Response-Generated-GroupsIdCallbacksNotDeliveredResponse.html#method_getData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsIdCallbacksNotDeliveredResponse\u003A\u003AsetPaging\u0028\u0029",
-            "name": "setPaging",
-            "summary": "Setter\u0020for\u0020paging",
-            "url": "classes/Arimac-Sigfox-Response-Generated-GroupsIdCallbacksNotDeliveredResponse.html#method_setPaging"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsIdCallbacksNotDeliveredResponse\u003A\u003AgetPaging\u0028\u0029",
             "name": "getPaging",
@@ -21131,20 +20001,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-GroupsIdGeolocationPayloadsResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsIdGeolocationPayloadsResponse\u003A\u003AsetData\u0028\u0029",
-            "name": "setData",
-            "summary": "Setter\u0020for\u0020data",
-            "url": "classes/Arimac-Sigfox-Response-Generated-GroupsIdGeolocationPayloadsResponse.html#method_setData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsIdGeolocationPayloadsResponse\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Response-Generated-GroupsIdGeolocationPayloadsResponse.html#method_getData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsIdGeolocationPayloadsResponse\u003A\u003AsetPaging\u0028\u0029",
-            "name": "setPaging",
-            "summary": "Setter\u0020for\u0020paging",
-            "url": "classes/Arimac-Sigfox-Response-Generated-GroupsIdGeolocationPayloadsResponse.html#method_setPaging"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsIdGeolocationPayloadsResponse\u003A\u003AgetPaging\u0028\u0029",
             "name": "getPaging",
@@ -21166,20 +20026,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-GroupsListResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsListResponse\u003A\u003AsetData\u0028\u0029",
-            "name": "setData",
-            "summary": "Setter\u0020for\u0020data",
-            "url": "classes/Arimac-Sigfox-Response-Generated-GroupsListResponse.html#method_setData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsListResponse\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Response-Generated-GroupsListResponse.html#method_getData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsListResponse\u003A\u003AsetPaging\u0028\u0029",
-            "name": "setPaging",
-            "summary": "Setter\u0020for\u0020paging",
-            "url": "classes/Arimac-Sigfox-Response-Generated-GroupsListResponse.html#method_setPaging"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsListResponse\u003A\u003AgetPaging\u0028\u0029",
             "name": "getPaging",
@@ -21201,20 +20051,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-ProfilesListResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ProfilesListResponse\u003A\u003AsetData\u0028\u0029",
-            "name": "setData",
-            "summary": "Setter\u0020for\u0020data",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ProfilesListResponse.html#method_setData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ProfilesListResponse\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Response-Generated-ProfilesListResponse.html#method_getData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ProfilesListResponse\u003A\u003AsetPaging\u0028\u0029",
-            "name": "setPaging",
-            "summary": "Setter\u0020for\u0020paging",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ProfilesListResponse.html#method_setPaging"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ProfilesListResponse\u003A\u003AgetPaging\u0028\u0029",
             "name": "getPaging",
@@ -21236,11 +20076,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-TilesMonarchKmzStartAsyncResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\TilesMonarchKmzStartAsyncResponse\u003A\u003AsetJobId\u0028\u0029",
-            "name": "setJobId",
-            "summary": "Setter\u0020for\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Response-Generated-TilesMonarchKmzStartAsyncResponse.html#method_setJobId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\TilesMonarchKmzStartAsyncResponse\u003A\u003AgetJobId\u0028\u0029",
             "name": "getJobId",
             "summary": "Getter\u0020for\u0020jobId",
@@ -21256,20 +20091,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-UsersListResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\UsersListResponse\u003A\u003AsetData\u0028\u0029",
-            "name": "setData",
-            "summary": "Setter\u0020for\u0020data",
-            "url": "classes/Arimac-Sigfox-Response-Generated-UsersListResponse.html#method_setData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\UsersListResponse\u003A\u003AgetData\u0028\u0029",
             "name": "getData",
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Response-Generated-UsersListResponse.html#method_getData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\UsersListResponse\u003A\u003AsetPaging\u0028\u0029",
-            "name": "setPaging",
-            "summary": "Setter\u0020for\u0020paging",
-            "url": "classes/Arimac-Sigfox-Response-Generated-UsersListResponse.html#method_setPaging"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\UsersListResponse\u003A\u003AgetPaging\u0028\u0029",
             "name": "getPaging",
@@ -21285,11 +20110,6 @@ Search.appendIndex(
             "name": "paging",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-UsersListResponse.html#property_paging"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\PaginatedResponse",
-            "name": "PaginatedResponse",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Response-PaginatedResponse.html"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Sigfox",
             "name": "Sigfox",
@@ -21340,16 +20160,6 @@ Search.appendIndex(
             "name": "users",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Sigfox.html#method_users"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\SigfoxExt",
-            "name": "SigfoxExt",
-            "summary": "Constructor\u0020of\u0020the\u0020\u0060Sigfox\u0060\u0020class.",
-            "url": "classes/Arimac-Sigfox-SigfoxExt.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\SigfoxExt\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020a\u0020Sigfox\u0020client\u0020instance",
-            "url": "classes/Arimac-Sigfox-SigfoxExt.html#method___construct"
         },                {
             "fqsen": "\\",
             "name": "\\",
