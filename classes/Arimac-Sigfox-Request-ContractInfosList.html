@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Documentation</title>
+    <title>PHP Sigfox Client</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="../">
     <link rel="icon" href="images/favicon.ico"/>
@@ -19,7 +19,7 @@
     </head>
 <body id="top">
     <header class="phpdocumentor-header phpdocumentor-section">
-    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">Documentation</a></h1>
+    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">PHP Sigfox Client</a></h1>
     <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
     <label class="phpdocumentor-header__menu-icon" for="menu-button">
         <i class="fas fa-bars"></i>
@@ -205,13 +205,6 @@
 <dd>if true, we return the list of actions and resources the user has access</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Request.html#property_body">$body</a>
-    <span>
-                &nbsp;: array&lt;string|int, mixed&gt;            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Request-ContractInfosList.html#property_contractIds">$contractIds</a>
     <span>
                 &nbsp;: string|null            </span>
@@ -225,13 +218,6 @@ separated by comma.</dd>
                 &nbsp;: bool|null            </span>
 </dt>
 <dd>Searches for contracts that are attached to the given group and its descendants</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Definition.html#property_extendable">$extendable</a>
-    <span>
-                &nbsp;: bool            </span>
-</dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Request-ContractInfosList.html#property_fields">$fields</a>
@@ -318,20 +304,6 @@ Epoch).</dd>
 <dd>Searches for contracts with a given pricing model</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Request-ContractInfosList.html#property_query">$query</a>
-    <span>
-                &nbsp;: array&lt;string|int, mixed&gt;            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Definition.html#property_required">$required</a>
-    <span>
-                &nbsp;: array&lt;string|int, mixed&gt;            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Request-ContractInfosList.html#property_subscriptionPlan">$subscriptionPlan</a>
     <span>
                 &nbsp;: int|null            </span>
@@ -359,26 +331,12 @@ Epoch).</dd>
 </dt>
 <dd>Searches for contracts that are attached to the given group and its ancestors</dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Request-ContractInfosList.html#property_validations">$validations</a>
-    <span>
-                &nbsp;: array&lt;string|int, mixed&gt;            </span>
-</dt>
-<dd></dd>
-
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getAuthorizations">getAuthorizations()</a>
     <span>
                         &nbsp;: bool    </span>
 </dt>
 <dd>Getter for authorizations</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Request.html#method_getBodyFields">getBodyFields()</a>
-    <span>
-                        &nbsp;: array&lt;string|int, string&gt;    </span>
-</dt>
-<dd>Returning all property names for request body</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getContractIds">getContractIds()</a>
@@ -472,20 +430,6 @@ Epoch).</dd>
 <dd>Getter for pricingModel</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Request.html#method_getQueryFields">getQueryFields()</a>
-    <span>
-                        &nbsp;: array&lt;string|int, string&gt;    </span>
-</dt>
-<dd>Returning all property names for query string</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getSerializeMetaData">getSerializeMetaData()</a>
-    <span>
-                        &nbsp;: array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;    </span>
-</dt>
-<dd>Returning all meta data to serialize and deserialize objects</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getSubscriptionPlan">getSubscriptionPlan()</a>
     <span>
                         &nbsp;: int    </span>
@@ -512,13 +456,6 @@ Epoch).</dd>
                         &nbsp;: bool    </span>
 </dt>
 <dd>Getter for up</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Definition.html#method_isExtendable">isExtendable()</a>
-    <span>
-                        &nbsp;: bool    </span>
-</dt>
-<dd>Returning the weather the class is extendable or not</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setAuthorizations">setAuthorizations()</a>
@@ -1027,36 +964,6 @@ Epoch).</dd>
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_body">
-        $body
-        <a href="classes/Arimac-Sigfox-Request.html#property_body" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Request.php"><a href="files/src-request.html"><abbr title="src/Request.php">Request.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">6</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$body</span>
-     = <span class="phpdocumentor-signature__default-value">[]</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="property_contractIds">
         $contractIds
         <a href="classes/Arimac-Sigfox-Request-ContractInfosList.html#property_contractIds" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1112,36 +1019,6 @@ separated by comma.</p>
 
         <section class="phpdocumentor-description"></section>
 
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_extendable">
-        $extendable
-        <a href="classes/Arimac-Sigfox-Definition.html#property_extendable" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">14</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">bool</span>
-    <span class="phpdocumentor-signature__name">$extendable</span>
-     = <span class="phpdocumentor-signature__default-value">false</span></code>
-
-    
     
 
 </article>
@@ -1530,66 +1407,6 @@ Epoch).</p>
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_query">
-        $query
-        <a href="classes/Arimac-Sigfox-Request-ContractInfosList.html#property_query" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">191</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$query</span>
-     = <span class="phpdocumentor-signature__default-value">array(&#039;name&#039;, &#039;groupId&#039;, &#039;groupType&#039;, &#039;deep&#039;, &#039;up&#039;, &#039;orderIds&#039;, &#039;contractIds&#039;, &#039;fromTime&#039;, &#039;toTime&#039;, &#039;tokenDuration&#039;, &#039;pricingModel&#039;, &#039;subscriptionPlan&#039;, &#039;geolocationMode&#039;, &#039;fields&#039;, &#039;limit&#039;, &#039;offset&#039;, &#039;pageId&#039;, &#039;authorizations&#039;)</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_required">
-        $required
-        <a href="classes/Arimac-Sigfox-Definition.html#property_required" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">10</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$required</span>
-     = <span class="phpdocumentor-signature__default-value">[]</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="property_subscriptionPlan">
         $subscriptionPlan
         <a href="classes/Arimac-Sigfox-Request-ContractInfosList.html#property_subscriptionPlan" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1734,36 +1551,6 @@ Epoch).</p>
     
 
 </article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_validations">
-        $validations
-        <a href="classes/Arimac-Sigfox-Request-ContractInfosList.html#property_validations" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">192</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$validations</span>
-     = <span class="phpdocumentor-signature__default-value">array(&#039;fields&#039; =&gt; array(&#039;in:group(name\,type\,level),order(name),blacklistedTerritories(group(name\,type\,level))&#039;, &#039;nullable&#039;))</span></code>
-
-    
-    
-
-</article>
             </section>
 
             <section class="phpdocumentor-methods">
@@ -1784,7 +1571,7 @@ Epoch).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">626</span>
+    <span class="phpdocumentor-element-found-in__line">632</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for authorizations</p>
@@ -1812,40 +1599,6 @@ Epoch).</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getBodyFields">
-        getBodyFields()
-        <a href="classes/Arimac-Sigfox-Request.html#method_getBodyFields" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Request.php"><a href="files/src-request.html"><abbr title="src/Request.php">Request.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">15</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Returning all property names for request body</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getBodyFields</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_getContractIds">
         getContractIds()
         <a href="classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getContractIds" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1853,7 +1606,7 @@ Epoch).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">348</span>
+    <span class="phpdocumentor-element-found-in__line">354</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for contractIds</p>
@@ -1889,7 +1642,7 @@ list are separated by comma.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">281</span>
+    <span class="phpdocumentor-element-found-in__line">287</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for deep</p>
@@ -1924,7 +1677,7 @@ list are separated by comma.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">542</span>
+    <span class="phpdocumentor-element-found-in__line">548</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for fields</p>
@@ -1959,7 +1712,7 @@ list are separated by comma.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">371</span>
+    <span class="phpdocumentor-element-found-in__line">377</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for fromTime</p>
@@ -1995,7 +1748,7 @@ milliseconds since Unix Epoch).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">519</span>
+    <span class="phpdocumentor-element-found-in__line">525</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for geolocationMode</p>
@@ -2036,7 +1789,7 @@ milliseconds since Unix Epoch).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">231</span>
+    <span class="phpdocumentor-element-found-in__line">237</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for groupId</p>
@@ -2071,7 +1824,7 @@ milliseconds since Unix Epoch).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">260</span>
+    <span class="phpdocumentor-element-found-in__line">266</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for groupType</p>
@@ -2114,7 +1867,7 @@ milliseconds since Unix Epoch).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">563</span>
+    <span class="phpdocumentor-element-found-in__line">569</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for limit</p>
@@ -2149,7 +1902,7 @@ milliseconds since Unix Epoch).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">210</span>
+    <span class="phpdocumentor-element-found-in__line">216</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for name</p>
@@ -2184,7 +1937,7 @@ milliseconds since Unix Epoch).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">584</span>
+    <span class="phpdocumentor-element-found-in__line">590</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for offset</p>
@@ -2219,7 +1972,7 @@ milliseconds since Unix Epoch).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">325</span>
+    <span class="phpdocumentor-element-found-in__line">331</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for orderIds</p>
@@ -2255,7 +2008,7 @@ comma.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">605</span>
+    <span class="phpdocumentor-element-found-in__line">611</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for pageId</p>
@@ -2290,7 +2043,7 @@ comma.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">445</span>
+    <span class="phpdocumentor-element-found-in__line">451</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for pricingModel</p>
@@ -2329,88 +2082,6 @@ comma.</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getQueryFields">
-        getQueryFields()
-        <a href="classes/Arimac-Sigfox-Request.html#method_getQueryFields" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Request.php"><a href="files/src-request.html"><abbr title="src/Request.php">Request.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">24</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Returning all property names for query string</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getQueryFields</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getSerializeMetaData">
-        getSerializeMetaData()
-        <a href="classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">633</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Returning all meta data to serialize and deserialize objects</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getSerializeMetaData</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">inheritdoc</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"></section>
-
-                                    </dd>
-                        </dl>
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_getSubscriptionPlan">
         getSubscriptionPlan()
         <a href="classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getSubscriptionPlan" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2418,7 +2089,7 @@ comma.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">484</span>
+    <span class="phpdocumentor-element-found-in__line">490</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for subscriptionPlan</p>
@@ -2476,7 +2147,7 @@ comma.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">414</span>
+    <span class="phpdocumentor-element-found-in__line">420</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for tokenDuration</p>
@@ -2511,7 +2182,7 @@ comma.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">393</span>
+    <span class="phpdocumentor-element-found-in__line">399</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for toTime</p>
@@ -2546,7 +2217,7 @@ comma.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">302</span>
+    <span class="phpdocumentor-element-found-in__line">308</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for up</p>
@@ -2574,54 +2245,6 @@ comma.</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_isExtendable">
-        isExtendable()
-        <a href="classes/Arimac-Sigfox-Definition.html#method_isExtendable" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">24</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Returning the weather the class is extendable or not</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">isExtendable</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">inheritdoc</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"></section>
-
-                                    </dd>
-                        </dl>
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_setAuthorizations">
         setAuthorizations()
         <a href="classes/Arimac-Sigfox-Request-ContractInfosList.html#method_setAuthorizations" class="headerlink"><i class="fas fa-link"></i></a>
@@ -2629,7 +2252,7 @@ comma.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">616</span>
+    <span class="phpdocumentor-element-found-in__line">622</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for authorizations</p>
@@ -2676,7 +2299,7 @@ comma.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">337</span>
+    <span class="phpdocumentor-element-found-in__line">343</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for contractIds</p>
@@ -2724,7 +2347,7 @@ elements of the list are separated by comma.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">271</span>
+    <span class="phpdocumentor-element-found-in__line">277</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for deep</p>
@@ -2771,7 +2394,7 @@ elements of the list are separated by comma.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">531</span>
+    <span class="phpdocumentor-element-found-in__line">537</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for fields</p>
@@ -2818,7 +2441,7 @@ elements of the list are separated by comma.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">360</span>
+    <span class="phpdocumentor-element-found-in__line">366</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for fromTime</p>
@@ -2866,7 +2489,7 @@ milliseconds since Unix Epoch).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">502</span>
+    <span class="phpdocumentor-element-found-in__line">508</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for geolocationMode</p>
@@ -2919,7 +2542,7 @@ milliseconds since Unix Epoch).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">221</span>
+    <span class="phpdocumentor-element-found-in__line">227</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for groupId</p>
@@ -2966,7 +2589,7 @@ milliseconds since Unix Epoch).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">246</span>
+    <span class="phpdocumentor-element-found-in__line">252</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for groupType</p>
@@ -3021,7 +2644,7 @@ milliseconds since Unix Epoch).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">553</span>
+    <span class="phpdocumentor-element-found-in__line">559</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for limit</p>
@@ -3068,7 +2691,7 @@ milliseconds since Unix Epoch).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">200</span>
+    <span class="phpdocumentor-element-found-in__line">206</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for name</p>
@@ -3115,7 +2738,7 @@ milliseconds since Unix Epoch).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">574</span>
+    <span class="phpdocumentor-element-found-in__line">580</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for offset</p>
@@ -3162,7 +2785,7 @@ milliseconds since Unix Epoch).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">314</span>
+    <span class="phpdocumentor-element-found-in__line">320</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for orderIds</p>
@@ -3210,7 +2833,7 @@ separated by comma.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">595</span>
+    <span class="phpdocumentor-element-found-in__line">601</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for pageId</p>
@@ -3257,7 +2880,7 @@ separated by comma.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">430</span>
+    <span class="phpdocumentor-element-found-in__line">436</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for pricingModel</p>
@@ -3315,7 +2938,7 @@ separated by comma.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">465</span>
+    <span class="phpdocumentor-element-found-in__line">471</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for subscriptionPlan</p>
@@ -3385,7 +3008,7 @@ separated by comma.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">404</span>
+    <span class="phpdocumentor-element-found-in__line">410</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for tokenDuration</p>
@@ -3432,7 +3055,7 @@ separated by comma.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">383</span>
+    <span class="phpdocumentor-element-found-in__line">389</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for toTime</p>
@@ -3480,7 +3103,7 @@ Epoch).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/ContractInfosList.php"><a href="files/src-request-contractinfoslist.html"><abbr title="src/Request/ContractInfosList.php">ContractInfosList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">292</span>
+    <span class="phpdocumentor-element-found-in__line">298</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for up</p>

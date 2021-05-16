@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Documentation</title>
+    <title>PHP Sigfox Client</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="../">
     <link rel="icon" href="images/favicon.ico"/>
@@ -19,7 +19,7 @@
     </head>
 <body id="top">
     <header class="phpdocumentor-header phpdocumentor-section">
-    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">Documentation</a></h1>
+    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">PHP Sigfox Client</a></h1>
     <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
     <label class="phpdocumentor-header__menu-icon" for="menu-button">
         <i class="fas fa-bars"></i>
@@ -213,33 +213,12 @@ to allow for migration to a DATA_ADVANCED callback</dd>
 <dd>True to enable the callback, otherwise false</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Definition.html#property_extendable">$extendable</a>
-    <span>
-                &nbsp;: bool            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Definition-CreateCallback.html#property_payloadConfig">$payloadConfig</a>
     <span>
                 &nbsp;: string|null            </span>
 </dt>
 <dd>The custom payload configuration. Only for DATA and DATA_ADVANCED callbacks. This field can be unset when
 updating.</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Definition.html#property_required">$required</a>
-    <span>
-                &nbsp;: array&lt;string|int, mixed&gt;            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Definition-CreateCallback.html#property_validations">$validations</a>
-    <span>
-                &nbsp;: array&lt;string|int, mixed&gt;            </span>
-</dt>
-<dd></dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Definition-CreateCallback.html#method_getCallbackSubtype">getCallbackSubtype()</a>
@@ -275,20 +254,6 @@ updating.</dd>
                         &nbsp;: string    </span>
 </dt>
 <dd>Getter for payloadConfig</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Definition-CreateCallback.html#method_getSerializeMetaData">getSerializeMetaData()</a>
-    <span>
-                        &nbsp;: array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;    </span>
-</dt>
-<dd>Returning all meta data to serialize and deserialize objects</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Definition.html#method_isExtendable">isExtendable()</a>
-    <span>
-                        &nbsp;: bool    </span>
-</dt>
-<dd>Returning the weather the class is extendable or not</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Definition-CreateCallback.html#method_setCallbackSubtype">setCallbackSubtype()</a>
@@ -788,36 +753,6 @@ to allow for migration to a DATA_ADVANCED callback</p>
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_extendable">
-        $extendable
-        <a href="classes/Arimac-Sigfox-Definition.html#property_extendable" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">14</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">bool</span>
-    <span class="phpdocumentor-signature__name">$extendable</span>
-     = <span class="phpdocumentor-signature__default-value">false</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="property_payloadConfig">
         $payloadConfig
         <a href="classes/Arimac-Sigfox-Definition-CreateCallback.html#property_payloadConfig" class="headerlink"><i class="fas fa-link"></i></a>
@@ -844,66 +779,6 @@ updating.</p>
     
 
 </article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_required">
-        $required
-        <a href="classes/Arimac-Sigfox-Definition.html#property_required" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">10</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$required</span>
-     = <span class="phpdocumentor-signature__default-value">[]</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_validations">
-        $validations
-        <a href="classes/Arimac-Sigfox-Definition-CreateCallback.html#property_validations" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CreateCallback.php"><a href="files/src-definition-createcallback.html"><abbr title="src/Definition/CreateCallback.php">CreateCallback.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">99</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$validations</span>
-     = <span class="phpdocumentor-signature__default-value">array(&#039;channel&#039; =&gt; array(&#039;required&#039;), &#039;callbackType&#039; =&gt; array(&#039;required&#039;), &#039;callbackSubtype&#039; =&gt; array(&#039;required&#039;), &#039;enabled&#039; =&gt; array(&#039;required&#039;))</span></code>
-
-    
-    
-
-</article>
             </section>
 
             <section class="phpdocumentor-methods">
@@ -924,7 +799,7 @@ updating.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CreateCallback.php"><a href="files/src-definition-createcallback.html"><abbr title="src/Definition/CreateCallback.php">CreateCallback.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">195</span>
+    <span class="phpdocumentor-element-found-in__line">198</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for callbackSubtype</p>
@@ -982,7 +857,7 @@ updating.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CreateCallback.php"><a href="files/src-definition-createcallback.html"><abbr title="src/Definition/CreateCallback.php">CreateCallback.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">156</span>
+    <span class="phpdocumentor-element-found-in__line">159</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for callbackType</p>
@@ -1028,7 +903,7 @@ updating.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CreateCallback.php"><a href="files/src-definition-createcallback.html"><abbr title="src/Definition/CreateCallback.php">CreateCallback.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">125</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for channel</p>
@@ -1068,7 +943,7 @@ updating.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CreateCallback.php"><a href="files/src-definition-createcallback.html"><abbr title="src/Definition/CreateCallback.php">CreateCallback.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">239</span>
+    <span class="phpdocumentor-element-found-in__line">242</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for enabled</p>
@@ -1103,7 +978,7 @@ updating.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CreateCallback.php"><a href="files/src-definition-createcallback.html"><abbr title="src/Definition/CreateCallback.php">CreateCallback.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">218</span>
+    <span class="phpdocumentor-element-found-in__line">221</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for payloadConfig</p>
@@ -1132,102 +1007,6 @@ unset when updating.</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getSerializeMetaData">
-        getSerializeMetaData()
-        <a href="classes/Arimac-Sigfox-Definition-CreateCallback.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CreateCallback.php"><a href="files/src-definition-createcallback.html"><abbr title="src/Definition/CreateCallback.php">CreateCallback.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">246</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Returning all meta data to serialize and deserialize objects</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getSerializeMetaData</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">inheritdoc</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"></section>
-
-                                    </dd>
-                        </dl>
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_isExtendable">
-        isExtendable()
-        <a href="classes/Arimac-Sigfox-Definition.html#method_isExtendable" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">24</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Returning the weather the class is extendable or not</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">isExtendable</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">inheritdoc</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"></section>
-
-                                    </dd>
-                        </dl>
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_setCallbackSubtype">
         setCallbackSubtype()
         <a href="classes/Arimac-Sigfox-Definition-CreateCallback.html#method_setCallbackSubtype" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1235,7 +1014,7 @@ unset when updating.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CreateCallback.php"><a href="files/src-definition-createcallback.html"><abbr title="src/Definition/CreateCallback.php">CreateCallback.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">176</span>
+    <span class="phpdocumentor-element-found-in__line">179</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for callbackSubtype</p>
@@ -1305,7 +1084,7 @@ unset when updating.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CreateCallback.php"><a href="files/src-definition-createcallback.html"><abbr title="src/Definition/CreateCallback.php">CreateCallback.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">141</span>
+    <span class="phpdocumentor-element-found-in__line">144</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for callbackType</p>
@@ -1363,7 +1142,7 @@ unset when updating.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CreateCallback.php"><a href="files/src-definition-createcallback.html"><abbr title="src/Definition/CreateCallback.php">CreateCallback.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">111</span>
+    <span class="phpdocumentor-element-found-in__line">114</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for channel</p>
@@ -1415,7 +1194,7 @@ unset when updating.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CreateCallback.php"><a href="files/src-definition-createcallback.html"><abbr title="src/Definition/CreateCallback.php">CreateCallback.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">229</span>
+    <span class="phpdocumentor-element-found-in__line">232</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for enabled</p>
@@ -1462,7 +1241,7 @@ unset when updating.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CreateCallback.php"><a href="files/src-definition-createcallback.html"><abbr title="src/Definition/CreateCallback.php">CreateCallback.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">207</span>
+    <span class="phpdocumentor-element-found-in__line">210</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for payloadConfig</p>

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Documentation</title>
+    <title>PHP Sigfox Client</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="../">
     <link rel="icon" href="images/favicon.ico"/>
@@ -19,7 +19,7 @@
     </head>
 <body id="top">
     <header class="phpdocumentor-header phpdocumentor-section">
-    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">Documentation</a></h1>
+    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">PHP Sigfox Client</a></h1>
     <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
     <label class="phpdocumentor-header__menu-icon" for="menu-button">
         <i class="fas fa-bars"></i>
@@ -86,15 +86,11 @@
 </h3>
 
 <dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Arimac-Sigfox-Serializer-Impl-Definition.html"><abbr title="\Arimac\Sigfox\Serializer\Impl\Definition">Definition</abbr></a></dt>
-        <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Arimac-Sigfox-Serializer-Impl-Generic.html"><abbr title="\Arimac\Sigfox\Serializer\Impl\Generic">Generic</abbr></a></dt>
-        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Arimac-Sigfox-Client-ClientImpl.html"><abbr title="\Arimac\Sigfox\Client\ClientImpl">ClientImpl</abbr></a></dt>
         <dd>Implement this to use different HTTP clients</dd>
     
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Client-Client.html"><abbr title="\Arimac\Sigfox\Client\Client">Client</abbr></a></dt>
-        <dd>Client wrapper that serializing and deserializing data before sending and receiving</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Client-Guzzle.html"><abbr title="\Arimac\Sigfox\Client\Guzzle">Guzzle</abbr></a></dt>
+        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Definition-ActionJob-Status.html"><abbr title="\Arimac\Sigfox\Definition\ActionJob\Status">Status</abbr></a></dt>
         <dd>the informations about the devices already treated</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Definition-ActionJob.html"><abbr title="\Arimac\Sigfox\Definition\ActionJob">ActionJob</abbr></a></dt>
@@ -495,8 +491,6 @@ service</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Definition-UserUpdate.html"><abbr title="\Arimac\Sigfox\Definition\UserUpdate">UserUpdate</abbr></a></dt>
         <dd>User information to be updated</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Definition.html"><abbr title="\Arimac\Sigfox\Definition">Definition</abbr></a></dt>
-        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></dt>
         <dd>Deserialization exceptions.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Exception-Response-BadRequestException.html"><abbr title="\Arimac\Sigfox\Exception\Response\BadRequestException">BadRequestException</abbr></a></dt>
@@ -746,8 +740,6 @@ a previous calculation</dd>
         <dd>Update a given user.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-UsersList.html"><abbr title="\Arimac\Sigfox\Request\UsersList">UsersList</abbr></a></dt>
         <dd>Retrieve a list of users according to visibility permissions and request filters.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request.html"><abbr title="\Arimac\Sigfox\Request">Request</abbr></a></dt>
-        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Response-Generated-ApiUsersCreateResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ApiUsersCreateResponse">ApiUsersCreateResponse</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Response-Generated-ApiUsersIdRenewCredentialResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ApiUsersIdRenewCredentialResponse">ApiUsersIdRenewCredentialResponse</abbr></a></dt>
@@ -818,26 +810,16 @@ a previous calculation</dd>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Response-Generated-UsersListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\UsersListResponse">UsersListResponse</abbr></a></dt>
         <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Serializer-ArraySerializer.html"><abbr title="\Arimac\Sigfox\Serializer\ArraySerializer">ArraySerializer</abbr></a></dt>
-        <dd>Serializing and deserializing arrays</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Serializer-ClassSerializer.html"><abbr title="\Arimac\Sigfox\Serializer\ClassSerializer">ClassSerializer</abbr></a></dt>
-        <dd>Serializing and deserializing class instances</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Serializer-GenericSerializer.html"><abbr title="\Arimac\Sigfox\Serializer\GenericSerializer">GenericSerializer</abbr></a></dt>
-        <dd>Serializing and deserializing generic types</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Serializer-PrimitiveSerializer.html"><abbr title="\Arimac\Sigfox\Serializer\PrimitiveSerializer">PrimitiveSerializer</abbr></a></dt>
-        <dd>Serializing and deserializing primitive typed values. (array, string, int, float, bool)</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Serializer-Serializer.html"><abbr title="\Arimac\Sigfox\Serializer\Serializer">Serializer</abbr></a></dt>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Response-PaginatedResponse.html"><abbr title="\Arimac\Sigfox\Response\PaginatedResponse">PaginatedResponse</abbr></a></dt>
         <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Sigfox.html"><abbr title="\Arimac\Sigfox\Sigfox">Sigfox</abbr></a></dt>
         <dd>Client for sigfox API</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Client-Guzzle.html"><abbr title="\Arimac\Sigfox\Client\Guzzle">Guzzle</abbr></a></dt>
-        <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Repository.html"><abbr title="\Arimac\Sigfox\Repository">Repository</abbr></a></dt>
-        <dd></dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Response-PaginatedResponse.html"><abbr title="\Arimac\Sigfox\Response\PaginatedResponse">PaginatedResponse</abbr></a></dt>
-        <dd></dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-SigfoxExt.html"><abbr title="\Arimac\Sigfox\SigfoxExt">SigfoxExt</abbr></a></dt>
         <dd>Constructor of the `Sigfox` class.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Definition.html"><abbr title="\Arimac\Sigfox\Definition">Definition</abbr></a></dt>
+        <dd></dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request.html"><abbr title="\Arimac\Sigfox\Request">Request</abbr></a></dt>
+        <dd></dd>
     
             <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/Arimac-Sigfox-Definition-BillableGroup.html"><abbr title="\Arimac\Sigfox\Definition\BillableGroup">BillableGroup</abbr></a></dt>
         <dd>Defines the billable group&#039;s properties</dd>

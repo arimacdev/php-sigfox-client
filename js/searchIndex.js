@@ -1,25 +1,35 @@
 Search.appendIndex(
     [
                 {
-            "fqsen": "\\Arimac\\Sigfox\\Client\\Client",
-            "name": "Client",
-            "summary": "Client\u0020wrapper\u0020that\u0020serializing\u0020and\u0020deserializing\u0020data\u0020before\u0020sending\u0020and\u0020receiving",
-            "url": "classes/Arimac-Sigfox-Client-Client.html"
+            "fqsen": "\\Arimac\\Sigfox\\Client\\ClientImpl",
+            "name": "ClientImpl",
+            "summary": "Implement\u0020this\u0020to\u0020use\u0020different\u0020HTTP\u0020clients",
+            "url": "classes/Arimac-Sigfox-Client-ClientImpl.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Client\\Client\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Client\\ClientImpl\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
             "summary": "Initializing\u0020the\u0020client",
-            "url": "classes/Arimac-Sigfox-Client-Client.html#method___construct"
+            "url": "classes/Arimac-Sigfox-Client-ClientImpl.html#method___construct"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Client\\Client\u003A\u003Acall\u0028\u0029",
-            "name": "call",
-            "summary": "Calling\u0020the\u0020inner\u0020client\u0020after\u0020serialized\u0020and\u0020validated\u0020data.",
-            "url": "classes/Arimac-Sigfox-Client-Client.html#method_call"
+            "fqsen": "\\Arimac\\Sigfox\\Client\\ClientImpl\u003A\u003Arequest\u0028\u0029",
+            "name": "request",
+            "summary": "Making\u0020a\u0020request\u0020to\u0020the\u0020API",
+            "url": "classes/Arimac-Sigfox-Client-ClientImpl.html#method_request"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Client\\Client\u003A\u003A\u0024inner",
-            "name": "inner",
+            "fqsen": "\\Arimac\\Sigfox\\Client\\Guzzle",
+            "name": "Guzzle",
             "summary": "",
-            "url": "classes/Arimac-Sigfox-Client-Client.html#property_inner"
+            "url": "classes/Arimac-Sigfox-Client-Guzzle.html"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Client\\Guzzle\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Initializing\u0020the\u0020client",
+            "url": "classes/Arimac-Sigfox-Client-Guzzle.html#method___construct"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Client\\Guzzle\u003A\u003Arequest\u0028\u0029",
+            "name": "request",
+            "summary": "Making\u0020a\u0020request\u0020to\u0020the\u0020API",
+            "url": "classes/Arimac-Sigfox-Client-Guzzle.html#method_request"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ActionJob\\Status",
             "name": "Status",
@@ -66,11 +76,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020errors",
             "url": "classes/Arimac-Sigfox-Definition-ActionJob-Status.html#method_getErrors"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ActionJob\\Status\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ActionJob-Status.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ActionJob\\Status\u003A\u003A\u0024total",
             "name": "total",
             "summary": "the\u0020total\u0020number\u0020of\u0020devices\u0020given",
@@ -115,11 +120,6 @@ Search.appendIndex(
             "name": "getStatus",
             "summary": "Getter\u0020for\u0020status",
             "url": "classes/Arimac-Sigfox-Definition-ActionJob.html#method_getStatus"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ActionJob\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ActionJob.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ActionJob\u003A\u003A\u0024jobDone",
             "name": "jobDone",
@@ -195,11 +195,6 @@ Search.appendIndex(
             "name": "getTilt",
             "summary": "Getter\u0020for\u0020tilt",
             "url": "classes/Arimac-Sigfox-Definition-Antenna.html#method_getTilt"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Antenna\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Antenna.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Antenna\u003A\u003A\u0024model",
             "name": "model",
@@ -306,11 +301,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-ApiUser.html#method_getResources"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ApiUser\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ApiUser.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ApiUser\u003A\u003A\u0024group",
             "name": "group",
             "summary": "",
@@ -391,11 +381,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020profileIds",
             "url": "classes/Arimac-Sigfox-Definition-ApiUserCreation.html#method_getProfileIds"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ApiUserCreation\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ApiUserCreation.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ApiUserCreation\u003A\u003A\u0024groupId",
             "name": "groupId",
             "summary": "The\u0020group\u0020identifer",
@@ -415,11 +400,6 @@ Search.appendIndex(
             "name": "profileIds",
             "summary": "The\u0020API\u0020user\u0020profiles",
             "url": "classes/Arimac-Sigfox-Definition-ApiUserCreation.html#property_profileIds"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ApiUserCreation\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-ApiUserCreation.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ApiUserEdition",
             "name": "ApiUserEdition",
@@ -451,20 +431,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Definition-AsynchronousDeviceEditionJob.html#method_getData"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\AsynchronousDeviceEditionJob\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-AsynchronousDeviceEditionJob.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\AsynchronousDeviceEditionJob\u003A\u003A\u0024data",
             "name": "data",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Definition-AsynchronousDeviceEditionJob.html#property_data"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\AsynchronousDeviceEditionJob\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-AsynchronousDeviceEditionJob.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\AsynchronousDeviceReplacementJob\\DataItem",
             "name": "DataItem",
@@ -491,11 +461,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020targetDeviceId",
             "url": "classes/Arimac-Sigfox-Definition-AsynchronousDeviceReplacementJob-DataItem.html#method_getTargetDeviceId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\AsynchronousDeviceReplacementJob\\DataItem\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-AsynchronousDeviceReplacementJob-DataItem.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\AsynchronousDeviceReplacementJob\\DataItem\u003A\u003A\u0024deviceId",
             "name": "deviceId",
             "summary": "The\u0020device\u0027s\u0020identifier\u0020to\u0020replace\u0020\u0028hexadecimal\u0020format\u0029",
@@ -520,11 +485,6 @@ Search.appendIndex(
             "name": "getData",
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Definition-AsynchronousDeviceReplacementJob.html#method_getData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\AsynchronousDeviceReplacementJob\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-AsynchronousDeviceReplacementJob.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\AsynchronousDeviceReplacementJob\u003A\u003A\u0024data",
             "name": "data",
@@ -566,11 +526,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020activable",
             "url": "classes/Arimac-Sigfox-Definition-AsynchronousDeviceTransferJob-DataItem.html#method_getActivable"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\AsynchronousDeviceTransferJob\\DataItem\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-AsynchronousDeviceTransferJob-DataItem.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\AsynchronousDeviceTransferJob\\DataItem\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020device\u0027s\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
@@ -585,11 +540,6 @@ Search.appendIndex(
             "name": "activable",
             "summary": "True\u0020if\u0020the\u0020device\u0020is\u0020activable\u0020and\u0020can\u0020take\u0020a\u0020token.\u0020Not\u0020used\u0020if\u0020the\u0020device\u0020has\u0020already\u0020a\u0020token\u0020and\u0020if\u0020the\ntransferred\u0020is\u0020intra\u002Dorder.",
             "url": "classes/Arimac-Sigfox-Definition-AsynchronousDeviceTransferJob-DataItem.html#property_activable"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\AsynchronousDeviceTransferJob\\DataItem\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-AsynchronousDeviceTransferJob-DataItem.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\AsynchronousDeviceTransferJob",
             "name": "AsynchronousDeviceTransferJob",
@@ -616,11 +566,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Definition-AsynchronousDeviceTransferJob.html#method_getData"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\AsynchronousDeviceTransferJob\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-AsynchronousDeviceTransferJob.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\AsynchronousDeviceTransferJob\u003A\u003A\u0024deviceTypeId",
             "name": "deviceTypeId",
             "summary": "The\u0020device\u0020type\u0020where\u0020new\u0020devices\u0020will\u0020be\u0020transfered",
@@ -630,11 +575,6 @@ Search.appendIndex(
             "name": "data",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Definition-AsynchronousDeviceTransferJob.html#property_data"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\AsynchronousDeviceTransferJob\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-AsynchronousDeviceTransferJob.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\AvailableEntitiesResponse\\ClassesItem",
             "name": "ClassesItem",
@@ -670,11 +610,6 @@ Search.appendIndex(
             "name": "getAttenuation",
             "summary": "Getter\u0020for\u0020attenuation",
             "url": "classes/Arimac-Sigfox-Definition-AvailableEntitiesResponse-ClassesItem.html#method_getAttenuation"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\AvailableEntitiesResponse\\ClassesItem\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-AvailableEntitiesResponse-ClassesItem.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\AvailableEntitiesResponse\\ClassesItem\u003A\u003A\u0024id",
             "name": "id",
@@ -715,11 +650,6 @@ Search.appendIndex(
             "name": "getName",
             "summary": "Getter\u0020for\u0020name",
             "url": "classes/Arimac-Sigfox-Definition-AvailableEntitiesResponse-OperatorsItem-OperatorForecastsItem.html#method_getName"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\AvailableEntitiesResponse\\OperatorsItem\\OperatorForecastsItem\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-AvailableEntitiesResponse-OperatorsItem-OperatorForecastsItem.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\AvailableEntitiesResponse\\OperatorsItem\\OperatorForecastsItem\u003A\u003A\u0024id",
             "name": "id",
@@ -806,11 +736,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020actions",
             "url": "classes/Arimac-Sigfox-Definition-AvailableEntitiesResponse-OperatorsItem.html#method_getActions"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\AvailableEntitiesResponse\\OperatorsItem\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-AvailableEntitiesResponse-OperatorsItem.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\AvailableEntitiesResponse\\OperatorsItem\u003A\u003A\u0024operatorId",
             "name": "operatorId",
             "summary": "The\u0020identifier\u0020of\u0020the\u0020operator.",
@@ -880,11 +805,6 @@ Search.appendIndex(
             "name": "getActions",
             "summary": "Getter\u0020for\u0020actions",
             "url": "classes/Arimac-Sigfox-Definition-AvailableEntitiesResponse.html#method_getActions"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\AvailableEntitiesResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-AvailableEntitiesResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\AvailableEntitiesResponse\u003A\u003A\u0024operators",
             "name": "operators",
@@ -986,11 +906,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-BaseContact.html#method_getResources"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseContact\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-BaseContact.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseContact\u003A\u003A\u0024name",
             "name": "name",
             "summary": "The\u0020contact\u0027s\u0020name",
@@ -1030,11 +945,6 @@ Search.appendIndex(
             "name": "resources",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Definition-BaseContact.html#property_resources"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseContact\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-BaseContact.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseDeviceType",
             "name": "BaseDeviceType",
@@ -1131,11 +1041,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020automaticRenewal",
             "url": "classes/Arimac-Sigfox-Definition-BaseDeviceType.html#method_getAutomaticRenewal"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseDeviceType\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-BaseDeviceType.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseDeviceType\u003A\u003ADOWNLINK_MODE_DIRECT",
             "name": "DOWNLINK_MODE_DIRECT",
             "summary": "DIRECT",
@@ -1231,11 +1136,6 @@ Search.appendIndex(
             "summary": "Allows\u0020the\u0020automatic\u0020renewal\u0020of\u0020devices\u0020attached\u0020to\u0020this\u0020device\u0020type",
             "url": "classes/Arimac-Sigfox-Definition-BaseDeviceType.html#property_automaticRenewal"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseDeviceType\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-BaseDeviceType.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseGeolocation",
             "name": "BaseGeolocation",
             "summary": "",
@@ -1260,11 +1160,6 @@ Search.appendIndex(
             "name": "getName",
             "summary": "Getter\u0020for\u0020name",
             "url": "classes/Arimac-Sigfox-Definition-BaseGeolocation.html#method_getName"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseGeolocation\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-BaseGeolocation.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseGeolocation\u003A\u003A\u0024id",
             "name": "id",
@@ -1291,11 +1186,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020name",
             "url": "classes/Arimac-Sigfox-Definition-BaseHost.html#method_getName"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseHost\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-BaseHost.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseHost\u003A\u003A\u0024name",
             "name": "name",
             "summary": "The\u0020host\u0027s\u0020name",
@@ -1315,11 +1205,6 @@ Search.appendIndex(
             "name": "getName",
             "summary": "Getter\u0020for\u0020name",
             "url": "classes/Arimac-Sigfox-Definition-BaseMaintenance.html#method_getName"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseMaintenance\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-BaseMaintenance.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseMaintenance\u003A\u003A\u0024name",
             "name": "name",
@@ -1350,11 +1235,6 @@ Search.appendIndex(
             "name": "getAnnualCost",
             "summary": "Getter\u0020for\u0020annualCost",
             "url": "classes/Arimac-Sigfox-Definition-BaseProvider.html#method_getAnnualCost"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseProvider\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-BaseProvider.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseProvider\u003A\u003A\u0024name",
             "name": "name",
@@ -1390,11 +1270,6 @@ Search.appendIndex(
             "name": "getUserRoles",
             "summary": "Getter\u0020for\u0020userRoles",
             "url": "classes/Arimac-Sigfox-Definition-BaseResponse.html#method_getUserRoles"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-BaseResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseResponse\u003A\u003A\u0024message",
             "name": "message",
@@ -1520,11 +1395,6 @@ Search.appendIndex(
             "name": "getLng",
             "summary": "Getter\u0020for\u0020lng",
             "url": "classes/Arimac-Sigfox-Definition-BaseSite.html#method_getLng"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseSite\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-BaseSite.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseSite\u003A\u003ASTATUS_PROD",
             "name": "STATUS_PROD",
@@ -1691,11 +1561,6 @@ Search.appendIndex(
             "summary": "the\u0020site\u0027s\u0020longitutde",
             "url": "classes/Arimac-Sigfox-Definition-BaseSite.html#property_lng"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseSite\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-BaseSite.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseSiteConvention",
             "name": "BaseSiteConvention",
             "summary": "Generic\u0020information\u0020about\u0020convention",
@@ -1790,11 +1655,6 @@ Search.appendIndex(
             "name": "getType",
             "summary": "Getter\u0020for\u0020type",
             "url": "classes/Arimac-Sigfox-Definition-BaseSiteConvention.html#method_getType"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseSiteConvention\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-BaseSiteConvention.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseSiteConvention\u003A\u003ASTATUS_AT_SIGFOX",
             "name": "STATUS_AT_SIGFOX",
@@ -2006,11 +1866,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020type",
             "url": "classes/Arimac-Sigfox-Definition-BaseSiteIntervention.html#method_getType"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseSiteIntervention\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-BaseSiteIntervention.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseSiteIntervention\u003A\u003AEQUIPMENTS_TO_CHANGE_ANTENNA",
             "name": "EQUIPMENTS_TO_CHANGE_ANTENNA",
             "summary": "ANTENNA",
@@ -2211,11 +2066,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020name",
             "url": "classes/Arimac-Sigfox-Definition-BaseStation-LocationItem.html#method_getName"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseStation\\LocationItem\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-BaseStation-LocationItem.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseStation\\LocationItem\u003A\u003A\u0024code",
             "name": "code",
             "summary": "location\u0020code",
@@ -2250,11 +2100,6 @@ Search.appendIndex(
             "name": "getOut",
             "summary": "Getter\u0020for\u0020out",
             "url": "classes/Arimac-Sigfox-Definition-BaseStation-Queue.html#method_getOut"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseStation\\Queue\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-BaseStation-Queue.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseStation\\Queue\u003A\u003A\u0024in",
             "name": "in",
@@ -3000,11 +2845,6 @@ Search.appendIndex(
             "name": "getResources",
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-BaseStation.html#method_getResources"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseStation\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-BaseStation.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseStation\u003A\u003ACONNECTION_TYPE_ETH",
             "name": "CONNECTION_TYPE_ETH",
@@ -3786,11 +3626,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Definition-BaseStation.html#property_resources"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BaseStation\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-BaseStation.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Basic",
             "name": "Basic",
             "summary": "Defines\u0020the\u0020Basic\u0020group\u0020type\u0020properties",
@@ -3806,20 +3641,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020currentPrototypeCount",
             "url": "classes/Arimac-Sigfox-Definition-Basic.html#method_getCurrentPrototypeCount"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Basic\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Basic.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Basic\u003A\u003A\u0024currentPrototypeCount",
             "name": "currentPrototypeCount",
             "summary": "Number\u0020of\u0020prototype\u0020registered.\u0020Accessible\u0020only\u0020for\u0020groups\u0020under\u0020SO",
             "url": "classes/Arimac-Sigfox-Definition-Basic.html#property_currentPrototypeCount"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Basic\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-Basic.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BasicCreate",
             "name": "BasicCreate",
@@ -3866,11 +3691,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020linePattern",
             "url": "classes/Arimac-Sigfox-Definition-BatchUrlCallback.html#method_getLinePattern"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BatchUrlCallback\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-BatchUrlCallback.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BatchUrlCallback\u003A\u003A\u0024url",
             "name": "url",
             "summary": "The\u0020callback\u0027s\u0020url",
@@ -3885,11 +3705,6 @@ Search.appendIndex(
             "name": "linePattern",
             "summary": "The\u0020line\u0020pattern\u0020representing\u0020a\u0020message.",
             "url": "classes/Arimac-Sigfox-Definition-BatchUrlCallback.html#property_linePattern"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BatchUrlCallback\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-BatchUrlCallback.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BillableGroup",
             "name": "BillableGroup",
@@ -3926,11 +3741,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020maxPrototypeAllowed",
             "url": "classes/Arimac-Sigfox-Definition-BillableGroup.html#method_getMaxPrototypeAllowed"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BillableGroup\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-BillableGroup.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BillableGroup\u003A\u003A\u0024billable",
             "name": "billable",
             "summary": "true\u0020if\u0020the\u0020group\u0020is\u0020billable",
@@ -3945,11 +3755,6 @@ Search.appendIndex(
             "name": "maxPrototypeAllowed",
             "summary": "Number\u0020of\u0020prototypes\u0020allowed.\u0020Accessible\u0020only\u0020for\u0020groups\u0020under\u0020SO",
             "url": "classes/Arimac-Sigfox-Definition-BillableGroup.html#property_maxPrototypeAllowed"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BillableGroup\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-BillableGroup.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Bounds",
             "name": "Bounds",
@@ -3975,11 +3780,6 @@ Search.appendIndex(
             "name": "getNe",
             "summary": "Getter\u0020for\u0020ne",
             "url": "classes/Arimac-Sigfox-Definition-Bounds.html#method_getNe"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Bounds\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Bounds.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Bounds\u003A\u003A\u0024sw",
             "name": "sw",
@@ -4066,11 +3866,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020activable",
             "url": "classes/Arimac-Sigfox-Definition-BulkDeviceAsynchronousRequest-DataItem.html#method_getActivable"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BulkDeviceAsynchronousRequest\\DataItem\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-BulkDeviceAsynchronousRequest-DataItem.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BulkDeviceAsynchronousRequest\\DataItem\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020device\u0027s\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
@@ -4105,11 +3900,6 @@ Search.appendIndex(
             "name": "activable",
             "summary": "Value\u0020describing\u0020if\u0020the\u0020devices\u0020are\u0020activable\u0020and\u0020can\u0020recover\u0020a\u0020token",
             "url": "classes/Arimac-Sigfox-Definition-BulkDeviceAsynchronousRequest-DataItem.html#property_activable"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BulkDeviceAsynchronousRequest\\DataItem\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-BulkDeviceAsynchronousRequest-DataItem.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BulkDeviceAsynchronousRequest",
             "name": "BulkDeviceAsynchronousRequest",
@@ -4166,11 +3956,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Definition-BulkDeviceAsynchronousRequest.html#method_getData"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BulkDeviceAsynchronousRequest\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-BulkDeviceAsynchronousRequest.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BulkDeviceAsynchronousRequest\u003A\u003A\u0024deviceTypeId",
             "name": "deviceTypeId",
             "summary": "The\u0020identifier\u0020of\u0020the\u0020device\u0020type\u0020under\u0020which\u0020the\u0020new\u0020devices\u0020will\u0020be\u0020created",
@@ -4195,11 +3980,6 @@ Search.appendIndex(
             "name": "data",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Definition-BulkDeviceAsynchronousRequest.html#property_data"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BulkDeviceAsynchronousRequest\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-BulkDeviceAsynchronousRequest.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BulkUnsubscribe\\DataItem",
             "name": "DataItem",
@@ -4226,11 +4006,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020unsubscriptionTime",
             "url": "classes/Arimac-Sigfox-Definition-BulkUnsubscribe-DataItem.html#method_getUnsubscriptionTime"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BulkUnsubscribe\\DataItem\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-BulkUnsubscribe-DataItem.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BulkUnsubscribe\\DataItem\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020device\u0027s\u0020identifier\u0020to\u0020unsubscribe\u0020\u0028hexadecimal\u0020format\u0029",
@@ -4255,11 +4030,6 @@ Search.appendIndex(
             "name": "getData",
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Definition-BulkUnsubscribe.html#method_getData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\BulkUnsubscribe\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-BulkUnsubscribe.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\BulkUnsubscribe\u003A\u003A\u0024data",
             "name": "data",
@@ -4340,11 +4110,6 @@ Search.appendIndex(
             "name": "getDead",
             "summary": "Getter\u0020for\u0020dead",
             "url": "classes/Arimac-Sigfox-Definition-Callback.html#method_getDead"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Callback\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Callback.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Callback\u003A\u003ACALLBACK_TYPE_DATA",
             "name": "CALLBACK_TYPE_DATA",
@@ -4456,11 +4221,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020message",
             "url": "classes/Arimac-Sigfox-Definition-CallbackEmail.html#method_getMessage"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CallbackEmail\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-CallbackEmail.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CallbackEmail\u003A\u003A\u0024subject",
             "name": "subject",
             "summary": "The\u0020subject\u0020of\u0020the\u0020email\u0020to\u0020be\u0020sent",
@@ -4535,11 +4295,6 @@ Search.appendIndex(
             "name": "getError",
             "summary": "Getter\u0020for\u0020error",
             "url": "classes/Arimac-Sigfox-Definition-CallbackHTTP.html#method_getError"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CallbackHTTP\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CallbackHTTP.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CallbackHTTP\u003A\u003A\u0024url",
             "name": "url",
@@ -4620,11 +4375,6 @@ Search.appendIndex(
             "name": "getTime",
             "summary": "Getter\u0020for\u0020time",
             "url": "classes/Arimac-Sigfox-Definition-CbStatus.html#method_getTime"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CbStatus\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CbStatus.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CbStatus\u003A\u003A\u0024status",
             "name": "status",
@@ -4721,11 +4471,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020source",
             "url": "classes/Arimac-Sigfox-Definition-CellularConnectivityBase.html#method_getSource"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CellularConnectivityBase\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CellularConnectivityBase.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CellularConnectivityBase\u003A\u003ASOURCE_REMOTE",
             "name": "SOURCE_REMOTE",
             "summary": "REMOTE\u0020\u0028Configuration\u0020provided\u0020by\u0020Cloud\u0029",
@@ -4780,11 +4525,6 @@ Search.appendIndex(
             "name": "source",
             "summary": "Configuration\u0020origin\u0020of\u0020the\u0020connectivity",
             "url": "classes/Arimac-Sigfox-Definition-CellularConnectivityBase.html#property_source"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CellularConnectivityBase\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-CellularConnectivityBase.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CellularConnectivityForBs",
             "name": "CellularConnectivityForBs",
@@ -4880,11 +4620,6 @@ Search.appendIndex(
             "name": "getResources",
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-CellularConnectivityForBs.html#method_getResources"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CellularConnectivityForBs\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CellularConnectivityForBs.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CellularConnectivityForBs\u003A\u003ASTATE_ACTIVE",
             "name": "STATE_ACTIVE",
@@ -5076,11 +4811,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-CellularConnectivityForGroup.html#method_getResources"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CellularConnectivityForGroup\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CellularConnectivityForGroup.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CellularConnectivityForGroup\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020group\u0027s\u0020identifier",
@@ -5126,11 +4856,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020key",
             "url": "classes/Arimac-Sigfox-Definition-Certificate.html#method_getKey"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Certificate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Certificate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Certificate\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020product\u0020certificate\u0027s\u0020identifier",
@@ -5156,11 +4881,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020key",
             "url": "classes/Arimac-Sigfox-Definition-CertificateUpdate.html#method_getKey"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CertificateUpdate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CertificateUpdate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CertificateUpdate\u003A\u003A\u0024key",
             "name": "key",
             "summary": "The\u0020certificate\u0020name",
@@ -5181,20 +4901,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020currentPrototypeCount",
             "url": "classes/Arimac-Sigfox-Definition-Channel.html#method_getCurrentPrototypeCount"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Channel\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Channel.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Channel\u003A\u003A\u0024currentPrototypeCount",
             "name": "currentPrototypeCount",
             "summary": "Number\u0020of\u0020prototype\u0020registered.\u0020Accessible\u0020only\u0020for\u0020groups\u0020under\u0020SO",
             "url": "classes/Arimac-Sigfox-Definition-Channel.html#property_currentPrototypeCount"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Channel\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-Channel.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ChannelCreate",
             "name": "ChannelCreate",
@@ -5271,11 +4981,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020actions",
             "url": "classes/Arimac-Sigfox-Definition-CityArea.html#method_getActions"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CityArea\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CityArea.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CityArea\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020city\u0020area\u0027s\u0020identifier",
@@ -5331,11 +5036,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020timezone",
             "url": "classes/Arimac-Sigfox-Definition-CommonApiUser.html#method_getTimezone"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonApiUser\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CommonApiUser.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonApiUser\u003A\u003A\u0024name",
             "name": "name",
             "summary": "The\u0020API\u0020user\u0020name",
@@ -5345,11 +5045,6 @@ Search.appendIndex(
             "name": "timezone",
             "summary": "The\u0020API\u0020user\u0020timezone",
             "url": "classes/Arimac-Sigfox-Definition-CommonApiUser.html#property_timezone"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonApiUser\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-CommonApiUser.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonCertificate",
             "name": "CommonCertificate",
@@ -5426,11 +5121,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020description",
             "url": "classes/Arimac-Sigfox-Definition-CommonCertificate.html#method_getDescription"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonCertificate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CommonCertificate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonCertificate\u003A\u003ASTATUS_ONGOING",
             "name": "STATUS_ONGOING",
             "summary": "ongoing",
@@ -5476,11 +5166,6 @@ Search.appendIndex(
             "summary": "The\u0020certificate\u0020description",
             "url": "classes/Arimac-Sigfox-Definition-CommonCertificate.html#property_description"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonCertificate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-CommonCertificate.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonContractInfo\\OptionsItem",
             "name": "OptionsItem",
             "summary": "",
@@ -5505,11 +5190,6 @@ Search.appendIndex(
             "name": "getParameters",
             "summary": "Getter\u0020for\u0020parameters",
             "url": "classes/Arimac-Sigfox-Definition-CommonContractInfo-OptionsItem.html#method_getParameters"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonContractInfo\\OptionsItem\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CommonContractInfo-OptionsItem.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonContractInfo\\OptionsItem\u003A\u003A\u0024id",
             "name": "id",
@@ -5636,11 +5316,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020options",
             "url": "classes/Arimac-Sigfox-Definition-CommonContractInfo.html#method_getOptions"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonContractInfo\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CommonContractInfo.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonContractInfo\u003A\u003A\u0024name",
             "name": "name",
             "summary": "The\u0020contract\u0020name",
@@ -5696,11 +5371,6 @@ Search.appendIndex(
             "summary": "The\u0020activated\u0020premium\u0020options.\u0020Given\u0020options\u0020will\u0020be\u0020merged\u0020with\u0020existing\u0020options\u0020in\u0020contract.\u0020In\u0020order\u0020to\ndelete\u0020a\u0020single\u0020option\u0020use\u0020\u0022\/\u007Bid\u007D\/options\u0022\u0020API.",
             "url": "classes/Arimac-Sigfox-Definition-CommonContractInfo.html#property_options"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonContractInfo\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-CommonContractInfo.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonDevice",
             "name": "CommonDevice",
             "summary": "Defines\u0020the\u0020device\u0027s\u0020common\u0020properties\u0020for\u0020reading\u0020or\u0020creation\u0020\u0028not\u0020update\u0029",
@@ -5726,11 +5396,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020name",
             "url": "classes/Arimac-Sigfox-Definition-CommonDevice.html#method_getName"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonDevice\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CommonDevice.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonDevice\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020device\u0027s\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
@@ -5740,11 +5405,6 @@ Search.appendIndex(
             "name": "name",
             "summary": "The\u0020device\u0027s\u0020name",
             "url": "classes/Arimac-Sigfox-Definition-CommonDevice.html#property_name"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonDevice\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-CommonDevice.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonGroupCreate",
             "name": "CommonGroupCreate",
@@ -5800,11 +5460,6 @@ Search.appendIndex(
             "name": "getParentId",
             "summary": "Getter\u0020for\u0020parentId",
             "url": "classes/Arimac-Sigfox-Definition-CommonGroupCreate.html#method_getParentId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonGroupCreate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CommonGroupCreate.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonGroupCreate\u003A\u003ATYPE_SO",
             "name": "TYPE_SO",
@@ -5876,11 +5531,6 @@ Search.appendIndex(
             "summary": "The\u0020parent\u0020group\u0020id",
             "url": "classes/Arimac-Sigfox-Definition-CommonGroupCreate.html#property_parentId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonGroupCreate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-CommonGroupCreate.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonGroupUpdate",
             "name": "CommonGroupUpdate",
             "summary": "Generic\u0020information\u0020for\u0020group\u0020update",
@@ -5925,11 +5575,6 @@ Search.appendIndex(
             "name": "getTimezone",
             "summary": "Getter\u0020for\u0020timezone",
             "url": "classes/Arimac-Sigfox-Definition-CommonGroupUpdate.html#method_getTimezone"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonGroupUpdate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CommonGroupUpdate.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonGroupUpdate\u003A\u003ATYPE_SO",
             "name": "TYPE_SO",
@@ -5996,11 +5641,6 @@ Search.appendIndex(
             "summary": "The\u0020timezone\u0020\u0028in\u0020Java\u0020TimeZone\u0020ID\u0020format,\u0020e.g.\u0022America\/Costa_Rica\u0022\u0029.",
             "url": "classes/Arimac-Sigfox-Definition-CommonGroupUpdate.html#property_timezone"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonGroupUpdate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-CommonGroupUpdate.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonRole",
             "name": "CommonRole",
             "summary": "generic\u0020information\u0020about\u0020a\u0020Role",
@@ -6026,11 +5666,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020type",
             "url": "classes/Arimac-Sigfox-Definition-CommonRole.html#method_getType"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonRole\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CommonRole.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonRole\u003A\u003ATYPE_ROLE",
             "name": "TYPE_ROLE",
             "summary": "ROLE",
@@ -6055,11 +5690,6 @@ Search.appendIndex(
             "name": "type",
             "summary": "Token\u0027s\u0020type\u0020of\u0020role",
             "url": "classes/Arimac-Sigfox-Definition-CommonRole.html#property_type"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonRole\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-CommonRole.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonUser",
             "name": "CommonUser",
@@ -6096,11 +5726,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020timezone",
             "url": "classes/Arimac-Sigfox-Definition-CommonUser.html#method_getTimezone"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonUser\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CommonUser.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonUser\u003A\u003A\u0024firstName",
             "name": "firstName",
             "summary": "The\u0020user\u0027s\u0020first\u0020name",
@@ -6115,11 +5740,6 @@ Search.appendIndex(
             "name": "timezone",
             "summary": "The\u0020user\u0027s\u0020timezone",
             "url": "classes/Arimac-Sigfox-Definition-CommonUser.html#property_timezone"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CommonUser\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-CommonUser.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ComputedLocation",
             "name": "ComputedLocation",
@@ -6175,11 +5795,6 @@ Search.appendIndex(
             "name": "getPlaceIds",
             "summary": "Getter\u0020for\u0020placeIds",
             "url": "classes/Arimac-Sigfox-Definition-ComputedLocation.html#method_getPlaceIds"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ComputedLocation\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ComputedLocation.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ComputedLocation\u003A\u003ASOURCE_RSSI_AND_POSITION_OF_THE_STATION",
             "name": "SOURCE_RSSI_AND_POSITION_OF_THE_STATION",
@@ -6261,11 +5876,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020id",
             "url": "classes/Arimac-Sigfox-Definition-Contact.html#method_getId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Contact\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Contact.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Contact\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020contact\u0027s\u0020identifier",
@@ -6286,20 +5896,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020id",
             "url": "classes/Arimac-Sigfox-Definition-ContractId.html#method_getId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ContractId\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ContractId.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ContractId\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020contract\u0027s\u0020id",
             "url": "classes/Arimac-Sigfox-Definition-ContractId.html#property_id"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ContractId\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-ContractId.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ContractInfo",
             "name": "ContractInfo",
@@ -6475,11 +6075,6 @@ Search.appendIndex(
             "name": "getTokensUsed",
             "summary": "Getter\u0020for\u0020tokensUsed",
             "url": "classes/Arimac-Sigfox-Definition-ContractInfo.html#method_getTokensUsed"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ContractInfo\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ContractInfo.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ContractInfo\u003A\u003APRICING_MODEL_PRICING_MODEL_V1",
             "name": "PRICING_MODEL_PRICING_MODEL_V1",
@@ -6716,11 +6311,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020blacklistedTerritories",
             "url": "classes/Arimac-Sigfox-Definition-ContractInfoCreate.html#method_getBlacklistedTerritories"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ContractInfoCreate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ContractInfoCreate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ContractInfoCreate\u003A\u003APRICING_MODEL_PRICING_MODEL_V1",
             "name": "PRICING_MODEL_PRICING_MODEL_V1",
             "summary": "Pricing\u0020model\u0020verion\u00201",
@@ -6826,11 +6416,6 @@ Search.appendIndex(
             "summary": "The\u0020list\u0020of\u0020\u0022blacklisted\u0022\u0020territories,\u0020as\u0020an\u0020array\u0020of\u0020NIP\u0020group\u0020IDs.",
             "url": "classes/Arimac-Sigfox-Definition-ContractInfoCreate.html#property_blacklistedTerritories"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ContractInfoCreate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-ContractInfoCreate.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ContractInfoUpdate",
             "name": "ContractInfoUpdate",
             "summary": "Defines\u0020a\u0020contract\u0020common\u0020properties",
@@ -6855,11 +6440,6 @@ Search.appendIndex(
             "name": "getBlacklistedTerritories",
             "summary": "Getter\u0020for\u0020blacklistedTerritories",
             "url": "classes/Arimac-Sigfox-Definition-ContractInfoUpdate.html#method_getBlacklistedTerritories"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ContractInfoUpdate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ContractInfoUpdate.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ContractInfoUpdate\u003A\u003A\u0024orderName",
             "name": "orderName",
@@ -7006,11 +6586,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020pair",
             "url": "classes/Arimac-Sigfox-Definition-CreateAdslSubscription.html#method_getPair"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateAdslSubscription\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CreateAdslSubscription.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateAdslSubscription\u003A\u003ACONNECTION_STATUS_REQUEST",
             "name": "CONNECTION_STATUS_REQUEST",
             "summary": "REQUEST",
@@ -7091,11 +6666,6 @@ Search.appendIndex(
             "summary": "The\u0020pair\u0020of\u0020this\u0020internet\u0020subscription.\u0020This\u0020field\u0020can\u0020be\u0020unset\u0020when\u0020updating.",
             "url": "classes/Arimac-Sigfox-Definition-CreateAdslSubscription.html#property_pair"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateAdslSubscription\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-CreateAdslSubscription.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateBatchUrlCallback",
             "name": "CreateBatchUrlCallback",
             "summary": "Defines\u0020the\u0020properties\u0020needed\u0020to\u0020create\u0020a\u0020batch\u0020url\u0020callback",
@@ -7131,11 +6701,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020linePattern",
             "url": "classes/Arimac-Sigfox-Definition-CreateBatchUrlCallback.html#method_getLinePattern"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateBatchUrlCallback\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CreateBatchUrlCallback.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateBatchUrlCallback\u003A\u003A\u0024url",
             "name": "url",
             "summary": "The\u0020callback\u0027s\u0020url",
@@ -7150,11 +6715,6 @@ Search.appendIndex(
             "name": "linePattern",
             "summary": "The\u0020line\u0020pattern\u0020representing\u0020a\u0020message.",
             "url": "classes/Arimac-Sigfox-Definition-CreateBatchUrlCallback.html#property_linePattern"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateBatchUrlCallback\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-CreateBatchUrlCallback.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateCallback",
             "name": "CreateCallback",
@@ -7210,11 +6770,6 @@ Search.appendIndex(
             "name": "getEnabled",
             "summary": "Getter\u0020for\u0020enabled",
             "url": "classes/Arimac-Sigfox-Definition-CreateCallback.html#method_getEnabled"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateCallback\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CreateCallback.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateCallback\u003A\u003ACALLBACK_TYPE_DATA",
             "name": "CALLBACK_TYPE_DATA",
@@ -7291,11 +6846,6 @@ Search.appendIndex(
             "summary": "True\u0020to\u0020enable\u0020the\u0020callback,\u0020otherwise\u0020false",
             "url": "classes/Arimac-Sigfox-Definition-CreateCallback.html#property_enabled"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateCallback\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-CreateCallback.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateEmailCallback",
             "name": "CreateEmailCallback",
             "summary": "Defines\u0020the\u0020properties\u0020needed\u0020to\u0020create\u0020a\u0020batch\u0020url\u0020callback",
@@ -7331,11 +6881,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020message",
             "url": "classes/Arimac-Sigfox-Definition-CreateEmailCallback.html#method_getMessage"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateEmailCallback\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CreateEmailCallback.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateEmailCallback\u003A\u003A\u0024subject",
             "name": "subject",
             "summary": "The\u0020subject\u0020of\u0020the\u0020email.",
@@ -7350,11 +6895,6 @@ Search.appendIndex(
             "name": "message",
             "summary": "the\u0020content\u0020of\u0020the\u0020message.",
             "url": "classes/Arimac-Sigfox-Definition-CreateEmailCallback.html#property_message"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateEmailCallback\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-CreateEmailCallback.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateInternetSubscription",
             "name": "CreateInternetSubscription",
@@ -7441,11 +6981,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020contacts",
             "url": "classes/Arimac-Sigfox-Definition-CreateInternetSubscription.html#method_getContacts"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateInternetSubscription\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CreateInternetSubscription.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateInternetSubscription\u003A\u003ATYPE_GSM",
             "name": "TYPE_GSM",
             "summary": "GSM",
@@ -7526,11 +7061,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Definition-CreateInternetSubscription.html#property_contacts"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateInternetSubscription\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-CreateInternetSubscription.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateResponse",
             "name": "CreateResponse",
             "summary": "Generic\u0020information\u0020about\u0020user\u0020create\u0020operation",
@@ -7545,11 +7075,6 @@ Search.appendIndex(
             "name": "getId",
             "summary": "Getter\u0020for\u0020id",
             "url": "classes/Arimac-Sigfox-Definition-CreateResponse.html#method_getId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CreateResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateResponse\u003A\u003A\u0024id",
             "name": "id",
@@ -7661,11 +7186,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020rType",
             "url": "classes/Arimac-Sigfox-Definition-CreateSatSubscription.html#method_getRType"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateSatSubscription\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CreateSatSubscription.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateSatSubscription\u003A\u003ACONNECTION_STATUS_REQUEST",
             "name": "CONNECTION_STATUS_REQUEST",
             "summary": "REQUEST",
@@ -7741,11 +7261,6 @@ Search.appendIndex(
             "summary": "\u002D\u0020\u007B\u0040see\u0020CreateSatSubscription\u003A\u003AR_TYPE_HEATING\u007D\n\u002D\u0020\u007B\u0040see\u0020CreateSatSubscription\u003A\u003AR_TYPE_STANDARD\u007D",
             "url": "classes/Arimac-Sigfox-Definition-CreateSatSubscription.html#property_rType"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateSatSubscription\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-CreateSatSubscription.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateUrlCallback",
             "name": "CreateUrlCallback",
             "summary": "Defines\u0020the\u0020properties\u0020needed\u0020to\u0020create\u0020a\u0020url\u0020callback",
@@ -7811,11 +7326,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020contentType",
             "url": "classes/Arimac-Sigfox-Definition-CreateUrlCallback.html#method_getContentType"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateUrlCallback\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-CreateUrlCallback.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateUrlCallback\u003A\u003A\u0024url",
             "name": "url",
             "summary": "The\u0020callback\u0027s\u0020url",
@@ -7845,11 +7355,6 @@ Search.appendIndex(
             "name": "contentType",
             "summary": "The\u0020body\u0020media\u0020type\u0020of\u0020the\u0020request,\u0020only\u0020if\u0020httpMethpd\u0020is\u0020set\u0020to\u0020POST\u0020or\u0020PUT.\u0020This\u0020field\u0020can\u0020be\u0020unset\u0020when\nupdating.",
             "url": "classes/Arimac-Sigfox-Definition-CreateUrlCallback.html#property_contentType"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\CreateUrlCallback\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-CreateUrlCallback.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Device",
             "name": "Device",
@@ -8156,11 +7661,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-Device.html#method_getResources"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Device\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Device.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Device\u003A\u003ALQI_LIMIT",
             "name": "LQI_LIMIT",
             "summary": "LIMIT",
@@ -8441,20 +7941,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Definition-DeviceActionJob.html#method_getData"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceActionJob\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-DeviceActionJob.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceActionJob\u003A\u003A\u0024data",
             "name": "data",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Definition-DeviceActionJob.html#property_data"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceActionJob\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-DeviceActionJob.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceConsumption\\DeviceConsumptionsItem\\RoamingDetailsItem",
             "name": "RoamingDetailsItem",
@@ -8500,11 +7990,6 @@ Search.appendIndex(
             "name": "getTerritoryRoamingDownlinkFrameCount",
             "summary": "Getter\u0020for\u0020territoryRoamingDownlinkFrameCount",
             "url": "classes/Arimac-Sigfox-Definition-DeviceConsumption-DeviceConsumptionsItem-RoamingDetailsItem.html#method_getTerritoryRoamingDownlinkFrameCount"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceConsumption\\DeviceConsumptionsItem\\RoamingDetailsItem\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-DeviceConsumption-DeviceConsumptionsItem-RoamingDetailsItem.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceConsumption\\DeviceConsumptionsItem\\RoamingDetailsItem\u003A\u003A\u0024territory",
             "name": "territory",
@@ -8581,11 +8066,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020roamingDetails",
             "url": "classes/Arimac-Sigfox-Definition-DeviceConsumption-DeviceConsumptionsItem.html#method_getRoamingDetails"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceConsumption\\DeviceConsumptionsItem\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-DeviceConsumption-DeviceConsumptionsItem.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceConsumption\\DeviceConsumptionsItem\u003A\u003A\u0024frameCount",
             "name": "frameCount",
             "summary": "Number\u0020of\u0020uplink\u0020messages\u0020this\u0020day",
@@ -8635,11 +8115,6 @@ Search.appendIndex(
             "name": "getDeviceConsumptions",
             "summary": "Getter\u0020for\u0020deviceConsumptions",
             "url": "classes/Arimac-Sigfox-Definition-DeviceConsumption.html#method_getDeviceConsumptions"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceConsumption\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-DeviceConsumption.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceConsumption\u003A\u003A\u0024id",
             "name": "id",
@@ -8726,11 +8201,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020lng",
             "url": "classes/Arimac-Sigfox-Definition-DeviceCreationJob.html#method_getLng"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceCreationJob\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-DeviceCreationJob.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceCreationJob\u003A\u003A\u0024deviceTypeId",
             "name": "deviceTypeId",
             "summary": "The\u0020device\u0020type\u0027s\u0020identifier\u0020this\u0020device\u0020is\u0020affected",
@@ -8790,11 +8260,6 @@ Search.appendIndex(
             "name": "getName",
             "summary": "Getter\u0020for\u0020name",
             "url": "classes/Arimac-Sigfox-Definition-DeviceEditionBulk.html#method_getName"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceEditionBulk\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-DeviceEditionBulk.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceEditionBulk\u003A\u003A\u0024id",
             "name": "id",
@@ -8891,11 +8356,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020parameters",
             "url": "classes/Arimac-Sigfox-Definition-DeviceErrorMessages.html#method_getParameters"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceErrorMessages\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-DeviceErrorMessages.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceErrorMessages\u003A\u003A\u0024deviceId",
             "name": "deviceId",
             "summary": "Device\u0020identifier",
@@ -8961,11 +8421,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020lng",
             "url": "classes/Arimac-Sigfox-Definition-DeviceLocation.html#method_getLng"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceLocation\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-DeviceLocation.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceLocation\u003A\u003A\u0024lat",
             "name": "lat",
             "summary": "The\u0020device\u0027s\u0020estimated\u0020latitude",
@@ -9000,11 +8455,6 @@ Search.appendIndex(
             "name": "getValid",
             "summary": "Getter\u0020for\u0020valid",
             "url": "classes/Arimac-Sigfox-Definition-DeviceLocation-2.html#method_getValid"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceLocation_2\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-DeviceLocation-2.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceLocation_2\u003A\u003A\u0024time",
             "name": "time",
@@ -9130,11 +8580,6 @@ Search.appendIndex(
             "name": "getDownlinkAnswerStatus",
             "summary": "Getter\u0020for\u0020downlinkAnswerStatus",
             "url": "classes/Arimac-Sigfox-Definition-DeviceMessage.html#method_getDownlinkAnswerStatus"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceMessage\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-DeviceMessage.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceMessage\u003A\u003ALQI_LIMIT",
             "name": "LQI_LIMIT",
@@ -9406,11 +8851,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020automaticRenewal",
             "url": "classes/Arimac-Sigfox-Definition-DeviceType.html#method_getAutomaticRenewal"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceType\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-DeviceType.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceType\u003A\u003ADOWNLINK_MODE_DIRECT",
             "name": "DOWNLINK_MODE_DIRECT",
             "summary": "DIRECT",
@@ -9541,11 +8981,6 @@ Search.appendIndex(
             "summary": "Allows\u0020the\u0020automatic\u0020renewal\u0020of\u0020devices\u0020attached\u0020to\u0020this\u0020device\u0020type",
             "url": "classes/Arimac-Sigfox-Definition-DeviceType.html#property_automaticRenewal"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceType\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-DeviceType.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceTypeCreate",
             "name": "DeviceTypeCreate",
             "summary": "Defines\u0020the\u0020device\u0020type\u0027s\u0020properties\u0020that\u0020can\u0020or\u0020lust\u0020be\u0020be\u0020included\u0020during\u0020creation",
@@ -9591,11 +9026,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020geolocPayloadConfigId",
             "url": "classes/Arimac-Sigfox-Definition-DeviceTypeCreate.html#method_getGeolocPayloadConfigId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceTypeCreate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-DeviceTypeCreate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceTypeCreate\u003A\u003A\u0024groupId",
             "name": "groupId",
             "summary": "The\u0020device\u0020type\u0027s\u0020group\u0020identifier",
@@ -9615,11 +9045,6 @@ Search.appendIndex(
             "name": "geolocPayloadConfigId",
             "summary": "The\u0020geoloc\u0020payload\u0020configuration\u0020identifier.\u0020Required\u0020if\u0020the\u0020payload\u0020type\u0020is\u0020Geolocation,\u0020else\u0020ignored.",
             "url": "classes/Arimac-Sigfox-Definition-DeviceTypeCreate.html#property_geolocPayloadConfigId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceTypeCreate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-DeviceTypeCreate.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceTypeUpdate",
             "name": "DeviceTypeUpdate",
@@ -9715,11 +9140,6 @@ Search.appendIndex(
             "name": "getAutomaticRenewal",
             "summary": "Getter\u0020for\u0020automaticRenewal",
             "url": "classes/Arimac-Sigfox-Definition-DeviceTypeUpdate.html#method_getAutomaticRenewal"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceTypeUpdate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-DeviceTypeUpdate.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceTypeUpdate\u003A\u003APAYLOAD_TYPE_REGULAR",
             "name": "PAYLOAD_TYPE_REGULAR",
@@ -9831,11 +9251,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020name",
             "url": "classes/Arimac-Sigfox-Definition-DeviceUpdateJob.html#method_getName"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceUpdateJob\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-DeviceUpdateJob.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DeviceUpdateJob\u003A\u003A\u0024name",
             "name": "name",
             "summary": "The\u0020device\u0027s\u0020name",
@@ -9856,11 +9271,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020networkOperatorId",
             "url": "classes/Arimac-Sigfox-Definition-DIST.html#method_getNetworkOperatorId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DIST\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-DIST.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DIST\u003A\u003A\u0024networkOperatorId",
             "name": "networkOperatorId",
             "summary": "SO\u0020or\u0020NIP\u0020group\u0020id\u0020for\u0020a\u0020DIST\u0020\u0026\u0020SVNO\u0020\u0020group.\u0020This\u0020field\u0020is\u0020mandatory\u0020for\u0020DIST\u0020\u0026\u0020SVNO\u0020group\u0020creation.",
@@ -9880,11 +9290,6 @@ Search.appendIndex(
             "name": "getNetworkOperatorId",
             "summary": "Getter\u0020for\u0020networkOperatorId",
             "url": "classes/Arimac-Sigfox-Definition-DISTCreate.html#method_getNetworkOperatorId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DISTCreate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-DISTCreate.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DISTCreate\u003A\u003A\u0024networkOperatorId",
             "name": "networkOperatorId",
@@ -9956,11 +9361,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020country",
             "url": "classes/Arimac-Sigfox-Definition-DownlinkAnswerStatus.html#method_getCountry"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\DownlinkAnswerStatus\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-DownlinkAnswerStatus.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\DownlinkAnswerStatus\u003A\u003A\u0024baseStation",
             "name": "baseStation",
             "summary": "base\u0020station\u0020to\u0020send\u0020downlink\u0020message",
@@ -10021,11 +9421,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020message",
             "url": "classes/Arimac-Sigfox-Definition-EmailCallback.html#method_getMessage"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\EmailCallback\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-EmailCallback.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\EmailCallback\u003A\u003A\u0024subject",
             "name": "subject",
             "summary": "The\u0020subject\u0020of\u0020the\u0020email.",
@@ -10076,11 +9471,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020message",
             "url": "classes/Arimac-Sigfox-Definition-ErrorContent-ErrorsItem.html#method_getMessage"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ErrorContent\\ErrorsItem\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ErrorContent-ErrorsItem.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ErrorContent\\ErrorsItem\u003A\u003A\u0024type",
             "name": "type",
             "summary": "Describe\u0020where\u0020the\u0020problem\u0020occurred.\u0020Can\u0020be\u0020from\u0020body,\u0020query\u0020or\u0020path.",
@@ -10120,11 +9510,6 @@ Search.appendIndex(
             "name": "getErrors",
             "summary": "Getter\u0020for\u0020errors",
             "url": "classes/Arimac-Sigfox-Definition-ErrorContent.html#method_getErrors"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ErrorContent\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ErrorContent.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ErrorContent\u003A\u003A\u0024message",
             "name": "message",
@@ -10230,11 +9615,6 @@ Search.appendIndex(
             "name": "getParameters",
             "summary": "Getter\u0020for\u0020parameters",
             "url": "classes/Arimac-Sigfox-Definition-ErrorMessages.html#method_getParameters"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ErrorMessages\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ErrorMessages.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ErrorMessages\u003A\u003A\u0024deviceId",
             "name": "deviceId",
@@ -10376,11 +9756,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020source",
             "url": "classes/Arimac-Sigfox-Definition-EthernetConnectivityBase.html#method_getSource"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\EthernetConnectivityBase\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-EthernetConnectivityBase.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\EthernetConnectivityBase\u003A\u003ATYPE_STATIC",
             "name": "TYPE_STATIC",
             "summary": "STATIC",
@@ -10456,11 +9831,6 @@ Search.appendIndex(
             "summary": "Configuration\u0020origin\u0020of\u0020the\u0020connectivity",
             "url": "classes/Arimac-Sigfox-Definition-EthernetConnectivityBase.html#property_source"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\EthernetConnectivityBase\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-EthernetConnectivityBase.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\EthernetConnectivityForBs",
             "name": "EthernetConnectivityForBs",
             "summary": "Ethernet\u0020connectivity\u0020configuration\u0020for\u0020a\u0020base\u0020station.",
@@ -10535,11 +9905,6 @@ Search.appendIndex(
             "name": "getResources",
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-EthernetConnectivityForBs.html#method_getResources"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\EthernetConnectivityForBs\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-EthernetConnectivityForBs.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\EthernetConnectivityForBs\u003A\u003ASTATE_ACTIVE",
             "name": "STATE_ACTIVE",
@@ -10661,11 +10026,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-EthernetConnectivityForGroup.html#method_getResources"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\EthernetConnectivityForGroup\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-EthernetConnectivityForGroup.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\EthernetConnectivityForGroup\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020group\u0027s\u0020identifier",
@@ -10710,11 +10070,6 @@ Search.appendIndex(
             "name": "getName",
             "summary": "Getter\u0020for\u0020name",
             "url": "classes/Arimac-Sigfox-Definition-GeolocPayloadConfig.html#method_getName"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\GeolocPayloadConfig\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-GeolocPayloadConfig.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\GeolocPayloadConfig\u003A\u003A\u0024id",
             "name": "id",
@@ -10771,11 +10126,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020margins",
             "url": "classes/Arimac-Sigfox-Definition-GlobalCoverageBulkResponse-ResultsItem.html#method_getMargins"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\GlobalCoverageBulkResponse\\ResultsItem\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-GlobalCoverageBulkResponse-ResultsItem.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\GlobalCoverageBulkResponse\\ResultsItem\u003A\u003A\u0024lat",
             "name": "lat",
             "summary": "The\u0020latitude\u0020in\u0020degrees.",
@@ -10831,11 +10181,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020results",
             "url": "classes/Arimac-Sigfox-Definition-GlobalCoverageBulkResponse.html#method_getResults"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\GlobalCoverageBulkResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-GlobalCoverageBulkResponse.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\GlobalCoverageBulkResponse\u003A\u003A\u0024jobDone",
             "name": "jobDone",
             "summary": "If\u0020the\u0020job\u0020is\u0020completed\u0020or\u0020not",
@@ -10876,11 +10221,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020lng",
             "url": "classes/Arimac-Sigfox-Definition-GlobalCoverageRequest-LocationsItem.html#method_getLng"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\GlobalCoverageRequest\\LocationsItem\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-GlobalCoverageRequest-LocationsItem.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\GlobalCoverageRequest\\LocationsItem\u003A\u003A\u0024lat",
             "name": "lat",
             "summary": "A\u0020latitude\u0020in\u0020degrees.\u0020Must\u0020be\u0020between\u0020\u002D90\u00B0\u0020and\u002090\u00B0.",
@@ -10890,11 +10230,6 @@ Search.appendIndex(
             "name": "lng",
             "summary": "A\u0020longitude\u0020in\u0020degrees.\u0020Must\u0020be\u0020between\u0020\u002D180\u00B0\u0020and\u0020180\u00B0.",
             "url": "classes/Arimac-Sigfox-Definition-GlobalCoverageRequest-LocationsItem.html#property_lng"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\GlobalCoverageRequest\\LocationsItem\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-GlobalCoverageRequest-LocationsItem.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\GlobalCoverageRequest",
             "name": "GlobalCoverageRequest",
@@ -10931,11 +10266,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020groupId",
             "url": "classes/Arimac-Sigfox-Definition-GlobalCoverageRequest.html#method_getGroupId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\GlobalCoverageRequest\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-GlobalCoverageRequest.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\GlobalCoverageRequest\u003A\u003A\u0024locations",
             "name": "locations",
             "summary": "An\u0020array\u0020of\u0020positions.\u0020Valid\u0020locations\u0020have\u0020two\u0020properties,\u0020lat\u0020and\u0020lng.",
@@ -10950,11 +10280,6 @@ Search.appendIndex(
             "name": "groupId",
             "summary": "The\u0020id\u0020of\u0020a\u0020group\u0020to\u0020include\u0020its\u0020operator\u0020in\u0020the\u0020global\u0020coverage,\u0020in\u0020case\u0020it\u0020is\u0020not\u0020a\u0020public\u0020operator.",
             "url": "classes/Arimac-Sigfox-Definition-GlobalCoverageRequest.html#property_groupId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\GlobalCoverageRequest\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-GlobalCoverageRequest.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\GlobalCoverageResponse\\DataItem",
             "name": "DataItem",
@@ -11001,11 +10326,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020margins",
             "url": "classes/Arimac-Sigfox-Definition-GlobalCoverageResponse-DataItem.html#method_getMargins"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\GlobalCoverageResponse\\DataItem\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-GlobalCoverageResponse-DataItem.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\GlobalCoverageResponse\\DataItem\u003A\u003A\u0024lat",
             "name": "lat",
             "summary": "The\u0020latitude\u0020in\u0020degrees.",
@@ -11040,11 +10360,6 @@ Search.appendIndex(
             "name": "getData",
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Definition-GlobalCoverageResponse.html#method_getData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\GlobalCoverageResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-GlobalCoverageResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\GlobalCoverageResponse\u003A\u003A\u0024data",
             "name": "data",
@@ -11166,11 +10481,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020actions",
             "url": "classes/Arimac-Sigfox-Definition-Group.html#method_getActions"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Group\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Group.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Group\u003A\u003ATYPE_SO",
             "name": "TYPE_SO",
             "summary": "SO",
@@ -11271,11 +10581,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Definition-Group.html#property_actions"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Group\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-Group.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\GroupCallbackEmail",
             "name": "GroupCallbackEmail",
             "summary": "Callback\u0020of\u0020email\u0020type",
@@ -11300,11 +10605,6 @@ Search.appendIndex(
             "name": "getMessage",
             "summary": "Getter\u0020for\u0020message",
             "url": "classes/Arimac-Sigfox-Definition-GroupCallbackEmail.html#method_getMessage"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\GroupCallbackEmail\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-GroupCallbackEmail.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\GroupCallbackEmail\u003A\u003A\u0024subject",
             "name": "subject",
@@ -11380,11 +10680,6 @@ Search.appendIndex(
             "name": "getError",
             "summary": "Getter\u0020for\u0020error",
             "url": "classes/Arimac-Sigfox-Definition-GroupCallbackHTTP.html#method_getError"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\GroupCallbackHTTP\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-GroupCallbackHTTP.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\GroupCallbackHTTP\u003A\u003A\u0024url",
             "name": "url",
@@ -11526,11 +10821,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020parameters",
             "url": "classes/Arimac-Sigfox-Definition-GroupErrorMessages.html#method_getParameters"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\GroupErrorMessages\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-GroupErrorMessages.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\GroupErrorMessages\u003A\u003A\u0024device",
             "name": "device",
             "summary": "Device\u0020identifier",
@@ -11646,11 +10936,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020gsmConnectionType",
             "url": "classes/Arimac-Sigfox-Definition-GsmSubscription.html#method_getGsmConnectionType"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\GsmSubscription\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-GsmSubscription.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\GsmSubscription\u003A\u003AGSM_CONNECTION_TYPE_DONGLE_USB",
             "name": "GSM_CONNECTION_TYPE_DONGLE_USB",
             "summary": "DONGLE_USB",
@@ -11736,11 +11021,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-Host.html#method_getResources"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Host\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Host.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Host\u003A\u003A\u0024group",
             "name": "group",
             "summary": "",
@@ -11775,11 +11055,6 @@ Search.appendIndex(
             "name": "getGroupId",
             "summary": "Getter\u0020for\u0020groupId",
             "url": "classes/Arimac-Sigfox-Definition-HostCreation.html#method_getGroupId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\HostCreation\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-HostCreation.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\HostCreation\u003A\u003A\u0024groupId",
             "name": "groupId",
@@ -11890,11 +11165,6 @@ Search.appendIndex(
             "name": "getResources",
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-InternetSubscription.html#method_getResources"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\InternetSubscription\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-InternetSubscription.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\InternetSubscription\u003A\u003ATYPE_GSM",
             "name": "TYPE_GSM",
@@ -12021,11 +11291,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020type",
             "url": "classes/Arimac-Sigfox-Definition-JobError.html#method_getType"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\JobError\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-JobError.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\JobError\u003A\u003ATYPE_ENTITY",
             "name": "TYPE_ENTITY",
             "summary": "ENTITY",
@@ -12066,20 +11331,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020coverageMode",
             "url": "classes/Arimac-Sigfox-Definition-KmzCreatePublicRequest.html#method_getCoverageMode"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\KmzCreatePublicRequest\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-KmzCreatePublicRequest.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\KmzCreatePublicRequest\u003A\u003A\u0024coverageMode",
             "name": "coverageMode",
             "summary": "The\u0020coverage\u0020mode\u0020for\u0020coverage\u0020display.\u0020\u0020Outdoor\u0020is\u0020for\u00200dB\u0020margin\u0020and\u0020Indoor\u0020for\u002020\u0020dB\u0020margin\u0020U1,\u0020U2\u0020and\u0020U3\nare\u0020for\u0020product\u0020class\u0020\u00281U,\u00202U\u0020and\u00203U\u0029,\u00200U\u0020is\u0020considered\u0020by\u0020default.",
             "url": "classes/Arimac-Sigfox-Definition-KmzCreatePublicRequest.html#property_coverageMode"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\KmzCreatePublicRequest\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-KmzCreatePublicRequest.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\KmzStatusResponse",
             "name": "KmzStatusResponse",
@@ -12105,11 +11360,6 @@ Search.appendIndex(
             "name": "getTime",
             "summary": "Getter\u0020for\u0020time",
             "url": "classes/Arimac-Sigfox-Definition-KmzStatusResponse.html#method_getTime"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\KmzStatusResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-KmzStatusResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\KmzStatusResponse\u003A\u003A\u0024jobDone",
             "name": "jobDone",
@@ -12165,11 +11415,6 @@ Search.appendIndex(
             "name": "getConnectionComments",
             "summary": "Getter\u0020for\u0020connectionComments",
             "url": "classes/Arimac-Sigfox-Definition-LanSubscription.html#method_getConnectionComments"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\LanSubscription\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-LanSubscription.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\LanSubscription\u003A\u003ANETWORK_TYPE_COMPANY",
             "name": "NETWORK_TYPE_COMPANY",
@@ -12271,11 +11516,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020placeIds",
             "url": "classes/Arimac-Sigfox-Definition-LastComputedLocation.html#method_getPlaceIds"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\LastComputedLocation\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-LastComputedLocation.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\LastComputedLocation\u003A\u003ASOURCE_CODE_RSSI_AND_POSITION_OF_THE_STATION",
             "name": "SOURCE_CODE_RSSI_AND_POSITION_OF_THE_STATION",
             "summary": "computed\u0020using\u0020RSSI\u0020and\u0020position\u0020of\u0020the\u0020station\u0020\u0028legacy\u0029",
@@ -12366,11 +11606,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020lng",
             "url": "classes/Arimac-Sigfox-Definition-LatLng.html#method_getLng"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\LatLng\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-LatLng.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\LatLng\u003A\u003A\u0024lat",
             "name": "lat",
             "summary": "The\u0020latitude\u0020in\u0020degrees.",
@@ -12380,11 +11615,6 @@ Search.appendIndex(
             "name": "lng",
             "summary": "The\u0020longitude\u0020in\u0020degrees.",
             "url": "classes/Arimac-Sigfox-Definition-LatLng.html#property_lng"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\LatLng\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-LatLng.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Maintenance",
             "name": "Maintenance",
@@ -12430,11 +11660,6 @@ Search.appendIndex(
             "name": "getResources",
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-Maintenance.html#method_getResources"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Maintenance\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Maintenance.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Maintenance\u003A\u003A\u0024group",
             "name": "group",
@@ -12490,11 +11715,6 @@ Search.appendIndex(
             "name": "getActions",
             "summary": "Getter\u0020for\u0020actions",
             "url": "classes/Arimac-Sigfox-Definition-MinBaseStation.html#method_getActions"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinBaseStation\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-MinBaseStation.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\MinBaseStation\u003A\u003A\u0024id",
             "name": "id",
@@ -12555,11 +11775,6 @@ Search.appendIndex(
             "name": "getActions",
             "summary": "Getter\u0020for\u0020actions",
             "url": "classes/Arimac-Sigfox-Definition-MinBaseStationWithType.html#method_getActions"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinBaseStationWithType\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-MinBaseStationWithType.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\MinBaseStationWithType\u003A\u003ARESOURCE_TYPE_SBS",
             "name": "RESOURCE_TYPE_SBS",
@@ -12626,11 +11841,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020actions",
             "url": "classes/Arimac-Sigfox-Definition-MinContact.html#method_getActions"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinContact\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-MinContact.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\MinContact\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020contact\u0027s\u0020identifier",
@@ -12690,11 +11900,6 @@ Search.appendIndex(
             "name": "getResources",
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-MinContractInfo.html#method_getResources"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinContractInfo\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-MinContractInfo.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\MinContractInfo\u003A\u003A\u0024id",
             "name": "id",
@@ -12760,11 +11965,6 @@ Search.appendIndex(
             "name": "getResources",
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-MinDeviceType.html#method_getResources"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinDeviceType\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-MinDeviceType.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\MinDeviceType\u003A\u003A\u0024id",
             "name": "id",
@@ -12851,11 +12051,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-MinGroup.html#method_getResources"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinGroup\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-MinGroup.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\MinGroup\u003A\u003ATYPE_SO",
             "name": "TYPE_SO",
             "summary": "SO",
@@ -12931,11 +12126,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Definition-MinGroup.html#property_resources"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinGroup\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-MinGroup.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\MinHost",
             "name": "MinHost",
             "summary": "",
@@ -12960,11 +12150,6 @@ Search.appendIndex(
             "name": "getName",
             "summary": "Getter\u0020for\u0020name",
             "url": "classes/Arimac-Sigfox-Definition-MinHost.html#method_getName"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinHost\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-MinHost.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\MinHost\u003A\u003A\u0024id",
             "name": "id",
@@ -13000,11 +12185,6 @@ Search.appendIndex(
             "name": "getName",
             "summary": "Getter\u0020for\u0020name",
             "url": "classes/Arimac-Sigfox-Definition-MinHwFamily.html#method_getName"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinHwFamily\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-MinHwFamily.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\MinHwFamily\u003A\u003AID_STANDARD",
             "name": "ID_STANDARD",
@@ -13061,11 +12241,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020name",
             "url": "classes/Arimac-Sigfox-Definition-MinMaintenance.html#method_getName"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinMaintenance\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-MinMaintenance.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\MinMaintenance\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020maintenance\u0027s\u0020identifier",
@@ -13101,11 +12276,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020name",
             "url": "classes/Arimac-Sigfox-Definition-MinMetaRole.html#method_getName"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinMetaRole\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-MinMetaRole.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\MinMetaRole\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020meta\u0020role\u0027s\u0020identifier",
@@ -13115,11 +12285,6 @@ Search.appendIndex(
             "name": "name",
             "summary": "The\u0020meta\u0020role\u0027s\u0020name",
             "url": "classes/Arimac-Sigfox-Definition-MinMetaRole.html#property_name"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinMetaRole\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-MinMetaRole.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\MinPerm",
             "name": "MinPerm",
@@ -13145,11 +12310,6 @@ Search.appendIndex(
             "name": "getName",
             "summary": "Getter\u0020for\u0020name",
             "url": "classes/Arimac-Sigfox-Definition-MinPerm.html#method_getName"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinPerm\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-MinPerm.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\MinPerm\u003A\u003A\u0024code",
             "name": "code",
@@ -13196,11 +12356,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020actions",
             "url": "classes/Arimac-Sigfox-Definition-MinProfile.html#method_getActions"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinProfile\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-MinProfile.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\MinProfile\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020profile\u0027s\u0020identifier",
@@ -13215,11 +12370,6 @@ Search.appendIndex(
             "name": "actions",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Definition-MinProfile.html#property_actions"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinProfile\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-MinProfile.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\MinProvider",
             "name": "MinProvider",
@@ -13255,11 +12405,6 @@ Search.appendIndex(
             "name": "getActions",
             "summary": "Getter\u0020for\u0020actions",
             "url": "classes/Arimac-Sigfox-Definition-MinProvider.html#method_getActions"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinProvider\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-MinProvider.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\MinProvider\u003A\u003A\u0024id",
             "name": "id",
@@ -13311,11 +12456,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020path",
             "url": "classes/Arimac-Sigfox-Definition-MinRole.html#method_getPath"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinRole\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-MinRole.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\MinRole\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020role\u0027s\u0020identifier",
@@ -13330,11 +12470,6 @@ Search.appendIndex(
             "name": "path",
             "summary": "The\u0020roles\u0027s\u0020path\u0020sorted\u0020by\u0020descending\u0020ancestor\u0020\u0028direct\u0020parent\u0020to\u0020farest\u0020parent\u0029",
             "url": "classes/Arimac-Sigfox-Definition-MinRole.html#property_path"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinRole\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-MinRole.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\MinSite",
             "name": "MinSite",
@@ -13371,11 +12506,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020actions",
             "url": "classes/Arimac-Sigfox-Definition-MinSite.html#method_getActions"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinSite\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-MinSite.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\MinSite\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020site\u0027s\u0020identifier",
@@ -13390,11 +12520,6 @@ Search.appendIndex(
             "name": "actions",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Definition-MinSite.html#property_actions"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\MinSite\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-MinSite.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ModemCertificate",
             "name": "ModemCertificate",
@@ -13420,11 +12545,6 @@ Search.appendIndex(
             "name": "getRepeaterFunction",
             "summary": "Getter\u0020for\u0020repeaterFunction",
             "url": "classes/Arimac-Sigfox-Definition-ModemCertificate.html#method_getRepeaterFunction"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ModemCertificate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ModemCertificate.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ModemCertificate\u003A\u003A\u0024radioConfigurations",
             "name": "radioConfigurations",
@@ -13461,11 +12581,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020balancedLinkBudget",
             "url": "classes/Arimac-Sigfox-Definition-ModemCertificateRadioConfiguration.html#method_getBalancedLinkBudget"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ModemCertificateRadioConfiguration\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ModemCertificateRadioConfiguration.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ModemCertificateRadioConfiguration\u003A\u003A\u0024outputPower",
             "name": "outputPower",
             "summary": "Output\u0020conducted\u0020power\u0020\u0028dBm\u0029",
@@ -13491,11 +12606,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020countryISOAlpha3",
             "url": "classes/Arimac-Sigfox-Definition-NIP.html#method_getCountryISOAlpha3"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\NIP\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-NIP.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\NIP\u003A\u003A\u0024countryISOAlpha3",
             "name": "countryISOAlpha3",
             "summary": "This\u0020is\u0020the\u0020country\u0020ISO\u0020code\u0020\u00283\u0020letters\u0020from\u0020the\u0020ISO\u00203166\u002D1\u0020alpha\u002D3\u0020country\u0020code\u0029\u0020where\u0020the\u0020operator\u0020manages\nits\u0020network.\u0020Only\u0020available\u0020for\u0020SNO\u0020and\u0020NIP.",
@@ -13515,11 +12625,6 @@ Search.appendIndex(
             "name": "getCountryISOAlpha3",
             "summary": "Getter\u0020for\u0020countryISOAlpha3",
             "url": "classes/Arimac-Sigfox-Definition-NIPCreate.html#method_getCountryISOAlpha3"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\NIPCreate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-NIPCreate.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\NIPCreate\u003A\u003A\u0024countryISOAlpha3",
             "name": "countryISOAlpha3",
@@ -13541,11 +12646,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020countryISOAlpha3",
             "url": "classes/Arimac-Sigfox-Definition-NIPUpdate.html#method_getCountryISOAlpha3"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\NIPUpdate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-NIPUpdate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\NIPUpdate\u003A\u003A\u0024countryISOAlpha3",
             "name": "countryISOAlpha3",
             "summary": "This\u0020is\u0020the\u0020country\u0020ISO\u0020code\u0020\u00283\u0020letters\u0020from\u0020the\u0020ISO\u00203166\u002D1\u0020alpha\u002D3\u0020country\u0020code\u0029\u0020where\u0020the\u0020operator\u0020manages\nits\u0020network.\u0020Only\u0020available\u0020for\u0020SO\u0020and\u0020NIP.",
@@ -13565,11 +12665,6 @@ Search.appendIndex(
             "name": "getNext",
             "summary": "Getter\u0020for\u0020next",
             "url": "classes/Arimac-Sigfox-Definition-Paging.html#method_getNext"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Paging\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Paging.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Paging\u003A\u003A\u0024next",
             "name": "next",
@@ -13591,20 +12686,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020currentPrototypeCount",
             "url": "classes/Arimac-Sigfox-Definition-Partner.html#method_getCurrentPrototypeCount"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Partner\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Partner.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Partner\u003A\u003A\u0024currentPrototypeCount",
             "name": "currentPrototypeCount",
             "summary": "Number\u0020of\u0020prototype\u0020registered.\u0020Accessible\u0020only\u0020for\u0020groups\u0020under\u0020SO",
             "url": "classes/Arimac-Sigfox-Definition-Partner.html#property_currentPrototypeCount"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Partner\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-Partner.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\PartnerCreate",
             "name": "PartnerCreate",
@@ -13626,20 +12711,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020currentPrototypeCount",
             "url": "classes/Arimac-Sigfox-Definition-Partners.html#method_getCurrentPrototypeCount"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Partners\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Partners.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Partners\u003A\u003A\u0024currentPrototypeCount",
             "name": "currentPrototypeCount",
             "summary": "Number\u0020of\u0020prototype\u0020registered.\u0020Accessible\u0020only\u0020for\u0020groups\u0020under\u0020SO",
             "url": "classes/Arimac-Sigfox-Definition-Partners.html#property_currentPrototypeCount"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Partners\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-Partners.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\PartnersCreate",
             "name": "PartnersCreate",
@@ -13711,11 +12786,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-Perm.html#method_getResources"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Perm\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Perm.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Perm\u003A\u003A\u0024code",
             "name": "code",
             "summary": "The\u0020permission\u0027s\u0020code",
@@ -13766,11 +12836,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020devKit",
             "url": "classes/Arimac-Sigfox-Definition-ProductCertificate.html#method_getDevKit"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ProductCertificate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ProductCertificate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ProductCertificate\u003A\u003A\u0024radioConfigurations",
             "name": "radioConfigurations",
             "summary": "Radio\u0020configurations\u0020available\u0020for\u0020this\u0020certificate",
@@ -13805,11 +12870,6 @@ Search.appendIndex(
             "name": "getMaxEirp",
             "summary": "Getter\u0020for\u0020maxEirp",
             "url": "classes/Arimac-Sigfox-Definition-ProductCertificateRadioConfiguration.html#method_getMaxEirp"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ProductCertificateRadioConfiguration\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ProductCertificateRadioConfiguration.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ProductCertificateRadioConfiguration\u003A\u003AUPLINK_CLASS_U0",
             "name": "UPLINK_CLASS_U0",
@@ -13976,11 +13036,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020standardCfgs",
             "url": "classes/Arimac-Sigfox-Definition-ProductCertificateWithPacResponse.html#method_getStandardCfgs"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ProductCertificateWithPacResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ProductCertificateWithPacResponse.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ProductCertificateWithPacResponse\u003A\u003A\u0024externalId",
             "name": "externalId",
             "summary": "External\u0020Id\u0020of\u0020the\u0020certificate",
@@ -14101,11 +13156,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-Profile.html#method_getResources"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Profile\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Profile.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Profile\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020profiler\u0020identifier",
@@ -14150,11 +13200,6 @@ Search.appendIndex(
             "name": "getProfileId",
             "summary": "Getter\u0020for\u0020profileId",
             "url": "classes/Arimac-Sigfox-Definition-ProfileIds.html#method_getProfileId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ProfileIds\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-ProfileIds.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ProfileIds\u003A\u003A\u0024profileId",
             "name": "profileId",
@@ -14206,11 +13251,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-Provider.html#method_getResources"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Provider\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Provider.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Provider\u003A\u003A\u0024group",
             "name": "group",
             "summary": "",
@@ -14246,11 +13286,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020groupId",
             "url": "classes/Arimac-Sigfox-Definition-ProviderCreation.html#method_getGroupId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ProviderCreation\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ProviderCreation.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ProviderCreation\u003A\u003A\u0024groupId",
             "name": "groupId",
             "summary": "identifier\u0020of\u0020the\u0020group\u0020of\u0020this\u0020provider",
@@ -14280,11 +13315,6 @@ Search.appendIndex(
             "name": "getInputSensitivity",
             "summary": "Getter\u0020for\u0020inputSensitivity",
             "url": "classes/Arimac-Sigfox-Definition-RadioCertificate.html#method_getInputSensitivity"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\RadioCertificate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-RadioCertificate.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\RadioCertificate\u003A\u003AMODES_UPLINK_ONLY",
             "name": "MODES_UPLINK_ONLY",
@@ -14320,11 +13350,6 @@ Search.appendIndex(
             "name": "getId",
             "summary": "Getter\u0020for\u0020id",
             "url": "classes/Arimac-Sigfox-Definition-RadioConfiguration.html#method_getId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\RadioConfiguration\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-RadioConfiguration.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\RadioConfiguration\u003A\u003AID_RC1",
             "name": "ID_RC1",
@@ -14371,11 +13396,6 @@ Search.appendIndex(
             "summary": "The\u0020radio\u0020configuration\u0020identifier",
             "url": "classes/Arimac-Sigfox-Definition-RadioConfiguration.html#property_id"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\RadioConfiguration\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-RadioConfiguration.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\RedundancyResponse",
             "name": "RedundancyResponse",
             "summary": "Returned\u0020data\u0020for\u0020Service\u0020Coverage\u0020Redundancy\u0020API",
@@ -14390,11 +13410,6 @@ Search.appendIndex(
             "name": "getRedundancy",
             "summary": "Getter\u0020for\u0020redundancy",
             "url": "classes/Arimac-Sigfox-Definition-RedundancyResponse.html#method_getRedundancy"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\RedundancyResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-RedundancyResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\RedundancyResponse\u003A\u003A\u0024redundancy",
             "name": "redundancy",
@@ -14425,11 +13440,6 @@ Search.appendIndex(
             "name": "getSuccess",
             "summary": "Getter\u0020for\u0020success",
             "url": "classes/Arimac-Sigfox-Definition-RegistrationJob-Status.html#method_getSuccess"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\RegistrationJob\\Status\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-RegistrationJob-Status.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\RegistrationJob\\Status\u003A\u003A\u0024errors",
             "name": "errors",
@@ -14506,11 +13516,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020status",
             "url": "classes/Arimac-Sigfox-Definition-RegistrationJob.html#method_getStatus"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\RegistrationJob\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-RegistrationJob.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\RegistrationJob\u003A\u003A\u0024jobDone",
             "name": "jobDone",
             "summary": "If\u0020the\u0020job\u0020is\u0020finished\u0020or\u0020not",
@@ -14566,11 +13571,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020success",
             "url": "classes/Arimac-Sigfox-Definition-RegistrationJobStatus-Status.html#method_getSuccess"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\RegistrationJobStatus\\Status\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-RegistrationJobStatus-Status.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\RegistrationJobStatus\\Status\u003A\u003A\u0024errors",
             "name": "errors",
             "summary": "Detailed\u0020information\u0020about\u0020each\u0020error",
@@ -14615,11 +13615,6 @@ Search.appendIndex(
             "name": "getStatus",
             "summary": "Getter\u0020for\u0020status",
             "url": "classes/Arimac-Sigfox-Definition-RegistrationJobStatus.html#method_getStatus"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\RegistrationJobStatus\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-RegistrationJobStatus.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\RegistrationJobStatus\u003A\u003A\u0024jobDone",
             "name": "jobDone",
@@ -14691,11 +13686,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020repeated",
             "url": "classes/Arimac-Sigfox-Definition-Repetition.html#method_getRepeated"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Repetition\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Repetition.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Repetition\u003A\u003A\u0024nseq",
             "name": "nseq",
             "summary": "nseq\u0020of\u0020the\u0020repetition",
@@ -14746,11 +13736,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020success",
             "url": "classes/Arimac-Sigfox-Definition-ReplaceResponse-Status.html#method_getSuccess"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ReplaceResponse\\Status\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ReplaceResponse-Status.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ReplaceResponse\\Status\u003A\u003A\u0024errors",
             "name": "errors",
             "summary": "reasons\u0020of\u0020each\u0020errors",
@@ -14785,11 +13770,6 @@ Search.appendIndex(
             "name": "getStatus",
             "summary": "Getter\u0020for\u0020status",
             "url": "classes/Arimac-Sigfox-Definition-ReplaceResponse.html#method_getStatus"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\ReplaceResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-ReplaceResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\ReplaceResponse\u003A\u003A\u0024total",
             "name": "total",
@@ -14936,11 +13916,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020cbStatus",
             "url": "classes/Arimac-Sigfox-Definition-Rinfo.html#method_getCbStatus"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Rinfo\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Rinfo.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Rinfo\u003A\u003A\u0024baseStation",
             "name": "baseStation",
             "summary": "Name\u0020and\u0020Id\u0020of\u0020the\u0020base\u0020station\u0020which\u0020has\u0020received\u0020the\u0020message.",
@@ -15061,11 +14036,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-Role.html#method_getResources"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Role\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Role.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Role\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020role\u0027s\u0020identifier",
@@ -15115,11 +14085,6 @@ Search.appendIndex(
             "name": "getPerms",
             "summary": "Getter\u0020for\u0020perms",
             "url": "classes/Arimac-Sigfox-Definition-RoleCreate.html#method_getPerms"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\RoleCreate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-RoleCreate.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\RoleCreate\u003A\u003A\u0024parentRoleId",
             "name": "parentRoleId",
@@ -15235,11 +14200,6 @@ Search.appendIndex(
             "name": "getRType",
             "summary": "Getter\u0020for\u0020rType",
             "url": "classes/Arimac-Sigfox-Definition-SatSubscription.html#method_getRType"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\SatSubscription\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-SatSubscription.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\SatSubscription\u003A\u003ACONNECTION_STATUS_REQUEST",
             "name": "CONNECTION_STATUS_REQUEST",
@@ -15370,11 +14330,6 @@ Search.appendIndex(
             "name": "getActions",
             "summary": "Getter\u0020for\u0020actions",
             "url": "classes/Arimac-Sigfox-Definition-SimpleSite.html#method_getActions"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\SimpleSite\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-SimpleSite.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\SimpleSite\u003A\u003ASTATUS_PROD",
             "name": "STATUS_PROD",
@@ -15526,11 +14481,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020prototype",
             "url": "classes/Arimac-Sigfox-Definition-SingleDeviceFields.html#method_getPrototype"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\SingleDeviceFields\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-SingleDeviceFields.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\SingleDeviceFields\u003A\u003A\u0024activable",
             "name": "activable",
             "summary": "true\u0020if\u0020the\u0020device\u0020is\u0020activable\u0020and\u0020can\u0020take\u0020a\u0020token.\u0020Not\u0020used\u0020if\u0020the\u0020device\u0020has\u0020already\u0020a\u0020token",
@@ -15585,11 +14535,6 @@ Search.appendIndex(
             "name": "getName",
             "summary": "Getter\u0020for\u0020name",
             "url": "classes/Arimac-Sigfox-Definition-Site-LocationItem.html#method_getName"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Site\\LocationItem\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Site-LocationItem.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Site\\LocationItem\u003A\u003A\u0024code",
             "name": "code",
@@ -15746,11 +14691,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-Site.html#method_getResources"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Site\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Site.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Site\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020site\u0027s\u0020identifier",
@@ -15856,11 +14796,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020group",
             "url": "classes/Arimac-Sigfox-Definition-SiteConvention.html#method_getGroup"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\SiteConvention\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-SiteConvention.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\SiteConvention\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020convention\u0027s\u0020identifier",
@@ -15961,11 +14896,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020lastEditedBy",
             "url": "classes/Arimac-Sigfox-Definition-SiteIntervention.html#method_getLastEditedBy"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\SiteIntervention\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-SiteIntervention.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\SiteIntervention\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020intervention\u0027s\u0020identifier",
@@ -16021,11 +14951,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020countryISOAlpha3",
             "url": "classes/Arimac-Sigfox-Definition-SO.html#method_getCountryISOAlpha3"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\SO\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-SO.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\SO\u003A\u003A\u0024countryISOAlpha3",
             "name": "countryISOAlpha3",
             "summary": "This\u0020is\u0020the\u0020country\u0020ISO\u0020code\u0020\u00283\u0020letters\u0020from\u0020the\u0020ISO\u00203166\u002D1\u0020alpha\u002D3\u0020country\u0020code\u0029\u0020where\u0020the\u0020operator\u0020manages\nits\u0020network.\u0020Only\u0020available\u0020for\u0020SNO\u0020and\u0020NIP.",
@@ -16045,11 +14970,6 @@ Search.appendIndex(
             "name": "getCountryISOAlpha3",
             "summary": "Getter\u0020for\u0020countryISOAlpha3",
             "url": "classes/Arimac-Sigfox-Definition-SOCreate.html#method_getCountryISOAlpha3"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\SOCreate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-SOCreate.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\SOCreate\u003A\u003A\u0024countryISOAlpha3",
             "name": "countryISOAlpha3",
@@ -16071,11 +14991,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020countryISOAlpha3",
             "url": "classes/Arimac-Sigfox-Definition-SOUpdate.html#method_getCountryISOAlpha3"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\SOUpdate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-SOUpdate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\SOUpdate\u003A\u003A\u0024countryISOAlpha3",
             "name": "countryISOAlpha3",
             "summary": "This\u0020is\u0020the\u0020country\u0020ISO\u0020code\u0020\u00283\u0020letters\u0020from\u0020the\u0020ISO\u00203166\u002D1\u0020alpha\u002D3\u0020country\u0020code\u0029\u0020where\u0020the\u0020operator\u0020manages\nits\u0020network.\u0020Only\u0020available\u0020for\u0020SO\u0020and\u0020NIP.",
@@ -16096,20 +15011,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020currentPrototypeCount",
             "url": "classes/Arimac-Sigfox-Definition-Starter.html#method_getCurrentPrototypeCount"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Starter\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Starter.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Starter\u003A\u003A\u0024currentPrototypeCount",
             "name": "currentPrototypeCount",
             "summary": "Number\u0020of\u0020prototype\u0020registered.\u0020Accessible\u0020only\u0020for\u0020groups\u0020under\u0020SO",
             "url": "classes/Arimac-Sigfox-Definition-Starter.html#property_currentPrototypeCount"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Starter\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-Starter.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\StarterCreate",
             "name": "StarterCreate",
@@ -16136,11 +15041,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020networkOperatorId",
             "url": "classes/Arimac-Sigfox-Definition-SVNO.html#method_getNetworkOperatorId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\SVNO\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-SVNO.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\SVNO\u003A\u003A\u0024networkOperatorId",
             "name": "networkOperatorId",
             "summary": "SO\u0020or\u0020NIP\u0020group\u0020id\u0020for\u0020a\u0020DIST\u0020\u0026\u0020SVNO\u0020\u0020group.\u0020This\u0020field\u0020is\u0020mandatory\u0020for\u0020DIST\u0020\u0026\u0020SVNO\u0020group\u0020creation.",
@@ -16160,11 +15060,6 @@ Search.appendIndex(
             "name": "getNetworkOperatorId",
             "summary": "Getter\u0020for\u0020networkOperatorId",
             "url": "classes/Arimac-Sigfox-Definition-SVNOCreate.html#method_getNetworkOperatorId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\SVNOCreate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-SVNOCreate.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\SVNOCreate\u003A\u003A\u0024networkOperatorId",
             "name": "networkOperatorId",
@@ -16205,11 +15100,6 @@ Search.appendIndex(
             "name": "getBounds",
             "summary": "Getter\u0020for\u0020bounds",
             "url": "classes/Arimac-Sigfox-Definition-TilesResponse.html#method_getBounds"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\TilesResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-TilesResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\TilesResponse\u003A\u003A\u0024baseImgUrl",
             "name": "baseImgUrl",
@@ -16281,11 +15171,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020freeMessagesSent",
             "url": "classes/Arimac-Sigfox-Definition-Token.html#method_getFreeMessagesSent"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\Token\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-Token.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\Token\u003A\u003ASTATE_OK",
             "name": "STATE_OK",
             "summary": "OK",
@@ -16346,11 +15231,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020unsubscriptionTime",
             "url": "classes/Arimac-Sigfox-Definition-TokenUnsubscribe.html#method_getUnsubscriptionTime"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\TokenUnsubscribe\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-TokenUnsubscribe.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\TokenUnsubscribe\u003A\u003A\u0024unsubscriptionTime",
             "name": "unsubscriptionTime",
             "summary": "Timestamp\u0020of\u0020token\u0020unsubscription\u0020date\u0020\u0028in\u0020milliseconds\u0020since\u0020the\u0020Unix\u0020Epoch\u0029",
@@ -16391,11 +15271,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020linePattern",
             "url": "classes/Arimac-Sigfox-Definition-UpdatebatchUrlCallback.html#method_getLinePattern"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\UpdatebatchUrlCallback\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-UpdatebatchUrlCallback.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\UpdatebatchUrlCallback\u003A\u003A\u0024url",
             "name": "url",
             "summary": "The\u0020callback\u0027s\u0020url",
@@ -16410,11 +15285,6 @@ Search.appendIndex(
             "name": "linePattern",
             "summary": "The\u0020line\u0020pattern\u0020representing\u0020a\u0020message.",
             "url": "classes/Arimac-Sigfox-Definition-UpdatebatchUrlCallback.html#property_linePattern"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\UpdatebatchUrlCallback\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-UpdatebatchUrlCallback.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\UpdateCallback",
             "name": "UpdateCallback",
@@ -16470,11 +15340,6 @@ Search.appendIndex(
             "name": "getEnabled",
             "summary": "Getter\u0020for\u0020enabled",
             "url": "classes/Arimac-Sigfox-Definition-UpdateCallback.html#method_getEnabled"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\UpdateCallback\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-UpdateCallback.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\UpdateCallback\u003A\u003ACALLBACK_TYPE_DATA",
             "name": "CALLBACK_TYPE_DATA",
@@ -16586,11 +15451,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020message",
             "url": "classes/Arimac-Sigfox-Definition-UpdateEmailCallback.html#method_getMessage"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\UpdateEmailCallback\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-UpdateEmailCallback.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\UpdateEmailCallback\u003A\u003A\u0024subject",
             "name": "subject",
             "summary": "The\u0020subject\u0020of\u0020the\u0020email.",
@@ -16680,11 +15540,6 @@ Search.appendIndex(
             "name": "getContacts",
             "summary": "Getter\u0020for\u0020contacts",
             "url": "classes/Arimac-Sigfox-Definition-UpdateInternetSubscription.html#method_getContacts"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\UpdateInternetSubscription\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-UpdateInternetSubscription.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\UpdateInternetSubscription\u003A\u003ATYPE_GSM",
             "name": "TYPE_GSM",
@@ -16816,11 +15671,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020bodyTemplate",
             "url": "classes/Arimac-Sigfox-Definition-UpdateUrlCallback.html#method_getBodyTemplate"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\UpdateUrlCallback\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-UpdateUrlCallback.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\UpdateUrlCallback\u003A\u003A\u0024url",
             "name": "url",
             "summary": "The\u0020callback\u0027s\u0020url",
@@ -16845,11 +15695,6 @@ Search.appendIndex(
             "name": "bodyTemplate",
             "summary": "The\u0020body\u0020template\u0020of\u0020the\u0020request.\u0020Only\u0020if\u0020httpMethpd\u0020is\u0020set\u0020to\u0020POST\u0020or\u0020PUT.\u0020It\u0020can\u0020contain\u0020predefined\u0020and\ncustom\u0020variables.\u0020Mandatory\u0020for\u0020URL\u0020callbacks.\u0020This\u0020field\u0020can\u0020be\u0020unset\u0020when\u0020updating.",
             "url": "classes/Arimac-Sigfox-Definition-UpdateUrlCallback.html#property_bodyTemplate"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\UpdateUrlCallback\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-UpdateUrlCallback.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\UrlCallback",
             "name": "UrlCallback",
@@ -16926,11 +15771,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020contentType",
             "url": "classes/Arimac-Sigfox-Definition-UrlCallback.html#method_getContentType"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\UrlCallback\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-UrlCallback.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\UrlCallback\u003A\u003A\u0024url",
             "name": "url",
             "summary": "The\u0020callback\u0027s\u0020url",
@@ -16965,11 +15805,6 @@ Search.appendIndex(
             "name": "contentType",
             "summary": "The\u0020body\u0020media\u0020type\u0020of\u0020the\u0020request,\u0020only\u0020if\u0020httpMethpd\u0020is\u0020set\u0020to\u0020POST\u0020or\u0020PUT.\u0020This\u0020field\u0020can\u0020be\u0020unset\u0020when\nupdating.",
             "url": "classes/Arimac-Sigfox-Definition-UrlCallback.html#property_contentType"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\UrlCallback\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-UrlCallback.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\User",
             "name": "User",
@@ -17056,11 +15891,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020resources",
             "url": "classes/Arimac-Sigfox-Definition-User.html#method_getResources"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\User\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-User.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\User\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020user\u0027s\u0020identifier",
@@ -17101,11 +15931,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Definition-User.html#property_resources"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\User\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-User.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\UserCreation",
             "name": "UserCreation",
             "summary": "User\u0020information\u0020for\u0020creation",
@@ -17131,11 +15956,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020sendWelcomeEmail",
             "url": "classes/Arimac-Sigfox-Definition-UserCreation.html#method_getSendWelcomeEmail"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\UserCreation\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-UserCreation.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\UserCreation\u003A\u003A\u0024email",
             "name": "email",
             "summary": "The\u0020user\u0027s\u0020email",
@@ -17145,11 +15965,6 @@ Search.appendIndex(
             "name": "sendWelcomeEmail",
             "summary": "Send\u0020an\u0020email\u0020to\u0020the\u0020user\u0020to\u0020create\/change\u0020is\u0020password",
             "url": "classes/Arimac-Sigfox-Definition-UserCreation.html#property_sendWelcomeEmail"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\UserCreation\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-UserCreation.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\UserRole",
             "name": "UserRole",
@@ -17175,11 +15990,6 @@ Search.appendIndex(
             "name": "getProfile",
             "summary": "Getter\u0020for\u0020profile",
             "url": "classes/Arimac-Sigfox-Definition-UserRole.html#method_getProfile"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\UserRole\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-UserRole.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\UserRole\u003A\u003A\u0024group",
             "name": "group",
@@ -17216,11 +16026,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020profileId",
             "url": "classes/Arimac-Sigfox-Definition-UserUpdate-UserRolesItem.html#method_getProfileId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\UserUpdate\\UserRolesItem\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-UserUpdate-UserRolesItem.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\UserUpdate\\UserRolesItem\u003A\u003A\u0024groupId",
             "name": "groupId",
             "summary": "The\u0020group\u0020identifier\u0020on\u0020which\u0020the\u0020user\u0020will\u0020have\u0020the\u0020permissions\u0020set",
@@ -17230,11 +16035,6 @@ Search.appendIndex(
             "name": "profileId",
             "summary": "The\u0020profile\u0020identifier\u0020giving\u0020permissions\u0020to\u0020the\u0020user",
             "url": "classes/Arimac-Sigfox-Definition-UserUpdate-UserRolesItem.html#property_profileId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\UserUpdate\\UserRolesItem\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition-UserUpdate-UserRolesItem.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\UserUpdate",
             "name": "UserUpdate",
@@ -17271,11 +16071,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020maintenances",
             "url": "classes/Arimac-Sigfox-Definition-UserUpdate.html#method_getMaintenances"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\\UserUpdate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition-UserUpdate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Definition\\UserUpdate\u003A\u003A\u0024userRoles",
             "name": "userRoles",
             "summary": "Defines\u0020the\u0020rights\u0020of\u0020the\u0020user",
@@ -17291,45 +16086,10 @@ Search.appendIndex(
             "summary": "list\u0020of\u0020maintenance\u0020ids\u0020corresponding\u0020to\u0020the\u0020userRoles\u0020with\u0020site\u0020limited\u0020access\u0020granted",
             "url": "classes/Arimac-Sigfox-Definition-UserUpdate.html#property_maintenances"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition",
-            "name": "Definition",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Definition.html#method_getSerializeMetaData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\u003A\u003AisExtendable\u0028\u0029",
-            "name": "isExtendable",
-            "summary": "Returning\u0020the\u0020weather\u0020the\u0020class\u0020is\u0020extendable\u0020or\u0020not",
-            "url": "classes/Arimac-Sigfox-Definition.html#method_isExtendable"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\u003A\u003A\u0024required",
-            "name": "required",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition.html#property_required"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition.html#property_validations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Definition\u003A\u003A\u0024extendable",
-            "name": "extendable",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Definition.html#property_extendable"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Exception\\DeserializeException",
             "name": "DeserializeException",
             "summary": "Deserialization\u0020exceptions.",
             "url": "classes/Arimac-Sigfox-Exception-DeserializeException.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\DeserializeException\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Initializing\u0020the\u0020exception",
-            "url": "classes/Arimac-Sigfox-Exception-DeserializeException.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Exception\\DeserializeException\u003A\u003AgetClassName\u0028\u0029",
             "name": "getClassName",
@@ -17346,100 +16106,45 @@ Search.appendIndex(
             "summary": "Expected\u0020type\u0020for\u0020the\u0020property",
             "url": "classes/Arimac-Sigfox-Exception-DeserializeException.html#method_getExpectedType"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\DeserializeException\u003A\u003A\u0024className",
-            "name": "className",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Exception-DeserializeException.html#property_className"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\DeserializeException\u003A\u003A\u0024propertyName",
-            "name": "propertyName",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Exception-DeserializeException.html#property_propertyName"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\DeserializeException\u003A\u003A\u0024expectedType",
-            "name": "expectedType",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Exception-DeserializeException.html#property_expectedType"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\BadRequestException",
             "name": "BadRequestException",
             "summary": "HTTP\u0020400\u0020Bad\u0020Request\u0020error",
             "url": "classes/Arimac-Sigfox-Exception-Response-BadRequestException.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\BadRequestException\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Initializing\u0020the\u0020exception",
-            "url": "classes/Arimac-Sigfox-Exception-Response-BadRequestException.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\BadRequestException\u003A\u003AgetErrors\u0028\u0029",
             "name": "getErrors",
             "summary": "List\u0020of\u0020errors\u0020that\u0020occured\u0020during\u0020request",
             "url": "classes/Arimac-Sigfox-Exception-Response-BadRequestException.html#method_getErrors"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\BadRequestException\u003A\u003A\u0024innerContent",
-            "name": "innerContent",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Exception-Response-BadRequestException.html#property_innerContent"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\ConflictException",
             "name": "ConflictException",
             "summary": "HTTP\u0020409\u0020Conflict\u0020error",
             "url": "classes/Arimac-Sigfox-Exception-Response-ConflictException.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\ConflictException\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Initializing\u0020the\u0020exception",
-            "url": "classes/Arimac-Sigfox-Exception-Response-ConflictException.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\ForbiddenException",
             "name": "ForbiddenException",
             "summary": "HTTP\u0020403\u0020Forbidden\u0020error",
             "url": "classes/Arimac-Sigfox-Exception-Response-ForbiddenException.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\ForbiddenException\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Initializing\u0020the\u0020exception",
-            "url": "classes/Arimac-Sigfox-Exception-Response-ForbiddenException.html#method___construct"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\InternalServerException",
             "name": "InternalServerException",
             "summary": "HTTP\u0020412\u0020Precondition\u0020Failed\u0020error",
             "url": "classes/Arimac-Sigfox-Exception-Response-InternalServerException.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\InternalServerException\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Initializing\u0020the\u0020exception",
-            "url": "classes/Arimac-Sigfox-Exception-Response-InternalServerException.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\MethodNotAllowedException",
             "name": "MethodNotAllowedException",
             "summary": "HTTP\u0020405\u0020Method\u0020Not\u0020Allowed\u0020error",
             "url": "classes/Arimac-Sigfox-Exception-Response-MethodNotAllowedException.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\MethodNotAllowedException\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Initializing\u0020the\u0020exception",
-            "url": "classes/Arimac-Sigfox-Exception-Response-MethodNotAllowedException.html#method___construct"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\MethodNotAllowedException\u003A\u003AgetAllowedMethods\u0028\u0029",
             "name": "getAllowedMethods",
             "summary": "Returning\u0020all\u0020available\u0020HTTP\u0020methods\u0020for\u0020the\u0020endpoint",
             "url": "classes/Arimac-Sigfox-Exception-Response-MethodNotAllowedException.html#method_getAllowedMethods"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\MethodNotAllowedException\u003A\u003A\u0024allowedMethods",
-            "name": "allowedMethods",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Exception-Response-MethodNotAllowedException.html#property_allowedMethods"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\NotFoundException",
             "name": "NotFoundException",
             "summary": "HTTP\u0020404\u0020Not\u0020Found\u0020error",
             "url": "classes/Arimac-Sigfox-Exception-Response-NotFoundException.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\NotFoundException\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Initializing\u0020the\u0020exception",
-            "url": "classes/Arimac-Sigfox-Exception-Response-NotFoundException.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\ResponseException",
             "name": "ResponseException",
@@ -17451,20 +16156,10 @@ Search.appendIndex(
             "summary": "HTTP\u0020401\u0020Unauthorized\u0020error",
             "url": "classes/Arimac-Sigfox-Exception-Response-UnauthorizedException.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\Response\\UnauthorizedException\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Initializing\u0020the\u0020exception",
-            "url": "classes/Arimac-Sigfox-Exception-Response-UnauthorizedException.html#method___construct"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Exception\\SerializeException",
             "name": "SerializeException",
             "summary": "Deserialization\u0020exceptions.",
             "url": "classes/Arimac-Sigfox-Exception-SerializeException.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\SerializeException\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Initializing\u0020the\u0020exception",
-            "url": "classes/Arimac-Sigfox-Exception-SerializeException.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Exception\\SerializeException\u003A\u003AgetClassName\u0028\u0029",
             "name": "getClassName",
@@ -17481,30 +16176,10 @@ Search.appendIndex(
             "summary": "Expected\u0020type\u0020for\u0020the\u0020property",
             "url": "classes/Arimac-Sigfox-Exception-SerializeException.html#method_getExpectedType"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\SerializeException\u003A\u003A\u0024className",
-            "name": "className",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Exception-SerializeException.html#property_className"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\SerializeException\u003A\u003A\u0024propertyName",
-            "name": "propertyName",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Exception-SerializeException.html#property_propertyName"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Exception\\SerializeException\u003A\u003A\u0024expectedType",
-            "name": "expectedType",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Exception-SerializeException.html#property_expectedType"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsers",
             "name": "ApiUsers",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-ApiUsers.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsers\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-ApiUsers.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsers\u003A\u003Alist\u0028\u0029",
             "name": "list",
@@ -17521,20 +16196,10 @@ Search.appendIndex(
             "summary": "Find\u0020by\u0020id",
             "url": "classes/Arimac-Sigfox-Repository-ApiUsers.html#method_find"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsers\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-ApiUsers.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsersId",
             "name": "ApiUsersId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-ApiUsersId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsersId\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-ApiUsersId.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsersId\u003A\u003Aget\u0028\u0029",
             "name": "get",
@@ -17561,25 +16226,10 @@ Search.appendIndex(
             "summary": "Generate\u0020a\u0020new\u0020password\u0020for\u0020a\u0020given\u0020API\u0020user.",
             "url": "classes/Arimac-Sigfox-Repository-ApiUsersId.html#method_renewCredential"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsersId\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-ApiUsersId.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsersId\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "The\u0020API\u0020user\u0020identifier",
-            "url": "classes/Arimac-Sigfox-Repository-ApiUsersId.html#property_id"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsersIdProfiles",
             "name": "ApiUsersIdProfiles",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-ApiUsersIdProfiles.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsersIdProfiles\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-ApiUsersIdProfiles.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsersIdProfiles\u003A\u003Aupdate\u0028\u0029",
             "name": "update",
@@ -17591,55 +16241,20 @@ Search.appendIndex(
             "summary": "Find\u0020by\u0020profileId",
             "url": "classes/Arimac-Sigfox-Repository-ApiUsersIdProfiles.html#method_find"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsersIdProfiles\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-ApiUsersIdProfiles.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsersIdProfiles\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "The\u0020API\u0020user\u0020identifier",
-            "url": "classes/Arimac-Sigfox-Repository-ApiUsersIdProfiles.html#property_id"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsersIdProfilesProfileId",
             "name": "ApiUsersIdProfilesProfileId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-ApiUsersIdProfilesProfileId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsersIdProfilesProfileId\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-ApiUsersIdProfilesProfileId.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsersIdProfilesProfileId\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
             "summary": "Delete\u0020a\u0020profile\u0020to\u0020a\u0020given\u0020API\u0020user.",
             "url": "classes/Arimac-Sigfox-Repository-ApiUsersIdProfilesProfileId.html#method_delete"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsersIdProfilesProfileId\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-ApiUsersIdProfilesProfileId.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsersIdProfilesProfileId\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "The\u0020API\u0020user\u0020identifier",
-            "url": "classes/Arimac-Sigfox-Repository-ApiUsersIdProfilesProfileId.html#property_id"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsersIdProfilesProfileId\u003A\u003A\u0024profileId",
-            "name": "profileId",
-            "summary": "The\u0020profile\u0020identifier",
-            "url": "classes/Arimac-Sigfox-Repository-ApiUsersIdProfilesProfileId.html#property_profileId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfos",
             "name": "ContractInfos",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-ContractInfos.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfos\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-ContractInfos.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfos\u003A\u003Alist\u0028\u0029",
             "name": "list",
@@ -17656,85 +16271,40 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-ContractInfos.html#method_bulk"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfos\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-ContractInfos.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulk",
             "name": "ContractInfosBulk",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulk.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulk\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulk.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulk\u003A\u003Arestart\u0028\u0029",
             "name": "restart",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulk.html#method_restart"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulk\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulk.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulkRestart",
             "name": "ContractInfosBulkRestart",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulkRestart.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulkRestart\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulkRestart.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulkRestart\u003A\u003Afind\u0028\u0029",
             "name": "find",
             "summary": "Find\u0020by\u0020jobId",
             "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulkRestart.html#method_find"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulkRestart\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulkRestart.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulkRestartJobId",
             "name": "ContractInfosBulkRestartJobId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulkRestartJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulkRestartJobId\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulkRestartJobId.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulkRestartJobId\u003A\u003AgetStatus\u0028\u0029",
             "name": "getStatus",
             "summary": "Retrieve\u0020a\u0020contract\u0020async\u0020job\u0020status\u0020for\u0020restart\u0020action.",
             "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulkRestartJobId.html#method_getStatus"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulkRestartJobId\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulkRestartJobId.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulkRestartJobId\u003A\u003A\u0024jobId",
-            "name": "jobId",
-            "summary": "The\u0020job\u0020identidier\u0020\u0028hexademical\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulkRestartJobId.html#property_jobId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosId",
             "name": "ContractInfosId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-ContractInfosId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosId\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-ContractInfosId.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosId\u003A\u003Aget\u0028\u0029",
             "name": "get",
@@ -17751,25 +16321,10 @@ Search.appendIndex(
             "summary": "Retrieve\u0020a\u0020list\u0020of\u0020devices\u0020according\u0020to\u0020visibility\u0020permissions\u0020and\u0020request\u0020filters.",
             "url": "classes/Arimac-Sigfox-Repository-ContractInfosId.html#method_devices"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosId\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-ContractInfosId.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosId\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "The\u0020Contract\u0020identifier",
-            "url": "classes/Arimac-Sigfox-Repository-ContractInfosId.html#property_id"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\Coverages",
             "name": "Coverages",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-Coverages.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\Coverages\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-Coverages.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\Coverages\u003A\u003Aglobal\u0028\u0029",
             "name": "global",
@@ -17781,40 +16336,20 @@ Search.appendIndex(
             "summary": "Get\u0020operator\u0020coverage\u0020redundancy\u0020for\u0020a\u0020selected\u0020latitude\u0020and\u0020longitude,\nfor\u0020specific\u0020device\u0020situation.",
             "url": "classes/Arimac-Sigfox-Repository-Coverages.html#method_operatorsRedundancy"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\Coverages\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-Coverages.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobal",
             "name": "CoveragesGlobal",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobal.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobal\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobal.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobal\u003A\u003Apredictions\u0028\u0029",
             "name": "predictions",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobal.html#method_predictions"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobal\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobal.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobalPredictions",
             "name": "CoveragesGlobalPredictions",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictions.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobalPredictions\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictions.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobalPredictions\u003A\u003AgetOne\u0028\u0029",
             "name": "getOne",
@@ -17836,65 +16371,30 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictions.html#method_bulk"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobalPredictions\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictions.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobalPredictionsBulk",
             "name": "CoveragesGlobalPredictionsBulk",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictionsBulk.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobalPredictionsBulk\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictionsBulk.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobalPredictionsBulk\u003A\u003Afind\u0028\u0029",
             "name": "find",
             "summary": "Find\u0020by\u0020jobId",
             "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictionsBulk.html#method_find"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobalPredictionsBulk\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictionsBulk.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobalPredictionsBulkJobId",
             "name": "CoveragesGlobalPredictionsBulkJobId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictionsBulkJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobalPredictionsBulkJobId\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictionsBulkJobId.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobalPredictionsBulkJobId\u003A\u003AgetStatus\u0028\u0029",
             "name": "getStatus",
             "summary": "Retrieve\u0020coverage\u0020predictions\u0020computation\u0020from\u0020asynchronous\u0020job\u0020status\u0020and\u0020results.",
             "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictionsBulkJobId.html#method_getStatus"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobalPredictionsBulkJobId\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictionsBulkJobId.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobalPredictionsBulkJobId\u003A\u003A\u0024jobId",
-            "name": "jobId",
-            "summary": "The\u0020job\u0027s\u0020identifier\u0020\u0028hexademical\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictionsBulkJobId.html#property_jobId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\Devices",
             "name": "Devices",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-Devices.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\Devices\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-Devices.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\Devices\u003A\u003Alist\u0028\u0029",
             "name": "list",
@@ -17916,20 +16416,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-Devices.html#method_bulk"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\Devices\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-Devices.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulk",
             "name": "DevicesBulk",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulk.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulk\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulk.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulk\u003A\u003Acreate\u0028\u0029",
             "name": "create",
@@ -17976,225 +16466,100 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_unsubscribe"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulk\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulk.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkJobId",
             "name": "DevicesBulkJobId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkJobId\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkJobId.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkJobId\u003A\u003Aget\u0028\u0029",
             "name": "get",
             "summary": "Retrieve\u0020the\u0020status\u0020of\u0020an\u0020asynchronous\u0020job\u0020for\u0020devices.",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkJobId.html#method_get"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkJobId\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkJobId.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkJobId\u003A\u003A\u0024jobId",
-            "name": "jobId",
-            "summary": "The\u0020job\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkJobId.html#property_jobId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkRestart",
             "name": "DevicesBulkRestart",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkRestart.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkRestart\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkRestart.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkRestart\u003A\u003Afind\u0028\u0029",
             "name": "find",
             "summary": "Find\u0020by\u0020jobId",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkRestart.html#method_find"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkRestart\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkRestart.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkRestartJobId",
             "name": "DevicesBulkRestartJobId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkRestartJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkRestartJobId\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkRestartJobId.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkRestartJobId\u003A\u003Aget\u0028\u0029",
             "name": "get",
             "summary": "Retrieve\u0020the\u0020async\u0020job\u0020status\u0020for\u0020a\u0020restart\u0020devices\u0020action.",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkRestartJobId.html#method_get"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkRestartJobId\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkRestartJobId.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkRestartJobId\u003A\u003A\u0024jobId",
-            "name": "jobId",
-            "summary": "The\u0020job\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkRestartJobId.html#property_jobId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkResume",
             "name": "DevicesBulkResume",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkResume.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkResume\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkResume.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkResume\u003A\u003Afind\u0028\u0029",
             "name": "find",
             "summary": "Find\u0020by\u0020jobId",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkResume.html#method_find"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkResume\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkResume.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkResumeJobId",
             "name": "DevicesBulkResumeJobId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkResumeJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkResumeJobId\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkResumeJobId.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkResumeJobId\u003A\u003Aget\u0028\u0029",
             "name": "get",
             "summary": "Retrieve\u0020the\u0020async\u0020job\u0020status\u0020for\u0020a\u0020resume\u0020devices\u0020action.",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkResumeJobId.html#method_get"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkResumeJobId\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkResumeJobId.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkResumeJobId\u003A\u003A\u0024jobId",
-            "name": "jobId",
-            "summary": "The\u0020job\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkResumeJobId.html#property_jobId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkSuspend",
             "name": "DevicesBulkSuspend",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkSuspend.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkSuspend\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkSuspend.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkSuspend\u003A\u003Afind\u0028\u0029",
             "name": "find",
             "summary": "Find\u0020by\u0020jobId",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkSuspend.html#method_find"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkSuspend\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkSuspend.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkSuspendJobId",
             "name": "DevicesBulkSuspendJobId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkSuspendJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkSuspendJobId\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkSuspendJobId.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkSuspendJobId\u003A\u003Aget\u0028\u0029",
             "name": "get",
             "summary": "Retrieve\u0020the\u0020async\u0020job\u0020status\u0020for\u0020a\u0020suspend\u0020devices\u0020action.",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkSuspendJobId.html#method_get"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkSuspendJobId\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkSuspendJobId.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkSuspendJobId\u003A\u003A\u0024jobId",
-            "name": "jobId",
-            "summary": "The\u0020job\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkSuspendJobId.html#property_jobId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkUnsubscribe",
             "name": "DevicesBulkUnsubscribe",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkUnsubscribe.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkUnsubscribe\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkUnsubscribe.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkUnsubscribe\u003A\u003Afind\u0028\u0029",
             "name": "find",
             "summary": "Find\u0020by\u0020jobId",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkUnsubscribe.html#method_find"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkUnsubscribe\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkUnsubscribe.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkUnsubscribeJobId",
             "name": "DevicesBulkUnsubscribeJobId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkUnsubscribeJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkUnsubscribeJobId\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkUnsubscribeJobId.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkUnsubscribeJobId\u003A\u003Aget\u0028\u0029",
             "name": "get",
             "summary": "Retrieve\u0020the\u0020async\u0020job\u0020status\u0020for\u0020an\u0020unsubscribe\u0020devices\u0020action.",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkUnsubscribeJobId.html#method_get"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkUnsubscribeJobId\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkUnsubscribeJobId.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkUnsubscribeJobId\u003A\u003A\u0024jobId",
-            "name": "jobId",
-            "summary": "The\u0020job\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkUnsubscribeJobId.html#property_jobId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesId",
             "name": "DevicesId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesId\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesId.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesId\u003A\u003Aget\u0028\u0029",
             "name": "get",
@@ -18251,25 +16616,10 @@ Search.appendIndex(
             "summary": "Set\u0020an\u0020unsubscription\u0020date\u0020for\u0020the\u0020device\u0027s\u0020token.",
             "url": "classes/Arimac-Sigfox-Repository-DevicesId.html#method_unsubscribe"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesId\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesId.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesId\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "The\u0020Device\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesId.html#property_id"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdCertificate",
             "name": "DevicesIdCertificate",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesIdCertificate.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdCertificate\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesIdCertificate.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdCertificate\u003A\u003Amodem\u0028\u0029",
             "name": "modem",
@@ -18281,50 +16631,20 @@ Search.appendIndex(
             "summary": "Retrieve\u0020the\u0020product\u0020certificate\u0020associated\u0020with\u0020a\u0020device\u0020already\u0020registered.",
             "url": "classes/Arimac-Sigfox-Repository-DevicesIdCertificate.html#method_product"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdCertificate\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesIdCertificate.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdCertificate\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "The\u0020Device\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesIdCertificate.html#property_id"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdConsumption",
             "name": "DevicesIdConsumption",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesIdConsumption.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdConsumption\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesIdConsumption.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdConsumption\u003A\u003Ayear\u0028\u0029",
             "name": "year",
             "summary": "Find\u0020by\u0020year",
             "url": "classes/Arimac-Sigfox-Repository-DevicesIdConsumption.html#method_year"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdConsumption\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesIdConsumption.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdConsumption\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "The\u0020Device\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesIdConsumption.html#property_id"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdConsumptionYear",
             "name": "DevicesIdConsumptionYear",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesIdConsumptionYear.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdConsumptionYear\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesIdConsumptionYear.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdConsumptionYear\u003A\u003Aget\u0028\u0029",
             "name": "get",
@@ -18336,65 +16656,20 @@ Search.appendIndex(
             "summary": "Find\u0020by\u0020month",
             "url": "classes/Arimac-Sigfox-Repository-DevicesIdConsumptionYear.html#method_month"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdConsumptionYear\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesIdConsumptionYear.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdConsumptionYear\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "The\u0020Device\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesIdConsumptionYear.html#property_id"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdConsumptionYear\u003A\u003A\u0024year",
-            "name": "year",
-            "summary": "The\u0020year\u0020of\u0020consumption",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesIdConsumptionYear.html#property_year"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdConsumptionYearMonth",
             "name": "DevicesIdConsumptionYearMonth",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesIdConsumptionYearMonth.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdConsumptionYearMonth\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesIdConsumptionYearMonth.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdConsumptionYearMonth\u003A\u003Aget\u0028\u0029",
             "name": "get",
             "summary": "Retrieve\u0020a\u0020device\u0027s\u0020consumption\u0020for\u0020a\u0020given\u0020month\u0020during\u0020a\u0020given\u0020year.",
             "url": "classes/Arimac-Sigfox-Repository-DevicesIdConsumptionYearMonth.html#method_get"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdConsumptionYearMonth\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesIdConsumptionYearMonth.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdConsumptionYearMonth\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "The\u0020Device\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesIdConsumptionYearMonth.html#property_id"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdConsumptionYearMonth\u003A\u003A\u0024year",
-            "name": "year",
-            "summary": "The\u0020year\u0020of\u0020consumption",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesIdConsumptionYearMonth.html#property_year"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdConsumptionYearMonth\u003A\u003A\u0024month",
-            "name": "month",
-            "summary": "The\u0020month\u0020of\u0020consumption",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesIdConsumptionYearMonth.html#property_month"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdMessages",
             "name": "DevicesIdMessages",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesIdMessages.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdMessages\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesIdMessages.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdMessages\u003A\u003Alist\u0028\u0029",
             "name": "list",
@@ -18406,25 +16681,10 @@ Search.appendIndex(
             "summary": "Return\u0020the\u0020number\u0020of\u0020messages\u0020for\u0020a\u0020given\u0020device,\u0020for\u0020the\u0020last\u0020day,\u0020last\u0020week\u0020and\u0020last\u0020month.",
             "url": "classes/Arimac-Sigfox-Repository-DevicesIdMessages.html#method_metric"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdMessages\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesIdMessages.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesIdMessages\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "The\u0020Device\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesIdMessages.html#property_id"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypes",
             "name": "DeviceTypes",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DeviceTypes.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypes\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypes.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypes\u003A\u003Alist\u0028\u0029",
             "name": "list",
@@ -18446,85 +16706,40 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DeviceTypes.html#method_bulk"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypes\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypes.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulk",
             "name": "DeviceTypesBulk",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulk.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulk\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulk.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulk\u003A\u003Arestart\u0028\u0029",
             "name": "restart",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulk.html#method_restart"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulk\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulk.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulkRestart",
             "name": "DeviceTypesBulkRestart",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulkRestart.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulkRestart\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulkRestart.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulkRestart\u003A\u003Afind\u0028\u0029",
             "name": "find",
             "summary": "Find\u0020by\u0020jobId",
             "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulkRestart.html#method_find"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulkRestart\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulkRestart.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulkRestartJobId",
             "name": "DeviceTypesBulkRestartJobId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulkRestartJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulkRestartJobId\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulkRestartJobId.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulkRestartJobId\u003A\u003Aget\u0028\u0029",
             "name": "get",
             "summary": "Retrieve\u0020the\u0020async\u0020job\u0020status\u0020of\u0020a\u0020device\u0020type\u0027s\u0020asynchronous\u0020job\u0020for\u0020a\u0020restart\u0020devices\u0020action.",
             "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulkRestartJobId.html#method_get"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulkRestartJobId\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulkRestartJobId.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulkRestartJobId\u003A\u003A\u0024jobId",
-            "name": "jobId",
-            "summary": "The\u0020job\u0027s\u0020identidier\u0020\u0028hexademical\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulkRestartJobId.html#property_jobId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesId",
             "name": "DeviceTypesId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DeviceTypesId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesId\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesId.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesId\u003A\u003Aget\u0028\u0029",
             "name": "get",
@@ -18566,25 +16781,10 @@ Search.appendIndex(
             "summary": "Restart\u0020the\u0020devices\u0020of\u0020a\u0020device\u0020type\u0020with\u0020a\u0020asynchronous\u0020job.",
             "url": "classes/Arimac-Sigfox-Repository-DeviceTypesId.html#method_bulkRestart"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesId\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesId.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesId\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "The\u0020Device\u0020Type\u0020identifier\u0020\u0028hexademical\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesId.html#property_id"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesIdCallbacks",
             "name": "DeviceTypesIdCallbacks",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DeviceTypesIdCallbacks.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesIdCallbacks\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesIdCallbacks.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesIdCallbacks\u003A\u003Alist\u0028\u0029",
             "name": "list",
@@ -18601,25 +16801,10 @@ Search.appendIndex(
             "summary": "Find\u0020by\u0020callbackId",
             "url": "classes/Arimac-Sigfox-Repository-DeviceTypesIdCallbacks.html#method_find"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesIdCallbacks\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesIdCallbacks.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesIdCallbacks\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "The\u0020Device\u0020Type\u0020identifier\u0020\u0028hexademical\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesIdCallbacks.html#property_id"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesIdCallbacksCallbackId",
             "name": "DeviceTypesIdCallbacksCallbackId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DeviceTypesIdCallbacksCallbackId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesIdCallbacksCallbackId\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesIdCallbacksCallbackId.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesIdCallbacksCallbackId\u003A\u003Aupdate\u0028\u0029",
             "name": "update",
@@ -18646,30 +16831,10 @@ Search.appendIndex(
             "summary": "Retrieve\u0020the\u0020last\u0020device\u0020message\u0020error\u0020associated\u0020with\u0020this\u0020callback.",
             "url": "classes/Arimac-Sigfox-Repository-DeviceTypesIdCallbacksCallbackId.html#method_callbacksNotDelivered"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesIdCallbacksCallbackId\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesIdCallbacksCallbackId.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesIdCallbacksCallbackId\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "The\u0020Device\u0020Type\u0020identifier\u0020\u0028hexademical\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesIdCallbacksCallbackId.html#property_id"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesIdCallbacksCallbackId\u003A\u003A\u0024callbackId",
-            "name": "callbackId",
-            "summary": "The\u0020Callback\u0020identifier",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesIdCallbacksCallbackId.html#property_callbackId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\Groups",
             "name": "Groups",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-Groups.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\Groups\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-Groups.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\Groups\u003A\u003Alist\u0028\u0029",
             "name": "list",
@@ -18686,20 +16851,10 @@ Search.appendIndex(
             "summary": "Find\u0020by\u0020id",
             "url": "classes/Arimac-Sigfox-Repository-Groups.html#method_find"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\Groups\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-Groups.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\GroupsId",
             "name": "GroupsId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-GroupsId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\GroupsId\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-GroupsId.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\GroupsId\u003A\u003Aget\u0028\u0029",
             "name": "get",
@@ -18726,25 +16881,10 @@ Search.appendIndex(
             "summary": "Retrieve\u0020a\u0020list\u0020of\u0020geolocation\u0020payload\u0020according\u0020to\u0020request\u0020filters.",
             "url": "classes/Arimac-Sigfox-Repository-GroupsId.html#method_geolocationPayloads"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\GroupsId\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-GroupsId.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\GroupsId\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "The\u0020Group\u0020identifier",
-            "url": "classes/Arimac-Sigfox-Repository-GroupsId.html#property_id"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\Profiles",
             "name": "Profiles",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-Profiles.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\Profiles\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-Profiles.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\Profiles\u003A\u003Alist\u0028\u0029",
             "name": "list",
@@ -18756,45 +16896,20 @@ Search.appendIndex(
             "summary": "Find\u0020by\u0020id",
             "url": "classes/Arimac-Sigfox-Repository-Profiles.html#method_find"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\Profiles\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-Profiles.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ProfilesId",
             "name": "ProfilesId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-ProfilesId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ProfilesId\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-ProfilesId.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ProfilesId\u003A\u003Aget\u0028\u0029",
             "name": "get",
             "summary": "Retrieve\u0020information\u0020about\u0020a\u0020given\u0020profile.",
             "url": "classes/Arimac-Sigfox-Repository-ProfilesId.html#method_get"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ProfilesId\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-ProfilesId.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ProfilesId\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "The\u0020Profile\u0020identifier",
-            "url": "classes/Arimac-Sigfox-Repository-ProfilesId.html#property_id"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\Tiles",
             "name": "Tiles",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-Tiles.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\Tiles\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-Tiles.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\Tiles\u003A\u003Amonarch\u0028\u0029",
             "name": "monarch",
@@ -18806,20 +16921,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-Tiles.html#method_publicCoverage"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\Tiles\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-Tiles.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarch",
             "name": "TilesMonarch",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-TilesMonarch.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarch\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-TilesMonarch.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarch\u003A\u003Aget\u0028\u0029",
             "name": "get",
@@ -18831,20 +16936,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-TilesMonarch.html#method_kmz"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarch\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-TilesMonarch.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarchKmz",
             "name": "TilesMonarchKmz",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-TilesMonarchKmz.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarchKmz\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-TilesMonarchKmz.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarchKmz\u003A\u003AstartAsync\u0028\u0029",
             "name": "startAsync",
@@ -18856,20 +16951,10 @@ Search.appendIndex(
             "summary": "Find\u0020by\u0020jobId",
             "url": "classes/Arimac-Sigfox-Repository-TilesMonarchKmz.html#method_find"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarchKmz\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-TilesMonarchKmz.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarchKmzJobId",
             "name": "TilesMonarchKmzJobId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-TilesMonarchKmzJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarchKmzJobId\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-TilesMonarchKmzJobId.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarchKmzJobId\u003A\u003Aget\u0028\u0029",
             "name": "get",
@@ -18881,50 +16966,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-TilesMonarchKmzJobId.html#method_tileskmz"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarchKmzJobId\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-TilesMonarchKmzJobId.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarchKmzJobId\u003A\u003A\u0024jobId",
-            "name": "jobId",
-            "summary": "The\u0020job\u0027s\u0020identifier\u0020\u0028hexademical\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Repository-TilesMonarchKmzJobId.html#property_jobId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarchKmzJobIdTileskmz",
             "name": "TilesMonarchKmzJobIdTileskmz",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-TilesMonarchKmzJobIdTileskmz.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarchKmzJobIdTileskmz\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-TilesMonarchKmzJobIdTileskmz.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarchKmzJobIdTileskmz\u003A\u003AgetCoverage\u0028\u0029",
             "name": "getCoverage",
             "summary": "Retrieve\u0020Sigfox\u0020Monarch\u0020coverage\u0020kmz\u0020from\u0020a\u0020job",
             "url": "classes/Arimac-Sigfox-Repository-TilesMonarchKmzJobIdTileskmz.html#method_getCoverage"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarchKmzJobIdTileskmz\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-TilesMonarchKmzJobIdTileskmz.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarchKmzJobIdTileskmz\u003A\u003A\u0024jobId",
-            "name": "jobId",
-            "summary": "The\u0020job\u0027s\u0020identifier\u0020\u0028hexademical\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Repository-TilesMonarchKmzJobIdTileskmz.html#property_jobId"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesPublicCoverage",
             "name": "TilesPublicCoverage",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-TilesPublicCoverage.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesPublicCoverage\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-TilesPublicCoverage.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesPublicCoverage\u003A\u003Aget\u0028\u0029",
             "name": "get",
@@ -18936,20 +16991,10 @@ Search.appendIndex(
             "summary": "Retrieve\u0020Sigfox\u0020public\u0020coverage\u0020kmz\u0020file\u0020from\u0020a\u0020job.\u0020The\u0020public\u0020coverage\u0020is\u0020always\u0020available\u0020and\u0020does\u0020not\nrequire\u0020a\u0020previous\u0020calculation",
             "url": "classes/Arimac-Sigfox-Repository-TilesPublicCoverage.html#method_kmzTitles"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesPublicCoverage\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-TilesPublicCoverage.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\Users",
             "name": "Users",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-Users.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\Users\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-Users.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\Users\u003A\u003Alist\u0028\u0029",
             "name": "list",
@@ -18966,20 +17011,10 @@ Search.appendIndex(
             "summary": "Find\u0020by\u0020id",
             "url": "classes/Arimac-Sigfox-Repository-Users.html#method_find"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\Users\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-Users.html#property_client"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\UsersId",
             "name": "UsersId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-UsersId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\UsersId\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-UsersId.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\UsersId\u003A\u003Aget\u0028\u0029",
             "name": "get",
@@ -19001,25 +17036,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-UsersId.html#method_profiles"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\UsersId\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-UsersId.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\UsersId\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "The\u0020User\u0020identifier",
-            "url": "classes/Arimac-Sigfox-Repository-UsersId.html#property_id"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\UsersIdProfiles",
             "name": "UsersIdProfiles",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-UsersIdProfiles.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\UsersIdProfiles\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-UsersIdProfiles.html#method___construct"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\UsersIdProfiles\u003A\u003AaddRoles\u0028\u0029",
             "name": "addRoles",
@@ -19031,45 +17051,15 @@ Search.appendIndex(
             "summary": "Find\u0020by\u0020profileId",
             "url": "classes/Arimac-Sigfox-Repository-UsersIdProfiles.html#method_find"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\UsersIdProfiles\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-UsersIdProfiles.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\UsersIdProfiles\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "The\u0020User\u0020identifier",
-            "url": "classes/Arimac-Sigfox-Repository-UsersIdProfiles.html#property_id"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\UsersIdProfilesProfileId",
             "name": "UsersIdProfilesProfileId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-UsersIdProfilesProfileId.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\UsersIdProfilesProfileId\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Creating\u0020the\u0020repository",
-            "url": "classes/Arimac-Sigfox-Repository-UsersIdProfilesProfileId.html#method___construct"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\UsersIdProfilesProfileId\u003A\u003Adelete\u0028\u0029",
             "name": "delete",
             "summary": "Delete\u0020profiles\u0020or\u0020a\u0020given\u0020profile\u0020associated\u0020to\u0020the\u0020groupId",
             "url": "classes/Arimac-Sigfox-Repository-UsersIdProfilesProfileId.html#method_delete"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\UsersIdProfilesProfileId\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "The\u0020HTTP\u0020client",
-            "url": "classes/Arimac-Sigfox-Repository-UsersIdProfilesProfileId.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\UsersIdProfilesProfileId\u003A\u003A\u0024id",
-            "name": "id",
-            "summary": "The\u0020User\u0020identifier",
-            "url": "classes/Arimac-Sigfox-Repository-UsersIdProfilesProfileId.html#property_id"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\UsersIdProfilesProfileId\u003A\u003A\u0024profileId",
-            "name": "profileId",
-            "summary": "The\u0020profile\u0020identifier",
-            "url": "classes/Arimac-Sigfox-Repository-UsersIdProfilesProfileId.html#property_profileId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersCreate",
             "name": "ApiUsersCreate",
@@ -19086,25 +17076,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020apiUser",
             "url": "classes/Arimac-Sigfox-Request-ApiUsersCreate.html#method_getApiUser"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersCreate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersCreate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersCreate\u003A\u003A\u0024apiUser",
             "name": "apiUser",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Request-ApiUsersCreate.html#property_apiUser"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersCreate\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersCreate.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersCreate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersCreate.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdGet",
             "name": "ApiUsersIdGet",
@@ -19131,11 +17106,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-ApiUsersIdGet.html#method_getAuthorizations"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdGet\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdGet.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdGet\u003A\u003A\u0024fields",
             "name": "fields",
             "summary": "Defines\u0020the\u0020other\u0020available\u0020fields\u0020to\u0020be\u0020returned\u0020in\u0020the\u0020response.",
@@ -19145,16 +17115,6 @@ Search.appendIndex(
             "name": "authorizations",
             "summary": "if\u0020true,\u0020return\u0020the\u0020list\u0020of\u0020actions\u0020and\u0020resources\u0020the\u0020user\u0020has\u0020access",
             "url": "classes/Arimac-Sigfox-Request-ApiUsersIdGet.html#property_authorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdGet\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdGet.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdGet\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdGet.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdProfilesUpdate",
             "name": "ApiUsersIdProfilesUpdate",
@@ -19171,25 +17131,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020profileIds",
             "url": "classes/Arimac-Sigfox-Request-ApiUsersIdProfilesUpdate.html#method_getProfileIds"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdProfilesUpdate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdProfilesUpdate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdProfilesUpdate\u003A\u003A\u0024profileIds",
             "name": "profileIds",
             "summary": "The\u0020API\u0020profile\u0020to\u0020update",
             "url": "classes/Arimac-Sigfox-Request-ApiUsersIdProfilesUpdate.html#property_profileIds"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdProfilesUpdate\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdProfilesUpdate.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdProfilesUpdate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdProfilesUpdate.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdUpdate",
             "name": "ApiUsersIdUpdate",
@@ -19206,25 +17151,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020apiUser",
             "url": "classes/Arimac-Sigfox-Request-ApiUsersIdUpdate.html#method_getApiUser"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdUpdate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdUpdate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdUpdate\u003A\u003A\u0024apiUser",
             "name": "apiUser",
             "summary": "The\u0020information\u0020to\u0020update",
             "url": "classes/Arimac-Sigfox-Request-ApiUsersIdUpdate.html#property_apiUser"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdUpdate\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdUpdate.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersIdUpdate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersIdUpdate.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList",
             "name": "ApiUsersList",
@@ -19291,11 +17221,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_getAuthorizations"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003A\u0024fields",
             "name": "fields",
             "summary": "Defines\u0020the\u0020other\u0020available\u0020fields\u0020to\u0020be\u0020returned\u0020in\u0020the\u0020response.",
@@ -19325,16 +17250,6 @@ Search.appendIndex(
             "name": "authorizations",
             "summary": "if\u0020true,\u0020return\u0020the\u0020list\u0020of\u0020actions\u0020and\u0020resources\u0020the\u0020user\u0020has\u0020access",
             "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#property_authorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ApiUsersList\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ApiUsersList.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdDevices",
             "name": "ContractInfosIdDevices",
@@ -19381,11 +17296,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020pageId",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosIdDevices.html#method_getPageId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdDevices\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosIdDevices.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdDevices\u003A\u003A\u0024deviceTypeId",
             "name": "deviceTypeId",
             "summary": "Returns\u0020only\u0020devices\u0020of\u0020the\u0020given\u0020device\u0020type",
@@ -19405,16 +17315,6 @@ Search.appendIndex(
             "name": "pageId",
             "summary": "Token\u0020representing\u0020the\u0020page\u0020to\u0020retrieve",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosIdDevices.html#property_pageId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdDevices\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosIdDevices.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdDevices\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosIdDevices.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdGet",
             "name": "ContractInfosIdGet",
@@ -19441,11 +17341,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosIdGet.html#method_getAuthorizations"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdGet\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosIdGet.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdGet\u003A\u003A\u0024fields",
             "name": "fields",
             "summary": "Defines\u0020the\u0020other\u0020available\u0020fields\u0020to\u0020be\u0020returned\u0020in\u0020the\u0020response.",
@@ -19455,16 +17350,6 @@ Search.appendIndex(
             "name": "authorizations",
             "summary": "if\u0020true,\u0020we\u0020return\u0020the\u0020list\u0020of\u0020actions\u0020and\u0020resources\u0020the\u0020user\u0020has\u0020access",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosIdGet.html#property_authorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdGet\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosIdGet.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosIdGet\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosIdGet.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList",
             "name": "ContractInfosList",
@@ -19651,11 +17536,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getAuthorizations"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003AGROUP_TYPE_BASIC",
             "name": "GROUP_TYPE_BASIC",
             "summary": "BASIC",
@@ -19806,16 +17686,6 @@ Search.appendIndex(
             "summary": "if\u0020true,\u0020we\u0020return\u0020the\u0020list\u0020of\u0020actions\u0020and\u0020resources\u0020the\u0020user\u0020has\u0020access",
             "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#property_authorizations"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ContractInfosList\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ContractInfosList.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsCalculateBulk",
             "name": "CoveragesGlobalPredictionsCalculateBulk",
             "summary": "Starting\u0020the\u0020computation\u0020of\u0020the\u0020coverage\u0020margins\u0020for\u0020multiple\u0020points,\u0020for\u0020each\u0020redundancy\u0020level.",
@@ -19831,25 +17701,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020payload",
             "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsCalculateBulk.html#method_getPayload"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsCalculateBulk\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsCalculateBulk.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsCalculateBulk\u003A\u003A\u0024payload",
             "name": "payload",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsCalculateBulk.html#property_payload"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsCalculateBulk\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsCalculateBulk.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsCalculateBulk\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsCalculateBulk.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGet",
             "name": "CoveragesGlobalPredictionsGet",
@@ -19866,25 +17721,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020payload",
             "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGet.html#method_getPayload"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGet\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGet.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGet\u003A\u003A\u0024payload",
             "name": "payload",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGet.html#property_payload"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGet\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGet.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGet\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGet.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGetOne",
             "name": "CoveragesGlobalPredictionsGetOne",
@@ -19931,11 +17771,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020groupId",
             "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_getGroupId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGetOne\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGetOne\u003A\u003A\u0024lat",
             "name": "lat",
             "summary": "the\u0020latitude",
@@ -19955,16 +17790,6 @@ Search.appendIndex(
             "name": "groupId",
             "summary": "the\u0020id\u0020of\u0020a\u0020group\u0020to\u0020include\u0020its\u0020operator\u0020in\u0020the\u0020global\u0020coverage",
             "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#property_groupId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGetOne\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesGlobalPredictionsGetOne\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesOperatorsRedundancy",
             "name": "CoveragesOperatorsRedundancy",
@@ -20021,11 +17846,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020deviceClassId",
             "url": "classes/Arimac-Sigfox-Request-CoveragesOperatorsRedundancy.html#method_getDeviceClassId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesOperatorsRedundancy\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesOperatorsRedundancy.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesOperatorsRedundancy\u003A\u003A\u0024lat",
             "name": "lat",
             "summary": "the\u0020latitude",
@@ -20051,16 +17871,6 @@ Search.appendIndex(
             "summary": "The\u0020product\u0020uplink\u0020class\u0020from\u00200\u0020to\u00203\u0020\u00280U\u0020to\u00203U\u0029.",
             "url": "classes/Arimac-Sigfox-Request-CoveragesOperatorsRedundancy.html#property_deviceClassId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesOperatorsRedundancy\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesOperatorsRedundancy.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\CoveragesOperatorsRedundancy\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-CoveragesOperatorsRedundancy.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkCreate",
             "name": "DevicesBulkCreate",
             "summary": "Create\u0020multiple\u0020new\u0020devices\u0020with\u0020asynchronous\u0020job",
@@ -20076,25 +17886,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020devices",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkCreate.html#method_getDevices"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkCreate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkCreate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkCreate\u003A\u003A\u0024devices",
             "name": "devices",
             "summary": "The\u0020devices\u0020to\u0020create",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkCreate.html#property_devices"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkCreate\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkCreate.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkCreate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkCreate.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkReplace",
             "name": "DevicesBulkReplace",
@@ -20111,20 +17906,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020devicePairs",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkReplace.html#method_getDevicePairs"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkReplace\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkReplace.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkReplace\u003A\u003A\u0024devicePairs",
             "name": "devicePairs",
             "summary": "Pairs\u0020of\u0020source\u0020and\u0020target\u0020devices",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkReplace.html#property_devicePairs"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkReplace\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkReplace.html#property_body"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestart",
             "name": "DevicesBulkRestart",
@@ -20151,11 +17936,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020groupId",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestart.html#method_getGroupId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestart\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestart.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestart\u003A\u003A\u0024devices",
             "name": "devices",
             "summary": "list\u0020of\u0020device\u0027s\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
@@ -20165,21 +17945,6 @@ Search.appendIndex(
             "name": "groupId",
             "summary": "Group\u0020Identifier\u0020use\u0020to\u0020restart\u0020multiple\u0020devices",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestart.html#property_groupId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestart\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestart.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestart\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestart.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestart\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestart.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResume",
             "name": "DevicesBulkResume",
@@ -20206,11 +17971,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020groupId",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkResume.html#method_getGroupId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResume\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkResume.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResume\u003A\u003A\u0024devices",
             "name": "devices",
             "summary": "list\u0020of\u0020device\u0027s\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
@@ -20220,21 +17980,6 @@ Search.appendIndex(
             "name": "groupId",
             "summary": "Group\u0020Identifier\u0020use\u0020to\u0020resume\u0020multiple\u0020devices",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkResume.html#property_groupId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResume\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkResume.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResume\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkResume.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResume\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkResume.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspend",
             "name": "DevicesBulkSuspend",
@@ -20261,11 +18006,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020groupId",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspend.html#method_getGroupId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspend\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspend.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspend\u003A\u003A\u0024devices",
             "name": "devices",
             "summary": "list\u0020of\u0020device\u0027s\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
@@ -20275,21 +18015,6 @@ Search.appendIndex(
             "name": "groupId",
             "summary": "Group\u0020Identifier\u0020use\u0020to\u0020suspend\u0020multiple\u0020devices",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspend.html#property_groupId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspend\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspend.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspend\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspend.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspend\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspend.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkTransfer",
             "name": "DevicesBulkTransfer",
@@ -20306,25 +18031,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020devices",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkTransfer.html#method_getDevices"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkTransfer\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkTransfer.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkTransfer\u003A\u003A\u0024devices",
             "name": "devices",
             "summary": "The\u0020devices\u0020to\u0020move",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkTransfer.html#property_devices"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkTransfer\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkTransfer.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkTransfer\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkTransfer.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribe",
             "name": "DevicesBulkUnsubscribe",
@@ -20351,11 +18061,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020groupId",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribe.html#method_getGroupId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribe\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribe.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribe\u003A\u003A\u0024devices",
             "name": "devices",
             "summary": "array\u0020of\u0020device\u0027s\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029\u0020with\u0020unsubscribtion\u0020time",
@@ -20365,21 +18070,6 @@ Search.appendIndex(
             "name": "groupId",
             "summary": "Group\u0020Identifier\u0020use\u0020to\u0020unsubscribe\u0020multiple\u0020devices",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribe.html#property_groupId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribe\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribe.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribe\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribe.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribe\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribe.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUpdate",
             "name": "DevicesBulkUpdate",
@@ -20406,11 +18096,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020groupId",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkUpdate.html#method_getGroupId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUpdate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUpdate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUpdate\u003A\u003A\u0024devices",
             "name": "devices",
             "summary": "The\u0020devices\u0020to\u0020edit",
@@ -20420,21 +18105,6 @@ Search.appendIndex(
             "name": "groupId",
             "summary": "Group\u0020Identifier\u0020use\u0020to\u0020create\u0020the\u0020devices",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkUpdate.html#property_groupId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUpdate\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUpdate.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUpdate\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUpdate.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUpdate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUpdate.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesCreate",
             "name": "DevicesCreate",
@@ -20451,25 +18121,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020device",
             "url": "classes/Arimac-Sigfox-Request-DevicesCreate.html#method_getDevice"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesCreate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DevicesCreate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesCreate\u003A\u003A\u0024device",
             "name": "device",
             "summary": "The\u0020device\u0020to\u0020create",
             "url": "classes/Arimac-Sigfox-Request-DevicesCreate.html#property_device"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesCreate\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesCreate.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesCreate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesCreate.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCallbacksNotDelivered",
             "name": "DevicesIdCallbacksNotDelivered",
@@ -20516,11 +18171,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdCallbacksNotDelivered.html#method_getOffset"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCallbacksNotDelivered\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdCallbacksNotDelivered.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCallbacksNotDelivered\u003A\u003A\u0024since",
             "name": "since",
             "summary": "Starting\u0020timestamp\u0020\u0028in\u0020milliseconds\u0020since\u0020the\u0020Unix\u0020Epoch\u0029",
@@ -20541,11 +18191,6 @@ Search.appendIndex(
             "summary": "The\u0020number\u0020of\u0020items\u0020to\u0020skip",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdCallbacksNotDelivered.html#property_offset"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCallbacksNotDelivered\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdCallbacksNotDelivered.html#property_query"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCertificateModem",
             "name": "DevicesIdCertificateModem",
             "summary": "Retrieve\u0020the\u0020modem\u0020certificate\u0020associated\u0020with\u0020a\u0020device.",
@@ -20561,25 +18206,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdCertificateModem.html#method_getFields"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCertificateModem\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdCertificateModem.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCertificateModem\u003A\u003A\u0024fields",
             "name": "fields",
             "summary": "Defines\u0020the\u0020other\u0020available\u0020fields\u0020to\u0020be\u0020returned\u0020in\u0020the\u0020response.",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdCertificateModem.html#property_fields"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCertificateModem\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdCertificateModem.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCertificateModem\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdCertificateModem.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCertificateProduct",
             "name": "DevicesIdCertificateProduct",
@@ -20596,25 +18226,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdCertificateProduct.html#method_getFields"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCertificateProduct\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdCertificateProduct.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCertificateProduct\u003A\u003A\u0024fields",
             "name": "fields",
             "summary": "Defines\u0020the\u0020other\u0020available\u0020fields\u0020to\u0020be\u0020returned\u0020in\u0020the\u0020response.",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdCertificateProduct.html#property_fields"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCertificateProduct\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdCertificateProduct.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdCertificateProduct\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdCertificateProduct.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdGet",
             "name": "DevicesIdGet",
@@ -20641,11 +18256,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdGet.html#method_getFields"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdGet\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdGet.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdGet\u003A\u003A\u0024authorizations",
             "name": "authorizations",
             "summary": "if\u0020true,\u0020we\u0020return\u0020the\u0020list\u0020of\u0020actions\u0020and\u0020resources\u0020the\u0020user\u0020has\u0020access",
@@ -20655,16 +18265,6 @@ Search.appendIndex(
             "name": "fields",
             "summary": "Defines\u0020the\u0020other\u0020available\u0020fields\u0020to\u0020be\u0020returned\u0020in\u0020the\u0020response.",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdGet.html#property_fields"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdGet\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdGet.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdGet\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdGet.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdLocations",
             "name": "DevicesIdLocations",
@@ -20721,11 +18321,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdLocations.html#method_getOffset"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdLocations\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdLocations.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdLocations\u003A\u003A\u0024oob",
             "name": "oob",
             "summary": "if\u0020true,\u0020the\u0020method\u0020return\u0020also\u0020the\u0020location\u0020from\u0020out\u0020of\u0020band\u0020Messages",
@@ -20750,11 +18345,6 @@ Search.appendIndex(
             "name": "offset",
             "summary": "The\u0020number\u0020of\u0020items\u0020to\u0020skip",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdLocations.html#property_offset"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdLocations\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdLocations.html#property_query"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdMessagesList",
             "name": "DevicesIdMessagesList",
@@ -20811,11 +18401,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdMessagesList.html#method_getOffset"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdMessagesList\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdMessagesList.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdMessagesList\u003A\u003A\u0024fields",
             "name": "fields",
             "summary": "Defines\u0020the\u0020other\u0020available\u0020fields\u0020to\u0020be\u0020returned\u0020in\u0020the\u0020response.",
@@ -20841,16 +18426,6 @@ Search.appendIndex(
             "summary": "The\u0020number\u0020of\u0020items\u0020to\u0020skip",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdMessagesList.html#property_offset"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdMessagesList\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdMessagesList.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdMessagesList\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdMessagesList.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdProductCertificate",
             "name": "DevicesIdProductCertificate",
             "summary": "Retrieve\u0020the\u0020product\u0020certificate\u0020associated\u0020with\u0020a\u0020given\u0020device\u0020ID\u0020and\u0020PAC,\u0020when\u0020the\u0020device\u0020has\u0020not\u0020already\u0020been\ncreated\u0020on\u0020the\u0020portal,\u0020only\u0020in\u0020CRA",
@@ -20866,25 +18441,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020pac",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdProductCertificate.html#method_getPac"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdProductCertificate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdProductCertificate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdProductCertificate\u003A\u003A\u0024pac",
             "name": "pac",
             "summary": "The\u0020device\u0027s\u0020PAC\u0020\u0028hexadecimal\u0020format\u0029",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdProductCertificate.html#property_pac"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdProductCertificate\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdProductCertificate.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdProductCertificate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdProductCertificate.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdUnsubscribe",
             "name": "DevicesIdUnsubscribe",
@@ -20901,25 +18461,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020unsubscriptionTime",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdUnsubscribe.html#method_getUnsubscriptionTime"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdUnsubscribe\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdUnsubscribe.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdUnsubscribe\u003A\u003A\u0024unsubscriptionTime",
             "name": "unsubscriptionTime",
             "summary": "the\u0020unsubscription\u0020time\u0020\u0028in\u0020milliseconds\u0020since\u0020the\u0020Unix\u0020Epoch\u0029",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdUnsubscribe.html#property_unsubscriptionTime"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdUnsubscribe\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdUnsubscribe.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdUnsubscribe\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdUnsubscribe.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdUpdate",
             "name": "DevicesIdUpdate",
@@ -20936,25 +18481,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020device",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdUpdate.html#method_getDevice"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdUpdate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdUpdate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdUpdate\u003A\u003A\u0024device",
             "name": "device",
             "summary": "The\u0020device\u0020to\u0020update",
             "url": "classes/Arimac-Sigfox-Request-DevicesIdUpdate.html#property_device"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdUpdate\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdUpdate.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesIdUpdate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesIdUpdate.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList",
             "name": "DevicesList",
@@ -21091,11 +18621,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020pageId",
             "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_getPageId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DevicesList.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020device\u0027s\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
@@ -21161,16 +18686,6 @@ Search.appendIndex(
             "summary": "Token\u0020representing\u0020the\u0020page\u0020to\u0020retrieve",
             "url": "classes/Arimac-Sigfox-Request-DevicesList.html#property_pageId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesList.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesList\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DevicesList.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesCreate",
             "name": "DeviceTypesCreate",
             "summary": "Create\u0020a\u0020new\u0020device\u0020type",
@@ -21186,25 +18701,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020deviceType",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesCreate.html#method_getDeviceType"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesCreate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesCreate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesCreate\u003A\u003A\u0024deviceType",
             "name": "deviceType",
             "summary": "The\u0020device\u0020type\u0020to\u0020create",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesCreate.html#property_deviceType"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesCreate\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesCreate.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesCreate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesCreate.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered",
             "name": "DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered",
@@ -21251,11 +18751,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html#method_getOffset"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered\u003A\u003A\u0024since",
             "name": "since",
             "summary": "Starting\u0020timestamp\u0020\u0028in\u0020milliseconds\u0020since\u0020Unix\u0020Epoch\u0029.",
@@ -21276,11 +18771,6 @@ Search.appendIndex(
             "summary": "Defines\u0020the\u0020number\u0020of\u0020items\u0020to\u0020skip",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html#property_offset"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html#property_query"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdEnable",
             "name": "DeviceTypesIdCallbacksCallbackIdEnable",
             "summary": "Enable\u0020or\u0020disable\u0020a\u0020callback\u0020for\u0020a\u0020given\u0020device\u0020type.",
@@ -21296,25 +18786,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020enabled",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdEnable.html#method_getEnabled"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdEnable\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdEnable.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdEnable\u003A\u003A\u0024enabled",
             "name": "enabled",
             "summary": "True\u0020to\u0020enable\u0020the\u0020callback,\u0020false\u0020to\u0020disable\u0020it",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdEnable.html#property_enabled"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdEnable\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdEnable.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdEnable\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdEnable.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdUpdate",
             "name": "DeviceTypesIdCallbacksCallbackIdUpdate",
@@ -21331,25 +18806,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020callback",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdUpdate.html#method_getCallback"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdUpdate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdUpdate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdUpdate\u003A\u003A\u0024callback",
             "name": "callback",
             "summary": "The\u0020callback\u0020to\u0020update",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdUpdate.html#property_callback"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdUpdate\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdUpdate.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCallbackIdUpdate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdUpdate.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCreate",
             "name": "DeviceTypesIdCallbacksCreate",
@@ -21366,25 +18826,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020callback",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCreate.html#method_getCallback"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCreate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCreate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCreate\u003A\u003A\u0024callback",
             "name": "callback",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCreate.html#property_callback"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCreate\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCreate.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksCreate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCreate.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksNotDelivered",
             "name": "DeviceTypesIdCallbacksNotDelivered",
@@ -21431,11 +18876,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#method_getOffset"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksNotDelivered\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksNotDelivered\u003A\u003A\u0024since",
             "name": "since",
             "summary": "Starting\u0020timestamp\u0020\u0028in\u0020milliseconds\u0020since\u0020Unix\u0020Epoch\u0029.",
@@ -21455,11 +18895,6 @@ Search.appendIndex(
             "name": "offset",
             "summary": "Defines\u0020the\u0020number\u0020of\u0020items\u0020to\u0020skip",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#property_offset"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdCallbacksNotDelivered\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#property_query"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdGet",
             "name": "DeviceTypesIdGet",
@@ -21486,11 +18921,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020fields",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdGet.html#method_getFields"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdGet\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdGet.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdGet\u003A\u003A\u0024authorizations",
             "name": "authorizations",
             "summary": "if\u0020true,\u0020we\u0020return\u0020the\u0020list\u0020of\u0020actions\u0020and\u0020resources\u0020the\u0020user\u0020has\u0020access",
@@ -21500,16 +18930,6 @@ Search.appendIndex(
             "name": "fields",
             "summary": "Defines\u0020the\u0020other\u0020available\u0020API\u0020user\u0027s\u0020fields\u0020to\u0020be\u0020returned\u0020in\u0020the\u0020response.",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdGet.html#property_fields"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdGet\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdGet.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdGet\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdGet.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdMessages",
             "name": "DeviceTypesIdMessages",
@@ -21576,11 +18996,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdMessages.html#method_getOffset"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdMessages\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdMessages.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdMessages\u003A\u003A\u0024fields",
             "name": "fields",
             "summary": "Defines\u0020the\u0020other\u0020available\u0020API\u0020user\u0027s\u0020fields\u0020to\u0020be\u0020returned\u0020in\u0020the\u0020response.",
@@ -21611,16 +19026,6 @@ Search.appendIndex(
             "summary": "Defines\u0020the\u0020number\u0020of\u0020items\u0020to\u0020skip",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdMessages.html#property_offset"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdMessages\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdMessages.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdMessages\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdMessages.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdUpdate",
             "name": "DeviceTypesIdUpdate",
             "summary": "Update\u0020a\u0020given\u0020device\u0020type.",
@@ -21636,25 +19041,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020deviceType",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdUpdate.html#method_getDeviceType"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdUpdate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdUpdate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdUpdate\u003A\u003A\u0024deviceType",
             "name": "deviceType",
             "summary": "The\u0020device\u0020type\u0020to\u0020update",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdUpdate.html#property_deviceType"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdUpdate\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdUpdate.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesIdUpdate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesIdUpdate.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList",
             "name": "DeviceTypesList",
@@ -21771,11 +19161,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020pageId",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getPageId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003APAYLOAD_TYPE_REGULAR",
             "name": "PAYLOAD_TYPE_REGULAR",
             "summary": "Regular\u0020\u0028raw\u0020payload\u0029",
@@ -21861,16 +19246,6 @@ Search.appendIndex(
             "summary": "Token\u0020representing\u0020the\u0020page\u0020to\u0020retrieve",
             "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#property_pageId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DeviceTypesList\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-DeviceTypesList.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsCreate",
             "name": "GroupsCreate",
             "summary": "Create\u0020a\u0020new\u0020group.",
@@ -21886,25 +19261,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020group",
             "url": "classes/Arimac-Sigfox-Request-GroupsCreate.html#method_getGroup"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsCreate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-GroupsCreate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsCreate\u003A\u003A\u0024group",
             "name": "group",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Request-GroupsCreate.html#property_group"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsCreate\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-GroupsCreate.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsCreate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-GroupsCreate.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdCallbacksNotDelivered",
             "name": "GroupsIdCallbacksNotDelivered",
@@ -21951,11 +19311,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020offset",
             "url": "classes/Arimac-Sigfox-Request-GroupsIdCallbacksNotDelivered.html#method_getOffset"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdCallbacksNotDelivered\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdCallbacksNotDelivered.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdCallbacksNotDelivered\u003A\u003A\u0024since",
             "name": "since",
             "summary": "Starting\u0020timestamp\u0020\u0028in\u0020milliseconds\u0020since\u0020Unix\u0020Epoch\u0029",
@@ -21975,11 +19330,6 @@ Search.appendIndex(
             "name": "offset",
             "summary": "The\u0020number\u0020of\u0020items\u0020to\u0020skip",
             "url": "classes/Arimac-Sigfox-Request-GroupsIdCallbacksNotDelivered.html#property_offset"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdCallbacksNotDelivered\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdCallbacksNotDelivered.html#property_query"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdGeolocationPayloads",
             "name": "GroupsIdGeolocationPayloads",
@@ -22016,11 +19366,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020pageId",
             "url": "classes/Arimac-Sigfox-Request-GroupsIdGeolocationPayloads.html#method_getPageId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdGeolocationPayloads\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdGeolocationPayloads.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdGeolocationPayloads\u003A\u003A\u0024limit",
             "name": "limit",
             "summary": "The\u0020maximum\u0020number\u0020of\u0020items\u0020to\u0020return",
@@ -22035,11 +19380,6 @@ Search.appendIndex(
             "name": "pageId",
             "summary": "Token\u0020representing\u0020the\u0020page\u0020to\u0020retrieve",
             "url": "classes/Arimac-Sigfox-Request-GroupsIdGeolocationPayloads.html#property_pageId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdGeolocationPayloads\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdGeolocationPayloads.html#property_query"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdGet",
             "name": "GroupsIdGet",
@@ -22066,11 +19406,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-GroupsIdGet.html#method_getAuthorizations"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdGet\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdGet.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdGet\u003A\u003A\u0024fields",
             "name": "fields",
             "summary": "Defines\u0020the\u0020other\u0020available\u0020fields\u0020to\u0020be\u0020returned\u0020in\u0020the\u0020response.",
@@ -22080,16 +19415,6 @@ Search.appendIndex(
             "name": "authorizations",
             "summary": "if\u0020true,\u0020we\u0020return\u0020the\u0020list\u0020of\u0020actions\u0020and\u0020resources\u0020the\u0020user\u0020has\u0020access",
             "url": "classes/Arimac-Sigfox-Request-GroupsIdGet.html#property_authorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdGet\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdGet.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdGet\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdGet.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdUpdate",
             "name": "GroupsIdUpdate",
@@ -22106,25 +19431,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020group",
             "url": "classes/Arimac-Sigfox-Request-GroupsIdUpdate.html#method_getGroup"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdUpdate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdUpdate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdUpdate\u003A\u003A\u0024group",
             "name": "group",
             "summary": "The\u0020group\u0020to\u0020update",
             "url": "classes/Arimac-Sigfox-Request-GroupsIdUpdate.html#property_group"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdUpdate\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdUpdate.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsIdUpdate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-GroupsIdUpdate.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList",
             "name": "GroupsList",
@@ -22241,11 +19551,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020pageId",
             "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_getPageId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-GroupsList.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003ATYPES_SO",
             "name": "TYPES_SO",
             "summary": "SO",
@@ -22346,16 +19651,6 @@ Search.appendIndex(
             "summary": "Token\u0020representing\u0020the\u0020page\u0020to\u0020retrieve",
             "url": "classes/Arimac-Sigfox-Request-GroupsList.html#property_pageId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-GroupsList.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\GroupsList\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-GroupsList.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesIdGet",
             "name": "ProfilesIdGet",
             "summary": "Retrieve\u0020information\u0020about\u0020a\u0020given\u0020profile.",
@@ -22381,11 +19676,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-ProfilesIdGet.html#method_getAuthorizations"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesIdGet\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-ProfilesIdGet.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesIdGet\u003A\u003A\u0024fields",
             "name": "fields",
             "summary": "Defines\u0020the\u0020other\u0020available\u0020fields\u0020to\u0020be\u0020returned\u0020in\u0020the\u0020response.",
@@ -22395,16 +19685,6 @@ Search.appendIndex(
             "name": "authorizations",
             "summary": "if\u0020true,\u0020return\u0020the\u0020list\u0020of\u0020actions\u0020and\u0020resources\u0020the\u0020user\u0020has\u0020access",
             "url": "classes/Arimac-Sigfox-Request-ProfilesIdGet.html#property_authorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesIdGet\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ProfilesIdGet.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesIdGet\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ProfilesIdGet.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesList",
             "name": "ProfilesList",
@@ -22471,11 +19751,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-ProfilesList.html#method_getAuthorizations"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesList\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-ProfilesList.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesList\u003A\u003A\u0024groupId",
             "name": "groupId",
             "summary": "The\u0020group\u0027s\u0020identifier",
@@ -22505,16 +19780,6 @@ Search.appendIndex(
             "name": "authorizations",
             "summary": "if\u0020true,\u0020return\u0020the\u0020list\u0020of\u0020actions\u0020and\u0020resources\u0020the\u0020user\u0020has\u0020access",
             "url": "classes/Arimac-Sigfox-Request-ProfilesList.html#property_authorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesList\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ProfilesList.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\ProfilesList\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-ProfilesList.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzJobIdTileskmzGetCoverage",
             "name": "TilesMonarchKmzJobIdTileskmzGetCoverage",
@@ -22571,11 +19836,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020east",
             "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_getEast"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzJobIdTileskmzGetCoverage\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzJobIdTileskmzGetCoverage\u003A\u003A\u0024zoom",
             "name": "zoom",
             "summary": "The\u0020zoom\u0020level\u0020used\u0020to\u0020generate\u0020kmz\u0020file",
@@ -22601,16 +19861,6 @@ Search.appendIndex(
             "summary": "The\u0020east\u0020boundary\u0020to\u0020extract\u0020coverage",
             "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#property_east"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzJobIdTileskmzGetCoverage\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzJobIdTileskmzGetCoverage\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzStartAsync",
             "name": "TilesMonarchKmzStartAsync",
             "summary": "Starting\u0020the\u0020computation\u0020of\u0020Sigfox\u0020Monarch\u0020coverage\u0020view\u0020for\u0020a\u0020specific\u0020coverage\u0020mode.\u0020A\u0020new\u0020computation\u0020starts\u0020if\nno\u0020other\u0020computation,\u0020run\u0020in\u0020the\u0020last\u002024\u0020hours,\u0020is\u0020available.\u0020Otherwise,\u0020the\u0020existing\u0020jobId\u0020is\u0020returned.",
@@ -22626,25 +19876,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020request",
             "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzStartAsync.html#method_getRequest"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzStartAsync\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzStartAsync.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzStartAsync\u003A\u003A\u0024request",
             "name": "request",
             "summary": "The\u0020computation\u0020will\u0020be\u0020performed\u0020with\u0020the\u0020specified\u0020coverage\u0020mode",
             "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzStartAsync.html#property_request"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzStartAsync\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzStartAsync.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzStartAsync\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzStartAsync.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles",
             "name": "TilesPublicCoverageKmzTitles",
@@ -22701,11 +19936,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020east",
             "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#method_getEast"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003A\u0024zoom",
             "name": "zoom",
             "summary": "The\u0020zoom\u0020level\u0020used\u0020to\u0020generate\u0020kmz\u0020file",
@@ -22731,16 +19961,6 @@ Search.appendIndex(
             "summary": "The\u0020east\u0020boundary\u0020to\u0020extract\u0020coverage",
             "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#property_east"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#property_validations"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersCreate",
             "name": "UsersCreate",
             "summary": "Create\u0020a\u0020new\u0020user.",
@@ -22756,25 +19976,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020user",
             "url": "classes/Arimac-Sigfox-Request-UsersCreate.html#method_getUser"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersCreate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-UsersCreate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersCreate\u003A\u003A\u0024user",
             "name": "user",
             "summary": "The\u0020user\u0020to\u0020create",
             "url": "classes/Arimac-Sigfox-Request-UsersCreate.html#property_user"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersCreate\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-UsersCreate.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersCreate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-UsersCreate.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdGet",
             "name": "UsersIdGet",
@@ -22801,11 +20006,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020authorizations",
             "url": "classes/Arimac-Sigfox-Request-UsersIdGet.html#method_getAuthorizations"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdGet\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-UsersIdGet.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdGet\u003A\u003A\u0024fields",
             "name": "fields",
             "summary": "Defines\u0020the\u0020other\u0020available\u0020fields\u0020to\u0020be\u0020returned\u0020in\u0020the\u0020response.",
@@ -22815,16 +20015,6 @@ Search.appendIndex(
             "name": "authorizations",
             "summary": "if\u0020true,\u0020we\u0020return\u0020the\u0020list\u0020of\u0020actions\u0020and\u0020resources\u0020the\u0020user\u0020has\u0020access",
             "url": "classes/Arimac-Sigfox-Request-UsersIdGet.html#property_authorizations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdGet\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-UsersIdGet.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdGet\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-UsersIdGet.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdProfilesAddRoles",
             "name": "UsersIdProfilesAddRoles",
@@ -22841,25 +20031,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020userRoles",
             "url": "classes/Arimac-Sigfox-Request-UsersIdProfilesAddRoles.html#method_getUserRoles"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdProfilesAddRoles\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-UsersIdProfilesAddRoles.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdProfilesAddRoles\u003A\u003A\u0024userRoles",
             "name": "userRoles",
             "summary": "user\u0020roles\u0020array\u0020to\u0020add",
             "url": "classes/Arimac-Sigfox-Request-UsersIdProfilesAddRoles.html#property_userRoles"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdProfilesAddRoles\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-UsersIdProfilesAddRoles.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdProfilesAddRoles\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-UsersIdProfilesAddRoles.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdProfilesProfileIdDelete",
             "name": "UsersIdProfilesProfileIdDelete",
@@ -22876,20 +20051,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020groupId",
             "url": "classes/Arimac-Sigfox-Request-UsersIdProfilesProfileIdDelete.html#method_getGroupId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdProfilesProfileIdDelete\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-UsersIdProfilesProfileIdDelete.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdProfilesProfileIdDelete\u003A\u003A\u0024groupId",
             "name": "groupId",
             "summary": "The\u0020group\u0020identifier",
             "url": "classes/Arimac-Sigfox-Request-UsersIdProfilesProfileIdDelete.html#property_groupId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdProfilesProfileIdDelete\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-UsersIdProfilesProfileIdDelete.html#property_query"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdUpdate",
             "name": "UsersIdUpdate",
@@ -22906,25 +20071,10 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020user",
             "url": "classes/Arimac-Sigfox-Request-UsersIdUpdate.html#method_getUser"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdUpdate\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-UsersIdUpdate.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdUpdate\u003A\u003A\u0024user",
             "name": "user",
             "summary": "The\u0020user\u0020to\u0020update",
             "url": "classes/Arimac-Sigfox-Request-UsersIdUpdate.html#property_user"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdUpdate\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-UsersIdUpdate.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersIdUpdate\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-UsersIdUpdate.html#property_validations"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList",
             "name": "UsersList",
@@ -23031,11 +20181,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020pageId",
             "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_getPageId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request-UsersList.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003A\u0024fields",
             "name": "fields",
             "summary": "Defines\u0020the\u0020other\u0020available\u0020fields\u0020to\u0020be\u0020returned\u0020in\u0020the\u0020response.",
@@ -23086,46 +20231,6 @@ Search.appendIndex(
             "summary": "Token\u0020representing\u0020the\u0020page\u0020to\u0020retrieve",
             "url": "classes/Arimac-Sigfox-Request-UsersList.html#property_pageId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-UsersList.html#property_query"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\UsersList\u003A\u003A\u0024validations",
-            "name": "validations",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request-UsersList.html#property_validations"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request",
-            "name": "Request",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\u003A\u003AgetBodyFields\u0028\u0029",
-            "name": "getBodyFields",
-            "summary": "Returning\u0020all\u0020property\u0020names\u0020for\u0020request\u0020body",
-            "url": "classes/Arimac-Sigfox-Request.html#method_getBodyFields"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\u003A\u003AgetQueryFields\u0028\u0029",
-            "name": "getQueryFields",
-            "summary": "Returning\u0020all\u0020property\u0020names\u0020for\u0020query\u0020string",
-            "url": "classes/Arimac-Sigfox-Request.html#method_getQueryFields"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Request.html#method_getSerializeMetaData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\u003A\u003A\u0024body",
-            "name": "body",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request.html#property_body"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\u003A\u003A\u0024query",
-            "name": "query",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Request.html#property_query"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersCreateResponse",
             "name": "ApiUsersCreateResponse",
             "summary": "",
@@ -23140,11 +20245,6 @@ Search.appendIndex(
             "name": "getId",
             "summary": "Getter\u0020for\u0020id",
             "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersCreateResponse.html#method_getId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersCreateResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersCreateResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersCreateResponse\u003A\u003A\u0024id",
             "name": "id",
@@ -23165,11 +20265,6 @@ Search.appendIndex(
             "name": "getAccessToken",
             "summary": "Getter\u0020for\u0020accessToken",
             "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersIdRenewCredentialResponse.html#method_getAccessToken"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersIdRenewCredentialResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersIdRenewCredentialResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersIdRenewCredentialResponse\u003A\u003A\u0024accessToken",
             "name": "accessToken",
@@ -23201,11 +20296,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020paging",
             "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersListResponse.html#method_getPaging"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersListResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ApiUsersListResponse.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersListResponse\u003A\u003A\u0024data",
             "name": "data",
             "summary": "",
@@ -23230,11 +20320,6 @@ Search.appendIndex(
             "name": "getJobId",
             "summary": "Getter\u0020for\u0020jobId",
             "url": "classes/Arimac-Sigfox-Response-Generated-ContractInfosIdBulkRestartResponse.html#method_getJobId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ContractInfosIdBulkRestartResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ContractInfosIdBulkRestartResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ContractInfosIdBulkRestartResponse\u003A\u003A\u0024jobId",
             "name": "jobId",
@@ -23265,11 +20350,6 @@ Search.appendIndex(
             "name": "getPaging",
             "summary": "Getter\u0020for\u0020paging",
             "url": "classes/Arimac-Sigfox-Response-Generated-ContractInfosIdDevicesResponse.html#method_getPaging"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ContractInfosIdDevicesResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ContractInfosIdDevicesResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ContractInfosIdDevicesResponse\u003A\u003A\u0024data",
             "name": "data",
@@ -23306,11 +20386,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020paging",
             "url": "classes/Arimac-Sigfox-Response-Generated-ContractInfosListResponse.html#method_getPaging"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ContractInfosListResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ContractInfosListResponse.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ContractInfosListResponse\u003A\u003A\u0024data",
             "name": "data",
             "summary": "",
@@ -23335,11 +20410,6 @@ Search.appendIndex(
             "name": "getJobId",
             "summary": "Getter\u0020for\u0020jobId",
             "url": "classes/Arimac-Sigfox-Response-Generated-CoveragesGlobalPredictionsCalculateBulkResponse.html#method_getJobId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\CoveragesGlobalPredictionsCalculateBulkResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-CoveragesGlobalPredictionsCalculateBulkResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\CoveragesGlobalPredictionsCalculateBulkResponse\u003A\u003A\u0024jobId",
             "name": "jobId",
@@ -23370,11 +20440,6 @@ Search.appendIndex(
             "name": "getMargins",
             "summary": "Getter\u0020for\u0020margins",
             "url": "classes/Arimac-Sigfox-Response-Generated-CoveragesGlobalPredictionsGetOneResponse.html#method_getMargins"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\CoveragesGlobalPredictionsGetOneResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-CoveragesGlobalPredictionsGetOneResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\CoveragesGlobalPredictionsGetOneResponse\u003A\u003A\u0024locationCovered",
             "name": "locationCovered",
@@ -23411,11 +20476,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020jobId",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkCreateResponse.html#method_getJobId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkCreateResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkCreateResponse.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkCreateResponse\u003A\u003A\u0024total",
             "name": "total",
             "summary": "Number\u0020of\u0020device\u0020to\u0020create",
@@ -23441,11 +20501,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020jobId",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkRestartResponse.html#method_getJobId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkRestartResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkRestartResponse.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkRestartResponse\u003A\u003A\u0024jobId",
             "name": "jobId",
             "summary": "jobId\u0020\u0028to\u0020use\u0020in\u0020job\u0020status\u0020request\u0029",
@@ -23466,11 +20521,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020jobId",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkResumeResponse.html#method_getJobId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkResumeResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkResumeResponse.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkResumeResponse\u003A\u003A\u0024jobId",
             "name": "jobId",
             "summary": "jobId\u0020\u0028to\u0020use\u0020in\u0020job\u0020status\u0020request\u0029",
@@ -23490,11 +20540,6 @@ Search.appendIndex(
             "name": "getJobId",
             "summary": "Getter\u0020for\u0020jobId",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkSuspendResponse.html#method_getJobId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkSuspendResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkSuspendResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkSuspendResponse\u003A\u003A\u0024jobId",
             "name": "jobId",
@@ -23526,11 +20571,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020jobId",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkTransferResponse.html#method_getJobId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkTransferResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkTransferResponse.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkTransferResponse\u003A\u003A\u0024total",
             "name": "total",
             "summary": "Number\u0020of\u0020devices\u0020to\u0020transfer",
@@ -23555,11 +20595,6 @@ Search.appendIndex(
             "name": "getJobId",
             "summary": "Getter\u0020for\u0020jobId",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkUnsubscribeResponse.html#method_getJobId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkUnsubscribeResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkUnsubscribeResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkUnsubscribeResponse\u003A\u003A\u0024jobId",
             "name": "jobId",
@@ -23591,11 +20626,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020jobId",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkUpdateResponse.html#method_getJobId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkUpdateResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkUpdateResponse.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkUpdateResponse\u003A\u003A\u0024total",
             "name": "total",
             "summary": "Number\u0020of\u0020devices\u0020to\u0020edit",
@@ -23620,11 +20650,6 @@ Search.appendIndex(
             "name": "getId",
             "summary": "Getter\u0020for\u0020id",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesCreateResponse.html#method_getId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesCreateResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesCreateResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesCreateResponse\u003A\u003A\u0024id",
             "name": "id",
@@ -23655,11 +20680,6 @@ Search.appendIndex(
             "name": "getPaging",
             "summary": "Getter\u0020for\u0020paging",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdCallbacksNotDeliveredResponse.html#method_getPaging"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdCallbacksNotDeliveredResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdCallbacksNotDeliveredResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdCallbacksNotDeliveredResponse\u003A\u003A\u0024data",
             "name": "data",
@@ -23696,11 +20716,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020paging",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdLocationsResponse.html#method_getPaging"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdLocationsResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdLocationsResponse.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdLocationsResponse\u003A\u003A\u0024data",
             "name": "data",
             "summary": "",
@@ -23735,11 +20750,6 @@ Search.appendIndex(
             "name": "getPaging",
             "summary": "Getter\u0020for\u0020paging",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesListResponse.html#method_getPaging"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdMessagesListResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesListResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdMessagesListResponse\u003A\u003A\u0024data",
             "name": "data",
@@ -23785,11 +20795,6 @@ Search.appendIndex(
             "name": "getLastMonth",
             "summary": "Getter\u0020for\u0020lastMonth",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesMetricResponse.html#method_getLastMonth"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdMessagesMetricResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesMetricResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesIdMessagesMetricResponse\u003A\u003A\u0024lastDay",
             "name": "lastDay",
@@ -23841,11 +20846,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020paging",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesListResponse.html#method_getPaging"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesListResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesListResponse.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesListResponse\u003A\u003A\u0024data",
             "name": "data",
             "summary": "",
@@ -23876,11 +20876,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020id",
             "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesCreateResponse.html#method_getId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesCreateResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesCreateResponse.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesCreateResponse\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020new\u0020created\u0020device\u0020type\u0027s\u0020identifier",
@@ -23900,11 +20895,6 @@ Search.appendIndex(
             "name": "getJobId",
             "summary": "Getter\u0020for\u0020jobId",
             "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdBulkRestartResponse.html#method_getJobId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdBulkRestartResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdBulkRestartResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdBulkRestartResponse\u003A\u003A\u0024jobId",
             "name": "jobId",
@@ -23926,11 +20916,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020id",
             "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdCallbacksCreateResponse.html#method_getId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdCallbacksCreateResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdCallbacksCreateResponse.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdCallbacksCreateResponse\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020callback\u0027s\u0020identifier",
@@ -23950,11 +20935,6 @@ Search.appendIndex(
             "name": "getData",
             "summary": "Getter\u0020for\u0020data",
             "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdCallbacksListResponse.html#method_getData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdCallbacksListResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdCallbacksListResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdCallbacksListResponse\u003A\u003A\u0024data",
             "name": "data",
@@ -23985,11 +20965,6 @@ Search.appendIndex(
             "name": "getPaging",
             "summary": "Getter\u0020for\u0020paging",
             "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdCallbacksNotDeliveredResponse.html#method_getPaging"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdCallbacksNotDeliveredResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdCallbacksNotDeliveredResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdCallbacksNotDeliveredResponse\u003A\u003A\u0024data",
             "name": "data",
@@ -24025,11 +21000,6 @@ Search.appendIndex(
             "name": "getPaging",
             "summary": "Getter\u0020for\u0020paging",
             "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdMessagesResponse.html#method_getPaging"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdMessagesResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesIdMessagesResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesIdMessagesResponse\u003A\u003A\u0024data",
             "name": "data",
@@ -24076,11 +21046,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020paging",
             "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesListResponse.html#method_getPaging"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesListResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DeviceTypesListResponse.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DeviceTypesListResponse\u003A\u003A\u0024data",
             "name": "data",
             "summary": "",
@@ -24111,11 +21076,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020id",
             "url": "classes/Arimac-Sigfox-Response-Generated-GroupsCreateResponse.html#method_getId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsCreateResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-GroupsCreateResponse.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsCreateResponse\u003A\u003A\u0024id",
             "name": "id",
             "summary": "The\u0020new\u0020created\u0020group\u0020identifier",
@@ -24145,11 +21105,6 @@ Search.appendIndex(
             "name": "getPaging",
             "summary": "Getter\u0020for\u0020paging",
             "url": "classes/Arimac-Sigfox-Response-Generated-GroupsIdCallbacksNotDeliveredResponse.html#method_getPaging"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsIdCallbacksNotDeliveredResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-GroupsIdCallbacksNotDeliveredResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsIdCallbacksNotDeliveredResponse\u003A\u003A\u0024data",
             "name": "data",
@@ -24186,11 +21141,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020paging",
             "url": "classes/Arimac-Sigfox-Response-Generated-GroupsIdGeolocationPayloadsResponse.html#method_getPaging"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsIdGeolocationPayloadsResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-GroupsIdGeolocationPayloadsResponse.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsIdGeolocationPayloadsResponse\u003A\u003A\u0024data",
             "name": "data",
             "summary": "",
@@ -24225,11 +21175,6 @@ Search.appendIndex(
             "name": "getPaging",
             "summary": "Getter\u0020for\u0020paging",
             "url": "classes/Arimac-Sigfox-Response-Generated-GroupsListResponse.html#method_getPaging"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsListResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-GroupsListResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\GroupsListResponse\u003A\u003A\u0024data",
             "name": "data",
@@ -24266,11 +21211,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020paging",
             "url": "classes/Arimac-Sigfox-Response-Generated-ProfilesListResponse.html#method_getPaging"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ProfilesListResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-ProfilesListResponse.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ProfilesListResponse\u003A\u003A\u0024data",
             "name": "data",
             "summary": "",
@@ -24295,11 +21235,6 @@ Search.appendIndex(
             "name": "getJobId",
             "summary": "Getter\u0020for\u0020jobId",
             "url": "classes/Arimac-Sigfox-Response-Generated-TilesMonarchKmzStartAsyncResponse.html#method_getJobId"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\TilesMonarchKmzStartAsyncResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-TilesMonarchKmzStartAsyncResponse.html#method_getSerializeMetaData"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\TilesMonarchKmzStartAsyncResponse\u003A\u003A\u0024jobId",
             "name": "jobId",
@@ -24331,11 +21266,6 @@ Search.appendIndex(
             "summary": "Getter\u0020for\u0020paging",
             "url": "classes/Arimac-Sigfox-Response-Generated-UsersListResponse.html#method_getPaging"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\UsersListResponse\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Response-Generated-UsersListResponse.html#method_getSerializeMetaData"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\UsersListResponse\u003A\u003A\u0024data",
             "name": "data",
             "summary": "",
@@ -24346,225 +21276,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-UsersListResponse.html#property_paging"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\ArraySerializer",
-            "name": "ArraySerializer",
-            "summary": "Serializing\u0020and\u0020deserializing\u0020arrays",
-            "url": "classes/Arimac-Sigfox-Serializer-ArraySerializer.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\ArraySerializer\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Initializing\u0020the\u0020serializer",
-            "url": "classes/Arimac-Sigfox-Serializer-ArraySerializer.html#method___construct"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\ArraySerializer\u003A\u003Aserialize\u0028\u0029",
-            "name": "serialize",
-            "summary": "Serializing\u0020an\u0020array\u0020or\u0020instance\u0020to\u0020a\u0020class\u0020instance",
-            "url": "classes/Arimac-Sigfox-Serializer-ArraySerializer.html#method_serialize"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\ArraySerializer\u003A\u003Adeserialize\u0028\u0029",
-            "name": "deserialize",
-            "summary": "Deserializing\u0020an\u0020instance\u0020to\u0020a\u0020json\u0020serializable\u0020value",
-            "url": "classes/Arimac-Sigfox-Serializer-ArraySerializer.html#method_deserialize"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\ArraySerializer\u003A\u003AgetType\u0028\u0029",
-            "name": "getType",
-            "summary": "Returning\u0020the\u0020type\u0020name\u0020of\u0020the\u0020item",
-            "url": "classes/Arimac-Sigfox-Serializer-ArraySerializer.html#method_getType"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\ArraySerializer\u003A\u003A\u0024item",
-            "name": "item",
+            "fqsen": "\\Arimac\\Sigfox\\Response\\PaginatedResponse",
+            "name": "PaginatedResponse",
             "summary": "",
-            "url": "classes/Arimac-Sigfox-Serializer-ArraySerializer.html#property_item"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\ArraySerializer\u003A\u003A\u0024propertyName",
-            "name": "propertyName",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Serializer-ArraySerializer.html#property_propertyName"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\ClassSerializer",
-            "name": "ClassSerializer",
-            "summary": "Serializing\u0020and\u0020deserializing\u0020class\u0020instances",
-            "url": "classes/Arimac-Sigfox-Serializer-ClassSerializer.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\ClassSerializer\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Initializing\u0020the\u0020serializer",
-            "url": "classes/Arimac-Sigfox-Serializer-ClassSerializer.html#method___construct"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\ClassSerializer\u003A\u003Aserialize\u0028\u0029",
-            "name": "serialize",
-            "summary": "Serializing\u0020an\u0020array\u0020or\u0020instance\u0020to\u0020a\u0020class\u0020instance",
-            "url": "classes/Arimac-Sigfox-Serializer-ClassSerializer.html#method_serialize"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\ClassSerializer\u003A\u003Adeserialize\u0028\u0029",
-            "name": "deserialize",
-            "summary": "Deserializing\u0020an\u0020instance\u0020to\u0020a\u0020json\u0020serializable\u0020value",
-            "url": "classes/Arimac-Sigfox-Serializer-ClassSerializer.html#method_deserialize"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\ClassSerializer\u003A\u003AgetType\u0028\u0029",
-            "name": "getType",
-            "summary": "Returning\u0020the\u0020type\u0020name\u0020of\u0020the\u0020item",
-            "url": "classes/Arimac-Sigfox-Serializer-ClassSerializer.html#method_getType"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\ClassSerializer\u003A\u003A\u0024name",
-            "name": "name",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Serializer-ClassSerializer.html#property_name"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\GenericSerializer",
-            "name": "GenericSerializer",
-            "summary": "Serializing\u0020and\u0020deserializing\u0020generic\u0020types",
-            "url": "classes/Arimac-Sigfox-Serializer-GenericSerializer.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\GenericSerializer\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Initializing\u0020the\u0020serializer",
-            "url": "classes/Arimac-Sigfox-Serializer-GenericSerializer.html#method___construct"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\GenericSerializer\u003A\u003Aserialize\u0028\u0029",
-            "name": "serialize",
-            "summary": "Serializing\u0020an\u0020array\u0020or\u0020instance\u0020to\u0020a\u0020class\u0020instance",
-            "url": "classes/Arimac-Sigfox-Serializer-GenericSerializer.html#method_serialize"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\GenericSerializer\u003A\u003Adeserialize\u0028\u0029",
-            "name": "deserialize",
-            "summary": "Deserializing\u0020an\u0020instance\u0020to\u0020a\u0020json\u0020serializable\u0020value",
-            "url": "classes/Arimac-Sigfox-Serializer-GenericSerializer.html#method_deserialize"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\GenericSerializer\u003A\u003AgetType\u0028\u0029",
-            "name": "getType",
-            "summary": "Returning\u0020the\u0020type\u0020name\u0020of\u0020the\u0020item",
-            "url": "classes/Arimac-Sigfox-Serializer-GenericSerializer.html#method_getType"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\GenericSerializer\u003A\u003A\u0024parentType",
-            "name": "parentType",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Serializer-GenericSerializer.html#property_parentType"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\GenericSerializer\u003A\u003A\u0024childType",
-            "name": "childType",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Serializer-GenericSerializer.html#property_childType"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\Impl\\Definition",
-            "name": "Definition",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Serializer-Impl-Definition.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\Impl\\Definition\u003A\u003AgetSerializeMetaData\u0028\u0029",
-            "name": "getSerializeMetaData",
-            "summary": "Returning\u0020all\u0020meta\u0020data\u0020to\u0020serialize\u0020and\u0020deserialize\u0020objects",
-            "url": "classes/Arimac-Sigfox-Serializer-Impl-Definition.html#method_getSerializeMetaData"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\Impl\\Definition\u003A\u003AisExtendable\u0028\u0029",
-            "name": "isExtendable",
-            "summary": "Returning\u0020the\u0020weather\u0020the\u0020class\u0020is\u0020extendable\u0020or\u0020not",
-            "url": "classes/Arimac-Sigfox-Serializer-Impl-Definition.html#method_isExtendable"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\Impl\\Generic",
-            "name": "Generic",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Serializer-Impl-Generic.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\Impl\\Generic\u003A\u003Aserialize\u0028\u0029",
-            "name": "serialize",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Serializer-Impl-Generic.html#method_serialize"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\Impl\\Generic\u003A\u003Adeserialize\u0028\u0029",
-            "name": "deserialize",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Serializer-Impl-Generic.html#method_deserialize"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\PrimitiveSerializer",
-            "name": "PrimitiveSerializer",
-            "summary": "Serializing\u0020and\u0020deserializing\u0020primitive\u0020typed\u0020values.\u0020\u0028array,\u0020string,\u0020int,\u0020float,\u0020bool\u0029",
-            "url": "classes/Arimac-Sigfox-Serializer-PrimitiveSerializer.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\PrimitiveSerializer\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Initializing\u0020the\u0020serializer",
-            "url": "classes/Arimac-Sigfox-Serializer-PrimitiveSerializer.html#method___construct"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\PrimitiveSerializer\u003A\u003Avalidate\u0028\u0029",
-            "name": "validate",
-            "summary": "Validating\u0020the\u0020type\u0020of\u0020the\u0020value",
-            "url": "classes/Arimac-Sigfox-Serializer-PrimitiveSerializer.html#method_validate"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\PrimitiveSerializer\u003A\u003Aserialize\u0028\u0029",
-            "name": "serialize",
-            "summary": "Serializing\u0020an\u0020array\u0020or\u0020instance\u0020to\u0020a\u0020class\u0020instance",
-            "url": "classes/Arimac-Sigfox-Serializer-PrimitiveSerializer.html#method_serialize"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\PrimitiveSerializer\u003A\u003Adeserialize\u0028\u0029",
-            "name": "deserialize",
-            "summary": "Deserializing\u0020an\u0020instance\u0020to\u0020a\u0020json\u0020serializable\u0020value",
-            "url": "classes/Arimac-Sigfox-Serializer-PrimitiveSerializer.html#method_deserialize"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\PrimitiveSerializer\u003A\u003AgetType\u0028\u0029",
-            "name": "getType",
-            "summary": "Returning\u0020the\u0020type\u0020name\u0020of\u0020the\u0020item",
-            "url": "classes/Arimac-Sigfox-Serializer-PrimitiveSerializer.html#method_getType"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\PrimitiveSerializer\u003A\u003A\u0024type",
-            "name": "type",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Serializer-PrimitiveSerializer.html#property_type"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\Serializer",
-            "name": "Serializer",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Serializer-Serializer.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\Serializer\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Initializing\u0020the\u0020serializer",
-            "url": "classes/Arimac-Sigfox-Serializer-Serializer.html#method___construct"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\Serializer\u003A\u003Aserialize\u0028\u0029",
-            "name": "serialize",
-            "summary": "Serializing\u0020an\u0020array\u0020or\u0020instance\u0020to\u0020a\u0020class\u0020instance",
-            "url": "classes/Arimac-Sigfox-Serializer-Serializer.html#method_serialize"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\Serializer\u003A\u003Adeserialize\u0028\u0029",
-            "name": "deserialize",
-            "summary": "Deserializing\u0020an\u0020instance\u0020to\u0020a\u0020json\u0020serializable\u0020value",
-            "url": "classes/Arimac-Sigfox-Serializer-Serializer.html#method_deserialize"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\Serializer\u003A\u003AgetType\u0028\u0029",
-            "name": "getType",
-            "summary": "Returning\u0020the\u0020type\u0020name\u0020of\u0020the\u0020item",
-            "url": "classes/Arimac-Sigfox-Serializer-Serializer.html#method_getType"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\Serializer\u003A\u003AsetParent\u0028\u0029",
-            "name": "setParent",
-            "summary": "Setting\u0020the\u0020upper\u0020level\u0020serializer",
-            "url": "classes/Arimac-Sigfox-Serializer-Serializer.html#method_setParent"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\Serializer\u003A\u003AgetParent\u0028\u0029",
-            "name": "getParent",
-            "summary": "Returning\u0020the\u0020upper\u0020level\u0020serializer",
-            "url": "classes/Arimac-Sigfox-Serializer-Serializer.html#method_getParent"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\Serializer\u003A\u003AgetParentType\u0028\u0029",
-            "name": "getParentType",
-            "summary": "Returning\u0020the\u0020super\u0020parent\u0020type",
-            "url": "classes/Arimac-Sigfox-Serializer-Serializer.html#method_getParentType"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\Serializer\u003A\u003A\u0024parent",
-            "name": "parent",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Serializer-Serializer.html#property_parent"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\Serializer\u003A\u003A\u0024className",
-            "name": "className",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Serializer-Serializer.html#property_className"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\Serializer\u003A\u003A\u0024propertyName",
-            "name": "propertyName",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Serializer-Serializer.html#property_propertyName"
+            "url": "classes/Arimac-Sigfox-Response-PaginatedResponse.html"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Sigfox",
             "name": "Sigfox",
@@ -24616,56 +21331,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Sigfox.html#method_users"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Client\\ClientImpl",
-            "name": "ClientImpl",
-            "summary": "Implement\u0020this\u0020to\u0020use\u0020different\u0020HTTP\u0020clients",
-            "url": "classes/Arimac-Sigfox-Client-ClientImpl.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Client\\ClientImpl\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Initializing\u0020the\u0020client",
-            "url": "classes/Arimac-Sigfox-Client-ClientImpl.html#method___construct"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Client\\ClientImpl\u003A\u003Arequest\u0028\u0029",
-            "name": "request",
-            "summary": "Making\u0020a\u0020request\u0020to\u0020the\u0020API",
-            "url": "classes/Arimac-Sigfox-Client-ClientImpl.html#method_request"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Client\\Guzzle",
-            "name": "Guzzle",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Client-Guzzle.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Client\\Guzzle\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "Initializing\u0020the\u0020client",
-            "url": "classes/Arimac-Sigfox-Client-Guzzle.html#method___construct"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Client\\Guzzle\u003A\u003Arequest\u0028\u0029",
-            "name": "request",
-            "summary": "Making\u0020a\u0020request\u0020to\u0020the\u0020API",
-            "url": "classes/Arimac-Sigfox-Client-Guzzle.html#method_request"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Client\\Guzzle\u003A\u003A\u0024client",
-            "name": "client",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Client-Guzzle.html#property_client"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository",
-            "name": "Repository",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\u003A\u003Abind\u0028\u0029",
-            "name": "bind",
-            "summary": "Binding\u0020path\u0020parameters\u0020to\u0020the\u0020URL",
-            "url": "classes/Arimac-Sigfox-Repository.html#method_bind"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\PaginatedResponse",
-            "name": "PaginatedResponse",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Response-PaginatedResponse.html"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\SigfoxExt",
             "name": "SigfoxExt",
             "summary": "Constructor\u0020of\u0020the\u0020\u0060Sigfox\u0060\u0020class.",
@@ -24676,15 +21341,15 @@ Search.appendIndex(
             "summary": "Creating\u0020a\u0020Sigfox\u0020client\u0020instance",
             "url": "classes/Arimac-Sigfox-SigfoxExt.html#method___construct"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\SigfoxExt\u003A\u003A\u0024baseUrl",
-            "name": "baseUrl",
+            "fqsen": "\\Arimac\\Sigfox\\Definition",
+            "name": "Definition",
             "summary": "",
-            "url": "classes/Arimac-Sigfox-SigfoxExt.html#property_baseUrl"
+            "url": "classes/Arimac-Sigfox-Definition.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\SigfoxExt\u003A\u003A\u0024client",
-            "name": "client",
+            "fqsen": "\\Arimac\\Sigfox\\Request",
+            "name": "Request",
             "summary": "",
-            "url": "classes/Arimac-Sigfox-SigfoxExt.html#property_client"
+            "url": "classes/Arimac-Sigfox-Request.html"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -24840,15 +21505,5 @@ Search.appendIndex(
             "name": "Response",
             "summary": "",
             "url": "namespaces/arimac-sigfox-response.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer",
-            "name": "Serializer",
-            "summary": "",
-            "url": "namespaces/arimac-sigfox-serializer.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Serializer\\Impl",
-            "name": "Impl",
-            "summary": "",
-            "url": "namespaces/arimac-sigfox-serializer-impl.html"
         }            ]
 );

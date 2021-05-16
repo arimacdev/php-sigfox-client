@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Documentation</title>
+    <title>PHP Sigfox Client</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="../">
     <link rel="icon" href="images/favicon.ico"/>
@@ -19,7 +19,7 @@
     </head>
 <body id="top">
     <header class="phpdocumentor-header phpdocumentor-section">
-    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">Documentation</a></h1>
+    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">PHP Sigfox Client</a></h1>
     <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
     <label class="phpdocumentor-header__menu-icon" for="menu-button">
         <i class="fas fa-bars"></i>
@@ -121,20 +121,6 @@
 <dd>Ending timestamp (in milliseconds since Unix Epoch).</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Request.html#property_body">$body</a>
-    <span>
-                &nbsp;: array&lt;string|int, mixed&gt;            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Definition.html#property_extendable">$extendable</a>
-    <span>
-                &nbsp;: bool            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#property_limit">$limit</a>
     <span>
                 &nbsp;: int|null            </span>
@@ -149,32 +135,11 @@
 <dd>Defines the number of items to skip</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#property_query">$query</a>
-    <span>
-                &nbsp;: array&lt;string|int, mixed&gt;            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Definition.html#property_required">$required</a>
-    <span>
-                &nbsp;: array&lt;string|int, mixed&gt;            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#property_since">$since</a>
     <span>
                 &nbsp;: int|null            </span>
 </dt>
 <dd>Starting timestamp (in milliseconds since Unix Epoch).</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Definition.html#property_validations">$validations</a>
-    <span>
-                &nbsp;: array&lt;string|int, mixed&gt;            </span>
-</dt>
-<dd></dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#method_getBefore">getBefore()</a>
@@ -182,13 +147,6 @@
                         &nbsp;: int    </span>
 </dt>
 <dd>Getter for before</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Request.html#method_getBodyFields">getBodyFields()</a>
-    <span>
-                        &nbsp;: array&lt;string|int, string&gt;    </span>
-</dt>
-<dd>Returning all property names for request body</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#method_getLimit">getLimit()</a>
@@ -205,32 +163,11 @@
 <dd>Getter for offset</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Request.html#method_getQueryFields">getQueryFields()</a>
-    <span>
-                        &nbsp;: array&lt;string|int, string&gt;    </span>
-</dt>
-<dd>Returning all property names for query string</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#method_getSerializeMetaData">getSerializeMetaData()</a>
-    <span>
-                        &nbsp;: array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;    </span>
-</dt>
-<dd>Returning all meta data to serialize and deserialize objects</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#method_getSince">getSince()</a>
     <span>
                         &nbsp;: int    </span>
 </dt>
 <dd>Getter for since</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Definition.html#method_isExtendable">isExtendable()</a>
-    <span>
-                        &nbsp;: bool    </span>
-</dt>
-<dd>Returning the weather the class is extendable or not</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#method_setBefore">setBefore()</a>
@@ -311,66 +248,6 @@
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_body">
-        $body
-        <a href="classes/Arimac-Sigfox-Request.html#property_body" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Request.php"><a href="files/src-request.html"><abbr title="src/Request.php">Request.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">6</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$body</span>
-     = <span class="phpdocumentor-signature__default-value">[]</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_extendable">
-        $extendable
-        <a href="classes/Arimac-Sigfox-Definition.html#property_extendable" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">14</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">bool</span>
-    <span class="phpdocumentor-signature__name">$extendable</span>
-     = <span class="phpdocumentor-signature__default-value">false</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="property_limit">
         $limit
         <a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#property_limit" class="headerlink"><i class="fas fa-link"></i></a>
@@ -435,66 +312,6 @@
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_query">
-        $query
-        <a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#property_query" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesIdCallbacksNotDelivered.php"><a href="files/src-request-devicetypesidcallbacksnotdelivered.html"><abbr title="src/Request/DeviceTypesIdCallbacksNotDelivered.php">DeviceTypesIdCallbacksNotDelivered.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">36</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$query</span>
-     = <span class="phpdocumentor-signature__default-value">array(&#039;since&#039;, &#039;before&#039;, &#039;limit&#039;, &#039;offset&#039;)</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_required">
-        $required
-        <a href="classes/Arimac-Sigfox-Definition.html#property_required" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">10</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$required</span>
-     = <span class="phpdocumentor-signature__default-value">[]</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="property_since">
         $since
         <a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#property_since" class="headerlink"><i class="fas fa-link"></i></a>
@@ -520,36 +337,6 @@
     
 
 </article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_validations">
-        $validations
-        <a href="classes/Arimac-Sigfox-Definition.html#property_validations" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">12</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$validations</span>
-     = <span class="phpdocumentor-signature__default-value">[]</span></code>
-
-    
-    
-
-</article>
             </section>
 
             <section class="phpdocumentor-methods">
@@ -570,7 +357,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesIdCallbacksNotDelivered.php"><a href="files/src-request-devicetypesidcallbacksnotdelivered.html"><abbr title="src/Request/DeviceTypesIdCallbacksNotDelivered.php">DeviceTypesIdCallbacksNotDelivered.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">75</span>
+    <span class="phpdocumentor-element-found-in__line">78</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for before</p>
@@ -598,40 +385,6 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getBodyFields">
-        getBodyFields()
-        <a href="classes/Arimac-Sigfox-Request.html#method_getBodyFields" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Request.php"><a href="files/src-request.html"><abbr title="src/Request.php">Request.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">15</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Returning all property names for request body</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getBodyFields</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_getLimit">
         getLimit()
         <a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#method_getLimit" class="headerlink"><i class="fas fa-link"></i></a>
@@ -639,7 +392,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesIdCallbacksNotDelivered.php"><a href="files/src-request-devicetypesidcallbacksnotdelivered.html"><abbr title="src/Request/DeviceTypesIdCallbacksNotDelivered.php">DeviceTypesIdCallbacksNotDelivered.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">96</span>
+    <span class="phpdocumentor-element-found-in__line">99</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for limit</p>
@@ -674,7 +427,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesIdCallbacksNotDelivered.php"><a href="files/src-request-devicetypesidcallbacksnotdelivered.html"><abbr title="src/Request/DeviceTypesIdCallbacksNotDelivered.php">DeviceTypesIdCallbacksNotDelivered.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">117</span>
+    <span class="phpdocumentor-element-found-in__line">120</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for offset</p>
@@ -702,88 +455,6 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getQueryFields">
-        getQueryFields()
-        <a href="classes/Arimac-Sigfox-Request.html#method_getQueryFields" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Request.php"><a href="files/src-request.html"><abbr title="src/Request.php">Request.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">24</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Returning all property names for query string</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getQueryFields</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getSerializeMetaData">
-        getSerializeMetaData()
-        <a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesIdCallbacksNotDelivered.php"><a href="files/src-request-devicetypesidcallbacksnotdelivered.html"><abbr title="src/Request/DeviceTypesIdCallbacksNotDelivered.php">DeviceTypesIdCallbacksNotDelivered.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">124</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Returning all meta data to serialize and deserialize objects</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getSerializeMetaData</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">inheritdoc</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"></section>
-
-                                    </dd>
-                        </dl>
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_getSince">
         getSince()
         <a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#method_getSince" class="headerlink"><i class="fas fa-link"></i></a>
@@ -791,7 +462,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesIdCallbacksNotDelivered.php"><a href="files/src-request-devicetypesidcallbacksnotdelivered.html"><abbr title="src/Request/DeviceTypesIdCallbacksNotDelivered.php">DeviceTypesIdCallbacksNotDelivered.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for since</p>
@@ -819,54 +490,6 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_isExtendable">
-        isExtendable()
-        <a href="classes/Arimac-Sigfox-Definition.html#method_isExtendable" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">24</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Returning the weather the class is extendable or not</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">isExtendable</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">inheritdoc</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"></section>
-
-                                    </dd>
-                        </dl>
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_setBefore">
         setBefore()
         <a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html#method_setBefore" class="headerlink"><i class="fas fa-link"></i></a>
@@ -874,7 +497,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesIdCallbacksNotDelivered.php"><a href="files/src-request-devicetypesidcallbacksnotdelivered.html"><abbr title="src/Request/DeviceTypesIdCallbacksNotDelivered.php">DeviceTypesIdCallbacksNotDelivered.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for before</p>
@@ -921,7 +544,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesIdCallbacksNotDelivered.php"><a href="files/src-request-devicetypesidcallbacksnotdelivered.html"><abbr title="src/Request/DeviceTypesIdCallbacksNotDelivered.php">DeviceTypesIdCallbacksNotDelivered.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">89</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for limit</p>
@@ -968,7 +591,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesIdCallbacksNotDelivered.php"><a href="files/src-request-devicetypesidcallbacksnotdelivered.html"><abbr title="src/Request/DeviceTypesIdCallbacksNotDelivered.php">DeviceTypesIdCallbacksNotDelivered.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">107</span>
+    <span class="phpdocumentor-element-found-in__line">110</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for offset</p>
@@ -1015,7 +638,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesIdCallbacksNotDelivered.php"><a href="files/src-request-devicetypesidcallbacksnotdelivered.html"><abbr title="src/Request/DeviceTypesIdCallbacksNotDelivered.php">DeviceTypesIdCallbacksNotDelivered.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for since</p>

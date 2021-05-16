@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Documentation</title>
+    <title>PHP Sigfox Client</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <base href="../">
     <link rel="icon" href="images/favicon.ico"/>
@@ -19,7 +19,7 @@
     </head>
 <body id="top">
     <header class="phpdocumentor-header phpdocumentor-section">
-    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">Documentation</a></h1>
+    <h1 class="phpdocumentor-title"><a href="" class="phpdocumentor-title__link">PHP Sigfox Client</a></h1>
     <input class="phpdocumentor-header__menu-button" type="checkbox" id="menu-button" name="menu-button" />
     <label class="phpdocumentor-header__menu-icon" for="menu-button">
         <i class="fas fa-bars"></i>
@@ -873,13 +873,6 @@ is installed.</dd>
 <dd>Environment loss of this base station (in dB)</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Definition.html#property_extendable">$extendable</a>
-    <span>
-                &nbsp;: bool            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Definition-BaseStation.html#property_firstCommissioningTime">$firstCommissioningTime</a>
     <span>
                 &nbsp;: int|null            </span>
@@ -1142,13 +1135,6 @@ decommisioning time otherwise</dd>
 <dd>Base station RAM log.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Definition.html#property_required">$required</a>
-    <span>
-                &nbsp;: array&lt;string|int, mixed&gt;            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Definition-BaseStation.html#property_resources">$resources</a>
     <span>
                 &nbsp;: array&lt;string|int, mixed&gt;|null            </span>
@@ -1203,13 +1189,6 @@ decommisioning time otherwise</dd>
                 &nbsp;: int|null            </span>
 </dt>
 <dd>TX power margin of this base station (in dBm)</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Definition-BaseStation.html#property_validations">$validations</a>
-    <span>
-                &nbsp;: array&lt;string|int, mixed&gt;            </span>
-</dt>
-<dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Definition-BaseStation.html#property_versionCurrent">$versionCurrent</a>
@@ -1681,13 +1660,6 @@ decommisioning time otherwise</dd>
 <dd>Getter for restartTime</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Definition-BaseStation.html#method_getSerializeMetaData">getSerializeMetaData()</a>
-    <span>
-                        &nbsp;: array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;    </span>
-</dt>
-<dd>Returning all meta data to serialize and deserialize objects</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Definition-BaseStation.html#method_getServiceCoverage">getServiceCoverage()</a>
     <span>
                         &nbsp;: int    </span>
@@ -1749,13 +1721,6 @@ decommisioning time otherwise</dd>
                         &nbsp;: int    </span>
 </dt>
 <dd>Getter for wwanMode</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Definition.html#method_isExtendable">isExtendable()</a>
-    <span>
-                        &nbsp;: bool    </span>
-</dt>
-<dd>Returning the weather the class is extendable or not</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Definition-BaseStation.html#method_setActions">setActions()</a>
@@ -5410,36 +5375,6 @@ is installed.</p>
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_extendable">
-        $extendable
-        <a href="classes/Arimac-Sigfox-Definition.html#property_extendable" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">14</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">bool</span>
-    <span class="phpdocumentor-signature__name">$extendable</span>
-     = <span class="phpdocumentor-signature__default-value">false</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="property_firstCommissioningTime">
         $firstCommissioningTime
         <a href="classes/Arimac-Sigfox-Definition-BaseStation.html#property_firstCommissioningTime" class="headerlink"><i class="fas fa-link"></i></a>
@@ -6784,36 +6719,6 @@ decommisioning time otherwise</p>
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_required">
-        $required
-        <a href="classes/Arimac-Sigfox-Definition.html#property_required" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">10</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$required</span>
-     = <span class="phpdocumentor-signature__default-value">[]</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="property_resources">
         $resources
         <a href="classes/Arimac-Sigfox-Definition-BaseStation.html#property_resources" class="headerlink"><i class="fas fa-link"></i></a>
@@ -7094,36 +6999,6 @@ decommisioning time otherwise</p>
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_validations">
-        $validations
-        <a href="classes/Arimac-Sigfox-Definition-BaseStation.html#property_validations" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">877</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$validations</span>
-     = <span class="phpdocumentor-signature__default-value">array(&#039;macroChannel&#039; =&gt; array(&#039;min:0&#039;, &#039;numeric&#039;, &#039;nullable&#039;), &#039;txPowerMargin&#039; =&gt; array(&#039;max:20&#039;, &#039;min:-20&#039;, &#039;numeric&#039;, &#039;nullable&#039;))</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="property_versionCurrent">
         $versionCurrent
         <a href="classes/Arimac-Sigfox-Definition-BaseStation.html#property_versionCurrent" class="headerlink"><i class="fas fa-link"></i></a>
@@ -7253,7 +7128,7 @@ decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2637</span>
+    <span class="phpdocumentor-element-found-in__line">2640</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for actions</p>
@@ -7287,7 +7162,7 @@ decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2574</span>
+    <span class="phpdocumentor-element-found-in__line">2577</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for antenna</p>
@@ -7321,7 +7196,7 @@ decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2205</span>
+    <span class="phpdocumentor-element-found-in__line">2208</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for antennaGain</p>
@@ -7356,7 +7231,7 @@ decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2251</span>
+    <span class="phpdocumentor-element-found-in__line">2254</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for antennaInsertionLoss</p>
@@ -7392,7 +7267,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2450</span>
+    <span class="phpdocumentor-element-found-in__line">2453</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for antennaLocationCode</p>
@@ -7435,7 +7310,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2274</span>
+    <span class="phpdocumentor-element-found-in__line">2277</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for antennaMaxAdmissiblePower</p>
@@ -7471,7 +7346,7 @@ antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2228</span>
+    <span class="phpdocumentor-element-found-in__line">2231</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for antennaNoiseFigure</p>
@@ -7507,7 +7382,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2595</span>
+    <span class="phpdocumentor-element-found-in__line">2598</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for availableConnections</p>
@@ -7541,7 +7416,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1641</span>
+    <span class="phpdocumentor-element-found-in__line">1644</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for baseFrequency</p>
@@ -7576,7 +7451,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1896</span>
+    <span class="phpdocumentor-element-found-in__line">1899</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for bitRate</p>
@@ -7619,7 +7494,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2184</span>
+    <span class="phpdocumentor-element-found-in__line">2187</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for cableLoss</p>
@@ -7654,7 +7529,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2379</span>
+    <span class="phpdocumentor-element-found-in__line">2382</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for cavityFilterInsertionLoss</p>
@@ -7689,7 +7564,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2121</span>
+    <span class="phpdocumentor-element-found-in__line">2124</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for cavityFilterVersion</p>
@@ -7759,7 +7634,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2142</span>
+    <span class="phpdocumentor-element-found-in__line">2145</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for cavityFilterVersionDescription</p>
@@ -7794,7 +7669,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1021</span>
+    <span class="phpdocumentor-element-found-in__line">1024</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for commissioningTime</p>
@@ -7829,7 +7704,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1362</span>
+    <span class="phpdocumentor-element-found-in__line">1365</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for communicationState</p>
@@ -7881,7 +7756,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1199</span>
+    <span class="phpdocumentor-element-found-in__line">1202</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for connectionType</p>
@@ -7924,7 +7799,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1577</span>
+    <span class="phpdocumentor-element-found-in__line">1580</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for createdBy</p>
@@ -7959,7 +7834,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1556</span>
+    <span class="phpdocumentor-element-found-in__line">1559</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for creationTime</p>
@@ -7994,7 +7869,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1042</span>
+    <span class="phpdocumentor-element-found-in__line">1045</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for decommissioningTime</p>
@@ -8029,7 +7904,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1220</span>
+    <span class="phpdocumentor-element-found-in__line">1223</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for description</p>
@@ -8064,7 +7939,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1662</span>
+    <span class="phpdocumentor-element-found-in__line">1665</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for downlinkCenterFrequency</p>
@@ -8099,7 +7974,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1514</span>
+    <span class="phpdocumentor-element-found-in__line">1517</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for downlinkEnabled</p>
@@ -8134,7 +8009,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1938</span>
+    <span class="phpdocumentor-element-found-in__line">1941</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for elevation</p>
@@ -8169,7 +8044,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2163</span>
+    <span class="phpdocumentor-element-found-in__line">2166</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for environmentLoss</p>
@@ -8204,7 +8079,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1000</span>
+    <span class="phpdocumentor-element-found-in__line">1003</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for firstCommissioningTime</p>
@@ -8239,7 +8114,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2295</span>
+    <span class="phpdocumentor-element-found-in__line">2298</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for gainFlag</p>
@@ -8274,7 +8149,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2511</span>
+    <span class="phpdocumentor-element-found-in__line">2514</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for geolocComputation</p>
@@ -8320,7 +8195,7 @@ with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2553</span>
+    <span class="phpdocumentor-element-found-in__line">2556</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for geolocGlobalStateOfContribution</p>
@@ -8373,7 +8248,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1917</span>
+    <span class="phpdocumentor-element-found-in__line">1920</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for globalCoverageEnable</p>
@@ -8408,7 +8283,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">979</span>
+    <span class="phpdocumentor-element-found-in__line">982</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for group</p>
@@ -8442,7 +8317,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1264</span>
+    <span class="phpdocumentor-element-found-in__line">1267</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for hwFamily</p>
@@ -8476,7 +8351,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">958</span>
+    <span class="phpdocumentor-element-found-in__line">961</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for hwVersion</p>
@@ -8511,7 +8386,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">895</span>
+    <span class="phpdocumentor-element-found-in__line">898</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for id</p>
@@ -8546,7 +8421,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1535</span>
+    <span class="phpdocumentor-element-found-in__line">1538</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for installer</p>
@@ -8581,7 +8456,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1285</span>
+    <span class="phpdocumentor-element-found-in__line">1288</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for keepAlive</p>
@@ -8616,7 +8491,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1128</span>
+    <span class="phpdocumentor-element-found-in__line">1131</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for lastCommunicationTime</p>
@@ -8651,7 +8526,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1620</span>
+    <span class="phpdocumentor-element-found-in__line">1623</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for lastEditedBy</p>
@@ -8686,7 +8561,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1599</span>
+    <span class="phpdocumentor-element-found-in__line">1602</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for lastEditionTime</p>
@@ -8721,7 +8596,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1149</span>
+    <span class="phpdocumentor-element-found-in__line">1152</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for lastPingTime</p>
@@ -8756,7 +8631,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1306</span>
+    <span class="phpdocumentor-element-found-in__line">1309</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for lat</p>
@@ -8791,7 +8666,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1430</span>
+    <span class="phpdocumentor-element-found-in__line">1433</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for lifecycleStatus</p>
@@ -8840,7 +8715,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2074</span>
+    <span class="phpdocumentor-element-found-in__line">2077</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for lnaByPass</p>
@@ -8875,7 +8750,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2358</span>
+    <span class="phpdocumentor-element-found-in__line">2361</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for lnaInsertionLoss</p>
@@ -8910,7 +8785,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1327</span>
+    <span class="phpdocumentor-element-found-in__line">1330</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for lng</p>
@@ -8945,7 +8820,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1243</span>
+    <span class="phpdocumentor-element-found-in__line">1246</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for location</p>
@@ -8981,7 +8856,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1683</span>
+    <span class="phpdocumentor-element-found-in__line">1686</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for macroChannel</p>
@@ -9016,7 +8891,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2616</span>
+    <span class="phpdocumentor-element-found-in__line">2619</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for makerCode</p>
@@ -9051,7 +8926,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1086</span>
+    <span class="phpdocumentor-element-found-in__line">1089</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for manufacturerDeliveryTime</p>
@@ -9086,7 +8961,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2032</span>
+    <span class="phpdocumentor-element-found-in__line">2035</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for mastEquipment</p>
@@ -9193,7 +9068,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2053</span>
+    <span class="phpdocumentor-element-found-in__line">2056</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for mastEquipmentDescription</p>
@@ -9228,7 +9103,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2316</span>
+    <span class="phpdocumentor-element-found-in__line">2319</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for mastEquipmentGain</p>
@@ -9263,7 +9138,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2337</span>
+    <span class="phpdocumentor-element-found-in__line">2340</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for mastEquipmentNoiseFigure</p>
@@ -9298,7 +9173,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1472</span>
+    <span class="phpdocumentor-element-found-in__line">1475</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for muted</p>
@@ -9333,7 +9208,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">916</span>
+    <span class="phpdocumentor-element-found-in__line">919</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for name</p>
@@ -9368,7 +9243,7 @@ Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1065</span>
+    <span class="phpdocumentor-element-found-in__line">1068</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for operatingDays</p>
@@ -9404,7 +9279,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2421</span>
+    <span class="phpdocumentor-element-found-in__line">2424</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for powerCapability</p>
@@ -9439,7 +9314,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1766</span>
+    <span class="phpdocumentor-element-found-in__line">1769</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for preAmp1</p>
@@ -9485,7 +9360,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1797</span>
+    <span class="phpdocumentor-element-found-in__line">1800</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for preAmp2</p>
@@ -9531,7 +9406,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1735</span>
+    <span class="phpdocumentor-element-found-in__line">1738</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for protocol</p>
@@ -9577,7 +9452,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1451</span>
+    <span class="phpdocumentor-element-found-in__line">1454</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for queue</p>
@@ -9611,7 +9486,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1830</span>
+    <span class="phpdocumentor-element-found-in__line">1833</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for RAMLog</p>
@@ -9660,7 +9535,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2658</span>
+    <span class="phpdocumentor-element-found-in__line">2661</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for resources</p>
@@ -9694,7 +9569,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1170</span>
+    <span class="phpdocumentor-element-found-in__line">1173</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for restartTime</p>
@@ -9722,54 +9597,6 @@ to decommisioning time otherwise</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getSerializeMetaData">
-        getSerializeMetaData()
-        <a href="classes/Arimac-Sigfox-Definition-BaseStation.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">2665</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Returning all meta data to serialize and deserialize objects</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getSerializeMetaData</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">inheritdoc</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"></section>
-
-                                    </dd>
-                        </dl>
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_getServiceCoverage">
         getServiceCoverage()
         <a href="classes/Arimac-Sigfox-Definition-BaseStation.html#method_getServiceCoverage" class="headerlink"><i class="fas fa-link"></i></a>
@@ -9777,7 +9604,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2479</span>
+    <span class="phpdocumentor-element-found-in__line">2482</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for serviceCoverage</p>
@@ -9820,7 +9647,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1959</span>
+    <span class="phpdocumentor-element-found-in__line">1962</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for splatRadius</p>
@@ -9855,7 +9682,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1397</span>
+    <span class="phpdocumentor-element-found-in__line">1400</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for state</p>
@@ -9907,7 +9734,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1493</span>
+    <span class="phpdocumentor-element-found-in__line">1496</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for transmissionAuthorized</p>
@@ -9942,7 +9769,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1704</span>
+    <span class="phpdocumentor-element-found-in__line">1707</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for txPowerAmplification</p>
@@ -9977,7 +9804,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2400</span>
+    <span class="phpdocumentor-element-found-in__line">2403</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for txPowerMargin</p>
@@ -10012,7 +9839,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">937</span>
+    <span class="phpdocumentor-element-found-in__line">940</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for versionCurrent</p>
@@ -10047,7 +9874,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1107</span>
+    <span class="phpdocumentor-element-found-in__line">1110</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for warrantyTime</p>
@@ -10082,7 +9909,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1867</span>
+    <span class="phpdocumentor-element-found-in__line">1870</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for wwanMode</p>
@@ -10130,54 +9957,6 @@ to decommisioning time otherwise</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_isExtendable">
-        isExtendable()
-        <a href="classes/Arimac-Sigfox-Definition.html#method_isExtendable" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">24</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Returning the weather the class is extendable or not</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">isExtendable</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">inheritdoc</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"></section>
-
-                                    </dd>
-                        </dl>
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_setActions">
         setActions()
         <a href="classes/Arimac-Sigfox-Definition-BaseStation.html#method_setActions" class="headerlink"><i class="fas fa-link"></i></a>
@@ -10185,7 +9964,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2627</span>
+    <span class="phpdocumentor-element-found-in__line">2630</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for actions</p>
@@ -10231,7 +10010,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2564</span>
+    <span class="phpdocumentor-element-found-in__line">2567</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for antenna</p>
@@ -10277,7 +10056,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2195</span>
+    <span class="phpdocumentor-element-found-in__line">2198</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for antennaGain</p>
@@ -10324,7 +10103,7 @@ to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2240</span>
+    <span class="phpdocumentor-element-found-in__line">2243</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for antennaInsertionLoss</p>
@@ -10372,7 +10151,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2436</span>
+    <span class="phpdocumentor-element-found-in__line">2439</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for antennaLocationCode</p>
@@ -10427,7 +10206,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2263</span>
+    <span class="phpdocumentor-element-found-in__line">2266</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for antennaMaxAdmissiblePower</p>
@@ -10475,7 +10254,7 @@ is only relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2217</span>
+    <span class="phpdocumentor-element-found-in__line">2220</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for antennaNoiseFigure</p>
@@ -10523,7 +10302,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2585</span>
+    <span class="phpdocumentor-element-found-in__line">2588</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for availableConnections</p>
@@ -10569,7 +10348,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1631</span>
+    <span class="phpdocumentor-element-found-in__line">1634</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for baseFrequency</p>
@@ -10616,7 +10395,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1882</span>
+    <span class="phpdocumentor-element-found-in__line">1885</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for bitRate</p>
@@ -10671,7 +10450,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2174</span>
+    <span class="phpdocumentor-element-found-in__line">2177</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for cableLoss</p>
@@ -10718,7 +10497,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2369</span>
+    <span class="phpdocumentor-element-found-in__line">2372</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for cavityFilterInsertionLoss</p>
@@ -10765,7 +10544,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2098</span>
+    <span class="phpdocumentor-element-found-in__line">2101</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for cavityFilterVersion</p>
@@ -10847,7 +10626,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2132</span>
+    <span class="phpdocumentor-element-found-in__line">2135</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for cavityFilterVersionDescription</p>
@@ -10894,7 +10673,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1011</span>
+    <span class="phpdocumentor-element-found-in__line">1014</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for commissioningTime</p>
@@ -10941,7 +10720,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1345</span>
+    <span class="phpdocumentor-element-found-in__line">1348</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for communicationState</p>
@@ -11005,7 +10784,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1185</span>
+    <span class="phpdocumentor-element-found-in__line">1188</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for connectionType</p>
@@ -11060,7 +10839,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1567</span>
+    <span class="phpdocumentor-element-found-in__line">1570</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for createdBy</p>
@@ -11107,7 +10886,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1546</span>
+    <span class="phpdocumentor-element-found-in__line">1549</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for creationTime</p>
@@ -11154,7 +10933,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1032</span>
+    <span class="phpdocumentor-element-found-in__line">1035</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for decommissioningTime</p>
@@ -11201,7 +10980,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1210</span>
+    <span class="phpdocumentor-element-found-in__line">1213</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for description</p>
@@ -11248,7 +11027,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1652</span>
+    <span class="phpdocumentor-element-found-in__line">1655</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for downlinkCenterFrequency</p>
@@ -11295,7 +11074,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1504</span>
+    <span class="phpdocumentor-element-found-in__line">1507</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for downlinkEnabled</p>
@@ -11342,7 +11121,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1928</span>
+    <span class="phpdocumentor-element-found-in__line">1931</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for elevation</p>
@@ -11389,7 +11168,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2153</span>
+    <span class="phpdocumentor-element-found-in__line">2156</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for environmentLoss</p>
@@ -11436,7 +11215,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">990</span>
+    <span class="phpdocumentor-element-found-in__line">993</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for firstCommissioningTime</p>
@@ -11483,7 +11262,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2285</span>
+    <span class="phpdocumentor-element-found-in__line">2288</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for gainFlag</p>
@@ -11530,7 +11309,7 @@ relevant when an antenna with a filter is installed.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2496</span>
+    <span class="phpdocumentor-element-found-in__line">2499</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for geolocComputation</p>
@@ -11589,7 +11368,7 @@ location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2535</span>
+    <span class="phpdocumentor-element-found-in__line">2538</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for geolocGlobalStateOfContribution</p>
@@ -11654,7 +11433,7 @@ Station's contribution to the Sigfox Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1907</span>
+    <span class="phpdocumentor-element-found-in__line">1910</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for globalCoverageEnable</p>
@@ -11701,7 +11480,7 @@ Station's contribution to the Sigfox Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">969</span>
+    <span class="phpdocumentor-element-found-in__line">972</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for group</p>
@@ -11747,7 +11526,7 @@ Station's contribution to the Sigfox Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1254</span>
+    <span class="phpdocumentor-element-found-in__line">1257</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for hwFamily</p>
@@ -11793,7 +11572,7 @@ Station's contribution to the Sigfox Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">948</span>
+    <span class="phpdocumentor-element-found-in__line">951</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for hwVersion</p>
@@ -11840,7 +11619,7 @@ Station's contribution to the Sigfox Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">885</span>
+    <span class="phpdocumentor-element-found-in__line">888</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for id</p>
@@ -11887,7 +11666,7 @@ Station's contribution to the Sigfox Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1525</span>
+    <span class="phpdocumentor-element-found-in__line">1528</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for installer</p>
@@ -11934,7 +11713,7 @@ Station's contribution to the Sigfox Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1275</span>
+    <span class="phpdocumentor-element-found-in__line">1278</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for keepAlive</p>
@@ -11981,7 +11760,7 @@ Station's contribution to the Sigfox Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1118</span>
+    <span class="phpdocumentor-element-found-in__line">1121</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for lastCommunicationTime</p>
@@ -12028,7 +11807,7 @@ Station's contribution to the Sigfox Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1610</span>
+    <span class="phpdocumentor-element-found-in__line">1613</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for lastEditedBy</p>
@@ -12075,7 +11854,7 @@ Station's contribution to the Sigfox Network location service.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1589</span>
+    <span class="phpdocumentor-element-found-in__line">1592</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for lastEditionTime</p>
@@ -12123,7 +11902,7 @@ Unix Epoch)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1139</span>
+    <span class="phpdocumentor-element-found-in__line">1142</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for lastPingTime</p>
@@ -12170,7 +11949,7 @@ Unix Epoch)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1296</span>
+    <span class="phpdocumentor-element-found-in__line">1299</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for lat</p>
@@ -12217,7 +11996,7 @@ Unix Epoch)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1414</span>
+    <span class="phpdocumentor-element-found-in__line">1417</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for lifecycleStatus</p>
@@ -12278,7 +12057,7 @@ Unix Epoch)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2064</span>
+    <span class="phpdocumentor-element-found-in__line">2067</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for lnaByPass</p>
@@ -12325,7 +12104,7 @@ Unix Epoch)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2348</span>
+    <span class="phpdocumentor-element-found-in__line">2351</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for lnaInsertionLoss</p>
@@ -12372,7 +12151,7 @@ Unix Epoch)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1317</span>
+    <span class="phpdocumentor-element-found-in__line">1320</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for lng</p>
@@ -12419,7 +12198,7 @@ Unix Epoch)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1232</span>
+    <span class="phpdocumentor-element-found-in__line">1235</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for location</p>
@@ -12467,7 +12246,7 @@ country (region and department available for some countries).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1673</span>
+    <span class="phpdocumentor-element-found-in__line">1676</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for macroChannel</p>
@@ -12514,7 +12293,7 @@ country (region and department available for some countries).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2606</span>
+    <span class="phpdocumentor-element-found-in__line">2609</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for makerCode</p>
@@ -12561,7 +12340,7 @@ country (region and department available for some countries).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1076</span>
+    <span class="phpdocumentor-element-found-in__line">1079</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for manufacturerDeliveryTime</p>
@@ -12608,7 +12387,7 @@ country (region and department available for some countries).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1996</span>
+    <span class="phpdocumentor-element-found-in__line">1999</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for mastEquipment</p>
@@ -12727,7 +12506,7 @@ Stations have type 21.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2043</span>
+    <span class="phpdocumentor-element-found-in__line">2046</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for mastEquipmentDescription</p>
@@ -12774,7 +12553,7 @@ Stations have type 21.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2306</span>
+    <span class="phpdocumentor-element-found-in__line">2309</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for mastEquipmentGain</p>
@@ -12821,7 +12600,7 @@ Stations have type 21.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2327</span>
+    <span class="phpdocumentor-element-found-in__line">2330</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for mastEquipmentNoiseFigure</p>
@@ -12868,7 +12647,7 @@ Stations have type 21.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1462</span>
+    <span class="phpdocumentor-element-found-in__line">1465</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for muted</p>
@@ -12915,7 +12694,7 @@ Stations have type 21.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">906</span>
+    <span class="phpdocumentor-element-found-in__line">909</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for name</p>
@@ -12962,7 +12741,7 @@ Stations have type 21.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1054</span>
+    <span class="phpdocumentor-element-found-in__line">1057</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for operatingDays</p>
@@ -13010,7 +12789,7 @@ decommissioned, or to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2411</span>
+    <span class="phpdocumentor-element-found-in__line">2414</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for powerCapability</p>
@@ -13057,7 +12836,7 @@ decommissioned, or to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1751</span>
+    <span class="phpdocumentor-element-found-in__line">1754</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for preAmp1</p>
@@ -13115,7 +12894,7 @@ decommissioned, or to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1782</span>
+    <span class="phpdocumentor-element-found-in__line">1785</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for preAmp2</p>
@@ -13173,7 +12952,7 @@ decommissioned, or to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1720</span>
+    <span class="phpdocumentor-element-found-in__line">1723</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for protocol</p>
@@ -13231,7 +13010,7 @@ decommissioned, or to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1441</span>
+    <span class="phpdocumentor-element-found-in__line">1444</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for queue</p>
@@ -13277,7 +13056,7 @@ decommissioned, or to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1814</span>
+    <span class="phpdocumentor-element-found-in__line">1817</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for RAMLog</p>
@@ -13338,7 +13117,7 @@ decommissioned, or to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2648</span>
+    <span class="phpdocumentor-element-found-in__line">2651</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for resources</p>
@@ -13384,7 +13163,7 @@ decommissioned, or to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1160</span>
+    <span class="phpdocumentor-element-found-in__line">1163</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for restartTime</p>
@@ -13431,7 +13210,7 @@ decommissioned, or to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2465</span>
+    <span class="phpdocumentor-element-found-in__line">2468</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for serviceCoverage</p>
@@ -13486,7 +13265,7 @@ decommissioned, or to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1949</span>
+    <span class="phpdocumentor-element-found-in__line">1952</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for splatRadius</p>
@@ -13533,7 +13312,7 @@ decommissioned, or to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1380</span>
+    <span class="phpdocumentor-element-found-in__line">1383</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for state</p>
@@ -13597,7 +13376,7 @@ decommissioned, or to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1483</span>
+    <span class="phpdocumentor-element-found-in__line">1486</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for transmissionAuthorized</p>
@@ -13644,7 +13423,7 @@ decommissioned, or to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1694</span>
+    <span class="phpdocumentor-element-found-in__line">1697</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for txPowerAmplification</p>
@@ -13691,7 +13470,7 @@ decommissioned, or to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">2390</span>
+    <span class="phpdocumentor-element-found-in__line">2393</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for txPowerMargin</p>
@@ -13738,7 +13517,7 @@ decommissioned, or to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">927</span>
+    <span class="phpdocumentor-element-found-in__line">930</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for versionCurrent</p>
@@ -13785,7 +13564,7 @@ decommissioned, or to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1097</span>
+    <span class="phpdocumentor-element-found-in__line">1100</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for warrantyTime</p>
@@ -13832,7 +13611,7 @@ decommissioned, or to decommisioning time otherwise</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/BaseStation.php"><a href="files/src-definition-basestation.html"><abbr title="src/Definition/BaseStation.php">BaseStation.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">1849</span>
+    <span class="phpdocumentor-element-found-in__line">1852</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for wwanMode</p>
