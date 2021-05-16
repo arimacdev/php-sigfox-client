@@ -198,6 +198,6 @@ class GsmSubscription extends InternetSubscription
      */
     public function getSerializeMetaData() : array
     {
-        return array('dataNumber' => new PrimitiveSerializer(self::class, 'dataNumber', 'string'), 'simCardNumber' => new PrimitiveSerializer(self::class, 'simCardNumber', 'string'), 'imei' => new PrimitiveSerializer(self::class, 'imei', 'string'), 'modem' => new PrimitiveSerializer(self::class, 'modem', 'string'), 'modemSerialNumber' => new PrimitiveSerializer(self::class, 'modemSerialNumber', 'string'), 'gsmConnectionType' => new PrimitiveSerializer(self::class, 'gsmConnectionType', 'int'));
+        return array('dataNumber' => new PrimitiveSerializer('string'), 'simCardNumber' => new PrimitiveSerializer('string'), 'imei' => new PrimitiveSerializer('string'), 'modem' => new PrimitiveSerializer('string'), 'modemSerialNumber' => new PrimitiveSerializer('string'), 'gsmConnectionType' => new PrimitiveSerializer('int'));
     }
 }

@@ -41,6 +41,6 @@ class DeviceUpdateJob extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'));
+        return array('name' => new PrimitiveSerializer('string'));
     }
 }

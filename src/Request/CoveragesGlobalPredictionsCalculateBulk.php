@@ -39,6 +39,8 @@ class CoveragesGlobalPredictionsCalculateBulk extends Request
     /**
      * Getter for payload
      *
+     * @internal
+     *
      * @return GlobalCoverageRequest
      */
     public function getPayload() : ?GlobalCoverageRequest
@@ -52,6 +54,6 @@ class CoveragesGlobalPredictionsCalculateBulk extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('payload' => new ClassSerializer(self::class, 'payload', GlobalCoverageRequest::class));
+        return array('payload' => new ClassSerializer(GlobalCoverageRequest::class));
     }
 }

@@ -73,6 +73,6 @@ class UserCreation extends UserUpdate
      */
     public function getSerializeMetaData() : array
     {
-        return array('email' => new PrimitiveSerializer(self::class, 'email', 'string'), 'sendWelcomeEmail' => new PrimitiveSerializer(self::class, 'sendWelcomeEmail', 'bool'));
+        return array('email' => new PrimitiveSerializer('string'), 'sendWelcomeEmail' => new PrimitiveSerializer('bool'));
     }
 }

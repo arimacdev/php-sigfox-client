@@ -69,6 +69,6 @@ class ActionJob extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('jobDone' => new PrimitiveSerializer(self::class, 'jobDone', 'bool'), 'status' => new ClassSerializer(self::class, 'status', Status::class));
+        return array('jobDone' => new PrimitiveSerializer('bool'), 'status' => new ClassSerializer(Status::class));
     }
 }

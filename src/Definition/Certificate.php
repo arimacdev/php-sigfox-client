@@ -70,6 +70,6 @@ class Certificate extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'key' => new PrimitiveSerializer(self::class, 'key', 'string'));
+        return array('id' => new PrimitiveSerializer('string'), 'key' => new PrimitiveSerializer('string'));
     }
 }

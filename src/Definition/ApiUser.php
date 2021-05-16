@@ -198,6 +198,6 @@ class ApiUser extends CommonApiUser
      */
     public function getSerializeMetaData() : array
     {
-        return array('group' => new ClassSerializer(self::class, 'group', MinGroup::class), 'creationTime' => new PrimitiveSerializer(self::class, 'creationTime', 'int'), 'id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'accessToken' => new PrimitiveSerializer(self::class, 'accessToken', 'string'), 'profiles' => new ArraySerializer(self::class, 'profiles', new ClassSerializer(self::class, 'profiles', MinProfile::class)), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
+        return array('group' => new ClassSerializer(MinGroup::class), 'creationTime' => new PrimitiveSerializer('int'), 'id' => new PrimitiveSerializer('string'), 'accessToken' => new PrimitiveSerializer('string'), 'profiles' => new ArraySerializer(new ClassSerializer(MinProfile::class)), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'resources' => new ArraySerializer(new PrimitiveSerializer('string')));
     }
 }

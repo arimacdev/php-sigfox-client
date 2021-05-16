@@ -53,6 +53,8 @@ class GroupsIdCallbacksNotDelivered extends Request
     /**
      * Getter for since
      *
+     * @internal
+     *
      * @return int Starting timestamp (in milliseconds since Unix Epoch)
      */
     public function getSince() : ?int
@@ -73,6 +75,8 @@ class GroupsIdCallbacksNotDelivered extends Request
     }
     /**
      * Getter for before
+     *
+     * @internal
      *
      * @return int Ending timestamp (in milliseconds since Unix Epoch)
      */
@@ -95,6 +99,8 @@ class GroupsIdCallbacksNotDelivered extends Request
     /**
      * Getter for limit
      *
+     * @internal
+     *
      * @return int The maximum number of items to return
      */
     public function getLimit() : ?int
@@ -116,6 +122,8 @@ class GroupsIdCallbacksNotDelivered extends Request
     /**
      * Getter for offset
      *
+     * @internal
+     *
      * @return int The number of items to skip
      */
     public function getOffset() : ?int
@@ -129,6 +137,6 @@ class GroupsIdCallbacksNotDelivered extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('since' => new PrimitiveSerializer(self::class, 'since', 'int'), 'before' => new PrimitiveSerializer(self::class, 'before', 'int'), 'limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'offset' => new PrimitiveSerializer(self::class, 'offset', 'int'));
+        return array('since' => new PrimitiveSerializer('int'), 'before' => new PrimitiveSerializer('int'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'));
     }
 }

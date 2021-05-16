@@ -2,9 +2,8 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
-class DevicesIdConsumption extends Repository
+class DevicesIdConsumption
 {
     /**
      * The HTTP client

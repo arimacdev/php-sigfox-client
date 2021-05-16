@@ -38,6 +38,8 @@ class UsersIdProfilesAddRoles extends Request
     /**
      * Getter for userRoles
      *
+     * @internal
+     *
      * @return array user roles array to add
      */
     public function getUserRoles() : ?array
@@ -51,6 +53,6 @@ class UsersIdProfilesAddRoles extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('userRoles' => new PrimitiveSerializer(self::class, 'userRoles', 'array'));
+        return array('userRoles' => new PrimitiveSerializer('array'));
     }
 }

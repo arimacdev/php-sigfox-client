@@ -100,6 +100,6 @@ class UpdatebatchUrlCallback extends UpdateCallback
      */
     public function getSerializeMetaData() : array
     {
-        return array('url' => new PrimitiveSerializer(self::class, 'url', 'string'), 'httpMethod' => new PrimitiveSerializer(self::class, 'httpMethod', 'string'), 'linePattern' => new PrimitiveSerializer(self::class, 'linePattern', 'string'));
+        return array('url' => new PrimitiveSerializer('string'), 'httpMethod' => new PrimitiveSerializer('string'), 'linePattern' => new PrimitiveSerializer('string'));
     }
 }

@@ -37,6 +37,8 @@ class ApiUsersCreate extends Request
     /**
      * Getter for apiUser
      *
+     * @internal
+     *
      * @return ApiUserCreation
      */
     public function getApiUser() : ?ApiUserCreation
@@ -50,6 +52,6 @@ class ApiUsersCreate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('apiUser' => new ClassSerializer(self::class, 'apiUser', ApiUserCreation::class));
+        return array('apiUser' => new ClassSerializer(ApiUserCreation::class));
     }
 }

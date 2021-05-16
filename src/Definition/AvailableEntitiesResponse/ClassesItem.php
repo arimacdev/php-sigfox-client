@@ -95,6 +95,6 @@ class ClassesItem extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer(self::class, 'id', 'int'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'attenuation' => new ArraySerializer(self::class, 'attenuation', new PrimitiveSerializer(self::class, 'attenuation', 'int')));
+        return array('id' => new PrimitiveSerializer('int'), 'name' => new PrimitiveSerializer('string'), 'attenuation' => new ArraySerializer(new PrimitiveSerializer('int')));
     }
 }

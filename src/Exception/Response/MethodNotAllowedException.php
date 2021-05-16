@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Exception\Response;
 
+use Arimac\Sigfox\Exception\DeserializeException;
 use Throwable;
 
 /**
@@ -33,5 +34,39 @@ class MethodNotAllowedException extends ResponseException {
      */
     public function getAllowedMethods(): array {
         return $this->allowedMethods;
+    }
+
+    /**
+     * @internal
+     *
+     * @inheritdoc
+     */
+    public static function deserialize($value): MethodNotAllowedException
+    {
+        if(!is_array($value)||!isset($value["message"])||!isset($value["allowedMethods"])){
+            throw new DeserializeException(
+                ["array(message)"],
+                is_array($value)? "array(".implode(", ", array_keys($value)).")" :gettype($value)
+            );
+        }
+
+        $message = $value["message"];
+        if(!is_string($message)){
+            throw new DeserializeException(["string"], gettype($message));
+        }
+
+        $allowedMethods = $value["allowedMethods"];
+
+        if(!is_array($allowedMethods)){
+            throw new DeserializeException(["string[]"], gettype($value["allowedMethods"]));
+        }
+
+        foreach($allowedMethods as $method){
+            if(!is_string($method)){
+                throw new DeserializeException(["string"], gettype($method));
+            }
+        }
+
+        return new MethodNotAllowedException($message, $allowedMethods);
     }
 }

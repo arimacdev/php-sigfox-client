@@ -50,20 +50,18 @@ class Definition extends Class_
         $this->setArrayProperty("validations", $validations);
     }
 
-    protected function toSerialize(string $propertyName, string $type){
+    protected function toSerialize(string $type){
         $isArray = substr($type, strlen($type) - 2) === "[]";
         $isGeneric = substr($type, strlen($type) - 1) === ">";
         // has a namespace
         if ($isArray) {
             $itemType = substr($type, 0, strlen($type) - 2);
-            $itemType = $this->toSerialize($propertyName, $itemType);
+            $itemType = $this->toSerialize($itemType);
             $this->useType("Arimac\\Sigfox\\Serializer\\ArraySerializer");
 
             return $this->factory->new(
                 "ArraySerializer",
                 [
-                    $this->factory->classConstFetch("self", "class"),
-                    $this->factory->val($propertyName), 
                     $itemType
                 ]
             );
@@ -74,14 +72,12 @@ class Definition extends Class_
 
             $parentType = $this->useType($parentType);
             $parentType = $this->factory->classConstFetch($parentType, "class");
-            $childType = $this->toSerialize($propertyName, $childType);
+            $childType = $this->toSerialize($childType);
 
             $this->useType("Arimac\\Sigfox\\Serializer\\GenericSerializer");
             return $this->factory->new(
                 "GenericSerializer", 
                 [
-                    $this->factory->classConstFetch("self", "class"),
-                    $this->factory->val($propertyName),
                     $parentType,
                     $childType
                 ]
@@ -95,8 +91,6 @@ class Definition extends Class_
                 return $this->factory->new(
                     "ClassSerializer", 
                     [
-                        $this->factory->classConstFetch("self", "class"),
-                        $this->factory->val($propertyName), 
                         $this->factory->classConstFetch($className, "class")
                     ]
                 );
@@ -107,8 +101,6 @@ class Definition extends Class_
                 return $this->factory->new(
                     "PrimitiveSerializer",
                     [
-                        $this->factory->classConstFetch("self", "class"),
-                        $this->factory->val($propertyName),
                         $this->factory->val($type)
                     ]
                 );
@@ -119,7 +111,7 @@ class Definition extends Class_
     public function setSerialize(array $serialize){
         $serializers = [];
         foreach($serialize as $propertyName => $type){
-            $serializers[$propertyName] = $this->toSerialize($propertyName, $type);
+            $serializers[$propertyName] = $this->toSerialize($type);
         }
         
         $this->addMethod(

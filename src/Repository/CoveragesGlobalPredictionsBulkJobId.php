@@ -2,10 +2,17 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
+use Arimac\Sigfox\Helper;
 use Arimac\Sigfox\Definition\GlobalCoverageBulkResponse;
-class CoveragesGlobalPredictionsBulkJobId extends Repository
+use Arimac\Sigfox\Exception\DeserializeException;
+use Arimac\Sigfox\Exception\UnexpectedResponseException;
+use Arimac\Sigfox\Exception\Response\BadRequestException;
+use Arimac\Sigfox\Exception\Response\UnauthorizedException;
+use Arimac\Sigfox\Exception\Response\ForbiddenException;
+use Arimac\Sigfox\Exception\Response\NotFoundException;
+use Arimac\Sigfox\Exception\Response\InternalServerException;
+class CoveragesGlobalPredictionsBulkJobId
 {
     /**
      * The HTTP client
@@ -38,9 +45,17 @@ class CoveragesGlobalPredictionsBulkJobId extends Repository
      * article](https://support.sigfox.com/docs/global-coverage-api).
      *
      * @return GlobalCoverageBulkResponse
+     *
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
+     * @throws UnexpectedResponseException If server returned an unexpected status code.
+     * @throws BadRequestException         If server returned a HTTP 400 error.
+     * @throws UnauthorizedException       If server returned a HTTP 401 error.
+     * @throws ForbiddenException          If server returned a HTTP 403 error.
+     * @throws NotFoundException           If server returned a HTTP 404 error.
+     * @throws InternalServerException     If server returned a HTTP 500 error.
      */
     public function getStatus() : GlobalCoverageBulkResponse
     {
-        return $this->client->call('get', $this->bind('/coverages/global/predictions/bulk/{jobId}', $this->jobId), null, GlobalCoverageBulkResponse::class);
+        return $this->client->call('get', Helper::bindUrlParams('/coverages/global/predictions/bulk/{jobId}', $this->jobId), null, GlobalCoverageBulkResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
 }

@@ -40,6 +40,8 @@ class TilesMonarchKmzStartAsync extends Request
     /**
      * Getter for request
      *
+     * @internal
+     *
      * @return KmzCreatePublicRequest The computation will be performed with the specified coverage mode
      */
     public function getRequest() : ?KmzCreatePublicRequest
@@ -53,6 +55,6 @@ class TilesMonarchKmzStartAsync extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('request' => new ClassSerializer(self::class, 'request', KmzCreatePublicRequest::class));
+        return array('request' => new ClassSerializer(KmzCreatePublicRequest::class));
     }
 }

@@ -56,6 +56,8 @@ class ContractInfosIdDevices extends Request
     /**
      * Getter for deviceTypeId
      *
+     * @internal
+     *
      * @return string Returns only devices of the given device type
      */
     public function getDeviceTypeId() : ?string
@@ -77,6 +79,8 @@ class ContractInfosIdDevices extends Request
     }
     /**
      * Getter for fields
+     *
+     * @internal
      *
      * @return string Defines the other available fields to be returned in the response.
      *                
@@ -100,6 +104,8 @@ class ContractInfosIdDevices extends Request
     /**
      * Getter for limit
      *
+     * @internal
+     *
      * @return int The maximum number of items to return
      */
     public function getLimit() : ?int
@@ -121,6 +127,8 @@ class ContractInfosIdDevices extends Request
     /**
      * Getter for pageId
      *
+     * @internal
+     *
      * @return string Token representing the page to retrieve
      */
     public function getPageId() : ?string
@@ -134,6 +142,6 @@ class ContractInfosIdDevices extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('deviceTypeId' => new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), 'fields' => new PrimitiveSerializer(self::class, 'fields', 'string'), 'limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'pageId' => new PrimitiveSerializer(self::class, 'pageId', 'string'));
+        return array('deviceTypeId' => new PrimitiveSerializer('string'), 'fields' => new PrimitiveSerializer('string'), 'limit' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
     }
 }

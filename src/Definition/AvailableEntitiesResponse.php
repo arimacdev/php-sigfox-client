@@ -99,6 +99,6 @@ class AvailableEntitiesResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('operators' => new ArraySerializer(self::class, 'operators', new ClassSerializer(self::class, 'operators', OperatorsItem::class)), 'classes' => new ArraySerializer(self::class, 'classes', new ClassSerializer(self::class, 'classes', ClassesItem::class)), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
+        return array('operators' => new ArraySerializer(new ClassSerializer(OperatorsItem::class)), 'classes' => new ArraySerializer(new ClassSerializer(ClassesItem::class)), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')));
     }
 }

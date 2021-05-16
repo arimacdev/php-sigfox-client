@@ -148,6 +148,8 @@ class GroupsList extends Request
     /**
      * Getter for parentIds
      *
+     * @internal
+     *
      * @return string[] The parent group's identifiers from which the children will be fetched
      */
     public function getParentIds() : ?array
@@ -169,6 +171,8 @@ class GroupsList extends Request
     /**
      * Getter for deep
      *
+     * @internal
+     *
      * @return bool Retrieve all sub-groups
      */
     public function getDeep() : ?bool
@@ -189,6 +193,8 @@ class GroupsList extends Request
     }
     /**
      * Getter for name
+     *
+     * @internal
      *
      * @return string Searches for groups containing the given text in their name
      */
@@ -221,6 +227,8 @@ class GroupsList extends Request
     }
     /**
      * Getter for types
+     *
+     * @internal
      *
      * @return int[] Group's type
      *               
@@ -255,6 +263,8 @@ class GroupsList extends Request
     /**
      * Getter for fields
      *
+     * @internal
+     *
      * @return string Defines the other available fields to be returned in the response.
      *                
      */
@@ -277,6 +287,8 @@ class GroupsList extends Request
     }
     /**
      * Getter for action
+     *
+     * @internal
      *
      * @return string Defines a resource:action pair the user has access on groups.
      *                
@@ -301,6 +313,8 @@ class GroupsList extends Request
     /**
      * Getter for sort
      *
+     * @internal
+     *
      * @return string The field on which the list will be sorted. (field to sort ascending or -field to sort
      *                descending)
      */
@@ -323,6 +337,8 @@ class GroupsList extends Request
     /**
      * Getter for authorizations
      *
+     * @internal
+     *
      * @return bool if true, we return the list of actions and resources the user has access
      */
     public function getAuthorizations() : ?bool
@@ -343,6 +359,8 @@ class GroupsList extends Request
     }
     /**
      * Getter for limit
+     *
+     * @internal
      *
      * @return int The maximum number of items to return
      */
@@ -365,6 +383,8 @@ class GroupsList extends Request
     /**
      * Getter for offset
      *
+     * @internal
+     *
      * @return int The number of items to skip
      */
     public function getOffset() : ?int
@@ -386,6 +406,8 @@ class GroupsList extends Request
     /**
      * Getter for pageId
      *
+     * @internal
+     *
      * @return string Token representing the page to retrieve
      */
     public function getPageId() : ?string
@@ -399,6 +421,6 @@ class GroupsList extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('parentIds' => new ArraySerializer(self::class, 'parentIds', new PrimitiveSerializer(self::class, 'parentIds', 'string')), 'deep' => new PrimitiveSerializer(self::class, 'deep', 'bool'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'types' => new ArraySerializer(self::class, 'types', new PrimitiveSerializer(self::class, 'types', 'int')), 'fields' => new PrimitiveSerializer(self::class, 'fields', 'string'), 'action' => new PrimitiveSerializer(self::class, 'action', 'string'), 'sort' => new PrimitiveSerializer(self::class, 'sort', 'string'), 'authorizations' => new PrimitiveSerializer(self::class, 'authorizations', 'bool'), 'limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'offset' => new PrimitiveSerializer(self::class, 'offset', 'int'), 'pageId' => new PrimitiveSerializer(self::class, 'pageId', 'string'));
+        return array('parentIds' => new ArraySerializer(new PrimitiveSerializer('string')), 'deep' => new PrimitiveSerializer('bool'), 'name' => new PrimitiveSerializer('string'), 'types' => new ArraySerializer(new PrimitiveSerializer('int')), 'fields' => new PrimitiveSerializer('string'), 'action' => new PrimitiveSerializer('string'), 'sort' => new PrimitiveSerializer('string'), 'authorizations' => new PrimitiveSerializer('bool'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
     }
 }

@@ -2,69 +2,56 @@
 
 namespace Arimac\Sigfox\Exception;
 
-use Exception;
-
 /**
  * Deserialization exceptions.
  */
-class SerializeException extends Exception
+class SerializeException extends SigfoxException
 {
+    /** @internal **/
+    protected array $expectedTypes;
 
     /** @internal **/
-    protected string $className;
-
-    /** @internal **/
-    protected string $propertyName;
-
-    /** @internal **/
-    protected string $expectedType;
+    protected string $actualType;
 
     /**
      * Initializing the exception
      *
      * @internal
      *
-     * @param string $className    Name of the class that the value exists
-     * @param string $propertyName Name of the property that the value exists
-     * @param string $expectedType Expected type for the given property
+     * @param string $expectedTypes Expected types for the given property
+     * @param string $actualType    The type of the user passed value
      */
-    public function __construct(string $className, string $propertyName, string $expectedType)
+    public function __construct(array $expectedTypes, string $actualType)
     {
-        parent::__construct(
-            "Can not serialize the $className:$propertyName property as $expectedType."
-        );
-        $this->className = $className;
-        $this->propertyName = $propertyName;
-        $this->expectedType = $expectedType;
-    }
+        $expectedDisplay = "";
+        if(count($expectedTypes)>1){
+            $expectedDisplay = "one of ".implode(", ",$expectedTypes);
+        } else {
+            $expectedDisplay = $expectedTypes[0];
+        }
 
-    /**
-     * Name of the class that the value exists
-     *
-     * @return string
-     */
-    public function getClassName(): string
-    {
-        return $this->className;
-    }
+        parent::__construct("Can not serialize the value. Expected a $expectedDisplay, but got $actualType");
 
-    /**
-     * Name of the property that the value exists
-     *
-     * @return string
-     */
-    public function getPropertyName(): string
-    {
-        return $this->propertyName;
+        $this->expectedTypes = $expectedTypes;
+        $this->actualType = $actualType;
     }
 
     /**
      * Expected type for the property
      *
+     * @return string[]
+     */
+    public function getExpectedTypes(): array
+    {
+        return $this->expectedTypes;
+    }
+
+    /**
+     * Actual type that user passed
+     *
      * @return string
      */
-    public function getExpectedType(): string
-    {
-        return $this->expectedType;
+    public function getActualType(): string {
+        return $this->actualType;
     }
 }

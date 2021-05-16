@@ -346,6 +346,6 @@ class InternetSubscription extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'type' => new PrimitiveSerializer(self::class, 'type', 'int'), 'priority' => new PrimitiveSerializer(self::class, 'priority', 'int'), 'comments' => new PrimitiveSerializer(self::class, 'comments', 'string'), 'startTime' => new PrimitiveSerializer(self::class, 'startTime', 'int'), 'endTime' => new PrimitiveSerializer(self::class, 'endTime', 'int'), 'provider' => new ClassSerializer(self::class, 'provider', MinProvider::class), 'contacts' => new ArraySerializer(self::class, 'contacts', new ClassSerializer(self::class, 'contacts', MinContact::class)), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
+        return array('id' => new PrimitiveSerializer('string'), 'type' => new PrimitiveSerializer('int'), 'priority' => new PrimitiveSerializer('int'), 'comments' => new PrimitiveSerializer('string'), 'startTime' => new PrimitiveSerializer('int'), 'endTime' => new PrimitiveSerializer('int'), 'provider' => new ClassSerializer(MinProvider::class), 'contacts' => new ArraySerializer(new ClassSerializer(MinContact::class)), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'resources' => new ArraySerializer(new PrimitiveSerializer('string')));
     }
 }

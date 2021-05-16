@@ -69,6 +69,8 @@ class DeviceTypesIdMessages extends Request
     /**
      * Getter for fields
      *
+     * @internal
+     *
      * @return string Defines the other available API user's fields to be returned in the response.
      *                
      */
@@ -91,6 +93,8 @@ class DeviceTypesIdMessages extends Request
     /**
      * Getter for since
      *
+     * @internal
+     *
      * @return int Starting timestamp (in milliseconds since Unix Epoch).
      */
     public function getSince() : ?int
@@ -111,6 +115,8 @@ class DeviceTypesIdMessages extends Request
     }
     /**
      * Getter for before
+     *
+     * @internal
      *
      * @return int Ending timestamp (in milliseconds since Unix Epoch).
      */
@@ -133,6 +139,8 @@ class DeviceTypesIdMessages extends Request
     /**
      * Getter for authorizations
      *
+     * @internal
+     *
      * @return bool if true, we return the list of actions and resources the user has access
      */
     public function getAuthorizations() : ?bool
@@ -153,6 +161,8 @@ class DeviceTypesIdMessages extends Request
     }
     /**
      * Getter for limit
+     *
+     * @internal
      *
      * @return int Defines the maximum number of items to return
      */
@@ -175,6 +185,8 @@ class DeviceTypesIdMessages extends Request
     /**
      * Getter for offset
      *
+     * @internal
+     *
      * @return int Defines the number of items to skip
      */
     public function getOffset() : ?int
@@ -188,6 +200,6 @@ class DeviceTypesIdMessages extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('fields' => new PrimitiveSerializer(self::class, 'fields', 'string'), 'since' => new PrimitiveSerializer(self::class, 'since', 'int'), 'before' => new PrimitiveSerializer(self::class, 'before', 'int'), 'authorizations' => new PrimitiveSerializer(self::class, 'authorizations', 'bool'), 'limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'offset' => new PrimitiveSerializer(self::class, 'offset', 'int'));
+        return array('fields' => new PrimitiveSerializer('string'), 'since' => new PrimitiveSerializer('int'), 'before' => new PrimitiveSerializer('int'), 'authorizations' => new PrimitiveSerializer('bool'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'));
     }
 }

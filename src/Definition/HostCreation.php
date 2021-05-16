@@ -39,6 +39,6 @@ class HostCreation extends BaseHost
      */
     public function getSerializeMetaData() : array
     {
-        return array('groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'));
+        return array('groupId' => new PrimitiveSerializer('string'));
     }
 }

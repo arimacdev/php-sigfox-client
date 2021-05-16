@@ -15,6 +15,8 @@ class ApiUsersCreateResponse extends Definition
     /**
      * Setter for id
      *
+     * @internal
+     *
      * @param string $id The newly created API user identifier
      *
      * @return self To use in method chains
@@ -40,6 +42,6 @@ class ApiUsersCreateResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'));
+        return array('id' => new PrimitiveSerializer('string'));
     }
 }

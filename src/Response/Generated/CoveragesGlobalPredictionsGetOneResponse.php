@@ -22,6 +22,8 @@ class CoveragesGlobalPredictionsGetOneResponse extends Definition
     /**
      * Setter for locationCovered
      *
+     * @internal
+     *
      * @param bool $locationCovered True, if the requested location is considered covered.
      *
      * @return self To use in method chains
@@ -42,6 +44,8 @@ class CoveragesGlobalPredictionsGetOneResponse extends Definition
     }
     /**
      * Setter for margins
+     *
+     * @internal
      *
      * @param int[] $margins Margins
      *
@@ -68,6 +72,6 @@ class CoveragesGlobalPredictionsGetOneResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('locationCovered' => new PrimitiveSerializer(self::class, 'locationCovered', 'bool'), 'margins' => new ArraySerializer(self::class, 'margins', new PrimitiveSerializer(self::class, 'margins', 'int')));
+        return array('locationCovered' => new PrimitiveSerializer('bool'), 'margins' => new ArraySerializer(new PrimitiveSerializer('int')));
     }
 }

@@ -492,6 +492,6 @@ class BaseSiteIntervention extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('author' => new PrimitiveSerializer(self::class, 'author', 'string'), 'comment' => new PrimitiveSerializer(self::class, 'comment', 'string'), 'equipmentsToChange' => new ArraySerializer(self::class, 'equipmentsToChange', new PrimitiveSerializer(self::class, 'equipmentsToChange', 'int')), 'plannedTime' => new PrimitiveSerializer(self::class, 'plannedTime', 'int'), 'interventionTime' => new PrimitiveSerializer(self::class, 'interventionTime', 'int'), 'endTime' => new PrimitiveSerializer(self::class, 'endTime', 'int'), 'billCode' => new PrimitiveSerializer(self::class, 'billCode', 'string'), 'rtId' => new PrimitiveSerializer(self::class, 'rtId', 'string'), 'closed' => new PrimitiveSerializer(self::class, 'closed', 'bool'), 'costs' => new PrimitiveSerializer(self::class, 'costs', 'int'), 'type' => new PrimitiveSerializer(self::class, 'type', 'int'));
+        return array('author' => new PrimitiveSerializer('string'), 'comment' => new PrimitiveSerializer('string'), 'equipmentsToChange' => new ArraySerializer(new PrimitiveSerializer('int')), 'plannedTime' => new PrimitiveSerializer('int'), 'interventionTime' => new PrimitiveSerializer('int'), 'endTime' => new PrimitiveSerializer('int'), 'billCode' => new PrimitiveSerializer('string'), 'rtId' => new PrimitiveSerializer('string'), 'closed' => new PrimitiveSerializer('bool'), 'costs' => new PrimitiveSerializer('int'), 'type' => new PrimitiveSerializer('int'));
     }
 }

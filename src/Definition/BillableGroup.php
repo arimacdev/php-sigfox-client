@@ -101,6 +101,6 @@ trait BillableGroup
      */
     public function getSerializeMetaData() : array
     {
-        return array('billable' => new PrimitiveSerializer(self::class, 'billable', 'bool'), 'technicalEmail' => new PrimitiveSerializer(self::class, 'technicalEmail', 'string'), 'maxPrototypeAllowed' => new PrimitiveSerializer(self::class, 'maxPrototypeAllowed', 'int'));
+        return array('billable' => new PrimitiveSerializer('bool'), 'technicalEmail' => new PrimitiveSerializer('string'), 'maxPrototypeAllowed' => new PrimitiveSerializer('int'));
     }
 }

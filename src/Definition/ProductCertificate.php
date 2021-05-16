@@ -71,6 +71,6 @@ class ProductCertificate extends RadioCertificate
      */
     public function getSerializeMetaData() : array
     {
-        return array('radioConfigurations' => new ArraySerializer(self::class, 'radioConfigurations', new ClassSerializer(self::class, 'radioConfigurations', ProductCertificateRadioConfiguration::class)), 'devKit' => new PrimitiveSerializer(self::class, 'devKit', 'bool'));
+        return array('radioConfigurations' => new ArraySerializer(new ClassSerializer(ProductCertificateRadioConfiguration::class)), 'devKit' => new PrimitiveSerializer('bool'));
     }
 }

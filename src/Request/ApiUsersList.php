@@ -70,6 +70,8 @@ class ApiUsersList extends Request
     /**
      * Getter for fields
      *
+     * @internal
+     *
      * @return string Defines the other available fields to be returned in the response.
      *                
      */
@@ -92,6 +94,8 @@ class ApiUsersList extends Request
     /**
      * Getter for profileId
      *
+     * @internal
+     *
      * @return string Searches for API users with the given profile
      */
     public function getProfileId() : ?string
@@ -112,6 +116,8 @@ class ApiUsersList extends Request
     }
     /**
      * Getter for groupIds
+     *
+     * @internal
      *
      * @return string[] Searches for API users who are attached to the given groups
      */
@@ -134,6 +140,8 @@ class ApiUsersList extends Request
     /**
      * Getter for limit
      *
+     * @internal
+     *
      * @return int Defines the maximum number of items to return
      */
     public function getLimit() : ?int
@@ -154,6 +162,8 @@ class ApiUsersList extends Request
     }
     /**
      * Getter for offset
+     *
+     * @internal
      *
      * @return int Defines the number of items to skip
      */
@@ -176,6 +186,8 @@ class ApiUsersList extends Request
     /**
      * Getter for authorizations
      *
+     * @internal
+     *
      * @return bool if true, return the list of actions and resources the user has access
      */
     public function getAuthorizations() : ?bool
@@ -189,6 +201,6 @@ class ApiUsersList extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('fields' => new PrimitiveSerializer(self::class, 'fields', 'string'), 'profileId' => new PrimitiveSerializer(self::class, 'profileId', 'string'), 'groupIds' => new ArraySerializer(self::class, 'groupIds', new PrimitiveSerializer(self::class, 'groupIds', 'string')), 'limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'offset' => new PrimitiveSerializer(self::class, 'offset', 'int'), 'authorizations' => new PrimitiveSerializer(self::class, 'authorizations', 'bool'));
+        return array('fields' => new PrimitiveSerializer('string'), 'profileId' => new PrimitiveSerializer('string'), 'groupIds' => new ArraySerializer(new PrimitiveSerializer('string')), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'authorizations' => new PrimitiveSerializer('bool'));
     }
 }

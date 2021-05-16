@@ -2,9 +2,8 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
-class Tiles extends Repository
+class Tiles
 {
     /**
      * The HTTP client

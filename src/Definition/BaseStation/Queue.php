@@ -77,6 +77,6 @@ class Queue extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('in' => new PrimitiveSerializer(self::class, 'in', 'int'), 'out' => new PrimitiveSerializer(self::class, 'out', 'int'));
+        return array('in' => new PrimitiveSerializer('int'), 'out' => new PrimitiveSerializer('int'));
     }
 }

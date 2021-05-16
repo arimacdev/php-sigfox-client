@@ -18,4 +18,14 @@ class UnauthorizedException extends ResponseException {
     {
         parent::__construct("Unauthorized. Authentication (ID/password) error.", 401, $prev);
     }
+
+    /**
+     * @internal
+     *
+     * @inheritdoc
+     */
+    public static function deserialize($value): UnauthorizedException
+    {
+        return new UnauthorizedException();
+    }
 }

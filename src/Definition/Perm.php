@@ -148,6 +148,6 @@ class Perm extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('code' => new PrimitiveSerializer(self::class, 'code', 'int'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'description' => new PrimitiveSerializer(self::class, 'description', 'string'), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
+        return array('code' => new PrimitiveSerializer('int'), 'name' => new PrimitiveSerializer('string'), 'description' => new PrimitiveSerializer('string'), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'resources' => new ArraySerializer(new PrimitiveSerializer('string')));
     }
 }

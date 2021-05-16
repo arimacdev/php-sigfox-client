@@ -43,6 +43,6 @@ class AsynchronousDeviceEditionJob extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('data' => new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', DeviceEditionBulk::class)));
+        return array('data' => new ArraySerializer(new ClassSerializer(DeviceEditionBulk::class)));
     }
 }

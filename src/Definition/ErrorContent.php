@@ -73,6 +73,6 @@ class ErrorContent extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('message' => new PrimitiveSerializer(self::class, 'message', 'string'), 'errors' => new ArraySerializer(self::class, 'errors', new ClassSerializer(self::class, 'errors', ErrorsItem::class)));
+        return array('message' => new PrimitiveSerializer('string'), 'errors' => new ArraySerializer(new ClassSerializer(ErrorsItem::class)));
     }
 }

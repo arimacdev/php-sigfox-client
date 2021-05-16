@@ -100,6 +100,6 @@ class CreateEmailCallback extends CreateCallback
      */
     public function getSerializeMetaData() : array
     {
-        return array('subject' => new PrimitiveSerializer(self::class, 'subject', 'string'), 'recipient' => new PrimitiveSerializer(self::class, 'recipient', 'string'), 'message' => new PrimitiveSerializer(self::class, 'message', 'string'));
+        return array('subject' => new PrimitiveSerializer('string'), 'recipient' => new PrimitiveSerializer('string'), 'message' => new PrimitiveSerializer('string'));
     }
 }

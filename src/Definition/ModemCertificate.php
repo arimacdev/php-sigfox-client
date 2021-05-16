@@ -71,6 +71,6 @@ class ModemCertificate extends RadioCertificate
      */
     public function getSerializeMetaData() : array
     {
-        return array('radioConfigurations' => new ArraySerializer(self::class, 'radioConfigurations', new ClassSerializer(self::class, 'radioConfigurations', ModemCertificateRadioConfiguration::class)), 'repeaterFunction' => new PrimitiveSerializer(self::class, 'repeaterFunction', 'bool'));
+        return array('radioConfigurations' => new ArraySerializer(new ClassSerializer(ModemCertificateRadioConfiguration::class)), 'repeaterFunction' => new PrimitiveSerializer('bool'));
     }
 }

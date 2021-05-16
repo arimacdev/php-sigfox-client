@@ -8,20 +8,17 @@ use Arimac\Sigfox\Exception\SerializeException;
 /**
  * Serializing and deserializing primitive typed values. (array, string, int, float, bool)
  */
-class PrimitiveSerializer extends Serializer
+class PrimitiveSerializer implements Serializer
 {
     protected string $type;
 
     /**
      * Initializing the serializer
      *
-     * @param string $className    Name of the class that property exist. For error reporting purposes
-     * @param string $propertyName Name of the property. For error reporting purposes
-     * @param string $type         Name of the type
+     * @param string $type Name of the type
      */
-    public function __construct(string $classname, string $propertyName, string $type)
+    public function __construct(string $type)
     {
-        parent::__construct($classname, $propertyName);
         $this->type = $type;
     }
 
@@ -65,7 +62,7 @@ class PrimitiveSerializer extends Serializer
         }
 
         if (!$this->validate($value)) {
-            throw new SerializeException($this->className, $this->propertyName, $this->getParentType());
+            throw new SerializeException([$this->type], gettype($value));
         }
 
         return $value;
@@ -81,17 +78,9 @@ class PrimitiveSerializer extends Serializer
         }
 
         if (!$this->validate($value)) {
-            throw new DeserializeException($this->className, $this->propertyName, $this->getParentType());
+            throw new DeserializeException([$this->type], gettype($value));
         }
 
         return $value;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    protected function getType(): string
-    {
-        return $this->type;
     }
 }

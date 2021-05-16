@@ -67,6 +67,6 @@ class MinMaintenance extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'));
+        return array('id' => new PrimitiveSerializer('string'), 'name' => new PrimitiveSerializer('string'));
     }
 }

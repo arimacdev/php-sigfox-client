@@ -39,6 +39,8 @@ class GroupsIdUpdate extends Request
     /**
      * Getter for group
      *
+     * @internal
+     *
      * @return CommonGroupUpdate The group to update
      */
     public function getGroup() : ?CommonGroupUpdate
@@ -52,6 +54,6 @@ class GroupsIdUpdate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('group' => new ClassSerializer(self::class, 'group', CommonGroupUpdate::class));
+        return array('group' => new ClassSerializer(CommonGroupUpdate::class));
     }
 }

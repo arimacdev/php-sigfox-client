@@ -149,6 +149,6 @@ class DeviceConsumptionsItem extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('frameCount' => new PrimitiveSerializer(self::class, 'frameCount', 'int'), 'downlinkFrameCount' => new PrimitiveSerializer(self::class, 'downlinkFrameCount', 'int'), 'roamingFrameCount' => new PrimitiveSerializer(self::class, 'roamingFrameCount', 'int'), 'roamingDownlinkFrameCount' => new PrimitiveSerializer(self::class, 'roamingDownlinkFrameCount', 'int'), 'roamingDetails' => new ArraySerializer(self::class, 'roamingDetails', new ClassSerializer(self::class, 'roamingDetails', RoamingDetailsItem::class)));
+        return array('frameCount' => new PrimitiveSerializer('int'), 'downlinkFrameCount' => new PrimitiveSerializer('int'), 'roamingFrameCount' => new PrimitiveSerializer('int'), 'roamingDownlinkFrameCount' => new PrimitiveSerializer('int'), 'roamingDetails' => new ArraySerializer(new ClassSerializer(RoamingDetailsItem::class)));
     }
 }

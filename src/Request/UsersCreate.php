@@ -39,6 +39,8 @@ class UsersCreate extends Request
     /**
      * Getter for user
      *
+     * @internal
+     *
      * @return UserCreation The user to create
      */
     public function getUser() : ?UserCreation
@@ -52,6 +54,6 @@ class UsersCreate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('user' => new ClassSerializer(self::class, 'user', UserCreation::class));
+        return array('user' => new ClassSerializer(UserCreation::class));
     }
 }

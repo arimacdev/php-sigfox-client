@@ -154,6 +154,6 @@ class BulkDeviceAsynchronousRequest extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('deviceTypeId' => new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), 'productCertificate' => new ClassSerializer(self::class, 'productCertificate', CertificateUpdate::class), 'prototype' => new PrimitiveSerializer(self::class, 'prototype', 'bool'), 'prefix' => new PrimitiveSerializer(self::class, 'prefix', 'string'), 'data' => new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', DataItem::class)));
+        return array('deviceTypeId' => new PrimitiveSerializer('string'), 'productCertificate' => new ClassSerializer(CertificateUpdate::class), 'prototype' => new PrimitiveSerializer('bool'), 'prefix' => new PrimitiveSerializer('string'), 'data' => new ArraySerializer(new ClassSerializer(DataItem::class)));
     }
 }

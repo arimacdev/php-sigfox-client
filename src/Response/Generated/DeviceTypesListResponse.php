@@ -25,6 +25,8 @@ class DeviceTypesListResponse extends Definition
     /**
      * Setter for data
      *
+     * @internal
+     *
      * @param DeviceType[] $data
      *
      * @return self To use in method chains
@@ -46,6 +48,8 @@ class DeviceTypesListResponse extends Definition
     /**
      * Setter for actions
      *
+     * @internal
+     *
      * @param string[] $actions
      *
      * @return self To use in method chains
@@ -66,6 +70,8 @@ class DeviceTypesListResponse extends Definition
     }
     /**
      * Setter for paging
+     *
+     * @internal
      *
      * @param Paging $paging
      *
@@ -92,6 +98,6 @@ class DeviceTypesListResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('data' => new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', DeviceType::class)), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'paging' => new ClassSerializer(self::class, 'paging', Paging::class));
+        return array('data' => new ArraySerializer(new ClassSerializer(DeviceType::class)), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'paging' => new ClassSerializer(Paging::class));
     }
 }

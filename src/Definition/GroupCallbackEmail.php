@@ -70,6 +70,6 @@ trait GroupCallbackEmail
      */
     public function getSerializeMetaData() : array
     {
-        return array('subject' => new PrimitiveSerializer(self::class, 'subject', 'string'), 'message' => new PrimitiveSerializer(self::class, 'message', 'string'));
+        return array('subject' => new PrimitiveSerializer('string'), 'message' => new PrimitiveSerializer('string'));
     }
 }

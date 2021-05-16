@@ -70,6 +70,6 @@ class BaseResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('message' => new PrimitiveSerializer(self::class, 'message', 'string'), 'userRoles' => new ArraySerializer(self::class, 'userRoles', new ClassSerializer(self::class, 'userRoles', UserRole::class)));
+        return array('message' => new PrimitiveSerializer('string'), 'userRoles' => new ArraySerializer(new ClassSerializer(UserRole::class)));
     }
 }

@@ -39,6 +39,8 @@ class DevicesIdProductCertificate extends Request
     /**
      * Getter for pac
      *
+     * @internal
+     *
      * @return string The device's PAC (hexadecimal format)
      */
     public function getPac() : ?string
@@ -52,6 +54,6 @@ class DevicesIdProductCertificate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('pac' => new PrimitiveSerializer(self::class, 'pac', 'string'));
+        return array('pac' => new PrimitiveSerializer('string'));
     }
 }

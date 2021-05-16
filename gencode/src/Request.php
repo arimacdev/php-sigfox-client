@@ -173,4 +173,23 @@ class Request extends Definition
 
         return null;
     }
+
+    public function addGetter(
+        string $type,
+        string $propertyName,
+        ?string $docComment = null
+    ) {
+        if ($docComment) {
+            $indent = strlen($docComment) - strlen(trim($docComment));
+            $indentStr = str_repeat(" ", $indent);
+
+            $docComment = Helper::strReplaceFirst(
+                "* @",
+                "* @internal\n" . $indentStr . " *\n" . $indentStr . " * @",
+                $docComment
+            );
+        }
+
+        parent::addGetter($type, $propertyName, $docComment);
+    }
 }

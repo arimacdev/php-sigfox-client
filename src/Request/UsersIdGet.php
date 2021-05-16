@@ -45,6 +45,8 @@ class UsersIdGet extends Request
     /**
      * Getter for fields
      *
+     * @internal
+     *
      * @return string Defines the other available fields to be returned in the response.
      *                
      */
@@ -67,6 +69,8 @@ class UsersIdGet extends Request
     /**
      * Getter for authorizations
      *
+     * @internal
+     *
      * @return bool if true, we return the list of actions and resources the user has access
      */
     public function getAuthorizations() : ?bool
@@ -80,6 +84,6 @@ class UsersIdGet extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('fields' => new PrimitiveSerializer(self::class, 'fields', 'string'), 'authorizations' => new PrimitiveSerializer(self::class, 'authorizations', 'bool'));
+        return array('fields' => new PrimitiveSerializer('string'), 'authorizations' => new PrimitiveSerializer('bool'));
     }
 }

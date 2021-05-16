@@ -71,6 +71,6 @@ class UserRolesItem extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'), 'profileId' => new PrimitiveSerializer(self::class, 'profileId', 'string'));
+        return array('groupId' => new PrimitiveSerializer('string'), 'profileId' => new PrimitiveSerializer('string'));
     }
 }

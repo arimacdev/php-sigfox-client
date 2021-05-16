@@ -15,6 +15,8 @@ class DeviceTypesIdCallbacksListResponse extends Definition
     /**
      * Setter for data
      *
+     * @internal
+     *
      * @param Callback[] $data
      *
      * @return self To use in method chains
@@ -40,6 +42,6 @@ class DeviceTypesIdCallbacksListResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('data' => new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', Callback::class)));
+        return array('data' => new ArraySerializer(new ClassSerializer(Callback::class)));
     }
 }

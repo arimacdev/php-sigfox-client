@@ -69,6 +69,6 @@ class ModemCertificateRadioConfiguration extends RadioConfiguration
      */
     public function getSerializeMetaData() : array
     {
-        return array('outputPower' => new PrimitiveSerializer(self::class, 'outputPower', 'int'), 'balancedLinkBudget' => new PrimitiveSerializer(self::class, 'balancedLinkBudget', 'bool'));
+        return array('outputPower' => new PrimitiveSerializer('int'), 'balancedLinkBudget' => new PrimitiveSerializer('bool'));
     }
 }

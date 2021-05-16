@@ -248,6 +248,6 @@ class CellularConnectivityBase extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'apn' => new PrimitiveSerializer(self::class, 'apn', 'string'), 'username' => new PrimitiveSerializer(self::class, 'username', 'string'), 'password' => new PrimitiveSerializer(self::class, 'password', 'string'), 'pin' => new PrimitiveSerializer(self::class, 'pin', 'string'), 'roaming' => new PrimitiveSerializer(self::class, 'roaming', 'bool'), 'source' => new PrimitiveSerializer(self::class, 'source', 'int'));
+        return array('name' => new PrimitiveSerializer('string'), 'apn' => new PrimitiveSerializer('string'), 'username' => new PrimitiveSerializer('string'), 'password' => new PrimitiveSerializer('string'), 'pin' => new PrimitiveSerializer('string'), 'roaming' => new PrimitiveSerializer('bool'), 'source' => new PrimitiveSerializer('int'));
     }
 }

@@ -69,6 +69,6 @@ class ReplaceResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('total' => new PrimitiveSerializer(self::class, 'total', 'int'), 'status' => new ClassSerializer(self::class, 'status', Status::class));
+        return array('total' => new PrimitiveSerializer('int'), 'status' => new ClassSerializer(Status::class));
     }
 }

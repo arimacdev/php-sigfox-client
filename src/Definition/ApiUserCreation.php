@@ -131,6 +131,6 @@ class ApiUserCreation extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'timezone' => new PrimitiveSerializer(self::class, 'timezone', 'string'), 'profileIds' => new ArraySerializer(self::class, 'profileIds', new PrimitiveSerializer(self::class, 'profileIds', 'string')));
+        return array('groupId' => new PrimitiveSerializer('string'), 'name' => new PrimitiveSerializer('string'), 'timezone' => new PrimitiveSerializer('string'), 'profileIds' => new ArraySerializer(new PrimitiveSerializer('string')));
     }
 }

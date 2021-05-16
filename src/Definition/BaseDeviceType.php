@@ -349,6 +349,6 @@ class BaseDeviceType extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'description' => new PrimitiveSerializer(self::class, 'description', 'string'), 'downlinkMode' => new PrimitiveSerializer(self::class, 'downlinkMode', 'int'), 'downlinkDataString' => new PrimitiveSerializer(self::class, 'downlinkDataString', 'string'), 'payloadType' => new PrimitiveSerializer(self::class, 'payloadType', 'int'), 'payloadConfig' => new PrimitiveSerializer(self::class, 'payloadConfig', 'string'), 'keepAlive' => new PrimitiveSerializer(self::class, 'keepAlive', 'int'), 'alertEmail' => new PrimitiveSerializer(self::class, 'alertEmail', 'string'), 'automaticRenewal' => new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'));
+        return array('name' => new PrimitiveSerializer('string'), 'description' => new PrimitiveSerializer('string'), 'downlinkMode' => new PrimitiveSerializer('int'), 'downlinkDataString' => new PrimitiveSerializer('string'), 'payloadType' => new PrimitiveSerializer('int'), 'payloadConfig' => new PrimitiveSerializer('string'), 'keepAlive' => new PrimitiveSerializer('int'), 'alertEmail' => new PrimitiveSerializer('string'), 'automaticRenewal' => new PrimitiveSerializer('bool'));
     }
 }

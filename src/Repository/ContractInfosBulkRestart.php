@@ -2,9 +2,8 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
-class ContractInfosBulkRestart extends Repository
+class ContractInfosBulkRestart
 {
     /**
      * The HTTP client

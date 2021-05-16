@@ -93,6 +93,6 @@ class SiteConvention extends BaseSiteConvention
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'site' => new ClassSerializer(self::class, 'site', MinSite::class), 'group' => new ClassSerializer(self::class, 'group', MinGroup::class));
+        return array('id' => new PrimitiveSerializer('string'), 'site' => new ClassSerializer(MinSite::class), 'group' => new ClassSerializer(MinGroup::class));
     }
 }

@@ -42,6 +42,6 @@ trait ProfileIds
      */
     public function getSerializeMetaData() : array
     {
-        return array('profileId' => new ArraySerializer(self::class, 'profileId', new PrimitiveSerializer(self::class, 'profileId', 'string')));
+        return array('profileId' => new ArraySerializer(new PrimitiveSerializer('string')));
     }
 }

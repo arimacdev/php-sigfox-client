@@ -20,6 +20,8 @@ class DeviceTypesIdCallbacksNotDeliveredResponse extends Definition
     /**
      * Setter for data
      *
+     * @internal
+     *
      * @param ErrorMessages[] $data
      *
      * @return self To use in method chains
@@ -40,6 +42,8 @@ class DeviceTypesIdCallbacksNotDeliveredResponse extends Definition
     }
     /**
      * Setter for paging
+     *
+     * @internal
      *
      * @param Paging $paging
      *
@@ -66,6 +70,6 @@ class DeviceTypesIdCallbacksNotDeliveredResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('data' => new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', ErrorMessages::class)), 'paging' => new ClassSerializer(self::class, 'paging', Paging::class));
+        return array('data' => new ArraySerializer(new ClassSerializer(ErrorMessages::class)), 'paging' => new ClassSerializer(Paging::class));
     }
 }

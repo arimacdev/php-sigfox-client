@@ -40,6 +40,6 @@ class BulkUnsubscribe extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('data' => new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', DataItem::class)));
+        return array('data' => new ArraySerializer(new ClassSerializer(DataItem::class)));
     }
 }

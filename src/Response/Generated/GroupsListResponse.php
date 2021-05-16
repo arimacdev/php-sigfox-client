@@ -20,6 +20,8 @@ class GroupsListResponse extends Definition
     /**
      * Setter for data
      *
+     * @internal
+     *
      * @param Group[] $data
      *
      * @return self To use in method chains
@@ -40,6 +42,8 @@ class GroupsListResponse extends Definition
     }
     /**
      * Setter for paging
+     *
+     * @internal
      *
      * @param Paging $paging
      *
@@ -66,6 +70,6 @@ class GroupsListResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('data' => new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', Group::class)), 'paging' => new ClassSerializer(self::class, 'paging', Paging::class));
+        return array('data' => new ArraySerializer(new ClassSerializer(Group::class)), 'paging' => new ClassSerializer(Paging::class));
     }
 }

@@ -180,6 +180,6 @@ class Antenna extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('model' => new PrimitiveSerializer(self::class, 'model', 'string'), 'azimuth' => new PrimitiveSerializer(self::class, 'azimuth', 'int'), 'attenuation' => new PrimitiveSerializer(self::class, 'attenuation', 'int'), 'attenuationDirect' => new PrimitiveSerializer(self::class, 'attenuationDirect', 'int'), 'attenuationIndirect' => new PrimitiveSerializer(self::class, 'attenuationIndirect', 'int'), 'tilt' => new PrimitiveSerializer(self::class, 'tilt', 'int'));
+        return array('model' => new PrimitiveSerializer('string'), 'azimuth' => new PrimitiveSerializer('int'), 'attenuation' => new PrimitiveSerializer('int'), 'attenuationDirect' => new PrimitiveSerializer('int'), 'attenuationIndirect' => new PrimitiveSerializer('int'), 'tilt' => new PrimitiveSerializer('int'));
     }
 }

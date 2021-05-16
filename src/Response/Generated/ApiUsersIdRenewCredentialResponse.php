@@ -15,6 +15,8 @@ class ApiUsersIdRenewCredentialResponse extends Definition
     /**
      * Setter for accessToken
      *
+     * @internal
+     *
      * @param string $accessToken The new API user's acces token (password)
      *
      * @return self To use in method chains
@@ -40,6 +42,6 @@ class ApiUsersIdRenewCredentialResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('accessToken' => new PrimitiveSerializer(self::class, 'accessToken', 'string'));
+        return array('accessToken' => new PrimitiveSerializer('string'));
     }
 }

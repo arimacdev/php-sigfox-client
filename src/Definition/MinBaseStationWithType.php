@@ -142,6 +142,6 @@ class MinBaseStationWithType extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'resourceType' => new PrimitiveSerializer(self::class, 'resourceType', 'int'), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
+        return array('id' => new PrimitiveSerializer('string'), 'name' => new PrimitiveSerializer('string'), 'resourceType' => new PrimitiveSerializer('int'), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')));
     }
 }

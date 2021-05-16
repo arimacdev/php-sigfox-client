@@ -350,6 +350,6 @@ class DeviceTypeUpdate extends BaseDeviceType
      */
     public function getSerializeMetaData() : array
     {
-        return array('payloadType' => new PrimitiveSerializer(self::class, 'payloadType', 'int'), 'payloadConfig' => new PrimitiveSerializer(self::class, 'payloadConfig', 'string'), 'downlinkMode' => new PrimitiveSerializer(self::class, 'downlinkMode', 'int'), 'downlinkDataString' => new PrimitiveSerializer(self::class, 'downlinkDataString', 'string'), 'description' => new PrimitiveSerializer(self::class, 'description', 'string'), 'contractId' => new PrimitiveSerializer(self::class, 'contractId', 'string'), 'contracts' => new ArraySerializer(self::class, 'contracts', new ClassSerializer(self::class, 'contracts', ContractId::class)), 'geolocPayloadConfigId' => new PrimitiveSerializer(self::class, 'geolocPayloadConfigId', 'string'), 'automaticRenewal' => new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'));
+        return array('payloadType' => new PrimitiveSerializer('int'), 'payloadConfig' => new PrimitiveSerializer('string'), 'downlinkMode' => new PrimitiveSerializer('int'), 'downlinkDataString' => new PrimitiveSerializer('string'), 'description' => new PrimitiveSerializer('string'), 'contractId' => new PrimitiveSerializer('string'), 'contracts' => new ArraySerializer(new ClassSerializer(ContractId::class)), 'geolocPayloadConfigId' => new PrimitiveSerializer('string'), 'automaticRenewal' => new PrimitiveSerializer('bool'));
     }
 }

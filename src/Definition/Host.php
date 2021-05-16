@@ -114,6 +114,6 @@ class Host extends BaseHost
      */
     public function getSerializeMetaData() : array
     {
-        return array('group' => new ClassSerializer(self::class, 'group', MinGroup::class), 'contacts' => new ArraySerializer(self::class, 'contacts', new ClassSerializer(self::class, 'contacts', Contact::class)), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
+        return array('group' => new ClassSerializer(MinGroup::class), 'contacts' => new ArraySerializer(new ClassSerializer(Contact::class)), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'resources' => new ArraySerializer(new PrimitiveSerializer('string')));
     }
 }

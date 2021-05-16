@@ -39,6 +39,8 @@ class ApiUsersIdProfilesUpdate extends Request
     /**
      * Getter for profileIds
      *
+     * @internal
+     *
      * @return ProfileIds The API profile to update
      */
     public function getProfileIds() : ?ProfileIds
@@ -52,6 +54,6 @@ class ApiUsersIdProfilesUpdate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('profileIds' => new ClassSerializer(self::class, 'profileIds', ProfileIds::class));
+        return array('profileIds' => new ClassSerializer(ProfileIds::class));
     }
 }

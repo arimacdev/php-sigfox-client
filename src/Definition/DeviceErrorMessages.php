@@ -230,6 +230,6 @@ class DeviceErrorMessages extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('deviceId' => new PrimitiveSerializer(self::class, 'deviceId', 'string'), 'deviceTypeId' => new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), 'time' => new PrimitiveSerializer(self::class, 'time', 'int'), 'data' => new PrimitiveSerializer(self::class, 'data', 'string'), 'status' => new PrimitiveSerializer(self::class, 'status', 'string'), 'message' => new PrimitiveSerializer(self::class, 'message', 'string'), 'callback' => new ClassSerializer(self::class, 'callback', CallbackMedium::class), 'parameters' => new PrimitiveSerializer(self::class, 'parameters', 'array'));
+        return array('deviceId' => new PrimitiveSerializer('string'), 'deviceTypeId' => new PrimitiveSerializer('string'), 'time' => new PrimitiveSerializer('int'), 'data' => new PrimitiveSerializer('string'), 'status' => new PrimitiveSerializer('string'), 'message' => new PrimitiveSerializer('string'), 'callback' => new ClassSerializer(CallbackMedium::class), 'parameters' => new PrimitiveSerializer('array'));
     }
 }

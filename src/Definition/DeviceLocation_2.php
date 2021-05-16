@@ -66,6 +66,6 @@ class DeviceLocation_2 extends ComputedLocation
      */
     public function getSerializeMetaData() : array
     {
-        return array('time' => new PrimitiveSerializer(self::class, 'time', 'int'), 'valid' => new PrimitiveSerializer(self::class, 'valid', 'bool'));
+        return array('time' => new PrimitiveSerializer('int'), 'valid' => new PrimitiveSerializer('bool'));
     }
 }

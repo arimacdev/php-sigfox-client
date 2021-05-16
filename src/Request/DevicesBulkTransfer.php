@@ -39,6 +39,8 @@ class DevicesBulkTransfer extends Request
     /**
      * Getter for devices
      *
+     * @internal
+     *
      * @return AsynchronousDeviceTransferJob The devices to move
      */
     public function getDevices() : ?AsynchronousDeviceTransferJob
@@ -52,6 +54,6 @@ class DevicesBulkTransfer extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('devices' => new ClassSerializer(self::class, 'devices', AsynchronousDeviceTransferJob::class));
+        return array('devices' => new ClassSerializer(AsynchronousDeviceTransferJob::class));
     }
 }

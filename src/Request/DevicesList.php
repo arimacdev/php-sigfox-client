@@ -111,6 +111,8 @@ class DevicesList extends Request
     /**
      * Getter for id
      *
+     * @internal
+     *
      * @return string The device's identifier (hexadecimal format)
      */
     public function getId() : ?string
@@ -132,6 +134,8 @@ class DevicesList extends Request
     }
     /**
      * Getter for groupIds
+     *
+     * @internal
      *
      * @return string[] Returns all devices under the given groups (included sub-groups if the parameter deep is
      *                  equals to true)
@@ -155,6 +159,8 @@ class DevicesList extends Request
     /**
      * Getter for deep
      *
+     * @internal
+     *
      * @return bool if true, we search by groups and subgroups through the parameter 'groupIds'
      */
     public function getDeep() : ?bool
@@ -175,6 +181,8 @@ class DevicesList extends Request
     }
     /**
      * Getter for authorizations
+     *
+     * @internal
      *
      * @return bool if true, we return the list of actions and resources the user has access
      */
@@ -197,6 +205,8 @@ class DevicesList extends Request
     /**
      * Getter for deviceTypeId
      *
+     * @internal
+     *
      * @return string Returns all devices of the given device type
      */
     public function getDeviceTypeId() : ?string
@@ -217,6 +227,8 @@ class DevicesList extends Request
     }
     /**
      * Getter for operatorId
+     *
+     * @internal
      *
      * @return string Returns all devices under the given operator
      */
@@ -239,6 +251,8 @@ class DevicesList extends Request
     }
     /**
      * Getter for sort
+     *
+     * @internal
      *
      * @return string The field on which the list will be sorted. (field to sort ascending or -field to sort
      *                descending)
@@ -263,6 +277,8 @@ class DevicesList extends Request
     /**
      * Getter for minId
      *
+     * @internal
+     *
      * @return string The minimal id of the filtered range, only availble when sort parameter is set to "id" or "-id"
      */
     public function getMinId() : ?string
@@ -284,6 +300,8 @@ class DevicesList extends Request
     }
     /**
      * Getter for maxId
+     *
+     * @internal
      *
      * @return string The maximal id of the filtered range, only availble when sort parameter is set to "id" or "-id"
      */
@@ -307,6 +325,8 @@ class DevicesList extends Request
     /**
      * Getter for fields
      *
+     * @internal
+     *
      * @return string Defines the other available fields to be returned in the response.
      *                
      */
@@ -329,6 +349,8 @@ class DevicesList extends Request
     /**
      * Getter for limit
      *
+     * @internal
+     *
      * @return int The maximum number of items to return
      */
     public function getLimit() : ?int
@@ -349,6 +371,8 @@ class DevicesList extends Request
     }
     /**
      * Getter for offset
+     *
+     * @internal
      *
      * @return int The number of items to skip
      */
@@ -371,6 +395,8 @@ class DevicesList extends Request
     /**
      * Getter for pageId
      *
+     * @internal
+     *
      * @return string Token representing the page to retrieve
      */
     public function getPageId() : ?string
@@ -384,6 +410,6 @@ class DevicesList extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'groupIds' => new ArraySerializer(self::class, 'groupIds', new PrimitiveSerializer(self::class, 'groupIds', 'string')), 'deep' => new PrimitiveSerializer(self::class, 'deep', 'bool'), 'authorizations' => new PrimitiveSerializer(self::class, 'authorizations', 'bool'), 'deviceTypeId' => new PrimitiveSerializer(self::class, 'deviceTypeId', 'string'), 'operatorId' => new PrimitiveSerializer(self::class, 'operatorId', 'string'), 'sort' => new PrimitiveSerializer(self::class, 'sort', 'string'), 'minId' => new PrimitiveSerializer(self::class, 'minId', 'string'), 'maxId' => new PrimitiveSerializer(self::class, 'maxId', 'string'), 'fields' => new PrimitiveSerializer(self::class, 'fields', 'string'), 'limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'offset' => new PrimitiveSerializer(self::class, 'offset', 'int'), 'pageId' => new PrimitiveSerializer(self::class, 'pageId', 'string'));
+        return array('id' => new PrimitiveSerializer('string'), 'groupIds' => new ArraySerializer(new PrimitiveSerializer('string')), 'deep' => new PrimitiveSerializer('bool'), 'authorizations' => new PrimitiveSerializer('bool'), 'deviceTypeId' => new PrimitiveSerializer('string'), 'operatorId' => new PrimitiveSerializer('string'), 'sort' => new PrimitiveSerializer('string'), 'minId' => new PrimitiveSerializer('string'), 'maxId' => new PrimitiveSerializer('string'), 'fields' => new PrimitiveSerializer('string'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
     }
 }

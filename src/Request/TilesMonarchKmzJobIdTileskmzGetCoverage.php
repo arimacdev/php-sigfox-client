@@ -62,6 +62,8 @@ class TilesMonarchKmzJobIdTileskmzGetCoverage extends Request
     /**
      * Getter for zoom
      *
+     * @internal
+     *
      * @return int The zoom level used to generate kmz file
      */
     public function getZoom() : ?int
@@ -82,6 +84,8 @@ class TilesMonarchKmzJobIdTileskmzGetCoverage extends Request
     }
     /**
      * Getter for north
+     *
+     * @internal
      *
      * @return int The north boundary to extract coverage
      */
@@ -104,6 +108,8 @@ class TilesMonarchKmzJobIdTileskmzGetCoverage extends Request
     /**
      * Getter for south
      *
+     * @internal
+     *
      * @return int The south boundary to extract coverage
      */
     public function getSouth() : ?int
@@ -124,6 +130,8 @@ class TilesMonarchKmzJobIdTileskmzGetCoverage extends Request
     }
     /**
      * Getter for west
+     *
+     * @internal
      *
      * @return int The west boundary to extract coverage
      */
@@ -146,6 +154,8 @@ class TilesMonarchKmzJobIdTileskmzGetCoverage extends Request
     /**
      * Getter for east
      *
+     * @internal
+     *
      * @return int The east boundary to extract coverage
      */
     public function getEast() : ?int
@@ -159,6 +169,6 @@ class TilesMonarchKmzJobIdTileskmzGetCoverage extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('zoom' => new PrimitiveSerializer(self::class, 'zoom', 'int'), 'north' => new PrimitiveSerializer(self::class, 'north', 'int'), 'south' => new PrimitiveSerializer(self::class, 'south', 'int'), 'west' => new PrimitiveSerializer(self::class, 'west', 'int'), 'east' => new PrimitiveSerializer(self::class, 'east', 'int'));
+        return array('zoom' => new PrimitiveSerializer('int'), 'north' => new PrimitiveSerializer('int'), 'south' => new PrimitiveSerializer('int'), 'west' => new PrimitiveSerializer('int'), 'east' => new PrimitiveSerializer('int'));
     }
 }

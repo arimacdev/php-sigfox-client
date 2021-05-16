@@ -40,6 +40,6 @@ class CertificateUpdate extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('key' => new PrimitiveSerializer(self::class, 'key', 'string'));
+        return array('key' => new PrimitiveSerializer('string'));
     }
 }

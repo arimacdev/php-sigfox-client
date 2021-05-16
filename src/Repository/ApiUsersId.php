@@ -2,14 +2,23 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
+use Arimac\Sigfox\Helper;
 use Arimac\Sigfox\Request\ApiUsersIdGet;
 use Arimac\Sigfox\Definition\ApiUser;
+use Arimac\Sigfox\Exception\DeserializeException;
+use Arimac\Sigfox\Exception\SerializeException;
+use Arimac\Sigfox\Exception\UnexpectedResponseException;
+use Arimac\Sigfox\Exception\Response\BadRequestException;
+use Arimac\Sigfox\Exception\Response\UnauthorizedException;
+use Arimac\Sigfox\Exception\Response\ForbiddenException;
+use Arimac\Sigfox\Exception\Response\NotFoundException;
+use Arimac\Sigfox\Exception\Response\InternalServerException;
 use Arimac\Sigfox\Definition\ApiUserEdition;
 use Arimac\Sigfox\Request\ApiUsersIdUpdate;
 use Arimac\Sigfox\Response\Generated\ApiUsersIdRenewCredentialResponse;
-class ApiUsersId extends Repository
+use Arimac\Sigfox\Exception\Response\MethodNotAllowedException;
+class ApiUsersId
 {
     /**
      * The HTTP client
@@ -42,28 +51,52 @@ class ApiUsersId extends Repository
      * @param ApiUsersIdGet $request The query and body parameters to pass
      *
      * @return ApiUser
+     *
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
+     * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
+     * @throws UnexpectedResponseException If server returned an unexpected status code.
+     * @throws BadRequestException         If server returned a HTTP 400 error.
+     * @throws UnauthorizedException       If server returned a HTTP 401 error.
+     * @throws ForbiddenException          If server returned a HTTP 403 error.
+     * @throws NotFoundException           If server returned a HTTP 404 error.
+     * @throws InternalServerException     If server returned a HTTP 500 error.
      */
     public function get(?ApiUsersIdGet $request = null) : ApiUser
     {
-        return $this->client->call('get', $this->bind('/api-users/{id}', $this->id), $request, ApiUser::class);
+        return $this->client->call('get', Helper::bindUrlParams('/api-users/{id}', $this->id), $request, ApiUser::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
     /**
      * Update information about a given API user.
      *
      * @param ApiUserEdition $apiUser The information to update
+     *
+     * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
+     * @throws UnexpectedResponseException If server returned an unexpected status code.
+     * @throws BadRequestException         If server returned a HTTP 400 error.
+     * @throws UnauthorizedException       If server returned a HTTP 401 error.
+     * @throws ForbiddenException          If server returned a HTTP 403 error.
+     * @throws NotFoundException           If server returned a HTTP 404 error.
+     * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function update(ApiUserEdition $apiUser)
+    public function update(ApiUserEdition $apiUser) : void
     {
         $request = new ApiUsersIdUpdate();
         $request->setApiUser($apiUser);
-        return $this->client->call('put', $this->bind('/api-users/{id}', $this->id), $request);
+        $this->client->call('put', Helper::bindUrlParams('/api-users/{id}', $this->id), $request, null, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
     /**
      * Delete a given API user.
+     *
+     * @throws UnexpectedResponseException If server returned an unexpected status code.
+     * @throws BadRequestException         If server returned a HTTP 400 error.
+     * @throws UnauthorizedException       If server returned a HTTP 401 error.
+     * @throws ForbiddenException          If server returned a HTTP 403 error.
+     * @throws NotFoundException           If server returned a HTTP 404 error.
+     * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function delete()
+    public function delete() : void
     {
-        return $this->client->call('delete', $this->bind('/api-users/{id}', $this->id), null);
+        $this->client->call('delete', Helper::bindUrlParams('/api-users/{id}', $this->id), null, null, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
     /**
      * @return ApiUsersIdProfiles
@@ -76,9 +109,18 @@ class ApiUsersId extends Repository
      * Generate a new password for a given API user.
      *
      * @return ApiUsersIdRenewCredentialResponse
+     *
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
+     * @throws UnexpectedResponseException If server returned an unexpected status code.
+     * @throws BadRequestException         If server returned a HTTP 400 error.
+     * @throws UnauthorizedException       If server returned a HTTP 401 error.
+     * @throws ForbiddenException          If server returned a HTTP 403 error.
+     * @throws NotFoundException           If server returned a HTTP 404 error.
+     * @throws MethodNotAllowedException   If server returned a HTTP 405 error.
+     * @throws InternalServerException     If server returned a HTTP 500 error.
      */
     public function renewCredential() : ApiUsersIdRenewCredentialResponse
     {
-        return $this->client->call('put', $this->bind('/api-users/{id}/renew-credential', $this->id), null, ApiUsersIdRenewCredentialResponse::class);
+        return $this->client->call('put', Helper::bindUrlParams('/api-users/{id}/renew-credential', $this->id), null, ApiUsersIdRenewCredentialResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 405 => MethodNotAllowedException::class, 500 => InternalServerException::class));
     }
 }

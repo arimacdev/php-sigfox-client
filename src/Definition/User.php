@@ -231,6 +231,6 @@ class User extends CommonUser
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'email' => new PrimitiveSerializer(self::class, 'email', 'string'), 'locked' => new PrimitiveSerializer(self::class, 'locked', 'bool'), 'creationTime' => new PrimitiveSerializer(self::class, 'creationTime', 'int'), 'lastLoginTime' => new PrimitiveSerializer(self::class, 'lastLoginTime', 'int'), 'userRoles' => new ArraySerializer(self::class, 'userRoles', new ClassSerializer(self::class, 'userRoles', UserRole::class)), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
+        return array('id' => new PrimitiveSerializer('string'), 'email' => new PrimitiveSerializer('string'), 'locked' => new PrimitiveSerializer('bool'), 'creationTime' => new PrimitiveSerializer('int'), 'lastLoginTime' => new PrimitiveSerializer('int'), 'userRoles' => new ArraySerializer(new ClassSerializer(UserRole::class)), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'resources' => new ArraySerializer(new PrimitiveSerializer('string')));
     }
 }

@@ -242,4 +242,21 @@ class Helper
             rmdir($dir);
         }
     }
+
+    /**
+     * Find and replace only the firs occurance of a string
+     *
+     * @param string $search  String to search
+     * @param string $replace String to replace with
+     * @param string $subject The text
+     *
+     * @return string
+     */
+    public static function strReplaceFirst(string $search, string $replace, string $subject): string{
+        $pos = strpos($subject, $search);
+        if ($pos !== false) {
+            return substr_replace($subject, $replace, $pos, strlen($search));
+        }
+        return $subject;
+    }
 }

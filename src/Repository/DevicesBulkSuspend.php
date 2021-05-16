@@ -2,9 +2,8 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
-class DevicesBulkSuspend extends Repository
+class DevicesBulkSuspend
 {
     /**
      * The HTTP client

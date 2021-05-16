@@ -39,6 +39,8 @@ class DeviceTypesIdUpdate extends Request
     /**
      * Getter for deviceType
      *
+     * @internal
+     *
      * @return DeviceTypeUpdate The device type to update
      */
     public function getDeviceType() : ?DeviceTypeUpdate
@@ -52,6 +54,6 @@ class DeviceTypesIdUpdate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('deviceType' => new ClassSerializer(self::class, 'deviceType', DeviceTypeUpdate::class));
+        return array('deviceType' => new ClassSerializer(DeviceTypeUpdate::class));
     }
 }

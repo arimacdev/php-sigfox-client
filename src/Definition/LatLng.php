@@ -71,6 +71,6 @@ class LatLng extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('lat' => new PrimitiveSerializer(self::class, 'lat', 'int'), 'lng' => new PrimitiveSerializer(self::class, 'lng', 'int'));
+        return array('lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'));
     }
 }

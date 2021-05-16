@@ -9,6 +9,7 @@ use Arimac\Sigfox\GenCode\Config\RewriteRules;
 use Arimac\Sigfox\GenCode\Helper;
 use Arimac\Sigfox\GenCode\Repository;
 use Arimac\Sigfox\GenCode\Request;
+use Arimac\Sigfox\GenCode\Response;
 
 $dir = dirname(__DIR__);
 
@@ -57,6 +58,17 @@ $repositories = [];
 $client = new Client("Arimac\\Sigfox", "Sigfox", Helper::normalizeDocComment("Client for sigfox API"));
 $client->extend("Arimac\\Sigfox\\SigfoxExt");
 
+$errors = [
+    400=> "Arimac\\Sigfox\\Exception\\Response\\BadRequestException",
+    401=> "Arimac\\Sigfox\\Exception\\Response\\UnauthorizedException",
+    403=> "Arimac\\Sigfox\\Exception\\Response\\ForbiddenException",
+    404=> "Arimac\\Sigfox\\Exception\\Response\\NotFoundException",
+    405=> "Arimac\\Sigfox\\Exception\\Response\\MethodNotAllowedException",
+    409=> "Arimac\\Sigfox\\Exception\\Response\\ConflictException",
+    412=> "Arimac\\Sigfox\\Exception\\Response\\PreconditionFailedException",
+    500=> "Arimac\\Sigfox\\Exception\\Response\\InternalServerException"
+];
+
 foreach ($openapi["paths"] as $endpoint => $path) {
     $rewrite = RewriteRules::rewrite($endpoint);
     $slices = explode("/", $rewrite);
@@ -97,7 +109,6 @@ foreach ($openapi["paths"] as $endpoint => $path) {
 
             if (!isset($repositories[$repoName])) {
                 $repository = new Repository("Arimac\\Sigfox\\Repository", $repoName);
-                $repository->extend("Arimac\\Sigfox\\Repository");
                 /** @var Repository **/
                 $prevRepository = $repositories[$previousRepoName] ?? null;
                 $repositories[$repoName] = $repository;
@@ -143,12 +154,20 @@ foreach ($openapi["paths"] as $endpoint => $path) {
         $operation = $path[$requestMethod];
 
         $responseType=null;
+        $responseTypeNullable = false;
+        $expectedErrors = [];
         foreach($operation["responses"] as $statusCode => $response){
-            if($statusCode<204&&$statusCode>199){
+            if($statusCode<204&&$statusCode>=200){
                 if(isset($response["schema"])){
                     $responseClassName = $requestClassName."Response";
-                    $responseType = Definition::fromArray("Arimac\\Sigfox\\Response\\Generated\\$responseClassName",$response["schema"]);
+                    $responseType = Response::fromArray("Arimac\\Sigfox\\Response\\Generated\\$responseClassName",$response["schema"]);
                 }
+            }
+            if($statusCode==204){
+                $responseTypeNullable = true;    
+            }
+            if($statusCode>=400){
+                $expectedErrors[(int)$statusCode] = $errors[(int) $statusCode];
             }
         }
 
@@ -165,7 +184,9 @@ foreach ($openapi["paths"] as $endpoint => $path) {
             $requestMethod, 
             $endpoint, 
             $responseType, 
+            $responseTypeNullable,
             $requestType, 
+            $expectedErrors,
             $description,
             $properties
         );

@@ -67,6 +67,6 @@ class LocationItem extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('code' => new PrimitiveSerializer(self::class, 'code', 'int'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'));
+        return array('code' => new PrimitiveSerializer('int'), 'name' => new PrimitiveSerializer('string'));
     }
 }

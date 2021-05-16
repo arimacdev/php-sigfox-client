@@ -68,6 +68,8 @@ class CoveragesOperatorsRedundancy extends Request
     /**
      * Getter for lat
      *
+     * @internal
+     *
      * @return int the latitude
      */
     public function getLat() : ?int
@@ -88,6 +90,8 @@ class CoveragesOperatorsRedundancy extends Request
     }
     /**
      * Getter for lng
+     *
+     * @internal
      *
      * @return int the longitude
      */
@@ -111,6 +115,8 @@ class CoveragesOperatorsRedundancy extends Request
     }
     /**
      * Getter for operatorId
+     *
+     * @internal
      *
      * @return string The group id related to the operator to get its coverage result. Is required for root sigfox
      *                users.
@@ -139,6 +145,8 @@ class CoveragesOperatorsRedundancy extends Request
     /**
      * Getter for deviceSituation
      *
+     * @internal
+     *
      * @return string The coverage mode.
      *                - OUTDOOR, max link budget
      *                - INDOOR, link budget with 20dB margin
@@ -164,6 +172,8 @@ class CoveragesOperatorsRedundancy extends Request
     /**
      * Getter for deviceClassId
      *
+     * @internal
+     *
      * @return int The product uplink class from 0 to 3 (0U to 3U).
      */
     public function getDeviceClassId() : ?int
@@ -177,6 +187,6 @@ class CoveragesOperatorsRedundancy extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('lat' => new PrimitiveSerializer(self::class, 'lat', 'int'), 'lng' => new PrimitiveSerializer(self::class, 'lng', 'int'), 'operatorId' => new PrimitiveSerializer(self::class, 'operatorId', 'string'), 'deviceSituation' => new PrimitiveSerializer(self::class, 'deviceSituation', 'string'), 'deviceClassId' => new PrimitiveSerializer(self::class, 'deviceClassId', 'int'));
+        return array('lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'), 'operatorId' => new PrimitiveSerializer('string'), 'deviceSituation' => new PrimitiveSerializer('string'), 'deviceClassId' => new PrimitiveSerializer('int'));
     }
 }

@@ -47,6 +47,6 @@ class Basic extends Group
      */
     public function getSerializeMetaData() : array
     {
-        return array('currentPrototypeCount' => new PrimitiveSerializer(self::class, 'currentPrototypeCount', 'int'));
+        return array('currentPrototypeCount' => new PrimitiveSerializer('int'));
     }
 }

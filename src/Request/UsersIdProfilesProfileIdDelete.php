@@ -34,6 +34,8 @@ class UsersIdProfilesProfileIdDelete extends Request
     /**
      * Getter for groupId
      *
+     * @internal
+     *
      * @return string The group identifier
      */
     public function getGroupId() : ?string
@@ -47,6 +49,6 @@ class UsersIdProfilesProfileIdDelete extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'));
+        return array('groupId' => new PrimitiveSerializer('string'));
     }
 }

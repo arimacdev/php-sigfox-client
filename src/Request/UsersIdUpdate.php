@@ -39,6 +39,8 @@ class UsersIdUpdate extends Request
     /**
      * Getter for user
      *
+     * @internal
+     *
      * @return UserUpdate The user to update
      */
     public function getUser() : ?UserUpdate
@@ -52,6 +54,6 @@ class UsersIdUpdate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('user' => new ClassSerializer(self::class, 'user', UserUpdate::class));
+        return array('user' => new ClassSerializer(UserUpdate::class));
     }
 }

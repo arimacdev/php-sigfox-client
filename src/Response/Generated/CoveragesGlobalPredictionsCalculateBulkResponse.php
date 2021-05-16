@@ -15,6 +15,8 @@ class CoveragesGlobalPredictionsCalculateBulkResponse extends Definition
     /**
      * Setter for jobId
      *
+     * @internal
+     *
      * @param string $jobId jobId provided to the customer to request the job status and results
      *
      * @return self To use in method chains
@@ -40,6 +42,6 @@ class CoveragesGlobalPredictionsCalculateBulkResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('jobId' => new PrimitiveSerializer(self::class, 'jobId', 'string'));
+        return array('jobId' => new PrimitiveSerializer('string'));
     }
 }

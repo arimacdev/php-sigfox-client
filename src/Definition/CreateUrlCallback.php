@@ -193,6 +193,6 @@ class CreateUrlCallback extends CreateCallback
      */
     public function getSerializeMetaData() : array
     {
-        return array('url' => new PrimitiveSerializer(self::class, 'url', 'string'), 'httpMethod' => new PrimitiveSerializer(self::class, 'httpMethod', 'string'), 'headers' => new PrimitiveSerializer(self::class, 'headers', 'array'), 'sendSni' => new PrimitiveSerializer(self::class, 'sendSni', 'bool'), 'bodyTemplate' => new PrimitiveSerializer(self::class, 'bodyTemplate', 'string'), 'contentType' => new PrimitiveSerializer(self::class, 'contentType', 'string'));
+        return array('url' => new PrimitiveSerializer('string'), 'httpMethod' => new PrimitiveSerializer('string'), 'headers' => new PrimitiveSerializer('array'), 'sendSni' => new PrimitiveSerializer('bool'), 'bodyTemplate' => new PrimitiveSerializer('string'), 'contentType' => new PrimitiveSerializer('string'));
     }
 }

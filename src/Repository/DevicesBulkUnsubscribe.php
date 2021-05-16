@@ -2,9 +2,8 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
-class DevicesBulkUnsubscribe extends Repository
+class DevicesBulkUnsubscribe
 {
     /**
      * The HTTP client

@@ -35,6 +35,8 @@ class DevicesBulkReplace extends Request
     /**
      * Getter for devicePairs
      *
+     * @internal
+     *
      * @return AsynchronousDeviceReplacementJob Pairs of source and target devices
      */
     public function getDevicePairs() : ?AsynchronousDeviceReplacementJob
@@ -48,6 +50,6 @@ class DevicesBulkReplace extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('devicePairs' => new ClassSerializer(self::class, 'devicePairs', AsynchronousDeviceReplacementJob::class));
+        return array('devicePairs' => new ClassSerializer(AsynchronousDeviceReplacementJob::class));
     }
 }

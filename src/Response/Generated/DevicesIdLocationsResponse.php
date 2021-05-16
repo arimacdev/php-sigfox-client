@@ -20,6 +20,8 @@ class DevicesIdLocationsResponse extends Definition
     /**
      * Setter for data
      *
+     * @internal
+     *
      * @param DeviceLocation_2[] $data
      *
      * @return self To use in method chains
@@ -40,6 +42,8 @@ class DevicesIdLocationsResponse extends Definition
     }
     /**
      * Setter for paging
+     *
+     * @internal
      *
      * @param Paging $paging
      *
@@ -66,6 +70,6 @@ class DevicesIdLocationsResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('data' => new ArraySerializer(self::class, 'data', new ClassSerializer(self::class, 'data', DeviceLocation_2::class)), 'paging' => new ClassSerializer(self::class, 'paging', Paging::class));
+        return array('data' => new ArraySerializer(new ClassSerializer(DeviceLocation_2::class)), 'paging' => new ClassSerializer(Paging::class));
     }
 }

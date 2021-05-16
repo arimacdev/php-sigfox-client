@@ -44,6 +44,8 @@ class DevicesIdGet extends Request
     /**
      * Getter for authorizations
      *
+     * @internal
+     *
      * @return bool if true, we return the list of actions and resources the user has access
      */
     public function getAuthorizations() : ?bool
@@ -66,6 +68,8 @@ class DevicesIdGet extends Request
     /**
      * Getter for fields
      *
+     * @internal
+     *
      * @return string Defines the other available fields to be returned in the response.
      *                
      */
@@ -80,6 +84,6 @@ class DevicesIdGet extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('authorizations' => new PrimitiveSerializer(self::class, 'authorizations', 'bool'), 'fields' => new PrimitiveSerializer(self::class, 'fields', 'string'));
+        return array('authorizations' => new PrimitiveSerializer('bool'), 'fields' => new PrimitiveSerializer('string'));
     }
 }

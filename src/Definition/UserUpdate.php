@@ -103,6 +103,6 @@ class UserUpdate extends CommonUser
      */
     public function getSerializeMetaData() : array
     {
-        return array('userRoles' => new ArraySerializer(self::class, 'userRoles', new ClassSerializer(self::class, 'userRoles', UserRolesItem::class)), 'baseStations' => new PrimitiveSerializer(self::class, 'baseStations', 'string'), 'maintenances' => new PrimitiveSerializer(self::class, 'maintenances', 'string'));
+        return array('userRoles' => new ArraySerializer(new ClassSerializer(UserRolesItem::class)), 'baseStations' => new PrimitiveSerializer('string'), 'maintenances' => new PrimitiveSerializer('string'));
     }
 }

@@ -95,6 +95,8 @@ class UsersList extends Request
     /**
      * Getter for fields
      *
+     * @internal
+     *
      * @return string Defines the other available fields to be returned in the response.
      *                
      */
@@ -117,6 +119,8 @@ class UsersList extends Request
     /**
      * Getter for text
      *
+     * @internal
+     *
      * @return string Searches for users containing the given text in their name or email
      */
     public function getText() : ?string
@@ -137,6 +141,8 @@ class UsersList extends Request
     }
     /**
      * Getter for profileId
+     *
+     * @internal
      *
      * @return string Searches for users who have the given profile affected
      */
@@ -159,6 +165,8 @@ class UsersList extends Request
     /**
      * Getter for groupIds
      *
+     * @internal
+     *
      * @return string[] Searches for users who are attached to the given groups
      */
     public function getGroupIds() : ?array
@@ -179,6 +187,8 @@ class UsersList extends Request
     }
     /**
      * Getter for deep
+     *
+     * @internal
      *
      * @return bool Deep search in the sub group hierarchy
      */
@@ -204,6 +214,8 @@ class UsersList extends Request
     /**
      * Getter for sort
      *
+     * @internal
+     *
      * @return string The field on which the list will be sorted. (field to sort ascending or -field to sort
      *                descending)
      *                sort by name will sort on lowercase and ascii string version of "<firstName> <lastName>"
@@ -228,6 +240,8 @@ class UsersList extends Request
     /**
      * Getter for authorizations
      *
+     * @internal
+     *
      * @return bool if true, we return the list of actions and resources the user has access
      */
     public function getAuthorizations() : ?bool
@@ -248,6 +262,8 @@ class UsersList extends Request
     }
     /**
      * Getter for limit
+     *
+     * @internal
      *
      * @return int The maximum number of items to return
      */
@@ -270,6 +286,8 @@ class UsersList extends Request
     /**
      * Getter for offset
      *
+     * @internal
+     *
      * @return int The number of items to skip
      */
     public function getOffset() : ?int
@@ -291,6 +309,8 @@ class UsersList extends Request
     /**
      * Getter for pageId
      *
+     * @internal
+     *
      * @return string Token representing the page to retrieve
      */
     public function getPageId() : ?string
@@ -304,6 +324,6 @@ class UsersList extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('fields' => new PrimitiveSerializer(self::class, 'fields', 'string'), 'text' => new PrimitiveSerializer(self::class, 'text', 'string'), 'profileId' => new PrimitiveSerializer(self::class, 'profileId', 'string'), 'groupIds' => new ArraySerializer(self::class, 'groupIds', new PrimitiveSerializer(self::class, 'groupIds', 'string')), 'deep' => new PrimitiveSerializer(self::class, 'deep', 'bool'), 'sort' => new PrimitiveSerializer(self::class, 'sort', 'string'), 'authorizations' => new PrimitiveSerializer(self::class, 'authorizations', 'bool'), 'limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'offset' => new PrimitiveSerializer(self::class, 'offset', 'int'), 'pageId' => new PrimitiveSerializer(self::class, 'pageId', 'string'));
+        return array('fields' => new PrimitiveSerializer('string'), 'text' => new PrimitiveSerializer('string'), 'profileId' => new PrimitiveSerializer('string'), 'groupIds' => new ArraySerializer(new PrimitiveSerializer('string')), 'deep' => new PrimitiveSerializer('bool'), 'sort' => new PrimitiveSerializer('string'), 'authorizations' => new PrimitiveSerializer('bool'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
     }
 }

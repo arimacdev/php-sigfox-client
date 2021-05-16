@@ -19,4 +19,14 @@ class InternalServerException extends ResponseException {
     {
         parent::__construct("Internal Server Error", 500, $prev);
     }
+
+    /**
+     * @internal
+     *
+     * @inheritdoc
+     */
+    public static function deserialize($value): InternalServerException
+    {
+        return new InternalServerException();
+    }
 }

@@ -171,6 +171,6 @@ class Profile extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'group' => new ClassSerializer(self::class, 'group', MinGroup::class), 'roles' => new ArraySerializer(self::class, 'roles', new ClassSerializer(self::class, 'roles', MinRole::class)), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
+        return array('id' => new PrimitiveSerializer('string'), 'name' => new PrimitiveSerializer('string'), 'group' => new ClassSerializer(MinGroup::class), 'roles' => new ArraySerializer(new ClassSerializer(MinRole::class)), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'resources' => new ArraySerializer(new PrimitiveSerializer('string')));
     }
 }

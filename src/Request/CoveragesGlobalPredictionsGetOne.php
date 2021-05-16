@@ -60,6 +60,8 @@ class CoveragesGlobalPredictionsGetOne extends Request
     /**
      * Getter for lat
      *
+     * @internal
+     *
      * @return int the latitude
      */
     public function getLat() : ?int
@@ -80,6 +82,8 @@ class CoveragesGlobalPredictionsGetOne extends Request
     }
     /**
      * Getter for lng
+     *
+     * @internal
      *
      * @return int the longitude
      */
@@ -104,6 +108,8 @@ class CoveragesGlobalPredictionsGetOne extends Request
     /**
      * Getter for radius
      *
+     * @internal
+     *
      * @return int The radius of the area in which the coverage results are averaged and returned for a selected
      *             location, in meters.
      *             
@@ -127,6 +133,8 @@ class CoveragesGlobalPredictionsGetOne extends Request
     /**
      * Getter for groupId
      *
+     * @internal
+     *
      * @return string the id of a group to include its operator in the global coverage
      */
     public function getGroupId() : ?string
@@ -140,6 +148,6 @@ class CoveragesGlobalPredictionsGetOne extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('lat' => new PrimitiveSerializer(self::class, 'lat', 'int'), 'lng' => new PrimitiveSerializer(self::class, 'lng', 'int'), 'radius' => new PrimitiveSerializer(self::class, 'radius', 'int'), 'groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'));
+        return array('lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'), 'radius' => new PrimitiveSerializer('int'), 'groupId' => new PrimitiveSerializer('string'));
     }
 }

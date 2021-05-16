@@ -58,6 +58,8 @@ class DevicesIdLocations extends Request
     /**
      * Getter for oob
      *
+     * @internal
+     *
      * @return bool if true, the method return also the location from out of band Messages
      */
     public function getOob() : ?bool
@@ -78,6 +80,8 @@ class DevicesIdLocations extends Request
     }
     /**
      * Getter for since
+     *
+     * @internal
      *
      * @return int Starting timestamp (in milliseconds since the Unix Epoch)
      */
@@ -100,6 +104,8 @@ class DevicesIdLocations extends Request
     /**
      * Getter for before
      *
+     * @internal
+     *
      * @return int Ending timestamp (in milliseconds since the Unix Epoch)
      */
     public function getBefore() : ?int
@@ -120,6 +126,8 @@ class DevicesIdLocations extends Request
     }
     /**
      * Getter for limit
+     *
+     * @internal
      *
      * @return int The maximum number of items to return
      */
@@ -142,6 +150,8 @@ class DevicesIdLocations extends Request
     /**
      * Getter for offset
      *
+     * @internal
+     *
      * @return int The number of items to skip
      */
     public function getOffset() : ?int
@@ -155,6 +165,6 @@ class DevicesIdLocations extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('oob' => new PrimitiveSerializer(self::class, 'oob', 'bool'), 'since' => new PrimitiveSerializer(self::class, 'since', 'int'), 'before' => new PrimitiveSerializer(self::class, 'before', 'int'), 'limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'offset' => new PrimitiveSerializer(self::class, 'offset', 'int'));
+        return array('oob' => new PrimitiveSerializer('bool'), 'since' => new PrimitiveSerializer('int'), 'before' => new PrimitiveSerializer('int'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'));
     }
 }

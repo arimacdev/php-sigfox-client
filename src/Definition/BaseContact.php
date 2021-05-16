@@ -240,6 +240,6 @@ class BaseContact extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'email' => new PrimitiveSerializer(self::class, 'email', 'string'), 'phoneNumber' => new PrimitiveSerializer(self::class, 'phoneNumber', 'string'), 'mobilePhoneNumber' => new PrimitiveSerializer(self::class, 'mobilePhoneNumber', 'string'), 'address' => new PrimitiveSerializer(self::class, 'address', 'string'), 'description' => new PrimitiveSerializer(self::class, 'description', 'string'), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')), 'resources' => new ArraySerializer(self::class, 'resources', new PrimitiveSerializer(self::class, 'resources', 'string')));
+        return array('name' => new PrimitiveSerializer('string'), 'email' => new PrimitiveSerializer('string'), 'phoneNumber' => new PrimitiveSerializer('string'), 'mobilePhoneNumber' => new PrimitiveSerializer('string'), 'address' => new PrimitiveSerializer('string'), 'description' => new PrimitiveSerializer('string'), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'resources' => new ArraySerializer(new PrimitiveSerializer('string')));
     }
 }

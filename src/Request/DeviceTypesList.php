@@ -132,6 +132,8 @@ class DeviceTypesList extends Request
     /**
      * Getter for name
      *
+     * @internal
+     *
      * @return string Search returns all Device Type names containing the value. Example: ?name=sig
      *                
      */
@@ -156,6 +158,8 @@ class DeviceTypesList extends Request
     /**
      * Getter for groupIds
      *
+     * @internal
+     *
      * @return string[] Search for device types which are attached to a Group. Example:
      *                  ?groupIds=57309674171c857460043087,57309674171c857460043088
      *                  
@@ -179,6 +183,8 @@ class DeviceTypesList extends Request
     /**
      * Getter for deep
      *
+     * @internal
+     *
      * @return bool If a group identifier is specified, also includes its subgroups.
      */
     public function getDeep() : ?bool
@@ -199,6 +205,8 @@ class DeviceTypesList extends Request
     }
     /**
      * Getter for contractId
+     *
+     * @internal
      *
      * @return string Searches for device types which are attached to the given contract.
      */
@@ -229,6 +237,8 @@ class DeviceTypesList extends Request
     /**
      * Getter for payloadType
      *
+     * @internal
+     *
      * @return int Searches device types by payload type
      *             
      *             - {@see DeviceTypesList::PAYLOAD_TYPE_REGULAR}
@@ -258,6 +268,8 @@ class DeviceTypesList extends Request
     /**
      * Getter for authorizations
      *
+     * @internal
+     *
      * @return bool if true, we return the list of actions and resources the user has access
      */
     public function getAuthorizations() : ?bool
@@ -279,6 +291,8 @@ class DeviceTypesList extends Request
     }
     /**
      * Getter for sort
+     *
+     * @internal
      *
      * @return string The field on which the list will be sorted. (field to sort ascending or -field to sort
      *                descending).
@@ -303,6 +317,8 @@ class DeviceTypesList extends Request
     /**
      * Getter for fields
      *
+     * @internal
+     *
      * @return string Defines the other available API user's fields to be returned in the response.
      *                
      */
@@ -325,6 +341,8 @@ class DeviceTypesList extends Request
     /**
      * Getter for limit
      *
+     * @internal
+     *
      * @return int Defines the maximum number of items to return
      */
     public function getLimit() : ?int
@@ -345,6 +363,8 @@ class DeviceTypesList extends Request
     }
     /**
      * Getter for offset
+     *
+     * @internal
      *
      * @return int Defines the number of items to skip
      */
@@ -367,6 +387,8 @@ class DeviceTypesList extends Request
     /**
      * Getter for pageId
      *
+     * @internal
+     *
      * @return string Token representing the page to retrieve
      */
     public function getPageId() : ?string
@@ -380,6 +402,6 @@ class DeviceTypesList extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'groupIds' => new ArraySerializer(self::class, 'groupIds', new PrimitiveSerializer(self::class, 'groupIds', 'string')), 'deep' => new PrimitiveSerializer(self::class, 'deep', 'bool'), 'contractId' => new PrimitiveSerializer(self::class, 'contractId', 'string'), 'payloadType' => new PrimitiveSerializer(self::class, 'payloadType', 'int'), 'authorizations' => new PrimitiveSerializer(self::class, 'authorizations', 'bool'), 'sort' => new PrimitiveSerializer(self::class, 'sort', 'string'), 'fields' => new PrimitiveSerializer(self::class, 'fields', 'string'), 'limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'offset' => new PrimitiveSerializer(self::class, 'offset', 'int'), 'pageId' => new PrimitiveSerializer(self::class, 'pageId', 'string'));
+        return array('name' => new PrimitiveSerializer('string'), 'groupIds' => new ArraySerializer(new PrimitiveSerializer('string')), 'deep' => new PrimitiveSerializer('bool'), 'contractId' => new PrimitiveSerializer('string'), 'payloadType' => new PrimitiveSerializer('int'), 'authorizations' => new PrimitiveSerializer('bool'), 'sort' => new PrimitiveSerializer('string'), 'fields' => new PrimitiveSerializer('string'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
     }
 }

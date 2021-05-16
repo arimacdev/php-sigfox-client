@@ -175,6 +175,6 @@ trait SingleDeviceFields
      */
     public function getSerializeMetaData() : array
     {
-        return array('activable' => new PrimitiveSerializer(self::class, 'activable', 'bool'), 'automaticRenewal' => new PrimitiveSerializer(self::class, 'automaticRenewal', 'bool'), 'lat' => new PrimitiveSerializer(self::class, 'lat', 'int'), 'lng' => new PrimitiveSerializer(self::class, 'lng', 'int'), 'productCertificate' => new ClassSerializer(self::class, 'productCertificate', CertificateUpdate::class), 'prototype' => new PrimitiveSerializer(self::class, 'prototype', 'bool'));
+        return array('activable' => new PrimitiveSerializer('bool'), 'automaticRenewal' => new PrimitiveSerializer('bool'), 'lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'), 'productCertificate' => new ClassSerializer(CertificateUpdate::class), 'prototype' => new PrimitiveSerializer('bool'));
     }
 }

@@ -122,6 +122,6 @@ class OptionsItem extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'parameters' => new PrimitiveSerializer(self::class, 'parameters', 'array'));
+        return array('id' => new PrimitiveSerializer('string'), 'parameters' => new PrimitiveSerializer('array'));
     }
 }

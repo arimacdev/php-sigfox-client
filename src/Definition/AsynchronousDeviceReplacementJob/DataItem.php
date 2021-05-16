@@ -67,6 +67,6 @@ class DataItem extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('deviceId' => new PrimitiveSerializer(self::class, 'deviceId', 'string'), 'targetDeviceId' => new PrimitiveSerializer(self::class, 'targetDeviceId', 'string'));
+        return array('deviceId' => new PrimitiveSerializer('string'), 'targetDeviceId' => new PrimitiveSerializer('string'));
     }
 }

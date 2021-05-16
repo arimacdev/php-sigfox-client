@@ -2,69 +2,22 @@
 
 namespace Arimac\Sigfox\Exception;
 
-use Exception;
-
 /**
  * Deserialization exceptions.
  */
-class DeserializeException extends Exception
+class DeserializeException extends SerializeException
 {
-
-    /** @internal **/
-    protected string $className;
-
-    /** @internal **/
-    protected string $propertyName;
-
-    /** @internal **/
-    protected string $expectedType;
-
     /**
      * Initializing the exception
      *
      * @internal
      *
-     * @param string $className    Name of the class that the value exists
-     * @param string $propertyName Name of the property that the value exists
-     * @param string $expectedType Expected type for the given property
+     * @param string $expectedTypes Expected types for the given property
+     * @param string $actualType    The type of the user passed value
      */
-    public function __construct(string $className, string $propertyName, string $expectedType)
+    public function __construct(array $expectedTypes, string $actualType)
     {
-        parent::__construct(
-            "Can not deserialize the $className:$propertyName property as $expectedType."
-        );
-        $this->className = $className;
-        $this->propertyName = $propertyName;
-        $this->expectedType = $expectedType;
-    }
-
-    /**
-     * Name of the class that the value exists
-     *
-     * @return string
-     */
-    public function getClassName(): string
-    {
-        return $this->className;
-    }
-
-    /**
-     * Name of the property that the value exists
-     *
-     * @return string
-     */
-    public function getPropertyName(): string
-    {
-        return $this->propertyName;
-    }
-
-    /**
-     * Expected type for the property
-     *
-     * @return string
-     */
-    public function getExpectedType(): string
-    {
-        return $this->expectedType;
+        parent::__construct($expectedTypes, $actualType);
+        $this->message = str_replace("serialize", "deserialize", $this->message);
     }
 }

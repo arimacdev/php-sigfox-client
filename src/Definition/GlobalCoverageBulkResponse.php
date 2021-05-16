@@ -100,6 +100,6 @@ class GlobalCoverageBulkResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('jobDone' => new PrimitiveSerializer(self::class, 'jobDone', 'bool'), 'time' => new PrimitiveSerializer(self::class, 'time', 'int'), 'results' => new ArraySerializer(self::class, 'results', new ClassSerializer(self::class, 'results', ResultsItem::class)));
+        return array('jobDone' => new PrimitiveSerializer('bool'), 'time' => new PrimitiveSerializer('int'), 'results' => new ArraySerializer(new ClassSerializer(ResultsItem::class)));
     }
 }

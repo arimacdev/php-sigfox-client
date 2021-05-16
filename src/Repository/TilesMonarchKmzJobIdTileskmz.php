@@ -2,10 +2,17 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
+use Arimac\Sigfox\Helper;
 use Arimac\Sigfox\Request\TilesMonarchKmzJobIdTileskmzGetCoverage;
-class TilesMonarchKmzJobIdTileskmz extends Repository
+use Arimac\Sigfox\Exception\SerializeException;
+use Arimac\Sigfox\Exception\UnexpectedResponseException;
+use Arimac\Sigfox\Exception\Response\BadRequestException;
+use Arimac\Sigfox\Exception\Response\UnauthorizedException;
+use Arimac\Sigfox\Exception\Response\ForbiddenException;
+use Arimac\Sigfox\Exception\Response\NotFoundException;
+use Arimac\Sigfox\Exception\Response\InternalServerException;
+class TilesMonarchKmzJobIdTileskmz
 {
     /**
      * The HTTP client
@@ -36,9 +43,17 @@ class TilesMonarchKmzJobIdTileskmz extends Repository
      * Retrieve Sigfox Monarch coverage kmz from a job
      *
      * @param TilesMonarchKmzJobIdTileskmzGetCoverage $request The query and body parameters to pass
+     *
+     * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
+     * @throws UnexpectedResponseException If server returned an unexpected status code.
+     * @throws BadRequestException         If server returned a HTTP 400 error.
+     * @throws UnauthorizedException       If server returned a HTTP 401 error.
+     * @throws ForbiddenException          If server returned a HTTP 403 error.
+     * @throws NotFoundException           If server returned a HTTP 404 error.
+     * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function getCoverage(TilesMonarchKmzJobIdTileskmzGetCoverage $request)
+    public function getCoverage(TilesMonarchKmzJobIdTileskmzGetCoverage $request) : void
     {
-        return $this->client->call('get', $this->bind('/tiles/monarch/kmz/{jobId}/tiles.kmz', $this->jobId), $request);
+        $this->client->call('get', Helper::bindUrlParams('/tiles/monarch/kmz/{jobId}/tiles.kmz', $this->jobId), $request, null, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
 }

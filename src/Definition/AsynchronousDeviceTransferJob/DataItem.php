@@ -101,6 +101,6 @@ class DataItem extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'keepHistory' => new PrimitiveSerializer(self::class, 'keepHistory', 'bool'), 'activable' => new PrimitiveSerializer(self::class, 'activable', 'bool'));
+        return array('id' => new PrimitiveSerializer('string'), 'keepHistory' => new PrimitiveSerializer('bool'), 'activable' => new PrimitiveSerializer('bool'));
     }
 }

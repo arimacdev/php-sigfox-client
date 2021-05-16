@@ -39,6 +39,8 @@ class DevicesBulkCreate extends Request
     /**
      * Getter for devices
      *
+     * @internal
+     *
      * @return AsynchronousDeviceCreationJob The devices to create
      */
     public function getDevices() : ?AsynchronousDeviceCreationJob
@@ -52,6 +54,6 @@ class DevicesBulkCreate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('devices' => new ClassSerializer(self::class, 'devices', AsynchronousDeviceCreationJob::class));
+        return array('devices' => new ClassSerializer(AsynchronousDeviceCreationJob::class));
     }
 }

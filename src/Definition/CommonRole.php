@@ -100,6 +100,6 @@ class CommonRole extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'type' => new PrimitiveSerializer(self::class, 'type', 'int'));
+        return array('name' => new PrimitiveSerializer('string'), 'type' => new PrimitiveSerializer('int'));
     }
 }

@@ -109,6 +109,6 @@ class GlobalCoverageRequest extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('locations' => new ArraySerializer(self::class, 'locations', new ClassSerializer(self::class, 'locations', LocationsItem::class)), 'radius' => new PrimitiveSerializer(self::class, 'radius', 'int'), 'groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'));
+        return array('locations' => new ArraySerializer(new ClassSerializer(LocationsItem::class)), 'radius' => new PrimitiveSerializer('int'), 'groupId' => new PrimitiveSerializer('string'));
     }
 }

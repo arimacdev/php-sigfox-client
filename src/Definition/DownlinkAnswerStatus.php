@@ -149,6 +149,6 @@ class DownlinkAnswerStatus extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('baseStation' => new ClassSerializer(self::class, 'baseStation', MinBaseStationWithType::class), 'plannedPower' => new PrimitiveSerializer(self::class, 'plannedPower', 'int'), 'data' => new PrimitiveSerializer(self::class, 'data', 'string'), 'operator' => new PrimitiveSerializer(self::class, 'operator', 'string'), 'country' => new PrimitiveSerializer(self::class, 'country', 'string'));
+        return array('baseStation' => new ClassSerializer(MinBaseStationWithType::class), 'plannedPower' => new PrimitiveSerializer('int'), 'data' => new PrimitiveSerializer('string'), 'operator' => new PrimitiveSerializer('string'), 'country' => new PrimitiveSerializer('string'));
     }
 }

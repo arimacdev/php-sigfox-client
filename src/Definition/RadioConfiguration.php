@@ -108,6 +108,6 @@ class RadioConfiguration extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer(self::class, 'id', 'int'));
+        return array('id' => new PrimitiveSerializer('int'));
     }
 }

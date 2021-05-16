@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Serializer;
 
+use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Serializer\Impl\Definition;
 use stdClass;
@@ -9,50 +10,53 @@ use stdClass;
 /**
  * Serializing and deserializing class instances
  */
-class ClassSerializer extends Serializer
+class ClassSerializer implements Serializer
 {
-    protected string $name;
+    protected string $className;
 
     /**
      * Initializing the serializer
      *
-     * @param string $className    Name of the class that property exist. For error reporting purposes
-     * @param string $propertyName Name of the property. For error reporting purposes
-     * @param string $name         The class name
+     * @param string $className The class name
      */
-    public function __construct(string $className, string $propertyName, string $name)
+    public function __construct(string $className)
     {
-        parent::__construct($className, $propertyName);
-        $this->propertyName = $propertyName;
-        $this->name = $name;
+        $this->className = $className;
     }
 
     /**
      * @inheritdoc
      */
-    public function serialize($value)
+    public function deserialize($value)
     {
         if (is_null($value)) {
             return null;
         }
 
-        if ($value instanceof $this->name) {
+        if (is_object($value) && $value instanceof $this->className) {
             return $value;
         }
 
-        if (!is_array($value) && !($value instanceof stdClass)) {
-            throw new SerializeException($this->className, $this->propertyName, $this->getParentType());
+        /** @var Definition **/
+        $obj = new $this->className();
+        $metaData = $obj->getSerializeMetaData();
+
+        if (!is_array($value) && !(is_object($value)&&$value instanceof stdClass)) {
+            throw new DeserializeException(
+                [$this->className, "array(".implode(",",array_keys($metaData)).")"],
+                is_array($value)? "array(".implode(",", array_keys($value)).")": gettype($value)
+            );
         }
 
         /** @var Definition **/
-        $obj = new $this->name();
+        $obj = new $this->className();
         $metaData = $obj->getSerializeMetaData();
         $extendable = $obj->isExtendable();
 
         if (is_array($value)) {
             /** @var Serializer $serializer **/
             foreach ($metaData as $propertyName => $serializer) {
-                $serialized = $serializer->serialize($value[$propertyName] ?? null);
+                $serialized = $serializer->deserialize($value[$propertyName] ?? null);
                 unset($value[$propertyName]);
                 $setter = "set" . ucfirst($propertyName);
                 $obj->$setter($serialized);
@@ -60,7 +64,7 @@ class ClassSerializer extends Serializer
         } else if ($value instanceof stdClass) {
             /** @var Serializer $serializer **/
             foreach ($metaData as $propertyName => $serializer) {
-                $serialized = $serializer->serialize($value->$propertyName ?? null);
+                $serialized = $serializer->deserialize($value->$propertyName ?? null);
                 unset($value->$propertyName);
                 $setter = "set" . ucfirst($propertyName);
                 $obj->$setter($serialized);
@@ -80,13 +84,13 @@ class ClassSerializer extends Serializer
     /**
      * @inheritdoc
      */
-    public function deserialize($value)
+    public function serialize($value)
     {
         if (is_null($value)) {
             return null;
         }
-        if (!is_object($value)||!($value instanceof $this->name)) {
-            throw new SerializeException($this->className, $this->propertyName, $this->getParentType());
+        if (!is_object($value)||!($value instanceof $this->className)) {
+            throw new SerializeException([$this->className], is_object($value)? get_class($value): gettype($value));
         }
 
         /** @var Definition $value **/
@@ -97,7 +101,7 @@ class ClassSerializer extends Serializer
         /** @var Serializer $serializer **/
         foreach($metaData as $propertyName => $serializer){
             $getter = "get".ucfirst($propertyName);
-            $deserialized = $serializer->deserialize($value->$getter());
+            $deserialized = $serializer->serialize($value->$getter());
             $arr[$propertyName] = $deserialized;
         }
 
@@ -108,13 +112,5 @@ class ClassSerializer extends Serializer
         }
 
         return $arr;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    protected function getType(): string
-    {
-        return $this->name;
     }
 }

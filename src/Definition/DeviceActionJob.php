@@ -43,6 +43,6 @@ class DeviceActionJob extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('data' => new ArraySerializer(self::class, 'data', new PrimitiveSerializer(self::class, 'data', 'string')));
+        return array('data' => new ArraySerializer(new PrimitiveSerializer('string')));
     }
 }

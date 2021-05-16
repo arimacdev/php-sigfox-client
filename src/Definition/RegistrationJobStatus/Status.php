@@ -73,6 +73,6 @@ class Status extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('errors' => new ArraySerializer(self::class, 'errors', new ClassSerializer(self::class, 'errors', JobError::class)), 'success' => new PrimitiveSerializer(self::class, 'success', 'int'));
+        return array('errors' => new ArraySerializer(new ClassSerializer(JobError::class)), 'success' => new PrimitiveSerializer('int'));
     }
 }

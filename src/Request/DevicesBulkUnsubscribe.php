@@ -50,6 +50,8 @@ class DevicesBulkUnsubscribe extends Request
     /**
      * Getter for devices
      *
+     * @internal
+     *
      * @return BulkUnsubscribe array of device's identifier (hexadecimal format) with unsubscribtion time
      */
     public function getDevices() : ?BulkUnsubscribe
@@ -71,6 +73,8 @@ class DevicesBulkUnsubscribe extends Request
     /**
      * Getter for groupId
      *
+     * @internal
+     *
      * @return string Group Identifier use to unsubscribe multiple devices
      */
     public function getGroupId() : ?string
@@ -84,6 +88,6 @@ class DevicesBulkUnsubscribe extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('devices' => new ClassSerializer(self::class, 'devices', BulkUnsubscribe::class), 'groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'));
+        return array('devices' => new ClassSerializer(BulkUnsubscribe::class), 'groupId' => new PrimitiveSerializer('string'));
     }
 }

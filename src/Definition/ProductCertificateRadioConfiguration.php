@@ -130,6 +130,6 @@ class ProductCertificateRadioConfiguration extends RadioConfiguration
      */
     public function getSerializeMetaData() : array
     {
-        return array('uplinkClass' => new PrimitiveSerializer(self::class, 'uplinkClass', 'int'), 'maxEirp' => new PrimitiveSerializer(self::class, 'maxEirp', 'int'));
+        return array('uplinkClass' => new PrimitiveSerializer('int'), 'maxEirp' => new PrimitiveSerializer('int'));
     }
 }

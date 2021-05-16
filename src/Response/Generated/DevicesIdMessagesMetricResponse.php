@@ -27,6 +27,8 @@ class DevicesIdMessagesMetricResponse extends Definition
     /**
      * Setter for lastDay
      *
+     * @internal
+     *
      * @param int $lastDay Number of device messages for the last day
      *
      * @return self To use in method chains
@@ -48,6 +50,8 @@ class DevicesIdMessagesMetricResponse extends Definition
     /**
      * Setter for lastWeek
      *
+     * @internal
+     *
      * @param int $lastWeek Number of device messages for the last week
      *
      * @return self To use in method chains
@@ -68,6 +72,8 @@ class DevicesIdMessagesMetricResponse extends Definition
     }
     /**
      * Setter for lastMonth
+     *
+     * @internal
      *
      * @param int $lastMonth Number of device messages for the last month
      *
@@ -94,6 +100,6 @@ class DevicesIdMessagesMetricResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('lastDay' => new PrimitiveSerializer(self::class, 'lastDay', 'int'), 'lastWeek' => new PrimitiveSerializer(self::class, 'lastWeek', 'int'), 'lastMonth' => new PrimitiveSerializer(self::class, 'lastMonth', 'int'));
+        return array('lastDay' => new PrimitiveSerializer('int'), 'lastWeek' => new PrimitiveSerializer('int'), 'lastMonth' => new PrimitiveSerializer('int'));
     }
 }

@@ -66,6 +66,6 @@ class Bounds extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('sw' => new ClassSerializer(self::class, 'sw', LatLng::class), 'ne' => new ClassSerializer(self::class, 'ne', LatLng::class));
+        return array('sw' => new ClassSerializer(LatLng::class), 'ne' => new ClassSerializer(LatLng::class));
     }
 }

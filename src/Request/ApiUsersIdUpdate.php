@@ -39,6 +39,8 @@ class ApiUsersIdUpdate extends Request
     /**
      * Getter for apiUser
      *
+     * @internal
+     *
      * @return ApiUserEdition The information to update
      */
     public function getApiUser() : ?ApiUserEdition
@@ -52,6 +54,6 @@ class ApiUsersIdUpdate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('apiUser' => new ClassSerializer(self::class, 'apiUser', ApiUserEdition::class));
+        return array('apiUser' => new ClassSerializer(ApiUserEdition::class));
     }
 }

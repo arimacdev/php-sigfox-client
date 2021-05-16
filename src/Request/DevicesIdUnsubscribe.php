@@ -39,6 +39,8 @@ class DevicesIdUnsubscribe extends Request
     /**
      * Getter for unsubscriptionTime
      *
+     * @internal
+     *
      * @return TokenUnsubscribe the unsubscription time (in milliseconds since the Unix Epoch)
      */
     public function getUnsubscriptionTime() : ?TokenUnsubscribe
@@ -52,6 +54,6 @@ class DevicesIdUnsubscribe extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('unsubscriptionTime' => new ClassSerializer(self::class, 'unsubscriptionTime', TokenUnsubscribe::class));
+        return array('unsubscriptionTime' => new ClassSerializer(TokenUnsubscribe::class));
     }
 }

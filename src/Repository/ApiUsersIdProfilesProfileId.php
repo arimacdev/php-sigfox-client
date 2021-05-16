@@ -2,9 +2,16 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
-class ApiUsersIdProfilesProfileId extends Repository
+use Arimac\Sigfox\Helper;
+use Arimac\Sigfox\Exception\UnexpectedResponseException;
+use Arimac\Sigfox\Exception\Response\BadRequestException;
+use Arimac\Sigfox\Exception\Response\UnauthorizedException;
+use Arimac\Sigfox\Exception\Response\ForbiddenException;
+use Arimac\Sigfox\Exception\Response\NotFoundException;
+use Arimac\Sigfox\Exception\Response\MethodNotAllowedException;
+use Arimac\Sigfox\Exception\Response\InternalServerException;
+class ApiUsersIdProfilesProfileId
 {
     /**
      * The HTTP client
@@ -41,9 +48,17 @@ class ApiUsersIdProfilesProfileId extends Repository
     }
     /**
      * Delete a profile to a given API user.
+     *
+     * @throws UnexpectedResponseException If server returned an unexpected status code.
+     * @throws BadRequestException         If server returned a HTTP 400 error.
+     * @throws UnauthorizedException       If server returned a HTTP 401 error.
+     * @throws ForbiddenException          If server returned a HTTP 403 error.
+     * @throws NotFoundException           If server returned a HTTP 404 error.
+     * @throws MethodNotAllowedException   If server returned a HTTP 405 error.
+     * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function delete()
+    public function delete() : void
     {
-        return $this->client->call('delete', $this->bind('/api-users/{id}/profiles/{profileId}', $this->id, $this->profileId), null);
+        $this->client->call('delete', Helper::bindUrlParams('/api-users/{id}/profiles/{profileId}', $this->id, $this->profileId), null, null, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 405 => MethodNotAllowedException::class, 500 => InternalServerException::class));
     }
 }

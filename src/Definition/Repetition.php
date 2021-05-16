@@ -148,6 +148,6 @@ class Repetition extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('nseq' => new PrimitiveSerializer(self::class, 'nseq', 'int'), 'rssi' => new PrimitiveSerializer(self::class, 'rssi', 'int'), 'snr' => new PrimitiveSerializer(self::class, 'snr', 'int'), 'freq' => new PrimitiveSerializer(self::class, 'freq', 'int'), 'repeated' => new PrimitiveSerializer(self::class, 'repeated', 'bool'));
+        return array('nseq' => new PrimitiveSerializer('int'), 'rssi' => new PrimitiveSerializer('int'), 'snr' => new PrimitiveSerializer('int'), 'freq' => new PrimitiveSerializer('int'), 'repeated' => new PrimitiveSerializer('bool'));
     }
 }

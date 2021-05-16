@@ -211,6 +211,8 @@ class ContractInfosList extends Request
     /**
      * Getter for name
      *
+     * @internal
+     *
      * @return string Searches for contracts containing the given text in their name
      */
     public function getName() : ?string
@@ -231,6 +233,8 @@ class ContractInfosList extends Request
     }
     /**
      * Getter for groupId
+     *
+     * @internal
      *
      * @return string Searches for contracts who are attached to the given group
      */
@@ -257,6 +261,8 @@ class ContractInfosList extends Request
     /**
      * Getter for groupType
      *
+     * @internal
+     *
      * @return int Searches for contracts that are attached to a specific group type.
      *             
      *             - {@see ContractInfosList::GROUP_TYPE_BASIC}
@@ -282,6 +288,8 @@ class ContractInfosList extends Request
     /**
      * Getter for deep
      *
+     * @internal
+     *
      * @return bool Searches for contracts that are attached to the given group and its descendants
      */
     public function getDeep() : ?bool
@@ -302,6 +310,8 @@ class ContractInfosList extends Request
     }
     /**
      * Getter for up
+     *
+     * @internal
      *
      * @return bool Searches for contracts that are attached to the given group and its ancestors
      */
@@ -324,6 +334,8 @@ class ContractInfosList extends Request
     }
     /**
      * Getter for orderIds
+     *
+     * @internal
      *
      * @return string Searches for contracts with the listed orderIds. The elements of the list are separated by
      *                comma.
@@ -348,6 +360,8 @@ class ContractInfosList extends Request
     /**
      * Getter for contractIds
      *
+     * @internal
+     *
      * @return string Searches for contracts IDs that have the listed external (BSS) contractId. The elements of the
      *                list are separated by comma.
      */
@@ -370,6 +384,8 @@ class ContractInfosList extends Request
     }
     /**
      * Getter for fromTime
+     *
+     * @internal
      *
      * @return int Searches for contracts with communication end time superior or equal to given time (in
      *             milliseconds since Unix Epoch).
@@ -394,6 +410,8 @@ class ContractInfosList extends Request
     /**
      * Getter for toTime
      *
+     * @internal
+     *
      * @return int Searches for contracts with start time inferior to given time (in milliseconds since Unix Epoch).
      */
     public function getToTime() : ?int
@@ -414,6 +432,8 @@ class ContractInfosList extends Request
     }
     /**
      * Getter for tokenDuration
+     *
+     * @internal
      *
      * @return int Searches for contracts with the given token duration in months.
      */
@@ -440,6 +460,8 @@ class ContractInfosList extends Request
     }
     /**
      * Getter for pricingModel
+     *
+     * @internal
      *
      * @return int Searches for contracts with a given pricing model
      *             
@@ -475,6 +497,8 @@ class ContractInfosList extends Request
     }
     /**
      * Getter for subscriptionPlan
+     *
+     * @internal
      *
      * @return int Searches for contracts with the given subscription plan:
      *             
@@ -513,6 +537,8 @@ class ContractInfosList extends Request
     /**
      * Getter for geolocationMode
      *
+     * @internal
+     *
      * @return int Searches for contracts with the given geolocation mode (level)
      *             1 (ATLAS)
      *             2 (ATLAS_WIFI)
@@ -542,6 +568,8 @@ class ContractInfosList extends Request
     /**
      * Getter for fields
      *
+     * @internal
+     *
      * @return string Defines the other available fields to be returned in the response.
      *                
      */
@@ -564,6 +592,8 @@ class ContractInfosList extends Request
     /**
      * Getter for limit
      *
+     * @internal
+     *
      * @return int The maximum number of items to return
      */
     public function getLimit() : ?int
@@ -584,6 +614,8 @@ class ContractInfosList extends Request
     }
     /**
      * Getter for offset
+     *
+     * @internal
      *
      * @return int The number of items to skip
      */
@@ -606,6 +638,8 @@ class ContractInfosList extends Request
     /**
      * Getter for pageId
      *
+     * @internal
+     *
      * @return string Token representing the page to retrieve
      */
     public function getPageId() : ?string
@@ -627,6 +661,8 @@ class ContractInfosList extends Request
     /**
      * Getter for authorizations
      *
+     * @internal
+     *
      * @return bool if true, we return the list of actions and resources the user has access
      */
     public function getAuthorizations() : ?bool
@@ -640,6 +676,6 @@ class ContractInfosList extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'), 'groupType' => new PrimitiveSerializer(self::class, 'groupType', 'int'), 'deep' => new PrimitiveSerializer(self::class, 'deep', 'bool'), 'up' => new PrimitiveSerializer(self::class, 'up', 'bool'), 'orderIds' => new PrimitiveSerializer(self::class, 'orderIds', 'string'), 'contractIds' => new PrimitiveSerializer(self::class, 'contractIds', 'string'), 'fromTime' => new PrimitiveSerializer(self::class, 'fromTime', 'int'), 'toTime' => new PrimitiveSerializer(self::class, 'toTime', 'int'), 'tokenDuration' => new PrimitiveSerializer(self::class, 'tokenDuration', 'int'), 'pricingModel' => new PrimitiveSerializer(self::class, 'pricingModel', 'int'), 'subscriptionPlan' => new PrimitiveSerializer(self::class, 'subscriptionPlan', 'int'), 'geolocationMode' => new PrimitiveSerializer(self::class, 'geolocationMode', 'int'), 'fields' => new PrimitiveSerializer(self::class, 'fields', 'string'), 'limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'offset' => new PrimitiveSerializer(self::class, 'offset', 'int'), 'pageId' => new PrimitiveSerializer(self::class, 'pageId', 'string'), 'authorizations' => new PrimitiveSerializer(self::class, 'authorizations', 'bool'));
+        return array('name' => new PrimitiveSerializer('string'), 'groupId' => new PrimitiveSerializer('string'), 'groupType' => new PrimitiveSerializer('int'), 'deep' => new PrimitiveSerializer('bool'), 'up' => new PrimitiveSerializer('bool'), 'orderIds' => new PrimitiveSerializer('string'), 'contractIds' => new PrimitiveSerializer('string'), 'fromTime' => new PrimitiveSerializer('int'), 'toTime' => new PrimitiveSerializer('int'), 'tokenDuration' => new PrimitiveSerializer('int'), 'pricingModel' => new PrimitiveSerializer('int'), 'subscriptionPlan' => new PrimitiveSerializer('int'), 'geolocationMode' => new PrimitiveSerializer('int'), 'fields' => new PrimitiveSerializer('string'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'), 'authorizations' => new PrimitiveSerializer('bool'));
     }
 }

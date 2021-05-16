@@ -50,6 +50,8 @@ class DevicesBulkSuspend extends Request
     /**
      * Getter for devices
      *
+     * @internal
+     *
      * @return DeviceActionJob list of device's identifier (hexadecimal format)
      */
     public function getDevices() : ?DeviceActionJob
@@ -71,6 +73,8 @@ class DevicesBulkSuspend extends Request
     /**
      * Getter for groupId
      *
+     * @internal
+     *
      * @return string Group Identifier use to suspend multiple devices
      */
     public function getGroupId() : ?string
@@ -84,6 +88,6 @@ class DevicesBulkSuspend extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('devices' => new ClassSerializer(self::class, 'devices', DeviceActionJob::class), 'groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'));
+        return array('devices' => new ClassSerializer(DeviceActionJob::class), 'groupId' => new PrimitiveSerializer('string'));
     }
 }

@@ -39,6 +39,8 @@ class DevicesIdCertificateModem extends Request
     /**
      * Getter for fields
      *
+     * @internal
+     *
      * @return string Defines the other available fields to be returned in the response.
      *                
      */
@@ -53,6 +55,6 @@ class DevicesIdCertificateModem extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('fields' => new PrimitiveSerializer(self::class, 'fields', 'string'));
+        return array('fields' => new PrimitiveSerializer('string'));
     }
 }

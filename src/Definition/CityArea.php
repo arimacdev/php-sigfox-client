@@ -178,6 +178,6 @@ class CityArea extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'), 'readOnly' => new PrimitiveSerializer(self::class, 'readOnly', 'bool'), 'deploymentKpiReport' => new PrimitiveSerializer(self::class, 'deploymentKpiReport', 'bool'), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
+        return array('id' => new PrimitiveSerializer('string'), 'name' => new PrimitiveSerializer('string'), 'groupId' => new PrimitiveSerializer('string'), 'readOnly' => new PrimitiveSerializer('bool'), 'deploymentKpiReport' => new PrimitiveSerializer('bool'), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')));
     }
 }

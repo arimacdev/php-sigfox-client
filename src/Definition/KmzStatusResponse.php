@@ -67,6 +67,6 @@ class KmzStatusResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('jobDone' => new PrimitiveSerializer(self::class, 'jobDone', 'bool'), 'time' => new PrimitiveSerializer(self::class, 'time', 'int'));
+        return array('jobDone' => new PrimitiveSerializer('bool'), 'time' => new PrimitiveSerializer('int'));
     }
 }

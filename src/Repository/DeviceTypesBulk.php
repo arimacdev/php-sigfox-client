@@ -2,9 +2,8 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
-class DeviceTypesBulk extends Repository
+class DeviceTypesBulk
 {
     /**
      * The HTTP client

@@ -39,6 +39,8 @@ class DevicesIdUpdate extends Request
     /**
      * Getter for device
      *
+     * @internal
+     *
      * @return DeviceUpdateJob The device to update
      */
     public function getDevice() : ?DeviceUpdateJob
@@ -52,6 +54,6 @@ class DevicesIdUpdate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('device' => new ClassSerializer(self::class, 'device', DeviceUpdateJob::class));
+        return array('device' => new ClassSerializer(DeviceUpdateJob::class));
     }
 }

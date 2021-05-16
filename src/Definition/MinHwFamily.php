@@ -103,6 +103,6 @@ class MinHwFamily extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer(self::class, 'id', 'int'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'));
+        return array('id' => new PrimitiveSerializer('int'), 'name' => new PrimitiveSerializer('string'));
     }
 }

@@ -113,6 +113,6 @@ class JobError extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('entity' => new PrimitiveSerializer(self::class, 'entity', 'string'), 'message' => new PrimitiveSerializer(self::class, 'message', 'string'), 'type' => new PrimitiveSerializer(self::class, 'type', 'int'));
+        return array('entity' => new PrimitiveSerializer('string'), 'message' => new PrimitiveSerializer('string'), 'type' => new PrimitiveSerializer('int'));
     }
 }

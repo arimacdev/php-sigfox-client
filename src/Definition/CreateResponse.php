@@ -42,6 +42,6 @@ class CreateResponse extends BaseResponse
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'));
+        return array('id' => new PrimitiveSerializer('string'));
     }
 }

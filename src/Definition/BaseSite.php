@@ -486,6 +486,6 @@ class BaseSite extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'lessorId' => new PrimitiveSerializer(self::class, 'lessorId', 'string'), 'address' => new PrimitiveSerializer(self::class, 'address', 'string'), 'comment' => new PrimitiveSerializer(self::class, 'comment', 'string'), 'status' => new PrimitiveSerializer(self::class, 'status', 'int'), 'statusComment' => new PrimitiveSerializer(self::class, 'statusComment', 'string'), 'stationInstallation' => new PrimitiveSerializer(self::class, 'stationInstallation', 'int'), 'inverterInfo' => new PrimitiveSerializer(self::class, 'inverterInfo', 'int'), 'aerialWorkPlatformAccess' => new PrimitiveSerializer(self::class, 'aerialWorkPlatformAccess', 'bool'), 'lat' => new PrimitiveSerializer(self::class, 'lat', 'int'), 'lng' => new PrimitiveSerializer(self::class, 'lng', 'int'));
+        return array('name' => new PrimitiveSerializer('string'), 'lessorId' => new PrimitiveSerializer('string'), 'address' => new PrimitiveSerializer('string'), 'comment' => new PrimitiveSerializer('string'), 'status' => new PrimitiveSerializer('int'), 'statusComment' => new PrimitiveSerializer('string'), 'stationInstallation' => new PrimitiveSerializer('int'), 'inverterInfo' => new PrimitiveSerializer('int'), 'aerialWorkPlatformAccess' => new PrimitiveSerializer('bool'), 'lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'));
     }
 }

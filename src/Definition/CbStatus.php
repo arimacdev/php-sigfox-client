@@ -121,6 +121,6 @@ class CbStatus extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('status' => new PrimitiveSerializer(self::class, 'status', 'int'), 'info' => new PrimitiveSerializer(self::class, 'info', 'string'), 'cbDef' => new PrimitiveSerializer(self::class, 'cbDef', 'string'), 'time' => new PrimitiveSerializer(self::class, 'time', 'int'));
+        return array('status' => new PrimitiveSerializer('int'), 'info' => new PrimitiveSerializer('string'), 'cbDef' => new PrimitiveSerializer('string'), 'time' => new PrimitiveSerializer('int'));
     }
 }

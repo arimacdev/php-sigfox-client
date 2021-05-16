@@ -50,6 +50,8 @@ class DevicesBulkUpdate extends Request
     /**
      * Getter for devices
      *
+     * @internal
+     *
      * @return AsynchronousDeviceEditionJob The devices to edit
      */
     public function getDevices() : ?AsynchronousDeviceEditionJob
@@ -71,6 +73,8 @@ class DevicesBulkUpdate extends Request
     /**
      * Getter for groupId
      *
+     * @internal
+     *
      * @return string Group Identifier use to create the devices
      */
     public function getGroupId() : ?string
@@ -84,6 +88,6 @@ class DevicesBulkUpdate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('devices' => new ClassSerializer(self::class, 'devices', AsynchronousDeviceEditionJob::class), 'groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'));
+        return array('devices' => new ClassSerializer(AsynchronousDeviceEditionJob::class), 'groupId' => new PrimitiveSerializer('string'));
     }
 }

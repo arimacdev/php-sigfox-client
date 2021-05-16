@@ -37,6 +37,8 @@ class GroupsCreate extends Request
     /**
      * Getter for group
      *
+     * @internal
+     *
      * @return CommonGroupCreate
      */
     public function getGroup() : ?CommonGroupCreate
@@ -50,6 +52,6 @@ class GroupsCreate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('group' => new ClassSerializer(self::class, 'group', CommonGroupCreate::class));
+        return array('group' => new ClassSerializer(CommonGroupCreate::class));
     }
 }

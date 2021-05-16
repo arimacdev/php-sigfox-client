@@ -2,29 +2,24 @@
 
 namespace Arimac\Sigfox\Serializer;
 
+use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Serializer\Serializer;
 
 /**
  * Serializing and deserializing arrays
  */
-class ArraySerializer extends Serializer {
+class ArraySerializer implements Serializer {
     protected Serializer $item;
-
-    protected string $propertyName;
 
     /**
      * Initializing the serializer
      *
-     * @param string     $className    Name of the class that property exist. For error reporting purposes
-     * @param string     $propertyName Name of the property. For error reporting purposes
-     * @param Serializer $item         The serializer of the inner item
+     * @param Serializer $item The serializer of the inner item
      */
-    public function __construct(string $className, string $propertyName, Serializer $item)
+    public function __construct(Serializer $item)
     {
-        parent::__construct($className, $propertyName);
         $this->item = $item;    
-        $item->setParent($this);
     }
 
     /**
@@ -36,13 +31,15 @@ class ArraySerializer extends Serializer {
             return null;
         }
         if(!is_array($value)){
-           throw new SerializeException($this->className, $this->propertyName, $this->getParentType()) ;
+           throw new SerializeException(["array"], gettype($value)) ;
         }
         $itemSerializer = $this->item;
 
-        return array_map(function($item) use ($itemSerializer){
-            return $itemSerializer->serialize($item);
-        },$value);
+        $newArr = [];
+        foreach($value as $key=> $val){
+            $newArr[$key] = $itemSerializer->serialize($val);
+        }
+        return $newArr;
     }
 
     /**
@@ -54,19 +51,14 @@ class ArraySerializer extends Serializer {
             return null;
         }
         if(!is_array($value)){
-           throw new SerializeException($this->className, $this->propertyName, $this->getParentType()) ;
+           throw new DeserializeException(["array"], gettype($value)) ;
         }
         $itemSerializer = $this->item;
 
-        return array_map(function($item) use ($itemSerializer){
-            return $itemSerializer->deserialize($item);
-        },$value); 
-    }
-
-    /**
-     * @inheritdoc
-     */
-    protected function getType(): string {
-        return $this->item->getType()."[]";
+        $newArr = [];
+        foreach($value as $key=> $val){
+            $newArr[$key] = $itemSerializer->deserialize($val);
+        }
+        return $newArr;
     }
 }

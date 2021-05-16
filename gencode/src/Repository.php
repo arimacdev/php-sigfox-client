@@ -6,6 +6,7 @@ use PhpParser\Node\Arg;
 use PhpParser\Node\Expr\Assign;
 use PhpParser\Node\Expr\FuncCall;
 use PhpParser\Node\Expr\New_;
+use PhpParser\Node\Expr\StaticCall;
 use PhpParser\Node\Expr\Variable;
 use PhpParser\Node\Name;
 use PhpParser\Node\NullableType;
@@ -133,7 +134,9 @@ class Repository extends Class_
         string $requestMethod,
         string $endpoint,
         ?string $responseType = null,
+        bool $responseTypeNullable,
         ?string $requestType = null,
+        array $errors = [],
         ?string $description = null,
         array $properties = []
     ) {
@@ -145,7 +148,8 @@ class Repository extends Class_
                 $name = $property[0];
                 array_push($params, new Variable("this->$name"));
             }
-            $endpoint = new FuncCall(new Name("\$this->bind"), $params);
+            $this->useType("Arimac\\Sigfox\\Helper");
+            $endpoint = new StaticCall(new Name("Helper"), "bindUrlParams", $params);
         }
 
         $args = [
@@ -210,10 +214,38 @@ class Repository extends Class_
             $responseType = $this->useType($responseType);
             array_push($docBlockTags, ["return", $responseType]);
             array_push($args, $this->factory->classConstFetch($responseType, "class"));
+
+            $deserializeException = $this->useType("Arimac\\Sigfox\\Exception\\DeserializeException");
+            array_push($docBlockTags, ["throws", $deserializeException, "If failed to deserialize response body as a response object."]);
+        } else {
+            array_push($args, $this->factory->val(null));
         }
 
-        $stmts[] = new Return_(new FuncCall(new Name("\$this->client->call"), $args));
+        if($requestType){
+            $serializeException = $this->useType("Arimac\\Sigfox\\Exception\\SerializeException");
+            array_push($docBlockTags, ["throws", $serializeException, "If request object failed to serialize to a JSON serializable type."]);
+        }
 
+        $unexpectedException = $this->useType("Arimac\\Sigfox\\Exception\\UnexpectedResponseException");
+        array_push($docBlockTags, ["throws", $unexpectedException, "If server returned an unexpected status code."]);
+
+        $astErrors = [];
+        foreach($errors as $statusCode => $className){
+            $className = $this->useType($className);
+            array_push($docBlockTags, ["throws", $className, "If server returned a HTTP ".$statusCode." error."]);
+            $astErrors[$statusCode] = $this->factory->classConstFetch($className, "class");
+        }
+        array_push($args, $this->factory->val($astErrors));
+
+        if($responseType){
+            $stmts[] = new Return_(new FuncCall(new Name("\$this->client->call"), $args));
+            if($responseTypeNullable){
+                $responseType = new NullableType($responseType);
+            }
+        } else {
+            $stmts[] = new FuncCall(new Name("\$this->client->call"), $args);
+            $responseType = "void";
+        }
 
         $this->addMethod($methodName, $params, $stmts, $responseType, Helper::normalizeDocComment($description, $docBlockTags, 2));
     }

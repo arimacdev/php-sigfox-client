@@ -332,6 +332,6 @@ class SatSubscription extends InternetSubscription
      */
     public function getSerializeMetaData() : array
     {
-        return array('connectionStatus' => new PrimitiveSerializer(self::class, 'connectionStatus', 'int'), 'altitude' => new PrimitiveSerializer(self::class, 'altitude', 'int'), 'azimuth' => new PrimitiveSerializer(self::class, 'azimuth', 'int'), 'polarization' => new PrimitiveSerializer(self::class, 'polarization', 'int'), 'orderNumber' => new PrimitiveSerializer(self::class, 'orderNumber', 'string'), 'locationCode' => new PrimitiveSerializer(self::class, 'locationCode', 'string'), 'clusterCode' => new PrimitiveSerializer(self::class, 'clusterCode', 'string'), 'login' => new PrimitiveSerializer(self::class, 'login', 'string'), 'password' => new PrimitiveSerializer(self::class, 'password', 'string'), 'rType' => new PrimitiveSerializer(self::class, 'rType', 'int'));
+        return array('connectionStatus' => new PrimitiveSerializer('int'), 'altitude' => new PrimitiveSerializer('int'), 'azimuth' => new PrimitiveSerializer('int'), 'polarization' => new PrimitiveSerializer('int'), 'orderNumber' => new PrimitiveSerializer('string'), 'locationCode' => new PrimitiveSerializer('string'), 'clusterCode' => new PrimitiveSerializer('string'), 'login' => new PrimitiveSerializer('string'), 'password' => new PrimitiveSerializer('string'), 'rType' => new PrimitiveSerializer('int'));
     }
 }

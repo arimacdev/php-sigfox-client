@@ -196,6 +196,6 @@ class Token extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('state' => new PrimitiveSerializer(self::class, 'state', 'int'), 'detailMessage' => new PrimitiveSerializer(self::class, 'detailMessage', 'string'), 'end' => new PrimitiveSerializer(self::class, 'end', 'int'), 'freeMessages' => new PrimitiveSerializer(self::class, 'freeMessages', 'int'), 'freeMessagesSent' => new PrimitiveSerializer(self::class, 'freeMessagesSent', 'int'));
+        return array('state' => new PrimitiveSerializer('int'), 'detailMessage' => new PrimitiveSerializer('string'), 'end' => new PrimitiveSerializer('int'), 'freeMessages' => new PrimitiveSerializer('int'), 'freeMessagesSent' => new PrimitiveSerializer('int'));
     }
 }

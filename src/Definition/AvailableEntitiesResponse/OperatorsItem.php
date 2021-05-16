@@ -206,6 +206,6 @@ class OperatorsItem extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('operatorId' => new PrimitiveSerializer(self::class, 'operatorId', 'string'), 'operatorName' => new PrimitiveSerializer(self::class, 'operatorName', 'string'), 'operatorMinDb' => new PrimitiveSerializer(self::class, 'operatorMinDb', 'int'), 'operatorMaxDb' => new PrimitiveSerializer(self::class, 'operatorMaxDb', 'int'), 'operatorStandard' => new PrimitiveSerializer(self::class, 'operatorStandard', 'int'), 'operatorForecasts' => new ArraySerializer(self::class, 'operatorForecasts', new ClassSerializer(self::class, 'operatorForecasts', OperatorForecastsItem::class)), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
+        return array('operatorId' => new PrimitiveSerializer('string'), 'operatorName' => new PrimitiveSerializer('string'), 'operatorMinDb' => new PrimitiveSerializer('int'), 'operatorMaxDb' => new PrimitiveSerializer('int'), 'operatorStandard' => new PrimitiveSerializer('int'), 'operatorForecasts' => new ArraySerializer(new ClassSerializer(OperatorForecastsItem::class)), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')));
     }
 }

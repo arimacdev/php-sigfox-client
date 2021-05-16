@@ -38,6 +38,8 @@ class DeviceTypesIdCallbacksCallbackIdEnable extends Request
     /**
      * Getter for enabled
      *
+     * @internal
+     *
      * @return bool True to enable the callback, false to disable it
      */
     public function getEnabled() : ?bool
@@ -51,6 +53,6 @@ class DeviceTypesIdCallbacksCallbackIdEnable extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('enabled' => new PrimitiveSerializer(self::class, 'enabled', 'bool'));
+        return array('enabled' => new PrimitiveSerializer('bool'));
     }
 }

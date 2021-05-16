@@ -15,6 +15,8 @@ class DevicesCreateResponse extends Definition
     /**
      * Setter for id
      *
+     * @internal
+     *
      * @param string $id The device's identifier (hexadecimal format)
      *
      * @return self To use in method chains
@@ -40,6 +42,6 @@ class DevicesCreateResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'));
+        return array('id' => new PrimitiveSerializer('string'));
     }
 }

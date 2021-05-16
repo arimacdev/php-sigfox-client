@@ -39,6 +39,8 @@ class DeviceTypesCreate extends Request
     /**
      * Getter for deviceType
      *
+     * @internal
+     *
      * @return DeviceTypeCreate The device type to create
      */
     public function getDeviceType() : ?DeviceTypeCreate
@@ -52,6 +54,6 @@ class DeviceTypesCreate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('deviceType' => new ClassSerializer(self::class, 'deviceType', DeviceTypeCreate::class));
+        return array('deviceType' => new ClassSerializer(DeviceTypeCreate::class));
     }
 }

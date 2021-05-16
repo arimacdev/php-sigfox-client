@@ -388,6 +388,6 @@ class Group extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'description' => new PrimitiveSerializer(self::class, 'description', 'string'), 'type' => new PrimitiveSerializer(self::class, 'type', 'int'), 'timezone' => new PrimitiveSerializer(self::class, 'timezone', 'string'), 'id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'nameCI' => new PrimitiveSerializer(self::class, 'nameCI', 'string'), 'path' => new ArraySerializer(self::class, 'path', new ClassSerializer(self::class, 'path', MinGroup::class)), 'createdBy' => new PrimitiveSerializer(self::class, 'createdBy', 'string'), 'creationTime' => new PrimitiveSerializer(self::class, 'creationTime', 'int'), 'leaf' => new PrimitiveSerializer(self::class, 'leaf', 'bool'), 'actions' => new ArraySerializer(self::class, 'actions', new PrimitiveSerializer(self::class, 'actions', 'string')));
+        return array('name' => new PrimitiveSerializer('string'), 'description' => new PrimitiveSerializer('string'), 'type' => new PrimitiveSerializer('int'), 'timezone' => new PrimitiveSerializer('string'), 'id' => new PrimitiveSerializer('string'), 'nameCI' => new PrimitiveSerializer('string'), 'path' => new ArraySerializer(new ClassSerializer(MinGroup::class)), 'createdBy' => new PrimitiveSerializer('string'), 'creationTime' => new PrimitiveSerializer('int'), 'leaf' => new PrimitiveSerializer('bool'), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')));
     }
 }

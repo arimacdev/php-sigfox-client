@@ -46,6 +46,8 @@ class GroupsIdGeolocationPayloads extends Request
     /**
      * Getter for limit
      *
+     * @internal
+     *
      * @return int The maximum number of items to return
      */
     public function getLimit() : ?int
@@ -66,6 +68,8 @@ class GroupsIdGeolocationPayloads extends Request
     }
     /**
      * Getter for offset
+     *
+     * @internal
      *
      * @return int The number of items to skip
      */
@@ -88,6 +92,8 @@ class GroupsIdGeolocationPayloads extends Request
     /**
      * Getter for pageId
      *
+     * @internal
+     *
      * @return string Token representing the page to retrieve
      */
     public function getPageId() : ?string
@@ -101,6 +107,6 @@ class GroupsIdGeolocationPayloads extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'offset' => new PrimitiveSerializer(self::class, 'offset', 'int'), 'pageId' => new PrimitiveSerializer(self::class, 'pageId', 'string'));
+        return array('limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
     }
 }

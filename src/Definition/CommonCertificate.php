@@ -227,6 +227,6 @@ class CommonCertificate extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer(self::class, 'id', 'string'), 'name' => new PrimitiveSerializer(self::class, 'name', 'string'), 'status' => new PrimitiveSerializer(self::class, 'status', 'int'), 'key' => new PrimitiveSerializer(self::class, 'key', 'string'), 'manufacturer' => new ClassSerializer(self::class, 'manufacturer', MinGroup::class), 'version' => new PrimitiveSerializer(self::class, 'version', 'string'), 'description' => new PrimitiveSerializer(self::class, 'description', 'string'));
+        return array('id' => new PrimitiveSerializer('string'), 'name' => new PrimitiveSerializer('string'), 'status' => new PrimitiveSerializer('int'), 'key' => new PrimitiveSerializer('string'), 'manufacturer' => new ClassSerializer(MinGroup::class), 'version' => new PrimitiveSerializer('string'), 'description' => new PrimitiveSerializer('string'));
     }
 }

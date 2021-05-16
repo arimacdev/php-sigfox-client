@@ -214,6 +214,6 @@ class LastComputedLocation extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('lat' => new PrimitiveSerializer(self::class, 'lat', 'int'), 'lng' => new PrimitiveSerializer(self::class, 'lng', 'int'), 'radius' => new PrimitiveSerializer(self::class, 'radius', 'int'), 'sourceCode' => new PrimitiveSerializer(self::class, 'sourceCode', 'int'), 'placeIds' => new ArraySerializer(self::class, 'placeIds', new PrimitiveSerializer(self::class, 'placeIds', 'string')));
+        return array('lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'), 'radius' => new PrimitiveSerializer('int'), 'sourceCode' => new PrimitiveSerializer('int'), 'placeIds' => new ArraySerializer(new PrimitiveSerializer('string')));
     }
 }

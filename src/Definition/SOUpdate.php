@@ -45,6 +45,6 @@ class SOUpdate extends CommonGroupUpdate
      */
     public function getSerializeMetaData() : array
     {
-        return array('countryISOAlpha3' => new PrimitiveSerializer(self::class, 'countryISOAlpha3', 'string'));
+        return array('countryISOAlpha3' => new PrimitiveSerializer('string'));
     }
 }

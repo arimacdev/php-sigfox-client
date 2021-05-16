@@ -4,6 +4,8 @@ namespace Arimac\Sigfox\Exception\Response;
 
 use Arimac\Sigfox\Definition\ErrorContent;
 use Arimac\Sigfox\Definition\ErrorContent\ErrorsItem;
+use Arimac\Sigfox\Exception\DeserializeException;
+use Arimac\Sigfox\Serializer\ClassSerializer;
 use Throwable;
 
 /**
@@ -27,7 +29,7 @@ class BadRequestException extends ResponseException {
         ErrorContent $innerContent,
         Throwable $prev = null
     ){
-        parent::__construct($innerContent->getMessage(), 400, $prev);
+        parent::__construct($innerContent->getMessage()??"Bad Request", 400, $prev);
         $this->innerContent = $innerContent;
     }
 
@@ -36,7 +38,23 @@ class BadRequestException extends ResponseException {
      *
      * @return ErrorsItem[]
      */
-    public function getErrors(): array {
+    public function getErrors(): ?array {
         return $this->innerContent->getErrors();
+    }
+
+    /**
+     * @internal
+     *
+     * @inheritdoc
+     */
+    public static function deserialize($value): BadRequestException
+    {
+        $serializer = new ClassSerializer(ErrorContent::class);
+        $errorContent = $serializer->deserialize($value);
+        if(!$errorContent){
+            throw new DeserializeException(["array(message, errors)"], gettype($value));
+        }
+
+        return new BadRequestException($errorContent);
     }
 }

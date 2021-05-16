@@ -15,6 +15,8 @@ class DevicesBulkResumeResponse extends Definition
     /**
      * Setter for jobId
      *
+     * @internal
+     *
      * @param string $jobId jobId (to use in job status request)
      *
      * @return self To use in method chains
@@ -40,6 +42,6 @@ class DevicesBulkResumeResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('jobId' => new PrimitiveSerializer(self::class, 'jobId', 'string'));
+        return array('jobId' => new PrimitiveSerializer('string'));
     }
 }

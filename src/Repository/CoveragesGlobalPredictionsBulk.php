@@ -2,9 +2,8 @@
 
 namespace Arimac\Sigfox\Repository;
 
-use Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
-class CoveragesGlobalPredictionsBulk extends Repository
+class CoveragesGlobalPredictionsBulk
 {
     /**
      * The HTTP client

@@ -339,6 +339,6 @@ class BaseSiteConvention extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('annualCost' => new PrimitiveSerializer(self::class, 'annualCost', 'int'), 'comments' => new PrimitiveSerializer(self::class, 'comments', 'string'), 'startTime' => new PrimitiveSerializer(self::class, 'startTime', 'int'), 'endTime' => new PrimitiveSerializer(self::class, 'endTime', 'int'), 'contractReference' => new PrimitiveSerializer(self::class, 'contractReference', 'string'), 'maintenance' => new PrimitiveSerializer(self::class, 'maintenance', 'bool'), 'maintenanceAnnualCost' => new PrimitiveSerializer(self::class, 'maintenanceAnnualCost', 'int'), 'status' => new PrimitiveSerializer(self::class, 'status', 'int'), 'type' => new PrimitiveSerializer(self::class, 'type', 'int'));
+        return array('annualCost' => new PrimitiveSerializer('int'), 'comments' => new PrimitiveSerializer('string'), 'startTime' => new PrimitiveSerializer('int'), 'endTime' => new PrimitiveSerializer('int'), 'contractReference' => new PrimitiveSerializer('string'), 'maintenance' => new PrimitiveSerializer('bool'), 'maintenanceAnnualCost' => new PrimitiveSerializer('int'), 'status' => new PrimitiveSerializer('int'), 'type' => new PrimitiveSerializer('int'));
     }
 }

@@ -68,6 +68,8 @@ class ProfilesList extends Request
     /**
      * Getter for groupId
      *
+     * @internal
+     *
      * @return string The group's identifier
      */
     public function getGroupId() : ?string
@@ -88,6 +90,8 @@ class ProfilesList extends Request
     }
     /**
      * Getter for inherit
+     *
+     * @internal
      *
      * @return bool also returns profiles inherited from parent's group
      */
@@ -111,6 +115,8 @@ class ProfilesList extends Request
     /**
      * Getter for fields
      *
+     * @internal
+     *
      * @return string Defines the other available fields to be returned in the response.
      *                
      */
@@ -133,6 +139,8 @@ class ProfilesList extends Request
     /**
      * Getter for limit
      *
+     * @internal
+     *
      * @return int The maximum number of items to return
      */
     public function getLimit() : ?int
@@ -153,6 +161,8 @@ class ProfilesList extends Request
     }
     /**
      * Getter for offset
+     *
+     * @internal
      *
      * @return int The number of items to skip
      */
@@ -175,6 +185,8 @@ class ProfilesList extends Request
     /**
      * Getter for authorizations
      *
+     * @internal
+     *
      * @return bool if true, return the list of actions and resources the user has access
      */
     public function getAuthorizations() : ?bool
@@ -188,6 +200,6 @@ class ProfilesList extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('groupId' => new PrimitiveSerializer(self::class, 'groupId', 'string'), 'inherit' => new PrimitiveSerializer(self::class, 'inherit', 'bool'), 'fields' => new PrimitiveSerializer(self::class, 'fields', 'string'), 'limit' => new PrimitiveSerializer(self::class, 'limit', 'int'), 'offset' => new PrimitiveSerializer(self::class, 'offset', 'int'), 'authorizations' => new PrimitiveSerializer(self::class, 'authorizations', 'bool'));
+        return array('groupId' => new PrimitiveSerializer('string'), 'inherit' => new PrimitiveSerializer('bool'), 'fields' => new PrimitiveSerializer('string'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'authorizations' => new PrimitiveSerializer('bool'));
     }
 }

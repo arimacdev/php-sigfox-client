@@ -96,6 +96,6 @@ class RegistrationJobStatus extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('jobDone' => new PrimitiveSerializer(self::class, 'jobDone', 'bool'), 'total' => new PrimitiveSerializer(self::class, 'total', 'int'), 'status' => new ClassSerializer(self::class, 'status', Status::class));
+        return array('jobDone' => new PrimitiveSerializer('bool'), 'total' => new PrimitiveSerializer('int'), 'status' => new ClassSerializer(Status::class));
     }
 }

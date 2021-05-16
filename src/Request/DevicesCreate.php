@@ -39,6 +39,8 @@ class DevicesCreate extends Request
     /**
      * Getter for device
      *
+     * @internal
+     *
      * @return DeviceCreationJob The device to create
      */
     public function getDevice() : ?DeviceCreationJob
@@ -52,6 +54,6 @@ class DevicesCreate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('device' => new ClassSerializer(self::class, 'device', DeviceCreationJob::class));
+        return array('device' => new ClassSerializer(DeviceCreationJob::class));
     }
 }

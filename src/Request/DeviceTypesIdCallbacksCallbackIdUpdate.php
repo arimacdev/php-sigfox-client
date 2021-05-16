@@ -39,6 +39,8 @@ class DeviceTypesIdCallbacksCallbackIdUpdate extends Request
     /**
      * Getter for callback
      *
+     * @internal
+     *
      * @return UpdateCallback The callback to update
      */
     public function getCallback() : ?UpdateCallback
@@ -52,6 +54,6 @@ class DeviceTypesIdCallbacksCallbackIdUpdate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('callback' => new ClassSerializer(self::class, 'callback', UpdateCallback::class));
+        return array('callback' => new ClassSerializer(UpdateCallback::class));
     }
 }
