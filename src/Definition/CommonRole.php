@@ -37,6 +37,9 @@ class CommonRole extends Definition
      * @var int
      */
     protected ?int $type = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('name' => array('max:100', 'nullable'));
     /**
      * Setter for name
@@ -92,6 +95,8 @@ class CommonRole extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

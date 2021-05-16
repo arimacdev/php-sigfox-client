@@ -61,6 +61,8 @@ class ProfilesListResponse extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

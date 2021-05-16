@@ -39,6 +39,8 @@ class SVNO extends Group
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

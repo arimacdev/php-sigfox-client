@@ -15,7 +15,13 @@ class DevicesIdCertificateProduct extends Request
      * @var string
      */
     protected ?string $fields = null;
+    /**
+     * @internal
+     */
     protected array $query = array('fields');
+    /**
+     * @internal
+     */
     protected array $validations = array('fields' => array('in:manufacturer(name)', 'nullable'));
     /**
      * Setter for fields
@@ -42,6 +48,8 @@ class DevicesIdCertificateProduct extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

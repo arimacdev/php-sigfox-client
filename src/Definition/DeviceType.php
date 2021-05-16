@@ -153,6 +153,9 @@ class DeviceType extends BaseDeviceType
      * @var bool
      */
     protected ?bool $automaticRenewal = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('description' => array('max:300', 'nullable'));
     /**
      * Setter for id
@@ -527,6 +530,8 @@ class DeviceType extends BaseDeviceType
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

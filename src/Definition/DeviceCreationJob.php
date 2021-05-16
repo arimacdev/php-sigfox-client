@@ -197,6 +197,8 @@ class DeviceCreationJob extends CommonDevice
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

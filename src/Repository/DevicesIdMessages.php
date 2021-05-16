@@ -11,14 +11,20 @@ class DevicesIdMessages extends Repository
 {
     /**
      * The HTTP client
+     *
+     * @internal
      */
     protected ?Client $client;
     /**
      * The Device identifier (hexadecimal format)
+     *
+     * @internal
      */
     protected ?string $id;
     /**
      * Creating the repository
+     *
+     * @internal
      *
      * @param Client $client The HTTP client
      * @param string $id     The Device identifier (hexadecimal format)

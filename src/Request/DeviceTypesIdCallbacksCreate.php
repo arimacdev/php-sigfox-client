@@ -14,7 +14,13 @@ class DeviceTypesIdCallbacksCreate extends Request
      * @var CreateCallback
      */
     protected ?CreateCallback $callback = null;
+    /**
+     * @internal
+     */
     protected array $body = array('callback');
+    /**
+     * @internal
+     */
     protected array $validations = array('callback' => array('required'));
     /**
      * Setter for callback
@@ -39,6 +45,8 @@ class DeviceTypesIdCallbacksCreate extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

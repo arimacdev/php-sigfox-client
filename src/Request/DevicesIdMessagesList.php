@@ -39,7 +39,13 @@ class DevicesIdMessagesList extends Request
      * @var int
      */
     protected ?int $offset = null;
+    /**
+     * @internal
+     */
     protected array $query = array('fields', 'since', 'before', 'limit', 'offset');
+    /**
+     * @internal
+     */
     protected array $validations = array('fields' => array('in:oob,ackRequired,device(name),rinfos(cbStatus\\,rep\\,repetitions\\,baseStation(name)),downlinkAnswerStatus(baseStation(name))', 'nullable'));
     /**
      * Setter for fields
@@ -150,6 +156,8 @@ class DevicesIdMessagesList extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

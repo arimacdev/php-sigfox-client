@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<phpdocumentor>
-    <parser>
-        <default-package-name>Sigfox API Client</default-package-name>
-        <target>doc/cache</target>
-    </parser>
-    <transformer>
-        <target>doc/build</target>
-    </transformer>
-    <files>
-        <directory>./src</directory>
-    </files>
-    <transformations>
-        <template name="default" />
-    </transformations>
+<phpdocumentor configVersion="3.0">
+    <paths>
+        <output>doc/build</output>
+        <cache>doc/cache</cache>
+    </paths>
+    <version number="2.0.0">
+        <api>
+            <source dsn=".">
+                <path>src</path>
+            </source>
+            <ignore hidden="true">
+                <path>src/Client/Client.php</path>
+                <path>src/Serializer/**/*</path>
+                <path>src/Repository.php</path>
+            </ignore>
+            <default-package-name>PHP Sigfox Client</default-package-name>
+        </api>
+    </version> 
+    <title>PHP Sigfox Client</title>
 </phpdocumentor>

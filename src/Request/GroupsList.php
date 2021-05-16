@@ -125,7 +125,13 @@ class GroupsList extends Request
      * @var string
      */
     protected ?string $pageId = null;
+    /**
+     * @internal
+     */
     protected array $query = array('parentIds', 'deep', 'name', 'types', 'fields', 'action', 'sort', 'authorizations', 'limit', 'offset', 'pageId');
+    /**
+     * @internal
+     */
     protected array $validations = array('fields' => array('in:path(name\\,type\\,level)', 'nullable'), 'action' => array('in:base-stations:create,contract-infos:create,device-types:create,devices:create,hosts:create,maintenances:create,providers:create,sites:create,users:create', 'nullable'), 'sort' => array('in:id,-id,name,-name', 'nullable'));
     /**
      * Setter for parentIds
@@ -388,6 +394,8 @@ class GroupsList extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

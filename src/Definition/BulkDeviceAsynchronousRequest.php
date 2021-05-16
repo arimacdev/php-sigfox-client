@@ -38,6 +38,9 @@ class BulkDeviceAsynchronousRequest extends Definition
      * @var DataItem[]
      */
     protected ?array $data = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('deviceTypeId' => array('required'), 'prefix' => array('max:40', 'nullable'));
     /**
      * Setter for deviceTypeId
@@ -146,6 +149,8 @@ class BulkDeviceAsynchronousRequest extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

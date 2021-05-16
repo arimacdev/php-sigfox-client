@@ -166,6 +166,8 @@ class Profile extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

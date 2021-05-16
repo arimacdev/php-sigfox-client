@@ -173,6 +173,8 @@ class CallbackHTTP extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -21,6 +21,9 @@ class CommonDevice extends Definition
      * @var string
      */
     protected ?string $name = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('id' => array('required'), 'name' => array('required', 'max:100'));
     /**
      * Setter for id
@@ -66,6 +69,8 @@ class CommonDevice extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

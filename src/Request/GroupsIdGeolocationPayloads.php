@@ -27,6 +27,9 @@ class GroupsIdGeolocationPayloads extends Request
      * @var string
      */
     protected ?string $pageId = null;
+    /**
+     * @internal
+     */
     protected array $query = array('limit', 'offset', 'pageId');
     /**
      * Setter for limit
@@ -93,6 +96,8 @@ class GroupsIdGeolocationPayloads extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

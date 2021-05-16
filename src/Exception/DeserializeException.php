@@ -10,14 +10,19 @@ use Exception;
 class DeserializeException extends Exception
 {
 
+    /** @internal **/
     protected string $className;
 
+    /** @internal **/
     protected string $propertyName;
 
+    /** @internal **/
     protected string $expectedType;
 
     /**
      * Initializing the exception
+     *
+     * @internal
      *
      * @param string $className    Name of the class that the value exists
      * @param string $propertyName Name of the property that the value exists

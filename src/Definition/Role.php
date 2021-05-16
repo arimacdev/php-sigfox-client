@@ -143,6 +143,8 @@ class Role extends CommonRole
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

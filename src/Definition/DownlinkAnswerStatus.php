@@ -144,6 +144,8 @@ class DownlinkAnswerStatus extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

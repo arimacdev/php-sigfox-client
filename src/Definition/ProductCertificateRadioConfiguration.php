@@ -125,6 +125,8 @@ class ProductCertificateRadioConfiguration extends RadioConfiguration
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

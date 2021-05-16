@@ -21,7 +21,13 @@ class DeviceTypesIdGet extends Request
      * @var string
      */
     protected ?string $fields = null;
+    /**
+     * @internal
+     */
     protected array $query = array('authorizations', 'fields');
+    /**
+     * @internal
+     */
     protected array $validations = array('fields' => array('in:group(name\\,type\\,level),contract(name),geolocPayloadConfig(name)', 'nullable'));
     /**
      * Setter for authorizations
@@ -69,6 +75,8 @@ class DeviceTypesIdGet extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

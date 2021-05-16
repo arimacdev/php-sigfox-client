@@ -13,10 +13,14 @@ class ApiUsers extends Repository
 {
     /**
      * The HTTP client
+     *
+     * @internal
      */
     protected ?Client $client;
     /**
      * Creating the repository
+     *
+     * @internal
      *
      * @param Client $client The HTTP client
      */

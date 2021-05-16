@@ -16,7 +16,13 @@ class UsersCreate extends Request
      * @var UserCreation
      */
     protected ?UserCreation $user = null;
+    /**
+     * @internal
+     */
     protected array $body = array('user');
+    /**
+     * @internal
+     */
     protected array $validations = array('user' => array('required'));
     /**
      * Setter for user
@@ -41,6 +47,8 @@ class UsersCreate extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

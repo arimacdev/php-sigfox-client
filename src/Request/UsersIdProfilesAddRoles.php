@@ -15,7 +15,13 @@ class UsersIdProfilesAddRoles extends Request
      * @var array
      */
     protected ?array $userRoles = null;
+    /**
+     * @internal
+     */
     protected array $body = array('userRoles');
+    /**
+     * @internal
+     */
     protected array $validations = array('userRoles' => array('required'));
     /**
      * Setter for userRoles
@@ -40,6 +46,8 @@ class UsersIdProfilesAddRoles extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

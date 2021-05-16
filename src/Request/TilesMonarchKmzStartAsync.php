@@ -17,7 +17,13 @@ class TilesMonarchKmzStartAsync extends Request
      * @var KmzCreatePublicRequest
      */
     protected ?KmzCreatePublicRequest $request = null;
+    /**
+     * @internal
+     */
     protected array $body = array('request');
+    /**
+     * @internal
+     */
     protected array $validations = array('request' => array('required'));
     /**
      * Setter for request
@@ -42,6 +48,8 @@ class TilesMonarchKmzStartAsync extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -61,6 +61,8 @@ class DeviceLocation_2 extends ComputedLocation
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

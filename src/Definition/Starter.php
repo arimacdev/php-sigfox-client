@@ -15,6 +15,9 @@ class Starter extends Group
      * @var int
      */
     protected ?int $currentPrototypeCount = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('currentPrototypeCount' => array('min:0', 'numeric', 'nullable'));
     /**
      * Setter for currentPrototypeCount
@@ -39,6 +42,8 @@ class Starter extends Group
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

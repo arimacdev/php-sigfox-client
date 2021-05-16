@@ -193,6 +193,8 @@ class ApiUser extends CommonApiUser
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

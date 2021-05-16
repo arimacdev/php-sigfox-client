@@ -62,6 +62,8 @@ class RoleCreate extends CommonRole
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -345,6 +345,8 @@ class DeviceTypeUpdate extends BaseDeviceType
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

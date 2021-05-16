@@ -34,6 +34,8 @@ class Contact extends BaseContact
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -114,6 +114,8 @@ class CellularConnectivityForGroup extends CellularConnectivityBase
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -97,6 +97,9 @@ class CreateInternetSubscription extends Definition
      * @var MinContact[]
      */
     protected ?array $contacts = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('type' => array('required'), 'priority' => array('required'), 'startTime' => array('required'));
     /**
      * Setter for id
@@ -292,6 +295,8 @@ class CreateInternetSubscription extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

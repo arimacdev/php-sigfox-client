@@ -14,7 +14,13 @@ class GroupsCreate extends Request
      * @var CommonGroupCreate
      */
     protected ?CommonGroupCreate $group = null;
+    /**
+     * @internal
+     */
     protected array $body = array('group');
+    /**
+     * @internal
+     */
     protected array $validations = array('group' => array('required'));
     /**
      * Setter for group
@@ -39,6 +45,8 @@ class GroupsCreate extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

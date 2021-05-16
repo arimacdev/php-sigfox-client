@@ -16,7 +16,13 @@ class CoveragesGlobalPredictionsCalculateBulk extends Request
      * @var GlobalCoverageRequest
      */
     protected ?GlobalCoverageRequest $payload = null;
+    /**
+     * @internal
+     */
     protected array $body = array('payload');
+    /**
+     * @internal
+     */
     protected array $validations = array('payload' => array('required'));
     /**
      * Setter for payload
@@ -41,6 +47,8 @@ class CoveragesGlobalPredictionsCalculateBulk extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

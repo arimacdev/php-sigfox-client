@@ -9,22 +9,32 @@ class DevicesIdConsumptionYearMonth extends Repository
 {
     /**
      * The HTTP client
+     *
+     * @internal
      */
     protected ?Client $client;
     /**
      * The Device identifier (hexadecimal format)
+     *
+     * @internal
      */
     protected ?string $id;
     /**
      * The year of consumption
+     *
+     * @internal
      */
     protected ?string $year;
     /**
      * The month of consumption
+     *
+     * @internal
      */
     protected ?string $month;
     /**
      * Creating the repository
+     *
+     * @internal
      *
      * @param Client $client The HTTP client
      * @param string $id     The Device identifier (hexadecimal format)

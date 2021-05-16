@@ -993,6 +993,8 @@ class Device extends CommonDevice
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -16,14 +16,20 @@ class GroupsId extends Repository
 {
     /**
      * The HTTP client
+     *
+     * @internal
      */
     protected ?Client $client;
     /**
      * The Group identifier
+     *
+     * @internal
      */
     protected ?string $id;
     /**
      * Creating the repository
+     *
+     * @internal
      *
      * @param Client $client The HTTP client
      * @param string $id     The Group identifier

@@ -34,6 +34,9 @@ class DeviceTypeCreate extends BaseDeviceType
      * @var string
      */
     protected ?string $geolocPayloadConfigId = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('groupId' => array('required'), 'contracts' => array('required'), 'geolocPayloadConfigId' => array('required'));
     /**
      * Setter for groupId
@@ -123,6 +126,8 @@ class DeviceTypeCreate extends BaseDeviceType
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

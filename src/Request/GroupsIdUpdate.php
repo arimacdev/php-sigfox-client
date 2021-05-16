@@ -16,7 +16,13 @@ class GroupsIdUpdate extends Request
      * @var CommonGroupUpdate
      */
     protected ?CommonGroupUpdate $group = null;
+    /**
+     * @internal
+     */
     protected array $body = array('group');
+    /**
+     * @internal
+     */
     protected array $validations = array('group' => array('required'));
     /**
      * Setter for group
@@ -41,6 +47,8 @@ class GroupsIdUpdate extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

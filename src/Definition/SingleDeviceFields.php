@@ -170,6 +170,8 @@ trait SingleDeviceFields
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

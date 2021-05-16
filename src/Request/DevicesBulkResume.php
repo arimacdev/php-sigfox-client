@@ -23,8 +23,17 @@ class DevicesBulkResume extends Request
      * @var string
      */
     protected ?string $groupId = null;
+    /**
+     * @internal
+     */
     protected array $query = array('groupId');
+    /**
+     * @internal
+     */
     protected array $body = array('devices');
+    /**
+     * @internal
+     */
     protected array $validations = array('devices' => array('required'));
     /**
      * Setter for devices
@@ -70,6 +79,8 @@ class DevicesBulkResume extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

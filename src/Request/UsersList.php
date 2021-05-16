@@ -71,7 +71,13 @@ class UsersList extends Request
      * @var string
      */
     protected ?string $pageId = null;
+    /**
+     * @internal
+     */
     protected array $query = array('fields', 'text', 'profileId', 'groupIds', 'deep', 'sort', 'authorizations', 'limit', 'offset', 'pageId');
+    /**
+     * @internal
+     */
     protected array $validations = array('fields' => array('in:userRoles(group(name\\,type\\,level\\,bssId\\,customerBssId)\\,profile(name\\,roles(name\\,perms(name))))', 'nullable'), 'sort' => array('in:id,-id,name,-name,email,-email', 'nullable'));
     /**
      * Setter for fields
@@ -293,6 +299,8 @@ class UsersList extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -31,6 +31,9 @@ class GlobalCoverageRequest extends Definition
      * @var string
      */
     protected ?string $groupId = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('locations' => array('required'));
     /**
      * Setter for locations
@@ -101,6 +104,8 @@ class GlobalCoverageRequest extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

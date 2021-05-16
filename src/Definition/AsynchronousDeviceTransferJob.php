@@ -19,6 +19,9 @@ class AsynchronousDeviceTransferJob extends Definition
      * @var DataItem[]
      */
     protected ?array $data = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('deviceTypeId' => array('required'));
     /**
      * Setter for deviceTypeId
@@ -64,6 +67,8 @@ class AsynchronousDeviceTransferJob extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

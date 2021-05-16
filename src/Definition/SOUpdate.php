@@ -40,6 +40,8 @@ class SOUpdate extends CommonGroupUpdate
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

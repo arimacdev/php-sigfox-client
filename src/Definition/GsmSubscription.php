@@ -193,6 +193,8 @@ class GsmSubscription extends InternetSubscription
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -20,6 +20,9 @@ class UserCreation extends UserUpdate
      * @var bool
      */
     protected ?bool $sendWelcomeEmail = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('email' => array('required', 'max:250'));
     /**
      * Setter for email
@@ -65,6 +68,8 @@ class UserCreation extends UserUpdate
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

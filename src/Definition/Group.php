@@ -122,6 +122,9 @@ class Group extends Definition
      * @var string[]
      */
     protected ?array $actions = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('name' => array('max:100', 'min:3', 'nullable'), 'description' => array('max:300', 'nullable'));
     /**
      * Setter for name
@@ -380,6 +383,8 @@ class Group extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

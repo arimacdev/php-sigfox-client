@@ -29,6 +29,9 @@ class MinRole extends Definition
      * @var MinMetaRole[]
      */
     protected ?array $path = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('name' => array('max:100', 'nullable'));
     /**
      * Setter for id
@@ -95,6 +98,8 @@ class MinRole extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

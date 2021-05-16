@@ -88,7 +88,13 @@ class DevicesList extends Request
      * @var string
      */
     protected ?string $pageId = null;
+    /**
+     * @internal
+     */
     protected array $query = array('id', 'groupIds', 'deep', 'authorizations', 'deviceTypeId', 'operatorId', 'sort', 'minId', 'maxId', 'fields', 'limit', 'offset', 'pageId');
+    /**
+     * @internal
+     */
     protected array $validations = array('sort' => array('in:id,-id,name,-name,lastCom,-lastCom', 'nullable'), 'fields' => array('in:deviceType(name),group(name\\,type\\,level\\,bssId\\,customerBssId),contract(name),productCertificate(key),modemCertificate(key)', 'nullable'));
     /**
      * Setter for id
@@ -373,6 +379,8 @@ class DevicesList extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

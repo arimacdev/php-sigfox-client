@@ -16,7 +16,13 @@ class DevicesIdUnsubscribe extends Request
      * @var TokenUnsubscribe
      */
     protected ?TokenUnsubscribe $unsubscriptionTime = null;
+    /**
+     * @internal
+     */
     protected array $body = array('unsubscriptionTime');
+    /**
+     * @internal
+     */
     protected array $validations = array('unsubscriptionTime' => array('required'));
     /**
      * Setter for unsubscriptionTime
@@ -41,6 +47,8 @@ class DevicesIdUnsubscribe extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

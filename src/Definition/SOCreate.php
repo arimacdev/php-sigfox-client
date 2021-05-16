@@ -40,6 +40,8 @@ class SOCreate extends CommonGroupCreate
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

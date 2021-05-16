@@ -11,6 +11,8 @@ class NotFoundException extends ResponseException {
     /**
      * Initializing the exception
      *
+     * @internal
+     *
      * @param string    $message The error message that returning from the server
      * @param Throwable $prev    Previous exception
      */

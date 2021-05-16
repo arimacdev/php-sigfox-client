@@ -18,6 +18,9 @@ class LatLng extends Definition
      * @var int
      */
     protected ?int $lng = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('lat' => array('max:90', 'min:-90', 'numeric', 'nullable'), 'lng' => array('max:180', 'min:-180', 'numeric', 'nullable'));
     /**
      * Setter for lat
@@ -63,6 +66,8 @@ class LatLng extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

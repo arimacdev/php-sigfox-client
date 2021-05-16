@@ -93,6 +93,9 @@ class CreateSatSubscription extends CreateInternetSubscription
      * @var int
      */
     protected ?int $rType = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('connectionStatus' => array('required'), 'orderNumber' => array('required'), 'rType' => array('required'));
     /**
      * Setter for connectionStatus
@@ -324,6 +327,8 @@ class CreateSatSubscription extends CreateInternetSubscription
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

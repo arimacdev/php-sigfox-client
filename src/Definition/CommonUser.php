@@ -27,6 +27,9 @@ class CommonUser extends Definition
      * @var string
      */
     protected ?string $timezone = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('firstName' => array('max:100', 'nullable'), 'lastName' => array('max:100', 'nullable'));
     /**
      * Setter for firstName
@@ -93,6 +96,8 @@ class CommonUser extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -82,6 +82,9 @@ class CommonGroupCreate extends Definition
      * @var string
      */
     protected ?string $parentId = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('name' => array('required', 'max:100', 'min:3'), 'description' => array('required', 'max:300'), 'type' => array('required'), 'timezone' => array('required'), 'parentId' => array('required'));
     /**
      * Setter for name
@@ -212,6 +215,8 @@ class CommonGroupCreate extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

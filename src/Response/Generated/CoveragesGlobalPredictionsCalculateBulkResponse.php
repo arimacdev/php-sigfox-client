@@ -35,6 +35,8 @@ class CoveragesGlobalPredictionsCalculateBulkResponse extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

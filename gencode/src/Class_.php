@@ -190,6 +190,7 @@ class Class_
         $property->setDefault($items);
         $property->setType("array");
         $property->makeProtected();
+        $property->setDocComment(Helper::normalizeDocComment([["internal", null]], 2));
         $this->class->addStmt($property);
     }
 

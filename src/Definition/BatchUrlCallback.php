@@ -26,6 +26,9 @@ class BatchUrlCallback extends Callback
      * @var string
      */
     protected ?string $linePattern = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('httpMethod' => array('in:GET,PUT,POST', 'nullable'));
     /**
      * Setter for url
@@ -92,6 +95,8 @@ class BatchUrlCallback extends Callback
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

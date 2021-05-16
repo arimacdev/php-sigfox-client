@@ -21,7 +21,13 @@ class ProfilesIdGet extends Request
      * @var bool
      */
     protected ?bool $authorizations = null;
+    /**
+     * @internal
+     */
     protected array $query = array('fields', 'authorizations');
+    /**
+     * @internal
+     */
     protected array $validations = array('fields' => array('in:group(name\\,type\\,level),roles(name\\,path(name))', 'nullable'));
     /**
      * Setter for fields
@@ -69,6 +75,8 @@ class ProfilesIdGet extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

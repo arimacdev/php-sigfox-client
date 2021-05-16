@@ -10,10 +10,15 @@ use Throwable;
  * HTTP 400 Bad Request error
  */
 class BadRequestException extends ResponseException {
+    /**
+     * @internal
+     */
     protected ErrorContent $innerContent;
 
     /**
      * Initializing the exception
+     *
+     * @internal
      *
      * @param ErrorContent $innerContent Response content
      * @param Throwable    $prev         Previous exception

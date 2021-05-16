@@ -37,6 +37,8 @@ class CreateResponse extends BaseResponse
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

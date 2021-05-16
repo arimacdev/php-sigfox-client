@@ -26,6 +26,9 @@ class MinProfile extends Definition
      * @var string[]
      */
     protected ?array $actions = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('name' => array('max:100', 'nullable'));
     /**
      * Setter for id
@@ -92,6 +95,8 @@ class MinProfile extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

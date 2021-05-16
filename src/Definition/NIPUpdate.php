@@ -40,6 +40,8 @@ class NIPUpdate extends CommonGroupUpdate
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

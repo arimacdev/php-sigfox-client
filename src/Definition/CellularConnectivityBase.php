@@ -72,6 +72,9 @@ class CellularConnectivityBase extends Definition
      * @var int
      */
     protected ?int $source = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('name' => array('required'), 'apn' => array('required'));
     /**
      * Setter for name
@@ -240,6 +243,8 @@ class CellularConnectivityBase extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

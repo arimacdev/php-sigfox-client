@@ -81,6 +81,8 @@ class RadioCertificate extends CommonCertificate
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

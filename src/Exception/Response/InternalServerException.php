@@ -11,6 +11,8 @@ class InternalServerException extends ResponseException {
     /**
      * Initializing the exception
      *
+     * @internal
+     *
      * @param Throwable $prev Previous exception
      */
     public function __construct(Throwable $prev = null)

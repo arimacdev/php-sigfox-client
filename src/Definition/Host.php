@@ -109,6 +109,8 @@ class Host extends BaseHost
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

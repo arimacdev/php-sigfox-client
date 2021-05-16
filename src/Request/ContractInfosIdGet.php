@@ -21,7 +21,13 @@ class ContractInfosIdGet extends Request
      * @var bool
      */
     protected ?bool $authorizations = null;
+    /**
+     * @internal
+     */
     protected array $query = array('fields', 'authorizations');
+    /**
+     * @internal
+     */
     protected array $validations = array('fields' => array('in:group(name\\,type\\,level),order(name),blacklistedTerritories(group(name\\,type\\,level))', 'nullable'));
     /**
      * Setter for fields
@@ -69,6 +75,8 @@ class ContractInfosIdGet extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -91,6 +91,8 @@ class EmailCallback extends Callback
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -18,6 +18,9 @@ class LocationsItem extends Definition
      * @var int
      */
     protected ?int $lng = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('lat' => array('required'), 'lng' => array('required'));
     /**
      * Setter for lat
@@ -63,6 +66,8 @@ class LocationsItem extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

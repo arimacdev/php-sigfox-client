@@ -96,6 +96,9 @@ class CreateCallback extends Definition
      * @var bool
      */
     protected ?bool $enabled = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('channel' => array('required'), 'callbackType' => array('required'), 'callbackSubtype' => array('required'), 'enabled' => array('required'));
     /**
      * Setter for channel
@@ -242,6 +245,8 @@ class CreateCallback extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

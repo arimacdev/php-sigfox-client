@@ -65,6 +65,8 @@ class DeviceLocation extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

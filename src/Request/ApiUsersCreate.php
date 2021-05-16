@@ -14,7 +14,13 @@ class ApiUsersCreate extends Request
      * @var ApiUserCreation
      */
     protected ?ApiUserCreation $apiUser = null;
+    /**
+     * @internal
+     */
     protected array $body = array('apiUser');
+    /**
+     * @internal
+     */
     protected array $validations = array('apiUser' => array('required'));
     /**
      * Setter for apiUser
@@ -39,6 +45,8 @@ class ApiUsersCreate extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

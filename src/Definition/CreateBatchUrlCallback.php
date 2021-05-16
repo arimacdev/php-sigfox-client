@@ -26,6 +26,9 @@ class CreateBatchUrlCallback extends CreateCallback
      * @var string
      */
     protected ?string $linePattern = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('url' => array('required'), 'httpMethod' => array('required', 'in:GET,PUT,POST'));
     /**
      * Setter for url
@@ -92,6 +95,8 @@ class CreateBatchUrlCallback extends CreateCallback
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

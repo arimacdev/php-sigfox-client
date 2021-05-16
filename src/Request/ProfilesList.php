@@ -45,7 +45,13 @@ class ProfilesList extends Request
      * @var bool
      */
     protected ?bool $authorizations = null;
+    /**
+     * @internal
+     */
     protected array $query = array('groupId', 'inherit', 'fields', 'limit', 'offset', 'authorizations');
+    /**
+     * @internal
+     */
     protected array $validations = array('groupId' => array('required'), 'fields' => array('in:group(name\\,type\\,level),roles(name\\,path(name))', 'nullable'));
     /**
      * Setter for groupId
@@ -177,6 +183,8 @@ class ProfilesList extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

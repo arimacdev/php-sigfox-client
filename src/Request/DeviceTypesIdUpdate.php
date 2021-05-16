@@ -16,7 +16,13 @@ class DeviceTypesIdUpdate extends Request
      * @var DeviceTypeUpdate
      */
     protected ?DeviceTypeUpdate $deviceType = null;
+    /**
+     * @internal
+     */
     protected array $body = array('deviceType');
+    /**
+     * @internal
+     */
     protected array $validations = array('deviceType' => array('required'));
     /**
      * Setter for deviceType
@@ -41,6 +47,8 @@ class DeviceTypesIdUpdate extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

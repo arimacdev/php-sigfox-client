@@ -46,6 +46,9 @@ class CreateUrlCallback extends CreateCallback
      * @var string
      */
     protected ?string $contentType = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('url' => array('required'), 'httpMethod' => array('required', 'in:GET,PUT,POST'));
     /**
      * Setter for url
@@ -185,6 +188,8 @@ class CreateUrlCallback extends CreateCallback
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

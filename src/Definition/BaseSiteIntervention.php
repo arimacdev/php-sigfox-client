@@ -487,6 +487,8 @@ class BaseSiteIntervention extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

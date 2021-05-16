@@ -127,6 +127,9 @@ class ContractInfoCreate extends CommonContractInfo
      * @var string[]
      */
     protected ?array $blacklistedTerritories = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('groupId' => array('required'), 'contractId' => array('required'), 'userId' => array('required'), 'pricingModel' => array('required'), 'startTime' => array('required', 'min:0', 'numeric'), 'timezone' => array('required'), 'subscriptionPlan' => array('required'), 'tokenDuration' => array('required', 'min:0', 'numeric'));
     /**
      * Setter for groupId
@@ -391,6 +394,8 @@ class ContractInfoCreate extends CommonContractInfo
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

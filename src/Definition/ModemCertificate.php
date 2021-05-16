@@ -66,6 +66,8 @@ class ModemCertificate extends RadioCertificate
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

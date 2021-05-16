@@ -88,6 +88,9 @@ class MinGroup extends Definition
      * @var string[]
      */
     protected ?array $resources = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('name' => array('max:100', 'min:3', 'nullable'));
     /**
      * Setter for id
@@ -239,6 +242,8 @@ class MinGroup extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

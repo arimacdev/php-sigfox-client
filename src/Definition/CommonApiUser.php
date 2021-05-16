@@ -21,6 +21,9 @@ class CommonApiUser extends Definition
      * @var string
      */
     protected ?string $timezone = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('name' => array('max:100', 'nullable'));
     /**
      * Setter for name
@@ -66,6 +69,8 @@ class CommonApiUser extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

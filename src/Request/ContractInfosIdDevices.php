@@ -33,7 +33,13 @@ class ContractInfosIdDevices extends Request
      * @var string
      */
     protected ?string $pageId = null;
+    /**
+     * @internal
+     */
     protected array $query = array('deviceTypeId', 'fields', 'limit', 'pageId');
+    /**
+     * @internal
+     */
     protected array $validations = array('fields' => array('in:deviceType(name),group(name\\,type\\,level\\,bssId\\,customerBssId),contract(name),productCertificate(key),modemCertificate(name)', 'nullable'));
     /**
      * Setter for deviceTypeId
@@ -123,6 +129,8 @@ class ContractInfosIdDevices extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

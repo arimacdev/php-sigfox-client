@@ -98,6 +98,8 @@ class UserUpdate extends CommonUser
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -58,7 +58,7 @@ class Repository extends Class_
         $this->addProperty(
             "client",
             "Client",
-            Helper::normalizeDocComment("The HTTP client",2)
+            Helper::normalizeDocComment("The HTTP client", [["internal", null]],2)
         );
         $params[] = new Param(new Variable("client"), null, "Client");
         $stmts[] = new Assign(
@@ -69,7 +69,11 @@ class Repository extends Class_
         foreach ($parameters as $param) {
             $params[] = new Param(new Variable($param[0]), null, $param[1]);
 
-            $this->addProperty($param[0], $param[1], $param[2]?Helper::normalizeDocComment($param[2],2):null);
+            $this->addProperty(
+                $param[0], 
+                $param[1], 
+                Helper::normalizeDocComment($param[2], [["internal", null]],2)
+            );
 
             $stmts[] = new Assign(
                 new Variable("this->" . $param[0]),
@@ -88,6 +92,7 @@ class Repository extends Class_
                     }
         }, $parameters);
         array_unshift($docblockTags, ["param", "Client", "\$client", "The HTTP client"]);
+        array_unshift($docblockTags, ["internal", null]);
         $this->addMethod(
             "__construct",
             $params,

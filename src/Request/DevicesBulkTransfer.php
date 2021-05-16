@@ -16,7 +16,13 @@ class DevicesBulkTransfer extends Request
      * @var AsynchronousDeviceTransferJob
      */
     protected ?AsynchronousDeviceTransferJob $devices = null;
+    /**
+     * @internal
+     */
     protected array $body = array('devices');
+    /**
+     * @internal
+     */
     protected array $validations = array('devices' => array('required'));
     /**
      * Setter for devices
@@ -41,6 +47,8 @@ class DevicesBulkTransfer extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

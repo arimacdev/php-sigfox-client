@@ -232,6 +232,8 @@ class SimpleSite extends MinSite
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

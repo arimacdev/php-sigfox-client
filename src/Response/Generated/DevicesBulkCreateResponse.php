@@ -62,6 +62,8 @@ class DevicesBulkCreateResponse extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

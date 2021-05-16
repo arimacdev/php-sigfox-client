@@ -94,6 +94,9 @@ class EthernetConnectivityBase extends Definition
      * @var int
      */
     protected ?int $source = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('name' => array('required'), 'type' => array('required'));
     /**
      * Setter for name
@@ -310,6 +313,8 @@ class EthernetConnectivityBase extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

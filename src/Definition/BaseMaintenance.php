@@ -35,6 +35,8 @@ class BaseMaintenance extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

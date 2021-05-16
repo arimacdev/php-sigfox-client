@@ -27,6 +27,9 @@ trait BillableGroup
      * @var int
      */
     protected ?int $maxPrototypeAllowed = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('technicalEmail' => array('max:250', 'nullable'));
     /**
      * Setter for billable
@@ -93,6 +96,8 @@ trait BillableGroup
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

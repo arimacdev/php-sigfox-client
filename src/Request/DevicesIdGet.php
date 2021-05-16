@@ -21,7 +21,13 @@ class DevicesIdGet extends Request
      * @var string
      */
     protected ?string $fields = null;
+    /**
+     * @internal
+     */
     protected array $query = array('authorizations', 'fields');
+    /**
+     * @internal
+     */
     protected array $validations = array('fields' => array('in:deviceType(name),group(name\\,type\\,level\\,bssId\\,customerBssId),contract(name),productCertificate(key),modemCertificate(key)', 'nullable'));
     /**
      * Setter for authorizations
@@ -69,6 +75,8 @@ class DevicesIdGet extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -114,6 +114,8 @@ class EthernetConnectivityForGroup extends EthernetConnectivityBase
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

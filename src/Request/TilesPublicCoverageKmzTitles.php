@@ -40,7 +40,13 @@ class TilesPublicCoverageKmzTitles extends Request
      * @var int
      */
     protected ?int $east = null;
+    /**
+     * @internal
+     */
     protected array $query = array('zoom', 'north', 'south', 'west', 'east');
+    /**
+     * @internal
+     */
     protected array $validations = array('zoom' => array('required', 'max:11', 'min:0', 'numeric'), 'north' => array('required', 'max:90', 'min:-90', 'numeric'), 'south' => array('required', 'max:90', 'min:-90', 'numeric'), 'west' => array('required', 'max:180', 'min:-180', 'numeric'), 'east' => array('required', 'max:180', 'min:-180', 'numeric'));
     /**
      * Setter for zoom
@@ -149,6 +155,8 @@ class TilesPublicCoverageKmzTitles extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -16,7 +16,13 @@ class DevicesIdProductCertificate extends Request
      * @var string
      */
     protected ?string $pac = null;
+    /**
+     * @internal
+     */
     protected array $query = array('pac');
+    /**
+     * @internal
+     */
     protected array $validations = array('pac' => array('required'));
     /**
      * Setter for pac
@@ -41,6 +47,8 @@ class DevicesIdProductCertificate extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

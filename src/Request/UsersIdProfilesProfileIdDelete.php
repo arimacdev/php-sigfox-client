@@ -15,6 +15,9 @@ class UsersIdProfilesProfileIdDelete extends Request
      * @var string
      */
     protected ?string $groupId = null;
+    /**
+     * @internal
+     */
     protected array $query = array('groupId');
     /**
      * Setter for groupId
@@ -39,6 +42,8 @@ class UsersIdProfilesProfileIdDelete extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

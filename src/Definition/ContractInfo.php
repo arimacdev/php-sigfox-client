@@ -530,6 +530,8 @@ class ContractInfo extends CommonContractInfo
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

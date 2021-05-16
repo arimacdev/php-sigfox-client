@@ -109,6 +109,8 @@ class Provider extends BaseProvider
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

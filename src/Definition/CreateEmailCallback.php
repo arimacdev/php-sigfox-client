@@ -26,6 +26,9 @@ class CreateEmailCallback extends CreateCallback
      * @var string
      */
     protected ?string $message = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('recipient' => array('required'));
     /**
      * Setter for subject
@@ -92,6 +95,8 @@ class CreateEmailCallback extends CreateCallback
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

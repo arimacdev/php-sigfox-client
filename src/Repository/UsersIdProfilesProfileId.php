@@ -9,18 +9,26 @@ class UsersIdProfilesProfileId extends Repository
 {
     /**
      * The HTTP client
+     *
+     * @internal
      */
     protected ?Client $client;
     /**
      * The User identifier
+     *
+     * @internal
      */
     protected ?string $id;
     /**
      * The profile identifier
+     *
+     * @internal
      */
     protected ?string $profileId;
     /**
      * Creating the repository
+     *
+     * @internal
      *
      * @param Client $client    The HTTP client
      * @param string $id        The User identifier

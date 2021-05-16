@@ -3,12 +3,20 @@
 namespace Arimac\Sigfox;
 
 abstract class Request extends Definition {
+    /**
+     * @internal
+     */
     protected array $body = [];
 
+    /**
+     * @internal
+     */
     protected array $query = [];
 
     /**
      * Returning all property names for request body
+     *
+     * @internal
      *
      * @return string[]
      */
@@ -19,6 +27,8 @@ abstract class Request extends Definition {
     /**
      * Returning all property names for query string
      *
+     * @internal
+     *
      * @return string[]
      */
     public function getQueryFields(): array {
@@ -26,6 +36,8 @@ abstract class Request extends Definition {
     }
 
     /**
+     * @internal
+     *
      * @inheritdoc
      */
     public abstract function getSerializeMetaData(): array;

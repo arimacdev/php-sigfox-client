@@ -6,6 +6,8 @@ class Repository {
     /**
      * Binding path parameters to the URL
      *
+     * @internal
+     *
      * @param string $url URL with path parameter names. Example:- `/user/{id}`
      * @param array ...$params Value to replace path parameters
      *

@@ -144,6 +144,8 @@ class DeviceConsumptionsItem extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -13,18 +13,26 @@ class DeviceTypesIdCallbacksCallbackId extends Repository
 {
     /**
      * The HTTP client
+     *
+     * @internal
      */
     protected ?Client $client;
     /**
      * The Device Type identifier (hexademical format)
+     *
+     * @internal
      */
     protected ?string $id;
     /**
      * The Callback identifier
+     *
+     * @internal
      */
     protected ?string $callbackId;
     /**
      * Creating the repository
+     *
+     * @internal
      *
      * @param Client $client     The HTTP client
      * @param string $id         The Device Type identifier (hexademical format)

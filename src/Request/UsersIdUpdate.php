@@ -16,7 +16,13 @@ class UsersIdUpdate extends Request
      * @var UserUpdate
      */
     protected ?UserUpdate $user = null;
+    /**
+     * @internal
+     */
     protected array $body = array('user');
+    /**
+     * @internal
+     */
     protected array $validations = array('user' => array('required'));
     /**
      * Setter for user
@@ -41,6 +47,8 @@ class UsersIdUpdate extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

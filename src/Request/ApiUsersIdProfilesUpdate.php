@@ -16,7 +16,13 @@ class ApiUsersIdProfilesUpdate extends Request
      * @var ProfileIds
      */
     protected ?ProfileIds $profileIds = null;
+    /**
+     * @internal
+     */
     protected array $body = array('profileIds');
+    /**
+     * @internal
+     */
     protected array $validations = array('profileIds' => array('required'));
     /**
      * Setter for profileIds
@@ -41,6 +47,8 @@ class ApiUsersIdProfilesUpdate extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

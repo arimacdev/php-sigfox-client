@@ -56,6 +56,9 @@ class BaseContact extends Definition
      * @var string[]
      */
     protected ?array $resources = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('name' => array('required'), 'email' => array('max:250', 'nullable'));
     /**
      * Setter for name
@@ -232,6 +235,8 @@ class BaseContact extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

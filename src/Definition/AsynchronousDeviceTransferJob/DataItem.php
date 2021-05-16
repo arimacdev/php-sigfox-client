@@ -25,6 +25,9 @@ class DataItem extends Definition
      * @var bool
      */
     protected ?bool $activable = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('id' => array('required'));
     /**
      * Setter for id
@@ -93,6 +96,8 @@ class DataItem extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

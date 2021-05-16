@@ -209,6 +209,8 @@ class LastComputedLocation extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -13,6 +13,9 @@ class KmzCreatePublicRequest extends Definition
      * @var string
      */
     protected ?string $coverageMode = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('coverageMode' => array('in:OVERLAP_INDOOR,OVERLAP_OUTDOOR,OVERLAP_INDOOR_U1,OVERLAP_OUTDOOR_U1,OVERLAP_INDOOR_U2,OVERLAP_OUTDOOR_U2,OVERLAP_INDOOR_U3,OVERLAP_OUTDOOR_U3', 'nullable'));
     /**
      * Setter for coverageMode
@@ -42,6 +45,8 @@ class KmzCreatePublicRequest extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

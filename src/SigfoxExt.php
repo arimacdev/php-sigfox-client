@@ -10,15 +10,19 @@ use Arimac\Sigfox\Client\Guzzle;
  * Constructor of the `Sigfox` class.
  *
  * Since `Sigfox` is a auto generated class. This class is using to implement manual methods that should be in
- * {`Sigfox` class.
+ * `Sigfox` class.
  */
 class SigfoxExt {
     /**
+     * @internal
+     *
      * @var string
      */
     protected $baseUrl;
 
     /**
+     * @internal
+     *
      * @var Client
      */
     protected $client;

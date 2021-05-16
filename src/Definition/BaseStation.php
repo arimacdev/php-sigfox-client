@@ -874,6 +874,9 @@ class BaseStation extends Definition
      * @var string[]
      */
     protected ?array $resources = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('macroChannel' => array('min:0', 'numeric', 'nullable'), 'txPowerMargin' => array('max:20', 'min:-20', 'numeric', 'nullable'));
     /**
      * Setter for id
@@ -2661,6 +2664,8 @@ class BaseStation extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

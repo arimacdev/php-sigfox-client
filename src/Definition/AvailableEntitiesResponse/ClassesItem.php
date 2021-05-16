@@ -90,6 +90,8 @@ class ClassesItem extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

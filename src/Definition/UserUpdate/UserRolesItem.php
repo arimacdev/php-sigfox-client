@@ -18,6 +18,9 @@ class UserRolesItem extends Definition
      * @var string
      */
     protected ?string $profileId = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('groupId' => array('required'), 'profileId' => array('required'));
     /**
      * Setter for groupId
@@ -63,6 +66,8 @@ class UserRolesItem extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

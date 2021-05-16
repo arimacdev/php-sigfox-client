@@ -34,6 +34,9 @@ class DevicesIdCallbacksNotDelivered extends Request
      * @var int
      */
     protected ?int $offset = null;
+    /**
+     * @internal
+     */
     protected array $query = array('since', 'before', 'limit', 'offset');
     /**
      * Setter for since
@@ -121,6 +124,8 @@ class DevicesIdCallbacksNotDelivered extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

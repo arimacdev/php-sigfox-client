@@ -114,6 +114,9 @@ class BaseDeviceType extends Definition
      * @var bool
      */
     protected ?bool $automaticRenewal = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('name' => array('max:100', 'nullable'), 'description' => array('max:300', 'nullable'), 'keepAlive' => array('min:0', 'numeric', 'nullable'), 'alertEmail' => array('max:250', 'nullable'));
     /**
      * Setter for name
@@ -341,6 +344,8 @@ class BaseDeviceType extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

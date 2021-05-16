@@ -45,7 +45,13 @@ class CoveragesOperatorsRedundancy extends Request
      * @var int
      */
     protected ?int $deviceClassId = null;
+    /**
+     * @internal
+     */
     protected array $query = array('lat', 'lng', 'operatorId', 'deviceSituation', 'deviceClassId');
+    /**
+     * @internal
+     */
     protected array $validations = array('lat' => array('required'), 'lng' => array('required'));
     /**
      * Setter for lat
@@ -166,6 +172,8 @@ class CoveragesOperatorsRedundancy extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -16,7 +16,13 @@ class DevicesCreate extends Request
      * @var DeviceCreationJob
      */
     protected ?DeviceCreationJob $device = null;
+    /**
+     * @internal
+     */
     protected array $body = array('device');
+    /**
+     * @internal
+     */
     protected array $validations = array('device' => array('required'));
     /**
      * Setter for device
@@ -41,6 +47,8 @@ class DevicesCreate extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

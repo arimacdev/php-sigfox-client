@@ -52,6 +52,9 @@ class User extends CommonUser
      * @var string[]
      */
     protected ?array $resources = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('email' => array('max:250', 'nullable'));
     /**
      * Setter for id
@@ -223,6 +226,8 @@ class User extends CommonUser
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

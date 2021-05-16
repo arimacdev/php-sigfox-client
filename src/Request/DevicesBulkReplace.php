@@ -16,6 +16,9 @@ class DevicesBulkReplace extends Request
      * @var AsynchronousDeviceReplacementJob
      */
     protected ?AsynchronousDeviceReplacementJob $devicePairs = null;
+    /**
+     * @internal
+     */
     protected array $body = array('devicePairs');
     /**
      * Setter for devicePairs
@@ -40,6 +43,8 @@ class DevicesBulkReplace extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

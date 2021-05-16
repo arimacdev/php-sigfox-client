@@ -62,6 +62,8 @@ class ContractInfoUpdate extends CommonContractInfo
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

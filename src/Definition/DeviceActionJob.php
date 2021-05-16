@@ -11,6 +11,9 @@ class DeviceActionJob extends Definition
      * @var string[]
      */
     protected ?array $data = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('data' => array('required'));
     /**
      * Setter for data
@@ -35,6 +38,8 @@ class DeviceActionJob extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

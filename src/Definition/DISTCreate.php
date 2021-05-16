@@ -39,6 +39,8 @@ class DISTCreate extends CommonGroupCreate
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

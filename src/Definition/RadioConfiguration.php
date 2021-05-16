@@ -56,6 +56,9 @@ class RadioConfiguration extends Definition
      * @var int
      */
     protected ?int $id = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('id' => array('required'));
     /**
      * Setter for id
@@ -100,6 +103,8 @@ class RadioConfiguration extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

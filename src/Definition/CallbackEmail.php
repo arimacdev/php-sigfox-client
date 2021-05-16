@@ -65,6 +65,8 @@ trait CallbackEmail
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

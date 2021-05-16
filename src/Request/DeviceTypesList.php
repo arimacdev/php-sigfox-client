@@ -108,7 +108,13 @@ class DeviceTypesList extends Request
      * @var string
      */
     protected ?string $pageId = null;
+    /**
+     * @internal
+     */
     protected array $query = array('name', 'groupIds', 'deep', 'contractId', 'payloadType', 'authorizations', 'sort', 'fields', 'limit', 'offset', 'pageId');
+    /**
+     * @internal
+     */
     protected array $validations = array('sort' => array('in:id,-id,name,-name', 'nullable'), 'fields' => array('in:group(name\\,type\\,level),contract(name),geolocPayloadConfig(name)', 'nullable'));
     /**
      * Setter for name
@@ -369,6 +375,8 @@ class DeviceTypesList extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

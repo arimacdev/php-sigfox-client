@@ -102,6 +102,9 @@ class CreateAdslSubscription extends CreateInternetSubscription
      * @var string
      */
     protected ?string $pair = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('connectionStatus' => array('required'), 'interfaceLogin' => array('required'), 'interfacePassword' => array('required'), 'modem' => array('required'));
     /**
      * Setter for connectionStatus
@@ -393,6 +396,8 @@ class CreateAdslSubscription extends CreateInternetSubscription
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

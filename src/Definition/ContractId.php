@@ -15,6 +15,9 @@ class ContractId extends Definition
      * @var string
      */
     protected ?string $id = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('id' => array('required'));
     /**
      * Setter for id
@@ -39,6 +42,8 @@ class ContractId extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

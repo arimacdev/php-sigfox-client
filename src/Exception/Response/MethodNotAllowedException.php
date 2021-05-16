@@ -8,10 +8,13 @@ use Throwable;
  * HTTP 405 Method Not Allowed error
  */
 class MethodNotAllowedException extends ResponseException {
+    /** @internal **/
     protected array $allowedMethods;
 
      /**
      * Initializing the exception
+     *
+     * @internal
      *
      * @param string    $message        The error message that returning from the server
      * @param string[]  $allowedMethods All allowed HTTP methods

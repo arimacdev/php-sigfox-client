@@ -15,7 +15,13 @@ class DeviceTypesIdCallbacksCallbackIdEnable extends Request
      * @var bool
      */
     protected ?bool $enabled = null;
+    /**
+     * @internal
+     */
     protected array $query = array('enabled');
+    /**
+     * @internal
+     */
     protected array $validations = array('enabled' => array('required'));
     /**
      * Setter for enabled
@@ -40,6 +46,8 @@ class DeviceTypesIdCallbacksCallbackIdEnable extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -79,6 +79,9 @@ class CommonContractInfo extends Definition
      * @var OptionsItem[]
      */
     protected ?array $options = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('name' => array('max:100', 'nullable'), 'activationEndTime' => array('min:0', 'numeric', 'nullable'), 'communicationEndTime' => array('min:0', 'numeric', 'nullable'), 'maxUplinkFrames' => array('min:0', 'numeric', 'nullable'), 'maxDownlinkFrames' => array('min:0', 'numeric', 'nullable'), 'maxTokens' => array('min:0', 'numeric', 'nullable'), 'renewalDuration' => array('min:0', 'numeric', 'nullable'));
     /**
      * Setter for name
@@ -318,6 +321,8 @@ class CommonContractInfo extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

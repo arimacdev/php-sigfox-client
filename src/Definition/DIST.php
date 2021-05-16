@@ -39,6 +39,8 @@ class DIST extends Group
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

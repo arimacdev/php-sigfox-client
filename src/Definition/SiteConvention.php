@@ -88,6 +88,8 @@ class SiteConvention extends BaseSiteConvention
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

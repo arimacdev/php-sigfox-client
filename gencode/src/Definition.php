@@ -127,7 +127,7 @@ class Definition extends Class_
             [],
             [new Return_($this->factory->val($serializers))],
             "array",
-            Helper::normalizeDocComment([["inheritdoc",null]])
+            Helper::normalizeDocComment([["internal", null],["inheritdoc",null]])
         );
     }
 

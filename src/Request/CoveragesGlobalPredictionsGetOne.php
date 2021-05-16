@@ -37,7 +37,13 @@ class CoveragesGlobalPredictionsGetOne extends Request
      * @var string
      */
     protected ?string $groupId = null;
+    /**
+     * @internal
+     */
     protected array $query = array('lat', 'lng', 'radius', 'groupId');
+    /**
+     * @internal
+     */
     protected array $validations = array('lat' => array('required'), 'lng' => array('required'));
     /**
      * Setter for lat
@@ -129,6 +135,8 @@ class CoveragesGlobalPredictionsGetOne extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -188,7 +188,13 @@ class ContractInfosList extends Request
      * @var bool
      */
     protected ?bool $authorizations = null;
+    /**
+     * @internal
+     */
     protected array $query = array('name', 'groupId', 'groupType', 'deep', 'up', 'orderIds', 'contractIds', 'fromTime', 'toTime', 'tokenDuration', 'pricingModel', 'subscriptionPlan', 'geolocationMode', 'fields', 'limit', 'offset', 'pageId', 'authorizations');
+    /**
+     * @internal
+     */
     protected array $validations = array('fields' => array('in:group(name\\,type\\,level),order(name),blacklistedTerritories(group(name\\,type\\,level))', 'nullable'));
     /**
      * Setter for name
@@ -629,6 +635,8 @@ class ContractInfosList extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

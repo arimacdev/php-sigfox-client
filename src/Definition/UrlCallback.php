@@ -52,6 +52,9 @@ class UrlCallback extends Callback
      * @var string
      */
     protected ?string $contentType = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('httpMethod' => array('in:GET,PUT,POST', 'nullable'));
     /**
      * Setter for url
@@ -212,6 +215,8 @@ class UrlCallback extends Callback
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

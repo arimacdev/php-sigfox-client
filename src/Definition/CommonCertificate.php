@@ -61,6 +61,9 @@ class CommonCertificate extends Definition
      * @var string
      */
     protected ?string $description = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('name' => array('required'));
     /**
      * Setter for id
@@ -219,6 +222,8 @@ class CommonCertificate extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

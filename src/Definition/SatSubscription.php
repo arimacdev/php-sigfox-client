@@ -327,6 +327,8 @@ class SatSubscription extends InternetSubscription
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

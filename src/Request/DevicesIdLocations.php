@@ -39,6 +39,9 @@ class DevicesIdLocations extends Request
      * @var int
      */
     protected ?int $offset = null;
+    /**
+     * @internal
+     */
     protected array $query = array('oob', 'since', 'before', 'limit', 'offset');
     /**
      * Setter for oob
@@ -147,6 +150,8 @@ class DevicesIdLocations extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

@@ -21,7 +21,13 @@ class GroupsIdGet extends Request
      * @var bool
      */
     protected ?bool $authorizations = null;
+    /**
+     * @internal
+     */
     protected array $query = array('fields', 'authorizations');
+    /**
+     * @internal
+     */
     protected array $validations = array('fields' => array('in:paths(name)', 'nullable'));
     /**
      * Setter for fields
@@ -69,6 +75,8 @@ class GroupsIdGet extends Request
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

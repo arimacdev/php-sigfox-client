@@ -34,6 +34,9 @@ class ApiUserCreation extends Definition
      * @var string[]
      */
     protected ?array $profileIds = null;
+    /**
+     * @internal
+     */
     protected array $validations = array('groupId' => array('required'), 'name' => array('required', 'max:100'), 'timezone' => array('required'), 'profileIds' => array('required'));
     /**
      * Setter for groupId
@@ -123,6 +126,8 @@ class ApiUserCreation extends Definition
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

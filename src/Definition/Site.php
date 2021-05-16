@@ -379,6 +379,8 @@ class Site extends BaseSite
     }
     /**
      * @inheritdoc
+     *
+     * @internal
      */
     public function getSerializeMetaData() : array
     {

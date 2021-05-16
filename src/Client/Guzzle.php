@@ -5,7 +5,11 @@ namespace Arimac\Sigfox\Client;
 use GuzzleHttp\Client;
 
 class Guzzle implements ClientImpl {
-    /** @var Client **/
+    /**
+     * @ignore
+     *
+     * @var Client
+     */
     protected $client;
 
     /**
