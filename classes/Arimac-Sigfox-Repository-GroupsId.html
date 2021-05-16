@@ -82,6 +82,9 @@
         <h2 class="phpdocumentor-content__title">
     GroupsId
 
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/Arimac-Sigfox-Repository.html"><abbr title="\Arimac\Sigfox\Repository">Repository</abbr></a>
+    </span>
     
     
     
@@ -90,7 +93,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/GroupsId.php"><a href="files/src-repository-groupsid.html"><abbr title="src/Repository/GroupsId.php">GroupsId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
 </aside>
 
         
@@ -134,8 +137,8 @@
     <span>
                         &nbsp;: <a href="classes/Arimac-Sigfox-Response-Generated-GroupsIdCallbacksNotDeliveredResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\GroupsIdCallbacksNotDeliveredResponse">GroupsIdCallbacksNotDeliveredResponse</abbr></a>    </span>
 </dt>
-<dd>Retrieve a list of undelivered callbacks and errors for a given group, in reverse chronological order (most recent
-message first).</dd>
+<dd>Retrieve a list of undelivered callbacks and errors for a given group, in reverse chronological order (most
+recent message first).</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-GroupsId.html#method_delete">delete()</a>
@@ -165,6 +168,13 @@ message first).</dd>
 </dt>
 <dd>Update a given group.</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Arimac-Sigfox-Repository.html#method_bind">bind()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Binding path parameters to the URL</dd>
+
         </dl>
 
 
@@ -193,7 +203,7 @@ message first).</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/GroupsId.php"><a href="files/src-repository-groupsid.html"><abbr title="src/Repository/GroupsId.php">GroupsId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 </aside>
 
         <p class="phpdocumentor-summary">The HTTP client</p>
@@ -225,7 +235,7 @@ message first).</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/GroupsId.php"><a href="files/src-repository-groupsid.html"><abbr title="src/Repository/GroupsId.php">GroupsId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 </aside>
 
         <p class="phpdocumentor-summary">The Group identifier</p>
@@ -261,7 +271,7 @@ message first).</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/GroupsId.php"><a href="files/src-repository-groupsid.html"><abbr title="src/Repository/GroupsId.php">GroupsId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">29</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 </aside>
 
         <p class="phpdocumentor-summary">Creating the repository</p>
@@ -316,15 +326,15 @@ message first).</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/GroupsId.php"><a href="files/src-repository-groupsid.html"><abbr title="src/Repository/GroupsId.php">GroupsId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">73</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Retrieve a list of undelivered callbacks and errors for a given group, in reverse chronological order (most recent
-message first).</p>
+        <p class="phpdocumentor-summary">Retrieve a list of undelivered callbacks and errors for a given group, in reverse chronological order (most
+recent message first).</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">callbacksNotDelivered</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-GroupsIdCallbacksNotDelivered.html"><abbr title="\Arimac\Sigfox\Request\GroupsIdCallbacksNotDelivered">GroupsIdCallbacksNotDelivered</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-GroupsIdCallbacksNotDeliveredResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\GroupsIdCallbacksNotDeliveredResponse">GroupsIdCallbacksNotDeliveredResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">callbacksNotDelivered</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-GroupsIdCallbacksNotDelivered.html"><abbr title="\Arimac\Sigfox\Request\GroupsIdCallbacksNotDelivered">GroupsIdCallbacksNotDelivered</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-GroupsIdCallbacksNotDeliveredResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\GroupsIdCallbacksNotDeliveredResponse">GroupsIdCallbacksNotDeliveredResponse</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -333,9 +343,11 @@ message first).</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$request</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-GroupsIdCallbacksNotDelivered.html"><abbr title="\Arimac\Sigfox\Request\GroupsIdCallbacksNotDelivered">GroupsIdCallbacksNotDelivered</abbr></a></span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The query and body parameters to pass</p>
+</section>
+
             </dd>
             </dl>
 
@@ -361,7 +373,7 @@ message first).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/GroupsId.php"><a href="files/src-repository-groupsid.html"><abbr title="src/Repository/GroupsId.php">GroupsId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">51</span>
+    <span class="phpdocumentor-element-found-in__line">61</span>
 </aside>
 
         <p class="phpdocumentor-summary">Delete a given group.</p>
@@ -395,14 +407,14 @@ message first).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/GroupsId.php"><a href="files/src-repository-groupsid.html"><abbr title="src/Repository/GroupsId.php">GroupsId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">84</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve a list of geolocation payload according to request filters.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">geolocationPayloads</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-GroupsIdGeolocationPayloads.html"><abbr title="\Arimac\Sigfox\Request\GroupsIdGeolocationPayloads">GroupsIdGeolocationPayloads</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-GroupsIdGeolocationPayloadsResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\GroupsIdGeolocationPayloadsResponse">GroupsIdGeolocationPayloadsResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">geolocationPayloads</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-GroupsIdGeolocationPayloads.html"><abbr title="\Arimac\Sigfox\Request\GroupsIdGeolocationPayloads">GroupsIdGeolocationPayloads</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-GroupsIdGeolocationPayloadsResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\GroupsIdGeolocationPayloadsResponse">GroupsIdGeolocationPayloadsResponse</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -411,9 +423,11 @@ message first).</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$request</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-GroupsIdGeolocationPayloads.html"><abbr title="\Arimac\Sigfox\Request\GroupsIdGeolocationPayloads">GroupsIdGeolocationPayloads</abbr></a></span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The query and body parameters to pass</p>
+</section>
+
             </dd>
             </dl>
 
@@ -439,14 +453,14 @@ message first).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/GroupsId.php"><a href="files/src-repository-groupsid.html"><abbr title="src/Repository/GroupsId.php">GroupsId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">43</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve information about a given group.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-GroupsIdGet.html"><abbr title="\Arimac\Sigfox\Request\GroupsIdGet">GroupsIdGet</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-Group.html"><abbr title="\Arimac\Sigfox\Definition\Group">Group</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-GroupsIdGet.html"><abbr title="\Arimac\Sigfox\Request\GroupsIdGet">GroupsIdGet</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-Group.html"><abbr title="\Arimac\Sigfox\Definition\Group">Group</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -455,9 +469,11 @@ message first).</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$request</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-GroupsIdGet.html"><abbr title="\Arimac\Sigfox\Request\GroupsIdGet">GroupsIdGet</abbr></a></span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The query and body parameters to pass</p>
+</section>
+
             </dd>
             </dl>
 
@@ -483,25 +499,27 @@ message first).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/GroupsId.php"><a href="files/src-repository-groupsid.html"><abbr title="src/Repository/GroupsId.php">GroupsId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">52</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update a given group.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-GroupsIdUpdate.html"><abbr title="\Arimac\Sigfox\Request\GroupsIdUpdate">GroupsIdUpdate</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-CommonGroupUpdate.html"><abbr title="\Arimac\Sigfox\Definition\CommonGroupUpdate">CommonGroupUpdate</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$group</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-GroupsIdUpdate.html"><abbr title="\Arimac\Sigfox\Request\GroupsIdUpdate">GroupsIdUpdate</abbr></a></span>
+                <span class="phpdocumentor-signature__argument__name">$group</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-CommonGroupUpdate.html"><abbr title="\Arimac\Sigfox\Definition\CommonGroupUpdate">CommonGroupUpdate</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The group to update</p>
+</section>
+
             </dd>
             </dl>
 
@@ -511,6 +529,62 @@ message first).</p>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_bind">
+        bind()
+        <a href="classes/Arimac-Sigfox-Repository.html#method_bind" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Repository.php"><a href="files/src-repository.html"><abbr title="src/Repository.php">Repository.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">14</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Binding path parameters to the URL</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">bind</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$url</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$url</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>URL with path parameter names. Example:- <code class="prettyprint">/user/{id}</code></p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$params</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Value to replace path parameters</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>URL with replaced path parameter values</p>
+</section>
 
     
 </article>

@@ -82,6 +82,9 @@
         <h2 class="phpdocumentor-content__title">
     DevicesId
 
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/Arimac-Sigfox-Repository.html"><abbr title="\Arimac\Sigfox\Repository">Repository</abbr></a>
+    </span>
     
     
     
@@ -90,7 +93,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesId.php"><a href="files/src-repository-devicesid.html"><abbr title="src/Repository/DevicesId.php">DevicesId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 </aside>
 
         
@@ -191,8 +194,8 @@ recent message first).</dd>
     <span>
                         &nbsp;: <a href="classes/Arimac-Sigfox-Definition-ProductCertificateWithPacResponse.html"><abbr title="\Arimac\Sigfox\Definition\ProductCertificateWithPacResponse">ProductCertificateWithPacResponse</abbr></a>    </span>
 </dt>
-<dd>Retrieve the product certificate associated with a given device ID and PAC, when the device has not already been
-created on the portal, only in CRA</dd>
+<dd>Retrieve the product certificate associated with a given device ID and PAC, when the device has not already
+been created on the portal, only in CRA</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-DevicesId.html#method_unsubscribe">unsubscribe()</a>
@@ -207,6 +210,13 @@ created on the portal, only in CRA</dd>
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Update a given device.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Arimac-Sigfox-Repository.html#method_bind">bind()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Binding path parameters to the URL</dd>
 
         </dl>
 
@@ -236,7 +246,7 @@ created on the portal, only in CRA</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesId.php"><a href="files/src-repository-devicesid.html"><abbr title="src/Repository/DevicesId.php">DevicesId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 </aside>
 
         <p class="phpdocumentor-summary">The HTTP client</p>
@@ -268,7 +278,7 @@ created on the portal, only in CRA</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesId.php"><a href="files/src-repository-devicesid.html"><abbr title="src/Repository/DevicesId.php">DevicesId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">28</span>
 </aside>
 
         <p class="phpdocumentor-summary">The Device identifier (hexadecimal format)</p>
@@ -304,7 +314,7 @@ created on the portal, only in CRA</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesId.php"><a href="files/src-repository-devicesid.html"><abbr title="src/Repository/DevicesId.php">DevicesId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">32</span>
+    <span class="phpdocumentor-element-found-in__line">35</span>
 </aside>
 
         <p class="phpdocumentor-summary">Creating the repository</p>
@@ -359,7 +369,7 @@ created on the portal, only in CRA</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesId.php"><a href="files/src-repository-devicesid.html"><abbr title="src/Repository/DevicesId.php">DevicesId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">77</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve a list of undelivered callbacks and errors for a given device, in reverse chronological order (most
@@ -367,7 +377,7 @@ recent message first).</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">callbacksNotDelivered</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesIdCallbacksNotDelivered.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdCallbacksNotDelivered">DevicesIdCallbacksNotDelivered</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DevicesIdCallbacksNotDeliveredResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesIdCallbacksNotDeliveredResponse">DevicesIdCallbacksNotDeliveredResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">callbacksNotDelivered</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesIdCallbacksNotDelivered.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdCallbacksNotDelivered">DevicesIdCallbacksNotDelivered</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DevicesIdCallbacksNotDeliveredResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesIdCallbacksNotDeliveredResponse">DevicesIdCallbacksNotDeliveredResponse</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -376,9 +386,11 @@ recent message first).</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$request</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesIdCallbacksNotDelivered.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdCallbacksNotDelivered">DevicesIdCallbacksNotDelivered</abbr></a></span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The query and body parameters to pass</p>
+</section>
+
             </dd>
             </dl>
 
@@ -404,7 +416,7 @@ recent message first).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesId.php"><a href="files/src-repository-devicesid.html"><abbr title="src/Repository/DevicesId.php">DevicesId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">69</span>
+    <span class="phpdocumentor-element-found-in__line">84</span>
 </aside>
 
     
@@ -437,7 +449,7 @@ recent message first).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesId.php"><a href="files/src-repository-devicesid.html"><abbr title="src/Repository/DevicesId.php">DevicesId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">105</span>
 </aside>
 
     
@@ -470,7 +482,7 @@ recent message first).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesId.php"><a href="files/src-repository-devicesid.html"><abbr title="src/Repository/DevicesId.php">DevicesId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 </aside>
 
         <p class="phpdocumentor-summary">Delete a given device.</p>
@@ -504,7 +516,7 @@ recent message first).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesId.php"><a href="files/src-repository-devicesid.html"><abbr title="src/Repository/DevicesId.php">DevicesId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">112</span>
 </aside>
 
         <p class="phpdocumentor-summary">Disable sequence number check for the next message.</p>
@@ -538,14 +550,14 @@ recent message first).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesId.php"><a href="files/src-repository-devicesid.html"><abbr title="src/Repository/DevicesId.php">DevicesId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve information about a given device.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesIdGet.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdGet">DevicesIdGet</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-Device.html"><abbr title="\Arimac\Sigfox\Definition\Device">Device</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesIdGet.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdGet">DevicesIdGet</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-Device.html"><abbr title="\Arimac\Sigfox\Definition\Device">Device</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -554,9 +566,11 @@ recent message first).</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$request</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesIdGet.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdGet">DevicesIdGet</abbr></a></span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The query and body parameters to pass</p>
+</section>
+
             </dd>
             </dl>
 
@@ -582,14 +596,14 @@ recent message first).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesId.php"><a href="files/src-repository-devicesid.html"><abbr title="src/Repository/DevicesId.php">DevicesId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">105</span>
+    <span class="phpdocumentor-element-found-in__line">130</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve a list of location data of a device according to request filters.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">locations</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesIdLocations.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdLocations">DevicesIdLocations</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DevicesIdLocationsResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesIdLocationsResponse">DevicesIdLocationsResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">locations</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesIdLocations.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdLocations">DevicesIdLocations</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DevicesIdLocationsResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesIdLocationsResponse">DevicesIdLocationsResponse</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -598,9 +612,11 @@ recent message first).</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$request</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesIdLocations.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdLocations">DevicesIdLocations</abbr></a></span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The query and body parameters to pass</p>
+</section>
+
             </dd>
             </dl>
 
@@ -626,7 +642,7 @@ recent message first).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesId.php"><a href="files/src-repository-devicesid.html"><abbr title="src/Repository/DevicesId.php">DevicesId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">98</span>
+    <span class="phpdocumentor-element-found-in__line">119</span>
 </aside>
 
     
@@ -659,26 +675,28 @@ recent message first).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesId.php"><a href="files/src-repository-devicesid.html"><abbr title="src/Repository/DevicesId.php">DevicesId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">77</span>
+    <span class="phpdocumentor-element-found-in__line">96</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Retrieve the product certificate associated with a given device ID and PAC, when the device has not already been
-created on the portal, only in CRA</p>
+        <p class="phpdocumentor-summary">Retrieve the product certificate associated with a given device ID and PAC, when the device has not already
+been created on the portal, only in CRA</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">productCertificate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesIdProductCertificate.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdProductCertificate">DevicesIdProductCertificate</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-ProductCertificateWithPacResponse.html"><abbr title="\Arimac\Sigfox\Definition\ProductCertificateWithPacResponse">ProductCertificateWithPacResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">productCertificate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pac</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-ProductCertificateWithPacResponse.html"><abbr title="\Arimac\Sigfox\Definition\ProductCertificateWithPacResponse">ProductCertificateWithPacResponse</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesIdProductCertificate.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdProductCertificate">DevicesIdProductCertificate</abbr></a></span>
+                <span class="phpdocumentor-signature__argument__name">$pac</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The device's PAC (hexadecimal format)</p>
+</section>
+
             </dd>
             </dl>
 
@@ -704,25 +722,27 @@ created on the portal, only in CRA</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesId.php"><a href="files/src-repository-devicesid.html"><abbr title="src/Repository/DevicesId.php">DevicesId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">112</span>
+    <span class="phpdocumentor-element-found-in__line">139</span>
 </aside>
 
         <p class="phpdocumentor-summary">Set an unsubscription date for the device&#039;s token.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">unsubscribe</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesIdUnsubscribe.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdUnsubscribe">DevicesIdUnsubscribe</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">unsubscribe</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-TokenUnsubscribe.html"><abbr title="\Arimac\Sigfox\Definition\TokenUnsubscribe">TokenUnsubscribe</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$unsubscriptionTime</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesIdUnsubscribe.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdUnsubscribe">DevicesIdUnsubscribe</abbr></a></span>
+                <span class="phpdocumentor-signature__argument__name">$unsubscriptionTime</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-TokenUnsubscribe.html"><abbr title="\Arimac\Sigfox\Definition\TokenUnsubscribe">TokenUnsubscribe</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>the unsubscription time (in milliseconds since the Unix Epoch)</p>
+</section>
+
             </dd>
             </dl>
 
@@ -748,25 +768,27 @@ created on the portal, only in CRA</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesId.php"><a href="files/src-repository-devicesid.html"><abbr title="src/Repository/DevicesId.php">DevicesId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update a given device.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesIdUpdate.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdUpdate">DevicesIdUpdate</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-DeviceUpdateJob.html"><abbr title="\Arimac\Sigfox\Definition\DeviceUpdateJob">DeviceUpdateJob</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$device</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesIdUpdate.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdUpdate">DevicesIdUpdate</abbr></a></span>
+                <span class="phpdocumentor-signature__argument__name">$device</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-DeviceUpdateJob.html"><abbr title="\Arimac\Sigfox\Definition\DeviceUpdateJob">DeviceUpdateJob</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The device to update</p>
+</section>
+
             </dd>
             </dl>
 
@@ -776,6 +798,62 @@ created on the portal, only in CRA</p>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_bind">
+        bind()
+        <a href="classes/Arimac-Sigfox-Repository.html#method_bind" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Repository.php"><a href="files/src-repository.html"><abbr title="src/Repository.php">Repository.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">14</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Binding path parameters to the URL</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">bind</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$url</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$url</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>URL with path parameter names. Example:- <code class="prettyprint">/user/{id}</code></p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$params</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Value to replace path parameters</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>URL with replaced path parameter values</p>
+</section>
 
     
 </article>

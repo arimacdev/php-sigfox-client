@@ -203,13 +203,6 @@
 <dd>Received Signal Strength Indication from repeaters (in dBm – Float value with two maximum fraction digits)</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Definition-Rinfo.html#property_serialize">$serialize</a>
-    <span>
-                &nbsp;: mixed            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Definition-Rinfo.html#property_snr">$snr</a>
     <span>
                 &nbsp;: int|null            </span>
@@ -308,7 +301,7 @@
 <dd>Getter for rssiRepeaters</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Definition.html#method_getSerializeMetaData">getSerializeMetaData()</a>
+    <a href="classes/Arimac-Sigfox-Definition-Rinfo.html#method_getSerializeMetaData">getSerializeMetaData()</a>
     <span>
                         &nbsp;: array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;    </span>
 </dt>
@@ -550,7 +543,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 </aside>
 
     
@@ -857,36 +850,6 @@
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_serialize">
-        $serialize
-        <a href="classes/Arimac-Sigfox-Definition-Rinfo.html#property_serialize" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">89</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">$serialize</span>
-     = <span class="phpdocumentor-signature__default-value">array(new ArimacSigfoxSerializerClassSerializer(self::class, &#039;baseStation&#039;, ArimacSigfoxDefinitionMinBaseStationWithType::class), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;rssi&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;rssiRepeaters&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;lat&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;lng&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;delay&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;snr&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;snrRepeaters&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;freq&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;freqRepeaters&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;rep&#039;, &#039;int&#039;), new ArimacSigfoxSerializerArraySerializer(self::class, &#039;repetitions&#039;, new ArimacSigfoxSerializerClassSerializer(self::class, &#039;repetitions&#039;, ArimacSigfoxDefinitionRepetition::class)), new ArimacSigfoxSerializerArraySerializer(self::class, &#039;cbStatus&#039;, new ArimacSigfoxSerializerClassSerializer(self::class, &#039;cbStatus&#039;, ArimacSigfoxDefinitionCbStatus::class)))</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="property_snr">
         $snr
         <a href="classes/Arimac-Sigfox-Definition-Rinfo.html#property_snr" class="headerlink"><i class="fas fa-link"></i></a>
@@ -994,7 +957,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">107</span>
+    <span class="phpdocumentor-element-found-in__line">106</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for baseStation</p>
@@ -1029,7 +992,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">361</span>
+    <span class="phpdocumentor-element-found-in__line">360</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for cbStatus</p>
@@ -1064,7 +1027,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">214</span>
+    <span class="phpdocumentor-element-found-in__line">213</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for delay</p>
@@ -1099,7 +1062,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">277</span>
+    <span class="phpdocumentor-element-found-in__line">276</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for freq</p>
@@ -1134,7 +1097,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">298</span>
+    <span class="phpdocumentor-element-found-in__line">297</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for freqRepeaters</p>
@@ -1169,7 +1132,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">172</span>
+    <span class="phpdocumentor-element-found-in__line">171</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for lat</p>
@@ -1204,7 +1167,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">193</span>
+    <span class="phpdocumentor-element-found-in__line">192</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for lng</p>
@@ -1239,7 +1202,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">319</span>
+    <span class="phpdocumentor-element-found-in__line">318</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for rep</p>
@@ -1274,7 +1237,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">340</span>
+    <span class="phpdocumentor-element-found-in__line">339</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for repetitions</p>
@@ -1309,7 +1272,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">128</span>
+    <span class="phpdocumentor-element-found-in__line">127</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for rssi</p>
@@ -1344,7 +1307,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">151</span>
+    <span class="phpdocumentor-element-found-in__line">150</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for rssiRepeaters</p>
@@ -1375,12 +1338,12 @@ fraction digits)</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_getSerializeMetaData">
         getSerializeMetaData()
-        <a href="classes/Arimac-Sigfox-Definition.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Arimac-Sigfox-Definition-Rinfo.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">367</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returning all meta data to serialize and deserialize objects</p>
@@ -1393,6 +1356,20 @@ fraction digits)</p>
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;</span>
@@ -1414,7 +1391,7 @@ fraction digits)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">235</span>
+    <span class="phpdocumentor-element-found-in__line">234</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for snr</p>
@@ -1449,7 +1426,7 @@ fraction digits)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">256</span>
+    <span class="phpdocumentor-element-found-in__line">255</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for snrRepeaters</p>
@@ -1484,7 +1461,7 @@ fraction digits)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returning the weather the class is extendable or not</p>
@@ -1497,6 +1474,20 @@ fraction digits)</p>
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
@@ -1518,7 +1509,7 @@ fraction digits)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">97</span>
+    <span class="phpdocumentor-element-found-in__line">96</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for baseStation</p>
@@ -1565,7 +1556,7 @@ fraction digits)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">351</span>
+    <span class="phpdocumentor-element-found-in__line">350</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for cbStatus</p>
@@ -1612,7 +1603,7 @@ fraction digits)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">204</span>
+    <span class="phpdocumentor-element-found-in__line">203</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for delay</p>
@@ -1659,7 +1650,7 @@ fraction digits)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">267</span>
+    <span class="phpdocumentor-element-found-in__line">266</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for freq</p>
@@ -1706,7 +1697,7 @@ fraction digits)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">288</span>
+    <span class="phpdocumentor-element-found-in__line">287</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for freqRepeaters</p>
@@ -1753,7 +1744,7 @@ fraction digits)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">162</span>
+    <span class="phpdocumentor-element-found-in__line">161</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for lat</p>
@@ -1800,7 +1791,7 @@ fraction digits)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">183</span>
+    <span class="phpdocumentor-element-found-in__line">182</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for lng</p>
@@ -1847,7 +1838,7 @@ fraction digits)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">309</span>
+    <span class="phpdocumentor-element-found-in__line">308</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for rep</p>
@@ -1894,7 +1885,7 @@ fraction digits)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">330</span>
+    <span class="phpdocumentor-element-found-in__line">329</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for repetitions</p>
@@ -1941,7 +1932,7 @@ fraction digits)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">118</span>
+    <span class="phpdocumentor-element-found-in__line">117</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for rssi</p>
@@ -1988,7 +1979,7 @@ fraction digits)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">140</span>
+    <span class="phpdocumentor-element-found-in__line">139</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for rssiRepeaters</p>
@@ -2036,7 +2027,7 @@ maximum fraction digits)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">225</span>
+    <span class="phpdocumentor-element-found-in__line">224</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for snr</p>
@@ -2083,7 +2074,7 @@ maximum fraction digits)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/Rinfo.php"><a href="files/src-definition-rinfo.html"><abbr title="src/Definition/Rinfo.php">Rinfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">246</span>
+    <span class="phpdocumentor-element-found-in__line">245</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for snrRepeaters</p>

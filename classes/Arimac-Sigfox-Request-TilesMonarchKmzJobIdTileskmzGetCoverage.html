@@ -83,7 +83,7 @@
     TilesMonarchKmzJobIdTileskmzGetCoverage
 
         <span class="phpdocumentor-element__extends">
-        extends <a href="classes/Arimac-Sigfox-Definition.html"><abbr title="\Arimac\Sigfox\Definition">Definition</abbr></a>
+        extends <a href="classes/Arimac-Sigfox-Request.html"><abbr title="\Arimac\Sigfox\Request">Request</abbr></a>
     </span>
     
     
@@ -114,6 +114,13 @@
 
 <dl class="phpdocumentor-table-of-contents">
                 <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/Arimac-Sigfox-Request.html#property_body">$body</a>
+    <span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#property_east">$east</a>
     <span>
                 &nbsp;: int|null            </span>
@@ -137,7 +144,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#property_query">$query</a>
     <span>
-                &nbsp;: mixed            </span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd></dd>
 
@@ -145,13 +152,6 @@
     <a href="classes/Arimac-Sigfox-Definition.html#property_required">$required</a>
     <span>
                 &nbsp;: array&lt;string|int, mixed&gt;            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#property_serialize">$serialize</a>
-    <span>
-                &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
@@ -165,7 +165,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#property_validations">$validations</a>
     <span>
-                &nbsp;: mixed            </span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd></dd>
 
@@ -184,11 +184,60 @@
 <dd>The zoom level used to generate kmz file</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Definition.html#method_getSerializeMetaData">getSerializeMetaData()</a>
+    <a href="classes/Arimac-Sigfox-Request.html#method_getBodyFields">getBodyFields()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, string&gt;    </span>
+</dt>
+<dd>Returning all property names for request body</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_getEast">getEast()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd>Getter for east</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_getNorth">getNorth()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd>Getter for north</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request.html#method_getQueryFields">getQueryFields()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, string&gt;    </span>
+</dt>
+<dd>Returning all property names for query string</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_getSerializeMetaData">getSerializeMetaData()</a>
     <span>
                         &nbsp;: array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;    </span>
 </dt>
 <dd>Returning all meta data to serialize and deserialize objects</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_getSouth">getSouth()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd>Getter for south</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_getWest">getWest()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd>Getter for west</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_getZoom">getZoom()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd>Getter for zoom</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Definition.html#method_isExtendable">isExtendable()</a>
@@ -251,6 +300,36 @@
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_body">
+        $body
+        <a href="classes/Arimac-Sigfox-Request.html#property_body" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request.php"><a href="files/src-request.html"><abbr title="src/Request.php">Request.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">6</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$body</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_east">
         $east
         <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#property_east" class="headerlink"><i class="fas fa-link"></i></a>
@@ -292,7 +371,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 </aside>
 
     
@@ -354,13 +433,13 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php"><a href="files/src-request-tilesmonarchkmzjobidtileskmzgetcoverage.html"><abbr title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php">TilesMonarchKmzJobIdTileskmzGetCoverage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">43</span>
+    <span class="phpdocumentor-element-found-in__line">42</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$query</span>
      = <span class="phpdocumentor-signature__default-value">array(&#039;zoom&#039;, &#039;north&#039;, &#039;south&#039;, &#039;west&#039;, &#039;east&#039;)</span></code>
 
@@ -393,36 +472,6 @@
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$required</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_serialize">
-        $serialize
-        <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#property_serialize" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php"><a href="files/src-request-tilesmonarchkmzjobidtileskmzgetcoverage.html"><abbr title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php">TilesMonarchKmzJobIdTileskmzGetCoverage.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">42</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">$serialize</span>
-     = <span class="phpdocumentor-signature__default-value">array(new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;zoom&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;north&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;south&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;west&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;east&#039;, &#039;int&#039;))</span></code>
 
     
     
@@ -476,13 +525,13 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php"><a href="files/src-request-tilesmonarchkmzjobidtileskmzgetcoverage.html"><abbr title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php">TilesMonarchKmzJobIdTileskmzGetCoverage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">43</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$validations</span>
      = <span class="phpdocumentor-signature__default-value">array(&#039;zoom&#039; =&gt; array(&#039;required&#039;, &#039;max:11&#039;, &#039;min:0&#039;, &#039;numeric&#039;), &#039;north&#039; =&gt; array(&#039;required&#039;, &#039;max:90&#039;, &#039;min:-90&#039;, &#039;numeric&#039;), &#039;south&#039; =&gt; array(&#039;required&#039;, &#039;max:90&#039;, &#039;min:-90&#039;, &#039;numeric&#039;), &#039;west&#039; =&gt; array(&#039;required&#039;, &#039;max:180&#039;, &#039;min:-180&#039;, &#039;numeric&#039;), &#039;east&#039; =&gt; array(&#039;required&#039;, &#039;max:180&#039;, &#039;min:-180&#039;, &#039;numeric&#039;))</span></code>
 
@@ -567,14 +616,152 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getSerializeMetaData">
-        getSerializeMetaData()
-        <a href="classes/Arimac-Sigfox-Definition.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getBodyFields">
+        getBodyFields()
+        <a href="classes/Arimac-Sigfox-Request.html#method_getBodyFields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request.php"><a href="files/src-request.html"><abbr title="src/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returning all property names for request body</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getBodyFields</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getEast">
+        getEast()
+        <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_getEast" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php"><a href="files/src-request-tilesmonarchkmzjobidtileskmzgetcoverage.html"><abbr title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php">TilesMonarchKmzJobIdTileskmzGetCoverage.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">145</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for east</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getEast</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>The east boundary to extract coverage</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getNorth">
+        getNorth()
+        <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_getNorth" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php"><a href="files/src-request-tilesmonarchkmzjobidtileskmzgetcoverage.html"><abbr title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php">TilesMonarchKmzJobIdTileskmzGetCoverage.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">82</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for north</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getNorth</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>The north boundary to extract coverage</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getQueryFields">
+        getQueryFields()
+        <a href="classes/Arimac-Sigfox-Request.html#method_getQueryFields" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request.php"><a href="files/src-request.html"><abbr title="src/Request.php">Request.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">24</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returning all property names for query string</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getQueryFields</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getSerializeMetaData">
+        getSerializeMetaData()
+        <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php"><a href="files/src-request-tilesmonarchkmzjobidtileskmzgetcoverage.html"><abbr title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php">TilesMonarchKmzJobIdTileskmzGetCoverage.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">152</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returning all meta data to serialize and deserialize objects</p>
@@ -587,11 +774,130 @@
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getSouth">
+        getSouth()
+        <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_getSouth" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php"><a href="files/src-request-tilesmonarchkmzjobidtileskmzgetcoverage.html"><abbr title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php">TilesMonarchKmzJobIdTileskmzGetCoverage.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">103</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for south</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getSouth</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>The south boundary to extract coverage</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getWest">
+        getWest()
+        <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_getWest" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php"><a href="files/src-request-tilesmonarchkmzjobidtileskmzgetcoverage.html"><abbr title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php">TilesMonarchKmzJobIdTileskmzGetCoverage.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">124</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for west</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getWest</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>The west boundary to extract coverage</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getZoom">
+        getZoom()
+        <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#method_getZoom" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php"><a href="files/src-request-tilesmonarchkmzjobidtileskmzgetcoverage.html"><abbr title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php">TilesMonarchKmzJobIdTileskmzGetCoverage.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">61</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for zoom</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getZoom</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>The zoom level used to generate kmz file</p>
+</section>
 
     
 </article>
@@ -608,7 +914,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returning the weather the class is extendable or not</p>
@@ -621,6 +927,20 @@
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
@@ -642,7 +962,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php"><a href="files/src-request-tilesmonarchkmzjobidtileskmzgetcoverage.html"><abbr title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php">TilesMonarchKmzJobIdTileskmzGetCoverage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">100</span>
+    <span class="phpdocumentor-element-found-in__line">135</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for east</p>
@@ -689,7 +1009,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php"><a href="files/src-request-tilesmonarchkmzjobidtileskmzgetcoverage.html"><abbr title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php">TilesMonarchKmzJobIdTileskmzGetCoverage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for north</p>
@@ -736,7 +1056,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php"><a href="files/src-request-tilesmonarchkmzjobidtileskmzgetcoverage.html"><abbr title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php">TilesMonarchKmzJobIdTileskmzGetCoverage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">76</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for south</p>
@@ -783,7 +1103,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php"><a href="files/src-request-tilesmonarchkmzjobidtileskmzgetcoverage.html"><abbr title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php">TilesMonarchKmzJobIdTileskmzGetCoverage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">88</span>
+    <span class="phpdocumentor-element-found-in__line">114</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for west</p>
@@ -830,7 +1150,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php"><a href="files/src-request-tilesmonarchkmzjobidtileskmzgetcoverage.html"><abbr title="src/Request/TilesMonarchKmzJobIdTileskmzGetCoverage.php">TilesMonarchKmzJobIdTileskmzGetCoverage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">52</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for zoom</p>

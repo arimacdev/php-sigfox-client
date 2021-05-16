@@ -83,7 +83,7 @@
     CoveragesGlobalPredictionsGetOne
 
         <span class="phpdocumentor-element__extends">
-        extends <a href="classes/Arimac-Sigfox-Definition.html"><abbr title="\Arimac\Sigfox\Definition">Definition</abbr></a>
+        extends <a href="classes/Arimac-Sigfox-Request.html"><abbr title="\Arimac\Sigfox\Request">Request</abbr></a>
     </span>
     
     
@@ -117,6 +117,13 @@ article</a>.</p>
 
 <dl class="phpdocumentor-table-of-contents">
                 <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/Arimac-Sigfox-Request.html#property_body">$body</a>
+    <span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Definition.html#property_extendable">$extendable</a>
     <span>
                 &nbsp;: bool            </span>
@@ -147,7 +154,7 @@ article</a>.</p>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#property_query">$query</a>
     <span>
-                &nbsp;: mixed            </span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd></dd>
 
@@ -167,21 +174,56 @@ meters.</dd>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#property_serialize">$serialize</a>
-    <span>
-                &nbsp;: mixed            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#property_validations">$validations</a>
     <span>
-                &nbsp;: mixed            </span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd></dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Definition.html#method_getSerializeMetaData">getSerializeMetaData()</a>
+    <a href="classes/Arimac-Sigfox-Request.html#method_getBodyFields">getBodyFields()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, string&gt;    </span>
+</dt>
+<dd>Returning all property names for request body</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_getGroupId">getGroupId()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Getter for groupId</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_getLat">getLat()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd>Getter for lat</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_getLng">getLng()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd>Getter for lng</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request.html#method_getQueryFields">getQueryFields()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, string&gt;    </span>
+</dt>
+<dd>Returning all property names for query string</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_getRadius">getRadius()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd>Getter for radius</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_getSerializeMetaData">getSerializeMetaData()</a>
     <span>
                         &nbsp;: array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;    </span>
 </dt>
@@ -241,6 +283,36 @@ meters.</dd>
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_body">
+        $body
+        <a href="classes/Arimac-Sigfox-Request.html#property_body" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request.php"><a href="files/src-request.html"><abbr title="src/Request.php">Request.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">6</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$body</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_extendable">
         $extendable
         <a href="classes/Arimac-Sigfox-Definition.html#property_extendable" class="headerlink"><i class="fas fa-link"></i></a>
@@ -250,7 +322,7 @@ meters.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 </aside>
 
     
@@ -376,13 +448,13 @@ meters.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/CoveragesGlobalPredictionsGetOne.php"><a href="files/src-request-coveragesglobalpredictionsgetone.html"><abbr title="src/Request/CoveragesGlobalPredictionsGetOne.php">CoveragesGlobalPredictionsGetOne.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">41</span>
+    <span class="phpdocumentor-element-found-in__line">40</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$query</span>
      = <span class="phpdocumentor-signature__default-value">array(&#039;lat&#039;, &#039;lng&#039;, &#039;radius&#039;, &#039;groupId&#039;)</span></code>
 
@@ -460,36 +532,6 @@ meters.</p>
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_serialize">
-        $serialize
-        <a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#property_serialize" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/CoveragesGlobalPredictionsGetOne.php"><a href="files/src-request-coveragesglobalpredictionsgetone.html"><abbr title="src/Request/CoveragesGlobalPredictionsGetOne.php">CoveragesGlobalPredictionsGetOne.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">40</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">$serialize</span>
-     = <span class="phpdocumentor-signature__default-value">array(new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;lat&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;lng&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;radius&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;groupId&#039;, &#039;string&#039;))</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="property_validations">
         $validations
         <a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#property_validations" class="headerlink"><i class="fas fa-link"></i></a>
@@ -499,15 +541,15 @@ meters.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/CoveragesGlobalPredictionsGetOne.php"><a href="files/src-request-coveragesglobalpredictionsgetone.html"><abbr title="src/Request/CoveragesGlobalPredictionsGetOne.php">CoveragesGlobalPredictionsGetOne.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">42</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$validations</span>
-     = <span class="phpdocumentor-signature__default-value">array(&#039;lat&#039; =&gt; array(&#039;required&#039;), &#039;lng&#039; =&gt; array(&#039;required&#039;), &#039;radius&#039; =&gt; array(&#039;required&#039;), &#039;groupId&#039; =&gt; array(&#039;required&#039;))</span></code>
+     = <span class="phpdocumentor-signature__default-value">array(&#039;lat&#039; =&gt; array(&#039;required&#039;), &#039;lng&#039; =&gt; array(&#039;required&#039;))</span></code>
 
     
     
@@ -526,14 +568,223 @@ meters.</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getSerializeMetaData">
-        getSerializeMetaData()
-        <a href="classes/Arimac-Sigfox-Definition.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getBodyFields">
+        getBodyFields()
+        <a href="classes/Arimac-Sigfox-Request.html#method_getBodyFields" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request.php"><a href="files/src-request.html"><abbr title="src/Request.php">Request.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">15</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returning all property names for request body</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getBodyFields</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getGroupId">
+        getGroupId()
+        <a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_getGroupId" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/CoveragesGlobalPredictionsGetOne.php"><a href="files/src-request-coveragesglobalpredictionsgetone.html"><abbr title="src/Request/CoveragesGlobalPredictionsGetOne.php">CoveragesGlobalPredictionsGetOne.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">126</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for groupId</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getGroupId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>the id of a group to include its operator in the global coverage</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getLat">
+        getLat()
+        <a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_getLat" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/CoveragesGlobalPredictionsGetOne.php"><a href="files/src-request-coveragesglobalpredictionsgetone.html"><abbr title="src/Request/CoveragesGlobalPredictionsGetOne.php">CoveragesGlobalPredictionsGetOne.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">59</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for lat</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getLat</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>the latitude</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getLng">
+        getLng()
+        <a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_getLng" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/CoveragesGlobalPredictionsGetOne.php"><a href="files/src-request-coveragesglobalpredictionsgetone.html"><abbr title="src/Request/CoveragesGlobalPredictionsGetOne.php">CoveragesGlobalPredictionsGetOne.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">80</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for lng</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getLng</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>the longitude</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getQueryFields">
+        getQueryFields()
+        <a href="classes/Arimac-Sigfox-Request.html#method_getQueryFields" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request.php"><a href="files/src-request.html"><abbr title="src/Request.php">Request.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">24</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returning all property names for query string</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getQueryFields</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getRadius">
+        getRadius()
+        <a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_getRadius" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/CoveragesGlobalPredictionsGetOne.php"><a href="files/src-request-coveragesglobalpredictionsgetone.html"><abbr title="src/Request/CoveragesGlobalPredictionsGetOne.php">CoveragesGlobalPredictionsGetOne.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">105</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for radius</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getRadius</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>The radius of the area in which the coverage results are averaged and returned for a selected
+location, in meters.</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getSerializeMetaData">
+        getSerializeMetaData()
+        <a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/CoveragesGlobalPredictionsGetOne.php"><a href="files/src-request-coveragesglobalpredictionsgetone.html"><abbr title="src/Request/CoveragesGlobalPredictionsGetOne.php">CoveragesGlobalPredictionsGetOne.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">133</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returning all meta data to serialize and deserialize objects</p>
@@ -546,6 +797,20 @@ meters.</p>
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;</span>
@@ -567,7 +832,7 @@ meters.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returning the weather the class is extendable or not</p>
@@ -580,6 +845,20 @@ meters.</p>
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
@@ -601,7 +880,7 @@ meters.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/CoveragesGlobalPredictionsGetOne.php"><a href="files/src-request-coveragesglobalpredictionsgetone.html"><abbr title="src/Request/CoveragesGlobalPredictionsGetOne.php">CoveragesGlobalPredictionsGetOne.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">88</span>
+    <span class="phpdocumentor-element-found-in__line">116</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for groupId</p>
@@ -648,7 +927,7 @@ meters.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/CoveragesGlobalPredictionsGetOne.php"><a href="files/src-request-coveragesglobalpredictionsgetone.html"><abbr title="src/Request/CoveragesGlobalPredictionsGetOne.php">CoveragesGlobalPredictionsGetOne.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">50</span>
+    <span class="phpdocumentor-element-found-in__line">49</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for lat</p>
@@ -695,7 +974,7 @@ meters.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/CoveragesGlobalPredictionsGetOne.php"><a href="files/src-request-coveragesglobalpredictionsgetone.html"><abbr title="src/Request/CoveragesGlobalPredictionsGetOne.php">CoveragesGlobalPredictionsGetOne.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">70</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for lng</p>
@@ -742,7 +1021,7 @@ meters.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/CoveragesGlobalPredictionsGetOne.php"><a href="files/src-request-coveragesglobalpredictionsgetone.html"><abbr title="src/Request/CoveragesGlobalPredictionsGetOne.php">CoveragesGlobalPredictionsGetOne.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">76</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for radius</p>

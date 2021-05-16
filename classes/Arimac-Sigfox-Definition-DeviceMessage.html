@@ -266,13 +266,6 @@
 <dd>the sequence number for this message, may not be present when device uses VO protocol</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Definition-DeviceMessage.html#property_serialize">$serialize</a>
-    <span>
-                &nbsp;: mixed            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Definition-DeviceMessage.html#property_time">$time</a>
     <span>
                 &nbsp;: int|null            </span>
@@ -357,7 +350,7 @@
 <dd>Getter for seqNumber</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Definition.html#method_getSerializeMetaData">getSerializeMetaData()</a>
+    <a href="classes/Arimac-Sigfox-Definition-DeviceMessage.html#method_getSerializeMetaData">getSerializeMetaData()</a>
     <span>
                         &nbsp;: array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;    </span>
 </dt>
@@ -917,7 +910,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 </aside>
 
     
@@ -1161,36 +1154,6 @@
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_serialize">
-        $serialize
-        <a href="classes/Arimac-Sigfox-Definition-DeviceMessage.html#property_serialize" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">125</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">$serialize</span>
-     = <span class="phpdocumentor-signature__default-value">array(new ArimacSigfoxSerializerClassSerializer(self::class, &#039;device&#039;, ArimacSigfoxDefinitionCommonDevice::class), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;time&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;data&#039;, &#039;string&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;ackRequired&#039;, &#039;bool&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;lqi&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;lqiRepeaters&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;seqNumber&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;nbFrames&#039;, &#039;int&#039;), new ArimacSigfoxSerializerArraySerializer(self::class, &#039;computedLocation&#039;, new ArimacSigfoxSerializerClassSerializer(self::class, &#039;computedLocation&#039;, ArimacSigfoxDefinitionComputedLocation::class)), new ArimacSigfoxSerializerArraySerializer(self::class, &#039;rinfos&#039;, new ArimacSigfoxSerializerClassSerializer(self::class, &#039;rinfos&#039;, ArimacSigfoxDefinitionRinfo::class)), new ArimacSigfoxSerializerClassSerializer(self::class, &#039;downlinkAnswerStatus&#039;, ArimacSigfoxDefinitionDownlinkAnswerStatus::class))</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="property_time">
         $time
         <a href="classes/Arimac-Sigfox-Definition-DeviceMessage.html#property_time" class="headerlink"><i class="fas fa-link"></i></a>
@@ -1266,7 +1229,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">206</span>
+    <span class="phpdocumentor-element-found-in__line">205</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for ackRequired</p>
@@ -1301,7 +1264,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">340</span>
+    <span class="phpdocumentor-element-found-in__line">339</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for computedLocation</p>
@@ -1335,7 +1298,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">185</span>
+    <span class="phpdocumentor-element-found-in__line">184</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for data</p>
@@ -1370,7 +1333,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">143</span>
+    <span class="phpdocumentor-element-found-in__line">142</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for device</p>
@@ -1405,7 +1368,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">382</span>
+    <span class="phpdocumentor-element-found-in__line">381</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for downlinkAnswerStatus</p>
@@ -1440,7 +1403,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">241</span>
+    <span class="phpdocumentor-element-found-in__line">240</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for lqi</p>
@@ -1492,7 +1455,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">276</span>
+    <span class="phpdocumentor-element-found-in__line">275</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for lqiRepeaters</p>
@@ -1544,7 +1507,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">319</span>
+    <span class="phpdocumentor-element-found-in__line">318</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for nbFrames</p>
@@ -1579,7 +1542,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">361</span>
+    <span class="phpdocumentor-element-found-in__line">360</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for rinfos</p>
@@ -1613,7 +1576,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">297</span>
+    <span class="phpdocumentor-element-found-in__line">296</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for seqNumber</p>
@@ -1643,12 +1606,12 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_getSerializeMetaData">
         getSerializeMetaData()
-        <a href="classes/Arimac-Sigfox-Definition.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Arimac-Sigfox-Definition-DeviceMessage.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">388</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returning all meta data to serialize and deserialize objects</p>
@@ -1661,6 +1624,20 @@
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;</span>
@@ -1682,7 +1659,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">164</span>
+    <span class="phpdocumentor-element-found-in__line">163</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for time</p>
@@ -1717,7 +1694,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returning the weather the class is extendable or not</p>
@@ -1730,6 +1707,20 @@
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
@@ -1751,7 +1742,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">196</span>
+    <span class="phpdocumentor-element-found-in__line">195</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for ackRequired</p>
@@ -1798,7 +1789,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">330</span>
+    <span class="phpdocumentor-element-found-in__line">329</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for computedLocation</p>
@@ -1844,7 +1835,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">175</span>
+    <span class="phpdocumentor-element-found-in__line">174</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for data</p>
@@ -1891,7 +1882,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">132</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for device</p>
@@ -1938,7 +1929,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">372</span>
+    <span class="phpdocumentor-element-found-in__line">371</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for downlinkAnswerStatus</p>
@@ -1985,7 +1976,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">224</span>
+    <span class="phpdocumentor-element-found-in__line">223</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for lqi</p>
@@ -2049,7 +2040,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">259</span>
+    <span class="phpdocumentor-element-found-in__line">258</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for lqiRepeaters</p>
@@ -2113,7 +2104,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">309</span>
+    <span class="phpdocumentor-element-found-in__line">308</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for nbFrames</p>
@@ -2161,7 +2152,7 @@ device.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">351</span>
+    <span class="phpdocumentor-element-found-in__line">350</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for rinfos</p>
@@ -2207,7 +2198,7 @@ device.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">287</span>
+    <span class="phpdocumentor-element-found-in__line">286</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for seqNumber</p>
@@ -2254,7 +2245,7 @@ device.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/DeviceMessage.php"><a href="files/src-definition-devicemessage.html"><abbr title="src/Definition/DeviceMessage.php">DeviceMessage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">154</span>
+    <span class="phpdocumentor-element-found-in__line">153</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for time</p>

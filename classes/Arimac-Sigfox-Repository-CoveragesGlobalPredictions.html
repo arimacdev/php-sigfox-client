@@ -82,6 +82,9 @@
         <h2 class="phpdocumentor-content__title">
     CoveragesGlobalPredictions
 
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/Arimac-Sigfox-Repository.html"><abbr title="\Arimac\Sigfox\Repository">Repository</abbr></a>
+    </span>
     
     
     
@@ -90,7 +93,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/CoveragesGlobalPredictions.php"><a href="files/src-repository-coveragesglobalpredictions.html"><abbr title="src/Repository/CoveragesGlobalPredictions.php">CoveragesGlobalPredictions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 </aside>
 
         
@@ -151,6 +154,13 @@
 <dd>Get coverage margins for a selected latitude and longitude, for each
 redundancy level.</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Arimac-Sigfox-Repository.html#method_bind">bind()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Binding path parameters to the URL</dd>
+
         </dl>
 
 
@@ -179,7 +189,7 @@ redundancy level.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/CoveragesGlobalPredictions.php"><a href="files/src-repository-coveragesglobalpredictions.html"><abbr title="src/Repository/CoveragesGlobalPredictions.php">CoveragesGlobalPredictions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">17</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 </aside>
 
         <p class="phpdocumentor-summary">The HTTP client</p>
@@ -215,7 +225,7 @@ redundancy level.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/CoveragesGlobalPredictions.php"><a href="files/src-repository-coveragesglobalpredictions.html"><abbr title="src/Repository/CoveragesGlobalPredictions.php">CoveragesGlobalPredictions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 </aside>
 
         <p class="phpdocumentor-summary">Creating the repository</p>
@@ -261,7 +271,7 @@ redundancy level.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/CoveragesGlobalPredictions.php"><a href="files/src-repository-coveragesglobalpredictions.html"><abbr title="src/Repository/CoveragesGlobalPredictions.php">CoveragesGlobalPredictions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">80</span>
 </aside>
 
     
@@ -294,14 +304,14 @@ redundancy level.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/CoveragesGlobalPredictions.php"><a href="files/src-repository-coveragesglobalpredictions.html"><abbr title="src/Repository/CoveragesGlobalPredictions.php">CoveragesGlobalPredictions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">55</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
 </aside>
 
         <p class="phpdocumentor-summary">Starting the computation of the coverage margins for multiple points, for each redundancy level.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">calculateBulk</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsCalculateBulk.html"><abbr title="\Arimac\Sigfox\Request\CoveragesGlobalPredictionsCalculateBulk">CoveragesGlobalPredictionsCalculateBulk</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-CoveragesGlobalPredictionsCalculateBulkResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\CoveragesGlobalPredictionsCalculateBulkResponse">CoveragesGlobalPredictionsCalculateBulkResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">calculateBulk</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-GlobalCoverageRequest.html"><abbr title="\Arimac\Sigfox\Definition\GlobalCoverageRequest">GlobalCoverageRequest</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$payload</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-CoveragesGlobalPredictionsCalculateBulkResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\CoveragesGlobalPredictionsCalculateBulkResponse">CoveragesGlobalPredictionsCalculateBulkResponse</abbr></a></span></code>
 
         <section class="phpdocumentor-description"><p>For more information please refer to the <a href="https://support.sigfox.com/docs/global-coverage-api">Global Coverage API
 article</a>.</p>
@@ -310,11 +320,12 @@ article</a>.</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsCalculateBulk.html"><abbr title="\Arimac\Sigfox\Request\CoveragesGlobalPredictionsCalculateBulk">CoveragesGlobalPredictionsCalculateBulk</abbr></a></span>
+                <span class="phpdocumentor-signature__argument__name">$payload</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-GlobalCoverageRequest.html"><abbr title="\Arimac\Sigfox\Definition\GlobalCoverageRequest">GlobalCoverageRequest</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -340,14 +351,14 @@ article</a>.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/CoveragesGlobalPredictions.php"><a href="files/src-repository-coveragesglobalpredictions.html"><abbr title="src/Repository/CoveragesGlobalPredictions.php">CoveragesGlobalPredictions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get the coverage margins for multiple points, for each redundancy level.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGet.html"><abbr title="\Arimac\Sigfox\Request\CoveragesGlobalPredictionsGet">CoveragesGlobalPredictionsGet</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-GlobalCoverageResponse.html"><abbr title="\Arimac\Sigfox\Definition\GlobalCoverageResponse">GlobalCoverageResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-GlobalCoverageRequest.html"><abbr title="\Arimac\Sigfox\Definition\GlobalCoverageRequest">GlobalCoverageRequest</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$payload</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-GlobalCoverageResponse.html"><abbr title="\Arimac\Sigfox\Definition\GlobalCoverageResponse">GlobalCoverageResponse</abbr></a></span></code>
 
         <section class="phpdocumentor-description"><p>Sigfox recommends to:
 -use the bulk endpoint instead when requesting a large number of locations
@@ -360,11 +371,12 @@ article</a>.</p>
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGet.html"><abbr title="\Arimac\Sigfox\Request\CoveragesGlobalPredictionsGet">CoveragesGlobalPredictionsGet</abbr></a></span>
+                <span class="phpdocumentor-signature__argument__name">$payload</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-GlobalCoverageRequest.html"><abbr title="\Arimac\Sigfox\Definition\GlobalCoverageRequest">GlobalCoverageRequest</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"></section>
+
             </dd>
             </dl>
 
@@ -390,7 +402,7 @@ article</a>.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/CoveragesGlobalPredictions.php"><a href="files/src-repository-coveragesglobalpredictions.html"><abbr title="src/Repository/CoveragesGlobalPredictions.php">CoveragesGlobalPredictions.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 </aside>
 
         <p class="phpdocumentor-summary">Get coverage margins for a selected latitude and longitude, for each
@@ -411,7 +423,9 @@ article</a>.</p>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-CoveragesGlobalPredictionsGetOne.html"><abbr title="\Arimac\Sigfox\Request\CoveragesGlobalPredictionsGetOne">CoveragesGlobalPredictionsGetOne</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The query and body parameters to pass</p>
+</section>
+
             </dd>
             </dl>
 
@@ -421,6 +435,62 @@ article</a>.</p>
     <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-CoveragesGlobalPredictionsGetOneResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\CoveragesGlobalPredictionsGetOneResponse">CoveragesGlobalPredictionsGetOneResponse</abbr></a></span>
             &mdash;
             <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_bind">
+        bind()
+        <a href="classes/Arimac-Sigfox-Repository.html#method_bind" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Repository.php"><a href="files/src-repository.html"><abbr title="src/Repository.php">Repository.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">14</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Binding path parameters to the URL</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">bind</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$url</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$url</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>URL with path parameter names. Example:- <code class="prettyprint">/user/{id}</code></p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$params</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Value to replace path parameters</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>URL with replaced path parameter values</p>
+</section>
 
     
 </article>

@@ -82,6 +82,9 @@
         <h2 class="phpdocumentor-content__title">
     DeviceTypesIdCallbacksCallbackId
 
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/Arimac-Sigfox-Repository.html"><abbr title="\Arimac\Sigfox\Repository">Repository</abbr></a>
+    </span>
     
     
     
@@ -90,7 +93,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacksCallbackId.php"><a href="files/src-repository-devicetypesidcallbackscallbackid.html"><abbr title="src/Repository/DeviceTypesIdCallbacksCallbackId.php">DeviceTypesIdCallbacksCallbackId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">12</span>
 </aside>
 
         
@@ -162,8 +165,8 @@
     <span>
                         &nbsp;: mixed    </span>
 </dt>
-<dd>Selects a downlink callback for a device type. The callback will be selected as the downlink one, the one that was
-previously selected will no longer be used for downlink.</dd>
+<dd>Selects a downlink callback for a device type. The callback will be selected as the downlink one, the one that
+was previously selected will no longer be used for downlink.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-DeviceTypesIdCallbacksCallbackId.html#method_update">update()</a>
@@ -171,6 +174,13 @@ previously selected will no longer be used for downlink.</dd>
                         &nbsp;: mixed    </span>
 </dt>
 <dd>Update a callback for a given device type</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Arimac-Sigfox-Repository.html#method_bind">bind()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Binding path parameters to the URL</dd>
 
         </dl>
 
@@ -200,7 +210,7 @@ previously selected will no longer be used for downlink.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacksCallbackId.php"><a href="files/src-repository-devicetypesidcallbackscallbackid.html"><abbr title="src/Repository/DeviceTypesIdCallbacksCallbackId.php">DeviceTypesIdCallbacksCallbackId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 </aside>
 
         <p class="phpdocumentor-summary">The Callback identifier</p>
@@ -232,7 +242,7 @@ previously selected will no longer be used for downlink.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacksCallbackId.php"><a href="files/src-repository-devicetypesidcallbackscallbackid.html"><abbr title="src/Repository/DeviceTypesIdCallbacksCallbackId.php">DeviceTypesIdCallbacksCallbackId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 </aside>
 
         <p class="phpdocumentor-summary">The HTTP client</p>
@@ -264,7 +274,7 @@ previously selected will no longer be used for downlink.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacksCallbackId.php"><a href="files/src-repository-devicetypesidcallbackscallbackid.html"><abbr title="src/Repository/DeviceTypesIdCallbacksCallbackId.php">DeviceTypesIdCallbacksCallbackId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 </aside>
 
         <p class="phpdocumentor-summary">The Device Type identifier (hexademical format)</p>
@@ -300,7 +310,7 @@ previously selected will no longer be used for downlink.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacksCallbackId.php"><a href="files/src-repository-devicetypesidcallbackscallbackid.html"><abbr title="src/Repository/DeviceTypesIdCallbacksCallbackId.php">DeviceTypesIdCallbacksCallbackId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 </aside>
 
         <p class="phpdocumentor-summary">Creating the repository</p>
@@ -364,14 +374,14 @@ previously selected will no longer be used for downlink.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacksCallbackId.php"><a href="files/src-repository-devicetypesidcallbackscallbackid.html"><abbr title="src/Repository/DeviceTypesIdCallbacksCallbackId.php">DeviceTypesIdCallbacksCallbackId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">69</span>
+    <span class="phpdocumentor-element-found-in__line">83</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve the last device message error associated with this callback.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">callbacksNotDelivered</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered">DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-ErrorMessages.html"><abbr title="\Arimac\Sigfox\Definition\ErrorMessages">ErrorMessages</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">callbacksNotDelivered</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered">DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-ErrorMessages.html"><abbr title="\Arimac\Sigfox\Definition\ErrorMessages">ErrorMessages</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -380,9 +390,11 @@ previously selected will no longer be used for downlink.</dd>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$request</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered">DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered</abbr></a></span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The query and body parameters to pass</p>
+</section>
+
             </dd>
             </dl>
 
@@ -408,7 +420,7 @@ previously selected will no longer be used for downlink.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacksCallbackId.php"><a href="files/src-repository-devicetypesidcallbackscallbackid.html"><abbr title="src/Repository/DeviceTypesIdCallbacksCallbackId.php">DeviceTypesIdCallbacksCallbackId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 </aside>
 
         <p class="phpdocumentor-summary">Delete a callback for a given device type.</p>
@@ -442,25 +454,27 @@ previously selected will no longer be used for downlink.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacksCallbackId.php"><a href="files/src-repository-devicetypesidcallbackscallbackid.html"><abbr title="src/Repository/DeviceTypesIdCallbacksCallbackId.php">DeviceTypesIdCallbacksCallbackId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 </aside>
 
         <p class="phpdocumentor-summary">Enable or disable a callback for a given device type.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">enable</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdEnable.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdEnable">DeviceTypesIdCallbacksCallbackIdEnable</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">enable</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$enabled</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdEnable.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdEnable">DeviceTypesIdCallbacksCallbackIdEnable</abbr></a></span>
+                <span class="phpdocumentor-signature__argument__name">$enabled</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>True to enable the callback, false to disable it</p>
+</section>
+
             </dd>
             </dl>
 
@@ -486,11 +500,11 @@ previously selected will no longer be used for downlink.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacksCallbackId.php"><a href="files/src-repository-devicetypesidcallbackscallbackid.html"><abbr title="src/Repository/DeviceTypesIdCallbacksCallbackId.php">DeviceTypesIdCallbacksCallbackId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Selects a downlink callback for a device type. The callback will be selected as the downlink one, the one that was
-previously selected will no longer be used for downlink.</p>
+        <p class="phpdocumentor-summary">Selects a downlink callback for a device type. The callback will be selected as the downlink one, the one that
+was previously selected will no longer be used for downlink.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -521,25 +535,27 @@ previously selected will no longer be used for downlink.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacksCallbackId.php"><a href="files/src-repository-devicetypesidcallbackscallbackid.html"><abbr title="src/Repository/DeviceTypesIdCallbacksCallbackId.php">DeviceTypesIdCallbacksCallbackId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update a callback for a given device type</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdUpdate.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdUpdate">DeviceTypesIdCallbacksCallbackIdUpdate</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-UpdateCallback.html"><abbr title="\Arimac\Sigfox\Definition\UpdateCallback">UpdateCallback</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$callback</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
         <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdUpdate.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdUpdate">DeviceTypesIdCallbacksCallbackIdUpdate</abbr></a></span>
+                <span class="phpdocumentor-signature__argument__name">$callback</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-UpdateCallback.html"><abbr title="\Arimac\Sigfox\Definition\UpdateCallback">UpdateCallback</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The callback to update</p>
+</section>
+
             </dd>
             </dl>
 
@@ -549,6 +565,62 @@ previously selected will no longer be used for downlink.</p>
     <span class="phpdocumentor-signature__response_type">mixed</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_bind">
+        bind()
+        <a href="classes/Arimac-Sigfox-Repository.html#method_bind" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Repository.php"><a href="files/src-repository.html"><abbr title="src/Repository.php">Repository.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">14</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Binding path parameters to the URL</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">bind</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$url</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$url</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>URL with path parameter names. Example:- <code class="prettyprint">/user/{id}</code></p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$params</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Value to replace path parameters</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>URL with replaced path parameter values</p>
+</section>
 
     
 </article>

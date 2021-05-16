@@ -82,6 +82,9 @@
         <h2 class="phpdocumentor-content__title">
     DeviceTypes
 
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/Arimac-Sigfox-Repository.html"><abbr title="\Arimac\Sigfox\Repository">Repository</abbr></a>
+    </span>
     
     
     
@@ -90,7 +93,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypes.php"><a href="files/src-repository-devicetypes.html"><abbr title="src/Repository/DeviceTypes.php">DeviceTypes.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">10</span>
+    <span class="phpdocumentor-element-found-in__line">12</span>
 </aside>
 
         
@@ -150,6 +153,13 @@
 </dt>
 <dd>Retrieve a list of device types according to visibility permissions and request filters.</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Arimac-Sigfox-Repository.html#method_bind">bind()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Binding path parameters to the URL</dd>
+
         </dl>
 
 
@@ -178,7 +188,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypes.php"><a href="files/src-repository-devicetypes.html"><abbr title="src/Repository/DeviceTypes.php">DeviceTypes.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">17</span>
 </aside>
 
         <p class="phpdocumentor-summary">The HTTP client</p>
@@ -214,7 +224,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypes.php"><a href="files/src-repository-devicetypes.html"><abbr title="src/Repository/DeviceTypes.php">DeviceTypes.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 </aside>
 
         <p class="phpdocumentor-summary">Creating the repository</p>
@@ -260,7 +270,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypes.php"><a href="files/src-repository-devicetypes.html"><abbr title="src/Repository/DeviceTypes.php">DeviceTypes.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 </aside>
 
     
@@ -293,25 +303,27 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypes.php"><a href="files/src-repository-devicetypes.html"><abbr title="src/Repository/DeviceTypes.php">DeviceTypes.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">35</span>
+    <span class="phpdocumentor-element-found-in__line">45</span>
 </aside>
 
         <p class="phpdocumentor-summary">Create a new device type</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">create</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DeviceTypesCreate.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesCreate">DeviceTypesCreate</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DeviceTypesCreateResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DeviceTypesCreateResponse">DeviceTypesCreateResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">create</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-DeviceTypeCreate.html"><abbr title="\Arimac\Sigfox\Definition\DeviceTypeCreate">DeviceTypeCreate</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$deviceType</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DeviceTypesCreateResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DeviceTypesCreateResponse">DeviceTypesCreateResponse</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DeviceTypesCreate.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesCreate">DeviceTypesCreate</abbr></a></span>
+                <span class="phpdocumentor-signature__argument__name">$deviceType</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-DeviceTypeCreate.html"><abbr title="\Arimac\Sigfox\Definition\DeviceTypeCreate">DeviceTypeCreate</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The device type to create</p>
+</section>
+
             </dd>
             </dl>
 
@@ -337,7 +349,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypes.php"><a href="files/src-repository-devicetypes.html"><abbr title="src/Repository/DeviceTypes.php">DeviceTypes.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">46</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 </aside>
 
         <p class="phpdocumentor-summary">Find by id</p>
@@ -383,14 +395,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypes.php"><a href="files/src-repository-devicetypes.html"><abbr title="src/Repository/DeviceTypes.php">DeviceTypes.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">28</span>
+    <span class="phpdocumentor-element-found-in__line">34</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve a list of device types according to visibility permissions and request filters.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">list</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesList">DeviceTypesList</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DeviceTypesListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DeviceTypesListResponse">DeviceTypesListResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">list</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesList">DeviceTypesList</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DeviceTypesListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DeviceTypesListResponse">DeviceTypesListResponse</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -399,9 +411,11 @@
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$request</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesList">DeviceTypesList</abbr></a></span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The query and body parameters to pass</p>
+</section>
+
             </dd>
             </dl>
 
@@ -411,6 +425,62 @@
     <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DeviceTypesListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DeviceTypesListResponse">DeviceTypesListResponse</abbr></a></span>
             &mdash;
             <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_bind">
+        bind()
+        <a href="classes/Arimac-Sigfox-Repository.html#method_bind" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Repository.php"><a href="files/src-repository.html"><abbr title="src/Repository.php">Repository.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">14</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Binding path parameters to the URL</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">bind</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$url</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$url</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>URL with path parameter names. Example:- <code class="prettyprint">/user/{id}</code></p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$params</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Value to replace path parameters</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>URL with replaced path parameter values</p>
+</section>
 
     
 </article>

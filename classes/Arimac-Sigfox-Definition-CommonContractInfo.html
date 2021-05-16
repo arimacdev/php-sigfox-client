@@ -206,16 +206,9 @@ delete a single option use &quot;/{id}/options&quot; API.</dd>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Definition-CommonContractInfo.html#property_serialize">$serialize</a>
-    <span>
-                &nbsp;: mixed            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Definition-CommonContractInfo.html#property_validations">$validations</a>
     <span>
-                &nbsp;: mixed            </span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd></dd>
 
@@ -297,7 +290,7 @@ delete a single option use &quot;/{id}/options&quot; API.</dd>
 <dd>Getter for renewalDuration</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Definition.html#method_getSerializeMetaData">getSerializeMetaData()</a>
+    <a href="classes/Arimac-Sigfox-Definition-CommonContractInfo.html#method_getSerializeMetaData">getSerializeMetaData()</a>
     <span>
                         &nbsp;: array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;    </span>
 </dt>
@@ -543,7 +536,7 @@ delete a single option use &quot;/{id}/options&quot; API.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 </aside>
 
     
@@ -819,9 +812,9 @@ delete a single option use &quot;/{id}/options&quot; API.</p>
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_serialize">
-        $serialize
-        <a href="classes/Arimac-Sigfox-Definition-CommonContractInfo.html#property_serialize" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_validations">
+        $validations
+        <a href="classes/Arimac-Sigfox-Definition-CommonContractInfo.html#property_validations" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
@@ -834,37 +827,7 @@ delete a single option use &quot;/{id}/options&quot; API.</p>
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">$serialize</span>
-     = <span class="phpdocumentor-signature__default-value">array(new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;name&#039;, &#039;string&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;activationEndTime&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;communicationEndTime&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;bidir&#039;, &#039;bool&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;highPriorityDownlink&#039;, &#039;bool&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;maxUplinkFrames&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;maxDownlinkFrames&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;maxTokens&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;automaticRenewal&#039;, &#039;bool&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;renewalDuration&#039;, &#039;int&#039;), new ArimacSigfoxSerializerArraySerializer(self::class, &#039;options&#039;, new ArimacSigfoxSerializerClassSerializer(self::class, &#039;options&#039;, ArimacSigfoxDefinitionCommonContractInfoOptionsItem::class)))</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_validations">
-        $validations
-        <a href="classes/Arimac-Sigfox-Definition-CommonContractInfo.html#property_validations" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">83</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$validations</span>
      = <span class="phpdocumentor-signature__default-value">array(&#039;name&#039; =&gt; array(&#039;max:100&#039;, &#039;nullable&#039;), &#039;activationEndTime&#039; =&gt; array(&#039;min:0&#039;, &#039;numeric&#039;, &#039;nullable&#039;), &#039;communicationEndTime&#039; =&gt; array(&#039;min:0&#039;, &#039;numeric&#039;, &#039;nullable&#039;), &#039;maxUplinkFrames&#039; =&gt; array(&#039;min:0&#039;, &#039;numeric&#039;, &#039;nullable&#039;), &#039;maxDownlinkFrames&#039; =&gt; array(&#039;min:0&#039;, &#039;numeric&#039;, &#039;nullable&#039;), &#039;maxTokens&#039; =&gt; array(&#039;min:0&#039;, &#039;numeric&#039;, &#039;nullable&#039;), &#039;renewalDuration&#039; =&gt; array(&#039;min:0&#039;, &#039;numeric&#039;, &#039;nullable&#039;))</span></code>
 
@@ -892,7 +855,7 @@ delete a single option use &quot;/{id}/options&quot; API.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">123</span>
+    <span class="phpdocumentor-element-found-in__line">122</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for activationEndTime</p>
@@ -927,7 +890,7 @@ delete a single option use &quot;/{id}/options&quot; API.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">272</span>
+    <span class="phpdocumentor-element-found-in__line">271</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for automaticRenewal</p>
@@ -962,7 +925,7 @@ delete a single option use &quot;/{id}/options&quot; API.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">166</span>
+    <span class="phpdocumentor-element-found-in__line">165</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for bidir</p>
@@ -997,7 +960,7 @@ delete a single option use &quot;/{id}/options&quot; API.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">145</span>
+    <span class="phpdocumentor-element-found-in__line">144</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for communicationEndTime</p>
@@ -1032,7 +995,7 @@ delete a single option use &quot;/{id}/options&quot; API.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">187</span>
+    <span class="phpdocumentor-element-found-in__line">186</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for highPriorityDownlink</p>
@@ -1067,7 +1030,7 @@ delete a single option use &quot;/{id}/options&quot; API.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">229</span>
+    <span class="phpdocumentor-element-found-in__line">228</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for maxDownlinkFrames</p>
@@ -1102,7 +1065,7 @@ delete a single option use &quot;/{id}/options&quot; API.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">251</span>
+    <span class="phpdocumentor-element-found-in__line">250</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for maxTokens</p>
@@ -1137,7 +1100,7 @@ delete a single option use &quot;/{id}/options&quot; API.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">208</span>
+    <span class="phpdocumentor-element-found-in__line">207</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for maxUplinkFrames</p>
@@ -1172,7 +1135,7 @@ delete a single option use &quot;/{id}/options&quot; API.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">101</span>
+    <span class="phpdocumentor-element-found-in__line">100</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for name</p>
@@ -1207,7 +1170,7 @@ delete a single option use &quot;/{id}/options&quot; API.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">316</span>
+    <span class="phpdocumentor-element-found-in__line">315</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for options</p>
@@ -1243,7 +1206,7 @@ contract. In order to delete a single option use &quot;/{id}/options&quot; API.<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">293</span>
+    <span class="phpdocumentor-element-found-in__line">292</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for renewalDuration</p>
@@ -1273,12 +1236,12 @@ contract. In order to delete a single option use &quot;/{id}/options&quot; API.<
 >
     <h4 class="phpdocumentor-element__name" id="method_getSerializeMetaData">
         getSerializeMetaData()
-        <a href="classes/Arimac-Sigfox-Definition.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Arimac-Sigfox-Definition-CommonContractInfo.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">322</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returning all meta data to serialize and deserialize objects</p>
@@ -1291,6 +1254,20 @@ contract. In order to delete a single option use &quot;/{id}/options&quot; API.<
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;</span>
@@ -1312,7 +1289,7 @@ contract. In order to delete a single option use &quot;/{id}/options&quot; API.<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returning the weather the class is extendable or not</p>
@@ -1325,6 +1302,20 @@ contract. In order to delete a single option use &quot;/{id}/options&quot; API.<
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
@@ -1346,7 +1337,7 @@ contract. In order to delete a single option use &quot;/{id}/options&quot; API.<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">113</span>
+    <span class="phpdocumentor-element-found-in__line">112</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for activationEndTime</p>
@@ -1394,7 +1385,7 @@ time limit.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">262</span>
+    <span class="phpdocumentor-element-found-in__line">261</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for automaticRenewal</p>
@@ -1441,7 +1432,7 @@ time limit.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">156</span>
+    <span class="phpdocumentor-element-found-in__line">155</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for bidir</p>
@@ -1488,7 +1479,7 @@ time limit.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">135</span>
+    <span class="phpdocumentor-element-found-in__line">134</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for communicationEndTime</p>
@@ -1536,7 +1527,7 @@ time limit.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">177</span>
+    <span class="phpdocumentor-element-found-in__line">176</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for highPriorityDownlink</p>
@@ -1583,7 +1574,7 @@ time limit.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">219</span>
+    <span class="phpdocumentor-element-found-in__line">218</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for maxDownlinkFrames</p>
@@ -1630,7 +1621,7 @@ time limit.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">241</span>
+    <span class="phpdocumentor-element-found-in__line">240</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for maxTokens</p>
@@ -1678,7 +1669,7 @@ number.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">198</span>
+    <span class="phpdocumentor-element-found-in__line">197</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for maxUplinkFrames</p>
@@ -1725,7 +1716,7 @@ number.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">91</span>
+    <span class="phpdocumentor-element-found-in__line">90</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for name</p>
@@ -1772,7 +1763,7 @@ number.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">305</span>
+    <span class="phpdocumentor-element-found-in__line">304</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for options</p>
@@ -1820,7 +1811,7 @@ options in contract. In order to delete a single option use &quot;/{id}/options&
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CommonContractInfo.php"><a href="files/src-definition-commoncontractinfo.html"><abbr title="src/Definition/CommonContractInfo.php">CommonContractInfo.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">283</span>
+    <span class="phpdocumentor-element-found-in__line">282</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for renewalDuration</p>

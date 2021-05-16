@@ -83,7 +83,7 @@
     GroupsList
 
         <span class="phpdocumentor-element__extends">
-        extends <a href="classes/Arimac-Sigfox-Definition.html"><abbr title="\Arimac\Sigfox\Definition">Definition</abbr></a>
+        extends <a href="classes/Arimac-Sigfox-Request.html"><abbr title="\Arimac\Sigfox\Request">Request</abbr></a>
     </span>
     
     
@@ -194,6 +194,13 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
 <dd>if true, we return the list of actions and resources the user has access</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/Arimac-Sigfox-Request.html#property_body">$body</a>
+    <span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Request-GroupsList.html#property_deep">$deep</a>
     <span>
                 &nbsp;: bool|null            </span>
@@ -252,7 +259,7 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Request-GroupsList.html#property_query">$query</a>
     <span>
-                &nbsp;: mixed            </span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd></dd>
 
@@ -260,13 +267,6 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
     <a href="classes/Arimac-Sigfox-Definition.html#property_required">$required</a>
     <span>
                 &nbsp;: array&lt;string|int, mixed&gt;            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Request-GroupsList.html#property_serialize">$serialize</a>
-    <span>
-                &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
@@ -287,16 +287,107 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Request-GroupsList.html#property_validations">$validations</a>
     <span>
-                &nbsp;: mixed            </span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd></dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Definition.html#method_getSerializeMetaData">getSerializeMetaData()</a>
+    <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getAction">getAction()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Getter for action</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getAuthorizations">getAuthorizations()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Getter for authorizations</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request.html#method_getBodyFields">getBodyFields()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, string&gt;    </span>
+</dt>
+<dd>Returning all property names for request body</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getDeep">getDeep()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Getter for deep</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getFields">getFields()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Getter for fields</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getLimit">getLimit()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd>Getter for limit</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getName">getName()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Getter for name</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getOffset">getOffset()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd>Getter for offset</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getPageId">getPageId()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Getter for pageId</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getParentIds">getParentIds()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, string&gt;    </span>
+</dt>
+<dd>Getter for parentIds</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request.html#method_getQueryFields">getQueryFields()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, string&gt;    </span>
+</dt>
+<dd>Returning all property names for query string</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getSerializeMetaData">getSerializeMetaData()</a>
     <span>
                         &nbsp;: array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;    </span>
 </dt>
 <dd>Returning all meta data to serialize and deserialize objects</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getSort">getSort()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Getter for sort</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getTypes">getTypes()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, int&gt;    </span>
+</dt>
+<dd>Getter for types</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Definition.html#method_isExtendable">isExtendable()</a>
@@ -714,6 +805,36 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_body">
+        $body
+        <a href="classes/Arimac-Sigfox-Request.html#property_body" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request.php"><a href="files/src-request.html"><abbr title="src/Request.php">Request.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">6</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$body</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_deep">
         $deep
         <a href="classes/Arimac-Sigfox-Request-GroupsList.html#property_deep" class="headerlink"><i class="fas fa-link"></i></a>
@@ -755,7 +876,7 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 </aside>
 
     
@@ -977,13 +1098,13 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">129</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$query</span>
      = <span class="phpdocumentor-signature__default-value">array(&#039;parentIds&#039;, &#039;deep&#039;, &#039;name&#039;, &#039;types&#039;, &#039;fields&#039;, &#039;action&#039;, &#039;sort&#039;, &#039;authorizations&#039;, &#039;limit&#039;, &#039;offset&#039;, &#039;pageId&#039;)</span></code>
 
@@ -1016,36 +1137,6 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$required</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_serialize">
-        $serialize
-        <a href="classes/Arimac-Sigfox-Request-GroupsList.html#property_serialize" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">128</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">$serialize</span>
-     = <span class="phpdocumentor-signature__default-value">array(new ArimacSigfoxSerializerArraySerializer(self::class, &#039;parentIds&#039;, new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;parentIds&#039;, &#039;string&#039;)), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;deep&#039;, &#039;bool&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;name&#039;, &#039;string&#039;), new ArimacSigfoxSerializerArraySerializer(self::class, &#039;types&#039;, new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;types&#039;, &#039;int&#039;)), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;fields&#039;, &#039;string&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;action&#039;, &#039;string&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;sort&#039;, &#039;string&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;authorizations&#039;, &#039;bool&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;limit&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;offset&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;pageId&#039;, &#039;string&#039;))</span></code>
 
     
     
@@ -1160,15 +1251,15 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">130</span>
+    <span class="phpdocumentor-element-found-in__line">129</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$validations</span>
-     = <span class="phpdocumentor-signature__default-value">array(&#039;parentIds&#039; =&gt; array(&#039;required&#039;), &#039;deep&#039; =&gt; array(&#039;required&#039;), &#039;name&#039; =&gt; array(&#039;required&#039;), &#039;types&#039; =&gt; array(&#039;required&#039;), &#039;fields&#039; =&gt; array(&#039;required&#039;, &#039;in:path(name\,type\,level)&#039;), &#039;action&#039; =&gt; array(&#039;required&#039;, &#039;in:base-stations:create,contract-infos:create,device-types:create,devices:create,hosts:create,maintenances:create,providers:create,sites:create,users:create&#039;), &#039;sort&#039; =&gt; array(&#039;required&#039;, &#039;in:id,-id,name,-name&#039;), &#039;authorizations&#039; =&gt; array(&#039;required&#039;), &#039;limit&#039; =&gt; array(&#039;required&#039;), &#039;offset&#039; =&gt; array(&#039;required&#039;), &#039;pageId&#039; =&gt; array(&#039;required&#039;))</span></code>
+     = <span class="phpdocumentor-signature__default-value">array(&#039;fields&#039; =&gt; array(&#039;in:path(name\,type\,level)&#039;, &#039;nullable&#039;), &#039;action&#039; =&gt; array(&#039;in:base-stations:create,contract-infos:create,device-types:create,devices:create,hosts:create,maintenances:create,providers:create,sites:create,users:create&#039;, &#039;nullable&#039;), &#039;sort&#039; =&gt; array(&#039;in:id,-id,name,-name&#039;, &#039;nullable&#039;))</span></code>
 
     
     
@@ -1187,14 +1278,397 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getSerializeMetaData">
-        getSerializeMetaData()
-        <a href="classes/Arimac-Sigfox-Definition.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getAction">
+        getAction()
+        <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getAction" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">278</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for action</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getAction</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Defines a resource:action pair the user has access on groups.</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getAuthorizations">
+        getAuthorizations()
+        <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getAuthorizations" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">322</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for authorizations</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getAuthorizations</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>if true, we return the list of actions and resources the user has access</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getBodyFields">
+        getBodyFields()
+        <a href="classes/Arimac-Sigfox-Request.html#method_getBodyFields" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request.php"><a href="files/src-request.html"><abbr title="src/Request.php">Request.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">15</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returning all property names for request body</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getBodyFields</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getDeep">
+        getDeep()
+        <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getDeep" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">168</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for deep</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getDeep</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Retrieve all sub-groups</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getFields">
+        getFields()
+        <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getFields" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">255</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for fields</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getFields</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Defines the other available fields to be returned in the response.</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getLimit">
+        getLimit()
+        <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getLimit" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">343</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for limit</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getLimit</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>The maximum number of items to return</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getName">
+        getName()
+        <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getName" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">189</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for name</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getName</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Searches for groups containing the given text in their name</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getOffset">
+        getOffset()
+        <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getOffset" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">364</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for offset</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getOffset</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>The number of items to skip</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getPageId">
+        getPageId()
+        <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getPageId" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">385</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for pageId</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getPageId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Token representing the page to retrieve</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getParentIds">
+        getParentIds()
+        <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getParentIds" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">147</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for parentIds</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getParentIds</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>The parent group's identifiers from which the children will be fetched</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getQueryFields">
+        getQueryFields()
+        <a href="classes/Arimac-Sigfox-Request.html#method_getQueryFields" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request.php"><a href="files/src-request.html"><abbr title="src/Request.php">Request.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">24</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returning all property names for query string</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getQueryFields</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getSerializeMetaData">
+        getSerializeMetaData()
+        <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">392</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returning all meta data to serialize and deserialize objects</p>
@@ -1207,11 +1681,125 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getSort">
+        getSort()
+        <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getSort" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">301</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for sort</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getSort</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>The field on which the list will be sorted. (field to sort ascending or -field to sort
+descending)</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getTypes">
+        getTypes()
+        <a href="classes/Arimac-Sigfox-Request-GroupsList.html#method_getTypes" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">232</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for types</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getTypes</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, int&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Group's type</p>
+<ul>
+<li>
+<a href="classes/Arimac-Sigfox-Request-GroupsList.html#constant_TYPES_SO"><abbr title="\Arimac\Sigfox\Request\GroupsList::TYPES_SO">GroupsList::TYPES_SO</abbr></a>
+</li>
+<li>
+<a href="classes/Arimac-Sigfox-Request-GroupsList.html#constant_TYPES_OTHER"><abbr title="\Arimac\Sigfox\Request\GroupsList::TYPES_OTHER">GroupsList::TYPES_OTHER</abbr></a>
+</li>
+<li>
+<a href="classes/Arimac-Sigfox-Request-GroupsList.html#constant_TYPES_SVNO"><abbr title="\Arimac\Sigfox\Request\GroupsList::TYPES_SVNO">GroupsList::TYPES_SVNO</abbr></a>
+</li>
+<li>
+<a href="classes/Arimac-Sigfox-Request-GroupsList.html#constant_TYPES_PARTNERS"><abbr title="\Arimac\Sigfox\Request\GroupsList::TYPES_PARTNERS">GroupsList::TYPES_PARTNERS</abbr></a>
+</li>
+<li>
+<a href="classes/Arimac-Sigfox-Request-GroupsList.html#constant_TYPES_NIP"><abbr title="\Arimac\Sigfox\Request\GroupsList::TYPES_NIP">GroupsList::TYPES_NIP</abbr></a>
+</li>
+<li>
+<a href="classes/Arimac-Sigfox-Request-GroupsList.html#constant_TYPES_DIST"><abbr title="\Arimac\Sigfox\Request\GroupsList::TYPES_DIST">GroupsList::TYPES_DIST</abbr></a>
+</li>
+<li>
+<a href="classes/Arimac-Sigfox-Request-GroupsList.html#constant_TYPES_CHANNEL"><abbr title="\Arimac\Sigfox\Request\GroupsList::TYPES_CHANNEL">GroupsList::TYPES_CHANNEL</abbr></a>
+</li>
+<li>
+<a href="classes/Arimac-Sigfox-Request-GroupsList.html#constant_TYPES_STARTER"><abbr title="\Arimac\Sigfox\Request\GroupsList::TYPES_STARTER">GroupsList::TYPES_STARTER</abbr></a>
+</li>
+<li>
+<a href="classes/Arimac-Sigfox-Request-GroupsList.html#constant_TYPES_PARTNER"><abbr title="\Arimac\Sigfox\Request\GroupsList::TYPES_PARTNER">GroupsList::TYPES_PARTNER</abbr></a>
+</li>
+</ul>
+</section>
 
     
 </article>
@@ -1228,7 +1816,7 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returning the weather the class is extendable or not</p>
@@ -1241,6 +1829,20 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
@@ -1262,7 +1864,7 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">211</span>
+    <span class="phpdocumentor-element-found-in__line">267</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for action</p>
@@ -1309,7 +1911,7 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">236</span>
+    <span class="phpdocumentor-element-found-in__line">312</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for authorizations</p>
@@ -1356,7 +1958,7 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">150</span>
+    <span class="phpdocumentor-element-found-in__line">158</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for deep</p>
@@ -1403,7 +2005,7 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">198</span>
+    <span class="phpdocumentor-element-found-in__line">244</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for fields</p>
@@ -1450,7 +2052,7 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">248</span>
+    <span class="phpdocumentor-element-found-in__line">333</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for limit</p>
@@ -1497,7 +2099,7 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">162</span>
+    <span class="phpdocumentor-element-found-in__line">179</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for name</p>
@@ -1544,7 +2146,7 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">260</span>
+    <span class="phpdocumentor-element-found-in__line">354</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for offset</p>
@@ -1591,7 +2193,7 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">272</span>
+    <span class="phpdocumentor-element-found-in__line">375</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for pageId</p>
@@ -1638,7 +2240,7 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">138</span>
+    <span class="phpdocumentor-element-found-in__line">137</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for parentIds</p>
@@ -1685,7 +2287,7 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">224</span>
+    <span class="phpdocumentor-element-found-in__line">290</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for sort</p>
@@ -1733,7 +2335,7 @@ descending)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsList.php"><a href="files/src-request-groupslist.html"><abbr title="src/Request/GroupsList.php">GroupsList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">185</span>
+    <span class="phpdocumentor-element-found-in__line">211</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for types</p>

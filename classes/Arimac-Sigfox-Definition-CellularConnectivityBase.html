@@ -191,13 +191,6 @@ unset by setting the value as an empty string.</dd>
 <dd>Indicates if the cellular connectivity is registered on a roaming network.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Definition-CellularConnectivityBase.html#property_serialize">$serialize</a>
-    <span>
-                &nbsp;: mixed            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Definition-CellularConnectivityBase.html#property_source">$source</a>
     <span>
                 &nbsp;: int|null            </span>
@@ -215,7 +208,7 @@ be unset by setting the value as an empty string.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Definition-CellularConnectivityBase.html#property_validations">$validations</a>
     <span>
-                &nbsp;: mixed            </span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd></dd>
 
@@ -255,7 +248,7 @@ be unset by setting the value as an empty string.</dd>
 <dd>Getter for roaming</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Definition.html#method_getSerializeMetaData">getSerializeMetaData()</a>
+    <a href="classes/Arimac-Sigfox-Definition-CellularConnectivityBase.html#method_getSerializeMetaData">getSerializeMetaData()</a>
     <span>
                         &nbsp;: array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;    </span>
 </dt>
@@ -505,7 +498,7 @@ be unset by setting the value as an empty string.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 </aside>
 
     
@@ -686,36 +679,6 @@ unset by setting the value as an empty string.</p>
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_serialize">
-        $serialize
-        <a href="classes/Arimac-Sigfox-Definition-CellularConnectivityBase.html#property_serialize" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CellularConnectivityBase.php"><a href="files/src-definition-cellularconnectivitybase.html"><abbr title="src/Definition/CellularConnectivityBase.php">CellularConnectivityBase.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">75</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">$serialize</span>
-     = <span class="phpdocumentor-signature__default-value">array(new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;name&#039;, &#039;string&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;apn&#039;, &#039;string&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;username&#039;, &#039;string&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;password&#039;, &#039;string&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;pin&#039;, &#039;string&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;roaming&#039;, &#039;bool&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;source&#039;, &#039;int&#039;))</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="property_source">
         $source
         <a href="classes/Arimac-Sigfox-Definition-CellularConnectivityBase.html#property_source" class="headerlink"><i class="fas fa-link"></i></a>
@@ -804,13 +767,13 @@ be unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CellularConnectivityBase.php"><a href="files/src-definition-cellularconnectivitybase.html"><abbr title="src/Definition/CellularConnectivityBase.php">CellularConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">76</span>
+    <span class="phpdocumentor-element-found-in__line">75</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$validations</span>
      = <span class="phpdocumentor-signature__default-value">array(&#039;name&#039; =&gt; array(&#039;required&#039;), &#039;apn&#039; =&gt; array(&#039;required&#039;))</span></code>
 
@@ -838,7 +801,7 @@ be unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CellularConnectivityBase.php"><a href="files/src-definition-cellularconnectivitybase.html"><abbr title="src/Definition/CellularConnectivityBase.php">CellularConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">115</span>
+    <span class="phpdocumentor-element-found-in__line">114</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for apn</p>
@@ -873,7 +836,7 @@ be unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CellularConnectivityBase.php"><a href="files/src-definition-cellularconnectivitybase.html"><abbr title="src/Definition/CellularConnectivityBase.php">CellularConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for name</p>
@@ -908,7 +871,7 @@ be unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CellularConnectivityBase.php"><a href="files/src-definition-cellularconnectivitybase.html"><abbr title="src/Definition/CellularConnectivityBase.php">CellularConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">161</span>
+    <span class="phpdocumentor-element-found-in__line">160</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for password</p>
@@ -944,7 +907,7 @@ This field can be unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CellularConnectivityBase.php"><a href="files/src-definition-cellularconnectivitybase.html"><abbr title="src/Definition/CellularConnectivityBase.php">CellularConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">184</span>
+    <span class="phpdocumentor-element-found-in__line">183</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for pin</p>
@@ -980,7 +943,7 @@ field can be unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CellularConnectivityBase.php"><a href="files/src-definition-cellularconnectivitybase.html"><abbr title="src/Definition/CellularConnectivityBase.php">CellularConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">205</span>
+    <span class="phpdocumentor-element-found-in__line">204</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for roaming</p>
@@ -1010,12 +973,12 @@ field can be unset by setting the value as an empty string.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_getSerializeMetaData">
         getSerializeMetaData()
-        <a href="classes/Arimac-Sigfox-Definition.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Arimac-Sigfox-Definition-CellularConnectivityBase.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CellularConnectivityBase.php"><a href="files/src-definition-cellularconnectivitybase.html"><abbr title="src/Definition/CellularConnectivityBase.php">CellularConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">244</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returning all meta data to serialize and deserialize objects</p>
@@ -1028,6 +991,20 @@ field can be unset by setting the value as an empty string.</p>
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;</span>
@@ -1049,7 +1026,7 @@ field can be unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CellularConnectivityBase.php"><a href="files/src-definition-cellularconnectivitybase.html"><abbr title="src/Definition/CellularConnectivityBase.php">CellularConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">238</span>
+    <span class="phpdocumentor-element-found-in__line">237</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for source</p>
@@ -1098,7 +1075,7 @@ field can be unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CellularConnectivityBase.php"><a href="files/src-definition-cellularconnectivitybase.html"><abbr title="src/Definition/CellularConnectivityBase.php">CellularConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">138</span>
+    <span class="phpdocumentor-element-found-in__line">137</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for username</p>
@@ -1134,7 +1111,7 @@ This field can be unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returning the weather the class is extendable or not</p>
@@ -1147,6 +1124,20 @@ This field can be unset by setting the value as an empty string.</p>
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
@@ -1168,7 +1159,7 @@ This field can be unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CellularConnectivityBase.php"><a href="files/src-definition-cellularconnectivitybase.html"><abbr title="src/Definition/CellularConnectivityBase.php">CellularConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">105</span>
+    <span class="phpdocumentor-element-found-in__line">104</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for apn</p>
@@ -1215,7 +1206,7 @@ This field can be unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CellularConnectivityBase.php"><a href="files/src-definition-cellularconnectivitybase.html"><abbr title="src/Definition/CellularConnectivityBase.php">CellularConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">83</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for name</p>
@@ -1262,7 +1253,7 @@ This field can be unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CellularConnectivityBase.php"><a href="files/src-definition-cellularconnectivitybase.html"><abbr title="src/Definition/CellularConnectivityBase.php">CellularConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">150</span>
+    <span class="phpdocumentor-element-found-in__line">149</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for password</p>
@@ -1310,7 +1301,7 @@ configuration. This field can be unset by setting the value as an empty string.<
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CellularConnectivityBase.php"><a href="files/src-definition-cellularconnectivitybase.html"><abbr title="src/Definition/CellularConnectivityBase.php">CellularConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">173</span>
+    <span class="phpdocumentor-element-found-in__line">172</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for pin</p>
@@ -1358,7 +1349,7 @@ This field can be unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CellularConnectivityBase.php"><a href="files/src-definition-cellularconnectivitybase.html"><abbr title="src/Definition/CellularConnectivityBase.php">CellularConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">195</span>
+    <span class="phpdocumentor-element-found-in__line">194</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for roaming</p>
@@ -1405,7 +1396,7 @@ This field can be unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CellularConnectivityBase.php"><a href="files/src-definition-cellularconnectivitybase.html"><abbr title="src/Definition/CellularConnectivityBase.php">CellularConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">222</span>
+    <span class="phpdocumentor-element-found-in__line">221</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for source</p>
@@ -1466,7 +1457,7 @@ This field can be unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/CellularConnectivityBase.php"><a href="files/src-definition-cellularconnectivitybase.html"><abbr title="src/Definition/CellularConnectivityBase.php">CellularConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">127</span>
+    <span class="phpdocumentor-element-found-in__line">126</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for username</p>

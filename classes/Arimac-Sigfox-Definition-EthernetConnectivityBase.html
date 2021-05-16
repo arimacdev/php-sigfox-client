@@ -219,13 +219,6 @@ the value to null.</dd>
 <dd></dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Definition-EthernetConnectivityBase.html#property_serialize">$serialize</a>
-    <span>
-                &nbsp;: mixed            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Definition-EthernetConnectivityBase.html#property_source">$source</a>
     <span>
                 &nbsp;: int|null            </span>
@@ -242,7 +235,7 @@ the value to null.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Definition-EthernetConnectivityBase.html#property_validations">$validations</a>
     <span>
-                &nbsp;: mixed            </span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd></dd>
 
@@ -296,7 +289,7 @@ the value to null.</dd>
 <dd>Getter for name</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Definition.html#method_getSerializeMetaData">getSerializeMetaData()</a>
+    <a href="classes/Arimac-Sigfox-Definition-EthernetConnectivityBase.html#method_getSerializeMetaData">getSerializeMetaData()</a>
     <span>
                         &nbsp;: array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;    </span>
 </dt>
@@ -647,7 +640,7 @@ setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 </aside>
 
     
@@ -859,36 +852,6 @@ the value to null.</p>
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_serialize">
-        $serialize
-        <a href="classes/Arimac-Sigfox-Definition-EthernetConnectivityBase.html#property_serialize" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">97</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">$serialize</span>
-     = <span class="phpdocumentor-signature__default-value">array(new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;name&#039;, &#039;string&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;type&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;ip&#039;, &#039;string&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;mask&#039;, &#039;string&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;dns1&#039;, &#039;string&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;dns2&#039;, &#039;string&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;gateway&#039;, &#039;string&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;mtu&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;source&#039;, &#039;int&#039;))</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="property_source">
         $source
         <a href="classes/Arimac-Sigfox-Definition-EthernetConnectivityBase.html#property_source" class="headerlink"><i class="fas fa-link"></i></a>
@@ -984,13 +947,13 @@ the value to null.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">98</span>
+    <span class="phpdocumentor-element-found-in__line">97</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$validations</span>
      = <span class="phpdocumentor-signature__default-value">array(&#039;name&#039; =&gt; array(&#039;required&#039;), &#039;type&#039; =&gt; array(&#039;required&#039;))</span></code>
 
@@ -1018,7 +981,7 @@ the value to null.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">208</span>
+    <span class="phpdocumentor-element-found-in__line">207</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for dns1</p>
@@ -1053,7 +1016,7 @@ the value to null.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">231</span>
+    <span class="phpdocumentor-element-found-in__line">230</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for dns2</p>
@@ -1089,7 +1052,7 @@ unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">252</span>
+    <span class="phpdocumentor-element-found-in__line">251</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for gateway</p>
@@ -1124,7 +1087,7 @@ unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">166</span>
+    <span class="phpdocumentor-element-found-in__line">165</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for ip</p>
@@ -1159,7 +1122,7 @@ unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">187</span>
+    <span class="phpdocumentor-element-found-in__line">186</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for mask</p>
@@ -1194,7 +1157,7 @@ unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">275</span>
+    <span class="phpdocumentor-element-found-in__line">274</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for mtu</p>
@@ -1230,7 +1193,7 @@ by setting the value to null.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">116</span>
+    <span class="phpdocumentor-element-found-in__line">115</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for name</p>
@@ -1260,12 +1223,12 @@ by setting the value to null.</p>
 >
     <h4 class="phpdocumentor-element__name" id="method_getSerializeMetaData">
         getSerializeMetaData()
-        <a href="classes/Arimac-Sigfox-Definition.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Arimac-Sigfox-Definition-EthernetConnectivityBase.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">314</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returning all meta data to serialize and deserialize objects</p>
@@ -1278,6 +1241,20 @@ by setting the value to null.</p>
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;</span>
@@ -1299,7 +1276,7 @@ by setting the value to null.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">308</span>
+    <span class="phpdocumentor-element-found-in__line">307</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for source</p>
@@ -1348,7 +1325,7 @@ by setting the value to null.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">145</span>
+    <span class="phpdocumentor-element-found-in__line">144</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for type</p>
@@ -1391,7 +1368,7 @@ by setting the value to null.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returning the weather the class is extendable or not</p>
@@ -1404,6 +1381,20 @@ by setting the value to null.</p>
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
@@ -1425,7 +1416,7 @@ by setting the value to null.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">198</span>
+    <span class="phpdocumentor-element-found-in__line">197</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for dns1</p>
@@ -1472,7 +1463,7 @@ by setting the value to null.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">220</span>
+    <span class="phpdocumentor-element-found-in__line">219</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for dns2</p>
@@ -1520,7 +1511,7 @@ can be unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">242</span>
+    <span class="phpdocumentor-element-found-in__line">241</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for gateway</p>
@@ -1567,7 +1558,7 @@ can be unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">156</span>
+    <span class="phpdocumentor-element-found-in__line">155</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for ip</p>
@@ -1614,7 +1605,7 @@ can be unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">177</span>
+    <span class="phpdocumentor-element-found-in__line">176</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for mask</p>
@@ -1661,7 +1652,7 @@ can be unset by setting the value as an empty string.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">264</span>
+    <span class="phpdocumentor-element-found-in__line">263</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for mtu</p>
@@ -1709,7 +1700,7 @@ unset by setting the value to null.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">106</span>
+    <span class="phpdocumentor-element-found-in__line">105</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for name</p>
@@ -1756,7 +1747,7 @@ unset by setting the value to null.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">292</span>
+    <span class="phpdocumentor-element-found-in__line">291</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for source</p>
@@ -1817,7 +1808,7 @@ unset by setting the value to null.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition/EthernetConnectivityBase.php"><a href="files/src-definition-ethernetconnectivitybase.html"><abbr title="src/Definition/EthernetConnectivityBase.php">EthernetConnectivityBase.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">131</span>
+    <span class="phpdocumentor-element-found-in__line">130</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for type</p>

@@ -83,7 +83,7 @@
     DeviceTypesList
 
         <span class="phpdocumentor-element__extends">
-        extends <a href="classes/Arimac-Sigfox-Definition.html"><abbr title="\Arimac\Sigfox\Definition">Definition</abbr></a>
+        extends <a href="classes/Arimac-Sigfox-Request.html"><abbr title="\Arimac\Sigfox\Request">Request</abbr></a>
     </span>
     
     
@@ -163,6 +163,13 @@
 <dd>if true, we return the list of actions and resources the user has access</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/Arimac-Sigfox-Request.html#property_body">$body</a>
+    <span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
+</dt>
+<dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#property_contractId">$contractId</a>
     <span>
                 &nbsp;: string|null            </span>
@@ -236,7 +243,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#property_query">$query</a>
     <span>
-                &nbsp;: mixed            </span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd></dd>
 
@@ -244,13 +251,6 @@
     <a href="classes/Arimac-Sigfox-Definition.html#property_required">$required</a>
     <span>
                 &nbsp;: array&lt;string|int, mixed&gt;            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#property_serialize">$serialize</a>
-    <span>
-                &nbsp;: mixed            </span>
 </dt>
 <dd></dd>
 
@@ -264,16 +264,107 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#property_validations">$validations</a>
     <span>
-                &nbsp;: mixed            </span>
+                &nbsp;: array&lt;string|int, mixed&gt;            </span>
 </dt>
 <dd></dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Definition.html#method_getSerializeMetaData">getSerializeMetaData()</a>
+    <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getAuthorizations">getAuthorizations()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Getter for authorizations</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request.html#method_getBodyFields">getBodyFields()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, string&gt;    </span>
+</dt>
+<dd>Returning all property names for request body</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getContractId">getContractId()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Getter for contractId</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getDeep">getDeep()</a>
+    <span>
+                        &nbsp;: bool    </span>
+</dt>
+<dd>Getter for deep</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getFields">getFields()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Getter for fields</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getGroupIds">getGroupIds()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, string&gt;    </span>
+</dt>
+<dd>Getter for groupIds</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getLimit">getLimit()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd>Getter for limit</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getName">getName()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Getter for name</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getOffset">getOffset()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd>Getter for offset</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getPageId">getPageId()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Getter for pageId</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getPayloadType">getPayloadType()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd>Getter for payloadType</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request.html#method_getQueryFields">getQueryFields()</a>
+    <span>
+                        &nbsp;: array&lt;string|int, string&gt;    </span>
+</dt>
+<dd>Returning all property names for query string</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getSerializeMetaData">getSerializeMetaData()</a>
     <span>
                         &nbsp;: array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;    </span>
 </dt>
 <dd>Returning all meta data to serialize and deserialize objects</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getSort">getSort()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Getter for sort</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Definition.html#method_isExtendable">isExtendable()</a>
@@ -578,6 +669,36 @@
             -protected
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="property_body">
+        $body
+        <a href="classes/Arimac-Sigfox-Request.html#property_body" class="headerlink"><i class="fas fa-link"></i></a>
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request.php"><a href="files/src-request.html"><abbr title="src/Request.php">Request.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">6</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
+    <span class="phpdocumentor-signature__name">$body</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -protected
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="property_contractId">
         $contractId
         <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#property_contractId" class="headerlink"><i class="fas fa-link"></i></a>
@@ -651,7 +772,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 </aside>
 
     
@@ -926,13 +1047,13 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">112</span>
+    <span class="phpdocumentor-element-found-in__line">111</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$query</span>
      = <span class="phpdocumentor-signature__default-value">array(&#039;name&#039;, &#039;groupIds&#039;, &#039;deep&#039;, &#039;contractId&#039;, &#039;payloadType&#039;, &#039;authorizations&#039;, &#039;sort&#039;, &#039;fields&#039;, &#039;limit&#039;, &#039;offset&#039;, &#039;pageId&#039;)</span></code>
 
@@ -965,36 +1086,6 @@
         <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$required</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
-
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_serialize">
-        $serialize
-        <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#property_serialize" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">111</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
-    <span class="phpdocumentor-signature__name">$serialize</span>
-     = <span class="phpdocumentor-signature__default-value">array(new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;name&#039;, &#039;string&#039;), new ArimacSigfoxSerializerArraySerializer(self::class, &#039;groupIds&#039;, new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;groupIds&#039;, &#039;string&#039;)), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;deep&#039;, &#039;bool&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;contractId&#039;, &#039;string&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;payloadType&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;authorizations&#039;, &#039;bool&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;sort&#039;, &#039;string&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;fields&#039;, &#039;string&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;limit&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;offset&#039;, &#039;int&#039;), new ArimacSigfoxSerializerPrimitiveSerializer(self::class, &#039;pageId&#039;, &#039;string&#039;))</span></code>
 
     
     
@@ -1048,15 +1139,15 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">113</span>
+    <span class="phpdocumentor-element-found-in__line">112</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">mixed</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
     <span class="phpdocumentor-signature__name">$validations</span>
-     = <span class="phpdocumentor-signature__default-value">array(&#039;name&#039; =&gt; array(&#039;required&#039;), &#039;groupIds&#039; =&gt; array(&#039;required&#039;), &#039;deep&#039; =&gt; array(&#039;required&#039;), &#039;contractId&#039; =&gt; array(&#039;required&#039;), &#039;payloadType&#039; =&gt; array(&#039;required&#039;), &#039;authorizations&#039; =&gt; array(&#039;required&#039;), &#039;sort&#039; =&gt; array(&#039;required&#039;, &#039;in:id,-id,name,-name&#039;), &#039;fields&#039; =&gt; array(&#039;required&#039;, &#039;in:group(name\,type\,level),contract(name),geolocPayloadConfig(name)&#039;), &#039;limit&#039; =&gt; array(&#039;required&#039;), &#039;offset&#039; =&gt; array(&#039;required&#039;), &#039;pageId&#039; =&gt; array(&#039;required&#039;))</span></code>
+     = <span class="phpdocumentor-signature__default-value">array(&#039;sort&#039; =&gt; array(&#039;in:id,-id,name,-name&#039;, &#039;nullable&#039;), &#039;fields&#039; =&gt; array(&#039;in:group(name\,type\,level),contract(name),geolocPayloadConfig(name)&#039;, &#039;nullable&#039;))</span></code>
 
     
     
@@ -1075,14 +1166,453 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getSerializeMetaData">
-        getSerializeMetaData()
-        <a href="classes/Arimac-Sigfox-Definition.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getAuthorizations">
+        getAuthorizations()
+        <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getAuthorizations" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">257</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for authorizations</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getAuthorizations</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>if true, we return the list of actions and resources the user has access</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getBodyFields">
+        getBodyFields()
+        <a href="classes/Arimac-Sigfox-Request.html#method_getBodyFields" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request.php"><a href="files/src-request.html"><abbr title="src/Request.php">Request.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">15</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returning all property names for request body</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getBodyFields</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getContractId">
+        getContractId()
+        <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getContractId" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">199</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for contractId</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getContractId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Searches for device types which are attached to the given contract.</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getDeep">
+        getDeep()
+        <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getDeep" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">178</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for deep</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getDeep</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">bool</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>If a group identifier is specified, also includes its subgroups.</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getFields">
+        getFields()
+        <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getFields" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">303</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for fields</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getFields</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Defines the other available API user's fields to be returned in the response.</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getGroupIds">
+        getGroupIds()
+        <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getGroupIds" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">157</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for groupIds</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getGroupIds</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Search for device types which are attached to a Group. Example:
+?groupIds=57309674171c857460043087,57309674171c857460043088</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getLimit">
+        getLimit()
+        <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getLimit" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">324</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for limit</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getLimit</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Defines the maximum number of items to return</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getName">
+        getName()
+        <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getName" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">132</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for name</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getName</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Search returns all Device Type names containing the value. Example: ?name=sig</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getOffset">
+        getOffset()
+        <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getOffset" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">345</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for offset</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getOffset</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Defines the number of items to skip</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getPageId">
+        getPageId()
+        <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getPageId" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">366</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for pageId</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getPageId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Token representing the page to retrieve</p>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getPayloadType">
+        getPayloadType()
+        <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getPayloadType" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">236</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for payloadType</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getPayloadType</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>Searches device types by payload type</p>
+<ul>
+<li>
+<a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#constant_PAYLOAD_TYPE_REGULAR"><abbr title="\Arimac\Sigfox\Request\DeviceTypesList::PAYLOAD_TYPE_REGULAR">DeviceTypesList::PAYLOAD_TYPE_REGULAR</abbr></a>
+</li>
+<li>
+<a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#constant_PAYLOAD_TYPE_CUSTOM_GRAMMAR"><abbr title="\Arimac\Sigfox\Request\DeviceTypesList::PAYLOAD_TYPE_CUSTOM_GRAMMAR">DeviceTypesList::PAYLOAD_TYPE_CUSTOM_GRAMMAR</abbr></a>
+</li>
+<li>
+<a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#constant_PAYLOAD_TYPE_GEOLOCATION"><abbr title="\Arimac\Sigfox\Request\DeviceTypesList::PAYLOAD_TYPE_GEOLOCATION">DeviceTypesList::PAYLOAD_TYPE_GEOLOCATION</abbr></a>
+</li>
+<li>
+<a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#constant_PAYLOAD_TYPE_DISPLAY_IN_ASCII"><abbr title="\Arimac\Sigfox\Request\DeviceTypesList::PAYLOAD_TYPE_DISPLAY_IN_ASCII">DeviceTypesList::PAYLOAD_TYPE_DISPLAY_IN_ASCII</abbr></a>
+</li>
+<li>
+<a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#constant_PAYLOAD_TYPE_RADIO_PLANNING_FRAME"><abbr title="\Arimac\Sigfox\Request\DeviceTypesList::PAYLOAD_TYPE_RADIO_PLANNING_FRAME">DeviceTypesList::PAYLOAD_TYPE_RADIO_PLANNING_FRAME</abbr></a>
+</li>
+<li>
+<a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#constant_PAYLOAD_TYPE_SENSITV2"><abbr title="\Arimac\Sigfox\Request\DeviceTypesList::PAYLOAD_TYPE_SENSITV2">DeviceTypesList::PAYLOAD_TYPE_SENSITV2</abbr></a>
+</li>
+</ul>
+</section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getQueryFields">
+        getQueryFields()
+        <a href="classes/Arimac-Sigfox-Request.html#method_getQueryFields" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request.php"><a href="files/src-request.html"><abbr title="src/Request.php">Request.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">24</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returning all property names for query string</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getQueryFields</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, string&gt;</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getSerializeMetaData">
+        getSerializeMetaData()
+        <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getSerializeMetaData" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">373</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returning all meta data to serialize and deserialize objects</p>
@@ -1095,11 +1625,61 @@
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">array&lt;string|int, <abbr title="\Arimac\Sigfox\Serializer\Impl\Serializer">Serializer</abbr>&gt;</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getSort">
+        getSort()
+        <a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html#method_getSort" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">280</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getter for sort</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getSort</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>The field on which the list will be sorted. (field to sort ascending or -field to sort
+descending).</p>
+</section>
 
     
 </article>
@@ -1116,7 +1696,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Definition.php"><a href="files/src-definition.html"><abbr title="src/Definition.php">Definition.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">24</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returning the weather the class is extendable or not</p>
@@ -1129,6 +1709,20 @@
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">inheritdoc</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">bool</span>
@@ -1150,7 +1744,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">192</span>
+    <span class="phpdocumentor-element-found-in__line">247</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for authorizations</p>
@@ -1197,7 +1791,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">160</span>
+    <span class="phpdocumentor-element-found-in__line">189</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for contractId</p>
@@ -1244,7 +1838,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">148</span>
+    <span class="phpdocumentor-element-found-in__line">168</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for deep</p>
@@ -1291,7 +1885,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">218</span>
+    <span class="phpdocumentor-element-found-in__line">292</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for fields</p>
@@ -1338,7 +1932,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">136</span>
+    <span class="phpdocumentor-element-found-in__line">145</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for groupIds</p>
@@ -1386,7 +1980,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">230</span>
+    <span class="phpdocumentor-element-found-in__line">314</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for limit</p>
@@ -1433,7 +2027,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">122</span>
+    <span class="phpdocumentor-element-found-in__line">121</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for name</p>
@@ -1480,7 +2074,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">242</span>
+    <span class="phpdocumentor-element-found-in__line">335</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for offset</p>
@@ -1527,7 +2121,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">254</span>
+    <span class="phpdocumentor-element-found-in__line">356</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for pageId</p>
@@ -1574,7 +2168,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">180</span>
+    <span class="phpdocumentor-element-found-in__line">218</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for payloadType</p>
@@ -1641,7 +2235,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DeviceTypesList.php"><a href="files/src-request-devicetypeslist.html"><abbr title="src/Request/DeviceTypesList.php">DeviceTypesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">205</span>
+    <span class="phpdocumentor-element-found-in__line">269</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for sort</p>

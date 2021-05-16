@@ -82,6 +82,9 @@
         <h2 class="phpdocumentor-content__title">
     DevicesBulk
 
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/Arimac-Sigfox-Repository.html"><abbr title="\Arimac\Sigfox\Repository">Repository</abbr></a>
+    </span>
     
     
     
@@ -90,7 +93,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">22</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 </aside>
 
         
@@ -185,6 +188,13 @@
 </dt>
 <dd>Update or edit multiple devices with asynchronous job.</dd>
 
+            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
+    <a href="classes/Arimac-Sigfox-Repository.html#method_bind">bind()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Binding path parameters to the URL</dd>
+
         </dl>
 
 
@@ -213,7 +223,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">27</span>
+    <span class="phpdocumentor-element-found-in__line">31</span>
 </aside>
 
         <p class="phpdocumentor-summary">The HTTP client</p>
@@ -249,7 +259,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">37</span>
 </aside>
 
         <p class="phpdocumentor-summary">Creating the repository</p>
@@ -295,25 +305,27 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">40</span>
+    <span class="phpdocumentor-element-found-in__line">48</span>
 </aside>
 
         <p class="phpdocumentor-summary">Create multiple new devices with asynchronous job</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">create</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesBulkCreate.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkCreate">DevicesBulkCreate</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DevicesBulkCreateResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesBulkCreateResponse">DevicesBulkCreateResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">create</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-AsynchronousDeviceCreationJob.html"><abbr title="\Arimac\Sigfox\Definition\AsynchronousDeviceCreationJob">AsynchronousDeviceCreationJob</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$devices</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DevicesBulkCreateResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesBulkCreateResponse">DevicesBulkCreateResponse</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesBulkCreate.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkCreate">DevicesBulkCreate</abbr></a></span>
+                <span class="phpdocumentor-signature__argument__name">$devices</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-AsynchronousDeviceCreationJob.html"><abbr title="\Arimac\Sigfox\Definition\AsynchronousDeviceCreationJob">AsynchronousDeviceCreationJob</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The devices to create</p>
+</section>
+
             </dd>
             </dl>
 
@@ -339,7 +351,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 </aside>
 
         <p class="phpdocumentor-summary">Find by jobId</p>
@@ -385,25 +397,27 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">72</span>
+    <span class="phpdocumentor-element-found-in__line">96</span>
 </aside>
 
         <p class="phpdocumentor-summary">Replace multiple devices (moving tokens from one device to another) with synchronous job</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">replace</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesBulkReplace.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkReplace">DevicesBulkReplace</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-ReplaceResponse.html"><abbr title="\Arimac\Sigfox\Definition\ReplaceResponse">ReplaceResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">replace</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-AsynchronousDeviceReplacementJob.html"><abbr title="\Arimac\Sigfox\Definition\AsynchronousDeviceReplacementJob">AsynchronousDeviceReplacementJob</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$devicePairs</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-ReplaceResponse.html"><abbr title="\Arimac\Sigfox\Definition\ReplaceResponse">ReplaceResponse</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesBulkReplace.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkReplace">DevicesBulkReplace</abbr></a></span>
+                <span class="phpdocumentor-signature__argument__name">$devicePairs</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-AsynchronousDeviceReplacementJob.html"><abbr title="\Arimac\Sigfox\Definition\AsynchronousDeviceReplacementJob">AsynchronousDeviceReplacementJob</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>Pairs of source and target devices</p>
+</section>
+
             </dd>
             </dl>
 
@@ -429,7 +443,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">86</span>
+    <span class="phpdocumentor-element-found-in__line">116</span>
 </aside>
 
     
@@ -462,7 +476,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">114</span>
+    <span class="phpdocumentor-element-found-in__line">152</span>
 </aside>
 
     
@@ -495,7 +509,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">100</span>
+    <span class="phpdocumentor-element-found-in__line">134</span>
 </aside>
 
     
@@ -528,25 +542,27 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">65</span>
+    <span class="phpdocumentor-element-found-in__line">83</span>
 </aside>
 
         <p class="phpdocumentor-summary">Transfer multiple devices to another device type with asynchronous job</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">transfer</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesBulkTransfer.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkTransfer">DevicesBulkTransfer</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DevicesBulkTransferResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesBulkTransferResponse">DevicesBulkTransferResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">transfer</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-AsynchronousDeviceTransferJob.html"><abbr title="\Arimac\Sigfox\Definition\AsynchronousDeviceTransferJob">AsynchronousDeviceTransferJob</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$devices</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DevicesBulkTransferResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesBulkTransferResponse">DevicesBulkTransferResponse</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesBulkTransfer.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkTransfer">DevicesBulkTransfer</abbr></a></span>
+                <span class="phpdocumentor-signature__argument__name">$devices</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-AsynchronousDeviceTransferJob.html"><abbr title="\Arimac\Sigfox\Definition\AsynchronousDeviceTransferJob">AsynchronousDeviceTransferJob</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The devices to move</p>
+</section>
+
             </dd>
             </dl>
 
@@ -572,7 +588,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">128</span>
+    <span class="phpdocumentor-element-found-in__line">170</span>
 </aside>
 
     
@@ -605,7 +621,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">47</span>
+    <span class="phpdocumentor-element-found-in__line">61</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update or edit multiple devices with asynchronous job.</p>
@@ -623,7 +639,9 @@
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesBulkUpdate.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkUpdate">DevicesBulkUpdate</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                
+                    <section class="phpdocumentor-description"><p>The query and body parameters to pass</p>
+</section>
+
             </dd>
             </dl>
 
@@ -633,6 +651,62 @@
     <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DevicesBulkUpdateResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesBulkUpdateResponse">DevicesBulkUpdateResponse</abbr></a></span>
             &mdash;
             <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_bind">
+        bind()
+        <a href="classes/Arimac-Sigfox-Repository.html#method_bind" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Repository.php"><a href="files/src-repository.html"><abbr title="src/Repository.php">Repository.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">14</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Binding path parameters to the URL</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                <span class="phpdocumentor-signature__name">bind</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$url</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$url</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>URL with path parameter names. Example:- <code class="prettyprint">/user/{id}</code></p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$params</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Value to replace path parameters</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">string</span>
+            &mdash;
+            <section class="phpdocumentor-description"><p>URL with replaced path parameter values</p>
+</section>
 
     
 </article>
