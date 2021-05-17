@@ -326,6 +326,7 @@ class CommonContractInfo extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer('string'), 'activationEndTime' => new PrimitiveSerializer('int'), 'communicationEndTime' => new PrimitiveSerializer('int'), 'bidir' => new PrimitiveSerializer('bool'), 'highPriorityDownlink' => new PrimitiveSerializer('bool'), 'maxUplinkFrames' => new PrimitiveSerializer('int'), 'maxDownlinkFrames' => new PrimitiveSerializer('int'), 'maxTokens' => new PrimitiveSerializer('int'), 'automaticRenewal' => new PrimitiveSerializer('bool'), 'renewalDuration' => new PrimitiveSerializer('int'), 'options' => new ArraySerializer(new ClassSerializer(OptionsItem::class)));
+        $serializers = array('name' => new PrimitiveSerializer('string'), 'activationEndTime' => new PrimitiveSerializer('int'), 'communicationEndTime' => new PrimitiveSerializer('int'), 'bidir' => new PrimitiveSerializer('bool'), 'highPriorityDownlink' => new PrimitiveSerializer('bool'), 'maxUplinkFrames' => new PrimitiveSerializer('int'), 'maxDownlinkFrames' => new PrimitiveSerializer('int'), 'maxTokens' => new PrimitiveSerializer('int'), 'automaticRenewal' => new PrimitiveSerializer('bool'), 'renewalDuration' => new PrimitiveSerializer('int'), 'options' => new ArraySerializer(new ClassSerializer(OptionsItem::class)));
+        return $serializers;
     }
 }

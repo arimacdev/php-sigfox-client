@@ -101,6 +101,7 @@ class CommonUser extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('firstName' => new PrimitiveSerializer('string'), 'lastName' => new PrimitiveSerializer('string'), 'timezone' => new PrimitiveSerializer('string'));
+        $serializers = array('firstName' => new PrimitiveSerializer('string'), 'lastName' => new PrimitiveSerializer('string'), 'timezone' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

@@ -350,6 +350,8 @@ class DeviceTypeUpdate extends BaseDeviceType
      */
     public function getSerializeMetaData() : array
     {
-        return array('payloadType' => new PrimitiveSerializer('int'), 'payloadConfig' => new PrimitiveSerializer('string'), 'downlinkMode' => new PrimitiveSerializer('int'), 'downlinkDataString' => new PrimitiveSerializer('string'), 'description' => new PrimitiveSerializer('string'), 'contractId' => new PrimitiveSerializer('string'), 'contracts' => new ArraySerializer(new ClassSerializer(ContractId::class)), 'geolocPayloadConfigId' => new PrimitiveSerializer('string'), 'automaticRenewal' => new PrimitiveSerializer('bool'));
+        $serializers = array('payloadType' => new PrimitiveSerializer('int'), 'payloadConfig' => new PrimitiveSerializer('string'), 'downlinkMode' => new PrimitiveSerializer('int'), 'downlinkDataString' => new PrimitiveSerializer('string'), 'description' => new PrimitiveSerializer('string'), 'contractId' => new PrimitiveSerializer('string'), 'contracts' => new ArraySerializer(new ClassSerializer(ContractId::class)), 'geolocPayloadConfigId' => new PrimitiveSerializer('string'), 'automaticRenewal' => new PrimitiveSerializer('bool'));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

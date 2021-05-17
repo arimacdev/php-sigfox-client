@@ -54,6 +54,7 @@ class DevicesBulkCreate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('devices' => new ClassSerializer(AsynchronousDeviceCreationJob::class));
+        $serializers = array('devices' => new ClassSerializer(AsynchronousDeviceCreationJob::class));
+        return $serializers;
     }
 }

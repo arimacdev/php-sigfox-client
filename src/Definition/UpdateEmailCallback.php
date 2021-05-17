@@ -96,6 +96,8 @@ class UpdateEmailCallback extends UpdateCallback
      */
     public function getSerializeMetaData() : array
     {
-        return array('subject' => new PrimitiveSerializer('string'), 'recipient' => new PrimitiveSerializer('string'), 'message' => new PrimitiveSerializer('string'));
+        $serializers = array('subject' => new PrimitiveSerializer('string'), 'recipient' => new PrimitiveSerializer('string'), 'message' => new PrimitiveSerializer('string'));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

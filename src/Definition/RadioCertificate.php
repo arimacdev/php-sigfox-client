@@ -86,6 +86,8 @@ class RadioCertificate extends CommonCertificate
      */
     public function getSerializeMetaData() : array
     {
-        return array('modes' => new ArraySerializer(new PrimitiveSerializer('int')), 'inputSensitivity' => new PrimitiveSerializer('int'));
+        $serializers = array('modes' => new ArraySerializer(new PrimitiveSerializer('int')), 'inputSensitivity' => new PrimitiveSerializer('int'));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

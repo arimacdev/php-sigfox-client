@@ -127,6 +127,7 @@ class Status extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('total' => new PrimitiveSerializer('int'), 'nbSuccess' => new PrimitiveSerializer('int'), 'nbErrors' => new PrimitiveSerializer('int'), 'errors' => new ArraySerializer(new ClassSerializer(JobError::class)));
+        $serializers = array('total' => new PrimitiveSerializer('int'), 'nbSuccess' => new PrimitiveSerializer('int'), 'nbErrors' => new PrimitiveSerializer('int'), 'errors' => new ArraySerializer(new ClassSerializer(JobError::class)));
+        return $serializers;
     }
 }

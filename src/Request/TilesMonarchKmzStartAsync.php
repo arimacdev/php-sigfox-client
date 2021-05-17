@@ -55,6 +55,7 @@ class TilesMonarchKmzStartAsync extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('request' => new ClassSerializer(KmzCreatePublicRequest::class));
+        $serializers = array('request' => new ClassSerializer(KmzCreatePublicRequest::class));
+        return $serializers;
     }
 }

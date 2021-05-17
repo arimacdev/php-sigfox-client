@@ -73,6 +73,8 @@ class UserCreation extends UserUpdate
      */
     public function getSerializeMetaData() : array
     {
-        return array('email' => new PrimitiveSerializer('string'), 'sendWelcomeEmail' => new PrimitiveSerializer('bool'));
+        $serializers = array('email' => new PrimitiveSerializer('string'), 'sendWelcomeEmail' => new PrimitiveSerializer('bool'));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

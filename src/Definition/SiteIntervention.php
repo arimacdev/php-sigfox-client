@@ -226,6 +226,8 @@ class SiteIntervention extends BaseSiteIntervention
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer('string'), 'site' => new ClassSerializer(MinSite::class), 'group' => new ClassSerializer(MinGroup::class), 'baseStation' => new ClassSerializer(MinBaseStation::class), 'creationTime' => new PrimitiveSerializer('int'), 'createdBy' => new PrimitiveSerializer('string'), 'lastEditedTime' => new PrimitiveSerializer('int'), 'lastEditedBy' => new PrimitiveSerializer('string'));
+        $serializers = array('id' => new PrimitiveSerializer('string'), 'site' => new ClassSerializer(MinSite::class), 'group' => new ClassSerializer(MinGroup::class), 'baseStation' => new ClassSerializer(MinBaseStation::class), 'creationTime' => new PrimitiveSerializer('int'), 'createdBy' => new PrimitiveSerializer('string'), 'lastEditedTime' => new PrimitiveSerializer('int'), 'lastEditedBy' => new PrimitiveSerializer('string'));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

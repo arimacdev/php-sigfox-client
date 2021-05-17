@@ -38,6 +38,7 @@ class Paging extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('next' => new PrimitiveSerializer('string'));
+        $serializers = array('next' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

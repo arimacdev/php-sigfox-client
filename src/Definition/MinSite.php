@@ -97,6 +97,7 @@ class MinSite extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer('string'), 'name' => new PrimitiveSerializer('string'), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')));
+        $serializers = array('id' => new PrimitiveSerializer('string'), 'name' => new PrimitiveSerializer('string'), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')));
+        return $serializers;
     }
 }

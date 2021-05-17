@@ -178,6 +178,7 @@ class CallbackHTTP extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('url' => new PrimitiveSerializer('string'), 'headers' => new PrimitiveSerializer('array'), 'body' => new PrimitiveSerializer('string'), 'contentType' => new PrimitiveSerializer('string'), 'method' => new PrimitiveSerializer('string'), 'error' => new PrimitiveSerializer('string'));
+        $serializers = array('url' => new PrimitiveSerializer('string'), 'headers' => new PrimitiveSerializer('array'), 'body' => new PrimitiveSerializer('string'), 'contentType' => new PrimitiveSerializer('string'), 'method' => new PrimitiveSerializer('string'), 'error' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

@@ -41,6 +41,8 @@ class DeviceUpdateJob extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer('string'));
+        $serializers = array('name' => new PrimitiveSerializer('string'));
+        $serializers = array_merge($serializers, $this->getSerializeMetaDataSingleDeviceFields());
+        return $serializers;
     }
 }

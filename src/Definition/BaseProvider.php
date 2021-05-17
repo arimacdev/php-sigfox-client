@@ -67,6 +67,7 @@ class BaseProvider extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer('string'), 'annualCost' => new PrimitiveSerializer('int'));
+        $serializers = array('name' => new PrimitiveSerializer('string'), 'annualCost' => new PrimitiveSerializer('int'));
+        return $serializers;
     }
 }

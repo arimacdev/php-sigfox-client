@@ -68,8 +68,9 @@ trait CallbackEmail
      *
      * @internal
      */
-    public function getSerializeMetaData() : array
+    public function getSerializeMetaDataCallbackEmail() : array
     {
-        return array('subject' => new PrimitiveSerializer('string'), 'message' => new PrimitiveSerializer('string'));
+        $serializers = array('subject' => new PrimitiveSerializer('string'), 'message' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

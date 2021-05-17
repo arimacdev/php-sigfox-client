@@ -492,6 +492,7 @@ class BaseSiteIntervention extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('author' => new PrimitiveSerializer('string'), 'comment' => new PrimitiveSerializer('string'), 'equipmentsToChange' => new ArraySerializer(new PrimitiveSerializer('int')), 'plannedTime' => new PrimitiveSerializer('int'), 'interventionTime' => new PrimitiveSerializer('int'), 'endTime' => new PrimitiveSerializer('int'), 'billCode' => new PrimitiveSerializer('string'), 'rtId' => new PrimitiveSerializer('string'), 'closed' => new PrimitiveSerializer('bool'), 'costs' => new PrimitiveSerializer('int'), 'type' => new PrimitiveSerializer('int'));
+        $serializers = array('author' => new PrimitiveSerializer('string'), 'comment' => new PrimitiveSerializer('string'), 'equipmentsToChange' => new ArraySerializer(new PrimitiveSerializer('int')), 'plannedTime' => new PrimitiveSerializer('int'), 'interventionTime' => new PrimitiveSerializer('int'), 'endTime' => new PrimitiveSerializer('int'), 'billCode' => new PrimitiveSerializer('string'), 'rtId' => new PrimitiveSerializer('string'), 'closed' => new PrimitiveSerializer('bool'), 'costs' => new PrimitiveSerializer('int'), 'type' => new PrimitiveSerializer('int'));
+        return $serializers;
     }
 }

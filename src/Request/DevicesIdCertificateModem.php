@@ -55,6 +55,7 @@ class DevicesIdCertificateModem extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('fields' => new PrimitiveSerializer('string'));
+        $serializers = array('fields' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

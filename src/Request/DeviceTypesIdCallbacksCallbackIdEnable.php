@@ -53,6 +53,7 @@ class DeviceTypesIdCallbacksCallbackIdEnable extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('enabled' => new PrimitiveSerializer('bool'));
+        $serializers = array('enabled' => new PrimitiveSerializer('bool'));
+        return $serializers;
     }
 }

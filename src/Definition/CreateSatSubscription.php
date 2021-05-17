@@ -332,6 +332,8 @@ class CreateSatSubscription extends CreateInternetSubscription
      */
     public function getSerializeMetaData() : array
     {
-        return array('connectionStatus' => new PrimitiveSerializer('int'), 'altitude' => new PrimitiveSerializer('int'), 'azimuth' => new PrimitiveSerializer('int'), 'polarization' => new PrimitiveSerializer('int'), 'orderNumber' => new PrimitiveSerializer('string'), 'locationCode' => new PrimitiveSerializer('string'), 'clusterCode' => new PrimitiveSerializer('string'), 'login' => new PrimitiveSerializer('string'), 'password' => new PrimitiveSerializer('string'), 'rType' => new PrimitiveSerializer('int'));
+        $serializers = array('connectionStatus' => new PrimitiveSerializer('int'), 'altitude' => new PrimitiveSerializer('int'), 'azimuth' => new PrimitiveSerializer('int'), 'polarization' => new PrimitiveSerializer('int'), 'orderNumber' => new PrimitiveSerializer('string'), 'locationCode' => new PrimitiveSerializer('string'), 'clusterCode' => new PrimitiveSerializer('string'), 'login' => new PrimitiveSerializer('string'), 'password' => new PrimitiveSerializer('string'), 'rType' => new PrimitiveSerializer('int'));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

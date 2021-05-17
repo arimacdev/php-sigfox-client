@@ -402,6 +402,7 @@ class DeviceTypesList extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer('string'), 'groupIds' => new ArraySerializer(new PrimitiveSerializer('string')), 'deep' => new PrimitiveSerializer('bool'), 'contractId' => new PrimitiveSerializer('string'), 'payloadType' => new PrimitiveSerializer('int'), 'authorizations' => new PrimitiveSerializer('bool'), 'sort' => new PrimitiveSerializer('string'), 'fields' => new PrimitiveSerializer('string'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
+        $serializers = array('name' => new PrimitiveSerializer('string'), 'groupIds' => new ArraySerializer(new PrimitiveSerializer('string')), 'deep' => new PrimitiveSerializer('bool'), 'contractId' => new PrimitiveSerializer('string'), 'payloadType' => new PrimitiveSerializer('int'), 'authorizations' => new PrimitiveSerializer('bool'), 'sort' => new PrimitiveSerializer('string'), 'fields' => new PrimitiveSerializer('string'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

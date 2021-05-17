@@ -209,6 +209,7 @@ class DataItem extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer('string'), 'pac' => new PrimitiveSerializer('string'), 'name' => new PrimitiveSerializer('string'), 'lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'), 'automaticRenewal' => new PrimitiveSerializer('bool'), 'activable' => new PrimitiveSerializer('bool'));
+        $serializers = array('id' => new PrimitiveSerializer('string'), 'pac' => new PrimitiveSerializer('string'), 'name' => new PrimitiveSerializer('string'), 'lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'), 'automaticRenewal' => new PrimitiveSerializer('bool'), 'activable' => new PrimitiveSerializer('bool'));
+        return $serializers;
     }
 }

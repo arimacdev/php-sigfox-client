@@ -66,6 +66,7 @@ class UserRole extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('group' => new ClassSerializer(MinGroup::class), 'profile' => new ClassSerializer(MinProfile::class));
+        $serializers = array('group' => new ClassSerializer(MinGroup::class), 'profile' => new ClassSerializer(MinProfile::class));
+        return $serializers;
     }
 }

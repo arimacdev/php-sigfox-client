@@ -368,6 +368,7 @@ class Rinfo extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('baseStation' => new ClassSerializer(MinBaseStationWithType::class), 'rssi' => new PrimitiveSerializer('int'), 'rssiRepeaters' => new PrimitiveSerializer('int'), 'lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'), 'delay' => new PrimitiveSerializer('int'), 'snr' => new PrimitiveSerializer('int'), 'snrRepeaters' => new PrimitiveSerializer('int'), 'freq' => new PrimitiveSerializer('int'), 'freqRepeaters' => new PrimitiveSerializer('int'), 'rep' => new PrimitiveSerializer('int'), 'repetitions' => new ArraySerializer(new ClassSerializer(Repetition::class)), 'cbStatus' => new ArraySerializer(new ClassSerializer(CbStatus::class)));
+        $serializers = array('baseStation' => new ClassSerializer(MinBaseStationWithType::class), 'rssi' => new PrimitiveSerializer('int'), 'rssiRepeaters' => new PrimitiveSerializer('int'), 'lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'), 'delay' => new PrimitiveSerializer('int'), 'snr' => new PrimitiveSerializer('int'), 'snrRepeaters' => new PrimitiveSerializer('int'), 'freq' => new PrimitiveSerializer('int'), 'freqRepeaters' => new PrimitiveSerializer('int'), 'rep' => new PrimitiveSerializer('int'), 'repetitions' => new ArraySerializer(new ClassSerializer(Repetition::class)), 'cbStatus' => new ArraySerializer(new ClassSerializer(CbStatus::class)));
+        return $serializers;
     }
 }

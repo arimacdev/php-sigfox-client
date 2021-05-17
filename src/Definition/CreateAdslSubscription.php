@@ -401,6 +401,8 @@ class CreateAdslSubscription extends CreateInternetSubscription
      */
     public function getSerializeMetaData() : array
     {
-        return array('connectionStatus' => new PrimitiveSerializer('int'), 'internetAccount' => new PrimitiveSerializer('string'), 'orderNumber' => new PrimitiveSerializer('string'), 'interfaceLogin' => new PrimitiveSerializer('string'), 'interfacePassword' => new PrimitiveSerializer('string'), 'adslLogin' => new PrimitiveSerializer('string'), 'adslPassword' => new PrimitiveSerializer('string'), 'lineNumber' => new PrimitiveSerializer('string'), 'modem' => new PrimitiveSerializer('string'), 'modemSerialNumber' => new PrimitiveSerializer('string'), 'jumperStrip' => new PrimitiveSerializer('string'), 'jumperBlock' => new PrimitiveSerializer('string'), 'pair' => new PrimitiveSerializer('string'));
+        $serializers = array('connectionStatus' => new PrimitiveSerializer('int'), 'internetAccount' => new PrimitiveSerializer('string'), 'orderNumber' => new PrimitiveSerializer('string'), 'interfaceLogin' => new PrimitiveSerializer('string'), 'interfacePassword' => new PrimitiveSerializer('string'), 'adslLogin' => new PrimitiveSerializer('string'), 'adslPassword' => new PrimitiveSerializer('string'), 'lineNumber' => new PrimitiveSerializer('string'), 'modem' => new PrimitiveSerializer('string'), 'modemSerialNumber' => new PrimitiveSerializer('string'), 'jumperStrip' => new PrimitiveSerializer('string'), 'jumperBlock' => new PrimitiveSerializer('string'), 'pair' => new PrimitiveSerializer('string'));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

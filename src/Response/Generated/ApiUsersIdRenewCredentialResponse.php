@@ -42,6 +42,7 @@ class ApiUsersIdRenewCredentialResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('accessToken' => new PrimitiveSerializer('string'));
+        $serializers = array('accessToken' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

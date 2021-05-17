@@ -45,6 +45,7 @@ class RedundancyResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('redundancy' => new PrimitiveSerializer('int'));
+        $serializers = array('redundancy' => new PrimitiveSerializer('int'));
+        return $serializers;
     }
 }

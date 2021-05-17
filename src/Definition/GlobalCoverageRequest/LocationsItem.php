@@ -71,6 +71,7 @@ class LocationsItem extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'));
+        $serializers = array('lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'));
+        return $serializers;
     }
 }

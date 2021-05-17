@@ -142,6 +142,7 @@ class ContractInfosIdDevices extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('deviceTypeId' => new PrimitiveSerializer('string'), 'fields' => new PrimitiveSerializer('string'), 'limit' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
+        $serializers = array('deviceTypeId' => new PrimitiveSerializer('string'), 'fields' => new PrimitiveSerializer('string'), 'limit' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

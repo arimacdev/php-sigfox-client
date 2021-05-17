@@ -284,6 +284,7 @@ class GroupErrorMessages extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('device' => new PrimitiveSerializer('string'), 'deviceUrl' => new PrimitiveSerializer('string'), 'deviceType' => new PrimitiveSerializer('string'), 'time' => new PrimitiveSerializer('int'), 'data' => new PrimitiveSerializer('string'), 'snr' => new PrimitiveSerializer('string'), 'status' => new PrimitiveSerializer('string'), 'message' => new PrimitiveSerializer('string'), 'callback' => new ClassSerializer(GroupCallbackMedium::class), 'parameters' => new PrimitiveSerializer('array'));
+        $serializers = array('device' => new PrimitiveSerializer('string'), 'deviceUrl' => new PrimitiveSerializer('string'), 'deviceType' => new PrimitiveSerializer('string'), 'time' => new PrimitiveSerializer('int'), 'data' => new PrimitiveSerializer('string'), 'snr' => new PrimitiveSerializer('string'), 'status' => new PrimitiveSerializer('string'), 'message' => new PrimitiveSerializer('string'), 'callback' => new ClassSerializer(GroupCallbackMedium::class), 'parameters' => new PrimitiveSerializer('array'));
+        return $serializers;
     }
 }

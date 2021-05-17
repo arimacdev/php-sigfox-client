@@ -70,6 +70,7 @@ class GroupsIdCallbacksNotDeliveredResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('data' => new ArraySerializer(new ClassSerializer(GroupErrorMessages::class)), 'paging' => new ClassSerializer(Paging::class));
+        $serializers = array('data' => new ArraySerializer(new ClassSerializer(GroupErrorMessages::class)), 'paging' => new ClassSerializer(Paging::class));
+        return $serializers;
     }
 }

@@ -122,6 +122,7 @@ class ResultsItem extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'), 'locationCovered' => new PrimitiveSerializer('bool'), 'margins' => new ArraySerializer(new PrimitiveSerializer('int')));
+        $serializers = array('lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'), 'locationCovered' => new PrimitiveSerializer('bool'), 'margins' => new ArraySerializer(new PrimitiveSerializer('int')));
+        return $serializers;
     }
 }

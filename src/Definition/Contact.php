@@ -39,6 +39,8 @@ class Contact extends BaseContact
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer('string'));
+        $serializers = array('id' => new PrimitiveSerializer('string'));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

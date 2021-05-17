@@ -39,6 +39,8 @@ class ProviderCreation extends BaseProvider
      */
     public function getSerializeMetaData() : array
     {
-        return array('groupId' => new PrimitiveSerializer('string'));
+        $serializers = array('groupId' => new PrimitiveSerializer('string'));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

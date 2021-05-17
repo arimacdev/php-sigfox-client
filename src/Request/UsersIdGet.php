@@ -84,6 +84,7 @@ class UsersIdGet extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('fields' => new PrimitiveSerializer('string'), 'authorizations' => new PrimitiveSerializer('bool'));
+        $serializers = array('fields' => new PrimitiveSerializer('string'), 'authorizations' => new PrimitiveSerializer('bool'));
+        return $serializers;
     }
 }

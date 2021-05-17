@@ -136,6 +136,7 @@ class DeviceTypesIdCallbacksNotDelivered extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('since' => new PrimitiveSerializer('int'), 'before' => new PrimitiveSerializer('int'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'));
+        $serializers = array('since' => new PrimitiveSerializer('int'), 'before' => new PrimitiveSerializer('int'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'));
+        return $serializers;
     }
 }

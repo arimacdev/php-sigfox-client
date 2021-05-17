@@ -103,6 +103,7 @@ class MinRole extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer('string'), 'name' => new PrimitiveSerializer('string'), 'path' => new ArraySerializer(new ClassSerializer(MinMetaRole::class)));
+        $serializers = array('id' => new PrimitiveSerializer('string'), 'name' => new PrimitiveSerializer('string'), 'path' => new ArraySerializer(new ClassSerializer(MinMetaRole::class)));
+        return $serializers;
     }
 }

@@ -196,6 +196,7 @@ class CommonGroupUpdate extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer('string'), 'description' => new PrimitiveSerializer('string'), 'type' => new PrimitiveSerializer('int'), 'timezone' => new PrimitiveSerializer('string'));
+        $serializers = array('name' => new PrimitiveSerializer('string'), 'description' => new PrimitiveSerializer('string'), 'type' => new PrimitiveSerializer('int'), 'timezone' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

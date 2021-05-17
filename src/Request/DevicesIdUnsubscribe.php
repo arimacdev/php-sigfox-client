@@ -54,6 +54,7 @@ class DevicesIdUnsubscribe extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('unsubscriptionTime' => new ClassSerializer(TokenUnsubscribe::class));
+        $serializers = array('unsubscriptionTime' => new ClassSerializer(TokenUnsubscribe::class));
+        return $serializers;
     }
 }

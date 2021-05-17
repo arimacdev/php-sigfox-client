@@ -96,6 +96,7 @@ class TilesResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('baseImgUrl' => new PrimitiveSerializer('string'), 'tmsTemplateUrl' => new PrimitiveSerializer('string'), 'bounds' => new ClassSerializer(Bounds::class));
+        $serializers = array('baseImgUrl' => new PrimitiveSerializer('string'), 'tmsTemplateUrl' => new PrimitiveSerializer('string'), 'bounds' => new ClassSerializer(Bounds::class));
+        return $serializers;
     }
 }

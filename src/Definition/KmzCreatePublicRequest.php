@@ -50,6 +50,7 @@ class KmzCreatePublicRequest extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('coverageMode' => new PrimitiveSerializer('string'));
+        $serializers = array('coverageMode' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

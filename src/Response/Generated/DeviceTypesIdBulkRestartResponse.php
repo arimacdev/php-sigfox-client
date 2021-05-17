@@ -42,6 +42,7 @@ class DeviceTypesIdBulkRestartResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('jobId' => new PrimitiveSerializer('string'));
+        $serializers = array('jobId' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

@@ -53,6 +53,7 @@ class UsersIdProfilesAddRoles extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('userRoles' => new PrimitiveSerializer('array'));
+        $serializers = array('userRoles' => new PrimitiveSerializer('array'));
+        return $serializers;
     }
 }

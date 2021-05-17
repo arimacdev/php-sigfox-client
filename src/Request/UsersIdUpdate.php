@@ -54,6 +54,7 @@ class UsersIdUpdate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('user' => new ClassSerializer(UserUpdate::class));
+        $serializers = array('user' => new ClassSerializer(UserUpdate::class));
+        return $serializers;
     }
 }

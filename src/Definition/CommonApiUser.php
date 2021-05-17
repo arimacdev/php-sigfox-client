@@ -74,6 +74,7 @@ class CommonApiUser extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer('string'), 'timezone' => new PrimitiveSerializer('string'));
+        $serializers = array('name' => new PrimitiveSerializer('string'), 'timezone' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

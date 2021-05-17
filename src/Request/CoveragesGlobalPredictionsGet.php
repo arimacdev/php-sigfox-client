@@ -58,6 +58,7 @@ class CoveragesGlobalPredictionsGet extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('payload' => new ClassSerializer(GlobalCoverageRequest::class));
+        $serializers = array('payload' => new ClassSerializer(GlobalCoverageRequest::class));
+        return $serializers;
     }
 }

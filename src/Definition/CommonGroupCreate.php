@@ -220,6 +220,7 @@ class CommonGroupCreate extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer('string'), 'description' => new PrimitiveSerializer('string'), 'type' => new PrimitiveSerializer('int'), 'timezone' => new PrimitiveSerializer('string'), 'parentId' => new PrimitiveSerializer('string'));
+        $serializers = array('name' => new PrimitiveSerializer('string'), 'description' => new PrimitiveSerializer('string'), 'type' => new PrimitiveSerializer('int'), 'timezone' => new PrimitiveSerializer('string'), 'parentId' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

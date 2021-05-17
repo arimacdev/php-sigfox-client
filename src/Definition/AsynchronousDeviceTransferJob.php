@@ -72,6 +72,7 @@ class AsynchronousDeviceTransferJob extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('deviceTypeId' => new PrimitiveSerializer('string'), 'data' => new ArraySerializer(new ClassSerializer(DataItem::class)));
+        $serializers = array('deviceTypeId' => new PrimitiveSerializer('string'), 'data' => new ArraySerializer(new ClassSerializer(DataItem::class)));
+        return $serializers;
     }
 }

@@ -237,6 +237,8 @@ class SimpleSite extends MinSite
      */
     public function getSerializeMetaData() : array
     {
-        return array('host' => new ClassSerializer(MinHost::class), 'candidateExternalId' => new PrimitiveSerializer('int'), 'status' => new PrimitiveSerializer('int'), 'lessorId' => new PrimitiveSerializer('string'), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')));
+        $serializers = array('host' => new ClassSerializer(MinHost::class), 'candidateExternalId' => new PrimitiveSerializer('int'), 'status' => new PrimitiveSerializer('int'), 'lessorId' => new PrimitiveSerializer('string'), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

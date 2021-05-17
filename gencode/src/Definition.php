@@ -50,7 +50,8 @@ class Definition extends Class_
         $this->setArrayProperty("validations", $validations);
     }
 
-    protected function toSerialize(string $type){
+    protected function toSerialize(string $type)
+    {
         $isArray = substr($type, strlen($type) - 2) === "[]";
         $isGeneric = substr($type, strlen($type) - 1) === ">";
         // has a namespace
@@ -76,7 +77,7 @@ class Definition extends Class_
 
             $this->useType("Arimac\\Sigfox\\Serializer\\GenericSerializer");
             return $this->factory->new(
-                "GenericSerializer", 
+                "GenericSerializer",
                 [
                     $parentType,
                     $childType
@@ -86,10 +87,10 @@ class Definition extends Class_
             $slices = explode("\\", $type);
             if (count($slices) > 1) {
                 $className = $this->useType($type);
-                
+
                 $this->useType("Arimac\\Sigfox\\Serializer\\ClassSerializer");
                 return $this->factory->new(
-                    "ClassSerializer", 
+                    "ClassSerializer",
                     [
                         $this->factory->classConstFetch($className, "class")
                     ]
@@ -108,18 +109,60 @@ class Definition extends Class_
         }
     }
 
-    public function setSerialize(array $serialize){
+    public function setSerialize(array $serialize, array $extends)
+    {
         $serializers = [];
-        foreach($serialize as $propertyName => $type){
+        foreach ($serialize as $propertyName => $type) {
             $serializers[$propertyName] = $this->toSerialize($type);
         }
-        
+
+        $methodName = "getSerializeMetaData";
+        if (in_array($this->name, $this->forceTraits)) {
+            $methodName .= $this->name;
+        }
+
+        $stmts = [new Assign(new Variable("serializers"), $this->factory->val($serializers))];
+
+        if (count($extends)) {
+            foreach ($extends as $extend) {
+                $extend = Helper::defToName($extend);
+                if (in_array($extend, $this->forceTraits)) {
+                    $stmts[] = new Assign(
+                        new Variable("serializers"),
+                        $this->factory->funcCall(
+                            "array_merge",
+                            [
+                                new Variable("serializers"),
+                                $this->factory->methodCall(
+                                    new Variable("this"),
+                                    "getSerializeMetaData" . $extend
+                                )
+                            ]
+                        )
+                    );
+                } else {
+                    $stmts[] = new Assign(
+                        new Variable("serializers"),
+                        $this->factory->funcCall(
+                            "array_merge",
+                            [
+                                new Variable("serializers"),
+                                $this->factory->staticCall("parent", "getSerializeMetaData")
+                            ]
+                        )
+                    );
+                }
+            }
+        }
+
+        $stmts[] = new Return_($this->factory->var("serializers"));
+
         $this->addMethod(
-            "getSerializeMetaData",
+            $methodName,
             [],
-            [new Return_($this->factory->val($serializers))],
+            $stmts,
             "array",
-            Helper::normalizeDocComment([["internal", null],["inheritdoc",null]])
+            Helper::normalizeDocComment([["internal", null], ["inheritdoc", null]])
         );
     }
 
@@ -154,7 +197,7 @@ class Definition extends Class_
             $this->class->addStmt($useTrait);
             return false;
         } else {
-            if(!in_array($this->name, $this->forceTraits)){
+            if (!in_array($this->name, $this->forceTraits)) {
                 $this->class->extend($name);
             }
             return true;
@@ -169,7 +212,7 @@ class Definition extends Class_
     protected static function getValidations(array $definition, $required = false): array
     {
         $validations = [];
-        if ((isset($definition["required"])&&$definition["required"]) || $required) {
+        if ((isset($definition["required"]) && $definition["required"]) || $required) {
             $validations[] = "required";
         }
         if (isset($definition["maximum"])) {
@@ -189,9 +232,9 @@ class Definition extends Class_
             $validations[] = "min:" . $definition["minLength"];
         }
         if (isset($definition["enum"])) {
-            $validations[] = "in:" . implode(",", str_replace(",",'\,', $definition["enum"]));
+            $validations[] = "in:" . implode(",", str_replace(",", '\,', $definition["enum"]));
         }
-        if(count($validations)&&!in_array("required", $validations)){
+        if (count($validations) && !in_array("required", $validations)) {
             $validations[] = "nullable";
         }
         return $validations;
@@ -300,11 +343,11 @@ class Definition extends Class_
                     $constants = EnumFields::getConstants($name, $propertyName, $description);
                     if ($constants) {
                         $constPrefix = Helper::camelToUnderscore($propertyName);
-                        $description = isset($constants["comment"])?$constants["comment"]."\n":"";
-                        $description .="\n";
+                        $description = isset($constants["comment"]) ? $constants["comment"] . "\n" : "";
+                        $description .= "\n";
                         foreach ($constants as $constName => $attr) {
-                            if ($constName !== "comment")  {
-                                $description .= "- {@see $className::$constPrefix"."_$constName}\n";
+                            if ($constName !== "comment") {
+                                $description .= "- {@see $className::$constPrefix" . "_$constName}\n";
                                 $defClass->addConst(
                                     $constPrefix . "_" . $constName,
                                     $attr["value"],
@@ -351,10 +394,10 @@ class Definition extends Class_
         $extended = false;
         foreach ($extends as $extend) {
             $className = Helper::defToName($extend);
-            $extended =$defClass->extend("Arimac\\Sigfox\\Definition\\" . $className) || $extended;
+            $extended = $defClass->extend("Arimac\\Sigfox\\Definition\\" . $className) || $extended;
         }
 
-        if(!$extended){
+        if (!$extended) {
             $defClass->extend("Arimac\\Sigfox\\Definition");
         }
 
@@ -363,8 +406,8 @@ class Definition extends Class_
             $defClass->addProperty("extendable", "bool", null, true);
         }
 
-        if (count($serialize)) {
-            $defClass->setSerialize($serialize);
+        if (count($serialize) || count($extends)) {
+            $defClass->setSerialize($serialize, $extends);
         }
 
         if (count($validations)) {

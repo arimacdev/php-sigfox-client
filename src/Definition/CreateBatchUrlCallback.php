@@ -100,6 +100,8 @@ class CreateBatchUrlCallback extends CreateCallback
      */
     public function getSerializeMetaData() : array
     {
-        return array('url' => new PrimitiveSerializer('string'), 'httpMethod' => new PrimitiveSerializer('string'), 'linePattern' => new PrimitiveSerializer('string'));
+        $serializers = array('url' => new PrimitiveSerializer('string'), 'httpMethod' => new PrimitiveSerializer('string'), 'linePattern' => new PrimitiveSerializer('string'));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

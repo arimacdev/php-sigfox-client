@@ -67,6 +67,7 @@ class KmzStatusResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('jobDone' => new PrimitiveSerializer('bool'), 'time' => new PrimitiveSerializer('int'));
+        $serializers = array('jobDone' => new PrimitiveSerializer('bool'), 'time' => new PrimitiveSerializer('int'));
+        return $serializers;
     }
 }

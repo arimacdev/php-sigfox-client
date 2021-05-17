@@ -52,6 +52,7 @@ class GroupsCreate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('group' => new ClassSerializer(CommonGroupCreate::class));
+        $serializers = array('group' => new ClassSerializer(CommonGroupCreate::class));
+        return $serializers;
     }
 }

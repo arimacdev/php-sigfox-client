@@ -200,6 +200,7 @@ class ProfilesList extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('groupId' => new PrimitiveSerializer('string'), 'inherit' => new PrimitiveSerializer('bool'), 'fields' => new PrimitiveSerializer('string'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'authorizations' => new PrimitiveSerializer('bool'));
+        $serializers = array('groupId' => new PrimitiveSerializer('string'), 'inherit' => new PrimitiveSerializer('bool'), 'fields' => new PrimitiveSerializer('string'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'authorizations' => new PrimitiveSerializer('bool'));
+        return $serializers;
     }
 }

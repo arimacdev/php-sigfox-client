@@ -40,6 +40,7 @@ class TokenUnsubscribe extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('unsubscriptionTime' => new PrimitiveSerializer('int'));
+        $serializers = array('unsubscriptionTime' => new PrimitiveSerializer('int'));
+        return $serializers;
     }
 }

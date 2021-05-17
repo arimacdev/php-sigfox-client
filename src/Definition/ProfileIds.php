@@ -40,8 +40,9 @@ trait ProfileIds
      *
      * @internal
      */
-    public function getSerializeMetaData() : array
+    public function getSerializeMetaDataProfileIds() : array
     {
-        return array('profileId' => new ArraySerializer(new PrimitiveSerializer('string')));
+        $serializers = array('profileId' => new ArraySerializer(new PrimitiveSerializer('string')));
+        return $serializers;
     }
 }

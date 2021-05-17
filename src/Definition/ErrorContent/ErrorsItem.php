@@ -100,6 +100,7 @@ class ErrorsItem extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('type' => new PrimitiveSerializer('string'), 'field' => new PrimitiveSerializer('string'), 'message' => new PrimitiveSerializer('string'));
+        $serializers = array('type' => new PrimitiveSerializer('string'), 'field' => new PrimitiveSerializer('string'), 'message' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

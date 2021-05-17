@@ -71,6 +71,7 @@ class DevicesBulkCreateResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('total' => new PrimitiveSerializer('int'), 'jobId' => new PrimitiveSerializer('string'));
+        $serializers = array('total' => new PrimitiveSerializer('int'), 'jobId' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

@@ -54,6 +54,7 @@ class DevicesBulkTransfer extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('devices' => new ClassSerializer(AsynchronousDeviceTransferJob::class));
+        $serializers = array('devices' => new ClassSerializer(AsynchronousDeviceTransferJob::class));
+        return $serializers;
     }
 }

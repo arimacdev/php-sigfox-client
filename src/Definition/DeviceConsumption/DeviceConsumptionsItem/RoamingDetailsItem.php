@@ -121,6 +121,7 @@ class RoamingDetailsItem extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('territory' => new PrimitiveSerializer('string'), 'operator' => new PrimitiveSerializer('string'), 'territoryRoamingFrameCount' => new PrimitiveSerializer('int'), 'territoryRoamingDownlinkFrameCount' => new PrimitiveSerializer('int'));
+        $serializers = array('territory' => new PrimitiveSerializer('string'), 'operator' => new PrimitiveSerializer('string'), 'territoryRoamingFrameCount' => new PrimitiveSerializer('int'), 'territoryRoamingDownlinkFrameCount' => new PrimitiveSerializer('int'));
+        return $serializers;
     }
 }

@@ -45,6 +45,8 @@ class NIPCreate extends CommonGroupCreate
      */
     public function getSerializeMetaData() : array
     {
-        return array('countryISOAlpha3' => new PrimitiveSerializer('string'));
+        $serializers = array('countryISOAlpha3' => new PrimitiveSerializer('string'));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

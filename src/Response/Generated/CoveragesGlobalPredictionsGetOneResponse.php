@@ -72,6 +72,7 @@ class CoveragesGlobalPredictionsGetOneResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('locationCovered' => new PrimitiveSerializer('bool'), 'margins' => new ArraySerializer(new PrimitiveSerializer('int')));
+        $serializers = array('locationCovered' => new PrimitiveSerializer('bool'), 'margins' => new ArraySerializer(new PrimitiveSerializer('int')));
+        return $serializers;
     }
 }

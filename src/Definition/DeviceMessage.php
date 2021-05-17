@@ -389,6 +389,7 @@ class DeviceMessage extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('device' => new ClassSerializer(CommonDevice::class), 'time' => new PrimitiveSerializer('int'), 'data' => new PrimitiveSerializer('string'), 'ackRequired' => new PrimitiveSerializer('bool'), 'lqi' => new PrimitiveSerializer('int'), 'lqiRepeaters' => new PrimitiveSerializer('int'), 'seqNumber' => new PrimitiveSerializer('int'), 'nbFrames' => new PrimitiveSerializer('int'), 'computedLocation' => new ArraySerializer(new ClassSerializer(ComputedLocation::class)), 'rinfos' => new ArraySerializer(new ClassSerializer(Rinfo::class)), 'downlinkAnswerStatus' => new ClassSerializer(DownlinkAnswerStatus::class));
+        $serializers = array('device' => new ClassSerializer(CommonDevice::class), 'time' => new PrimitiveSerializer('int'), 'data' => new PrimitiveSerializer('string'), 'ackRequired' => new PrimitiveSerializer('bool'), 'lqi' => new PrimitiveSerializer('int'), 'lqiRepeaters' => new PrimitiveSerializer('int'), 'seqNumber' => new PrimitiveSerializer('int'), 'nbFrames' => new PrimitiveSerializer('int'), 'computedLocation' => new ArraySerializer(new ClassSerializer(ComputedLocation::class)), 'rinfos' => new ArraySerializer(new ClassSerializer(Rinfo::class)), 'downlinkAnswerStatus' => new ClassSerializer(DownlinkAnswerStatus::class));
+        return $serializers;
     }
 }

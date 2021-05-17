@@ -107,6 +107,7 @@ class GroupsIdGeolocationPayloads extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
+        $serializers = array('limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

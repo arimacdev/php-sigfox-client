@@ -388,6 +388,7 @@ class Group extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer('string'), 'description' => new PrimitiveSerializer('string'), 'type' => new PrimitiveSerializer('int'), 'timezone' => new PrimitiveSerializer('string'), 'id' => new PrimitiveSerializer('string'), 'nameCI' => new PrimitiveSerializer('string'), 'path' => new ArraySerializer(new ClassSerializer(MinGroup::class)), 'createdBy' => new PrimitiveSerializer('string'), 'creationTime' => new PrimitiveSerializer('int'), 'leaf' => new PrimitiveSerializer('bool'), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')));
+        $serializers = array('name' => new PrimitiveSerializer('string'), 'description' => new PrimitiveSerializer('string'), 'type' => new PrimitiveSerializer('int'), 'timezone' => new PrimitiveSerializer('string'), 'id' => new PrimitiveSerializer('string'), 'nameCI' => new PrimitiveSerializer('string'), 'path' => new ArraySerializer(new ClassSerializer(MinGroup::class)), 'createdBy' => new PrimitiveSerializer('string'), 'creationTime' => new PrimitiveSerializer('int'), 'leaf' => new PrimitiveSerializer('bool'), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')));
+        return $serializers;
     }
 }

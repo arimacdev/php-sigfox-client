@@ -214,6 +214,7 @@ class ComputedLocation extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'), 'radius' => new PrimitiveSerializer('int'), 'source' => new PrimitiveSerializer('int'), 'placeIds' => new ArraySerializer(new PrimitiveSerializer('string')));
+        $serializers = array('lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'), 'radius' => new PrimitiveSerializer('int'), 'source' => new PrimitiveSerializer('int'), 'placeIds' => new ArraySerializer(new PrimitiveSerializer('string')));
+        return $serializers;
     }
 }

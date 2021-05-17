@@ -187,6 +187,7 @@ class CoveragesOperatorsRedundancy extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'), 'operatorId' => new PrimitiveSerializer('string'), 'deviceSituation' => new PrimitiveSerializer('string'), 'deviceClassId' => new PrimitiveSerializer('int'));
+        $serializers = array('lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'), 'operatorId' => new PrimitiveSerializer('string'), 'deviceSituation' => new PrimitiveSerializer('string'), 'deviceClassId' => new PrimitiveSerializer('int'));
+        return $serializers;
     }
 }

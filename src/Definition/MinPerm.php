@@ -70,6 +70,7 @@ class MinPerm extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('code' => new PrimitiveSerializer('int'), 'name' => new PrimitiveSerializer('string'));
+        $serializers = array('code' => new PrimitiveSerializer('int'), 'name' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

@@ -131,6 +131,8 @@ class DeviceTypeCreate extends BaseDeviceType
      */
     public function getSerializeMetaData() : array
     {
-        return array('groupId' => new PrimitiveSerializer('string'), 'contractId' => new PrimitiveSerializer('string'), 'contracts' => new ArraySerializer(new ClassSerializer(ContractId::class)), 'geolocPayloadConfigId' => new PrimitiveSerializer('string'));
+        $serializers = array('groupId' => new PrimitiveSerializer('string'), 'contractId' => new PrimitiveSerializer('string'), 'contracts' => new ArraySerializer(new ClassSerializer(ContractId::class)), 'geolocPayloadConfigId' => new PrimitiveSerializer('string'));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

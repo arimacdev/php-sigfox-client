@@ -384,6 +384,8 @@ class Site extends BaseSite
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer('string'), 'host' => new ClassSerializer(MinHost::class), 'maintenance' => new ClassSerializer(MinMaintenance::class), 'group' => new ClassSerializer(MinGroup::class), 'basestationCount' => new PrimitiveSerializer('int'), 'primaryInternetSubscription' => new ClassSerializer(InternetSubscription::class), 'candidateExternalId' => new PrimitiveSerializer('int'), 'location' => new ArraySerializer(new ClassSerializer(LocationItem::class)), 'creationTime' => new PrimitiveSerializer('int'), 'createdBy' => new PrimitiveSerializer('string'), 'lastEditedTime' => new PrimitiveSerializer('int'), 'lastEditedBy' => new PrimitiveSerializer('string'), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'resources' => new ArraySerializer(new PrimitiveSerializer('string')));
+        $serializers = array('id' => new PrimitiveSerializer('string'), 'host' => new ClassSerializer(MinHost::class), 'maintenance' => new ClassSerializer(MinMaintenance::class), 'group' => new ClassSerializer(MinGroup::class), 'basestationCount' => new PrimitiveSerializer('int'), 'primaryInternetSubscription' => new ClassSerializer(InternetSubscription::class), 'candidateExternalId' => new PrimitiveSerializer('int'), 'location' => new ArraySerializer(new ClassSerializer(LocationItem::class)), 'creationTime' => new PrimitiveSerializer('int'), 'createdBy' => new PrimitiveSerializer('string'), 'lastEditedTime' => new PrimitiveSerializer('int'), 'lastEditedBy' => new PrimitiveSerializer('string'), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'resources' => new ArraySerializer(new PrimitiveSerializer('string')));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

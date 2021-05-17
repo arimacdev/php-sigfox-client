@@ -67,6 +67,7 @@ class DataItem extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer('string'), 'unsubscriptionTime' => new PrimitiveSerializer('int'));
+        $serializers = array('id' => new PrimitiveSerializer('string'), 'unsubscriptionTime' => new PrimitiveSerializer('int'));
+        return $serializers;
     }
 }

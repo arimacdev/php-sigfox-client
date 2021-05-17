@@ -42,6 +42,7 @@ class DeviceTypesIdCallbacksListResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('data' => new ArraySerializer(new ClassSerializer(Callback::class)));
+        $serializers = array('data' => new ArraySerializer(new ClassSerializer(Callback::class)));
+        return $serializers;
     }
 }

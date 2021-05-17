@@ -486,6 +486,7 @@ class BaseSite extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer('string'), 'lessorId' => new PrimitiveSerializer('string'), 'address' => new PrimitiveSerializer('string'), 'comment' => new PrimitiveSerializer('string'), 'status' => new PrimitiveSerializer('int'), 'statusComment' => new PrimitiveSerializer('string'), 'stationInstallation' => new PrimitiveSerializer('int'), 'inverterInfo' => new PrimitiveSerializer('int'), 'aerialWorkPlatformAccess' => new PrimitiveSerializer('bool'), 'lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'));
+        $serializers = array('name' => new PrimitiveSerializer('string'), 'lessorId' => new PrimitiveSerializer('string'), 'address' => new PrimitiveSerializer('string'), 'comment' => new PrimitiveSerializer('string'), 'status' => new PrimitiveSerializer('int'), 'statusComment' => new PrimitiveSerializer('string'), 'stationInstallation' => new PrimitiveSerializer('int'), 'inverterInfo' => new PrimitiveSerializer('int'), 'aerialWorkPlatformAccess' => new PrimitiveSerializer('bool'), 'lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'));
+        return $serializers;
     }
 }

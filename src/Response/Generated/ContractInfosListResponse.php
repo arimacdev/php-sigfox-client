@@ -70,6 +70,7 @@ class ContractInfosListResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('data' => new ArraySerializer(new ClassSerializer(ContractInfo::class)), 'paging' => new ClassSerializer(Paging::class));
+        $serializers = array('data' => new ArraySerializer(new ClassSerializer(ContractInfo::class)), 'paging' => new ClassSerializer(Paging::class));
+        return $serializers;
     }
 }

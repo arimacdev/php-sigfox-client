@@ -47,6 +47,9 @@ class Partner extends Group
      */
     public function getSerializeMetaData() : array
     {
-        return array('currentPrototypeCount' => new PrimitiveSerializer('int'));
+        $serializers = array('currentPrototypeCount' => new PrimitiveSerializer('int'));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        $serializers = array_merge($serializers, $this->getSerializeMetaDataBillableGroup());
+        return $serializers;
     }
 }

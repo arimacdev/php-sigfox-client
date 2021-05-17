@@ -318,6 +318,7 @@ class EthernetConnectivityBase extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer('string'), 'type' => new PrimitiveSerializer('int'), 'ip' => new PrimitiveSerializer('string'), 'mask' => new PrimitiveSerializer('string'), 'dns1' => new PrimitiveSerializer('string'), 'dns2' => new PrimitiveSerializer('string'), 'gateway' => new PrimitiveSerializer('string'), 'mtu' => new PrimitiveSerializer('int'), 'source' => new PrimitiveSerializer('int'));
+        $serializers = array('name' => new PrimitiveSerializer('string'), 'type' => new PrimitiveSerializer('int'), 'ip' => new PrimitiveSerializer('string'), 'mask' => new PrimitiveSerializer('string'), 'dns1' => new PrimitiveSerializer('string'), 'dns2' => new PrimitiveSerializer('string'), 'gateway' => new PrimitiveSerializer('string'), 'mtu' => new PrimitiveSerializer('int'), 'source' => new PrimitiveSerializer('int'));
+        return $serializers;
     }
 }

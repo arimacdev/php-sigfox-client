@@ -54,6 +54,7 @@ class DeviceTypesCreate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('deviceType' => new ClassSerializer(DeviceTypeCreate::class));
+        $serializers = array('deviceType' => new ClassSerializer(DeviceTypeCreate::class));
+        return $serializers;
     }
 }

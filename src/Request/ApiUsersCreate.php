@@ -52,6 +52,7 @@ class ApiUsersCreate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('apiUser' => new ClassSerializer(ApiUserCreation::class));
+        $serializers = array('apiUser' => new ClassSerializer(ApiUserCreation::class));
+        return $serializers;
     }
 }

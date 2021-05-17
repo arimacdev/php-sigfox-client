@@ -67,6 +67,8 @@ class RoleCreate extends CommonRole
      */
     public function getSerializeMetaData() : array
     {
-        return array('parentRoleId' => new PrimitiveSerializer('string'), 'perms' => new ArraySerializer(new PrimitiveSerializer('int')));
+        $serializers = array('parentRoleId' => new PrimitiveSerializer('string'), 'perms' => new ArraySerializer(new PrimitiveSerializer('int')));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

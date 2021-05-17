@@ -165,6 +165,7 @@ class DevicesIdLocations extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('oob' => new PrimitiveSerializer('bool'), 'since' => new PrimitiveSerializer('int'), 'before' => new PrimitiveSerializer('int'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'));
+        $serializers = array('oob' => new PrimitiveSerializer('bool'), 'since' => new PrimitiveSerializer('int'), 'before' => new PrimitiveSerializer('int'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'));
+        return $serializers;
     }
 }

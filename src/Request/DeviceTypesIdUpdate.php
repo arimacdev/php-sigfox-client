@@ -54,6 +54,7 @@ class DeviceTypesIdUpdate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('deviceType' => new ClassSerializer(DeviceTypeUpdate::class));
+        $serializers = array('deviceType' => new ClassSerializer(DeviceTypeUpdate::class));
+        return $serializers;
     }
 }

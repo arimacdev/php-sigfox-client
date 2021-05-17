@@ -399,6 +399,8 @@ class ContractInfoCreate extends CommonContractInfo
      */
     public function getSerializeMetaData() : array
     {
-        return array('groupId' => new PrimitiveSerializer('string'), 'contractId' => new PrimitiveSerializer('string'), 'userId' => new PrimitiveSerializer('string'), 'orderId' => new PrimitiveSerializer('string'), 'orderName' => new PrimitiveSerializer('string'), 'pricingModel' => new PrimitiveSerializer('int'), 'startTime' => new PrimitiveSerializer('int'), 'timezone' => new PrimitiveSerializer('string'), 'subscriptionPlan' => new PrimitiveSerializer('int'), 'tokenDuration' => new PrimitiveSerializer('int'), 'blacklistedTerritories' => new ArraySerializer(new PrimitiveSerializer('string')));
+        $serializers = array('groupId' => new PrimitiveSerializer('string'), 'contractId' => new PrimitiveSerializer('string'), 'userId' => new PrimitiveSerializer('string'), 'orderId' => new PrimitiveSerializer('string'), 'orderName' => new PrimitiveSerializer('string'), 'pricingModel' => new PrimitiveSerializer('int'), 'startTime' => new PrimitiveSerializer('int'), 'timezone' => new PrimitiveSerializer('string'), 'subscriptionPlan' => new PrimitiveSerializer('int'), 'tokenDuration' => new PrimitiveSerializer('int'), 'blacklistedTerritories' => new ArraySerializer(new PrimitiveSerializer('string')));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

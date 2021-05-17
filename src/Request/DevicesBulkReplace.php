@@ -50,6 +50,7 @@ class DevicesBulkReplace extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('devicePairs' => new ClassSerializer(AsynchronousDeviceReplacementJob::class));
+        $serializers = array('devicePairs' => new ClassSerializer(AsynchronousDeviceReplacementJob::class));
+        return $serializers;
     }
 }

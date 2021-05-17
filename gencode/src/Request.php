@@ -150,7 +150,7 @@ class Request extends Definition
                 }
 
                 if (count($serialize)) {
-                    $defClass->setSerialize($serialize);
+                    $defClass->setSerialize($serialize, []);
                 }
 
                 if (count($query)) {

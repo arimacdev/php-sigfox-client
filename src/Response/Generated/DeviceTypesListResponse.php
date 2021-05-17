@@ -98,6 +98,7 @@ class DeviceTypesListResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('data' => new ArraySerializer(new ClassSerializer(DeviceType::class)), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'paging' => new ClassSerializer(Paging::class));
+        $serializers = array('data' => new ArraySerializer(new ClassSerializer(DeviceType::class)), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'paging' => new ClassSerializer(Paging::class));
+        return $serializers;
     }
 }

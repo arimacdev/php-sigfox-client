@@ -148,6 +148,7 @@ class Repetition extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('nseq' => new PrimitiveSerializer('int'), 'rssi' => new PrimitiveSerializer('int'), 'snr' => new PrimitiveSerializer('int'), 'freq' => new PrimitiveSerializer('int'), 'repeated' => new PrimitiveSerializer('bool'));
+        $serializers = array('nseq' => new PrimitiveSerializer('int'), 'rssi' => new PrimitiveSerializer('int'), 'snr' => new PrimitiveSerializer('int'), 'freq' => new PrimitiveSerializer('int'), 'repeated' => new PrimitiveSerializer('bool'));
+        return $serializers;
     }
 }

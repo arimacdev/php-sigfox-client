@@ -173,8 +173,9 @@ trait SingleDeviceFields
      *
      * @internal
      */
-    public function getSerializeMetaData() : array
+    public function getSerializeMetaDataSingleDeviceFields() : array
     {
-        return array('activable' => new PrimitiveSerializer('bool'), 'automaticRenewal' => new PrimitiveSerializer('bool'), 'lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'), 'productCertificate' => new ClassSerializer(CertificateUpdate::class), 'prototype' => new PrimitiveSerializer('bool'));
+        $serializers = array('activable' => new PrimitiveSerializer('bool'), 'automaticRenewal' => new PrimitiveSerializer('bool'), 'lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'), 'productCertificate' => new ClassSerializer(CertificateUpdate::class), 'prototype' => new PrimitiveSerializer('bool'));
+        return $serializers;
     }
 }

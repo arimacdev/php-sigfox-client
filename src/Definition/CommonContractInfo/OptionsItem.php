@@ -122,6 +122,7 @@ class OptionsItem extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer('string'), 'parameters' => new PrimitiveSerializer('array'));
+        $serializers = array('id' => new PrimitiveSerializer('string'), 'parameters' => new PrimitiveSerializer('array'));
+        return $serializers;
     }
 }

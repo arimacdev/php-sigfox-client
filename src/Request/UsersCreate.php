@@ -54,6 +54,7 @@ class UsersCreate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('user' => new ClassSerializer(UserCreation::class));
+        $serializers = array('user' => new ClassSerializer(UserCreation::class));
+        return $serializers;
     }
 }

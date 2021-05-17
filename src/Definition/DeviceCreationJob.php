@@ -202,6 +202,9 @@ class DeviceCreationJob extends CommonDevice
      */
     public function getSerializeMetaData() : array
     {
-        return array('deviceTypeId' => new PrimitiveSerializer('string'), 'pac' => new PrimitiveSerializer('string'), 'prototype' => new PrimitiveSerializer('bool'), 'automaticRenewal' => new PrimitiveSerializer('bool'), 'activable' => new PrimitiveSerializer('bool'), 'lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'));
+        $serializers = array('deviceTypeId' => new PrimitiveSerializer('string'), 'pac' => new PrimitiveSerializer('string'), 'prototype' => new PrimitiveSerializer('bool'), 'automaticRenewal' => new PrimitiveSerializer('bool'), 'activable' => new PrimitiveSerializer('bool'), 'lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        $serializers = array_merge($serializers, $this->getSerializeMetaDataSingleDeviceFields());
+        return $serializers;
     }
 }

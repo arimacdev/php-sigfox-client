@@ -180,6 +180,7 @@ class RegistrationJob extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('jobDone' => new PrimitiveSerializer('bool'), 'operatorId' => new PrimitiveSerializer('string'), 'name' => new PrimitiveSerializer('string'), 'description' => new PrimitiveSerializer('string'), 'total' => new PrimitiveSerializer('int'), 'status' => new ClassSerializer(Status::class));
+        $serializers = array('jobDone' => new PrimitiveSerializer('bool'), 'operatorId' => new PrimitiveSerializer('string'), 'name' => new PrimitiveSerializer('string'), 'description' => new PrimitiveSerializer('string'), 'total' => new PrimitiveSerializer('int'), 'status' => new ClassSerializer(Status::class));
+        return $serializers;
     }
 }

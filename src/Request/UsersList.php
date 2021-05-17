@@ -324,6 +324,7 @@ class UsersList extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('fields' => new PrimitiveSerializer('string'), 'text' => new PrimitiveSerializer('string'), 'profileId' => new PrimitiveSerializer('string'), 'groupIds' => new ArraySerializer(new PrimitiveSerializer('string')), 'deep' => new PrimitiveSerializer('bool'), 'sort' => new PrimitiveSerializer('string'), 'authorizations' => new PrimitiveSerializer('bool'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
+        $serializers = array('fields' => new PrimitiveSerializer('string'), 'text' => new PrimitiveSerializer('string'), 'profileId' => new PrimitiveSerializer('string'), 'groupIds' => new ArraySerializer(new PrimitiveSerializer('string')), 'deep' => new PrimitiveSerializer('bool'), 'sort' => new PrimitiveSerializer('string'), 'authorizations' => new PrimitiveSerializer('bool'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

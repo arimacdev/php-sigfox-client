@@ -67,6 +67,8 @@ class ContractInfoUpdate extends CommonContractInfo
      */
     public function getSerializeMetaData() : array
     {
-        return array('orderName' => new PrimitiveSerializer('string'), 'blacklistedTerritories' => new ArraySerializer(new PrimitiveSerializer('string')));
+        $serializers = array('orderName' => new PrimitiveSerializer('string'), 'blacklistedTerritories' => new ArraySerializer(new PrimitiveSerializer('string')));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

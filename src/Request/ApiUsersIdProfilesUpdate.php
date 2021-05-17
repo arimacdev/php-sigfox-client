@@ -54,6 +54,7 @@ class ApiUsersIdProfilesUpdate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('profileIds' => new ClassSerializer(ProfileIds::class));
+        $serializers = array('profileIds' => new ClassSerializer(ProfileIds::class));
+        return $serializers;
     }
 }

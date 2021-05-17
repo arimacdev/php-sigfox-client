@@ -148,6 +148,8 @@ class Role extends CommonRole
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer('string'), 'perms' => new ArraySerializer(new ClassSerializer(MinPerm::class)), 'path' => new ArraySerializer(new ClassSerializer(MinMetaRole::class)), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'resources' => new ArraySerializer(new PrimitiveSerializer('string')));
+        $serializers = array('id' => new PrimitiveSerializer('string'), 'perms' => new ArraySerializer(new ClassSerializer(MinPerm::class)), 'path' => new ArraySerializer(new ClassSerializer(MinMetaRole::class)), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'resources' => new ArraySerializer(new PrimitiveSerializer('string')));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

@@ -170,6 +170,8 @@ class LanSubscription extends InternetSubscription
      */
     public function getSerializeMetaData() : array
     {
-        return array('networkType' => new PrimitiveSerializer('int'), 'ethConnectionType' => new PrimitiveSerializer('int'), 'addressing' => new PrimitiveSerializer('string'), 'connectionComments' => new PrimitiveSerializer('int'));
+        $serializers = array('networkType' => new PrimitiveSerializer('int'), 'ethConnectionType' => new PrimitiveSerializer('int'), 'addressing' => new PrimitiveSerializer('string'), 'connectionComments' => new PrimitiveSerializer('int'));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

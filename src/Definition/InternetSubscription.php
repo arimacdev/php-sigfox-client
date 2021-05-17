@@ -346,6 +346,7 @@ class InternetSubscription extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer('string'), 'type' => new PrimitiveSerializer('int'), 'priority' => new PrimitiveSerializer('int'), 'comments' => new PrimitiveSerializer('string'), 'startTime' => new PrimitiveSerializer('int'), 'endTime' => new PrimitiveSerializer('int'), 'provider' => new ClassSerializer(MinProvider::class), 'contacts' => new ArraySerializer(new ClassSerializer(MinContact::class)), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'resources' => new ArraySerializer(new PrimitiveSerializer('string')));
+        $serializers = array('id' => new PrimitiveSerializer('string'), 'type' => new PrimitiveSerializer('int'), 'priority' => new PrimitiveSerializer('int'), 'comments' => new PrimitiveSerializer('string'), 'startTime' => new PrimitiveSerializer('int'), 'endTime' => new PrimitiveSerializer('int'), 'provider' => new ClassSerializer(MinProvider::class), 'contacts' => new ArraySerializer(new ClassSerializer(MinContact::class)), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'resources' => new ArraySerializer(new PrimitiveSerializer('string')));
+        return $serializers;
     }
 }

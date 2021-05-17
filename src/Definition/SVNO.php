@@ -44,6 +44,8 @@ class SVNO extends Group
      */
     public function getSerializeMetaData() : array
     {
-        return array('networkOperatorId' => new PrimitiveSerializer('string'));
+        $serializers = array('networkOperatorId' => new PrimitiveSerializer('string'));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

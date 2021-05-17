@@ -52,6 +52,7 @@ class DeviceTypesIdCallbacksCreate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('callback' => new ClassSerializer(CreateCallback::class));
+        $serializers = array('callback' => new ClassSerializer(CreateCallback::class));
+        return $serializers;
     }
 }

@@ -88,6 +88,7 @@ class DevicesBulkUnsubscribe extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('devices' => new ClassSerializer(BulkUnsubscribe::class), 'groupId' => new PrimitiveSerializer('string'));
+        $serializers = array('devices' => new ClassSerializer(BulkUnsubscribe::class), 'groupId' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

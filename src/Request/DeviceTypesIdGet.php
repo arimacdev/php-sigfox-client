@@ -84,6 +84,7 @@ class DeviceTypesIdGet extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('authorizations' => new PrimitiveSerializer('bool'), 'fields' => new PrimitiveSerializer('string'));
+        $serializers = array('authorizations' => new PrimitiveSerializer('bool'), 'fields' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

@@ -264,6 +264,8 @@ class EthernetConnectivityForBs extends EthernetConnectivityBase
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer('string'), 'group' => new ClassSerializer(MinGroup::class), 'baseStation' => new ClassSerializer(MinBaseStation::class), 'state' => new PrimitiveSerializer('int'), 'syncStatus' => new PrimitiveSerializer('int'), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'resources' => new ArraySerializer(new PrimitiveSerializer('string')));
+        $serializers = array('id' => new PrimitiveSerializer('string'), 'group' => new ClassSerializer(MinGroup::class), 'baseStation' => new ClassSerializer(MinBaseStation::class), 'state' => new PrimitiveSerializer('int'), 'syncStatus' => new PrimitiveSerializer('int'), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'resources' => new ArraySerializer(new PrimitiveSerializer('string')));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

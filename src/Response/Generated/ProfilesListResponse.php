@@ -70,6 +70,7 @@ class ProfilesListResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('data' => new ArraySerializer(new ClassSerializer(Profile::class)), 'paging' => new ClassSerializer(Paging::class));
+        $serializers = array('data' => new ArraySerializer(new ClassSerializer(Profile::class)), 'paging' => new ClassSerializer(Paging::class));
+        return $serializers;
     }
 }

@@ -299,6 +299,7 @@ class Callback extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer('string'), 'channel' => new PrimitiveSerializer('string'), 'callbackType' => new PrimitiveSerializer('int'), 'callbackSubtype' => new PrimitiveSerializer('int'), 'payloadConfig' => new PrimitiveSerializer('string'), 'enabled' => new PrimitiveSerializer('bool'), 'dead' => new PrimitiveSerializer('bool'));
+        $serializers = array('id' => new PrimitiveSerializer('string'), 'channel' => new PrimitiveSerializer('string'), 'callbackType' => new PrimitiveSerializer('int'), 'callbackSubtype' => new PrimitiveSerializer('int'), 'payloadConfig' => new PrimitiveSerializer('string'), 'enabled' => new PrimitiveSerializer('bool'), 'dead' => new PrimitiveSerializer('bool'));
+        return $serializers;
     }
 }

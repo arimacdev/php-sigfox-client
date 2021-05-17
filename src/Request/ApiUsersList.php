@@ -201,6 +201,7 @@ class ApiUsersList extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('fields' => new PrimitiveSerializer('string'), 'profileId' => new PrimitiveSerializer('string'), 'groupIds' => new ArraySerializer(new PrimitiveSerializer('string')), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'authorizations' => new PrimitiveSerializer('bool'));
+        $serializers = array('fields' => new PrimitiveSerializer('string'), 'profileId' => new PrimitiveSerializer('string'), 'groupIds' => new ArraySerializer(new PrimitiveSerializer('string')), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'authorizations' => new PrimitiveSerializer('bool'));
+        return $serializers;
     }
 }

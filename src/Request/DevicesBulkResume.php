@@ -88,6 +88,7 @@ class DevicesBulkResume extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('devices' => new ClassSerializer(DeviceActionJob::class), 'groupId' => new PrimitiveSerializer('string'));
+        $serializers = array('devices' => new ClassSerializer(DeviceActionJob::class), 'groupId' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

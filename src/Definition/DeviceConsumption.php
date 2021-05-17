@@ -73,6 +73,7 @@ class DeviceConsumption extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer('int'), 'deviceConsumptions' => new ArraySerializer(new ClassSerializer(DeviceConsumptionsItem::class)));
+        $serializers = array('id' => new PrimitiveSerializer('int'), 'deviceConsumptions' => new ArraySerializer(new ClassSerializer(DeviceConsumptionsItem::class)));
+        return $serializers;
     }
 }

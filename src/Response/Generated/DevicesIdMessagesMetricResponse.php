@@ -100,6 +100,7 @@ class DevicesIdMessagesMetricResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('lastDay' => new PrimitiveSerializer('int'), 'lastWeek' => new PrimitiveSerializer('int'), 'lastMonth' => new PrimitiveSerializer('int'));
+        $serializers = array('lastDay' => new PrimitiveSerializer('int'), 'lastWeek' => new PrimitiveSerializer('int'), 'lastMonth' => new PrimitiveSerializer('int'));
+        return $serializers;
     }
 }

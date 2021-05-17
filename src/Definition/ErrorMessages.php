@@ -257,6 +257,7 @@ class ErrorMessages extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('deviceId' => new PrimitiveSerializer('string'), 'deviceTypeId' => new PrimitiveSerializer('string'), 'time' => new PrimitiveSerializer('int'), 'data' => new PrimitiveSerializer('string'), 'snr' => new PrimitiveSerializer('string'), 'status' => new PrimitiveSerializer('string'), 'message' => new PrimitiveSerializer('string'), 'callback' => new ClassSerializer(CallbackMedium::class), 'parameters' => new PrimitiveSerializer('array'));
+        $serializers = array('deviceId' => new PrimitiveSerializer('string'), 'deviceTypeId' => new PrimitiveSerializer('string'), 'time' => new PrimitiveSerializer('int'), 'data' => new PrimitiveSerializer('string'), 'snr' => new PrimitiveSerializer('string'), 'status' => new PrimitiveSerializer('string'), 'message' => new PrimitiveSerializer('string'), 'callback' => new ClassSerializer(CallbackMedium::class), 'parameters' => new PrimitiveSerializer('array'));
+        return $serializers;
     }
 }

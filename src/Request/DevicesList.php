@@ -410,6 +410,7 @@ class DevicesList extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('id' => new PrimitiveSerializer('string'), 'groupIds' => new ArraySerializer(new PrimitiveSerializer('string')), 'deep' => new PrimitiveSerializer('bool'), 'authorizations' => new PrimitiveSerializer('bool'), 'deviceTypeId' => new PrimitiveSerializer('string'), 'operatorId' => new PrimitiveSerializer('string'), 'sort' => new PrimitiveSerializer('string'), 'minId' => new PrimitiveSerializer('string'), 'maxId' => new PrimitiveSerializer('string'), 'fields' => new PrimitiveSerializer('string'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
+        $serializers = array('id' => new PrimitiveSerializer('string'), 'groupIds' => new ArraySerializer(new PrimitiveSerializer('string')), 'deep' => new PrimitiveSerializer('bool'), 'authorizations' => new PrimitiveSerializer('bool'), 'deviceTypeId' => new PrimitiveSerializer('string'), 'operatorId' => new PrimitiveSerializer('string'), 'sort' => new PrimitiveSerializer('string'), 'minId' => new PrimitiveSerializer('string'), 'maxId' => new PrimitiveSerializer('string'), 'fields' => new PrimitiveSerializer('string'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

@@ -40,6 +40,7 @@ class BaseHost extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('name' => new PrimitiveSerializer('string'));
+        $serializers = array('name' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

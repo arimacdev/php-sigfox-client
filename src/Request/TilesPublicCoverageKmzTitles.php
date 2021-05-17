@@ -170,6 +170,7 @@ class TilesPublicCoverageKmzTitles extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('zoom' => new PrimitiveSerializer('int'), 'north' => new PrimitiveSerializer('int'), 'south' => new PrimitiveSerializer('int'), 'west' => new PrimitiveSerializer('int'), 'east' => new PrimitiveSerializer('int'));
+        $serializers = array('zoom' => new PrimitiveSerializer('int'), 'north' => new PrimitiveSerializer('int'), 'south' => new PrimitiveSerializer('int'), 'west' => new PrimitiveSerializer('int'), 'east' => new PrimitiveSerializer('int'));
+        return $serializers;
     }
 }

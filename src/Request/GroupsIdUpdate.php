@@ -54,6 +54,7 @@ class GroupsIdUpdate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('group' => new ClassSerializer(CommonGroupUpdate::class));
+        $serializers = array('group' => new ClassSerializer(CommonGroupUpdate::class));
+        return $serializers;
     }
 }

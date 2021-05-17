@@ -70,6 +70,7 @@ class DevicesIdMessagesListResponse extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('data' => new ArraySerializer(new ClassSerializer(DeviceMessage::class)), 'paging' => new ClassSerializer(Paging::class));
+        $serializers = array('data' => new ArraySerializer(new ClassSerializer(DeviceMessage::class)), 'paging' => new ClassSerializer(Paging::class));
+        return $serializers;
     }
 }

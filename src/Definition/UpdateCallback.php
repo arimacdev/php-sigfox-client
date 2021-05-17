@@ -245,6 +245,7 @@ class UpdateCallback extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('channel' => new PrimitiveSerializer('string'), 'callbackType' => new PrimitiveSerializer('int'), 'callbackSubtype' => new PrimitiveSerializer('int'), 'payloadConfig' => new PrimitiveSerializer('string'), 'enabled' => new PrimitiveSerializer('bool'));
+        $serializers = array('channel' => new PrimitiveSerializer('string'), 'callbackType' => new PrimitiveSerializer('int'), 'callbackSubtype' => new PrimitiveSerializer('int'), 'payloadConfig' => new PrimitiveSerializer('string'), 'enabled' => new PrimitiveSerializer('bool'));
+        return $serializers;
     }
 }

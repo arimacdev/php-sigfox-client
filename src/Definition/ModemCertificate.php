@@ -71,6 +71,8 @@ class ModemCertificate extends RadioCertificate
      */
     public function getSerializeMetaData() : array
     {
-        return array('radioConfigurations' => new ArraySerializer(new ClassSerializer(ModemCertificateRadioConfiguration::class)), 'repeaterFunction' => new PrimitiveSerializer('bool'));
+        $serializers = array('radioConfigurations' => new ArraySerializer(new ClassSerializer(ModemCertificateRadioConfiguration::class)), 'repeaterFunction' => new PrimitiveSerializer('bool'));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

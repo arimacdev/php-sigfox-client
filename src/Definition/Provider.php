@@ -114,6 +114,8 @@ class Provider extends BaseProvider
      */
     public function getSerializeMetaData() : array
     {
-        return array('group' => new ClassSerializer(MinGroup::class), 'contacts' => new ArraySerializer(new ClassSerializer(Contact::class)), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'resources' => new ArraySerializer(new PrimitiveSerializer('string')));
+        $serializers = array('group' => new ClassSerializer(MinGroup::class), 'contacts' => new ArraySerializer(new ClassSerializer(Contact::class)), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'resources' => new ArraySerializer(new PrimitiveSerializer('string')));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

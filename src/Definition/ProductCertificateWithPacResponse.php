@@ -307,6 +307,8 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      */
     public function getSerializeMetaData() : array
     {
-        return array('externalId' => new PrimitiveSerializer('string'), 'certificateCode' => new PrimitiveSerializer('int'), 'certificateIndex' => new PrimitiveSerializer('int'), 'qualificationTime' => new PrimitiveSerializer('int'), 'reportNumber' => new PrimitiveSerializer('string'), 'inputSensitivity' => new PrimitiveSerializer('int'), 'encryptionPayload' => new PrimitiveSerializer('bool'), 'devKit' => new PrimitiveSerializer('bool'), 'modes' => new ArraySerializer(new PrimitiveSerializer('int')), 'standards' => new ArraySerializer(new ClassSerializer(RadioConfiguration::class)), 'standardCfgs' => new ArraySerializer(new ClassSerializer(ProductCertificateRadioConfiguration::class)));
+        $serializers = array('externalId' => new PrimitiveSerializer('string'), 'certificateCode' => new PrimitiveSerializer('int'), 'certificateIndex' => new PrimitiveSerializer('int'), 'qualificationTime' => new PrimitiveSerializer('int'), 'reportNumber' => new PrimitiveSerializer('string'), 'inputSensitivity' => new PrimitiveSerializer('int'), 'encryptionPayload' => new PrimitiveSerializer('bool'), 'devKit' => new PrimitiveSerializer('bool'), 'modes' => new ArraySerializer(new PrimitiveSerializer('int')), 'standards' => new ArraySerializer(new ClassSerializer(RadioConfiguration::class)), 'standardCfgs' => new ArraySerializer(new ClassSerializer(ProductCertificateRadioConfiguration::class)));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

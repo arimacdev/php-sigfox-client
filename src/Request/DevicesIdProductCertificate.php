@@ -54,6 +54,7 @@ class DevicesIdProductCertificate extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('pac' => new PrimitiveSerializer('string'));
+        $serializers = array('pac' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

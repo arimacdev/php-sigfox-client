@@ -220,6 +220,8 @@ class UrlCallback extends Callback
      */
     public function getSerializeMetaData() : array
     {
-        return array('url' => new PrimitiveSerializer('string'), 'httpMethod' => new PrimitiveSerializer('string'), 'downlinkHook' => new PrimitiveSerializer('bool'), 'headers' => new PrimitiveSerializer('array'), 'sendSni' => new PrimitiveSerializer('bool'), 'bodyTemplate' => new PrimitiveSerializer('string'), 'contentType' => new PrimitiveSerializer('string'));
+        $serializers = array('url' => new PrimitiveSerializer('string'), 'httpMethod' => new PrimitiveSerializer('string'), 'downlinkHook' => new PrimitiveSerializer('bool'), 'headers' => new PrimitiveSerializer('array'), 'sendSni' => new PrimitiveSerializer('bool'), 'bodyTemplate' => new PrimitiveSerializer('string'), 'contentType' => new PrimitiveSerializer('string'));
+        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        return $serializers;
     }
 }

@@ -171,6 +171,7 @@ class DevicesIdMessagesList extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('fields' => new PrimitiveSerializer('string'), 'since' => new PrimitiveSerializer('int'), 'before' => new PrimitiveSerializer('int'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'));
+        $serializers = array('fields' => new PrimitiveSerializer('string'), 'since' => new PrimitiveSerializer('int'), 'before' => new PrimitiveSerializer('int'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'));
+        return $serializers;
     }
 }

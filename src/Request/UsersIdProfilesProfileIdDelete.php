@@ -49,6 +49,7 @@ class UsersIdProfilesProfileIdDelete extends Request
      */
     public function getSerializeMetaData() : array
     {
-        return array('groupId' => new PrimitiveSerializer('string'));
+        $serializers = array('groupId' => new PrimitiveSerializer('string'));
+        return $serializers;
     }
 }

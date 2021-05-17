@@ -99,8 +99,9 @@ trait BillableGroup
      *
      * @internal
      */
-    public function getSerializeMetaData() : array
+    public function getSerializeMetaDataBillableGroup() : array
     {
-        return array('billable' => new PrimitiveSerializer('bool'), 'technicalEmail' => new PrimitiveSerializer('string'), 'maxPrototypeAllowed' => new PrimitiveSerializer('int'));
+        $serializers = array('billable' => new PrimitiveSerializer('bool'), 'technicalEmail' => new PrimitiveSerializer('string'), 'maxPrototypeAllowed' => new PrimitiveSerializer('int'));
+        return $serializers;
     }
 }

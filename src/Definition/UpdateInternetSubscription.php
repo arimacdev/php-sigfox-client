@@ -269,6 +269,7 @@ class UpdateInternetSubscription extends Definition
      */
     public function getSerializeMetaData() : array
     {
-        return array('type' => new PrimitiveSerializer('int'), 'priority' => new PrimitiveSerializer('int'), 'comments' => new PrimitiveSerializer('string'), 'startTime' => new PrimitiveSerializer('int'), 'endTime' => new PrimitiveSerializer('int'), 'provider' => new ClassSerializer(MinProvider::class), 'contacts' => new ArraySerializer(new ClassSerializer(MinContact::class)));
+        $serializers = array('type' => new PrimitiveSerializer('int'), 'priority' => new PrimitiveSerializer('int'), 'comments' => new PrimitiveSerializer('string'), 'startTime' => new PrimitiveSerializer('int'), 'endTime' => new PrimitiveSerializer('int'), 'provider' => new ClassSerializer(MinProvider::class), 'contacts' => new ArraySerializer(new ClassSerializer(MinContact::class)));
+        return $serializers;
     }
 }
