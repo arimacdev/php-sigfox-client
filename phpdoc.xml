@@ -12,7 +12,7 @@
             <ignore hidden="true">
                 <path>src/Client/Client.php</path>
                 <path>src/Serializer/**/*</path>
-                <path>src/Repository.php</path>
+                <path>src/Helper.php</path>
             </ignore>
             <default-package-name>PHP Sigfox Client</default-package-name>
         </api>
