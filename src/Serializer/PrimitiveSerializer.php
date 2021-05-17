@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Serializer;
 
 use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
+use stdClass;
 
 /**
  * Serializing and deserializing primitive typed values. (array, string, int, float, bool)
@@ -44,6 +45,13 @@ class PrimitiveSerializer implements Serializer
                 break;
             case "array":
                 $validated = is_array($value);
+                if($validated){
+                    foreach($value as  $val){
+                        if(is_object($val)&&!($val instanceof stdClass)){
+                            $validated = false;
+                        }
+                    }
+                }
                 break;
             case "bool":
                 $validated = is_bool($value);

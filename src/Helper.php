@@ -2,6 +2,8 @@
 
 namespace Arimac\Sigfox;
 
+use stdClass;
+
 class Helper {
     /**
      * Filter only required keys from a large array
@@ -40,5 +42,28 @@ class Helper {
             }
         }
         return implode("/", $slices);
+    }
+
+    /**
+     * Returning the JSON serializable error value from a nested array or a object
+     *
+     * @param mixed $value
+     *
+     * @return bool
+     */
+    public static function getJSONSerializableErrorValue($value)
+    {
+        if (is_array($value) || (is_object($value) && $value instanceof stdClass)) {
+            foreach ($value as $val) {
+                $err = self::getJSONSerializableErrorValue($val);
+                if($err){
+                    return $err;
+                }
+            }
+        } else if(is_object($value)){
+            return $value;
+        }
+
+        return null;
     }
 }
