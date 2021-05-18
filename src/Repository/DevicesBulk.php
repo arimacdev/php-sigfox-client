@@ -3,7 +3,7 @@
 namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Client\Client;
-use Arimac\Sigfox\Definition\AsynchronousDeviceCreationJob;
+use Arimac\Sigfox\Model\AsynchronousDeviceCreationJob;
 use Arimac\Sigfox\Request\DevicesBulkCreate;
 use Arimac\Sigfox\Response\Generated\DevicesBulkCreateResponse;
 use Arimac\Sigfox\Exception\DeserializeException;
@@ -16,12 +16,12 @@ use Arimac\Sigfox\Exception\Response\ConflictException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
 use Arimac\Sigfox\Request\DevicesBulkUpdate;
 use Arimac\Sigfox\Response\Generated\DevicesBulkUpdateResponse;
-use Arimac\Sigfox\Definition\AsynchronousDeviceTransferJob;
+use Arimac\Sigfox\Model\AsynchronousDeviceTransferJob;
 use Arimac\Sigfox\Request\DevicesBulkTransfer;
 use Arimac\Sigfox\Response\Generated\DevicesBulkTransferResponse;
-use Arimac\Sigfox\Definition\AsynchronousDeviceReplacementJob;
+use Arimac\Sigfox\Model\AsynchronousDeviceReplacementJob;
 use Arimac\Sigfox\Request\DevicesBulkReplace;
-use Arimac\Sigfox\Definition\ReplaceResponse;
+use Arimac\Sigfox\Model\ReplaceResponse;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Request\DevicesBulkRestart;
 use Arimac\Sigfox\Response\Generated\DevicesBulkRestartResponse;
@@ -53,7 +53,7 @@ class DevicesBulk
     /**
      * Create multiple new devices with asynchronous job
      *
-     * @param AsynchronousDeviceCreationJob $devices The devices to create
+     * @param AsynchronousDeviceCreationJob|undefined $devices The devices to create
      *
      * @return DevicesBulkCreateResponse
      *
@@ -66,7 +66,7 @@ class DevicesBulk
      * @throws ConflictException           If server returned a HTTP 409 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function create(AsynchronousDeviceCreationJob $devices) : DevicesBulkCreateResponse
+    public function create(?AsynchronousDeviceCreationJob $devices) : DevicesBulkCreateResponse
     {
         $request = new DevicesBulkCreate();
         $request->setDevices($devices);
@@ -88,7 +88,7 @@ class DevicesBulk
      * @throws ConflictException           If server returned a HTTP 409 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function update(DevicesBulkUpdate $request) : DevicesBulkUpdateResponse
+    public function update(?DevicesBulkUpdate $request = null) : DevicesBulkUpdateResponse
     {
         return $this->client->call('put', '/devices/bulk', $request, DevicesBulkUpdateResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 409 => ConflictException::class, 500 => InternalServerException::class));
     }
@@ -106,7 +106,7 @@ class DevicesBulk
     /**
      * Transfer multiple devices to another device type with asynchronous job
      *
-     * @param AsynchronousDeviceTransferJob $devices The devices to move
+     * @param AsynchronousDeviceTransferJob|undefined $devices The devices to move
      *
      * @return DevicesBulkTransferResponse
      *
@@ -119,7 +119,7 @@ class DevicesBulk
      * @throws ConflictException           If server returned a HTTP 409 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function transfer(AsynchronousDeviceTransferJob $devices) : DevicesBulkTransferResponse
+    public function transfer(?AsynchronousDeviceTransferJob $devices) : DevicesBulkTransferResponse
     {
         $request = new DevicesBulkTransfer();
         $request->setDevices($devices);
@@ -163,7 +163,7 @@ class DevicesBulk
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function restart(DevicesBulkRestart $request) : DevicesBulkRestartResponse
+    public function restart(?DevicesBulkRestart $request = null) : DevicesBulkRestartResponse
     {
         return $this->client->call('post', '/devices/bulk/restart', $request, DevicesBulkRestartResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
@@ -190,7 +190,7 @@ class DevicesBulk
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function suspend(DevicesBulkSuspend $request) : DevicesBulkSuspendResponse
+    public function suspend(?DevicesBulkSuspend $request = null) : DevicesBulkSuspendResponse
     {
         return $this->client->call('post', '/devices/bulk/suspend', $request, DevicesBulkSuspendResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
@@ -217,7 +217,7 @@ class DevicesBulk
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function resume(DevicesBulkResume $request) : DevicesBulkResumeResponse
+    public function resume(?DevicesBulkResume $request = null) : DevicesBulkResumeResponse
     {
         return $this->client->call('post', '/devices/bulk/resume', $request, DevicesBulkResumeResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
@@ -244,7 +244,7 @@ class DevicesBulk
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function unsubscribe(DevicesBulkUnsubscribe $request) : DevicesBulkUnsubscribeResponse
+    public function unsubscribe(?DevicesBulkUnsubscribe $request = null) : DevicesBulkUnsubscribeResponse
     {
         return $this->client->call('post', '/devices/bulk/unsubscribe', $request, DevicesBulkUnsubscribeResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }

@@ -5,7 +5,7 @@ namespace Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Helper;
 use Arimac\Sigfox\Request\DevicesIdCertificateModem;
-use Arimac\Sigfox\Definition\ModemCertificate;
+use Arimac\Sigfox\Model\ModemCertificate;
 use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
@@ -15,7 +15,7 @@ use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
 use Arimac\Sigfox\Request\DevicesIdCertificateProduct;
-use Arimac\Sigfox\Definition\ProductCertificate;
+use Arimac\Sigfox\Model\ProductCertificate;
 class DevicesIdCertificate
 {
     /**

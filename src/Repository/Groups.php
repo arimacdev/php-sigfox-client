@@ -12,7 +12,7 @@ use Arimac\Sigfox\Exception\Response\BadRequestException;
 use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
-use Arimac\Sigfox\Definition\CommonGroupCreate;
+use Arimac\Sigfox\Model\CommonGroupCreate;
 use Arimac\Sigfox\Request\GroupsCreate;
 use Arimac\Sigfox\Response\Generated\GroupsCreateResponse;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
@@ -61,7 +61,7 @@ class Groups
     /**
      * Create a new group.
      *
-     * @param CommonGroupCreate $group
+     * @param CommonGroupCreate|undefined $group
      *
      * @return GroupsCreateResponse
      *
@@ -75,7 +75,7 @@ class Groups
      * @throws ConflictException           If server returned a HTTP 409 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function create(CommonGroupCreate $group) : GroupsCreateResponse
+    public function create(?CommonGroupCreate $group) : GroupsCreateResponse
     {
         $request = new GroupsCreate();
         $request->setGroup($group);

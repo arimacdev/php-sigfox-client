@@ -2,11 +2,12 @@
 
 namespace Arimac\Sigfox\Client;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
 use Arimac\Sigfox\Helper;
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Validator\Validator;
 
 /**
  * Client wrapper that serializing and deserializing data before sending and receiving
@@ -35,34 +36,37 @@ class Client
      * @param string   $response Response class name
      * @param string[] $errors   All expected HTTP errors as an associated array `[statusCode=>className]`
      *
-     * @return Definition An instance of $response type.
+     * @return Model An instance of $response type.
      */
     public function call(
         string $method,
-        string $url, 
-        ?Request $request = null, 
-        ?string $responseClass = null, 
+        string $url,
+        ?Request $request = null,
+        ?string $responseClass = null,
         array $errors = []
-    ): ?Definition
-    {
-        $requestSerializer = new ClassSerializer($request::class);
-        $serialized = $requestSerializer->serialize($request);
+    ): ?Model {
+        $body = null;
+        $query = null;
+        if ($request) {
+            Validator::validate($request);
+            $requestSerializer = new ClassSerializer($request::class);
+            $serialized = $requestSerializer->serialize($request);
 
-        $body = Helper::arrayFilterKeys($serialized, $request->getBodyFields());
-        $query = Helper::arrayFilterKeys($serialized, $request->getQueryFields());
-
+            $body = Helper::arrayFilterKeys($serialized, $request->getBodyFields());
+            $query = Helper::arrayFilterKeys($serialized, $request->getQueryFields());
+        }
         list($statusCode, $body) = $this->inner->request($method, $url, $body, $query);
         $statusCode = (int) $statusCode;
         if ($responseClass) {
-            if($statusCode>=200&&$statusCode<204){
+            if ($statusCode >= 200 && $statusCode < 204) {
                 $responseJson = json_decode($body, true);
                 $responseSerializer = new ClassSerializer($responseClass);
                 $deserialized = $responseSerializer->deserialize($responseJson);
                 return $deserialized;
-            } else if($statusCode==204){
+            } else if ($statusCode == 204) {
                 return null;
-            } else if ($statusCode>400){
-                if(isset($errors[$statusCode])){
+            } else if ($statusCode > 400) {
+                if (isset($errors[$statusCode])) {
                     $responseJson = json_decode($body, true);
                     $exception = $errors[$statusCode]::deserialize($responseJson);
                     throw $exception;

@@ -52,7 +52,7 @@ class TilesMonarchKmzJobIdTileskmz
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function getCoverage(TilesMonarchKmzJobIdTileskmzGetCoverage $request) : void
+    public function getCoverage(?TilesMonarchKmzJobIdTileskmzGetCoverage $request = null) : void
     {
         $this->client->call('get', Helper::bindUrlParams('/tiles/monarch/kmz/{jobId}/tiles.kmz', $this->jobId), $request, null, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }

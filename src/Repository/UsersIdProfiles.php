@@ -43,7 +43,7 @@ class UsersIdProfiles
     /**
      * add user roles to a user.
      *
-     * @param array $userRoles user roles array to add
+     * @param array|undefined $userRoles user roles array to add
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -54,7 +54,7 @@ class UsersIdProfiles
      * @throws MethodNotAllowedException   If server returned a HTTP 405 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function addRoles(array $userRoles) : void
+    public function addRoles(?array $userRoles) : void
     {
         $request = new UsersIdProfilesAddRoles();
         $request->setUserRoles($userRoles);

@@ -2,9 +2,9 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
-class CoveragesGlobalPredictionsCalculateBulkResponse extends Definition
+class CoveragesGlobalPredictionsCalculateBulkResponse extends Model
 {
     /**
      * jobId provided to the customer to request the job status and results

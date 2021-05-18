@@ -8,5 +8,5 @@ interface Validate {
      *
      * @return Rule[][] Property name as the key and Rule[] as the value
      */
-    public function getValidationRules(): array;    
+    function getValidationMetaData(): array;    
 }

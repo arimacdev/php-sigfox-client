@@ -2,9 +2,9 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
-class ApiUsersCreateResponse extends Definition
+class ApiUsersCreateResponse extends Model
 {
     /**
      * The newly created API user identifier

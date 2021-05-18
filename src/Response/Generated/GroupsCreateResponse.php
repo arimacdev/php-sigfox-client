@@ -2,9 +2,9 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
-class GroupsCreateResponse extends Definition
+class GroupsCreateResponse extends Model
 {
     /**
      * The new created group identifier

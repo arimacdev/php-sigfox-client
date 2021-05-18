@@ -2,9 +2,9 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
-class ApiUsersIdRenewCredentialResponse extends Definition
+class ApiUsersIdRenewCredentialResponse extends Model
 {
     /**
      * The new API user's acces token (password)

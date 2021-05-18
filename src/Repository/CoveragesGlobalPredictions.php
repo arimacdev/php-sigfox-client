@@ -13,9 +13,9 @@ use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
-use Arimac\Sigfox\Definition\GlobalCoverageRequest;
+use Arimac\Sigfox\Model\GlobalCoverageRequest;
 use Arimac\Sigfox\Request\CoveragesGlobalPredictionsGet;
-use Arimac\Sigfox\Definition\GlobalCoverageResponse;
+use Arimac\Sigfox\Model\GlobalCoverageResponse;
 use Arimac\Sigfox\Request\CoveragesGlobalPredictionsCalculateBulk;
 use Arimac\Sigfox\Response\Generated\CoveragesGlobalPredictionsCalculateBulkResponse;
 class CoveragesGlobalPredictions
@@ -56,7 +56,7 @@ class CoveragesGlobalPredictions
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function getOne(CoveragesGlobalPredictionsGetOne $request) : CoveragesGlobalPredictionsGetOneResponse
+    public function getOne(?CoveragesGlobalPredictionsGetOne $request = null) : CoveragesGlobalPredictionsGetOneResponse
     {
         return $this->client->call('get', '/coverages/global/predictions', $request, CoveragesGlobalPredictionsGetOneResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
@@ -69,7 +69,7 @@ class CoveragesGlobalPredictions
      * For more information please refer to the [Global Coverage API
      * article](https://support.sigfox.com/docs/global-coverage-api).
      *
-     * @param GlobalCoverageRequest $payload
+     * @param GlobalCoverageRequest|undefined $payload
      *
      * @return GlobalCoverageResponse
      *
@@ -82,7 +82,7 @@ class CoveragesGlobalPredictions
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function get(GlobalCoverageRequest $payload) : GlobalCoverageResponse
+    public function get(?GlobalCoverageRequest $payload) : GlobalCoverageResponse
     {
         $request = new CoveragesGlobalPredictionsGet();
         $request->setPayload($payload);
@@ -93,7 +93,7 @@ class CoveragesGlobalPredictions
      * For more information please refer to the [Global Coverage API
      * article](https://support.sigfox.com/docs/global-coverage-api).
      *
-     * @param GlobalCoverageRequest $payload
+     * @param GlobalCoverageRequest|undefined $payload
      *
      * @return CoveragesGlobalPredictionsCalculateBulkResponse
      *
@@ -106,7 +106,7 @@ class CoveragesGlobalPredictions
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function calculateBulk(GlobalCoverageRequest $payload) : CoveragesGlobalPredictionsCalculateBulkResponse
+    public function calculateBulk(?GlobalCoverageRequest $payload) : CoveragesGlobalPredictionsCalculateBulkResponse
     {
         $request = new CoveragesGlobalPredictionsCalculateBulk();
         $request->setPayload($payload);

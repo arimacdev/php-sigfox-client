@@ -5,7 +5,7 @@ namespace Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Helper;
 use Arimac\Sigfox\Request\ProfilesIdGet;
-use Arimac\Sigfox\Definition\Profile;
+use Arimac\Sigfox\Model\Profile;
 use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;

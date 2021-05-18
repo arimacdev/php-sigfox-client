@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Validator\Rules\OneOf;
 /**
  * Retrieve information about a device type.
  */
@@ -25,10 +26,6 @@ class DeviceTypesIdGet extends Request
      * @internal
      */
     protected array $query = array('authorizations', 'fields');
-    /**
-     * @internal
-     */
-    protected array $validations = array('fields' => array('in:group(name\\,type\\,level),contract(name),geolocPayloadConfig(name)', 'nullable'));
     /**
      * Setter for authorizations
      *
@@ -86,5 +83,15 @@ class DeviceTypesIdGet extends Request
     {
         $serializers = array('authorizations' => new PrimitiveSerializer('bool'), 'fields' => new PrimitiveSerializer('string'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('fields' => array(new OneOf(array('group(name,type,level)', 'contract(name)', 'geolocPayloadConfig(name)'))));
+        return $rules;
     }
 }

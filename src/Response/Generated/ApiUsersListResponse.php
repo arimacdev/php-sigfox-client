@@ -2,12 +2,14 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition\ApiUser;
-use Arimac\Sigfox\Definition\Paging;
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model\ApiUser;
+use Arimac\Sigfox\Model\Paging;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
-class ApiUsersListResponse extends Definition
+use Arimac\Sigfox\Validator\Rules\ChildSet;
+use Arimac\Sigfox\Validator\Rules\Child;
+class ApiUsersListResponse extends Model
 {
     /**
      * @var ApiUser[]
@@ -72,5 +74,15 @@ class ApiUsersListResponse extends Definition
     {
         $serializers = array('data' => new ArraySerializer(new ClassSerializer(ApiUser::class)), 'paging' => new ClassSerializer(Paging::class));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('data' => array(new ChildSet()), 'paging' => array(new Child()));
+        return $rules;
     }
 }

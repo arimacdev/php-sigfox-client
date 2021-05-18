@@ -3,8 +3,10 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Definition\GlobalCoverageRequest;
+use Arimac\Sigfox\Model\GlobalCoverageRequest;
 use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
+use Arimac\Sigfox\Validator\Rules\Child;
 /**
  * Get the coverage margins for multiple points, for each redundancy level.
  * Sigfox recommends to:
@@ -24,10 +26,6 @@ class CoveragesGlobalPredictionsGet extends Request
      * @internal
      */
     protected array $body = array('payload');
-    /**
-     * @internal
-     */
-    protected array $validations = array('payload' => array('required'));
     /**
      * Setter for payload
      *
@@ -60,5 +58,15 @@ class CoveragesGlobalPredictionsGet extends Request
     {
         $serializers = array('payload' => new ClassSerializer(GlobalCoverageRequest::class));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('payload' => array(new Required(), new Child()));
+        return $rules;
     }
 }

@@ -3,8 +3,10 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Definition\UpdateCallback;
+use Arimac\Sigfox\Model\UpdateCallback;
 use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
+use Arimac\Sigfox\Validator\Rules\Child;
 /**
  * Update a callback for a given device type
  */
@@ -20,10 +22,6 @@ class DeviceTypesIdCallbacksCallbackIdUpdate extends Request
      * @internal
      */
     protected array $body = array('callback');
-    /**
-     * @internal
-     */
-    protected array $validations = array('callback' => array('required'));
     /**
      * Setter for callback
      *
@@ -56,5 +54,15 @@ class DeviceTypesIdCallbacksCallbackIdUpdate extends Request
     {
         $serializers = array('callback' => new ClassSerializer(UpdateCallback::class));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('callback' => array(new Required(), new Child()));
+        return $rules;
     }
 }

@@ -1,5 +1,5 @@
 {
-    "Arimac\\Sigfox\\Definition\\MinGroup": {
+    "Arimac\\Sigfox\\Model\\MinGroup": {
         "type": {
             "SO": {
                 "value": 0,
@@ -40,7 +40,7 @@
             "comment": "Group's type"
         }
     },
-    "Arimac\\Sigfox\\Definition\\CellularConnectivityForBs": {
+    "Arimac\\Sigfox\\Model\\CellularConnectivityForBs": {
         "state": {
             "ACTIVE": {
                 "value": 0,
@@ -134,7 +134,7 @@
             "comment": "Error status returned after a connectivity config creation\/edition"
         }
     },
-    "Arimac\\Sigfox\\Definition\\EthernetConnectivityForBs": {
+    "Arimac\\Sigfox\\Model\\EthernetConnectivityForBs": {
         "state": {
             "ACTIVE": {
                 "value": 0,
@@ -174,7 +174,7 @@
             "comment": "Synchronisation status of an ethernet connectivity configuration"
         }
     },
-    "Arimac\\Sigfox\\Definition\\BaseStation": {
+    "Arimac\\Sigfox\\Model\\BaseStation": {
         "connectionType": {
             "ETH": {
                 "value": 0,
@@ -556,7 +556,7 @@
             "comment": "The status, computed by the geolocation services, of the Base Station's contribution to the Sigfox Network location service."
         }
     },
-    "Arimac\\Sigfox\\Definition\\MinHwFamily": {
+    "Arimac\\Sigfox\\Model\\MinHwFamily": {
         "id": {
             "STANDARD": {
                 "value": 0,
@@ -577,7 +577,7 @@
             "comment": "Base station hardware family id."
         }
     },
-    "Arimac\\Sigfox\\Definition\\SimpleSite": {
+    "Arimac\\Sigfox\\Model\\SimpleSite": {
         "status": {
             "PROD": {
                 "value": 0,
@@ -630,7 +630,7 @@
             "comment": "Site status"
         }
     },
-    "Arimac\\Sigfox\\Definition\\CellularConnectivityBase": {
+    "Arimac\\Sigfox\\Model\\CellularConnectivityBase": {
         "source": {
             "REMOTE": {
                 "value": 0,
@@ -651,7 +651,7 @@
             "comment": "Configuration origin of the connectivity"
         }
     },
-    "Arimac\\Sigfox\\Definition\\EthernetConnectivityBase": {
+    "Arimac\\Sigfox\\Model\\EthernetConnectivityBase": {
         "type": {
             "STATIC": {
                 "value": 1,
@@ -683,7 +683,7 @@
             "comment": "Configuration origin of the connectivity"
         }
     },
-    "Arimac\\Sigfox\\Definition\\DeviceMessage": {
+    "Arimac\\Sigfox\\Model\\DeviceMessage": {
         "lqi": {
             "LIMIT": {
                 "value": 0,
@@ -731,7 +731,7 @@
             "comment": "link quality indicator for repeated message"
         }
     },
-    "Arimac\\Sigfox\\Definition\\ComputedLocation": {
+    "Arimac\\Sigfox\\Model\\ComputedLocation": {
         "source": {
             "RSSI_AND_POSITION_OF_THE_STATION": {
                 "value": 0,
@@ -768,7 +768,7 @@
             "comment": "Define how the location has been computed:"
         }
     },
-    "Arimac\\Sigfox\\Definition\\MinBaseStationWithType": {
+    "Arimac\\Sigfox\\Model\\MinBaseStationWithType": {
         "resourceType": {
             "SBS": {
                 "value": 0,
@@ -781,7 +781,7 @@
             "comment": "Resource type."
         }
     },
-    "Arimac\\Sigfox\\Definition\\JobError": {
+    "Arimac\\Sigfox\\Model\\JobError": {
         "type": {
             "ENTITY": {
                 "value": 0,
@@ -794,7 +794,7 @@
             "comment": "Error type"
         }
     },
-    "Arimac\\Sigfox\\Definition\\ContractInfoCreate": {
+    "Arimac\\Sigfox\\Model\\ContractInfoCreate": {
         "pricingModel": {
             "PRICING_MODEL_V1": {
                 "value": 1,
@@ -842,7 +842,7 @@
             "comment": "The contract info subscription plan."
         }
     },
-    "Arimac\\Sigfox\\Definition\\ContractInfo": {
+    "Arimac\\Sigfox\\Model\\ContractInfo": {
         "pricingModel": {
             "PRICING_MODEL_V1": {
                 "value": 1,
@@ -878,7 +878,7 @@
             "comment": "The contract info subscription plan."
         }
     },
-    "Arimac\\Sigfox\\Definition\\Device": {
+    "Arimac\\Sigfox\\Model\\Device": {
         "lqi": {
             "LIMIT": {
                 "value": 0,
@@ -984,7 +984,7 @@
             "comment": "Computed automatic renewal status."
         }
     },
-    "Arimac\\Sigfox\\Definition\\LastComputedLocation": {
+    "Arimac\\Sigfox\\Model\\LastComputedLocation": {
         "sourceCode": {
             "RSSI_AND_POSITION_OF_THE_STATION": {
                 "value": 0,
@@ -1021,7 +1021,7 @@
             "comment": "Define how the location has been computed:"
         }
     },
-    "Arimac\\Sigfox\\Definition\\Token": {
+    "Arimac\\Sigfox\\Model\\Token": {
         "state": {
             "OK": {
                 "value": 0,
@@ -1042,7 +1042,7 @@
             "comment": ""
         }
     },
-    "Arimac\\Sigfox\\Definition\\CommonCertificate": {
+    "Arimac\\Sigfox\\Model\\CommonCertificate": {
         "status": {
             "ONGOING": {
                 "value": 0,
@@ -1055,7 +1055,7 @@
             "comment": "The certificate's status code"
         }
     },
-    "Arimac\\Sigfox\\Definition\\RadioConfiguration": {
+    "Arimac\\Sigfox\\Model\\RadioConfiguration": {
         "id": {
             "RC1": {
                 "value": 0,
@@ -1092,7 +1092,7 @@
             "comment": "The radio configuration identifier"
         }
     },
-    "Arimac\\Sigfox\\Definition\\ProductCertificateRadioConfiguration": {
+    "Arimac\\Sigfox\\Model\\ProductCertificateRadioConfiguration": {
         "uplinkClass": {
             "U0": {
                 "value": 0,
@@ -1129,7 +1129,7 @@
             "comment": "The device uplink class"
         }
     },
-    "Arimac\\Sigfox\\Definition\\RadioCertificate": {
+    "Arimac\\Sigfox\\Model\\RadioCertificate": {
         "modes": {
             "UPLINK_ONLY": {
                 "value": "0",
@@ -1142,7 +1142,7 @@
             "comment": "The certificate's mode code"
         }
     },
-    "Arimac\\Sigfox\\Definition\\BaseDeviceType": {
+    "Arimac\\Sigfox\\Model\\BaseDeviceType": {
         "downlinkMode": {
             "DIRECT": {
                 "value": 0,
@@ -1190,7 +1190,7 @@
             "comment": "The payload type"
         }
     },
-    "Arimac\\Sigfox\\Definition\\DeviceType": {
+    "Arimac\\Sigfox\\Model\\DeviceType": {
         "downlinkMode": {
             "DIRECT": {
                 "value": 0,
@@ -1238,7 +1238,7 @@
             "comment": "The payload type"
         }
     },
-    "Arimac\\Sigfox\\Definition\\DeviceTypeUpdate": {
+    "Arimac\\Sigfox\\Model\\DeviceTypeUpdate": {
         "payloadType": {
             "REGULAR": {
                 "value": 2,
@@ -1286,7 +1286,7 @@
             "comment": "The downlink mode to use for the devices of this device type."
         }
     },
-    "Arimac\\Sigfox\\Definition\\Callback": {
+    "Arimac\\Sigfox\\Model\\Callback": {
         "callbackType": {
             "DATA": {
                 "value": 0,
@@ -1334,7 +1334,7 @@
             "comment": "The callback's subtype. The subtype must be valid against its type."
         }
     },
-    "Arimac\\Sigfox\\Definition\\CreateCallback": {
+    "Arimac\\Sigfox\\Model\\CreateCallback": {
         "callbackType": {
             "DATA": {
                 "value": 0,
@@ -1382,7 +1382,7 @@
             "comment": "The callback's subtype. The subtype must be valid against its type."
         }
     },
-    "Arimac\\Sigfox\\Definition\\UpdateCallback": {
+    "Arimac\\Sigfox\\Model\\UpdateCallback": {
         "callbackType": {
             "DATA": {
                 "value": 0,
@@ -1430,7 +1430,7 @@
             "comment": "The callback's subtype. The subtype must be valid against its type."
         }
     },
-    "Arimac\\Sigfox\\Definition\\CommonGroupCreate": {
+    "Arimac\\Sigfox\\Model\\CommonGroupCreate": {
         "type": {
             "SO": {
                 "value": 0,
@@ -1471,7 +1471,7 @@
             "comment": "Group's type:"
         }
     },
-    "Arimac\\Sigfox\\Definition\\CommonGroupUpdate": {
+    "Arimac\\Sigfox\\Model\\CommonGroupUpdate": {
         "type": {
             "SO": {
                 "value": 0,
@@ -1512,7 +1512,7 @@
             "comment": "- Group's type"
         }
     },
-    "Arimac\\Sigfox\\Definition\\Group": {
+    "Arimac\\Sigfox\\Model\\Group": {
         "type": {
             "SO": {
                 "value": 0,
@@ -1553,7 +1553,7 @@
             "comment": "Group's type"
         }
     },
-    "Arimac\\Sigfox\\Definition\\CommonRole": {
+    "Arimac\\Sigfox\\Model\\CommonRole": {
         "type": {
             "ROLE": {
                 "value": 0,
@@ -1570,7 +1570,7 @@
             "comment": "Token's type of role"
         }
     },
-    "Arimac\\Sigfox\\Definition\\InternetSubscription": {
+    "Arimac\\Sigfox\\Model\\InternetSubscription": {
         "type": {
             "GSM": {
                 "value": 0,
@@ -1610,7 +1610,7 @@
             "comment": "Internet subscription priority."
         }
     },
-    "Arimac\\Sigfox\\Definition\\GsmSubscription": {
+    "Arimac\\Sigfox\\Model\\GsmSubscription": {
         "gsmConnectionType": {
             "DONGLE_USB": {
                 "value": 0,
@@ -1623,7 +1623,7 @@
             "comment": "GSM subscription connection type"
         }
     },
-    "Arimac\\Sigfox\\Definition\\SatSubscription": {
+    "Arimac\\Sigfox\\Model\\SatSubscription": {
         "connectionStatus": {
             "REQUEST": {
                 "value": 0,
@@ -1651,7 +1651,7 @@
             "comment": "Subscription receiver type"
         }
     },
-    "Arimac\\Sigfox\\Definition\\LanSubscription": {
+    "Arimac\\Sigfox\\Model\\LanSubscription": {
         "networkType": {
             "COMPANY": {
                 "value": 0,
@@ -1679,7 +1679,7 @@
             "comment": "Subscription connection type"
         }
     },
-    "Arimac\\Sigfox\\Definition\\CreateInternetSubscription": {
+    "Arimac\\Sigfox\\Model\\CreateInternetSubscription": {
         "type": {
             "GSM": {
                 "value": 0,
@@ -1719,7 +1719,7 @@
             "comment": "Internet subscription priority."
         }
     },
-    "Arimac\\Sigfox\\Definition\\CreateAdslSubscription": {
+    "Arimac\\Sigfox\\Model\\CreateAdslSubscription": {
         "connectionStatus": {
             "REQUEST": {
                 "value": 0,
@@ -1736,7 +1736,7 @@
             "comment": "Subscription connection status"
         }
     },
-    "Arimac\\Sigfox\\Definition\\CreateSatSubscription": {
+    "Arimac\\Sigfox\\Model\\CreateSatSubscription": {
         "connectionStatus": {
             "REQUEST": {
                 "value": 0,
@@ -1762,7 +1762,7 @@
                 "comment": "Subscription receiver type"
             }
         },
-        "Arimac\\Sigfox\\Definition\\UpdateInternetSubscription": {
+        "Arimac\\Sigfox\\Model\\UpdateInternetSubscription": {
             "type": {
                 "GSM": {
                     "value": 0,
@@ -1802,7 +1802,7 @@
                 "comment": "Internet subscription priority."
             }
         },
-        "Arimac\\Sigfox\\Definition\\BaseSiteConvention": {
+        "Arimac\\Sigfox\\Model\\BaseSiteConvention": {
             "status": {
                 "AT_SIGFOX": {
                     "value": 0,
@@ -1850,7 +1850,7 @@
                 "comment": "Convention status."
             }
         },
-        "Arimac\\Sigfox\\Definition\\BaseSiteIntervention": {
+        "Arimac\\Sigfox\\Model\\BaseSiteIntervention": {
             "equipmentsToChange": {
                 "ANTENNA": {
                     "value": 0,
@@ -1954,7 +1954,7 @@
                 "comment": "Convention status."
             }
         },
-        "Arimac\\Sigfox\\Definition\\BaseSite": {
+        "Arimac\\Sigfox\\Model\\BaseSite": {
             "status": {
                 "PROD": {
                     "value": 0,
@@ -2054,8 +2054,15 @@
             }
         }
     },
-    "Arimac\\Sigfox\\Definition\\Antenna": [],
-    "Arimac\\Sigfox\\Definition\\UpdateInternetSubscription": {
+    "Arimac\\Sigfox\\Model\\Antenna": {
+        "model": {
+            "debug": [
+                "Antenna model of the station. E.g. \"CXL 900-3LW\", \"CXL 900-6LW\" , \"\" -> NONE ..."
+            ],
+            "comment": "Antenna model of the station. E.g. \"CXL 900-3LW\", \"CXL 900-6LW\" , \"\" -> NONE ..."
+        }
+    },
+    "Arimac\\Sigfox\\Model\\UpdateInternetSubscription": {
         "type": {
             "GSM": {
                 "value": 0,
@@ -2095,7 +2102,7 @@
             "comment": "Internet subscription priority."
         }
     },
-    "Arimac\\Sigfox\\Definition\\BaseSiteConvention": {
+    "Arimac\\Sigfox\\Model\\BaseSiteConvention": {
         "status": {
             "AT_SIGFOX": {
                 "value": 0,
@@ -2143,7 +2150,7 @@
             "comment": "Convention status."
         }
     },
-    "Arimac\\Sigfox\\Definition\\BaseSiteIntervention": {
+    "Arimac\\Sigfox\\Model\\BaseSiteIntervention": {
         "equipmentsToChange": {
             "ANTENNA": {
                 "value": 0,
@@ -2247,7 +2254,7 @@
             "comment": "Convention status."
         }
     },
-    "Arimac\\Sigfox\\Definition\\BaseSite": {
+    "Arimac\\Sigfox\\Model\\BaseSite": {
         "status": {
             "PROD": {
                 "value": 0,

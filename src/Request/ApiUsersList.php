@@ -5,6 +5,7 @@ namespace Arimac\Sigfox\Request;
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
+use Arimac\Sigfox\Validator\Rules\OneOf;
 /**
  * Retrieve a list of API users according to visibility permissions and request filters.
  */
@@ -50,10 +51,6 @@ class ApiUsersList extends Request
      * @internal
      */
     protected array $query = array('fields', 'profileId', 'groupIds', 'limit', 'offset', 'authorizations');
-    /**
-     * @internal
-     */
-    protected array $validations = array('fields' => array('in:group(name\\,type\\,level\\,bssId\\,customerBssId),profiles(name\\,roles(name\\,perms(name)))', 'nullable'));
     /**
      * Setter for fields
      *
@@ -203,5 +200,15 @@ class ApiUsersList extends Request
     {
         $serializers = array('fields' => new PrimitiveSerializer('string'), 'profileId' => new PrimitiveSerializer('string'), 'groupIds' => new ArraySerializer(new PrimitiveSerializer('string')), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'authorizations' => new PrimitiveSerializer('bool'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('fields' => array(new OneOf(array('group(name,type,level,bssId,customerBssId)', 'profiles(name,roles(name,perms(name)))'))));
+        return $rules;
     }
 }

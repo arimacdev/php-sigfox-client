@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox\GenCode;
 
-class Response extends Definition
+class Response extends Model
 {
     public function addSetter(
         string $type,

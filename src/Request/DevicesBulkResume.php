@@ -3,9 +3,11 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Definition\DeviceActionJob;
+use Arimac\Sigfox\Model\DeviceActionJob;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
+use Arimac\Sigfox\Validator\Rules\Child;
 /**
  * Resume multiple devices with asynchronous job.
  */
@@ -31,10 +33,6 @@ class DevicesBulkResume extends Request
      * @internal
      */
     protected array $body = array('devices');
-    /**
-     * @internal
-     */
-    protected array $validations = array('devices' => array('required'));
     /**
      * Setter for devices
      *
@@ -90,5 +88,15 @@ class DevicesBulkResume extends Request
     {
         $serializers = array('devices' => new ClassSerializer(DeviceActionJob::class), 'groupId' => new PrimitiveSerializer('string'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('devices' => array(new Required(), new Child()));
+        return $rules;
     }
 }

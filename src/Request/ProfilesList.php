@@ -4,6 +4,8 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
+use Arimac\Sigfox\Validator\Rules\OneOf;
 /**
  * Retrieve a list of a Group's profiles according to visibility permissions and request filters.
  */
@@ -49,10 +51,6 @@ class ProfilesList extends Request
      * @internal
      */
     protected array $query = array('groupId', 'inherit', 'fields', 'limit', 'offset', 'authorizations');
-    /**
-     * @internal
-     */
-    protected array $validations = array('groupId' => array('required'), 'fields' => array('in:group(name\\,type\\,level),roles(name\\,path(name))', 'nullable'));
     /**
      * Setter for groupId
      *
@@ -202,5 +200,15 @@ class ProfilesList extends Request
     {
         $serializers = array('groupId' => new PrimitiveSerializer('string'), 'inherit' => new PrimitiveSerializer('bool'), 'fields' => new PrimitiveSerializer('string'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'authorizations' => new PrimitiveSerializer('bool'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('groupId' => array(new Required()), 'fields' => array(new OneOf(array('group(name,type,level)', 'roles(name,path(name))'))));
+        return $rules;
     }
 }

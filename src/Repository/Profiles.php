@@ -46,7 +46,7 @@ class Profiles
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function list(ProfilesList $request) : ProfilesListResponse
+    public function list(?ProfilesList $request = null) : ProfilesListResponse
     {
         return $this->client->call('get', '/profiles/', $request, ProfilesListResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 500 => InternalServerException::class));
     }

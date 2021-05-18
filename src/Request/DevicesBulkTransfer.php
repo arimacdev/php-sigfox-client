@@ -3,8 +3,10 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Definition\AsynchronousDeviceTransferJob;
+use Arimac\Sigfox\Model\AsynchronousDeviceTransferJob;
 use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
+use Arimac\Sigfox\Validator\Rules\Child;
 /**
  * Transfer multiple devices to another device type with asynchronous job
  */
@@ -20,10 +22,6 @@ class DevicesBulkTransfer extends Request
      * @internal
      */
     protected array $body = array('devices');
-    /**
-     * @internal
-     */
-    protected array $validations = array('devices' => array('required'));
     /**
      * Setter for devices
      *
@@ -56,5 +54,15 @@ class DevicesBulkTransfer extends Request
     {
         $serializers = array('devices' => new ClassSerializer(AsynchronousDeviceTransferJob::class));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('devices' => array(new Required(), new Child()));
+        return $rules;
     }
 }

@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
 /**
  * Get coverage margins for a selected latitude and longitude, for each
  * redundancy level.
@@ -15,15 +16,15 @@ class CoveragesGlobalPredictionsGetOne extends Request
     /**
      * the latitude
      *
-     * @var int
+     * @var double
      */
-    protected ?int $lat = null;
+    protected ?float $lat = null;
     /**
      * the longitude
      *
-     * @var int
+     * @var double
      */
-    protected ?int $lng = null;
+    protected ?float $lng = null;
     /**
      * The radius of the area in which the coverage results are averaged and returned for a selected location, in
      * meters.
@@ -42,17 +43,13 @@ class CoveragesGlobalPredictionsGetOne extends Request
      */
     protected array $query = array('lat', 'lng', 'radius', 'groupId');
     /**
-     * @internal
-     */
-    protected array $validations = array('lat' => array('required'), 'lng' => array('required'));
-    /**
      * Setter for lat
      *
-     * @param int $lat the latitude
+     * @param double $lat the latitude
      *
      * @return self To use in method chains
      */
-    public function setLat(?int $lat) : self
+    public function setLat(?float $lat) : self
     {
         $this->lat = $lat;
         return $this;
@@ -62,20 +59,20 @@ class CoveragesGlobalPredictionsGetOne extends Request
      *
      * @internal
      *
-     * @return int the latitude
+     * @return double the latitude
      */
-    public function getLat() : ?int
+    public function getLat() : ?float
     {
         return $this->lat;
     }
     /**
      * Setter for lng
      *
-     * @param int $lng the longitude
+     * @param double $lng the longitude
      *
      * @return self To use in method chains
      */
-    public function setLng(?int $lng) : self
+    public function setLng(?float $lng) : self
     {
         $this->lng = $lng;
         return $this;
@@ -85,9 +82,9 @@ class CoveragesGlobalPredictionsGetOne extends Request
      *
      * @internal
      *
-     * @return int the longitude
+     * @return double the longitude
      */
-    public function getLng() : ?int
+    public function getLng() : ?float
     {
         return $this->lng;
     }
@@ -148,7 +145,17 @@ class CoveragesGlobalPredictionsGetOne extends Request
      */
     public function getSerializeMetaData() : array
     {
-        $serializers = array('lat' => new PrimitiveSerializer('int'), 'lng' => new PrimitiveSerializer('int'), 'radius' => new PrimitiveSerializer('int'), 'groupId' => new PrimitiveSerializer('string'));
+        $serializers = array('lat' => new PrimitiveSerializer('double'), 'lng' => new PrimitiveSerializer('double'), 'radius' => new PrimitiveSerializer('int'), 'groupId' => new PrimitiveSerializer('string'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('lat' => array(new Required()), 'lng' => array(new Required()));
+        return $rules;
     }
 }

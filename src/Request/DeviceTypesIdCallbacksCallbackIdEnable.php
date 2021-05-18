@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
 /**
  * Enable or disable a callback for a given device type.
  */
@@ -19,10 +20,6 @@ class DeviceTypesIdCallbacksCallbackIdEnable extends Request
      * @internal
      */
     protected array $query = array('enabled');
-    /**
-     * @internal
-     */
-    protected array $validations = array('enabled' => array('required'));
     /**
      * Setter for enabled
      *
@@ -55,5 +52,15 @@ class DeviceTypesIdCallbacksCallbackIdEnable extends Request
     {
         $serializers = array('enabled' => new PrimitiveSerializer('bool'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('enabled' => array(new Required()));
+        return $rules;
     }
 }

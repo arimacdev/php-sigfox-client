@@ -5,7 +5,7 @@ namespace Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Helper;
 use Arimac\Sigfox\Request\GroupsIdGet;
-use Arimac\Sigfox\Definition\Group;
+use Arimac\Sigfox\Model\Group;
 use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
@@ -14,7 +14,7 @@ use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
-use Arimac\Sigfox\Definition\CommonGroupUpdate;
+use Arimac\Sigfox\Model\CommonGroupUpdate;
 use Arimac\Sigfox\Request\GroupsIdUpdate;
 use Arimac\Sigfox\Request\GroupsIdCallbacksNotDelivered;
 use Arimac\Sigfox\Response\Generated\GroupsIdCallbacksNotDeliveredResponse;
@@ -70,7 +70,7 @@ class GroupsId
     /**
      * Update a given group.
      *
-     * @param CommonGroupUpdate $group The group to update
+     * @param CommonGroupUpdate|undefined $group The group to update
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -80,7 +80,7 @@ class GroupsId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function update(CommonGroupUpdate $group) : void
+    public function update(?CommonGroupUpdate $group) : void
     {
         $request = new GroupsIdUpdate();
         $request->setGroup($group);

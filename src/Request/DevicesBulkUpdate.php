@@ -3,9 +3,11 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Definition\AsynchronousDeviceEditionJob;
+use Arimac\Sigfox\Model\AsynchronousDeviceEditionJob;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
+use Arimac\Sigfox\Validator\Rules\Child;
 /**
  * Update or edit multiple devices with asynchronous job.
  */
@@ -31,10 +33,6 @@ class DevicesBulkUpdate extends Request
      * @internal
      */
     protected array $body = array('devices');
-    /**
-     * @internal
-     */
-    protected array $validations = array('devices' => array('required'));
     /**
      * Setter for devices
      *
@@ -90,5 +88,15 @@ class DevicesBulkUpdate extends Request
     {
         $serializers = array('devices' => new ClassSerializer(AsynchronousDeviceEditionJob::class), 'groupId' => new PrimitiveSerializer('string'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('devices' => array(new Required(), new Child()));
+        return $rules;
     }
 }

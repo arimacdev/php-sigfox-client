@@ -13,7 +13,7 @@ use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
-use Arimac\Sigfox\Definition\DeviceTypeCreate;
+use Arimac\Sigfox\Model\DeviceTypeCreate;
 use Arimac\Sigfox\Request\DeviceTypesCreate;
 use Arimac\Sigfox\Response\Generated\DeviceTypesCreateResponse;
 class DeviceTypes
@@ -58,7 +58,7 @@ class DeviceTypes
     /**
      * Create a new device type
      *
-     * @param DeviceTypeCreate $deviceType The device type to create
+     * @param DeviceTypeCreate|undefined $deviceType The device type to create
      *
      * @return DeviceTypesCreateResponse
      *
@@ -71,7 +71,7 @@ class DeviceTypes
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function create(DeviceTypeCreate $deviceType) : DeviceTypesCreateResponse
+    public function create(?DeviceTypeCreate $deviceType) : DeviceTypesCreateResponse
     {
         $request = new DeviceTypesCreate();
         $request->setDeviceType($deviceType);

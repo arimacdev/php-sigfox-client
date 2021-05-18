@@ -5,6 +5,7 @@ namespace Arimac\Sigfox\Request;
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
+use Arimac\Sigfox\Validator\Rules\OneOf;
 /**
  * Retrieve a list of groups according to visibility permissions and request filters.
  * If parentIds is provided, retrieve all direct sub-groups under the given parents. If parentIds is not provided,
@@ -129,10 +130,6 @@ class GroupsList extends Request
      * @internal
      */
     protected array $query = array('parentIds', 'deep', 'name', 'types', 'fields', 'action', 'sort', 'authorizations', 'limit', 'offset', 'pageId');
-    /**
-     * @internal
-     */
-    protected array $validations = array('fields' => array('in:path(name\\,type\\,level)', 'nullable'), 'action' => array('in:base-stations:create,contract-infos:create,device-types:create,devices:create,hosts:create,maintenances:create,providers:create,sites:create,users:create', 'nullable'), 'sort' => array('in:id,-id,name,-name', 'nullable'));
     /**
      * Setter for parentIds
      *
@@ -423,5 +420,15 @@ class GroupsList extends Request
     {
         $serializers = array('parentIds' => new ArraySerializer(new PrimitiveSerializer('string')), 'deep' => new PrimitiveSerializer('bool'), 'name' => new PrimitiveSerializer('string'), 'types' => new ArraySerializer(new PrimitiveSerializer('int')), 'fields' => new PrimitiveSerializer('string'), 'action' => new PrimitiveSerializer('string'), 'sort' => new PrimitiveSerializer('string'), 'authorizations' => new PrimitiveSerializer('bool'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('fields' => array(new OneOf(array('path(name,type,level)'))), 'action' => array(new OneOf(array('base-stations:create', 'contract-infos:create', 'device-types:create', 'devices:create', 'hosts:create', 'maintenances:create', 'providers:create', 'sites:create', 'users:create'))), 'sort' => array(new OneOf(array('id', '-id', 'name', '-name'))));
+        return $rules;
     }
 }

@@ -2,9 +2,9 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
-class DevicesBulkUpdateResponse extends Definition
+class DevicesBulkUpdateResponse extends Model
 {
     /**
      * Number of devices to edit

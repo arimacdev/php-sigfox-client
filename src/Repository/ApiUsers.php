@@ -14,7 +14,7 @@ use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\MethodNotAllowedException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
-use Arimac\Sigfox\Definition\ApiUserCreation;
+use Arimac\Sigfox\Model\ApiUserCreation;
 use Arimac\Sigfox\Request\ApiUsersCreate;
 use Arimac\Sigfox\Response\Generated\ApiUsersCreateResponse;
 class ApiUsers
@@ -60,7 +60,7 @@ class ApiUsers
     /**
      * Create a new API user.
      *
-     * @param ApiUserCreation $apiUser
+     * @param ApiUserCreation|undefined $apiUser
      *
      * @return ApiUsersCreateResponse
      *
@@ -74,7 +74,7 @@ class ApiUsers
      * @throws MethodNotAllowedException   If server returned a HTTP 405 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function create(ApiUserCreation $apiUser) : ApiUsersCreateResponse
+    public function create(?ApiUserCreation $apiUser) : ApiUsersCreateResponse
     {
         $request = new ApiUsersCreate();
         $request->setApiUser($apiUser);

@@ -4,7 +4,7 @@ namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Helper;
-use Arimac\Sigfox\Definition\UpdateCallback;
+use Arimac\Sigfox\Model\UpdateCallback;
 use Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdUpdate;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
@@ -15,7 +15,7 @@ use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
 use Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdEnable;
 use Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered;
-use Arimac\Sigfox\Definition\ErrorMessages;
+use Arimac\Sigfox\Model\ErrorMessages;
 use Arimac\Sigfox\Exception\DeserializeException;
 class DeviceTypesIdCallbacksCallbackId
 {
@@ -55,7 +55,7 @@ class DeviceTypesIdCallbacksCallbackId
     /**
      * Update a callback for a given device type
      *
-     * @param UpdateCallback $callback The callback to update
+     * @param UpdateCallback|undefined $callback The callback to update
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -65,7 +65,7 @@ class DeviceTypesIdCallbacksCallbackId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function update(UpdateCallback $callback) : void
+    public function update(?UpdateCallback $callback) : void
     {
         $request = new DeviceTypesIdCallbacksCallbackIdUpdate();
         $request->setCallback($callback);
@@ -88,7 +88,7 @@ class DeviceTypesIdCallbacksCallbackId
     /**
      * Enable or disable a callback for a given device type.
      *
-     * @param bool $enabled True to enable the callback, false to disable it
+     * @param bool|undefined $enabled True to enable the callback, false to disable it
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -98,7 +98,7 @@ class DeviceTypesIdCallbacksCallbackId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function enable(bool $enabled) : void
+    public function enable(?bool $enabled) : void
     {
         $request = new DeviceTypesIdCallbacksCallbackIdEnable();
         $request->setEnabled($enabled);

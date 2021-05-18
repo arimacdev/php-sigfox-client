@@ -5,7 +5,7 @@ namespace Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Helper;
 use Arimac\Sigfox\Request\DeviceTypesIdGet;
-use Arimac\Sigfox\Definition\DeviceType;
+use Arimac\Sigfox\Model\DeviceType;
 use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
@@ -14,7 +14,7 @@ use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
-use Arimac\Sigfox\Definition\DeviceTypeUpdate;
+use Arimac\Sigfox\Model\DeviceTypeUpdate;
 use Arimac\Sigfox\Request\DeviceTypesIdUpdate;
 use Arimac\Sigfox\Request\DeviceTypesIdMessages;
 use Arimac\Sigfox\Response\Generated\DeviceTypesIdMessagesResponse;
@@ -71,7 +71,7 @@ class DeviceTypesId
     /**
      * Update a given device type.
      *
-     * @param DeviceTypeUpdate $deviceType The device type to update
+     * @param DeviceTypeUpdate|undefined $deviceType The device type to update
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -81,7 +81,7 @@ class DeviceTypesId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function update(DeviceTypeUpdate $deviceType) : void
+    public function update(?DeviceTypeUpdate $deviceType) : void
     {
         $request = new DeviceTypesIdUpdate();
         $request->setDeviceType($deviceType);

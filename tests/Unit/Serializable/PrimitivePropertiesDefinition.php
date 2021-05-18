@@ -2,10 +2,10 @@
 
 namespace Arimac\Sigfox\Test\Unit\Serializable;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 
-class PrimitivePropertiesDefinition extends Definition
+class PrimitivePropertiesDefinition extends Model
 {
 
     protected ?string $name = null;

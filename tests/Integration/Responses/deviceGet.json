@@ -1,0 +1,71 @@
+{
+  "id": "1",
+  "name": "device#1",
+  "satelliteCapable": true,
+  "repeater": true,
+  "messageModulo": 0,
+  "deviceType": {
+    "id": "572f1204017975032d8ec1dd",
+    "name": "Device type info 1",
+    "actions": ["read"],
+    "resources": ["messages", "messages-oob"]
+  },
+  "contract": {
+    "id": "572f1204017975032d8ec1dd",
+    "name": "Contract info 1",
+    "actions": ["read"],
+    "resources": ["devices"]
+  },
+  "group": {
+    "id": "572f1204017975032d8ec1dd",
+    "name": "Group 1",
+    "type": 0,
+    "level": 1,
+    "actions": ["read"]
+  },
+  "modemCertificate": {
+    "id": "53aaad5ae4b0ba69e6d561b9",
+    "key": "P_0003_71CF_01"
+  },
+  "prototype": true,
+  "productCertificate": {
+    "id": "53aaad5ae4b0ba69e6d561b9",
+    "key": "P_0003_71CF_01"
+  },
+  "location": {
+    "lat": 43.456,
+    "lng": 6.524
+  },
+  "lastComputedLocation": {
+    "lat": 0,
+    "lng": 0,
+    "radius": 0,
+    "sourceCode": 0,
+    "placeIds": ["string"]
+  },
+  "pac": "string",
+  "sequenceNumber": 0,
+  "trashSequenceNumber": 0,
+  "lastCom": 0,
+  "lqi": 0,
+  "activationTime": 0,
+  "creationTime": 0,
+  "state": 0,
+  "comState": 0,
+  "token": {
+    "state": 0,
+    "detailMessage": "Active",
+    "end": 1503619200000,
+    "freeMessages": 1,
+    "freeMessagesSent": 9
+  },
+  "unsubscriptionTime": 0,
+  "createdBy": "string",
+  "lastEditionTime": 0,
+  "lastEditedBy": "string",
+  "automaticRenewal": true,
+  "automaticRenewalStatus": 0,
+  "activable": true,
+  "actions": ["create", "update"],
+  "resources": ["messages", "product-certificate"]
+}

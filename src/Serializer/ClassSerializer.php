@@ -117,7 +117,9 @@ class ClassSerializer implements Serializer
         foreach ($metaData as $propertyName => $serializer) {
             $getter = "get" . ucfirst($propertyName);
             $deserialized = $serializer->serialize($value->$getter());
-            $arr[$propertyName] = $deserialized;
+            if(isset($deserialized)){
+                $arr[$propertyName] = $deserialized;
+            }
         }
 
         if ($extendable) {

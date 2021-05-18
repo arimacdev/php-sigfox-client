@@ -2,12 +2,14 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition\DeviceLocation_2;
-use Arimac\Sigfox\Definition\Paging;
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model\DeviceLocation_2;
+use Arimac\Sigfox\Model\Paging;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
-class DevicesIdLocationsResponse extends Definition
+use Arimac\Sigfox\Validator\Rules\ChildSet;
+use Arimac\Sigfox\Validator\Rules\Child;
+class DevicesIdLocationsResponse extends Model
 {
     /**
      * @var DeviceLocation_2[]
@@ -72,5 +74,15 @@ class DevicesIdLocationsResponse extends Definition
     {
         $serializers = array('data' => new ArraySerializer(new ClassSerializer(DeviceLocation_2::class)), 'paging' => new ClassSerializer(Paging::class));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('data' => array(new ChildSet()), 'paging' => array(new Child()));
+        return $rules;
     }
 }

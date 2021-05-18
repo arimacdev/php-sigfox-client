@@ -2,12 +2,14 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition\DeviceErrorMessages;
-use Arimac\Sigfox\Definition\Paging;
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model\DeviceErrorMessages;
+use Arimac\Sigfox\Model\Paging;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
-class DevicesIdCallbacksNotDeliveredResponse extends Definition
+use Arimac\Sigfox\Validator\Rules\ChildSet;
+use Arimac\Sigfox\Validator\Rules\Child;
+class DevicesIdCallbacksNotDeliveredResponse extends Model
 {
     /**
      * @var DeviceErrorMessages[]
@@ -72,5 +74,15 @@ class DevicesIdCallbacksNotDeliveredResponse extends Definition
     {
         $serializers = array('data' => new ArraySerializer(new ClassSerializer(DeviceErrorMessages::class)), 'paging' => new ClassSerializer(Paging::class));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('data' => array(new ChildSet()), 'paging' => array(new Child()));
+        return $rules;
     }
 }

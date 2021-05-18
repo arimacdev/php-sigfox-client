@@ -2,9 +2,9 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
-class DeviceTypesCreateResponse extends Definition
+class DeviceTypesCreateResponse extends Model
 {
     /**
      * The new created device type's identifier

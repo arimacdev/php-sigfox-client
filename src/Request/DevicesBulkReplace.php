@@ -3,8 +3,9 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Definition\AsynchronousDeviceReplacementJob;
+use Arimac\Sigfox\Model\AsynchronousDeviceReplacementJob;
 use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Validator\Rules\Child;
 /**
  * Replace multiple devices (moving tokens from one device to another) with synchronous job
  */
@@ -52,5 +53,15 @@ class DevicesBulkReplace extends Request
     {
         $serializers = array('devicePairs' => new ClassSerializer(AsynchronousDeviceReplacementJob::class));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('devicePairs' => array(new Child()));
+        return $rules;
     }
 }

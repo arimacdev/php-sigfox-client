@@ -2,9 +2,9 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
-class ContractInfosIdBulkRestartResponse extends Definition
+class ContractInfosIdBulkRestartResponse extends Model
 {
     /**
      * jobId so that the customer is able to request job status

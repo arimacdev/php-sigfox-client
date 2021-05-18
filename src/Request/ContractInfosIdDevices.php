@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Validator\Rules\OneOf;
 /**
  * Retrieve a list of devices according to visibility permissions and request filters.
  */
@@ -37,10 +38,6 @@ class ContractInfosIdDevices extends Request
      * @internal
      */
     protected array $query = array('deviceTypeId', 'fields', 'limit', 'pageId');
-    /**
-     * @internal
-     */
-    protected array $validations = array('fields' => array('in:deviceType(name),group(name\\,type\\,level\\,bssId\\,customerBssId),contract(name),productCertificate(key),modemCertificate(name)', 'nullable'));
     /**
      * Setter for deviceTypeId
      *
@@ -144,5 +141,15 @@ class ContractInfosIdDevices extends Request
     {
         $serializers = array('deviceTypeId' => new PrimitiveSerializer('string'), 'fields' => new PrimitiveSerializer('string'), 'limit' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('fields' => array(new OneOf(array('deviceType(name)', 'group(name,type,level,bssId,customerBssId)', 'contract(name)', 'productCertificate(key)', 'modemCertificate(name)'))));
+        return $rules;
     }
 }

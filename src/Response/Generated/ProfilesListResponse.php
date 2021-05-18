@@ -2,12 +2,14 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition\Profile;
-use Arimac\Sigfox\Definition\Paging;
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model\Profile;
+use Arimac\Sigfox\Model\Paging;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
-class ProfilesListResponse extends Definition
+use Arimac\Sigfox\Validator\Rules\ChildSet;
+use Arimac\Sigfox\Validator\Rules\Child;
+class ProfilesListResponse extends Model
 {
     /**
      * @var Profile[]
@@ -72,5 +74,15 @@ class ProfilesListResponse extends Definition
     {
         $serializers = array('data' => new ArraySerializer(new ClassSerializer(Profile::class)), 'paging' => new ClassSerializer(Paging::class));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('data' => array(new ChildSet()), 'paging' => array(new Child()));
+        return $rules;
     }
 }

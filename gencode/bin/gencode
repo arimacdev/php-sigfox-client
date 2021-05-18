@@ -2,7 +2,7 @@
 <?php
 
 use Arimac\Sigfox\GenCode\Client;
-use Arimac\Sigfox\GenCode\Definition;
+use Arimac\Sigfox\GenCode\Model;
 use Arimac\Sigfox\GenCode\Config\EnumFields;
 use Arimac\Sigfox\GenCode\Config\MethodNames;
 use Arimac\Sigfox\GenCode\Config\RewriteRules;
@@ -21,7 +21,7 @@ if (!file_exists($openapiFileLocation)) {
     file_put_contents($openapiFileLocation, fopen($openapiUrl, 'r'));
 }
 
-Helper::rrmdir($dir . "/../src/Definition");
+Helper::rrmdir($dir . "/../src/Model");
 Helper::rrmdir($dir."/../src/Repository");
 Helper::rrmdir($dir."/../src/Request");
 Helper::rrmdir($dir."/../src/Response/Generated");
@@ -38,7 +38,7 @@ $simpleAlias = ["Resources", "Resource", "Actions", "Action"];
 foreach ($openapi["definitions"] as $key => $definition) {
     $name = ucfirst($key);
     if (!in_array($name, $simpleAlias)) {
-        $defClass = Definition::fromArray("Arimac\\Sigfox\\Definition\\$name", $definition);
+        $defClass = Model::fromArray("Arimac\\Sigfox\\Model\\$name", $definition);
     }
 }
 

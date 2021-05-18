@@ -3,7 +3,7 @@
 namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Client\Client;
-use Arimac\Sigfox\Definition\TilesResponse;
+use Arimac\Sigfox\Model\TilesResponse;
 use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
 use Arimac\Sigfox\Exception\Response\BadRequestException;
@@ -63,7 +63,7 @@ class TilesPublicCoverage
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function kmzTitles(TilesPublicCoverageKmzTitles $request) : void
+    public function kmzTitles(?TilesPublicCoverageKmzTitles $request = null) : void
     {
         $this->client->call('get', '/tiles/public-coverage/kmz/tiles.kmz', $request, null, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }

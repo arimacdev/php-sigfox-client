@@ -2,9 +2,9 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
-class DevicesBulkSuspendResponse extends Definition
+class DevicesBulkSuspendResponse extends Model
 {
     /**
      * jobId (to use in job status request)

@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Validator\Rules\OneOf;
 /**
  * Retrieve the modem certificate associated with a device.
  */
@@ -19,10 +20,6 @@ class DevicesIdCertificateModem extends Request
      * @internal
      */
     protected array $query = array('fields');
-    /**
-     * @internal
-     */
-    protected array $validations = array('fields' => array('in:manufacturer(name)', 'nullable'));
     /**
      * Setter for fields
      *
@@ -57,5 +54,15 @@ class DevicesIdCertificateModem extends Request
     {
         $serializers = array('fields' => new PrimitiveSerializer('string'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('fields' => array(new OneOf(array('manufacturer(name)'))));
+        return $rules;
     }
 }

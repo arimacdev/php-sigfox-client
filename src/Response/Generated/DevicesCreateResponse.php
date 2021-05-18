@@ -2,9 +2,9 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
-class DevicesCreateResponse extends Definition
+class DevicesCreateResponse extends Model
 {
     /**
      * The device's identifier (hexadecimal format)

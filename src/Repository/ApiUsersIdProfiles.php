@@ -4,7 +4,7 @@ namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Helper;
-use Arimac\Sigfox\Definition\ProfileIds;
+use Arimac\Sigfox\Model\ProfileIds;
 use Arimac\Sigfox\Request\ApiUsersIdProfilesUpdate;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
@@ -44,7 +44,7 @@ class ApiUsersIdProfiles
     /**
      * Associate new profiles to a given API user.
      *
-     * @param ProfileIds $profileIds The API profile to update
+     * @param ProfileIds|undefined $profileIds The API profile to update
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -55,7 +55,7 @@ class ApiUsersIdProfiles
      * @throws MethodNotAllowedException   If server returned a HTTP 405 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function update(ProfileIds $profileIds) : void
+    public function update(?ProfileIds $profileIds) : void
     {
         $request = new ApiUsersIdProfilesUpdate();
         $request->setProfileIds($profileIds);

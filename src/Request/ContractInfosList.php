@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Validator\Rules\OneOf;
 /**
  * Retrieve a list of contracts according to visibility permissions and request filters.
  */
@@ -192,10 +193,6 @@ class ContractInfosList extends Request
      * @internal
      */
     protected array $query = array('name', 'groupId', 'groupType', 'deep', 'up', 'orderIds', 'contractIds', 'fromTime', 'toTime', 'tokenDuration', 'pricingModel', 'subscriptionPlan', 'geolocationMode', 'fields', 'limit', 'offset', 'pageId', 'authorizations');
-    /**
-     * @internal
-     */
-    protected array $validations = array('fields' => array('in:group(name\\,type\\,level),order(name),blacklistedTerritories(group(name\\,type\\,level))', 'nullable'));
     /**
      * Setter for name
      *
@@ -678,5 +675,15 @@ class ContractInfosList extends Request
     {
         $serializers = array('name' => new PrimitiveSerializer('string'), 'groupId' => new PrimitiveSerializer('string'), 'groupType' => new PrimitiveSerializer('int'), 'deep' => new PrimitiveSerializer('bool'), 'up' => new PrimitiveSerializer('bool'), 'orderIds' => new PrimitiveSerializer('string'), 'contractIds' => new PrimitiveSerializer('string'), 'fromTime' => new PrimitiveSerializer('int'), 'toTime' => new PrimitiveSerializer('int'), 'tokenDuration' => new PrimitiveSerializer('int'), 'pricingModel' => new PrimitiveSerializer('int'), 'subscriptionPlan' => new PrimitiveSerializer('int'), 'geolocationMode' => new PrimitiveSerializer('int'), 'fields' => new PrimitiveSerializer('string'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'), 'authorizations' => new PrimitiveSerializer('bool'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('fields' => array(new OneOf(array('group(name,type,level)', 'order(name)', 'blacklistedTerritories(group(name,type,level))'))));
+        return $rules;
     }
 }

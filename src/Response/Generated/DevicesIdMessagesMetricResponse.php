@@ -2,9 +2,9 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
-class DevicesIdMessagesMetricResponse extends Definition
+class DevicesIdMessagesMetricResponse extends Model
 {
     /**
      * Number of device messages for the last day

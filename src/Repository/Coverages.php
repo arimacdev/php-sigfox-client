@@ -4,7 +4,7 @@ namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\CoveragesOperatorsRedundancy;
-use Arimac\Sigfox\Definition\RedundancyResponse;
+use Arimac\Sigfox\Model\RedundancyResponse;
 use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
@@ -58,7 +58,7 @@ class Coverages
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function operatorsRedundancy(CoveragesOperatorsRedundancy $request) : RedundancyResponse
+    public function operatorsRedundancy(?CoveragesOperatorsRedundancy $request = null) : RedundancyResponse
     {
         return $this->client->call('get', '/coverages/operators/redundancy', $request, RedundancyResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }

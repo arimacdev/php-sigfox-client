@@ -3,8 +3,10 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Definition\ApiUserEdition;
+use Arimac\Sigfox\Model\ApiUserEdition;
 use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
+use Arimac\Sigfox\Validator\Rules\Child;
 /**
  * Update information about a given API user.
  */
@@ -20,10 +22,6 @@ class ApiUsersIdUpdate extends Request
      * @internal
      */
     protected array $body = array('apiUser');
-    /**
-     * @internal
-     */
-    protected array $validations = array('apiUser' => array('required'));
     /**
      * Setter for apiUser
      *
@@ -56,5 +54,15 @@ class ApiUsersIdUpdate extends Request
     {
         $serializers = array('apiUser' => new ClassSerializer(ApiUserEdition::class));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('apiUser' => array(new Required(), new Child()));
+        return $rules;
     }
 }

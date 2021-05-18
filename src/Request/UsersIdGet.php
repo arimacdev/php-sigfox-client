@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Validator\Rules\OneOf;
 /**
  * Retrieve information about a given user. The id can also be the user's email address.
  */
@@ -25,10 +26,6 @@ class UsersIdGet extends Request
      * @internal
      */
     protected array $query = array('fields', 'authorizations');
-    /**
-     * @internal
-     */
-    protected array $validations = array('fields' => array('in:userRoles(group(name\\,type\\,level\\,bssId\\,customerBssId)\\,profile(name\\,roles(name\\,perms(name))))', 'nullable'));
     /**
      * Setter for fields
      *
@@ -86,5 +83,15 @@ class UsersIdGet extends Request
     {
         $serializers = array('fields' => new PrimitiveSerializer('string'), 'authorizations' => new PrimitiveSerializer('bool'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('fields' => array(new OneOf(array('userRoles(group(name,type,level,bssId,customerBssId),profile(name,roles(name,perms(name))))'))));
+        return $rules;
     }
 }

@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
 /**
  * Retrieve the product certificate associated with a given device ID and PAC, when the device has not already been
  * created on the portal, only in CRA
@@ -20,10 +21,6 @@ class DevicesIdProductCertificate extends Request
      * @internal
      */
     protected array $query = array('pac');
-    /**
-     * @internal
-     */
-    protected array $validations = array('pac' => array('required'));
     /**
      * Setter for pac
      *
@@ -56,5 +53,15 @@ class DevicesIdProductCertificate extends Request
     {
         $serializers = array('pac' => new PrimitiveSerializer('string'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('pac' => array(new Required()));
+        return $rules;
     }
 }

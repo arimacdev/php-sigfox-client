@@ -5,6 +5,7 @@ namespace Arimac\Sigfox\Request;
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
+use Arimac\Sigfox\Validator\Rules\OneOf;
 /**
  * Retrieve a list of users according to visibility permissions and request filters.
  */
@@ -75,10 +76,6 @@ class UsersList extends Request
      * @internal
      */
     protected array $query = array('fields', 'text', 'profileId', 'groupIds', 'deep', 'sort', 'authorizations', 'limit', 'offset', 'pageId');
-    /**
-     * @internal
-     */
-    protected array $validations = array('fields' => array('in:userRoles(group(name\\,type\\,level\\,bssId\\,customerBssId)\\,profile(name\\,roles(name\\,perms(name))))', 'nullable'), 'sort' => array('in:id,-id,name,-name,email,-email', 'nullable'));
     /**
      * Setter for fields
      *
@@ -326,5 +323,15 @@ class UsersList extends Request
     {
         $serializers = array('fields' => new PrimitiveSerializer('string'), 'text' => new PrimitiveSerializer('string'), 'profileId' => new PrimitiveSerializer('string'), 'groupIds' => new ArraySerializer(new PrimitiveSerializer('string')), 'deep' => new PrimitiveSerializer('bool'), 'sort' => new PrimitiveSerializer('string'), 'authorizations' => new PrimitiveSerializer('bool'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('fields' => array(new OneOf(array('userRoles(group(name,type,level,bssId,customerBssId),profile(name,roles(name,perms(name))))'))), 'sort' => array(new OneOf(array('id', '-id', 'name', '-name', 'email', '-email'))));
+        return $rules;
     }
 }

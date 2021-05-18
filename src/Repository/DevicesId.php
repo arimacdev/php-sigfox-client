@@ -5,7 +5,7 @@ namespace Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Helper;
 use Arimac\Sigfox\Request\DevicesIdGet;
-use Arimac\Sigfox\Definition\Device;
+use Arimac\Sigfox\Model\Device;
 use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
@@ -14,15 +14,15 @@ use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
-use Arimac\Sigfox\Definition\DeviceUpdateJob;
+use Arimac\Sigfox\Model\DeviceUpdateJob;
 use Arimac\Sigfox\Request\DevicesIdUpdate;
 use Arimac\Sigfox\Request\DevicesIdCallbacksNotDelivered;
 use Arimac\Sigfox\Response\Generated\DevicesIdCallbacksNotDeliveredResponse;
 use Arimac\Sigfox\Request\DevicesIdProductCertificate;
-use Arimac\Sigfox\Definition\ProductCertificateWithPacResponse;
+use Arimac\Sigfox\Model\ProductCertificateWithPacResponse;
 use Arimac\Sigfox\Request\DevicesIdLocations;
 use Arimac\Sigfox\Response\Generated\DevicesIdLocationsResponse;
-use Arimac\Sigfox\Definition\TokenUnsubscribe;
+use Arimac\Sigfox\Model\TokenUnsubscribe;
 use Arimac\Sigfox\Request\DevicesIdUnsubscribe;
 class DevicesId
 {
@@ -74,7 +74,7 @@ class DevicesId
     /**
      * Update a given device.
      *
-     * @param DeviceUpdateJob $device The device to update
+     * @param DeviceUpdateJob|undefined $device The device to update
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -84,7 +84,7 @@ class DevicesId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function update(DeviceUpdateJob $device) : void
+    public function update(?DeviceUpdateJob $device) : void
     {
         $request = new DevicesIdUpdate();
         $request->setDevice($device);
@@ -136,7 +136,7 @@ class DevicesId
      * Retrieve the product certificate associated with a given device ID and PAC, when the device has not already
      * been created on the portal, only in CRA
      *
-     * @param string $pac The device's PAC (hexadecimal format)
+     * @param string|undefined $pac The device's PAC (hexadecimal format)
      *
      * @return ProductCertificateWithPacResponse
      *
@@ -149,7 +149,7 @@ class DevicesId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function productCertificate(string $pac) : ProductCertificateWithPacResponse
+    public function productCertificate(?string $pac) : ProductCertificateWithPacResponse
     {
         $request = new DevicesIdProductCertificate();
         $request->setPac($pac);
@@ -206,7 +206,8 @@ class DevicesId
     /**
      * Set an unsubscription date for the device's token.
      *
-     * @param TokenUnsubscribe $unsubscriptionTime the unsubscription time (in milliseconds since the Unix Epoch)
+     * @param TokenUnsubscribe|undefined $unsubscriptionTime the unsubscription time (in milliseconds since the Unix
+     *                                                       Epoch)
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -216,7 +217,7 @@ class DevicesId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function unsubscribe(TokenUnsubscribe $unsubscriptionTime) : void
+    public function unsubscribe(?TokenUnsubscribe $unsubscriptionTime) : void
     {
         $request = new DevicesIdUnsubscribe();
         $request->setUnsubscriptionTime($unsubscriptionTime);

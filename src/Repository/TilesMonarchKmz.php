@@ -3,7 +3,7 @@
 namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Client\Client;
-use Arimac\Sigfox\Definition\KmzCreatePublicRequest;
+use Arimac\Sigfox\Model\KmzCreatePublicRequest;
 use Arimac\Sigfox\Request\TilesMonarchKmzStartAsync;
 use Arimac\Sigfox\Response\Generated\TilesMonarchKmzStartAsyncResponse;
 use Arimac\Sigfox\Exception\DeserializeException;
@@ -38,7 +38,8 @@ class TilesMonarchKmz
      * starts if no other computation, run in the last 24 hours, is available. Otherwise, the existing jobId is
      * returned.
      *
-     * @param KmzCreatePublicRequest $request The computation will be performed with the specified coverage mode
+     * @param KmzCreatePublicRequest|undefined $request The computation will be performed with the specified coverage
+     *                                                  mode
      *
      * @return TilesMonarchKmzStartAsyncResponse
      *
@@ -51,7 +52,7 @@ class TilesMonarchKmz
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function startAsync(KmzCreatePublicRequest $request) : TilesMonarchKmzStartAsyncResponse
+    public function startAsync(?KmzCreatePublicRequest $request) : TilesMonarchKmzStartAsyncResponse
     {
         $request = new TilesMonarchKmzStartAsync();
         $request->setRequest($request);

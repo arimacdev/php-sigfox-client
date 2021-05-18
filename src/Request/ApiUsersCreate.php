@@ -3,8 +3,10 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Definition\ApiUserCreation;
+use Arimac\Sigfox\Model\ApiUserCreation;
 use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
+use Arimac\Sigfox\Validator\Rules\Child;
 /**
  * Create a new API user.
  */
@@ -18,10 +20,6 @@ class ApiUsersCreate extends Request
      * @internal
      */
     protected array $body = array('apiUser');
-    /**
-     * @internal
-     */
-    protected array $validations = array('apiUser' => array('required'));
     /**
      * Setter for apiUser
      *
@@ -54,5 +52,15 @@ class ApiUsersCreate extends Request
     {
         $serializers = array('apiUser' => new ClassSerializer(ApiUserCreation::class));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('apiUser' => array(new Required(), new Child()));
+        return $rules;
     }
 }

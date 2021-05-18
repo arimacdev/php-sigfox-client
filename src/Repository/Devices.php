@@ -12,7 +12,7 @@ use Arimac\Sigfox\Exception\Response\BadRequestException;
 use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
-use Arimac\Sigfox\Definition\DeviceCreationJob;
+use Arimac\Sigfox\Model\DeviceCreationJob;
 use Arimac\Sigfox\Request\DevicesCreate;
 use Arimac\Sigfox\Response\Generated\DevicesCreateResponse;
 use Arimac\Sigfox\Exception\Response\ConflictException;
@@ -57,7 +57,7 @@ class Devices
     /**
      * Create a new device.
      *
-     * @param DeviceCreationJob $device The device to create
+     * @param DeviceCreationJob|undefined $device The device to create
      *
      * @return DevicesCreateResponse
      *
@@ -70,7 +70,7 @@ class Devices
      * @throws ConflictException           If server returned a HTTP 409 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function create(DeviceCreationJob $device) : DevicesCreateResponse
+    public function create(?DeviceCreationJob $device) : DevicesCreateResponse
     {
         $request = new DevicesCreate();
         $request->setDevice($device);

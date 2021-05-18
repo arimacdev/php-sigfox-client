@@ -5,6 +5,7 @@ namespace Arimac\Sigfox\Request;
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
+use Arimac\Sigfox\Validator\Rules\OneOf;
 /**
  * Retrieve a list of device types according to visibility permissions and request filters.
  */
@@ -112,10 +113,6 @@ class DeviceTypesList extends Request
      * @internal
      */
     protected array $query = array('name', 'groupIds', 'deep', 'contractId', 'payloadType', 'authorizations', 'sort', 'fields', 'limit', 'offset', 'pageId');
-    /**
-     * @internal
-     */
-    protected array $validations = array('sort' => array('in:id,-id,name,-name', 'nullable'), 'fields' => array('in:group(name\\,type\\,level),contract(name),geolocPayloadConfig(name)', 'nullable'));
     /**
      * Setter for name
      *
@@ -404,5 +401,15 @@ class DeviceTypesList extends Request
     {
         $serializers = array('name' => new PrimitiveSerializer('string'), 'groupIds' => new ArraySerializer(new PrimitiveSerializer('string')), 'deep' => new PrimitiveSerializer('bool'), 'contractId' => new PrimitiveSerializer('string'), 'payloadType' => new PrimitiveSerializer('int'), 'authorizations' => new PrimitiveSerializer('bool'), 'sort' => new PrimitiveSerializer('string'), 'fields' => new PrimitiveSerializer('string'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('sort' => array(new OneOf(array('id', '-id', 'name', '-name'))), 'fields' => array(new OneOf(array('group(name,type,level)', 'contract(name)', 'geolocPayloadConfig(name)'))));
+        return $rules;
     }
 }

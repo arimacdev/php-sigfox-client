@@ -5,7 +5,7 @@ namespace Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Helper;
 use Arimac\Sigfox\Request\ApiUsersIdGet;
-use Arimac\Sigfox\Definition\ApiUser;
+use Arimac\Sigfox\Model\ApiUser;
 use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
@@ -14,7 +14,7 @@ use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
-use Arimac\Sigfox\Definition\ApiUserEdition;
+use Arimac\Sigfox\Model\ApiUserEdition;
 use Arimac\Sigfox\Request\ApiUsersIdUpdate;
 use Arimac\Sigfox\Response\Generated\ApiUsersIdRenewCredentialResponse;
 use Arimac\Sigfox\Exception\Response\MethodNotAllowedException;
@@ -68,7 +68,7 @@ class ApiUsersId
     /**
      * Update information about a given API user.
      *
-     * @param ApiUserEdition $apiUser The information to update
+     * @param ApiUserEdition|undefined $apiUser The information to update
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -78,7 +78,7 @@ class ApiUsersId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function update(ApiUserEdition $apiUser) : void
+    public function update(?ApiUserEdition $apiUser) : void
     {
         $request = new ApiUsersIdUpdate();
         $request->setApiUser($apiUser);

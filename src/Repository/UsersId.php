@@ -5,7 +5,7 @@ namespace Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Helper;
 use Arimac\Sigfox\Request\UsersIdGet;
-use Arimac\Sigfox\Definition\User;
+use Arimac\Sigfox\Model\User;
 use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
@@ -14,9 +14,9 @@ use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
-use Arimac\Sigfox\Definition\UserUpdate;
+use Arimac\Sigfox\Model\UserUpdate;
 use Arimac\Sigfox\Request\UsersIdUpdate;
-use Arimac\Sigfox\Definition\UpdateResponse;
+use Arimac\Sigfox\Model\UpdateResponse;
 class UsersId
 {
     /**
@@ -67,7 +67,7 @@ class UsersId
     /**
      * Update a given user.
      *
-     * @param UserUpdate $user The user to update
+     * @param UserUpdate|undefined $user The user to update
      *
      * @return UpdateResponse
      *
@@ -80,7 +80,7 @@ class UsersId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function update(UserUpdate $user) : ?UpdateResponse
+    public function update(?UserUpdate $user) : ?UpdateResponse
     {
         $request = new UsersIdUpdate();
         $request->setUser($user);

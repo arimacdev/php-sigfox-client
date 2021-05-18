@@ -11,7 +11,8 @@ class Child implements Rule {
         if(!is_object($value)||!($value instanceof Validate)){
             return false;
         }
-        return Validator::validate($value);
+        Validator::validate($value);
+        return true;
     }
 
     function format(): string {

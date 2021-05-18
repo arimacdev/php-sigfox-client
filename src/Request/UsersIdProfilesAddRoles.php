@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
 /**
  * add user roles to a user.
  */
@@ -19,10 +20,6 @@ class UsersIdProfilesAddRoles extends Request
      * @internal
      */
     protected array $body = array('userRoles');
-    /**
-     * @internal
-     */
-    protected array $validations = array('userRoles' => array('required'));
     /**
      * Setter for userRoles
      *
@@ -55,5 +52,15 @@ class UsersIdProfilesAddRoles extends Request
     {
         $serializers = array('userRoles' => new PrimitiveSerializer('array'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('userRoles' => array(new Required()));
+        return $rules;
     }
 }

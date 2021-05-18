@@ -3,8 +3,10 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Definition\CommonGroupCreate;
+use Arimac\Sigfox\Model\CommonGroupCreate;
 use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
+use Arimac\Sigfox\Validator\Rules\Child;
 /**
  * Create a new group.
  */
@@ -18,10 +20,6 @@ class GroupsCreate extends Request
      * @internal
      */
     protected array $body = array('group');
-    /**
-     * @internal
-     */
-    protected array $validations = array('group' => array('required'));
     /**
      * Setter for group
      *
@@ -54,5 +52,15 @@ class GroupsCreate extends Request
     {
         $serializers = array('group' => new ClassSerializer(CommonGroupCreate::class));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('group' => array(new Required(), new Child()));
+        return $rules;
     }
 }

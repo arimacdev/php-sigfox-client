@@ -4,7 +4,7 @@ namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Helper;
-use Arimac\Sigfox\Definition\GlobalCoverageBulkResponse;
+use Arimac\Sigfox\Model\GlobalCoverageBulkResponse;
 use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
 use Arimac\Sigfox\Exception\Response\BadRequestException;

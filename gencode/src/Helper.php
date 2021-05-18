@@ -172,6 +172,8 @@ class Helper
                 return "int";
             case "number":
                 return "float";
+            case "double":
+                return "float";
             case "boolean":
                 return "bool";
             case "string":

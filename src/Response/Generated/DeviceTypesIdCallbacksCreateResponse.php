@@ -2,9 +2,9 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
-class DeviceTypesIdCallbacksCreateResponse extends Definition
+class DeviceTypesIdCallbacksCreateResponse extends Model
 {
     /**
      * The callback's identifier

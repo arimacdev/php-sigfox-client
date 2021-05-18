@@ -3,8 +3,10 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Definition\ProfileIds;
+use Arimac\Sigfox\Model\ProfileIds;
 use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
+use Arimac\Sigfox\Validator\Rules\Child;
 /**
  * Associate new profiles to a given API user.
  */
@@ -20,10 +22,6 @@ class ApiUsersIdProfilesUpdate extends Request
      * @internal
      */
     protected array $body = array('profileIds');
-    /**
-     * @internal
-     */
-    protected array $validations = array('profileIds' => array('required'));
     /**
      * Setter for profileIds
      *
@@ -56,5 +54,15 @@ class ApiUsersIdProfilesUpdate extends Request
     {
         $serializers = array('profileIds' => new ClassSerializer(ProfileIds::class));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('profileIds' => array(new Required(), new Child()));
+        return $rules;
     }
 }

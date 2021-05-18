@@ -2,13 +2,15 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition\DeviceType;
-use Arimac\Sigfox\Definition\Paging;
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model\DeviceType;
+use Arimac\Sigfox\Model\Paging;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
-class DeviceTypesListResponse extends Definition
+use Arimac\Sigfox\Validator\Rules\ChildSet;
+use Arimac\Sigfox\Validator\Rules\Child;
+class DeviceTypesListResponse extends Model
 {
     /**
      * @var DeviceType[]
@@ -100,5 +102,15 @@ class DeviceTypesListResponse extends Definition
     {
         $serializers = array('data' => new ArraySerializer(new ClassSerializer(DeviceType::class)), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'paging' => new ClassSerializer(Paging::class));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('data' => array(new ChildSet()), 'paging' => array(new Child()));
+        return $rules;
     }
 }

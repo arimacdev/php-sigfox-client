@@ -3,8 +3,10 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Definition\TokenUnsubscribe;
+use Arimac\Sigfox\Model\TokenUnsubscribe;
 use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
+use Arimac\Sigfox\Validator\Rules\Child;
 /**
  * Set an unsubscription date for the device's token.
  */
@@ -20,10 +22,6 @@ class DevicesIdUnsubscribe extends Request
      * @internal
      */
     protected array $body = array('unsubscriptionTime');
-    /**
-     * @internal
-     */
-    protected array $validations = array('unsubscriptionTime' => array('required'));
     /**
      * Setter for unsubscriptionTime
      *
@@ -56,5 +54,15 @@ class DevicesIdUnsubscribe extends Request
     {
         $serializers = array('unsubscriptionTime' => new ClassSerializer(TokenUnsubscribe::class));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('unsubscriptionTime' => array(new Required(), new Child()));
+        return $rules;
     }
 }

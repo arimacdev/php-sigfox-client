@@ -13,9 +13,9 @@ use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
-use Arimac\Sigfox\Definition\UserCreation;
+use Arimac\Sigfox\Model\UserCreation;
 use Arimac\Sigfox\Request\UsersCreate;
-use Arimac\Sigfox\Definition\CreateResponse;
+use Arimac\Sigfox\Model\CreateResponse;
 class Users
 {
     /**
@@ -58,7 +58,7 @@ class Users
     /**
      * Create a new user.
      *
-     * @param UserCreation $user The user to create
+     * @param UserCreation|undefined $user The user to create
      *
      * @return CreateResponse
      *
@@ -71,7 +71,7 @@ class Users
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function create(UserCreation $user) : CreateResponse
+    public function create(?UserCreation $user) : CreateResponse
     {
         $request = new UsersCreate();
         $request->setUser($user);

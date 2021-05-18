@@ -3,7 +3,7 @@
 namespace Arimac\Sigfox\Repository;
 
 use Arimac\Sigfox\Client\Client;
-use Arimac\Sigfox\Definition\TilesResponse;
+use Arimac\Sigfox\Model\TilesResponse;
 use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
 use Arimac\Sigfox\Exception\Response\BadRequestException;

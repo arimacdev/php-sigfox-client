@@ -3,8 +3,10 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Definition\DeviceUpdateJob;
+use Arimac\Sigfox\Model\DeviceUpdateJob;
 use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
+use Arimac\Sigfox\Validator\Rules\Child;
 /**
  * Update a given device.
  */
@@ -20,10 +22,6 @@ class DevicesIdUpdate extends Request
      * @internal
      */
     protected array $body = array('device');
-    /**
-     * @internal
-     */
-    protected array $validations = array('device' => array('required'));
     /**
      * Setter for device
      *
@@ -56,5 +54,15 @@ class DevicesIdUpdate extends Request
     {
         $serializers = array('device' => new ClassSerializer(DeviceUpdateJob::class));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('device' => array(new Required(), new Child()));
+        return $rules;
     }
 }

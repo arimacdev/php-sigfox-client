@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Validator\Rules\OneOf;
 /**
  * Retrieve information about a given contract.
  */
@@ -25,10 +26,6 @@ class ContractInfosIdGet extends Request
      * @internal
      */
     protected array $query = array('fields', 'authorizations');
-    /**
-     * @internal
-     */
-    protected array $validations = array('fields' => array('in:group(name\\,type\\,level),order(name),blacklistedTerritories(group(name\\,type\\,level))', 'nullable'));
     /**
      * Setter for fields
      *
@@ -86,5 +83,15 @@ class ContractInfosIdGet extends Request
     {
         $serializers = array('fields' => new PrimitiveSerializer('string'), 'authorizations' => new PrimitiveSerializer('bool'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('fields' => array(new OneOf(array('group(name,type,level)', 'order(name)', 'blacklistedTerritories(group(name,type,level))'))));
+        return $rules;
     }
 }

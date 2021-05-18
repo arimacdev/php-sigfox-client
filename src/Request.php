@@ -2,7 +2,7 @@
 
 namespace Arimac\Sigfox;
 
-abstract class Request extends Definition {
+abstract class Request extends Model {
     /**
      * @internal
      */
@@ -34,11 +34,4 @@ abstract class Request extends Definition {
     public function getQueryFields(): array {
         return $this->query;
     }
-
-    /**
-     * @internal
-     *
-     * @inheritdoc
-     */
-    public abstract function getSerializeMetaData(): array;
 }

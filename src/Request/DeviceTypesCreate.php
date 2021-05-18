@@ -3,8 +3,10 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Definition\DeviceTypeCreate;
+use Arimac\Sigfox\Model\DeviceTypeCreate;
 use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
+use Arimac\Sigfox\Validator\Rules\Child;
 /**
  * Create a new device type
  */
@@ -20,10 +22,6 @@ class DeviceTypesCreate extends Request
      * @internal
      */
     protected array $body = array('deviceType');
-    /**
-     * @internal
-     */
-    protected array $validations = array('deviceType' => array('required'));
     /**
      * Setter for deviceType
      *
@@ -56,5 +54,15 @@ class DeviceTypesCreate extends Request
     {
         $serializers = array('deviceType' => new ClassSerializer(DeviceTypeCreate::class));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('deviceType' => array(new Required(), new Child()));
+        return $rules;
     }
 }

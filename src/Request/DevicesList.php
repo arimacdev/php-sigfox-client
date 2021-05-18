@@ -5,6 +5,7 @@ namespace Arimac\Sigfox\Request;
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
+use Arimac\Sigfox\Validator\Rules\OneOf;
 /**
  * Retrieve a list of devices according to visibility permissions and request filters.
  */
@@ -92,10 +93,6 @@ class DevicesList extends Request
      * @internal
      */
     protected array $query = array('id', 'groupIds', 'deep', 'authorizations', 'deviceTypeId', 'operatorId', 'sort', 'minId', 'maxId', 'fields', 'limit', 'offset', 'pageId');
-    /**
-     * @internal
-     */
-    protected array $validations = array('sort' => array('in:id,-id,name,-name,lastCom,-lastCom', 'nullable'), 'fields' => array('in:deviceType(name),group(name\\,type\\,level\\,bssId\\,customerBssId),contract(name),productCertificate(key),modemCertificate(key)', 'nullable'));
     /**
      * Setter for id
      *
@@ -412,5 +409,15 @@ class DevicesList extends Request
     {
         $serializers = array('id' => new PrimitiveSerializer('string'), 'groupIds' => new ArraySerializer(new PrimitiveSerializer('string')), 'deep' => new PrimitiveSerializer('bool'), 'authorizations' => new PrimitiveSerializer('bool'), 'deviceTypeId' => new PrimitiveSerializer('string'), 'operatorId' => new PrimitiveSerializer('string'), 'sort' => new PrimitiveSerializer('string'), 'minId' => new PrimitiveSerializer('string'), 'maxId' => new PrimitiveSerializer('string'), 'fields' => new PrimitiveSerializer('string'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'), 'pageId' => new PrimitiveSerializer('string'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('sort' => array(new OneOf(array('id', '-id', 'name', '-name', 'lastCom', '-lastCom'))), 'fields' => array(new OneOf(array('deviceType(name)', 'group(name,type,level,bssId,customerBssId)', 'contract(name)', 'productCertificate(key)', 'modemCertificate(key)'))));
+        return $rules;
     }
 }

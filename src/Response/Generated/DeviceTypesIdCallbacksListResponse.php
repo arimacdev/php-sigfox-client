@@ -2,11 +2,12 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition\Callback;
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model\Callback;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
-class DeviceTypesIdCallbacksListResponse extends Definition
+use Arimac\Sigfox\Validator\Rules\ChildSet;
+class DeviceTypesIdCallbacksListResponse extends Model
 {
     /**
      * @var Callback[]
@@ -44,5 +45,15 @@ class DeviceTypesIdCallbacksListResponse extends Definition
     {
         $serializers = array('data' => new ArraySerializer(new ClassSerializer(Callback::class)));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('data' => array(new ChildSet()));
+        return $rules;
     }
 }

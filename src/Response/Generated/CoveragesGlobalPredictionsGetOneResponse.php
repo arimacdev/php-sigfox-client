@@ -2,10 +2,10 @@
 
 namespace Arimac\Sigfox\Response\Generated;
 
-use Arimac\Sigfox\Definition;
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
-class CoveragesGlobalPredictionsGetOneResponse extends Definition
+class CoveragesGlobalPredictionsGetOneResponse extends Model
 {
     /**
      * True, if the requested location is considered covered.

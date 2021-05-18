@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Validator\Rules\OneOf;
 /**
  * Retrieve a list of messages for a given device according to request filters, with a 3-day history.
  */
@@ -43,10 +44,6 @@ class DevicesIdMessagesList extends Request
      * @internal
      */
     protected array $query = array('fields', 'since', 'before', 'limit', 'offset');
-    /**
-     * @internal
-     */
-    protected array $validations = array('fields' => array('in:oob,ackRequired,device(name),rinfos(cbStatus\\,rep\\,repetitions\\,baseStation(name)),downlinkAnswerStatus(baseStation(name))', 'nullable'));
     /**
      * Setter for fields
      *
@@ -173,5 +170,15 @@ class DevicesIdMessagesList extends Request
     {
         $serializers = array('fields' => new PrimitiveSerializer('string'), 'since' => new PrimitiveSerializer('int'), 'before' => new PrimitiveSerializer('int'), 'limit' => new PrimitiveSerializer('int'), 'offset' => new PrimitiveSerializer('int'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('fields' => array(new OneOf(array('oob', 'ackRequired', 'device(name)', 'rinfos(cbStatus,rep,repetitions,baseStation(name))', 'downlinkAnswerStatus(baseStation(name))'))));
+        return $rules;
     }
 }

@@ -12,7 +12,7 @@ use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
-use Arimac\Sigfox\Definition\CreateCallback;
+use Arimac\Sigfox\Model\CreateCallback;
 use Arimac\Sigfox\Request\DeviceTypesIdCallbacksCreate;
 use Arimac\Sigfox\Response\Generated\DeviceTypesIdCallbacksCreateResponse;
 use Arimac\Sigfox\Exception\SerializeException;
@@ -63,7 +63,7 @@ class DeviceTypesIdCallbacks
     /**
      * Create a new callback for a given device type.
      *
-     * @param CreateCallback $callback
+     * @param CreateCallback|undefined $callback
      *
      * @return DeviceTypesIdCallbacksCreateResponse
      *
@@ -76,7 +76,7 @@ class DeviceTypesIdCallbacks
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function create(CreateCallback $callback) : DeviceTypesIdCallbacksCreateResponse
+    public function create(?CreateCallback $callback) : DeviceTypesIdCallbacksCreateResponse
     {
         $request = new DeviceTypesIdCallbacksCreate();
         $request->setCallback($callback);

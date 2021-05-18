@@ -3,8 +3,10 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Definition\KmzCreatePublicRequest;
+use Arimac\Sigfox\Model\KmzCreatePublicRequest;
 use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
+use Arimac\Sigfox\Validator\Rules\Child;
 /**
  * Starting the computation of Sigfox Monarch coverage view for a specific coverage mode. A new computation starts if
  * no other computation, run in the last 24 hours, is available. Otherwise, the existing jobId is returned.
@@ -21,10 +23,6 @@ class TilesMonarchKmzStartAsync extends Request
      * @internal
      */
     protected array $body = array('request');
-    /**
-     * @internal
-     */
-    protected array $validations = array('request' => array('required'));
     /**
      * Setter for request
      *
@@ -57,5 +55,15 @@ class TilesMonarchKmzStartAsync extends Request
     {
         $serializers = array('request' => new ClassSerializer(KmzCreatePublicRequest::class));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('request' => array(new Required(), new Child()));
+        return $rules;
     }
 }

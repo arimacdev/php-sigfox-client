@@ -4,6 +4,9 @@ namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
+use Arimac\Sigfox\Validator\Rules\Max;
+use Arimac\Sigfox\Validator\Rules\Min;
 /**
  * Retrieve Sigfox public coverage kmz file from a job. The public coverage is always available and does not require
  * a previous calculation
@@ -44,10 +47,6 @@ class TilesPublicCoverageKmzTitles extends Request
      * @internal
      */
     protected array $query = array('zoom', 'north', 'south', 'west', 'east');
-    /**
-     * @internal
-     */
-    protected array $validations = array('zoom' => array('required', 'max:11', 'min:0', 'numeric'), 'north' => array('required', 'max:90', 'min:-90', 'numeric'), 'south' => array('required', 'max:90', 'min:-90', 'numeric'), 'west' => array('required', 'max:180', 'min:-180', 'numeric'), 'east' => array('required', 'max:180', 'min:-180', 'numeric'));
     /**
      * Setter for zoom
      *
@@ -172,5 +171,15 @@ class TilesPublicCoverageKmzTitles extends Request
     {
         $serializers = array('zoom' => new PrimitiveSerializer('int'), 'north' => new PrimitiveSerializer('int'), 'south' => new PrimitiveSerializer('int'), 'west' => new PrimitiveSerializer('int'), 'east' => new PrimitiveSerializer('int'));
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('zoom' => array(new Required(), new Max(11), new Min(0)), 'north' => array(new Required(), new Max(90), new Min(-90)), 'south' => array(new Required(), new Max(90), new Min(-90)), 'west' => array(new Required(), new Max(180), new Min(-180)), 'east' => array(new Required(), new Max(180), new Min(-180)));
+        return $rules;
     }
 }

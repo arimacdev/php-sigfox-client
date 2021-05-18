@@ -5,7 +5,7 @@ namespace Arimac\Sigfox\GenCode;
 use Arimac\Sigfox\GenCode\Config\EnumFields;
 use PhpParser\BuilderFactory;
 
-class Request extends Definition
+class Request extends Model
 {
     protected $getter = false;
 
@@ -77,11 +77,18 @@ class Request extends Definition
 
                 foreach ($properties as $property) {
                     $propertyName = $property["name"];
-                    $type = Definition::fromArray($name . "\\" . ucfirst($propertyName), $property);
+                    $type = Model::fromArray($name . "\\" . ucfirst($propertyName), $property);
                     $usedType = $defClass->useType($type);
                     $phpType = Helper::toPHPValue($usedType);
 
                     $validation = self::getValidations($property);
+                    if (substr($type, 0, 14) === "Arimac\\Sigfox\\") {
+                        if ($phpType === "array") {
+                            $validation[] = ["child-set"];
+                        } else {
+                            $validation[] = ["child"];
+                        }
+                    }
                     if (count($validation)) {
                         $validations[$propertyName] = $validation;
                     }
@@ -162,7 +169,7 @@ class Request extends Definition
                 }
 
                 if (count($validations)) {
-                    $defClass->setValidations($validations);
+                    $defClass->setValidations($validations, []);
                 }
 
                 $defClass->save();
