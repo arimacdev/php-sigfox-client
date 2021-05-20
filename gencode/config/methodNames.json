@@ -101,7 +101,7 @@
         "post": "replace"
     },
     "\/devices\/bulk\/restart": {
-        "post": "restart"
+        "post": "restartBulk"
     },
     "\/devices\/bulk\/restart\/{jobId}": {
         "get": "get"

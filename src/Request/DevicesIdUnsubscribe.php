@@ -21,7 +21,7 @@ class DevicesIdUnsubscribe extends Request
     /**
      * @internal
      */
-    protected array $body = array('unsubscriptionTime');
+    protected ?string $body = 'unsubscriptionTime';
     /**
      * Setter for unsubscriptionTime
      *

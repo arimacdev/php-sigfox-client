@@ -47,25 +47,33 @@ class Client
     ): ?Model {
         $body = null;
         $query = null;
+        // Serializing and validating data
         if ($request) {
             Validator::validate($request);
             $requestSerializer = new ClassSerializer($request::class);
             $serialized = $requestSerializer->serialize($request);
 
-            $body = Helper::arrayFilterKeys($serialized, $request->getBodyFields());
+            $bodyField = $request->getBodyField();
+            if($bodyField && isset($serialized[$bodyField])){
+                $body = $serialized[$bodyField];
+            }
+
             $query = Helper::arrayFilterKeys($serialized, $request->getQueryFields());
         }
+        // Calling API endpoint
         list($statusCode, $body) = $this->inner->request($method, $url, $body, $query);
         $statusCode = (int) $statusCode;
+
+        // If accepting a response
         if ($responseClass) {
-            if ($statusCode >= 200 && $statusCode < 204) {
+            if ($statusCode >= 200 && $statusCode < 204) { // 200..203 requests accepting a response
                 $responseJson = json_decode($body, true);
                 $responseSerializer = new ClassSerializer($responseClass);
                 $deserialized = $responseSerializer->deserialize($responseJson);
                 return $deserialized;
-            } else if ($statusCode == 204) {
+            } else if ($statusCode == 204) { // 204 is not accepting a response
                 return null;
-            } else if ($statusCode > 400) {
+            } else if ($statusCode > 400) { // 400> is accepting a error
                 if (isset($errors[$statusCode])) {
                     $responseJson = json_decode($body, true);
                     $exception = $errors[$statusCode]::deserialize($responseJson);

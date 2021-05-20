@@ -6,7 +6,6 @@ use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Helper;
 use Arimac\Sigfox\Request\GroupsIdGet;
 use Arimac\Sigfox\Model\Group;
-use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
 use Arimac\Sigfox\Exception\Response\BadRequestException;
@@ -14,12 +13,18 @@ use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
+use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Model\CommonGroupUpdate;
 use Arimac\Sigfox\Request\GroupsIdUpdate;
 use Arimac\Sigfox\Request\GroupsIdCallbacksNotDelivered;
 use Arimac\Sigfox\Response\Generated\GroupsIdCallbacksNotDeliveredResponse;
+use Arimac\Sigfox\Model;
+use Arimac\Sigfox\Response\Paginated\PaginatedResponse;
+use Arimac\Sigfox\Model\GroupErrorMessages;
+use Arimac\Sigfox\Response\Paginated\PaginateResponse;
 use Arimac\Sigfox\Request\GroupsIdGeolocationPayloads;
 use Arimac\Sigfox\Response\Generated\GroupsIdGeolocationPayloadsResponse;
+use Arimac\Sigfox\Model\BaseGeolocation;
 class GroupsId
 {
     /**
@@ -54,7 +59,6 @@ class GroupsId
      *
      * @return Group
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
@@ -62,6 +66,7 @@ class GroupsId
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
     public function get(?GroupsIdGet $request = null) : Group
     {
@@ -106,9 +111,8 @@ class GroupsId
      *
      * @param GroupsIdCallbacksNotDelivered $request The query and body parameters to pass
      *
-     * @return GroupsIdCallbacksNotDeliveredResponse
+     * @return PaginateResponse<GroupErrorMessages,GroupsIdCallbacksNotDeliveredResponse>
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
@@ -117,18 +121,25 @@ class GroupsId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function callbacksNotDelivered(?GroupsIdCallbacksNotDelivered $request = null) : GroupsIdCallbacksNotDeliveredResponse
+    public function callbacksNotDelivered(?GroupsIdCallbacksNotDelivered $request = null) : PaginateResponse
     {
-        return $this->client->call('get', Helper::bindUrlParams('/groups/{id}/callbacks-not-delivered', $this->id), $request, GroupsIdCallbacksNotDeliveredResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        if (!isset($request)) {
+            $request = new GroupsIdCallbacksNotDelivered();
+            $request->setLimit(100);
+            $request->setOffset(0);
+        }
+        $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
+        /** @var Model&PaginatedResponse **/
+        $response = $this->client->call('get', Helper::bindUrlParams('/groups/{id}/callbacks-not-delivered', $this->id), $request, GroupsIdCallbacksNotDeliveredResponse::class, $errors);
+        return new PaginateResponse($this->client, $request, $response, $errors);
     }
     /**
      * Retrieve a list of geolocation payload according to request filters.
      *
      * @param GroupsIdGeolocationPayloads $request The query and body parameters to pass
      *
-     * @return GroupsIdGeolocationPayloadsResponse
+     * @return PaginateResponse<BaseGeolocation,GroupsIdGeolocationPayloadsResponse>
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
@@ -137,8 +148,16 @@ class GroupsId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function geolocationPayloads(?GroupsIdGeolocationPayloads $request = null) : GroupsIdGeolocationPayloadsResponse
+    public function geolocationPayloads(?GroupsIdGeolocationPayloads $request = null) : PaginateResponse
     {
-        return $this->client->call('get', Helper::bindUrlParams('/groups/{id}/geoloc-payloads', $this->id), $request, GroupsIdGeolocationPayloadsResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        if (!isset($request)) {
+            $request = new GroupsIdGeolocationPayloads();
+            $request->setLimit(100);
+            $request->setOffset(0);
+        }
+        $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
+        /** @var Model&PaginatedResponse **/
+        $response = $this->client->call('get', Helper::bindUrlParams('/groups/{id}/geoloc-payloads', $this->id), $request, GroupsIdGeolocationPayloadsResponse::class, $errors);
+        return new PaginateResponse($this->client, $request, $response, $errors);
     }
 }

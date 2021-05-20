@@ -22,7 +22,7 @@ class TilesMonarchKmzStartAsync extends Request
     /**
      * @internal
      */
-    protected array $body = array('request');
+    protected ?string $body = 'request';
     /**
      * Setter for request
      *

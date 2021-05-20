@@ -5,7 +5,6 @@ namespace Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\DeviceTypesList;
 use Arimac\Sigfox\Response\Generated\DeviceTypesListResponse;
-use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
 use Arimac\Sigfox\Exception\Response\BadRequestException;
@@ -13,6 +12,10 @@ use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
+use Arimac\Sigfox\Model;
+use Arimac\Sigfox\Response\Paginated\PaginatedResponse;
+use Arimac\Sigfox\Model\DeviceType;
+use Arimac\Sigfox\Response\Paginated\PaginateResponse;
 use Arimac\Sigfox\Model\DeviceTypeCreate;
 use Arimac\Sigfox\Request\DeviceTypesCreate;
 use Arimac\Sigfox\Response\Generated\DeviceTypesCreateResponse;
@@ -40,9 +43,8 @@ class DeviceTypes
      *
      * @param DeviceTypesList $request The query and body parameters to pass
      *
-     * @return DeviceTypesListResponse
+     * @return PaginateResponse<DeviceType,DeviceTypesListResponse>
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
@@ -51,18 +53,25 @@ class DeviceTypes
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function list(?DeviceTypesList $request = null) : DeviceTypesListResponse
+    public function list(?DeviceTypesList $request = null) : PaginateResponse
     {
-        return $this->client->call('get', '/device-types/', $request, DeviceTypesListResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        if (!isset($request)) {
+            $request = new DeviceTypesList();
+            $request->setLimit(100);
+            $request->setOffset(0);
+        }
+        $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
+        /** @var Model&PaginatedResponse **/
+        $response = $this->client->call('get', '/device-types/', $request, DeviceTypesListResponse::class, $errors);
+        return new PaginateResponse($this->client, $request, $response, $errors);
     }
     /**
      * Create a new device type
      *
      * @param DeviceTypeCreate|undefined $deviceType The device type to create
      *
-     * @return DeviceTypesCreateResponse
+     * @return string The new created device type's identifier
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
@@ -71,11 +80,13 @@ class DeviceTypes
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function create(?DeviceTypeCreate $deviceType) : DeviceTypesCreateResponse
+    public function create(?DeviceTypeCreate $deviceType) : ?string
     {
         $request = new DeviceTypesCreate();
         $request->setDeviceType($deviceType);
-        return $this->client->call('post', '/device-types/', $request, DeviceTypesCreateResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        /** @var DeviceTypesCreateResponse **/
+        $response = $this->client->call('post', '/device-types/', $request, DeviceTypesCreateResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        return $response->getId();
     }
     /**
      * Find by id

@@ -3,11 +3,12 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
+use Arimac\Sigfox\Response\Paginated\PaginatedRequest;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of location data of a device according to request filters.
  */
-class DevicesIdLocations extends Request
+class DevicesIdLocations extends Request implements PaginatedRequest
 {
     /**
      * if true, the method return also the location from out of band Messages

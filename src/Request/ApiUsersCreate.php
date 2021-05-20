@@ -19,7 +19,7 @@ class ApiUsersCreate extends Request
     /**
      * @internal
      */
-    protected array $body = array('apiUser');
+    protected ?string $body = 'apiUser';
     /**
      * Setter for apiUser
      *

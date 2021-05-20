@@ -3,13 +3,14 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
+use Arimac\Sigfox\Response\Paginated\PaginatedRequest;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 use Arimac\Sigfox\Validator\Rules\OneOf;
 /**
  * Retrieve a list of API users according to visibility permissions and request filters.
  */
-class ApiUsersList extends Request
+class ApiUsersList extends Request implements PaginatedRequest
 {
     /**
      * Defines the other available fields to be returned in the response.

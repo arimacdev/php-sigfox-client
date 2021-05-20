@@ -3,11 +3,12 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
+use Arimac\Sigfox\Response\Paginated\PaginatedRequest;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve the last device message error associated with this callback.
  */
-class DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered extends Request
+class DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered extends Request implements PaginatedRequest
 {
     /**
      * Starting timestamp (in milliseconds since Unix Epoch).

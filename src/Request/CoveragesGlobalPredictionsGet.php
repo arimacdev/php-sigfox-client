@@ -25,7 +25,7 @@ class CoveragesGlobalPredictionsGet extends Request
     /**
      * @internal
      */
-    protected array $body = array('payload');
+    protected ?string $body = 'payload';
     /**
      * Setter for payload
      *

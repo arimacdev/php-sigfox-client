@@ -4,13 +4,14 @@ namespace Arimac\Sigfox\Response\Generated;
 
 use Arimac\Sigfox\Model\DeviceType;
 use Arimac\Sigfox\Model\Paging;
+use Arimac\Sigfox\Response\Paginated\PaginatedResponse;
 use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Validator\Rules\ChildSet;
 use Arimac\Sigfox\Validator\Rules\Child;
-class DeviceTypesListResponse extends Model
+class DeviceTypesListResponse extends Model implements PaginatedResponse
 {
     /**
      * @var DeviceType[]

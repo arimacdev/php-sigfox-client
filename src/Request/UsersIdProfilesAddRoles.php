@@ -19,7 +19,7 @@ class UsersIdProfilesAddRoles extends Request
     /**
      * @internal
      */
-    protected array $body = array('userRoles');
+    protected ?string $body = 'userRoles';
     /**
      * Setter for userRoles
      *

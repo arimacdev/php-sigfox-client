@@ -21,7 +21,7 @@ class DeviceTypesIdCallbacksCallbackIdUpdate extends Request
     /**
      * @internal
      */
-    protected array $body = array('callback');
+    protected ?string $body = 'callback';
     /**
      * Setter for callback
      *

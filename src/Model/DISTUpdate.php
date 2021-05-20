@@ -9,7 +9,7 @@ use Arimac\Sigfox\Extendable;
 class DISTUpdate extends CommonGroupUpdate
 {
     use Extendable;
-    protected ?bool $extendable = null;
+    protected ?bool $extendable = true;
     /**
      * @inheritdoc
      *

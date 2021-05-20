@@ -6,7 +6,6 @@ use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Helper;
 use Arimac\Sigfox\Request\ContractInfosIdGet;
 use Arimac\Sigfox\Model\ContractInfo;
-use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
 use Arimac\Sigfox\Exception\Response\BadRequestException;
@@ -14,10 +13,15 @@ use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
+use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Response\Generated\ContractInfosIdBulkRestartResponse;
 use Arimac\Sigfox\Request\ContractInfosIdDevices;
 use Arimac\Sigfox\Response\Generated\ContractInfosIdDevicesResponse;
 use Arimac\Sigfox\Exception\Response\MethodNotAllowedException;
+use Arimac\Sigfox\Model;
+use Arimac\Sigfox\Response\Paginated\PaginatedResponse;
+use Arimac\Sigfox\Model\Device;
+use Arimac\Sigfox\Response\Paginated\PaginateResponse;
 class ContractInfosId
 {
     /**
@@ -52,7 +56,6 @@ class ContractInfosId
      *
      * @return ContractInfo
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
@@ -60,6 +63,7 @@ class ContractInfosId
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
     public function get(?ContractInfosIdGet $request = null) : ContractInfo
     {
@@ -68,9 +72,8 @@ class ContractInfosId
     /**
      * Create an async job to restart the devices associated to a contract.
      *
-     * @return ContractInfosIdBulkRestartResponse
+     * @return string jobId so that the customer is able to request job status
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
      * @throws UnauthorizedException       If server returned a HTTP 401 error.
@@ -78,18 +81,19 @@ class ContractInfosId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function bulkRestart() : ContractInfosIdBulkRestartResponse
+    public function bulkRestart() : ?string
     {
-        return $this->client->call('post', Helper::bindUrlParams('/contract-infos/{id}/bulk/restart', $this->id), null, ContractInfosIdBulkRestartResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        /** @var ContractInfosIdBulkRestartResponse **/
+        $response = $this->client->call('post', Helper::bindUrlParams('/contract-infos/{id}/bulk/restart', $this->id), null, ContractInfosIdBulkRestartResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        return $response->getJobId();
     }
     /**
      * Retrieve a list of devices according to visibility permissions and request filters.
      *
      * @param ContractInfosIdDevices $request The query and body parameters to pass
      *
-     * @return ContractInfosIdDevicesResponse
+     * @return PaginateResponse<Device,ContractInfosIdDevicesResponse>
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
@@ -99,8 +103,16 @@ class ContractInfosId
      * @throws MethodNotAllowedException   If server returned a HTTP 405 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function devices(?ContractInfosIdDevices $request = null) : ContractInfosIdDevicesResponse
+    public function devices(?ContractInfosIdDevices $request = null) : PaginateResponse
     {
-        return $this->client->call('get', Helper::bindUrlParams('/contract-infos/{id}/devices', $this->id), $request, ContractInfosIdDevicesResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 405 => MethodNotAllowedException::class, 500 => InternalServerException::class));
+        if (!isset($request)) {
+            $request = new ContractInfosIdDevices();
+            $request->setLimit(100);
+            $request->setOffset(0);
+        }
+        $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 405 => MethodNotAllowedException::class, 500 => InternalServerException::class);
+        /** @var Model&PaginatedResponse **/
+        $response = $this->client->call('get', Helper::bindUrlParams('/contract-infos/{id}/devices', $this->id), $request, ContractInfosIdDevicesResponse::class, $errors);
+        return new PaginateResponse($this->client, $request, $response, $errors);
     }
 }

@@ -3,11 +3,12 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
+use Arimac\Sigfox\Response\Paginated\PaginatedRequest;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of geolocation payload according to request filters.
  */
-class GroupsIdGeolocationPayloads extends Request
+class GroupsIdGeolocationPayloads extends Request implements PaginatedRequest
 {
     /**
      * The maximum number of items to return

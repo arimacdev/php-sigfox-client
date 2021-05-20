@@ -113,6 +113,11 @@ class Class_
         $this->class->extend($type);
     }
 
+    public function implement(string $name) {
+        $type = $this->useType($name);
+        $this->class->implement($type);
+    }
+
     public function getNamespace(): string
     {
         return $this->namespaceName;

@@ -21,7 +21,7 @@ class GroupsIdUpdate extends Request
     /**
      * @internal
      */
-    protected array $body = array('group');
+    protected ?string $body = 'group';
     /**
      * Setter for group
      *

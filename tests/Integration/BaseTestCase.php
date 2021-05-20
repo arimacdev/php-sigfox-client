@@ -11,6 +11,7 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Client;
 use Arimac\Sigfox\Test\Integration\MockClient;
 use Arimac\Sigfox\Sigfox;
+use GuzzleHttp\Middleware;
 use ReflectionClass;
 use ReflectionObject;
 
@@ -21,11 +22,14 @@ class BaseTestCase extends TestCase {
     /** @var Sigfox **/
     protected $client;
 
+    protected array $history = [];
+
     protected function setUp(): void
     {
         $mock = new MockHandler(); 
-
+        $history = Middleware::history($this->history);
         $handlerStack = HandlerStack::create($mock);
+        $handlerStack->push($history);
         $client = new Client(['handler' => $handlerStack]);
         $mockClient = new MockClient("","","");
         $mockClient->setClient($client);
@@ -43,7 +47,7 @@ class BaseTestCase extends TestCase {
         $this->client = $sigfox;
     } 
 
-    protected function response(string $fileName): string {
+    protected function sample(string $fileName): string {
         return file_get_contents(dirname(__DIR__)."/Integration/Responses/".$fileName.".json");
     }
 
@@ -60,18 +64,12 @@ class BaseTestCase extends TestCase {
     {
         $this->assertEquals([], array_diff_key($array, $expected));
 
-        $isAssociated = !isset($expected[0]);
-
         foreach ($expected as $key => $value) {
             if (is_array($value)) {
                 $this->assertArraySimilar($value, $array[$key]);
             } else {
-                if($isAssociated){
-                    $this->assertArrayHasKey($key, $array);
-                    $this->assertEquals($value, $array[$key]);
-                } else {
-                    $this->assertContains($value, $array);
-                }
+                $this->assertArrayHasKey($key, $array);
+                $this->assertEquals($value, $array[$key]);
             }
         }
     }

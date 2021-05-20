@@ -21,7 +21,7 @@ class DevicesIdUpdate extends Request
     /**
      * @internal
      */
-    protected array $body = array('device');
+    protected ?string $body = 'device';
     /**
      * Setter for device
      *

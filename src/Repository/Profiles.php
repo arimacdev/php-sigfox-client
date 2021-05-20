@@ -5,13 +5,16 @@ namespace Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\ProfilesList;
 use Arimac\Sigfox\Response\Generated\ProfilesListResponse;
-use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
 use Arimac\Sigfox\Exception\Response\BadRequestException;
 use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
+use Arimac\Sigfox\Model;
+use Arimac\Sigfox\Response\Paginated\PaginatedResponse;
+use Arimac\Sigfox\Model\Profile;
+use Arimac\Sigfox\Response\Paginated\PaginateResponse;
 class Profiles
 {
     /**
@@ -36,9 +39,8 @@ class Profiles
      *
      * @param ProfilesList $request The query and body parameters to pass
      *
-     * @return ProfilesListResponse
+     * @return PaginateResponse<Profile,ProfilesListResponse>
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
@@ -46,9 +48,17 @@ class Profiles
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function list(?ProfilesList $request = null) : ProfilesListResponse
+    public function list(?ProfilesList $request = null) : PaginateResponse
     {
-        return $this->client->call('get', '/profiles/', $request, ProfilesListResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 500 => InternalServerException::class));
+        if (!isset($request)) {
+            $request = new ProfilesList();
+            $request->setLimit(100);
+            $request->setOffset(0);
+        }
+        $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 500 => InternalServerException::class);
+        /** @var Model&PaginatedResponse **/
+        $response = $this->client->call('get', '/profiles/', $request, ProfilesListResponse::class, $errors);
+        return new PaginateResponse($this->client, $request, $response, $errors);
     }
     /**
      * Find by id

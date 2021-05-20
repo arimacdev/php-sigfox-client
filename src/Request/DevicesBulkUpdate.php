@@ -32,7 +32,7 @@ class DevicesBulkUpdate extends Request
     /**
      * @internal
      */
-    protected array $body = array('devices');
+    protected ?string $body = 'devices';
     /**
      * Setter for devices
      *

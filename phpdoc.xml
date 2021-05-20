@@ -13,6 +13,8 @@
                 <path>src/Client/Client.php</path>
                 <path>src/Serializer/**/*</path>
                 <path>src/Helper.php</path>
+                <path>src/Response/Paginated/PaginatedRequest.php</path>
+                <path>src/Response/Paginated/PaginatedResponse.php</path>
             </ignore>
             <default-package-name>PHP Sigfox Client</default-package-name>
         </api>

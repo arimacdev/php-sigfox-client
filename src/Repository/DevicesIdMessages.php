@@ -6,7 +6,6 @@ use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Helper;
 use Arimac\Sigfox\Request\DevicesIdMessagesList;
 use Arimac\Sigfox\Response\Generated\DevicesIdMessagesListResponse;
-use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
 use Arimac\Sigfox\Exception\Response\BadRequestException;
@@ -15,7 +14,12 @@ use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\PreconditionFailedException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
+use Arimac\Sigfox\Model;
+use Arimac\Sigfox\Response\Paginated\PaginatedResponse;
+use Arimac\Sigfox\Model\DeviceMessage;
+use Arimac\Sigfox\Response\Paginated\PaginateResponse;
 use Arimac\Sigfox\Response\Generated\DevicesIdMessagesMetricResponse;
+use Arimac\Sigfox\Exception\DeserializeException;
 class DevicesIdMessages
 {
     /**
@@ -48,9 +52,8 @@ class DevicesIdMessages
      *
      * @param DevicesIdMessagesList $request The query and body parameters to pass
      *
-     * @return DevicesIdMessagesListResponse
+     * @return PaginateResponse<DeviceMessage,DevicesIdMessagesListResponse>
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
@@ -60,22 +63,30 @@ class DevicesIdMessages
      * @throws PreconditionFailedException If server returned a HTTP 412 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function list(?DevicesIdMessagesList $request = null) : DevicesIdMessagesListResponse
+    public function list(?DevicesIdMessagesList $request = null) : PaginateResponse
     {
-        return $this->client->call('get', Helper::bindUrlParams('/devices/{id}/messages', $this->id), $request, DevicesIdMessagesListResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 412 => PreconditionFailedException::class, 500 => InternalServerException::class));
+        if (!isset($request)) {
+            $request = new DevicesIdMessagesList();
+            $request->setLimit(100);
+            $request->setOffset(0);
+        }
+        $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 412 => PreconditionFailedException::class, 500 => InternalServerException::class);
+        /** @var Model&PaginatedResponse **/
+        $response = $this->client->call('get', Helper::bindUrlParams('/devices/{id}/messages', $this->id), $request, DevicesIdMessagesListResponse::class, $errors);
+        return new PaginateResponse($this->client, $request, $response, $errors);
     }
     /**
      * Return the number of messages for a given device, for the last day, last week and last month.
      *
      * @return DevicesIdMessagesMetricResponse
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
      * @throws UnauthorizedException       If server returned a HTTP 401 error.
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
     public function metric() : DevicesIdMessagesMetricResponse
     {

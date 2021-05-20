@@ -45,7 +45,7 @@ class Model extends Class_
         }
     }
 
-        protected function toSerialize(string $type)
+    protected function toSerialize(string $type)
     {
         $isArray = substr($type, strlen($type) - 2) === "[]";
         $isGeneric = substr($type, strlen($type) - 1) === ">";
@@ -179,11 +179,11 @@ class Model extends Class_
     public function setValidations(array $validations, array $extends)
     {
         $validationAst = [];
-        foreach($validations as $propertyName=> $rules){
+        foreach ($validations as $propertyName => $rules) {
             $validationAst[$propertyName] = [];
-            foreach($rules as $rule){
+            foreach ($rules as $rule) {
                 $name  = array_shift($rule);
-                switch($name){
+                switch ($name) {
                     case "required":
                         $className = $this->useType("Arimac\\Sigfox\\Validator\\Rules\\Required");
                         $validationAst[$propertyName][] = $this->factory->new($className);
@@ -229,7 +229,19 @@ class Model extends Class_
         );
     }
 
+    public function setProperty(string $propertyName, string $type, bool $required, $description)
+    {
+        $this->properties[$propertyName] = [$type, $required, $description];
+    }
 
+    public function getProperties(): array
+    {
+        return $this->properties;
+    }
+
+    public function getName(): string {
+        return $this->getNamespace()."\\".$this->getClassName();
+    }
 
     public function addSetter(
         string $type,
@@ -271,7 +283,7 @@ class Model extends Class_
 
     public function addProperty(string $name, string $type, ?string $docComment = null, $value = null)
     {
-        parent::addProperty($name, $type, $docComment, $this->factory->val(null));
+        parent::addProperty($name, $type, $docComment, $this->factory->val($value));
     }
 
     protected static function getValidations(array $definition, $required = false): array
@@ -319,13 +331,16 @@ class Model extends Class_
                 case "array":
                     if (isset($definition["items"])) {
                         $item = static::fromArray($name . "Item", $definition["items"]);
+                        if (is_object($item)) {
+                            $item = $item->getNamespace() . "\\" . $item->getClassName();
+                        }
                         return $item . "[]";
                     }
                     return "array";
                 case "string":
                     return "string";
                 case "number":
-                    if (isset($definition["format"])&&in_array($definition["format"], ["float", "double"])) {
+                    if (isset($definition["format"]) && in_array($definition["format"], ["float", "double"])) {
                         return $definition["format"];
                     } else {
                         return "int";
@@ -383,12 +398,15 @@ class Model extends Class_
 
         foreach ($properties as $propertyName => $property) {
             $type = Model::fromArray($name . "\\" . ucfirst($propertyName), $property);
+            if (is_object($type)) {
+                $type = $type->getNamespace() . "\\" . $type->getClassName();
+            }
             $usedType = $defClass->useType($type);
             $phpType = Helper::toPHPValue($usedType);
 
             $validation = self::getValidations($property, $required ? in_array($propertyName, $required) : false);
             if (substr($type, 0, 14) === "Arimac\\Sigfox\\") {
-                if($phpType==="array"){
+                if ($phpType === "array") {
                     $validation[] = ["child-set"];
                 } else {
                     $validation[] = ["child"];
@@ -426,6 +444,9 @@ class Model extends Class_
                     }
                 }
             }
+
+            
+            $defClass->setProperty($propertyName, $type, in_array("required", $validation), $description);
 
             $defClass->addProperty(
                 $propertyName,
@@ -484,6 +505,6 @@ class Model extends Class_
 
         $defClass->save();
 
-        return $name;
+        return $defClass;
     }
 }

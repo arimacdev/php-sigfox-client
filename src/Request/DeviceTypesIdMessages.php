@@ -3,12 +3,13 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
+use Arimac\Sigfox\Response\Paginated\PaginatedRequest;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Validator\Rules\OneOf;
 /**
  * Retrieve a list of messages for a given device types with a 3-day history.
  */
-class DeviceTypesIdMessages extends Request
+class DeviceTypesIdMessages extends Request implements PaginatedRequest
 {
     /**
      * Defines the other available API user's fields to be returned in the response.

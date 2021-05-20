@@ -11,7 +11,7 @@ use Arimac\Sigfox\Validator\Rules\Child;
 /**
  * Restart multiple devices with asynchronous job.
  */
-class DevicesBulkRestart extends Request
+class DevicesBulkRestartBulk extends Request
 {
     /**
      * list of device's identifier (hexadecimal format)
@@ -32,7 +32,7 @@ class DevicesBulkRestart extends Request
     /**
      * @internal
      */
-    protected array $body = array('devices');
+    protected ?string $body = 'devices';
     /**
      * Setter for devices
      *

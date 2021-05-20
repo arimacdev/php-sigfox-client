@@ -5,7 +5,6 @@ namespace Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\ContractInfosList;
 use Arimac\Sigfox\Response\Generated\ContractInfosListResponse;
-use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
 use Arimac\Sigfox\Exception\Response\BadRequestException;
@@ -13,6 +12,10 @@ use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
+use Arimac\Sigfox\Model;
+use Arimac\Sigfox\Response\Paginated\PaginatedResponse;
+use Arimac\Sigfox\Model\ContractInfo;
+use Arimac\Sigfox\Response\Paginated\PaginateResponse;
 class ContractInfos
 {
     /**
@@ -37,9 +40,8 @@ class ContractInfos
      *
      * @param ContractInfosList $request The query and body parameters to pass
      *
-     * @return ContractInfosListResponse
+     * @return PaginateResponse<ContractInfo,ContractInfosListResponse>
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
@@ -48,9 +50,17 @@ class ContractInfos
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function list(?ContractInfosList $request = null) : ContractInfosListResponse
+    public function list(?ContractInfosList $request = null) : PaginateResponse
     {
-        return $this->client->call('get', '/contract-infos/', $request, ContractInfosListResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        if (!isset($request)) {
+            $request = new ContractInfosList();
+            $request->setLimit(100);
+            $request->setOffset(0);
+        }
+        $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
+        /** @var Model&PaginatedResponse **/
+        $response = $this->client->call('get', '/contract-infos/', $request, ContractInfosListResponse::class, $errors);
+        return new PaginateResponse($this->client, $request, $response, $errors);
     }
     /**
      * Find by id

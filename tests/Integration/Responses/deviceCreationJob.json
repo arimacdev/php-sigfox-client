@@ -1,0 +1,14 @@
+{
+    "id": "00FF",
+    "name": "Device 1",
+    "activable": false,
+    "automaticRenewal": true,
+    "lat": 48.8585715,
+    "lng": 2.2922923,
+    "productCertificate": {
+        "key": "P_0003_71CF_01"
+    },
+    "prototype": true,
+    "pac": "585CB3B42AC98BD4",
+    "deviceTypeId": "57309548171c857460043085"
+}

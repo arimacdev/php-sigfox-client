@@ -3,11 +3,12 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
+use Arimac\Sigfox\Response\Paginated\PaginatedRequest;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of undelivered callback messages for a given device types.
  */
-class DeviceTypesIdCallbacksNotDelivered extends Request
+class DeviceTypesIdCallbacksNotDelivered extends Request implements PaginatedRequest
 {
     /**
      * Starting timestamp (in milliseconds since Unix Epoch).

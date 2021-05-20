@@ -28,14 +28,16 @@ class Request extends Model
         }
     }
 
-    public function setProperty(string $propertyName, string $type, bool $required, $description)
-    {
-        $this->properties[$propertyName] = [$type, $required, $description];
-    }
-
-    public function getProperties(): array
-    {
-        return $this->properties;
+    public function addProperty(
+        string $name,
+        string $type,
+        ?string $docComment = null,
+        $value = null
+    ) {
+        parent::addProperty($name, $type, $docComment, $value);
+        if ($name === "limit") {
+            $this->implement("Arimac\\Sigfox\\Response\\Paginated\\PaginatedRequest");
+        }
     }
 
     public function setQuery(array $query)
@@ -43,9 +45,9 @@ class Request extends Model
         $this->setArrayProperty("query", $query);
     }
 
-    public function setBody(array $body)
+    public function setBody(?string $body)
     {
-        $this->setArrayProperty("body", $body);
+        $this->addProperty("body", "string", Helper::normalizeDocComment([["internal"]],2),$body);
     }
 
     public static function fromArray(string $name, array $definition)
@@ -55,13 +57,17 @@ class Request extends Model
         $namespace = implode("\\", $slices);
 
         if (isset($definition["parameters"])) {
-            $body = [];
+            $body = null;
             $query = [];
             $properties = [];
             foreach ($definition["parameters"] as $parameter) {
                 if ($parameter["in"] === "body" || $parameter["in"] === "query") {
                     $in = $parameter["in"];
-                    array_push($$in, $parameter["name"]);
+                    if($in==="query"){
+                        array_push($query, $parameter["name"]);
+                    } else {
+                        $body = $parameter["name"];
+                    }
                     array_push($properties, $parameter);
                 }
             }
@@ -78,6 +84,9 @@ class Request extends Model
                 foreach ($properties as $property) {
                     $propertyName = $property["name"];
                     $type = Model::fromArray($name . "\\" . ucfirst($propertyName), $property);
+                    if(is_object($type)){
+                        $type = $type->getNamespace()."\\".$type->getClassName();
+                    }
                     $usedType = $defClass->useType($type);
                     $phpType = Helper::toPHPValue($usedType);
 
@@ -164,7 +173,7 @@ class Request extends Model
                     $defClass->setQuery($query);
                 }
 
-                if (count($body)) {
+                if ($body) {
                     $defClass->setBody($body);
                 }
 

@@ -21,7 +21,7 @@ class UsersCreate extends Request
     /**
      * @internal
      */
-    protected array $body = array('user');
+    protected ?string $body = 'user';
     /**
      * Setter for user
      *

@@ -21,7 +21,7 @@ class DeviceTypesCreate extends Request
     /**
      * @internal
      */
-    protected array $body = array('deviceType');
+    protected ?string $body = 'deviceType';
     /**
      * Setter for deviceType
      *

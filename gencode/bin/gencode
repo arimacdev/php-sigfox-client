@@ -153,14 +153,14 @@ foreach ($openapi["paths"] as $endpoint => $path) {
 
         $operation = $path[$requestMethod];
 
-        $responseType=null;
+        $responseModel=null;
         $responseTypeNullable = false;
         $expectedErrors = [];
         foreach($operation["responses"] as $statusCode => $response){
             if($statusCode<204&&$statusCode>=200){
                 if(isset($response["schema"])){
                     $responseClassName = $requestClassName."Response";
-                    $responseType = Response::fromArray("Arimac\\Sigfox\\Response\\Generated\\$responseClassName",$response["schema"]);
+                    $responseModel = Response::fromArray("Arimac\\Sigfox\\Response\\Generated\\$responseClassName",$response["schema"]);
                 }
             }
             if($statusCode==204){
@@ -171,24 +171,17 @@ foreach ($openapi["paths"] as $endpoint => $path) {
             }
         }
 
-        $request = Request::fromArray("Arimac\\Sigfox\\Request\\$requestClassName", $operation);
-        $requestType = null;
-        $properties = [];
-        if($request){
-            $requestType = $request->getNamespace()."\\".$request->getClassName();
-            $properties = $request->getProperties();
-        }
+        $requestModel = Request::fromArray("Arimac\\Sigfox\\Request\\$requestClassName", $operation);
 
         $repository->addRequestMethod(
             $methodName, 
             $requestMethod, 
             $endpoint, 
-            $responseType, 
+            $responseModel, 
             $responseTypeNullable,
-            $requestType, 
+            $requestModel, 
             $expectedErrors,
-            $description,
-            $properties
+            $description
         );
     }
 }

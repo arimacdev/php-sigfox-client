@@ -4,12 +4,13 @@ namespace Arimac\Sigfox\Response\Generated;
 
 use Arimac\Sigfox\Model\ErrorMessages;
 use Arimac\Sigfox\Model\Paging;
+use Arimac\Sigfox\Response\Paginated\PaginatedResponse;
 use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 use Arimac\Sigfox\Validator\Rules\ChildSet;
 use Arimac\Sigfox\Validator\Rules\Child;
-class DeviceTypesIdCallbacksNotDeliveredResponse extends Model
+class DeviceTypesIdCallbacksNotDeliveredResponse extends Model implements PaginatedResponse
 {
     /**
      * @var ErrorMessages[]

@@ -5,13 +5,16 @@ namespace Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request\GroupsList;
 use Arimac\Sigfox\Response\Generated\GroupsListResponse;
-use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
 use Arimac\Sigfox\Exception\Response\BadRequestException;
 use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
+use Arimac\Sigfox\Model;
+use Arimac\Sigfox\Response\Paginated\PaginatedResponse;
+use Arimac\Sigfox\Model\Group;
+use Arimac\Sigfox\Response\Paginated\PaginateResponse;
 use Arimac\Sigfox\Model\CommonGroupCreate;
 use Arimac\Sigfox\Request\GroupsCreate;
 use Arimac\Sigfox\Response\Generated\GroupsCreateResponse;
@@ -44,9 +47,8 @@ class Groups
      *
      * @param GroupsList $request The query and body parameters to pass
      *
-     * @return GroupsListResponse
+     * @return PaginateResponse<Group,GroupsListResponse>
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
@@ -54,18 +56,25 @@ class Groups
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function list(?GroupsList $request = null) : GroupsListResponse
+    public function list(?GroupsList $request = null) : PaginateResponse
     {
-        return $this->client->call('get', '/groups/', $request, GroupsListResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 500 => InternalServerException::class));
+        if (!isset($request)) {
+            $request = new GroupsList();
+            $request->setLimit(100);
+            $request->setOffset(0);
+        }
+        $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 500 => InternalServerException::class);
+        /** @var Model&PaginatedResponse **/
+        $response = $this->client->call('get', '/groups/', $request, GroupsListResponse::class, $errors);
+        return new PaginateResponse($this->client, $request, $response, $errors);
     }
     /**
      * Create a new group.
      *
      * @param CommonGroupCreate|undefined $group
      *
-     * @return GroupsCreateResponse
+     * @return string The new created group identifier
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
@@ -75,11 +84,13 @@ class Groups
      * @throws ConflictException           If server returned a HTTP 409 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function create(?CommonGroupCreate $group) : GroupsCreateResponse
+    public function create(?CommonGroupCreate $group) : ?string
     {
         $request = new GroupsCreate();
         $request->setGroup($group);
-        return $this->client->call('post', '/groups/', $request, GroupsCreateResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 409 => ConflictException::class, 500 => InternalServerException::class));
+        /** @var GroupsCreateResponse **/
+        $response = $this->client->call('post', '/groups/', $request, GroupsCreateResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 409 => ConflictException::class, 500 => InternalServerException::class));
+        return $response->getId();
     }
     /**
      * Find by id

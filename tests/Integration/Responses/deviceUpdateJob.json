@@ -1,0 +1,15 @@
+{
+
+    "activable": false,
+    "automaticRenewal": true,
+    "lat": 48.8585715,
+    "lng": 2.2922923,
+    "productCertificate": 
+
+    {
+        "key": "P_0003_71CF_01"
+    },
+    "prototype": true,
+    "name": "Device 1"
+
+}

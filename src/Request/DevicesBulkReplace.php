@@ -20,7 +20,7 @@ class DevicesBulkReplace extends Request
     /**
      * @internal
      */
-    protected array $body = array('devicePairs');
+    protected ?string $body = 'devicePairs';
     /**
      * Setter for devicePairs
      *

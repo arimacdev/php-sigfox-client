@@ -126,7 +126,6 @@ class DeviceTypesIdCallbacksCallbackId
      *
      * @return ErrorMessages
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
@@ -134,6 +133,7 @@ class DeviceTypesIdCallbacksCallbackId
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
     public function callbacksNotDelivered(?DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered $request = null) : ErrorMessages
     {

@@ -20,12 +20,6 @@
         }
     },
     "minimum-stability": "dev",
-    "scripts": {
-        "phpdoc": "php72 ./phpDocumentor.phar",
-        "gh-pages": "gh-pages --repo https://github.com/arimacdev/php-sigfox-client --dist doc/build --branch gh-pages",
-        "gencode": "./gencode/bin/gencode",
-        "phpunit": "./vendor/bin/phpunit --testdox"
-    },
     "require": {
         "guzzlehttp/guzzle": "7.*"
     },

@@ -21,7 +21,7 @@ class ApiUsersIdProfilesUpdate extends Request
     /**
      * @internal
      */
-    protected array $body = array('profileIds');
+    protected ?string $body = 'profileIds';
     /**
      * Setter for profileIds
      *

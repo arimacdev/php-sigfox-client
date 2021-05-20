@@ -21,4 +21,16 @@ class Response extends Model
         }
         parent::addSetter($type, $propertyName, $docComment);
     }
+
+    public function addProperty(
+        string $name,
+        string $type,
+        ?string $docComment = null,
+        $value = null
+    ) {
+        parent::addProperty($name, $type, $docComment, $value);
+        if ($name === "paging") {
+            $this->implement("Arimac\\Sigfox\\Response\\Paginated\\PaginatedResponse");
+        }
+    }
 }

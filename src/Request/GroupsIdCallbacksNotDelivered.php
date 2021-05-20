@@ -3,12 +3,13 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
+use Arimac\Sigfox\Response\Paginated\PaginatedRequest;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Retrieve a list of undelivered callbacks and errors for a given group, in reverse chronological order (most recent
  * message first).
  */
-class GroupsIdCallbacksNotDelivered extends Request
+class GroupsIdCallbacksNotDelivered extends Request implements PaginatedRequest
 {
     /**
      * Starting timestamp (in milliseconds since Unix Epoch)

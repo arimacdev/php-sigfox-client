@@ -6,7 +6,6 @@ use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Helper;
 use Arimac\Sigfox\Request\DevicesIdGet;
 use Arimac\Sigfox\Model\Device;
-use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
 use Arimac\Sigfox\Exception\Response\BadRequestException;
@@ -14,14 +13,20 @@ use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
+use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Model\DeviceUpdateJob;
 use Arimac\Sigfox\Request\DevicesIdUpdate;
 use Arimac\Sigfox\Request\DevicesIdCallbacksNotDelivered;
 use Arimac\Sigfox\Response\Generated\DevicesIdCallbacksNotDeliveredResponse;
+use Arimac\Sigfox\Model;
+use Arimac\Sigfox\Response\Paginated\PaginatedResponse;
+use Arimac\Sigfox\Model\DeviceErrorMessages;
+use Arimac\Sigfox\Response\Paginated\PaginateResponse;
 use Arimac\Sigfox\Request\DevicesIdProductCertificate;
 use Arimac\Sigfox\Model\ProductCertificateWithPacResponse;
 use Arimac\Sigfox\Request\DevicesIdLocations;
 use Arimac\Sigfox\Response\Generated\DevicesIdLocationsResponse;
+use Arimac\Sigfox\Model\DeviceLocation_2;
 use Arimac\Sigfox\Model\TokenUnsubscribe;
 use Arimac\Sigfox\Request\DevicesIdUnsubscribe;
 class DevicesId
@@ -58,7 +63,6 @@ class DevicesId
      *
      * @return Device
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
@@ -66,6 +70,7 @@ class DevicesId
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
     public function get(?DevicesIdGet $request = null) : Device
     {
@@ -110,9 +115,8 @@ class DevicesId
      *
      * @param DevicesIdCallbacksNotDelivered $request The query and body parameters to pass
      *
-     * @return DevicesIdCallbacksNotDeliveredResponse
+     * @return PaginateResponse<DeviceErrorMessages,DevicesIdCallbacksNotDeliveredResponse>
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
@@ -121,9 +125,17 @@ class DevicesId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function callbacksNotDelivered(?DevicesIdCallbacksNotDelivered $request = null) : DevicesIdCallbacksNotDeliveredResponse
+    public function callbacksNotDelivered(?DevicesIdCallbacksNotDelivered $request = null) : PaginateResponse
     {
-        return $this->client->call('get', Helper::bindUrlParams('/devices/{id}/callbacks-not-delivered', $this->id), $request, DevicesIdCallbacksNotDeliveredResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        if (!isset($request)) {
+            $request = new DevicesIdCallbacksNotDelivered();
+            $request->setLimit(100);
+            $request->setOffset(0);
+        }
+        $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
+        /** @var Model&PaginatedResponse **/
+        $response = $this->client->call('get', Helper::bindUrlParams('/devices/{id}/callbacks-not-delivered', $this->id), $request, DevicesIdCallbacksNotDeliveredResponse::class, $errors);
+        return new PaginateResponse($this->client, $request, $response, $errors);
     }
     /**
      * @return DevicesIdCertificate
@@ -140,7 +152,6 @@ class DevicesId
      *
      * @return ProductCertificateWithPacResponse
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
@@ -148,6 +159,7 @@ class DevicesId
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
     public function productCertificate(?string $pac) : ProductCertificateWithPacResponse
     {
@@ -188,9 +200,8 @@ class DevicesId
      *
      * @param DevicesIdLocations $request The query and body parameters to pass
      *
-     * @return DevicesIdLocationsResponse
+     * @return PaginateResponse<DeviceLocation_2,DevicesIdLocationsResponse>
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
@@ -199,9 +210,17 @@ class DevicesId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function locations(?DevicesIdLocations $request = null) : DevicesIdLocationsResponse
+    public function locations(?DevicesIdLocations $request = null) : PaginateResponse
     {
-        return $this->client->call('get', Helper::bindUrlParams('/devices/{id}/locations', $this->id), $request, DevicesIdLocationsResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        if (!isset($request)) {
+            $request = new DevicesIdLocations();
+            $request->setLimit(100);
+            $request->setOffset(0);
+        }
+        $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
+        /** @var Model&PaginatedResponse **/
+        $response = $this->client->call('get', Helper::bindUrlParams('/devices/{id}/locations', $this->id), $request, DevicesIdLocationsResponse::class, $errors);
+        return new PaginateResponse($this->client, $request, $response, $errors);
     }
     /**
      * Set an unsubscription date for the device's token.

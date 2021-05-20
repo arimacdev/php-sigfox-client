@@ -2,11 +2,11 @@
 
 namespace Arimac\Sigfox;
 
-abstract class Request extends Model {
+class Request extends Model {
     /**
      * @internal
      */
-    protected array $body = [];
+    protected ?string $body = null;
 
     /**
      * @internal
@@ -14,13 +14,13 @@ abstract class Request extends Model {
     protected array $query = [];
 
     /**
-     * Returning all property names for request body
+     * Returning the body property name
      *
      * @internal
      *
-     * @return string[]
+     * @return string|undefined
      */
-    public function getBodyFields(): array {
+    public function getBodyField(): ?string {
         return $this->body;
     }
 

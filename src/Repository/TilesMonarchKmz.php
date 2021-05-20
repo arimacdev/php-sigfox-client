@@ -6,7 +6,6 @@ use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Model\KmzCreatePublicRequest;
 use Arimac\Sigfox\Request\TilesMonarchKmzStartAsync;
 use Arimac\Sigfox\Response\Generated\TilesMonarchKmzStartAsyncResponse;
-use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
 use Arimac\Sigfox\Exception\Response\BadRequestException;
@@ -41,9 +40,8 @@ class TilesMonarchKmz
      * @param KmzCreatePublicRequest|undefined $request The computation will be performed with the specified coverage
      *                                                  mode
      *
-     * @return TilesMonarchKmzStartAsyncResponse
+     * @return string jobId provided to the customer to request the job status and results
      *
-     * @throws DeserializeException        If failed to deserialize response body as a response object.
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws BadRequestException         If server returned a HTTP 400 error.
@@ -52,11 +50,13 @@ class TilesMonarchKmz
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function startAsync(?KmzCreatePublicRequest $request) : TilesMonarchKmzStartAsyncResponse
+    public function startAsync(?KmzCreatePublicRequest $request) : ?string
     {
         $request = new TilesMonarchKmzStartAsync();
         $request->setRequest($request);
-        return $this->client->call('post', '/tiles/monarch/kmz', $request, TilesMonarchKmzStartAsyncResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        /** @var TilesMonarchKmzStartAsyncResponse **/
+        $response = $this->client->call('post', '/tiles/monarch/kmz', $request, TilesMonarchKmzStartAsyncResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        return $response->getJobId();
     }
     /**
      * Find by jobId
