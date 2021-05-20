@@ -90,7 +90,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/Users.php"><a href="files/src-repository-users.html"><abbr title="src/Repository/Users.php">Users.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 </aside>
 
         
@@ -111,7 +111,7 @@
                     <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-Users.html#method_create">create()</a>
     <span>
-                        &nbsp;: <a href="classes/Arimac-Sigfox-Definition-CreateResponse.html"><abbr title="\Arimac\Sigfox\Definition\CreateResponse">CreateResponse</abbr></a>    </span>
+                        &nbsp;: <a href="classes/Arimac-Sigfox-Model-CreateResponse.html"><abbr title="\Arimac\Sigfox\Model\CreateResponse">CreateResponse</abbr></a>    </span>
 </dt>
 <dd>Create a new user.</dd>
 
@@ -125,7 +125,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-Users.html#method_list">list()</a>
     <span>
-                        &nbsp;: <a href="classes/Arimac-Sigfox-Response-Generated-UsersListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\UsersListResponse">UsersListResponse</abbr></a>    </span>
+                        &nbsp;: <a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginateResponse">PaginateResponse</abbr></a>&lt;<a href="classes/Arimac-Sigfox-Model-User.html"><abbr title="\Arimac\Sigfox\Model\User">User</abbr></a>, <a href="classes/Arimac-Sigfox-Response-Generated-UsersListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\UsersListResponse">UsersListResponse</abbr></a>&gt;    </span>
 </dt>
 <dd>Retrieve a list of users according to visibility permissions and request filters.</dd>
 
@@ -155,14 +155,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/Users.php"><a href="files/src-repository-users.html"><abbr title="src/Repository/Users.php">Users.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">85</span>
 </aside>
 
         <p class="phpdocumentor-summary">Create a new user.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">create</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-UserCreation.html"><abbr title="\Arimac\Sigfox\Definition\UserCreation">UserCreation</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$user</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-CreateResponse.html"><abbr title="\Arimac\Sigfox\Definition\CreateResponse">CreateResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">create</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-UserCreation.html"><abbr title="\Arimac\Sigfox\Model\UserCreation">UserCreation</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$user</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-CreateResponse.html"><abbr title="\Arimac\Sigfox\Model\CreateResponse">CreateResponse</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -170,7 +170,7 @@
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$user</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-UserCreation.html"><abbr title="\Arimac\Sigfox\Definition\UserCreation">UserCreation</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-UserCreation.html"><abbr title="\Arimac\Sigfox\Model\UserCreation">UserCreation</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The user to create</p>
@@ -186,16 +186,6 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
-</section>
-
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -265,10 +255,20 @@
 </section>
 
                                     </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
+</section>
+
+                                    </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-CreateResponse.html"><abbr title="\Arimac\Sigfox\Definition\CreateResponse">CreateResponse</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-CreateResponse.html"><abbr title="\Arimac\Sigfox\Model\CreateResponse">CreateResponse</abbr></a></span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -287,7 +287,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/Users.php"><a href="files/src-repository-users.html"><abbr title="src/Repository/Users.php">Users.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">87</span>
+    <span class="phpdocumentor-element-found-in__line">98</span>
 </aside>
 
         <p class="phpdocumentor-summary">Find by id</p>
@@ -333,14 +333,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/Users.php"><a href="files/src-repository-users.html"><abbr title="src/Repository/Users.php">Users.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">57</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve a list of users according to visibility permissions and request filters.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">list</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-UsersList.html"><abbr title="\Arimac\Sigfox\Request\UsersList">UsersList</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-UsersListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\UsersListResponse">UsersListResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">list</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-UsersList.html"><abbr title="\Arimac\Sigfox\Request\UsersList">UsersList</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginateResponse">PaginateResponse</abbr></a>&lt;<a href="classes/Arimac-Sigfox-Model-User.html"><abbr title="\Arimac\Sigfox\Model\User">User</abbr></a>, <a href="classes/Arimac-Sigfox-Response-Generated-UsersListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\UsersListResponse">UsersListResponse</abbr></a>&gt;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -364,16 +364,6 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
-</section>
-
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -446,7 +436,7 @@
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-UsersListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\UsersListResponse">UsersListResponse</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginateResponse">PaginateResponse</abbr></a>&lt;<a href="classes/Arimac-Sigfox-Model-User.html"><abbr title="\Arimac\Sigfox\Model\User">User</abbr></a>, <a href="classes/Arimac-Sigfox-Response-Generated-UsersListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\UsersListResponse">UsersListResponse</abbr></a>&gt;</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 

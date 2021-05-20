@@ -87,13 +87,16 @@
     </span>
     
     
+            <span class="phpdocumentor-element__implements">
+            implements
+                            <abbr title="\Arimac\Sigfox\Response\Paginated\PaginatedRequest">PaginatedRequest</abbr>                    </span>
     
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 </aside>
 
             <p class="phpdocumentor-summary">Retrieve a list of devices according to visibility permissions and request filters.</p>
@@ -105,6 +108,17 @@
 
 
 
+<h3 id="interfaces_class_traits">
+    Interfaces, Classes and Traits
+    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
+</h3>
+
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginatedRequest">PaginatedRequest</abbr></dt>
+        <dd></dd>
+    
+    
+    </dl>
 
 
 <h3 id="toc">
@@ -205,6 +219,13 @@
 <dd>The field on which the list will be sorted. (field to sort ascending or -field to sort descending)</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Model.html#method_from">from()</a>
+    <span>
+                        &nbsp;: static    </span>
+</dt>
+<dd>Initializing a model from an array</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Request-DevicesList.html#method_setAuthorizations">setAuthorizations()</a>
     <span>
                         &nbsp;: self    </span>
@@ -323,7 +344,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">36</span>
+    <span class="phpdocumentor-element-found-in__line">38</span>
 </aside>
 
         <p class="phpdocumentor-summary">if true, we return the list of actions and resources the user has access</p>
@@ -355,7 +376,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">30</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 </aside>
 
         <p class="phpdocumentor-summary">if true, we search by groups and subgroups through the parameter &#039;groupIds&#039;</p>
@@ -387,7 +408,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">42</span>
+    <span class="phpdocumentor-element-found-in__line">44</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns all devices of the given device type</p>
@@ -419,7 +440,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">72</span>
+    <span class="phpdocumentor-element-found-in__line">74</span>
 </aside>
 
         <p class="phpdocumentor-summary">Defines the other available fields to be returned in the response.</p>
@@ -451,7 +472,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">26</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns all devices under the given groups (included sub-groups if the parameter deep is equals to true)</p>
@@ -483,7 +504,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 </aside>
 
         <p class="phpdocumentor-summary">The device&#039;s identifier (hexadecimal format)</p>
@@ -515,7 +536,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">78</span>
+    <span class="phpdocumentor-element-found-in__line">80</span>
 </aside>
 
         <p class="phpdocumentor-summary">The maximum number of items to return</p>
@@ -547,7 +568,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">66</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 </aside>
 
         <p class="phpdocumentor-summary">The maximal id of the filtered range, only availble when sort parameter is set to &quot;id&quot; or &quot;-id&quot;</p>
@@ -579,7 +600,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">62</span>
 </aside>
 
         <p class="phpdocumentor-summary">The minimal id of the filtered range, only availble when sort parameter is set to &quot;id&quot; or &quot;-id&quot;</p>
@@ -611,7 +632,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">86</span>
 </aside>
 
         <p class="phpdocumentor-summary">The number of items to skip</p>
@@ -643,7 +664,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">48</span>
+    <span class="phpdocumentor-element-found-in__line">50</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returns all devices under the given operator</p>
@@ -675,7 +696,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">90</span>
+    <span class="phpdocumentor-element-found-in__line">92</span>
 </aside>
 
         <p class="phpdocumentor-summary">Token representing the page to retrieve</p>
@@ -707,7 +728,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">54</span>
+    <span class="phpdocumentor-element-found-in__line">56</span>
 </aside>
 
         <p class="phpdocumentor-summary">The field on which the list will be sorted. (field to sort ascending or -field to sort descending)</p>
@@ -734,6 +755,70 @@
         class="phpdocumentor-element
             -method
             -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_from">
+        from()
+        <a href="classes/Arimac-Sigfox-Model.html#method_from" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Model.php"><a href="files/src-model.html"><abbr title="src/Model.php">Model.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Initializing a model from an array</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">from</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<abbr title="\Arimac\Sigfox\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$params</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<abbr title="\Arimac\Sigfox\undefined">undefined</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Pass this parameter if you want to initial
+property value from an array. See API
+reference for all property names and types</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If provided an invalid type to a property</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">static</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="method_setAuthorizations">
@@ -743,7 +828,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">177</span>
+    <span class="phpdocumentor-element-found-in__line">175</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for authorizations</p>
@@ -790,7 +875,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">154</span>
+    <span class="phpdocumentor-element-found-in__line">152</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for deep</p>
@@ -837,7 +922,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">200</span>
+    <span class="phpdocumentor-element-found-in__line">198</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for deviceTypeId</p>
@@ -884,7 +969,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">320</span>
+    <span class="phpdocumentor-element-found-in__line">318</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for fields</p>
@@ -931,7 +1016,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">130</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for groupIds</p>
@@ -979,7 +1064,7 @@ deep is equals to true)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">106</span>
+    <span class="phpdocumentor-element-found-in__line">104</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for id</p>
@@ -1026,7 +1111,7 @@ deep is equals to true)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">344</span>
+    <span class="phpdocumentor-element-found-in__line">342</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for limit</p>
@@ -1073,7 +1158,7 @@ deep is equals to true)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">296</span>
+    <span class="phpdocumentor-element-found-in__line">294</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for maxId</p>
@@ -1121,7 +1206,7 @@ deep is equals to true)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">272</span>
+    <span class="phpdocumentor-element-found-in__line">270</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for minId</p>
@@ -1169,7 +1254,7 @@ deep is equals to true)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">367</span>
+    <span class="phpdocumentor-element-found-in__line">365</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for offset</p>
@@ -1216,7 +1301,7 @@ deep is equals to true)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">223</span>
+    <span class="phpdocumentor-element-found-in__line">221</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for operatorId</p>
@@ -1263,7 +1348,7 @@ deep is equals to true)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">390</span>
+    <span class="phpdocumentor-element-found-in__line">388</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for pageId</p>
@@ -1310,7 +1395,7 @@ deep is equals to true)</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesList.php"><a href="files/src-request-deviceslist.html"><abbr title="src/Request/DevicesList.php">DevicesList.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">247</span>
+    <span class="phpdocumentor-element-found-in__line">245</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for sort</p>

@@ -90,7 +90,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesIdMessages.php"><a href="files/src-repository-devicesidmessages.html"><abbr title="src/Repository/DevicesIdMessages.php">DevicesIdMessages.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 </aside>
 
         
@@ -111,7 +111,7 @@
                     <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-DevicesIdMessages.html#method_list">list()</a>
     <span>
-                        &nbsp;: <a href="classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesIdMessagesListResponse">DevicesIdMessagesListResponse</abbr></a>    </span>
+                        &nbsp;: <a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginateResponse">PaginateResponse</abbr></a>&lt;<a href="classes/Arimac-Sigfox-Model-DeviceMessage.html"><abbr title="\Arimac\Sigfox\Model\DeviceMessage">DeviceMessage</abbr></a>, <a href="classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesIdMessagesListResponse">DevicesIdMessagesListResponse</abbr></a>&gt;    </span>
 </dt>
 <dd>Retrieve a list of messages for a given device according to request filters, with a 3-day history.</dd>
 
@@ -148,14 +148,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesIdMessages.php"><a href="files/src-repository-devicesidmessages.html"><abbr title="src/Repository/DevicesIdMessages.php">DevicesIdMessages.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">63</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve a list of messages for a given device according to request filters, with a 3-day history.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">list</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesIdMessagesList.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdMessagesList">DevicesIdMessagesList</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesIdMessagesListResponse">DevicesIdMessagesListResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">list</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesIdMessagesList.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdMessagesList">DevicesIdMessagesList</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginateResponse">PaginateResponse</abbr></a>&lt;<a href="classes/Arimac-Sigfox-Model-DeviceMessage.html"><abbr title="\Arimac\Sigfox\Model\DeviceMessage">DeviceMessage</abbr></a>, <a href="classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesIdMessagesListResponse">DevicesIdMessagesListResponse</abbr></a>&gt;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -179,16 +179,6 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
-</section>
-
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -271,7 +261,7 @@
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesIdMessagesListResponse">DevicesIdMessagesListResponse</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginateResponse">PaginateResponse</abbr></a>&lt;<a href="classes/Arimac-Sigfox-Model-DeviceMessage.html"><abbr title="\Arimac\Sigfox\Model\DeviceMessage">DeviceMessage</abbr></a>, <a href="classes/Arimac-Sigfox-Response-Generated-DevicesIdMessagesListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesIdMessagesListResponse">DevicesIdMessagesListResponse</abbr></a>&gt;</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -290,7 +280,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesIdMessages.php"><a href="files/src-repository-devicesidmessages.html"><abbr title="src/Repository/DevicesIdMessages.php">DevicesIdMessages.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">80</span>
+    <span class="phpdocumentor-element-found-in__line">91</span>
 </aside>
 
         <p class="phpdocumentor-summary">Return the number of messages for a given device, for the last day, last week and last month.</p>
@@ -309,16 +299,6 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
-</section>
-
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -375,6 +355,16 @@
                                                                 <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-Response-InternalServerException.html"><abbr title="\Arimac\Sigfox\Exception\Response\InternalServerException">InternalServerException</abbr></a></span>
                                                             
                                                  <section class="phpdocumentor-description"><p>If server returned a HTTP 500 error.</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
 </section>
 
                                     </dd>

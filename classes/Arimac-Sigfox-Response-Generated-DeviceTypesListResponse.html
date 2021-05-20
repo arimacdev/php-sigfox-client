@@ -84,17 +84,20 @@
     DeviceTypesListResponse
 
         <span class="phpdocumentor-element__extends">
-        extends <a href="classes/Arimac-Sigfox-Definition.html"><abbr title="\Arimac\Sigfox\Definition">Definition</abbr></a>
+        extends <a href="classes/Arimac-Sigfox-Model.html"><abbr title="\Arimac\Sigfox\Model">Model</abbr></a>
     </span>
     
     
+            <span class="phpdocumentor-element__implements">
+            implements
+                            <abbr title="\Arimac\Sigfox\Response\Paginated\PaginatedResponse">PaginatedResponse</abbr>                    </span>
     
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Generated/DeviceTypesListResponse.php"><a href="files/src-response-generated-devicetypeslistresponse.html"><abbr title="src/Response/Generated/DeviceTypesListResponse.php">DeviceTypesListResponse.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 </aside>
 
         
@@ -104,6 +107,17 @@
 
 
 
+<h3 id="interfaces_class_traits">
+    Interfaces, Classes and Traits
+    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
+</h3>
+
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginatedResponse">PaginatedResponse</abbr></dt>
+        <dd></dd>
+    
+    
+    </dl>
 
 
 <h3 id="toc">
@@ -129,11 +143,18 @@
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Response-Generated-DeviceTypesListResponse.html#property_paging">$paging</a>
     <span>
-                &nbsp;: <a href="classes/Arimac-Sigfox-Definition-Paging.html"><abbr title="\Arimac\Sigfox\Definition\Paging">Paging</abbr></a>|null            </span>
+                &nbsp;: <a href="classes/Arimac-Sigfox-Model-Paging.html"><abbr title="\Arimac\Sigfox\Model\Paging">Paging</abbr></a>|null            </span>
 </dt>
 <dd></dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Model.html#method_from">from()</a>
+    <span>
+                        &nbsp;: static    </span>
+</dt>
+<dd>Initializing a model from an array</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Response-Generated-DeviceTypesListResponse.html#method_getActions">getActions()</a>
     <span>
                         &nbsp;: array&lt;string|int, string&gt;    </span>
@@ -143,14 +164,14 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Response-Generated-DeviceTypesListResponse.html#method_getData">getData()</a>
     <span>
-                        &nbsp;: array&lt;string|int, <a href="classes/Arimac-Sigfox-Definition-DeviceType.html"><abbr title="\Arimac\Sigfox\Definition\DeviceType">DeviceType</abbr></a>&gt;    </span>
+                        &nbsp;: array&lt;string|int, <a href="classes/Arimac-Sigfox-Model-DeviceType.html"><abbr title="\Arimac\Sigfox\Model\DeviceType">DeviceType</abbr></a>&gt;    </span>
 </dt>
 <dd>Getter for data</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Response-Generated-DeviceTypesListResponse.html#method_getPaging">getPaging()</a>
     <span>
-                        &nbsp;: <a href="classes/Arimac-Sigfox-Definition-Paging.html"><abbr title="\Arimac\Sigfox\Definition\Paging">Paging</abbr></a>    </span>
+                        &nbsp;: <a href="classes/Arimac-Sigfox-Model-Paging.html"><abbr title="\Arimac\Sigfox\Model\Paging">Paging</abbr></a>    </span>
 </dt>
 <dd>Getter for paging</dd>
 
@@ -182,7 +203,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Generated/DeviceTypesListResponse.php"><a href="files/src-response-generated-devicetypeslistresponse.html"><abbr title="src/Response/Generated/DeviceTypesListResponse.php">DeviceTypesListResponse.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">20</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 </aside>
 
     
@@ -213,7 +234,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Generated/DeviceTypesListResponse.php"><a href="files/src-response-generated-devicetypeslistresponse.html"><abbr title="src/Response/Generated/DeviceTypesListResponse.php">DeviceTypesListResponse.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">16</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 </aside>
 
     
@@ -244,13 +265,13 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Generated/DeviceTypesListResponse.php"><a href="files/src-response-generated-devicetypeslistresponse.html"><abbr title="src/Response/Generated/DeviceTypesListResponse.php">DeviceTypesListResponse.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">24</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 </aside>
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/Arimac-Sigfox-Definition-Paging.html"><abbr title="\Arimac\Sigfox\Definition\Paging">Paging</abbr></a>|null</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/Arimac-Sigfox-Model-Paging.html"><abbr title="\Arimac\Sigfox\Model\Paging">Paging</abbr></a>|null</span>
     <span class="phpdocumentor-signature__name">$paging</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
@@ -270,6 +291,70 @@
         class="phpdocumentor-element
             -method
             -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_from">
+        from()
+        <a href="classes/Arimac-Sigfox-Model.html#method_from" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Model.php"><a href="files/src-model.html"><abbr title="src/Model.php">Model.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Initializing a model from an array</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">from</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<abbr title="\Arimac\Sigfox\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$params</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<abbr title="\Arimac\Sigfox\undefined">undefined</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Pass this parameter if you want to initial
+property value from an array. See API
+reference for all property names and types</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If provided an invalid type to a property</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">static</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="method_getActions">
@@ -279,7 +364,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Generated/DeviceTypesListResponse.php"><a href="files/src-response-generated-devicetypeslistresponse.html"><abbr title="src/Response/Generated/DeviceTypesListResponse.php">DeviceTypesListResponse.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">67</span>
+    <span class="phpdocumentor-element-found-in__line">70</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for actions</p>
@@ -313,14 +398,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Generated/DeviceTypesListResponse.php"><a href="files/src-response-generated-devicetypeslistresponse.html"><abbr title="src/Response/Generated/DeviceTypesListResponse.php">DeviceTypesListResponse.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">44</span>
+    <span class="phpdocumentor-element-found-in__line">47</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for data</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getData</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/Arimac-Sigfox-Definition-DeviceType.html"><abbr title="\Arimac\Sigfox\Definition\DeviceType">DeviceType</abbr></a>&gt;</span></code>
+                <span class="phpdocumentor-signature__name">getData</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/Arimac-Sigfox-Model-DeviceType.html"><abbr title="\Arimac\Sigfox\Model\DeviceType">DeviceType</abbr></a>&gt;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -328,7 +413,7 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/Arimac-Sigfox-Definition-DeviceType.html"><abbr title="\Arimac\Sigfox\Definition\DeviceType">DeviceType</abbr></a>&gt;</span>
+    <span class="phpdocumentor-signature__response_type">array&lt;string|int, <a href="classes/Arimac-Sigfox-Model-DeviceType.html"><abbr title="\Arimac\Sigfox\Model\DeviceType">DeviceType</abbr></a>&gt;</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -347,14 +432,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Generated/DeviceTypesListResponse.php"><a href="files/src-response-generated-devicetypeslistresponse.html"><abbr title="src/Response/Generated/DeviceTypesListResponse.php">DeviceTypesListResponse.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">90</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 </aside>
 
         <p class="phpdocumentor-summary">Getter for paging</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getPaging</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-Paging.html"><abbr title="\Arimac\Sigfox\Definition\Paging">Paging</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">getPaging</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-Paging.html"><abbr title="\Arimac\Sigfox\Model\Paging">Paging</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -362,7 +447,7 @@
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-Paging.html"><abbr title="\Arimac\Sigfox\Definition\Paging">Paging</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-Paging.html"><abbr title="\Arimac\Sigfox\Model\Paging">Paging</abbr></a></span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 

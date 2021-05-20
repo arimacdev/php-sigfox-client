@@ -93,7 +93,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesIdUpdate.php"><a href="files/src-request-devicesidupdate.html"><abbr title="src/Request/DevicesIdUpdate.php">DevicesIdUpdate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">11</span>
+    <span class="phpdocumentor-element-found-in__line">13</span>
 </aside>
 
             <p class="phpdocumentor-summary">Update a given device.</p>
@@ -116,11 +116,18 @@
                 <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Request-DevicesIdUpdate.html#property_device">$device</a>
     <span>
-                &nbsp;: <a href="classes/Arimac-Sigfox-Definition-DeviceUpdateJob.html"><abbr title="\Arimac\Sigfox\Definition\DeviceUpdateJob">DeviceUpdateJob</abbr></a>|null            </span>
+                &nbsp;: <a href="classes/Arimac-Sigfox-Model-DeviceUpdateJob.html"><abbr title="\Arimac\Sigfox\Model\DeviceUpdateJob">DeviceUpdateJob</abbr></a>|null            </span>
 </dt>
 <dd>The device to update</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Model.html#method_from">from()</a>
+    <span>
+                        &nbsp;: static    </span>
+</dt>
+<dd>Initializing a model from an array</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Request-DevicesIdUpdate.html#method_setDevice">setDevice()</a>
     <span>
                         &nbsp;: self    </span>
@@ -155,14 +162,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesIdUpdate.php"><a href="files/src-request-devicesidupdate.html"><abbr title="src/Request/DevicesIdUpdate.php">DevicesIdUpdate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">20</span>
 </aside>
 
         <p class="phpdocumentor-summary">The device to update</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/Arimac-Sigfox-Definition-DeviceUpdateJob.html"><abbr title="\Arimac\Sigfox\Definition\DeviceUpdateJob">DeviceUpdateJob</abbr></a>|null</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/Arimac-Sigfox-Model-DeviceUpdateJob.html"><abbr title="\Arimac\Sigfox\Model\DeviceUpdateJob">DeviceUpdateJob</abbr></a>|null</span>
     <span class="phpdocumentor-signature__name">$device</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
@@ -182,6 +189,70 @@
         class="phpdocumentor-element
             -method
             -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_from">
+        from()
+        <a href="classes/Arimac-Sigfox-Model.html#method_from" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Model.php"><a href="files/src-model.html"><abbr title="src/Model.php">Model.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Initializing a model from an array</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">from</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<abbr title="\Arimac\Sigfox\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$params</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<abbr title="\Arimac\Sigfox\undefined">undefined</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Pass this parameter if you want to initial
+property value from an array. See API
+reference for all property names and types</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If provided an invalid type to a property</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">static</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="method_setDevice">
@@ -191,14 +262,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesIdUpdate.php"><a href="files/src-request-devicesidupdate.html"><abbr title="src/Request/DevicesIdUpdate.php">DevicesIdUpdate.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">32</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for device</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">setDevice</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-DeviceUpdateJob.html"><abbr title="\Arimac\Sigfox\Definition\DeviceUpdateJob">DeviceUpdateJob</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$device</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
+                <span class="phpdocumentor-signature__name">setDevice</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-DeviceUpdateJob.html"><abbr title="\Arimac\Sigfox\Model\DeviceUpdateJob">DeviceUpdateJob</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$device</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -206,7 +277,7 @@
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$device</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-DeviceUpdateJob.html"><abbr title="\Arimac\Sigfox\Definition\DeviceUpdateJob">DeviceUpdateJob</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-DeviceUpdateJob.html"><abbr title="\Arimac\Sigfox\Model\DeviceUpdateJob">DeviceUpdateJob</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The device to update</p>

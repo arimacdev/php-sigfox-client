@@ -90,7 +90,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/ContractInfosId.php"><a href="files/src-repository-contractinfosid.html"><abbr title="src/Repository/ContractInfosId.php">ContractInfosId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">21</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 </aside>
 
         
@@ -111,21 +111,21 @@
                     <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-ContractInfosId.html#method_bulkRestart">bulkRestart()</a>
     <span>
-                        &nbsp;: <a href="classes/Arimac-Sigfox-Response-Generated-ContractInfosIdBulkRestartResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ContractInfosIdBulkRestartResponse">ContractInfosIdBulkRestartResponse</abbr></a>    </span>
+                        &nbsp;: string    </span>
 </dt>
 <dd>Create an async job to restart the devices associated to a contract.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-ContractInfosId.html#method_devices">devices()</a>
     <span>
-                        &nbsp;: <a href="classes/Arimac-Sigfox-Response-Generated-ContractInfosIdDevicesResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ContractInfosIdDevicesResponse">ContractInfosIdDevicesResponse</abbr></a>    </span>
+                        &nbsp;: <a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginateResponse">PaginateResponse</abbr></a>&lt;<a href="classes/Arimac-Sigfox-Model-Device.html"><abbr title="\Arimac\Sigfox\Model\Device">Device</abbr></a>, <a href="classes/Arimac-Sigfox-Response-Generated-ContractInfosIdDevicesResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ContractInfosIdDevicesResponse">ContractInfosIdDevicesResponse</abbr></a>&gt;    </span>
 </dt>
 <dd>Retrieve a list of devices according to visibility permissions and request filters.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-ContractInfosId.html#method_get">get()</a>
     <span>
-                        &nbsp;: <a href="classes/Arimac-Sigfox-Definition-ContractInfo.html"><abbr title="\Arimac\Sigfox\Definition\ContractInfo">ContractInfo</abbr></a>    </span>
+                        &nbsp;: <a href="classes/Arimac-Sigfox-Model-ContractInfo.html"><abbr title="\Arimac\Sigfox\Model\ContractInfo">ContractInfo</abbr></a>    </span>
 </dt>
 <dd>Retrieve information about a given contract.</dd>
 
@@ -155,14 +155,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/ContractInfosId.php"><a href="files/src-repository-contractinfosid.html"><abbr title="src/Repository/ContractInfosId.php">ContractInfosId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">84</span>
 </aside>
 
         <p class="phpdocumentor-summary">Create an async job to restart the devices associated to a contract.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">bulkRestart</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-ContractInfosIdBulkRestartResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ContractInfosIdBulkRestartResponse">ContractInfosIdBulkRestartResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">bulkRestart</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -174,16 +174,6 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
-</section>
-
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -246,9 +236,10 @@
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-ContractInfosIdBulkRestartResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ContractInfosIdBulkRestartResponse">ContractInfosIdBulkRestartResponse</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
+            <section class="phpdocumentor-description"><p>jobId so that the customer is able to request job status</p>
+</section>
 
     
 </article>
@@ -265,14 +256,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/ContractInfosId.php"><a href="files/src-repository-contractinfosid.html"><abbr title="src/Repository/ContractInfosId.php">ContractInfosId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">102</span>
+    <span class="phpdocumentor-element-found-in__line">106</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve a list of devices according to visibility permissions and request filters.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">devices</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-ContractInfosIdDevices.html"><abbr title="\Arimac\Sigfox\Request\ContractInfosIdDevices">ContractInfosIdDevices</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-ContractInfosIdDevicesResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ContractInfosIdDevicesResponse">ContractInfosIdDevicesResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">devices</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-ContractInfosIdDevices.html"><abbr title="\Arimac\Sigfox\Request\ContractInfosIdDevices">ContractInfosIdDevices</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginateResponse">PaginateResponse</abbr></a>&lt;<a href="classes/Arimac-Sigfox-Model-Device.html"><abbr title="\Arimac\Sigfox\Model\Device">Device</abbr></a>, <a href="classes/Arimac-Sigfox-Response-Generated-ContractInfosIdDevicesResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ContractInfosIdDevicesResponse">ContractInfosIdDevicesResponse</abbr></a>&gt;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -296,16 +287,6 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
-</section>
-
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -388,7 +369,7 @@
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-ContractInfosIdDevicesResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ContractInfosIdDevicesResponse">ContractInfosIdDevicesResponse</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginateResponse">PaginateResponse</abbr></a>&lt;<a href="classes/Arimac-Sigfox-Model-Device.html"><abbr title="\Arimac\Sigfox\Model\Device">Device</abbr></a>, <a href="classes/Arimac-Sigfox-Response-Generated-ContractInfosIdDevicesResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ContractInfosIdDevicesResponse">ContractInfosIdDevicesResponse</abbr></a>&gt;</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -407,14 +388,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/ContractInfosId.php"><a href="files/src-repository-contractinfosid.html"><abbr title="src/Repository/ContractInfosId.php">ContractInfosId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">64</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve information about a given contract.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-ContractInfosIdGet.html"><abbr title="\Arimac\Sigfox\Request\ContractInfosIdGet">ContractInfosIdGet</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-ContractInfo.html"><abbr title="\Arimac\Sigfox\Definition\ContractInfo">ContractInfo</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-ContractInfosIdGet.html"><abbr title="\Arimac\Sigfox\Request\ContractInfosIdGet">ContractInfosIdGet</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-ContractInfo.html"><abbr title="\Arimac\Sigfox\Model\ContractInfo">ContractInfo</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -438,16 +419,6 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
-</section>
-
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -517,10 +488,20 @@
 </section>
 
                                     </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
+</section>
+
+                                    </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-ContractInfo.html"><abbr title="\Arimac\Sigfox\Definition\ContractInfo">ContractInfo</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-ContractInfo.html"><abbr title="\Arimac\Sigfox\Model\ContractInfo">ContractInfo</abbr></a></span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 

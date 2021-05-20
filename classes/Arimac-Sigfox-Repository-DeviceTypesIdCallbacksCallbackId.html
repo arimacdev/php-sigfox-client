@@ -111,7 +111,7 @@
                     <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-DeviceTypesIdCallbacksCallbackId.html#method_callbacksNotDelivered">callbacksNotDelivered()</a>
     <span>
-                        &nbsp;: <a href="classes/Arimac-Sigfox-Definition-ErrorMessages.html"><abbr title="\Arimac\Sigfox\Definition\ErrorMessages">ErrorMessages</abbr></a>    </span>
+                        &nbsp;: <a href="classes/Arimac-Sigfox-Model-ErrorMessages.html"><abbr title="\Arimac\Sigfox\Model\ErrorMessages">ErrorMessages</abbr></a>    </span>
 </dt>
 <dd>Retrieve the last device message error associated with this callback.</dd>
 
@@ -177,7 +177,7 @@ was previously selected will no longer be used for downlink.</dd>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">callbacksNotDelivered</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered">DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-ErrorMessages.html"><abbr title="\Arimac\Sigfox\Definition\ErrorMessages">ErrorMessages</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">callbacksNotDelivered</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered">DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-ErrorMessages.html"><abbr title="\Arimac\Sigfox\Model\ErrorMessages">ErrorMessages</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -201,16 +201,6 @@ was previously selected will no longer be used for downlink.</dd>
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
-</section>
-
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -280,10 +270,20 @@ was previously selected will no longer be used for downlink.</dd>
 </section>
 
                                     </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
+</section>
+
+                                    </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-ErrorMessages.html"><abbr title="\Arimac\Sigfox\Definition\ErrorMessages">ErrorMessages</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-ErrorMessages.html"><abbr title="\Arimac\Sigfox\Model\ErrorMessages">ErrorMessages</abbr></a></span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -409,7 +409,7 @@ was previously selected will no longer be used for downlink.</dd>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">enable</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$enabled</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                <span class="phpdocumentor-signature__name">enable</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$enabled</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -417,7 +417,7 @@ was previously selected will no longer be used for downlink.</dd>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$enabled</span>
-                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>True to enable the callback, false to disable it</p>
@@ -632,7 +632,7 @@ was previously selected will no longer be used for downlink.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-UpdateCallback.html"><abbr title="\Arimac\Sigfox\Definition\UpdateCallback">UpdateCallback</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$callback</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-UpdateCallback.html"><abbr title="\Arimac\Sigfox\Model\UpdateCallback">UpdateCallback</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$callback</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -640,7 +640,7 @@ was previously selected will no longer be used for downlink.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$callback</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-UpdateCallback.html"><abbr title="\Arimac\Sigfox\Definition\UpdateCallback">UpdateCallback</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-UpdateCallback.html"><abbr title="\Arimac\Sigfox\Model\UpdateCallback">UpdateCallback</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The callback to update</p>

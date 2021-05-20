@@ -90,7 +90,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/Profiles.php"><a href="files/src-repository-profiles.html"><abbr title="src/Repository/Profiles.php">Profiles.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">18</span>
 </aside>
 
         
@@ -118,7 +118,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-Profiles.html#method_list">list()</a>
     <span>
-                        &nbsp;: <a href="classes/Arimac-Sigfox-Response-Generated-ProfilesListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ProfilesListResponse">ProfilesListResponse</abbr></a>    </span>
+                        &nbsp;: <a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginateResponse">PaginateResponse</abbr></a>&lt;<a href="classes/Arimac-Sigfox-Model-Profile.html"><abbr title="\Arimac\Sigfox\Model\Profile">Profile</abbr></a>, <a href="classes/Arimac-Sigfox-Response-Generated-ProfilesListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ProfilesListResponse">ProfilesListResponse</abbr></a>&gt;    </span>
 </dt>
 <dd>Retrieve a list of a Group&#039;s profiles according to visibility permissions and request filters.</dd>
 
@@ -148,7 +148,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/Profiles.php"><a href="files/src-repository-profiles.html"><abbr title="src/Repository/Profiles.php">Profiles.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">70</span>
 </aside>
 
         <p class="phpdocumentor-summary">Find by id</p>
@@ -194,14 +194,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/Profiles.php"><a href="files/src-repository-profiles.html"><abbr title="src/Repository/Profiles.php">Profiles.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve a list of a Group&#039;s profiles according to visibility permissions and request filters.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">list</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-ProfilesList.html"><abbr title="\Arimac\Sigfox\Request\ProfilesList">ProfilesList</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-ProfilesListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ProfilesListResponse">ProfilesListResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">list</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-ProfilesList.html"><abbr title="\Arimac\Sigfox\Request\ProfilesList">ProfilesList</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginateResponse">PaginateResponse</abbr></a>&lt;<a href="classes/Arimac-Sigfox-Model-Profile.html"><abbr title="\Arimac\Sigfox\Model\Profile">Profile</abbr></a>, <a href="classes/Arimac-Sigfox-Response-Generated-ProfilesListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ProfilesListResponse">ProfilesListResponse</abbr></a>&gt;</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -210,7 +210,7 @@
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$request</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-ProfilesList.html"><abbr title="\Arimac\Sigfox\Request\ProfilesList">ProfilesList</abbr></a></span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The query and body parameters to pass</p>
 </section>
@@ -225,16 +225,6 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
-</section>
-
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -297,7 +287,7 @@
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-ProfilesListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ProfilesListResponse">ProfilesListResponse</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginateResponse">PaginateResponse</abbr></a>&lt;<a href="classes/Arimac-Sigfox-Model-Profile.html"><abbr title="\Arimac\Sigfox\Model\Profile">Profile</abbr></a>, <a href="classes/Arimac-Sigfox-Response-Generated-ProfilesListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\ProfilesListResponse">ProfilesListResponse</abbr></a>&gt;</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 

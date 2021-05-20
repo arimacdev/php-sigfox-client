@@ -118,7 +118,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-Coverages.html#method_operatorsRedundancy">operatorsRedundancy()</a>
     <span>
-                        &nbsp;: <a href="classes/Arimac-Sigfox-Definition-RedundancyResponse.html"><abbr title="\Arimac\Sigfox\Definition\RedundancyResponse">RedundancyResponse</abbr></a>    </span>
+                        &nbsp;: <a href="classes/Arimac-Sigfox-Model-RedundancyResponse.html"><abbr title="\Arimac\Sigfox\Model\RedundancyResponse">RedundancyResponse</abbr></a>    </span>
 </dt>
 <dd>Get operator coverage redundancy for a selected latitude and longitude,
 for specific device situation.</dd>
@@ -190,7 +190,7 @@ for specific device situation.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">operatorsRedundancy</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-CoveragesOperatorsRedundancy.html"><abbr title="\Arimac\Sigfox\Request\CoveragesOperatorsRedundancy">CoveragesOperatorsRedundancy</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-RedundancyResponse.html"><abbr title="\Arimac\Sigfox\Definition\RedundancyResponse">RedundancyResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">operatorsRedundancy</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-CoveragesOperatorsRedundancy.html"><abbr title="\Arimac\Sigfox\Request\CoveragesOperatorsRedundancy">CoveragesOperatorsRedundancy</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-RedundancyResponse.html"><abbr title="\Arimac\Sigfox\Model\RedundancyResponse">RedundancyResponse</abbr></a></span></code>
 
         <section class="phpdocumentor-description"><p>For more information please refer to the <a href="https://support.sigfox.com/docs/global-coverage-api">Global Coverage API
 article</a>.</p>
@@ -201,7 +201,7 @@ article</a>.</p>
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$request</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-CoveragesOperatorsRedundancy.html"><abbr title="\Arimac\Sigfox\Request\CoveragesOperatorsRedundancy">CoveragesOperatorsRedundancy</abbr></a></span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The query and body parameters to pass</p>
 </section>
@@ -216,16 +216,6 @@ article</a>.</p>
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
-</section>
-
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -295,10 +285,20 @@ article</a>.</p>
 </section>
 
                                     </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
+</section>
+
+                                    </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-RedundancyResponse.html"><abbr title="\Arimac\Sigfox\Definition\RedundancyResponse">RedundancyResponse</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-RedundancyResponse.html"><abbr title="\Arimac\Sigfox\Model\RedundancyResponse">RedundancyResponse</abbr></a></span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 

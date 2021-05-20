@@ -93,7 +93,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesBulkResume.php"><a href="files/src-request-devicesbulkresume.html"><abbr title="src/Request/DevicesBulkResume.php">DevicesBulkResume.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 </aside>
 
             <p class="phpdocumentor-summary">Resume multiple devices with asynchronous job.</p>
@@ -116,7 +116,7 @@
                 <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Request-DevicesBulkResume.html#property_devices">$devices</a>
     <span>
-                &nbsp;: <a href="classes/Arimac-Sigfox-Definition-DeviceActionJob.html"><abbr title="\Arimac\Sigfox\Definition\DeviceActionJob">DeviceActionJob</abbr></a>|null            </span>
+                &nbsp;: <a href="classes/Arimac-Sigfox-Model-DeviceActionJob.html"><abbr title="\Arimac\Sigfox\Model\DeviceActionJob">DeviceActionJob</abbr></a>|null            </span>
 </dt>
 <dd>list of device&#039;s identifier (hexadecimal format)</dd>
 
@@ -128,6 +128,13 @@
 <dd>Group Identifier use to resume multiple devices</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Model.html#method_from">from()</a>
+    <span>
+                        &nbsp;: static    </span>
+</dt>
+<dd>Initializing a model from an array</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Request-DevicesBulkResume.html#method_setDevices">setDevices()</a>
     <span>
                         &nbsp;: self    </span>
@@ -169,14 +176,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesBulkResume.php"><a href="files/src-request-devicesbulkresume.html"><abbr title="src/Request/DevicesBulkResume.php">DevicesBulkResume.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 </aside>
 
         <p class="phpdocumentor-summary">list of device&#039;s identifier (hexadecimal format)</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/Arimac-Sigfox-Definition-DeviceActionJob.html"><abbr title="\Arimac\Sigfox\Definition\DeviceActionJob">DeviceActionJob</abbr></a>|null</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/Arimac-Sigfox-Model-DeviceActionJob.html"><abbr title="\Arimac\Sigfox\Model\DeviceActionJob">DeviceActionJob</abbr></a>|null</span>
     <span class="phpdocumentor-signature__name">$devices</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
@@ -201,7 +208,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesBulkResume.php"><a href="files/src-request-devicesbulkresume.html"><abbr title="src/Request/DevicesBulkResume.php">DevicesBulkResume.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 </aside>
 
         <p class="phpdocumentor-summary">Group Identifier use to resume multiple devices</p>
@@ -228,6 +235,70 @@
         class="phpdocumentor-element
             -method
             -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_from">
+        from()
+        <a href="classes/Arimac-Sigfox-Model.html#method_from" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Model.php"><a href="files/src-model.html"><abbr title="src/Model.php">Model.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">23</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Initializing a model from an array</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">from</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<abbr title="\Arimac\Sigfox\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$params</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<abbr title="\Arimac\Sigfox\undefined">undefined</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Pass this parameter if you want to initial
+property value from an array. See API
+reference for all property names and types</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If provided an invalid type to a property</p>
+</section>
+
+                                    </dd>
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">static</span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="method_setDevices">
@@ -237,14 +308,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesBulkResume.php"><a href="files/src-request-devicesbulkresume.html"><abbr title="src/Request/DevicesBulkResume.php">DevicesBulkResume.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">45</span>
+    <span class="phpdocumentor-element-found-in__line">43</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for devices</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">setDevices</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-DeviceActionJob.html"><abbr title="\Arimac\Sigfox\Definition\DeviceActionJob">DeviceActionJob</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$devices</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
+                <span class="phpdocumentor-signature__name">setDevices</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-DeviceActionJob.html"><abbr title="\Arimac\Sigfox\Model\DeviceActionJob">DeviceActionJob</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$devices</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">self</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -252,7 +323,7 @@
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$devices</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-DeviceActionJob.html"><abbr title="\Arimac\Sigfox\Definition\DeviceActionJob">DeviceActionJob</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-DeviceActionJob.html"><abbr title="\Arimac\Sigfox\Model\DeviceActionJob">DeviceActionJob</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>list of device's identifier (hexadecimal format)</p>
@@ -284,7 +355,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/DevicesBulkResume.php"><a href="files/src-request-devicesbulkresume.html"><abbr title="src/Request/DevicesBulkResume.php">DevicesBulkResume.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">66</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for groupId</p>

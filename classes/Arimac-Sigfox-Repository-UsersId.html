@@ -118,7 +118,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-UsersId.html#method_get">get()</a>
     <span>
-                        &nbsp;: <a href="classes/Arimac-Sigfox-Definition-User.html"><abbr title="\Arimac\Sigfox\Definition\User">User</abbr></a>    </span>
+                        &nbsp;: <a href="classes/Arimac-Sigfox-Model-User.html"><abbr title="\Arimac\Sigfox\Model\User">User</abbr></a>    </span>
 </dt>
 <dd>Retrieve information about a given user. The id can also be the user&#039;s email address.</dd>
 
@@ -132,7 +132,7 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-UsersId.html#method_update">update()</a>
     <span>
-                        &nbsp;: <abbr title="\Arimac\Sigfox\Definition\UpdateResponse">UpdateResponse</abbr>    </span>
+                        &nbsp;: <abbr title="\Arimac\Sigfox\Model\UpdateResponse">UpdateResponse</abbr>    </span>
 </dt>
 <dd>Update a given user.</dd>
 
@@ -269,7 +269,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-UsersIdGet.html"><abbr title="\Arimac\Sigfox\Request\UsersIdGet">UsersIdGet</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-User.html"><abbr title="\Arimac\Sigfox\Definition\User">User</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-UsersIdGet.html"><abbr title="\Arimac\Sigfox\Request\UsersIdGet">UsersIdGet</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-User.html"><abbr title="\Arimac\Sigfox\Model\User">User</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -293,16 +293,6 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
-</section>
-
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -372,10 +362,20 @@
 </section>
 
                                     </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
+</section>
+
+                                    </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-User.html"><abbr title="\Arimac\Sigfox\Definition\User">User</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-User.html"><abbr title="\Arimac\Sigfox\Model\User">User</abbr></a></span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -434,7 +434,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-UserUpdate.html"><abbr title="\Arimac\Sigfox\Definition\UserUpdate">UserUpdate</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$user</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Arimac\Sigfox\Definition\UpdateResponse">UpdateResponse</abbr></span></code>
+                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-UserUpdate.html"><abbr title="\Arimac\Sigfox\Model\UserUpdate">UserUpdate</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$user</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Arimac\Sigfox\Model\UpdateResponse">UpdateResponse</abbr></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -442,7 +442,7 @@
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$user</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-UserUpdate.html"><abbr title="\Arimac\Sigfox\Definition\UserUpdate">UserUpdate</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-UserUpdate.html"><abbr title="\Arimac\Sigfox\Model\UserUpdate">UserUpdate</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The user to update</p>
@@ -458,16 +458,6 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
-</section>
-
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -537,10 +527,20 @@
 </section>
 
                                     </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
+</section>
+
+                                    </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Arimac\Sigfox\Definition\UpdateResponse">UpdateResponse</abbr></span>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\Arimac\Sigfox\Model\UpdateResponse">UpdateResponse</abbr></span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 

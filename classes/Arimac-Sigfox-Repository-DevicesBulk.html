@@ -125,16 +125,23 @@
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_replace">replace()</a>
     <span>
-                        &nbsp;: <a href="classes/Arimac-Sigfox-Definition-ReplaceResponse.html"><abbr title="\Arimac\Sigfox\Definition\ReplaceResponse">ReplaceResponse</abbr></a>    </span>
+                        &nbsp;: <a href="classes/Arimac-Sigfox-Model-ReplaceResponse.html"><abbr title="\Arimac\Sigfox\Model\ReplaceResponse">ReplaceResponse</abbr></a>    </span>
 </dt>
 <dd>Replace multiple devices (moving tokens from one device to another) with synchronous job</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_restart">restart()</a>
     <span>
-                        &nbsp;: <a href="classes/Arimac-Sigfox-Request-DevicesBulkRestart.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkRestart">DevicesBulkRestart</abbr></a>    </span>
+                        &nbsp;: <a href="classes/Arimac-Sigfox-Repository-DevicesBulkRestart.html"><abbr title="\Arimac\Sigfox\Repository\DevicesBulkRestart">DevicesBulkRestart</abbr></a>    </span>
 </dt>
 <dd></dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_restartBulk">restartBulk()</a>
+    <span>
+                        &nbsp;: string    </span>
+</dt>
+<dd>Restart multiple devices with asynchronous job.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_resume">resume()</a>
@@ -204,7 +211,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">create</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-AsynchronousDeviceCreationJob.html"><abbr title="\Arimac\Sigfox\Definition\AsynchronousDeviceCreationJob">AsynchronousDeviceCreationJob</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$devices</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DevicesBulkCreateResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesBulkCreateResponse">DevicesBulkCreateResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">create</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-AsynchronousDeviceCreationJob.html"><abbr title="\Arimac\Sigfox\Model\AsynchronousDeviceCreationJob">AsynchronousDeviceCreationJob</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$devices</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DevicesBulkCreateResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesBulkCreateResponse">DevicesBulkCreateResponse</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -212,7 +219,7 @@
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$devices</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-AsynchronousDeviceCreationJob.html"><abbr title="\Arimac\Sigfox\Definition\AsynchronousDeviceCreationJob">AsynchronousDeviceCreationJob</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-AsynchronousDeviceCreationJob.html"><abbr title="\Arimac\Sigfox\Model\AsynchronousDeviceCreationJob">AsynchronousDeviceCreationJob</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The devices to create</p>
@@ -228,16 +235,6 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
-</section>
-
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -304,6 +301,16 @@
                                                                 <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-Response-InternalServerException.html"><abbr title="\Arimac\Sigfox\Exception\Response\InternalServerException">InternalServerException</abbr></a></span>
                                                             
                                                  <section class="phpdocumentor-description"><p>If server returned a HTTP 500 error.</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
 </section>
 
                                     </dd>
@@ -382,7 +389,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">replace</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-AsynchronousDeviceReplacementJob.html"><abbr title="\Arimac\Sigfox\Definition\AsynchronousDeviceReplacementJob">AsynchronousDeviceReplacementJob</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$devicePairs</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-ReplaceResponse.html"><abbr title="\Arimac\Sigfox\Definition\ReplaceResponse">ReplaceResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">replace</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-AsynchronousDeviceReplacementJob.html"><abbr title="\Arimac\Sigfox\Model\AsynchronousDeviceReplacementJob">AsynchronousDeviceReplacementJob</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$devicePairs</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-ReplaceResponse.html"><abbr title="\Arimac\Sigfox\Model\ReplaceResponse">ReplaceResponse</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -390,7 +397,7 @@
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$devicePairs</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-AsynchronousDeviceReplacementJob.html"><abbr title="\Arimac\Sigfox\Definition\AsynchronousDeviceReplacementJob">AsynchronousDeviceReplacementJob</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-AsynchronousDeviceReplacementJob.html"><abbr title="\Arimac\Sigfox\Model\AsynchronousDeviceReplacementJob">AsynchronousDeviceReplacementJob</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Pairs of source and target devices</p>
@@ -409,13 +416,168 @@
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-SerializeException.html"><abbr title="\Arimac\Sigfox\Exception\SerializeException">SerializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If request object failed to serialize to a JSON serializable type.</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-UnexpectedResponseException.html"><abbr title="\Arimac\Sigfox\Exception\UnexpectedResponseException">UnexpectedResponseException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If server returned an unexpected status code.</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-Response-BadRequestException.html"><abbr title="\Arimac\Sigfox\Exception\Response\BadRequestException">BadRequestException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If server returned a HTTP 400 error.</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-Response-UnauthorizedException.html"><abbr title="\Arimac\Sigfox\Exception\Response\UnauthorizedException">UnauthorizedException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If server returned a HTTP 401 error.</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-Response-ForbiddenException.html"><abbr title="\Arimac\Sigfox\Exception\Response\ForbiddenException">ForbiddenException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If server returned a HTTP 403 error.</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-Response-NotFoundException.html"><abbr title="\Arimac\Sigfox\Exception\Response\NotFoundException">NotFoundException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If server returned a HTTP 404 error.</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-Response-InternalServerException.html"><abbr title="\Arimac\Sigfox\Exception\Response\InternalServerException">InternalServerException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If server returned a HTTP 500 error.</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
                                                                 <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
                                                             
                                                  <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
 </section>
 
                                     </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
+                        </dl>
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-ReplaceResponse.html"><abbr title="\Arimac\Sigfox\Model\ReplaceResponse">ReplaceResponse</abbr></a></span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_restart">
+        restart()
+        <a href="classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_restart" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">174</span>
+</aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">restart</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Repository-DevicesBulkRestart.html"><abbr title="\Arimac\Sigfox\Repository\DevicesBulkRestart">DevicesBulkRestart</abbr></a></span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Repository-DevicesBulkRestart.html"><abbr title="\Arimac\Sigfox\Repository\DevicesBulkRestart">DevicesBulkRestart</abbr></a></span>
+            &mdash;
+            <section class="phpdocumentor-description"></section>
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_restartBulk">
+        restartBulk()
+        <a href="classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_restartBulk" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">165</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Restart multiple devices with asynchronous job.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">restartBulk</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesBulkRestartBulk.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkRestartBulk">DevicesBulkRestartBulk</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+
+        <section class="phpdocumentor-description"></section>
+
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$request</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesBulkRestartBulk.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkRestartBulk">DevicesBulkRestartBulk</abbr></a></span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The query and body parameters to pass</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -488,42 +650,10 @@
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-ReplaceResponse.html"><abbr title="\Arimac\Sigfox\Definition\ReplaceResponse">ReplaceResponse</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_restart">
-        restart()
-        <a href="classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_restart" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">173</span>
-</aside>
-
-    
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">restart</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Request-DevicesBulkRestart.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkRestart">DevicesBulkRestart</abbr></a></span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Request-DevicesBulkRestart.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkRestart">DevicesBulkRestart</abbr></a></span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
+            <section class="phpdocumentor-description"><p>jobId (to use in job status request)</p>
+</section>
 
     
 </article>
@@ -540,7 +670,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">227</span>
+    <span class="phpdocumentor-element-found-in__line">230</span>
 </aside>
 
     
@@ -573,7 +703,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">200</span>
+    <span class="phpdocumentor-element-found-in__line">202</span>
 </aside>
 
     
@@ -613,7 +743,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">transfer</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-AsynchronousDeviceTransferJob.html"><abbr title="\Arimac\Sigfox\Definition\AsynchronousDeviceTransferJob">AsynchronousDeviceTransferJob</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$devices</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DevicesBulkTransferResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesBulkTransferResponse">DevicesBulkTransferResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">transfer</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-AsynchronousDeviceTransferJob.html"><abbr title="\Arimac\Sigfox\Model\AsynchronousDeviceTransferJob">AsynchronousDeviceTransferJob</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$devices</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DevicesBulkTransferResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesBulkTransferResponse">DevicesBulkTransferResponse</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -621,7 +751,7 @@
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$devices</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Definition-AsynchronousDeviceTransferJob.html"><abbr title="\Arimac\Sigfox\Definition\AsynchronousDeviceTransferJob">AsynchronousDeviceTransferJob</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-AsynchronousDeviceTransferJob.html"><abbr title="\Arimac\Sigfox\Model\AsynchronousDeviceTransferJob">AsynchronousDeviceTransferJob</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The devices to move</p>
@@ -637,16 +767,6 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
-</section>
-
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -716,6 +836,16 @@
 </section>
 
                                     </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
+</section>
+
+                                    </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
@@ -738,7 +868,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">254</span>
+    <span class="phpdocumentor-element-found-in__line">258</span>
 </aside>
 
     
@@ -778,7 +908,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesBulkUpdate.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkUpdate">DevicesBulkUpdate</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DevicesBulkUpdateResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesBulkUpdateResponse">DevicesBulkUpdateResponse</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesBulkUpdate.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkUpdate">DevicesBulkUpdate</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Generated-DevicesBulkUpdateResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesBulkUpdateResponse">DevicesBulkUpdateResponse</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -787,7 +917,7 @@
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$request</span>
                 : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DevicesBulkUpdate.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkUpdate">DevicesBulkUpdate</abbr></a></span>
-                            </dt>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The query and body parameters to pass</p>
 </section>
@@ -802,16 +932,6 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
-</section>
-
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -878,6 +998,16 @@
                                                                 <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-Response-InternalServerException.html"><abbr title="\Arimac\Sigfox\Exception\Response\InternalServerException">InternalServerException</abbr></a></span>
                                                             
                                                  <section class="phpdocumentor-description"><p>If server returned a HTTP 500 error.</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
 </section>
 
                                     </dd>

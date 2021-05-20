@@ -111,14 +111,14 @@
                     <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-DevicesIdCertificate.html#method_modem">modem()</a>
     <span>
-                        &nbsp;: <a href="classes/Arimac-Sigfox-Definition-ModemCertificate.html"><abbr title="\Arimac\Sigfox\Definition\ModemCertificate">ModemCertificate</abbr></a>    </span>
+                        &nbsp;: <a href="classes/Arimac-Sigfox-Model-ModemCertificate.html"><abbr title="\Arimac\Sigfox\Model\ModemCertificate">ModemCertificate</abbr></a>    </span>
 </dt>
 <dd>Retrieve the modem certificate associated with a device.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-DevicesIdCertificate.html#method_product">product()</a>
     <span>
-                        &nbsp;: <a href="classes/Arimac-Sigfox-Definition-ProductCertificate.html"><abbr title="\Arimac\Sigfox\Definition\ProductCertificate">ProductCertificate</abbr></a>    </span>
+                        &nbsp;: <a href="classes/Arimac-Sigfox-Model-ProductCertificate.html"><abbr title="\Arimac\Sigfox\Model\ProductCertificate">ProductCertificate</abbr></a>    </span>
 </dt>
 <dd>Retrieve the product certificate associated with a device already registered.</dd>
 
@@ -155,7 +155,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">modem</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fields</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-ModemCertificate.html"><abbr title="\Arimac\Sigfox\Definition\ModemCertificate">ModemCertificate</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">modem</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fields</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-ModemCertificate.html"><abbr title="\Arimac\Sigfox\Model\ModemCertificate">ModemCertificate</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -179,16 +179,6 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
-</section>
-
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -258,10 +248,20 @@
 </section>
 
                                     </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
+</section>
+
+                                    </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-ModemCertificate.html"><abbr title="\Arimac\Sigfox\Definition\ModemCertificate">ModemCertificate</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-ModemCertificate.html"><abbr title="\Arimac\Sigfox\Model\ModemCertificate">ModemCertificate</abbr></a></span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -287,7 +287,7 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">product</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fields</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-ProductCertificate.html"><abbr title="\Arimac\Sigfox\Definition\ProductCertificate">ProductCertificate</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">product</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$fields</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-ProductCertificate.html"><abbr title="\Arimac\Sigfox\Model\ProductCertificate">ProductCertificate</abbr></a></span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -311,16 +311,6 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
-</section>
-
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -390,10 +380,20 @@
 </section>
 
                                     </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If failed to deserialize response body as a response object.</p>
+</section>
+
+                                    </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Definition-ProductCertificate.html"><abbr title="\Arimac\Sigfox\Definition\ProductCertificate">ProductCertificate</abbr></a></span>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-ProductCertificate.html"><abbr title="\Arimac\Sigfox\Model\ProductCertificate">ProductCertificate</abbr></a></span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
