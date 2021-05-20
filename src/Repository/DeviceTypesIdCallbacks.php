@@ -55,7 +55,7 @@ class DeviceTypesIdCallbacks
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function list() : ?Callback[]
+    public function list() : ?array
     {
         /** @var DeviceTypesIdCallbacksListResponse **/
         $response = $this->client->call('get', Helper::bindUrlParams('/device-types/{id}/callbacks', $this->id), null, DeviceTypesIdCallbacksListResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));

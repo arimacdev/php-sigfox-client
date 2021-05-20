@@ -319,7 +319,7 @@ class Repository extends Class_
                     $getter
                 )
             );
-            $responseType = $type;
+            $responseType = Helper::toPHPValue($type);
             if(!$required){
                 $responseType = new NullableType($responseType);
             }
