@@ -114,7 +114,10 @@
                         &nbsp;: <a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginateResponse">PaginateResponse</abbr></a>&lt;<a href="classes/Arimac-Sigfox-Model-GroupErrorMessages.html"><abbr title="\Arimac\Sigfox\Model\GroupErrorMessages">GroupErrorMessages</abbr></a>, <a href="classes/Arimac-Sigfox-Response-Generated-GroupsIdCallbacksNotDeliveredResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\GroupsIdCallbacksNotDeliveredResponse">GroupsIdCallbacksNotDeliveredResponse</abbr></a>&gt;    </span>
 </dt>
 <dd>Retrieve a list of undelivered callbacks and errors for a given group, in reverse chronological order (most
-recent message first).</dd>
+recent message first). SNR will be deprecated (see [Newsletter](https://backend.sigfox.com/welcome/news) for
+details). To monitor radio link quality, please use the [Link Quality Indicator
+(LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is more relevant than SNR in
+Sigfox network.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-GroupsId.html#method_delete">delete()</a>
@@ -170,11 +173,14 @@ recent message first).</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/GroupsId.php"><a href="files/src-repository-groupsid.html"><abbr title="src/Repository/GroupsId.php">GroupsId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">124</span>
+    <span class="phpdocumentor-element-found-in__line">127</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve a list of undelivered callbacks and errors for a given group, in reverse chronological order (most
-recent message first).</p>
+recent message first). SNR will be deprecated (see [Newsletter](https://backend.sigfox.com/welcome/news) for
+details). To monitor radio link quality, please use the [Link Quality Indicator
+(LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is more relevant than SNR in
+Sigfox network.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
@@ -393,7 +399,7 @@ recent message first).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/GroupsId.php"><a href="files/src-repository-groupsid.html"><abbr title="src/Repository/GroupsId.php">GroupsId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">151</span>
+    <span class="phpdocumentor-element-found-in__line">149</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve a list of geolocation payload according to request filters.</p>
@@ -654,7 +660,7 @@ recent message first).</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-CommonGroupUpdate.html"><abbr title="\Arimac\Sigfox\Model\CommonGroupUpdate">CommonGroupUpdate</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$group</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-CommonGroupUpdate.html"><abbr title="\Arimac\Sigfox\Model\CommonGroupUpdate">CommonGroupUpdate</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$group</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -662,7 +668,7 @@ recent message first).</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$group</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-CommonGroupUpdate.html"><abbr title="\Arimac\Sigfox\Model\CommonGroupUpdate">CommonGroupUpdate</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-CommonGroupUpdate.html"><abbr title="\Arimac\Sigfox\Model\CommonGroupUpdate">CommonGroupUpdate</abbr></a>|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The group to update</p>

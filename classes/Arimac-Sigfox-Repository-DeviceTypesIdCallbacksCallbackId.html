@@ -142,7 +142,10 @@ was previously selected will no longer be used for downlink.</dd>
     <span>
                         &nbsp;: void    </span>
 </dt>
-<dd>Update a callback for a given device type</dd>
+<dd>Update a callback for a given device type SNR will be deprecated (see
+[Newsletter](https://backend.sigfox.com/welcome/news) for details). To monitor radio link quality, please use
+the [Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is
+more relevant than SNR in Sigfox network.</dd>
 
         </dl>
 
@@ -170,7 +173,7 @@ was previously selected will no longer be used for downlink.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacksCallbackId.php"><a href="files/src-repository-devicetypesidcallbackscallbackid.html"><abbr title="src/Repository/DeviceTypesIdCallbacksCallbackId.php">DeviceTypesIdCallbacksCallbackId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">138</span>
+    <span class="phpdocumentor-element-found-in__line">141</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve the last device message error associated with this callback.</p>
@@ -302,7 +305,7 @@ was previously selected will no longer be used for downlink.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacksCallbackId.php"><a href="files/src-repository-devicetypesidcallbackscallbackid.html"><abbr title="src/Repository/DeviceTypesIdCallbacksCallbackId.php">DeviceTypesIdCallbacksCallbackId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">84</span>
+    <span class="phpdocumentor-element-found-in__line">87</span>
 </aside>
 
         <p class="phpdocumentor-summary">Delete a callback for a given device type.</p>
@@ -402,14 +405,14 @@ was previously selected will no longer be used for downlink.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacksCallbackId.php"><a href="files/src-repository-devicetypesidcallbackscallbackid.html"><abbr title="src/Repository/DeviceTypesIdCallbacksCallbackId.php">DeviceTypesIdCallbacksCallbackId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">101</span>
+    <span class="phpdocumentor-element-found-in__line">104</span>
 </aside>
 
         <p class="phpdocumentor-summary">Enable or disable a callback for a given device type.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">enable</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$enabled</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                <span class="phpdocumentor-signature__name">enable</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$enabled</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -417,7 +420,7 @@ was previously selected will no longer be used for downlink.</dd>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$enabled</span>
-                : <span class="phpdocumentor-signature__argument__return-type">bool|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr></span>
+                : <span class="phpdocumentor-signature__argument__return-type">bool|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>True to enable the callback, false to disable it</p>
@@ -524,7 +527,7 @@ was previously selected will no longer be used for downlink.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacksCallbackId.php"><a href="files/src-repository-devicetypesidcallbackscallbackid.html"><abbr title="src/Repository/DeviceTypesIdCallbacksCallbackId.php">DeviceTypesIdCallbacksCallbackId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">118</span>
+    <span class="phpdocumentor-element-found-in__line">121</span>
 </aside>
 
         <p class="phpdocumentor-summary">Selects a downlink callback for a device type. The callback will be selected as the downlink one, the one that
@@ -625,14 +628,17 @@ was previously selected will no longer be used for downlink.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacksCallbackId.php"><a href="files/src-repository-devicetypesidcallbackscallbackid.html"><abbr title="src/Repository/DeviceTypesIdCallbacksCallbackId.php">DeviceTypesIdCallbacksCallbackId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">68</span>
+    <span class="phpdocumentor-element-found-in__line">71</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Update a callback for a given device type</p>
+        <p class="phpdocumentor-summary">Update a callback for a given device type SNR will be deprecated (see
+[Newsletter](https://backend.sigfox.com/welcome/news) for details). To monitor radio link quality, please use
+the [Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is
+more relevant than SNR in Sigfox network.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-UpdateCallback.html"><abbr title="\Arimac\Sigfox\Model\UpdateCallback">UpdateCallback</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$callback</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-UpdateCallback.html"><abbr title="\Arimac\Sigfox\Model\UpdateCallback">UpdateCallback</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$callback</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -640,7 +646,7 @@ was previously selected will no longer be used for downlink.</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$callback</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-UpdateCallback.html"><abbr title="\Arimac\Sigfox\Model\UpdateCallback">UpdateCallback</abbr></a>|<abbr title="\Arimac\Sigfox\Repository\undefined">undefined</abbr></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-UpdateCallback.html"><abbr title="\Arimac\Sigfox\Model\UpdateCallback">UpdateCallback</abbr></a>|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The callback to update</p>

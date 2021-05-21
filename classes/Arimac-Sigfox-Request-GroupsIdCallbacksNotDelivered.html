@@ -87,20 +87,20 @@
     </span>
     
     
-            <span class="phpdocumentor-element__implements">
-            implements
-                            <abbr title="\Arimac\Sigfox\Response\Paginated\PaginatedRequest">PaginatedRequest</abbr>                    </span>
     
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsIdCallbacksNotDelivered.php"><a href="files/src-request-groupsidcallbacksnotdelivered.html"><abbr title="src/Request/GroupsIdCallbacksNotDelivered.php">GroupsIdCallbacksNotDelivered.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">12</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 </aside>
 
             <p class="phpdocumentor-summary">Retrieve a list of undelivered callbacks and errors for a given group, in reverse chronological order (most recent
-message first).</p>
+message first). SNR will be deprecated (see [Newsletter](https://backend.sigfox.com/welcome/news) for details). To
+monitor radio link quality, please use the [Link Quality Indicator
+(LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is more relevant than SNR in Sigfox
+network.</p>
 
     <section class="phpdocumentor-description"></section>
 
@@ -109,17 +109,6 @@ message first).</p>
 
 
 
-<h3 id="interfaces_class_traits">
-    Interfaces, Classes and Traits
-    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
-</h3>
-
-<dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -interface"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginatedRequest">PaginatedRequest</abbr></dt>
-        <dd></dd>
-    
-    
-    </dl>
 
 
 <h3 id="toc">
@@ -219,7 +208,7 @@ message first).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsIdCallbacksNotDelivered.php"><a href="files/src-request-groupsidcallbacksnotdelivered.html"><abbr title="src/Request/GroupsIdCallbacksNotDelivered.php">GroupsIdCallbacksNotDelivered.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">25</span>
+    <span class="phpdocumentor-element-found-in__line">27</span>
 </aside>
 
         <p class="phpdocumentor-summary">Ending timestamp (in milliseconds since Unix Epoch)</p>
@@ -251,7 +240,7 @@ message first).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsIdCallbacksNotDelivered.php"><a href="files/src-request-groupsidcallbacksnotdelivered.html"><abbr title="src/Request/GroupsIdCallbacksNotDelivered.php">GroupsIdCallbacksNotDelivered.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">31</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 </aside>
 
         <p class="phpdocumentor-summary">The maximum number of items to return</p>
@@ -283,7 +272,7 @@ message first).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsIdCallbacksNotDelivered.php"><a href="files/src-request-groupsidcallbacksnotdelivered.html"><abbr title="src/Request/GroupsIdCallbacksNotDelivered.php">GroupsIdCallbacksNotDelivered.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">37</span>
+    <span class="phpdocumentor-element-found-in__line">39</span>
 </aside>
 
         <p class="phpdocumentor-summary">The number of items to skip</p>
@@ -315,7 +304,7 @@ message first).</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsIdCallbacksNotDelivered.php"><a href="files/src-request-groupsidcallbacksnotdelivered.html"><abbr title="src/Request/GroupsIdCallbacksNotDelivered.php">GroupsIdCallbacksNotDelivered.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 </aside>
 
         <p class="phpdocumentor-summary">Starting timestamp (in milliseconds since Unix Epoch)</p>
@@ -358,7 +347,7 @@ message first).</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">from</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<abbr title="\Arimac\Sigfox\undefined">undefined</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+            <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">from</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
 
         <section class="phpdocumentor-description"></section>
 
@@ -366,7 +355,7 @@ message first).</p>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$params</span>
-                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|<abbr title="\Arimac\Sigfox\undefined">undefined</abbr></span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>Pass this parameter if you want to initial
@@ -415,7 +404,7 @@ reference for all property names and types</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsIdCallbacksNotDelivered.php"><a href="files/src-request-groupsidcallbacksnotdelivered.html"><abbr title="src/Request/GroupsIdCallbacksNotDelivered.php">GroupsIdCallbacksNotDelivered.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">72</span>
+    <span class="phpdocumentor-element-found-in__line">74</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for before</p>
@@ -462,7 +451,7 @@ reference for all property names and types</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsIdCallbacksNotDelivered.php"><a href="files/src-request-groupsidcallbacksnotdelivered.html"><abbr title="src/Request/GroupsIdCallbacksNotDelivered.php">GroupsIdCallbacksNotDelivered.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">95</span>
+    <span class="phpdocumentor-element-found-in__line">97</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for limit</p>
@@ -509,7 +498,7 @@ reference for all property names and types</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsIdCallbacksNotDelivered.php"><a href="files/src-request-groupsidcallbacksnotdelivered.html"><abbr title="src/Request/GroupsIdCallbacksNotDelivered.php">GroupsIdCallbacksNotDelivered.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">118</span>
+    <span class="phpdocumentor-element-found-in__line">120</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for offset</p>
@@ -556,7 +545,7 @@ reference for all property names and types</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Request/GroupsIdCallbacksNotDelivered.php"><a href="files/src-request-groupsidcallbacksnotdelivered.html"><abbr title="src/Request/GroupsIdCallbacksNotDelivered.php">GroupsIdCallbacksNotDelivered.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">49</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 </aside>
 
         <p class="phpdocumentor-summary">Setter for since</p>

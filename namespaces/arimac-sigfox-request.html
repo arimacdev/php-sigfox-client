@@ -119,23 +119,18 @@ for specific device situation.</dd>
         <dd>Create multiple new devices with asynchronous job</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DevicesBulkReplace.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkReplace">DevicesBulkReplace</abbr></a></dt>
         <dd>Replace multiple devices (moving tokens from one device to another) with synchronous job</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DevicesBulkRestartBulk.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkRestartBulk">DevicesBulkRestartBulk</abbr></a></dt>
-        <dd>Restart multiple devices with asynchronous job.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DevicesBulkResume.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkResume">DevicesBulkResume</abbr></a></dt>
-        <dd>Resume multiple devices with asynchronous job.</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DevicesBulkSuspend.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkSuspend">DevicesBulkSuspend</abbr></a></dt>
-        <dd>Suspend multiple devices with asynchronous job</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DevicesBulkTransfer.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkTransfer">DevicesBulkTransfer</abbr></a></dt>
         <dd>Transfer multiple devices to another device type with asynchronous job</dd>
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribe.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkUnsubscribe">DevicesBulkUnsubscribe</abbr></a></dt>
-        <dd>Unsubscribe multiple devices with asynchronous job.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DevicesBulkUpdate.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkUpdate">DevicesBulkUpdate</abbr></a></dt>
         <dd>Update or edit multiple devices with asynchronous job.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DevicesCreate.html"><abbr title="\Arimac\Sigfox\Request\DevicesCreate">DevicesCreate</abbr></a></dt>
         <dd>Create a new device.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DevicesIdCallbacksNotDelivered.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdCallbacksNotDelivered">DevicesIdCallbacksNotDelivered</abbr></a></dt>
         <dd>Retrieve a list of undelivered callbacks and errors for a given device, in reverse chronological order (most
-recent message first).</dd>
+recent message first). SNR will be deprecated (see [Newsletter](https://backend.sigfox.com/welcome/news) for
+details). To monitor radio link quality, please use the [Link Quality Indicator
+(LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is more relevant than SNR in Sigfox
+network.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DevicesIdCertificateModem.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdCertificateModem">DevicesIdCertificateModem</abbr></a></dt>
         <dd>Retrieve the modem certificate associated with a device.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DevicesIdCertificateProduct.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdCertificateProduct">DevicesIdCertificateProduct</abbr></a></dt>
@@ -145,7 +140,10 @@ recent message first).</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DevicesIdLocations.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdLocations">DevicesIdLocations</abbr></a></dt>
         <dd>Retrieve a list of location data of a device according to request filters.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DevicesIdMessagesList.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdMessagesList">DevicesIdMessagesList</abbr></a></dt>
-        <dd>Retrieve a list of messages for a given device according to request filters, with a 3-day history.</dd>
+        <dd>Retrieve a list of messages for a given device according to request filters. SNR will be deprecated (see
+[Newsletter](https://backend.sigfox.com/welcome/news) for details). To monitor radio link quality, please use the
+[Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is more
+relevant than SNR in Sigfox network.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DevicesIdProductCertificate.html"><abbr title="\Arimac\Sigfox\Request\DevicesIdProductCertificate">DevicesIdProductCertificate</abbr></a></dt>
         <dd>Retrieve the product certificate associated with a given device ID and PAC, when the device has not already been
 created on the portal, only in CRA</dd>
@@ -162,15 +160,27 @@ created on the portal, only in CRA</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdEnable.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdEnable">DeviceTypesIdCallbacksCallbackIdEnable</abbr></a></dt>
         <dd>Enable or disable a callback for a given device type.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdUpdate.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdUpdate">DeviceTypesIdCallbacksCallbackIdUpdate</abbr></a></dt>
-        <dd>Update a callback for a given device type</dd>
+        <dd>Update a callback for a given device type SNR will be deprecated (see
+[Newsletter](https://backend.sigfox.com/welcome/news) for details). To monitor radio link quality, please use the
+[Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is more
+relevant than SNR in Sigfox network.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCreate.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdCallbacksCreate">DeviceTypesIdCallbacksCreate</abbr></a></dt>
-        <dd>Create a new callback for a given device type.</dd>
+        <dd>Create a new callback for a given device type. SNR will be deprecated (see
+[Newsletter](https://backend.sigfox.com/welcome/news) for details). To monitor radio link quality, please use the
+[Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is more
+relevant than SNR in Sigfox network.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksNotDelivered.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdCallbacksNotDelivered">DeviceTypesIdCallbacksNotDelivered</abbr></a></dt>
-        <dd>Retrieve a list of undelivered callback messages for a given device types.</dd>
+        <dd>Retrieve a list of undelivered callback messages for a given device types. SNR will be deprecated (see
+[Newsletter](https://backend.sigfox.com/welcome/news) for details). To monitor radio link quality, please use the
+[Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is more
+relevant than SNR in Sigfox network.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdGet.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdGet">DeviceTypesIdGet</abbr></a></dt>
         <dd>Retrieve information about a device type.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdMessages.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdMessages">DeviceTypesIdMessages</abbr></a></dt>
-        <dd>Retrieve a list of messages for a given device types with a 3-day history.</dd>
+        <dd>Retrieve a list of messages for a given device types. SNR will be deprecated (see
+[Newsletter](https://backend.sigfox.com/welcome/news) for details). To monitor radio link quality, please use the
+[Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is more
+relevant than SNR in Sigfox network.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdUpdate.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdUpdate">DeviceTypesIdUpdate</abbr></a></dt>
         <dd>Update a given device type.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DeviceTypesList.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesList">DeviceTypesList</abbr></a></dt>
@@ -179,7 +189,10 @@ created on the portal, only in CRA</dd>
         <dd>Create a new group.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-GroupsIdCallbacksNotDelivered.html"><abbr title="\Arimac\Sigfox\Request\GroupsIdCallbacksNotDelivered">GroupsIdCallbacksNotDelivered</abbr></a></dt>
         <dd>Retrieve a list of undelivered callbacks and errors for a given group, in reverse chronological order (most recent
-message first).</dd>
+message first). SNR will be deprecated (see [Newsletter](https://backend.sigfox.com/welcome/news) for details). To
+monitor radio link quality, please use the [Link Quality Indicator
+(LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is more relevant than SNR in Sigfox
+network.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-GroupsIdGeolocationPayloads.html"><abbr title="\Arimac\Sigfox\Request\GroupsIdGeolocationPayloads">GroupsIdGeolocationPayloads</abbr></a></dt>
         <dd>Retrieve a list of geolocation payload according to request filters.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-GroupsIdGet.html"><abbr title="\Arimac\Sigfox\Request\GroupsIdGet">GroupsIdGet</abbr></a></dt>
@@ -212,6 +225,18 @@ a previous calculation</dd>
         <dd>Update a given user.</dd>
             <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-UsersList.html"><abbr title="\Arimac\Sigfox\Request\UsersList">UsersList</abbr></a></dt>
         <dd>Retrieve a list of users according to visibility permissions and request filters.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DevicesBulkRestartAsync.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkRestartAsync">DevicesBulkRestartAsync</abbr></a></dt>
+        <dd>Restart multiple devices with asynchronous job.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DevicesBulkResumeAsync.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkResumeAsync">DevicesBulkResumeAsync</abbr></a></dt>
+        <dd>Resume multiple devices with asynchronous job.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DevicesBulkSuspendAsync.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkSuspendAsync">DevicesBulkSuspendAsync</abbr></a></dt>
+        <dd>Suspend multiple devices with asynchronous job</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribeAsync.html"><abbr title="\Arimac\Sigfox\Request\DevicesBulkUnsubscribeAsync">DevicesBulkUnsubscribeAsync</abbr></a></dt>
+        <dd>Unsubscribe multiple devices with asynchronous job.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-OperatorsIdGet.html"><abbr title="\Arimac\Sigfox\Request\OperatorsIdGet">OperatorsIdGet</abbr></a></dt>
+        <dd>Retrieve information about a given operator.</dd>
+            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Request-OperatorsIdUpdate.html"><abbr title="\Arimac\Sigfox\Request\OperatorsIdUpdate">OperatorsIdUpdate</abbr></a></dt>
+        <dd>Update a given operator.</dd>
     
     </dl>
 
