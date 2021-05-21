@@ -8,7 +8,7 @@ use Arimac\Sigfox\Serializer\ArraySerializer;
 /**
  * The API user profile identifier(s)
  */
-trait ProfileIds
+class ProfileIds extends Model
 {
     /**
      * @var string[]
@@ -40,7 +40,7 @@ trait ProfileIds
      *
      * @internal
      */
-    public function getSerializeMetaDataProfileIds() : array
+    public function getSerializeMetaData() : array
     {
         $serializers = array('profileId' => new ArraySerializer(new PrimitiveSerializer('string')));
         return $serializers;

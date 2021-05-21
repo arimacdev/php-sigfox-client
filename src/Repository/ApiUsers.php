@@ -57,20 +57,15 @@ class ApiUsers
      */
     public function list(?ApiUsersList $request = null) : PaginateResponse
     {
-        if (!isset($request)) {
-            $request = new ApiUsersList();
-            $request->setLimit(100);
-            $request->setOffset(0);
-        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 405 => MethodNotAllowedException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', '/api-users/', $request, ApiUsersListResponse::class, $errors);
-        return new PaginateResponse($this->client, $request, $response, $errors);
+        return new PaginateResponse($this->client, $response, $errors);
     }
     /**
      * Create a new API user.
      *
-     * @param ApiUserCreation|undefined $apiUser
+     * @param ApiUserCreation|null $apiUser
      *
      * @return string The newly created API user identifier
      *

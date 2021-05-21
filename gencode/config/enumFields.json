@@ -2858,5 +2858,396 @@
             },
             "comment": "Group's type"
         }
+    },
+    "Arimac\\Sigfox\\Model\\BaseStationUpdate": {
+        "mastEquipment": {
+            "OTHER": {
+                "value": 0,
+                "comment": "OTHER"
+            },
+            "LNA_V2_SBS_868_P": {
+                "value": 1,
+                "comment": "LNA_V2_SBS_868_P"
+            },
+            "LNA_V2_SBS_902_P": {
+                "value": 2,
+                "comment": "LNA_V2_SBS_902_P"
+            },
+            "LNA_V2_NB_SBS_868_P": {
+                "value": 3,
+                "comment": "LNA_V2_NB_SBS_868_P"
+            },
+            "LNA_V1_SBS_868_P": {
+                "value": 4,
+                "comment": "LNA_V1_SBS_868_P"
+            },
+            "LNA_V2_SBS_920_P": {
+                "value": 5,
+                "comment": "LNA_V2_SBS_920_P"
+            },
+            "LNA_V2_SBS_923_P": {
+                "value": 6,
+                "comment": "LNA_V2_SBS_923_P"
+            },
+            "MINI": {
+                "value": 7,
+                "comment": "MINI"
+            },
+            "LNA_V4_867": {
+                "value": 8,
+                "comment": "LNA_V4_867"
+            },
+            "LNA_V4_915": {
+                "value": 9,
+                "comment": "LNA_V4_915"
+            },
+            "LNAC_867": {
+                "value": 10,
+                "comment": "LNAC_867"
+            },
+            "LNAC_868": {
+                "value": 11,
+                "comment": "LNAC_868"
+            },
+            "LNAC_902": {
+                "value": 12,
+                "comment": "LNAC_902"
+            },
+            "LNAC_916_TX": {
+                "value": 13,
+                "comment": "LNAC_916_TX"
+            },
+            "LNAC_921": {
+                "value": 14,
+                "comment": "LNAC_921"
+            },
+            "LNAC_921_TX": {
+                "value": 15,
+                "comment": "LNAC_921_TX"
+            },
+            "LNAC_922_TX": {
+                "value": 16,
+                "comment": "LNAC_922_TX"
+            },
+            "LNA_V3_SBS_868_P": {
+                "value": 17,
+                "comment": "LNA_V3_SBS_868_P"
+            },
+            "LNA_V3_SBS_902_P": {
+                "value": 18,
+                "comment": "LNA_V3_SBS_902_P"
+            },
+            "LNA_V3_SBS_920_P": {
+                "value": 19,
+                "comment": "LNA_V3_SBS_920_P"
+            },
+            "LNA_V3_SBS_923_P": {
+                "value": 20,
+                "comment": "LNA_V3_SBS_923_P"
+            },
+            "NONE": {
+                "value": 21,
+                "comment": "NONE"
+            },
+            "LNAC_868_TX": {
+                "value": 22,
+                "comment": "LNAC_868_TX"
+            },
+            "comment": "LNA version of this base station. Mini station has type 7 -> MINI. Mini Access has type 21."
+        },
+        "cavityFilterVersion": {
+            "NONE": {
+                "value": -1,
+                "comment": "None"
+            },
+            "OTHER": {
+                "value": 0,
+                "comment": "Other"
+            ,
+            "ETSI_868MHZ_MATECH": {
+                "value": 1,
+                "comment": "ETSI 868MHz (Matech)"
+            }},
+            "ETSI_868MHZ_ELHYTE": {
+                "value": 2,
+                "comment": "ETSI 868MHz (Elhyte)"
+            },
+            "FCC_905MHZ_MATECH": {
+                "value": 3,
+                "comment": "FCC 905MHz (Matech)"
+            },
+            "FCC_905MHZ_ELHYTE":{
+                "value": 4,
+                "comment": "FCC 905MHz (Elhyte)"
+            },
+            "FCC_920MHZ": {
+                "value": 5,
+                "comment": "FCC 920MHz"
+            },
+            "FCC_923MHZ": {
+                "value": 6,
+                "comment": "FCC 923MHz"
+            },
+            "FCC_9225MHZ": {
+                "value": 7,
+                "comment": "FCC 922.5MHz"
+            },
+            "ETSI_867MHZ_MATECH": {
+                "value": 8,
+                "comment": "ETSI 867MHz (Matech)"
+            },
+            "ETSI_867MHZ": {
+                "value": 9,
+                "comment": "ETSI 867MHz (Techniwave)"
+            },
+            "FCC_921_5MHZ": {
+                "value": 10,
+                "comment": "FCC 921.5MHz"
+            },
+            "comment": "Cavity filter version for the base station."
+        },
+        "serviceCoverage": {
+            "GLOBAL": {
+                "value": 0,
+                "comment": "GLOBAL"
+            },
+            "CUSTOMER": {
+                "value": 1,
+                "comment": "CUSTOMER"
+            },
+            "comment": "Service coverage of a mini base station"
+        }
+    },
+    "Arimac\\Sigfox\\Model\\OperatorRead": {
+        "warrantyMode": {
+            "MANUFACTURER": {
+                "value": 0,
+                "comment": "MANUFACTURER"
+            },
+            "PROVISIONING": {
+                "value": 1,
+                "comment": "PROVISIONING"
+            },
+            "comment": "Warranty mode."
+        },
+        "networkType": {
+            "SNO_PUBLIC": {
+                "value": 0,
+                "comment": "SNO_PUBLIC"
+            },
+            "SNO_PRIVATE": {
+                "value": 1,
+                "comment": "SNO_PRIVATE"
+            },
+            "PILOT_PUBLIC": {
+                "value": 2,
+                "comment": "PILOT_PUBLIC"
+            },
+            "PILOT_PRIVATE": {
+                "value": 3,
+                "comment": "PILOT_PRIVATE"
+            },
+            "comment": "Network type."
+        }
+    },
+    "Arimac\\Sigfox\\Model\\AdslSubscription": {
+        "connectionStatus": {
+            "REQUEST": {
+                "value": 0,
+                "comment": "REQUEST"
+            },
+            "INSTALLED": {
+                "value": 1,
+                "comment": "INSTALLED"
+            },
+            "ACTIVATED": {
+                "value": 2,
+                "comment": "ACTIVATED"
+            },
+            "comment": "Subscription connection status"
+        }
+    },
+    "Arimac\\Sigfox\\Model\\WifiSubscription": {
+        "networkType": {
+            "COMPANY": {
+                "value": 0,
+                "comment": "COMPANY"
+            },
+            "OTHER": {
+                "value": 1,
+                "comment": "OTHER"
+            },
+            "RESIDENT": {
+                "value": 2,
+                "comment": "RESIDENT"
+            },
+            "comment": "Subscription network type"
+        },
+        "ethConnectionType": {
+            "DHCP": {
+                "value": 0,
+                "comment": "DHCP"
+            },
+            "STATIC": {
+                "value": 1,
+                "comment": "STATIC"
+            },
+            "comment": "Subscription connection type"
+        }
+    },
+    "Arimac\\Sigfox\\Model\\CreateGsmSubscription": {
+        "gsmConnectionType": {
+            "DONGLE_USB": {
+                "value": 0,
+                "comment": "DONGLE_USB"
+            },
+            "ROUTER_ETH": {
+                "value": 1,
+                "comment": "ROUTER_ETH"
+            },
+            "comment": "GSM subscription connection type"
+        }
+    },
+    "Arimac\\Sigfox\\Model\\CreateLanSubscription": {
+        "networkType": {
+            "COMPANY": {
+                "value": 0,
+                "comment": "COMPANY"
+            },
+            "OTHER": {
+                "value": 1,
+                "comment": "OTHER"
+            },
+            "RESIDENT": {
+                "value": 2,
+                "comment": "RESIDENT"
+            },
+            "comment": "Subscription network type"
+        },
+        "ethConnectionType": {
+            "DHCP": {
+                "value": 0,
+                "comment": "DHCP"
+            },
+            "STATIC": {
+                "value": 1,
+                "comment": "STATIC"
+            },
+            "comment": "Subscription connection type"
+        }
+    },
+    "Arimac\\Sigfox\\Model\\CreateWifiSubscription": {
+        "networkType": {
+            "COMPANY": {
+                "value": 0,
+                "comment": "COMPANY"
+            },
+            "OTHER": {
+                "value": 1,
+                "comment": "OTHER"
+            },
+            "RESIDENT": {
+                "value": 2,
+                "comment": "RESIDENT"
+            },
+            "comment": "Subscription network type"
+        },
+        "ethConnectionType": {
+            "DHCP": {
+                "value": 0,
+                "comment": "DHCP"
+            },
+            "STATIC": {
+                "value": 1,
+                "comment": "STATIC"
+            },
+            "comment": "Subscription connection type"
+        }
+    },
+    "Arimac\\Sigfox\\Model\\UpdateAdslSubscription": {
+        "connectionStatus": {
+            "REQUEST": {
+                "value": 0,
+                "comment": "REQUEST"
+            },
+            "INSTALLED": {
+                "value": 1,
+                "comment": "INSTALLED"
+            },
+            "ACTIVATED": {
+                "value": 2,
+                "comment": "ACTIVATED"
+            },
+            "comment": "Subscription connection status"
+        }
+    },
+    "Arimac\\Sigfox\\Model\\UpdateGsmSubscription": {
+        "gsmConnectionType": {
+            "DONGLE_USB": {
+                "value": 0,
+                "comment": "DONGLE_USB"
+            },
+            "ROUTER_ETH": {
+                "value": 1,
+                "comment": "ROUTER_ETH"
+            },
+            "comment": "GSM subscription connection type"
+        }
+    },
+    "Arimac\\Sigfox\\Model\\UpdateSatSubscription": {
+        "connectionStatus": {
+            "REQUEST": {
+                "value": 0,
+                "comment": "REQUEST"
+            },
+            "CREDENTIALS_PROVIDED": {
+                "value": 1,
+                "comment": "CREDENTIALS PROVIDED"
+            },
+            "KIT_RECEIVED": {
+                "value": 2,
+                "comment": "KIT RECEIVED"
+            },
+            "comment": "Subscription connection status"
+        },
+        "rType": {
+            "HEATING": {
+                "value": 0,
+                "comment": "HEATING"
+            },
+            "STANDARD": {
+                "value": 1,
+                "comment": "STANDARD"
+            },
+            "comment": "Subscription receiver type"
+        }
+    },
+    "Arimac\\Sigfox\\Model\\UpdateWifiSubscription": {
+        "networkType": {
+            "COMPANY": {
+                "value": 0,
+                "comment": "COMPANY"
+            },
+            "OTHER": {
+                "value": 1,
+                "comment": "OTHER"
+            },
+            "RESIDENT": {
+                "value": 2,
+                "comment": "RESIDENT"
+            },
+            "comment": "Subscription network type"
+        },
+        "ethConnectionType": {
+            "DHCP": {
+                "value": 0,
+                "comment": "DHCP"
+            },
+            "STATIC": {
+                "value": 1,
+                "comment": "STATIC"
+            },
+            "comment": "Subscription connection type"
+        }
     }
 }

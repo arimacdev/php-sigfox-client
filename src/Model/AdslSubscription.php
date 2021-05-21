@@ -3,11 +3,10 @@
 namespace Arimac\Sigfox\Model;
 
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
-use Arimac\Sigfox\Validator\Rules\Required;
 /**
  * Information about ADSL internet subscription
  */
-class CreateAdslSubscription extends CreateInternetSubscription
+class AdslSubscription extends InternetSubscription
 {
     /**
      * REQUEST
@@ -24,9 +23,9 @@ class CreateAdslSubscription extends CreateInternetSubscription
     /**
      * Subscription connection status
      * 
-     * - {@see CreateAdslSubscription::CONNECTION_STATUS_REQUEST}
-     * - {@see CreateAdslSubscription::CONNECTION_STATUS_INSTALLED}
-     * - {@see CreateAdslSubscription::CONNECTION_STATUS_ACTIVATED}
+     * - {@see AdslSubscription::CONNECTION_STATUS_REQUEST}
+     * - {@see AdslSubscription::CONNECTION_STATUS_INSTALLED}
+     * - {@see AdslSubscription::CONNECTION_STATUS_ACTIVATED}
      *
      * @var int
      */
@@ -108,9 +107,9 @@ class CreateAdslSubscription extends CreateInternetSubscription
      *
      * @param int $connectionStatus Subscription connection status
      *                              
-     *                              - {@see CreateAdslSubscription::CONNECTION_STATUS_REQUEST}
-     *                              - {@see CreateAdslSubscription::CONNECTION_STATUS_INSTALLED}
-     *                              - {@see CreateAdslSubscription::CONNECTION_STATUS_ACTIVATED}
+     *                              - {@see AdslSubscription::CONNECTION_STATUS_REQUEST}
+     *                              - {@see AdslSubscription::CONNECTION_STATUS_INSTALLED}
+     *                              - {@see AdslSubscription::CONNECTION_STATUS_ACTIVATED}
      *                              
      *
      * @return self To use in method chains
@@ -125,9 +124,9 @@ class CreateAdslSubscription extends CreateInternetSubscription
      *
      * @return int Subscription connection status
      *             
-     *             - {@see CreateAdslSubscription::CONNECTION_STATUS_REQUEST}
-     *             - {@see CreateAdslSubscription::CONNECTION_STATUS_INSTALLED}
-     *             - {@see CreateAdslSubscription::CONNECTION_STATUS_ACTIVATED}
+     *             - {@see AdslSubscription::CONNECTION_STATUS_REQUEST}
+     *             - {@see AdslSubscription::CONNECTION_STATUS_INSTALLED}
+     *             - {@see AdslSubscription::CONNECTION_STATUS_ACTIVATED}
      *             
      */
     public function getConnectionStatus() : ?int
@@ -401,16 +400,5 @@ class CreateAdslSubscription extends CreateInternetSubscription
         $serializers = array('connectionStatus' => new PrimitiveSerializer('int'), 'internetAccount' => new PrimitiveSerializer('string'), 'orderNumber' => new PrimitiveSerializer('string'), 'interfaceLogin' => new PrimitiveSerializer('string'), 'interfacePassword' => new PrimitiveSerializer('string'), 'adslLogin' => new PrimitiveSerializer('string'), 'adslPassword' => new PrimitiveSerializer('string'), 'lineNumber' => new PrimitiveSerializer('string'), 'modem' => new PrimitiveSerializer('string'), 'modemSerialNumber' => new PrimitiveSerializer('string'), 'jumperStrip' => new PrimitiveSerializer('string'), 'jumperBlock' => new PrimitiveSerializer('string'), 'pair' => new PrimitiveSerializer('string'));
         $serializers = array_merge($serializers, parent::getSerializeMetaData());
         return $serializers;
-    }
-    /**
-     * @inheritdoc
-     *
-     * @internal
-     */
-    public function getValidationMetaData() : array
-    {
-        $rules = array('connectionStatus' => array(new Required()), 'interfaceLogin' => array(new Required()), 'interfacePassword' => array(new Required()), 'modem' => array(new Required()));
-        $rules = array_merge($rules, parent::getValidationMetaData());
-        return $rules;
     }
 }

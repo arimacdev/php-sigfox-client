@@ -12,4 +12,7 @@ codegen:
 	./gencode/bin/gencode
 phpunit:
 	./vendor/bin/phpunit --testdox	
-	
+psalm:
+	./vendor/bin/psalm
+psalm-cache:
+	./vendor/bin/psalm --clear-cache

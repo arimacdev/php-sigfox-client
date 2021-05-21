@@ -75,7 +75,7 @@ class GroupsId
     /**
      * Update a given group.
      *
-     * @param CommonGroupUpdate|undefined $group The group to update
+     * @param CommonGroupUpdate|null $group The group to update
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -107,7 +107,10 @@ class GroupsId
     }
     /**
      * Retrieve a list of undelivered callbacks and errors for a given group, in reverse chronological order (most
-     * recent message first).
+     * recent message first). SNR will be deprecated (see [Newsletter](https://backend.sigfox.com/welcome/news) for
+     * details). To monitor radio link quality, please use the [Link Quality Indicator
+     * (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is more relevant than SNR in
+     * Sigfox network.
      *
      * @param GroupsIdCallbacksNotDelivered $request The query and body parameters to pass
      *
@@ -123,15 +126,10 @@ class GroupsId
      */
     public function callbacksNotDelivered(?GroupsIdCallbacksNotDelivered $request = null) : PaginateResponse
     {
-        if (!isset($request)) {
-            $request = new GroupsIdCallbacksNotDelivered();
-            $request->setLimit(100);
-            $request->setOffset(0);
-        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', Helper::bindUrlParams('/groups/{id}/callbacks-not-delivered', $this->id), $request, GroupsIdCallbacksNotDeliveredResponse::class, $errors);
-        return new PaginateResponse($this->client, $request, $response, $errors);
+        return new PaginateResponse($this->client, $response, $errors);
     }
     /**
      * Retrieve a list of geolocation payload according to request filters.
@@ -150,14 +148,9 @@ class GroupsId
      */
     public function geolocationPayloads(?GroupsIdGeolocationPayloads $request = null) : PaginateResponse
     {
-        if (!isset($request)) {
-            $request = new GroupsIdGeolocationPayloads();
-            $request->setLimit(100);
-            $request->setOffset(0);
-        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', Helper::bindUrlParams('/groups/{id}/geoloc-payloads', $this->id), $request, GroupsIdGeolocationPayloadsResponse::class, $errors);
-        return new PaginateResponse($this->client, $request, $response, $errors);
+        return new PaginateResponse($this->client, $response, $errors);
     }
 }

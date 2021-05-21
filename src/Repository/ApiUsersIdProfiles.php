@@ -44,7 +44,7 @@ class ApiUsersIdProfiles
     /**
      * Associate new profiles to a given API user.
      *
-     * @param ProfileIds|undefined $profileIds The API profile to update
+     * @param ProfileIds|null $profileIds The API profile to update
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.

@@ -14,9 +14,9 @@ class Model implements SerializeModel, Validate
      *
      * @throws DeserializeException If provided an invalid type to a property
      *
-     * @param array|undefined $params Pass this parameter if you want to initial
-     *                                property value from an array. See API
-     *                                reference for all property names and types
+     * @param array|null $params Pass this parameter if you want to initial
+     *                           property value from an array. See API
+     *                           reference for all property names and types
      *
      * @return static
      */

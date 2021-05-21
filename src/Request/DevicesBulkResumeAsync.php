@@ -9,9 +9,9 @@ use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Validator\Rules\Required;
 use Arimac\Sigfox\Validator\Rules\Child;
 /**
- * Restart multiple devices with asynchronous job.
+ * Resume multiple devices with asynchronous job.
  */
-class DevicesBulkRestartBulk extends Request
+class DevicesBulkResumeAsync extends Request
 {
     /**
      * list of device's identifier (hexadecimal format)
@@ -20,7 +20,7 @@ class DevicesBulkRestartBulk extends Request
      */
     protected ?DeviceActionJob $devices = null;
     /**
-     * Group Identifier use to restart multiple devices
+     * Group Identifier use to resume multiple devices
      *
      * @var string
      */
@@ -59,7 +59,7 @@ class DevicesBulkRestartBulk extends Request
     /**
      * Setter for groupId
      *
-     * @param string $groupId Group Identifier use to restart multiple devices
+     * @param string $groupId Group Identifier use to resume multiple devices
      *
      * @return self To use in method chains
      */
@@ -73,7 +73,7 @@ class DevicesBulkRestartBulk extends Request
      *
      * @internal
      *
-     * @return string Group Identifier use to restart multiple devices
+     * @return string Group Identifier use to resume multiple devices
      */
     public function getGroupId() : ?string
     {

@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Response\Paginated;
 
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Request;
+use InvalidArgumentException;
 
 /**
  * A helper to handle paginations
@@ -23,10 +24,6 @@ class PaginateResponse {
     /**
      * @internal
      */
-    protected PaginatedRequest $request;
-    /**
-     * @internal
-     */
     protected array $errors;
     /**
      * @internal
@@ -40,10 +37,6 @@ class PaginateResponse {
      * @internal
      */
     protected int $page = 0;
-    /**
-     * @internal
-     */
-    protected int $startedOffset;
 
     /**
      * Initializing the pagination response
@@ -51,22 +44,20 @@ class PaginateResponse {
      * @internal
      *
      * @param Client $client   To call endpoints
-     * @param PaginatedRequest To fetch request data
      * @param PaginateResponse Initial response
      * @param array            Expected array list
+     *
+     * @throws InvalidArgumentException
      */
     public function __construct(
         Client $client, 
-        PaginatedRequest $request, 
         PaginatedResponse $response, 
         array $errors
     )
     {
         $this->client = $client;
-        $this->request = $request;
         $this->response = $response;
         $this->errors = $errors;
-        $this->startedOffset = $request->getOffset();
         $this->cache[] = $response;
     }
 
@@ -76,7 +67,6 @@ class PaginateResponse {
      * @internal
      */
     public function reset(){
-        $this->request->setOffset($this->startedOffset);
         $this->page = 0;
         $this->response = $this->cache[0];
     }
@@ -118,9 +108,6 @@ class PaginateResponse {
         if(is_null($next)){
             return false;
         }
-        $request = $this->request;
-        $newOffset = $request->getOffset() + $request->getLimit();
-        $request->setOffset($newOffset);
         $this->page++;
 
          // If the response in the cache
@@ -132,7 +119,7 @@ class PaginateResponse {
         /** @var Request $request **/
 
         /** @var PaginatedResponse **/
-        $response = $this->client->call("GET", $next, $request, $this->response::class, $this->errors);
+        $response = $this->client->call("GET", $next, null, $this->response::class, $this->errors);
         // Inserting to the cache if user enabled
         if($this->cacheEnabled){
             $this->cache[] = $response;

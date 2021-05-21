@@ -43,7 +43,7 @@ class UsersIdProfiles
     /**
      * add user roles to a user.
      *
-     * @param array|undefined $userRoles user roles array to add
+     * @param array|null $userRoles user roles array to add
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.

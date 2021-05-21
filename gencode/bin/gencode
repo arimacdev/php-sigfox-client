@@ -4,8 +4,11 @@
 use Arimac\Sigfox\GenCode\Client;
 use Arimac\Sigfox\GenCode\Model;
 use Arimac\Sigfox\GenCode\Config\EnumFields;
+use Arimac\Sigfox\GenCode\Config\ForceTraits;
+use Arimac\Sigfox\GenCode\Config\HttpErrors;
 use Arimac\Sigfox\GenCode\Config\MethodNames;
 use Arimac\Sigfox\GenCode\Config\RewriteRules;
+use Arimac\Sigfox\GenCode\Config\TypeAlias;
 use Arimac\Sigfox\GenCode\Helper;
 use Arimac\Sigfox\GenCode\Repository;
 use Arimac\Sigfox\GenCode\Request;
@@ -15,7 +18,7 @@ $dir = dirname(__DIR__);
 
 require_once $dir . "/vendor/autoload.php";
 
-$openapiFileLocation = $dir . "/tmp/openapi.json";
+$openapiFileLocation = $dir . "/config/openapi.json";
 $openapiUrl = "https://support.sigfox.com/api/apidocs";
 if (!file_exists($openapiFileLocation)) {
     file_put_contents($openapiFileLocation, fopen($openapiUrl, 'r'));
@@ -32,14 +35,13 @@ $openapi = json_decode( file_get_contents($openapiFileLocation) , true);
 EnumFields::initialize();
 RewriteRules::initialize();
 MethodNames::initialize();
-
-$simpleAlias = ["Resources", "Resource", "Actions", "Action"];
+ForceTraits::initialize();
+TypeAlias::initialize();
+HttpErrors::initialize();
 
 foreach ($openapi["definitions"] as $key => $definition) {
     $name = ucfirst($key);
-    if (!in_array($name, $simpleAlias)) {
-        $defClass = Model::fromArray("Arimac\\Sigfox\\Model\\$name", $definition);
-    }
+    $defClass = Model::fromArray("Arimac\\Sigfox\\Model\\$name", $definition);
 }
 
 foreach ($openapi["paths"] as $endpoint => $operations){
@@ -57,17 +59,6 @@ $repositories = [];
 
 $client = new Client("Arimac\\Sigfox", "Sigfox", Helper::normalizeDocComment("Client for sigfox API"));
 $client->extend("Arimac\\Sigfox\\SigfoxExt");
-
-$errors = [
-    400=> "Arimac\\Sigfox\\Exception\\Response\\BadRequestException",
-    401=> "Arimac\\Sigfox\\Exception\\Response\\UnauthorizedException",
-    403=> "Arimac\\Sigfox\\Exception\\Response\\ForbiddenException",
-    404=> "Arimac\\Sigfox\\Exception\\Response\\NotFoundException",
-    405=> "Arimac\\Sigfox\\Exception\\Response\\MethodNotAllowedException",
-    409=> "Arimac\\Sigfox\\Exception\\Response\\ConflictException",
-    412=> "Arimac\\Sigfox\\Exception\\Response\\PreconditionFailedException",
-    500=> "Arimac\\Sigfox\\Exception\\Response\\InternalServerException"
-];
 
 foreach ($openapi["paths"] as $endpoint => $path) {
     $rewrite = RewriteRules::rewrite($endpoint);
@@ -150,7 +141,7 @@ foreach ($openapi["paths"] as $endpoint => $path) {
         $methodName = MethodNames::getMethodName($endpoint, $requestMethod, $description);
 
         $requestClassName = $repoName . ucfirst($methodName);
-
+       
         $operation = $path[$requestMethod];
 
         $responseModel=null;
@@ -167,7 +158,7 @@ foreach ($openapi["paths"] as $endpoint => $path) {
                 $responseTypeNullable = true;    
             }
             if($statusCode>=400){
-                $expectedErrors[(int)$statusCode] = $errors[(int) $statusCode];
+                $expectedErrors[(int)$statusCode] = HttpErrors::getError((string) $statusCode);
             }
         }
 
@@ -195,3 +186,4 @@ foreach ($repositories as $repoName => $repo) {
 EnumFields::save();
 RewriteRules::save();
 MethodNames::save();
+TypeAlias::save();

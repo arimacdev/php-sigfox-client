@@ -11,7 +11,7 @@ use Arimac\Sigfox\Validator\Rules\Child;
 /**
  * Suspend multiple devices with asynchronous job
  */
-class DevicesBulkSuspend extends Request
+class DevicesBulkSuspendAsync extends Request
 {
     /**
      * list of device's identifier (hexadecimal format)

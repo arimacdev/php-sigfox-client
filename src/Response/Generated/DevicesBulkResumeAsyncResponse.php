@@ -4,7 +4,7 @@ namespace Arimac\Sigfox\Response\Generated;
 
 use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
-class DevicesBulkUnsubscribeResponse extends Model
+class DevicesBulkResumeAsyncResponse extends Model
 {
     /**
      * jobId (to use in job status request)

@@ -3,10 +3,10 @@
 namespace Arimac\Sigfox\Model;
 
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
-class ProviderCreation extends BaseProvider
+class MaintenanceCreation extends BaseMaintenance
 {
     /**
-     * identifier of the group of this provider
+     * identifier of the group of this maintenance
      *
      * @var string
      */
@@ -14,7 +14,7 @@ class ProviderCreation extends BaseProvider
     /**
      * Setter for groupId
      *
-     * @param string $groupId identifier of the group of this provider
+     * @param string $groupId identifier of the group of this maintenance
      *
      * @return self To use in method chains
      */
@@ -26,7 +26,7 @@ class ProviderCreation extends BaseProvider
     /**
      * Getter for groupId
      *
-     * @return string identifier of the group of this provider
+     * @return string identifier of the group of this maintenance
      */
     public function getGroupId() : ?string
     {

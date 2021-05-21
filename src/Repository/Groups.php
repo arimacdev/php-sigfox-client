@@ -58,20 +58,15 @@ class Groups
      */
     public function list(?GroupsList $request = null) : PaginateResponse
     {
-        if (!isset($request)) {
-            $request = new GroupsList();
-            $request->setLimit(100);
-            $request->setOffset(0);
-        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', '/groups/', $request, GroupsListResponse::class, $errors);
-        return new PaginateResponse($this->client, $request, $response, $errors);
+        return new PaginateResponse($this->client, $response, $errors);
     }
     /**
      * Create a new group.
      *
-     * @param CommonGroupCreate|undefined $group
+     * @param CommonGroupCreate|null $group
      *
      * @return string The new created group identifier
      *

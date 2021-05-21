@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Model;
 
-use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Validator\Rules\Child;

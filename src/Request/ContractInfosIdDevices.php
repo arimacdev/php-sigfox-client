@@ -3,13 +3,12 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Response\Paginated\PaginatedRequest;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Validator\Rules\OneOf;
 /**
  * Retrieve a list of devices according to visibility permissions and request filters.
  */
-class ContractInfosIdDevices extends Request implements PaginatedRequest
+class ContractInfosIdDevices extends Request
 {
     /**
      * Returns only devices of the given device type

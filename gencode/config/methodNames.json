@@ -101,25 +101,25 @@
         "post": "replace"
     },
     "\/devices\/bulk\/restart": {
-        "post": "restartBulk"
+        "post": "restartAsync"
     },
     "\/devices\/bulk\/restart\/{jobId}": {
         "get": "get"
     },
     "\/devices\/bulk\/suspend": {
-        "post": "suspend"
+        "post": "suspendAsync"
     },
     "\/devices\/bulk\/suspend\/{jobId}": {
         "get": "get"
     },
     "\/devices\/bulk\/resume": {
-        "post": "resume"
+        "post": "resumeAsync"
     },
     "\/devices\/bulk\/resume\/{jobId}": {
         "get": "get"
     },
     "\/devices\/bulk\/unsubscribe": {
-        "post": "unsubscribe"
+        "post": "unsubscribeAsync"
     },
     "\/devices\/bulk\/unsubscribe\/{jobId}": {
         "get": "get"
@@ -218,5 +218,9 @@
     },
     "\/users\/{id}\/profiles\/{profileId}": {
         "delete": "delete"
+    },
+    "\/operators\/{id}": {
+        "get": "get",
+        "put": "update"
     }
 }

@@ -46,8 +46,8 @@ class DevicesIdCertificate
     /**
      * Retrieve the modem certificate associated with a device.
      *
-     * @param string|undefined $fields Defines the other available fields to be returned in the response.
-     *                                 
+     * @param string|null $fields Defines the other available fields to be returned in the response.
+     *                            
      *
      * @return ModemCertificate
      *
@@ -69,8 +69,8 @@ class DevicesIdCertificate
     /**
      * Retrieve the product certificate associated with a device already registered.
      *
-     * @param string|undefined $fields Defines the other available fields to be returned in the response.
-     *                                 
+     * @param string|null $fields Defines the other available fields to be returned in the response.
+     *                            
      *
      * @return ProductCertificate
      *

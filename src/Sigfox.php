@@ -8,6 +8,7 @@ use Arimac\Sigfox\Repository\Coverages;
 use Arimac\Sigfox\Repository\Devices;
 use Arimac\Sigfox\Repository\DeviceTypes;
 use Arimac\Sigfox\Repository\Groups;
+use Arimac\Sigfox\Repository\Operators;
 use Arimac\Sigfox\Repository\Profiles;
 use Arimac\Sigfox\Repository\Tiles;
 use Arimac\Sigfox\Repository\Users;
@@ -57,6 +58,13 @@ class Sigfox extends SigfoxExt
     public function groups() : Groups
     {
         return new Groups($this->client);
+    }
+    /**
+     * @return Operators
+     */
+    public function operators() : Operators
+    {
+        return new Operators($this->client);
     }
     /**
      * @return Profiles

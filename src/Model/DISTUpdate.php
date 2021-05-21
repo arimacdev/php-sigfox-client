@@ -3,13 +3,14 @@
 namespace Arimac\Sigfox\Model;
 
 use Arimac\Sigfox\Extendable;
+use Arimac\Sigfox\ExtendableImpl;
 /**
  * Defines the DIST group's update properties
  */
-class DISTUpdate extends CommonGroupUpdate
+class DISTUpdate extends CommonGroupUpdate implements ExtendableImpl
 {
     use Extendable;
-    protected ?bool $extendable = true;
+    protected bool $extendable = true;
     /**
      * @inheritdoc
      *

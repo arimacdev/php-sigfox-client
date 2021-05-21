@@ -1,0 +1,10 @@
+{
+  "400": "Arimac\\Sigfox\\Exception\\Response\\BadRequestException",
+  "401": "Arimac\\Sigfox\\Exception\\Response\\UnauthorizedException",
+  "403": "Arimac\\Sigfox\\Exception\\Response\\ForbiddenException",
+  "404": "Arimac\\Sigfox\\Exception\\Response\\NotFoundException",
+  "405": "Arimac\\Sigfox\\Exception\\Response\\MethodNotAllowedException",
+  "409": "Arimac\\Sigfox\\Exception\\Response\\ConflictException",
+  "412": "Arimac\\Sigfox\\Exception\\Response\\PreconditionFailedException",
+  "500": "Arimac\\Sigfox\\Exception\\Response\\InternalServerException"
+}

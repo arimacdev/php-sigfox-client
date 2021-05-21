@@ -1,0 +1,10 @@
+{
+    "forceTraits":[
+        "Arimac\\Sigfox\\Model\\BillableGroup",
+        "Arimac\\Sigfox\\Model\\CallbackEmail",
+        "Arimac\\Sigfox\\Model\\GroupCallbackEmail",
+        "Arimac\\Sigfox\\Model\\CommonApiUser",
+        "Arimac\\Sigfox\\Model\\SingleDeviceFields",
+        "Arimac\\Sigfox\\Extendable"
+    ]
+}

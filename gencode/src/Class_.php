@@ -140,14 +140,19 @@ class Class_
         string $name,
         string $type,
         ?string $docComment = null,
-        $value = null
+        $value = null,
+        bool $nullable = true
     ) {
         $property = $this->factory->property($name);
         $property->makeProtected();
         if($value){
             $property->setDefault($value);
         }
-        $property->setType(new NullableType($type));
+        if($nullable){
+            $property->setType(new NullableType($type));
+        } else {
+            $property->setType($type);
+        }
         if ($docComment) {
             $property->setDocComment($docComment);
         }

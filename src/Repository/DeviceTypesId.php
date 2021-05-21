@@ -76,7 +76,7 @@ class DeviceTypesId
     /**
      * Update a given device type.
      *
-     * @param DeviceTypeUpdate|undefined $deviceType The device type to update
+     * @param DeviceTypeUpdate|null $deviceType The device type to update
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -107,7 +107,10 @@ class DeviceTypesId
         $this->client->call('delete', Helper::bindUrlParams('/device-types/{id}', $this->id), null, null, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
     /**
-     * Retrieve a list of messages for a given device types with a 3-day history.
+     * Retrieve a list of messages for a given device types. SNR will be deprecated (see
+     * [Newsletter](https://backend.sigfox.com/welcome/news) for details). To monitor radio link quality, please use
+     * the [Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is
+     * more relevant than SNR in Sigfox network.
      *
      * @param DeviceTypesIdMessages $request The query and body parameters to pass
      *
@@ -123,18 +126,16 @@ class DeviceTypesId
      */
     public function messages(?DeviceTypesIdMessages $request = null) : PaginateResponse
     {
-        if (!isset($request)) {
-            $request = new DeviceTypesIdMessages();
-            $request->setLimit(100);
-            $request->setOffset(0);
-        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', Helper::bindUrlParams('/device-types/{id}/messages', $this->id), $request, DeviceTypesIdMessagesResponse::class, $errors);
-        return new PaginateResponse($this->client, $request, $response, $errors);
+        return new PaginateResponse($this->client, $response, $errors);
     }
     /**
-     * Retrieve a list of undelivered callback messages for a given device types.
+     * Retrieve a list of undelivered callback messages for a given device types. SNR will be deprecated (see
+     * [Newsletter](https://backend.sigfox.com/welcome/news) for details). To monitor radio link quality, please use
+     * the [Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is
+     * more relevant than SNR in Sigfox network.
      *
      * @param DeviceTypesIdCallbacksNotDelivered $request The query and body parameters to pass
      *
@@ -150,15 +151,10 @@ class DeviceTypesId
      */
     public function callbacksNotDelivered(?DeviceTypesIdCallbacksNotDelivered $request = null) : PaginateResponse
     {
-        if (!isset($request)) {
-            $request = new DeviceTypesIdCallbacksNotDelivered();
-            $request->setLimit(100);
-            $request->setOffset(0);
-        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', Helper::bindUrlParams('/device-types/{id}/callbacks-not-delivered', $this->id), $request, DeviceTypesIdCallbacksNotDeliveredResponse::class, $errors);
-        return new PaginateResponse($this->client, $request, $response, $errors);
+        return new PaginateResponse($this->client, $response, $errors);
     }
     /**
      * @return DeviceTypesIdCallbacks

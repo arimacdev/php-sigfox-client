@@ -69,7 +69,7 @@ class CoveragesGlobalPredictions
      * For more information please refer to the [Global Coverage API
      * article](https://support.sigfox.com/docs/global-coverage-api).
      *
-     * @param GlobalCoverageRequest|undefined $payload
+     * @param GlobalCoverageRequest|null $payload
      *
      * @return GlobalCoverageResponse
      *
@@ -93,7 +93,7 @@ class CoveragesGlobalPredictions
      * For more information please refer to the [Global Coverage API
      * article](https://support.sigfox.com/docs/global-coverage-api).
      *
-     * @param GlobalCoverageRequest|undefined $payload
+     * @param GlobalCoverageRequest|null $payload
      *
      * @return string jobId provided to the customer to request the job status and results
      *

@@ -50,7 +50,7 @@ class UsersIdProfilesProfileId
     /**
      * Delete profiles or a given profile associated to the groupId
      *
-     * @param string|undefined $groupId The group identifier
+     * @param string|null $groupId The group identifier
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.

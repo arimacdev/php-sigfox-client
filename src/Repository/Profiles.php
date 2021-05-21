@@ -50,15 +50,10 @@ class Profiles
      */
     public function list(?ProfilesList $request = null) : PaginateResponse
     {
-        if (!isset($request)) {
-            $request = new ProfilesList();
-            $request->setLimit(100);
-            $request->setOffset(0);
-        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', '/profiles/', $request, ProfilesListResponse::class, $errors);
-        return new PaginateResponse($this->client, $request, $response, $errors);
+        return new PaginateResponse($this->client, $response, $errors);
     }
     /**
      * Find by id

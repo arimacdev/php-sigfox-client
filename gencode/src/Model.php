@@ -3,6 +3,8 @@
 namespace Arimac\Sigfox\GenCode;
 
 use Arimac\Sigfox\GenCode\Config\EnumFields;
+use Arimac\Sigfox\GenCode\Config\ForceTraits;
+use Arimac\Sigfox\GenCode\Config\TypeAlias;
 use PhpParser\BuilderFactory;
 use PhpParser\Node\Expr\Assign;
 use PhpParser\Node\Expr\Variable;
@@ -11,35 +13,17 @@ use PhpParser\Node\Stmt\Return_;
 
 class Model extends Class_
 {
-    protected $getter = true;
-
-    protected $forceTraits = [
-        "BillableGroup",
-        "CallbackEmail",
-        "GroupCallbackEmail",
-        "ProfileIds",
-        "SingleDeviceFields",
-        "Extendable"
-    ];
-
-    protected static $aliases = [
-        "Action" => "string",
-        "Actions" => "string[]",
-        "Resource" => "string[]",
-        "Resources" => "string[]"
-    ];
-
     public function __construct(string $namespaceName, string $name, ?string $docComment = null)
     {
         $this->factory = new BuilderFactory;
         $this->namespaceName = $namespaceName;
         $this->namespace = $this->factory->namespace($namespaceName);
-        if (in_array($name, $this->forceTraits)) {
+        $this->name = $name;
+        if (ForceTraits::exist($this->getName())) {
             $this->class = $this->factory->trait($name);
         } else {
             $this->class = $this->factory->class($name);
         }
-        $this->name = $name;
         if ($docComment) {
             $this->class->setDocComment($docComment);
         }
@@ -112,7 +96,7 @@ class Model extends Class_
         ?string $docComment = null
     ) {
         $thisMethodName = $methodName;
-        if (in_array($this->name, $this->forceTraits)) {
+        if (ForceTraits::exist($this->getName())) {
             $thisMethodName .= $this->name;
         }
 
@@ -121,7 +105,7 @@ class Model extends Class_
         if (count($extends)) {
             foreach ($extends as $extend) {
                 $extend = Helper::defToName($extend);
-                if (in_array($extend, $this->forceTraits)) {
+                if (ForceTraits::exist("Arimac\\Sigfox\\Model\\".$extend)) {
                     $stmts[] = new Assign(
                         new Variable($variableName),
                         $this->factory->funcCall(
@@ -268,22 +252,23 @@ class Model extends Class_
 
     public function extend(string $name): bool
     {
-        $name = $this->useType($name);
-        if (in_array($name, $this->forceTraits)) {
+        if (ForceTraits::exist($name)) {
+            $name = $this->useType($name);
             $useTrait = $this->factory->useTrait($name);
             $this->class->addStmt($useTrait);
             return false;
         } else {
-            if (!in_array($this->name, $this->forceTraits)) {
+            if (!ForceTraits::exist($this->getName())) {
+                $name = $this->useType($name);
                 $this->class->extend($name);
             }
             return true;
         }
     }
 
-    public function addProperty(string $name, string $type, ?string $docComment = null, $value = null)
+    public function addProperty(string $name, string $type, ?string $docComment = null, $value = null, bool $nullable=true)
     {
-        parent::addProperty($name, $type, $docComment, $this->factory->val($value));
+        parent::addProperty($name, $type, $docComment, $this->factory->val($value), $nullable);
     }
 
     protected static function getValidations(array $definition, $required = false): array
@@ -364,21 +349,19 @@ class Model extends Class_
             }
         } else if (isset($definition["\$ref"])) {
             $defClassName = Helper::defToName($definition["\$ref"]);
-            if (isset(self::$aliases[$defClassName])) {
-                return self::$aliases[$defClassName];
-            }
-            return "Arimac\\Sigfox\\Model\\" . $defClassName;
+            $className =  "Arimac\\Sigfox\\Model\\" . $defClassName;
+            return TypeAlias::getAlias($className)??$className;
         } else if (isset($definition["schema"]) && isset($definition["schema"]["\$ref"])) {
             $defClassName = Helper::defToName($definition["schema"]["\$ref"]);
-            if (isset(self::$aliases[$defClassName])) {
-                return self::$aliases[$defClassName];
-            }
-            return "Arimac\\Sigfox\\Model\\" . $defClassName;
+            $className =  "Arimac\\Sigfox\\Model\\" . $defClassName;
+            return TypeAlias::getAlias($className)??$className;
         }
 
         if (count($extends) === 1 && empty($properties) && !$extendable) {
-            $className = Helper::defToName($extends[0]);
-            return "Arimac\\Sigfox\\Model\\" . $className;
+            $newClassName = Helper::defToName($extends[0]);
+            $alias =  "Arimac\\Sigfox\\Model\\" . $newClassName;
+            TypeAlias::addAlias($name, $alias);
+            return $alias;
         }
 
         if (empty($properties) && empty($extends)) {
@@ -492,7 +475,8 @@ class Model extends Class_
 
         if ($extendable) {
             $defClass->extend("Arimac\\Sigfox\\Extendable");
-            $defClass->addProperty("extendable", "bool", null, true);
+            $defClass->implement("Arimac\\Sigfox\\ExtendableImpl");
+            $defClass->addProperty("extendable", "bool", null, true, false);
         }
 
         if (count($serialize) || count($extends)) {

@@ -52,15 +52,10 @@ class ContractInfos
      */
     public function list(?ContractInfosList $request = null) : PaginateResponse
     {
-        if (!isset($request)) {
-            $request = new ContractInfosList();
-            $request->setLimit(100);
-            $request->setOffset(0);
-        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', '/contract-infos/', $request, ContractInfosListResponse::class, $errors);
-        return new PaginateResponse($this->client, $request, $response, $errors);
+        return new PaginateResponse($this->client, $response, $errors);
     }
     /**
      * Find by id

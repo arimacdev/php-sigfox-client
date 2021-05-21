@@ -48,7 +48,10 @@ class DevicesIdMessages
         $this->id = $id;
     }
     /**
-     * Retrieve a list of messages for a given device according to request filters, with a 3-day history.
+     * Retrieve a list of messages for a given device according to request filters. SNR will be deprecated (see
+     * [Newsletter](https://backend.sigfox.com/welcome/news) for details). To monitor radio link quality, please use
+     * the [Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is
+     * more relevant than SNR in Sigfox network.
      *
      * @param DevicesIdMessagesList $request The query and body parameters to pass
      *
@@ -65,15 +68,10 @@ class DevicesIdMessages
      */
     public function list(?DevicesIdMessagesList $request = null) : PaginateResponse
     {
-        if (!isset($request)) {
-            $request = new DevicesIdMessagesList();
-            $request->setLimit(100);
-            $request->setOffset(0);
-        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 412 => PreconditionFailedException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', Helper::bindUrlParams('/devices/{id}/messages', $this->id), $request, DevicesIdMessagesListResponse::class, $errors);
-        return new PaginateResponse($this->client, $request, $response, $errors);
+        return new PaginateResponse($this->client, $response, $errors);
     }
     /**
      * Return the number of messages for a given device, for the last day, last week and last month.

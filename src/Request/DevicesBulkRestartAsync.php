@@ -3,24 +3,24 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Model\BulkUnsubscribe;
+use Arimac\Sigfox\Model\DeviceActionJob;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Validator\Rules\Required;
 use Arimac\Sigfox\Validator\Rules\Child;
 /**
- * Unsubscribe multiple devices with asynchronous job.
+ * Restart multiple devices with asynchronous job.
  */
-class DevicesBulkUnsubscribe extends Request
+class DevicesBulkRestartAsync extends Request
 {
     /**
-     * array of device's identifier (hexadecimal format) with unsubscribtion time
+     * list of device's identifier (hexadecimal format)
      *
-     * @var BulkUnsubscribe
+     * @var DeviceActionJob
      */
-    protected ?BulkUnsubscribe $devices = null;
+    protected ?DeviceActionJob $devices = null;
     /**
-     * Group Identifier use to unsubscribe multiple devices
+     * Group Identifier use to restart multiple devices
      *
      * @var string
      */
@@ -36,11 +36,11 @@ class DevicesBulkUnsubscribe extends Request
     /**
      * Setter for devices
      *
-     * @param BulkUnsubscribe $devices array of device's identifier (hexadecimal format) with unsubscribtion time
+     * @param DeviceActionJob $devices list of device's identifier (hexadecimal format)
      *
      * @return self To use in method chains
      */
-    public function setDevices(?BulkUnsubscribe $devices) : self
+    public function setDevices(?DeviceActionJob $devices) : self
     {
         $this->devices = $devices;
         return $this;
@@ -50,16 +50,16 @@ class DevicesBulkUnsubscribe extends Request
      *
      * @internal
      *
-     * @return BulkUnsubscribe array of device's identifier (hexadecimal format) with unsubscribtion time
+     * @return DeviceActionJob list of device's identifier (hexadecimal format)
      */
-    public function getDevices() : ?BulkUnsubscribe
+    public function getDevices() : ?DeviceActionJob
     {
         return $this->devices;
     }
     /**
      * Setter for groupId
      *
-     * @param string $groupId Group Identifier use to unsubscribe multiple devices
+     * @param string $groupId Group Identifier use to restart multiple devices
      *
      * @return self To use in method chains
      */
@@ -73,7 +73,7 @@ class DevicesBulkUnsubscribe extends Request
      *
      * @internal
      *
-     * @return string Group Identifier use to unsubscribe multiple devices
+     * @return string Group Identifier use to restart multiple devices
      */
     public function getGroupId() : ?string
     {
@@ -86,7 +86,7 @@ class DevicesBulkUnsubscribe extends Request
      */
     public function getSerializeMetaData() : array
     {
-        $serializers = array('devices' => new ClassSerializer(BulkUnsubscribe::class), 'groupId' => new PrimitiveSerializer('string'));
+        $serializers = array('devices' => new ClassSerializer(DeviceActionJob::class), 'groupId' => new PrimitiveSerializer('string'));
         return $serializers;
     }
     /**

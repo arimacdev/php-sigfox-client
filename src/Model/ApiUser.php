@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Model;
 
+use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
@@ -10,8 +11,9 @@ use Arimac\Sigfox\Validator\Rules\ChildSet;
 /**
  * Defines the API user properties
  */
-class ApiUser extends CommonApiUser
+class ApiUser extends Model
 {
+    use CommonApiUser;
     /**
      * @var MinGroup
      */
@@ -201,7 +203,7 @@ class ApiUser extends CommonApiUser
     public function getSerializeMetaData() : array
     {
         $serializers = array('group' => new ClassSerializer(MinGroup::class), 'creationTime' => new PrimitiveSerializer('int'), 'id' => new PrimitiveSerializer('string'), 'accessToken' => new PrimitiveSerializer('string'), 'profiles' => new ArraySerializer(new ClassSerializer(MinProfile::class)), 'actions' => new ArraySerializer(new PrimitiveSerializer('string')), 'resources' => new ArraySerializer(new PrimitiveSerializer('string')));
-        $serializers = array_merge($serializers, parent::getSerializeMetaData());
+        $serializers = array_merge($serializers, $this->getSerializeMetaDataCommonApiUser());
         return $serializers;
     }
     /**
@@ -212,7 +214,7 @@ class ApiUser extends CommonApiUser
     public function getValidationMetaData() : array
     {
         $rules = array('group' => array(new Child()), 'profiles' => array(new ChildSet()));
-        $rules = array_merge($rules, parent::getValidationMetaData());
+        $rules = array_merge($rules, $this->getValidationMetaDataCommonApiUser());
         return $rules;
     }
 }

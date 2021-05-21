@@ -3,13 +3,15 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Response\Paginated\PaginatedRequest;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Validator\Rules\OneOf;
 /**
- * Retrieve a list of messages for a given device types with a 3-day history.
+ * Retrieve a list of messages for a given device types. SNR will be deprecated (see
+ * [Newsletter](https://backend.sigfox.com/welcome/news) for details). To monitor radio link quality, please use the
+ * [Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is more
+ * relevant than SNR in Sigfox network.
  */
-class DeviceTypesIdMessages extends Request implements PaginatedRequest
+class DeviceTypesIdMessages extends Request
 {
     /**
      * Defines the other available API user's fields to be returned in the response.

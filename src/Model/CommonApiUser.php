@@ -2,13 +2,12 @@
 
 namespace Arimac\Sigfox\Model;
 
-use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Validator\Rules\MaxLength;
 /**
  * Defines the generic API user properties
  */
-class CommonApiUser extends Model
+trait CommonApiUser
 {
     /**
      * The API user name
@@ -69,7 +68,7 @@ class CommonApiUser extends Model
      *
      * @internal
      */
-    public function getSerializeMetaData() : array
+    public function getSerializeMetaDataCommonApiUser() : array
     {
         $serializers = array('name' => new PrimitiveSerializer('string'), 'timezone' => new PrimitiveSerializer('string'));
         return $serializers;
@@ -79,7 +78,7 @@ class CommonApiUser extends Model
      *
      * @internal
      */
-    public function getValidationMetaData() : array
+    public function getValidationMetaDataCommonApiUser() : array
     {
         $rules = array('name' => array(new MaxLength(100)));
         return $rules;

@@ -16,7 +16,7 @@ use Arimac\Sigfox\Exception\Response\InternalServerException;
 use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Model\UserUpdate;
 use Arimac\Sigfox\Request\UsersIdUpdate;
-use Arimac\Sigfox\Model\UpdateResponse;
+use Arimac\Sigfox\Model\BaseResponse;
 class UsersId
 {
     /**
@@ -67,9 +67,9 @@ class UsersId
     /**
      * Update a given user.
      *
-     * @param UserUpdate|undefined $user The user to update
+     * @param UserUpdate|null $user The user to update
      *
-     * @return UpdateResponse
+     * @return BaseResponse
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -80,11 +80,11 @@ class UsersId
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function update(?UserUpdate $user) : ?UpdateResponse
+    public function update(?UserUpdate $user) : ?BaseResponse
     {
         $request = new UsersIdUpdate();
         $request->setUser($user);
-        return $this->client->call('put', Helper::bindUrlParams('/users/{id}', $this->id), $request, UpdateResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        return $this->client->call('put', Helper::bindUrlParams('/users/{id}', $this->id), $request, BaseResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
     /**
      * Delete a given user.

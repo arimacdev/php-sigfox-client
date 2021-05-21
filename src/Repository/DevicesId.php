@@ -79,7 +79,7 @@ class DevicesId
     /**
      * Update a given device.
      *
-     * @param DeviceUpdateJob|undefined $device The device to update
+     * @param DeviceUpdateJob|null $device The device to update
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -111,7 +111,10 @@ class DevicesId
     }
     /**
      * Retrieve a list of undelivered callbacks and errors for a given device, in reverse chronological order (most
-     * recent message first).
+     * recent message first). SNR will be deprecated (see [Newsletter](https://backend.sigfox.com/welcome/news) for
+     * details). To monitor radio link quality, please use the [Link Quality Indicator
+     * (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is more relevant than SNR in
+     * Sigfox network.
      *
      * @param DevicesIdCallbacksNotDelivered $request The query and body parameters to pass
      *
@@ -127,15 +130,10 @@ class DevicesId
      */
     public function callbacksNotDelivered(?DevicesIdCallbacksNotDelivered $request = null) : PaginateResponse
     {
-        if (!isset($request)) {
-            $request = new DevicesIdCallbacksNotDelivered();
-            $request->setLimit(100);
-            $request->setOffset(0);
-        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', Helper::bindUrlParams('/devices/{id}/callbacks-not-delivered', $this->id), $request, DevicesIdCallbacksNotDeliveredResponse::class, $errors);
-        return new PaginateResponse($this->client, $request, $response, $errors);
+        return new PaginateResponse($this->client, $response, $errors);
     }
     /**
      * @return DevicesIdCertificate
@@ -148,7 +146,7 @@ class DevicesId
      * Retrieve the product certificate associated with a given device ID and PAC, when the device has not already
      * been created on the portal, only in CRA
      *
-     * @param string|undefined $pac The device's PAC (hexadecimal format)
+     * @param string|null $pac The device's PAC (hexadecimal format)
      *
      * @return ProductCertificateWithPacResponse
      *
@@ -212,21 +210,16 @@ class DevicesId
      */
     public function locations(?DevicesIdLocations $request = null) : PaginateResponse
     {
-        if (!isset($request)) {
-            $request = new DevicesIdLocations();
-            $request->setLimit(100);
-            $request->setOffset(0);
-        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', Helper::bindUrlParams('/devices/{id}/locations', $this->id), $request, DevicesIdLocationsResponse::class, $errors);
-        return new PaginateResponse($this->client, $request, $response, $errors);
+        return new PaginateResponse($this->client, $response, $errors);
     }
     /**
      * Set an unsubscription date for the device's token.
      *
-     * @param TokenUnsubscribe|undefined $unsubscriptionTime the unsubscription time (in milliseconds since the Unix
-     *                                                       Epoch)
+     * @param TokenUnsubscribe|null $unsubscriptionTime the unsubscription time (in milliseconds since the Unix
+     *                                                  Epoch)
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.

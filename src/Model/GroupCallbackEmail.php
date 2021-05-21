@@ -2,7 +2,6 @@
 
 namespace Arimac\Sigfox\Model;
 
-use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
  * Callback of email type

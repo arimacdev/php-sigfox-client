@@ -23,14 +23,14 @@ use Arimac\Sigfox\Model\AsynchronousDeviceReplacementJob;
 use Arimac\Sigfox\Request\DevicesBulkReplace;
 use Arimac\Sigfox\Model\ReplaceResponse;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
-use Arimac\Sigfox\Request\DevicesBulkRestartBulk;
-use Arimac\Sigfox\Response\Generated\DevicesBulkRestartBulkResponse;
-use Arimac\Sigfox\Request\DevicesBulkSuspend;
-use Arimac\Sigfox\Response\Generated\DevicesBulkSuspendResponse;
-use Arimac\Sigfox\Request\DevicesBulkResume;
-use Arimac\Sigfox\Response\Generated\DevicesBulkResumeResponse;
-use Arimac\Sigfox\Request\DevicesBulkUnsubscribe;
-use Arimac\Sigfox\Response\Generated\DevicesBulkUnsubscribeResponse;
+use Arimac\Sigfox\Request\DevicesBulkRestartAsync;
+use Arimac\Sigfox\Response\Generated\DevicesBulkRestartAsyncResponse;
+use Arimac\Sigfox\Request\DevicesBulkSuspendAsync;
+use Arimac\Sigfox\Response\Generated\DevicesBulkSuspendAsyncResponse;
+use Arimac\Sigfox\Request\DevicesBulkResumeAsync;
+use Arimac\Sigfox\Response\Generated\DevicesBulkResumeAsyncResponse;
+use Arimac\Sigfox\Request\DevicesBulkUnsubscribeAsync;
+use Arimac\Sigfox\Response\Generated\DevicesBulkUnsubscribeAsyncResponse;
 class DevicesBulk
 {
     /**
@@ -53,7 +53,7 @@ class DevicesBulk
     /**
      * Create multiple new devices with asynchronous job
      *
-     * @param AsynchronousDeviceCreationJob|undefined $devices The devices to create
+     * @param AsynchronousDeviceCreationJob|null $devices The devices to create
      *
      * @return DevicesBulkCreateResponse
      *
@@ -106,7 +106,7 @@ class DevicesBulk
     /**
      * Transfer multiple devices to another device type with asynchronous job
      *
-     * @param AsynchronousDeviceTransferJob|undefined $devices The devices to move
+     * @param AsynchronousDeviceTransferJob|null $devices The devices to move
      *
      * @return DevicesBulkTransferResponse
      *
@@ -128,7 +128,7 @@ class DevicesBulk
     /**
      * Replace multiple devices (moving tokens from one device to another) with synchronous job
      *
-     * @param AsynchronousDeviceReplacementJob|undefined $devicePairs Pairs of source and target devices
+     * @param AsynchronousDeviceReplacementJob|null $devicePairs Pairs of source and target devices
      *
      * @return ReplaceResponse
      *
@@ -150,7 +150,7 @@ class DevicesBulk
     /**
      * Restart multiple devices with asynchronous job.
      *
-     * @param DevicesBulkRestartBulk $request The query and body parameters to pass
+     * @param DevicesBulkRestartAsync $request The query and body parameters to pass
      *
      * @return string jobId (to use in job status request)
      *
@@ -162,10 +162,10 @@ class DevicesBulk
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function restartBulk(?DevicesBulkRestartBulk $request = null) : ?string
+    public function restartAsync(?DevicesBulkRestartAsync $request = null) : ?string
     {
-        /** @var DevicesBulkRestartBulkResponse **/
-        $response = $this->client->call('post', '/devices/bulk/restart', $request, DevicesBulkRestartBulkResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        /** @var DevicesBulkRestartAsyncResponse **/
+        $response = $this->client->call('post', '/devices/bulk/restart', $request, DevicesBulkRestartAsyncResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
         return $response->getJobId();
     }
     /**
@@ -178,7 +178,7 @@ class DevicesBulk
     /**
      * Suspend multiple devices with asynchronous job
      *
-     * @param DevicesBulkSuspend $request The query and body parameters to pass
+     * @param DevicesBulkSuspendAsync $request The query and body parameters to pass
      *
      * @return string jobId (to use in job status request)
      *
@@ -190,10 +190,10 @@ class DevicesBulk
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function suspend(?DevicesBulkSuspend $request = null) : ?string
+    public function suspendAsync(?DevicesBulkSuspendAsync $request = null) : ?string
     {
-        /** @var DevicesBulkSuspendResponse **/
-        $response = $this->client->call('post', '/devices/bulk/suspend', $request, DevicesBulkSuspendResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        /** @var DevicesBulkSuspendAsyncResponse **/
+        $response = $this->client->call('post', '/devices/bulk/suspend', $request, DevicesBulkSuspendAsyncResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
         return $response->getJobId();
     }
     /**
@@ -206,7 +206,7 @@ class DevicesBulk
     /**
      * Resume multiple devices with asynchronous job.
      *
-     * @param DevicesBulkResume $request The query and body parameters to pass
+     * @param DevicesBulkResumeAsync $request The query and body parameters to pass
      *
      * @return string jobId (to use in job status request)
      *
@@ -218,10 +218,10 @@ class DevicesBulk
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function resume(?DevicesBulkResume $request = null) : ?string
+    public function resumeAsync(?DevicesBulkResumeAsync $request = null) : ?string
     {
-        /** @var DevicesBulkResumeResponse **/
-        $response = $this->client->call('post', '/devices/bulk/resume', $request, DevicesBulkResumeResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        /** @var DevicesBulkResumeAsyncResponse **/
+        $response = $this->client->call('post', '/devices/bulk/resume', $request, DevicesBulkResumeAsyncResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
         return $response->getJobId();
     }
     /**
@@ -234,7 +234,7 @@ class DevicesBulk
     /**
      * Unsubscribe multiple devices with asynchronous job.
      *
-     * @param DevicesBulkUnsubscribe $request The query and body parameters to pass
+     * @param DevicesBulkUnsubscribeAsync $request The query and body parameters to pass
      *
      * @return string jobId (to use in job status request)
      *
@@ -246,10 +246,10 @@ class DevicesBulk
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function unsubscribe(?DevicesBulkUnsubscribe $request = null) : ?string
+    public function unsubscribeAsync(?DevicesBulkUnsubscribeAsync $request = null) : ?string
     {
-        /** @var DevicesBulkUnsubscribeResponse **/
-        $response = $this->client->call('post', '/devices/bulk/unsubscribe', $request, DevicesBulkUnsubscribeResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        /** @var DevicesBulkUnsubscribeAsyncResponse **/
+        $response = $this->client->call('post', '/devices/bulk/unsubscribe', $request, DevicesBulkUnsubscribeAsyncResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
         return $response->getJobId();
     }
     /**

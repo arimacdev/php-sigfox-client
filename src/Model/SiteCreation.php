@@ -3,10 +3,11 @@
 namespace Arimac\Sigfox\Model;
 
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
-class HostCreation extends BaseHost
+use Arimac\Sigfox\Validator\Rules\Required;
+class SiteCreation extends SiteUpdate
 {
     /**
-     * identifier of the group of this host
+     * identifier of the group of this site
      *
      * @var string
      */
@@ -14,7 +15,7 @@ class HostCreation extends BaseHost
     /**
      * Setter for groupId
      *
-     * @param string $groupId identifier of the group of this host
+     * @param string $groupId identifier of the group of this site
      *
      * @return self To use in method chains
      */
@@ -26,7 +27,7 @@ class HostCreation extends BaseHost
     /**
      * Getter for groupId
      *
-     * @return string identifier of the group of this host
+     * @return string identifier of the group of this site
      */
     public function getGroupId() : ?string
     {
@@ -42,5 +43,16 @@ class HostCreation extends BaseHost
         $serializers = array('groupId' => new PrimitiveSerializer('string'));
         $serializers = array_merge($serializers, parent::getSerializeMetaData());
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('groupId' => array(new Required()));
+        $rules = array_merge($rules, parent::getValidationMetaData());
+        return $rules;
     }
 }

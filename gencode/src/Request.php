@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\GenCode;
 
 use Arimac\Sigfox\GenCode\Config\EnumFields;
+use Arimac\Sigfox\GenCode\Config\ForceTraits;
 use PhpParser\BuilderFactory;
 
 class Request extends Model
@@ -16,27 +17,15 @@ class Request extends Model
         $this->factory = new BuilderFactory;
         $this->namespaceName = $namespaceName;
         $this->namespace = $this->factory->namespace($namespaceName);
-        if (in_array($name, $this->forceTraits)) {
+        $this->name = $name;
+        if (ForceTraits::exist($this->getName())) {
             $this->class = $this->factory->trait($name);
         } else {
             $this->class = $this->factory->class($name);
             $this->extend("Arimac\\Sigfox\\Request");
         }
-        $this->name = $name;
         if ($docComment) {
             $this->class->setDocComment($docComment);
-        }
-    }
-
-    public function addProperty(
-        string $name,
-        string $type,
-        ?string $docComment = null,
-        $value = null
-    ) {
-        parent::addProperty($name, $type, $docComment, $value);
-        if ($name === "limit") {
-            $this->implement("Arimac\\Sigfox\\Response\\Paginated\\PaginatedRequest");
         }
     }
 
@@ -83,6 +72,7 @@ class Request extends Model
 
                 foreach ($properties as $property) {
                     $propertyName = $property["name"];
+                    /** @var Model|string|null */
                     $type = Model::fromArray($name . "\\" . ucfirst($propertyName), $property);
                     if(is_object($type)){
                         $type = $type->getNamespace()."\\".$type->getClassName();

@@ -18,7 +18,7 @@ class Request extends Model {
      *
      * @internal
      *
-     * @return string|undefined
+     * @return string|null
      */
     public function getBodyField(): ?string {
         return $this->body;

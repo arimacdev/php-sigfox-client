@@ -8,7 +8,10 @@ use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Validator\Rules\Required;
 use Arimac\Sigfox\Validator\Rules\Child;
 /**
- * Update a callback for a given device type
+ * Update a callback for a given device type SNR will be deprecated (see
+ * [Newsletter](https://backend.sigfox.com/welcome/news) for details). To monitor radio link quality, please use the
+ * [Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is more
+ * relevant than SNR in Sigfox network.
  */
 class DeviceTypesIdCallbacksCallbackIdUpdate extends Request
 {

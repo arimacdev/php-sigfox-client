@@ -144,6 +144,7 @@ class Repository extends Class_
         ?string $description = null
     ) {
         if (is_object($request)) {
+            /** @var Request $request **/
             $requestType = $request ? $request->getName() : null;
             $requestProperties = $request ? $request->getProperties() : [];
         } else {
@@ -151,12 +152,14 @@ class Repository extends Class_
             $requestProperties = [];
         }
         if (is_object($response)) {
+            /** @var Response $response **/
             $responseType = $response ? $response->getName() : null;
             $responseProperties = $response ? $response->getProperties() : [];
         } else {
             $responseType = $response;
             $responseProperties = [];
         }
+
         $isPaginated = isset($responseProperties["paging"]);
 
         $endpoint = new String_($endpoint);
@@ -192,7 +195,7 @@ class Repository extends Class_
 
             $usedType = $this->useType($type);
 
-            array_push($docBlockTags, ["param", $usedType . ($required ? "" : "|undefined"), "\$$propertyName", $paramDescription]);
+            array_push($docBlockTags, ["param", $usedType . ($required ? "" : "|null"), "\$$propertyName", $paramDescription]);
 
             $phpType = Helper::toPHPValue($usedType);
 
@@ -225,38 +228,6 @@ class Repository extends Class_
             $param = $this->factory->param("request");
             if (!$required) {
                 $param->setDefault($this->factory->val(null));
-                if ($isPaginated) {
-                    $stmts[] = new If_(
-                        new BooleanNot(
-                            $this->factory->funcCall(
-                                "isset",
-                                [$this->factory->var("request")]
-                            )
-                        ),
-                        [
-                            "stmts" => [
-                                new Expression(new Assign(
-                                    $this->factory->var("request"),
-                                    $this->factory->new($requestType)
-                                )),
-                                new Expression($this->factory->methodCall(
-                                    $this->factory->var("request"),
-                                    "setLimit",
-                                    [
-                                        $this->factory->val(100)
-                                    ]
-                                )),
-                                new Expression($this->factory->methodCall(
-                                    $this->factory->var("request"),
-                                    "setOffset",
-                                    [
-                                        $this->factory->val(0)
-                                    ]
-                                ))
-                            ]
-                        ]
-                    );
-                }
                 $requestType = new NullableType($requestType);
             }
             $param->setType($requestType);
@@ -345,7 +316,6 @@ class Repository extends Class_
                         $this->factory->var("this"),
                         "client"
                     ),
-                    $this->factory->var("request"),
                     $this->factory->var("response"),
                     $this->factory->var("errors")
                 ])

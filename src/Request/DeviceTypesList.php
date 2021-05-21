@@ -3,14 +3,13 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Response\Paginated\PaginatedRequest;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 use Arimac\Sigfox\Validator\Rules\OneOf;
 /**
  * Retrieve a list of device types according to visibility permissions and request filters.
  */
-class DeviceTypesList extends Request implements PaginatedRequest
+class DeviceTypesList extends Request
 {
     /**
      * Regular (raw payload)

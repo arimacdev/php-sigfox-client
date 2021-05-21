@@ -54,20 +54,15 @@ class Devices
      */
     public function list(?DevicesList $request = null) : PaginateResponse
     {
-        if (!isset($request)) {
-            $request = new DevicesList();
-            $request->setLimit(100);
-            $request->setOffset(0);
-        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', '/devices/', $request, DevicesListResponse::class, $errors);
-        return new PaginateResponse($this->client, $request, $response, $errors);
+        return new PaginateResponse($this->client, $response, $errors);
     }
     /**
      * Create a new device.
      *
-     * @param DeviceCreationJob|undefined $device The device to create
+     * @param DeviceCreationJob|null $device The device to create
      *
      * @return string The device's identifier (hexadecimal format)
      *

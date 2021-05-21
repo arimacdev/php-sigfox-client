@@ -7,7 +7,7 @@ use Arimac\Sigfox\Validator\Rules\Required;
 /**
  * Information about satellite internet subscription
  */
-class CreateSatSubscription extends CreateInternetSubscription
+class UpdateSatSubscription extends UpdateInternetSubscription
 {
     /**
      * REQUEST
@@ -26,15 +26,15 @@ class CreateSatSubscription extends CreateInternetSubscription
      */
     public const R_TYPE_HEATING = 0;
     /**
-     * Subscription receiver type
+     * STANDARD
      */
     public const R_TYPE_STANDARD = 1;
     /**
      * Subscription connection status
      * 
-     * - {@see CreateSatSubscription::CONNECTION_STATUS_REQUEST}
-     * - {@see CreateSatSubscription::CONNECTION_STATUS_CREDENTIALS_PROVIDED}
-     * - {@see CreateSatSubscription::CONNECTION_STATUS_KIT_RECEIVED}
+     * - {@see UpdateSatSubscription::CONNECTION_STATUS_REQUEST}
+     * - {@see UpdateSatSubscription::CONNECTION_STATUS_CREDENTIALS_PROVIDED}
+     * - {@see UpdateSatSubscription::CONNECTION_STATUS_KIT_RECEIVED}
      *
      * @var int
      */
@@ -88,8 +88,10 @@ class CreateSatSubscription extends CreateInternetSubscription
      */
     protected ?string $password = null;
     /**
-     * - {@see CreateSatSubscription::R_TYPE_HEATING}
-     * - {@see CreateSatSubscription::R_TYPE_STANDARD}
+     * Subscription receiver type
+     * 
+     * - {@see UpdateSatSubscription::R_TYPE_HEATING}
+     * - {@see UpdateSatSubscription::R_TYPE_STANDARD}
      *
      * @var int
      */
@@ -99,9 +101,9 @@ class CreateSatSubscription extends CreateInternetSubscription
      *
      * @param int $connectionStatus Subscription connection status
      *                              
-     *                              - {@see CreateSatSubscription::CONNECTION_STATUS_REQUEST}
-     *                              - {@see CreateSatSubscription::CONNECTION_STATUS_CREDENTIALS_PROVIDED}
-     *                              - {@see CreateSatSubscription::CONNECTION_STATUS_KIT_RECEIVED}
+     *                              - {@see UpdateSatSubscription::CONNECTION_STATUS_REQUEST}
+     *                              - {@see UpdateSatSubscription::CONNECTION_STATUS_CREDENTIALS_PROVIDED}
+     *                              - {@see UpdateSatSubscription::CONNECTION_STATUS_KIT_RECEIVED}
      *                              
      *
      * @return self To use in method chains
@@ -116,9 +118,9 @@ class CreateSatSubscription extends CreateInternetSubscription
      *
      * @return int Subscription connection status
      *             
-     *             - {@see CreateSatSubscription::CONNECTION_STATUS_REQUEST}
-     *             - {@see CreateSatSubscription::CONNECTION_STATUS_CREDENTIALS_PROVIDED}
-     *             - {@see CreateSatSubscription::CONNECTION_STATUS_KIT_RECEIVED}
+     *             - {@see UpdateSatSubscription::CONNECTION_STATUS_REQUEST}
+     *             - {@see UpdateSatSubscription::CONNECTION_STATUS_CREDENTIALS_PROVIDED}
+     *             - {@see UpdateSatSubscription::CONNECTION_STATUS_KIT_RECEIVED}
      *             
      */
     public function getConnectionStatus() : ?int
@@ -298,9 +300,10 @@ class CreateSatSubscription extends CreateInternetSubscription
     /**
      * Setter for rType
      *
-     * @param int $rType 
-     *                   - {@see CreateSatSubscription::R_TYPE_HEATING}
-     *                   - {@see CreateSatSubscription::R_TYPE_STANDARD}
+     * @param int $rType Subscription receiver type
+     *                   
+     *                   - {@see UpdateSatSubscription::R_TYPE_HEATING}
+     *                   - {@see UpdateSatSubscription::R_TYPE_STANDARD}
      *                   
      *
      * @return self To use in method chains
@@ -313,9 +316,10 @@ class CreateSatSubscription extends CreateInternetSubscription
     /**
      * Getter for rType
      *
-     * @return int 
-     *             - {@see CreateSatSubscription::R_TYPE_HEATING}
-     *             - {@see CreateSatSubscription::R_TYPE_STANDARD}
+     * @return int Subscription receiver type
+     *             
+     *             - {@see UpdateSatSubscription::R_TYPE_HEATING}
+     *             - {@see UpdateSatSubscription::R_TYPE_STANDARD}
      *             
      */
     public function getRType() : ?int

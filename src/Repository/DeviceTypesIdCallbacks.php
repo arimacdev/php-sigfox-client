@@ -62,9 +62,12 @@ class DeviceTypesIdCallbacks
         return $response->getData();
     }
     /**
-     * Create a new callback for a given device type.
+     * Create a new callback for a given device type. SNR will be deprecated (see
+     * [Newsletter](https://backend.sigfox.com/welcome/news) for details). To monitor radio link quality, please use
+     * the [Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is
+     * more relevant than SNR in Sigfox network.
      *
-     * @param CreateCallback|undefined $callback
+     * @param CreateCallback|null $callback
      *
      * @return string The callback's identifier
      *

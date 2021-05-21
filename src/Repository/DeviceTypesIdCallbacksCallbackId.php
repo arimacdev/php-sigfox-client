@@ -53,9 +53,12 @@ class DeviceTypesIdCallbacksCallbackId
         $this->callbackId = $callbackId;
     }
     /**
-     * Update a callback for a given device type
+     * Update a callback for a given device type SNR will be deprecated (see
+     * [Newsletter](https://backend.sigfox.com/welcome/news) for details). To monitor radio link quality, please use
+     * the [Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is
+     * more relevant than SNR in Sigfox network.
      *
-     * @param UpdateCallback|undefined $callback The callback to update
+     * @param UpdateCallback|null $callback The callback to update
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -88,7 +91,7 @@ class DeviceTypesIdCallbacksCallbackId
     /**
      * Enable or disable a callback for a given device type.
      *
-     * @param bool|undefined $enabled True to enable the callback, false to disable it
+     * @param bool|null $enabled True to enable the callback, false to disable it
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.

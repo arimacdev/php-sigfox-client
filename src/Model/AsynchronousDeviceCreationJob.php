@@ -3,10 +3,11 @@
 namespace Arimac\Sigfox\Model;
 
 use Arimac\Sigfox\Extendable;
-class AsynchronousDeviceCreationJob extends BulkDeviceAsynchronousRequest
+use Arimac\Sigfox\ExtendableImpl;
+class AsynchronousDeviceCreationJob extends BulkDeviceAsynchronousRequest implements ExtendableImpl
 {
     use Extendable;
-    protected ?bool $extendable = true;
+    protected bool $extendable = true;
     /**
      * @inheritdoc
      *

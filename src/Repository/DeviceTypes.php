@@ -55,20 +55,15 @@ class DeviceTypes
      */
     public function list(?DeviceTypesList $request = null) : PaginateResponse
     {
-        if (!isset($request)) {
-            $request = new DeviceTypesList();
-            $request->setLimit(100);
-            $request->setOffset(0);
-        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', '/device-types/', $request, DeviceTypesListResponse::class, $errors);
-        return new PaginateResponse($this->client, $request, $response, $errors);
+        return new PaginateResponse($this->client, $response, $errors);
     }
     /**
      * Create a new device type
      *
-     * @param DeviceTypeCreate|undefined $deviceType The device type to create
+     * @param DeviceTypeCreate|null $deviceType The device type to create
      *
      * @return string The new created device type's identifier
      *

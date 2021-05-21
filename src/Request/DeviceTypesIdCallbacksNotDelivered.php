@@ -3,12 +3,14 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Response\Paginated\PaginatedRequest;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 /**
- * Retrieve a list of undelivered callback messages for a given device types.
+ * Retrieve a list of undelivered callback messages for a given device types. SNR will be deprecated (see
+ * [Newsletter](https://backend.sigfox.com/welcome/news) for details). To monitor radio link quality, please use the
+ * [Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is more
+ * relevant than SNR in Sigfox network.
  */
-class DeviceTypesIdCallbacksNotDelivered extends Request implements PaginatedRequest
+class DeviceTypesIdCallbacksNotDelivered extends Request
 {
     /**
      * Starting timestamp (in milliseconds since Unix Epoch).

@@ -3,7 +3,6 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Response\Paginated\PaginatedRequest;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 use Arimac\Sigfox\Validator\Rules\OneOf;
@@ -13,7 +12,7 @@ use Arimac\Sigfox\Validator\Rules\OneOf;
  * retrieve all direct sub-groups under the API user's group.
  * If deep is true, retrieve all sub-groups under either given parent groups or the API user group.
  */
-class GroupsList extends Request implements PaginatedRequest
+class GroupsList extends Request
 {
     /**
      * SO

@@ -1,0 +1,16 @@
+{
+    "Arimac\\Sigfox\\Model\\Action": "string",
+    "Arimac\\Sigfox\\Model\\Actions": "string[]",
+    "Arimac\\Sigfox\\Model\\Resource": "string[]",
+    "Arimac\\Sigfox\\Model\\Resources": "string[]",
+    "Arimac\\Sigfox\\Model\\BaseStationUpdate\\Antenna": "Arimac\\Sigfox\\Model\\Antenna",
+    "Arimac\\Sigfox\\Model\\BaseStation\\Group": "Arimac\\Sigfox\\Model\\MinGroup",
+    "Arimac\\Sigfox\\Model\\BaseStation\\HwFamily": "Arimac\\Sigfox\\Model\\MinHwFamily",
+    "Arimac\\Sigfox\\Model\\BaseStation\\Antenna": "Arimac\\Sigfox\\Model\\Antenna",
+    "Arimac\\Sigfox\\Model\\DeviceMessage\\Device": "Arimac\\Sigfox\\Model\\CommonDevice",
+    "Arimac\\Sigfox\\Model\\DeviceMessage\\DownlinkAnswerStatus": "Arimac\\Sigfox\\Model\\DownlinkAnswerStatus",
+    "Arimac\\Sigfox\\Model\\Rinfo\\BaseStation": "Arimac\\Sigfox\\Model\\MinBaseStationWithType",
+    "Arimac\\Sigfox\\Model\\DownlinkAnswerStatus\\BaseStation": "Arimac\\Sigfox\\Model\\MinBaseStationWithType",
+    "Arimac\\Sigfox\\Model\\SVNOUpdate": "Arimac\\Sigfox\\Model\\CommonGroupUpdate",
+    "Arimac\\Sigfox\\Model\\UpdateResponse": "Arimac\\Sigfox\\Model\\BaseResponse"
+}

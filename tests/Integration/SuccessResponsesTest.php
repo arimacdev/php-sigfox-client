@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Test;
 use Arimac\Sigfox\Model\Device;
 use Arimac\Sigfox\Model\DeviceCreationJob;
 use Arimac\Sigfox\Model\DeviceUpdateJob;
+use Arimac\Sigfox\Request\DevicesList;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Test\Integration\BaseTestCase;
 use GuzzleHttp\Psr7\Request;
@@ -84,7 +85,7 @@ class SuccessResponsesTest extends BaseTestCase {
 
         $responses = array_chunk($devices, 5);
         foreach($responses as $key=> $responseData){
-            $next = $key!==count($responses)-1?"/abc".$key:null;
+            $next = $key!==count($responses)-1?"/abc".$key."?a=123":null;
             $this->mock->append(new Response(
                 200,
                 ["Content-Type"=> "application/json"], 
@@ -99,7 +100,9 @@ class SuccessResponsesTest extends BaseTestCase {
         $devices = $this->setPaginatedResponses();
         $expected = array_chunk($devices, 5); 
 
-        $response = $this->client->devices()->list();
+        $response = $this->client->devices()->list(DevicesList::from([
+            "limit"=>100
+        ]));
         $pages = iterator_to_array($response->pages());
 
         $serializer = new ClassSerializer(Device::class);
@@ -115,14 +118,14 @@ class SuccessResponsesTest extends BaseTestCase {
         $request = $this->history[0]["request"];
         $uri = $request->getUri();
         $this->assertSame("/devices/", $uri->getPath());
-        $this->assertSame("limit=100&offset=0",$uri->getQuery());
+        $this->assertSame("limit=100",$uri->getQuery());
         $this->assertSame("GET", $request->getMethod());
 
         /** @var Request **/
         $request = $this->history[1]["request"];
         $uri = $request->getUri();
         $this->assertSame("/abc0", $uri->getPath());
-        $this->assertSame("limit=100&offset=100",$uri->getQuery());
+        $this->assertSame("a=123",$uri->getQuery());
         $this->assertSame("GET", $request->getMethod());
     }
 
@@ -143,14 +146,13 @@ class SuccessResponsesTest extends BaseTestCase {
         $request = $this->history[0]["request"];
         $uri = $request->getUri();
         $this->assertSame("/devices/", $uri->getPath());
-        $this->assertSame("limit=100&offset=0",$uri->getQuery());
         $this->assertSame("GET", $request->getMethod());
 
         /** @var Request **/
         $request = $this->history[1]["request"];
         $uri = $request->getUri();
         $this->assertSame("/abc0", $uri->getPath());
-        $this->assertSame("limit=100&offset=100",$uri->getQuery());
+        $this->assertSame("a=123",$uri->getQuery());
         $this->assertSame("GET", $request->getMethod());
     }
 

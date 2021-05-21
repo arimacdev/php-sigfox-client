@@ -3,10 +3,11 @@
 namespace Arimac\Sigfox\Model;
 
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
 /**
  * Information about LAN internet subscription
  */
-class LanSubscription extends InternetSubscription
+class CreateLanSubscription extends CreateInternetSubscription
 {
     /**
      * COMPANY
@@ -31,9 +32,9 @@ class LanSubscription extends InternetSubscription
     /**
      * Subscription network type
      * 
-     * - {@see LanSubscription::NETWORK_TYPE_COMPANY}
-     * - {@see LanSubscription::NETWORK_TYPE_OTHER}
-     * - {@see LanSubscription::NETWORK_TYPE_RESIDENT}
+     * - {@see CreateLanSubscription::NETWORK_TYPE_COMPANY}
+     * - {@see CreateLanSubscription::NETWORK_TYPE_OTHER}
+     * - {@see CreateLanSubscription::NETWORK_TYPE_RESIDENT}
      *
      * @var int
      */
@@ -41,8 +42,8 @@ class LanSubscription extends InternetSubscription
     /**
      * Subscription connection type
      * 
-     * - {@see LanSubscription::ETH_CONNECTION_TYPE_DHCP}
-     * - {@see LanSubscription::ETH_CONNECTION_TYPE_STATIC}
+     * - {@see CreateLanSubscription::ETH_CONNECTION_TYPE_DHCP}
+     * - {@see CreateLanSubscription::ETH_CONNECTION_TYPE_STATIC}
      *
      * @var int
      */
@@ -64,9 +65,9 @@ class LanSubscription extends InternetSubscription
      *
      * @param int $networkType Subscription network type
      *                         
-     *                         - {@see LanSubscription::NETWORK_TYPE_COMPANY}
-     *                         - {@see LanSubscription::NETWORK_TYPE_OTHER}
-     *                         - {@see LanSubscription::NETWORK_TYPE_RESIDENT}
+     *                         - {@see CreateLanSubscription::NETWORK_TYPE_COMPANY}
+     *                         - {@see CreateLanSubscription::NETWORK_TYPE_OTHER}
+     *                         - {@see CreateLanSubscription::NETWORK_TYPE_RESIDENT}
      *                         
      *
      * @return self To use in method chains
@@ -81,9 +82,9 @@ class LanSubscription extends InternetSubscription
      *
      * @return int Subscription network type
      *             
-     *             - {@see LanSubscription::NETWORK_TYPE_COMPANY}
-     *             - {@see LanSubscription::NETWORK_TYPE_OTHER}
-     *             - {@see LanSubscription::NETWORK_TYPE_RESIDENT}
+     *             - {@see CreateLanSubscription::NETWORK_TYPE_COMPANY}
+     *             - {@see CreateLanSubscription::NETWORK_TYPE_OTHER}
+     *             - {@see CreateLanSubscription::NETWORK_TYPE_RESIDENT}
      *             
      */
     public function getNetworkType() : ?int
@@ -95,8 +96,8 @@ class LanSubscription extends InternetSubscription
      *
      * @param int $ethConnectionType Subscription connection type
      *                               
-     *                               - {@see LanSubscription::ETH_CONNECTION_TYPE_DHCP}
-     *                               - {@see LanSubscription::ETH_CONNECTION_TYPE_STATIC}
+     *                               - {@see CreateLanSubscription::ETH_CONNECTION_TYPE_DHCP}
+     *                               - {@see CreateLanSubscription::ETH_CONNECTION_TYPE_STATIC}
      *                               
      *
      * @return self To use in method chains
@@ -111,8 +112,8 @@ class LanSubscription extends InternetSubscription
      *
      * @return int Subscription connection type
      *             
-     *             - {@see LanSubscription::ETH_CONNECTION_TYPE_DHCP}
-     *             - {@see LanSubscription::ETH_CONNECTION_TYPE_STATIC}
+     *             - {@see CreateLanSubscription::ETH_CONNECTION_TYPE_DHCP}
+     *             - {@see CreateLanSubscription::ETH_CONNECTION_TYPE_STATIC}
      *             
      */
     public function getEthConnectionType() : ?int
@@ -173,5 +174,16 @@ class LanSubscription extends InternetSubscription
         $serializers = array('networkType' => new PrimitiveSerializer('int'), 'ethConnectionType' => new PrimitiveSerializer('int'), 'addressing' => new PrimitiveSerializer('string'), 'connectionComments' => new PrimitiveSerializer('double'));
         $serializers = array_merge($serializers, parent::getSerializeMetaData());
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('networkType' => array(new Required()));
+        $rules = array_merge($rules, parent::getValidationMetaData());
+        return $rules;
     }
 }

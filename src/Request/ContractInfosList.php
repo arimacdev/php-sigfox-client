@@ -3,13 +3,12 @@
 namespace Arimac\Sigfox\Request;
 
 use Arimac\Sigfox\Request;
-use Arimac\Sigfox\Response\Paginated\PaginatedRequest;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Validator\Rules\OneOf;
 /**
  * Retrieve a list of contracts according to visibility permissions and request filters.
  */
-class ContractInfosList extends Request implements PaginatedRequest
+class ContractInfosList extends Request
 {
     /**
      * BASIC

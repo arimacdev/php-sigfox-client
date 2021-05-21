@@ -2,8 +2,8 @@
 
 namespace Arimac\Sigfox\Exception\Response;
 
-use Arimac\Sigfox\Definition\ErrorContent;
-use Arimac\Sigfox\Definition\ErrorContent\ErrorsItem;
+use Arimac\Sigfox\Model\ErrorContent;
+use Arimac\Sigfox\Model\ErrorContent\ErrorsItem;
 use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Throwable;

@@ -37,8 +37,7 @@ class TilesMonarchKmz
      * starts if no other computation, run in the last 24 hours, is available. Otherwise, the existing jobId is
      * returned.
      *
-     * @param KmzCreatePublicRequest|undefined $request The computation will be performed with the specified coverage
-     *                                                  mode
+     * @param KmzCreatePublicRequest|null $request The computation will be performed with the specified coverage mode
      *
      * @return string jobId provided to the customer to request the job status and results
      *

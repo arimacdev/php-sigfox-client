@@ -5,7 +5,8 @@ namespace Arimac\Sigfox\Serializer;
 use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Helper;
-use Arimac\Sigfox\Serializer\Impl\Definition;
+use Arimac\Sigfox\Serializer\Impl\Model;
+use Arimac\Sigfox\ExtendableImpl;
 use stdClass;
 
 /**
@@ -38,18 +39,18 @@ class ClassSerializer implements Serializer
             return $value;
         }
 
-        /** @var Definition **/
+        /** @var Model **/
         $obj = new $this->className();
         $metaData = $obj->getSerializeMetaData();
 
         if (!is_array($value) && !(is_object($value) && $value instanceof stdClass)) {
             throw new DeserializeException(
                 [$this->className, "array(" . implode(",", array_keys($metaData)) . ")"],
-                is_array($value) ? "array(" . implode(",", array_keys($value)) . ")" : gettype($value)
+                gettype($value)
             );
         }
 
-        /** @var Definition **/
+        /** @var Model **/
         $obj = new $this->className();
         $metaData = $obj->getSerializeMetaData();
         $extendable = $obj->isExtendable();
@@ -73,7 +74,7 @@ class ClassSerializer implements Serializer
         }
 
         if ($extendable) {
-            /** @var Extendable $obj **/
+            /** @var ExtendableImpl $obj **/
             foreach ($value as $key => $val) {
                 $errorValue = Helper::getJSONSerializableErrorValue($val);
                 if ($errorValue) {
@@ -108,7 +109,7 @@ class ClassSerializer implements Serializer
             throw new SerializeException([$this->className], is_object($value) ? get_class($value) : gettype($value));
         }
 
-        /** @var Definition $value **/
+        /** @var Model $value **/
         $metaData = $value->getSerializeMetaData();
         $extendable = $value->isExtendable();
         $arr = [];
@@ -123,7 +124,7 @@ class ClassSerializer implements Serializer
         }
 
         if ($extendable) {
-            /** @var Extendable $value **/
+            /** @var ExtendableImpl $value **/
             $data = $value->getExtendedData();
             $errorValue = Helper::getJSONSerializableErrorValue($data);
             if ($errorValue) {
