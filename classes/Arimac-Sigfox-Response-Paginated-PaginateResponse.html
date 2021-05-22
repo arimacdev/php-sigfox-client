@@ -85,13 +85,16 @@
 
     
     
+            <span class="phpdocumentor-element__implements">
+            implements
+                            <abbr title="\Arimac\Sigfox\Response\Paginated\ResponseData">ResponseData</abbr>                    </span>
     
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Paginated/PaginateResponse.php"><a href="files/src-response-paginated-paginateresponse.html"><abbr title="src/Response/Paginated/PaginateResponse.php">PaginateResponse.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">15</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 </aside>
 
             <p class="phpdocumentor-summary">A helper to handle paginations</p>
@@ -105,20 +108,11 @@
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">template</span>
+                    <span class="phpdocumentor-tag__name">implements</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>T</p>
-</section>
-
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">template</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                                
-                                                 <section class="phpdocumentor-description"><p>R of PaginatedResponse</p>
+                                                 <section class="phpdocumentor-description"><p>ResponseData<T></p>
 </section>
 
                                     </dd>
@@ -127,6 +121,17 @@
 
 
 
+<h3 id="interfaces_class_traits">
+    Interfaces, Classes and Traits
+    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
+</h3>
+
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -interface"><abbr title="\Arimac\Sigfox\Response\Paginated\ResponseData">ResponseData</abbr></dt>
+        <dd></dd>
+    
+    
+    </dl>
 
 
 <h3 id="toc">
@@ -138,14 +143,14 @@
                     <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html#method_enableCache">enableCache()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                        &nbsp;: void    </span>
 </dt>
 <dd>Enable the cache</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html#method_getOriginalResponse">getOriginalResponse()</a>
     <span>
-                        &nbsp;: <abbr title="\Arimac\Sigfox\Response\Paginated\PaginatedResponse">PaginatedResponse</abbr>|<abbr title="\Arimac\Sigfox\Response\Paginated\R">R</abbr>    </span>
+                        &nbsp;: <abbr title="\Arimac\Sigfox\Response\Paginated\PaginatedResponse">PaginatedResponse</abbr>    </span>
 </dt>
 <dd>Returning the original response</dd>
 
@@ -189,14 +194,14 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Paginated/PaginateResponse.php"><a href="files/src-response-paginated-paginateresponse.html"><abbr title="src/Response/Paginated/PaginateResponse.php">PaginateResponse.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">95</span>
 </aside>
 
         <p class="phpdocumentor-summary">Enable the cache</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">enableCache</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">enableCache</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
         <section class="phpdocumentor-description"><p>This method allows to reuse the iterator without fetching
 already fetched data again. Do not call this method if you
@@ -208,7 +213,7 @@ storing in the memory.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
             <section class="phpdocumentor-description"></section>
 
@@ -227,14 +232,14 @@ storing in the memory.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Paginated/PaginateResponse.php"><a href="files/src-response-paginated-paginateresponse.html"><abbr title="src/Response/Paginated/PaginateResponse.php">PaginateResponse.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">93</span>
+    <span class="phpdocumentor-element-found-in__line">108</span>
 </aside>
 
         <p class="phpdocumentor-summary">Returning the original response</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getOriginalResponse</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginatedResponse">PaginatedResponse</abbr>|<abbr title="\Arimac\Sigfox\Response\Paginated\R">R</abbr></span></code>
+                <span class="phpdocumentor-signature__name">getOriginalResponse</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginatedResponse">PaginatedResponse</abbr></span></code>
 
         <section class="phpdocumentor-description"><p>This response will change each time after accessed the next page</p>
 </section>
@@ -243,7 +248,7 @@ storing in the memory.</p>
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginatedResponse">PaginatedResponse</abbr>|<abbr title="\Arimac\Sigfox\Response\Paginated\R">R</abbr></span>
+    <span class="phpdocumentor-signature__response_type"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginatedResponse">PaginatedResponse</abbr></span>
             &mdash;
             <section class="phpdocumentor-description"><p>Original response object</p>
 </section>
@@ -263,7 +268,7 @@ storing in the memory.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Paginated/PaginateResponse.php"><a href="files/src-response-paginated-paginateresponse.html"><abbr title="src/Response/Paginated/PaginateResponse.php">PaginateResponse.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">153</span>
+    <span class="phpdocumentor-element-found-in__line">200</span>
 </aside>
 
         <p class="phpdocumentor-summary">Iterate over items</p>
@@ -279,6 +284,21 @@ automatically when the iterator reached to the end.</p>
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-SigfoxException.html"><abbr title="\Arimac\Sigfox\Exception\SigfoxException">SigfoxException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Paginated-ItemIterator.html"><abbr title="\Arimac\Sigfox\Response\Paginated\ItemIterator">ItemIterator</abbr></a>&lt;string|int, <abbr title="\Arimac\Sigfox\Response\Paginated\T">T</abbr>&gt;</span>
@@ -300,7 +320,7 @@ automatically when the iterator reached to the end.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Paginated/PaginateResponse.php"><a href="files/src-response-paginated-paginateresponse.html"><abbr title="src/Response/Paginated/PaginateResponse.php">PaginateResponse.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">140</span>
+    <span class="phpdocumentor-element-found-in__line">185</span>
 </aside>
 
         <p class="phpdocumentor-summary">Iterate over pages</p>
@@ -316,6 +336,21 @@ from the api as the iterated item.</p>
 
     
     
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-SigfoxException.html"><abbr title="\Arimac\Sigfox\Exception\SigfoxException">SigfoxException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"></section>
+
+                                    </dd>
+                        </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Paginated-PageIterator.html"><abbr title="\Arimac\Sigfox\Response\Paginated\PageIterator">PageIterator</abbr></a>&lt;string|int, <abbr title="\Arimac\Sigfox\Response\Paginated\T">T</abbr>&gt;</span>

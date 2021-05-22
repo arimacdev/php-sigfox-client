@@ -90,7 +90,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacks.php"><a href="files/src-repository-devicetypesidcallbacks.html"><abbr title="src/Repository/DeviceTypesIdCallbacks.php">DeviceTypesIdCallbacks.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">19</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 </aside>
 
         
@@ -158,7 +158,7 @@ more relevant than SNR in Sigfox network.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacks.php"><a href="files/src-repository-devicetypesidcallbacks.html"><abbr title="src/Repository/DeviceTypesIdCallbacks.php">DeviceTypesIdCallbacks.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">89</span>
 </aside>
 
         <p class="phpdocumentor-summary">Create a new callback for a given device type. SNR will be deprecated (see
@@ -207,6 +207,26 @@ more relevant than SNR in Sigfox network.</p>
                                                                 <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-UnexpectedResponseException.html"><abbr title="\Arimac\Sigfox\Exception\UnexpectedResponseException">UnexpectedResponseException</abbr></a></span>
                                                             
                                                  <section class="phpdocumentor-description"><p>If server returned an unexpected status code.</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-Response-ResponseException.html"><abbr title="\Arimac\Sigfox\Exception\Response\ResponseException">ResponseException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If server returned any expected HTTP error</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-ValidationException.html"><abbr title="\Arimac\Sigfox\Exception\ValidationException">ValidationException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If request could not be validated according to pre validation rules.</p>
 </section>
 
                                     </dd>
@@ -283,7 +303,7 @@ more relevant than SNR in Sigfox network.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacks.php"><a href="files/src-repository-devicetypesidcallbacks.html"><abbr title="src/Repository/DeviceTypesIdCallbacks.php">DeviceTypesIdCallbacks.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">97</span>
+    <span class="phpdocumentor-element-found-in__line">104</span>
 </aside>
 
         <p class="phpdocumentor-summary">Find by callbackId</p>
@@ -329,7 +349,7 @@ more relevant than SNR in Sigfox network.</p>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacks.php"><a href="files/src-repository-devicetypesidcallbacks.html"><abbr title="src/Repository/DeviceTypesIdCallbacks.php">DeviceTypesIdCallbacks.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">58</span>
+    <span class="phpdocumentor-element-found-in__line">63</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve a list of callbacks for a given device type according to visibility permissions and request filters.</p>
@@ -351,9 +371,39 @@ more relevant than SNR in Sigfox network.</p>
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-SerializeException.html"><abbr title="\Arimac\Sigfox\Exception\SerializeException">SerializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If request object failed to serialize to a JSON serializable type.</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
                                                                 <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-UnexpectedResponseException.html"><abbr title="\Arimac\Sigfox\Exception\UnexpectedResponseException">UnexpectedResponseException</abbr></a></span>
                                                             
                                                  <section class="phpdocumentor-description"><p>If server returned an unexpected status code.</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-Response-ResponseException.html"><abbr title="\Arimac\Sigfox\Exception\Response\ResponseException">ResponseException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If server returned any expected HTTP error</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-ValidationException.html"><abbr title="\Arimac\Sigfox\Exception\ValidationException">ValidationException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If request could not be validated according to pre validation rules.</p>
 </section>
 
                                     </dd>

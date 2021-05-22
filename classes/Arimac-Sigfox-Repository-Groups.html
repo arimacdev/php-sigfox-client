@@ -90,7 +90,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/Groups.php"><a href="files/src-repository-groups.html"><abbr title="src/Repository/Groups.php">Groups.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">23</span>
+    <span class="phpdocumentor-element-found-in__line">25</span>
 </aside>
 
         
@@ -155,7 +155,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/Groups.php"><a href="files/src-repository-groups.html"><abbr title="src/Repository/Groups.php">Groups.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">82</span>
+    <span class="phpdocumentor-element-found-in__line">93</span>
 </aside>
 
         <p class="phpdocumentor-summary">Create a new group.</p>
@@ -201,6 +201,26 @@
                                                                 <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-UnexpectedResponseException.html"><abbr title="\Arimac\Sigfox\Exception\UnexpectedResponseException">UnexpectedResponseException</abbr></a></span>
                                                             
                                                  <section class="phpdocumentor-description"><p>If server returned an unexpected status code.</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-Response-ResponseException.html"><abbr title="\Arimac\Sigfox\Exception\Response\ResponseException">ResponseException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If server returned any expected HTTP error</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-ValidationException.html"><abbr title="\Arimac\Sigfox\Exception\ValidationException">ValidationException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If request could not be validated according to pre validation rules.</p>
 </section>
 
                                     </dd>
@@ -287,7 +307,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/Groups.php"><a href="files/src-repository-groups.html"><abbr title="src/Repository/Groups.php">Groups.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">97</span>
+    <span class="phpdocumentor-element-found-in__line">108</span>
 </aside>
 
         <p class="phpdocumentor-summary">Find by id</p>
@@ -333,7 +353,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/Groups.php"><a href="files/src-repository-groups.html"><abbr title="src/Repository/Groups.php">Groups.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">59</span>
+    <span class="phpdocumentor-element-found-in__line">68</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve a list of groups according to visibility permissions and request filters.</p>
@@ -390,6 +410,26 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-Response-ResponseException.html"><abbr title="\Arimac\Sigfox\Exception\Response\ResponseException">ResponseException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If server returned any expected HTTP error</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-ValidationException.html"><abbr title="\Arimac\Sigfox\Exception\ValidationException">ValidationException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If request could not be validated according to pre validation rules.</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
                                                                 <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-Response-BadRequestException.html"><abbr title="\Arimac\Sigfox\Exception\Response\BadRequestException">BadRequestException</abbr></a></span>
                                                             
                                                  <section class="phpdocumentor-description"><p>If server returned a HTTP 400 error.</p>
@@ -431,7 +471,9 @@ If deep is true, retrieve all sub-groups under either given parent groups or the
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html"><abbr title="\Arimac\Sigfox\Response\Paginated\PaginateResponse">PaginateResponse</abbr></a>&lt;<a href="classes/Arimac-Sigfox-Model-Group.html"><abbr title="\Arimac\Sigfox\Model\Group">Group</abbr></a>, <a href="classes/Arimac-Sigfox-Response-Generated-GroupsListResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\GroupsListResponse">GroupsListResponse</abbr></a>&gt;</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
+            <section class="phpdocumentor-description"><p>First generic parameter is the item type and the second
+type is the original response type.</p>
+</section>
 
     
 </article>
