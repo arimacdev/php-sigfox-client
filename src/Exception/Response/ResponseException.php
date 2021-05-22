@@ -16,9 +16,9 @@ abstract class ResponseException extends SigfoxException {
      *
      * @param mixed $value JSON serializable scalar value
      *
-     * @return self Deserialized Exception
+     * @return static Deserialized Exception
      *
      * @throws DeserializeException
      */
-    abstract public static function deserialize($value): self;
+    abstract public static function deserialize($value);
 }

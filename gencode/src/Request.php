@@ -10,8 +10,6 @@ class Request extends Model
 {
     protected $getter = false;
 
-    protected $properties = [];
-
     public function __construct(string $namespaceName, string $name, ?string $docComment = null)
     {
         $this->factory = new BuilderFactory;
@@ -139,7 +137,7 @@ class Request extends Model
                             "Setter for $propertyName",
                             [
                                 ["param", $usedType, "\$$propertyName", $description],
-                                ["return", "self", "To use in method chains"]
+                                ["return", "static", "To use in method chains"]
                             ],
                             2
                         )

@@ -32,9 +32,9 @@ class TilesResponse extends Model
      *
      * @param string $baseImgUrl The tiles base image url
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBaseImgUrl(?string $baseImgUrl) : self
+    public function setBaseImgUrl(?string $baseImgUrl)
     {
         $this->baseImgUrl = $baseImgUrl;
         return $this;
@@ -53,9 +53,9 @@ class TilesResponse extends Model
      *
      * @param string $tmsTemplateUrl The TMS template url
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTmsTemplateUrl(?string $tmsTemplateUrl) : self
+    public function setTmsTemplateUrl(?string $tmsTemplateUrl)
     {
         $this->tmsTemplateUrl = $tmsTemplateUrl;
         return $this;
@@ -74,9 +74,9 @@ class TilesResponse extends Model
      *
      * @param Bounds $bounds
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBounds(?Bounds $bounds) : self
+    public function setBounds(?Bounds $bounds)
     {
         $this->bounds = $bounds;
         return $this;

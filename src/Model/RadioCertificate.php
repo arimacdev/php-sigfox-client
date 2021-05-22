@@ -38,9 +38,9 @@ class RadioCertificate extends CommonCertificate
      *                     - {@see RadioCertificate::MODES_UPLINK_AND_DOWNLINK}
      *                     
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setModes(?array $modes) : self
+    public function setModes(?array $modes)
     {
         $this->modes = $modes;
         return $this;
@@ -63,9 +63,9 @@ class RadioCertificate extends CommonCertificate
      *
      * @param int $inputSensitivity The certificate's input sensitivity
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setInputSensitivity(?int $inputSensitivity) : self
+    public function setInputSensitivity(?int $inputSensitivity)
     {
         $this->inputSensitivity = $inputSensitivity;
         return $this;

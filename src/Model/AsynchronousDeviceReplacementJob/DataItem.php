@@ -23,9 +23,9 @@ class DataItem extends Model
      *
      * @param string $deviceId The device's identifier to replace (hexadecimal format)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeviceId(?string $deviceId) : self
+    public function setDeviceId(?string $deviceId)
     {
         $this->deviceId = $deviceId;
         return $this;
@@ -44,9 +44,9 @@ class DataItem extends Model
      *
      * @param string $targetDeviceId The target device's identifier (hexadecimal format)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTargetDeviceId(?string $targetDeviceId) : self
+    public function setTargetDeviceId(?string $targetDeviceId)
     {
         $this->targetDeviceId = $targetDeviceId;
         return $this;

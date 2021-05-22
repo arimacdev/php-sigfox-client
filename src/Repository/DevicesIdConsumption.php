@@ -10,13 +10,13 @@ class DevicesIdConsumption
      *
      * @internal
      */
-    protected ?Client $client;
+    protected Client $client;
     /**
      * The Device identifier (hexadecimal format)
      *
      * @internal
      */
-    protected ?string $id;
+    protected string $id;
     /**
      * Creating the repository
      *

@@ -26,9 +26,9 @@ class DeviceLocation extends Model
      *
      * @param double $lat The device's estimated latitude
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLat(?float $lat) : self
+    public function setLat(?float $lat)
     {
         $this->lat = $lat;
         return $this;
@@ -47,9 +47,9 @@ class DeviceLocation extends Model
      *
      * @param double $lng The device's estimated longitude
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLng(?float $lng) : self
+    public function setLng(?float $lng)
     {
         $this->lng = $lng;
         return $this;

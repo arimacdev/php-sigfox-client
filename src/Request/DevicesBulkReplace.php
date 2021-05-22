@@ -26,9 +26,9 @@ class DevicesBulkReplace extends Request
      *
      * @param AsynchronousDeviceReplacementJob $devicePairs Pairs of source and target devices
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDevicePairs(?AsynchronousDeviceReplacementJob $devicePairs) : self
+    public function setDevicePairs(?AsynchronousDeviceReplacementJob $devicePairs)
     {
         $this->devicePairs = $devicePairs;
         return $this;

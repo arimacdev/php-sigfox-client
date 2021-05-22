@@ -30,9 +30,9 @@ class Status extends Model
      *
      * @param JobError[] $errors Detailed information about each error
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setErrors(?array $errors) : self
+    public function setErrors(?array $errors)
     {
         $this->errors = $errors;
         return $this;
@@ -51,9 +51,9 @@ class Status extends Model
      *
      * @param int $success The number of devices successfully created, edited or transferred
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSuccess(?int $success) : self
+    public function setSuccess(?int $success)
     {
         $this->success = $success;
         return $this;

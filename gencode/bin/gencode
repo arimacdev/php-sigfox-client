@@ -59,6 +59,7 @@ $repositories = [];
 
 $client = new Client("Arimac\\Sigfox", "Sigfox", Helper::normalizeDocComment("Client for sigfox API"));
 $client->extend("Arimac\\Sigfox\\SigfoxExt");
+$client->setBaseUrl($openapi["schemes"][0]."://".$openapi["host"].$openapi["basePath"]."/");
 
 foreach ($openapi["paths"] as $endpoint => $path) {
     $rewrite = RewriteRules::rewrite($endpoint);

@@ -24,9 +24,9 @@ class UserRolesItem extends Model
      *
      * @param string $groupId The group identifier on which the user will have the permissions set
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupId(?string $groupId) : self
+    public function setGroupId(?string $groupId)
     {
         $this->groupId = $groupId;
         return $this;
@@ -45,9 +45,9 @@ class UserRolesItem extends Model
      *
      * @param string $profileId The profile identifier giving permissions to the user
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setProfileId(?string $profileId) : self
+    public function setProfileId(?string $profileId)
     {
         $this->profileId = $profileId;
         return $this;

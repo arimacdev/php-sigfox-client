@@ -59,9 +59,9 @@ class DeviceErrorMessages extends Model
      *
      * @param string $deviceId Device identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeviceId(?string $deviceId) : self
+    public function setDeviceId(?string $deviceId)
     {
         $this->deviceId = $deviceId;
         return $this;
@@ -80,9 +80,9 @@ class DeviceErrorMessages extends Model
      *
      * @param string $deviceTypeId Device type identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeviceTypeId(?string $deviceTypeId) : self
+    public function setDeviceTypeId(?string $deviceTypeId)
     {
         $this->deviceTypeId = $deviceTypeId;
         return $this;
@@ -101,9 +101,9 @@ class DeviceErrorMessages extends Model
      *
      * @param int $time Timestamp of the message (in milliseconds since the Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTime(?int $time) : self
+    public function setTime(?int $time)
     {
         $this->time = $time;
         return $this;
@@ -122,9 +122,9 @@ class DeviceErrorMessages extends Model
      *
      * @param string $data Data message
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setData(?string $data) : self
+    public function setData(?string $data)
     {
         $this->data = $data;
         return $this;
@@ -143,9 +143,9 @@ class DeviceErrorMessages extends Model
      *
      * @param string $status Contains the callback response status.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setStatus(?string $status) : self
+    public function setStatus(?string $status)
     {
         $this->status = $status;
         return $this;
@@ -164,9 +164,9 @@ class DeviceErrorMessages extends Model
      *
      * @param string $message Contains additional information on the response.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMessage(?string $message) : self
+    public function setMessage(?string $message)
     {
         $this->message = $message;
         return $this;
@@ -185,9 +185,9 @@ class DeviceErrorMessages extends Model
      *
      * @param CallbackMedium $callback
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCallback(?CallbackMedium $callback) : self
+    public function setCallback(?CallbackMedium $callback)
     {
         $this->callback = $callback;
         return $this;
@@ -207,9 +207,9 @@ class DeviceErrorMessages extends Model
      * @param array $parameters All the parameters which have served to build the callback, see callback doc for an
      *                          exhaustive list.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setParameters(?array $parameters) : self
+    public function setParameters(?array $parameters)
     {
         $this->parameters = $parameters;
         return $this;

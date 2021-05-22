@@ -12,9 +12,9 @@ interface ExtendableImpl {
      * @param string $key   Property name to be in JSON object
      * @param mixed  $value JSON serializable value
      *
-     * @return self For method chains
+     * @return static For method chains
      */
-    public function set(string $key, $value): self;
+    public function set(string $key, $value);
 
     /**
      * Returning all the other properties and values

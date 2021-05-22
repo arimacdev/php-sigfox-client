@@ -73,9 +73,9 @@ class Token extends Model
      *                   - {@see Token::STATE_INVALID_TOKEN}
      *                   
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setState(?int $state) : self
+    public function setState(?int $state)
     {
         $this->state = $state;
         return $this;
@@ -105,9 +105,9 @@ class Token extends Model
      *                              - Invalid
      *                              
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDetailMessage(?string $detailMessage) : self
+    public function setDetailMessage(?string $detailMessage)
     {
         $this->detailMessage = $detailMessage;
         return $this;
@@ -131,9 +131,9 @@ class Token extends Model
      *
      * @param int $end The device's communication end time (in milliseconds since the Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setEnd(?int $end) : self
+    public function setEnd(?int $end)
     {
         $this->end = $end;
         return $this;
@@ -152,9 +152,9 @@ class Token extends Model
      *
      * @param int $freeMessages The number of free messages left for this token
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFreeMessages(?int $freeMessages) : self
+    public function setFreeMessages(?int $freeMessages)
     {
         $this->freeMessages = $freeMessages;
         return $this;
@@ -173,9 +173,9 @@ class Token extends Model
      *
      * @param int $freeMessagesSent The number of free messages already sent for this token
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFreeMessagesSent(?int $freeMessagesSent) : self
+    public function setFreeMessagesSent(?int $freeMessagesSent)
     {
         $this->freeMessagesSent = $freeMessagesSent;
         return $this;

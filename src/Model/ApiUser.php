@@ -53,9 +53,9 @@ class ApiUser extends Model
      *
      * @param MinGroup $group
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroup(?MinGroup $group) : self
+    public function setGroup(?MinGroup $group)
     {
         $this->group = $group;
         return $this;
@@ -74,9 +74,9 @@ class ApiUser extends Model
      *
      * @param int $creationTime The creation time since epoch
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCreationTime(?int $creationTime) : self
+    public function setCreationTime(?int $creationTime)
     {
         $this->creationTime = $creationTime;
         return $this;
@@ -95,9 +95,9 @@ class ApiUser extends Model
      *
      * @param string $id The API user identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -116,9 +116,9 @@ class ApiUser extends Model
      *
      * @param string $accessToken The API user access token (password)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAccessToken(?string $accessToken) : self
+    public function setAccessToken(?string $accessToken)
     {
         $this->accessToken = $accessToken;
         return $this;
@@ -137,9 +137,9 @@ class ApiUser extends Model
      *
      * @param MinProfile[] $profiles
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setProfiles(?array $profiles) : self
+    public function setProfiles(?array $profiles)
     {
         $this->profiles = $profiles;
         return $this;
@@ -158,9 +158,9 @@ class ApiUser extends Model
      *
      * @param string[] $actions
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActions(?array $actions) : self
+    public function setActions(?array $actions)
     {
         $this->actions = $actions;
         return $this;
@@ -179,9 +179,9 @@ class ApiUser extends Model
      *
      * @param string[] $resources
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setResources(?array $resources) : self
+    public function setResources(?array $resources)
     {
         $this->resources = $resources;
         return $this;

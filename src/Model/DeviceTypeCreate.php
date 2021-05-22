@@ -41,9 +41,9 @@ class DeviceTypeCreate extends BaseDeviceType
      *
      * @param string $groupId The device type's group identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupId(?string $groupId) : self
+    public function setGroupId(?string $groupId)
     {
         $this->groupId = $groupId;
         return $this;
@@ -62,9 +62,9 @@ class DeviceTypeCreate extends BaseDeviceType
      *
      * @param string $contractId The device type's contract identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setContractId(?string $contractId) : self
+    public function setContractId(?string $contractId)
     {
         $this->contractId = $contractId;
         return $this;
@@ -83,9 +83,9 @@ class DeviceTypeCreate extends BaseDeviceType
      *
      * @param ContractId[] $contracts The device type's contract identifiers
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setContracts(?array $contracts) : self
+    public function setContracts(?array $contracts)
     {
         $this->contracts = $contracts;
         return $this;
@@ -105,9 +105,9 @@ class DeviceTypeCreate extends BaseDeviceType
      * @param string $geolocPayloadConfigId The geoloc payload configuration identifier. Required if the payload type
      *                                      is Geolocation, else ignored.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGeolocPayloadConfigId(?string $geolocPayloadConfigId) : self
+    public function setGeolocPayloadConfigId(?string $geolocPayloadConfigId)
     {
         $this->geolocPayloadConfigId = $geolocPayloadConfigId;
         return $this;

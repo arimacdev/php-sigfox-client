@@ -20,9 +20,9 @@ class DISTCreate extends CommonGroupCreate
      * @param string $networkOperatorId SO or NIP group id for a DIST & SVNO  group. This field is mandatory for DIST
      *                                  & SVNO group creation.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setNetworkOperatorId(?string $networkOperatorId) : self
+    public function setNetworkOperatorId(?string $networkOperatorId)
     {
         $this->networkOperatorId = $networkOperatorId;
         return $this;

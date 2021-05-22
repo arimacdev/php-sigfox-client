@@ -8,6 +8,8 @@ use Arimac\Sigfox\Request\DevicesIdMessagesList;
 use Arimac\Sigfox\Response\Generated\DevicesIdMessagesListResponse;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
+use Arimac\Sigfox\Exception\Response\ResponseException;
+use Arimac\Sigfox\Exception\ValidationException;
 use Arimac\Sigfox\Exception\Response\BadRequestException;
 use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
@@ -27,13 +29,13 @@ class DevicesIdMessages
      *
      * @internal
      */
-    protected ?Client $client;
+    protected Client $client;
     /**
      * The Device identifier (hexadecimal format)
      *
      * @internal
      */
-    protected ?string $id;
+    protected string $id;
     /**
      * Creating the repository
      *
@@ -55,10 +57,19 @@ class DevicesIdMessages
      *
      * @param DevicesIdMessagesList $request The query and body parameters to pass
      *
-     * @return PaginateResponse<DeviceMessage,DevicesIdMessagesListResponse>
+     * @psalm-return PaginateResponse<DeviceMessage,DevicesIdMessagesListResponse,E>
+     *
+     * @psalm-type E=BadRequestException | UnauthorizedException | ForbiddenException | NotFoundException |
+     *             PreconditionFailedException | InternalServerException
+     *
+     * @return PaginateResponse<DeviceMessage,DevicesIdMessagesListResponse> First generic parameter is the item type
+     *                                                                       and the second type is the original
+     *                                                                       response type.
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
+     * @throws ResponseException           If server returned any expected HTTP error
+     * @throws ValidationException         If request could not be validated according to pre validation rules.
      * @throws BadRequestException         If server returned a HTTP 400 error.
      * @throws UnauthorizedException       If server returned a HTTP 401 error.
      * @throws ForbiddenException          If server returned a HTTP 403 error.
@@ -78,7 +89,10 @@ class DevicesIdMessages
      *
      * @return DevicesIdMessagesMetricResponse
      *
+     * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
+     * @throws ResponseException           If server returned any expected HTTP error
+     * @throws ValidationException         If request could not be validated according to pre validation rules.
      * @throws BadRequestException         If server returned a HTTP 400 error.
      * @throws UnauthorizedException       If server returned a HTTP 401 error.
      * @throws ForbiddenException          If server returned a HTTP 403 error.

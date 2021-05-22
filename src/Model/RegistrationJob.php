@@ -53,9 +53,9 @@ class RegistrationJob extends Model
      *
      * @param bool $jobDone If the job is finished or not
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setJobDone(?bool $jobDone) : self
+    public function setJobDone(?bool $jobDone)
     {
         $this->jobDone = $jobDone;
         return $this;
@@ -74,9 +74,9 @@ class RegistrationJob extends Model
      *
      * @param string $operatorId the operator's  idenfier (hexadecimal format)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOperatorId(?string $operatorId) : self
+    public function setOperatorId(?string $operatorId)
     {
         $this->operatorId = $operatorId;
         return $this;
@@ -95,9 +95,9 @@ class RegistrationJob extends Model
      *
      * @param string $name the name of the registration job
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -116,9 +116,9 @@ class RegistrationJob extends Model
      *
      * @param string $description the description of the registration job
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDescription(?string $description) : self
+    public function setDescription(?string $description)
     {
         $this->description = $description;
         return $this;
@@ -137,9 +137,9 @@ class RegistrationJob extends Model
      *
      * @param int $total the total number of base stations given to be created
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTotal(?int $total) : self
+    public function setTotal(?int $total)
     {
         $this->total = $total;
         return $this;
@@ -158,9 +158,9 @@ class RegistrationJob extends Model
      *
      * @param Status $status the informations about the base stations already treated
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setStatus(?Status $status) : self
+    public function setStatus(?Status $status)
     {
         $this->status = $status;
         return $this;

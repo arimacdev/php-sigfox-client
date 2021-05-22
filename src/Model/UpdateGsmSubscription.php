@@ -61,9 +61,9 @@ class UpdateGsmSubscription extends UpdateInternetSubscription
      * @param string $dataNumber The data number of this internet subscription. This field can be unset when
      *                           updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDataNumber(?string $dataNumber) : self
+    public function setDataNumber(?string $dataNumber)
     {
         $this->dataNumber = $dataNumber;
         return $this;
@@ -83,9 +83,9 @@ class UpdateGsmSubscription extends UpdateInternetSubscription
      * @param string $simCardNumber The sim card number of this internet subscription. This field can be unset when
      *                              updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSimCardNumber(?string $simCardNumber) : self
+    public function setSimCardNumber(?string $simCardNumber)
     {
         $this->simCardNumber = $simCardNumber;
         return $this;
@@ -104,9 +104,9 @@ class UpdateGsmSubscription extends UpdateInternetSubscription
      *
      * @param string $imei The IMEI of this internet subscription. This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setImei(?string $imei) : self
+    public function setImei(?string $imei)
     {
         $this->imei = $imei;
         return $this;
@@ -125,9 +125,9 @@ class UpdateGsmSubscription extends UpdateInternetSubscription
      *
      * @param string $modem The modem of this internet subscription. This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setModem(?string $modem) : self
+    public function setModem(?string $modem)
     {
         $this->modem = $modem;
         return $this;
@@ -146,9 +146,9 @@ class UpdateGsmSubscription extends UpdateInternetSubscription
      *
      * @param string $modemSerialNumber The serial number of the modem of this internet subscription
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setModemSerialNumber(?string $modemSerialNumber) : self
+    public function setModemSerialNumber(?string $modemSerialNumber)
     {
         $this->modemSerialNumber = $modemSerialNumber;
         return $this;
@@ -171,9 +171,9 @@ class UpdateGsmSubscription extends UpdateInternetSubscription
      *                               - {@see UpdateGsmSubscription::GSM_CONNECTION_TYPE_ROUTER_ETH}
      *                               
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGsmConnectionType(?int $gsmConnectionType) : self
+    public function setGsmConnectionType(?int $gsmConnectionType)
     {
         $this->gsmConnectionType = $gsmConnectionType;
         return $this;

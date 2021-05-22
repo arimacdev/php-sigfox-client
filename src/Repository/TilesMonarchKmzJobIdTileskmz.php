@@ -7,6 +7,8 @@ use Arimac\Sigfox\Helper;
 use Arimac\Sigfox\Request\TilesMonarchKmzJobIdTileskmzGetCoverage;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
+use Arimac\Sigfox\Exception\Response\ResponseException;
+use Arimac\Sigfox\Exception\ValidationException;
 use Arimac\Sigfox\Exception\Response\BadRequestException;
 use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
@@ -19,13 +21,13 @@ class TilesMonarchKmzJobIdTileskmz
      *
      * @internal
      */
-    protected ?Client $client;
+    protected Client $client;
     /**
      * The job's identifier (hexademical format)
      *
      * @internal
      */
-    protected ?string $jobId;
+    protected string $jobId;
     /**
      * Creating the repository
      *
@@ -46,6 +48,8 @@ class TilesMonarchKmzJobIdTileskmz
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
+     * @throws ResponseException           If server returned any expected HTTP error
+     * @throws ValidationException         If request could not be validated according to pre validation rules.
      * @throws BadRequestException         If server returned a HTTP 400 error.
      * @throws UnauthorizedException       If server returned a HTTP 401 error.
      * @throws ForbiddenException          If server returned a HTTP 403 error.

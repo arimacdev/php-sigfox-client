@@ -6,6 +6,9 @@ use Arimac\Sigfox\Validator\Rule;
 
 class Min implements Rule {
 
+    /**
+     * @var int|float
+     */
     protected $min;
 
     /**

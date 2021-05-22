@@ -41,9 +41,9 @@ class OptionsItem extends Model
      * @param string $id The premium option id (messageHistory, payloadEncryption, geolocation, cognition,
      *                   testFrames, networkMetadata, satellite)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -81,9 +81,9 @@ class OptionsItem extends Model
      *                            (none)
      *                          
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setParameters(?array $parameters) : self
+    public function setParameters(?array $parameters)
     {
         $this->parameters = $parameters;
         return $this;

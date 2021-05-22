@@ -196,9 +196,9 @@ class BaseSite extends Model
      *
      * @param string $name The site's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -217,9 +217,9 @@ class BaseSite extends Model
      *
      * @param string $lessorId The lessor identifier of the site. This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLessorId(?string $lessorId) : self
+    public function setLessorId(?string $lessorId)
     {
         $this->lessorId = $lessorId;
         return $this;
@@ -238,9 +238,9 @@ class BaseSite extends Model
      *
      * @param string $address The address of the site
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAddress(?string $address) : self
+    public function setAddress(?string $address)
     {
         $this->address = $address;
         return $this;
@@ -259,9 +259,9 @@ class BaseSite extends Model
      *
      * @param string $comment Comment about the site. This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setComment(?string $comment) : self
+    public function setComment(?string $comment)
     {
         $this->comment = $comment;
         return $this;
@@ -294,9 +294,9 @@ class BaseSite extends Model
      *                    - {@see BaseSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY}
      *                    
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setStatus(?int $status) : self
+    public function setStatus(?int $status)
     {
         $this->status = $status;
         return $this;
@@ -329,9 +329,9 @@ class BaseSite extends Model
      *
      * @param string $statusComment The comment of the status of the site. This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setStatusComment(?string $statusComment) : self
+    public function setStatusComment(?string $statusComment)
     {
         $this->statusComment = $statusComment;
         return $this;
@@ -356,9 +356,9 @@ class BaseSite extends Model
      *                                 - {@see BaseSite::STATION_INSTALLATION_OUTDOOR_WITHOUT_CABINET}
      *                                 
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setStationInstallation(?int $stationInstallation) : self
+    public function setStationInstallation(?int $stationInstallation)
     {
         $this->stationInstallation = $stationInstallation;
         return $this;
@@ -391,9 +391,9 @@ class BaseSite extends Model
      *                          - {@see BaseSite::INVERTER_INFO_DC_POWER_SOLAR}
      *                          
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setInverterInfo(?int $inverterInfo) : self
+    public function setInverterInfo(?int $inverterInfo)
     {
         $this->inverterInfo = $inverterInfo;
         return $this;
@@ -420,9 +420,9 @@ class BaseSite extends Model
      *
      * @param bool $aerialWorkPlatformAccess is the site access to the aerial work platform
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAerialWorkPlatformAccess(?bool $aerialWorkPlatformAccess) : self
+    public function setAerialWorkPlatformAccess(?bool $aerialWorkPlatformAccess)
     {
         $this->aerialWorkPlatformAccess = $aerialWorkPlatformAccess;
         return $this;
@@ -441,9 +441,9 @@ class BaseSite extends Model
      *
      * @param double $lat the site's latitude
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLat(?float $lat) : self
+    public function setLat(?float $lat)
     {
         $this->lat = $lat;
         return $this;
@@ -462,9 +462,9 @@ class BaseSite extends Model
      *
      * @param double $lng the site's longitutde
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLng(?float $lng) : self
+    public function setLng(?float $lng)
     {
         $this->lng = $lng;
         return $this;

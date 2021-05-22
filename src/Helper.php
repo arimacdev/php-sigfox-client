@@ -8,8 +8,8 @@ class Helper {
     /**
      * Filter only required keys from a large array
      *
-     * @param array $arr Input array
-     * @param string[] $needles Keys to filter
+     * @param array    $arr  Input array
+     * @param string[] $keys Keys to filter
      *
      * @return array New filtered array
      */
@@ -29,7 +29,7 @@ class Helper {
      * @internal
      *
      * @param string $url URL with path parameter names. Example:- `/user/{id}`
-     * @param array ...$params Value to replace path parameters
+     * @param string ...$params Value to replace path parameters
      *
      * @return string URL with replaced path parameter values
      */
@@ -49,11 +49,14 @@ class Helper {
      *
      * @param mixed $value
      *
-     * @return bool
+     * @return mixed
      */
     public static function getJSONSerializableErrorValue($value)
     {
         if (is_array($value) || (is_object($value) && $value instanceof stdClass)) {
+            if(is_object($value)){
+                $value = (array) $value;
+            }
             foreach ($value as $val) {
                 $err = self::getJSONSerializableErrorValue($val);
                 if($err){

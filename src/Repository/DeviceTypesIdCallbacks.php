@@ -5,7 +5,10 @@ namespace Arimac\Sigfox\Repository;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Helper;
 use Arimac\Sigfox\Response\Generated\DeviceTypesIdCallbacksListResponse;
+use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
+use Arimac\Sigfox\Exception\Response\ResponseException;
+use Arimac\Sigfox\Exception\ValidationException;
 use Arimac\Sigfox\Exception\Response\BadRequestException;
 use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
@@ -15,7 +18,6 @@ use Arimac\Sigfox\Model\Callback;
 use Arimac\Sigfox\Model\CreateCallback;
 use Arimac\Sigfox\Request\DeviceTypesIdCallbacksCreate;
 use Arimac\Sigfox\Response\Generated\DeviceTypesIdCallbacksCreateResponse;
-use Arimac\Sigfox\Exception\SerializeException;
 class DeviceTypesIdCallbacks
 {
     /**
@@ -23,13 +25,13 @@ class DeviceTypesIdCallbacks
      *
      * @internal
      */
-    protected ?Client $client;
+    protected Client $client;
     /**
      * The Device Type identifier (hexademical format)
      *
      * @internal
      */
-    protected ?string $id;
+    protected string $id;
     /**
      * Creating the repository
      *
@@ -48,7 +50,10 @@ class DeviceTypesIdCallbacks
      *
      * @return Callback[]
      *
+     * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
+     * @throws ResponseException           If server returned any expected HTTP error
+     * @throws ValidationException         If request could not be validated according to pre validation rules.
      * @throws BadRequestException         If server returned a HTTP 400 error.
      * @throws UnauthorizedException       If server returned a HTTP 401 error.
      * @throws ForbiddenException          If server returned a HTTP 403 error.
@@ -73,6 +78,8 @@ class DeviceTypesIdCallbacks
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
+     * @throws ResponseException           If server returned any expected HTTP error
+     * @throws ValidationException         If request could not be validated according to pre validation rules.
      * @throws BadRequestException         If server returned a HTTP 400 error.
      * @throws UnauthorizedException       If server returned a HTTP 401 error.
      * @throws ForbiddenException          If server returned a HTTP 403 error.

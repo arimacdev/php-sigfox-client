@@ -43,9 +43,9 @@ class DeviceConsumptionsItem extends Model
      *
      * @param int $frameCount Number of uplink messages this day
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFrameCount(?int $frameCount) : self
+    public function setFrameCount(?int $frameCount)
     {
         $this->frameCount = $frameCount;
         return $this;
@@ -64,9 +64,9 @@ class DeviceConsumptionsItem extends Model
      *
      * @param int $downlinkFrameCount Number of downlink messages this day
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDownlinkFrameCount(?int $downlinkFrameCount) : self
+    public function setDownlinkFrameCount(?int $downlinkFrameCount)
     {
         $this->downlinkFrameCount = $downlinkFrameCount;
         return $this;
@@ -85,9 +85,9 @@ class DeviceConsumptionsItem extends Model
      *
      * @param int $roamingFrameCount Number of uplink roaming messages this day
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRoamingFrameCount(?int $roamingFrameCount) : self
+    public function setRoamingFrameCount(?int $roamingFrameCount)
     {
         $this->roamingFrameCount = $roamingFrameCount;
         return $this;
@@ -106,9 +106,9 @@ class DeviceConsumptionsItem extends Model
      *
      * @param int $roamingDownlinkFrameCount Number of downlink roaming messages this day
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRoamingDownlinkFrameCount(?int $roamingDownlinkFrameCount) : self
+    public function setRoamingDownlinkFrameCount(?int $roamingDownlinkFrameCount)
     {
         $this->roamingDownlinkFrameCount = $roamingDownlinkFrameCount;
         return $this;
@@ -127,9 +127,9 @@ class DeviceConsumptionsItem extends Model
      *
      * @param RoamingDetailsItem[] $roamingDetails
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRoamingDetails(?array $roamingDetails) : self
+    public function setRoamingDetails(?array $roamingDetails)
     {
         $this->roamingDetails = $roamingDetails;
         return $this;

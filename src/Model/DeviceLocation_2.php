@@ -22,9 +22,9 @@ class DeviceLocation_2 extends ComputedLocation
      *
      * @param int $time Timestamp of the message (in milliseconds since the Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTime(?int $time) : self
+    public function setTime(?int $time)
     {
         $this->time = $time;
         return $this;
@@ -43,9 +43,9 @@ class DeviceLocation_2 extends ComputedLocation
      *
      * @param bool $valid true, if a valid estimation for this message is available (GPS or RSSI)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setValid(?bool $valid) : self
+    public function setValid(?bool $valid)
     {
         $this->valid = $valid;
         return $this;

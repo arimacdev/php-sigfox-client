@@ -370,9 +370,9 @@ class BaseStationUpdate extends Model
      *
      * @param string $name The base station's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -391,9 +391,9 @@ class BaseStationUpdate extends Model
      *
      * @param string $description Description of the base station
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDescription(?string $description) : self
+    public function setDescription(?string $description)
     {
         $this->description = $description;
         return $this;
@@ -413,9 +413,9 @@ class BaseStationUpdate extends Model
      * @param int $baseStationAlertTime Overrides group level alert times, in seconds, for an individual base
      *                                  station.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBaseStationAlertTime(?int $baseStationAlertTime) : self
+    public function setBaseStationAlertTime(?int $baseStationAlertTime)
     {
         $this->baseStationAlertTime = $baseStationAlertTime;
         return $this;
@@ -434,9 +434,9 @@ class BaseStationUpdate extends Model
      *
      * @param bool $transmissionAuthorized true if the transmission is authorized on this base station
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTransmissionAuthorized(?bool $transmissionAuthorized) : self
+    public function setTransmissionAuthorized(?bool $transmissionAuthorized)
     {
         $this->transmissionAuthorized = $transmissionAuthorized;
         return $this;
@@ -455,9 +455,9 @@ class BaseStationUpdate extends Model
      *
      * @param string $installer Name of the installer of this base station. This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setInstaller(?string $installer) : self
+    public function setInstaller(?string $installer)
     {
         $this->installer = $installer;
         return $this;
@@ -476,9 +476,9 @@ class BaseStationUpdate extends Model
      *
      * @param bool $globalCoverageEnable true if the base station is available for the global coverage computation
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGlobalCoverageEnable(?bool $globalCoverageEnable) : self
+    public function setGlobalCoverageEnable(?bool $globalCoverageEnable)
     {
         $this->globalCoverageEnable = $globalCoverageEnable;
         return $this;
@@ -497,9 +497,9 @@ class BaseStationUpdate extends Model
      *
      * @param int $elevation Antenna height (in meter)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setElevation(?int $elevation) : self
+    public function setElevation(?int $elevation)
     {
         $this->elevation = $elevation;
         return $this;
@@ -518,9 +518,9 @@ class BaseStationUpdate extends Model
      *
      * @param int $splatRadius Radius of the base station (in km). This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSplatRadius(?int $splatRadius) : self
+    public function setSplatRadius(?int $splatRadius)
     {
         $this->splatRadius = $splatRadius;
         return $this;
@@ -565,9 +565,9 @@ class BaseStationUpdate extends Model
      *                           - {@see BaseStationUpdate::MAST_EQUIPMENT_LNAC_868_TX}
      *                           
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMastEquipment(?int $mastEquipment) : self
+    public function setMastEquipment(?int $mastEquipment)
     {
         $this->mastEquipment = $mastEquipment;
         return $this;
@@ -612,9 +612,9 @@ class BaseStationUpdate extends Model
      * @param string $mastEquipmentDescription The base station's mast equipment description. This field can be unset
      *                                         when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMastEquipmentDescription(?string $mastEquipmentDescription) : self
+    public function setMastEquipmentDescription(?string $mastEquipmentDescription)
     {
         $this->mastEquipmentDescription = $mastEquipmentDescription;
         return $this;
@@ -633,9 +633,9 @@ class BaseStationUpdate extends Model
      *
      * @param bool $lnaByPass true if the LNA is by pass
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLnaByPass(?bool $lnaByPass) : self
+    public function setLnaByPass(?bool $lnaByPass)
     {
         $this->lnaByPass = $lnaByPass;
         return $this;
@@ -667,9 +667,9 @@ class BaseStationUpdate extends Model
      *                                 - {@see BaseStationUpdate::CAVITY_FILTER_VERSION_FCC_921_5MHZ}
      *                                 
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCavityFilterVersion(?int $cavityFilterVersion) : self
+    public function setCavityFilterVersion(?int $cavityFilterVersion)
     {
         $this->cavityFilterVersion = $cavityFilterVersion;
         return $this;
@@ -702,9 +702,9 @@ class BaseStationUpdate extends Model
      * @param string $cavityFilterVersionDescription The base station's cavity filter version description. This field
      *                                               can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCavityFilterVersionDescription(?string $cavityFilterVersionDescription) : self
+    public function setCavityFilterVersionDescription(?string $cavityFilterVersionDescription)
     {
         $this->cavityFilterVersionDescription = $cavityFilterVersionDescription;
         return $this;
@@ -723,9 +723,9 @@ class BaseStationUpdate extends Model
      *
      * @param double $environmentLoss Environment loss of this base station (in dB)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setEnvironmentLoss(?float $environmentLoss) : self
+    public function setEnvironmentLoss(?float $environmentLoss)
     {
         $this->environmentLoss = $environmentLoss;
         return $this;
@@ -744,9 +744,9 @@ class BaseStationUpdate extends Model
      *
      * @param double $cableLoss Cable loss of this base station (in dB)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCableLoss(?float $cableLoss) : self
+    public function setCableLoss(?float $cableLoss)
     {
         $this->cableLoss = $cableLoss;
         return $this;
@@ -765,9 +765,9 @@ class BaseStationUpdate extends Model
      *
      * @param double $antennaGain Antenna gai of this base station (in dB)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAntennaGain(?float $antennaGain) : self
+    public function setAntennaGain(?float $antennaGain)
     {
         $this->antennaGain = $antennaGain;
         return $this;
@@ -787,9 +787,9 @@ class BaseStationUpdate extends Model
      * @param double $antennaNoiseFigure Antenna noise figure of this base station (in dB). This setting is only
      *                                   relevant when an antenna with a filter is installed.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAntennaNoiseFigure(?float $antennaNoiseFigure) : self
+    public function setAntennaNoiseFigure(?float $antennaNoiseFigure)
     {
         $this->antennaNoiseFigure = $antennaNoiseFigure;
         return $this;
@@ -810,9 +810,9 @@ class BaseStationUpdate extends Model
      * @param double $antennaInsertionLoss Antenna insertion loss of this base station (in dB). This setting is only
      *                                     relevant when an antenna with a filter is installed.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAntennaInsertionLoss(?float $antennaInsertionLoss) : self
+    public function setAntennaInsertionLoss(?float $antennaInsertionLoss)
     {
         $this->antennaInsertionLoss = $antennaInsertionLoss;
         return $this;
@@ -833,9 +833,9 @@ class BaseStationUpdate extends Model
      * @param double $antennaMaxAdmissiblePower Antenna max admissible power of this base station (in dBm). This
      *                                          setting is only relevant when an antenna with a filter is installed.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAntennaMaxAdmissiblePower(?float $antennaMaxAdmissiblePower) : self
+    public function setAntennaMaxAdmissiblePower(?float $antennaMaxAdmissiblePower)
     {
         $this->antennaMaxAdmissiblePower = $antennaMaxAdmissiblePower;
         return $this;
@@ -855,9 +855,9 @@ class BaseStationUpdate extends Model
      *
      * @param bool $gainFlag true if the base station has a gain flag
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGainFlag(?bool $gainFlag) : self
+    public function setGainFlag(?bool $gainFlag)
     {
         $this->gainFlag = $gainFlag;
         return $this;
@@ -876,9 +876,9 @@ class BaseStationUpdate extends Model
      *
      * @param double $mastEquipmentGain Mast equipment gain of this base station (in dB)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMastEquipmentGain(?float $mastEquipmentGain) : self
+    public function setMastEquipmentGain(?float $mastEquipmentGain)
     {
         $this->mastEquipmentGain = $mastEquipmentGain;
         return $this;
@@ -897,9 +897,9 @@ class BaseStationUpdate extends Model
      *
      * @param double $mastEquipmentNoiseFigure Mast equipment noise figure of this base station (in dB)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMastEquipmentNoiseFigure(?float $mastEquipmentNoiseFigure) : self
+    public function setMastEquipmentNoiseFigure(?float $mastEquipmentNoiseFigure)
     {
         $this->mastEquipmentNoiseFigure = $mastEquipmentNoiseFigure;
         return $this;
@@ -918,9 +918,9 @@ class BaseStationUpdate extends Model
      *
      * @param double $lnaInsertionLoss LNA insertion loss of this base station (in dB)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLnaInsertionLoss(?float $lnaInsertionLoss) : self
+    public function setLnaInsertionLoss(?float $lnaInsertionLoss)
     {
         $this->lnaInsertionLoss = $lnaInsertionLoss;
         return $this;
@@ -939,9 +939,9 @@ class BaseStationUpdate extends Model
      *
      * @param double $cavityFilterInsertionLoss Cavity filter insertion loss of this base station (in dB)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCavityFilterInsertionLoss(?float $cavityFilterInsertionLoss) : self
+    public function setCavityFilterInsertionLoss(?float $cavityFilterInsertionLoss)
     {
         $this->cavityFilterInsertionLoss = $cavityFilterInsertionLoss;
         return $this;
@@ -960,9 +960,9 @@ class BaseStationUpdate extends Model
      *
      * @param double $txPowerMargin TX power margin of this base station (in dBm)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTxPowerMargin(?float $txPowerMargin) : self
+    public function setTxPowerMargin(?float $txPowerMargin)
     {
         $this->txPowerMargin = $txPowerMargin;
         return $this;
@@ -985,9 +985,9 @@ class BaseStationUpdate extends Model
      *                             - {@see BaseStationUpdate::SERVICE_COVERAGE_CUSTOMER}
      *                             
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setServiceCoverage(?int $serviceCoverage) : self
+    public function setServiceCoverage(?int $serviceCoverage)
     {
         $this->serviceCoverage = $serviceCoverage;
         return $this;
@@ -1010,9 +1010,9 @@ class BaseStationUpdate extends Model
      *
      * @param Antenna $antenna
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAntenna(?Antenna $antenna) : self
+    public function setAntenna(?Antenna $antenna)
     {
         $this->antenna = $antenna;
         return $this;
@@ -1031,9 +1031,9 @@ class BaseStationUpdate extends Model
      *
      * @param bool $monarchBeaconEnabled true if Monarch Beacon is enabled
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMonarchBeaconEnabled(?bool $monarchBeaconEnabled) : self
+    public function setMonarchBeaconEnabled(?bool $monarchBeaconEnabled)
     {
         $this->monarchBeaconEnabled = $monarchBeaconEnabled;
         return $this;

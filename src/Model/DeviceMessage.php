@@ -129,9 +129,9 @@ class DeviceMessage extends Model
      *
      * @param CommonDevice $device Defines a device message
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDevice(?CommonDevice $device) : self
+    public function setDevice(?CommonDevice $device)
     {
         $this->device = $device;
         return $this;
@@ -150,9 +150,9 @@ class DeviceMessage extends Model
      *
      * @param int $time Timestamp of the message (in milliseconds since the Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTime(?int $time) : self
+    public function setTime(?int $time)
     {
         $this->time = $time;
         return $this;
@@ -171,9 +171,9 @@ class DeviceMessage extends Model
      *
      * @param string $data message content, hex encoded
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setData(?string $data) : self
+    public function setData(?string $data)
     {
         $this->data = $data;
         return $this;
@@ -192,9 +192,9 @@ class DeviceMessage extends Model
      *
      * @param bool $ackRequired true if an acknowledge is required
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAckRequired(?bool $ackRequired) : self
+    public function setAckRequired(?bool $ackRequired)
     {
         $this->ackRequired = $ackRequired;
         return $this;
@@ -220,9 +220,9 @@ class DeviceMessage extends Model
      *                 - {@see DeviceMessage::LQI_NA}
      *                 
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLqi(?int $lqi) : self
+    public function setLqi(?int $lqi)
     {
         $this->lqi = $lqi;
         return $this;
@@ -255,9 +255,9 @@ class DeviceMessage extends Model
      *                          - {@see DeviceMessage::LQI_REPEATERS_NA}
      *                          
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLqiRepeaters(?int $lqiRepeaters) : self
+    public function setLqiRepeaters(?int $lqiRepeaters)
     {
         $this->lqiRepeaters = $lqiRepeaters;
         return $this;
@@ -283,9 +283,9 @@ class DeviceMessage extends Model
      *
      * @param int $seqNumber the sequence number for this message, may not be present when device uses VO protocol
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSeqNumber(?int $seqNumber) : self
+    public function setSeqNumber(?int $seqNumber)
     {
         $this->seqNumber = $seqNumber;
         return $this;
@@ -305,9 +305,9 @@ class DeviceMessage extends Model
      * @param int $nbFrames nbFrames can be 1 or 3. This value represents an expected number of frames sent by the
      *                      device.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setNbFrames(?int $nbFrames) : self
+    public function setNbFrames(?int $nbFrames)
     {
         $this->nbFrames = $nbFrames;
         return $this;
@@ -326,9 +326,9 @@ class DeviceMessage extends Model
      *
      * @param ComputedLocation[] $computedLocation
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setComputedLocation(?array $computedLocation) : self
+    public function setComputedLocation(?array $computedLocation)
     {
         $this->computedLocation = $computedLocation;
         return $this;
@@ -347,9 +347,9 @@ class DeviceMessage extends Model
      *
      * @param Rinfo[] $rinfos
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRinfos(?array $rinfos) : self
+    public function setRinfos(?array $rinfos)
     {
         $this->rinfos = $rinfos;
         return $this;
@@ -368,9 +368,9 @@ class DeviceMessage extends Model
      *
      * @param DownlinkAnswerStatus $downlinkAnswerStatus the last callback status for this reception
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDownlinkAnswerStatus(?DownlinkAnswerStatus $downlinkAnswerStatus) : self
+    public function setDownlinkAnswerStatus(?DownlinkAnswerStatus $downlinkAnswerStatus)
     {
         $this->downlinkAnswerStatus = $downlinkAnswerStatus;
         return $this;

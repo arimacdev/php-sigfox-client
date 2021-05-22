@@ -27,9 +27,9 @@ class DevicesBulkCreate extends Request
      *
      * @param AsynchronousDeviceCreationJob $devices The devices to create
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDevices(?AsynchronousDeviceCreationJob $devices) : self
+    public function setDevices(?AsynchronousDeviceCreationJob $devices)
     {
         $this->devices = $devices;
         return $this;

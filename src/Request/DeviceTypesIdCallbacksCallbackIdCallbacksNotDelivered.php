@@ -42,9 +42,9 @@ class DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered extends Request
      *
      * @param int $since Starting timestamp (in milliseconds since Unix Epoch).
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSince(?int $since) : self
+    public function setSince(?int $since)
     {
         $this->since = $since;
         return $this;
@@ -65,9 +65,9 @@ class DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered extends Request
      *
      * @param int $before Ending timestamp (in milliseconds since Unix Epoch).
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBefore(?int $before) : self
+    public function setBefore(?int $before)
     {
         $this->before = $before;
         return $this;
@@ -88,9 +88,9 @@ class DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered extends Request
      *
      * @param int $limit Defines the maximum number of items to return
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLimit(?int $limit) : self
+    public function setLimit(?int $limit)
     {
         $this->limit = $limit;
         return $this;
@@ -111,9 +111,9 @@ class DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered extends Request
      *
      * @param int $offset Defines the number of items to skip
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOffset(?int $offset) : self
+    public function setOffset(?int $offset)
     {
         $this->offset = $offset;
         return $this;

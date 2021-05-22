@@ -25,9 +25,9 @@ class ApiUsersCreate extends Request
      *
      * @param ApiUserCreation $apiUser
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setApiUser(?ApiUserCreation $apiUser) : self
+    public function setApiUser(?ApiUserCreation $apiUser)
     {
         $this->apiUser = $apiUser;
         return $this;

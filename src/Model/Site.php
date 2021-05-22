@@ -88,9 +88,9 @@ class Site extends BaseSite
      *
      * @param string $id The site's identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -109,9 +109,9 @@ class Site extends BaseSite
      *
      * @param MinHost $host
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setHost(?MinHost $host) : self
+    public function setHost(?MinHost $host)
     {
         $this->host = $host;
         return $this;
@@ -130,9 +130,9 @@ class Site extends BaseSite
      *
      * @param MinMaintenance $maintenance
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMaintenance(?MinMaintenance $maintenance) : self
+    public function setMaintenance(?MinMaintenance $maintenance)
     {
         $this->maintenance = $maintenance;
         return $this;
@@ -151,9 +151,9 @@ class Site extends BaseSite
      *
      * @param MinGroup $group
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroup(?MinGroup $group) : self
+    public function setGroup(?MinGroup $group)
     {
         $this->group = $group;
         return $this;
@@ -172,9 +172,9 @@ class Site extends BaseSite
      *
      * @param int $basestationCount the number of base station installed on this site
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBasestationCount(?int $basestationCount) : self
+    public function setBasestationCount(?int $basestationCount)
     {
         $this->basestationCount = $basestationCount;
         return $this;
@@ -193,9 +193,9 @@ class Site extends BaseSite
      *
      * @param InternetSubscription $primaryInternetSubscription
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPrimaryInternetSubscription(?InternetSubscription $primaryInternetSubscription) : self
+    public function setPrimaryInternetSubscription(?InternetSubscription $primaryInternetSubscription)
     {
         $this->primaryInternetSubscription = $primaryInternetSubscription;
         return $this;
@@ -214,9 +214,9 @@ class Site extends BaseSite
      *
      * @param int $candidateExternalId the external identifier of the site as a candidate
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCandidateExternalId(?int $candidateExternalId) : self
+    public function setCandidateExternalId(?int $candidateExternalId)
     {
         $this->candidateExternalId = $candidateExternalId;
         return $this;
@@ -236,9 +236,9 @@ class Site extends BaseSite
      * @param LocationItem[] $location ISO 3166-1 UN M.49 country code of the site location. The first code is the
      *                                 country (region and department available for some countries).
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLocation(?array $location) : self
+    public function setLocation(?array $location)
     {
         $this->location = $location;
         return $this;
@@ -258,9 +258,9 @@ class Site extends BaseSite
      *
      * @param int $creationTime Date of the creation of this site (in milliseconds)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCreationTime(?int $creationTime) : self
+    public function setCreationTime(?int $creationTime)
     {
         $this->creationTime = $creationTime;
         return $this;
@@ -279,9 +279,9 @@ class Site extends BaseSite
      *
      * @param string $createdBy Identifier of the user who created this site
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCreatedBy(?string $createdBy) : self
+    public function setCreatedBy(?string $createdBy)
     {
         $this->createdBy = $createdBy;
         return $this;
@@ -300,9 +300,9 @@ class Site extends BaseSite
      *
      * @param int $lastEditedTime Date of the last edition of this site (in milliseconds)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastEditedTime(?int $lastEditedTime) : self
+    public function setLastEditedTime(?int $lastEditedTime)
     {
         $this->lastEditedTime = $lastEditedTime;
         return $this;
@@ -321,9 +321,9 @@ class Site extends BaseSite
      *
      * @param string $lastEditedBy Identifier of the user who last edited this site
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastEditedBy(?string $lastEditedBy) : self
+    public function setLastEditedBy(?string $lastEditedBy)
     {
         $this->lastEditedBy = $lastEditedBy;
         return $this;
@@ -342,9 +342,9 @@ class Site extends BaseSite
      *
      * @param string[] $actions
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActions(?array $actions) : self
+    public function setActions(?array $actions)
     {
         $this->actions = $actions;
         return $this;
@@ -363,9 +363,9 @@ class Site extends BaseSite
      *
      * @param string[] $resources
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setResources(?array $resources) : self
+    public function setResources(?array $resources)
     {
         $this->resources = $resources;
         return $this;

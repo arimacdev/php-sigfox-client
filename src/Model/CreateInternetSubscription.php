@@ -105,9 +105,9 @@ class CreateInternetSubscription extends Model
      *
      * @param string $id The identifier of this internet subscription
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -133,9 +133,9 @@ class CreateInternetSubscription extends Model
      *                  - {@see CreateInternetSubscription::TYPE_WIFI}
      *                  
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setType(?int $type) : self
+    public function setType(?int $type)
     {
         $this->type = $type;
         return $this;
@@ -166,9 +166,9 @@ class CreateInternetSubscription extends Model
      *                      - {@see CreateInternetSubscription::PRIORITY_TERMINATED}
      *                      
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPriority(?int $priority) : self
+    public function setPriority(?int $priority)
     {
         $this->priority = $priority;
         return $this;
@@ -192,9 +192,9 @@ class CreateInternetSubscription extends Model
      *
      * @param string $comments The comments about this internet subscription. This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setComments(?string $comments) : self
+    public function setComments(?string $comments)
     {
         $this->comments = $comments;
         return $this;
@@ -213,9 +213,9 @@ class CreateInternetSubscription extends Model
      *
      * @param int $startTime The start time of this internet subscription
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setStartTime(?int $startTime) : self
+    public function setStartTime(?int $startTime)
     {
         $this->startTime = $startTime;
         return $this;
@@ -234,9 +234,9 @@ class CreateInternetSubscription extends Model
      *
      * @param int $endTime The end time this internet subscription. This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setEndTime(?int $endTime) : self
+    public function setEndTime(?int $endTime)
     {
         $this->endTime = $endTime;
         return $this;
@@ -255,9 +255,9 @@ class CreateInternetSubscription extends Model
      *
      * @param MinProvider $provider
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setProvider(?MinProvider $provider) : self
+    public function setProvider(?MinProvider $provider)
     {
         $this->provider = $provider;
         return $this;
@@ -276,9 +276,9 @@ class CreateInternetSubscription extends Model
      *
      * @param MinContact[] $contacts
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setContacts(?array $contacts) : self
+    public function setContacts(?array $contacts)
     {
         $this->contacts = $contacts;
         return $this;

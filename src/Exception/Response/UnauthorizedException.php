@@ -23,8 +23,12 @@ class UnauthorizedException extends ResponseException {
      * @internal
      *
      * @inheritdoc
+     *
+     * @param mixed $value
+     *
+     * @return self
      */
-    public static function deserialize($value): UnauthorizedException
+    public static function deserialize($value)
     {
         return new UnauthorizedException();
     }

@@ -25,9 +25,9 @@ class ModemCertificateRadioConfiguration extends RadioConfiguration
      *
      * @param double $outputPower Output conducted power (dBm)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOutputPower(?float $outputPower) : self
+    public function setOutputPower(?float $outputPower)
     {
         $this->outputPower = $outputPower;
         return $this;
@@ -46,9 +46,9 @@ class ModemCertificateRadioConfiguration extends RadioConfiguration
      *
      * @param bool $balancedLinkBudget Balanced link budget
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBalancedLinkBudget(?bool $balancedLinkBudget) : self
+    public function setBalancedLinkBudget(?bool $balancedLinkBudget)
     {
         $this->balancedLinkBudget = $balancedLinkBudget;
         return $this;

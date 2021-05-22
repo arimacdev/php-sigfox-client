@@ -38,9 +38,9 @@ class DevicesBulkResumeAsync extends Request
      *
      * @param DeviceActionJob $devices list of device's identifier (hexadecimal format)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDevices(?DeviceActionJob $devices) : self
+    public function setDevices(?DeviceActionJob $devices)
     {
         $this->devices = $devices;
         return $this;
@@ -61,9 +61,9 @@ class DevicesBulkResumeAsync extends Request
      *
      * @param string $groupId Group Identifier use to resume multiple devices
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupId(?string $groupId) : self
+    public function setGroupId(?string $groupId)
     {
         $this->groupId = $groupId;
         return $this;

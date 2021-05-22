@@ -22,9 +22,9 @@ class KmzCreatePublicRequest extends Model
      *                             by default.
      *                             
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCoverageMode(?string $coverageMode) : self
+    public function setCoverageMode(?string $coverageMode)
     {
         $this->coverageMode = $coverageMode;
         return $this;

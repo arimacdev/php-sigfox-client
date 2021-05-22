@@ -38,9 +38,9 @@ class DevicesBulkUpdate extends Request
      *
      * @param AsynchronousDeviceEditionJob $devices The devices to edit
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDevices(?AsynchronousDeviceEditionJob $devices) : self
+    public function setDevices(?AsynchronousDeviceEditionJob $devices)
     {
         $this->devices = $devices;
         return $this;
@@ -61,9 +61,9 @@ class DevicesBulkUpdate extends Request
      *
      * @param string $groupId Group Identifier use to create the devices
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupId(?string $groupId) : self
+    public function setGroupId(?string $groupId)
     {
         $this->groupId = $groupId;
         return $this;

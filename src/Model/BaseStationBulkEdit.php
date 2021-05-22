@@ -25,9 +25,9 @@ class BaseStationBulkEdit extends Model
      *
      * @param string $groupId Operator id of named base stations for bulk update
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupId(?string $groupId) : self
+    public function setGroupId(?string $groupId)
     {
         $this->groupId = $groupId;
         return $this;
@@ -46,9 +46,9 @@ class BaseStationBulkEdit extends Model
      *
      * @param BaseStationUpdate[] $basestations
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBasestations(?array $basestations) : self
+    public function setBasestations(?array $basestations)
     {
         $this->basestations = $basestations;
         return $this;

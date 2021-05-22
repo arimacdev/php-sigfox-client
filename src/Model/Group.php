@@ -130,9 +130,9 @@ class Group extends Model
      *
      * @param string $name The group's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -151,9 +151,9 @@ class Group extends Model
      *
      * @param string $description The group's description
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDescription(?string $description) : self
+    public function setDescription(?string $description)
     {
         $this->description = $description;
         return $this;
@@ -183,9 +183,9 @@ class Group extends Model
      *                  - {@see Group::TYPE_PARTNER}
      *                  
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setType(?int $type) : self
+    public function setType(?int $type)
     {
         $this->type = $type;
         return $this;
@@ -215,9 +215,9 @@ class Group extends Model
      *
      * @param string $timezone The timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTimezone(?string $timezone) : self
+    public function setTimezone(?string $timezone)
     {
         $this->timezone = $timezone;
         return $this;
@@ -236,9 +236,9 @@ class Group extends Model
      *
      * @param string $id The group's identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -257,9 +257,9 @@ class Group extends Model
      *
      * @param string $nameCI The group's name to ascii and lowercase
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setNameCI(?string $nameCI) : self
+    public function setNameCI(?string $nameCI)
     {
         $this->nameCI = $nameCI;
         return $this;
@@ -279,9 +279,9 @@ class Group extends Model
      * @param MinGroup[] $path The group's path sorted by descending ancestor {id} (direct parent to farthest
      *                         parent), restricted to the groups visible by the API user
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPath(?array $path) : self
+    public function setPath(?array $path)
     {
         $this->path = $path;
         return $this;
@@ -301,9 +301,9 @@ class Group extends Model
      *
      * @param string $createdBy The user id of the group's creator
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCreatedBy(?string $createdBy) : self
+    public function setCreatedBy(?string $createdBy)
     {
         $this->createdBy = $createdBy;
         return $this;
@@ -322,9 +322,9 @@ class Group extends Model
      *
      * @param int $creationTime The creation date of the group (timestamp in milliseconds since Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCreationTime(?int $creationTime) : self
+    public function setCreationTime(?int $creationTime)
     {
         $this->creationTime = $creationTime;
         return $this;
@@ -343,9 +343,9 @@ class Group extends Model
      *
      * @param bool $leaf true if the group is leaf
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLeaf(?bool $leaf) : self
+    public function setLeaf(?bool $leaf)
     {
         $this->leaf = $leaf;
         return $this;
@@ -364,9 +364,9 @@ class Group extends Model
      *
      * @param string[] $actions
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActions(?array $actions) : self
+    public function setActions(?array $actions)
     {
         $this->actions = $actions;
         return $this;

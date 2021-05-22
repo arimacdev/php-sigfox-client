@@ -95,9 +95,9 @@ class MinGroup extends Model
      *
      * @param string $id The group identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -116,9 +116,9 @@ class MinGroup extends Model
      *
      * @param string $name The group name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -148,9 +148,9 @@ class MinGroup extends Model
      *                  - {@see MinGroup::TYPE_PARTNER}
      *                  
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setType(?int $type) : self
+    public function setType(?int $type)
     {
         $this->type = $type;
         return $this;
@@ -180,9 +180,9 @@ class MinGroup extends Model
      *
      * @param int $level The depth level of the group in hierarchy
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLevel(?int $level) : self
+    public function setLevel(?int $level)
     {
         $this->level = $level;
         return $this;
@@ -201,9 +201,9 @@ class MinGroup extends Model
      *
      * @param string[] $actions
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActions(?array $actions) : self
+    public function setActions(?array $actions)
     {
         $this->actions = $actions;
         return $this;
@@ -222,9 +222,9 @@ class MinGroup extends Model
      *
      * @param string[] $resources
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setResources(?array $resources) : self
+    public function setResources(?array $resources)
     {
         $this->resources = $resources;
         return $this;

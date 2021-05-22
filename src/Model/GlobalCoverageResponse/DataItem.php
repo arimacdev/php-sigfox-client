@@ -36,9 +36,9 @@ class DataItem extends Model
      *
      * @param double $lat The latitude in degrees.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLat(?float $lat) : self
+    public function setLat(?float $lat)
     {
         $this->lat = $lat;
         return $this;
@@ -57,9 +57,9 @@ class DataItem extends Model
      *
      * @param double $lng The longitude in degrees.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLng(?float $lng) : self
+    public function setLng(?float $lng)
     {
         $this->lng = $lng;
         return $this;
@@ -78,9 +78,9 @@ class DataItem extends Model
      *
      * @param bool $locationCovered True, if the requested location is considered covered.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLocationCovered(?bool $locationCovered) : self
+    public function setLocationCovered(?bool $locationCovered)
     {
         $this->locationCovered = $locationCovered;
         return $this;
@@ -99,9 +99,9 @@ class DataItem extends Model
      *
      * @param int[] $margins The margins values (dB) for redundancy level 1, 2 and 3.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMargins(?array $margins) : self
+    public function setMargins(?array $margins)
     {
         $this->margins = $margins;
         return $this;

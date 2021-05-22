@@ -16,9 +16,9 @@ class MaintenanceCreation extends BaseMaintenance
      *
      * @param string $groupId identifier of the group of this maintenance
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupId(?string $groupId) : self
+    public function setGroupId(?string $groupId)
     {
         $this->groupId = $groupId;
         return $this;

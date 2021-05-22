@@ -48,9 +48,9 @@ class MinBaseStationWithType extends Model
      *
      * @param string $id The base station identifier in hexadecimal
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -69,9 +69,9 @@ class MinBaseStationWithType extends Model
      *
      * @param string $name The base station name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -94,9 +94,9 @@ class MinBaseStationWithType extends Model
      *                          - {@see MinBaseStationWithType::RESOURCE_TYPE_NAP}
      *                          
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setResourceType(?int $resourceType) : self
+    public function setResourceType(?int $resourceType)
     {
         $this->resourceType = $resourceType;
         return $this;
@@ -119,9 +119,9 @@ class MinBaseStationWithType extends Model
      *
      * @param string[] $actions
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActions(?array $actions) : self
+    public function setActions(?array $actions)
     {
         $this->actions = $actions;
         return $this;

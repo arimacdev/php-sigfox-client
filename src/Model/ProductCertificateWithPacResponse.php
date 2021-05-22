@@ -75,9 +75,9 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @param string $externalId External Id of the certificate
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setExternalId(?string $externalId) : self
+    public function setExternalId(?string $externalId)
     {
         $this->externalId = $externalId;
         return $this;
@@ -96,9 +96,9 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @param int $certificateCode Certificate's code
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCertificateCode(?int $certificateCode) : self
+    public function setCertificateCode(?int $certificateCode)
     {
         $this->certificateCode = $certificateCode;
         return $this;
@@ -117,9 +117,9 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @param int $certificateIndex Certificate's index
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCertificateIndex(?int $certificateIndex) : self
+    public function setCertificateIndex(?int $certificateIndex)
     {
         $this->certificateIndex = $certificateIndex;
         return $this;
@@ -138,9 +138,9 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @param int $qualificationTime Date of qualification (in milliseconds since the Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setQualificationTime(?int $qualificationTime) : self
+    public function setQualificationTime(?int $qualificationTime)
     {
         $this->qualificationTime = $qualificationTime;
         return $this;
@@ -159,9 +159,9 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @param string $reportNumber Report number
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setReportNumber(?string $reportNumber) : self
+    public function setReportNumber(?string $reportNumber)
     {
         $this->reportNumber = $reportNumber;
         return $this;
@@ -180,9 +180,9 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @param int $inputSensitivity Input sensitivity
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setInputSensitivity(?int $inputSensitivity) : self
+    public function setInputSensitivity(?int $inputSensitivity)
     {
         $this->inputSensitivity = $inputSensitivity;
         return $this;
@@ -201,9 +201,9 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @param bool $encryptionPayload true if the payload will be encrypted
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setEncryptionPayload(?bool $encryptionPayload) : self
+    public function setEncryptionPayload(?bool $encryptionPayload)
     {
         $this->encryptionPayload = $encryptionPayload;
         return $this;
@@ -222,9 +222,9 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @param bool $devKit DevKit Flag
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDevKit(?bool $devKit) : self
+    public function setDevKit(?bool $devKit)
     {
         $this->devKit = $devKit;
         return $this;
@@ -243,9 +243,9 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @param int[] $modes List of modes of the certificate [1=DOWNLINK, 2=MONARCH]
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setModes(?array $modes) : self
+    public function setModes(?array $modes)
     {
         $this->modes = $modes;
         return $this;
@@ -264,9 +264,9 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @param RadioConfiguration[] $standards
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setStandards(?array $standards) : self
+    public function setStandards(?array $standards)
     {
         $this->standards = $standards;
         return $this;
@@ -285,9 +285,9 @@ class ProductCertificateWithPacResponse extends CommonCertificate
      *
      * @param ProductCertificateRadioConfiguration[] $standardCfgs
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setStandardCfgs(?array $standardCfgs) : self
+    public function setStandardCfgs(?array $standardCfgs)
     {
         $this->standardCfgs = $standardCfgs;
         return $this;

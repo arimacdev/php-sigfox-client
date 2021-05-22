@@ -27,9 +27,9 @@ class ApiUsersIdUpdate extends Request
      *
      * @param ApiUserEdition $apiUser The information to update
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setApiUser(?ApiUserEdition $apiUser) : self
+    public function setApiUser(?ApiUserEdition $apiUser)
     {
         $this->apiUser = $apiUser;
         return $this;

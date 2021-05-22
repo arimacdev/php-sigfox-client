@@ -19,9 +19,9 @@ class ApiUsersIdRenewCredentialResponse extends Model
      *
      * @param string $accessToken The new API user's acces token (password)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAccessToken(?string $accessToken) : self
+    public function setAccessToken(?string $accessToken)
     {
         $this->accessToken = $accessToken;
         return $this;

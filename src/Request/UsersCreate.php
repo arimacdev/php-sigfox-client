@@ -27,9 +27,9 @@ class UsersCreate extends Request
      *
      * @param UserCreation $user The user to create
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setUser(?UserCreation $user) : self
+    public function setUser(?UserCreation $user)
     {
         $this->user = $user;
         return $this;

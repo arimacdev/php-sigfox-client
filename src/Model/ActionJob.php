@@ -26,9 +26,9 @@ class ActionJob extends Model
      *
      * @param bool $jobDone If the job is finished or not
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setJobDone(?bool $jobDone) : self
+    public function setJobDone(?bool $jobDone)
     {
         $this->jobDone = $jobDone;
         return $this;
@@ -47,9 +47,9 @@ class ActionJob extends Model
      *
      * @param Status $status the informations about the devices already treated
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setStatus(?Status $status) : self
+    public function setStatus(?Status $status)
     {
         $this->status = $status;
         return $this;

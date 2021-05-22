@@ -12,8 +12,8 @@ class DeserializeException extends SerializeException
      *
      * @internal
      *
-     * @param string $expectedTypes Expected types for the given property
-     * @param string $actualType    The type of the user passed value
+     * @param string[] $expectedTypes Expected types for the given property
+     * @param string   $actualType    The type of the user passed value
      */
     public function __construct(array $expectedTypes, string $actualType)
     {

@@ -56,9 +56,9 @@ class OperatorsItem extends Model
      *
      * @param string $operatorId The identifier of the operator.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOperatorId(?string $operatorId) : self
+    public function setOperatorId(?string $operatorId)
     {
         $this->operatorId = $operatorId;
         return $this;
@@ -77,9 +77,9 @@ class OperatorsItem extends Model
      *
      * @param string $operatorName The name of the operator.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOperatorName(?string $operatorName) : self
+    public function setOperatorName(?string $operatorName)
     {
         $this->operatorName = $operatorName;
         return $this;
@@ -98,9 +98,9 @@ class OperatorsItem extends Model
      *
      * @param int $operatorMinDb The minimal sensitivity for the operator (in dBm).
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOperatorMinDb(?int $operatorMinDb) : self
+    public function setOperatorMinDb(?int $operatorMinDb)
     {
         $this->operatorMinDb = $operatorMinDb;
         return $this;
@@ -119,9 +119,9 @@ class OperatorsItem extends Model
      *
      * @param int $operatorMaxDb The maximal sensitivity for the operator (in dBm).
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOperatorMaxDb(?int $operatorMaxDb) : self
+    public function setOperatorMaxDb(?int $operatorMaxDb)
     {
         $this->operatorMaxDb = $operatorMaxDb;
         return $this;
@@ -141,9 +141,9 @@ class OperatorsItem extends Model
      * @param int $operatorStandard The standard capability of the operator (0 for BAND800, 1 for BAND900), used to
      *                              choose the device class attenuation value.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOperatorStandard(?int $operatorStandard) : self
+    public function setOperatorStandard(?int $operatorStandard)
     {
         $this->operatorStandard = $operatorStandard;
         return $this;
@@ -163,9 +163,9 @@ class OperatorsItem extends Model
      *
      * @param OperatorForecastsItem[] $operatorForecasts Array of all the operator forecast radio planning infos.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOperatorForecasts(?array $operatorForecasts) : self
+    public function setOperatorForecasts(?array $operatorForecasts)
     {
         $this->operatorForecasts = $operatorForecasts;
         return $this;
@@ -184,9 +184,9 @@ class OperatorsItem extends Model
      *
      * @param string[] $actions
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActions(?array $actions) : self
+    public function setActions(?array $actions)
     {
         $this->actions = $actions;
         return $this;

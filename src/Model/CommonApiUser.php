@@ -26,9 +26,9 @@ trait CommonApiUser
      *
      * @param string $name The API user name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -47,9 +47,9 @@ trait CommonApiUser
      *
      * @param string $timezone The API user timezone
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTimezone(?string $timezone) : self
+    public function setTimezone(?string $timezone)
     {
         $this->timezone = $timezone;
         return $this;

@@ -52,9 +52,9 @@ class TilesPublicCoverageKmzTitles extends Request
      *
      * @param int $zoom The zoom level used to generate kmz file
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setZoom(?int $zoom) : self
+    public function setZoom(?int $zoom)
     {
         $this->zoom = $zoom;
         return $this;
@@ -75,9 +75,9 @@ class TilesPublicCoverageKmzTitles extends Request
      *
      * @param int $north The north boundary to extract coverage
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setNorth(?int $north) : self
+    public function setNorth(?int $north)
     {
         $this->north = $north;
         return $this;
@@ -98,9 +98,9 @@ class TilesPublicCoverageKmzTitles extends Request
      *
      * @param int $south The south boundary to extract coverage
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSouth(?int $south) : self
+    public function setSouth(?int $south)
     {
         $this->south = $south;
         return $this;
@@ -121,9 +121,9 @@ class TilesPublicCoverageKmzTitles extends Request
      *
      * @param int $west The west boundary to extract coverage
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setWest(?int $west) : self
+    public function setWest(?int $west)
     {
         $this->west = $west;
         return $this;
@@ -144,9 +144,9 @@ class TilesPublicCoverageKmzTitles extends Request
      *
      * @param int $east The east boundary to extract coverage
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setEast(?int $east) : self
+    public function setEast(?int $east)
     {
         $this->east = $east;
         return $this;

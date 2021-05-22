@@ -30,9 +30,9 @@ class Host extends BaseHost
      *
      * @param MinGroup $group
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroup(?MinGroup $group) : self
+    public function setGroup(?MinGroup $group)
     {
         $this->group = $group;
         return $this;
@@ -51,9 +51,9 @@ class Host extends BaseHost
      *
      * @param Contact[] $contacts
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setContacts(?array $contacts) : self
+    public function setContacts(?array $contacts)
     {
         $this->contacts = $contacts;
         return $this;
@@ -72,9 +72,9 @@ class Host extends BaseHost
      *
      * @param string[] $actions
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActions(?array $actions) : self
+    public function setActions(?array $actions)
     {
         $this->actions = $actions;
         return $this;
@@ -93,9 +93,9 @@ class Host extends BaseHost
      *
      * @param string[] $resources
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setResources(?array $resources) : self
+    public function setResources(?array $resources)
     {
         $this->resources = $resources;
         return $this;

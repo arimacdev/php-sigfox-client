@@ -26,9 +26,9 @@ class DevicesIdCertificateProduct extends Request
      * @param string $fields Defines the other available fields to be returned in the response.
      *                       
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFields(?string $fields) : self
+    public function setFields(?string $fields)
     {
         $this->fields = $fields;
         return $this;

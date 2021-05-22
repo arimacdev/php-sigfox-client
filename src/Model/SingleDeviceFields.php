@@ -47,9 +47,9 @@ trait SingleDeviceFields
      * @param bool $activable true if the device is activable and can take a token. Not used if the device has
      *                        already a token
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActivable(?bool $activable) : self
+    public function setActivable(?bool $activable)
     {
         $this->activable = $activable;
         return $this;
@@ -68,9 +68,9 @@ trait SingleDeviceFields
      *
      * @param bool $automaticRenewal Allow token renewal ?
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAutomaticRenewal(?bool $automaticRenewal) : self
+    public function setAutomaticRenewal(?bool $automaticRenewal)
     {
         $this->automaticRenewal = $automaticRenewal;
         return $this;
@@ -89,9 +89,9 @@ trait SingleDeviceFields
      *
      * @param double $lat The device's provided latitude
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLat(?float $lat) : self
+    public function setLat(?float $lat)
     {
         $this->lat = $lat;
         return $this;
@@ -110,9 +110,9 @@ trait SingleDeviceFields
      *
      * @param double $lng The device's provided longitude
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLng(?float $lng) : self
+    public function setLng(?float $lng)
     {
         $this->lng = $lng;
         return $this;
@@ -131,9 +131,9 @@ trait SingleDeviceFields
      *
      * @param CertificateUpdate $productCertificate
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setProductCertificate(?CertificateUpdate $productCertificate) : self
+    public function setProductCertificate(?CertificateUpdate $productCertificate)
     {
         $this->productCertificate = $productCertificate;
         return $this;
@@ -152,9 +152,9 @@ trait SingleDeviceFields
      *
      * @param bool $prototype If the device is a prototype or not
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPrototype(?bool $prototype) : self
+    public function setPrototype(?bool $prototype)
     {
         $this->prototype = $prototype;
         return $this;

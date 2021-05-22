@@ -17,9 +17,9 @@ class CertificateUpdate extends Model
      *
      * @param string $key The certificate name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setKey(?string $key) : self
+    public function setKey(?string $key)
     {
         $this->key = $key;
         return $this;

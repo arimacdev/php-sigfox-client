@@ -47,9 +47,9 @@ class CoveragesGlobalPredictionsGetOne extends Request
      *
      * @param double $lat the latitude
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLat(?float $lat) : self
+    public function setLat(?float $lat)
     {
         $this->lat = $lat;
         return $this;
@@ -70,9 +70,9 @@ class CoveragesGlobalPredictionsGetOne extends Request
      *
      * @param double $lng the longitude
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLng(?float $lng) : self
+    public function setLng(?float $lng)
     {
         $this->lng = $lng;
         return $this;
@@ -95,9 +95,9 @@ class CoveragesGlobalPredictionsGetOne extends Request
      *                    selected location, in meters.
      *                    
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRadius(?int $radius) : self
+    public function setRadius(?int $radius)
     {
         $this->radius = $radius;
         return $this;
@@ -120,9 +120,9 @@ class CoveragesGlobalPredictionsGetOne extends Request
      *
      * @param string $groupId the id of a group to include its operator in the global coverage
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupId(?string $groupId) : self
+    public function setGroupId(?string $groupId)
     {
         $this->groupId = $groupId;
         return $this;

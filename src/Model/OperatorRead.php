@@ -117,9 +117,9 @@ class OperatorRead extends Model
      *
      * @param string $id The operator's identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -138,9 +138,9 @@ class OperatorRead extends Model
      *
      * @param bool $autoCloseCampaign true if the operator defined to automatically close upgrade campaign
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAutoCloseCampaign(?bool $autoCloseCampaign) : self
+    public function setAutoCloseCampaign(?bool $autoCloseCampaign)
     {
         $this->autoCloseCampaign = $autoCloseCampaign;
         return $this;
@@ -159,9 +159,9 @@ class OperatorRead extends Model
      *
      * @param int $transmitterPower Transmitter power (TRP) (in mW)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTransmitterPower(?int $transmitterPower) : self
+    public function setTransmitterPower(?int $transmitterPower)
     {
         $this->transmitterPower = $transmitterPower;
         return $this;
@@ -180,9 +180,9 @@ class OperatorRead extends Model
      *
      * @param int $minDb Min dB (in dBm)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMinDb(?int $minDb) : self
+    public function setMinDb(?int $minDb)
     {
         $this->minDb = $minDb;
         return $this;
@@ -201,9 +201,9 @@ class OperatorRead extends Model
      *
      * @param int $maxDb Max dB (in dBm)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMaxDb(?int $maxDb) : self
+    public function setMaxDb(?int $maxDb)
     {
         $this->maxDb = $maxDb;
         return $this;
@@ -222,9 +222,9 @@ class OperatorRead extends Model
      *
      * @param int $alertTime Alert time (in seconds)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAlertTime(?int $alertTime) : self
+    public function setAlertTime(?int $alertTime)
     {
         $this->alertTime = $alertTime;
         return $this;
@@ -243,9 +243,9 @@ class OperatorRead extends Model
      *
      * @param string $requestTrackerBaseUrl Request tracker base Url
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRequestTrackerBaseUrl(?string $requestTrackerBaseUrl) : self
+    public function setRequestTrackerBaseUrl(?string $requestTrackerBaseUrl)
     {
         $this->requestTrackerBaseUrl = $requestTrackerBaseUrl;
         return $this;
@@ -264,9 +264,9 @@ class OperatorRead extends Model
      *
      * @param MinStandard $telecommunicationStandard
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTelecommunicationStandard(?MinStandard $telecommunicationStandard) : self
+    public function setTelecommunicationStandard(?MinStandard $telecommunicationStandard)
     {
         $this->telecommunicationStandard = $telecommunicationStandard;
         return $this;
@@ -285,9 +285,9 @@ class OperatorRead extends Model
      *
      * @param MinAntenna $antenna
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAntenna(?MinAntenna $antenna) : self
+    public function setAntenna(?MinAntenna $antenna)
     {
         $this->antenna = $antenna;
         return $this;
@@ -310,9 +310,9 @@ class OperatorRead extends Model
      *                          - {@see OperatorRead::WARRANTY_MODE_PROVISIONING}
      *                          
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setWarrantyMode(?int $warrantyMode) : self
+    public function setWarrantyMode(?int $warrantyMode)
     {
         $this->warrantyMode = $warrantyMode;
         return $this;
@@ -341,9 +341,9 @@ class OperatorRead extends Model
      *                         - {@see OperatorRead::NETWORK_TYPE_PILOT_PRIVATE}
      *                         
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setNetworkType(?int $networkType) : self
+    public function setNetworkType(?int $networkType)
     {
         $this->networkType = $networkType;
         return $this;
@@ -368,9 +368,9 @@ class OperatorRead extends Model
      *
      * @param string[] $actions
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActions(?array $actions) : self
+    public function setActions(?array $actions)
     {
         $this->actions = $actions;
         return $this;

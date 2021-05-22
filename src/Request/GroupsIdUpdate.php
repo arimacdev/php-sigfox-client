@@ -27,9 +27,9 @@ class GroupsIdUpdate extends Request
      *
      * @param CommonGroupUpdate $group The group to update
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroup(?CommonGroupUpdate $group) : self
+    public function setGroup(?CommonGroupUpdate $group)
     {
         $this->group = $group;
         return $this;

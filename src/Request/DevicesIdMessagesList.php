@@ -53,9 +53,9 @@ class DevicesIdMessagesList extends Request
      * @param string $fields Defines the other available fields to be returned in the response.
      *                       
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFields(?string $fields) : self
+    public function setFields(?string $fields)
     {
         $this->fields = $fields;
         return $this;
@@ -77,9 +77,9 @@ class DevicesIdMessagesList extends Request
      *
      * @param int $since Starting timestamp (in milliseconds since the Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSince(?int $since) : self
+    public function setSince(?int $since)
     {
         $this->since = $since;
         return $this;
@@ -100,9 +100,9 @@ class DevicesIdMessagesList extends Request
      *
      * @param int $before Ending timestamp (in milliseconds since the Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBefore(?int $before) : self
+    public function setBefore(?int $before)
     {
         $this->before = $before;
         return $this;
@@ -123,9 +123,9 @@ class DevicesIdMessagesList extends Request
      *
      * @param int $limit The maximum number of items to return
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLimit(?int $limit) : self
+    public function setLimit(?int $limit)
     {
         $this->limit = $limit;
         return $this;
@@ -146,9 +146,9 @@ class DevicesIdMessagesList extends Request
      *
      * @param int $offset The number of items to skip
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOffset(?int $offset) : self
+    public function setOffset(?int $offset)
     {
         $this->offset = $offset;
         return $this;

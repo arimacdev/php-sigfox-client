@@ -27,9 +27,9 @@ class DeviceTypesCreate extends Request
      *
      * @param DeviceTypeCreate $deviceType The device type to create
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeviceType(?DeviceTypeCreate $deviceType) : self
+    public function setDeviceType(?DeviceTypeCreate $deviceType)
     {
         $this->deviceType = $deviceType;
         return $this;

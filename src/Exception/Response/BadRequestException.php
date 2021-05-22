@@ -46,8 +46,12 @@ class BadRequestException extends ResponseException {
      * @internal
      *
      * @inheritdoc
+     *
+     * @param mixed $value
+     *
+     * @return self
      */
-    public static function deserialize($value): BadRequestException
+    public static function deserialize($value)
     {
         $serializer = new ClassSerializer(ErrorContent::class);
         $errorContent = $serializer->deserialize($value);

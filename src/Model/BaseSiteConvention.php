@@ -120,9 +120,9 @@ class BaseSiteConvention extends Model
      *
      * @param double $annualCost The annual cost of this convention
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAnnualCost(?float $annualCost) : self
+    public function setAnnualCost(?float $annualCost)
     {
         $this->annualCost = $annualCost;
         return $this;
@@ -141,9 +141,9 @@ class BaseSiteConvention extends Model
      *
      * @param string $comments The comments of this convention
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setComments(?string $comments) : self
+    public function setComments(?string $comments)
     {
         $this->comments = $comments;
         return $this;
@@ -162,9 +162,9 @@ class BaseSiteConvention extends Model
      *
      * @param int $startTime The start time of this convention
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setStartTime(?int $startTime) : self
+    public function setStartTime(?int $startTime)
     {
         $this->startTime = $startTime;
         return $this;
@@ -183,9 +183,9 @@ class BaseSiteConvention extends Model
      *
      * @param int $endTime The end time of this convention
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setEndTime(?int $endTime) : self
+    public function setEndTime(?int $endTime)
     {
         $this->endTime = $endTime;
         return $this;
@@ -204,9 +204,9 @@ class BaseSiteConvention extends Model
      *
      * @param string $contractReference The bss contract reference of this convention
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setContractReference(?string $contractReference) : self
+    public function setContractReference(?string $contractReference)
     {
         $this->contractReference = $contractReference;
         return $this;
@@ -225,9 +225,9 @@ class BaseSiteConvention extends Model
      *
      * @param bool $maintenance is this convention in maintenance
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMaintenance(?bool $maintenance) : self
+    public function setMaintenance(?bool $maintenance)
     {
         $this->maintenance = $maintenance;
         return $this;
@@ -246,9 +246,9 @@ class BaseSiteConvention extends Model
      *
      * @param double $maintenanceAnnualCost The annual cost of the maintenance of this convention
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMaintenanceAnnualCost(?float $maintenanceAnnualCost) : self
+    public function setMaintenanceAnnualCost(?float $maintenanceAnnualCost)
     {
         $this->maintenanceAnnualCost = $maintenanceAnnualCost;
         return $this;
@@ -274,9 +274,9 @@ class BaseSiteConvention extends Model
      *                    - {@see BaseSiteConvention::STATUS_SIGNED_BOTH}
      *                    
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setStatus(?int $status) : self
+    public function setStatus(?int $status)
     {
         $this->status = $status;
         return $this;
@@ -309,9 +309,9 @@ class BaseSiteConvention extends Model
      *                  - {@see BaseSiteConvention::TYPE_COMPANY}
      *                  
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setType(?int $type) : self
+    public function setType(?int $type)
     {
         $this->type = $type;
         return $this;

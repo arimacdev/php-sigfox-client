@@ -21,9 +21,9 @@ class RedundancyResponse extends Model
      * @param int $redundancy The base station redundancy, 0 = none, 1 = 1 base station, 2 = 2 base stations, 3 = 3
      *                        base stations or more
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRedundancy(?int $redundancy) : self
+    public function setRedundancy(?int $redundancy)
     {
         $this->redundancy = $redundancy;
         return $this;

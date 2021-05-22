@@ -23,9 +23,9 @@ class KmzStatusResponse extends Model
      *
      * @param bool $jobDone If the job is completed or not
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setJobDone(?bool $jobDone) : self
+    public function setJobDone(?bool $jobDone)
     {
         $this->jobDone = $jobDone;
         return $this;
@@ -44,9 +44,9 @@ class KmzStatusResponse extends Model
      *
      * @param int $time the kmz layer creation time (in milliseconds since the Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTime(?int $time) : self
+    public function setTime(?int $time)
     {
         $this->time = $time;
         return $this;

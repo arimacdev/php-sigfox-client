@@ -35,9 +35,9 @@ class RoamingDetailsItem extends Model
      *
      * @param string $territory Country of the Operator (3 letters from the ISO 3166-1 alpha-3 country code).
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTerritory(?string $territory) : self
+    public function setTerritory(?string $territory)
     {
         $this->territory = $territory;
         return $this;
@@ -56,9 +56,9 @@ class RoamingDetailsItem extends Model
      *
      * @param string $operator Name of the Operator
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOperator(?string $operator) : self
+    public function setOperator(?string $operator)
     {
         $this->operator = $operator;
         return $this;
@@ -77,9 +77,9 @@ class RoamingDetailsItem extends Model
      *
      * @param int $territoryRoamingFrameCount Number of uplink roaming messages this day for this operator
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTerritoryRoamingFrameCount(?int $territoryRoamingFrameCount) : self
+    public function setTerritoryRoamingFrameCount(?int $territoryRoamingFrameCount)
     {
         $this->territoryRoamingFrameCount = $territoryRoamingFrameCount;
         return $this;
@@ -98,9 +98,9 @@ class RoamingDetailsItem extends Model
      *
      * @param int $territoryRoamingDownlinkFrameCount Number of downlink roaming messages this day for this operator
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTerritoryRoamingDownlinkFrameCount(?int $territoryRoamingDownlinkFrameCount) : self
+    public function setTerritoryRoamingDownlinkFrameCount(?int $territoryRoamingDownlinkFrameCount)
     {
         $this->territoryRoamingDownlinkFrameCount = $territoryRoamingDownlinkFrameCount;
         return $this;

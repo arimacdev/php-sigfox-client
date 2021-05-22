@@ -23,9 +23,9 @@ class GlobalCoverageResponse extends Model
      *
      * @param DataItem[] $data An array containing the response for each point.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setData(?array $data) : self
+    public function setData(?array $data)
     {
         $this->data = $data;
         return $this;

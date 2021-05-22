@@ -21,9 +21,9 @@ class Basic extends Group
      *
      * @param int $currentPrototypeCount Number of prototype registered. Accessible only for groups under SO
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCurrentPrototypeCount(?int $currentPrototypeCount) : self
+    public function setCurrentPrototypeCount(?int $currentPrototypeCount)
     {
         $this->currentPrototypeCount = $currentPrototypeCount;
         return $this;

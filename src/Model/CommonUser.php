@@ -33,9 +33,9 @@ class CommonUser extends Model
      *
      * @param string $firstName The user's first name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFirstName(?string $firstName) : self
+    public function setFirstName(?string $firstName)
     {
         $this->firstName = $firstName;
         return $this;
@@ -54,9 +54,9 @@ class CommonUser extends Model
      *
      * @param string $lastName The user's last name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastName(?string $lastName) : self
+    public function setLastName(?string $lastName)
     {
         $this->lastName = $lastName;
         return $this;
@@ -75,9 +75,9 @@ class CommonUser extends Model
      *
      * @param string $timezone The user's timezone
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTimezone(?string $timezone) : self
+    public function setTimezone(?string $timezone)
     {
         $this->timezone = $timezone;
         return $this;

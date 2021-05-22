@@ -36,9 +36,9 @@ class UserUpdate extends CommonUser
      *
      * @param UserRolesItem[] $userRoles Defines the rights of the user
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setUserRoles(?array $userRoles) : self
+    public function setUserRoles(?array $userRoles)
     {
         $this->userRoles = $userRoles;
         return $this;
@@ -58,9 +58,9 @@ class UserUpdate extends CommonUser
      * @param string $baseStations list of base station ids (Comma-separated values in hexadecimal format)
      *                             corresponding to the userRoles with tap limited access granted
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBaseStations(?string $baseStations) : self
+    public function setBaseStations(?string $baseStations)
     {
         $this->baseStations = $baseStations;
         return $this;
@@ -81,9 +81,9 @@ class UserUpdate extends CommonUser
      * @param string $maintenances list of maintenance ids corresponding to the userRoles with site limited access
      *                             granted
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMaintenances(?string $maintenances) : self
+    public function setMaintenances(?string $maintenances)
     {
         $this->maintenances = $maintenances;
         return $this;

@@ -23,9 +23,9 @@ class Bounds extends Model
      *
      * @param LatLng $sw
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSw(?LatLng $sw) : self
+    public function setSw(?LatLng $sw)
     {
         $this->sw = $sw;
         return $this;
@@ -44,9 +44,9 @@ class Bounds extends Model
      *
      * @param LatLng $ne
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setNe(?LatLng $ne) : self
+    public function setNe(?LatLng $ne)
     {
         $this->ne = $ne;
         return $this;

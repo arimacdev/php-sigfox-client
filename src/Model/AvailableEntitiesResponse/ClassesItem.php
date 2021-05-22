@@ -30,9 +30,9 @@ class ClassesItem extends Model
      *
      * @param int $id The Id of the device class.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?int $id) : self
+    public function setId(?int $id)
     {
         $this->id = $id;
         return $this;
@@ -51,9 +51,9 @@ class ClassesItem extends Model
      *
      * @param string $name The name of the device class.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -72,9 +72,9 @@ class ClassesItem extends Model
      *
      * @param int[] $attenuation The mean attenuation associated for calculation (in dB).
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAttenuation(?array $attenuation) : self
+    public function setAttenuation(?array $attenuation)
     {
         $this->attenuation = $attenuation;
         return $this;

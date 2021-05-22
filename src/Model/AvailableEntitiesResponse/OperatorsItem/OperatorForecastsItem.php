@@ -23,9 +23,9 @@ class OperatorForecastsItem extends Model
      *
      * @param double $id The identifier of the radio planning.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?float $id) : self
+    public function setId(?float $id)
     {
         $this->id = $id;
         return $this;
@@ -44,9 +44,9 @@ class OperatorForecastsItem extends Model
      *
      * @param string $name The name of the simulation.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;

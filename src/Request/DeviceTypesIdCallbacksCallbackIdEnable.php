@@ -25,9 +25,9 @@ class DeviceTypesIdCallbacksCallbackIdEnable extends Request
      *
      * @param bool $enabled True to enable the callback, false to disable it
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setEnabled(?bool $enabled) : self
+    public function setEnabled(?bool $enabled)
     {
         $this->enabled = $enabled;
         return $this;

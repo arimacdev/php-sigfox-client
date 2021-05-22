@@ -59,9 +59,9 @@ class User extends CommonUser
      *
      * @param string $id The user's identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -80,9 +80,9 @@ class User extends CommonUser
      *
      * @param string $email The user's email
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setEmail(?string $email) : self
+    public function setEmail(?string $email)
     {
         $this->email = $email;
         return $this;
@@ -101,9 +101,9 @@ class User extends CommonUser
      *
      * @param bool $locked If the user account is locked or not
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLocked(?bool $locked) : self
+    public function setLocked(?bool $locked)
     {
         $this->locked = $locked;
         return $this;
@@ -122,9 +122,9 @@ class User extends CommonUser
      *
      * @param int $creationTime The user's creation time (in millisecond since Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCreationTime(?int $creationTime) : self
+    public function setCreationTime(?int $creationTime)
     {
         $this->creationTime = $creationTime;
         return $this;
@@ -143,9 +143,9 @@ class User extends CommonUser
      *
      * @param int $lastLoginTime The user's last login time
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastLoginTime(?int $lastLoginTime) : self
+    public function setLastLoginTime(?int $lastLoginTime)
     {
         $this->lastLoginTime = $lastLoginTime;
         return $this;
@@ -164,9 +164,9 @@ class User extends CommonUser
      *
      * @param UserRole[] $userRoles
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setUserRoles(?array $userRoles) : self
+    public function setUserRoles(?array $userRoles)
     {
         $this->userRoles = $userRoles;
         return $this;
@@ -185,9 +185,9 @@ class User extends CommonUser
      *
      * @param string[] $actions
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActions(?array $actions) : self
+    public function setActions(?array $actions)
     {
         $this->actions = $actions;
         return $this;
@@ -206,9 +206,9 @@ class User extends CommonUser
      *
      * @param string[] $resources
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setResources(?array $resources) : self
+    public function setResources(?array $resources)
     {
         $this->resources = $resources;
         return $this;

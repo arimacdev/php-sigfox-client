@@ -27,9 +27,9 @@ class DevicesIdUpdate extends Request
      *
      * @param DeviceUpdateJob $device The device to update
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDevice(?DeviceUpdateJob $device) : self
+    public function setDevice(?DeviceUpdateJob $device)
     {
         $this->device = $device;
         return $this;

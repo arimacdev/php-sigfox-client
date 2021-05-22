@@ -40,9 +40,9 @@ class JobError extends Model
      *
      * @param string $entity the hex id of the entity that has an error
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setEntity(?string $entity) : self
+    public function setEntity(?string $entity)
     {
         $this->entity = $entity;
         return $this;
@@ -61,9 +61,9 @@ class JobError extends Model
      *
      * @param string $message the message of the error
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMessage(?string $message) : self
+    public function setMessage(?string $message)
     {
         $this->message = $message;
         return $this;
@@ -86,9 +86,9 @@ class JobError extends Model
      *                  - {@see JobError::TYPE_SYSTEM}
      *                  
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setType(?int $type) : self
+    public function setType(?int $type)
     {
         $this->type = $type;
         return $this;

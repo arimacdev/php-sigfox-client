@@ -121,9 +121,9 @@ class BaseDeviceType extends Model
      *
      * @param string $name The device type's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -142,9 +142,9 @@ class BaseDeviceType extends Model
      *
      * @param string $description The device type's description
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDescription(?string $description) : self
+    public function setDescription(?string $description)
     {
         $this->description = $description;
         return $this;
@@ -169,9 +169,9 @@ class BaseDeviceType extends Model
      *                          - {@see BaseDeviceType::DOWNLINK_MODE_MANAGED}
      *                          
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDownlinkMode(?int $downlinkMode) : self
+    public function setDownlinkMode(?int $downlinkMode)
     {
         $this->downlinkMode = $downlinkMode;
         return $this;
@@ -199,9 +199,9 @@ class BaseDeviceType extends Model
      *                                   It must be an 8 byte length message given in hexadecimal string format.
      *                                   
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDownlinkDataString(?string $downlinkDataString) : self
+    public function setDownlinkDataString(?string $downlinkDataString)
     {
         $this->downlinkDataString = $downlinkDataString;
         return $this;
@@ -230,9 +230,9 @@ class BaseDeviceType extends Model
      *                         - {@see BaseDeviceType::PAYLOAD_TYPE_SENSITV2}
      *                         
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPayloadType(?int $payloadType) : self
+    public function setPayloadType(?int $payloadType)
     {
         $this->payloadType = $payloadType;
         return $this;
@@ -259,9 +259,9 @@ class BaseDeviceType extends Model
      *
      * @param string $payloadConfig The payload configuration. Required if the payload type is Custom, else ignored.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPayloadConfig(?string $payloadConfig) : self
+    public function setPayloadConfig(?string $payloadConfig)
     {
         $this->payloadConfig = $payloadConfig;
         return $this;
@@ -280,9 +280,9 @@ class BaseDeviceType extends Model
      *
      * @param int $keepAlive Keep alive period in seconds (0 to not keep alive else 1800 second minimum)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setKeepAlive(?int $keepAlive) : self
+    public function setKeepAlive(?int $keepAlive)
     {
         $this->keepAlive = $keepAlive;
         return $this;
@@ -302,9 +302,9 @@ class BaseDeviceType extends Model
      * @param string $alertEmail Email address to contact in case of problems occurring while executing a callback.
      *                           This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAlertEmail(?string $alertEmail) : self
+    public function setAlertEmail(?string $alertEmail)
     {
         $this->alertEmail = $alertEmail;
         return $this;
@@ -324,9 +324,9 @@ class BaseDeviceType extends Model
      *
      * @param bool $automaticRenewal Allows the automatic renewal of devices attached to this device type
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAutomaticRenewal(?bool $automaticRenewal) : self
+    public function setAutomaticRenewal(?bool $automaticRenewal)
     {
         $this->automaticRenewal = $automaticRenewal;
         return $this;

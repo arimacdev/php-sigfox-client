@@ -27,9 +27,9 @@ class DevicesCreate extends Request
      *
      * @param DeviceCreationJob $device The device to create
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDevice(?DeviceCreationJob $device) : self
+    public function setDevice(?DeviceCreationJob $device)
     {
         $this->device = $device;
         return $this;

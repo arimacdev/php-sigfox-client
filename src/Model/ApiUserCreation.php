@@ -41,9 +41,9 @@ class ApiUserCreation extends Model
      *
      * @param string $groupId The group identifer
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupId(?string $groupId) : self
+    public function setGroupId(?string $groupId)
     {
         $this->groupId = $groupId;
         return $this;
@@ -62,9 +62,9 @@ class ApiUserCreation extends Model
      *
      * @param string $name The API user name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -84,9 +84,9 @@ class ApiUserCreation extends Model
      * @param string $timezone The API user timezone as a Java TimeZone ID ("full name" version only, like
      *                         "America/Costa_Rica")
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTimezone(?string $timezone) : self
+    public function setTimezone(?string $timezone)
     {
         $this->timezone = $timezone;
         return $this;
@@ -106,9 +106,9 @@ class ApiUserCreation extends Model
      *
      * @param string[] $profileIds The API user profiles
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setProfileIds(?array $profileIds) : self
+    public function setProfileIds(?array $profileIds)
     {
         $this->profileIds = $profileIds;
         return $this;

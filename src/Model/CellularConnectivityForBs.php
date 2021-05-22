@@ -166,9 +166,9 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *
      * @param string $id The group's identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -187,9 +187,9 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *
      * @param MinGroup $group
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroup(?MinGroup $group) : self
+    public function setGroup(?MinGroup $group)
     {
         $this->group = $group;
         return $this;
@@ -208,9 +208,9 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *
      * @param MinBaseStation $baseStation
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBaseStation(?MinBaseStation $baseStation) : self
+    public function setBaseStation(?MinBaseStation $baseStation)
     {
         $this->baseStation = $baseStation;
         return $this;
@@ -236,9 +236,9 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *                   - {@see CellularConnectivityForBs::STATE_DELETING}
      *                   
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setState(?int $state) : self
+    public function setState(?int $state)
     {
         $this->state = $state;
         return $this;
@@ -269,9 +269,9 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *                        - {@see CellularConnectivityForBs::SYNC_STATUS_SENT}
      *                        
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSyncStatus(?int $syncStatus) : self
+    public function setSyncStatus(?int $syncStatus)
     {
         $this->syncStatus = $syncStatus;
         return $this;
@@ -306,9 +306,9 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *                                   - {@see CellularConnectivityForBs::LAST_SWITCH_ERROR_STATUS_UNKNOWN}
      *                                   
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastSwitchErrorStatus(?int $lastSwitchErrorStatus) : self
+    public function setLastSwitchErrorStatus(?int $lastSwitchErrorStatus)
     {
         $this->lastSwitchErrorStatus = $lastSwitchErrorStatus;
         return $this;
@@ -346,9 +346,9 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *                                    - {@see CellularConnectivityForBs::LAST_SETCONF_ERROR_STATUS_UNKNOWN}
      *                                    
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastSetconfErrorStatus(?int $lastSetconfErrorStatus) : self
+    public function setLastSetconfErrorStatus(?int $lastSetconfErrorStatus)
     {
         $this->lastSetconfErrorStatus = $lastSetconfErrorStatus;
         return $this;
@@ -375,9 +375,9 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *
      * @param string[] $actions
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActions(?array $actions) : self
+    public function setActions(?array $actions)
     {
         $this->actions = $actions;
         return $this;
@@ -396,9 +396,9 @@ class CellularConnectivityForBs extends CellularConnectivityBase
      *
      * @param string[] $resources
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setResources(?array $resources) : self
+    public function setResources(?array $resources)
     {
         $this->resources = $resources;
         return $this;

@@ -24,8 +24,12 @@ class PreconditionFailedException extends ResponseException {
      * @internal
      *
      * @inheritdoc
+     *
+     * @param mixed $value
+     *
+     * @return self
      */
-    public static function deserialize($value): PreconditionFailedException
+    public static function deserialize($value)
     {
         return new PreconditionFailedException();
     }

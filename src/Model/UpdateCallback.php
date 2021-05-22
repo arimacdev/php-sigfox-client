@@ -104,9 +104,9 @@ class UpdateCallback extends Model
      *                        - EMAIL
      *                        
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setChannel(?string $channel) : self
+    public function setChannel(?string $channel)
     {
         $this->channel = $channel;
         return $this;
@@ -134,9 +134,9 @@ class UpdateCallback extends Model
      *                          - {@see UpdateCallback::CALLBACK_TYPE_ERROR}
      *                          
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCallbackType(?int $callbackType) : self
+    public function setCallbackType(?int $callbackType)
     {
         $this->callbackType = $callbackType;
         return $this;
@@ -169,9 +169,9 @@ class UpdateCallback extends Model
      *                             - {@see UpdateCallback::CALLBACK_SUBTYPE_DATA_ADVANCED}
      *                             
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCallbackSubtype(?int $callbackSubtype) : self
+    public function setCallbackSubtype(?int $callbackSubtype)
     {
         $this->callbackSubtype = $callbackSubtype;
         return $this;
@@ -200,9 +200,9 @@ class UpdateCallback extends Model
      * @param string $payloadConfig The custom payload configuration. Only for DATA callbacks. This field can be
      *                              unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPayloadConfig(?string $payloadConfig) : self
+    public function setPayloadConfig(?string $payloadConfig)
     {
         $this->payloadConfig = $payloadConfig;
         return $this;
@@ -222,9 +222,9 @@ class UpdateCallback extends Model
      *
      * @param bool $enabled True to enable the callback, otherwise false
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setEnabled(?bool $enabled) : self
+    public function setEnabled(?bool $enabled)
     {
         $this->enabled = $enabled;
         return $this;

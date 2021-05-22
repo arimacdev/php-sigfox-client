@@ -19,9 +19,9 @@ class ApiUsersCreateResponse extends Model
      *
      * @param string $id The newly created API user identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;

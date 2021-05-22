@@ -7,6 +7,8 @@ use Arimac\Sigfox\Request\ApiUsersList;
 use Arimac\Sigfox\Response\Generated\ApiUsersListResponse;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
+use Arimac\Sigfox\Exception\Response\ResponseException;
+use Arimac\Sigfox\Exception\ValidationException;
 use Arimac\Sigfox\Exception\Response\BadRequestException;
 use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
@@ -27,7 +29,7 @@ class ApiUsers
      *
      * @internal
      */
-    protected ?Client $client;
+    protected Client $client;
     /**
      * Creating the repository
      *
@@ -44,10 +46,18 @@ class ApiUsers
      *
      * @param ApiUsersList $request The query and body parameters to pass
      *
-     * @return PaginateResponse<ApiUser,ApiUsersListResponse>
+     * @psalm-return PaginateResponse<ApiUser,ApiUsersListResponse,E>
+     *
+     * @psalm-type E=BadRequestException | UnauthorizedException | ForbiddenException | NotFoundException |
+     *             MethodNotAllowedException | InternalServerException
+     *
+     * @return PaginateResponse<ApiUser,ApiUsersListResponse> First generic parameter is the item type and the second
+     *                                                        type is the original response type.
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
+     * @throws ResponseException           If server returned any expected HTTP error
+     * @throws ValidationException         If request could not be validated according to pre validation rules.
      * @throws BadRequestException         If server returned a HTTP 400 error.
      * @throws UnauthorizedException       If server returned a HTTP 401 error.
      * @throws ForbiddenException          If server returned a HTTP 403 error.
@@ -71,6 +81,8 @@ class ApiUsers
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
+     * @throws ResponseException           If server returned any expected HTTP error
+     * @throws ValidationException         If request could not be validated according to pre validation rules.
      * @throws BadRequestException         If server returned a HTTP 400 error.
      * @throws UnauthorizedException       If server returned a HTTP 401 error.
      * @throws ForbiddenException          If server returned a HTTP 403 error.

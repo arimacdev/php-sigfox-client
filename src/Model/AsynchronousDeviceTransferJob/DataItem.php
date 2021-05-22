@@ -31,9 +31,9 @@ class DataItem extends Model
      *
      * @param string $id The device's identifier (hexadecimal format)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -52,9 +52,9 @@ class DataItem extends Model
      *
      * @param bool $keepHistory Whether to keep the device history or not
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setKeepHistory(?bool $keepHistory) : self
+    public function setKeepHistory(?bool $keepHistory)
     {
         $this->keepHistory = $keepHistory;
         return $this;
@@ -74,9 +74,9 @@ class DataItem extends Model
      * @param bool $activable True if the device is activable and can take a token. Not used if the device has
      *                        already a token and if the transferred is intra-order.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActivable(?bool $activable) : self
+    public function setActivable(?bool $activable)
     {
         $this->activable = $activable;
         return $this;

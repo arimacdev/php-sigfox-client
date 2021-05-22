@@ -35,9 +35,9 @@ class AvailableEntitiesResponse extends Model
      *
      * @param OperatorsItem[] $operators Array of operators infos and their forecast radio planning infos
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOperators(?array $operators) : self
+    public function setOperators(?array $operators)
     {
         $this->operators = $operators;
         return $this;
@@ -56,9 +56,9 @@ class AvailableEntitiesResponse extends Model
      *
      * @param ClassesItem[] $classes Array of device class infos.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setClasses(?array $classes) : self
+    public function setClasses(?array $classes)
     {
         $this->classes = $classes;
         return $this;
@@ -77,9 +77,9 @@ class AvailableEntitiesResponse extends Model
      *
      * @param string[] $actions
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActions(?array $actions) : self
+    public function setActions(?array $actions)
     {
         $this->actions = $actions;
         return $this;

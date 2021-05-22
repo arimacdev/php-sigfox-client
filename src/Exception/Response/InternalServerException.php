@@ -24,8 +24,12 @@ class InternalServerException extends ResponseException {
      * @internal
      *
      * @inheritdoc
+     *
+     * @param mixed $value
+     *
+     * @return self
      */
-    public static function deserialize($value): InternalServerException
+    public static function deserialize($value)
     {
         return new InternalServerException();
     }

@@ -45,9 +45,9 @@ class UpdateUrlCallback extends UpdateCallback
      *
      * @param string $url The callback's url
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setUrl(?string $url) : self
+    public function setUrl(?string $url)
     {
         $this->url = $url;
         return $this;
@@ -66,9 +66,9 @@ class UpdateUrlCallback extends UpdateCallback
      *
      * @param string $httpMethod The http method used to send a callback
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setHttpMethod(?string $httpMethod) : self
+    public function setHttpMethod(?string $httpMethod)
     {
         $this->httpMethod = $httpMethod;
         return $this;
@@ -88,9 +88,9 @@ class UpdateUrlCallback extends UpdateCallback
      * @param array $headers The headers of the http request to send, as an object with key:value. This field can be
      *                       unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setHeaders(?array $headers) : self
+    public function setHeaders(?array $headers)
     {
         $this->headers = $headers;
         return $this;
@@ -111,9 +111,9 @@ class UpdateUrlCallback extends UpdateCallback
      * @param bool $sendSni Send SNI (Server Name Indication) for SSL/TLS connections. Used by BATCH_URL and URL
      *                      callbacks (optional).
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSendSni(?bool $sendSni) : self
+    public function setSendSni(?bool $sendSni)
     {
         $this->sendSni = $sendSni;
         return $this;
@@ -135,9 +135,9 @@ class UpdateUrlCallback extends UpdateCallback
      *                             contain predefined and custom variables. Mandatory for URL callbacks. This field
      *                             can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBodyTemplate(?string $bodyTemplate) : self
+    public function setBodyTemplate(?string $bodyTemplate)
     {
         $this->bodyTemplate = $bodyTemplate;
         return $this;

@@ -55,9 +55,9 @@ class CoveragesOperatorsRedundancy extends Request
      *
      * @param double $lat the latitude
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLat(?float $lat) : self
+    public function setLat(?float $lat)
     {
         $this->lat = $lat;
         return $this;
@@ -78,9 +78,9 @@ class CoveragesOperatorsRedundancy extends Request
      *
      * @param double $lng the longitude
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLng(?float $lng) : self
+    public function setLng(?float $lng)
     {
         $this->lng = $lng;
         return $this;
@@ -103,9 +103,9 @@ class CoveragesOperatorsRedundancy extends Request
      *                           root sigfox users.
      *                           
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOperatorId(?string $operatorId) : self
+    public function setOperatorId(?string $operatorId)
     {
         $this->operatorId = $operatorId;
         return $this;
@@ -132,9 +132,9 @@ class CoveragesOperatorsRedundancy extends Request
      *                                - UNDERGROUND, link budget with 30dB margin
      *                                
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeviceSituation(?string $deviceSituation) : self
+    public function setDeviceSituation(?string $deviceSituation)
     {
         $this->deviceSituation = $deviceSituation;
         return $this;
@@ -159,9 +159,9 @@ class CoveragesOperatorsRedundancy extends Request
      *
      * @param int $deviceClassId The product uplink class from 0 to 3 (0U to 3U).
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeviceClassId(?int $deviceClassId) : self
+    public function setDeviceClassId(?int $deviceClassId)
     {
         $this->deviceClassId = $deviceClassId;
         return $this;

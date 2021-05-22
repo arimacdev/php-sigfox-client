@@ -26,9 +26,9 @@ class DevicesIdProductCertificate extends Request
      *
      * @param string $pac The device's PAC (hexadecimal format)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPac(?string $pac) : self
+    public function setPac(?string $pac)
     {
         $this->pac = $pac;
         return $this;

@@ -26,9 +26,9 @@ class MinPerm extends Model
      *
      * @param int $code The permission's code
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCode(?int $code) : self
+    public function setCode(?int $code)
     {
         $this->code = $code;
         return $this;
@@ -47,9 +47,9 @@ class MinPerm extends Model
      *
      * @param string $name The permission's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;

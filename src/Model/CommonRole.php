@@ -43,9 +43,9 @@ class CommonRole extends Model
      *
      * @param string $name the role's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -69,9 +69,9 @@ class CommonRole extends Model
      *                  - {@see CommonRole::TYPE_META}
      *                  
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setType(?int $type) : self
+    public function setType(?int $type)
     {
         $this->type = $type;
         return $this;

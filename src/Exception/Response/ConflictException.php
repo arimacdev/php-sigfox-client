@@ -26,8 +26,12 @@ class ConflictException extends ResponseException {
      * @internal
      *
      * @inheritdoc
+     *
+     * @param mixed $value
+     *
+     * @return self
      */
-    public static function deserialize($value): ConflictException
+    public static function deserialize($value)
     {
         if(!is_array($value)||!isset($value["message"])){
             throw new DeserializeException(

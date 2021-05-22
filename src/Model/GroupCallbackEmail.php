@@ -25,9 +25,9 @@ trait GroupCallbackEmail
      *
      * @param string $subject the subject of the mail which have been sent
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSubject(?string $subject) : self
+    public function setSubject(?string $subject)
     {
         $this->subject = $subject;
         return $this;
@@ -46,9 +46,9 @@ trait GroupCallbackEmail
      *
      * @param string $message The body of the mail which have been sent
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMessage(?string $message) : self
+    public function setMessage(?string $message)
     {
         $this->message = $message;
         return $this;

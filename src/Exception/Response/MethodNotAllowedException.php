@@ -30,7 +30,7 @@ class MethodNotAllowedException extends ResponseException {
     /**
      * Returning all available HTTP methods for the endpoint
      *
-     * @return string
+     * @return string[]
      */
     public function getAllowedMethods(): array {
         return $this->allowedMethods;
@@ -40,8 +40,12 @@ class MethodNotAllowedException extends ResponseException {
      * @internal
      *
      * @inheritdoc
+     *
+     * @param mixed $value
+     *
+     * @return self
      */
-    public static function deserialize($value): MethodNotAllowedException
+    public static function deserialize($value)
     {
         if(!is_array($value)||!isset($value["message"])||!isset($value["allowedMethods"])){
             throw new DeserializeException(

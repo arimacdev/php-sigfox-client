@@ -19,9 +19,9 @@ class DevicesBulkResumeAsyncResponse extends Model
      *
      * @param string $jobId jobId (to use in job status request)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setJobId(?string $jobId) : self
+    public function setJobId(?string $jobId)
     {
         $this->jobId = $jobId;
         return $this;

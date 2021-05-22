@@ -70,9 +70,9 @@ class CreateLanSubscription extends CreateInternetSubscription
      *                         - {@see CreateLanSubscription::NETWORK_TYPE_RESIDENT}
      *                         
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setNetworkType(?int $networkType) : self
+    public function setNetworkType(?int $networkType)
     {
         $this->networkType = $networkType;
         return $this;
@@ -100,9 +100,9 @@ class CreateLanSubscription extends CreateInternetSubscription
      *                               - {@see CreateLanSubscription::ETH_CONNECTION_TYPE_STATIC}
      *                               
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setEthConnectionType(?int $ethConnectionType) : self
+    public function setEthConnectionType(?int $ethConnectionType)
     {
         $this->ethConnectionType = $ethConnectionType;
         return $this;
@@ -125,9 +125,9 @@ class CreateLanSubscription extends CreateInternetSubscription
      *
      * @param string $addressing The addressing of this internet subscription. This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAddressing(?string $addressing) : self
+    public function setAddressing(?string $addressing)
     {
         $this->addressing = $addressing;
         return $this;
@@ -147,9 +147,9 @@ class CreateLanSubscription extends CreateInternetSubscription
      * @param double $connectionComments Comments about the connection of this internet subscription. This field can
      *                                   be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setConnectionComments(?float $connectionComments) : self
+    public function setConnectionComments(?float $connectionComments)
     {
         $this->connectionComments = $connectionComments;
         return $this;

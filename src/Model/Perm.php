@@ -41,9 +41,9 @@ class Perm extends Model
      *
      * @param int $code The permission's code
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCode(?int $code) : self
+    public function setCode(?int $code)
     {
         $this->code = $code;
         return $this;
@@ -62,9 +62,9 @@ class Perm extends Model
      *
      * @param string $name The permission's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -83,9 +83,9 @@ class Perm extends Model
      *
      * @param string $description The permission's description (in english)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDescription(?string $description) : self
+    public function setDescription(?string $description)
     {
         $this->description = $description;
         return $this;
@@ -104,9 +104,9 @@ class Perm extends Model
      *
      * @param string[] $actions
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActions(?array $actions) : self
+    public function setActions(?array $actions)
     {
         $this->actions = $actions;
         return $this;
@@ -125,9 +125,9 @@ class Perm extends Model
      *
      * @param string[] $resources
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setResources(?array $resources) : self
+    public function setResources(?array $resources)
     {
         $this->resources = $resources;
         return $this;

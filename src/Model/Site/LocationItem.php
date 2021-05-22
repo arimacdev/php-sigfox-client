@@ -23,9 +23,9 @@ class LocationItem extends Model
      *
      * @param int $code location code
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCode(?int $code) : self
+    public function setCode(?int $code)
     {
         $this->code = $code;
         return $this;
@@ -44,9 +44,9 @@ class LocationItem extends Model
      *
      * @param string $name location name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;

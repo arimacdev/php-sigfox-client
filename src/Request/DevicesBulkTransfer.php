@@ -27,9 +27,9 @@ class DevicesBulkTransfer extends Request
      *
      * @param AsynchronousDeviceTransferJob $devices The devices to move
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDevices(?AsynchronousDeviceTransferJob $devices) : self
+    public function setDevices(?AsynchronousDeviceTransferJob $devices)
     {
         $this->devices = $devices;
         return $this;

@@ -25,9 +25,9 @@ class UsersIdProfilesAddRoles extends Request
      *
      * @param array $userRoles user roles array to add
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setUserRoles(?array $userRoles) : self
+    public function setUserRoles(?array $userRoles)
     {
         $this->userRoles = $userRoles;
         return $this;

@@ -100,9 +100,9 @@ class EthernetConnectivityBase extends Model
      *
      * @param string $name The name of the configuration
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -125,9 +125,9 @@ class EthernetConnectivityBase extends Model
      *                  - {@see EthernetConnectivityBase::TYPE_PARTLY_DYNAMIC}
      *                  
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setType(?int $type) : self
+    public function setType(?int $type)
     {
         $this->type = $type;
         return $this;
@@ -150,9 +150,9 @@ class EthernetConnectivityBase extends Model
      *
      * @param string $ip IP address of the ethernet connectivity, required if the type is STATIC
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setIp(?string $ip) : self
+    public function setIp(?string $ip)
     {
         $this->ip = $ip;
         return $this;
@@ -171,9 +171,9 @@ class EthernetConnectivityBase extends Model
      *
      * @param string $mask Subnet mask of the ethernet connectivity, required if the type is STATIC
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMask(?string $mask) : self
+    public function setMask(?string $mask)
     {
         $this->mask = $mask;
         return $this;
@@ -192,9 +192,9 @@ class EthernetConnectivityBase extends Model
      *
      * @param string $dns1 DNS n°1 of the ethernet connectivity, required if the type is STATIC
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDns1(?string $dns1) : self
+    public function setDns1(?string $dns1)
     {
         $this->dns1 = $dns1;
         return $this;
@@ -214,9 +214,9 @@ class EthernetConnectivityBase extends Model
      * @param string $dns2 DNS n°2 of the ethernet connectivity, only applicable if the type is STATIC. This field
      *                     can be unset by setting the value as an empty string.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDns2(?string $dns2) : self
+    public function setDns2(?string $dns2)
     {
         $this->dns2 = $dns2;
         return $this;
@@ -236,9 +236,9 @@ class EthernetConnectivityBase extends Model
      *
      * @param string $gateway Gateway of the ethernet connectivity, required if the type is STATIC
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGateway(?string $gateway) : self
+    public function setGateway(?string $gateway)
     {
         $this->gateway = $gateway;
         return $this;
@@ -258,9 +258,9 @@ class EthernetConnectivityBase extends Model
      * @param int $mtu MTU of the ethernet connectivity, required if the type is PARTLY_DYNAMIC. This field can be
      *                 unset by setting the value to null.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMtu(?int $mtu) : self
+    public function setMtu(?int $mtu)
     {
         $this->mtu = $mtu;
         return $this;
@@ -286,9 +286,9 @@ class EthernetConnectivityBase extends Model
      *                    - {@see EthernetConnectivityBase::SOURCE_TOOLS}
      *                    
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSource(?int $source) : self
+    public function setSource(?int $source)
     {
         $this->source = $source;
         return $this;

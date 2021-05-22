@@ -131,9 +131,9 @@ class DeviceTypeUpdate extends BaseDeviceType
      *                         - {@see DeviceTypeUpdate::PAYLOAD_TYPE_SENSITV2}
      *                         
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPayloadType(?int $payloadType) : self
+    public function setPayloadType(?int $payloadType)
     {
         $this->payloadType = $payloadType;
         return $this;
@@ -160,9 +160,9 @@ class DeviceTypeUpdate extends BaseDeviceType
      *
      * @param string $payloadConfig The payload configuration. Required if the payload type is Custom, else ignored.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPayloadConfig(?string $payloadConfig) : self
+    public function setPayloadConfig(?string $payloadConfig)
     {
         $this->payloadConfig = $payloadConfig;
         return $this;
@@ -187,9 +187,9 @@ class DeviceTypeUpdate extends BaseDeviceType
      *                          - {@see DeviceTypeUpdate::DOWNLINK_MODE_MANAGED}
      *                          
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDownlinkMode(?int $downlinkMode) : self
+    public function setDownlinkMode(?int $downlinkMode)
     {
         $this->downlinkMode = $downlinkMode;
         return $this;
@@ -217,9 +217,9 @@ class DeviceTypeUpdate extends BaseDeviceType
      *                                   It must be an 8 byte length message given in hexadecimal string format.
      *                                   
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDownlinkDataString(?string $downlinkDataString) : self
+    public function setDownlinkDataString(?string $downlinkDataString)
     {
         $this->downlinkDataString = $downlinkDataString;
         return $this;
@@ -240,9 +240,9 @@ class DeviceTypeUpdate extends BaseDeviceType
      *
      * @param string $description The device types's description
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDescription(?string $description) : self
+    public function setDescription(?string $description)
     {
         $this->description = $description;
         return $this;
@@ -262,9 +262,9 @@ class DeviceTypeUpdate extends BaseDeviceType
      * @param string $contractId The device type's contract identifier (must be on the same group than the device
      *                           type)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setContractId(?string $contractId) : self
+    public function setContractId(?string $contractId)
     {
         $this->contractId = $contractId;
         return $this;
@@ -284,9 +284,9 @@ class DeviceTypeUpdate extends BaseDeviceType
      * @param ContractId[] $contracts The device type's contract identifiers (must be on the same group than the
      *                                device type)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setContracts(?array $contracts) : self
+    public function setContracts(?array $contracts)
     {
         $this->contracts = $contracts;
         return $this;
@@ -306,9 +306,9 @@ class DeviceTypeUpdate extends BaseDeviceType
      * @param string $geolocPayloadConfigId The geoloc payload configuration identifier. Required if the payload type
      *                                      is Geolocation, else ignored.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGeolocPayloadConfigId(?string $geolocPayloadConfigId) : self
+    public function setGeolocPayloadConfigId(?string $geolocPayloadConfigId)
     {
         $this->geolocPayloadConfigId = $geolocPayloadConfigId;
         return $this;
@@ -328,9 +328,9 @@ class DeviceTypeUpdate extends BaseDeviceType
      *
      * @param bool $automaticRenewal Allows the automatic renewal of devices attached to this device type
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAutomaticRenewal(?bool $automaticRenewal) : self
+    public function setAutomaticRenewal(?bool $automaticRenewal)
     {
         $this->automaticRenewal = $automaticRenewal;
         return $this;

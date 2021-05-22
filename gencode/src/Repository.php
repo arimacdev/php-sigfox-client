@@ -63,7 +63,9 @@ class Repository extends Class_
         $this->addProperty(
             "client",
             "Client",
-            Helper::normalizeDocComment("The HTTP client", [["internal", null]], 2)
+            Helper::normalizeDocComment("The HTTP client", [["internal", null]], 2),
+            null,
+            false
         );
         $params[] = new Param(new Variable("client"), null, "Client");
         $stmts[] = new Assign(
@@ -77,7 +79,9 @@ class Repository extends Class_
             $this->addProperty(
                 $param[0],
                 $param[1],
-                Helper::normalizeDocComment($param[2], [["internal", null]], 2)
+                Helper::normalizeDocComment($param[2], [["internal", null]], 2),
+                null,
+                false
             );
 
             $stmts[] = new Assign(
@@ -193,6 +197,8 @@ class Repository extends Class_
             $required = $requestProperties[$propertyName][1];
             $paramDescription = $requestProperties[$propertyName][2];
 
+            $requestVariableName = $propertyName==="request"?"coreRequest": "request";
+
             $usedType = $this->useType($type);
 
             array_push($docBlockTags, ["param", $usedType . ($required ? "" : "|null"), "\$$propertyName", $paramDescription]);
@@ -208,14 +214,14 @@ class Repository extends Class_
             $param->setType($phpType);
             $params[] = $param;
             // $request = new MyRequest()
-            array_push($stmts, new Assign(new Variable("request"), $this->factory->new($requestType)));
+            array_push($stmts, new Assign(new Variable($requestVariableName), $this->factory->new($requestType)));
             // $request->setMyParam($myParam);
             array_push($stmts, $this->factory->methodCall(
-                new Variable("request"),
+                new Variable($requestVariableName),
                 "set" . ucfirst($propertyName),
                 [$this->factory->var($propertyName)]
             ));
-            array_push($args, new Variable("request"));
+            array_push($args, new Variable($requestVariableName));
         } else if (isset($requestType)) {
             $requestType = $this->useType($requestType);
             array_push($docBlockTags, ["param", $requestType, "\$request", "The query and body parameters to pass"]);
@@ -244,19 +250,31 @@ class Repository extends Class_
         }
 
         // Adding the SerializeException as a @throws tag to doc block
-        if ($requestType) {
-            $serializeException = $this->useType("Arimac\\Sigfox\\Exception\\SerializeException");
-            array_push($docBlockTags, ["throws", $serializeException, "If request object failed to serialize to a JSON serializable type."]);
-        }
+        $serializeException = $this->useType("Arimac\\Sigfox\\Exception\\SerializeException");
+        array_push($docBlockTags, ["throws", $serializeException, "If request object failed to serialize to a JSON serializable type."]);
 
         // Adding UnexpectedResponseException to the doc block
         $unexpectedException = $this->useType("Arimac\\Sigfox\\Exception\\UnexpectedResponseException");
         array_push($docBlockTags, ["throws", $unexpectedException, "If server returned an unexpected status code."]);
 
+        // Adding generic HTTP exception
+        $responseException = $this->useType("Arimac\\Sigfox\\Exception\\Response\\ResponseException");
+        $docBlockTags[] = ["throws", $responseException, "If server returned any expected HTTP error"];
+
+        // ValidationException
+        $validationException = $this->useType("Arimac\\Sigfox\\Exception\\ValidationException");
+        $docBlockTags[] = [
+            "throws",
+            $validationException,
+            "If request could not be validated according to pre validation rules."
+        ];
+
         // Adding all expected HTTP responses to the doc block and $client->call method
         $astErrors = [];
+        $docErrors = [];
         foreach ($errors as $statusCode => $className) {
             $className = $this->useType($className);
+            $docErrors[] = $className;
             array_push($docBlockTags, ["throws", $className, "If server returned a HTTP " . $statusCode . " error."]);
             $astErrors[$statusCode] = $this->factory->classConstFetch($className, "class");
         }
@@ -269,7 +287,7 @@ class Repository extends Class_
 
         $clientCall = new FuncCall(new Name("\$this->client->call"), $args);
         // Returning the response from the method if the request is expecting for a response
-        if(count($responseProperties)===1&&!$responseTypeNullable) {
+        if (count($responseProperties) === 1 && !$responseTypeNullable) {
             $propertyName = array_keys($responseProperties)[0];
             $type = $responseProperties[$propertyName][0];
             $required = $responseProperties[$propertyName][1];
@@ -277,13 +295,13 @@ class Repository extends Class_
 
             $type = $this->useType($type);
             array_push($docBlockTags, ["return", $type, $paramDescription]);
-            $stmts[] = new Expression(new Assign($this->factory->var("response"), $clientCall),[
+            $stmts[] = new Expression(new Assign($this->factory->var("response"), $clientCall), [
                 // Ignoring type errors
-                "comments"=>[
+                "comments" => [
                     new Comment("/** @var $responseType **/")
                 ]
             ]);
-            $getter = "get".ucfirst($propertyName);
+            $getter = "get" . ucfirst($propertyName);
             $stmts[] = new Return_(
                 $this->factory->methodCall(
                     $this->factory->var("response"),
@@ -291,16 +309,15 @@ class Repository extends Class_
                 )
             );
             $responseType = Helper::toPHPValue($type);
-            if(!$required){
+            if (!$required) {
                 $responseType = new NullableType($responseType);
             }
-             
-        }else if ($isPaginated) {
+        } else if ($isPaginated) {
             $model = $this->useType("Arimac\\Sigfox\\Model");
             $paginatedResponse = $this->useType("Arimac\\Sigfox\\Response\\Paginated\\PaginatedResponse");
-            $stmts[] = new Expression(new Assign($this->factory->var("response"), $clientCall),[
+            $stmts[] = new Expression(new Assign($this->factory->var("response"), $clientCall), [
                 // Ignoring type errors
-                "comments"=>[
+                "comments" => [
                     new Comment("/** @var $model&$paginatedResponse **/")
                 ]
             ]);
@@ -308,7 +325,17 @@ class Repository extends Class_
             $itemType = substr($arrType, 0, strlen($arrType) - 2);
             $itemType = $this->useType($itemType);
             $paginateResponse = $this->useType("Arimac\\Sigfox\\Response\\Paginated\\PaginateResponse");
-            array_push($docBlockTags, ["return", "$paginateResponse<$itemType,$responseType>", null]);
+            $errors = implode(" | ",$docErrors);
+            array_push($docBlockTags, ["psalm-type", "E=".$errors]);
+            array_push($docBlockTags, ["psalm-return", "$paginateResponse<$itemType,$responseType,E>"]);
+            array_push(
+                $docBlockTags,
+                [
+                    "return", 
+                    "$paginateResponse<$itemType,$responseType>",
+                    "First generic parameter is the item type and the second type is the original response type."
+                ]
+            );
             $responseType = $paginateResponse;
             $stmts[] = new Return_(
                 $this->factory->new($paginateResponse, [

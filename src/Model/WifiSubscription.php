@@ -69,9 +69,9 @@ class WifiSubscription extends InternetSubscription
      *                         - {@see WifiSubscription::NETWORK_TYPE_RESIDENT}
      *                         
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setNetworkType(?int $networkType) : self
+    public function setNetworkType(?int $networkType)
     {
         $this->networkType = $networkType;
         return $this;
@@ -99,9 +99,9 @@ class WifiSubscription extends InternetSubscription
      *                               - {@see WifiSubscription::ETH_CONNECTION_TYPE_STATIC}
      *                               
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setEthConnectionType(?int $ethConnectionType) : self
+    public function setEthConnectionType(?int $ethConnectionType)
     {
         $this->ethConnectionType = $ethConnectionType;
         return $this;
@@ -124,9 +124,9 @@ class WifiSubscription extends InternetSubscription
      *
      * @param string $ssid The SSID of this Wi-Fi internet subscription. This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSsid(?string $ssid) : self
+    public function setSsid(?string $ssid)
     {
         $this->ssid = $ssid;
         return $this;
@@ -146,9 +146,9 @@ class WifiSubscription extends InternetSubscription
      * @param string $passphrase The passphrase on this Wi-Fi internet subscription. This field can be unset when
      *                           updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPassphrase(?string $passphrase) : self
+    public function setPassphrase(?string $passphrase)
     {
         $this->passphrase = $passphrase;
         return $this;

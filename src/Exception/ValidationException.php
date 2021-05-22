@@ -13,6 +13,8 @@ class ValidationException extends SigfoxException {
 
     /**
      * @internal
+     *
+     * @var mixed
      */
     protected $value;
 
@@ -22,7 +24,7 @@ class ValidationException extends SigfoxException {
      * @internal
      *
      * @param string $rule  Formatted rule
-     * @param string $value Invalid value
+     * @param mixed  $value Invalid value
      */
     public function __construct(string $rule, $value)
     {

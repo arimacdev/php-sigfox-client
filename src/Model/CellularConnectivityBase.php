@@ -78,9 +78,9 @@ class CellularConnectivityBase extends Model
      *
      * @param string $name The name of the configuration
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -99,9 +99,9 @@ class CellularConnectivityBase extends Model
      *
      * @param string $apn The APN used to connect to the base station with this cellular connectivity configuration
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setApn(?string $apn) : self
+    public function setApn(?string $apn)
     {
         $this->apn = $apn;
         return $this;
@@ -121,9 +121,9 @@ class CellularConnectivityBase extends Model
      * @param string $username The username used to connect to the base station with this cellular connectivity
      *                         configuration. This field can be unset by setting the value as an empty string.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setUsername(?string $username) : self
+    public function setUsername(?string $username)
     {
         $this->username = $username;
         return $this;
@@ -144,9 +144,9 @@ class CellularConnectivityBase extends Model
      * @param string $password The password used to connect to the base station with this cellular connectivity
      *                         configuration. This field can be unset by setting the value as an empty string.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPassword(?string $password) : self
+    public function setPassword(?string $password)
     {
         $this->password = $password;
         return $this;
@@ -167,9 +167,9 @@ class CellularConnectivityBase extends Model
      * @param string $pin The PIN used to connect to the base station with this cellular connectivity configuration.
      *                    This field can be unset by setting the value as an empty string.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPin(?string $pin) : self
+    public function setPin(?string $pin)
     {
         $this->pin = $pin;
         return $this;
@@ -189,9 +189,9 @@ class CellularConnectivityBase extends Model
      *
      * @param bool $roaming Indicates if the cellular connectivity is registered on a roaming network.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRoaming(?bool $roaming) : self
+    public function setRoaming(?bool $roaming)
     {
         $this->roaming = $roaming;
         return $this;
@@ -216,9 +216,9 @@ class CellularConnectivityBase extends Model
      *                    - {@see CellularConnectivityBase::SOURCE_TOOLS}
      *                    
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSource(?int $source) : self
+    public function setSource(?int $source)
     {
         $this->source = $source;
         return $this;

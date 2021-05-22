@@ -112,9 +112,9 @@ class UpdateAdslSubscription extends UpdateInternetSubscription
      *                              - {@see UpdateAdslSubscription::CONNECTION_STATUS_ACTIVATED}
      *                              
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setConnectionStatus(?int $connectionStatus) : self
+    public function setConnectionStatus(?int $connectionStatus)
     {
         $this->connectionStatus = $connectionStatus;
         return $this;
@@ -139,9 +139,9 @@ class UpdateAdslSubscription extends UpdateInternetSubscription
      * @param string $internetAccount The internet account of this internet subscription. This field can be unset
      *                                when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setInternetAccount(?string $internetAccount) : self
+    public function setInternetAccount(?string $internetAccount)
     {
         $this->internetAccount = $internetAccount;
         return $this;
@@ -161,9 +161,9 @@ class UpdateAdslSubscription extends UpdateInternetSubscription
      * @param string $orderNumber The order number of this internet subscription. This field can be unset when
      *                            updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOrderNumber(?string $orderNumber) : self
+    public function setOrderNumber(?string $orderNumber)
     {
         $this->orderNumber = $orderNumber;
         return $this;
@@ -182,9 +182,9 @@ class UpdateAdslSubscription extends UpdateInternetSubscription
      *
      * @param string $interfaceLogin The interface login of this internet subscription
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setInterfaceLogin(?string $interfaceLogin) : self
+    public function setInterfaceLogin(?string $interfaceLogin)
     {
         $this->interfaceLogin = $interfaceLogin;
         return $this;
@@ -203,9 +203,9 @@ class UpdateAdslSubscription extends UpdateInternetSubscription
      *
      * @param string $interfacePassword The interface password of this internet subscription
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setInterfacePassword(?string $interfacePassword) : self
+    public function setInterfacePassword(?string $interfacePassword)
     {
         $this->interfacePassword = $interfacePassword;
         return $this;
@@ -224,9 +224,9 @@ class UpdateAdslSubscription extends UpdateInternetSubscription
      *
      * @param string $adslLogin The adsl login of this internet subscription. This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAdslLogin(?string $adslLogin) : self
+    public function setAdslLogin(?string $adslLogin)
     {
         $this->adslLogin = $adslLogin;
         return $this;
@@ -246,9 +246,9 @@ class UpdateAdslSubscription extends UpdateInternetSubscription
      * @param string $adslPassword The adsl password of this internet subscription. This field can be unset when
      *                             updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAdslPassword(?string $adslPassword) : self
+    public function setAdslPassword(?string $adslPassword)
     {
         $this->adslPassword = $adslPassword;
         return $this;
@@ -267,9 +267,9 @@ class UpdateAdslSubscription extends UpdateInternetSubscription
      *
      * @param string $lineNumber The line number of this internet subscription
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLineNumber(?string $lineNumber) : self
+    public function setLineNumber(?string $lineNumber)
     {
         $this->lineNumber = $lineNumber;
         return $this;
@@ -288,9 +288,9 @@ class UpdateAdslSubscription extends UpdateInternetSubscription
      *
      * @param string $modem The modem of this internet subscription
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setModem(?string $modem) : self
+    public function setModem(?string $modem)
     {
         $this->modem = $modem;
         return $this;
@@ -309,9 +309,9 @@ class UpdateAdslSubscription extends UpdateInternetSubscription
      *
      * @param string $modemSerialNumber The serial number of the modem of this internet subscription
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setModemSerialNumber(?string $modemSerialNumber) : self
+    public function setModemSerialNumber(?string $modemSerialNumber)
     {
         $this->modemSerialNumber = $modemSerialNumber;
         return $this;
@@ -331,9 +331,9 @@ class UpdateAdslSubscription extends UpdateInternetSubscription
      * @param string $jumperStrip The jumper strip of this internet subscription. This field can be unset when
      *                            updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setJumperStrip(?string $jumperStrip) : self
+    public function setJumperStrip(?string $jumperStrip)
     {
         $this->jumperStrip = $jumperStrip;
         return $this;
@@ -353,9 +353,9 @@ class UpdateAdslSubscription extends UpdateInternetSubscription
      * @param string $jumperBlock The jumper block of this internet subscription. This field can be unset when
      *                            updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setJumperBlock(?string $jumperBlock) : self
+    public function setJumperBlock(?string $jumperBlock)
     {
         $this->jumperBlock = $jumperBlock;
         return $this;
@@ -374,9 +374,9 @@ class UpdateAdslSubscription extends UpdateInternetSubscription
      *
      * @param string $pair The pair of this internet subscription. This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPair(?string $pair) : self
+    public function setPair(?string $pair)
     {
         $this->pair = $pair;
         return $this;

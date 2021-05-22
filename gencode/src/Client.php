@@ -10,6 +10,16 @@ use PhpParser\Node\Stmt\Return_;
 class Client extends Class_ {
     protected $methods = [];
 
+    public function setBaseUrl(string $url){
+        $this->addMethod(
+            "getBaseUrl",
+            [],
+            [new Return_($this->factory->val($url))],
+            "string",
+            Helper::normalizeDocComment([["inheritdoc", null], ["internal", null]], 2)
+        );
+    }
+
     public function addRepositoryMethod(string $methodName, string $returnType)
     {
         if(in_array($methodName, $this->methods)){

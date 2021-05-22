@@ -68,9 +68,9 @@ class CommonCertificate extends Model
      *
      * @param string $id The certificate's identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -89,9 +89,9 @@ class CommonCertificate extends Model
      *
      * @param string $name The certificate's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -114,9 +114,9 @@ class CommonCertificate extends Model
      *                    - {@see CommonCertificate::STATUS_FINALIZED}
      *                    
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setStatus(?int $status) : self
+    public function setStatus(?int $status)
     {
         $this->status = $status;
         return $this;
@@ -139,9 +139,9 @@ class CommonCertificate extends Model
      *
      * @param string $key The certificate's key
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setKey(?string $key) : self
+    public function setKey(?string $key)
     {
         $this->key = $key;
         return $this;
@@ -160,9 +160,9 @@ class CommonCertificate extends Model
      *
      * @param MinGroup $manufacturer
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setManufacturer(?MinGroup $manufacturer) : self
+    public function setManufacturer(?MinGroup $manufacturer)
     {
         $this->manufacturer = $manufacturer;
         return $this;
@@ -181,9 +181,9 @@ class CommonCertificate extends Model
      *
      * @param string $version The certificate's version
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setVersion(?string $version) : self
+    public function setVersion(?string $version)
     {
         $this->version = $version;
         return $this;
@@ -202,9 +202,9 @@ class CommonCertificate extends Model
      *
      * @param string $description The certificate description
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDescription(?string $description) : self
+    public function setDescription(?string $description)
     {
         $this->description = $description;
         return $this;

@@ -31,9 +31,9 @@ class UpdateEmailCallback extends UpdateCallback
      *
      * @param string $subject The subject of the email.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSubject(?string $subject) : self
+    public function setSubject(?string $subject)
     {
         $this->subject = $subject;
         return $this;
@@ -52,9 +52,9 @@ class UpdateEmailCallback extends UpdateCallback
      *
      * @param string $recipient The recipient of the email.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRecipient(?string $recipient) : self
+    public function setRecipient(?string $recipient)
     {
         $this->recipient = $recipient;
         return $this;
@@ -73,9 +73,9 @@ class UpdateEmailCallback extends UpdateCallback
      *
      * @param string $message the content of the message.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMessage(?string $message) : self
+    public function setMessage(?string $message)
     {
         $this->message = $message;
         return $this;

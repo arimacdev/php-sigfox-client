@@ -82,9 +82,9 @@ class UsersList extends Request
      * @param string $fields Defines the other available fields to be returned in the response.
      *                       
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFields(?string $fields) : self
+    public function setFields(?string $fields)
     {
         $this->fields = $fields;
         return $this;
@@ -106,9 +106,9 @@ class UsersList extends Request
      *
      * @param string $text Searches for users containing the given text in their name or email
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setText(?string $text) : self
+    public function setText(?string $text)
     {
         $this->text = $text;
         return $this;
@@ -129,9 +129,9 @@ class UsersList extends Request
      *
      * @param string $profileId Searches for users who have the given profile affected
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setProfileId(?string $profileId) : self
+    public function setProfileId(?string $profileId)
     {
         $this->profileId = $profileId;
         return $this;
@@ -152,9 +152,9 @@ class UsersList extends Request
      *
      * @param string[] $groupIds Searches for users who are attached to the given groups
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupIds(?array $groupIds) : self
+    public function setGroupIds(?array $groupIds)
     {
         $this->groupIds = $groupIds;
         return $this;
@@ -175,9 +175,9 @@ class UsersList extends Request
      *
      * @param bool $deep Deep search in the sub group hierarchy
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeep(?bool $deep) : self
+    public function setDeep(?bool $deep)
     {
         $this->deep = $deep;
         return $this;
@@ -201,9 +201,9 @@ class UsersList extends Request
      *                     sort by name will sort on lowercase and ascii string version of "<firstName> <lastName>"
      *                     
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSort(?string $sort) : self
+    public function setSort(?string $sort)
     {
         $this->sort = $sort;
         return $this;
@@ -227,9 +227,9 @@ class UsersList extends Request
      *
      * @param bool $authorizations if true, we return the list of actions and resources the user has access
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAuthorizations(?bool $authorizations) : self
+    public function setAuthorizations(?bool $authorizations)
     {
         $this->authorizations = $authorizations;
         return $this;
@@ -250,9 +250,9 @@ class UsersList extends Request
      *
      * @param int $limit The maximum number of items to return
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLimit(?int $limit) : self
+    public function setLimit(?int $limit)
     {
         $this->limit = $limit;
         return $this;
@@ -273,9 +273,9 @@ class UsersList extends Request
      *
      * @param int $offset The number of items to skip
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOffset(?int $offset) : self
+    public function setOffset(?int $offset)
     {
         $this->offset = $offset;
         return $this;
@@ -296,9 +296,9 @@ class UsersList extends Request
      *
      * @param string $pageId Token representing the page to retrieve
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPageId(?string $pageId) : self
+    public function setPageId(?string $pageId)
     {
         $this->pageId = $pageId;
         return $this;

@@ -35,9 +35,9 @@ class CbStatus extends Model
      *
      * @param int $status http response status
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setStatus(?int $status) : self
+    public function setStatus(?int $status)
     {
         $this->status = $status;
         return $this;
@@ -56,9 +56,9 @@ class CbStatus extends Model
      *
      * @param string $info http response message
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setInfo(?string $info) : self
+    public function setInfo(?string $info)
     {
         $this->info = $info;
         return $this;
@@ -77,9 +77,9 @@ class CbStatus extends Model
      *
      * @param string $cbDef callback definition triggered
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCbDef(?string $cbDef) : self
+    public function setCbDef(?string $cbDef)
     {
         $this->cbDef = $cbDef;
         return $this;
@@ -98,9 +98,9 @@ class CbStatus extends Model
      *
      * @param int $time time the callback was called (in milliseconds since the Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTime(?int $time) : self
+    public function setTime(?int $time)
     {
         $this->time = $time;
         return $this;

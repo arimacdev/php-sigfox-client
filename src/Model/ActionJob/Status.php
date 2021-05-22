@@ -42,9 +42,9 @@ class Status extends Model
      *
      * @param int $total the total number of devices given
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTotal(?int $total) : self
+    public function setTotal(?int $total)
     {
         $this->total = $total;
         return $this;
@@ -63,9 +63,9 @@ class Status extends Model
      *
      * @param int $nbSuccess the number of devices successfully changed
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setNbSuccess(?int $nbSuccess) : self
+    public function setNbSuccess(?int $nbSuccess)
     {
         $this->nbSuccess = $nbSuccess;
         return $this;
@@ -84,9 +84,9 @@ class Status extends Model
      *
      * @param int $nbErrors the number of devices unsuccessfully changed
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setNbErrors(?int $nbErrors) : self
+    public function setNbErrors(?int $nbErrors)
     {
         $this->nbErrors = $nbErrors;
         return $this;
@@ -105,9 +105,9 @@ class Status extends Model
      *
      * @param JobError[] $errors reasons of each errors
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setErrors(?array $errors) : self
+    public function setErrors(?array $errors)
     {
         $this->errors = $errors;
         return $this;

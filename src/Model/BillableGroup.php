@@ -32,9 +32,9 @@ trait BillableGroup
      *
      * @param bool $billable true if the group is billable
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBillable(?bool $billable) : self
+    public function setBillable(?bool $billable)
     {
         $this->billable = $billable;
         return $this;
@@ -53,9 +53,9 @@ trait BillableGroup
      *
      * @param string $technicalEmail The technical contact email
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTechnicalEmail(?string $technicalEmail) : self
+    public function setTechnicalEmail(?string $technicalEmail)
     {
         $this->technicalEmail = $technicalEmail;
         return $this;
@@ -74,9 +74,9 @@ trait BillableGroup
      *
      * @param int $maxPrototypeAllowed Number of prototypes allowed. Accessible only for groups under SO
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMaxPrototypeAllowed(?int $maxPrototypeAllowed) : self
+    public function setMaxPrototypeAllowed(?int $maxPrototypeAllowed)
     {
         $this->maxPrototypeAllowed = $maxPrototypeAllowed;
         return $this;

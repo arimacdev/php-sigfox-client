@@ -43,9 +43,9 @@ class ContractInfosIdDevices extends Request
      *
      * @param string $deviceTypeId Returns only devices of the given device type
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeviceTypeId(?string $deviceTypeId) : self
+    public function setDeviceTypeId(?string $deviceTypeId)
     {
         $this->deviceTypeId = $deviceTypeId;
         return $this;
@@ -67,9 +67,9 @@ class ContractInfosIdDevices extends Request
      * @param string $fields Defines the other available fields to be returned in the response.
      *                       
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFields(?string $fields) : self
+    public function setFields(?string $fields)
     {
         $this->fields = $fields;
         return $this;
@@ -91,9 +91,9 @@ class ContractInfosIdDevices extends Request
      *
      * @param int $limit The maximum number of items to return
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLimit(?int $limit) : self
+    public function setLimit(?int $limit)
     {
         $this->limit = $limit;
         return $this;
@@ -114,9 +114,9 @@ class ContractInfosIdDevices extends Request
      *
      * @param string $pageId Token representing the page to retrieve
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPageId(?string $pageId) : self
+    public function setPageId(?string $pageId)
     {
         $this->pageId = $pageId;
         return $this;

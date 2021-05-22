@@ -56,9 +56,9 @@ class OperatorUpdate extends Model
      *
      * @param int $transmitterPower Transmitter power (TRP) (in mW)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTransmitterPower(?int $transmitterPower) : self
+    public function setTransmitterPower(?int $transmitterPower)
     {
         $this->transmitterPower = $transmitterPower;
         return $this;
@@ -77,9 +77,9 @@ class OperatorUpdate extends Model
      *
      * @param int $minDb Min dB (in dBm)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMinDb(?int $minDb) : self
+    public function setMinDb(?int $minDb)
     {
         $this->minDb = $minDb;
         return $this;
@@ -98,9 +98,9 @@ class OperatorUpdate extends Model
      *
      * @param int $maxDb Max dB (in dBm)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMaxDb(?int $maxDb) : self
+    public function setMaxDb(?int $maxDb)
     {
         $this->maxDb = $maxDb;
         return $this;
@@ -119,9 +119,9 @@ class OperatorUpdate extends Model
      *
      * @param int $alertTime Alert time (in seconds)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAlertTime(?int $alertTime) : self
+    public function setAlertTime(?int $alertTime)
     {
         $this->alertTime = $alertTime;
         return $this;
@@ -140,9 +140,9 @@ class OperatorUpdate extends Model
      *
      * @param string $requestTrackerBaseUrl Request tracker base Url
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRequestTrackerBaseUrl(?string $requestTrackerBaseUrl) : self
+    public function setRequestTrackerBaseUrl(?string $requestTrackerBaseUrl)
     {
         $this->requestTrackerBaseUrl = $requestTrackerBaseUrl;
         return $this;
@@ -161,9 +161,9 @@ class OperatorUpdate extends Model
      *
      * @param MinStandard $telecommunicationStandard
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTelecommunicationStandard(?MinStandard $telecommunicationStandard) : self
+    public function setTelecommunicationStandard(?MinStandard $telecommunicationStandard)
     {
         $this->telecommunicationStandard = $telecommunicationStandard;
         return $this;
@@ -182,9 +182,9 @@ class OperatorUpdate extends Model
      *
      * @param MinAntenna $antenna
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAntenna(?MinAntenna $antenna) : self
+    public function setAntenna(?MinAntenna $antenna)
     {
         $this->antenna = $antenna;
         return $this;

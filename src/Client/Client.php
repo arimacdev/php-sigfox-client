@@ -2,12 +2,16 @@
 
 namespace Arimac\Sigfox\Client;
 
+use Arimac\Sigfox\Exception\DeserializeException;
+use Arimac\Sigfox\Exception\Response\ResponseException;
+use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
 use Arimac\Sigfox\Helper;
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Validator\Validator;
+use Arimac\Sigfox\Exception\ValidationException;
 
 /**
  * Client wrapper that serializing and deserializing data before sending and receiving
@@ -30,13 +34,25 @@ class Client
     /**
      * Calling the inner client after serialized and validated data.
      *
-     * @param string   $method   HTTP method
-     * @param string   $url      The URL to call
-     * @param Request  $request  Request data
-     * @param string   $response Response class name
-     * @param string[] $errors   All expected HTTP errors as an associated array `[statusCode=>className]`
+     * @template T of Model
+     * @template E of ResponseException
      *
-     * @return Model An instance of $response type.
+     * @param string            $method        HTTP method
+     * @param string            $url           The URL to call
+     * @param Request           $request       Request data
+     * @param class-string<T>   $responseClass Response class name
+     * @param array<int,string> $errors        All expected HTTP errors as an associated
+     *                                         array `[statusCode=>className]`
+     *
+     * @psalm-param array<int,class-string<E>> $errors
+     *
+     * @throws SerializeException
+     * @throws DeserializeException
+     * @throws ValidationException
+     * @throws ResponseException
+     * @throws UnexpectedResponseException
+     *
+     * @return T An instance of $response type.
      */
     public function call(
         string $method,

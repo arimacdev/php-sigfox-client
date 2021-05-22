@@ -27,9 +27,9 @@ class ModemCertificate extends RadioCertificate
      *                                                                  certificate
      *                                                                  
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRadioConfigurations(?array $radioConfigurations) : self
+    public function setRadioConfigurations(?array $radioConfigurations)
     {
         $this->radioConfigurations = $radioConfigurations;
         return $this;
@@ -49,9 +49,9 @@ class ModemCertificate extends RadioCertificate
      *
      * @param bool $repeaterFunction The modem certificate has repeater function or not
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRepeaterFunction(?bool $repeaterFunction) : self
+    public function setRepeaterFunction(?bool $repeaterFunction)
     {
         $this->repeaterFunction = $repeaterFunction;
         return $this;

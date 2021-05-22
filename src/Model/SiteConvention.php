@@ -29,9 +29,9 @@ class SiteConvention extends BaseSiteConvention
      *
      * @param string $id The convention's identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -50,9 +50,9 @@ class SiteConvention extends BaseSiteConvention
      *
      * @param MinSite $site
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSite(?MinSite $site) : self
+    public function setSite(?MinSite $site)
     {
         $this->site = $site;
         return $this;
@@ -71,9 +71,9 @@ class SiteConvention extends BaseSiteConvention
      *
      * @param MinGroup $group
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroup(?MinGroup $group) : self
+    public function setGroup(?MinGroup $group)
     {
         $this->group = $group;
         return $this;

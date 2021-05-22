@@ -15,9 +15,9 @@ class Paging extends Model
      *
      * @param string $next
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setNext(?string $next) : self
+    public function setNext(?string $next)
     {
         $this->next = $next;
         return $this;

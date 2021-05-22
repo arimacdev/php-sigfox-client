@@ -50,9 +50,9 @@ class CallbackHTTP extends Model
      *
      * @param string $url The URL called when this message has been processed
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setUrl(?string $url) : self
+    public function setUrl(?string $url)
     {
         $this->url = $url;
         return $this;
@@ -71,9 +71,9 @@ class CallbackHTTP extends Model
      *
      * @param array $headers The headers sent in the request. If no header is defined, this field is not present.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setHeaders(?array $headers) : self
+    public function setHeaders(?array $headers)
     {
         $this->headers = $headers;
         return $this;
@@ -92,9 +92,9 @@ class CallbackHTTP extends Model
      *
      * @param string $body The body of the request, if any. It is only present if the request method is POST.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBody(?string $body) : self
+    public function setBody(?string $body)
     {
         $this->body = $body;
         return $this;
@@ -113,9 +113,9 @@ class CallbackHTTP extends Model
      *
      * @param string $contentType The content type of the request. It is only present if the request is POST.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setContentType(?string $contentType) : self
+    public function setContentType(?string $contentType)
     {
         $this->contentType = $contentType;
         return $this;
@@ -134,9 +134,9 @@ class CallbackHTTP extends Model
      *
      * @param string $method The HTTP method, currently GET, POST or PUT.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMethod(?string $method) : self
+    public function setMethod(?string $method)
     {
         $this->method = $method;
         return $this;
@@ -155,9 +155,9 @@ class CallbackHTTP extends Model
      *
      * @param string $error If there was an error, for instance if the body is JSON and could not be evaluated.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setError(?string $error) : self
+    public function setError(?string $error)
     {
         $this->error = $error;
         return $this;

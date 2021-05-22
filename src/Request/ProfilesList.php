@@ -56,9 +56,9 @@ class ProfilesList extends Request
      *
      * @param string $groupId The group's identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupId(?string $groupId) : self
+    public function setGroupId(?string $groupId)
     {
         $this->groupId = $groupId;
         return $this;
@@ -79,9 +79,9 @@ class ProfilesList extends Request
      *
      * @param bool $inherit also returns profiles inherited from parent's group
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setInherit(?bool $inherit) : self
+    public function setInherit(?bool $inherit)
     {
         $this->inherit = $inherit;
         return $this;
@@ -103,9 +103,9 @@ class ProfilesList extends Request
      * @param string $fields Defines the other available fields to be returned in the response.
      *                       
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFields(?string $fields) : self
+    public function setFields(?string $fields)
     {
         $this->fields = $fields;
         return $this;
@@ -127,9 +127,9 @@ class ProfilesList extends Request
      *
      * @param int $limit The maximum number of items to return
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLimit(?int $limit) : self
+    public function setLimit(?int $limit)
     {
         $this->limit = $limit;
         return $this;
@@ -150,9 +150,9 @@ class ProfilesList extends Request
      *
      * @param int $offset The number of items to skip
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOffset(?int $offset) : self
+    public function setOffset(?int $offset)
     {
         $this->offset = $offset;
         return $this;
@@ -173,9 +173,9 @@ class ProfilesList extends Request
      *
      * @param bool $authorizations if true, return the list of actions and resources the user has access
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAuthorizations(?bool $authorizations) : self
+    public function setAuthorizations(?bool $authorizations)
     {
         $this->authorizations = $authorizations;
         return $this;

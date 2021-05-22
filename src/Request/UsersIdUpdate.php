@@ -27,9 +27,9 @@ class UsersIdUpdate extends Request
      *
      * @param UserUpdate $user The user to update
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setUser(?UserUpdate $user) : self
+    public function setUser(?UserUpdate $user)
     {
         $this->user = $user;
         return $this;

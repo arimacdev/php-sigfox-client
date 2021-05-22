@@ -63,9 +63,9 @@ class BaseContact extends Model
      *
      * @param string $name The contact's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -84,9 +84,9 @@ class BaseContact extends Model
      *
      * @param string $email The contact's email. This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setEmail(?string $email) : self
+    public function setEmail(?string $email)
     {
         $this->email = $email;
         return $this;
@@ -106,9 +106,9 @@ class BaseContact extends Model
      * @param string $phoneNumber The contact's phone number must be in the international format with no spaces
      *                            between numbers (+country code - number). This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPhoneNumber(?string $phoneNumber) : self
+    public function setPhoneNumber(?string $phoneNumber)
     {
         $this->phoneNumber = $phoneNumber;
         return $this;
@@ -130,9 +130,9 @@ class BaseContact extends Model
      *                                  spaces between numbers (+country code - number). This field can be unset when
      *                                  updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMobilePhoneNumber(?string $mobilePhoneNumber) : self
+    public function setMobilePhoneNumber(?string $mobilePhoneNumber)
     {
         $this->mobilePhoneNumber = $mobilePhoneNumber;
         return $this;
@@ -152,9 +152,9 @@ class BaseContact extends Model
      *
      * @param string $address The contact's address
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAddress(?string $address) : self
+    public function setAddress(?string $address)
     {
         $this->address = $address;
         return $this;
@@ -173,9 +173,9 @@ class BaseContact extends Model
      *
      * @param string $description The contact's description
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDescription(?string $description) : self
+    public function setDescription(?string $description)
     {
         $this->description = $description;
         return $this;
@@ -194,9 +194,9 @@ class BaseContact extends Model
      *
      * @param string[] $actions
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActions(?array $actions) : self
+    public function setActions(?array $actions)
     {
         $this->actions = $actions;
         return $this;
@@ -215,9 +215,9 @@ class BaseContact extends Model
      *
      * @param string[] $resources
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setResources(?array $resources) : self
+    public function setResources(?array $resources)
     {
         $this->resources = $resources;
         return $this;

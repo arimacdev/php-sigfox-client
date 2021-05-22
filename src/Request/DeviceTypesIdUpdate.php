@@ -27,9 +27,9 @@ class DeviceTypesIdUpdate extends Request
      *
      * @param DeviceTypeUpdate $deviceType The device type to update
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeviceType(?DeviceTypeUpdate $deviceType) : self
+    public function setDeviceType(?DeviceTypeUpdate $deviceType)
     {
         $this->deviceType = $deviceType;
         return $this;

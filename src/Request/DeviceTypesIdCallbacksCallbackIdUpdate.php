@@ -30,9 +30,9 @@ class DeviceTypesIdCallbacksCallbackIdUpdate extends Request
      *
      * @param UpdateCallback $callback The callback to update
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCallback(?UpdateCallback $callback) : self
+    public function setCallback(?UpdateCallback $callback)
     {
         $this->callback = $callback;
         return $this;

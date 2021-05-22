@@ -19,9 +19,9 @@ class TilesMonarchKmzStartAsyncResponse extends Model
      *
      * @param string $jobId jobId provided to the customer to request the job status and results
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setJobId(?string $jobId) : self
+    public function setJobId(?string $jobId)
     {
         $this->jobId = $jobId;
         return $this;

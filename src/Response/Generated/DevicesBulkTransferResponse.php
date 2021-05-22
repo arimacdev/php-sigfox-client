@@ -25,9 +25,9 @@ class DevicesBulkTransferResponse extends Model
      *
      * @param int $total Number of devices to transfer
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTotal(?int $total) : self
+    public function setTotal(?int $total)
     {
         $this->total = $total;
         return $this;
@@ -48,9 +48,9 @@ class DevicesBulkTransferResponse extends Model
      *
      * @param string $jobId jobId (to use in job status request)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setJobId(?string $jobId) : self
+    public function setJobId(?string $jobId)
     {
         $this->jobId = $jobId;
         return $this;

@@ -31,9 +31,9 @@ class DevicesIdGet extends Request
      *
      * @param bool $authorizations if true, we return the list of actions and resources the user has access
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAuthorizations(?bool $authorizations) : self
+    public function setAuthorizations(?bool $authorizations)
     {
         $this->authorizations = $authorizations;
         return $this;
@@ -55,9 +55,9 @@ class DevicesIdGet extends Request
      * @param string $fields Defines the other available fields to be returned in the response.
      *                       
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFields(?string $fields) : self
+    public function setFields(?string $fields)
     {
         $this->fields = $fields;
         return $this;

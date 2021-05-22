@@ -26,9 +26,9 @@ class AsynchronousDeviceTransferJob extends Model
      *
      * @param string $deviceTypeId The device type where new devices will be transfered
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeviceTypeId(?string $deviceTypeId) : self
+    public function setDeviceTypeId(?string $deviceTypeId)
     {
         $this->deviceTypeId = $deviceTypeId;
         return $this;
@@ -47,9 +47,9 @@ class AsynchronousDeviceTransferJob extends Model
      *
      * @param DataItem[] $data
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setData(?array $data) : self
+    public function setData(?array $data)
     {
         $this->data = $data;
         return $this;

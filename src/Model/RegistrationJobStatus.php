@@ -32,9 +32,9 @@ class RegistrationJobStatus extends Model
      *
      * @param bool $jobDone If the job is finished or not
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setJobDone(?bool $jobDone) : self
+    public function setJobDone(?bool $jobDone)
     {
         $this->jobDone = $jobDone;
         return $this;
@@ -53,9 +53,9 @@ class RegistrationJobStatus extends Model
      *
      * @param int $total The total number of devices given to be created
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTotal(?int $total) : self
+    public function setTotal(?int $total)
     {
         $this->total = $total;
         return $this;
@@ -74,9 +74,9 @@ class RegistrationJobStatus extends Model
      *
      * @param Status $status The information about the devices already processed
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setStatus(?Status $status) : self
+    public function setStatus(?Status $status)
     {
         $this->status = $status;
         return $this;

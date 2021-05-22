@@ -25,9 +25,9 @@ trait CallbackEmail
      *
      * @param string $subject The subject of the email to be sent
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSubject(?string $subject) : self
+    public function setSubject(?string $subject)
     {
         $this->subject = $subject;
         return $this;
@@ -46,9 +46,9 @@ trait CallbackEmail
      *
      * @param string $message The body of the email to be sent
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMessage(?string $message) : self
+    public function setMessage(?string $message)
     {
         $this->message = $message;
         return $this;

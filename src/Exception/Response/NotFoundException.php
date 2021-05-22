@@ -26,8 +26,12 @@ class NotFoundException extends ResponseException {
      * @internal
      *
      * @inheritdoc
+     *
+     * @param mixed $value
+     *
+     * @return self
      */
-    public static function deserialize($value): NotFoundException
+    public static function deserialize($value)
     {
         if(!is_array($value)||!isset($value["message"])){
             throw new DeserializeException(

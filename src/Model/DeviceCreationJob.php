@@ -53,9 +53,9 @@ class DeviceCreationJob extends CommonDevice
      *
      * @param string $deviceTypeId The device type's identifier this device is affected
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeviceTypeId(?string $deviceTypeId) : self
+    public function setDeviceTypeId(?string $deviceTypeId)
     {
         $this->deviceTypeId = $deviceTypeId;
         return $this;
@@ -74,9 +74,9 @@ class DeviceCreationJob extends CommonDevice
      *
      * @param string $pac The device's PAC (Porting Access Code)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPac(?string $pac) : self
+    public function setPac(?string $pac)
     {
         $this->pac = $pac;
         return $this;
@@ -95,9 +95,9 @@ class DeviceCreationJob extends CommonDevice
      *
      * @param bool $prototype Set to true if the device is a prototype
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPrototype(?bool $prototype) : self
+    public function setPrototype(?bool $prototype)
     {
         $this->prototype = $prototype;
         return $this;
@@ -116,9 +116,9 @@ class DeviceCreationJob extends CommonDevice
      *
      * @param bool $automaticRenewal Subscribtion to automatic token renewal
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAutomaticRenewal(?bool $automaticRenewal) : self
+    public function setAutomaticRenewal(?bool $automaticRenewal)
     {
         $this->automaticRenewal = $automaticRenewal;
         return $this;
@@ -137,9 +137,9 @@ class DeviceCreationJob extends CommonDevice
      *
      * @param bool $activable The device is activable and can take a token
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActivable(?bool $activable) : self
+    public function setActivable(?bool $activable)
     {
         $this->activable = $activable;
         return $this;
@@ -158,9 +158,9 @@ class DeviceCreationJob extends CommonDevice
      *
      * @param double $lat The device's provided latitude
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLat(?float $lat) : self
+    public function setLat(?float $lat)
     {
         $this->lat = $lat;
         return $this;
@@ -179,9 +179,9 @@ class DeviceCreationJob extends CommonDevice
      *
      * @param double $lng The device's provided longitude
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLng(?float $lng) : self
+    public function setLng(?float $lng)
     {
         $this->lng = $lng;
         return $this;

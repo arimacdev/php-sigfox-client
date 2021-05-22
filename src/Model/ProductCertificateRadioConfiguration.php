@@ -76,9 +76,9 @@ class ProductCertificateRadioConfiguration extends RadioConfiguration
      *                         - {@see ProductCertificateRadioConfiguration::UPLINK_CLASS_D3}
      *                         
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setUplinkClass(?int $uplinkClass) : self
+    public function setUplinkClass(?int $uplinkClass)
     {
         $this->uplinkClass = $uplinkClass;
         return $this;
@@ -107,9 +107,9 @@ class ProductCertificateRadioConfiguration extends RadioConfiguration
      *
      * @param double $maxEirp Maximum radiated power EIRP (dBm)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMaxEirp(?float $maxEirp) : self
+    public function setMaxEirp(?float $maxEirp)
     {
         $this->maxEirp = $maxEirp;
         return $this;

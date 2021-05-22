@@ -134,9 +134,9 @@ class ContractInfoCreate extends CommonContractInfo
      *
      * @param string $groupId ID of group associated with the contact
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupId(?string $groupId) : self
+    public function setGroupId(?string $groupId)
     {
         $this->groupId = $groupId;
         return $this;
@@ -155,9 +155,9 @@ class ContractInfoCreate extends CommonContractInfo
      *
      * @param string $contractId The contract external ID. It's used to identify the contract in EDRs.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setContractId(?string $contractId) : self
+    public function setContractId(?string $contractId)
     {
         $this->contractId = $contractId;
         return $this;
@@ -176,9 +176,9 @@ class ContractInfoCreate extends CommonContractInfo
      *
      * @param string $userId The ID of the user who created the contract in BSS.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setUserId(?string $userId) : self
+    public function setUserId(?string $userId)
     {
         $this->userId = $userId;
         return $this;
@@ -197,9 +197,9 @@ class ContractInfoCreate extends CommonContractInfo
      *
      * @param string $orderId The order ID (hex), if any.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOrderId(?string $orderId) : self
+    public function setOrderId(?string $orderId)
     {
         $this->orderId = $orderId;
         return $this;
@@ -218,9 +218,9 @@ class ContractInfoCreate extends CommonContractInfo
      *
      * @param string $orderName The order name, if any
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOrderName(?string $orderName) : self
+    public function setOrderName(?string $orderName)
     {
         $this->orderName = $orderName;
         return $this;
@@ -244,9 +244,9 @@ class ContractInfoCreate extends CommonContractInfo
      *                          - {@see ContractInfoCreate::PRICING_MODEL_PRICING_MODEL_V3}
      *                          
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPricingModel(?int $pricingModel) : self
+    public function setPricingModel(?int $pricingModel)
     {
         $this->pricingModel = $pricingModel;
         return $this;
@@ -270,9 +270,9 @@ class ContractInfoCreate extends CommonContractInfo
      *
      * @param int $startTime The start time (in milliseconds) of the contract
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setStartTime(?int $startTime) : self
+    public function setStartTime(?int $startTime)
     {
         $this->startTime = $startTime;
         return $this;
@@ -292,9 +292,9 @@ class ContractInfoCreate extends CommonContractInfo
      * @param string $timezone The contract timezone name as a Java TimeZone ID ("full name" version only, like
      *                         "America/Costa_Rica").
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTimezone(?string $timezone) : self
+    public function setTimezone(?string $timezone)
     {
         $this->timezone = $timezone;
         return $this;
@@ -323,9 +323,9 @@ class ContractInfoCreate extends CommonContractInfo
      *                              - {@see ContractInfoCreate::SUBSCRIPTION_PLAN_ACTIVATE}
      *                              
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSubscriptionPlan(?int $subscriptionPlan) : self
+    public function setSubscriptionPlan(?int $subscriptionPlan)
     {
         $this->subscriptionPlan = $subscriptionPlan;
         return $this;
@@ -353,9 +353,9 @@ class ContractInfoCreate extends CommonContractInfo
      *
      * @param int $tokenDuration The token duration in months. Must be >= 0, if 0 unlimited token duration.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTokenDuration(?int $tokenDuration) : self
+    public function setTokenDuration(?int $tokenDuration)
     {
         $this->tokenDuration = $tokenDuration;
         return $this;
@@ -374,9 +374,9 @@ class ContractInfoCreate extends CommonContractInfo
      *
      * @param string[] $blacklistedTerritories The list of "blacklisted" territories, as an array of NIP group IDs.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBlacklistedTerritories(?array $blacklistedTerritories) : self
+    public function setBlacklistedTerritories(?array $blacklistedTerritories)
     {
         $this->blacklistedTerritories = $blacklistedTerritories;
         return $this;

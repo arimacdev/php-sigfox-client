@@ -24,9 +24,9 @@ class UsersIdProfilesProfileIdDelete extends Request
      *
      * @param string $groupId The group identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupId(?string $groupId) : self
+    public function setGroupId(?string $groupId)
     {
         $this->groupId = $groupId;
         return $this;

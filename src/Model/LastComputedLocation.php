@@ -87,9 +87,9 @@ class LastComputedLocation extends Model
      *
      * @param double $lat The device's estimated latitude
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLat(?float $lat) : self
+    public function setLat(?float $lat)
     {
         $this->lat = $lat;
         return $this;
@@ -108,9 +108,9 @@ class LastComputedLocation extends Model
      *
      * @param double $lng The device's estimated longitude
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLng(?float $lng) : self
+    public function setLng(?float $lng)
     {
         $this->lng = $lng;
         return $this;
@@ -129,9 +129,9 @@ class LastComputedLocation extends Model
      *
      * @param int $radius The radius of the circle (meters)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRadius(?int $radius) : self
+    public function setRadius(?int $radius)
     {
         $this->radius = $radius;
         return $this;
@@ -160,9 +160,9 @@ class LastComputedLocation extends Model
      *                        - {@see LastComputedLocation::SOURCE_CODE_PROXIMITY_LOCATION}
      *                        
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSourceCode(?int $sourceCode) : self
+    public function setSourceCode(?int $sourceCode)
     {
         $this->sourceCode = $sourceCode;
         return $this;
@@ -191,9 +191,9 @@ class LastComputedLocation extends Model
      *
      * @param string[] $placeIds The place ids computed by the Sigfox Geolocation service
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPlaceIds(?array $placeIds) : self
+    public function setPlaceIds(?array $placeIds)
     {
         $this->placeIds = $placeIds;
         return $this;

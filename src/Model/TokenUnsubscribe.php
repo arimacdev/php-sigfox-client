@@ -17,9 +17,9 @@ class TokenUnsubscribe extends Model
      *
      * @param int $unsubscriptionTime Timestamp of token unsubscription date (in milliseconds since the Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setUnsubscriptionTime(?int $unsubscriptionTime) : self
+    public function setUnsubscriptionTime(?int $unsubscriptionTime)
     {
         $this->unsubscriptionTime = $unsubscriptionTime;
         return $this;

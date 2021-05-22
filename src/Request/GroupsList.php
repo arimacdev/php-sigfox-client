@@ -135,9 +135,9 @@ class GroupsList extends Request
      *
      * @param string[] $parentIds The parent group's identifiers from which the children will be fetched
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setParentIds(?array $parentIds) : self
+    public function setParentIds(?array $parentIds)
     {
         $this->parentIds = $parentIds;
         return $this;
@@ -158,9 +158,9 @@ class GroupsList extends Request
      *
      * @param bool $deep Retrieve all sub-groups
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeep(?bool $deep) : self
+    public function setDeep(?bool $deep)
     {
         $this->deep = $deep;
         return $this;
@@ -181,9 +181,9 @@ class GroupsList extends Request
      *
      * @param string $name Searches for groups containing the given text in their name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -215,9 +215,9 @@ class GroupsList extends Request
      *                     - {@see GroupsList::TYPES_PARTNER}
      *                     
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTypes(?array $types) : self
+    public function setTypes(?array $types)
     {
         $this->types = $types;
         return $this;
@@ -250,9 +250,9 @@ class GroupsList extends Request
      * @param string $fields Defines the other available fields to be returned in the response.
      *                       
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFields(?string $fields) : self
+    public function setFields(?string $fields)
     {
         $this->fields = $fields;
         return $this;
@@ -275,9 +275,9 @@ class GroupsList extends Request
      * @param string $action Defines a resource:action pair the user has access on groups.
      *                       
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAction(?string $action) : self
+    public function setAction(?string $action)
     {
         $this->action = $action;
         return $this;
@@ -300,9 +300,9 @@ class GroupsList extends Request
      * @param string $sort The field on which the list will be sorted. (field to sort ascending or -field to sort
      *                     descending)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSort(?string $sort) : self
+    public function setSort(?string $sort)
     {
         $this->sort = $sort;
         return $this;
@@ -324,9 +324,9 @@ class GroupsList extends Request
      *
      * @param bool $authorizations if true, we return the list of actions and resources the user has access
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAuthorizations(?bool $authorizations) : self
+    public function setAuthorizations(?bool $authorizations)
     {
         $this->authorizations = $authorizations;
         return $this;
@@ -347,9 +347,9 @@ class GroupsList extends Request
      *
      * @param int $limit The maximum number of items to return
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLimit(?int $limit) : self
+    public function setLimit(?int $limit)
     {
         $this->limit = $limit;
         return $this;
@@ -370,9 +370,9 @@ class GroupsList extends Request
      *
      * @param int $offset The number of items to skip
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOffset(?int $offset) : self
+    public function setOffset(?int $offset)
     {
         $this->offset = $offset;
         return $this;
@@ -393,9 +393,9 @@ class GroupsList extends Request
      *
      * @param string $pageId Token representing the page to retrieve
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPageId(?string $pageId) : self
+    public function setPageId(?string $pageId)
     {
         $this->pageId = $pageId;
         return $this;

@@ -36,9 +36,9 @@ class GlobalCoverageBulkResponse extends Model
      *
      * @param bool $jobDone If the job is completed or not
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setJobDone(?bool $jobDone) : self
+    public function setJobDone(?bool $jobDone)
     {
         $this->jobDone = $jobDone;
         return $this;
@@ -57,9 +57,9 @@ class GlobalCoverageBulkResponse extends Model
      *
      * @param int $time the statistics creation time (in milliseconds since the Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTime(?int $time) : self
+    public function setTime(?int $time)
     {
         $this->time = $time;
         return $this;
@@ -78,9 +78,9 @@ class GlobalCoverageBulkResponse extends Model
      *
      * @param ResultsItem[] $results An array containing the response for each point.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setResults(?array $results) : self
+    public function setResults(?array $results)
     {
         $this->results = $results;
         return $this;

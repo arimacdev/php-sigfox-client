@@ -41,9 +41,9 @@ class Repetition extends Model
      *
      * @param int $nseq nseq of the repetition
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setNseq(?int $nseq) : self
+    public function setNseq(?int $nseq)
     {
         $this->nseq = $nseq;
         return $this;
@@ -62,9 +62,9 @@ class Repetition extends Model
      *
      * @param int $rssi Received Signal Strength Indication (in dBm – Float value with two maximum fraction digits)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRssi(?int $rssi) : self
+    public function setRssi(?int $rssi)
     {
         $this->rssi = $rssi;
         return $this;
@@ -83,9 +83,9 @@ class Repetition extends Model
      *
      * @param double $snr the best signal of all repetitions for this base station
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSnr(?float $snr) : self
+    public function setSnr(?float $snr)
     {
         $this->snr = $snr;
         return $this;
@@ -104,9 +104,9 @@ class Repetition extends Model
      *
      * @param double $freq the frequency at which the message has been received (in Hz)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFreq(?float $freq) : self
+    public function setFreq(?float $freq)
     {
         $this->freq = $freq;
         return $this;
@@ -125,9 +125,9 @@ class Repetition extends Model
      *
      * @param bool $repeated if this repetition has been propagated by a repeater
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRepeated(?bool $repeated) : self
+    public function setRepeated(?bool $repeated)
     {
         $this->repeated = $repeated;
         return $this;

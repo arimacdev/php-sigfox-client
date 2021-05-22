@@ -38,9 +38,9 @@ class GlobalCoverageRequest extends Model
      *
      * @param LocationsItem[] $locations An array of positions. Valid locations have two properties, lat and lng.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLocations(?array $locations) : self
+    public function setLocations(?array $locations)
     {
         $this->locations = $locations;
         return $this;
@@ -60,9 +60,9 @@ class GlobalCoverageRequest extends Model
      * @param int $radius The radius of the area in which the coverage results are averaged and returned for a
      *                    selected location, in meters.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRadius(?int $radius) : self
+    public function setRadius(?int $radius)
     {
         $this->radius = $radius;
         return $this;
@@ -83,9 +83,9 @@ class GlobalCoverageRequest extends Model
      * @param string $groupId The id of a group to include its operator in the global coverage, in case it is not a
      *                        public operator.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupId(?string $groupId) : self
+    public function setGroupId(?string $groupId)
     {
         $this->groupId = $groupId;
         return $this;

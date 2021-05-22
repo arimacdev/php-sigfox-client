@@ -57,9 +57,9 @@ class SiteIntervention extends BaseSiteIntervention
      *
      * @param string $id The intervention's identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -78,9 +78,9 @@ class SiteIntervention extends BaseSiteIntervention
      *
      * @param MinSite $site
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSite(?MinSite $site) : self
+    public function setSite(?MinSite $site)
     {
         $this->site = $site;
         return $this;
@@ -99,9 +99,9 @@ class SiteIntervention extends BaseSiteIntervention
      *
      * @param MinGroup $group
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroup(?MinGroup $group) : self
+    public function setGroup(?MinGroup $group)
     {
         $this->group = $group;
         return $this;
@@ -120,9 +120,9 @@ class SiteIntervention extends BaseSiteIntervention
      *
      * @param MinBaseStation $baseStation
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBaseStation(?MinBaseStation $baseStation) : self
+    public function setBaseStation(?MinBaseStation $baseStation)
     {
         $this->baseStation = $baseStation;
         return $this;
@@ -141,9 +141,9 @@ class SiteIntervention extends BaseSiteIntervention
      *
      * @param int $creationTime Date of the creation of this intervention (in milliseconds)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCreationTime(?int $creationTime) : self
+    public function setCreationTime(?int $creationTime)
     {
         $this->creationTime = $creationTime;
         return $this;
@@ -162,9 +162,9 @@ class SiteIntervention extends BaseSiteIntervention
      *
      * @param string $createdBy Identifier of the user who created this intervention
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCreatedBy(?string $createdBy) : self
+    public function setCreatedBy(?string $createdBy)
     {
         $this->createdBy = $createdBy;
         return $this;
@@ -183,9 +183,9 @@ class SiteIntervention extends BaseSiteIntervention
      *
      * @param int $lastEditedTime Date of the last edition of this intervention (in milliseconds)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastEditedTime(?int $lastEditedTime) : self
+    public function setLastEditedTime(?int $lastEditedTime)
     {
         $this->lastEditedTime = $lastEditedTime;
         return $this;
@@ -204,9 +204,9 @@ class SiteIntervention extends BaseSiteIntervention
      *
      * @param string $lastEditedBy Identifier of the user who last edited this intervention
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastEditedBy(?string $lastEditedBy) : self
+    public function setLastEditedBy(?string $lastEditedBy)
     {
         $this->lastEditedBy = $lastEditedBy;
         return $this;

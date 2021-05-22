@@ -23,9 +23,9 @@ class ContractInfoUpdate extends CommonContractInfo
      *
      * @param string $orderName The order name, if any. This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOrderName(?string $orderName) : self
+    public function setOrderName(?string $orderName)
     {
         $this->orderName = $orderName;
         return $this;
@@ -44,9 +44,9 @@ class ContractInfoUpdate extends CommonContractInfo
      *
      * @param string[] $blacklistedTerritories The list of "blacklisted" territories, as an array of NIP group IDs.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBlacklistedTerritories(?array $blacklistedTerritories) : self
+    public function setBlacklistedTerritories(?array $blacklistedTerritories)
     {
         $this->blacklistedTerritories = $blacklistedTerritories;
         return $this;

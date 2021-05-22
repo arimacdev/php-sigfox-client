@@ -20,9 +20,9 @@ class SiteUpdate extends BaseSite
      *                        The first code is the country (region and department available for some countries).
      *                        
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLocation(?array $location) : self
+    public function setLocation(?array $location)
     {
         $this->location = $location;
         return $this;

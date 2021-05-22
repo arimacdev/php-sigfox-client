@@ -8,6 +8,8 @@ use Arimac\Sigfox\Request\GroupsIdGet;
 use Arimac\Sigfox\Model\Group;
 use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Exception\UnexpectedResponseException;
+use Arimac\Sigfox\Exception\Response\ResponseException;
+use Arimac\Sigfox\Exception\ValidationException;
 use Arimac\Sigfox\Exception\Response\BadRequestException;
 use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
@@ -32,13 +34,13 @@ class GroupsId
      *
      * @internal
      */
-    protected ?Client $client;
+    protected Client $client;
     /**
      * The Group identifier
      *
      * @internal
      */
-    protected ?string $id;
+    protected string $id;
     /**
      * Creating the repository
      *
@@ -61,6 +63,8 @@ class GroupsId
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
+     * @throws ResponseException           If server returned any expected HTTP error
+     * @throws ValidationException         If request could not be validated according to pre validation rules.
      * @throws BadRequestException         If server returned a HTTP 400 error.
      * @throws UnauthorizedException       If server returned a HTTP 401 error.
      * @throws ForbiddenException          If server returned a HTTP 403 error.
@@ -79,6 +83,8 @@ class GroupsId
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
+     * @throws ResponseException           If server returned any expected HTTP error
+     * @throws ValidationException         If request could not be validated according to pre validation rules.
      * @throws BadRequestException         If server returned a HTTP 400 error.
      * @throws UnauthorizedException       If server returned a HTTP 401 error.
      * @throws ForbiddenException          If server returned a HTTP 403 error.
@@ -94,7 +100,10 @@ class GroupsId
     /**
      * Delete a given group.
      *
+     * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
+     * @throws ResponseException           If server returned any expected HTTP error
+     * @throws ValidationException         If request could not be validated according to pre validation rules.
      * @throws BadRequestException         If server returned a HTTP 400 error.
      * @throws UnauthorizedException       If server returned a HTTP 401 error.
      * @throws ForbiddenException          If server returned a HTTP 403 error.
@@ -114,10 +123,20 @@ class GroupsId
      *
      * @param GroupsIdCallbacksNotDelivered $request The query and body parameters to pass
      *
-     * @return PaginateResponse<GroupErrorMessages,GroupsIdCallbacksNotDeliveredResponse>
+     * @psalm-return PaginateResponse<GroupErrorMessages,GroupsIdCallbacksNotDeliveredResponse,E>
+     *
+     * @psalm-type E=BadRequestException | UnauthorizedException | ForbiddenException | NotFoundException |
+     *             InternalServerException
+     *
+     * @return PaginateResponse<GroupErrorMessages,GroupsIdCallbacksNotDeliveredResponse> First generic parameter is
+     *                                                                                    the item type and the
+     *                                                                                    second type is the original
+     *                                                                                    response type.
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
+     * @throws ResponseException           If server returned any expected HTTP error
+     * @throws ValidationException         If request could not be validated according to pre validation rules.
      * @throws BadRequestException         If server returned a HTTP 400 error.
      * @throws UnauthorizedException       If server returned a HTTP 401 error.
      * @throws ForbiddenException          If server returned a HTTP 403 error.
@@ -136,10 +155,19 @@ class GroupsId
      *
      * @param GroupsIdGeolocationPayloads $request The query and body parameters to pass
      *
-     * @return PaginateResponse<BaseGeolocation,GroupsIdGeolocationPayloadsResponse>
+     * @psalm-return PaginateResponse<BaseGeolocation,GroupsIdGeolocationPayloadsResponse,E>
+     *
+     * @psalm-type E=BadRequestException | UnauthorizedException | ForbiddenException | NotFoundException |
+     *             InternalServerException
+     *
+     * @return PaginateResponse<BaseGeolocation,GroupsIdGeolocationPayloadsResponse> First generic parameter is the
+     *                                                                               item type and the second type is
+     *                                                                               the original response type.
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
+     * @throws ResponseException           If server returned any expected HTTP error
+     * @throws ValidationException         If request could not be validated according to pre validation rules.
      * @throws BadRequestException         If server returned a HTTP 400 error.
      * @throws UnauthorizedException       If server returned a HTTP 401 error.
      * @throws ForbiddenException          If server returned a HTTP 403 error.

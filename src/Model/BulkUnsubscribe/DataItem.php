@@ -23,9 +23,9 @@ class DataItem extends Model
      *
      * @param string $id The device's identifier to unsubscribe (hexadecimal format)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -44,9 +44,9 @@ class DataItem extends Model
      *
      * @param int $unsubscriptionTime the unsubscription time (in milliseconds since the Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setUnsubscriptionTime(?int $unsubscriptionTime) : self
+    public function setUnsubscriptionTime(?int $unsubscriptionTime)
     {
         $this->unsubscriptionTime = $unsubscriptionTime;
         return $this;

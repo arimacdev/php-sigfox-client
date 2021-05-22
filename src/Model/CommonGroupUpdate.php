@@ -86,9 +86,9 @@ class CommonGroupUpdate extends Model
      *
      * @param string $name The group's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -107,9 +107,9 @@ class CommonGroupUpdate extends Model
      *
      * @param string $description The group's description
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDescription(?string $description) : self
+    public function setDescription(?string $description)
     {
         $this->description = $description;
         return $this;
@@ -139,9 +139,9 @@ class CommonGroupUpdate extends Model
      *                  - {@see CommonGroupUpdate::TYPE_PARTNER}
      *                  
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setType(?int $type) : self
+    public function setType(?int $type)
     {
         $this->type = $type;
         return $this;
@@ -171,9 +171,9 @@ class CommonGroupUpdate extends Model
      *
      * @param string $timezone The timezone (in Java TimeZone ID format, e.g."America/Costa_Rica").
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTimezone(?string $timezone) : self
+    public function setTimezone(?string $timezone)
     {
         $this->timezone = $timezone;
         return $this;

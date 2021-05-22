@@ -26,9 +26,9 @@ class CoveragesGlobalPredictionsGetOneResponse extends Model
      *
      * @param bool $locationCovered True, if the requested location is considered covered.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLocationCovered(?bool $locationCovered) : self
+    public function setLocationCovered(?bool $locationCovered)
     {
         $this->locationCovered = $locationCovered;
         return $this;
@@ -49,9 +49,9 @@ class CoveragesGlobalPredictionsGetOneResponse extends Model
      *
      * @param int[] $margins Margins
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMargins(?array $margins) : self
+    public function setMargins(?array $margins)
     {
         $this->margins = $margins;
         return $this;

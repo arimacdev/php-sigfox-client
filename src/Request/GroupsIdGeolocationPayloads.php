@@ -36,9 +36,9 @@ class GroupsIdGeolocationPayloads extends Request
      *
      * @param int $limit The maximum number of items to return
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLimit(?int $limit) : self
+    public function setLimit(?int $limit)
     {
         $this->limit = $limit;
         return $this;
@@ -59,9 +59,9 @@ class GroupsIdGeolocationPayloads extends Request
      *
      * @param int $offset The number of items to skip
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOffset(?int $offset) : self
+    public function setOffset(?int $offset)
     {
         $this->offset = $offset;
         return $this;
@@ -82,9 +82,9 @@ class GroupsIdGeolocationPayloads extends Request
      *
      * @param string $pageId Token representing the page to retrieve
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPageId(?string $pageId) : self
+    public function setPageId(?string $pageId)
     {
         $this->pageId = $pageId;
         return $this;

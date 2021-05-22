@@ -87,9 +87,9 @@ class CommonContractInfo extends Model
      *
      * @param string $name The contract name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -109,9 +109,9 @@ class CommonContractInfo extends Model
      * @param int $activationEndTime The activation end time (in milliseconds) of the contract. 0 means no activation
      *                               time limit.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActivationEndTime(?int $activationEndTime) : self
+    public function setActivationEndTime(?int $activationEndTime)
     {
         $this->activationEndTime = $activationEndTime;
         return $this;
@@ -131,9 +131,9 @@ class CommonContractInfo extends Model
      * @param int $communicationEndTime The end time (in milliseconds) of the communication. 0 means no communication
      *                                  time limit.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCommunicationEndTime(?int $communicationEndTime) : self
+    public function setCommunicationEndTime(?int $communicationEndTime)
     {
         $this->communicationEndTime = $communicationEndTime;
         return $this;
@@ -152,9 +152,9 @@ class CommonContractInfo extends Model
      *
      * @param bool $bidir True if the contract info is bidirectional.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBidir(?bool $bidir) : self
+    public function setBidir(?bool $bidir)
     {
         $this->bidir = $bidir;
         return $this;
@@ -173,9 +173,9 @@ class CommonContractInfo extends Model
      *
      * @param bool $highPriorityDownlink True if all downlinks are high priority.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setHighPriorityDownlink(?bool $highPriorityDownlink) : self
+    public function setHighPriorityDownlink(?bool $highPriorityDownlink)
     {
         $this->highPriorityDownlink = $highPriorityDownlink;
         return $this;
@@ -194,9 +194,9 @@ class CommonContractInfo extends Model
      *
      * @param int $maxUplinkFrames The maximum number of uplink frames.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMaxUplinkFrames(?int $maxUplinkFrames) : self
+    public function setMaxUplinkFrames(?int $maxUplinkFrames)
     {
         $this->maxUplinkFrames = $maxUplinkFrames;
         return $this;
@@ -215,9 +215,9 @@ class CommonContractInfo extends Model
      *
      * @param int $maxDownlinkFrames The maximum number of downlink frames.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMaxDownlinkFrames(?int $maxDownlinkFrames) : self
+    public function setMaxDownlinkFrames(?int $maxDownlinkFrames)
     {
         $this->maxDownlinkFrames = $maxDownlinkFrames;
         return $this;
@@ -237,9 +237,9 @@ class CommonContractInfo extends Model
      * @param int $maxTokens The maximum number of tokens for this contract. Either 0 (unlimited) or a positive
      *                       number.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMaxTokens(?int $maxTokens) : self
+    public function setMaxTokens(?int $maxTokens)
     {
         $this->maxTokens = $maxTokens;
         return $this;
@@ -258,9 +258,9 @@ class CommonContractInfo extends Model
      *
      * @param bool $automaticRenewal True if automatic renewal is allowed.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAutomaticRenewal(?bool $automaticRenewal) : self
+    public function setAutomaticRenewal(?bool $automaticRenewal)
     {
         $this->automaticRenewal = $automaticRenewal;
         return $this;
@@ -279,9 +279,9 @@ class CommonContractInfo extends Model
      *
      * @param int $renewalDuration The renewal duration in months.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRenewalDuration(?int $renewalDuration) : self
+    public function setRenewalDuration(?int $renewalDuration)
     {
         $this->renewalDuration = $renewalDuration;
         return $this;
@@ -301,9 +301,9 @@ class CommonContractInfo extends Model
      * @param OptionsItem[] $options The activated premium options. Given options will be merged with existing
      *                               options in contract. In order to delete a single option use "/{id}/options" API.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOptions(?array $options) : self
+    public function setOptions(?array $options)
     {
         $this->options = $options;
         return $this;

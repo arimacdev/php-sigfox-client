@@ -297,9 +297,9 @@ class Device extends CommonDevice
      *
      * @param bool $satelliteCapable Can the device communicate using satellite communication
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSatelliteCapable(?bool $satelliteCapable) : self
+    public function setSatelliteCapable(?bool $satelliteCapable)
     {
         $this->satelliteCapable = $satelliteCapable;
         return $this;
@@ -318,9 +318,9 @@ class Device extends CommonDevice
      *
      * @param bool $repeater Has the device repeater function
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRepeater(?bool $repeater) : self
+    public function setRepeater(?bool $repeater)
     {
         $this->repeater = $repeater;
         return $this;
@@ -339,9 +339,9 @@ class Device extends CommonDevice
      *
      * @param int $messageModulo The message modulo
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMessageModulo(?int $messageModulo) : self
+    public function setMessageModulo(?int $messageModulo)
     {
         $this->messageModulo = $messageModulo;
         return $this;
@@ -360,9 +360,9 @@ class Device extends CommonDevice
      *
      * @param MinDeviceType $deviceType
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeviceType(?MinDeviceType $deviceType) : self
+    public function setDeviceType(?MinDeviceType $deviceType)
     {
         $this->deviceType = $deviceType;
         return $this;
@@ -381,9 +381,9 @@ class Device extends CommonDevice
      *
      * @param MinContractInfo $contract
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setContract(?MinContractInfo $contract) : self
+    public function setContract(?MinContractInfo $contract)
     {
         $this->contract = $contract;
         return $this;
@@ -402,9 +402,9 @@ class Device extends CommonDevice
      *
      * @param MinGroup $group
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroup(?MinGroup $group) : self
+    public function setGroup(?MinGroup $group)
     {
         $this->group = $group;
         return $this;
@@ -423,9 +423,9 @@ class Device extends CommonDevice
      *
      * @param Certificate $modemCertificate
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setModemCertificate(?Certificate $modemCertificate) : self
+    public function setModemCertificate(?Certificate $modemCertificate)
     {
         $this->modemCertificate = $modemCertificate;
         return $this;
@@ -444,9 +444,9 @@ class Device extends CommonDevice
      *
      * @param bool $prototype The device is a prototype
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPrototype(?bool $prototype) : self
+    public function setPrototype(?bool $prototype)
     {
         $this->prototype = $prototype;
         return $this;
@@ -465,9 +465,9 @@ class Device extends CommonDevice
      *
      * @param Certificate $productCertificate
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setProductCertificate(?Certificate $productCertificate) : self
+    public function setProductCertificate(?Certificate $productCertificate)
     {
         $this->productCertificate = $productCertificate;
         return $this;
@@ -486,9 +486,9 @@ class Device extends CommonDevice
      *
      * @param DeviceLocation $location
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLocation(?DeviceLocation $location) : self
+    public function setLocation(?DeviceLocation $location)
     {
         $this->location = $location;
         return $this;
@@ -507,9 +507,9 @@ class Device extends CommonDevice
      *
      * @param LastComputedLocation $lastComputedLocation
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastComputedLocation(?LastComputedLocation $lastComputedLocation) : self
+    public function setLastComputedLocation(?LastComputedLocation $lastComputedLocation)
     {
         $this->lastComputedLocation = $lastComputedLocation;
         return $this;
@@ -528,9 +528,9 @@ class Device extends CommonDevice
      *
      * @param string $pac The device's PAC (Porting Access Code)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPac(?string $pac) : self
+    public function setPac(?string $pac)
     {
         $this->pac = $pac;
         return $this;
@@ -551,9 +551,9 @@ class Device extends CommonDevice
      *                            Absent if the device has never communicated or if the SIGFOX message protocol is V0
      *                            
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSequenceNumber(?int $sequenceNumber) : self
+    public function setSequenceNumber(?int $sequenceNumber)
     {
         $this->sequenceNumber = $sequenceNumber;
         return $this;
@@ -576,9 +576,9 @@ class Device extends CommonDevice
      *                                 Absent if there is no message trashed or if the SIGFOX message protocol is V0
      *                                 
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTrashSequenceNumber(?int $trashSequenceNumber) : self
+    public function setTrashSequenceNumber(?int $trashSequenceNumber)
     {
         $this->trashSequenceNumber = $trashSequenceNumber;
         return $this;
@@ -599,9 +599,9 @@ class Device extends CommonDevice
      *
      * @param int $lastCom The last time (in milliseconds since the Unix Epoch) the device has communicated
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastCom(?int $lastCom) : self
+    public function setLastCom(?int $lastCom)
     {
         $this->lastCom = $lastCom;
         return $this;
@@ -627,9 +627,9 @@ class Device extends CommonDevice
      *                 - {@see Device::LQI_NA}
      *                 
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLqi(?int $lqi) : self
+    public function setLqi(?int $lqi)
     {
         $this->lqi = $lqi;
         return $this;
@@ -655,9 +655,9 @@ class Device extends CommonDevice
      *
      * @param int $activationTime The device's activation time (in milliseconds since the Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActivationTime(?int $activationTime) : self
+    public function setActivationTime(?int $activationTime)
     {
         $this->activationTime = $activationTime;
         return $this;
@@ -676,9 +676,9 @@ class Device extends CommonDevice
      *
      * @param int $creationTime The device's provisionning time (in milliseconds since the Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCreationTime(?int $creationTime) : self
+    public function setCreationTime(?int $creationTime)
     {
         $this->creationTime = $creationTime;
         return $this;
@@ -707,9 +707,9 @@ class Device extends CommonDevice
      *                   - {@see Device::STATE_NOT_ACTIVABLE}
      *                   
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setState(?int $state) : self
+    public function setState(?int $state)
     {
         $this->state = $state;
         return $this;
@@ -746,9 +746,9 @@ class Device extends CommonDevice
      *                      - {@see Device::COM_STATE_NOT_SEEN}
      *                      
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setComState(?int $comState) : self
+    public function setComState(?int $comState)
     {
         $this->comState = $comState;
         return $this;
@@ -775,9 +775,9 @@ class Device extends CommonDevice
      *
      * @param Token $token
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setToken(?Token $token) : self
+    public function setToken(?Token $token)
     {
         $this->token = $token;
         return $this;
@@ -796,9 +796,9 @@ class Device extends CommonDevice
      *
      * @param int $unsubscriptionTime The device's unsubscription time (in milliseconds since the Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setUnsubscriptionTime(?int $unsubscriptionTime) : self
+    public function setUnsubscriptionTime(?int $unsubscriptionTime)
     {
         $this->unsubscriptionTime = $unsubscriptionTime;
         return $this;
@@ -817,9 +817,9 @@ class Device extends CommonDevice
      *
      * @param string $createdBy The id of device's creator user
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCreatedBy(?string $createdBy) : self
+    public function setCreatedBy(?string $createdBy)
     {
         $this->createdBy = $createdBy;
         return $this;
@@ -838,9 +838,9 @@ class Device extends CommonDevice
      *
      * @param int $lastEditionTime Date of the last edition of this device (in milliseconds since the Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastEditionTime(?int $lastEditionTime) : self
+    public function setLastEditionTime(?int $lastEditionTime)
     {
         $this->lastEditionTime = $lastEditionTime;
         return $this;
@@ -859,9 +859,9 @@ class Device extends CommonDevice
      *
      * @param string $lastEditedBy The id of device's last editor user
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastEditedBy(?string $lastEditedBy) : self
+    public function setLastEditedBy(?string $lastEditedBy)
     {
         $this->lastEditedBy = $lastEditedBy;
         return $this;
@@ -880,9 +880,9 @@ class Device extends CommonDevice
      *
      * @param bool $automaticRenewal Allow token renewal ?
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAutomaticRenewal(?bool $automaticRenewal) : self
+    public function setAutomaticRenewal(?bool $automaticRenewal)
     {
         $this->automaticRenewal = $automaticRenewal;
         return $this;
@@ -907,9 +907,9 @@ class Device extends CommonDevice
      *                                    - {@see Device::AUTOMATIC_RENEWAL_STATUS_ENDED}
      *                                    
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAutomaticRenewalStatus(?int $automaticRenewalStatus) : self
+    public function setAutomaticRenewalStatus(?int $automaticRenewalStatus)
     {
         $this->automaticRenewalStatus = $automaticRenewalStatus;
         return $this;
@@ -934,9 +934,9 @@ class Device extends CommonDevice
      *
      * @param bool $activable true if the device is activable and can take a token
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActivable(?bool $activable) : self
+    public function setActivable(?bool $activable)
     {
         $this->activable = $activable;
         return $this;
@@ -955,9 +955,9 @@ class Device extends CommonDevice
      *
      * @param string[] $actions
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActions(?array $actions) : self
+    public function setActions(?array $actions)
     {
         $this->actions = $actions;
         return $this;
@@ -976,9 +976,9 @@ class Device extends CommonDevice
      *
      * @param string[] $resources
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setResources(?array $resources) : self
+    public function setResources(?array $resources)
     {
         $this->resources = $resources;
         return $this;

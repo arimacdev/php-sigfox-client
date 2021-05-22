@@ -27,9 +27,9 @@ class OperatorsIdUpdate extends Request
      *
      * @param OperatorUpdate $operator The operator to update
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOperator(?OperatorUpdate $operator) : self
+    public function setOperator(?OperatorUpdate $operator)
     {
         $this->operator = $operator;
         return $this;

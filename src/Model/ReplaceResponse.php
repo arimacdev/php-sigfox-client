@@ -26,9 +26,9 @@ class ReplaceResponse extends Model
      *
      * @param int $total The total number of devices to be replaced
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTotal(?int $total) : self
+    public function setTotal(?int $total)
     {
         $this->total = $total;
         return $this;
@@ -47,9 +47,9 @@ class ReplaceResponse extends Model
      *
      * @param Status $status The information about the devices already processed
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setStatus(?Status $status) : self
+    public function setStatus(?Status $status)
     {
         $this->status = $status;
         return $this;

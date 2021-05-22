@@ -53,9 +53,9 @@ class MinHwFamily extends Model
      *                - {@see MinHwFamily::ID_ACCESS_STATION_MICRO}
      *                
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?int $id) : self
+    public function setId(?int $id)
     {
         $this->id = $id;
         return $this;
@@ -80,9 +80,9 @@ class MinHwFamily extends Model
      *
      * @param string $name The hardware family's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;

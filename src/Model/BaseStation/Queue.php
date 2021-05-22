@@ -25,9 +25,9 @@ class Queue extends Model
      *
      * @param int $in The number of messages handled by the base station
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setIn(?int $in) : self
+    public function setIn(?int $in)
     {
         $this->in = $in;
         return $this;
@@ -50,9 +50,9 @@ class Queue extends Model
      *                 or too many messages received at once by the station
      *                 
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOut(?int $out) : self
+    public function setOut(?int $out)
     {
         $this->out = $out;
         return $this;

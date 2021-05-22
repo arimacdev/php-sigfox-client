@@ -36,9 +36,9 @@ class MinRole extends Model
      *
      * @param string $id The role's identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -57,9 +57,9 @@ class MinRole extends Model
      *
      * @param string $name The role's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -78,9 +78,9 @@ class MinRole extends Model
      *
      * @param MinMetaRole[] $path The roles's path sorted by descending ancestor (direct parent to farest parent)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPath(?array $path) : self
+    public function setPath(?array $path)
     {
         $this->path = $path;
         return $this;

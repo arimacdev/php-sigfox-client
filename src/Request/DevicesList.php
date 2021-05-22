@@ -98,9 +98,9 @@ class DevicesList extends Request
      *
      * @param string $id The device's identifier (hexadecimal format)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -122,9 +122,9 @@ class DevicesList extends Request
      * @param string[] $groupIds Returns all devices under the given groups (included sub-groups if the parameter
      *                           deep is equals to true)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupIds(?array $groupIds) : self
+    public function setGroupIds(?array $groupIds)
     {
         $this->groupIds = $groupIds;
         return $this;
@@ -146,9 +146,9 @@ class DevicesList extends Request
      *
      * @param bool $deep if true, we search by groups and subgroups through the parameter 'groupIds'
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeep(?bool $deep) : self
+    public function setDeep(?bool $deep)
     {
         $this->deep = $deep;
         return $this;
@@ -169,9 +169,9 @@ class DevicesList extends Request
      *
      * @param bool $authorizations if true, we return the list of actions and resources the user has access
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAuthorizations(?bool $authorizations) : self
+    public function setAuthorizations(?bool $authorizations)
     {
         $this->authorizations = $authorizations;
         return $this;
@@ -192,9 +192,9 @@ class DevicesList extends Request
      *
      * @param string $deviceTypeId Returns all devices of the given device type
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeviceTypeId(?string $deviceTypeId) : self
+    public function setDeviceTypeId(?string $deviceTypeId)
     {
         $this->deviceTypeId = $deviceTypeId;
         return $this;
@@ -215,9 +215,9 @@ class DevicesList extends Request
      *
      * @param string $operatorId Returns all devices under the given operator
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOperatorId(?string $operatorId) : self
+    public function setOperatorId(?string $operatorId)
     {
         $this->operatorId = $operatorId;
         return $this;
@@ -239,9 +239,9 @@ class DevicesList extends Request
      * @param string $sort The field on which the list will be sorted. (field to sort ascending or -field to sort
      *                     descending)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSort(?string $sort) : self
+    public function setSort(?string $sort)
     {
         $this->sort = $sort;
         return $this;
@@ -264,9 +264,9 @@ class DevicesList extends Request
      * @param string $minId The minimal id of the filtered range, only availble when sort parameter is set to "id" or
      *                      "-id"
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMinId(?string $minId) : self
+    public function setMinId(?string $minId)
     {
         $this->minId = $minId;
         return $this;
@@ -288,9 +288,9 @@ class DevicesList extends Request
      * @param string $maxId The maximal id of the filtered range, only availble when sort parameter is set to "id" or
      *                      "-id"
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMaxId(?string $maxId) : self
+    public function setMaxId(?string $maxId)
     {
         $this->maxId = $maxId;
         return $this;
@@ -312,9 +312,9 @@ class DevicesList extends Request
      * @param string $fields Defines the other available fields to be returned in the response.
      *                       
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFields(?string $fields) : self
+    public function setFields(?string $fields)
     {
         $this->fields = $fields;
         return $this;
@@ -336,9 +336,9 @@ class DevicesList extends Request
      *
      * @param int $limit The maximum number of items to return
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLimit(?int $limit) : self
+    public function setLimit(?int $limit)
     {
         $this->limit = $limit;
         return $this;
@@ -359,9 +359,9 @@ class DevicesList extends Request
      *
      * @param int $offset The number of items to skip
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOffset(?int $offset) : self
+    public function setOffset(?int $offset)
     {
         $this->offset = $offset;
         return $this;
@@ -382,9 +382,9 @@ class DevicesList extends Request
      *
      * @param string $pageId Token representing the page to retrieve
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPageId(?string $pageId) : self
+    public function setPageId(?string $pageId)
     {
         $this->pageId = $pageId;
         return $this;

@@ -57,9 +57,9 @@ class ApiUsersList extends Request
      * @param string $fields Defines the other available fields to be returned in the response.
      *                       
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFields(?string $fields) : self
+    public function setFields(?string $fields)
     {
         $this->fields = $fields;
         return $this;
@@ -81,9 +81,9 @@ class ApiUsersList extends Request
      *
      * @param string $profileId Searches for API users with the given profile
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setProfileId(?string $profileId) : self
+    public function setProfileId(?string $profileId)
     {
         $this->profileId = $profileId;
         return $this;
@@ -104,9 +104,9 @@ class ApiUsersList extends Request
      *
      * @param string[] $groupIds Searches for API users who are attached to the given groups
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupIds(?array $groupIds) : self
+    public function setGroupIds(?array $groupIds)
     {
         $this->groupIds = $groupIds;
         return $this;
@@ -127,9 +127,9 @@ class ApiUsersList extends Request
      *
      * @param int $limit Defines the maximum number of items to return
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLimit(?int $limit) : self
+    public function setLimit(?int $limit)
     {
         $this->limit = $limit;
         return $this;
@@ -150,9 +150,9 @@ class ApiUsersList extends Request
      *
      * @param int $offset Defines the number of items to skip
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOffset(?int $offset) : self
+    public function setOffset(?int $offset)
     {
         $this->offset = $offset;
         return $this;
@@ -173,9 +173,9 @@ class ApiUsersList extends Request
      *
      * @param bool $authorizations if true, return the list of actions and resources the user has access
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAuthorizations(?bool $authorizations) : self
+    public function setAuthorizations(?bool $authorizations)
     {
         $this->authorizations = $authorizations;
         return $this;

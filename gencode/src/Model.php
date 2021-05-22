@@ -13,6 +13,8 @@ use PhpParser\Node\Stmt\Return_;
 
 class Model extends Class_
 {
+    protected array $properties = [];
+
     public function __construct(string $namespaceName, string $name, ?string $docComment = null)
     {
         $this->factory = new BuilderFactory;
@@ -238,7 +240,7 @@ class Model extends Class_
         $param = $this->factory->param($propertyName);
         $param->setType(new NullableType($type));
 
-        $this->addMethod("set" . ucfirst($propertyName), [$param], [$assignment, $ret], "self", $docComment);
+        $this->addMethod("set" . ucfirst($propertyName), [$param], [$assignment, $ret], null, $docComment);
     }
 
     public function addGetter(
@@ -447,7 +449,7 @@ class Model extends Class_
                     "Setter for $propertyName",
                     [
                         ["param", $usedType, "\$$propertyName", $description],
-                        ["return", "self", "To use in method chains"]
+                        ["return", "static", "To use in method chains"]
                     ],
                     2
                 )

@@ -18,6 +18,15 @@ use Arimac\Sigfox\Repository\Users;
 class Sigfox extends SigfoxExt
 {
     /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getBaseUrl() : string
+    {
+        return 'https://api.sigfox.com/v2/';
+    }
+    /**
      * @return ApiUsers
      */
     public function apiUsers() : ApiUsers

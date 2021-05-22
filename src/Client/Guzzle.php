@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Client;
 
 use GuzzleHttp\Client;
+use GuzzleHttp\Exception\GuzzleException;
 
 class Guzzle implements ClientImpl {
     /**
@@ -29,6 +30,8 @@ class Guzzle implements ClientImpl {
 
     /**
      * @inheritdoc
+     *
+     * @throws GuzzleException
      */
     function request(string $method, string $url, array $body=null, array $query=null):array {
         $res = $this->client->request($method, $url, [

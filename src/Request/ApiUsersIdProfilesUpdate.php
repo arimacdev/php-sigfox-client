@@ -27,9 +27,9 @@ class ApiUsersIdProfilesUpdate extends Request
      *
      * @param ProfileIds $profileIds The API profile to update
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setProfileIds(?ProfileIds $profileIds) : self
+    public function setProfileIds(?ProfileIds $profileIds)
     {
         $this->profileIds = $profileIds;
         return $this;

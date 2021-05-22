@@ -112,9 +112,9 @@ class Callback extends Model
      *
      * @param string $id The callback's identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -137,9 +137,9 @@ class Callback extends Model
      *                        - EMAIL
      *                        
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setChannel(?string $channel) : self
+    public function setChannel(?string $channel)
     {
         $this->channel = $channel;
         return $this;
@@ -167,9 +167,9 @@ class Callback extends Model
      *                          - {@see Callback::CALLBACK_TYPE_ERROR}
      *                          
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCallbackType(?int $callbackType) : self
+    public function setCallbackType(?int $callbackType)
     {
         $this->callbackType = $callbackType;
         return $this;
@@ -202,9 +202,9 @@ class Callback extends Model
      *                             - {@see Callback::CALLBACK_SUBTYPE_DATA_ADVANCED}
      *                             
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCallbackSubtype(?int $callbackSubtype) : self
+    public function setCallbackSubtype(?int $callbackSubtype)
     {
         $this->callbackSubtype = $callbackSubtype;
         return $this;
@@ -233,9 +233,9 @@ class Callback extends Model
      * @param string $payloadConfig The custom payload configuration. Only for DATA callbacks. This field can be
      *                              unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPayloadConfig(?string $payloadConfig) : self
+    public function setPayloadConfig(?string $payloadConfig)
     {
         $this->payloadConfig = $payloadConfig;
         return $this;
@@ -255,9 +255,9 @@ class Callback extends Model
      *
      * @param bool $enabled True to enable the callback, otherwise false
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setEnabled(?bool $enabled) : self
+    public function setEnabled(?bool $enabled)
     {
         $this->enabled = $enabled;
         return $this;
@@ -276,9 +276,9 @@ class Callback extends Model
      *
      * @param bool $dead True if last use of the callback fails, otherwise false
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDead(?bool $dead) : self
+    public function setDead(?bool $dead)
     {
         $this->dead = $dead;
         return $this;

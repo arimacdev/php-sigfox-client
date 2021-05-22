@@ -27,9 +27,9 @@ class BaseResponse extends Model
      *
      * @param string $message Additional information about the operation
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMessage(?string $message) : self
+    public function setMessage(?string $message)
     {
         $this->message = $message;
         return $this;
@@ -48,9 +48,9 @@ class BaseResponse extends Model
      *
      * @param UserRole[] $userRoles
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setUserRoles(?array $userRoles) : self
+    public function setUserRoles(?array $userRoles)
     {
         $this->userRoles = $userRoles;
         return $this;

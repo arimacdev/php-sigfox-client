@@ -27,9 +27,9 @@ class DevicesIdUnsubscribe extends Request
      *
      * @param TokenUnsubscribe $unsubscriptionTime the unsubscription time (in milliseconds since the Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setUnsubscriptionTime(?TokenUnsubscribe $unsubscriptionTime) : self
+    public function setUnsubscriptionTime(?TokenUnsubscribe $unsubscriptionTime)
     {
         $this->unsubscriptionTime = $unsubscriptionTime;
         return $this;

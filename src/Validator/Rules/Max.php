@@ -6,6 +6,9 @@ use Arimac\Sigfox\Validator\Rule;
 
 class Max implements Rule {
 
+    /**
+     * @var int|float
+     */
     protected $max;
 
     /**

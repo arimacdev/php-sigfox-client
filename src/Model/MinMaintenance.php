@@ -23,9 +23,9 @@ class MinMaintenance extends Model
      *
      * @param string $id The maintenance's identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -44,9 +44,9 @@ class MinMaintenance extends Model
      *
      * @param string $name The maintenance's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;

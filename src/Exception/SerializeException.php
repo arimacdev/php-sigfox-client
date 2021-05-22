@@ -18,7 +18,7 @@ class SerializeException extends SigfoxException
      *
      * @internal
      *
-     * @param string $expectedTypes Expected types for the given property
+     * @param array  $expectedTypes Expected types for the given property
      * @param string $actualType    The type of the user passed value
      */
     public function __construct(array $expectedTypes, string $actualType)

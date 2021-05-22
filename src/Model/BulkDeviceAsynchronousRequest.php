@@ -47,9 +47,9 @@ class BulkDeviceAsynchronousRequest extends Model
      *
      * @param string $deviceTypeId The identifier of the device type under which the new devices will be created
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeviceTypeId(?string $deviceTypeId) : self
+    public function setDeviceTypeId(?string $deviceTypeId)
     {
         $this->deviceTypeId = $deviceTypeId;
         return $this;
@@ -68,9 +68,9 @@ class BulkDeviceAsynchronousRequest extends Model
      *
      * @param CertificateUpdate $productCertificate
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setProductCertificate(?CertificateUpdate $productCertificate) : self
+    public function setProductCertificate(?CertificateUpdate $productCertificate)
     {
         $this->productCertificate = $productCertificate;
         return $this;
@@ -89,9 +89,9 @@ class BulkDeviceAsynchronousRequest extends Model
      *
      * @param bool $prototype Value describing if the devices are prototypes
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPrototype(?bool $prototype) : self
+    public function setPrototype(?bool $prototype)
     {
         $this->prototype = $prototype;
         return $this;
@@ -110,9 +110,9 @@ class BulkDeviceAsynchronousRequest extends Model
      *
      * @param string $prefix Prefix to used in device name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPrefix(?string $prefix) : self
+    public function setPrefix(?string $prefix)
     {
         $this->prefix = $prefix;
         return $this;
@@ -131,9 +131,9 @@ class BulkDeviceAsynchronousRequest extends Model
      *
      * @param DataItem[] $data
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setData(?array $data) : self
+    public function setData(?array $data)
     {
         $this->data = $data;
         return $this;

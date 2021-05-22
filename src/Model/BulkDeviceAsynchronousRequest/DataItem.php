@@ -57,9 +57,9 @@ class DataItem extends Model
      *
      * @param string $id The device's identifier (hexadecimal format)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -78,9 +78,9 @@ class DataItem extends Model
      *
      * @param string $pac The device's PAC (Porting Access Code)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPac(?string $pac) : self
+    public function setPac(?string $pac)
     {
         $this->pac = $pac;
         return $this;
@@ -99,9 +99,9 @@ class DataItem extends Model
      *
      * @param string $name The device's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -120,9 +120,9 @@ class DataItem extends Model
      *
      * @param double $lat The device's provided latitude
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLat(?float $lat) : self
+    public function setLat(?float $lat)
     {
         $this->lat = $lat;
         return $this;
@@ -141,9 +141,9 @@ class DataItem extends Model
      *
      * @param double $lng The device's provided longitude
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLng(?float $lng) : self
+    public function setLng(?float $lng)
     {
         $this->lng = $lng;
         return $this;
@@ -162,9 +162,9 @@ class DataItem extends Model
      *
      * @param bool $automaticRenewal Value describing if the device is permitted to automatically renew its token
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAutomaticRenewal(?bool $automaticRenewal) : self
+    public function setAutomaticRenewal(?bool $automaticRenewal)
     {
         $this->automaticRenewal = $automaticRenewal;
         return $this;
@@ -183,9 +183,9 @@ class DataItem extends Model
      *
      * @param bool $activable Value describing if the devices are activable and can recover a token
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActivable(?bool $activable) : self
+    public function setActivable(?bool $activable)
     {
         $this->activable = $activable;
         return $this;

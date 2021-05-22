@@ -198,9 +198,9 @@ class ContractInfosList extends Request
      *
      * @param string $name Searches for contracts containing the given text in their name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -221,9 +221,9 @@ class ContractInfosList extends Request
      *
      * @param string $groupId Searches for contracts who are attached to the given group
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupId(?string $groupId) : self
+    public function setGroupId(?string $groupId)
     {
         $this->groupId = $groupId;
         return $this;
@@ -248,9 +248,9 @@ class ContractInfosList extends Request
      *                       - {@see ContractInfosList::GROUP_TYPE_CHANNEL}
      *                       
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupType(?int $groupType) : self
+    public function setGroupType(?int $groupType)
     {
         $this->groupType = $groupType;
         return $this;
@@ -275,9 +275,9 @@ class ContractInfosList extends Request
      *
      * @param bool $deep Searches for contracts that are attached to the given group and its descendants
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeep(?bool $deep) : self
+    public function setDeep(?bool $deep)
     {
         $this->deep = $deep;
         return $this;
@@ -298,9 +298,9 @@ class ContractInfosList extends Request
      *
      * @param bool $up Searches for contracts that are attached to the given group and its ancestors
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setUp(?bool $up) : self
+    public function setUp(?bool $up)
     {
         $this->up = $up;
         return $this;
@@ -322,9 +322,9 @@ class ContractInfosList extends Request
      * @param string $orderIds Searches for contracts with the listed orderIds. The elements of the list are
      *                         separated by comma.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOrderIds(?string $orderIds) : self
+    public function setOrderIds(?string $orderIds)
     {
         $this->orderIds = $orderIds;
         return $this;
@@ -347,9 +347,9 @@ class ContractInfosList extends Request
      * @param string $contractIds Searches for contracts IDs that have the listed external (BSS) contractId. The
      *                            elements of the list are separated by comma.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setContractIds(?string $contractIds) : self
+    public function setContractIds(?string $contractIds)
     {
         $this->contractIds = $contractIds;
         return $this;
@@ -372,9 +372,9 @@ class ContractInfosList extends Request
      * @param int $fromTime Searches for contracts with communication end time superior or equal to given time (in
      *                      milliseconds since Unix Epoch).
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFromTime(?int $fromTime) : self
+    public function setFromTime(?int $fromTime)
     {
         $this->fromTime = $fromTime;
         return $this;
@@ -397,9 +397,9 @@ class ContractInfosList extends Request
      * @param int $toTime Searches for contracts with start time inferior to given time (in milliseconds since Unix
      *                    Epoch).
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setToTime(?int $toTime) : self
+    public function setToTime(?int $toTime)
     {
         $this->toTime = $toTime;
         return $this;
@@ -420,9 +420,9 @@ class ContractInfosList extends Request
      *
      * @param int $tokenDuration Searches for contracts with the given token duration in months.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTokenDuration(?int $tokenDuration) : self
+    public function setTokenDuration(?int $tokenDuration)
     {
         $this->tokenDuration = $tokenDuration;
         return $this;
@@ -448,9 +448,9 @@ class ContractInfosList extends Request
      *                          - {@see ContractInfosList::PRICING_MODEL_PRICING_MODEL_V3}
      *                          
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPricingModel(?int $pricingModel) : self
+    public function setPricingModel(?int $pricingModel)
     {
         $this->pricingModel = $pricingModel;
         return $this;
@@ -485,9 +485,9 @@ class ContractInfosList extends Request
      *                              - {@see ContractInfosList::SUBSCRIPTION_PLAN_ACTIVATE}
      *                              
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSubscriptionPlan(?int $subscriptionPlan) : self
+    public function setSubscriptionPlan(?int $subscriptionPlan)
     {
         $this->subscriptionPlan = $subscriptionPlan;
         return $this;
@@ -524,9 +524,9 @@ class ContractInfosList extends Request
      *                             6 (ATLAS_WIFI_PRIVATEDB)
      *                             
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGeolocationMode(?int $geolocationMode) : self
+    public function setGeolocationMode(?int $geolocationMode)
     {
         $this->geolocationMode = $geolocationMode;
         return $this;
@@ -555,9 +555,9 @@ class ContractInfosList extends Request
      * @param string $fields Defines the other available fields to be returned in the response.
      *                       
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFields(?string $fields) : self
+    public function setFields(?string $fields)
     {
         $this->fields = $fields;
         return $this;
@@ -579,9 +579,9 @@ class ContractInfosList extends Request
      *
      * @param int $limit The maximum number of items to return
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLimit(?int $limit) : self
+    public function setLimit(?int $limit)
     {
         $this->limit = $limit;
         return $this;
@@ -602,9 +602,9 @@ class ContractInfosList extends Request
      *
      * @param int $offset The number of items to skip
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOffset(?int $offset) : self
+    public function setOffset(?int $offset)
     {
         $this->offset = $offset;
         return $this;
@@ -625,9 +625,9 @@ class ContractInfosList extends Request
      *
      * @param string $pageId Token representing the page to retrieve
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPageId(?string $pageId) : self
+    public function setPageId(?string $pageId)
     {
         $this->pageId = $pageId;
         return $this;
@@ -648,9 +648,9 @@ class ContractInfosList extends Request
      *
      * @param bool $authorizations if true, we return the list of actions and resources the user has access
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAuthorizations(?bool $authorizations) : self
+    public function setAuthorizations(?bool $authorizations)
     {
         $this->authorizations = $authorizations;
         return $this;

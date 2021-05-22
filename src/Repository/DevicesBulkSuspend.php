@@ -10,7 +10,7 @@ class DevicesBulkSuspend
      *
      * @internal
      */
-    protected ?Client $client;
+    protected Client $client;
     /**
      * Creating the repository
      *

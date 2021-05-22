@@ -27,9 +27,9 @@ class UserCreation extends UserUpdate
      *
      * @param string $email The user's email
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setEmail(?string $email) : self
+    public function setEmail(?string $email)
     {
         $this->email = $email;
         return $this;
@@ -48,9 +48,9 @@ class UserCreation extends UserUpdate
      *
      * @param bool $sendWelcomeEmail Send an email to the user to create/change is password
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSendWelcomeEmail(?bool $sendWelcomeEmail) : self
+    public function setSendWelcomeEmail(?bool $sendWelcomeEmail)
     {
         $this->sendWelcomeEmail = $sendWelcomeEmail;
         return $this;

@@ -72,9 +72,9 @@ class RadioConfiguration extends Model
      *                - {@see RadioConfiguration::ID_RC7}
      *                
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?int $id) : self
+    public function setId(?int $id)
     {
         $this->id = $id;
         return $this;

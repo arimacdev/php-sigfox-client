@@ -23,9 +23,9 @@ class UserRole extends Model
      *
      * @param MinGroup $group
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroup(?MinGroup $group) : self
+    public function setGroup(?MinGroup $group)
     {
         $this->group = $group;
         return $this;
@@ -44,9 +44,9 @@ class UserRole extends Model
      *
      * @param MinProfile $profile
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setProfile(?MinProfile $profile) : self
+    public function setProfile(?MinProfile $profile)
     {
         $this->profile = $profile;
         return $this;

@@ -32,9 +32,9 @@ class UpdatebatchUrlCallback extends UpdateCallback
      *
      * @param string $url The callback's url
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setUrl(?string $url) : self
+    public function setUrl(?string $url)
     {
         $this->url = $url;
         return $this;
@@ -53,9 +53,9 @@ class UpdatebatchUrlCallback extends UpdateCallback
      *
      * @param string $httpMethod The http method used to send a callback
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setHttpMethod(?string $httpMethod) : self
+    public function setHttpMethod(?string $httpMethod)
     {
         $this->httpMethod = $httpMethod;
         return $this;
@@ -74,9 +74,9 @@ class UpdatebatchUrlCallback extends UpdateCallback
      *
      * @param string $linePattern The line pattern representing a message.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLinePattern(?string $linePattern) : self
+    public function setLinePattern(?string $linePattern)
     {
         $this->linePattern = $linePattern;
         return $this;

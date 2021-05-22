@@ -43,9 +43,9 @@ class DownlinkAnswerStatus extends Model
      *
      * @param MinBaseStationWithType $baseStation base station to send downlink message
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBaseStation(?MinBaseStationWithType $baseStation) : self
+    public function setBaseStation(?MinBaseStationWithType $baseStation)
     {
         $this->baseStation = $baseStation;
         return $this;
@@ -64,9 +64,9 @@ class DownlinkAnswerStatus extends Model
      *
      * @param double $plannedPower planned downlink power as it was computed by the backend
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPlannedPower(?float $plannedPower) : self
+    public function setPlannedPower(?float $plannedPower)
     {
         $this->plannedPower = $plannedPower;
         return $this;
@@ -85,9 +85,9 @@ class DownlinkAnswerStatus extends Model
      *
      * @param string $data response content, hex encoded
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setData(?string $data) : self
+    public function setData(?string $data)
     {
         $this->data = $data;
         return $this;
@@ -106,9 +106,9 @@ class DownlinkAnswerStatus extends Model
      *
      * @param string $operator name of the first operator which received the message as roaming
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOperator(?string $operator) : self
+    public function setOperator(?string $operator)
     {
         $this->operator = $operator;
         return $this;
@@ -127,9 +127,9 @@ class DownlinkAnswerStatus extends Model
      *
      * @param string $country country of the operator
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCountry(?string $country) : self
+    public function setCountry(?string $country)
     {
         $this->country = $country;
         return $this;

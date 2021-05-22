@@ -25,9 +25,9 @@ class GroupsCreate extends Request
      *
      * @param CommonGroupCreate $group
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroup(?CommonGroupCreate $group) : self
+    public function setGroup(?CommonGroupCreate $group)
     {
         $this->group = $group;
         return $this;

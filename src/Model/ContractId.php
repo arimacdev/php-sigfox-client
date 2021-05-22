@@ -21,9 +21,9 @@ class ContractId extends Model
      *
      * @param string $id The contract's id
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;

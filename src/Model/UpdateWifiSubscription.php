@@ -70,9 +70,9 @@ class UpdateWifiSubscription extends UpdateInternetSubscription
      *                         - {@see UpdateWifiSubscription::NETWORK_TYPE_RESIDENT}
      *                         
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setNetworkType(?int $networkType) : self
+    public function setNetworkType(?int $networkType)
     {
         $this->networkType = $networkType;
         return $this;
@@ -100,9 +100,9 @@ class UpdateWifiSubscription extends UpdateInternetSubscription
      *                               - {@see UpdateWifiSubscription::ETH_CONNECTION_TYPE_STATIC}
      *                               
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setEthConnectionType(?int $ethConnectionType) : self
+    public function setEthConnectionType(?int $ethConnectionType)
     {
         $this->ethConnectionType = $ethConnectionType;
         return $this;
@@ -125,9 +125,9 @@ class UpdateWifiSubscription extends UpdateInternetSubscription
      *
      * @param string $ssid The SSID of this Wi-Fi internet subscription. This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSsid(?string $ssid) : self
+    public function setSsid(?string $ssid)
     {
         $this->ssid = $ssid;
         return $this;
@@ -147,9 +147,9 @@ class UpdateWifiSubscription extends UpdateInternetSubscription
      * @param string $passphrase The passphrase on this Wi-Fi internet subscription. This field can be unset when
      *                           updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPassphrase(?string $passphrase) : self
+    public function setPassphrase(?string $passphrase)
     {
         $this->passphrase = $passphrase;
         return $this;

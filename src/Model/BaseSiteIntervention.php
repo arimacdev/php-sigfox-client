@@ -203,9 +203,9 @@ class BaseSiteIntervention extends Model
      *
      * @param string $author The author of this intervention
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAuthor(?string $author) : self
+    public function setAuthor(?string $author)
     {
         $this->author = $author;
         return $this;
@@ -224,9 +224,9 @@ class BaseSiteIntervention extends Model
      *
      * @param string $comment The comment about this intervention
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setComment(?string $comment) : self
+    public function setComment(?string $comment)
     {
         $this->comment = $comment;
         return $this;
@@ -263,9 +263,9 @@ class BaseSiteIntervention extends Model
      *                                  - {@see BaseSiteIntervention::EQUIPMENTS_TO_CHANGE_ROUTER_3G}
      *                                  
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setEquipmentsToChange(?array $equipmentsToChange) : self
+    public function setEquipmentsToChange(?array $equipmentsToChange)
     {
         $this->equipmentsToChange = $equipmentsToChange;
         return $this;
@@ -302,9 +302,9 @@ class BaseSiteIntervention extends Model
      *
      * @param int $plannedTime The planned time of this intervention
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPlannedTime(?int $plannedTime) : self
+    public function setPlannedTime(?int $plannedTime)
     {
         $this->plannedTime = $plannedTime;
         return $this;
@@ -323,9 +323,9 @@ class BaseSiteIntervention extends Model
      *
      * @param int $interventionTime The time of this intervention
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setInterventionTime(?int $interventionTime) : self
+    public function setInterventionTime(?int $interventionTime)
     {
         $this->interventionTime = $interventionTime;
         return $this;
@@ -344,9 +344,9 @@ class BaseSiteIntervention extends Model
      *
      * @param int $endTime The end time of this intervention
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setEndTime(?int $endTime) : self
+    public function setEndTime(?int $endTime)
     {
         $this->endTime = $endTime;
         return $this;
@@ -365,9 +365,9 @@ class BaseSiteIntervention extends Model
      *
      * @param string $billCode The bill code of this intervention
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBillCode(?string $billCode) : self
+    public function setBillCode(?string $billCode)
     {
         $this->billCode = $billCode;
         return $this;
@@ -386,9 +386,9 @@ class BaseSiteIntervention extends Model
      *
      * @param string $rtId The request tracker identifier of this intervention
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRtId(?string $rtId) : self
+    public function setRtId(?string $rtId)
     {
         $this->rtId = $rtId;
         return $this;
@@ -407,9 +407,9 @@ class BaseSiteIntervention extends Model
      *
      * @param bool $closed is this intervention closed
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setClosed(?bool $closed) : self
+    public function setClosed(?bool $closed)
     {
         $this->closed = $closed;
         return $this;
@@ -428,9 +428,9 @@ class BaseSiteIntervention extends Model
      *
      * @param double $costs The costs of this intervention
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCosts(?float $costs) : self
+    public function setCosts(?float $costs)
     {
         $this->costs = $costs;
         return $this;
@@ -459,9 +459,9 @@ class BaseSiteIntervention extends Model
      *                  - {@see BaseSiteIntervention::TYPE_DISMANTLING}
      *                  
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setType(?int $type) : self
+    public function setType(?int $type)
     {
         $this->type = $type;
         return $this;

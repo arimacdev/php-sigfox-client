@@ -49,9 +49,9 @@ class CityArea extends Model
      *
      * @param string $id The city area's identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -70,9 +70,9 @@ class CityArea extends Model
      *
      * @param string $name The city area's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -91,9 +91,9 @@ class CityArea extends Model
      *
      * @param string $groupId The city area operator's identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupId(?string $groupId) : self
+    public function setGroupId(?string $groupId)
     {
         $this->groupId = $groupId;
         return $this;
@@ -112,9 +112,9 @@ class CityArea extends Model
      *
      * @param bool $readOnly true if the city area is not editable by an operator user.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setReadOnly(?bool $readOnly) : self
+    public function setReadOnly(?bool $readOnly)
     {
         $this->readOnly = $readOnly;
         return $this;
@@ -134,9 +134,9 @@ class CityArea extends Model
      * @param bool $deploymentKpiReport true if the city area is included in the monthly deployement kpi report of
      *                                  the operator.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeploymentKpiReport(?bool $deploymentKpiReport) : self
+    public function setDeploymentKpiReport(?bool $deploymentKpiReport)
     {
         $this->deploymentKpiReport = $deploymentKpiReport;
         return $this;
@@ -155,9 +155,9 @@ class CityArea extends Model
      *
      * @param string[] $actions
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActions(?array $actions) : self
+    public function setActions(?array $actions)
     {
         $this->actions = $actions;
         return $this;

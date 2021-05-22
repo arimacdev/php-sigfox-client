@@ -30,9 +30,9 @@ class DeviceConsumption extends Model
      *
      * @param int $id Identifier of the device consumption
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?int $id) : self
+    public function setId(?int $id)
     {
         $this->id = $id;
         return $this;
@@ -51,9 +51,9 @@ class DeviceConsumption extends Model
      *
      * @param DeviceConsumptionsItem[] $deviceConsumptions Consumption of a device
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeviceConsumptions(?array $deviceConsumptions) : self
+    public function setDeviceConsumptions(?array $deviceConsumptions)
     {
         $this->deviceConsumptions = $deviceConsumptions;
         return $this;

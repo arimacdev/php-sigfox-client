@@ -12,7 +12,7 @@ use Iterator;
  *
  * @template T
  *
- * @template-implements Iterator<T>
+ * @implements Iterator<T>
  */
 class ItemIterator implements Iterator {
     /**
@@ -23,22 +23,24 @@ class ItemIterator implements Iterator {
     /**
      * @internal
      */
-    protected $position = 0;
+    protected int $position = 0;
 
     /**
      * @internal
      */
-    protected $key = 0;
+    protected int $key = 0;
+
+    /**
+     * @internal
+     *
+     * @var T[]
+     */
+    protected array $array = [];
 
     /**
      * @internal
      */
-    protected array $array;
-
-    /**
-     * @internal
-     */
-    protected bool $isValid;
+    protected bool $isValid = true;
 
     /**
      * Initializing the iterator from a PageIterator
@@ -54,6 +56,8 @@ class ItemIterator implements Iterator {
      * Skipping empty arrays
      *
      * @internal
+     *
+     * @return void
      */
     private function skipEmpty(){
         if(empty($this->parent->current())){

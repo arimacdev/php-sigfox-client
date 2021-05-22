@@ -30,9 +30,9 @@ class ErrorsItem extends Model
      * @param string $type Describe where the problem occurred. Can be from body, query or path.
      *                     
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setType(?string $type) : self
+    public function setType(?string $type)
     {
         $this->type = $type;
         return $this;
@@ -53,9 +53,9 @@ class ErrorsItem extends Model
      * @param string $field Name of the field or parameter where the specific error occurred.
      *                      
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setField(?string $field) : self
+    public function setField(?string $field)
     {
         $this->field = $field;
         return $this;
@@ -76,9 +76,9 @@ class ErrorsItem extends Model
      * @param string $message Readable specific error for the previously defined field.
      *                        
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMessage(?string $message) : self
+    public function setMessage(?string $message)
     {
         $this->message = $message;
         return $this;

@@ -50,9 +50,9 @@ class Antenna extends Model
      *
      * @param string $model Antenna model of the station. E.g. "CXL 900-3LW", "CXL 900-6LW" , "" -> NONE ...
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setModel(?string $model) : self
+    public function setModel(?string $model)
     {
         $this->model = $model;
         return $this;
@@ -71,9 +71,9 @@ class Antenna extends Model
      *
      * @param double $azimuth The base station's azimuth (in °)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAzimuth(?float $azimuth) : self
+    public function setAzimuth(?float $azimuth)
     {
         $this->azimuth = $azimuth;
         return $this;
@@ -92,9 +92,9 @@ class Antenna extends Model
      *
      * @param double $attenuation The base station's attenuation signal (in %)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAttenuation(?float $attenuation) : self
+    public function setAttenuation(?float $attenuation)
     {
         $this->attenuation = $attenuation;
         return $this;
@@ -114,9 +114,9 @@ class Antenna extends Model
      * @param double $attenuationDirect The base station's attenuation direct (in °). This field can be unset when
      *                                  updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAttenuationDirect(?float $attenuationDirect) : self
+    public function setAttenuationDirect(?float $attenuationDirect)
     {
         $this->attenuationDirect = $attenuationDirect;
         return $this;
@@ -136,9 +136,9 @@ class Antenna extends Model
      * @param double $attenuationIndirect The base station's attenuation indirect (in °). This field can be unset
      *                                    when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAttenuationIndirect(?float $attenuationIndirect) : self
+    public function setAttenuationIndirect(?float $attenuationIndirect)
     {
         $this->attenuationIndirect = $attenuationIndirect;
         return $this;
@@ -157,9 +157,9 @@ class Antenna extends Model
      *
      * @param double $tilt The base station's tilt
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTilt(?float $tilt) : self
+    public function setTilt(?float $tilt)
     {
         $this->tilt = $tilt;
         return $this;

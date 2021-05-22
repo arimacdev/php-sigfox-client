@@ -19,9 +19,9 @@ class ProfileIds extends Model
      *
      * @param string[] $profileId
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setProfileId(?array $profileId) : self
+    public function setProfileId(?array $profileId)
     {
         $this->profileId = $profileId;
         return $this;

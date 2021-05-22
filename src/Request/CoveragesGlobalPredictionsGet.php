@@ -31,9 +31,9 @@ class CoveragesGlobalPredictionsGet extends Request
      *
      * @param GlobalCoverageRequest $payload
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPayload(?GlobalCoverageRequest $payload) : self
+    public function setPayload(?GlobalCoverageRequest $payload)
     {
         $this->payload = $payload;
         return $this;

@@ -71,9 +71,9 @@ class GroupErrorMessages extends Model
      *
      * @param string $device Device identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDevice(?string $device) : self
+    public function setDevice(?string $device)
     {
         $this->device = $device;
         return $this;
@@ -92,9 +92,9 @@ class GroupErrorMessages extends Model
      *
      * @param string $deviceUrl Url to the device
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeviceUrl(?string $deviceUrl) : self
+    public function setDeviceUrl(?string $deviceUrl)
     {
         $this->deviceUrl = $deviceUrl;
         return $this;
@@ -113,9 +113,9 @@ class GroupErrorMessages extends Model
      *
      * @param string $deviceType Device type identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeviceType(?string $deviceType) : self
+    public function setDeviceType(?string $deviceType)
     {
         $this->deviceType = $deviceType;
         return $this;
@@ -134,9 +134,9 @@ class GroupErrorMessages extends Model
      *
      * @param int $time Timestamp of the message (posix format)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTime(?int $time) : self
+    public function setTime(?int $time)
     {
         $this->time = $time;
         return $this;
@@ -155,9 +155,9 @@ class GroupErrorMessages extends Model
      *
      * @param string $data Data message
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setData(?string $data) : self
+    public function setData(?string $data)
     {
         $this->data = $data;
         return $this;
@@ -176,9 +176,9 @@ class GroupErrorMessages extends Model
      *
      * @param string $snr The SNR of the messages received by the network so far
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSnr(?string $snr) : self
+    public function setSnr(?string $snr)
     {
         $this->snr = $snr;
         return $this;
@@ -197,9 +197,9 @@ class GroupErrorMessages extends Model
      *
      * @param string $status Contains the callback response status.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setStatus(?string $status) : self
+    public function setStatus(?string $status)
     {
         $this->status = $status;
         return $this;
@@ -218,9 +218,9 @@ class GroupErrorMessages extends Model
      *
      * @param string $message Contains additional information on the response.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMessage(?string $message) : self
+    public function setMessage(?string $message)
     {
         $this->message = $message;
         return $this;
@@ -239,9 +239,9 @@ class GroupErrorMessages extends Model
      *
      * @param GroupCallbackMedium $callback
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCallback(?GroupCallbackMedium $callback) : self
+    public function setCallback(?GroupCallbackMedium $callback)
     {
         $this->callback = $callback;
         return $this;
@@ -261,9 +261,9 @@ class GroupErrorMessages extends Model
      * @param array $parameters All the parameters which have served to build the callback, see callback doc for an
      *                          exhaustive list.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setParameters(?array $parameters) : self
+    public function setParameters(?array $parameters)
     {
         $this->parameters = $parameters;
         return $this;

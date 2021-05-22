@@ -38,9 +38,9 @@ class DevicesBulkUnsubscribeAsync extends Request
      *
      * @param BulkUnsubscribe $devices array of device's identifier (hexadecimal format) with unsubscribtion time
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDevices(?BulkUnsubscribe $devices) : self
+    public function setDevices(?BulkUnsubscribe $devices)
     {
         $this->devices = $devices;
         return $this;
@@ -61,9 +61,9 @@ class DevicesBulkUnsubscribeAsync extends Request
      *
      * @param string $groupId Group Identifier use to unsubscribe multiple devices
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupId(?string $groupId) : self
+    public function setGroupId(?string $groupId)
     {
         $this->groupId = $groupId;
         return $this;

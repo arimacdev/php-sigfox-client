@@ -161,9 +161,9 @@ class DeviceType extends BaseDeviceType
      *
      * @param string $id The device type's identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -182,9 +182,9 @@ class DeviceType extends BaseDeviceType
      *
      * @param string $description The device type's description
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDescription(?string $description) : self
+    public function setDescription(?string $description)
     {
         $this->description = $description;
         return $this;
@@ -209,9 +209,9 @@ class DeviceType extends BaseDeviceType
      *                          - {@see DeviceType::DOWNLINK_MODE_MANAGED}
      *                          
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDownlinkMode(?int $downlinkMode) : self
+    public function setDownlinkMode(?int $downlinkMode)
     {
         $this->downlinkMode = $downlinkMode;
         return $this;
@@ -239,9 +239,9 @@ class DeviceType extends BaseDeviceType
      *                                   It must be an 8 byte length message given in hexadecimal string format.
      *                                   
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDownlinkDataString(?string $downlinkDataString) : self
+    public function setDownlinkDataString(?string $downlinkDataString)
     {
         $this->downlinkDataString = $downlinkDataString;
         return $this;
@@ -270,9 +270,9 @@ class DeviceType extends BaseDeviceType
      *                         - {@see DeviceType::PAYLOAD_TYPE_SENSITV2}
      *                         
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPayloadType(?int $payloadType) : self
+    public function setPayloadType(?int $payloadType)
     {
         $this->payloadType = $payloadType;
         return $this;
@@ -299,9 +299,9 @@ class DeviceType extends BaseDeviceType
      *
      * @param string $payloadConfig The payload configuration. Required if the payload type is Custom, else ignored.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPayloadConfig(?string $payloadConfig) : self
+    public function setPayloadConfig(?string $payloadConfig)
     {
         $this->payloadConfig = $payloadConfig;
         return $this;
@@ -320,9 +320,9 @@ class DeviceType extends BaseDeviceType
      *
      * @param MinGroup $group
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroup(?MinGroup $group) : self
+    public function setGroup(?MinGroup $group)
     {
         $this->group = $group;
         return $this;
@@ -341,9 +341,9 @@ class DeviceType extends BaseDeviceType
      *
      * @param MinContractInfo $contract
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setContract(?MinContractInfo $contract) : self
+    public function setContract(?MinContractInfo $contract)
     {
         $this->contract = $contract;
         return $this;
@@ -362,9 +362,9 @@ class DeviceType extends BaseDeviceType
      *
      * @param MinContractInfo[] $contracts The list of the contracts associated with the device type
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setContracts(?array $contracts) : self
+    public function setContracts(?array $contracts)
     {
         $this->contracts = $contracts;
         return $this;
@@ -384,9 +384,9 @@ class DeviceType extends BaseDeviceType
      * @param MinContractInfo[] $detachedContracts The list of the contracts that were associated with the device
      *                                             type at some point, but are not anymore.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDetachedContracts(?array $detachedContracts) : self
+    public function setDetachedContracts(?array $detachedContracts)
     {
         $this->detachedContracts = $detachedContracts;
         return $this;
@@ -406,9 +406,9 @@ class DeviceType extends BaseDeviceType
      *
      * @param GeolocPayloadConfig $geolocPayloadConfig
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGeolocPayloadConfig(?GeolocPayloadConfig $geolocPayloadConfig) : self
+    public function setGeolocPayloadConfig(?GeolocPayloadConfig $geolocPayloadConfig)
     {
         $this->geolocPayloadConfig = $geolocPayloadConfig;
         return $this;
@@ -427,9 +427,9 @@ class DeviceType extends BaseDeviceType
      *
      * @param int $creationTime Date of the creation of this device type (in milliseconds)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCreationTime(?int $creationTime) : self
+    public function setCreationTime(?int $creationTime)
     {
         $this->creationTime = $creationTime;
         return $this;
@@ -448,9 +448,9 @@ class DeviceType extends BaseDeviceType
      *
      * @param string $createdBy Identifier of the user who created this device type
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCreatedBy(?string $createdBy) : self
+    public function setCreatedBy(?string $createdBy)
     {
         $this->createdBy = $createdBy;
         return $this;
@@ -469,9 +469,9 @@ class DeviceType extends BaseDeviceType
      *
      * @param int $lastEditionTime Date of the last edition of this device type (in milliseconds)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastEditionTime(?int $lastEditionTime) : self
+    public function setLastEditionTime(?int $lastEditionTime)
     {
         $this->lastEditionTime = $lastEditionTime;
         return $this;
@@ -490,9 +490,9 @@ class DeviceType extends BaseDeviceType
      *
      * @param string $lastEditedBy Identifier of the user who last edited this device type
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastEditedBy(?string $lastEditedBy) : self
+    public function setLastEditedBy(?string $lastEditedBy)
     {
         $this->lastEditedBy = $lastEditedBy;
         return $this;
@@ -511,9 +511,9 @@ class DeviceType extends BaseDeviceType
      *
      * @param bool $automaticRenewal Allows the automatic renewal of devices attached to this device type
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAutomaticRenewal(?bool $automaticRenewal) : self
+    public function setAutomaticRenewal(?bool $automaticRenewal)
     {
         $this->automaticRenewal = $automaticRenewal;
         return $this;

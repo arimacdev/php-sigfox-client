@@ -27,9 +27,9 @@ class MinMetaRole extends Model
      *
      * @param string $id The meta role's identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -48,9 +48,9 @@ class MinMetaRole extends Model
      *
      * @param string $name The meta role's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;

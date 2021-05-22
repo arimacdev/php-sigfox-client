@@ -14,12 +14,15 @@ use stdClass;
  */
 class ClassSerializer implements Serializer
 {
+    /**
+     * @var class-string
+     */
     protected string $className;
 
     /**
      * Initializing the serializer
      *
-     * @param string $className The class name
+     * @param class-string $className The class name
      */
     public function __construct(string $className)
     {
@@ -43,11 +46,16 @@ class ClassSerializer implements Serializer
         $obj = new $this->className();
         $metaData = $obj->getSerializeMetaData();
 
-        if (!is_array($value) && !(is_object($value) && $value instanceof stdClass)) {
+        if (!is_array($value) && !is_object($value)) {
             throw new DeserializeException(
                 [$this->className, "array(" . implode(",", array_keys($metaData)) . ")"],
                 gettype($value)
             );
+        }
+
+        if(is_object($value)){
+            /** @var array **/
+            $value = json_decode(json_encode($value),true);
         }
 
         /** @var Model **/
@@ -55,22 +63,12 @@ class ClassSerializer implements Serializer
         $metaData = $obj->getSerializeMetaData();
         $extendable = $obj->isExtendable();
 
-        if (is_array($value)) {
-            /** @var Serializer $serializer **/
-            foreach ($metaData as $propertyName => $serializer) {
-                $serialized = $serializer->deserialize($value[$propertyName] ?? null);
-                unset($value[$propertyName]);
-                $setter = "set" . ucfirst($propertyName);
-                $obj->$setter($serialized);
-            }
-        } else if ($value instanceof stdClass) {
-            /** @var Serializer $serializer **/
-            foreach ($metaData as $propertyName => $serializer) {
-                $serialized = $serializer->deserialize($value->$propertyName ?? null);
-                unset($value->$propertyName);
-                $setter = "set" . ucfirst($propertyName);
-                $obj->$setter($serialized);
-            }
+        /** @var Serializer $serializer **/
+        foreach ($metaData as $propertyName => $serializer) {
+            $serialized = $serializer->deserialize($value[$propertyName] ?? null);
+            unset($value[$propertyName]);
+            $setter = "set" . ucfirst($propertyName);
+            $obj->$setter($serialized);
         }
 
         if ($extendable) {
@@ -105,7 +103,7 @@ class ClassSerializer implements Serializer
         if (is_null($value)) {
             return null;
         }
-        if (!is_object($value) || !($value instanceof $this->className)) {
+        if (!($value instanceof $this->className)) {
             throw new SerializeException([$this->className], is_object($value) ? get_class($value) : gettype($value));
         }
 

@@ -42,9 +42,9 @@ class Role extends CommonRole
      *
      * @param string $id The role's identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -63,9 +63,9 @@ class Role extends CommonRole
      *
      * @param MinPerm[] $perms the permisions included in this role
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPerms(?array $perms) : self
+    public function setPerms(?array $perms)
     {
         $this->perms = $perms;
         return $this;
@@ -84,9 +84,9 @@ class Role extends CommonRole
      *
      * @param MinMetaRole[] $path The roles's path sorted by descending ancestor (direct parent to farest parent)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPath(?array $path) : self
+    public function setPath(?array $path)
     {
         $this->path = $path;
         return $this;
@@ -105,9 +105,9 @@ class Role extends CommonRole
      *
      * @param string[] $actions
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActions(?array $actions) : self
+    public function setActions(?array $actions)
     {
         $this->actions = $actions;
         return $this;
@@ -126,9 +126,9 @@ class Role extends CommonRole
      *
      * @param string[] $resources
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setResources(?array $resources) : self
+    public function setResources(?array $resources)
     {
         $this->resources = $resources;
         return $this;

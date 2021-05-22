@@ -883,9 +883,9 @@ class BaseStation extends Model
      *
      * @param string $id The base station's identifier (hexadecimal format)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -904,9 +904,9 @@ class BaseStation extends Model
      *
      * @param string $name The base station's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -925,9 +925,9 @@ class BaseStation extends Model
      *
      * @param string $versionCurrent The current version of the software installed on this base station
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setVersionCurrent(?string $versionCurrent) : self
+    public function setVersionCurrent(?string $versionCurrent)
     {
         $this->versionCurrent = $versionCurrent;
         return $this;
@@ -946,9 +946,9 @@ class BaseStation extends Model
      *
      * @param string $hwVersion The current version of the hardware of this base station
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setHwVersion(?string $hwVersion) : self
+    public function setHwVersion(?string $hwVersion)
     {
         $this->hwVersion = $hwVersion;
         return $this;
@@ -967,9 +967,9 @@ class BaseStation extends Model
      *
      * @param MinGroup $group
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroup(?MinGroup $group) : self
+    public function setGroup(?MinGroup $group)
     {
         $this->group = $group;
         return $this;
@@ -988,9 +988,9 @@ class BaseStation extends Model
      *
      * @param int $firstCommissioningTime The first commissioning time of the station (in milliseconds)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFirstCommissioningTime(?int $firstCommissioningTime) : self
+    public function setFirstCommissioningTime(?int $firstCommissioningTime)
     {
         $this->firstCommissioningTime = $firstCommissioningTime;
         return $this;
@@ -1009,9 +1009,9 @@ class BaseStation extends Model
      *
      * @param int $commissioningTime The commissioning time of the station (in milliseconds)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCommissioningTime(?int $commissioningTime) : self
+    public function setCommissioningTime(?int $commissioningTime)
     {
         $this->commissioningTime = $commissioningTime;
         return $this;
@@ -1030,9 +1030,9 @@ class BaseStation extends Model
      *
      * @param int $decommissioningTime The decommissioning time of the station (in milliseconds)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDecommissioningTime(?int $decommissioningTime) : self
+    public function setDecommissioningTime(?int $decommissioningTime)
     {
         $this->decommissioningTime = $decommissioningTime;
         return $this;
@@ -1052,9 +1052,9 @@ class BaseStation extends Model
      * @param int $operatingDays The number of operating days of the station. To present if the station was not
      *                           decommissioned, or to decommisioning time otherwise
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOperatingDays(?int $operatingDays) : self
+    public function setOperatingDays(?int $operatingDays)
     {
         $this->operatingDays = $operatingDays;
         return $this;
@@ -1074,9 +1074,9 @@ class BaseStation extends Model
      *
      * @param int $manufacturerDeliveryTime Date of the delivery made by the manufacturer for this base station
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setManufacturerDeliveryTime(?int $manufacturerDeliveryTime) : self
+    public function setManufacturerDeliveryTime(?int $manufacturerDeliveryTime)
     {
         $this->manufacturerDeliveryTime = $manufacturerDeliveryTime;
         return $this;
@@ -1095,9 +1095,9 @@ class BaseStation extends Model
      *
      * @param int $warrantyTime Date of the beginning of the warranty for this base station
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setWarrantyTime(?int $warrantyTime) : self
+    public function setWarrantyTime(?int $warrantyTime)
     {
         $this->warrantyTime = $warrantyTime;
         return $this;
@@ -1116,9 +1116,9 @@ class BaseStation extends Model
      *
      * @param int $lastCommunicationTime Date of the last communication made with this base station
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastCommunicationTime(?int $lastCommunicationTime) : self
+    public function setLastCommunicationTime(?int $lastCommunicationTime)
     {
         $this->lastCommunicationTime = $lastCommunicationTime;
         return $this;
@@ -1137,9 +1137,9 @@ class BaseStation extends Model
      *
      * @param int $lastPingTime Date of the last PING received from this base station
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastPingTime(?int $lastPingTime) : self
+    public function setLastPingTime(?int $lastPingTime)
     {
         $this->lastPingTime = $lastPingTime;
         return $this;
@@ -1158,9 +1158,9 @@ class BaseStation extends Model
      *
      * @param int $restartTime Date of the last restart of this base station
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRestartTime(?int $restartTime) : self
+    public function setRestartTime(?int $restartTime)
     {
         $this->restartTime = $restartTime;
         return $this;
@@ -1183,9 +1183,9 @@ class BaseStation extends Model
      *                            - {@see BaseStation::CONNECTION_TYPE_GSM}
      *                            
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setConnectionType(?int $connectionType) : self
+    public function setConnectionType(?int $connectionType)
     {
         $this->connectionType = $connectionType;
         return $this;
@@ -1208,9 +1208,9 @@ class BaseStation extends Model
      *
      * @param string $description Description of the base station
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDescription(?string $description) : self
+    public function setDescription(?string $description)
     {
         $this->description = $description;
         return $this;
@@ -1230,9 +1230,9 @@ class BaseStation extends Model
      * @param LocationItem[] $location ISO 3166-1 UN M.49 country code of the site location. The first code is the
      *                                 country (region and department available for some countries).
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLocation(?array $location) : self
+    public function setLocation(?array $location)
     {
         $this->location = $location;
         return $this;
@@ -1252,9 +1252,9 @@ class BaseStation extends Model
      *
      * @param MinHwFamily $hwFamily
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setHwFamily(?MinHwFamily $hwFamily) : self
+    public function setHwFamily(?MinHwFamily $hwFamily)
     {
         $this->hwFamily = $hwFamily;
         return $this;
@@ -1273,9 +1273,9 @@ class BaseStation extends Model
      *
      * @param int $keepAlive Number of seconds the base station keep alive
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setKeepAlive(?int $keepAlive) : self
+    public function setKeepAlive(?int $keepAlive)
     {
         $this->keepAlive = $keepAlive;
         return $this;
@@ -1294,9 +1294,9 @@ class BaseStation extends Model
      *
      * @param double $lat The base station's latitude
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLat(?float $lat) : self
+    public function setLat(?float $lat)
     {
         $this->lat = $lat;
         return $this;
@@ -1315,9 +1315,9 @@ class BaseStation extends Model
      *
      * @param double $lng The base station's longitude
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLng(?float $lng) : self
+    public function setLng(?float $lng)
     {
         $this->lng = $lng;
         return $this;
@@ -1343,9 +1343,9 @@ class BaseStation extends Model
      *                                - {@see BaseStation::COMMUNICATION_STATE_OK_KO}
      *                                
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCommunicationState(?int $communicationState) : self
+    public function setCommunicationState(?int $communicationState)
     {
         $this->communicationState = $communicationState;
         return $this;
@@ -1378,9 +1378,9 @@ class BaseStation extends Model
      *                   - {@see BaseStation::STATE_OK_KO}
      *                   
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setState(?int $state) : self
+    public function setState(?int $state)
     {
         $this->state = $state;
         return $this;
@@ -1412,9 +1412,9 @@ class BaseStation extends Model
      *                             - {@see BaseStation::LIFECYCLE_STATUS_DEAD}
      *                             
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLifecycleStatus(?int $lifecycleStatus) : self
+    public function setLifecycleStatus(?int $lifecycleStatus)
     {
         $this->lifecycleStatus = $lifecycleStatus;
         return $this;
@@ -1439,9 +1439,9 @@ class BaseStation extends Model
      *
      * @param Queue $queue
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setQueue(?Queue $queue) : self
+    public function setQueue(?Queue $queue)
     {
         $this->queue = $queue;
         return $this;
@@ -1460,9 +1460,9 @@ class BaseStation extends Model
      *
      * @param bool $muted true if the base station is muted
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMuted(?bool $muted) : self
+    public function setMuted(?bool $muted)
     {
         $this->muted = $muted;
         return $this;
@@ -1481,9 +1481,9 @@ class BaseStation extends Model
      *
      * @param bool $transmissionAuthorized true if the transmission is authorized on this base station
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTransmissionAuthorized(?bool $transmissionAuthorized) : self
+    public function setTransmissionAuthorized(?bool $transmissionAuthorized)
     {
         $this->transmissionAuthorized = $transmissionAuthorized;
         return $this;
@@ -1502,9 +1502,9 @@ class BaseStation extends Model
      *
      * @param bool $downlinkEnabled true if the downlink is enabled on this base station
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDownlinkEnabled(?bool $downlinkEnabled) : self
+    public function setDownlinkEnabled(?bool $downlinkEnabled)
     {
         $this->downlinkEnabled = $downlinkEnabled;
         return $this;
@@ -1523,9 +1523,9 @@ class BaseStation extends Model
      *
      * @param string $installer Name if the installer of this base station
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setInstaller(?string $installer) : self
+    public function setInstaller(?string $installer)
     {
         $this->installer = $installer;
         return $this;
@@ -1544,9 +1544,9 @@ class BaseStation extends Model
      *
      * @param int $creationTime Date of the creation of the base station (in milliseconds since Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCreationTime(?int $creationTime) : self
+    public function setCreationTime(?int $creationTime)
     {
         $this->creationTime = $creationTime;
         return $this;
@@ -1565,9 +1565,9 @@ class BaseStation extends Model
      *
      * @param string $createdBy Id of the user who created this base station
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCreatedBy(?string $createdBy) : self
+    public function setCreatedBy(?string $createdBy)
     {
         $this->createdBy = $createdBy;
         return $this;
@@ -1587,9 +1587,9 @@ class BaseStation extends Model
      * @param int $lastEditionTime Date of the last modification made on this base station (in milliseconds since
      *                             Unix Epoch)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastEditionTime(?int $lastEditionTime) : self
+    public function setLastEditionTime(?int $lastEditionTime)
     {
         $this->lastEditionTime = $lastEditionTime;
         return $this;
@@ -1608,9 +1608,9 @@ class BaseStation extends Model
      *
      * @param string $lastEditedBy Id of the user who edited this base station for the last time
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastEditedBy(?string $lastEditedBy) : self
+    public function setLastEditedBy(?string $lastEditedBy)
     {
         $this->lastEditedBy = $lastEditedBy;
         return $this;
@@ -1629,9 +1629,9 @@ class BaseStation extends Model
      *
      * @param int $baseFrequency Uplink base frequency of this base station (in Hz)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBaseFrequency(?int $baseFrequency) : self
+    public function setBaseFrequency(?int $baseFrequency)
     {
         $this->baseFrequency = $baseFrequency;
         return $this;
@@ -1650,9 +1650,9 @@ class BaseStation extends Model
      *
      * @param int $downlinkCenterFrequency Downlink center frequency of this base station (in Hz)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDownlinkCenterFrequency(?int $downlinkCenterFrequency) : self
+    public function setDownlinkCenterFrequency(?int $downlinkCenterFrequency)
     {
         $this->downlinkCenterFrequency = $downlinkCenterFrequency;
         return $this;
@@ -1671,9 +1671,9 @@ class BaseStation extends Model
      *
      * @param int $macroChannel Macro channel of this base station (in Hz)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMacroChannel(?int $macroChannel) : self
+    public function setMacroChannel(?int $macroChannel)
     {
         $this->macroChannel = $macroChannel;
         return $this;
@@ -1692,9 +1692,9 @@ class BaseStation extends Model
      *
      * @param int $txPowerAmplification TX power amplification of this base station (in %)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTxPowerAmplification(?int $txPowerAmplification) : self
+    public function setTxPowerAmplification(?int $txPowerAmplification)
     {
         $this->txPowerAmplification = $txPowerAmplification;
         return $this;
@@ -1718,9 +1718,9 @@ class BaseStation extends Model
      *                      - {@see BaseStation::PROTOCOL_BOTH}
      *                      
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setProtocol(?int $protocol) : self
+    public function setProtocol(?int $protocol)
     {
         $this->protocol = $protocol;
         return $this;
@@ -1749,9 +1749,9 @@ class BaseStation extends Model
      *                     - {@see BaseStation::PRE_AMP1_ATTEND}
      *                     
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPreAmp1(?int $preAmp1) : self
+    public function setPreAmp1(?int $preAmp1)
     {
         $this->preAmp1 = $preAmp1;
         return $this;
@@ -1780,9 +1780,9 @@ class BaseStation extends Model
      *                     - {@see BaseStation::PRE_AMP2_ATTEND}
      *                     
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPreAmp2(?int $preAmp2) : self
+    public function setPreAmp2(?int $preAmp2)
     {
         $this->preAmp2 = $preAmp2;
         return $this;
@@ -1812,9 +1812,9 @@ class BaseStation extends Model
      *                    - {@see BaseStation::R_A_M_LOG_DROP}
      *                    
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRAMLog(?int $RAMLog) : self
+    public function setRAMLog(?int $RAMLog)
     {
         $this->RAMLog = $RAMLog;
         return $this;
@@ -1847,9 +1847,9 @@ class BaseStation extends Model
      *                      - {@see BaseStation::WWAN_MODE_GPRS}
      *                      
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setWwanMode(?int $wwanMode) : self
+    public function setWwanMode(?int $wwanMode)
     {
         $this->wwanMode = $wwanMode;
         return $this;
@@ -1880,9 +1880,9 @@ class BaseStation extends Model
      *                     - {@see BaseStation::BIT_RATE_BIT_RATE_600_BS}
      *                     
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBitRate(?int $bitRate) : self
+    public function setBitRate(?int $bitRate)
     {
         $this->bitRate = $bitRate;
         return $this;
@@ -1905,9 +1905,9 @@ class BaseStation extends Model
      *
      * @param bool $globalCoverageEnable true if the base station is available for the global coverage computation
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGlobalCoverageEnable(?bool $globalCoverageEnable) : self
+    public function setGlobalCoverageEnable(?bool $globalCoverageEnable)
     {
         $this->globalCoverageEnable = $globalCoverageEnable;
         return $this;
@@ -1926,9 +1926,9 @@ class BaseStation extends Model
      *
      * @param int $elevation Antenna height of the base station (in m)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setElevation(?int $elevation) : self
+    public function setElevation(?int $elevation)
     {
         $this->elevation = $elevation;
         return $this;
@@ -1947,9 +1947,9 @@ class BaseStation extends Model
      *
      * @param int $splatRadius Radius of the base station (in km)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSplatRadius(?int $splatRadius) : self
+    public function setSplatRadius(?int $splatRadius)
     {
         $this->splatRadius = $splatRadius;
         return $this;
@@ -1994,9 +1994,9 @@ class BaseStation extends Model
      *                           - {@see BaseStation::MAST_EQUIPMENT_LNAC_868_TX}
      *                           
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMastEquipment(?int $mastEquipment) : self
+    public function setMastEquipment(?int $mastEquipment)
     {
         $this->mastEquipment = $mastEquipment;
         return $this;
@@ -2041,9 +2041,9 @@ class BaseStation extends Model
      *
      * @param string $mastEquipmentDescription The base station's mast equipment description
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMastEquipmentDescription(?string $mastEquipmentDescription) : self
+    public function setMastEquipmentDescription(?string $mastEquipmentDescription)
     {
         $this->mastEquipmentDescription = $mastEquipmentDescription;
         return $this;
@@ -2062,9 +2062,9 @@ class BaseStation extends Model
      *
      * @param bool $lnaByPass true if the LNA is by-passed
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLnaByPass(?bool $lnaByPass) : self
+    public function setLnaByPass(?bool $lnaByPass)
     {
         $this->lnaByPass = $lnaByPass;
         return $this;
@@ -2096,9 +2096,9 @@ class BaseStation extends Model
      *                                 - {@see BaseStation::CAVITY_FILTER_VERSION_ETSI_867MHZ_TECHNIWAVE}
      *                                 
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCavityFilterVersion(?int $cavityFilterVersion) : self
+    public function setCavityFilterVersion(?int $cavityFilterVersion)
     {
         $this->cavityFilterVersion = $cavityFilterVersion;
         return $this;
@@ -2130,9 +2130,9 @@ class BaseStation extends Model
      *
      * @param string $cavityFilterVersionDescription The base station's cavity filter version description
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCavityFilterVersionDescription(?string $cavityFilterVersionDescription) : self
+    public function setCavityFilterVersionDescription(?string $cavityFilterVersionDescription)
     {
         $this->cavityFilterVersionDescription = $cavityFilterVersionDescription;
         return $this;
@@ -2151,9 +2151,9 @@ class BaseStation extends Model
      *
      * @param double $environmentLoss Environment loss of this base station (in dB)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setEnvironmentLoss(?float $environmentLoss) : self
+    public function setEnvironmentLoss(?float $environmentLoss)
     {
         $this->environmentLoss = $environmentLoss;
         return $this;
@@ -2172,9 +2172,9 @@ class BaseStation extends Model
      *
      * @param double $cableLoss Cable loss of this base station (in dB)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCableLoss(?float $cableLoss) : self
+    public function setCableLoss(?float $cableLoss)
     {
         $this->cableLoss = $cableLoss;
         return $this;
@@ -2193,9 +2193,9 @@ class BaseStation extends Model
      *
      * @param double $antennaGain Antenna gain of this base station (in dB).
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAntennaGain(?float $antennaGain) : self
+    public function setAntennaGain(?float $antennaGain)
     {
         $this->antennaGain = $antennaGain;
         return $this;
@@ -2215,9 +2215,9 @@ class BaseStation extends Model
      * @param double $antennaNoiseFigure Antenna noise figure of this base station (in dB). This setting is only
      *                                   relevant when an antenna with a filter is installed.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAntennaNoiseFigure(?float $antennaNoiseFigure) : self
+    public function setAntennaNoiseFigure(?float $antennaNoiseFigure)
     {
         $this->antennaNoiseFigure = $antennaNoiseFigure;
         return $this;
@@ -2238,9 +2238,9 @@ class BaseStation extends Model
      * @param double $antennaInsertionLoss Antenna insertion loss of this base station (in dB). This setting is only
      *                                     relevant when an antenna with a filter is installed.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAntennaInsertionLoss(?float $antennaInsertionLoss) : self
+    public function setAntennaInsertionLoss(?float $antennaInsertionLoss)
     {
         $this->antennaInsertionLoss = $antennaInsertionLoss;
         return $this;
@@ -2261,9 +2261,9 @@ class BaseStation extends Model
      * @param double $antennaMaxAdmissiblePower Antenna max admissible power of this base station (in dBm). This
      *                                          setting is only relevant when an antenna with a filter is installed.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAntennaMaxAdmissiblePower(?float $antennaMaxAdmissiblePower) : self
+    public function setAntennaMaxAdmissiblePower(?float $antennaMaxAdmissiblePower)
     {
         $this->antennaMaxAdmissiblePower = $antennaMaxAdmissiblePower;
         return $this;
@@ -2283,9 +2283,9 @@ class BaseStation extends Model
      *
      * @param bool $gainFlag true if the base station has a gain flag
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGainFlag(?bool $gainFlag) : self
+    public function setGainFlag(?bool $gainFlag)
     {
         $this->gainFlag = $gainFlag;
         return $this;
@@ -2304,9 +2304,9 @@ class BaseStation extends Model
      *
      * @param double $mastEquipmentGain Mast equipment gain of this base station (in dB)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMastEquipmentGain(?float $mastEquipmentGain) : self
+    public function setMastEquipmentGain(?float $mastEquipmentGain)
     {
         $this->mastEquipmentGain = $mastEquipmentGain;
         return $this;
@@ -2325,9 +2325,9 @@ class BaseStation extends Model
      *
      * @param double $mastEquipmentNoiseFigure Mast equipment noise figure of this base station (in dB)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMastEquipmentNoiseFigure(?float $mastEquipmentNoiseFigure) : self
+    public function setMastEquipmentNoiseFigure(?float $mastEquipmentNoiseFigure)
     {
         $this->mastEquipmentNoiseFigure = $mastEquipmentNoiseFigure;
         return $this;
@@ -2346,9 +2346,9 @@ class BaseStation extends Model
      *
      * @param double $lnaInsertionLoss LNA insertion loss of this base station (in dB)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLnaInsertionLoss(?float $lnaInsertionLoss) : self
+    public function setLnaInsertionLoss(?float $lnaInsertionLoss)
     {
         $this->lnaInsertionLoss = $lnaInsertionLoss;
         return $this;
@@ -2367,9 +2367,9 @@ class BaseStation extends Model
      *
      * @param double $cavityFilterInsertionLoss Cavity filter insertion loss of this base station (in dB)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCavityFilterInsertionLoss(?float $cavityFilterInsertionLoss) : self
+    public function setCavityFilterInsertionLoss(?float $cavityFilterInsertionLoss)
     {
         $this->cavityFilterInsertionLoss = $cavityFilterInsertionLoss;
         return $this;
@@ -2388,9 +2388,9 @@ class BaseStation extends Model
      *
      * @param double $txPowerMargin TX power margin of this base station (in dBm)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setTxPowerMargin(?float $txPowerMargin) : self
+    public function setTxPowerMargin(?float $txPowerMargin)
     {
         $this->txPowerMargin = $txPowerMargin;
         return $this;
@@ -2409,9 +2409,9 @@ class BaseStation extends Model
      *
      * @param double $powerCapability power capability of this base station (in dBm)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPowerCapability(?float $powerCapability) : self
+    public function setPowerCapability(?float $powerCapability)
     {
         $this->powerCapability = $powerCapability;
         return $this;
@@ -2434,9 +2434,9 @@ class BaseStation extends Model
      *                                 - {@see BaseStation::ANTENNA_LOCATION_CODE_INDOOR}
      *                                 
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAntennaLocationCode(?int $antennaLocationCode) : self
+    public function setAntennaLocationCode(?int $antennaLocationCode)
     {
         $this->antennaLocationCode = $antennaLocationCode;
         return $this;
@@ -2463,9 +2463,9 @@ class BaseStation extends Model
      *                             - {@see BaseStation::SERVICE_COVERAGE_CUSTOMER}
      *                             
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setServiceCoverage(?int $serviceCoverage) : self
+    public function setServiceCoverage(?int $serviceCoverage)
     {
         $this->serviceCoverage = $serviceCoverage;
         return $this;
@@ -2494,9 +2494,9 @@ class BaseStation extends Model
      *                               - {@see BaseStation::GEOLOC_COMPUTATION_DISABLED}
      *                               
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGeolocComputation(?int $geolocComputation) : self
+    public function setGeolocComputation(?int $geolocComputation)
     {
         $this->geolocComputation = $geolocComputation;
         return $this;
@@ -2533,9 +2533,9 @@ class BaseStation extends Model
      *                                             BaseStation::GEOLOC_GLOBAL_STATE_OF_CONTRIBUTION_NOT_AVAILABLE}
      *                                             
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGeolocGlobalStateOfContribution(?int $geolocGlobalStateOfContribution) : self
+    public function setGeolocGlobalStateOfContribution(?int $geolocGlobalStateOfContribution)
     {
         $this->geolocGlobalStateOfContribution = $geolocGlobalStateOfContribution;
         return $this;
@@ -2562,9 +2562,9 @@ class BaseStation extends Model
      *
      * @param Antenna $antenna
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAntenna(?Antenna $antenna) : self
+    public function setAntenna(?Antenna $antenna)
     {
         $this->antenna = $antenna;
         return $this;
@@ -2583,9 +2583,9 @@ class BaseStation extends Model
      *
      * @param int[] $availableConnections
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAvailableConnections(?array $availableConnections) : self
+    public function setAvailableConnections(?array $availableConnections)
     {
         $this->availableConnections = $availableConnections;
         return $this;
@@ -2604,9 +2604,9 @@ class BaseStation extends Model
      *
      * @param string $makerCode the base station’s marker code
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMakerCode(?string $makerCode) : self
+    public function setMakerCode(?string $makerCode)
     {
         $this->makerCode = $makerCode;
         return $this;
@@ -2625,9 +2625,9 @@ class BaseStation extends Model
      *
      * @param string[] $actions
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActions(?array $actions) : self
+    public function setActions(?array $actions)
     {
         $this->actions = $actions;
         return $this;
@@ -2646,9 +2646,9 @@ class BaseStation extends Model
      *
      * @param string[] $resources
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setResources(?array $resources) : self
+    public function setResources(?array $resources)
     {
         $this->resources = $resources;
         return $this;

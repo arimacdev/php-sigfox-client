@@ -30,9 +30,9 @@ class ErrorContent extends Model
      *
      * @param string $message General error message
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setMessage(?string $message) : self
+    public function setMessage(?string $message)
     {
         $this->message = $message;
         return $this;
@@ -51,9 +51,9 @@ class ErrorContent extends Model
      *
      * @param ErrorsItem[] $errors List of errors that occured during request
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setErrors(?array $errors) : self
+    public function setErrors(?array $errors)
     {
         $this->errors = $errors;
         return $this;

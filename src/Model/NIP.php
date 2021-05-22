@@ -21,9 +21,9 @@ class NIP extends Group
      * @param string $countryISOAlpha3 This is the country ISO code (3 letters from the ISO 3166-1 alpha-3 country
      *                                 code) where the operator manages its network. Only available for SNO and NIP.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCountryISOAlpha3(?string $countryISOAlpha3) : self
+    public function setCountryISOAlpha3(?string $countryISOAlpha3)
     {
         $this->countryISOAlpha3 = $countryISOAlpha3;
         return $this;

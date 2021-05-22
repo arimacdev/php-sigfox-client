@@ -20,9 +20,9 @@ class MinAntenna extends Model
      *
      * @param string $model Antenna model
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setModel(?string $model) : self
+    public function setModel(?string $model)
     {
         $this->model = $model;
         return $this;

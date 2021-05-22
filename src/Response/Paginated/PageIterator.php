@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\Response\Paginated;
 
+use Arimac\Sigfox\Exception\SigfoxException;
 use Iterator;
 
 /**
@@ -13,15 +14,17 @@ use Iterator;
  * This iterator will returning an array of items as
  * the value and zero indexed key of the item as the key
  *
- * @template T
+ * @template T of \Arimac\Sigfox\Model
  *
- * @template-implements Iterator<T[]>
+ * @implements Iterator<T[]>
  */
 class PageIterator implements Iterator {
     /**
      * @internal
+     *
+     * @var ResponseData<T>
      */
-    protected PaginateResponse $response;
+    protected ResponseData $response;
 
     /**
      * @internal
@@ -36,37 +39,29 @@ class PageIterator implements Iterator {
     /**
      * Initializing the page iterator
      *
-     * @param PaginateResponse To load the next page items
+     * @param ResponseData<T> $response To load the next page items
+     *
      * @internal
+     *
+     * @throws SigfoxException
      */
-    public function __construct(PaginateResponse $response)
+    public function __construct(ResponseData $response)
     {
         $this->response = $response;
-        $this->hasNext = $this->hasNextPage();
+        $this->hasNext = $this->response->hasNextPage();
     }
 
     /**
      * @inheritdoc
      *
      * @internal
+     *
+     * @throws SigfoxException
      */
     public function rewind() {
         $this->position = 0;
         $this->response->reset();
-        $this->hasNext = $this->hasNextPage();
-    }
-
-    /**
-     * Checking the weather a next page exist or not
-     *
-     * @internal
-     *
-     * @return bool
-     */
-    private function hasNextPage():bool{
-        $paging = $this->response->getOriginalResponse()->getPaging();
-
-        return $paging&&$paging->getNext();
+        $this->hasNext = $this->response->hasNextPage();
     }
 
     /**
@@ -75,7 +70,7 @@ class PageIterator implements Iterator {
      * @return T[]
      */
     public function current() {
-        return $this->response->getOriginalResponse()->getData();
+        return $this->response->getResponseData();
     }
 
     /**
@@ -91,6 +86,8 @@ class PageIterator implements Iterator {
      * @inheritdoc
      *
      * @internal
+     *
+     * @throws SigfoxException
      */
     public function next() {
         $this->position++;

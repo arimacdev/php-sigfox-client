@@ -4,12 +4,15 @@ namespace Arimac\Sigfox\Response\Generated;
 
 use Arimac\Sigfox\Model\DeviceMessage;
 use Arimac\Sigfox\Model\Paging;
-use Arimac\Sigfox\Response\Paginated\PaginatedResponse;
 use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 use Arimac\Sigfox\Validator\Rules\ChildSet;
 use Arimac\Sigfox\Validator\Rules\Child;
+use Arimac\Sigfox\Response\Paginated\PaginatedResponse;
+/**
+ * @implements PaginatedResponse<DeviceMessage>
+ */
 class DevicesIdMessagesListResponse extends Model implements PaginatedResponse
 {
     /**
@@ -27,9 +30,9 @@ class DevicesIdMessagesListResponse extends Model implements PaginatedResponse
      *
      * @param DeviceMessage[] $data
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setData(?array $data) : self
+    public function setData(?array $data)
     {
         $this->data = $data;
         return $this;
@@ -50,9 +53,9 @@ class DevicesIdMessagesListResponse extends Model implements PaginatedResponse
      *
      * @param Paging $paging
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPaging(?Paging $paging) : self
+    public function setPaging(?Paging $paging)
     {
         $this->paging = $paging;
         return $this;

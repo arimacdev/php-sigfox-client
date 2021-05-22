@@ -103,9 +103,9 @@ class SimpleSite extends MinSite
      *
      * @param MinHost $host
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setHost(?MinHost $host) : self
+    public function setHost(?MinHost $host)
     {
         $this->host = $host;
         return $this;
@@ -124,9 +124,9 @@ class SimpleSite extends MinSite
      *
      * @param int $candidateExternalId external id of the site where the base station is installed
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCandidateExternalId(?int $candidateExternalId) : self
+    public function setCandidateExternalId(?int $candidateExternalId)
     {
         $this->candidateExternalId = $candidateExternalId;
         return $this;
@@ -159,9 +159,9 @@ class SimpleSite extends MinSite
      *                    - {@see SimpleSite::STATUS_INSTALLED_CONNECTED_ONLY_PRIMARY}
      *                    
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setStatus(?int $status) : self
+    public function setStatus(?int $status)
     {
         $this->status = $status;
         return $this;
@@ -194,9 +194,9 @@ class SimpleSite extends MinSite
      *
      * @param string $lessorId id of the lessor of the site where the base station is installed
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLessorId(?string $lessorId) : self
+    public function setLessorId(?string $lessorId)
     {
         $this->lessorId = $lessorId;
         return $this;
@@ -215,9 +215,9 @@ class SimpleSite extends MinSite
      *
      * @param string[] $actions
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setActions(?array $actions) : self
+    public function setActions(?array $actions)
     {
         $this->actions = $actions;
         return $this;

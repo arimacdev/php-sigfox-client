@@ -28,9 +28,9 @@ class TilesMonarchKmzStartAsync extends Request
      *
      * @param KmzCreatePublicRequest $request The computation will be performed with the specified coverage mode
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRequest(?KmzCreatePublicRequest $request) : self
+    public function setRequest(?KmzCreatePublicRequest $request)
     {
         $this->request = $request;
         return $this;

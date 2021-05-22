@@ -93,9 +93,9 @@ class Rinfo extends Model
      *
      * @param MinBaseStationWithType $baseStation Name and Id of the base station which has received the message.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setBaseStation(?MinBaseStationWithType $baseStation) : self
+    public function setBaseStation(?MinBaseStationWithType $baseStation)
     {
         $this->baseStation = $baseStation;
         return $this;
@@ -114,9 +114,9 @@ class Rinfo extends Model
      *
      * @param int $rssi Received Signal Strength Indication (in dBm – Float value with two maximum fraction digits)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRssi(?int $rssi) : self
+    public function setRssi(?int $rssi)
     {
         $this->rssi = $rssi;
         return $this;
@@ -136,9 +136,9 @@ class Rinfo extends Model
      * @param int $rssiRepeaters Received Signal Strength Indication from repeaters (in dBm – Float value with two
      *                           maximum fraction digits)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRssiRepeaters(?int $rssiRepeaters) : self
+    public function setRssiRepeaters(?int $rssiRepeaters)
     {
         $this->rssiRepeaters = $rssiRepeaters;
         return $this;
@@ -158,9 +158,9 @@ class Rinfo extends Model
      *
      * @param double $lat The latitude of the base station that has received the message.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLat(?float $lat) : self
+    public function setLat(?float $lat)
     {
         $this->lat = $lat;
         return $this;
@@ -179,9 +179,9 @@ class Rinfo extends Model
      *
      * @param double $lng The longitude of the base station that has received the message.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLng(?float $lng) : self
+    public function setLng(?float $lng)
     {
         $this->lng = $lng;
         return $this;
@@ -200,9 +200,9 @@ class Rinfo extends Model
      *
      * @param double $delay the delay (in second) between sending and receiving the message, may not be present.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDelay(?float $delay) : self
+    public function setDelay(?float $delay)
     {
         $this->delay = $delay;
         return $this;
@@ -221,9 +221,9 @@ class Rinfo extends Model
      *
      * @param double $snr the best signal of all repetitions for this base station
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSnr(?float $snr) : self
+    public function setSnr(?float $snr)
     {
         $this->snr = $snr;
         return $this;
@@ -242,9 +242,9 @@ class Rinfo extends Model
      *
      * @param double $snrRepeaters the best signal of all repetitions for this base station coming from repeaters
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSnrRepeaters(?float $snrRepeaters) : self
+    public function setSnrRepeaters(?float $snrRepeaters)
     {
         $this->snrRepeaters = $snrRepeaters;
         return $this;
@@ -263,9 +263,9 @@ class Rinfo extends Model
      *
      * @param double $freq the frequency at which the message has been received (in Hz)
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFreq(?float $freq) : self
+    public function setFreq(?float $freq)
     {
         $this->freq = $freq;
         return $this;
@@ -284,9 +284,9 @@ class Rinfo extends Model
      *
      * @param double $freqRepeaters the frequency at which the message has been received (in Hz) form repeaters
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFreqRepeaters(?float $freqRepeaters) : self
+    public function setFreqRepeaters(?float $freqRepeaters)
     {
         $this->freqRepeaters = $freqRepeaters;
         return $this;
@@ -305,9 +305,9 @@ class Rinfo extends Model
      *
      * @param int $rep number of repetitions sent by the base station
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRep(?int $rep) : self
+    public function setRep(?int $rep)
     {
         $this->rep = $rep;
         return $this;
@@ -326,9 +326,9 @@ class Rinfo extends Model
      *
      * @param Repetition[] $repetitions detail of the repetitions
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRepetitions(?array $repetitions) : self
+    public function setRepetitions(?array $repetitions)
     {
         $this->repetitions = $repetitions;
         return $this;
@@ -347,9 +347,9 @@ class Rinfo extends Model
      *
      * @param CbStatus[] $cbStatus list of callback status for this reception
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCbStatus(?array $cbStatus) : self
+    public function setCbStatus(?array $cbStatus)
     {
         $this->cbStatus = $cbStatus;
         return $this;

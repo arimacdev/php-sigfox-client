@@ -3,26 +3,37 @@
 namespace Arimac\Sigfox\Response\Paginated;
 
 use Arimac\Sigfox\Client\Client;
+use Arimac\Sigfox\Exception\DeserializeException;
+use Arimac\Sigfox\Exception\Response\ResponseException;
+use Arimac\Sigfox\Exception\SerializeException;
+use Arimac\Sigfox\Exception\SigfoxException;
+use Arimac\Sigfox\Exception\UnexpectedResponseException;
+use Arimac\Sigfox\Exception\ValidationException;
 use Arimac\Sigfox\Request;
-use InvalidArgumentException;
+use Arimac\Sigfox\Model;
 
 /**
  * A helper to handle paginations
  *
- * @template T
- * @template R of PaginatedResponse
+ * @template T of Model
+ * @template R of Model&PaginatedResponse<T>
+ * @template E of ResponseException
+ * @implements ResponseData<T>
  */
-class PaginateResponse {
+class PaginateResponse implements ResponseData {
     /**
      * @internal
      */
     protected Client $client;
     /**
      * @internal
+     * @var R
      */
     protected PaginatedResponse $response;
     /**
      * @internal
+     * @var array<int, string>
+     * @psalm-var array<int, class-string<E>>
      */
     protected array $errors;
     /**
@@ -31,6 +42,7 @@ class PaginateResponse {
     protected bool $cacheEnabled = false;
     /**
      * @internal
+     * @var R[]
      */
     protected array $cache = [];
     /**
@@ -43,15 +55,16 @@ class PaginateResponse {
      *
      * @internal
      *
-     * @param Client $client   To call endpoints
-     * @param PaginateResponse Initial response
-     * @param array            Expected array list
+     * @param Client                  $client   To call endpoints
+     * @param PaginatedResponse&Model $response Initial response
+     * @param array<int,string>       $errors   Expected array list
      *
-     * @throws InvalidArgumentException
+     * @psalm-param array<int, class-string<E>> $errors
+     * @psalm-param R                           $response
      */
     public function __construct(
         Client $client, 
-        PaginatedResponse $response, 
+        $response, 
         array $errors
     )
     {
@@ -66,7 +79,7 @@ class PaginateResponse {
      *
      * @internal
      */
-    public function reset(){
+    function reset(): void{
         $this->page = 0;
         $this->response = $this->cache[0];
     }
@@ -79,7 +92,7 @@ class PaginateResponse {
      * do not want to reuse the iterator. Because all data are
      * storing in the memory.
      */
-    public function enableCache(){
+    public function enableCache(): void{
         $this->cacheEnabled = true;
     }
 
@@ -88,10 +101,23 @@ class PaginateResponse {
      *
      * This response will change each time after accessed the next page
      *
-     * @return PaginatedResponse|R Original response object
+     * @return PaginatedResponse Original response object
+     *
+     * @psalm-return PaginatedResponse<T>
      */
-    public function getOriginalResponse(): PaginatedResponse {
+    function getOriginalResponse(): PaginatedResponse {
         return $this->response;
+    }
+
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     *
+     * @psalm-return T[]
+     */
+    function getResponseData(): array {
+        return $this->getOriginalResponse()->getData()??[];
     }
 
     /**
@@ -100,10 +126,15 @@ class PaginateResponse {
      * @internal
      *
      * @return bool Next page is exist or not
+     *
+     * @throws ResponseException
+     * @throws SerializeException
+     * @throws DeserializeException
+     * @throws ValidationException
+     * @throws UnexpectedResponseException
      */
-    public function nextPage(): bool {
-       
-        $paging = $this->response->getPaging();
+    function nextPage(): bool {
+        $paging = $this->getOriginalResponse()->getPaging();
         $next = $paging?$paging->getNext():null;
         if(is_null($next)){
             return false;
@@ -118,7 +149,7 @@ class PaginateResponse {
 
         /** @var Request $request **/
 
-        /** @var PaginatedResponse **/
+        /** @var R **/
         $response = $this->client->call("GET", $next, null, $this->response::class, $this->errors);
         // Inserting to the cache if user enabled
         if($this->cacheEnabled){
@@ -129,11 +160,25 @@ class PaginateResponse {
     }
 
     /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    function hasNextPage(): bool
+    {
+        $paging = $this->getOriginalResponse()->getPaging();
+        $next = $paging?$paging->getNext():null;
+        return !!$next;
+    }
+
+    /**
      * Iterate over pages
      *
      * This iterator will call the API in every iteration
      * and you can get all limited items that returned 
      * from the api as the iterated item.
+     *
+     * @throws SigfoxException
      *
      * @return PageIterator<T>
      */
@@ -147,6 +192,8 @@ class PaginateResponse {
      * This iterator will iterate over all fetched items. This
      * iterator is calling the API and fetching more values
      * automatically when the iterator reached to the end.
+     *
+     * @throws SigfoxException
      *
      * @return ItemIterator<T>
      */

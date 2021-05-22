@@ -23,9 +23,9 @@ class BaseGeolocation extends Model
      *
      * @param string $id Geolocation payload's id
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -44,9 +44,9 @@ class BaseGeolocation extends Model
      *
      * @param string $name Geolocation payload's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;

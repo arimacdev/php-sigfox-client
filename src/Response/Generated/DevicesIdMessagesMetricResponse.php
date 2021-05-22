@@ -31,9 +31,9 @@ class DevicesIdMessagesMetricResponse extends Model
      *
      * @param int $lastDay Number of device messages for the last day
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastDay(?int $lastDay) : self
+    public function setLastDay(?int $lastDay)
     {
         $this->lastDay = $lastDay;
         return $this;
@@ -54,9 +54,9 @@ class DevicesIdMessagesMetricResponse extends Model
      *
      * @param int $lastWeek Number of device messages for the last week
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastWeek(?int $lastWeek) : self
+    public function setLastWeek(?int $lastWeek)
     {
         $this->lastWeek = $lastWeek;
         return $this;
@@ -77,9 +77,9 @@ class DevicesIdMessagesMetricResponse extends Model
      *
      * @param int $lastMonth Number of device messages for the last month
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLastMonth(?int $lastMonth) : self
+    public function setLastMonth(?int $lastMonth)
     {
         $this->lastMonth = $lastMonth;
         return $this;

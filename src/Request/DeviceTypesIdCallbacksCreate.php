@@ -28,9 +28,9 @@ class DeviceTypesIdCallbacksCreate extends Request
      *
      * @param CreateCallback $callback
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setCallback(?CreateCallback $callback) : self
+    public function setCallback(?CreateCallback $callback)
     {
         $this->callback = $callback;
         return $this;

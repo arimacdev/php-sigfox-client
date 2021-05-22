@@ -119,9 +119,9 @@ class DeviceTypesList extends Request
      * @param string $name Search returns all Device Type names containing the value. Example: ?name=sig
      *                     
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -145,9 +145,9 @@ class DeviceTypesList extends Request
      *                           ?groupIds=57309674171c857460043087,57309674171c857460043088
      *                           
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setGroupIds(?array $groupIds) : self
+    public function setGroupIds(?array $groupIds)
     {
         $this->groupIds = $groupIds;
         return $this;
@@ -170,9 +170,9 @@ class DeviceTypesList extends Request
      *
      * @param bool $deep If a group identifier is specified, also includes its subgroups.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDeep(?bool $deep) : self
+    public function setDeep(?bool $deep)
     {
         $this->deep = $deep;
         return $this;
@@ -193,9 +193,9 @@ class DeviceTypesList extends Request
      *
      * @param string $contractId Searches for device types which are attached to the given contract.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setContractId(?string $contractId) : self
+    public function setContractId(?string $contractId)
     {
         $this->contractId = $contractId;
         return $this;
@@ -224,9 +224,9 @@ class DeviceTypesList extends Request
      *                         - {@see DeviceTypesList::PAYLOAD_TYPE_SENSITV2}
      *                         
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPayloadType(?int $payloadType) : self
+    public function setPayloadType(?int $payloadType)
     {
         $this->payloadType = $payloadType;
         return $this;
@@ -255,9 +255,9 @@ class DeviceTypesList extends Request
      *
      * @param bool $authorizations if true, we return the list of actions and resources the user has access
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAuthorizations(?bool $authorizations) : self
+    public function setAuthorizations(?bool $authorizations)
     {
         $this->authorizations = $authorizations;
         return $this;
@@ -279,9 +279,9 @@ class DeviceTypesList extends Request
      * @param string $sort The field on which the list will be sorted. (field to sort ascending or -field to sort
      *                     descending).
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setSort(?string $sort) : self
+    public function setSort(?string $sort)
     {
         $this->sort = $sort;
         return $this;
@@ -304,9 +304,9 @@ class DeviceTypesList extends Request
      * @param string $fields Defines the other available API user's fields to be returned in the response.
      *                       
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setFields(?string $fields) : self
+    public function setFields(?string $fields)
     {
         $this->fields = $fields;
         return $this;
@@ -328,9 +328,9 @@ class DeviceTypesList extends Request
      *
      * @param int $limit Defines the maximum number of items to return
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLimit(?int $limit) : self
+    public function setLimit(?int $limit)
     {
         $this->limit = $limit;
         return $this;
@@ -351,9 +351,9 @@ class DeviceTypesList extends Request
      *
      * @param int $offset Defines the number of items to skip
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOffset(?int $offset) : self
+    public function setOffset(?int $offset)
     {
         $this->offset = $offset;
         return $this;
@@ -374,9 +374,9 @@ class DeviceTypesList extends Request
      *
      * @param string $pageId Token representing the page to retrieve
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPageId(?string $pageId) : self
+    public function setPageId(?string $pageId)
     {
         $this->pageId = $pageId;
         return $this;

@@ -26,9 +26,9 @@ class Certificate extends Model
      *
      * @param string $id The product certificate's identifier
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id)
     {
         $this->id = $id;
         return $this;
@@ -47,9 +47,9 @@ class Certificate extends Model
      *
      * @param string $key The product certificate's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setKey(?string $key) : self
+    public function setKey(?string $key)
     {
         $this->key = $key;
         return $this;

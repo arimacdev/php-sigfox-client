@@ -27,9 +27,9 @@ class ProductCertificate extends RadioCertificate
      *                                                                    certificate
      *                                                                    
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRadioConfigurations(?array $radioConfigurations) : self
+    public function setRadioConfigurations(?array $radioConfigurations)
     {
         $this->radioConfigurations = $radioConfigurations;
         return $this;
@@ -49,9 +49,9 @@ class ProductCertificate extends RadioCertificate
      *
      * @param bool $devKit The product certificate has repeater function or not
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setDevKit(?bool $devKit) : self
+    public function setDevKit(?bool $devKit)
     {
         $this->devKit = $devKit;
         return $this;

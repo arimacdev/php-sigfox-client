@@ -105,9 +105,9 @@ class SatSubscription extends InternetSubscription
      *                              - {@see SatSubscription::CONNECTION_STATUS_KIT_RECEIVED}
      *                              
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setConnectionStatus(?int $connectionStatus) : self
+    public function setConnectionStatus(?int $connectionStatus)
     {
         $this->connectionStatus = $connectionStatus;
         return $this;
@@ -131,9 +131,9 @@ class SatSubscription extends InternetSubscription
      *
      * @param double $altitude The altitude of the satellite of this internet subscription
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAltitude(?float $altitude) : self
+    public function setAltitude(?float $altitude)
     {
         $this->altitude = $altitude;
         return $this;
@@ -152,9 +152,9 @@ class SatSubscription extends InternetSubscription
      *
      * @param double $azimuth The azimuth of the satellite of this internet subscription
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAzimuth(?float $azimuth) : self
+    public function setAzimuth(?float $azimuth)
     {
         $this->azimuth = $azimuth;
         return $this;
@@ -173,9 +173,9 @@ class SatSubscription extends InternetSubscription
      *
      * @param double $polarization The polarization of the satellite of this internet subscription
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPolarization(?float $polarization) : self
+    public function setPolarization(?float $polarization)
     {
         $this->polarization = $polarization;
         return $this;
@@ -194,9 +194,9 @@ class SatSubscription extends InternetSubscription
      *
      * @param string $orderNumber The order number of this internet subscription
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setOrderNumber(?string $orderNumber) : self
+    public function setOrderNumber(?string $orderNumber)
     {
         $this->orderNumber = $orderNumber;
         return $this;
@@ -216,9 +216,9 @@ class SatSubscription extends InternetSubscription
      * @param string $locationCode The location code of this internet subscription. This field can be unset when
      *                             updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLocationCode(?string $locationCode) : self
+    public function setLocationCode(?string $locationCode)
     {
         $this->locationCode = $locationCode;
         return $this;
@@ -238,9 +238,9 @@ class SatSubscription extends InternetSubscription
      * @param string $clusterCode The cluster code of this internet subscription. This field can be unset when
      *                            updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setClusterCode(?string $clusterCode) : self
+    public function setClusterCode(?string $clusterCode)
     {
         $this->clusterCode = $clusterCode;
         return $this;
@@ -259,9 +259,9 @@ class SatSubscription extends InternetSubscription
      *
      * @param string $login The login of this internet subscription. This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setLogin(?string $login) : self
+    public function setLogin(?string $login)
     {
         $this->login = $login;
         return $this;
@@ -280,9 +280,9 @@ class SatSubscription extends InternetSubscription
      *
      * @param string $password The password of this internet subscription. This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setPassword(?string $password) : self
+    public function setPassword(?string $password)
     {
         $this->password = $password;
         return $this;
@@ -305,9 +305,9 @@ class SatSubscription extends InternetSubscription
      *                   - {@see SatSubscription::R_TYPE_STANDARD}
      *                   
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setRType(?int $rType) : self
+    public function setRType(?int $rType)
     {
         $this->rType = $rType;
         return $this;

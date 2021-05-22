@@ -23,9 +23,9 @@ class BaseProvider extends Model
      *
      * @param string $name The provider's name
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name)
     {
         $this->name = $name;
         return $this;
@@ -44,9 +44,9 @@ class BaseProvider extends Model
      *
      * @param double $annualCost The provider's annual cost. This field can be unset when updating.
      *
-     * @return self To use in method chains
+     * @return static To use in method chains
      */
-    public function setAnnualCost(?float $annualCost) : self
+    public function setAnnualCost(?float $annualCost)
     {
         $this->annualCost = $annualCost;
         return $this;
