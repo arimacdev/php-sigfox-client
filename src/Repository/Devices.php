@@ -43,7 +43,7 @@ class Devices
     /**
      * Retrieve a list of devices according to visibility permissions and request filters.
      *
-     * @param DevicesList $request The query and body parameters to pass
+     * @param DevicesList|array|null $request The query and body parameters to pass
      *
      * @psalm-return PaginateResponse<Device,DevicesListResponse,E>
      *
@@ -61,8 +61,12 @@ class Devices
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function list(?DevicesList $request = null) : PaginateResponse
+    public function list($request = null) : PaginateResponse
     {
+        if (is_array($request)) {
+            /** @var DevicesList **/
+            $request = DevicesList::from($request);
+        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', '/devices/', $request, DevicesListResponse::class, $errors);
@@ -71,7 +75,7 @@ class Devices
     /**
      * Create a new device.
      *
-     * @param DeviceCreationJob|null $device The device to create
+     * @param DeviceCreationJob|array|null $device The device to create
      *
      * @return string The device's identifier (hexadecimal format)
      *
@@ -85,8 +89,12 @@ class Devices
      * @throws ConflictException           If server returned a HTTP 409 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function create(?DeviceCreationJob $device) : ?string
+    public function create($device) : ?string
     {
+        if (is_array($device)) {
+            /** @var DeviceCreationJob **/
+            $device = DeviceCreationJob::from($device);
+        }
         $request = new DevicesCreate();
         $request->setDevice($device);
         /** @var DevicesCreateResponse **/

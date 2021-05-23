@@ -54,7 +54,7 @@ class ContractInfosId
     /**
      * Retrieve information about a given contract.
      *
-     * @param ContractInfosIdGet $request The query and body parameters to pass
+     * @param ContractInfosIdGet|array|null $request The query and body parameters to pass
      *
      * @return ContractInfo
      *
@@ -69,8 +69,12 @@ class ContractInfosId
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function get(?ContractInfosIdGet $request = null) : ContractInfo
+    public function get($request = null) : ContractInfo
     {
+        if (is_array($request)) {
+            /** @var ContractInfosIdGet **/
+            $request = ContractInfosIdGet::from($request);
+        }
         return $this->client->call('get', Helper::bindUrlParams('/contract-infos/{id}', $this->id), $request, ContractInfo::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
     /**
@@ -97,7 +101,7 @@ class ContractInfosId
     /**
      * Retrieve a list of devices according to visibility permissions and request filters.
      *
-     * @param ContractInfosIdDevices $request The query and body parameters to pass
+     * @param ContractInfosIdDevices|array|null $request The query and body parameters to pass
      *
      * @psalm-return PaginateResponse<Device,ContractInfosIdDevicesResponse,E>
      *
@@ -118,8 +122,12 @@ class ContractInfosId
      * @throws MethodNotAllowedException   If server returned a HTTP 405 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function devices(?ContractInfosIdDevices $request = null) : PaginateResponse
+    public function devices($request = null) : PaginateResponse
     {
+        if (is_array($request)) {
+            /** @var ContractInfosIdDevices **/
+            $request = ContractInfosIdDevices::from($request);
+        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 405 => MethodNotAllowedException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', Helper::bindUrlParams('/contract-infos/{id}/devices', $this->id), $request, ContractInfosIdDevicesResponse::class, $errors);

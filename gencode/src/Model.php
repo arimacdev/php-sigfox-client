@@ -309,6 +309,7 @@ class Model extends Class_
         $properties = [];
         $extends = [];
         $extendable = false;
+        $required = [];
 
         if (isset($definition["type"]) && !isset($definition["allOf"])) {
             switch ($definition["type"]) {
@@ -342,6 +343,9 @@ class Model extends Class_
                 if (isset($allOf["type"])) {
                     if ($allOf["type"] === "object" && isset($allOf["properties"])) {
                         $properties = array_merge($properties, $allOf["properties"]);
+                        if(isset($allOf["required"])){
+                            $required = array_merge($required, $allOf["required"]);
+                        }
                     } else if ($allOf["type"] === "object") {
                         $extendable = true;
                     }
@@ -370,7 +374,9 @@ class Model extends Class_
             return "array";
         }
 
-        $required = $definition["required"] ?? null;
+        if(isset($definition["required"])){
+            $required = array_merge($required,$definition["required"]);
+        }
 
         $defClass = new static(
             $namespace,
@@ -481,11 +487,11 @@ class Model extends Class_
             $defClass->addProperty("extendable", "bool", null, true, false);
         }
 
-        if (count($serialize) || count($extends)) {
+        if (count($serialize) || count($extends) || ForceTraits::exist($name)) {
             $defClass->setSerialize($serialize, $extends);
         }
 
-        if (count($validations)) {
+        if (count($validations) || count($extends) || ForceTraits::exist($name)) {
             $defClass->setValidations($validations, $extends);
         }
 

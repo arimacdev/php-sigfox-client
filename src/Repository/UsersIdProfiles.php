@@ -58,7 +58,7 @@ class UsersIdProfiles
      * @throws MethodNotAllowedException   If server returned a HTTP 405 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function addRoles(?array $userRoles) : void
+    public function addRoles($userRoles) : void
     {
         $request = new UsersIdProfilesAddRoles();
         $request->setUserRoles($userRoles);

@@ -58,7 +58,7 @@ class TilesPublicCoverage
      * Retrieve Sigfox public coverage kmz file from a job. The public coverage is always available and does not
      * require a previous calculation
      *
-     * @param TilesPublicCoverageKmzTitles $request The query and body parameters to pass
+     * @param TilesPublicCoverageKmzTitles|array|null $request The query and body parameters to pass
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -70,8 +70,12 @@ class TilesPublicCoverage
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function kmzTitles(?TilesPublicCoverageKmzTitles $request = null) : void
+    public function kmzTitles($request = null) : void
     {
+        if (is_array($request)) {
+            /** @var TilesPublicCoverageKmzTitles **/
+            $request = TilesPublicCoverageKmzTitles::from($request);
+        }
         $this->client->call('get', '/tiles/public-coverage/kmz/tiles.kmz', $request, null, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
 }

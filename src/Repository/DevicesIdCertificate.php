@@ -64,7 +64,7 @@ class DevicesIdCertificate
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function modem(?string $fields) : ModemCertificate
+    public function modem($fields) : ModemCertificate
     {
         $request = new DevicesIdCertificateModem();
         $request->setFields($fields);
@@ -89,7 +89,7 @@ class DevicesIdCertificate
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function product(?string $fields) : ProductCertificate
+    public function product($fields) : ProductCertificate
     {
         $request = new DevicesIdCertificateProduct();
         $request->setFields($fields);

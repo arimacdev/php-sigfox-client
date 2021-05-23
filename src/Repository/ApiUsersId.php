@@ -50,7 +50,7 @@ class ApiUsersId
     /**
      * Retrieve information about a given API user.
      *
-     * @param ApiUsersIdGet $request The query and body parameters to pass
+     * @param ApiUsersIdGet|array|null $request The query and body parameters to pass
      *
      * @return ApiUser
      *
@@ -65,14 +65,18 @@ class ApiUsersId
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function get(?ApiUsersIdGet $request = null) : ApiUser
+    public function get($request = null) : ApiUser
     {
+        if (is_array($request)) {
+            /** @var ApiUsersIdGet **/
+            $request = ApiUsersIdGet::from($request);
+        }
         return $this->client->call('get', Helper::bindUrlParams('/api-users/{id}', $this->id), $request, ApiUser::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
     /**
      * Update information about a given API user.
      *
-     * @param ApiUserEdition|null $apiUser The information to update
+     * @param ApiUserEdition|array|null $apiUser The information to update
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -84,8 +88,12 @@ class ApiUsersId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function update(?ApiUserEdition $apiUser) : void
+    public function update($apiUser) : void
     {
+        if (is_array($apiUser)) {
+            /** @var ApiUserEdition **/
+            $apiUser = ApiUserEdition::from($apiUser);
+        }
         $request = new ApiUsersIdUpdate();
         $request->setApiUser($apiUser);
         $this->client->call('put', Helper::bindUrlParams('/api-users/{id}', $this->id), $request, null, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));

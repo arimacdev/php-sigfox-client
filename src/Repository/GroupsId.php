@@ -57,7 +57,7 @@ class GroupsId
     /**
      * Retrieve information about a given group.
      *
-     * @param GroupsIdGet $request The query and body parameters to pass
+     * @param GroupsIdGet|array|null $request The query and body parameters to pass
      *
      * @return Group
      *
@@ -72,14 +72,18 @@ class GroupsId
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function get(?GroupsIdGet $request = null) : Group
+    public function get($request = null) : Group
     {
+        if (is_array($request)) {
+            /** @var GroupsIdGet **/
+            $request = GroupsIdGet::from($request);
+        }
         return $this->client->call('get', Helper::bindUrlParams('/groups/{id}', $this->id), $request, Group::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
     /**
      * Update a given group.
      *
-     * @param CommonGroupUpdate|null $group The group to update
+     * @param CommonGroupUpdate|array|null $group The group to update
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -91,8 +95,12 @@ class GroupsId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function update(?CommonGroupUpdate $group) : void
+    public function update($group) : void
     {
+        if (is_array($group)) {
+            /** @var CommonGroupUpdate **/
+            $group = CommonGroupUpdate::from($group);
+        }
         $request = new GroupsIdUpdate();
         $request->setGroup($group);
         $this->client->call('put', Helper::bindUrlParams('/groups/{id}', $this->id), $request, null, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
@@ -121,7 +129,7 @@ class GroupsId
      * (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is more relevant than SNR in
      * Sigfox network.
      *
-     * @param GroupsIdCallbacksNotDelivered $request The query and body parameters to pass
+     * @param GroupsIdCallbacksNotDelivered|array|null $request The query and body parameters to pass
      *
      * @psalm-return PaginateResponse<GroupErrorMessages,GroupsIdCallbacksNotDeliveredResponse,E>
      *
@@ -143,8 +151,12 @@ class GroupsId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function callbacksNotDelivered(?GroupsIdCallbacksNotDelivered $request = null) : PaginateResponse
+    public function callbacksNotDelivered($request = null) : PaginateResponse
     {
+        if (is_array($request)) {
+            /** @var GroupsIdCallbacksNotDelivered **/
+            $request = GroupsIdCallbacksNotDelivered::from($request);
+        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', Helper::bindUrlParams('/groups/{id}/callbacks-not-delivered', $this->id), $request, GroupsIdCallbacksNotDeliveredResponse::class, $errors);
@@ -153,7 +165,7 @@ class GroupsId
     /**
      * Retrieve a list of geolocation payload according to request filters.
      *
-     * @param GroupsIdGeolocationPayloads $request The query and body parameters to pass
+     * @param GroupsIdGeolocationPayloads|array|null $request The query and body parameters to pass
      *
      * @psalm-return PaginateResponse<BaseGeolocation,GroupsIdGeolocationPayloadsResponse,E>
      *
@@ -174,8 +186,12 @@ class GroupsId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function geolocationPayloads(?GroupsIdGeolocationPayloads $request = null) : PaginateResponse
+    public function geolocationPayloads($request = null) : PaginateResponse
     {
+        if (is_array($request)) {
+            /** @var GroupsIdGeolocationPayloads **/
+            $request = GroupsIdGeolocationPayloads::from($request);
+        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', Helper::bindUrlParams('/groups/{id}/geoloc-payloads', $this->id), $request, GroupsIdGeolocationPayloadsResponse::class, $errors);

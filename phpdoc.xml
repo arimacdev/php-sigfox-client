@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<phpdocumentor configVersion="3.0">
+<phpdocumentor configVersion="3.0"  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://www.phpdoc.org">
     <paths>
-        <output>doc/build</output>
-        <cache>doc/cache</cache>
+        <output>docs/.build</output>
+        <cache>docs/.cache</cache>
     </paths>
     <version number="2.0.0">
         <api>
             <source dsn=".">
                 <path>src</path>
             </source>
+            <output>api</output>
             <ignore hidden="true">
                 <path>src/Client/Client.php</path>
                 <path>src/Serializer/**/*</path>
@@ -27,6 +28,13 @@
                 <ignore-tag>template</ignore-tag>
             </ignore-tags>
         </api>
+        <guide>
+            <source dsn=".">
+                <path>docs</path>
+            </source>
+            <output>guide</output>
+        </guide>
     </version> 
+    <template name="default"/>
     <title>PHP Sigfox Client</title>
 </phpdocumentor>

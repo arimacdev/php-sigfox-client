@@ -200,4 +200,13 @@ class PaginateResponse implements ResponseData {
     public function items() {
         return new ItemIterator(new PageIterator($this));
     }
+
+    /**
+     * Returning the zero indexed page number
+     *
+     * @return int
+     */
+    public function getPage():int{
+        return $this->page;
+    }
 }

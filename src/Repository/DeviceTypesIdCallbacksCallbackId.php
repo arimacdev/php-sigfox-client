@@ -60,7 +60,7 @@ class DeviceTypesIdCallbacksCallbackId
      * the [Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is
      * more relevant than SNR in Sigfox network.
      *
-     * @param UpdateCallback|null $callback The callback to update
+     * @param UpdateCallback|array|null $callback The callback to update
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -72,8 +72,12 @@ class DeviceTypesIdCallbacksCallbackId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function update(?UpdateCallback $callback) : void
+    public function update($callback) : void
     {
+        if (is_array($callback)) {
+            /** @var UpdateCallback **/
+            $callback = UpdateCallback::from($callback);
+        }
         $request = new DeviceTypesIdCallbacksCallbackIdUpdate();
         $request->setCallback($callback);
         $this->client->call('put', Helper::bindUrlParams('/device-types/{id}/callbacks/{callbackId}', $this->id, $this->callbackId), $request, null, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
@@ -110,7 +114,7 @@ class DeviceTypesIdCallbacksCallbackId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function enable(?bool $enabled) : void
+    public function enable($enabled) : void
     {
         $request = new DeviceTypesIdCallbacksCallbackIdEnable();
         $request->setEnabled($enabled);
@@ -137,7 +141,8 @@ class DeviceTypesIdCallbacksCallbackId
     /**
      * Retrieve the last device message error associated with this callback.
      *
-     * @param DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered $request The query and body parameters to pass
+     * @param DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered|array|null $request The query and body parameters
+     *                                                                                  to pass
      *
      * @return ErrorMessages
      *
@@ -152,8 +157,12 @@ class DeviceTypesIdCallbacksCallbackId
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function callbacksNotDelivered(?DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered $request = null) : ErrorMessages
+    public function callbacksNotDelivered($request = null) : ErrorMessages
     {
+        if (is_array($request)) {
+            /** @var DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered **/
+            $request = DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered::from($request);
+        }
         return $this->client->call('get', Helper::bindUrlParams('/device-types/{id}/callbacks/{callbackId}/callbacks-not-delivered', $this->id, $this->callbackId), $request, ErrorMessages::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
 }

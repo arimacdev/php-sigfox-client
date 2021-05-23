@@ -197,11 +197,35 @@ class Repository extends Class_
             $required = $requestProperties[$propertyName][1];
             $paramDescription = $requestProperties[$propertyName][2];
 
-            $requestVariableName = $propertyName==="request"?"coreRequest": "request";
+            $requestVariableName = $propertyName === "request" ? "coreRequest" : "request";
 
             $usedType = $this->useType($type);
+            $docBlockType = $usedType;
 
-            array_push($docBlockTags, ["param", $usedType . ($required ? "" : "|null"), "\$$propertyName", $paramDescription]);
+
+            if (substr($type, strlen($type) - 2) !== "[]" && $usedType !== $type) {
+                $docBlockType .= "|array";
+
+                $stmts[] = new If_(
+                    $this->factory->funcCall("is_array", [$this->factory->var($propertyName)]),
+                    [
+                        "stmts" => [
+                            new Expression(new Assign(
+                                $this->factory->var($propertyName),
+                                $this->factory->staticCall($usedType, "from", [$this->factory->var($propertyName)])
+                            ), [
+                                "comments" => [
+                                    new Comment("/** @var $usedType **/")
+                                ]
+                            ])
+                        ]
+                    ]
+                );
+            }
+            if (!$required) {
+                $docBlockType .= "|null";
+            }
+            array_push($docBlockTags, ["param", $docBlockType, "\$$propertyName", $paramDescription]);
 
             $phpType = Helper::toPHPValue($usedType);
 
@@ -211,7 +235,6 @@ class Repository extends Class_
                 $phpType = new NullableType($phpType);
             }
             $param = $this->factory->param($propertyName);
-            $param->setType($phpType);
             $params[] = $param;
             // $request = new MyRequest()
             array_push($stmts, new Assign(new Variable($requestVariableName), $this->factory->new($requestType)));
@@ -223,20 +246,43 @@ class Repository extends Class_
             ));
             array_push($args, new Variable($requestVariableName));
         } else if (isset($requestType)) {
-            $requestType = $this->useType($requestType);
-            array_push($docBlockTags, ["param", $requestType, "\$request", "The query and body parameters to pass"]);
+            $usedType = $this->useType($requestType);
+            $docBlockType = $usedType;
 
             $required = false;
             foreach ($requestProperties as $propertyName => $attrs) {
                 $required = $required || $attrs[1];
             }
 
+            if ( substr($usedType, strlen($usedType) - 2) !== "[]"&& $requestType!==$usedType) {
+                $docBlockType.="|array";
+                $stmts[] = new If_(
+                    $this->factory->funcCall("is_array", [$this->factory->var("request")]),
+                    [
+                        "stmts" => [
+                            new Expression(new Assign(
+                                $this->factory->var("request"),
+                                $this->factory->staticCall($usedType, "from", [$this->factory->var("request")])
+                            ), [
+                                "comments" => [
+                                    new Comment("/** @var $usedType **/")
+                                ]
+                            ])
+                        ]
+                    ]
+                );
+            }
+
+            if(!$required){
+                $docBlockType .= "|null";
+            }
+
+            array_push($docBlockTags, ["param", $docBlockType, "\$request", "The query and body parameters to pass"]);
+
             $param = $this->factory->param("request");
             if (!$required) {
                 $param->setDefault($this->factory->val(null));
-                $requestType = new NullableType($requestType);
             }
-            $param->setType($requestType);
             $params[] = $param;
             array_push($args, new Variable("request"));
         } else {
@@ -325,13 +371,13 @@ class Repository extends Class_
             $itemType = substr($arrType, 0, strlen($arrType) - 2);
             $itemType = $this->useType($itemType);
             $paginateResponse = $this->useType("Arimac\\Sigfox\\Response\\Paginated\\PaginateResponse");
-            $errors = implode(" | ",$docErrors);
-            array_push($docBlockTags, ["psalm-type", "E=".$errors]);
+            $errors = implode(" | ", $docErrors);
+            array_push($docBlockTags, ["psalm-type", "E=" . $errors]);
             array_push($docBlockTags, ["psalm-return", "$paginateResponse<$itemType,$responseType,E>"]);
             array_push(
                 $docBlockTags,
                 [
-                    "return", 
+                    "return",
                     "$paginateResponse<$itemType,$responseType>",
                     "First generic parameter is the item type and the second type is the original response type."
                 ]

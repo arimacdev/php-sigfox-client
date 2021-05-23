@@ -2,7 +2,8 @@ composer.phar
 /vendor/
 /gencode/vendor/
 /gencode/tmp/
-/doc/
+/docs/.build/
+/docs/.cache/
 /phpDocumentor.phar
 /.phpunit.result.cache
 

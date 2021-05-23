@@ -70,7 +70,7 @@ class Client
             $serialized = $requestSerializer->serialize($request);
 
             $bodyField = $request->getBodyField();
-            if($bodyField && isset($serialized[$bodyField])){
+            if ($bodyField && isset($serialized[$bodyField])) {
                 $body = $serialized[$bodyField];
             }
 
@@ -84,20 +84,26 @@ class Client
         if ($responseClass) {
             if ($statusCode >= 200 && $statusCode < 204) { // 200..203 requests accepting a response
                 $responseJson = json_decode($body, true);
+                if(json_last_error()!==JSON_ERROR_NONE) {
+                    throw new DeserializeException([
+                        "json-string"
+                    ], "string");
+                }
                 $responseSerializer = new ClassSerializer($responseClass);
                 $deserialized = $responseSerializer->deserialize($responseJson);
                 return $deserialized;
-            } else if ($statusCode == 204) { // 204 is not accepting a response
-                return null;
-            } else if ($statusCode > 400) { // 400> is accepting a error
-                if (isset($errors[$statusCode])) {
-                    $responseJson = json_decode($body, true);
-                    $exception = $errors[$statusCode]::deserialize($responseJson);
-                    throw $exception;
-                }
-                throw new UnexpectedResponseException($statusCode, $body);
             }
         }
-        return null;
+
+        if ($statusCode == 204) { // 204 success but not accepting a body
+            return null;
+        } else if ($statusCode >= 400) { // 400>= is accepting a error
+            if (isset($errors[$statusCode])) {
+                $responseJson = json_decode($body, true);
+                $exception = $errors[$statusCode]::deserialize($responseJson);
+                throw $exception;
+            }
+        }
+        throw new UnexpectedResponseException($statusCode, $body);
     }
 }

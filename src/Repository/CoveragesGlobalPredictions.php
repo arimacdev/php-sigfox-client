@@ -45,7 +45,7 @@ class CoveragesGlobalPredictions
      * For more information please refer to the [Global Coverage API
      * article](https://support.sigfox.com/docs/global-coverage-api).
      *
-     * @param CoveragesGlobalPredictionsGetOne $request The query and body parameters to pass
+     * @param CoveragesGlobalPredictionsGetOne|array|null $request The query and body parameters to pass
      *
      * @return CoveragesGlobalPredictionsGetOneResponse
      *
@@ -60,8 +60,12 @@ class CoveragesGlobalPredictions
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function getOne(?CoveragesGlobalPredictionsGetOne $request = null) : CoveragesGlobalPredictionsGetOneResponse
+    public function getOne($request = null) : CoveragesGlobalPredictionsGetOneResponse
     {
+        if (is_array($request)) {
+            /** @var CoveragesGlobalPredictionsGetOne **/
+            $request = CoveragesGlobalPredictionsGetOne::from($request);
+        }
         return $this->client->call('get', '/coverages/global/predictions', $request, CoveragesGlobalPredictionsGetOneResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
     /**
@@ -73,7 +77,7 @@ class CoveragesGlobalPredictions
      * For more information please refer to the [Global Coverage API
      * article](https://support.sigfox.com/docs/global-coverage-api).
      *
-     * @param GlobalCoverageRequest|null $payload
+     * @param GlobalCoverageRequest|array|null $payload
      *
      * @return GlobalCoverageResponse
      *
@@ -88,8 +92,12 @@ class CoveragesGlobalPredictions
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function get(?GlobalCoverageRequest $payload) : GlobalCoverageResponse
+    public function get($payload) : GlobalCoverageResponse
     {
+        if (is_array($payload)) {
+            /** @var GlobalCoverageRequest **/
+            $payload = GlobalCoverageRequest::from($payload);
+        }
         $request = new CoveragesGlobalPredictionsGet();
         $request->setPayload($payload);
         return $this->client->call('post', '/coverages/global/predictions', $request, GlobalCoverageResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
@@ -99,7 +107,7 @@ class CoveragesGlobalPredictions
      * For more information please refer to the [Global Coverage API
      * article](https://support.sigfox.com/docs/global-coverage-api).
      *
-     * @param GlobalCoverageRequest|null $payload
+     * @param GlobalCoverageRequest|array|null $payload
      *
      * @return string jobId provided to the customer to request the job status and results
      *
@@ -113,8 +121,12 @@ class CoveragesGlobalPredictions
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function calculateBulk(?GlobalCoverageRequest $payload) : ?string
+    public function calculateBulk($payload) : ?string
     {
+        if (is_array($payload)) {
+            /** @var GlobalCoverageRequest **/
+            $payload = GlobalCoverageRequest::from($payload);
+        }
         $request = new CoveragesGlobalPredictionsCalculateBulk();
         $request->setPayload($payload);
         /** @var CoveragesGlobalPredictionsCalculateBulkResponse **/

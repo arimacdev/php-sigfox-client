@@ -46,7 +46,7 @@ class ProfilesId
     /**
      * Retrieve information about a given profile.
      *
-     * @param ProfilesIdGet $request The query and body parameters to pass
+     * @param ProfilesIdGet|array|null $request The query and body parameters to pass
      *
      * @return Profile
      *
@@ -61,8 +61,12 @@ class ProfilesId
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function get(?ProfilesIdGet $request = null) : Profile
+    public function get($request = null) : Profile
     {
+        if (is_array($request)) {
+            /** @var ProfilesIdGet **/
+            $request = ProfilesIdGet::from($request);
+        }
         return $this->client->call('get', Helper::bindUrlParams('/profiles/{id}', $this->id), $request, Profile::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
 }

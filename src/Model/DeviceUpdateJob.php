@@ -45,4 +45,15 @@ class DeviceUpdateJob extends Model
         $serializers = array_merge($serializers, $this->getSerializeMetaDataSingleDeviceFields());
         return $serializers;
     }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array();
+        $rules = array_merge($rules, $this->getValidationMetaDataSingleDeviceFields());
+        return $rules;
+    }
 }

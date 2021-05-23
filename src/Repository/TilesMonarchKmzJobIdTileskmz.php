@@ -44,7 +44,7 @@ class TilesMonarchKmzJobIdTileskmz
     /**
      * Retrieve Sigfox Monarch coverage kmz from a job
      *
-     * @param TilesMonarchKmzJobIdTileskmzGetCoverage $request The query and body parameters to pass
+     * @param TilesMonarchKmzJobIdTileskmzGetCoverage|array|null $request The query and body parameters to pass
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -56,8 +56,12 @@ class TilesMonarchKmzJobIdTileskmz
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function getCoverage(?TilesMonarchKmzJobIdTileskmzGetCoverage $request = null) : void
+    public function getCoverage($request = null) : void
     {
+        if (is_array($request)) {
+            /** @var TilesMonarchKmzJobIdTileskmzGetCoverage **/
+            $request = TilesMonarchKmzJobIdTileskmzGetCoverage::from($request);
+        }
         $this->client->call('get', Helper::bindUrlParams('/tiles/monarch/kmz/{jobId}/tiles.kmz', $this->jobId), $request, null, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
 }

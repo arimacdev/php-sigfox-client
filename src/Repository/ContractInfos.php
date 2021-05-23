@@ -40,7 +40,7 @@ class ContractInfos
     /**
      * Retrieve a list of contracts according to visibility permissions and request filters.
      *
-     * @param ContractInfosList $request The query and body parameters to pass
+     * @param ContractInfosList|array|null $request The query and body parameters to pass
      *
      * @psalm-return PaginateResponse<ContractInfo,ContractInfosListResponse,E>
      *
@@ -61,8 +61,12 @@ class ContractInfos
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function list(?ContractInfosList $request = null) : PaginateResponse
+    public function list($request = null) : PaginateResponse
     {
+        if (is_array($request)) {
+            /** @var ContractInfosList **/
+            $request = ContractInfosList::from($request);
+        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', '/contract-infos/', $request, ContractInfosListResponse::class, $errors);

@@ -39,7 +39,8 @@ class TilesMonarchKmz
      * starts if no other computation, run in the last 24 hours, is available. Otherwise, the existing jobId is
      * returned.
      *
-     * @param KmzCreatePublicRequest|null $request The computation will be performed with the specified coverage mode
+     * @param KmzCreatePublicRequest|array|null $request The computation will be performed with the specified
+     *                                                   coverage mode
      *
      * @return string jobId provided to the customer to request the job status and results
      *
@@ -53,8 +54,12 @@ class TilesMonarchKmz
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function startAsync(?KmzCreatePublicRequest $request) : ?string
+    public function startAsync($request) : ?string
     {
+        if (is_array($request)) {
+            /** @var KmzCreatePublicRequest **/
+            $request = KmzCreatePublicRequest::from($request);
+        }
         $coreRequest = new TilesMonarchKmzStartAsync();
         $coreRequest->setRequest($request);
         /** @var TilesMonarchKmzStartAsyncResponse **/

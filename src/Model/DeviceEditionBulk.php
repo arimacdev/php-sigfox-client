@@ -4,6 +4,7 @@ namespace Arimac\Sigfox\Model;
 
 use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
 class DeviceEditionBulk extends Model
 {
     use SingleDeviceFields;
@@ -71,5 +72,16 @@ class DeviceEditionBulk extends Model
         $serializers = array('id' => new PrimitiveSerializer('string'), 'name' => new PrimitiveSerializer('string'));
         $serializers = array_merge($serializers, $this->getSerializeMetaDataSingleDeviceFields());
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('id' => array(new Required()));
+        $rules = array_merge($rules, $this->getValidationMetaDataSingleDeviceFields());
+        return $rules;
     }
 }

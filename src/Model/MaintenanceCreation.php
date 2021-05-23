@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Model;
 
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
 class MaintenanceCreation extends BaseMaintenance
 {
     /**
@@ -42,5 +43,16 @@ class MaintenanceCreation extends BaseMaintenance
         $serializers = array('groupId' => new PrimitiveSerializer('string'));
         $serializers = array_merge($serializers, parent::getSerializeMetaData());
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('groupId' => array(new Required()));
+        $rules = array_merge($rules, parent::getValidationMetaData());
+        return $rules;
     }
 }

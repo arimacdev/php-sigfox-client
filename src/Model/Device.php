@@ -6,6 +6,7 @@ use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\ArraySerializer;
 use Arimac\Sigfox\Validator\Rules\Child;
+use Arimac\Sigfox\Validator\Rules\Required;
 /**
  * Defines the device's properties
  */
@@ -1010,7 +1011,7 @@ class Device extends CommonDevice
      */
     public function getValidationMetaData() : array
     {
-        $rules = array('deviceType' => array(new Child()), 'contract' => array(new Child()), 'group' => array(new Child()), 'modemCertificate' => array(new Child()), 'productCertificate' => array(new Child()), 'location' => array(new Child()), 'lastComputedLocation' => array(new Child()), 'token' => array(new Child()));
+        $rules = array('deviceType' => array(new Child()), 'contract' => array(new Child()), 'group' => array(new Child()), 'modemCertificate' => array(new Child()), 'productCertificate' => array(new Child()), 'location' => array(new Child()), 'lastComputedLocation' => array(new Child()), 'pac' => array(new Required()), 'creationTime' => array(new Required()), 'state' => array(new Required()), 'comState' => array(new Required()), 'token' => array(new Child()), 'automaticRenewal' => array(new Required()));
         $rules = array_merge($rules, parent::getValidationMetaData());
         return $rules;
     }

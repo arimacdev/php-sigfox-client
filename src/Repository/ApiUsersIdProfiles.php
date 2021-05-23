@@ -46,7 +46,7 @@ class ApiUsersIdProfiles
     /**
      * Associate new profiles to a given API user.
      *
-     * @param ProfileIds|null $profileIds The API profile to update
+     * @param ProfileIds|array|null $profileIds The API profile to update
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -59,8 +59,12 @@ class ApiUsersIdProfiles
      * @throws MethodNotAllowedException   If server returned a HTTP 405 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function update(?ProfileIds $profileIds) : void
+    public function update($profileIds) : void
     {
+        if (is_array($profileIds)) {
+            /** @var ProfileIds **/
+            $profileIds = ProfileIds::from($profileIds);
+        }
         $request = new ApiUsersIdProfilesUpdate();
         $request->setProfileIds($profileIds);
         $this->client->call('put', Helper::bindUrlParams('/api-users/{id}/profiles', $this->id), $request, null, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 405 => MethodNotAllowedException::class, 500 => InternalServerException::class));

@@ -64,7 +64,7 @@ class UsersIdProfilesProfileId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function delete(?string $groupId) : void
+    public function delete($groupId) : void
     {
         $request = new UsersIdProfilesProfileIdDelete();
         $request->setGroupId($groupId);

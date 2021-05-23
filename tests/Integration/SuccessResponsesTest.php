@@ -73,6 +73,23 @@ class SuccessResponsesTest extends BaseTestCase {
         $this->assertArraySimilar($deviceCreationArr, $actual);
     }
 
+    public function testPostRequestWithArray(){
+        $deviceCreation = $this->sample("deviceCreationJob");
+        $deviceCreationArr = json_decode($deviceCreation, true);
+        $this->mock->append(new Response(201, ["Content-Type"=> "application/json"], "{\"id\":\"56E3AD\"}"));              
+
+        $deviceId = $this->client->devices()->create($deviceCreationArr);
+        $this->assertSame("56E3AD", $deviceId);
+
+        $this->assertArrayHasKey(0, $this->history);
+        /** @var Request **/
+        $request = $this->history[0]["request"];
+        $this->assertSame("/devices/", $request->getUri()->getPath());
+        $this->assertSame("POST", $request->getMethod());
+        $actual = json_decode($request->getBody()->__toString(), true );
+        $this->assertArraySimilar($deviceCreationArr, $actual);
+    }
+
     protected function setPaginatedResponses($responses = 2){
         $device = json_decode($this->sample("device"), true);
         $devices = [];

@@ -72,7 +72,7 @@ class DeviceTypesIdCallbacks
      * the [Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is
      * more relevant than SNR in Sigfox network.
      *
-     * @param CreateCallback|null $callback
+     * @param CreateCallback|array|null $callback
      *
      * @return string The callback's identifier
      *
@@ -86,8 +86,12 @@ class DeviceTypesIdCallbacks
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function create(?CreateCallback $callback) : ?string
+    public function create($callback) : ?string
     {
+        if (is_array($callback)) {
+            /** @var CreateCallback **/
+            $callback = CreateCallback::from($callback);
+        }
         $request = new DeviceTypesIdCallbacksCreate();
         $request->setCallback($callback);
         /** @var DeviceTypesIdCallbacksCreateResponse **/

@@ -49,7 +49,7 @@ class UsersId
     /**
      * Retrieve information about a given user. The id can also be the user's email address.
      *
-     * @param UsersIdGet $request The query and body parameters to pass
+     * @param UsersIdGet|array|null $request The query and body parameters to pass
      *
      * @return User
      *
@@ -64,14 +64,18 @@ class UsersId
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function get(?UsersIdGet $request = null) : User
+    public function get($request = null) : User
     {
+        if (is_array($request)) {
+            /** @var UsersIdGet **/
+            $request = UsersIdGet::from($request);
+        }
         return $this->client->call('get', Helper::bindUrlParams('/users/{id}', $this->id), $request, User::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
     /**
      * Update a given user.
      *
-     * @param UserUpdate|null $user The user to update
+     * @param UserUpdate|array|null $user The user to update
      *
      * @return BaseResponse
      *
@@ -86,8 +90,12 @@ class UsersId
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function update(?UserUpdate $user) : ?BaseResponse
+    public function update($user) : ?BaseResponse
     {
+        if (is_array($user)) {
+            /** @var UserUpdate **/
+            $user = UserUpdate::from($user);
+        }
         $request = new UsersIdUpdate();
         $request->setUser($user);
         return $this->client->call('put', Helper::bindUrlParams('/users/{id}', $this->id), $request, BaseResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));

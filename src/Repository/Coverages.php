@@ -47,7 +47,7 @@ class Coverages
      * For more information please refer to the [Global Coverage API
      * article](https://support.sigfox.com/docs/global-coverage-api).
      *
-     * @param CoveragesOperatorsRedundancy $request The query and body parameters to pass
+     * @param CoveragesOperatorsRedundancy|array|null $request The query and body parameters to pass
      *
      * @return RedundancyResponse
      *
@@ -62,8 +62,12 @@ class Coverages
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function operatorsRedundancy(?CoveragesOperatorsRedundancy $request = null) : RedundancyResponse
+    public function operatorsRedundancy($request = null) : RedundancyResponse
     {
+        if (is_array($request)) {
+            /** @var CoveragesOperatorsRedundancy **/
+            $request = CoveragesOperatorsRedundancy::from($request);
+        }
         return $this->client->call('get', '/coverages/operators/redundancy', $request, RedundancyResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
 }

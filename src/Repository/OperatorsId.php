@@ -48,7 +48,7 @@ class OperatorsId
     /**
      * Retrieve information about a given operator.
      *
-     * @param OperatorsIdGet $request The query and body parameters to pass
+     * @param OperatorsIdGet|array|null $request The query and body parameters to pass
      *
      * @return OperatorRead
      *
@@ -63,14 +63,18 @@ class OperatorsId
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function get(?OperatorsIdGet $request = null) : OperatorRead
+    public function get($request = null) : OperatorRead
     {
+        if (is_array($request)) {
+            /** @var OperatorsIdGet **/
+            $request = OperatorsIdGet::from($request);
+        }
         return $this->client->call('get', Helper::bindUrlParams('/operators/{id}', $this->id), $request, OperatorRead::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
     /**
      * Update a given operator.
      *
-     * @param OperatorUpdate|null $operator The operator to update
+     * @param OperatorUpdate|array|null $operator The operator to update
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -82,8 +86,12 @@ class OperatorsId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function update(?OperatorUpdate $operator) : void
+    public function update($operator) : void
     {
+        if (is_array($operator)) {
+            /** @var OperatorUpdate **/
+            $operator = OperatorUpdate::from($operator);
+        }
         $request = new OperatorsIdUpdate();
         $request->setOperator($operator);
         $this->client->call('put', Helper::bindUrlParams('/operators/{id}', $this->id), $request, null, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));

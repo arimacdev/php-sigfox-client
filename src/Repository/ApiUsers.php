@@ -44,7 +44,7 @@ class ApiUsers
     /**
      * Retrieve a list of API users according to visibility permissions and request filters.
      *
-     * @param ApiUsersList $request The query and body parameters to pass
+     * @param ApiUsersList|array|null $request The query and body parameters to pass
      *
      * @psalm-return PaginateResponse<ApiUser,ApiUsersListResponse,E>
      *
@@ -65,8 +65,12 @@ class ApiUsers
      * @throws MethodNotAllowedException   If server returned a HTTP 405 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function list(?ApiUsersList $request = null) : PaginateResponse
+    public function list($request = null) : PaginateResponse
     {
+        if (is_array($request)) {
+            /** @var ApiUsersList **/
+            $request = ApiUsersList::from($request);
+        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 405 => MethodNotAllowedException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', '/api-users/', $request, ApiUsersListResponse::class, $errors);
@@ -75,7 +79,7 @@ class ApiUsers
     /**
      * Create a new API user.
      *
-     * @param ApiUserCreation|null $apiUser
+     * @param ApiUserCreation|array|null $apiUser
      *
      * @return string The newly created API user identifier
      *
@@ -90,8 +94,12 @@ class ApiUsers
      * @throws MethodNotAllowedException   If server returned a HTTP 405 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function create(?ApiUserCreation $apiUser) : ?string
+    public function create($apiUser) : ?string
     {
+        if (is_array($apiUser)) {
+            /** @var ApiUserCreation **/
+            $apiUser = ApiUserCreation::from($apiUser);
+        }
         $request = new ApiUsersCreate();
         $request->setApiUser($apiUser);
         /** @var ApiUsersCreateResponse **/

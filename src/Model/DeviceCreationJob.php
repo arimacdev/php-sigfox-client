@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox\Model;
 
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
+use Arimac\Sigfox\Validator\Rules\Required;
 class DeviceCreationJob extends CommonDevice
 {
     use SingleDeviceFields;
@@ -206,5 +207,17 @@ class DeviceCreationJob extends CommonDevice
         $serializers = array_merge($serializers, parent::getSerializeMetaData());
         $serializers = array_merge($serializers, $this->getSerializeMetaDataSingleDeviceFields());
         return $serializers;
+    }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array('deviceTypeId' => array(new Required()), 'pac' => array(new Required()));
+        $rules = array_merge($rules, parent::getValidationMetaData());
+        $rules = array_merge($rules, $this->getValidationMetaDataSingleDeviceFields());
+        return $rules;
     }
 }

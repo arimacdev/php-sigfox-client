@@ -49,4 +49,15 @@ class SiteUpdate extends BaseSite
         $serializers = array_merge($serializers, parent::getSerializeMetaData());
         return $serializers;
     }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaData() : array
+    {
+        $rules = array();
+        $rules = array_merge($rules, parent::getValidationMetaData());
+        return $rules;
+    }
 }

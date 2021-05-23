@@ -61,7 +61,7 @@ class DevicesId
     /**
      * Retrieve information about a given device.
      *
-     * @param DevicesIdGet $request The query and body parameters to pass
+     * @param DevicesIdGet|array|null $request The query and body parameters to pass
      *
      * @return Device
      *
@@ -76,14 +76,18 @@ class DevicesId
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function get(?DevicesIdGet $request = null) : Device
+    public function get($request = null) : Device
     {
+        if (is_array($request)) {
+            /** @var DevicesIdGet **/
+            $request = DevicesIdGet::from($request);
+        }
         return $this->client->call('get', Helper::bindUrlParams('/devices/{id}', $this->id), $request, Device::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
     /**
      * Update a given device.
      *
-     * @param DeviceUpdateJob|null $device The device to update
+     * @param DeviceUpdateJob|array|null $device The device to update
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -95,8 +99,12 @@ class DevicesId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function update(?DeviceUpdateJob $device) : void
+    public function update($device) : void
     {
+        if (is_array($device)) {
+            /** @var DeviceUpdateJob **/
+            $device = DeviceUpdateJob::from($device);
+        }
         $request = new DevicesIdUpdate();
         $request->setDevice($device);
         $this->client->call('put', Helper::bindUrlParams('/devices/{id}', $this->id), $request, null, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
@@ -125,7 +133,7 @@ class DevicesId
      * (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is more relevant than SNR in
      * Sigfox network.
      *
-     * @param DevicesIdCallbacksNotDelivered $request The query and body parameters to pass
+     * @param DevicesIdCallbacksNotDelivered|array|null $request The query and body parameters to pass
      *
      * @psalm-return PaginateResponse<DeviceErrorMessages,DevicesIdCallbacksNotDeliveredResponse,E>
      *
@@ -147,8 +155,12 @@ class DevicesId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function callbacksNotDelivered(?DevicesIdCallbacksNotDelivered $request = null) : PaginateResponse
+    public function callbacksNotDelivered($request = null) : PaginateResponse
     {
+        if (is_array($request)) {
+            /** @var DevicesIdCallbacksNotDelivered **/
+            $request = DevicesIdCallbacksNotDelivered::from($request);
+        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', Helper::bindUrlParams('/devices/{id}/callbacks-not-delivered', $this->id), $request, DevicesIdCallbacksNotDeliveredResponse::class, $errors);
@@ -180,7 +192,7 @@ class DevicesId
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function productCertificate(?string $pac) : ProductCertificateWithPacResponse
+    public function productCertificate($pac) : ProductCertificateWithPacResponse
     {
         $request = new DevicesIdProductCertificate();
         $request->setPac($pac);
@@ -220,7 +232,7 @@ class DevicesId
     /**
      * Retrieve a list of location data of a device according to request filters.
      *
-     * @param DevicesIdLocations $request The query and body parameters to pass
+     * @param DevicesIdLocations|array|null $request The query and body parameters to pass
      *
      * @psalm-return PaginateResponse<DeviceLocation_2,DevicesIdLocationsResponse,E>
      *
@@ -241,8 +253,12 @@ class DevicesId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function locations(?DevicesIdLocations $request = null) : PaginateResponse
+    public function locations($request = null) : PaginateResponse
     {
+        if (is_array($request)) {
+            /** @var DevicesIdLocations **/
+            $request = DevicesIdLocations::from($request);
+        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', Helper::bindUrlParams('/devices/{id}/locations', $this->id), $request, DevicesIdLocationsResponse::class, $errors);
@@ -251,8 +267,8 @@ class DevicesId
     /**
      * Set an unsubscription date for the device's token.
      *
-     * @param TokenUnsubscribe|null $unsubscriptionTime the unsubscription time (in milliseconds since the Unix
-     *                                                  Epoch)
+     * @param TokenUnsubscribe|array|null $unsubscriptionTime the unsubscription time (in milliseconds since the Unix
+     *                                                        Epoch)
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -264,8 +280,12 @@ class DevicesId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function unsubscribe(?TokenUnsubscribe $unsubscriptionTime) : void
+    public function unsubscribe($unsubscriptionTime) : void
     {
+        if (is_array($unsubscriptionTime)) {
+            /** @var TokenUnsubscribe **/
+            $unsubscriptionTime = TokenUnsubscribe::from($unsubscriptionTime);
+        }
         $request = new DevicesIdUnsubscribe();
         $request->setUnsubscriptionTime($unsubscriptionTime);
         $this->client->call('put', Helper::bindUrlParams('/devices/{id}/unsubscribe', $this->id), $request, null, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));

@@ -44,7 +44,7 @@ class Users
     /**
      * Retrieve a list of users according to visibility permissions and request filters.
      *
-     * @param UsersList $request The query and body parameters to pass
+     * @param UsersList|array|null $request The query and body parameters to pass
      *
      * @psalm-return PaginateResponse<User,UsersListResponse,E>
      *
@@ -64,8 +64,12 @@ class Users
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function list(?UsersList $request = null) : PaginateResponse
+    public function list($request = null) : PaginateResponse
     {
+        if (is_array($request)) {
+            /** @var UsersList **/
+            $request = UsersList::from($request);
+        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', '/users/', $request, UsersListResponse::class, $errors);
@@ -74,7 +78,7 @@ class Users
     /**
      * Create a new user.
      *
-     * @param UserCreation|null $user The user to create
+     * @param UserCreation|array|null $user The user to create
      *
      * @return CreateResponse
      *
@@ -89,8 +93,12 @@ class Users
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function create(?UserCreation $user) : CreateResponse
+    public function create($user) : CreateResponse
     {
+        if (is_array($user)) {
+            /** @var UserCreation **/
+            $user = UserCreation::from($user);
+        }
         $request = new UsersCreate();
         $request->setUser($user);
         return $this->client->call('post', '/users/', $request, CreateResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));

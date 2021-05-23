@@ -43,7 +43,7 @@ class DeviceTypes
     /**
      * Retrieve a list of device types according to visibility permissions and request filters.
      *
-     * @param DeviceTypesList $request The query and body parameters to pass
+     * @param DeviceTypesList|array|null $request The query and body parameters to pass
      *
      * @psalm-return PaginateResponse<DeviceType,DeviceTypesListResponse,E>
      *
@@ -63,8 +63,12 @@ class DeviceTypes
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function list(?DeviceTypesList $request = null) : PaginateResponse
+    public function list($request = null) : PaginateResponse
     {
+        if (is_array($request)) {
+            /** @var DeviceTypesList **/
+            $request = DeviceTypesList::from($request);
+        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', '/device-types/', $request, DeviceTypesListResponse::class, $errors);
@@ -73,7 +77,7 @@ class DeviceTypes
     /**
      * Create a new device type
      *
-     * @param DeviceTypeCreate|null $deviceType The device type to create
+     * @param DeviceTypeCreate|array|null $deviceType The device type to create
      *
      * @return string The new created device type's identifier
      *
@@ -87,8 +91,12 @@ class DeviceTypes
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function create(?DeviceTypeCreate $deviceType) : ?string
+    public function create($deviceType) : ?string
     {
+        if (is_array($deviceType)) {
+            /** @var DeviceTypeCreate **/
+            $deviceType = DeviceTypeCreate::from($deviceType);
+        }
         $request = new DeviceTypesCreate();
         $request->setDeviceType($deviceType);
         /** @var DeviceTypesCreateResponse **/

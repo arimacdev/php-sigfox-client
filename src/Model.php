@@ -7,7 +7,7 @@ use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\Impl\Model as SerializeModel;
 use Arimac\Sigfox\Validator\Validate;
 
-class Model implements SerializeModel, Validate
+abstract class Model implements SerializeModel, Validate
 {
     /**
      * Initializing a model from an array

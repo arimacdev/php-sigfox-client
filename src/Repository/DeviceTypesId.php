@@ -58,7 +58,7 @@ class DeviceTypesId
     /**
      * Retrieve information about a device type.
      *
-     * @param DeviceTypesIdGet $request The query and body parameters to pass
+     * @param DeviceTypesIdGet|array|null $request The query and body parameters to pass
      *
      * @return DeviceType
      *
@@ -73,14 +73,18 @@ class DeviceTypesId
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function get(?DeviceTypesIdGet $request = null) : DeviceType
+    public function get($request = null) : DeviceType
     {
+        if (is_array($request)) {
+            /** @var DeviceTypesIdGet **/
+            $request = DeviceTypesIdGet::from($request);
+        }
         return $this->client->call('get', Helper::bindUrlParams('/device-types/{id}', $this->id), $request, DeviceType::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
     /**
      * Update a given device type.
      *
-     * @param DeviceTypeUpdate|null $deviceType The device type to update
+     * @param DeviceTypeUpdate|array|null $deviceType The device type to update
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -92,8 +96,12 @@ class DeviceTypesId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function update(?DeviceTypeUpdate $deviceType) : void
+    public function update($deviceType) : void
     {
+        if (is_array($deviceType)) {
+            /** @var DeviceTypeUpdate **/
+            $deviceType = DeviceTypeUpdate::from($deviceType);
+        }
         $request = new DeviceTypesIdUpdate();
         $request->setDeviceType($deviceType);
         $this->client->call('put', Helper::bindUrlParams('/device-types/{id}', $this->id), $request, null, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
@@ -121,7 +129,7 @@ class DeviceTypesId
      * the [Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is
      * more relevant than SNR in Sigfox network.
      *
-     * @param DeviceTypesIdMessages $request The query and body parameters to pass
+     * @param DeviceTypesIdMessages|array|null $request The query and body parameters to pass
      *
      * @psalm-return PaginateResponse<DeviceMessage,DeviceTypesIdMessagesResponse,E>
      *
@@ -142,8 +150,12 @@ class DeviceTypesId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function messages(?DeviceTypesIdMessages $request = null) : PaginateResponse
+    public function messages($request = null) : PaginateResponse
     {
+        if (is_array($request)) {
+            /** @var DeviceTypesIdMessages **/
+            $request = DeviceTypesIdMessages::from($request);
+        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', Helper::bindUrlParams('/device-types/{id}/messages', $this->id), $request, DeviceTypesIdMessagesResponse::class, $errors);
@@ -155,7 +167,7 @@ class DeviceTypesId
      * the [Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is
      * more relevant than SNR in Sigfox network.
      *
-     * @param DeviceTypesIdCallbacksNotDelivered $request The query and body parameters to pass
+     * @param DeviceTypesIdCallbacksNotDelivered|array|null $request The query and body parameters to pass
      *
      * @psalm-return PaginateResponse<ErrorMessages,DeviceTypesIdCallbacksNotDeliveredResponse,E>
      *
@@ -177,8 +189,12 @@ class DeviceTypesId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function callbacksNotDelivered(?DeviceTypesIdCallbacksNotDelivered $request = null) : PaginateResponse
+    public function callbacksNotDelivered($request = null) : PaginateResponse
     {
+        if (is_array($request)) {
+            /** @var DeviceTypesIdCallbacksNotDelivered **/
+            $request = DeviceTypesIdCallbacksNotDelivered::from($request);
+        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', Helper::bindUrlParams('/device-types/{id}/callbacks-not-delivered', $this->id), $request, DeviceTypesIdCallbacksNotDeliveredResponse::class, $errors);

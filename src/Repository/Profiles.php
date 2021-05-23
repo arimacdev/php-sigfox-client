@@ -39,7 +39,7 @@ class Profiles
     /**
      * Retrieve a list of a Group's profiles according to visibility permissions and request filters.
      *
-     * @param ProfilesList $request The query and body parameters to pass
+     * @param ProfilesList|array|null $request The query and body parameters to pass
      *
      * @psalm-return PaginateResponse<Profile,ProfilesListResponse,E>
      *
@@ -57,8 +57,12 @@ class Profiles
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function list(?ProfilesList $request = null) : PaginateResponse
+    public function list($request = null) : PaginateResponse
     {
+        if (is_array($request)) {
+            /** @var ProfilesList **/
+            $request = ProfilesList::from($request);
+        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', '/profiles/', $request, ProfilesListResponse::class, $errors);

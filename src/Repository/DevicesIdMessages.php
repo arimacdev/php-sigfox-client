@@ -55,7 +55,7 @@ class DevicesIdMessages
      * the [Link Quality Indicator (LQI)](https://support.sigfox.com/docs/link-quality:-general-knowledge) which is
      * more relevant than SNR in Sigfox network.
      *
-     * @param DevicesIdMessagesList $request The query and body parameters to pass
+     * @param DevicesIdMessagesList|array|null $request The query and body parameters to pass
      *
      * @psalm-return PaginateResponse<DeviceMessage,DevicesIdMessagesListResponse,E>
      *
@@ -77,8 +77,12 @@ class DevicesIdMessages
      * @throws PreconditionFailedException If server returned a HTTP 412 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function list(?DevicesIdMessagesList $request = null) : PaginateResponse
+    public function list($request = null) : PaginateResponse
     {
+        if (is_array($request)) {
+            /** @var DevicesIdMessagesList **/
+            $request = DevicesIdMessagesList::from($request);
+        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 412 => PreconditionFailedException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', Helper::bindUrlParams('/devices/{id}/messages', $this->id), $request, DevicesIdMessagesListResponse::class, $errors);

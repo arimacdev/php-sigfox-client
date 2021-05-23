@@ -47,7 +47,7 @@ class Groups
      * provided, retrieve all direct sub-groups under the API user's group.
      * If deep is true, retrieve all sub-groups under either given parent groups or the API user group.
      *
-     * @param GroupsList $request The query and body parameters to pass
+     * @param GroupsList|array|null $request The query and body parameters to pass
      *
      * @psalm-return PaginateResponse<Group,GroupsListResponse,E>
      *
@@ -65,8 +65,12 @@ class Groups
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function list(?GroupsList $request = null) : PaginateResponse
+    public function list($request = null) : PaginateResponse
     {
+        if (is_array($request)) {
+            /** @var GroupsList **/
+            $request = GroupsList::from($request);
+        }
         $errors = array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 500 => InternalServerException::class);
         /** @var Model&PaginatedResponse **/
         $response = $this->client->call('get', '/groups/', $request, GroupsListResponse::class, $errors);
@@ -75,7 +79,7 @@ class Groups
     /**
      * Create a new group.
      *
-     * @param CommonGroupCreate|null $group
+     * @param CommonGroupCreate|array|null $group
      *
      * @return string The new created group identifier
      *
@@ -90,8 +94,12 @@ class Groups
      * @throws ConflictException           If server returned a HTTP 409 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function create(?CommonGroupCreate $group) : ?string
+    public function create($group) : ?string
     {
+        if (is_array($group)) {
+            /** @var CommonGroupCreate **/
+            $group = CommonGroupCreate::from($group);
+        }
         $request = new GroupsCreate();
         $request->setGroup($group);
         /** @var GroupsCreateResponse **/

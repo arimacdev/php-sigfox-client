@@ -72,4 +72,14 @@ trait GroupCallbackEmail
         $serializers = array('subject' => new PrimitiveSerializer('string'), 'message' => new PrimitiveSerializer('string'));
         return $serializers;
     }
+    /**
+     * @inheritdoc
+     *
+     * @internal
+     */
+    public function getValidationMetaDataGroupCallbackEmail() : array
+    {
+        $rules = array();
+        return $rules;
+    }
 }
