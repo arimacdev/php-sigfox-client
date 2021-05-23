@@ -8,12 +8,15 @@
     <link rel="icon" href="images/favicon.ico"/>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
-            <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-okaidia.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -48,6 +51,63 @@
     Menu
 </label>
 <aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+            <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header"><a href="guide/index.html">Documentation</a></h2>
+                    <h2 class="phpdocumentor-sidebar__root-package">
+    <a href="guide/getting-started/index.html">Getting started</a>
+</h2>
+
+<ul class="phpdocumentor-list">
+            <li>
+                <a href="guide/getting-started/requirements.html">Requirements</a>
+
+
+        </li>
+            <li>
+                <a href="guide/getting-started/installing.html">Installing</a>
+
+
+        </li>
+            <li>
+                <a href="guide/getting-started/configuration.html">Configuration</a>
+
+
+        </li>
+    </ul>
+
+                    <h2 class="phpdocumentor-sidebar__root-package">
+    <a href="guide/usage/index.html">Usage</a>
+</h2>
+
+<ul class="phpdocumentor-list">
+            <li>
+                <a href="guide/usage/basic.html">Basic Usage</a>
+
+
+        </li>
+            <li>
+                <a href="guide/usage/pagination.html">Paginated Responses</a>
+
+
+        </li>
+            <li>
+                <a href="guide/usage/async.html">Async Responses</a>
+
+
+        </li>
+            <li>
+                <a href="guide/usage/customclients.html">Custom HTTP Clients</a>
+
+
+        </li>
+            <li>
+                <a href="guide/usage/exceptions.html">Exception Handling</a>
+
+
+        </li>
+    </ul>
+
+            </section>
     
     <section class="phpdocumentor-sidebar__category">
         <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
@@ -88,9 +148,6 @@
     
     
     
-            <span class="phpdocumentor-element__extends">
-            Uses
-                            <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html"><abbr title="\Arimac\Sigfox\Model\SingleDeviceFields">SingleDeviceFields</abbr></a>                    </span>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
@@ -100,6 +157,7 @@
 </aside>
 
         
+    <section class="phpdocumentor-description"></section>
 
 
 
@@ -115,53 +173,11 @@
 
 <dl class="phpdocumentor-table-of-contents">
                 <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#property_activable">$activable</a>
-    <span>
-                &nbsp;: bool|null            </span>
-</dt>
-<dd>true if the device is activable and can take a token. Not used if the device has already a token</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#property_automaticRenewal">$automaticRenewal</a>
-    <span>
-                &nbsp;: bool|null            </span>
-</dt>
-<dd>Allow token renewal ?</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#property_lat">$lat</a>
-    <span>
-                &nbsp;: float|null            </span>
-</dt>
-<dd>The device&#039;s provided latitude</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#property_lng">$lng</a>
-    <span>
-                &nbsp;: float|null            </span>
-</dt>
-<dd>The device&#039;s provided longitude</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Arimac-Sigfox-Model-DeviceUpdateJob.html#property_name">$name</a>
     <span>
                 &nbsp;: string|null            </span>
 </dt>
 <dd>The device&#039;s name</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#property_productCertificate">$productCertificate</a>
-    <span>
-                &nbsp;: <a href="classes/Arimac-Sigfox-Model-CertificateUpdate.html"><abbr title="\Arimac\Sigfox\Model\CertificateUpdate">CertificateUpdate</abbr></a>|null            </span>
-</dt>
-<dd></dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#property_prototype">$prototype</a>
-    <span>
-                &nbsp;: bool|null            </span>
-</dt>
-<dd>If the device is a prototype or not</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Model.html#method_from">from()</a>
@@ -171,34 +187,6 @@
 <dd>Initializing a model from an array</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_getActivable">getActivable()</a>
-    <span>
-                        &nbsp;: bool    </span>
-</dt>
-<dd>Getter for activable</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_getAutomaticRenewal">getAutomaticRenewal()</a>
-    <span>
-                        &nbsp;: bool    </span>
-</dt>
-<dd>Getter for automaticRenewal</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_getLat">getLat()</a>
-    <span>
-                        &nbsp;: float    </span>
-</dt>
-<dd>Getter for lat</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_getLng">getLng()</a>
-    <span>
-                        &nbsp;: float    </span>
-</dt>
-<dd>Getter for lng</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Model-DeviceUpdateJob.html#method_getName">getName()</a>
     <span>
                         &nbsp;: string    </span>
@@ -206,67 +194,11 @@
 <dd>Getter for name</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_getProductCertificate">getProductCertificate()</a>
-    <span>
-                        &nbsp;: <a href="classes/Arimac-Sigfox-Model-CertificateUpdate.html"><abbr title="\Arimac\Sigfox\Model\CertificateUpdate">CertificateUpdate</abbr></a>    </span>
-</dt>
-<dd>Getter for productCertificate</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_getPrototype">getPrototype()</a>
-    <span>
-                        &nbsp;: bool    </span>
-</dt>
-<dd>Getter for prototype</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_setActivable">setActivable()</a>
-    <span>
-                        &nbsp;: static    </span>
-</dt>
-<dd>Setter for activable</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_setAutomaticRenewal">setAutomaticRenewal()</a>
-    <span>
-                        &nbsp;: static    </span>
-</dt>
-<dd>Setter for automaticRenewal</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_setLat">setLat()</a>
-    <span>
-                        &nbsp;: static    </span>
-</dt>
-<dd>Setter for lat</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_setLng">setLng()</a>
-    <span>
-                        &nbsp;: static    </span>
-</dt>
-<dd>Setter for lng</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Model-DeviceUpdateJob.html#method_setName">setName()</a>
     <span>
                         &nbsp;: static    </span>
 </dt>
 <dd>Setter for name</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_setProductCertificate">setProductCertificate()</a>
-    <span>
-                        &nbsp;: static    </span>
-</dt>
-<dd>Setter for productCertificate</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_setPrototype">setPrototype()</a>
-    <span>
-                        &nbsp;: static    </span>
-</dt>
-<dd>Setter for prototype</dd>
 
         </dl>
 
@@ -280,134 +212,6 @@
             Properties
             <a href="classes/Arimac-Sigfox-Model-DeviceUpdateJob.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_activable">
-        $activable
-        <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#property_activable" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/SingleDeviceFields.php"><a href="files/src-model-singledevicefields.html"><abbr title="src/Model/SingleDeviceFields.php">SingleDeviceFields.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">15</span>
-</aside>
-
-        <p class="phpdocumentor-summary">true if the device is activable and can take a token. Not used if the device has already a token</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">bool|null</span>
-    <span class="phpdocumentor-signature__name">$activable</span>
-     = <span class="phpdocumentor-signature__default-value">null</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_automaticRenewal">
-        $automaticRenewal
-        <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#property_automaticRenewal" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/SingleDeviceFields.php"><a href="files/src-model-singledevicefields.html"><abbr title="src/Model/SingleDeviceFields.php">SingleDeviceFields.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">21</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Allow token renewal ?</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">bool|null</span>
-    <span class="phpdocumentor-signature__name">$automaticRenewal</span>
-     = <span class="phpdocumentor-signature__default-value">null</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_lat">
-        $lat
-        <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#property_lat" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/SingleDeviceFields.php"><a href="files/src-model-singledevicefields.html"><abbr title="src/Model/SingleDeviceFields.php">SingleDeviceFields.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">27</span>
-</aside>
-
-        <p class="phpdocumentor-summary">The device&#039;s provided latitude</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">float|null</span>
-    <span class="phpdocumentor-signature__name">$lat</span>
-     = <span class="phpdocumentor-signature__default-value">null</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_lng">
-        $lng
-        <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#property_lng" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/SingleDeviceFields.php"><a href="files/src-model-singledevicefields.html"><abbr title="src/Model/SingleDeviceFields.php">SingleDeviceFields.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">33</span>
-</aside>
-
-        <p class="phpdocumentor-summary">The device&#039;s provided longitude</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">float|null</span>
-    <span class="phpdocumentor-signature__name">$lng</span>
-     = <span class="phpdocumentor-signature__default-value">null</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
                     <article
         class="
             phpdocumentor-element
@@ -435,71 +239,8 @@
     <span class="phpdocumentor-signature__name">$name</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
     
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_productCertificate">
-        $productCertificate
-        <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#property_productCertificate" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/SingleDeviceFields.php"><a href="files/src-model-singledevicefields.html"><abbr title="src/Model/SingleDeviceFields.php">SingleDeviceFields.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">37</span>
-</aside>
-
     
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type"><a href="classes/Arimac-Sigfox-Model-CertificateUpdate.html"><abbr title="\Arimac\Sigfox\Model\CertificateUpdate">CertificateUpdate</abbr></a>|null</span>
-    <span class="phpdocumentor-signature__name">$productCertificate</span>
-     = <span class="phpdocumentor-signature__default-value">null</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_prototype">
-        $prototype
-        <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#property_prototype" class="headerlink"><i class="fas fa-link"></i></a>
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/SingleDeviceFields.php"><a href="files/src-model-singledevicefields.html"><abbr title="src/Model/SingleDeviceFields.php">SingleDeviceFields.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">43</span>
-</aside>
-
-        <p class="phpdocumentor-summary">If the device is a prototype or not</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">bool|null</span>
-    <span class="phpdocumentor-signature__name">$prototype</span>
-     = <span class="phpdocumentor-signature__default-value">null</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
     
 
 </article>
@@ -532,8 +273,7 @@
     <span class="phpdocumentor-signature__visibility">public</span>
             <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__name">from</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$params</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -570,148 +310,7 @@ reference for all property names and types</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">static</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getActivable">
-        getActivable()
-        <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_getActivable" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/SingleDeviceFields.php"><a href="files/src-model-singledevicefields.html"><abbr title="src/Model/SingleDeviceFields.php">SingleDeviceFields.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">62</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Getter for activable</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getActivable</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>true if the device is activable and can take a token. Not used if the device has already a token</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getAutomaticRenewal">
-        getAutomaticRenewal()
-        <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_getAutomaticRenewal" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/SingleDeviceFields.php"><a href="files/src-model-singledevicefields.html"><abbr title="src/Model/SingleDeviceFields.php">SingleDeviceFields.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">83</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Getter for automaticRenewal</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getAutomaticRenewal</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>Allow token renewal ?</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getLat">
-        getLat()
-        <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_getLat" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/SingleDeviceFields.php"><a href="files/src-model-singledevicefields.html"><abbr title="src/Model/SingleDeviceFields.php">SingleDeviceFields.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">104</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Getter for lat</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getLat</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">float</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The device's provided latitude</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getLng">
-        getLng()
-        <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_getLng" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/SingleDeviceFields.php"><a href="files/src-model-singledevicefields.html"><abbr title="src/Model/SingleDeviceFields.php">SingleDeviceFields.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">125</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Getter for lng</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getLng</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">float</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>The device's provided longitude</p>
-</section>
-
+        
     
 </article>
                     <article
@@ -736,8 +335,7 @@ reference for all property names and types</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">getName</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
@@ -745,264 +343,6 @@ reference for all property names and types</p>
     <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
             <section class="phpdocumentor-description"><p>The device's name</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getProductCertificate">
-        getProductCertificate()
-        <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_getProductCertificate" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/SingleDeviceFields.php"><a href="files/src-model-singledevicefields.html"><abbr title="src/Model/SingleDeviceFields.php">SingleDeviceFields.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">146</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Getter for productCertificate</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getProductCertificate</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-CertificateUpdate.html"><abbr title="\Arimac\Sigfox\Model\CertificateUpdate">CertificateUpdate</abbr></a></span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-CertificateUpdate.html"><abbr title="\Arimac\Sigfox\Model\CertificateUpdate">CertificateUpdate</abbr></a></span>
-            &mdash;
-            <section class="phpdocumentor-description"></section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_getPrototype">
-        getPrototype()
-        <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_getPrototype" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/SingleDeviceFields.php"><a href="files/src-model-singledevicefields.html"><abbr title="src/Model/SingleDeviceFields.php">SingleDeviceFields.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">167</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Getter for prototype</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getPrototype</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-    
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">bool</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>If the device is a prototype or not</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_setActivable">
-        setActivable()
-        <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_setActivable" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/SingleDeviceFields.php"><a href="files/src-model-singledevicefields.html"><abbr title="src/Model/SingleDeviceFields.php">SingleDeviceFields.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">52</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Setter for activable</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">setActivable</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$activable</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$activable</span>
-                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>true if the device is activable and can take a token. Not used if the device has
-already a token</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">static</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>To use in method chains</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_setAutomaticRenewal">
-        setAutomaticRenewal()
-        <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_setAutomaticRenewal" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/SingleDeviceFields.php"><a href="files/src-model-singledevicefields.html"><abbr title="src/Model/SingleDeviceFields.php">SingleDeviceFields.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">73</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Setter for automaticRenewal</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">setAutomaticRenewal</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$automaticRenewal</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$automaticRenewal</span>
-                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Allow token renewal ?</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">static</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>To use in method chains</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_setLat">
-        setLat()
-        <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_setLat" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/SingleDeviceFields.php"><a href="files/src-model-singledevicefields.html"><abbr title="src/Model/SingleDeviceFields.php">SingleDeviceFields.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">94</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Setter for lat</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">setLat</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lat</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$lat</span>
-                : <span class="phpdocumentor-signature__argument__return-type">float</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The device's provided latitude</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">static</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>To use in method chains</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_setLng">
-        setLng()
-        <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_setLng" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/SingleDeviceFields.php"><a href="files/src-model-singledevicefields.html"><abbr title="src/Model/SingleDeviceFields.php">SingleDeviceFields.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">115</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Setter for lng</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">setLng</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">float&nbsp;</span><span class="phpdocumentor-signature__argument__name">$lng</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$lng</span>
-                : <span class="phpdocumentor-signature__argument__return-type">float</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The device's provided longitude</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">static</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>To use in method chains</p>
 </section>
 
     
@@ -1029,8 +369,7 @@ already a token</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">setName</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -1039,99 +378,6 @@ already a token</p>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The device's name</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">static</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>To use in method chains</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_setProductCertificate">
-        setProductCertificate()
-        <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_setProductCertificate" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/SingleDeviceFields.php"><a href="files/src-model-singledevicefields.html"><abbr title="src/Model/SingleDeviceFields.php">SingleDeviceFields.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">136</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Setter for productCertificate</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">setProductCertificate</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-CertificateUpdate.html"><abbr title="\Arimac\Sigfox\Model\CertificateUpdate">CertificateUpdate</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$productCertificate</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$productCertificate</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-CertificateUpdate.html"><abbr title="\Arimac\Sigfox\Model\CertificateUpdate">CertificateUpdate</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"></section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">static</span>
-            &mdash;
-            <section class="phpdocumentor-description"><p>To use in method chains</p>
-</section>
-
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_setPrototype">
-        setPrototype()
-        <a href="classes/Arimac-Sigfox-Model-SingleDeviceFields.html#method_setPrototype" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Model/SingleDeviceFields.php"><a href="files/src-model-singledevicefields.html"><abbr title="src/Model/SingleDeviceFields.php">SingleDeviceFields.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">157</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Setter for prototype</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">setPrototype</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool&nbsp;</span><span class="phpdocumentor-signature__argument__name">$prototype</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
-
-        <section class="phpdocumentor-description"></section>
-
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$prototype</span>
-                : <span class="phpdocumentor-signature__argument__return-type">bool</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>If the device is a prototype or not</p>
 </section>
 
             </dd>
@@ -1170,5 +416,8 @@ already a token</p>
     <script>
         cssVars({});
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 </body>
 </html>

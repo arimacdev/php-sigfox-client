@@ -8,12 +8,15 @@
     <link rel="icon" href="images/favicon.ico"/>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
-            <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-okaidia.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -48,6 +51,63 @@
     Menu
 </label>
 <aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+            <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header"><a href="guide/index.html">Documentation</a></h2>
+                    <h2 class="phpdocumentor-sidebar__root-package">
+    <a href="guide/getting-started/index.html">Getting started</a>
+</h2>
+
+<ul class="phpdocumentor-list">
+            <li>
+                <a href="guide/getting-started/requirements.html">Requirements</a>
+
+
+        </li>
+            <li>
+                <a href="guide/getting-started/installing.html">Installing</a>
+
+
+        </li>
+            <li>
+                <a href="guide/getting-started/configuration.html">Configuration</a>
+
+
+        </li>
+    </ul>
+
+                    <h2 class="phpdocumentor-sidebar__root-package">
+    <a href="guide/usage/index.html">Usage</a>
+</h2>
+
+<ul class="phpdocumentor-list">
+            <li>
+                <a href="guide/usage/basic.html">Basic Usage</a>
+
+
+        </li>
+            <li>
+                <a href="guide/usage/pagination.html">Paginated Responses</a>
+
+
+        </li>
+            <li>
+                <a href="guide/usage/async.html">Async Responses</a>
+
+
+        </li>
+            <li>
+                <a href="guide/usage/customclients.html">Custom HTTP Clients</a>
+
+
+        </li>
+            <li>
+                <a href="guide/usage/exceptions.html">Exception Handling</a>
+
+
+        </li>
+    </ul>
+
+            </section>
     
     <section class="phpdocumentor-sidebar__category">
         <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
@@ -99,7 +159,6 @@
 
             <p class="phpdocumentor-summary">A helper to handle paginations</p>
 
-    <section class="phpdocumentor-description"></section>
 
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
@@ -153,6 +212,13 @@
                         &nbsp;: <abbr title="\Arimac\Sigfox\Response\Paginated\PaginatedResponse">PaginatedResponse</abbr>    </span>
 </dt>
 <dd>Returning the original response</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html#method_getPage">getPage()</a>
+    <span>
+                        &nbsp;: int    </span>
+</dt>
+<dd>Returning the zero indexed page number</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html#method_items">items()</a>
@@ -215,8 +281,7 @@ storing in the memory.</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -261,6 +326,38 @@ storing in the memory.</p>
             -public
                                                         "
 >
+    <h4 class="phpdocumentor-element__name" id="method_getPage">
+        getPage()
+        <a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html#method_getPage" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Paginated/PaginateResponse.php"><a href="files/src-response-paginated-paginateresponse.html"><abbr title="src/Response/Paginated/PaginateResponse.php">PaginateResponse.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">209</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Returning the zero indexed page number</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">getPage</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+    
+    
+    
+
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type">int</span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
     <h4 class="phpdocumentor-element__name" id="method_items">
         items()
         <a href="classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html#method_items" class="headerlink"><i class="fas fa-link"></i></a>
@@ -295,16 +392,14 @@ automatically when the iterator reached to the end.</p>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                 <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-SigfoxException.html"><abbr title="\Arimac\Sigfox\Exception\SigfoxException">SigfoxException</abbr></a></span>
                                                             
-                                                 <section class="phpdocumentor-description"></section>
-
+                                             
                                     </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Paginated-ItemIterator.html"><abbr title="\Arimac\Sigfox\Response\Paginated\ItemIterator">ItemIterator</abbr></a>&lt;string|int, <abbr title="\Arimac\Sigfox\Response\Paginated\T">T</abbr>&gt;</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -347,16 +442,14 @@ from the api as the iterated item.</p>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                 <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-SigfoxException.html"><abbr title="\Arimac\Sigfox\Exception\SigfoxException">SigfoxException</abbr></a></span>
                                                             
-                                                 <section class="phpdocumentor-description"></section>
-
+                                             
                                     </dd>
                         </dl>
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Response-Paginated-PageIterator.html"><abbr title="\Arimac\Sigfox\Response\Paginated\PageIterator">PageIterator</abbr></a>&lt;string|int, <abbr title="\Arimac\Sigfox\Response\Paginated\T">T</abbr>&gt;</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
             </section>
@@ -382,5 +475,8 @@ from the api as the iterated item.</p>
     <script>
         cssVars({});
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 </body>
 </html>

@@ -8,12 +8,15 @@
     <link rel="icon" href="images/favicon.ico"/>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
-            <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-okaidia.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -48,6 +51,63 @@
     Menu
 </label>
 <aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+            <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header"><a href="guide/index.html">Documentation</a></h2>
+                    <h2 class="phpdocumentor-sidebar__root-package">
+    <a href="guide/getting-started/index.html">Getting started</a>
+</h2>
+
+<ul class="phpdocumentor-list">
+            <li>
+                <a href="guide/getting-started/requirements.html">Requirements</a>
+
+
+        </li>
+            <li>
+                <a href="guide/getting-started/installing.html">Installing</a>
+
+
+        </li>
+            <li>
+                <a href="guide/getting-started/configuration.html">Configuration</a>
+
+
+        </li>
+    </ul>
+
+                    <h2 class="phpdocumentor-sidebar__root-package">
+    <a href="guide/usage/index.html">Usage</a>
+</h2>
+
+<ul class="phpdocumentor-list">
+            <li>
+                <a href="guide/usage/basic.html">Basic Usage</a>
+
+
+        </li>
+            <li>
+                <a href="guide/usage/pagination.html">Paginated Responses</a>
+
+
+        </li>
+            <li>
+                <a href="guide/usage/async.html">Async Responses</a>
+
+
+        </li>
+            <li>
+                <a href="guide/usage/customclients.html">Custom HTTP Clients</a>
+
+
+        </li>
+            <li>
+                <a href="guide/usage/exceptions.html">Exception Handling</a>
+
+
+        </li>
+    </ul>
+
+            </section>
     
     <section class="phpdocumentor-sidebar__category">
         <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
@@ -94,6 +154,7 @@
 </aside>
 
         
+    <section class="phpdocumentor-description"></section>
 
 
 
@@ -169,7 +230,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/ApiUsersId.php"><a href="files/src-repository-apiusersid.html"><abbr title="src/Repository/ApiUsersId.php">ApiUsersId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">106</span>
+    <span class="phpdocumentor-element-found-in__line">114</span>
 </aside>
 
         <p class="phpdocumentor-summary">Delete a given API user.</p>
@@ -178,8 +239,7 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">delete</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
@@ -282,8 +342,7 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -306,15 +365,14 @@
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-ApiUsersIdGet.html"><abbr title="\Arimac\Sigfox\Request\ApiUsersIdGet">ApiUsersIdGet</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-ApiUser.html"><abbr title="\Arimac\Sigfox\Model\ApiUser">ApiUser</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-ApiUsersIdGet.html"><abbr title="\Arimac\Sigfox\Request\ApiUsersIdGet">ApiUsersIdGet</abbr></a>|array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-ApiUser.html"><abbr title="\Arimac\Sigfox\Model\ApiUser">ApiUser</abbr></a></span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-ApiUsersIdGet.html"><abbr title="\Arimac\Sigfox\Request\ApiUsersIdGet">ApiUsersIdGet</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-ApiUsersIdGet.html"><abbr title="\Arimac\Sigfox\Request\ApiUsersIdGet">ApiUsersIdGet</abbr></a>|array&lt;string|int, mixed&gt;|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The query and body parameters to pass</p>
@@ -434,8 +492,7 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-ApiUser.html"><abbr title="\Arimac\Sigfox\Model\ApiUser">ApiUser</abbr></a></span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -451,7 +508,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/ApiUsersId.php"><a href="files/src-repository-apiusersid.html"><abbr title="src/Repository/ApiUsersId.php">ApiUsersId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">113</span>
+    <span class="phpdocumentor-element-found-in__line">121</span>
 </aside>
 
     
@@ -459,16 +516,14 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">profiles</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Repository-ApiUsersIdProfiles.html"><abbr title="\Arimac\Sigfox\Repository\ApiUsersIdProfiles">ApiUsersIdProfiles</abbr></a></span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Repository-ApiUsersIdProfiles.html"><abbr title="\Arimac\Sigfox\Repository\ApiUsersIdProfiles">ApiUsersIdProfiles</abbr></a></span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -484,7 +539,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/ApiUsersId.php"><a href="files/src-repository-apiusersid.html"><abbr title="src/Repository/ApiUsersId.php">ApiUsersId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">141</span>
 </aside>
 
         <p class="phpdocumentor-summary">Generate a new password for a given API user.</p>
@@ -493,8 +548,7 @@
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">renewCredential</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
@@ -625,22 +679,21 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/ApiUsersId.php"><a href="files/src-repository-apiusersid.html"><abbr title="src/Repository/ApiUsersId.php">ApiUsersId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">87</span>
+    <span class="phpdocumentor-element-found-in__line">91</span>
 </aside>
 
         <p class="phpdocumentor-summary">Update information about a given API user.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-ApiUserEdition.html"><abbr title="\Arimac\Sigfox\Model\ApiUserEdition">ApiUserEdition</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$apiUser</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-ApiUserEdition.html"><abbr title="\Arimac\Sigfox\Model\ApiUserEdition">ApiUserEdition</abbr></a>|array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$apiUser</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$apiUser</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-ApiUserEdition.html"><abbr title="\Arimac\Sigfox\Model\ApiUserEdition">ApiUserEdition</abbr></a>|null</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-ApiUserEdition.html"><abbr title="\Arimac\Sigfox\Model\ApiUserEdition">ApiUserEdition</abbr></a>|array&lt;string|int, mixed&gt;|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The information to update</p>
@@ -750,8 +803,7 @@
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
             </section>
@@ -777,5 +829,8 @@
     <script>
         cssVars({});
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 </body>
 </html>

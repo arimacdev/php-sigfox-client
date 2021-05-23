@@ -8,12 +8,15 @@
     <link rel="icon" href="images/favicon.ico"/>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
-            <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+            <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600;700&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="css/template.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0=" crossorigin="anonymous" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/themes/prism-okaidia.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.css">
                 <script src="https://cdn.jsdelivr.net/npm/fuse.js@3.4.6"></script>
         <script src="https://cdn.jsdelivr.net/npm/css-vars-ponyfill@2"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/js/all.min.js" integrity="sha256-0vuk8LXoyrmCjp1f0O300qo1M75ZQyhH9X3J6d+scmk=" crossorigin="anonymous"></script>
         <script src="js/search.js"></script>
         <script defer src="js/searchIndex.js"></script>
     </head>
@@ -48,6 +51,63 @@
     Menu
 </label>
 <aside class="phpdocumentor-column -four phpdocumentor-sidebar">
+            <section class="phpdocumentor-sidebar__category">
+        <h2 class="phpdocumentor-sidebar__category-header"><a href="guide/index.html">Documentation</a></h2>
+                    <h2 class="phpdocumentor-sidebar__root-package">
+    <a href="guide/getting-started/index.html">Getting started</a>
+</h2>
+
+<ul class="phpdocumentor-list">
+            <li>
+                <a href="guide/getting-started/requirements.html">Requirements</a>
+
+
+        </li>
+            <li>
+                <a href="guide/getting-started/installing.html">Installing</a>
+
+
+        </li>
+            <li>
+                <a href="guide/getting-started/configuration.html">Configuration</a>
+
+
+        </li>
+    </ul>
+
+                    <h2 class="phpdocumentor-sidebar__root-package">
+    <a href="guide/usage/index.html">Usage</a>
+</h2>
+
+<ul class="phpdocumentor-list">
+            <li>
+                <a href="guide/usage/basic.html">Basic Usage</a>
+
+
+        </li>
+            <li>
+                <a href="guide/usage/pagination.html">Paginated Responses</a>
+
+
+        </li>
+            <li>
+                <a href="guide/usage/async.html">Async Responses</a>
+
+
+        </li>
+            <li>
+                <a href="guide/usage/customclients.html">Custom HTTP Clients</a>
+
+
+        </li>
+            <li>
+                <a href="guide/usage/exceptions.html">Exception Handling</a>
+
+
+        </li>
+    </ul>
+
+            </section>
     
     <section class="phpdocumentor-sidebar__category">
         <h2 class="phpdocumentor-sidebar__category-header">Namespaces</h2>
@@ -94,6 +154,7 @@
 </aside>
 
         
+    <section class="phpdocumentor-description"></section>
 
 
 
@@ -173,25 +234,25 @@ more relevant than SNR in Sigfox network.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacksCallbackId.php"><a href="files/src-repository-devicetypesidcallbackscallbackid.html"><abbr title="src/Repository/DeviceTypesIdCallbacksCallbackId.php">DeviceTypesIdCallbacksCallbackId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">155</span>
+    <span class="phpdocumentor-element-found-in__line">160</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve the last device message error associated with this callback.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">callbacksNotDelivered</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered">DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-ErrorMessages.html"><abbr title="\Arimac\Sigfox\Model\ErrorMessages">ErrorMessages</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">callbacksNotDelivered</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered">DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered</abbr></a>|array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-ErrorMessages.html"><abbr title="\Arimac\Sigfox\Model\ErrorMessages">ErrorMessages</abbr></a></span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered">DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered</abbr></a></span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered.html"><abbr title="\Arimac\Sigfox\Request\DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered">DeviceTypesIdCallbacksCallbackIdCallbacksNotDelivered</abbr></a>|array&lt;string|int, mixed&gt;|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The query and body parameters to pass</p>
+                    <section class="phpdocumentor-description"><p>The query and body parameters
+to pass</p>
 </section>
 
             </dd>
@@ -308,8 +369,7 @@ more relevant than SNR in Sigfox network.</dd>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model-ErrorMessages.html"><abbr title="\Arimac\Sigfox\Model\ErrorMessages">ErrorMessages</abbr></a></span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -325,7 +385,7 @@ more relevant than SNR in Sigfox network.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacksCallbackId.php"><a href="files/src-repository-devicetypesidcallbackscallbackid.html"><abbr title="src/Repository/DeviceTypesIdCallbacksCallbackId.php">DeviceTypesIdCallbacksCallbackId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">94</span>
+    <span class="phpdocumentor-element-found-in__line">98</span>
 </aside>
 
         <p class="phpdocumentor-summary">Delete a callback for a given device type.</p>
@@ -334,8 +394,7 @@ more relevant than SNR in Sigfox network.</dd>
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">delete</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
@@ -438,8 +497,7 @@ more relevant than SNR in Sigfox network.</dd>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -455,7 +513,7 @@ more relevant than SNR in Sigfox network.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacksCallbackId.php"><a href="files/src-repository-devicetypesidcallbackscallbackid.html"><abbr title="src/Repository/DeviceTypesIdCallbacksCallbackId.php">DeviceTypesIdCallbacksCallbackId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">113</span>
+    <span class="phpdocumentor-element-found-in__line">117</span>
 </aside>
 
         <p class="phpdocumentor-summary">Enable or disable a callback for a given device type.</p>
@@ -464,8 +522,7 @@ more relevant than SNR in Sigfox network.</dd>
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">enable</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">bool|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$enabled</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
@@ -580,8 +637,7 @@ more relevant than SNR in Sigfox network.</dd>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -597,7 +653,7 @@ more relevant than SNR in Sigfox network.</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DeviceTypesIdCallbacksCallbackId.php"><a href="files/src-repository-devicetypesidcallbackscallbackid.html"><abbr title="src/Repository/DeviceTypesIdCallbacksCallbackId.php">DeviceTypesIdCallbacksCallbackId.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">133</span>
+    <span class="phpdocumentor-element-found-in__line">137</span>
 </aside>
 
         <p class="phpdocumentor-summary">Selects a downlink callback for a device type. The callback will be selected as the downlink one, the one that
@@ -607,8 +663,7 @@ was previously selected will no longer be used for downlink.</p>
     <span class="phpdocumentor-signature__visibility">public</span>
                 <span class="phpdocumentor-signature__name">setDownlink</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
     
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
@@ -711,8 +766,7 @@ was previously selected will no longer be used for downlink.</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
                     <article
@@ -738,15 +792,14 @@ more relevant than SNR in Sigfox network.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-UpdateCallback.html"><abbr title="\Arimac\Sigfox\Model\UpdateCallback">UpdateCallback</abbr></a>|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$callback</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                <span class="phpdocumentor-signature__name">update</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-UpdateCallback.html"><abbr title="\Arimac\Sigfox\Model\UpdateCallback">UpdateCallback</abbr></a>|array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$callback</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
-        <section class="phpdocumentor-description"></section>
-
+    
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$callback</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-UpdateCallback.html"><abbr title="\Arimac\Sigfox\Model\UpdateCallback">UpdateCallback</abbr></a>|null</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-UpdateCallback.html"><abbr title="\Arimac\Sigfox\Model\UpdateCallback">UpdateCallback</abbr></a>|array&lt;string|int, mixed&gt;|null</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The callback to update</p>
@@ -856,8 +909,7 @@ more relevant than SNR in Sigfox network.</p>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
     <span class="phpdocumentor-signature__response_type">void</span>
             &mdash;
-            <section class="phpdocumentor-description"></section>
-
+        
     
 </article>
             </section>
@@ -883,5 +935,8 @@ more relevant than SNR in Sigfox network.</p>
     <script>
         cssVars({});
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/prism.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
 </body>
 </html>

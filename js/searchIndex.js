@@ -21961,6 +21961,11 @@ Search.appendIndex(
             "summary": "Iterate\u0020over\u0020items",
             "url": "classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html#method_items"
         },                {
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Paginated\\PaginateResponse\u003A\u003AgetPage\u0028\u0029",
+            "name": "getPage",
+            "summary": "Returning\u0020the\u0020zero\u0020indexed\u0020page\u0020number",
+            "url": "classes/Arimac-Sigfox-Response-Paginated-PaginateResponse.html#method_getPage"
+        },                {
             "fqsen": "\\Arimac\\Sigfox\\Sigfox",
             "name": "Sigfox",
             "summary": "Client\u0020for\u0020sigfox\u0020API",
