@@ -1,12 +1,11 @@
 <p align="center">
 	<a href="https://github.com/arimacdev/php-sigfox-client">
-			<img src="./resources/sigfox-logo.png" />
+			<img width="160px" src="./resources/sigfox-logo.png" />
 	</a>
 </p>
 
 # PHP Sigfox Client
 
----
 <p align="center">
 	<a href="https://opensource.org/licenses/MIT">
     <img 
@@ -33,7 +32,9 @@
 A high level, up-to-date client library to access Sigfox APIs. This
 client library covered all the operations.
 
-[Documentation](https://arimacdev.github.io/php-sigfox-client)
+- [Documentation](https://arimacdev.github.io/php-sigfox-client)
+- [CHANGELOG](https://github.com/arimacdev/php-sigfox-client/blob/main/CHANGELOG.md)
+- [Contribution Guide](https://github.com/arimacdev/php-sigfox-client/blob/main/CONTRIBUTING.md)
 
 
 ## Installation
@@ -47,7 +48,7 @@ You do not want to install it.
 
 ## Usage
 
-See the documentation to view a detailed description. This is some code
+See the documentation for a detailed description. This is some code
 snippets for you to get an idea about this library.
 
 - Initializing the client
@@ -100,3 +101,32 @@ $sigfox->devices()->find("AF01F")->delete();
 - Requests validation over validation rules in the API documentation.
 - A developer friendly helper to handle pagination requests
 - A developer friendly helper to handle async requests
+
+## Versioning
+
+The initial version code is the `2.0.0`. The first number (`2`) belongs 
+to the version number of the Sigfox API. Second number is changing with 
+major versions. And the third number is changing with the minor
+versions.
+
+## Issues and Feature requests
+
+Do not hesitate to report if you faced any issue or a bug while using 
+this library. We are little bit busy, but happy to help you.
+
+We have added just a few basic features to this library to solve only 
+the most frequently encountered tasks. If you have an idea about a new
+feature, feel free to let us know in the [issues](https://github.com/arimacdev/php-sigfox-client/issues)
+section.
+
+## Contributing
+
+If you like to contribute and you do not have an idea about where to
+contribute, go to the [issues](https://github.com/arimacdev/php-sigfox-client/issues)
+section and try to pick one.
+
+Read the [Contribution
+Guide](https://github.com/arimacdev/php-sigfox-client/blob/main/CONTRIBUTING.md)
+if you new to contribute. And open a PR to the `master` branch with your
+contribution. Make sure all contributions are backward compatibility.
+Because we are not frequently releasing major versions of this library.
