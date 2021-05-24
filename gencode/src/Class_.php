@@ -71,23 +71,15 @@ class Class_
     public function useType(string $type): string
     {
         $isArray = substr($type, strlen($type) - 2) === "[]";
-        $isGeneric = substr($type, strlen($type) - 1) === ">";
-        // has a namespace
+        // Check the weather the given type is an array
         if ($isArray) {
+            // Add a use statement for the item type
             $itemType = substr($type, 0, strlen($type) - 2);
             $itemType = $this->useType($itemType);
             
             return $itemType."[]";
-        } else if ($isGeneric) {
-            $slices = explode("<", $type, 2);
-            $parentType = $slices[0];
-            $childType = substr($slices[1], 0, strlen($slices[1]) - 1);
-
-            $parentType = $this->useType($parentType);
-            $childType = $this->useType($childType);
-
-            return "$parentType<$childType>";
         } else {
+            // Checking the namespace of the type
             $slices = explode("\\", $type);
             if (count($slices) > 1) {
                 $className = array_pop($slices);

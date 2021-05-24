@@ -78,7 +78,7 @@ class Request extends Model
                     $usedType = $defClass->useType($type);
                     $phpType = Helper::toPHPValue($usedType);
 
-                    $validation = self::getValidations($property);
+                    $validation = self::resolveValidations($property);
                     if (substr($type, 0, 14) === "Arimac\\Sigfox\\") {
                         if ($phpType === "array") {
                             $validation[] = ["child-set"];

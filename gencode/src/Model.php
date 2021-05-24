@@ -31,10 +31,17 @@ class Model extends Class_
         }
     }
 
+    /**
+     * Converting types to serialize meta data
+     *
+     * @example
+     * ```
+     * new ArraySerializer(new ClassSerializer())
+     * ```
+     */
     protected function toSerialize(string $type)
     {
         $isArray = substr($type, strlen($type) - 2) === "[]";
-        $isGeneric = substr($type, strlen($type) - 1) === ">";
         // has a namespace
         if ($isArray) {
             $itemType = substr($type, 0, strlen($type) - 2);
@@ -47,24 +54,7 @@ class Model extends Class_
                     $itemType
                 ]
             );
-        } else if ($isGeneric) {
-            $slices = explode("<", $type, 2);
-            $parentType = $slices[0];
-            $childType = substr($slices[1], 0, strlen($slices[1]) - 1);
-
-            $parentType = $this->useType($parentType);
-            $parentType = $this->factory->classConstFetch($parentType, "class");
-            $childType = $this->toSerialize($childType);
-
-            $this->useType("Arimac\\Sigfox\\Serializer\\GenericSerializer");
-            return $this->factory->new(
-                "GenericSerializer",
-                [
-                    $parentType,
-                    $childType
-                ]
-            );
-        } else {
+        }  else {
             $slices = explode("\\", $type);
             if (count($slices) > 1) {
                 $className = $this->useType($type);
@@ -90,6 +80,16 @@ class Model extends Class_
         }
     }
 
+    /**
+     * Adding an extended array property to the model
+     *
+     * Extended array properties:-
+     * This is a method to store an array value in the class.
+     * But it must not be override after extended to another
+     * class. The array of the parent
+     * class is concatanating to the child class array.
+     *
+     */
     protected function addExtendedArrayPropertyMethod(
         array $items,
         array $extends,
@@ -273,7 +273,10 @@ class Model extends Class_
         parent::addProperty($name, $type, $docComment, $this->factory->val($value), $nullable);
     }
 
-    protected static function getValidations(array $definition, $required = false): array
+    /**
+     * Resolving validation rules from a schema object
+     */
+    protected static function resolveValidations(array $definition, $required = false): array
     {
         $validations = [];
         if ((isset($definition["required"]) && $definition["required"]) || $required) {
@@ -395,7 +398,7 @@ class Model extends Class_
             $usedType = $defClass->useType($type);
             $phpType = Helper::toPHPValue($usedType);
 
-            $validation = self::getValidations($property, $required ? in_array($propertyName, $required) : false);
+            $validation = self::resolveValidations($property, $required ? in_array($propertyName, $required) : false);
             if (substr($type, 0, 14) === "Arimac\\Sigfox\\") {
                 if ($phpType === "array") {
                     $validation[] = ["child-set"];

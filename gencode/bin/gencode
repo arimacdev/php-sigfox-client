@@ -18,20 +18,23 @@ $dir = dirname(__DIR__);
 
 require_once $dir . "/vendor/autoload.php";
 
+// Getting openapi file from the spec
+// Downloading from the internet if not exists
 $openapiFileLocation = $dir . "/config/openapi.json";
 $openapiUrl = "https://support.sigfox.com/api/apidocs";
 if (!file_exists($openapiFileLocation)) {
     file_put_contents($openapiFileLocation, fopen($openapiUrl, 'r'));
 }
+$openapi = json_decode(file_get_contents($openapiFileLocation), true);
 
+// Removing all auto generating files and directories recursively
 Helper::rrmdir($dir . "/../src/Model");
-Helper::rrmdir($dir."/../src/Repository");
-Helper::rrmdir($dir."/../src/Request");
-Helper::rrmdir($dir."/../src/Response/Generated");
-@unlink($dir."/../src/Sigfox.php");
+Helper::rrmdir($dir . "/../src/Repository");
+Helper::rrmdir($dir . "/../src/Request");
+Helper::rrmdir($dir . "/../src/Response/Generated");
+@unlink($dir . "/../src/Sigfox.php");
 
-$openapi = json_decode( file_get_contents($openapiFileLocation) , true);
-
+// Initializing all configuration files
 EnumFields::initialize();
 RewriteRules::initialize();
 MethodNames::initialize();
@@ -39,38 +42,36 @@ ForceTraits::initialize();
 TypeAlias::initialize();
 HttpErrors::initialize();
 
+// Creating models for each predefined schema objects
 foreach ($openapi["definitions"] as $key => $definition) {
     $name = ucfirst($key);
     $defClass = Model::fromArray("Arimac\\Sigfox\\Model\\$name", $definition);
 }
 
-foreach ($openapi["paths"] as $endpoint => $operations){
-    $rewrite = RewriteRules::rewrite($endpoint);
-    foreach($operations as $method=> $operation){
-        if($method!=="parameters"){
-            $methodName = MethodNames::getMethodName($endpoint, $method, $operation["description"]);
-        }
-    }
-}
-
+// Storing all repositories to use when we need
 /** @var Repository[] **/
-
 $repositories = [];
 
+// Creating the sigfox class
 $client = new Client("Arimac\\Sigfox", "Sigfox", Helper::normalizeDocComment("Client for sigfox API"));
 $client->extend("Arimac\\Sigfox\\SigfoxExt");
-$client->setBaseUrl($openapi["schemes"][0]."://".$openapi["host"].$openapi["basePath"]."/");
+$client->setBaseUrl($openapi["schemes"][0] . "://" . $openapi["host"] . $openapi["basePath"] . "/");
 
 foreach ($openapi["paths"] as $endpoint => $path) {
     $rewrite = RewriteRules::rewrite($endpoint);
     $slices = explode("/", $rewrite);
     $repoName = "";
+
     $requestMethods = array_keys($path);
-    $requestMethods = array_filter($requestMethods, function($method){
-        return $method!="parameters"; 
+    $requestMethods = array_filter($requestMethods, function ($method) {
+        // There is a property named `parameters` in the path object.
+        // So we are skipping it and filter only HTTP methods
+        return $method != "parameters";
     });
+
+    // Storing path parameter details to use in future
     $operation = $path[$requestMethods[0]];
-    $params = isset($operation["parameters"])? $operation["parameters"]: [];
+    $params = isset($operation["parameters"]) ? $operation["parameters"] : [];
     $pathParams = [];
     foreach ($params as $param) {
         if ($param["in"] === "path") {
@@ -83,55 +84,81 @@ foreach ($openapi["paths"] as $endpoint => $path) {
         }
     }
 
-    foreach ($slices as $key=> $slice) {
+    // Split the path into slices and creating repositories for each slice
+    foreach ($slices as $key => $slice) {
+        // Skipping the first empty slice and last optional empty slice
         if ($slice !== "") {
             $repoNameSlice = "";
             $parameter = false;
+            // If the slice is a path parameter tirm curly braces and converting the
+            // text in to camel case
             if (substr($slice, 0, 1) === "{") {
                 $parameter = true;
                 $repoNameSlice = Helper::dashToCamel(substr($slice, 1, strlen($slice) - 2));
             } else {
                 $repoNameSlice = Helper::dashToCamel($slice);
             }
-            if($key===1){
+            // Adding the slice as a method to `Sigfox` class if the slice is first slice
+            // Duplications are handling in the `addRepositoryMethod` method.
+            // $sigfox->devices()
+            if ($key === 1) {
                 $client->addRepositoryMethod(lcfirst($repoNameSlice), "Arimac\\Sigfox\\Repository\\$repoNameSlice");
             }
+            // Shifting the values and concat the slice into previous slices
             $previousRepoName = $repoName;
             $repoName .= $repoNameSlice;
 
+            // Check the weather a repository was already created with this name
             if (!isset($repositories[$repoName])) {
+                // Creating a new repository class if there is not
                 $repository = new Repository("Arimac\\Sigfox\\Repository", $repoName);
+                // Resolving the previous repository and fetching all
+                // the path parameters that set in this repository.
+                // To use in __construct method
                 /** @var Repository **/
                 $prevRepository = $repositories[$previousRepoName] ?? null;
-                $repositories[$repoName] = $repository;
-
                 $properties = $prevRepository ? $prevRepository->getProperties() : [];
 
+                // Adding it to the repositories storage
+                $repositories[$repoName] = $repository;
+
+                // Checking if the current slice is a path parameter
                 if ($parameter) {
                     $paramName = lcfirst($repoNameSlice);
+                    // Fetching the path parameter details from previously defined array
                     $type = $pathParams[$paramName]["type"];
                     $description = $pathParams[$paramName]["description"];
 
+                    // Adding the current path parameter to the constructor parameters
                     $properties[] = [$paramName, $type, $description];
+                    // Adding a find method with the current path parameter to
+                    // the previous repository
+                    // ->find("A123F")
                     $prevRepository->addFindMethod(
                         $paramName,
                         $type,
                         "Arimac\\Sigfox\\Repository\\$repoName",
                         Helper::normalizeDocComment(
-                            "Find by $paramName", 
+                            "Find by $paramName",
                             [
                                 ["param", "$type", "\$$paramName", $description],
-                                ["return","$repoName", null ]
+                                ["return", "$repoName", null]
                             ]
                         )
                     );
                 } else if ($prevRepository) {
+                    // Adding a normal repository method if it is not a path parameter
+                    // ->messages()
                     $methodName = lcfirst($repoNameSlice);
-                    $prevRepository->addRepositoryMethod($methodName,"Arimac\\Sigfox\\Repository\\". $repoName);
-                }
+                    $prevRepository->addRepositoryMethod($methodName, "Arimac\\Sigfox\\Repository\\" . $repoName);
+                } 
 
-                    $repository->addConstructor($properties);
+                // Adding a constructor to the current repository
+                // with path parameters of previous repositories
+                $repository->addConstructor($properties);
             } else {
+                // Nothing happened. But passing the current repository
+                // to the next iteration
                 $repository = $repositories[$repoName];
             }
         }
@@ -142,48 +169,57 @@ foreach ($openapi["paths"] as $endpoint => $path) {
         $methodName = MethodNames::getMethodName($endpoint, $requestMethod, $description);
 
         $requestClassName = $repoName . ucfirst($methodName);
-       
+
         $operation = $path[$requestMethod];
 
-        $responseModel=null;
+        $responseModel = null;
+        // We consider the response type is nullable if the operation is expecting 204 and <204 together
+        // as the response code.
         $responseTypeNullable = false;
         $expectedErrors = [];
-        foreach($operation["responses"] as $statusCode => $response){
-            if($statusCode<204&&$statusCode>=200){
-                if(isset($response["schema"])){
-                    $responseClassName = $requestClassName."Response";
-                    $responseModel = Response::fromArray("Arimac\\Sigfox\\Response\\Generated\\$responseClassName",$response["schema"]);
+        foreach ($operation["responses"] as $statusCode => $response) {
+            // 201-203 = Expecting a response
+            if ($statusCode < 204 && $statusCode >= 200) {
+                if (isset($response["schema"])) {
+                    $responseClassName = $requestClassName . "Response";
+                    $responseModel = Response::fromArray("Arimac\\Sigfox\\Response\\Generated\\$responseClassName", $response["schema"]);
                 }
             }
-            if($statusCode==204){
-                $responseTypeNullable = true;    
+            // 204 = No content
+            if ($statusCode == 204) {
+                $responseTypeNullable = true;
             }
-            if($statusCode>=400){
+            if ($statusCode >= 400) {
                 $expectedErrors[(int)$statusCode] = HttpErrors::getError((string) $statusCode);
             }
         }
 
         $requestModel = Request::fromArray("Arimac\\Sigfox\\Request\\$requestClassName", $operation);
 
+        // Adding a request method to the current repository
+        // ->update(["deviceTypeId"=>"ACB123"]);
         $repository->addRequestMethod(
-            $methodName, 
-            $requestMethod, 
-            $endpoint, 
-            $responseModel, 
+            $methodName,
+            $requestMethod,
+            $endpoint,
+            $responseModel,
             $responseTypeNullable,
-            $requestModel, 
+            $requestModel,
             $expectedErrors,
             $description
         );
     }
 }
 
+// Saving the Sigfox class
 $client->save();
 
+// Saving each repository
 foreach ($repositories as $repoName => $repo) {
     $repo->save();
 }
 
+// Save all modified configuration files
 EnumFields::save();
 RewriteRules::save();
 MethodNames::save();

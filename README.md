@@ -97,6 +97,7 @@ $sigfox->devices()->find("AF01F")->delete();
 
 ## Features
 
+- All operations implemented
 - Ability to use user defined HTTP clients.
 - Requests validation over validation rules in the API documentation.
 - A developer friendly helper to handle pagination requests
