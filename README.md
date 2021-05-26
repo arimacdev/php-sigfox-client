@@ -25,6 +25,12 @@
       alt="Packagist:Version"
     />
   </a>
+	<a href="https://github.com/arimacdev/php-sigfox-client/actions">
+    <img
+      src="https://github.com/arimacdev/php-sigfox-client/actions/workflows/main.yml/badge.svg"
+      alt="Actions:Main"
+    />
+  </a>
 </p>
 
 ---
