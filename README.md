@@ -35,6 +35,7 @@ client library covered all the operations.
 - [Documentation](https://arimacdev.github.io/php-sigfox-client)
 - [CHANGELOG](https://github.com/arimacdev/php-sigfox-client/blob/main/CHANGELOG.md)
 - [Contribution Guide](https://github.com/arimacdev/php-sigfox-client/blob/main/CONTRIBUTING.md)
+- [Examples](https://github.com/arimacdev/php-sigfox-client/tree/main/examples)
 
 
 ## Installation
