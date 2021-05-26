@@ -16,7 +16,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  build:
+  check:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -30,3 +30,18 @@ jobs:
           # Setup PHP version.
           php-version: 7.2
           tools: phpunit, psalm, composer
+      - name: Install dependencies
+        run: |
+          composer install
+          composer install --working-dir ./gencode
+          composer require guzzlehttp/guzzle
+      - name: Code generation
+        run: |
+          ./gencode/bin/gencode
+          git status
+      - name: Unit testing
+        run: phpunit --testdox
+      - name: Code analyze
+        run: psalm --show-info=true
+      
+        
