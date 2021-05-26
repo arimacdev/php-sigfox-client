@@ -1,0 +1,12 @@
+.gitattributes         export-ignore
+/.github/              export-ignore
+.gitignore             export-ignore
+/docs/                 export-ignore
+/Makefile              export-ignore
+/phpunit.xml.dist      export-ignore
+/psalm.xml             export-ignore
+/phpdoc.xml            export-ignore
+/tests/                export-ignore
+/gencode/              export-ignore
+/examples/             export-ignore
+/resources/            export-ignore
