@@ -105,6 +105,11 @@
 
 
         </li>
+            <li>
+                <a href="guide/usage/filedownloads.html">File Downloads</a>
+
+
+        </li>
     </ul>
 
             </section>
@@ -175,13 +180,6 @@
                         &nbsp;: <a href="classes/Arimac-Sigfox-Response-Async-AsyncResponse.html"><abbr title="\Arimac\Sigfox\Response\Async\AsyncResponse">AsyncResponse</abbr></a>&lt;<a href="classes/Arimac-Sigfox-Response-Generated-DevicesBulkCreateResponse.html"><abbr title="\Arimac\Sigfox\Response\Generated\DevicesBulkCreateResponse">DevicesBulkCreateResponse</abbr></a>, <a href="classes/Arimac-Sigfox-Model-RegistrationJobStatus.html"><abbr title="\Arimac\Sigfox\Model\RegistrationJobStatus">RegistrationJobStatus</abbr></a>&gt;    </span>
 </dt>
 <dd>Create multiple new devices with asynchronous job</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_find">find()</a>
-    <span>
-                        &nbsp;: <a href="classes/Arimac-Sigfox-Repository-DevicesBulkJobId.html"><abbr title="\Arimac\Sigfox\Repository\DevicesBulkJobId">DevicesBulkJobId</abbr></a>    </span>
-</dt>
-<dd>Find by jobId</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_replace">replace()</a>
@@ -401,50 +399,6 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_find">
-        find()
-        <a href="classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_find" class="headerlink"><i class="fas fa-link"></i></a>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">139</span>
-</aside>
-
-        <p class="phpdocumentor-summary">Find by jobId</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">find</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$jobId</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Repository-DevicesBulkJobId.html"><abbr title="\Arimac\Sigfox\Repository\DevicesBulkJobId">DevicesBulkJobId</abbr></a></span></code>
-
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$jobId</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>The job identifier (hexadecimal format)</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Repository-DevicesBulkJobId.html"><abbr title="\Arimac\Sigfox\Repository\DevicesBulkJobId">DevicesBulkJobId</abbr></a></span>
-            &mdash;
-        
-    
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
     <h4 class="phpdocumentor-element__name" id="method_replace">
         replace()
         <a href="classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_replace" class="headerlink"><i class="fas fa-link"></i></a>
@@ -452,7 +406,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">195</span>
+    <span class="phpdocumentor-element-found-in__line">184</span>
 </aside>
 
         <p class="phpdocumentor-summary">Replace multiple devices (moving tokens from one device to another) with synchronous job</p>
@@ -602,7 +556,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">223</span>
+    <span class="phpdocumentor-element-found-in__line">212</span>
 </aside>
 
         <p class="phpdocumentor-summary">Restart multiple devices with asynchronous job.</p>
@@ -752,7 +706,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">287</span>
+    <span class="phpdocumentor-element-found-in__line">276</span>
 </aside>
 
         <p class="phpdocumentor-summary">Resume multiple devices with asynchronous job.</p>
@@ -902,7 +856,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">255</span>
+    <span class="phpdocumentor-element-found-in__line">244</span>
 </aside>
 
         <p class="phpdocumentor-summary">Suspend multiple devices with asynchronous job</p>
@@ -1052,7 +1006,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">161</span>
+    <span class="phpdocumentor-element-found-in__line">150</span>
 </aside>
 
         <p class="phpdocumentor-summary">Transfer multiple devices to another device type with asynchronous job</p>
@@ -1202,7 +1156,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/DevicesBulk.php"><a href="files/src-repository-devicesbulk.html"><abbr title="src/Repository/DevicesBulk.php">DevicesBulk.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">319</span>
+    <span class="phpdocumentor-element-found-in__line">308</span>
 </aside>
 
         <p class="phpdocumentor-summary">Unsubscribe multiple devices with asynchronous job.</p>

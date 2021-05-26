@@ -17921,6 +17921,11 @@ Search.appendIndex(
             "summary": "Initializing\u0020a\u0020model\u0020from\u0020an\u0020array",
             "url": "classes/Arimac-Sigfox-Model.html#method_from"
         },                {
+            "fqsen": "\\Arimac\\Sigfox\\Model\u003A\u003AjsonSerialize\u0028\u0029",
+            "name": "jsonSerialize",
+            "summary": "",
+            "url": "classes/Arimac-Sigfox-Model.html#method_jsonSerialize"
+        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ApiUsers",
             "name": "ApiUsers",
             "summary": "",
@@ -18011,26 +18016,6 @@ Search.appendIndex(
             "summary": "Find\u0020by\u0020id",
             "url": "classes/Arimac-Sigfox-Repository-ContractInfos.html#method_find"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulk",
-            "name": "ContractInfosBulk",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulk.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulkRestart",
-            "name": "ContractInfosBulkRestart",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulkRestart.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulkRestart\u003A\u003Afind\u0028\u0029",
-            "name": "find",
-            "summary": "Find\u0020by\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulkRestart.html#method_find"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulkRestartJobId",
-            "name": "ContractInfosBulkRestartJobId",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulkRestartJobId.html"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosId",
             "name": "ContractInfosId",
             "summary": "",
@@ -18096,21 +18081,6 @@ Search.appendIndex(
             "summary": "Starting\u0020the\u0020computation\u0020of\u0020the\u0020coverage\u0020margins\u0020for\u0020multiple\u0020points,\u0020for\u0020each\u0020redundancy\u0020level.",
             "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictions.html#method_calculateBulk"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobalPredictionsBulk",
-            "name": "CoveragesGlobalPredictionsBulk",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictionsBulk.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobalPredictionsBulk\u003A\u003Afind\u0028\u0029",
-            "name": "find",
-            "summary": "Find\u0020by\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictionsBulk.html#method_find"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobalPredictionsBulkJobId",
-            "name": "CoveragesGlobalPredictionsBulkJobId",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictionsBulkJobId.html"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\Devices",
             "name": "Devices",
             "summary": "",
@@ -18151,11 +18121,6 @@ Search.appendIndex(
             "summary": "Update\u0020or\u0020edit\u0020multiple\u0020devices\u0020with\u0020asynchronous\u0020job.",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_update"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulk\u003A\u003Afind\u0028\u0029",
-            "name": "find",
-            "summary": "Find\u0020by\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_find"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulk\u003A\u003Atransfer\u0028\u0029",
             "name": "transfer",
             "summary": "Transfer\u0020multiple\u0020devices\u0020to\u0020another\u0020device\u0020type\u0020with\u0020asynchronous\u0020job",
@@ -18185,71 +18150,6 @@ Search.appendIndex(
             "name": "unsubscribe",
             "summary": "Unsubscribe\u0020multiple\u0020devices\u0020with\u0020asynchronous\u0020job.",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_unsubscribe"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkJobId",
-            "name": "DevicesBulkJobId",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkRestart",
-            "name": "DevicesBulkRestart",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkRestart.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkRestart\u003A\u003Afind\u0028\u0029",
-            "name": "find",
-            "summary": "Find\u0020by\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkRestart.html#method_find"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkRestartJobId",
-            "name": "DevicesBulkRestartJobId",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkRestartJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkResume",
-            "name": "DevicesBulkResume",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkResume.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkResume\u003A\u003Afind\u0028\u0029",
-            "name": "find",
-            "summary": "Find\u0020by\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkResume.html#method_find"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkResumeJobId",
-            "name": "DevicesBulkResumeJobId",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkResumeJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkSuspend",
-            "name": "DevicesBulkSuspend",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkSuspend.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkSuspend\u003A\u003Afind\u0028\u0029",
-            "name": "find",
-            "summary": "Find\u0020by\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkSuspend.html#method_find"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkSuspendJobId",
-            "name": "DevicesBulkSuspendJobId",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkSuspendJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkUnsubscribe",
-            "name": "DevicesBulkUnsubscribe",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkUnsubscribe.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkUnsubscribe\u003A\u003Afind\u0028\u0029",
-            "name": "find",
-            "summary": "Find\u0020by\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkUnsubscribe.html#method_find"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkUnsubscribeJobId",
-            "name": "DevicesBulkUnsubscribeJobId",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkUnsubscribeJobId.html"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesId",
             "name": "DevicesId",
@@ -18395,26 +18295,6 @@ Search.appendIndex(
             "name": "find",
             "summary": "Find\u0020by\u0020id",
             "url": "classes/Arimac-Sigfox-Repository-DeviceTypes.html#method_find"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulk",
-            "name": "DeviceTypesBulk",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulk.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulkRestart",
-            "name": "DeviceTypesBulkRestart",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulkRestart.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulkRestart\u003A\u003Afind\u0028\u0029",
-            "name": "find",
-            "summary": "Find\u0020by\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulkRestart.html#method_find"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulkRestartJobId",
-            "name": "DeviceTypesBulkRestartJobId",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulkRestartJobId.html"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesId",
             "name": "DeviceTypesId",
@@ -18686,10 +18566,10 @@ Search.appendIndex(
             "summary": "Retrieve\u0020the\u0020information\u0020needed\u0020to\u0020display\u0020Sigfox\u0020public\u0020coverage.",
             "url": "classes/Arimac-Sigfox-Repository-TilesPublicCoverage.html#method_get"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesPublicCoverage\u003A\u003AkmzTitles\u0028\u0029",
-            "name": "kmzTitles",
+            "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesPublicCoverage\u003A\u003AkmzTiles\u0028\u0029",
+            "name": "kmzTiles",
             "summary": "Retrieve\u0020Sigfox\u0020public\u0020coverage\u0020kmz\u0020file\u0020from\u0020a\u0020job.\u0020The\u0020public\u0020coverage\u0020is\u0020always\u0020available\u0020and\u0020does\u0020not\nrequire\u0020a\u0020previous\u0020calculation",
-            "url": "classes/Arimac-Sigfox-Repository-TilesPublicCoverage.html#method_kmzTitles"
+            "url": "classes/Arimac-Sigfox-Repository-TilesPublicCoverage.html#method_kmzTiles"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\Users",
             "name": "Users",
@@ -20811,60 +20691,60 @@ Search.appendIndex(
             "summary": "The\u0020computation\u0020will\u0020be\u0020performed\u0020with\u0020the\u0020specified\u0020coverage\u0020mode",
             "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzStart.html#property_request"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles",
-            "name": "TilesPublicCoverageKmzTitles",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTiles",
+            "name": "TilesPublicCoverageKmzTiles",
             "summary": "Retrieve\u0020Sigfox\u0020public\u0020coverage\u0020kmz\u0020file\u0020from\u0020a\u0020job.\u0020The\u0020public\u0020coverage\u0020is\u0020always\u0020available\u0020and\u0020does\u0020not\u0020require\na\u0020previous\u0020calculation",
-            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html"
+            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTiles.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003AsetZoom\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTiles\u003A\u003AsetZoom\u0028\u0029",
             "name": "setZoom",
             "summary": "Setter\u0020for\u0020zoom",
-            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#method_setZoom"
+            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTiles.html#method_setZoom"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003AsetNorth\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTiles\u003A\u003AsetNorth\u0028\u0029",
             "name": "setNorth",
             "summary": "Setter\u0020for\u0020north",
-            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#method_setNorth"
+            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTiles.html#method_setNorth"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003AsetSouth\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTiles\u003A\u003AsetSouth\u0028\u0029",
             "name": "setSouth",
             "summary": "Setter\u0020for\u0020south",
-            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#method_setSouth"
+            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTiles.html#method_setSouth"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003AsetWest\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTiles\u003A\u003AsetWest\u0028\u0029",
             "name": "setWest",
             "summary": "Setter\u0020for\u0020west",
-            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#method_setWest"
+            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTiles.html#method_setWest"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003AsetEast\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTiles\u003A\u003AsetEast\u0028\u0029",
             "name": "setEast",
             "summary": "Setter\u0020for\u0020east",
-            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#method_setEast"
+            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTiles.html#method_setEast"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003A\u0024zoom",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTiles\u003A\u003A\u0024zoom",
             "name": "zoom",
             "summary": "The\u0020zoom\u0020level\u0020used\u0020to\u0020generate\u0020kmz\u0020file",
-            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#property_zoom"
+            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTiles.html#property_zoom"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003A\u0024north",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTiles\u003A\u003A\u0024north",
             "name": "north",
             "summary": "The\u0020north\u0020boundary\u0020to\u0020extract\u0020coverage",
-            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#property_north"
+            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTiles.html#property_north"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003A\u0024south",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTiles\u003A\u003A\u0024south",
             "name": "south",
             "summary": "The\u0020south\u0020boundary\u0020to\u0020extract\u0020coverage",
-            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#property_south"
+            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTiles.html#property_south"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003A\u0024west",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTiles\u003A\u003A\u0024west",
             "name": "west",
             "summary": "The\u0020west\u0020boundary\u0020to\u0020extract\u0020coverage",
-            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#property_west"
+            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTiles.html#property_west"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles\u003A\u003A\u0024east",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTiles\u003A\u003A\u0024east",
             "name": "east",
             "summary": "The\u0020east\u0020boundary\u0020to\u0020extract\u0020coverage",
-            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html#property_east"
+            "url": "classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTiles.html#property_east"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\UsersCreate",
             "name": "UsersCreate",

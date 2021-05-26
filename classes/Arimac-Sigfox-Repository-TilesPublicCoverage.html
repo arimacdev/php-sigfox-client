@@ -105,6 +105,11 @@
 
 
         </li>
+            <li>
+                <a href="guide/usage/filedownloads.html">File Downloads</a>
+
+
+        </li>
     </ul>
 
             </section>
@@ -150,7 +155,7 @@
         <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/TilesPublicCoverage.php"><a href="files/src-repository-tilespubliccoverage.html"><abbr title="src/Repository/TilesPublicCoverage.php">TilesPublicCoverage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 </aside>
 
         
@@ -177,7 +182,7 @@
 <dd>Retrieve the information needed to display Sigfox public coverage.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Repository-TilesPublicCoverage.html#method_kmzTitles">kmzTitles()</a>
+    <a href="classes/Arimac-Sigfox-Repository-TilesPublicCoverage.html#method_kmzTiles">kmzTiles()</a>
     <span>
                         &nbsp;: void    </span>
 </dt>
@@ -210,7 +215,7 @@ require a previous calculation</dd>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/TilesPublicCoverage.php"><a href="files/src-repository-tilespubliccoverage.html"><abbr title="src/Repository/TilesPublicCoverage.php">TilesPublicCoverage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">54</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve the information needed to display Sigfox public coverage.</p>
@@ -341,14 +346,14 @@ require a previous calculation</dd>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_kmzTitles">
-        kmzTitles()
-        <a href="classes/Arimac-Sigfox-Repository-TilesPublicCoverage.html#method_kmzTitles" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_kmzTiles">
+        kmzTiles()
+        <a href="classes/Arimac-Sigfox-Repository-TilesPublicCoverage.html#method_kmzTiles" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Repository/TilesPublicCoverage.php"><a href="files/src-repository-tilespubliccoverage.html"><abbr title="src/Repository/TilesPublicCoverage.php">TilesPublicCoverage.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">73</span>
+    <span class="phpdocumentor-element-found-in__line">81</span>
 </aside>
 
         <p class="phpdocumentor-summary">Retrieve Sigfox public coverage kmz file from a job. The public coverage is always available and does not
@@ -356,14 +361,29 @@ require a previous calculation</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">kmzTitles</span><span>(</span><span class="phpdocumentor-signature__argument"><span>[</span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html"><abbr title="\Arimac\Sigfox\Request\TilesPublicCoverageKmzTitles">TilesPublicCoverageKmzTitles</abbr></a>|array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                <span class="phpdocumentor-signature__name">kmzTiles</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">resource|string|<abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$file</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTiles.html"><abbr title="\Arimac\Sigfox\Request\TilesPublicCoverageKmzTiles">TilesPublicCoverageKmzTiles</abbr></a>|array&lt;string|int, mixed&gt;|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
 
     
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$file</span>
+                : <span class="phpdocumentor-signature__argument__return-type">resource|string|<abbr title="\Psr\Http\Message\StreamInterface">StreamInterface</abbr></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Specify where the body of a response will be saved.
+Types:-</p>
+<ul>
+<li>string (path to file on disk)</li>
+<li>fopen() resource</li>
+<li>Psr\Http\Message\StreamInterface</li>
+</ul>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
                 <span class="phpdocumentor-signature__argument__name">$request</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTitles.html"><abbr title="\Arimac\Sigfox\Request\TilesPublicCoverageKmzTitles">TilesPublicCoverageKmzTitles</abbr></a>|array&lt;string|int, mixed&gt;|null</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Request-TilesPublicCoverageKmzTiles.html"><abbr title="\Arimac\Sigfox\Request\TilesPublicCoverageKmzTiles">TilesPublicCoverageKmzTiles</abbr></a>|array&lt;string|int, mixed&gt;|null</span>
                  = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
             <dd class="phpdocumentor-argument-list__definition">
                     <section class="phpdocumentor-description"><p>The query and body parameters to pass</p>
@@ -379,16 +399,6 @@ require a previous calculation</p>
     </h5>
     <dl class="phpdocumentor-tag-list">
                                     <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-SerializeException.html"><abbr title="\Arimac\Sigfox\Exception\SerializeException">SerializeException</abbr></a></span>
-                                                            
-                                                 <section class="phpdocumentor-description"><p>If request object failed to serialize to a JSON serializable type.</p>
-</section>
-
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
@@ -415,6 +425,26 @@ require a previous calculation</p>
                                                                 <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-ValidationException.html"><abbr title="\Arimac\Sigfox\Exception\ValidationException">ValidationException</abbr></a></span>
                                                             
                                                  <section class="phpdocumentor-description"><p>If request could not be validated according to pre validation rules.</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the request array could not conveted to an object.</p>
+</section>
+
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-SerializeException.html"><abbr title="\Arimac\Sigfox\Exception\SerializeException">SerializeException</abbr></a></span>
+                                                            
+                                                 <section class="phpdocumentor-description"><p>If the request object could not converted to a JSON value.</p>
 </section>
 
                                     </dd>

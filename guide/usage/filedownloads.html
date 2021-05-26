@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>PHP Sigfox Client</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <base href="../">
+    <base href="../../">
     <link rel="icon" href="images/favicon.ico"/>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/base.css">
@@ -105,6 +105,11 @@
 
 
         </li>
+            <li>
+                <a href="guide/usage/filedownloads.html">File Downloads</a>
+
+
+        </li>
     </ul>
 
             </section>
@@ -132,40 +137,29 @@
 </aside>
 
             <div class="phpdocumentor-column -eight phpdocumentor-content">
-                    <ul class="phpdocumentor-breadcrumbs">
-    </ul>
+                    <div class="section" id="file-downloads">
+<h1>File Downloads</h1>
+<p>Sigfox API provides some endpoints that returning files as the body. If you
+call this API and saved it without any library, You have to spend two times
+more than the actual time. With this library you can fetch and save parallaly
+in the same time.</p>
+<pre><code class="language-php " >$sigfox-&gt;tiles()-&gt;publicCoverage()-&gt;kmzTiles(&quot;./coverage.kmz&quot;);
+</code></pre>
+<p>To delete the file on an exception:-</p>
+<pre><code class="language-php " >try{
+    $sigfox-&gt;tiles()-&gt;publicCoverage()-&gt;kmzTiles(&quot;./coverage.kmz&quot;)
+} catch (SigfoxException $e) {
+    echo $e-&gt;getMessage();
+    unlink(&quot;./coverage.kmz&quot;);
+}
+</code></pre>
+<p>And also you can output the file contents on response.</p>
+<pre><code class="language-php " >$output = fopen(&quot;php://output&quot;,&quot;w&quot;);
+$sigfox-&gt;tiles()-&gt;publicCoverage()-&gt;kmzTiles($output);
+</code></pre>
+<p>You can pass request parameters as the second argument of the function.</p>
+</div>
 
-    <article class="phpdocumentor-element -file">
-        <h2 class="phpdocumentor-content__title">CoveragesGlobalPredictionsBulkJobId.php</h2>
-
-        
-    <section class="phpdocumentor-description"></section>
-
-
-
-
-
-
-<h3 id="interfaces_class_traits">
-    Interfaces, Classes and Traits
-    <a href="#interfaces_class_traits" class="headerlink"><i class="fas fa-link"></i></a>
-</h3>
-
-<dl class="phpdocumentor-table-of-contents">
-    
-            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictionsBulkJobId.html"><abbr title="\Arimac\Sigfox\Repository\CoveragesGlobalPredictionsBulkJobId">CoveragesGlobalPredictionsBulkJobId</abbr></a></dt>
-        <dd></dd>
-    
-    </dl>
-
-
-
-
-
-        
-
-        
-    </article>
                 <section data-search-results class="phpdocumentor-search-results phpdocumentor-search-results--hidden">
     <section class="phpdocumentor-search-results__dialog">
         <header class="phpdocumentor-search-results__header">
@@ -179,7 +173,7 @@
 </section>
             </div>
         </div>
-        <a href="files/src-repository-coveragesglobalpredictionsbulkjobid.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
