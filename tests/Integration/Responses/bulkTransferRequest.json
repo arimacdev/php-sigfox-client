@@ -1,0 +1,22 @@
+{
+  "deviceTypeId": "5a5896f93007ab520cb54108",
+  "data": [
+    {
+      "id": 1,
+      "keepHistory": true,
+      "activable": true
+    },
+    {
+      "id": "AB45F",
+      "activable": false
+    },
+    {
+      "id": "F5E8945",
+      "keepHistory": false
+    },
+
+    {
+      "id": "F59878S"
+    }
+  ]
+}

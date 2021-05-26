@@ -137,6 +137,7 @@ class ApiUsersId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws MethodNotAllowedException   If server returned a HTTP 405 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
     public function renewCredential() : ?string
     {

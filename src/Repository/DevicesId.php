@@ -154,6 +154,7 @@ class DevicesId
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
     public function callbacksNotDelivered($request = null) : PaginateResponse
     {
@@ -252,6 +253,7 @@ class DevicesId
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
     public function locations($request = null) : PaginateResponse
     {

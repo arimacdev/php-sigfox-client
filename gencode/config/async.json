@@ -1,0 +1,158 @@
+{
+    "startRequests": {
+        "\/contract-infos\/{id}\/bulk\/restart": {
+            "post": {
+                "status": "\/contract-infos\/bulk\/restart\/{jobId}"
+            }
+        },
+        "\/coverages\/global\/predictions\/bulk": {
+            "post": {
+                "status": "\/coverages\/global\/predictions\/bulk\/{jobId}"
+            }
+        },
+        "\/devices\/bulk": {
+            "post": {
+                "status": "\/devices\/bulk\/{jobId}"
+            },
+            "put": {
+                "status": "\/devices\/bulk\/{jobId}"
+            }
+        },
+        "\/devices\/bulk\/transfer": {
+            "post": {
+                "status": "\/devices\/bulk\/{jobId}"
+            }
+        },
+        "\/devices\/bulk\/restart": {
+            "post": {
+                "status": "\/devices\/bulk\/restart\/{jobId}"
+            }
+        },
+        "\/devices\/bulk\/suspend": {
+            "post": {
+                "status": "\/devices\/bulk\/suspend\/{jobId}"
+            }
+        },
+        "\/devices\/bulk\/resume": {
+            "post": {
+                "status": "\/devices\/bulk\/resume\/{jobId}"
+            }
+        },
+        "\/devices\/bulk\/unsubscribe": {
+            "post": {
+                "status": "\/devices\/bulk\/unsubscribe\/{jobId}"
+            }
+        },
+        "\/device-types\/{id}\/bulk\/restart": {
+            "post": {
+                "status": "\/device-types\/bulk\/restart\/{jobId}"
+            }
+        },
+        "\/tiles\/monarch\/kmz": {
+            "post": {
+                "status": "\/tiles\/monarch\/kmz\/{jobId}"
+            }
+        }
+    },
+    "statusRequests": {
+        "\/contract-infos\/bulk\/restart\/{jobId}": {
+            "params": [],
+            "responseType": "Arimac\\Sigfox\\Model\\ActionJob",
+            "errors": {
+                "400": "Arimac\\Sigfox\\Exception\\Response\\BadRequestException",
+                "401": "Arimac\\Sigfox\\Exception\\Response\\UnauthorizedException",
+                "403": "Arimac\\Sigfox\\Exception\\Response\\ForbiddenException",
+                "404": "Arimac\\Sigfox\\Exception\\Response\\NotFoundException",
+                "500": "Arimac\\Sigfox\\Exception\\Response\\InternalServerException"
+            }
+        },
+        "\/coverages\/global\/predictions\/bulk\/{jobId}": {
+            "params": [],
+            "responseType": "Arimac\\Sigfox\\Model\\GlobalCoverageBulkResponse",
+            "errors": {
+                "400": "Arimac\\Sigfox\\Exception\\Response\\BadRequestException",
+                "401": "Arimac\\Sigfox\\Exception\\Response\\UnauthorizedException",
+                "403": "Arimac\\Sigfox\\Exception\\Response\\ForbiddenException",
+                "404": "Arimac\\Sigfox\\Exception\\Response\\NotFoundException",
+                "500": "Arimac\\Sigfox\\Exception\\Response\\InternalServerException"
+            }
+        },
+        "\/devices\/bulk\/{jobId}": {
+            "params": [],
+            "responseType": "Arimac\\Sigfox\\Model\\RegistrationJobStatus",
+            "errors": {
+                "400": "Arimac\\Sigfox\\Exception\\Response\\BadRequestException",
+                "401": "Arimac\\Sigfox\\Exception\\Response\\UnauthorizedException",
+                "403": "Arimac\\Sigfox\\Exception\\Response\\ForbiddenException",
+                "404": "Arimac\\Sigfox\\Exception\\Response\\NotFoundException",
+                "500": "Arimac\\Sigfox\\Exception\\Response\\InternalServerException"
+            }
+        },
+        "\/devices\/bulk\/restart\/{jobId}": {
+            "params": [],
+            "responseType": "Arimac\\Sigfox\\Model\\ActionJob",
+            "errors": {
+                "400": "Arimac\\Sigfox\\Exception\\Response\\BadRequestException",
+                "401": "Arimac\\Sigfox\\Exception\\Response\\UnauthorizedException",
+                "403": "Arimac\\Sigfox\\Exception\\Response\\ForbiddenException",
+                "404": "Arimac\\Sigfox\\Exception\\Response\\NotFoundException",
+                "500": "Arimac\\Sigfox\\Exception\\Response\\InternalServerException"
+            }
+        },
+        "\/devices\/bulk\/suspend\/{jobId}": {
+            "params": [],
+            "responseType": "Arimac\\Sigfox\\Model\\ActionJob",
+            "errors": {
+                "400": "Arimac\\Sigfox\\Exception\\Response\\BadRequestException",
+                "401": "Arimac\\Sigfox\\Exception\\Response\\UnauthorizedException",
+                "403": "Arimac\\Sigfox\\Exception\\Response\\ForbiddenException",
+                "404": "Arimac\\Sigfox\\Exception\\Response\\NotFoundException",
+                "500": "Arimac\\Sigfox\\Exception\\Response\\InternalServerException"
+            }
+        },
+        "\/devices\/bulk\/resume\/{jobId}": {
+            "params": [],
+            "responseType": "Arimac\\Sigfox\\Model\\ActionJob",
+            "errors": {
+                "400": "Arimac\\Sigfox\\Exception\\Response\\BadRequestException",
+                "401": "Arimac\\Sigfox\\Exception\\Response\\UnauthorizedException",
+                "403": "Arimac\\Sigfox\\Exception\\Response\\ForbiddenException",
+                "404": "Arimac\\Sigfox\\Exception\\Response\\NotFoundException",
+                "500": "Arimac\\Sigfox\\Exception\\Response\\InternalServerException"
+            }
+        },
+        "\/devices\/bulk\/unsubscribe\/{jobId}": {
+            "params": [],
+            "responseType": "Arimac\\Sigfox\\Model\\ActionJob",
+            "errors": {
+                "400": "Arimac\\Sigfox\\Exception\\Response\\BadRequestException",
+                "401": "Arimac\\Sigfox\\Exception\\Response\\UnauthorizedException",
+                "403": "Arimac\\Sigfox\\Exception\\Response\\ForbiddenException",
+                "404": "Arimac\\Sigfox\\Exception\\Response\\NotFoundException",
+                "500": "Arimac\\Sigfox\\Exception\\Response\\InternalServerException"
+            }
+        },
+        "\/device-types\/bulk\/restart\/{jobId}": {
+            "params": [],
+            "responseType": "Arimac\\Sigfox\\Model\\ActionJob",
+            "errors": {
+                "400": "Arimac\\Sigfox\\Exception\\Response\\BadRequestException",
+                "401": "Arimac\\Sigfox\\Exception\\Response\\UnauthorizedException",
+                "403": "Arimac\\Sigfox\\Exception\\Response\\ForbiddenException",
+                "404": "Arimac\\Sigfox\\Exception\\Response\\NotFoundException",
+                "500": "Arimac\\Sigfox\\Exception\\Response\\InternalServerException"
+            }
+        },
+        "\/tiles\/monarch\/kmz\/{jobId}": {
+            "params": [],
+            "responseType": "Arimac\\Sigfox\\Model\\KmzStatusResponse",
+            "errors": {
+                "400": "Arimac\\Sigfox\\Exception\\Response\\BadRequestException",
+                "401": "Arimac\\Sigfox\\Exception\\Response\\UnauthorizedException",
+                "403": "Arimac\\Sigfox\\Exception\\Response\\ForbiddenException",
+                "404": "Arimac\\Sigfox\\Exception\\Response\\NotFoundException",
+                "500": "Arimac\\Sigfox\\Exception\\Response\\InternalServerException"
+            }
+        }
+    }
+}

@@ -5,6 +5,9 @@ namespace Arimac\Sigfox;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Client\ClientImpl;
 use Arimac\Sigfox\Client\Guzzle;
+use Arimac\Sigfox\Response\Async\AsyncModel;
+use Arimac\Sigfox\Response\Async\ReconstructedAsyncResponse;
+use InvalidArgumentException;
 
 /**
  * Constructor of the `Sigfox` class.
@@ -42,4 +45,40 @@ abstract class SigfoxExt {
      * @return string
      */
     abstract public function getBaseUrl(): string;
+
+    /**
+     * Making an async response from a serialized value
+     *
+     * @param string $value
+     *
+     * @return Model
+     *
+     * @throws InvalidArgumentException
+     *
+     * @psalm-return Model
+     */
+    public function jobStatus(string $value): Model {
+        $decoded = base64_decode($value);
+        if(!$decoded){
+            throw new InvalidArgumentException("Expecting an async response id. But got $value.", 0);
+        }
+
+        $exploded = explode(":",$decoded, 2);
+        if(count($exploded)!==2){
+            throw new InvalidArgumentException("Expecting an async response id. But got $value.", 1);
+        }
+
+        $className = "Arimac\\Sigfox\\Response\\Async\\Model\\".$exploded[0];
+        if(!class_exists($className)){
+            throw new InvalidArgumentException("Expecting an async response id. But got $value.", 3);
+        }
+
+        $params = explode(",",$exploded[1]);
+        /** @var AsyncModel<Model> **/
+        $model = new $className($params);
+        
+        $response =  new ReconstructedAsyncResponse($this->client, $model);
+
+        return $response->status();
+    }
 }

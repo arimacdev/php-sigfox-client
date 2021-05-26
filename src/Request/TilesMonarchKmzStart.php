@@ -11,7 +11,7 @@ use Arimac\Sigfox\Validator\Rules\Child;
  * Starting the computation of Sigfox Monarch coverage view for a specific coverage mode. A new computation starts if
  * no other computation, run in the last 24 hours, is available. Otherwise, the existing jobId is returned.
  */
-class TilesMonarchKmzStartAsync extends Request
+class TilesMonarchKmzStart extends Request
 {
     /**
      * The computation will be performed with the specified coverage mode

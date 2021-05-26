@@ -22,11 +22,4 @@ class ContractInfosBulk
     {
         $this->client = $client;
     }
-    /**
-     * @return ContractInfosBulkRestart
-     */
-    public function restart() : ContractInfosBulkRestart
-    {
-        return new ContractInfosBulkRestart($this->client);
-    }
 }

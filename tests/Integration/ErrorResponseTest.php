@@ -160,4 +160,44 @@ class ErrorResponseTest extends BaseTestCase {
         $this->expectException(ValidationException::class);
         $this->client->devices()->create(DeviceCreationJob::from($deviceArr));
     }
+
+    public function testPagindatedErrorResponse(){
+        $device = json_decode($this->sample("device"), true);
+        $devices = [];
+        for($i=0; $i<5; $i++){
+            $newDevice = $device;
+            $newDevice["id"] = (string)($i+1);
+            $newDevice["name"] = "device#".($i+1);
+            $devices[] = $device;
+        }
+
+        $this->mock->append(new Response(
+            200,
+            ["Content-Type"=> "application/json"], 
+            json_encode(["data"=>$devices, "paging"=>["next"=> "abc"]])
+        ));
+        $this->mock->append(new Response(
+            500,
+            [],
+            ''
+        ));
+
+        $devices = $this->client->devices()->list();
+        $this->expectException(InternalServerException::class);
+        foreach($devices->pages() as $page){
+        }
+    }
+
+    public function testAsyncRequest(){
+        $bulkTransferResponse = $this->sample("bulkTransferResponse");
+        $this->mock->append(new Response(200,[], $bulkTransferResponse));
+
+        $bulkTransferRequest = $this->sample("bulkTransferRequest");
+        $transferRequestArr = json_decode($bulkTransferRequest, true);
+        $job = $this->client->devices()->bulk()->transfer($transferRequestArr);
+
+        $this->expectException(InternalServerException::class);
+        $this->mock->append(new Response(500,[],''));
+        $job->status();
+    }
 }

@@ -17,6 +17,9 @@ use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
 use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Response\Generated\ContractInfosIdBulkRestartResponse;
+use Arimac\Sigfox\Model\ActionJob;
+use Arimac\Sigfox\Response\Async\AsyncResponse;
+use Arimac\Sigfox\Response\Async\Model\ContractInfosIdBulkRestartAsync;
 use Arimac\Sigfox\Request\ContractInfosIdDevices;
 use Arimac\Sigfox\Response\Generated\ContractInfosIdDevicesResponse;
 use Arimac\Sigfox\Exception\Response\MethodNotAllowedException;
@@ -80,7 +83,7 @@ class ContractInfosId
     /**
      * Create an async job to restart the devices associated to a contract.
      *
-     * @return string jobId so that the customer is able to request job status
+     * @return AsyncResponse<ContractInfosIdBulkRestartResponse, ActionJob>
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -91,12 +94,17 @@ class ContractInfosId
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function bulkRestart() : ?string
+    public function bulkRestart() : AsyncResponse
     {
         /** @var ContractInfosIdBulkRestartResponse **/
         $response = $this->client->call('post', Helper::bindUrlParams('/contract-infos/{id}/bulk/restart', $this->id), null, ContractInfosIdBulkRestartResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
-        return $response->getJobId();
+        $jobId = $response->getJobId();
+        if (is_null($jobId)) {
+            throw new DeserializeException(array('string'), 'null');
+        }
+        return new AsyncResponse($this->client, new ContractInfosIdBulkRestartAsync(array($jobId)), $response);
     }
     /**
      * Retrieve a list of devices according to visibility permissions and request filters.
@@ -121,6 +129,7 @@ class ContractInfosId
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws MethodNotAllowedException   If server returned a HTTP 405 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
     public function devices($request = null) : PaginateResponse
     {

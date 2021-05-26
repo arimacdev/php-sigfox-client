@@ -2,6 +2,7 @@
 <?php
 
 use Arimac\Sigfox\GenCode\Client;
+use Arimac\Sigfox\GenCode\Config\Async;
 use Arimac\Sigfox\GenCode\Model;
 use Arimac\Sigfox\GenCode\Config\EnumFields;
 use Arimac\Sigfox\GenCode\Config\ForceTraits;
@@ -32,6 +33,7 @@ Helper::rrmdir($dir . "/../src/Model");
 Helper::rrmdir($dir . "/../src/Repository");
 Helper::rrmdir($dir . "/../src/Request");
 Helper::rrmdir($dir . "/../src/Response/Generated");
+Helper::rrmdir($dir . "/../src/Response/Async/Model");
 @unlink($dir . "/../src/Sigfox.php");
 
 // Initializing all configuration files
@@ -41,6 +43,7 @@ MethodNames::initialize();
 ForceTraits::initialize();
 TypeAlias::initialize();
 HttpErrors::initialize();
+Async::initialize();
 
 // Creating models for each predefined schema objects
 foreach ($openapi["definitions"] as $key => $definition) {
@@ -58,6 +61,7 @@ $client->extend("Arimac\\Sigfox\\SigfoxExt");
 $client->setBaseUrl($openapi["schemes"][0] . "://" . $openapi["host"] . $openapi["basePath"] . "/");
 
 foreach ($openapi["paths"] as $endpoint => $path) {
+    $isAsyncStatusEndpoint = Async::isAsyncStatusEndpoint($endpoint);
     $rewrite = RewriteRules::rewrite($endpoint);
     $slices = explode("/", $rewrite);
     $repoName = "";
@@ -146,12 +150,12 @@ foreach ($openapi["paths"] as $endpoint => $path) {
                             ]
                         )
                     );
-                } else if ($prevRepository) {
+                } else if ($prevRepository&&!$isAsyncStatusEndpoint) {
                     // Adding a normal repository method if it is not a path parameter
                     // ->messages()
                     $methodName = lcfirst($repoNameSlice);
                     $prevRepository->addRepositoryMethod($methodName, "Arimac\\Sigfox\\Repository\\" . $repoName);
-                } 
+                }
 
                 // Adding a constructor to the current repository
                 // with path parameters of previous repositories
@@ -194,20 +198,22 @@ foreach ($openapi["paths"] as $endpoint => $path) {
             }
         }
 
-        $requestModel = Request::fromArray("Arimac\\Sigfox\\Request\\$requestClassName", $operation);
+        if (!$isAsyncStatusEndpoint) {
+            $requestModel = Request::fromArray("Arimac\\Sigfox\\Request\\$requestClassName", $operation);
 
-        // Adding a request method to the current repository
-        // ->update(["deviceTypeId"=>"ACB123"]);
-        $repository->addRequestMethod(
-            $methodName,
-            $requestMethod,
-            $endpoint,
-            $responseModel,
-            $responseTypeNullable,
-            $requestModel,
-            $expectedErrors,
-            $description
-        );
+            // Adding a request method to the current repository
+            // ->update(["deviceTypeId"=>"ACB123"]);
+            $repository->addRequestMethod(
+                $methodName,
+                $requestMethod,
+                $endpoint,
+                $responseModel,
+                $responseTypeNullable,
+                $requestModel,
+                $expectedErrors,
+                $description
+            );
+        } 
     }
 }
 

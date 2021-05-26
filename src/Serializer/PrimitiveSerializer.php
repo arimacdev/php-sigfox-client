@@ -35,18 +35,25 @@ class PrimitiveSerializer implements Serializer
         $validated = false;
         switch ($this->type) {
             case "string":
-                $validated = is_string($value);
+                $validated = is_int($value) || is_string($value) || is_float($value);
+                if($validated){
+                    $value = (string) $value;
+                }
                 break;
             case "int":
                 $validated = is_int($value);
                 break;
             case "float":
                 $validated = is_float($value) || is_int($value);
-                $value = (float) $value;
+                if($validated){
+                    $value = (float) $value;
+                }
                 break;
             case "double":
                 $validated = is_double($value) || is_int($value);
-                $value = (double) $value;
+                if($validated){
+                    $value = (double) $value;
+                }
                 break;
             case "array":
                 $validated = is_array($value);
@@ -77,12 +84,12 @@ class PrimitiveSerializer implements Serializer
             return null;
         }
         
-        $value = $this->validate($value);
-        if (!isset($value)) {
+        $validated = $this->validate($value);
+        if (!isset($validated)) {
             throw new SerializeException([$this->type], gettype($value));
         }
 
-        return $value;
+        return $validated;
     }
 
     /**
@@ -94,11 +101,11 @@ class PrimitiveSerializer implements Serializer
             return null;
         }
 
-        $value = $this->validate($value);
-        if (!isset($value)) {
+        $validated = $this->validate($value);
+        if (!isset($validated)) {
             throw new DeserializeException([$this->type], gettype($value));
         }
 
-        return $value;
+        return $validated;
     }
 }

@@ -22,11 +22,4 @@ class DeviceTypesBulk
     {
         $this->client = $client;
     }
-    /**
-     * @return DeviceTypesBulkRestart
-     */
-    public function restart() : DeviceTypesBulkRestart
-    {
-        return new DeviceTypesBulkRestart($this->client);
-    }
 }

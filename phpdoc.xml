@@ -17,6 +17,8 @@
                 <path>src/Response/Paginated/PaginatedResponse.php</path>
                 <path>src/Response/Paginated/ResponseData.php</path>
                 <path>src/ExtendableImpl.php</path>
+                <path>src/Response/Async/AsyncModel.php</path>
+                <path>src/Response/Async/Model/**/*</path>
             </ignore>
             <default-package-name>PHP Sigfox Client</default-package-name>
             <ignore-tags>

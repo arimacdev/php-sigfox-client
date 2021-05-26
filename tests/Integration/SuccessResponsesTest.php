@@ -4,7 +4,9 @@ namespace Arimac\Sigfox\Test;
 use Arimac\Sigfox\Model\Device;
 use Arimac\Sigfox\Model\DeviceCreationJob;
 use Arimac\Sigfox\Model\DeviceUpdateJob;
+use Arimac\Sigfox\Model\RegistrationJobStatus;
 use Arimac\Sigfox\Request\DevicesList;
+use Arimac\Sigfox\Response\Generated\DevicesBulkTransferResponse;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Test\Integration\BaseTestCase;
 use GuzzleHttp\Psr7\Request;
@@ -222,5 +224,87 @@ class SuccessResponsesTest extends BaseTestCase {
         $this->assertArraySimilar($expected, $pages);
         $this->assertCount(3, $this->history);
         $this->assertSame("/abc1", $this->history[2]["request"]->getUri()->getPath());
+    }
+
+    public function testAsyncRequest(){
+        $bulkTransferResponse = $this->sample("bulkTransferResponse");
+        $this->mock->append(new Response(200,[], $bulkTransferResponse));
+
+        $bulkTransferRequest = $this->sample("bulkTransferRequest");
+        $transferRequestArr = json_decode($bulkTransferRequest, true);
+
+        $job = $this->client->devices()->bulk()->transfer($transferRequestArr);
+        $classSerializer = new ClassSerializer(DevicesBulkTransferResponse::class);
+        $serialized = $classSerializer->serialize($job->getOriginalResponse());
+        $expected = json_decode($bulkTransferResponse,true);
+        $this->assertArraySimilar($expected, $serialized);
+
+        $deviceAsyncStatus = $this->sample("deviceAsyncStatus");
+        $asyncStatusArr = json_decode($deviceAsyncStatus, true);
+
+        $asyncStatusArr["jobDone"] = false;
+        $asyncStatusArr["status"]["success"] = 123;
+
+        $this->mock->append(new Response(200,[], json_encode($asyncStatusArr)));
+        $status = $job->status();
+
+        $classSerializer = new ClassSerializer(RegistrationJobStatus::class);
+        $serialized = $classSerializer->serialize($status);
+
+        $this->assertArraySimilar($asyncStatusArr, $serialized);
+
+        $asyncStatusArr["jobDone"] = true;
+        $asyncStatusArr["status"]["success"] = 12123;
+
+        $this->mock->append(new Response(200,[], json_encode($asyncStatusArr)));
+        $status = $job->status();
+
+        $classSerializer = new ClassSerializer(RegistrationJobStatus::class);
+        $serialized = $classSerializer->serialize($status);
+
+        $this->assertArraySimilar($asyncStatusArr, $serialized);
+        
+    }
+
+    public function testAsyncRequestAfterReconstruct(){
+        $bulkTransferResponse = $this->sample("bulkTransferResponse");
+        $this->mock->append(new Response(200,[], $bulkTransferResponse));
+
+        $bulkTransferRequest = $this->sample("bulkTransferRequest");
+        $transferRequestArr = json_decode($bulkTransferRequest, true);
+
+        $job = $this->client->devices()->bulk()->transfer($transferRequestArr);
+        $classSerializer = new ClassSerializer(DevicesBulkTransferResponse::class);
+        $serialized = $classSerializer->serialize($job->getOriginalResponse());
+        $expected = json_decode($bulkTransferResponse,true);
+        $this->assertArraySimilar($expected, $serialized);
+
+        $deviceAsyncStatus = $this->sample("deviceAsyncStatus");
+        $asyncStatusArr = json_decode($deviceAsyncStatus, true);
+
+        $asyncStatusArr["jobDone"] = false;
+        $asyncStatusArr["status"]["success"] = 123;
+
+        $this->mock->append(new Response(200,[], json_encode($asyncStatusArr)));
+        $status = $job->status();
+
+        $jobId = $job->getId();
+
+        $classSerializer = new ClassSerializer(RegistrationJobStatus::class);
+        $serialized = $classSerializer->serialize($status);
+
+        $this->assertArraySimilar($asyncStatusArr, $serialized);
+
+        $asyncStatusArr["jobDone"] = true;
+        $asyncStatusArr["status"]["success"] = 12123;
+
+        $this->mock->append(new Response(200,[], json_encode($asyncStatusArr)));
+        $status = $this->client->jobStatus($jobId);
+
+        $classSerializer = new ClassSerializer(RegistrationJobStatus::class);
+        $serialized = $classSerializer->serialize($status);
+
+        $this->assertArraySimilar($asyncStatusArr, $serialized);
+        
     }
 }

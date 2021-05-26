@@ -16,12 +16,12 @@ use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\PreconditionFailedException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
+use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Response\Paginated\PaginatedResponse;
 use Arimac\Sigfox\Model\DeviceMessage;
 use Arimac\Sigfox\Response\Paginated\PaginateResponse;
 use Arimac\Sigfox\Response\Generated\DevicesIdMessagesMetricResponse;
-use Arimac\Sigfox\Exception\DeserializeException;
 class DevicesIdMessages
 {
     /**
@@ -76,6 +76,7 @@ class DevicesIdMessages
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws PreconditionFailedException If server returned a HTTP 412 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
     public function list($request = null) : PaginateResponse
     {

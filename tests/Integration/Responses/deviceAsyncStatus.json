@@ -1,0 +1,20 @@
+{
+  "jobDone": true,
+  "total": 145298,
+  "status": {
+    "errors": [
+      {
+        "entity": "00FF",
+        "message": "Unauthorized modification",
+        "type": 0
+      },
+
+      {
+        "entity": "00FE",
+        "message": "Unknown device",
+        "type": 0
+      }
+    ],
+    "success": 145296
+  }
+}

@@ -13,6 +13,7 @@ use Arimac\Sigfox\Exception\Response\BadRequestException;
 use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
+use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Response\Paginated\PaginatedResponse;
 use Arimac\Sigfox\Model\Device;
@@ -60,6 +61,7 @@ class Devices
      * @throws UnauthorizedException       If server returned a HTTP 401 error.
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
     public function list($request = null) : PaginateResponse
     {
@@ -88,6 +90,7 @@ class Devices
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws ConflictException           If server returned a HTTP 409 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
     public function create($device) : ?string
     {

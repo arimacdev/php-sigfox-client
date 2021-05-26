@@ -28,6 +28,9 @@ use Arimac\Sigfox\Request\DeviceTypesIdCallbacksNotDelivered;
 use Arimac\Sigfox\Response\Generated\DeviceTypesIdCallbacksNotDeliveredResponse;
 use Arimac\Sigfox\Model\ErrorMessages;
 use Arimac\Sigfox\Response\Generated\DeviceTypesIdBulkRestartResponse;
+use Arimac\Sigfox\Model\ActionJob;
+use Arimac\Sigfox\Response\Async\AsyncResponse;
+use Arimac\Sigfox\Response\Async\Model\DeviceTypesIdBulkRestartAsync;
 class DeviceTypesId
 {
     /**
@@ -149,6 +152,7 @@ class DeviceTypesId
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
     public function messages($request = null) : PaginateResponse
     {
@@ -188,6 +192,7 @@ class DeviceTypesId
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
     public function callbacksNotDelivered($request = null) : PaginateResponse
     {
@@ -227,7 +232,7 @@ class DeviceTypesId
     /**
      * Restart the devices of a device type with a asynchronous job.
      *
-     * @return string jobId so that the customer is able to request job status
+     * @return AsyncResponse<DeviceTypesIdBulkRestartResponse, ActionJob>
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -238,11 +243,16 @@ class DeviceTypesId
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function bulkRestart() : ?string
+    public function bulkRestart() : AsyncResponse
     {
         /** @var DeviceTypesIdBulkRestartResponse **/
         $response = $this->client->call('post', Helper::bindUrlParams('/device-types/{id}/bulk/restart', $this->id), null, DeviceTypesIdBulkRestartResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
-        return $response->getJobId();
+        $jobId = $response->getJobId();
+        if (is_null($jobId)) {
+            throw new DeserializeException(array('string'), 'null');
+        }
+        return new AsyncResponse($this->client, new DeviceTypesIdBulkRestartAsync(array($jobId)), $response);
     }
 }

@@ -14,6 +14,7 @@ use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
+use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Response\Paginated\PaginatedResponse;
 use Arimac\Sigfox\Model\User;
@@ -21,7 +22,6 @@ use Arimac\Sigfox\Response\Paginated\PaginateResponse;
 use Arimac\Sigfox\Model\UserCreation;
 use Arimac\Sigfox\Request\UsersCreate;
 use Arimac\Sigfox\Model\CreateResponse;
-use Arimac\Sigfox\Exception\DeserializeException;
 class Users
 {
     /**
@@ -63,6 +63,7 @@ class Users
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
     public function list($request = null) : PaginateResponse
     {

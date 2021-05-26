@@ -14,6 +14,7 @@ use Arimac\Sigfox\Exception\Response\UnauthorizedException;
 use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
+use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Model\Callback;
 use Arimac\Sigfox\Model\CreateCallback;
 use Arimac\Sigfox\Request\DeviceTypesIdCallbacksCreate;
@@ -59,6 +60,7 @@ class DeviceTypesIdCallbacks
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
     public function list() : ?array
     {
@@ -85,6 +87,7 @@ class DeviceTypesIdCallbacks
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
     public function create($callback) : ?string
     {

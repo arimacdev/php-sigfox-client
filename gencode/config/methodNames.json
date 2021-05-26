@@ -101,25 +101,25 @@
         "post": "replace"
     },
     "\/devices\/bulk\/restart": {
-        "post": "restartAsync"
+        "post": "restart"
     },
     "\/devices\/bulk\/restart\/{jobId}": {
         "get": "get"
     },
     "\/devices\/bulk\/suspend": {
-        "post": "suspendAsync"
+        "post": "suspend"
     },
     "\/devices\/bulk\/suspend\/{jobId}": {
         "get": "get"
     },
     "\/devices\/bulk\/resume": {
-        "post": "resumeAsync"
+        "post": "resume"
     },
     "\/devices\/bulk\/resume\/{jobId}": {
         "get": "get"
     },
     "\/devices\/bulk\/unsubscribe": {
-        "post": "unsubscribeAsync"
+        "post": "unsubscribe"
     },
     "\/devices\/bulk\/unsubscribe\/{jobId}": {
         "get": "get"
@@ -190,7 +190,7 @@
         "get": "get"
     },
     "\/tiles\/monarch\/kmz": {
-        "post": "startAsync"
+        "post": "start"
     },
     "\/tiles\/monarch\/kmz\/{jobId}": {
         "get": "get"

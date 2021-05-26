@@ -2,6 +2,7 @@
 
 namespace Arimac\Sigfox\GenCode;
 
+use Arimac\Sigfox\GenCode\Config\Async;
 use PhpParser\Comment;
 use PhpParser\Node\Arg;
 use PhpParser\Node\Expr\Assign;
@@ -9,6 +10,7 @@ use PhpParser\Node\Expr\BooleanNot;
 use PhpParser\Node\Expr\FuncCall;
 use PhpParser\Node\Expr\New_;
 use PhpParser\Node\Expr\StaticCall;
+use PhpParser\Node\Expr\Throw_;
 use PhpParser\Node\Expr\Variable;
 use PhpParser\Node\Name;
 use PhpParser\Node\NullableType;
@@ -166,6 +168,9 @@ class Repository extends Class_
 
         $isPaginated = isset($responseProperties["paging"]);
 
+        $asyncDetails = Async::getAsyncDetails($endpoint, $requestMethod);
+        $isAsync = (bool) $asyncDetails;
+
         $endpoint = new String_($endpoint);
         // Binding all URL parameters
         // Helper::bindUrlParams("url", $this->pathParam, ...)
@@ -201,7 +206,6 @@ class Repository extends Class_
 
             $usedType = $this->useType($type);
             $docBlockType = $usedType;
-
 
             if (substr($type, strlen($type) - 2) !== "[]" && $usedType !== $type) {
                 $docBlockType .= "|array";
@@ -331,9 +335,96 @@ class Repository extends Class_
             array_push($args, $this->factory->val($astErrors));
         }
 
+        if($responseType){
+            // Adding DeserializeException to the docblock
+            $deserializeException = $this->useType("Arimac\\Sigfox\\Exception\\DeserializeException");
+            array_push($docBlockTags, ["throws", $deserializeException, "If failed to deserialize response body as a response object."]);
+        }
+
         $clientCall = new FuncCall(new Name("\$this->client->call"), $args);
         // Returning the response from the method if the request is expecting for a response
-        if (count($responseProperties) === 1 && !$responseTypeNullable) {
+        if ($isAsync){
+            $this->useType("Arimac\\Sigfox\\Helper");
+            $statusResponseType = $asyncDetails["responseType"];
+            $statusResponseType = $this->useType($statusResponseType);
+            $errors = $asyncDetails["errors"];
+
+            // Creating an async model
+            $asyncModelName = $this->name.ucfirst($methodName)."Async";
+            $asyncModel = new AsyncModel(
+                "Arimac\\Sigfox\\Response\\Async\\Model", 
+                $asyncModelName,
+                Helper::normalizeDocComment(
+                    [
+                        ["extends", "AsyncModel<$statusResponseType>"]
+                    ]
+                )
+            );
+            $asyncModel->useType("Arimac\\Sigfox\\Response\\Async\\AsyncModel");
+            $asyncModel->setErrors($errors);
+            $asyncModel->setResponseType($asyncDetails["responseType"]);
+            $asyncModel->setEndpoint($asyncDetails["status"]);
+            $asyncModel->save();
+
+            // $response = $this->call....;
+            $stmts[] = new Expression(new Assign($this->factory->var("response"), $clientCall), [
+                // Ignoring type errors
+                "comments" => [
+                    new Comment("/** @var $responseType **/")
+                ]
+            ]);
+
+            // $jobId = $response->getJobId();
+            $stmts[] = new Assign(
+                $this->factory->var("jobId"), 
+                $this->factory->methodCall($this->factory->var("response"), "getJobId") 
+            );
+
+            // if(is_null($jobId)){
+            //      throw new DeserializeException(["string"], null);
+            // }
+            $stmts[] = new If_(
+                $this->factory->funcCall(
+                    "is_null",
+                    [$this->factory->var("jobId")]
+                ),
+                [
+                    "stmts"=>[
+                        new Expression(new Throw_($this->factory->new("DeserializeException", [$this->factory->val(["string"]), $this->factory->val("null")] )))
+                    ]
+                ]
+            );
+
+            // Passing all parameters to the async model
+            $statusPathParams = $asyncDetails["params"];
+            $modelParams = [];
+            foreach($statusPathParams as $param){
+                array_push($modelParams, $this->factory->propertyFetch($this->factory->var("this"), $param ));
+            }
+            array_push($modelParams, $this->factory->var("jobId"));
+
+            // Return type of the doc block
+            array_push($docBlockTags, ["return", "AsyncResponse<$responseType, $statusResponseType>"]);
+
+            $responseType = $this->useType("Arimac\\Sigfox\\Response\\Async\\AsyncResponse");
+
+            $this->useType("Arimac\\Sigfox\\Response\\Async\\Model\\$asyncModelName");
+            // return new AsyncResponse(
+            //      $this->client,
+            //      new MyAsyncModel([$this->param1, $this->param2, $jobId]),
+            //      $response
+            // );
+            $stmts[] = new Return_(
+                $this->factory->new($responseType,[
+                    $this->factory->propertyFetch(
+                        $this->factory->var("this"),
+                        "client"
+                    ),
+                    $this->factory->new($asyncModelName,[$this->factory->val($modelParams)]),
+                    $this->factory->var("response"),
+                ])
+            );
+        } else if (count($responseProperties) === 1 && !$responseTypeNullable) {
             $propertyName = array_keys($responseProperties)[0];
             $type = $responseProperties[$propertyName][0];
             $required = $responseProperties[$propertyName][1];
@@ -371,9 +462,11 @@ class Repository extends Class_
             $itemType = substr($arrType, 0, strlen($arrType) - 2);
             $itemType = $this->useType($itemType);
             $paginateResponse = $this->useType("Arimac\\Sigfox\\Response\\Paginated\\PaginateResponse");
+
             $errors = implode(" | ", $docErrors);
             array_push($docBlockTags, ["psalm-type", "E=" . $errors]);
             array_push($docBlockTags, ["psalm-return", "$paginateResponse<$itemType,$responseType,E>"]);
+
             array_push(
                 $docBlockTags,
                 [
@@ -396,11 +489,6 @@ class Repository extends Class_
         } else if ($responseType) {
             // Setting the return type if request expecting for a response
             array_push($docBlockTags, ["return", $responseType, null]);
-
-            // Adding DeserializeException to the docblock
-            $deserializeException = $this->useType("Arimac\\Sigfox\\Exception\\DeserializeException");
-            array_push($docBlockTags, ["throws", $deserializeException, "If failed to deserialize response body as a response object."]);
-
             $stmts[] = new Return_($clientCall);
             if ($responseTypeNullable) {
                 $responseType = new NullableType($responseType);
@@ -409,6 +497,7 @@ class Repository extends Class_
             $stmts[] = $clientCall;
             $responseType = "void";
         }
+
 
         $this->addMethod($methodName, $params, $stmts, $responseType, Helper::normalizeDocComment($description, $docBlockTags, 2));
     }

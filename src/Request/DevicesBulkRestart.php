@@ -11,7 +11,7 @@ use Arimac\Sigfox\Validator\Rules\Child;
 /**
  * Restart multiple devices with asynchronous job.
  */
-class DevicesBulkRestartAsync extends Request
+class DevicesBulkRestart extends Request
 {
     /**
      * list of device's identifier (hexadecimal format)

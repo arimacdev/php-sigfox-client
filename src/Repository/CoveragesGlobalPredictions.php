@@ -20,6 +20,10 @@ use Arimac\Sigfox\Request\CoveragesGlobalPredictionsGet;
 use Arimac\Sigfox\Model\GlobalCoverageResponse;
 use Arimac\Sigfox\Request\CoveragesGlobalPredictionsCalculateBulk;
 use Arimac\Sigfox\Response\Generated\CoveragesGlobalPredictionsCalculateBulkResponse;
+use Arimac\Sigfox\Helper;
+use Arimac\Sigfox\Model\GlobalCoverageBulkResponse;
+use Arimac\Sigfox\Response\Async\AsyncResponse;
+use Arimac\Sigfox\Response\Async\Model\CoveragesGlobalPredictionsCalculateBulkAsync;
 class CoveragesGlobalPredictions
 {
     /**
@@ -109,7 +113,7 @@ class CoveragesGlobalPredictions
      *
      * @param GlobalCoverageRequest|array|null $payload
      *
-     * @return string jobId provided to the customer to request the job status and results
+     * @return AsyncResponse<CoveragesGlobalPredictionsCalculateBulkResponse, GlobalCoverageBulkResponse>
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -120,8 +124,9 @@ class CoveragesGlobalPredictions
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function calculateBulk($payload) : ?string
+    public function calculateBulk($payload) : AsyncResponse
     {
         if (is_array($payload)) {
             /** @var GlobalCoverageRequest **/
@@ -131,13 +136,10 @@ class CoveragesGlobalPredictions
         $request->setPayload($payload);
         /** @var CoveragesGlobalPredictionsCalculateBulkResponse **/
         $response = $this->client->call('post', '/coverages/global/predictions/bulk', $request, CoveragesGlobalPredictionsCalculateBulkResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
-        return $response->getJobId();
-    }
-    /**
-     * @return CoveragesGlobalPredictionsBulk
-     */
-    public function bulk() : CoveragesGlobalPredictionsBulk
-    {
-        return new CoveragesGlobalPredictionsBulk($this->client);
+        $jobId = $response->getJobId();
+        if (is_null($jobId)) {
+            throw new DeserializeException(array('string'), 'null');
+        }
+        return new AsyncResponse($this->client, new CoveragesGlobalPredictionsCalculateBulkAsync(array($jobId)), $response);
     }
 }

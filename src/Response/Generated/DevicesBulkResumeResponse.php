@@ -4,10 +4,10 @@ namespace Arimac\Sigfox\Response\Generated;
 
 use Arimac\Sigfox\Model;
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
-class TilesMonarchKmzStartAsyncResponse extends Model
+class DevicesBulkResumeResponse extends Model
 {
     /**
-     * jobId provided to the customer to request the job status and results
+     * jobId (to use in job status request)
      *
      * @var string
      */
@@ -17,7 +17,7 @@ class TilesMonarchKmzStartAsyncResponse extends Model
      *
      * @internal
      *
-     * @param string $jobId jobId provided to the customer to request the job status and results
+     * @param string $jobId jobId (to use in job status request)
      *
      * @return static To use in method chains
      */
@@ -29,7 +29,7 @@ class TilesMonarchKmzStartAsyncResponse extends Model
     /**
      * Getter for jobId
      *
-     * @return string jobId provided to the customer to request the job status and results
+     * @return string jobId (to use in job status request)
      */
     public function getJobId() : ?string
     {

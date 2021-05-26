@@ -16,23 +16,34 @@ use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\ConflictException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
 use Arimac\Sigfox\Exception\DeserializeException;
+use Arimac\Sigfox\Helper;
+use Arimac\Sigfox\Model\RegistrationJobStatus;
+use Arimac\Sigfox\Response\Async\AsyncResponse;
+use Arimac\Sigfox\Response\Async\Model\DevicesBulkCreateAsync;
 use Arimac\Sigfox\Request\DevicesBulkUpdate;
 use Arimac\Sigfox\Response\Generated\DevicesBulkUpdateResponse;
+use Arimac\Sigfox\Response\Async\Model\DevicesBulkUpdateAsync;
 use Arimac\Sigfox\Model\AsynchronousDeviceTransferJob;
 use Arimac\Sigfox\Request\DevicesBulkTransfer;
 use Arimac\Sigfox\Response\Generated\DevicesBulkTransferResponse;
+use Arimac\Sigfox\Response\Async\Model\DevicesBulkTransferAsync;
 use Arimac\Sigfox\Model\AsynchronousDeviceReplacementJob;
 use Arimac\Sigfox\Request\DevicesBulkReplace;
 use Arimac\Sigfox\Model\ReplaceResponse;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
-use Arimac\Sigfox\Request\DevicesBulkRestartAsync;
-use Arimac\Sigfox\Response\Generated\DevicesBulkRestartAsyncResponse;
-use Arimac\Sigfox\Request\DevicesBulkSuspendAsync;
-use Arimac\Sigfox\Response\Generated\DevicesBulkSuspendAsyncResponse;
-use Arimac\Sigfox\Request\DevicesBulkResumeAsync;
-use Arimac\Sigfox\Response\Generated\DevicesBulkResumeAsyncResponse;
-use Arimac\Sigfox\Request\DevicesBulkUnsubscribeAsync;
-use Arimac\Sigfox\Response\Generated\DevicesBulkUnsubscribeAsyncResponse;
+use Arimac\Sigfox\Request\DevicesBulkRestart;
+use Arimac\Sigfox\Response\Generated\DevicesBulkRestartResponse;
+use Arimac\Sigfox\Model\ActionJob;
+use Arimac\Sigfox\Response\Async\Model\DevicesBulkRestartAsync;
+use Arimac\Sigfox\Request\DevicesBulkSuspend;
+use Arimac\Sigfox\Response\Generated\DevicesBulkSuspendResponse;
+use Arimac\Sigfox\Response\Async\Model\DevicesBulkSuspendAsync;
+use Arimac\Sigfox\Request\DevicesBulkResume;
+use Arimac\Sigfox\Response\Generated\DevicesBulkResumeResponse;
+use Arimac\Sigfox\Response\Async\Model\DevicesBulkResumeAsync;
+use Arimac\Sigfox\Request\DevicesBulkUnsubscribe;
+use Arimac\Sigfox\Response\Generated\DevicesBulkUnsubscribeResponse;
+use Arimac\Sigfox\Response\Async\Model\DevicesBulkUnsubscribeAsync;
 class DevicesBulk
 {
     /**
@@ -57,7 +68,7 @@ class DevicesBulk
      *
      * @param AsynchronousDeviceCreationJob|array|null $devices The devices to create
      *
-     * @return DevicesBulkCreateResponse
+     * @return AsyncResponse<DevicesBulkCreateResponse, RegistrationJobStatus>
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -70,7 +81,7 @@ class DevicesBulk
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function create($devices) : DevicesBulkCreateResponse
+    public function create($devices) : AsyncResponse
     {
         if (is_array($devices)) {
             /** @var AsynchronousDeviceCreationJob **/
@@ -78,14 +89,20 @@ class DevicesBulk
         }
         $request = new DevicesBulkCreate();
         $request->setDevices($devices);
-        return $this->client->call('post', '/devices/bulk', $request, DevicesBulkCreateResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 409 => ConflictException::class, 500 => InternalServerException::class));
+        /** @var DevicesBulkCreateResponse **/
+        $response = $this->client->call('post', '/devices/bulk', $request, DevicesBulkCreateResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 409 => ConflictException::class, 500 => InternalServerException::class));
+        $jobId = $response->getJobId();
+        if (is_null($jobId)) {
+            throw new DeserializeException(array('string'), 'null');
+        }
+        return new AsyncResponse($this->client, new DevicesBulkCreateAsync(array($jobId)), $response);
     }
     /**
      * Update or edit multiple devices with asynchronous job.
      *
      * @param DevicesBulkUpdate|array|null $request The query and body parameters to pass
      *
-     * @return DevicesBulkUpdateResponse
+     * @return AsyncResponse<DevicesBulkUpdateResponse, RegistrationJobStatus>
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -98,13 +115,19 @@ class DevicesBulk
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function update($request = null) : DevicesBulkUpdateResponse
+    public function update($request = null) : AsyncResponse
     {
         if (is_array($request)) {
             /** @var DevicesBulkUpdate **/
             $request = DevicesBulkUpdate::from($request);
         }
-        return $this->client->call('put', '/devices/bulk', $request, DevicesBulkUpdateResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 409 => ConflictException::class, 500 => InternalServerException::class));
+        /** @var DevicesBulkUpdateResponse **/
+        $response = $this->client->call('put', '/devices/bulk', $request, DevicesBulkUpdateResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 409 => ConflictException::class, 500 => InternalServerException::class));
+        $jobId = $response->getJobId();
+        if (is_null($jobId)) {
+            throw new DeserializeException(array('string'), 'null');
+        }
+        return new AsyncResponse($this->client, new DevicesBulkUpdateAsync(array($jobId)), $response);
     }
     /**
      * Find by jobId
@@ -122,7 +145,7 @@ class DevicesBulk
      *
      * @param AsynchronousDeviceTransferJob|array|null $devices The devices to move
      *
-     * @return DevicesBulkTransferResponse
+     * @return AsyncResponse<DevicesBulkTransferResponse, RegistrationJobStatus>
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -135,7 +158,7 @@ class DevicesBulk
      * @throws InternalServerException     If server returned a HTTP 500 error.
      * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function transfer($devices) : DevicesBulkTransferResponse
+    public function transfer($devices) : AsyncResponse
     {
         if (is_array($devices)) {
             /** @var AsynchronousDeviceTransferJob **/
@@ -143,7 +166,13 @@ class DevicesBulk
         }
         $request = new DevicesBulkTransfer();
         $request->setDevices($devices);
-        return $this->client->call('post', '/devices/bulk/transfer', $request, DevicesBulkTransferResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 409 => ConflictException::class, 500 => InternalServerException::class));
+        /** @var DevicesBulkTransferResponse **/
+        $response = $this->client->call('post', '/devices/bulk/transfer', $request, DevicesBulkTransferResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 409 => ConflictException::class, 500 => InternalServerException::class));
+        $jobId = $response->getJobId();
+        if (is_null($jobId)) {
+            throw new DeserializeException(array('string'), 'null');
+        }
+        return new AsyncResponse($this->client, new DevicesBulkTransferAsync(array($jobId)), $response);
     }
     /**
      * Replace multiple devices (moving tokens from one device to another) with synchronous job
@@ -176,9 +205,9 @@ class DevicesBulk
     /**
      * Restart multiple devices with asynchronous job.
      *
-     * @param DevicesBulkRestartAsync|array|null $request The query and body parameters to pass
+     * @param DevicesBulkRestart|array|null $request The query and body parameters to pass
      *
-     * @return string jobId (to use in job status request)
+     * @return AsyncResponse<DevicesBulkRestartResponse, ActionJob>
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -189,30 +218,28 @@ class DevicesBulk
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function restartAsync($request = null) : ?string
+    public function restart($request = null) : AsyncResponse
     {
         if (is_array($request)) {
-            /** @var DevicesBulkRestartAsync **/
-            $request = DevicesBulkRestartAsync::from($request);
+            /** @var DevicesBulkRestart **/
+            $request = DevicesBulkRestart::from($request);
         }
-        /** @var DevicesBulkRestartAsyncResponse **/
-        $response = $this->client->call('post', '/devices/bulk/restart', $request, DevicesBulkRestartAsyncResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
-        return $response->getJobId();
-    }
-    /**
-     * @return DevicesBulkRestart
-     */
-    public function restart() : DevicesBulkRestart
-    {
-        return new DevicesBulkRestart($this->client);
+        /** @var DevicesBulkRestartResponse **/
+        $response = $this->client->call('post', '/devices/bulk/restart', $request, DevicesBulkRestartResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        $jobId = $response->getJobId();
+        if (is_null($jobId)) {
+            throw new DeserializeException(array('string'), 'null');
+        }
+        return new AsyncResponse($this->client, new DevicesBulkRestartAsync(array($jobId)), $response);
     }
     /**
      * Suspend multiple devices with asynchronous job
      *
-     * @param DevicesBulkSuspendAsync|array|null $request The query and body parameters to pass
+     * @param DevicesBulkSuspend|array|null $request The query and body parameters to pass
      *
-     * @return string jobId (to use in job status request)
+     * @return AsyncResponse<DevicesBulkSuspendResponse, ActionJob>
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -223,30 +250,28 @@ class DevicesBulk
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function suspendAsync($request = null) : ?string
+    public function suspend($request = null) : AsyncResponse
     {
         if (is_array($request)) {
-            /** @var DevicesBulkSuspendAsync **/
-            $request = DevicesBulkSuspendAsync::from($request);
+            /** @var DevicesBulkSuspend **/
+            $request = DevicesBulkSuspend::from($request);
         }
-        /** @var DevicesBulkSuspendAsyncResponse **/
-        $response = $this->client->call('post', '/devices/bulk/suspend', $request, DevicesBulkSuspendAsyncResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
-        return $response->getJobId();
-    }
-    /**
-     * @return DevicesBulkSuspend
-     */
-    public function suspend() : DevicesBulkSuspend
-    {
-        return new DevicesBulkSuspend($this->client);
+        /** @var DevicesBulkSuspendResponse **/
+        $response = $this->client->call('post', '/devices/bulk/suspend', $request, DevicesBulkSuspendResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        $jobId = $response->getJobId();
+        if (is_null($jobId)) {
+            throw new DeserializeException(array('string'), 'null');
+        }
+        return new AsyncResponse($this->client, new DevicesBulkSuspendAsync(array($jobId)), $response);
     }
     /**
      * Resume multiple devices with asynchronous job.
      *
-     * @param DevicesBulkResumeAsync|array|null $request The query and body parameters to pass
+     * @param DevicesBulkResume|array|null $request The query and body parameters to pass
      *
-     * @return string jobId (to use in job status request)
+     * @return AsyncResponse<DevicesBulkResumeResponse, ActionJob>
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -257,30 +282,28 @@ class DevicesBulk
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function resumeAsync($request = null) : ?string
+    public function resume($request = null) : AsyncResponse
     {
         if (is_array($request)) {
-            /** @var DevicesBulkResumeAsync **/
-            $request = DevicesBulkResumeAsync::from($request);
+            /** @var DevicesBulkResume **/
+            $request = DevicesBulkResume::from($request);
         }
-        /** @var DevicesBulkResumeAsyncResponse **/
-        $response = $this->client->call('post', '/devices/bulk/resume', $request, DevicesBulkResumeAsyncResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
-        return $response->getJobId();
-    }
-    /**
-     * @return DevicesBulkResume
-     */
-    public function resume() : DevicesBulkResume
-    {
-        return new DevicesBulkResume($this->client);
+        /** @var DevicesBulkResumeResponse **/
+        $response = $this->client->call('post', '/devices/bulk/resume', $request, DevicesBulkResumeResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        $jobId = $response->getJobId();
+        if (is_null($jobId)) {
+            throw new DeserializeException(array('string'), 'null');
+        }
+        return new AsyncResponse($this->client, new DevicesBulkResumeAsync(array($jobId)), $response);
     }
     /**
      * Unsubscribe multiple devices with asynchronous job.
      *
-     * @param DevicesBulkUnsubscribeAsync|array|null $request The query and body parameters to pass
+     * @param DevicesBulkUnsubscribe|array|null $request The query and body parameters to pass
      *
-     * @return string jobId (to use in job status request)
+     * @return AsyncResponse<DevicesBulkUnsubscribeResponse, ActionJob>
      *
      * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
@@ -291,22 +314,20 @@ class DevicesBulk
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
+     * @throws DeserializeException        If failed to deserialize response body as a response object.
      */
-    public function unsubscribeAsync($request = null) : ?string
+    public function unsubscribe($request = null) : AsyncResponse
     {
         if (is_array($request)) {
-            /** @var DevicesBulkUnsubscribeAsync **/
-            $request = DevicesBulkUnsubscribeAsync::from($request);
+            /** @var DevicesBulkUnsubscribe **/
+            $request = DevicesBulkUnsubscribe::from($request);
         }
-        /** @var DevicesBulkUnsubscribeAsyncResponse **/
-        $response = $this->client->call('post', '/devices/bulk/unsubscribe', $request, DevicesBulkUnsubscribeAsyncResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
-        return $response->getJobId();
-    }
-    /**
-     * @return DevicesBulkUnsubscribe
-     */
-    public function unsubscribe() : DevicesBulkUnsubscribe
-    {
-        return new DevicesBulkUnsubscribe($this->client);
+        /** @var DevicesBulkUnsubscribeResponse **/
+        $response = $this->client->call('post', '/devices/bulk/unsubscribe', $request, DevicesBulkUnsubscribeResponse::class, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        $jobId = $response->getJobId();
+        if (is_null($jobId)) {
+            throw new DeserializeException(array('string'), 'null');
+        }
+        return new AsyncResponse($this->client, new DevicesBulkUnsubscribeAsync(array($jobId)), $response);
     }
 }
