@@ -31,7 +31,7 @@ jobs:
         uses: shivammathur/setup-php@2.11.0
         with:
           # Setup PHP version.
-          php-version: 7.2
+          php-version: 8.0
           tools: phpunit, psalm, composer
       - name: Install dependencies
         run: |
