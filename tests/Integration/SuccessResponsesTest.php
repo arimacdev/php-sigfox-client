@@ -26,7 +26,7 @@ class SuccessResponsesTest extends BaseTestCase {
         $this->assertArrayHasKey(0, $this->history);
         /** @var Request **/
         $request = $this->history[0]["request"];
-        $this->assertSame("/devices/1005", $request->getUri()->getPath());
+        $this->assertSame("devices/1005", $request->getUri()->getPath());
         $this->assertSame("GET", $request->getMethod());
     }
 
@@ -40,7 +40,7 @@ class SuccessResponsesTest extends BaseTestCase {
         $this->assertArrayHasKey(0, $this->history);
         /** @var Request **/
         $request = $this->history[0]["request"];
-        $this->assertSame("/devices/1005", $request->getUri()->getPath());
+        $this->assertSame("devices/1005", $request->getUri()->getPath());
         $this->assertSame("PUT", $request->getMethod());
         $actual = json_decode($request->getBody()->__toString(), true );
         $this->assertArraySimilar($deviceUpdateArr, $actual);
@@ -54,7 +54,7 @@ class SuccessResponsesTest extends BaseTestCase {
         $this->assertArrayHasKey(0, $this->history);
         /** @var Request **/
         $request = $this->history[0]["request"];
-        $this->assertSame("/devices/1005", $request->getUri()->getPath());
+        $this->assertSame("devices/1005", $request->getUri()->getPath());
         $this->assertSame("DELETE", $request->getMethod());
     }
 
@@ -69,7 +69,7 @@ class SuccessResponsesTest extends BaseTestCase {
         $this->assertArrayHasKey(0, $this->history);
         /** @var Request **/
         $request = $this->history[0]["request"];
-        $this->assertSame("/devices/", $request->getUri()->getPath());
+        $this->assertSame("devices", $request->getUri()->getPath());
         $this->assertSame("POST", $request->getMethod());
         $actual = json_decode($request->getBody()->__toString(), true );
         $this->assertArraySimilar($deviceCreationArr, $actual);
@@ -86,7 +86,7 @@ class SuccessResponsesTest extends BaseTestCase {
         $this->assertArrayHasKey(0, $this->history);
         /** @var Request **/
         $request = $this->history[0]["request"];
-        $this->assertSame("/devices/", $request->getUri()->getPath());
+        $this->assertSame("devices", $request->getUri()->getPath());
         $this->assertSame("POST", $request->getMethod());
         $actual = json_decode($request->getBody()->__toString(), true );
         $this->assertArraySimilar($deviceCreationArr, $actual);
@@ -136,14 +136,14 @@ class SuccessResponsesTest extends BaseTestCase {
         /** @var Request **/
         $request = $this->history[0]["request"];
         $uri = $request->getUri();
-        $this->assertSame("/devices/", $uri->getPath());
+        $this->assertSame("devices", $uri->getPath());
         $this->assertSame("limit=100",$uri->getQuery());
         $this->assertSame("GET", $request->getMethod());
 
         /** @var Request **/
         $request = $this->history[1]["request"];
         $uri = $request->getUri();
-        $this->assertSame("/abc0", $uri->getPath());
+        $this->assertSame("abc0", $uri->getPath());
         $this->assertSame("a=123",$uri->getQuery());
         $this->assertSame("GET", $request->getMethod());
     }
@@ -164,13 +164,13 @@ class SuccessResponsesTest extends BaseTestCase {
         /** @var Request **/
         $request = $this->history[0]["request"];
         $uri = $request->getUri();
-        $this->assertSame("/devices/", $uri->getPath());
+        $this->assertSame("devices", $uri->getPath());
         $this->assertSame("GET", $request->getMethod());
 
         /** @var Request **/
         $request = $this->history[1]["request"];
         $uri = $request->getUri();
-        $this->assertSame("/abc0", $uri->getPath());
+        $this->assertSame("abc0", $uri->getPath());
         $this->assertSame("a=123",$uri->getQuery());
         $this->assertSame("GET", $request->getMethod());
     }
@@ -211,8 +211,8 @@ class SuccessResponsesTest extends BaseTestCase {
             $page++;
         }
         $this->assertCount(2, $this->history);
-        $this->assertSame("/devices/", $this->history[0]["request"]->getUri()->getPath());
-        $this->assertSame("/abc0", $this->history[1]["request"]->getUri()->getPath());
+        $this->assertSame("devices", $this->history[0]["request"]->getUri()->getPath());
+        $this->assertSame("abc0", $this->history[1]["request"]->getUri()->getPath());
         $pages = iterator_to_array($pageIterator);
 
         $serializer = new ClassSerializer(Device::class);
@@ -223,7 +223,7 @@ class SuccessResponsesTest extends BaseTestCase {
         }
         $this->assertArraySimilar($expected, $pages);
         $this->assertCount(3, $this->history);
-        $this->assertSame("/abc1", $this->history[2]["request"]->getUri()->getPath());
+        $this->assertSame("abc1", $this->history[2]["request"]->getUri()->getPath());
     }
 
     public function testAsyncRequest(){
