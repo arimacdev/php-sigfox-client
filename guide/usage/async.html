@@ -175,7 +175,7 @@ $jobId = $job-&gt;getId();
 // Save this job id in your database
 
 // You can get the job status in next request by a one method
-$status = $sigfox-&gt;jobStatus();
+$status = $sigfox-&gt;jobStatus($jobId);
 $total = $status-&gt;getTotal();
 </code></pre>
 <p>Refer the full <a href="https://arimacdev.github.io/php-sigfox-client/classes/Arimac-Sigfox-Response-Async-AsyncResponse.html">API reference</a> to get an idea about return types.</p>
