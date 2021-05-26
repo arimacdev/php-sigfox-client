@@ -3,6 +3,7 @@
 namespace Arimac\Sigfox;
 
 use Arimac\Sigfox\Exception\DeserializeException;
+use Arimac\Sigfox\Exception\SerializeException;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\Impl\Model as SerializeModel;
 use Arimac\Sigfox\Validator\Validate;
@@ -75,6 +76,8 @@ abstract class Model implements SerializeModel, Validate, JsonSerializable
      * @inheritdoc
      *
      * @return array
+     *
+     * @throws SerializeException
      */
     function jsonSerialize()
     {
