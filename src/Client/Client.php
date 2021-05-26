@@ -10,8 +10,8 @@ use Arimac\Sigfox\Exception\UnexpectedResponseException;
 use Arimac\Sigfox\Helper;
 use Arimac\Sigfox\Request;
 use Arimac\Sigfox\Serializer\ClassSerializer;
-use Arimac\Sigfox\Validator\Validator;
 use Arimac\Sigfox\Exception\ValidationException;
+use Psr\Http\Message\StreamInterface;
 
 /**
  * Client wrapper that serializing and deserializing data before sending and receiving
@@ -61,23 +61,11 @@ class Client
         ?string $responseClass = null,
         array $errors = []
     ): ?Model {
-        $body = null;
-        $query = null;
-        // Serializing and validating data
-        if ($request) {
-            Validator::validate($request);
-            $requestSerializer = new ClassSerializer($request::class);
-            $serialized = $requestSerializer->serialize($request);
-
-            $bodyField = $request->getBodyField();
-            if ($bodyField && isset($serialized[$bodyField])) {
-                $body = $serialized[$bodyField];
-            }
-
-            $query = Helper::arrayFilterKeys($serialized, $request->getQueryFields());
-        }
+        
+        list($query, $body) = Helper::splitRequest($request);
+        
         // Calling API endpoint
-        list($statusCode, $body) = $this->inner->request($method, $url, $body, $query);
+        list($statusCode, $body) = $this->inner->request($method, trim($url,"/"), $body, $query);
         $statusCode = (int) $statusCode;
 
         // If accepting a response
@@ -98,6 +86,56 @@ class Client
         if ($statusCode == 204) { // 204 success but not accepting a body
             return null;
         } else if ($statusCode >= 400) { // 400>= is accepting a error
+            if (isset($errors[$statusCode])) {
+                $responseJson = json_decode($body, true);
+                $exception = $errors[$statusCode]::deserialize($responseJson);
+                throw $exception;
+            }
+        }
+        throw new UnexpectedResponseException($statusCode, $body);
+    }
+
+    /**
+     * Downloading a file .
+     *
+     * @template T of Model
+     * @template E of ResponseException
+     *
+     * @param string                          $method  HTTP method
+     * @param string                          $url     The URL to call
+     * @param Request                         $request Request data
+     * @param resource|StreamInterface|string $sink    Response class name
+     * @param array<int,string>               $errors  All expected HTTP errors as an associated
+     *                                                 array `[statusCode=>className]`
+     *
+     * @psalm-param array<int,class-string<E>> $errors
+     *
+     * @throws ResponseException
+     * @throws UnexpectedResponseException
+     * @throws SerializeException
+     * @throws DeserializeException
+     * @throws ValidationException
+     *
+     * @return void
+     */
+    public function download(
+        string $method,
+        string $url,
+        ?Request $request = null,
+        $sink,
+        array $errors = []
+    ) {
+        list($query, $body) = Helper::splitRequest($request); 
+        // Calling API endpoint
+        list($statusCode, $body) = $this->inner->request($method, $url, $body, $query, $sink);
+        $statusCode = (int) $statusCode;
+
+        // If accepting a response
+        if ($statusCode >= 200 && $statusCode < 204) { // 200..203 requests accepting a response
+            return;
+        }
+
+        if ($statusCode >= 400) { // 400>= is accepting a error
             if (isset($errors[$statusCode])) {
                 $responseJson = json_decode($body, true);
                 $exception = $errors[$statusCode]::deserialize($responseJson);

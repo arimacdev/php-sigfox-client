@@ -202,7 +202,7 @@
         "get": "get"
     },
     "\/tiles\/public-coverage\/kmz\/tiles.kmz": {
-        "get": "kmzTitles"
+        "get": "kmzTiles"
     },
     "\/users\/": {
         "get": "list",

@@ -26,12 +26,13 @@ class MockClient implements ClientImpl
     /**
      * @inheritdoc
      */
-    function request(string $method, string $url, array $body = null, array $query = null): array
+    function request(string $method, string $url, array $body = null, array $query = null, $sink = null): array
     {
         try {
             $res = $this->client->request($method, $url, [
                 "body" => $body ? json_encode($body) : null,
-                "query" => $query
+                "query" => $query,
+                "sink" => $sink
             ]);
             return [$res->getStatusCode(), $res->getBody()];
         } catch (RequestException $e) {

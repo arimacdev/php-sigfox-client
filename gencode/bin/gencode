@@ -3,6 +3,7 @@
 
 use Arimac\Sigfox\GenCode\Client;
 use Arimac\Sigfox\GenCode\Config\Async;
+use Arimac\Sigfox\GenCode\Config\EmptyRepository;
 use Arimac\Sigfox\GenCode\Model;
 use Arimac\Sigfox\GenCode\Config\EnumFields;
 use Arimac\Sigfox\GenCode\Config\ForceTraits;
@@ -112,58 +113,60 @@ foreach ($openapi["paths"] as $endpoint => $path) {
             $previousRepoName = $repoName;
             $repoName .= $repoNameSlice;
 
-            // Check the weather a repository was already created with this name
-            if (!isset($repositories[$repoName])) {
-                // Creating a new repository class if there is not
-                $repository = new Repository("Arimac\\Sigfox\\Repository", $repoName);
-                // Resolving the previous repository and fetching all
-                // the path parameters that set in this repository.
-                // To use in __construct method
-                /** @var Repository **/
-                $prevRepository = $repositories[$previousRepoName] ?? null;
-                $properties = $prevRepository ? $prevRepository->getProperties() : [];
+            if (!$isAsyncStatusEndpoint) {
+                // Check the weather a repository was already created with this name
+                if (!isset($repositories[$repoName])) {
+                    // Creating a new repository class if there is not
+                    $repository = new Repository("Arimac\\Sigfox\\Repository", $repoName);
+                    // Resolving the previous repository and fetching all
+                    // the path parameters that set in this repository.
+                    // To use in __construct method
+                    /** @var Repository **/
+                    $prevRepository = $repositories[$previousRepoName] ?? null;
+                    $properties = $prevRepository ? $prevRepository->getProperties() : [];
 
-                // Adding it to the repositories storage
-                $repositories[$repoName] = $repository;
+                    // Adding it to the repositories storage
+                    $repositories[$repoName] = $repository;
 
-                // Checking if the current slice is a path parameter
-                if ($parameter) {
-                    $paramName = lcfirst($repoNameSlice);
-                    // Fetching the path parameter details from previously defined array
-                    $type = $pathParams[$paramName]["type"];
-                    $description = $pathParams[$paramName]["description"];
+                    // Checking if the current slice is a path parameter
+                    if ($parameter) {
+                        $paramName = lcfirst($repoNameSlice);
+                        // Fetching the path parameter details from previously defined array
+                        $type = $pathParams[$paramName]["type"];
+                        $description = $pathParams[$paramName]["description"];
 
-                    // Adding the current path parameter to the constructor parameters
-                    $properties[] = [$paramName, $type, $description];
-                    // Adding a find method with the current path parameter to
-                    // the previous repository
-                    // ->find("A123F")
-                    $prevRepository->addFindMethod(
-                        $paramName,
-                        $type,
-                        "Arimac\\Sigfox\\Repository\\$repoName",
-                        Helper::normalizeDocComment(
-                            "Find by $paramName",
-                            [
-                                ["param", "$type", "\$$paramName", $description],
-                                ["return", "$repoName", null]
-                            ]
-                        )
-                    );
-                } else if ($prevRepository&&!$isAsyncStatusEndpoint) {
-                    // Adding a normal repository method if it is not a path parameter
-                    // ->messages()
-                    $methodName = lcfirst($repoNameSlice);
-                    $prevRepository->addRepositoryMethod($methodName, "Arimac\\Sigfox\\Repository\\" . $repoName);
+                        // Adding the current path parameter to the constructor parameters
+                        $properties[] = [$paramName, $type, $description];
+                        // Adding a find method with the current path parameter to
+                        // the previous repository
+                        // ->find("A123F")
+                        $prevRepository->addFindMethod(
+                            $paramName,
+                            $type,
+                            "Arimac\\Sigfox\\Repository\\$repoName",
+                            Helper::normalizeDocComment(
+                                "Find by $paramName",
+                                [
+                                    ["param", "$type", "\$$paramName", $description],
+                                    ["return", "$repoName", null]
+                                ]
+                            )
+                        );
+                    } else if ($prevRepository && !$isAsyncStatusEndpoint) {
+                        // Adding a normal repository method if it is not a path parameter
+                        // ->messages()
+                        $methodName = lcfirst($repoNameSlice);
+                        $prevRepository->addRepositoryMethod($methodName, "Arimac\\Sigfox\\Repository\\" . $repoName);
+                    }
+
+                    // Adding a constructor to the current repository
+                    // with path parameters of previous repositories
+                    $repository->addConstructor($properties);
+                } else {
+                    // Nothing happened. But passing the current repository
+                    // to the next iteration
+                    $repository = $repositories[$repoName];
                 }
-
-                // Adding a constructor to the current repository
-                // with path parameters of previous repositories
-                $repository->addConstructor($properties);
-            } else {
-                // Nothing happened. But passing the current repository
-                // to the next iteration
-                $repository = $repositories[$repoName];
             }
         }
     }
@@ -176,6 +179,8 @@ foreach ($openapi["paths"] as $endpoint => $path) {
 
         $operation = $path[$requestMethod];
 
+        $isFileDownload = isset($operation["produces"]) && $operation["produces"][0] !== "application/json";
+
         $responseModel = null;
         // We consider the response type is nullable if the operation is expecting 204 and <204 together
         // as the response code.
@@ -184,7 +189,7 @@ foreach ($openapi["paths"] as $endpoint => $path) {
         foreach ($operation["responses"] as $statusCode => $response) {
             // 201-203 = Expecting a response
             if ($statusCode < 204 && $statusCode >= 200) {
-                if (isset($response["schema"])) {
+                if (isset($response["schema"]) && !$isFileDownload) {
                     $responseClassName = $requestClassName . "Response";
                     $responseModel = Response::fromArray("Arimac\\Sigfox\\Response\\Generated\\$responseClassName", $response["schema"]);
                 }
@@ -201,19 +206,30 @@ foreach ($openapi["paths"] as $endpoint => $path) {
         if (!$isAsyncStatusEndpoint) {
             $requestModel = Request::fromArray("Arimac\\Sigfox\\Request\\$requestClassName", $operation);
 
-            // Adding a request method to the current repository
-            // ->update(["deviceTypeId"=>"ACB123"]);
-            $repository->addRequestMethod(
-                $methodName,
-                $requestMethod,
-                $endpoint,
-                $responseModel,
-                $responseTypeNullable,
-                $requestModel,
-                $expectedErrors,
-                $description
-            );
-        } 
+            if ($isFileDownload) {
+                // Adding a file download endpoint
+                $repository->addDownloadMethod(
+                    $methodName,
+                    $endpoint,
+                    $requestModel,
+                    $expectedErrors,
+                    $description
+                );
+            } else {
+                // Adding a request method to the current repository
+                // ->update(["deviceTypeId"=>"ACB123"]);
+                $repository->addRequestMethod(
+                    $methodName,
+                    $requestMethod,
+                    $endpoint,
+                    $responseModel,
+                    $responseTypeNullable,
+                    $requestModel,
+                    $expectedErrors,
+                    $description
+                );
+            }
+        }
     }
 }
 

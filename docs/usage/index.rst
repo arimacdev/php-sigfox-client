@@ -12,3 +12,4 @@ this API client help you to do lot of things in small peice of codes.
     async
     customclients
     exceptions
+    filedownloads

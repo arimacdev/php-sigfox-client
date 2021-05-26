@@ -5,6 +5,11 @@ namespace Arimac\Sigfox;
 use Arimac\Sigfox\Client\Client;
 use Arimac\Sigfox\Client\ClientImpl;
 use Arimac\Sigfox\Client\Guzzle;
+use Arimac\Sigfox\Exception\DeserializeException;
+use Arimac\Sigfox\Exception\Response\ResponseException;
+use Arimac\Sigfox\Exception\SerializeException;
+use Arimac\Sigfox\Exception\UnexpectedResponseException;
+use Arimac\Sigfox\Exception\ValidationException;
 use Arimac\Sigfox\Response\Async\AsyncModel;
 use Arimac\Sigfox\Response\Async\ReconstructedAsyncResponse;
 use InvalidArgumentException;
@@ -54,6 +59,11 @@ abstract class SigfoxExt {
      * @return Model
      *
      * @throws InvalidArgumentException
+     * @throws SerializeException
+     * @throws DeserializeException
+     * @throws ValidationException
+     * @throws UnexpectedResponseException
+     * @throws ResponseException
      *
      * @psalm-return Model
      */

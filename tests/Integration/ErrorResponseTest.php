@@ -200,4 +200,20 @@ class ErrorResponseTest extends BaseTestCase {
         $this->mock->append(new Response(500,[],''));
         $job->status();
     }
+
+    public function testFileDownload(){
+        $tmpFile = __DIR__."/test.txt";
+        $this->mock->append(new Response(500,[], "Test"));
+        $this->expectException(InternalServerException::class);
+        $resource = fopen($tmpFile, "w+"); 
+        $this->client->tiles()->publicCoverage()->kmzTiles($resource);
+    }
+    /**
+     * This method is called after each test.
+     */
+    protected function tearDown(): void
+    {
+        @unlink(__DIR__."/test.txt");
+    }
+
 }

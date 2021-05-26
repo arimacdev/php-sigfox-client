@@ -1,6 +1,8 @@
 <?php
 namespace Arimac\Sigfox\Client;
 
+use Psr\Http\Message\StreamInterface;
+
 /**
  * Implement this to use different HTTP clients
  */
@@ -17,13 +19,15 @@ interface ClientImpl {
     /**
      * Making a request to the API
      *
-     * @param string $method The http method in lower case
-     * @param string $url    The url without the base URL
-     * @param array  $body   The request body as a JSON serializable array
-     * @param array  $query  The URL encoded query as an associated array
+     * @param string                          $method The http method in lower case
+     * @param string                          $url    The url without the base URL
+     * @param array                           $body   The request body as a JSON serializable array
+     * @param array                           $query  The URL encoded query as an associated array
+     * @param resource|string|StreamInterface $save   Location or resource to save the response
      *
-     * @return array An array containing status code and the response body. status code should be an integer and
-     *               the response body should be a string
+     * @return array An array containing status code, response body and headers. status code should be 
+     *               an integer, the response body should be a Psr\Http\Message\StreamInterface and
+     *               the headers should be array
      */
-    function request(string $method, string $url, array $body=null, array $query=null):array;
+    function request(string $method, string $url, array $body=null, array $query=null, $save = null):array;
 }

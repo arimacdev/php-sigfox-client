@@ -111,6 +111,25 @@ class SerializerTest extends TestCase
         $this->assertInstanceOf(PrimitivePropertiesDefinition::class, $serializer->deserialize($serialized));
     }
 
+    public function testPrimitivePropertiesJsonSerializable()
+    {
+        $obj = new PrimitivePropertiesDefinition();
+        $obj->setAge(12);
+        $obj->setHeight(12.34);
+        $obj->setHobbies(["Collecting Stamps"]);
+        $obj->setMarried(false);
+        $obj->setName("John");
+
+        $serialized = [
+            "name" => "John",
+            "age" => 12,
+            "height" => 12.34,
+            "married" => false,
+            "hobbies" => ["Collecting Stamps"],
+        ];
+        $this->assertSame($serialized, json_decode( json_encode($obj), true));
+    }
+
     public function testPrimitivePropertiesClassDeserializeWithWrongArray()
     {
         $serialized = [

@@ -11,7 +11,7 @@ use Arimac\Sigfox\Validator\Rules\Min;
  * Retrieve Sigfox public coverage kmz file from a job. The public coverage is always available and does not require
  * a previous calculation
  */
-class TilesPublicCoverageKmzTitles extends Request
+class TilesPublicCoverageKmzTiles extends Request
 {
     /**
      * The zoom level used to generate kmz file

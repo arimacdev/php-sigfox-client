@@ -5,7 +5,6 @@ namespace Arimac\Sigfox\Client;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
-use GuzzleHttp\Exception\ServerException;
 
 class Guzzle implements ClientImpl
 {
@@ -24,7 +23,7 @@ class Guzzle implements ClientImpl
         $this->client = new Client([
             'base_uri' => $baseUrl,
             'headers' => [
-                'Authorization' => ['Basic' . base64_encode($username . ':' . $password)],
+                'Authorization' => ['Basic ' . base64_encode($username . ':' . $password)],
                 "Content-Type" => "application/json",
                 "Accept" => "application/json"
             ],
@@ -36,20 +35,21 @@ class Guzzle implements ClientImpl
      *
      * @throws GuzzleException
      */
-    function request(string $method, string $url, array $body = null, array $query = null): array
+    function request(string $method, string $url, array $body = null, array $query = null, $save = null): array
     {
         try {
             $res = $this->client->request($method, $url, [
                 "body" => $body ? json_encode($body) : null,
-                "query" => $query
+                "query" => $query,
+                "sink"=> $save
             ]);
-            return [$res->getStatusCode(), $res->getBody()];
+            return [$res->getStatusCode(), $res->getBody(), $res->getHeaders()];
         } catch (RequestException $e) {
             $res = $e->getResponse();
             if ($res) {
                 return [$res->getStatusCode(), $res->getBody()];
             }
-            return [0, ''];
+            return [0, '', []];
         }
     }
 }

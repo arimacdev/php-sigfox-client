@@ -130,17 +130,6 @@ class DevicesBulk
         return new AsyncResponse($this->client, new DevicesBulkUpdateAsync(array($jobId)), $response);
     }
     /**
-     * Find by jobId
-     *
-     * @param string $jobId The job identifier (hexadecimal format)
-     *
-     * @return DevicesBulkJobId
-     */
-    public function find(string $jobId) : DevicesBulkJobId
-    {
-        return new DevicesBulkJobId($this->client, $jobId);
-    }
-    /**
      * Transfer multiple devices to another device type with asynchronous job
      *
      * @param AsynchronousDeviceTransferJob|array|null $devices The devices to move

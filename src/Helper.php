@@ -2,6 +2,10 @@
 
 namespace Arimac\Sigfox;
 
+use Arimac\Sigfox\Exception\SerializeException;
+use Arimac\Sigfox\Exception\ValidationException;
+use Arimac\Sigfox\Serializer\ClassSerializer;
+use Arimac\Sigfox\Validator\Validator;
 use stdClass;
 
 class Helper {
@@ -68,5 +72,35 @@ class Helper {
         }
 
         return null;
+    }
+
+    /**
+     * Split the request into query, body after deserializes and validates the request
+     *
+     * @param Request $request
+     *
+     * @throws SerializeException
+     * @throws ValidationException
+     *
+     * @return array<int,array|null>
+     */
+    public static function splitRequest(?Request $request): array {
+        $body = null;
+        $query = null;
+        // Serializing and validating data
+        if ($request) {
+            Validator::validate($request);
+            $requestSerializer = new ClassSerializer($request::class);
+            $serialized = $requestSerializer->serialize($request);
+
+            $bodyField = $request->getBodyField();
+            if ($bodyField && isset($serialized[$bodyField])) {
+                $body = $serialized[$bodyField];
+            }
+
+            $query = Helper::arrayFilterKeys($serialized, $request->getQueryFields());
+        }
+
+        return [$query, $body];
     }
 }

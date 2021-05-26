@@ -24,12 +24,19 @@ class Repository extends Class_
 {
     protected array $properties = [];
 
+    protected bool $empty = true;
+
+    public function isEmpty(): bool {
+        return $this->empty;
+    }
+
     public function addFindMethod(
         string $name,
         string $type,
         string $returnType,
         ?string $docComment = null
     ) {
+        $this->empty = false;
         $returnType = $this->useType($returnType);
         $methodName = "find";
         if (in_array($name, ["year", "month"])) {
@@ -119,6 +126,7 @@ class Repository extends Class_
 
     public function addRepositoryMethod(string $methodName, string $returnType)
     {
+        $this->empty = false;
         $returnType = $this->useType($returnType);
         $args = array_map(function ($property) {
             return new Arg(new Variable("this->" . $property[0]));
@@ -139,6 +147,207 @@ class Repository extends Class_
         );
     }
 
+    public function addDownloadMethod(
+        string $methodName,
+        string $endpoint,
+        $request = null,
+        array $errors,
+        ?string $description = null
+    ){
+        $this->empty = false;
+        if (is_object($request)) {
+            /** @var Request $request **/
+            $requestType = $request ? $request->getName() : null;
+            $requestProperties = $request ? $request->getProperties() : [];
+        } else {
+            $requestType = $request;
+            $requestProperties = [];
+        }
+
+        $endpoint = new String_($endpoint);
+        // Binding all URL parameters
+        // Helper::bindUrlParams("url", $this->pathParam, ...)
+        if (count($this->properties)) {
+            $params = [$endpoint];
+            foreach ($this->properties as $property) {
+                $name = $property[0];
+                array_push($params, new Variable("this->$name"));
+            }
+            $this->useType("Arimac\\Sigfox\\Helper");
+            $endpoint = new StaticCall(new Name("Helper"), "bindUrlParams", $params);
+        }
+
+        $args = [
+            new String_("get"),
+            $endpoint,
+        ];
+
+        $params = [
+            $this->factory->param("file")
+        ];
+        $stmts = [];
+
+        $streamInterface = $this->useType("Psr\Http\Message\StreamInterface");
+
+        $docBlockTags = [
+            [
+                "param",
+                "resource|string|".$streamInterface, 
+                "\$file",
+                "Specify where the body of a response will be saved.\n".
+                "Types:-\n\n".
+                "- string (path to file on disk)\n".
+                "- fopen() resource\n".
+                "- Psr\Http\Message\StreamInterface"
+            ]
+        ];
+
+        // Taking the inner property value as the argument if the request has only one property.
+        if (count($requestProperties) == 1 && $requestType) {
+            $propertyName = array_keys($requestProperties)[0];
+
+            $type = $requestProperties[$propertyName][0];
+            $required = $requestProperties[$propertyName][1];
+            $paramDescription = $requestProperties[$propertyName][2];
+
+            $requestVariableName = $propertyName === "request" ? "coreRequest" : "request";
+
+            $usedType = $this->useType($type);
+            $docBlockType = $usedType;
+
+            if (substr($type, strlen($type) - 2) !== "[]" && $usedType !== $type) {
+                $docBlockType .= "|array";
+
+                $stmts[] = new If_(
+                    $this->factory->funcCall("is_array", [$this->factory->var($propertyName)]),
+                    [
+                        "stmts" => [
+                            new Expression(new Assign(
+                                $this->factory->var($propertyName),
+                                $this->factory->staticCall($usedType, "from", [$this->factory->var($propertyName)])
+                            ), [
+                                "comments" => [
+                                    new Comment("/** @var $usedType **/")
+                                ]
+                            ])
+                        ]
+                    ]
+                );
+            }
+            if (!$required) {
+                $docBlockType .= "|null";
+            }
+            array_push($docBlockTags, ["param", $docBlockType, "\$$propertyName", $paramDescription]);
+
+            $phpType = Helper::toPHPValue($usedType);
+
+            $requestType = $this->useType($requestType);
+
+            if (!$required) {
+                $phpType = new NullableType($phpType);
+            }
+            $param = $this->factory->param($propertyName);
+            $params[] = $param;
+            // $request = new MyRequest()
+            array_push($stmts, new Assign(new Variable($requestVariableName), $this->factory->new($requestType)));
+            // $request->setMyParam($myParam);
+            array_push($stmts, $this->factory->methodCall(
+                new Variable($requestVariableName),
+                "set" . ucfirst($propertyName),
+                [$this->factory->var($propertyName)]
+            ));
+            array_push($args, new Variable($requestVariableName));
+        } else if (isset($requestType)) {
+            $usedType = $this->useType($requestType);
+            $docBlockType = $usedType;
+
+            $required = false;
+            foreach ($requestProperties as $propertyName => $attrs) {
+                $required = $required || $attrs[1];
+            }
+
+            if ( substr($usedType, strlen($usedType) - 2) !== "[]"&& $requestType!==$usedType) {
+                $docBlockType.="|array";
+                $stmts[] = new If_(
+                    $this->factory->funcCall("is_array", [$this->factory->var("request")]),
+                    [
+                        "stmts" => [
+                            new Expression(new Assign(
+                                $this->factory->var("request"),
+                                $this->factory->staticCall($usedType, "from", [$this->factory->var("request")])
+                            ), [
+                                "comments" => [
+                                    new Comment("/** @var $usedType **/")
+                                ]
+                            ])
+                        ]
+                    ]
+                );
+            }
+
+            if(!$required){
+                $docBlockType .= "|null";
+            }
+
+            array_push($docBlockTags, ["param", $docBlockType, "\$request", "The query and body parameters to pass"]);
+
+            $param = $this->factory->param("request");
+            if (!$required) {
+                $param->setDefault($this->factory->val(null));
+            }
+            $params[] = $param;
+            array_push($args, new Variable("request"));
+        } else {
+            array_push($args, $this->factory->val(null));
+        }
+
+        // Adding UnexpectedResponseException to the doc block
+        $unexpectedException = $this->useType("Arimac\\Sigfox\\Exception\\UnexpectedResponseException");
+        array_push($docBlockTags, ["throws", $unexpectedException, "If server returned an unexpected status code."]);
+
+        // Adding generic HTTP exception
+        $responseException = $this->useType("Arimac\\Sigfox\\Exception\\Response\\ResponseException");
+        $docBlockTags[] = ["throws", $responseException, "If server returned any expected HTTP error"];
+
+        // ValidationException
+        $validationException = $this->useType("Arimac\\Sigfox\\Exception\\ValidationException");
+        $docBlockTags[] = [
+            "throws",
+            $validationException,
+            "If request could not be validated according to pre validation rules."
+        ];
+
+        $deserializeException = $this->useType("Arimac\\Sigfox\\Exception\\DeserializeException");
+        $docBlockTags[] = [
+            "throws",
+            $deserializeException,
+            "If the request array could not conveted to an object."
+        ];
+
+        $serializeException = $this->useType("Arimac\\Sigfox\\Exception\\SerializeException");
+        $docBlockTags[] = [
+            "throws",
+            $serializeException,
+            "If the request object could not converted to a JSON value."
+        ];
+
+        // Adding all expected HTTP responses to the doc block and $client->call method
+        $astErrors = [];
+        $docErrors = [];
+        foreach ($errors as $statusCode => $className) {
+            $className = $this->useType($className);
+            $docErrors[] = $className;
+            array_push($docBlockTags, ["throws", $className, "If server returned a HTTP " . $statusCode . " error."]);
+            $astErrors[$statusCode] = $this->factory->classConstFetch($className, "class");
+        }
+        array_push($args, $this->factory->var("file"));
+        array_push($args, $this->factory->val($astErrors));
+
+        $stmts[] = new FuncCall(new Name("\$this->client->download"), $args);
+
+        $this->addMethod($methodName, $params, $stmts, "void", Helper::normalizeDocComment($description, $docBlockTags, 2));
+    }
+
     public function addRequestMethod(
         string $methodName,
         string $requestMethod,
@@ -149,6 +358,7 @@ class Repository extends Class_
         array $errors = [],
         ?string $description = null
     ) {
+        $this->empty = false;
         if (is_object($request)) {
             /** @var Request $request **/
             $requestType = $request ? $request->getName() : null;

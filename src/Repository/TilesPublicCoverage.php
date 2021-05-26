@@ -14,7 +14,8 @@ use Arimac\Sigfox\Exception\Response\ForbiddenException;
 use Arimac\Sigfox\Exception\Response\NotFoundException;
 use Arimac\Sigfox\Exception\Response\InternalServerException;
 use Arimac\Sigfox\Exception\DeserializeException;
-use Arimac\Sigfox\Request\TilesPublicCoverageKmzTitles;
+use Psr\Http\Message\StreamInterface;
+use Arimac\Sigfox\Request\TilesPublicCoverageKmzTiles;
 class TilesPublicCoverage
 {
     /**
@@ -58,24 +59,31 @@ class TilesPublicCoverage
      * Retrieve Sigfox public coverage kmz file from a job. The public coverage is always available and does not
      * require a previous calculation
      *
-     * @param TilesPublicCoverageKmzTitles|array|null $request The query and body parameters to pass
+     * @param resource|string|StreamInterface        $file    Specify where the body of a response will be saved.
+     *                                                        Types:-
+     *                                                        
+     *                                                        - string (path to file on disk)
+     *                                                        - fopen() resource
+     *                                                        - Psr\Http\Message\StreamInterface
+     * @param TilesPublicCoverageKmzTiles|array|null $request The query and body parameters to pass
      *
-     * @throws SerializeException          If request object failed to serialize to a JSON serializable type.
      * @throws UnexpectedResponseException If server returned an unexpected status code.
      * @throws ResponseException           If server returned any expected HTTP error
      * @throws ValidationException         If request could not be validated according to pre validation rules.
+     * @throws DeserializeException        If the request array could not conveted to an object.
+     * @throws SerializeException          If the request object could not converted to a JSON value.
      * @throws BadRequestException         If server returned a HTTP 400 error.
      * @throws UnauthorizedException       If server returned a HTTP 401 error.
      * @throws ForbiddenException          If server returned a HTTP 403 error.
      * @throws NotFoundException           If server returned a HTTP 404 error.
      * @throws InternalServerException     If server returned a HTTP 500 error.
      */
-    public function kmzTitles($request = null) : void
+    public function kmzTiles($file, $request = null) : void
     {
         if (is_array($request)) {
-            /** @var TilesPublicCoverageKmzTitles **/
-            $request = TilesPublicCoverageKmzTitles::from($request);
+            /** @var TilesPublicCoverageKmzTiles **/
+            $request = TilesPublicCoverageKmzTiles::from($request);
         }
-        $this->client->call('get', '/tiles/public-coverage/kmz/tiles.kmz', $request, null, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
+        $this->client->download('get', '/tiles/public-coverage/kmz/tiles.kmz', $request, $file, array(400 => BadRequestException::class, 401 => UnauthorizedException::class, 403 => ForbiddenException::class, 404 => NotFoundException::class, 500 => InternalServerException::class));
     }
 }

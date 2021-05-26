@@ -102,6 +102,7 @@ $sigfox->devices()->find("AF01F")->delete();
 - Requests validation over validation rules in the API documentation.
 - A developer friendly helper to handle pagination requests
 - A developer friendly helper to handle async requests
+- File downloads (kmz)
 
 ## Versioning
 

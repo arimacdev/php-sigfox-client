@@ -6,8 +6,9 @@ use Arimac\Sigfox\Exception\DeserializeException;
 use Arimac\Sigfox\Serializer\ClassSerializer;
 use Arimac\Sigfox\Serializer\Impl\Model as SerializeModel;
 use Arimac\Sigfox\Validator\Validate;
+use JsonSerializable;
 
-abstract class Model implements SerializeModel, Validate
+abstract class Model implements SerializeModel, Validate, JsonSerializable
 {
     /**
      * Initializing a model from an array
@@ -68,5 +69,16 @@ abstract class Model implements SerializeModel, Validate
     function isExtendable(): bool
     {
         return $this->extendable;
+    }
+
+    /**
+     * @inheritdoc
+     *
+     * @return array
+     */
+    function jsonSerialize()
+    {
+        $serializer = new ClassSerializer(get_class($this));
+        return $serializer->serialize($this);
     }
 }

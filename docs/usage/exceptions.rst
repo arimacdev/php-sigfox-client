@@ -48,7 +48,7 @@ exception class.
     When the server returned an error code that not mentioned in the documentation. But you can not catch it using 
     the `ResponseException`_ .
 
-
+Next:- :doc:`File Downloads<filedownloads>`
 
 .. _ValidationException API Reference: https://arimacdev.github.io/php-sigfox-client/classes/Arimac-Sigfox-Exception-ValidationException.html
 .. _SerializeException API Reference:  https://arimacdev.github.io/php-sigfox-client/classes/Arimac-Sigfox-Exception-SerializeException.html

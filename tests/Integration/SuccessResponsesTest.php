@@ -307,4 +307,15 @@ class SuccessResponsesTest extends BaseTestCase {
         $this->assertArraySimilar($asyncStatusArr, $serialized);
         
     }
+
+    public function testFileDownload(){
+        $tmpFile = __DIR__."/test.txt";
+        $this->mock->append(new Response(200,[], "Test"));
+        $resource = fopen($tmpFile, "w+"); 
+        $this->client->tiles()->publicCoverage()->kmzTiles($resource);
+        fclose($resource);
+        $contents = file_get_contents($tmpFile);
+        unlink($tmpFile);
+        $this->assertSame($contents, "Test");
+    }
 }
