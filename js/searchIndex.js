@@ -18011,20 +18011,10 @@ Search.appendIndex(
             "summary": "Find\u0020by\u0020id",
             "url": "classes/Arimac-Sigfox-Repository-ContractInfos.html#method_find"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfos\u003A\u003Abulk\u0028\u0029",
-            "name": "bulk",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-ContractInfos.html#method_bulk"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulk",
             "name": "ContractInfosBulk",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulk.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulk\u003A\u003Arestart\u0028\u0029",
-            "name": "restart",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulk.html#method_restart"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulkRestart",
             "name": "ContractInfosBulkRestart",
@@ -18040,11 +18030,6 @@ Search.appendIndex(
             "name": "ContractInfosBulkRestartJobId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulkRestartJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosBulkRestartJobId\u003A\u003AgetStatus\u0028\u0029",
-            "name": "getStatus",
-            "summary": "Retrieve\u0020a\u0020contract\u0020async\u0020job\u0020status\u0020for\u0020restart\u0020action.",
-            "url": "classes/Arimac-Sigfox-Repository-ContractInfosBulkRestartJobId.html#method_getStatus"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\ContractInfosId",
             "name": "ContractInfosId",
@@ -18111,11 +18096,6 @@ Search.appendIndex(
             "summary": "Starting\u0020the\u0020computation\u0020of\u0020the\u0020coverage\u0020margins\u0020for\u0020multiple\u0020points,\u0020for\u0020each\u0020redundancy\u0020level.",
             "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictions.html#method_calculateBulk"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobalPredictions\u003A\u003Abulk\u0028\u0029",
-            "name": "bulk",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictions.html#method_bulk"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobalPredictionsBulk",
             "name": "CoveragesGlobalPredictionsBulk",
             "summary": "",
@@ -18130,11 +18110,6 @@ Search.appendIndex(
             "name": "CoveragesGlobalPredictionsBulkJobId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictionsBulkJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\CoveragesGlobalPredictionsBulkJobId\u003A\u003AgetStatus\u0028\u0029",
-            "name": "getStatus",
-            "summary": "Retrieve\u0020coverage\u0020predictions\u0020computation\u0020from\u0020asynchronous\u0020job\u0020status\u0020and\u0020results.",
-            "url": "classes/Arimac-Sigfox-Repository-CoveragesGlobalPredictionsBulkJobId.html#method_getStatus"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\Devices",
             "name": "Devices",
@@ -18191,55 +18166,30 @@ Search.appendIndex(
             "summary": "Replace\u0020multiple\u0020devices\u0020\u0028moving\u0020tokens\u0020from\u0020one\u0020device\u0020to\u0020another\u0029\u0020with\u0020synchronous\u0020job",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_replace"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulk\u003A\u003ArestartAsync\u0028\u0029",
-            "name": "restartAsync",
-            "summary": "Restart\u0020multiple\u0020devices\u0020with\u0020asynchronous\u0020job.",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_restartAsync"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulk\u003A\u003Arestart\u0028\u0029",
             "name": "restart",
-            "summary": "",
+            "summary": "Restart\u0020multiple\u0020devices\u0020with\u0020asynchronous\u0020job.",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_restart"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulk\u003A\u003AsuspendAsync\u0028\u0029",
-            "name": "suspendAsync",
-            "summary": "Suspend\u0020multiple\u0020devices\u0020with\u0020asynchronous\u0020job",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_suspendAsync"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulk\u003A\u003Asuspend\u0028\u0029",
             "name": "suspend",
-            "summary": "",
+            "summary": "Suspend\u0020multiple\u0020devices\u0020with\u0020asynchronous\u0020job",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_suspend"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulk\u003A\u003AresumeAsync\u0028\u0029",
-            "name": "resumeAsync",
-            "summary": "Resume\u0020multiple\u0020devices\u0020with\u0020asynchronous\u0020job.",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_resumeAsync"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulk\u003A\u003Aresume\u0028\u0029",
             "name": "resume",
-            "summary": "",
+            "summary": "Resume\u0020multiple\u0020devices\u0020with\u0020asynchronous\u0020job.",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_resume"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulk\u003A\u003AunsubscribeAsync\u0028\u0029",
-            "name": "unsubscribeAsync",
-            "summary": "Unsubscribe\u0020multiple\u0020devices\u0020with\u0020asynchronous\u0020job.",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_unsubscribeAsync"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulk\u003A\u003Aunsubscribe\u0028\u0029",
             "name": "unsubscribe",
-            "summary": "",
+            "summary": "Unsubscribe\u0020multiple\u0020devices\u0020with\u0020asynchronous\u0020job.",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulk.html#method_unsubscribe"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkJobId",
             "name": "DevicesBulkJobId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkJobId\u003A\u003Aget\u0028\u0029",
-            "name": "get",
-            "summary": "Retrieve\u0020the\u0020status\u0020of\u0020an\u0020asynchronous\u0020job\u0020for\u0020devices.",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkJobId.html#method_get"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkRestart",
             "name": "DevicesBulkRestart",
@@ -18256,11 +18206,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkRestartJobId.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkRestartJobId\u003A\u003Aget\u0028\u0029",
-            "name": "get",
-            "summary": "Retrieve\u0020the\u0020async\u0020job\u0020status\u0020for\u0020a\u0020restart\u0020devices\u0020action.",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkRestartJobId.html#method_get"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkResume",
             "name": "DevicesBulkResume",
             "summary": "",
@@ -18275,11 +18220,6 @@ Search.appendIndex(
             "name": "DevicesBulkResumeJobId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkResumeJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkResumeJobId\u003A\u003Aget\u0028\u0029",
-            "name": "get",
-            "summary": "Retrieve\u0020the\u0020async\u0020job\u0020status\u0020for\u0020a\u0020resume\u0020devices\u0020action.",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkResumeJobId.html#method_get"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkSuspend",
             "name": "DevicesBulkSuspend",
@@ -18296,11 +18236,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkSuspendJobId.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkSuspendJobId\u003A\u003Aget\u0028\u0029",
-            "name": "get",
-            "summary": "Retrieve\u0020the\u0020async\u0020job\u0020status\u0020for\u0020a\u0020suspend\u0020devices\u0020action.",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkSuspendJobId.html#method_get"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkUnsubscribe",
             "name": "DevicesBulkUnsubscribe",
             "summary": "",
@@ -18315,11 +18250,6 @@ Search.appendIndex(
             "name": "DevicesBulkUnsubscribeJobId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DevicesBulkUnsubscribeJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesBulkUnsubscribeJobId\u003A\u003Aget\u0028\u0029",
-            "name": "get",
-            "summary": "Retrieve\u0020the\u0020async\u0020job\u0020status\u0020for\u0020an\u0020unsubscribe\u0020devices\u0020action.",
-            "url": "classes/Arimac-Sigfox-Repository-DevicesBulkUnsubscribeJobId.html#method_get"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DevicesId",
             "name": "DevicesId",
@@ -18466,20 +18396,10 @@ Search.appendIndex(
             "summary": "Find\u0020by\u0020id",
             "url": "classes/Arimac-Sigfox-Repository-DeviceTypes.html#method_find"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypes\u003A\u003Abulk\u0028\u0029",
-            "name": "bulk",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypes.html#method_bulk"
-        },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulk",
             "name": "DeviceTypesBulk",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulk.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulk\u003A\u003Arestart\u0028\u0029",
-            "name": "restart",
-            "summary": "",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulk.html#method_restart"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulkRestart",
             "name": "DeviceTypesBulkRestart",
@@ -18495,11 +18415,6 @@ Search.appendIndex(
             "name": "DeviceTypesBulkRestartJobId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulkRestartJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesBulkRestartJobId\u003A\u003Aget\u0028\u0029",
-            "name": "get",
-            "summary": "Retrieve\u0020the\u0020async\u0020job\u0020status\u0020of\u0020a\u0020device\u0020type\u0027s\u0020asynchronous\u0020job\u0020for\u0020a\u0020restart\u0020devices\u0020action.",
-            "url": "classes/Arimac-Sigfox-Repository-DeviceTypesBulkRestartJobId.html#method_get"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\DeviceTypesId",
             "name": "DeviceTypesId",
@@ -18731,10 +18646,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-TilesMonarchKmz.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarchKmz\u003A\u003AstartAsync\u0028\u0029",
-            "name": "startAsync",
+            "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarchKmz\u003A\u003Astart\u0028\u0029",
+            "name": "start",
             "summary": "Starting\u0020the\u0020computation\u0020of\u0020Sigfox\u0020Monarch\u0020coverage\u0020view\u0020for\u0020a\u0020specific\u0020coverage\u0020mode.\u0020A\u0020new\u0020computation\nstarts\u0020if\u0020no\u0020other\u0020computation,\u0020run\u0020in\u0020the\u0020last\u002024\u0020hours,\u0020is\u0020available.\u0020Otherwise,\u0020the\u0020existing\u0020jobId\u0020is\nreturned.",
-            "url": "classes/Arimac-Sigfox-Repository-TilesMonarchKmz.html#method_startAsync"
+            "url": "classes/Arimac-Sigfox-Repository-TilesMonarchKmz.html#method_start"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarchKmz\u003A\u003Afind\u0028\u0029",
             "name": "find",
@@ -18745,11 +18660,6 @@ Search.appendIndex(
             "name": "TilesMonarchKmzJobId",
             "summary": "",
             "url": "classes/Arimac-Sigfox-Repository-TilesMonarchKmzJobId.html"
-        },                {
-            "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarchKmzJobId\u003A\u003Aget\u0028\u0029",
-            "name": "get",
-            "summary": "Retrieve\u0020Sigfox\u0020Monarch\u0020coverage\u0020kmz\u0020computation\u0020from\u0020asynchronous\u0020job\u0020status",
-            "url": "classes/Arimac-Sigfox-Repository-TilesMonarchKmzJobId.html#method_get"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Repository\\TilesMonarchKmzJobId\u003A\u003Atileskmz\u0028\u0029",
             "name": "tileskmz",
@@ -19461,80 +19371,80 @@ Search.appendIndex(
             "summary": "Pairs\u0020of\u0020source\u0020and\u0020target\u0020devices",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkReplace.html#property_devicePairs"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestartAsync",
-            "name": "DevicesBulkRestartAsync",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestart",
+            "name": "DevicesBulkRestart",
             "summary": "Restart\u0020multiple\u0020devices\u0020with\u0020asynchronous\u0020job.",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestartAsync.html"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestart.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestartAsync\u003A\u003AsetDevices\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestart\u003A\u003AsetDevices\u0028\u0029",
             "name": "setDevices",
             "summary": "Setter\u0020for\u0020devices",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestartAsync.html#method_setDevices"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestart.html#method_setDevices"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestartAsync\u003A\u003AsetGroupId\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestart\u003A\u003AsetGroupId\u0028\u0029",
             "name": "setGroupId",
             "summary": "Setter\u0020for\u0020groupId",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestartAsync.html#method_setGroupId"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestart.html#method_setGroupId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestartAsync\u003A\u003A\u0024devices",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestart\u003A\u003A\u0024devices",
             "name": "devices",
             "summary": "list\u0020of\u0020device\u0027s\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestartAsync.html#property_devices"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestart.html#property_devices"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestartAsync\u003A\u003A\u0024groupId",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkRestart\u003A\u003A\u0024groupId",
             "name": "groupId",
             "summary": "Group\u0020Identifier\u0020use\u0020to\u0020restart\u0020multiple\u0020devices",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestartAsync.html#property_groupId"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkRestart.html#property_groupId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResumeAsync",
-            "name": "DevicesBulkResumeAsync",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResume",
+            "name": "DevicesBulkResume",
             "summary": "Resume\u0020multiple\u0020devices\u0020with\u0020asynchronous\u0020job.",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkResumeAsync.html"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkResume.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResumeAsync\u003A\u003AsetDevices\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResume\u003A\u003AsetDevices\u0028\u0029",
             "name": "setDevices",
             "summary": "Setter\u0020for\u0020devices",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkResumeAsync.html#method_setDevices"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkResume.html#method_setDevices"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResumeAsync\u003A\u003AsetGroupId\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResume\u003A\u003AsetGroupId\u0028\u0029",
             "name": "setGroupId",
             "summary": "Setter\u0020for\u0020groupId",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkResumeAsync.html#method_setGroupId"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkResume.html#method_setGroupId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResumeAsync\u003A\u003A\u0024devices",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResume\u003A\u003A\u0024devices",
             "name": "devices",
             "summary": "list\u0020of\u0020device\u0027s\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkResumeAsync.html#property_devices"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkResume.html#property_devices"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResumeAsync\u003A\u003A\u0024groupId",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkResume\u003A\u003A\u0024groupId",
             "name": "groupId",
             "summary": "Group\u0020Identifier\u0020use\u0020to\u0020resume\u0020multiple\u0020devices",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkResumeAsync.html#property_groupId"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkResume.html#property_groupId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspendAsync",
-            "name": "DevicesBulkSuspendAsync",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspend",
+            "name": "DevicesBulkSuspend",
             "summary": "Suspend\u0020multiple\u0020devices\u0020with\u0020asynchronous\u0020job",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspendAsync.html"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspend.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspendAsync\u003A\u003AsetDevices\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspend\u003A\u003AsetDevices\u0028\u0029",
             "name": "setDevices",
             "summary": "Setter\u0020for\u0020devices",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspendAsync.html#method_setDevices"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspend.html#method_setDevices"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspendAsync\u003A\u003AsetGroupId\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspend\u003A\u003AsetGroupId\u0028\u0029",
             "name": "setGroupId",
             "summary": "Setter\u0020for\u0020groupId",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspendAsync.html#method_setGroupId"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspend.html#method_setGroupId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspendAsync\u003A\u003A\u0024devices",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspend\u003A\u003A\u0024devices",
             "name": "devices",
             "summary": "list\u0020of\u0020device\u0027s\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspendAsync.html#property_devices"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspend.html#property_devices"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspendAsync\u003A\u003A\u0024groupId",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkSuspend\u003A\u003A\u0024groupId",
             "name": "groupId",
             "summary": "Group\u0020Identifier\u0020use\u0020to\u0020suspend\u0020multiple\u0020devices",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspendAsync.html#property_groupId"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkSuspend.html#property_groupId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkTransfer",
             "name": "DevicesBulkTransfer",
@@ -19551,30 +19461,30 @@ Search.appendIndex(
             "summary": "The\u0020devices\u0020to\u0020move",
             "url": "classes/Arimac-Sigfox-Request-DevicesBulkTransfer.html#property_devices"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribeAsync",
-            "name": "DevicesBulkUnsubscribeAsync",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribe",
+            "name": "DevicesBulkUnsubscribe",
             "summary": "Unsubscribe\u0020multiple\u0020devices\u0020with\u0020asynchronous\u0020job.",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribeAsync.html"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribe.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribeAsync\u003A\u003AsetDevices\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribe\u003A\u003AsetDevices\u0028\u0029",
             "name": "setDevices",
             "summary": "Setter\u0020for\u0020devices",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribeAsync.html#method_setDevices"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribe.html#method_setDevices"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribeAsync\u003A\u003AsetGroupId\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribe\u003A\u003AsetGroupId\u0028\u0029",
             "name": "setGroupId",
             "summary": "Setter\u0020for\u0020groupId",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribeAsync.html#method_setGroupId"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribe.html#method_setGroupId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribeAsync\u003A\u003A\u0024devices",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribe\u003A\u003A\u0024devices",
             "name": "devices",
             "summary": "array\u0020of\u0020device\u0027s\u0020identifier\u0020\u0028hexadecimal\u0020format\u0029\u0020with\u0020unsubscribtion\u0020time",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribeAsync.html#property_devices"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribe.html#property_devices"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribeAsync\u003A\u003A\u0024groupId",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUnsubscribe\u003A\u003A\u0024groupId",
             "name": "groupId",
             "summary": "Group\u0020Identifier\u0020use\u0020to\u0020unsubscribe\u0020multiple\u0020devices",
-            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribeAsync.html#property_groupId"
+            "url": "classes/Arimac-Sigfox-Request-DevicesBulkUnsubscribe.html#property_groupId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\DevicesBulkUpdate",
             "name": "DevicesBulkUpdate",
@@ -20886,20 +20796,20 @@ Search.appendIndex(
             "summary": "The\u0020east\u0020boundary\u0020to\u0020extract\u0020coverage",
             "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzJobIdTileskmzGetCoverage.html#property_east"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzStartAsync",
-            "name": "TilesMonarchKmzStartAsync",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzStart",
+            "name": "TilesMonarchKmzStart",
             "summary": "Starting\u0020the\u0020computation\u0020of\u0020Sigfox\u0020Monarch\u0020coverage\u0020view\u0020for\u0020a\u0020specific\u0020coverage\u0020mode.\u0020A\u0020new\u0020computation\u0020starts\u0020if\nno\u0020other\u0020computation,\u0020run\u0020in\u0020the\u0020last\u002024\u0020hours,\u0020is\u0020available.\u0020Otherwise,\u0020the\u0020existing\u0020jobId\u0020is\u0020returned.",
-            "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzStartAsync.html"
+            "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzStart.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzStartAsync\u003A\u003AsetRequest\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzStart\u003A\u003AsetRequest\u0028\u0029",
             "name": "setRequest",
             "summary": "Setter\u0020for\u0020request",
-            "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzStartAsync.html#method_setRequest"
+            "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzStart.html#method_setRequest"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzStartAsync\u003A\u003A\u0024request",
+            "fqsen": "\\Arimac\\Sigfox\\Request\\TilesMonarchKmzStart\u003A\u003A\u0024request",
             "name": "request",
             "summary": "The\u0020computation\u0020will\u0020be\u0020performed\u0020with\u0020the\u0020specified\u0020coverage\u0020mode",
-            "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzStartAsync.html#property_request"
+            "url": "classes/Arimac-Sigfox-Request-TilesMonarchKmzStart.html#property_request"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Request\\TilesPublicCoverageKmzTitles",
             "name": "TilesPublicCoverageKmzTitles",
@@ -21151,6 +21061,31 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Request.html"
         },                {
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Async\\AsyncResponse",
+            "name": "AsyncResponse",
+            "summary": "Async\u0020Response\u0020helper\u0020class",
+            "url": "classes/Arimac-Sigfox-Response-Async-AsyncResponse.html"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Async\\AsyncResponse\u003A\u003AgetOriginalResponse\u0028\u0029",
+            "name": "getOriginalResponse",
+            "summary": "Reurning\u0020the\u0020original\u0020job\u0020start\u0020response",
+            "url": "classes/Arimac-Sigfox-Response-Async-AsyncResponse.html#method_getOriginalResponse"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Async\\ReconstructedAsyncResponse",
+            "name": "ReconstructedAsyncResponse",
+            "summary": "Async\u0020Response\u0020helper\u0020class",
+            "url": "classes/Arimac-Sigfox-Response-Async-ReconstructedAsyncResponse.html"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Async\\ReconstructedAsyncResponse\u003A\u003Astatus\u0028\u0029",
+            "name": "status",
+            "summary": "Getting\u0020the\u0020status\u0020of\u0020the\u0020async\u0020job",
+            "url": "classes/Arimac-Sigfox-Response-Async-ReconstructedAsyncResponse.html#method_status"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Async\\ReconstructedAsyncResponse\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
+            "summary": "Returning\u0020the\u0020job\u0020id",
+            "url": "classes/Arimac-Sigfox-Response-Async-ReconstructedAsyncResponse.html#method_getId"
+        },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\ApiUsersCreateResponse",
             "name": "ApiUsersCreateResponse",
             "summary": "",
@@ -21336,50 +21271,50 @@ Search.appendIndex(
             "summary": "jobId\u0020\u0028to\u0020use\u0020in\u0020job\u0020status\u0020request\u0029",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkCreateResponse.html#property_jobId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkRestartAsyncResponse",
-            "name": "DevicesBulkRestartAsyncResponse",
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkRestartResponse",
+            "name": "DevicesBulkRestartResponse",
             "summary": "",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkRestartAsyncResponse.html"
+            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkRestartResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkRestartAsyncResponse\u003A\u003AgetJobId\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkRestartResponse\u003A\u003AgetJobId\u0028\u0029",
             "name": "getJobId",
             "summary": "Getter\u0020for\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkRestartAsyncResponse.html#method_getJobId"
+            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkRestartResponse.html#method_getJobId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkRestartAsyncResponse\u003A\u003A\u0024jobId",
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkRestartResponse\u003A\u003A\u0024jobId",
             "name": "jobId",
             "summary": "jobId\u0020\u0028to\u0020use\u0020in\u0020job\u0020status\u0020request\u0029",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkRestartAsyncResponse.html#property_jobId"
+            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkRestartResponse.html#property_jobId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkResumeAsyncResponse",
-            "name": "DevicesBulkResumeAsyncResponse",
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkResumeResponse",
+            "name": "DevicesBulkResumeResponse",
             "summary": "",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkResumeAsyncResponse.html"
+            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkResumeResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkResumeAsyncResponse\u003A\u003AgetJobId\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkResumeResponse\u003A\u003AgetJobId\u0028\u0029",
             "name": "getJobId",
             "summary": "Getter\u0020for\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkResumeAsyncResponse.html#method_getJobId"
+            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkResumeResponse.html#method_getJobId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkResumeAsyncResponse\u003A\u003A\u0024jobId",
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkResumeResponse\u003A\u003A\u0024jobId",
             "name": "jobId",
             "summary": "jobId\u0020\u0028to\u0020use\u0020in\u0020job\u0020status\u0020request\u0029",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkResumeAsyncResponse.html#property_jobId"
+            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkResumeResponse.html#property_jobId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkSuspendAsyncResponse",
-            "name": "DevicesBulkSuspendAsyncResponse",
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkSuspendResponse",
+            "name": "DevicesBulkSuspendResponse",
             "summary": "",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkSuspendAsyncResponse.html"
+            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkSuspendResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkSuspendAsyncResponse\u003A\u003AgetJobId\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkSuspendResponse\u003A\u003AgetJobId\u0028\u0029",
             "name": "getJobId",
             "summary": "Getter\u0020for\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkSuspendAsyncResponse.html#method_getJobId"
+            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkSuspendResponse.html#method_getJobId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkSuspendAsyncResponse\u003A\u003A\u0024jobId",
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkSuspendResponse\u003A\u003A\u0024jobId",
             "name": "jobId",
             "summary": "jobId\u0020\u0028to\u0020use\u0020in\u0020job\u0020status\u0020request\u0029",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkSuspendAsyncResponse.html#property_jobId"
+            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkSuspendResponse.html#property_jobId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkTransferResponse",
             "name": "DevicesBulkTransferResponse",
@@ -21406,20 +21341,20 @@ Search.appendIndex(
             "summary": "jobId\u0020\u0028to\u0020use\u0020in\u0020job\u0020status\u0020request\u0029",
             "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkTransferResponse.html#property_jobId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkUnsubscribeAsyncResponse",
-            "name": "DevicesBulkUnsubscribeAsyncResponse",
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkUnsubscribeResponse",
+            "name": "DevicesBulkUnsubscribeResponse",
             "summary": "",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkUnsubscribeAsyncResponse.html"
+            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkUnsubscribeResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkUnsubscribeAsyncResponse\u003A\u003AgetJobId\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkUnsubscribeResponse\u003A\u003AgetJobId\u0028\u0029",
             "name": "getJobId",
             "summary": "Getter\u0020for\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkUnsubscribeAsyncResponse.html#method_getJobId"
+            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkUnsubscribeResponse.html#method_getJobId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkUnsubscribeAsyncResponse\u003A\u003A\u0024jobId",
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkUnsubscribeResponse\u003A\u003A\u0024jobId",
             "name": "jobId",
             "summary": "jobId\u0020\u0028to\u0020use\u0020in\u0020job\u0020status\u0020request\u0029",
-            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkUnsubscribeAsyncResponse.html#property_jobId"
+            "url": "classes/Arimac-Sigfox-Response-Generated-DevicesBulkUnsubscribeResponse.html#property_jobId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\DevicesBulkUpdateResponse",
             "name": "DevicesBulkUpdateResponse",
@@ -21866,20 +21801,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/Arimac-Sigfox-Response-Generated-ProfilesListResponse.html#property_paging"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\TilesMonarchKmzStartAsyncResponse",
-            "name": "TilesMonarchKmzStartAsyncResponse",
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\TilesMonarchKmzStartResponse",
+            "name": "TilesMonarchKmzStartResponse",
             "summary": "",
-            "url": "classes/Arimac-Sigfox-Response-Generated-TilesMonarchKmzStartAsyncResponse.html"
+            "url": "classes/Arimac-Sigfox-Response-Generated-TilesMonarchKmzStartResponse.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\TilesMonarchKmzStartAsyncResponse\u003A\u003AgetJobId\u0028\u0029",
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\TilesMonarchKmzStartResponse\u003A\u003AgetJobId\u0028\u0029",
             "name": "getJobId",
             "summary": "Getter\u0020for\u0020jobId",
-            "url": "classes/Arimac-Sigfox-Response-Generated-TilesMonarchKmzStartAsyncResponse.html#method_getJobId"
+            "url": "classes/Arimac-Sigfox-Response-Generated-TilesMonarchKmzStartResponse.html#method_getJobId"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\TilesMonarchKmzStartAsyncResponse\u003A\u003A\u0024jobId",
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\TilesMonarchKmzStartResponse\u003A\u003A\u0024jobId",
             "name": "jobId",
             "summary": "jobId\u0020provided\u0020to\u0020the\u0020customer\u0020to\u0020request\u0020the\u0020job\u0020status\u0020and\u0020results",
-            "url": "classes/Arimac-Sigfox-Response-Generated-TilesMonarchKmzStartAsyncResponse.html#property_jobId"
+            "url": "classes/Arimac-Sigfox-Response-Generated-TilesMonarchKmzStartResponse.html#property_jobId"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Generated\\UsersListResponse",
             "name": "UsersListResponse",
@@ -22030,6 +21965,11 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "Creating\u0020a\u0020Sigfox\u0020client\u0020instance",
             "url": "classes/Arimac-Sigfox-SigfoxExt.html#method___construct"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\SigfoxExt\u003A\u003AjobStatus\u0028\u0029",
+            "name": "jobStatus",
+            "summary": "Making\u0020an\u0020async\u0020response\u0020from\u0020a\u0020serialized\u0020value",
+            "url": "classes/Arimac-Sigfox-SigfoxExt.html#method_jobStatus"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Validator\\Rule",
             "name": "Rule",
@@ -22381,15 +22321,20 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/arimac-sigfox-request.html"
         },                {
-            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated",
-            "name": "Generated",
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Async",
+            "name": "Async",
             "summary": "",
-            "url": "namespaces/arimac-sigfox-response-generated.html"
+            "url": "namespaces/arimac-sigfox-response-async.html"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response",
             "name": "Response",
             "summary": "",
             "url": "namespaces/arimac-sigfox-response.html"
+        },                {
+            "fqsen": "\\Arimac\\Sigfox\\Response\\Generated",
+            "name": "Generated",
+            "summary": "",
+            "url": "namespaces/arimac-sigfox-response-generated.html"
         },                {
             "fqsen": "\\Arimac\\Sigfox\\Response\\Paginated",
             "name": "Paginated",

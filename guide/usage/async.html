@@ -134,7 +134,51 @@
             <div class="phpdocumentor-column -eight phpdocumentor-content">
                     <div class="section" id="async-responses">
 <h1>Async Responses</h1>
-<p>Not implemented yet.</p>
+<p>This library provide you the easiest way to deal with async responses. With this way
+you do not to pass jobId to one request to another request. This is a basic example.</p>
+<pre><code class="language-php " >// Calling the start request
+$job = $sigfox-&gt;devices()-&gt;bulk()-&gt;transfer([
+    &quot;deviceTypeId&quot;=&gt; &quot;abcdef435....&quot;,
+    &quot;data&quot;=&gt; [
+        [
+            &quot;id&quot;=&gt; &quot;ABCE4&quot;,
+            &quot;activable&quot;=&gt; false
+        ],
+        [
+            &quot;id&quot;=&gt; &quot;ABGH4&quot;,
+            &quot;keepHistory&quot;=&gt; false
+        ]
+    ]
+]);
+
+sleep(10000);
+
+// Fetching job status
+$status = $job-&gt;status();
+$total = $status-&gt;getTotal();
+</code></pre>
+<p>And you can also access the original data of the first response by <code>getOriginalResponse</code> method.</p>
+<pre><code class="language-php " >// Calling the start request
+$job = $sigfox-&gt;devices()-&gt;bulk()-&gt;transfer([/** collapsed **/]);
+
+$startResponse = $job-&gt;getOriginalResponse();
+$total = $startResponse-&gt;getTotal();
+</code></pre>
+<p>When developing web sites, sometimes you have to check the job status by another request after started
+the job. So you have to save the job id in somewhere and fetch it again in next request. We faced the
+same issue and we implemented an easy-to-use method for you.</p>
+<pre><code class="language-php " >// Calling the start request
+$job = $sigfox-&gt;devices()-&gt;bulk()-&gt;transfer([/** collapsed **/]);
+
+$jobId = $job-&gt;getId();
+
+// Save this job id in your database
+
+// You can get the job status in next request by a one method
+$status = $sigfox-&gt;jobStatus();
+$total = $status-&gt;getTotal();
+</code></pre>
+<p>Refer the full <a href="https://arimacdev.github.io/php-sigfox-client/classes/Arimac-Sigfox-Response-Async-AsyncResponse.html">API reference</a> to get an idea about return types.</p>
 <p>Next:- <a href="guide/usage/customclients.html">Custom HTTP Clients</a></p>
 </div>
 

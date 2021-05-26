@@ -135,16 +135,15 @@
                     <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/arimac.html">Arimac</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/arimac-sigfox.html">Sigfox</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/arimac-sigfox-response.html">Response</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/arimac-sigfox-response-generated.html">Generated</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/arimac-sigfox-request.html">Request</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    TilesMonarchKmzStartAsyncResponse
+    TilesMonarchKmzStart
 
         <span class="phpdocumentor-element__extends">
-        extends <a href="classes/Arimac-Sigfox-Model.html"><abbr title="\Arimac\Sigfox\Model">Model</abbr></a>
+        extends <a href="classes/Arimac-Sigfox-Request.html"><abbr title="\Arimac\Sigfox\Request">Request</abbr></a>
     </span>
     
     
@@ -152,13 +151,14 @@
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Generated/TilesMonarchKmzStartAsyncResponse.php"><a href="files/src-response-generated-tilesmonarchkmzstartasyncresponse.html"><abbr title="src/Response/Generated/TilesMonarchKmzStartAsyncResponse.php">TilesMonarchKmzStartAsyncResponse.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/TilesMonarchKmzStart.php"><a href="files/src-request-tilesmonarchkmzstart.html"><abbr title="src/Request/TilesMonarchKmzStart.php">TilesMonarchKmzStart.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">7</span>
+    <span class="phpdocumentor-element-found-in__line">14</span>
 </aside>
 
-        
-    <section class="phpdocumentor-description"></section>
+            <p class="phpdocumentor-summary">Starting the computation of Sigfox Monarch coverage view for a specific coverage mode. A new computation starts if
+no other computation, run in the last 24 hours, is available. Otherwise, the existing jobId is returned.</p>
+
 
 
 
@@ -174,11 +174,11 @@
 
 <dl class="phpdocumentor-table-of-contents">
                 <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Arimac-Sigfox-Response-Generated-TilesMonarchKmzStartAsyncResponse.html#property_jobId">$jobId</a>
+    <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzStart.html#property_request">$request</a>
     <span>
-                &nbsp;: string|null            </span>
+                &nbsp;: <a href="classes/Arimac-Sigfox-Model-KmzCreatePublicRequest.html"><abbr title="\Arimac\Sigfox\Model\KmzCreatePublicRequest">KmzCreatePublicRequest</abbr></a>|null            </span>
 </dt>
-<dd>jobId provided to the customer to request the job status and results</dd>
+<dd>The computation will be performed with the specified coverage mode</dd>
 
                 <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Arimac-Sigfox-Model.html#method_from">from()</a>
@@ -188,11 +188,11 @@
 <dd>Initializing a model from an array</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-Response-Generated-TilesMonarchKmzStartAsyncResponse.html#method_getJobId">getJobId()</a>
+    <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzStart.html#method_setRequest">setRequest()</a>
     <span>
-                        &nbsp;: string    </span>
+                        &nbsp;: static    </span>
 </dt>
-<dd>Getter for jobId</dd>
+<dd>Setter for request</dd>
 
         </dl>
 
@@ -204,7 +204,7 @@
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/Arimac-Sigfox-Response-Generated-TilesMonarchKmzStartAsyncResponse.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzStart.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="
@@ -213,24 +213,24 @@
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_jobId">
-        $jobId
-        <a href="classes/Arimac-Sigfox-Response-Generated-TilesMonarchKmzStartAsyncResponse.html#property_jobId" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_request">
+        $request
+        <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzStart.html#property_request" class="headerlink"><i class="fas fa-link"></i></a>
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Generated/TilesMonarchKmzStartAsyncResponse.php"><a href="files/src-response-generated-tilesmonarchkmzstartasyncresponse.html"><abbr title="src/Response/Generated/TilesMonarchKmzStartAsyncResponse.php">TilesMonarchKmzStartAsyncResponse.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/TilesMonarchKmzStart.php"><a href="files/src-request-tilesmonarchkmzstart.html"><abbr title="src/Request/TilesMonarchKmzStart.php">TilesMonarchKmzStart.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">14</span>
+    <span class="phpdocumentor-element-found-in__line">21</span>
 </aside>
 
-        <p class="phpdocumentor-summary">jobId provided to the customer to request the job status and results</p>
+        <p class="phpdocumentor-summary">The computation will be performed with the specified coverage mode</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">string|null</span>
-    <span class="phpdocumentor-signature__name">$jobId</span>
+        <span class="phpdocumentor-signature__type"><a href="classes/Arimac-Sigfox-Model-KmzCreatePublicRequest.html"><abbr title="\Arimac\Sigfox\Model\KmzCreatePublicRequest">KmzCreatePublicRequest</abbr></a>|null</span>
+    <span class="phpdocumentor-signature__name">$request</span>
      = <span class="phpdocumentor-signature__default-value">null</span></code>
 
     
@@ -243,7 +243,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/Arimac-Sigfox-Response-Generated-TilesMonarchKmzStartAsyncResponse.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzStart.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -313,30 +313,42 @@ reference for all property names and types</p>
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_getJobId">
-        getJobId()
-        <a href="classes/Arimac-Sigfox-Response-Generated-TilesMonarchKmzStartAsyncResponse.html#method_getJobId" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_setRequest">
+        setRequest()
+        <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzStart.html#method_setRequest" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Generated/TilesMonarchKmzStartAsyncResponse.php"><a href="files/src-response-generated-tilesmonarchkmzstartasyncresponse.html"><abbr title="src/Response/Generated/TilesMonarchKmzStartAsyncResponse.php">TilesMonarchKmzStartAsyncResponse.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Request/TilesMonarchKmzStart.php"><a href="files/src-request-tilesmonarchkmzstart.html"><abbr title="src/Request/TilesMonarchKmzStart.php">TilesMonarchKmzStart.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">33</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Getter for jobId</p>
+        <p class="phpdocumentor-summary">Setter for request</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">getJobId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                <span class="phpdocumentor-signature__name">setRequest</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-KmzCreatePublicRequest.html"><abbr title="\Arimac\Sigfox\Model\KmzCreatePublicRequest">KmzCreatePublicRequest</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$request</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
 
     
-    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$request</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Arimac-Sigfox-Model-KmzCreatePublicRequest.html"><abbr title="\Arimac\Sigfox\Model\KmzCreatePublicRequest">KmzCreatePublicRequest</abbr></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>The computation will be performed with the specified coverage mode</p>
+</section>
+
+            </dd>
+            </dl>
+
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">string</span>
+    <span class="phpdocumentor-signature__response_type">static</span>
             &mdash;
-            <section class="phpdocumentor-description"><p>jobId provided to the customer to request the job status and results</p>
+            <section class="phpdocumentor-description"><p>To use in method chains</p>
 </section>
 
     
@@ -357,7 +369,7 @@ reference for all property names and types</p>
 </section>
             </div>
         </div>
-        <a href="classes/Arimac-Sigfox-Response-Generated-TilesMonarchKmzStartAsyncResponse.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/Arimac-Sigfox-Request-TilesMonarchKmzStart.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

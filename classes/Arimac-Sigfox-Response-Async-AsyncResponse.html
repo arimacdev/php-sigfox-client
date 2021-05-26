@@ -135,30 +135,50 @@
                     <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/arimac.html">Arimac</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/arimac-sigfox.html">Sigfox</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/arimac-sigfox-response.html">Response</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/arimac-sigfox-response-async.html">Async</a></li>
     </ul>
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    SigfoxExt
+    AsyncResponse
 
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/Arimac-Sigfox-Response-Async-ReconstructedAsyncResponse.html"><abbr title="\Arimac\Sigfox\Response\Async\ReconstructedAsyncResponse">ReconstructedAsyncResponse</abbr></a>
+    </span>
     
     
     
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/SigfoxExt.php"><a href="files/src-sigfoxext.html"><abbr title="src/SigfoxExt.php">SigfoxExt.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Async/AsyncResponse.php"><a href="files/src-response-async-asyncresponse.html"><abbr title="src/Response/Async/AsyncResponse.php">AsyncResponse.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">18</span>
+    <span class="phpdocumentor-element-found-in__line">19</span>
 </aside>
 
-            <p class="phpdocumentor-summary">Constructor of the `Sigfox` class.</p>
+            <p class="phpdocumentor-summary">Async Response helper class</p>
 
-    <section class="phpdocumentor-description"><p>Since <code class="prettyprint">Sigfox</code> is a auto generated class. This class is using to implement manual methods that should be in
-<code class="prettyprint">Sigfox</code> class.</p>
+    <section class="phpdocumentor-description"><p>The first generic parameter is the type of start response
+And the second generic parameter is the type of status response</p>
 </section>
 
 
+    <h5 class="phpdocumentor-tag-list__heading" id="tags">
+        Tags
+        <a href="#tags" class="headerlink"><i class="fas fa-link"></i></a>
+    </h5>
+    <dl class="phpdocumentor-tag-list">
+                                    <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">extends</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                                
+                                                 <section class="phpdocumentor-description"><p>ReconstructedAsyncResponse<R></p>
+</section>
+
+                                    </dd>
+                        </dl>
 
 
 
@@ -172,18 +192,25 @@
 
 <dl class="phpdocumentor-table-of-contents">
                     <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-SigfoxExt.html#method___construct">__construct()</a>
+    <a href="classes/Arimac-Sigfox-Response-Async-ReconstructedAsyncResponse.html#method_getId">getId()</a>
     <span>
-                        &nbsp;: mixed    </span>
+                        &nbsp;: string    </span>
 </dt>
-<dd>Creating a Sigfox client instance</dd>
+<dd>Returning the job id</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Arimac-Sigfox-SigfoxExt.html#method_jobStatus">jobStatus()</a>
+    <a href="classes/Arimac-Sigfox-Response-Async-AsyncResponse.html#method_getOriginalResponse">getOriginalResponse()</a>
     <span>
                         &nbsp;: <a href="classes/Arimac-Sigfox-Model.html"><abbr title="\Arimac\Sigfox\Model">Model</abbr></a>    </span>
 </dt>
-<dd>Making an async response from a serialized value</dd>
+<dd>Reurning the original job start response</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Arimac-Sigfox-Response-Async-ReconstructedAsyncResponse.html#method_status">status()</a>
+    <span>
+                        &nbsp;: <a href="classes/Arimac-Sigfox-Model.html"><abbr title="\Arimac\Sigfox\Model">Model</abbr></a>    </span>
+</dt>
+<dd>Getting the status of the async job</dd>
 
         </dl>
 
@@ -196,7 +223,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/Arimac-Sigfox-SigfoxExt.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/Arimac-Sigfox-Response-Async-AsyncResponse.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
         </h3>
                     <article
         class="phpdocumentor-element
@@ -204,58 +231,28 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method___construct">
-        __construct()
-        <a href="classes/Arimac-Sigfox-SigfoxExt.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getId">
+        getId()
+        <a href="classes/Arimac-Sigfox-Response-Async-ReconstructedAsyncResponse.html#method_getId" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/SigfoxExt.php"><a href="files/src-sigfoxext.html"><abbr title="src/SigfoxExt.php">SigfoxExt.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Async/ReconstructedAsyncResponse.php"><a href="files/src-response-async-reconstructedasyncresponse.html"><abbr title="src/Response/Async/ReconstructedAsyncResponse.php">ReconstructedAsyncResponse.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">33</span>
+    <span class="phpdocumentor-element-found-in__line">77</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Creating a Sigfox client instance</p>
+        <p class="phpdocumentor-summary">Returning the job id</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$username</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$password</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">class-string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$client</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">Guzzle::class</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                <span class="phpdocumentor-signature__name">getId</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
 
     
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$username</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Username to authenticate for Sigfox API</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$password</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Password to authenticate for Sigfox API</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$client</span>
-                : <span class="phpdocumentor-signature__argument__return-type">class-string</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">Guzzle::class</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>HTTP client to use to call Sigfox API</p>
-</section>
-
-            </dd>
-            </dl>
-
+    
     
 
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-    <span class="phpdocumentor-signature__response_type">mixed</span>
+    <span class="phpdocumentor-signature__response_type">string</span>
             &mdash;
         
     
@@ -266,34 +263,56 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_jobStatus">
-        jobStatus()
-        <a href="classes/Arimac-Sigfox-SigfoxExt.html#method_jobStatus" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getOriginalResponse">
+        getOriginalResponse()
+        <a href="classes/Arimac-Sigfox-Response-Async-AsyncResponse.html#method_getOriginalResponse" class="headerlink"><i class="fas fa-link"></i></a>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/SigfoxExt.php"><a href="files/src-sigfoxext.html"><abbr title="src/SigfoxExt.php">SigfoxExt.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Async/AsyncResponse.php"><a href="files/src-response-async-asyncresponse.html"><abbr title="src/Response/Async/AsyncResponse.php">AsyncResponse.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">60</span>
+    <span class="phpdocumentor-element-found-in__line">53</span>
 </aside>
 
-        <p class="phpdocumentor-summary">Making an async response from a serialized value</p>
+        <p class="phpdocumentor-summary">Reurning the original job start response</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                <span class="phpdocumentor-signature__name">jobStatus</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model.html"><abbr title="\Arimac\Sigfox\Model">Model</abbr></a></span></code>
+                <span class="phpdocumentor-signature__name">getOriginalResponse</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model.html"><abbr title="\Arimac\Sigfox\Model">Model</abbr></a></span></code>
 
     
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$value</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-            </dl>
+    
+    
 
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+    <span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model.html"><abbr title="\Arimac\Sigfox\Model">Model</abbr></a></span>
+            &mdash;
+        
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_status">
+        status()
+        <a href="classes/Arimac-Sigfox-Response-Async-ReconstructedAsyncResponse.html#method_status" class="headerlink"><i class="fas fa-link"></i></a>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Response/Async/ReconstructedAsyncResponse.php"><a href="files/src-response-async-reconstructedasyncresponse.html"><abbr title="src/Response/Async/ReconstructedAsyncResponse.php">ReconstructedAsyncResponse.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">64</span>
+</aside>
+
+        <p class="phpdocumentor-summary">Getting the status of the async job</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                <span class="phpdocumentor-signature__name">status</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Arimac-Sigfox-Model.html"><abbr title="\Arimac\Sigfox\Model">Model</abbr></a></span></code>
+
+    
+    
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
@@ -304,7 +323,39 @@
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><abbr title="\InvalidArgumentException">InvalidArgumentException</abbr></span>
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-SerializeException.html"><abbr title="\Arimac\Sigfox\Exception\SerializeException">SerializeException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-DeserializeException.html"><abbr title="\Arimac\Sigfox\Exception\DeserializeException">DeserializeException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-ValidationException.html"><abbr title="\Arimac\Sigfox\Exception\ValidationException">ValidationException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-UnexpectedResponseException.html"><abbr title="\Arimac\Sigfox\Exception\UnexpectedResponseException">UnexpectedResponseException</abbr></a></span>
+                                                            
+                                             
+                                    </dd>
+                            <dt class="phpdocumentor-tag-list__entry">
+                    <span class="phpdocumentor-tag__name">throws</span>
+                </dt>
+                <dd class="phpdocumentor-tag-list__definition">
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Arimac-Sigfox-Exception-Response-ResponseException.html"><abbr title="\Arimac\Sigfox\Exception\Response\ResponseException">ResponseException</abbr></a></span>
                                                             
                                              
                                     </dd>
@@ -332,7 +383,7 @@
 </section>
             </div>
         </div>
-        <a href="classes/Arimac-Sigfox-SigfoxExt.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/Arimac-Sigfox-Response-Async-AsyncResponse.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
