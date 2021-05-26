@@ -54,7 +54,7 @@ same issue and we implemented an easy-to-use method for you.
     // Save this job id in your database
 
     // You can get the job status in next request by a one method
-    $status = $sigfox->jobStatus();
+    $status = $sigfox->jobStatus($jobId);
     $total = $status->getTotal();
 
 Refer the full `API reference`_ to get an idea about return types.
