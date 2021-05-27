@@ -13,13 +13,13 @@
       alt="Travis:Status"
     />
   </a>
-	<a href="https://opensource.org/licenses/MIT">
+	<a href="https://packagist.org/packages/arimac/sigfox">
     <img 
       src="https://img.shields.io/packagist/php-v/arimac/sigfox"
       alt="PHP:Version"
     />
   </a>
-	<a href="https://opensource.org/licenses/MIT">
+	<a href="https://packagist.org/packages/arimac/sigfox">
     <img
       src="https://img.shields.io/packagist/v/arimac/sigfox"
       alt="Packagist:Version"
