@@ -150,7 +150,7 @@ class PaginateResponse implements ResponseData {
         /** @var Request $request **/
 
         /** @var R **/
-        $response = $this->client->call("GET", $next, null, $this->response::class, $this->errors);
+        $response = $this->client->call("GET", $next, null, get_class($this->response), $this->errors);
         // Inserting to the cache if user enabled
         if($this->cacheEnabled){
             $this->cache[] = $response;

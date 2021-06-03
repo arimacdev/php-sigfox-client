@@ -22,10 +22,11 @@ class BaseTestCase extends TestCase {
     /** @var Sigfox **/
     protected $client;
 
-    protected array $history = [];
+    protected array $history;
 
     protected function setUp(): void
     {
+        $this->history = [];
         $mock = new MockHandler(); 
         $history = Middleware::history($this->history);
         $handlerStack = HandlerStack::create($mock);
