@@ -90,7 +90,7 @@ class Helper {
         // Serializing and validating data
         if ($request) {
             Validator::validate($request);
-            $requestSerializer = new ClassSerializer($request::class);
+            $requestSerializer = new ClassSerializer(get_class($request));
             $serialized = $requestSerializer->serialize($request);
 
             $bodyField = $request->getBodyField();
