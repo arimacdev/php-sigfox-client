@@ -4,10 +4,10 @@ namespace Arimac\Sigfox\Model;
 
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
 use Arimac\Sigfox\Validator\Rules\Required;
-class MaintenanceCreation extends BaseMaintenance
+class ProviderCreation extends BaseProvider
 {
     /**
-     * identifier of the group of this maintenance
+     * identifier of the group of this provider
      *
      * @var string
      */
@@ -15,7 +15,7 @@ class MaintenanceCreation extends BaseMaintenance
     /**
      * Setter for groupId
      *
-     * @param string $groupId identifier of the group of this maintenance
+     * @param string $groupId identifier of the group of this provider
      *
      * @return static To use in method chains
      */
@@ -27,7 +27,7 @@ class MaintenanceCreation extends BaseMaintenance
     /**
      * Getter for groupId
      *
-     * @return string identifier of the group of this maintenance
+     * @return string identifier of the group of this provider
      */
     public function getGroupId() : ?string
     {

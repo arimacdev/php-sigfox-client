@@ -2962,12 +2962,12 @@
             },
             "OTHER": {
                 "value": 0,
-                "comment": "Other"
-            ,
-            "ETSI_868MHZ_MATECH": {
-                "value": 1,
-                "comment": "ETSI 868MHz (Matech)"
-            }},
+                "comment": "Other",
+                "ETSI_868MHZ_MATECH": {
+                    "value": 1,
+                    "comment": "ETSI 868MHz (Matech)"
+                }
+            },
             "ETSI_868MHZ_ELHYTE": {
                 "value": 2,
                 "comment": "ETSI 868MHz (Elhyte)"
@@ -2976,7 +2976,7 @@
                 "value": 3,
                 "comment": "FCC 905MHz (Matech)"
             },
-            "FCC_905MHZ_ELHYTE":{
+            "FCC_905MHZ_ELHYTE": {
                 "value": 4,
                 "comment": "FCC 905MHz (Elhyte)"
             },
@@ -3223,6 +3223,34 @@
         }
     },
     "Arimac\\Sigfox\\Model\\UpdateWifiSubscription": {
+        "networkType": {
+            "COMPANY": {
+                "value": 0,
+                "comment": "COMPANY"
+            },
+            "OTHER": {
+                "value": 1,
+                "comment": "OTHER"
+            },
+            "RESIDENT": {
+                "value": 2,
+                "comment": "RESIDENT"
+            },
+            "comment": "Subscription network type"
+        },
+        "ethConnectionType": {
+            "DHCP": {
+                "value": 0,
+                "comment": "DHCP"
+            },
+            "STATIC": {
+                "value": 1,
+                "comment": "STATIC"
+            },
+            "comment": "Subscription connection type"
+        }
+    },
+    "Arimac\\Sigfox\\Model\\UpdateLanSubscription": {
         "networkType": {
             "COMPANY": {
                 "value": 0,

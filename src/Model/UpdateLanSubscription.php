@@ -3,47 +3,24 @@
 namespace Arimac\Sigfox\Model;
 
 use Arimac\Sigfox\Serializer\PrimitiveSerializer;
-use Arimac\Sigfox\Validator\Rules\Required;
 /**
  * Information about LAN internet subscription
  */
-class CreateLanSubscription extends CreateInternetSubscription
+class UpdateLanSubscription extends UpdateInternetSubscription
 {
     /**
-     * COMPANY
-     */
-    public const NETWORK_TYPE_COMPANY = 0;
-    /**
-     * OTHER
-     */
-    public const NETWORK_TYPE_OTHER = 1;
-    /**
-     * RESIDENT
-     */
-    public const NETWORK_TYPE_RESIDENT = 2;
-    /**
-     * DHCP
-     */
-    public const ETH_CONNECTION_TYPE_DHCP = 0;
-    /**
-     * STATIC
-     */
-    public const ETH_CONNECTION_TYPE_STATIC = 1;
-    /**
      * Subscription network type
-     * 
-     * - {@see CreateLanSubscription::NETWORK_TYPE_COMPANY}
-     * - {@see CreateLanSubscription::NETWORK_TYPE_OTHER}
-     * - {@see CreateLanSubscription::NETWORK_TYPE_RESIDENT}
+     * - 0 -> COMPANY
+     * - 1 -> OTHER
+     * - 2 -> RESIDENT
      *
      * @var int
      */
     protected ?int $networkType = null;
     /**
      * Subscription connection type
-     * 
-     * - {@see CreateLanSubscription::ETH_CONNECTION_TYPE_DHCP}
-     * - {@see CreateLanSubscription::ETH_CONNECTION_TYPE_STATIC}
+     * - 0 -> DHCP
+     * - 1 -> STATIC
      *
      * @var int
      */
@@ -64,10 +41,9 @@ class CreateLanSubscription extends CreateInternetSubscription
      * Setter for networkType
      *
      * @param int $networkType Subscription network type
-     *                         
-     *                         - {@see CreateLanSubscription::NETWORK_TYPE_COMPANY}
-     *                         - {@see CreateLanSubscription::NETWORK_TYPE_OTHER}
-     *                         - {@see CreateLanSubscription::NETWORK_TYPE_RESIDENT}
+     *                         - 0 -> COMPANY
+     *                         - 1 -> OTHER
+     *                         - 2 -> RESIDENT
      *                         
      *
      * @return static To use in method chains
@@ -81,10 +57,9 @@ class CreateLanSubscription extends CreateInternetSubscription
      * Getter for networkType
      *
      * @return int Subscription network type
-     *             
-     *             - {@see CreateLanSubscription::NETWORK_TYPE_COMPANY}
-     *             - {@see CreateLanSubscription::NETWORK_TYPE_OTHER}
-     *             - {@see CreateLanSubscription::NETWORK_TYPE_RESIDENT}
+     *             - 0 -> COMPANY
+     *             - 1 -> OTHER
+     *             - 2 -> RESIDENT
      *             
      */
     public function getNetworkType() : ?int
@@ -95,9 +70,8 @@ class CreateLanSubscription extends CreateInternetSubscription
      * Setter for ethConnectionType
      *
      * @param int $ethConnectionType Subscription connection type
-     *                               
-     *                               - {@see CreateLanSubscription::ETH_CONNECTION_TYPE_DHCP}
-     *                               - {@see CreateLanSubscription::ETH_CONNECTION_TYPE_STATIC}
+     *                               - 0 -> DHCP
+     *                               - 1 -> STATIC
      *                               
      *
      * @return static To use in method chains
@@ -111,9 +85,8 @@ class CreateLanSubscription extends CreateInternetSubscription
      * Getter for ethConnectionType
      *
      * @return int Subscription connection type
-     *             
-     *             - {@see CreateLanSubscription::ETH_CONNECTION_TYPE_DHCP}
-     *             - {@see CreateLanSubscription::ETH_CONNECTION_TYPE_STATIC}
+     *             - 0 -> DHCP
+     *             - 1 -> STATIC
      *             
      */
     public function getEthConnectionType() : ?int
@@ -182,7 +155,7 @@ class CreateLanSubscription extends CreateInternetSubscription
      */
     public function getValidationMetaData() : array
     {
-        $rules = array('networkType' => array(new Required()));
+        $rules = array();
         $rules = array_merge($rules, parent::getValidationMetaData());
         return $rules;
     }

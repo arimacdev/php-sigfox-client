@@ -7082,200 +7082,6 @@
       "description": "Defines a profile entity",
       "example": { "id": "572f196fe0b90abc0b5104ab", "name": "CUSTOMER [W]" }
     },
-    "baseStationUpdate": {
-      "type": "object",
-      "properties": {
-        "name": { "type": "string", "description": "The base station's name" },
-        "description": {
-          "type": "string",
-          "description": "Description of the base station"
-        },
-        "baseStationAlertTime": {
-          "type": "integer",
-          "format": "int32",
-          "description": "Overrides group level alert times, in seconds, for an individual base station.",
-          "minimum": 300,
-          "maximum": 86400
-        },
-        "transmissionAuthorized": {
-          "type": "boolean",
-          "description": "true if the transmission is authorized on this base station"
-        },
-        "installer": {
-          "type": "string",
-          "description": "Name of the installer of this base station. This field can be unset when updating."
-        },
-        "globalCoverageEnable": {
-          "type": "boolean",
-          "description": "true if the base station is available for the global coverage computation"
-        },
-        "elevation": {
-          "type": "integer",
-          "format": "int32",
-          "description": "Antenna height (in meter)"
-        },
-        "splatRadius": {
-          "type": "integer",
-          "format": "int32",
-          "description": "Radius of the base station (in km). This field can be unset when updating."
-        },
-        "mastEquipment": {
-          "type": "integer",
-          "format": "int32",
-          "description": "LNA version of this base station. Mini station has type 7 -> MINI. Mini Access has type 21.\n0 -> OTHER\n1 -> LNA_V2_SBS_868_P\n2 -> LNA_V2_SBS_902_P\n3 -> LNA_V2_NB_SBS_868_P\n4 -> LNA_V1_SBS_868_P\n5 -> LNA_V2_SBS_920_P\n6 -> LNA_V2_SBS_923_P\n7 -> MINI\n8 -> LNA_V4_867\n9 -> LNA_V4_915\n10 -> LNAC_867\n11 -> LNAC_868\n12 -> LNAC_902\n13 -> LNAC_916_TX\n14 -> LNAC_921\n15 -> LNAC_921_TX\n16 -> LNAC_922_TX\n17 -> LNA_V3_SBS_868_P\n18 -> LNA_V3_SBS_902_P\n19 -> LNA_V3_SBS_920_P\n20 -> LNA_V3_SBS_923_P\n21 -> NONE\n22 -> LNAC_868_TX\n"
-        },
-        "mastEquipmentDescription": {
-          "type": "string",
-          "description": "The base station's mast equipment description. This field can be unset when updating."
-        },
-        "lnaByPass": {
-          "type": "boolean",
-          "description": "true if the LNA is by pass"
-        },
-        "cavityFilterVersion": {
-          "type": "integer",
-          "format": "int32",
-          "description": "Cavity filter version for the base station.\n-1 -> None\n0 -> Other\n1 -> ETSI 868MHz (Matech)\n2 -> ETSI 868MHz (Elhyte)\n3 -> FCC 905MHz (Matech)\n4 -> FCC 905MHz (Elhyte)\n5 -> FCC 920MHz\n6 -> FCC 923MHz\n7 -> FCC 922.5MHz\n8 -> ETSI 867MHz (Matech)\n9 -> ETSI 867MHz (Techniwave)\n10 -> FCC 921.5MHz\n"
-        },
-        "cavityFilterVersionDescription": {
-          "type": "string",
-          "description": "The base station's cavity filter version description. This field can be unset when updating."
-        },
-        "environmentLoss": {
-          "type": "number",
-          "format": "double",
-          "description": "Environment loss of this base station (in dB)"
-        },
-        "cableLoss": {
-          "type": "number",
-          "format": "double",
-          "description": "Cable loss of this base station (in dB)"
-        },
-        "antennaGain": {
-          "type": "number",
-          "format": "double",
-          "description": "Antenna gai of this base station (in dB)"
-        },
-        "antennaNoiseFigure": {
-          "type": "number",
-          "format": "double",
-          "description": "Antenna noise figure of this base station (in dB). This setting is only relevant when an antenna with a filter is installed."
-        },
-        "antennaInsertionLoss": {
-          "type": "number",
-          "format": "double",
-          "description": "Antenna insertion loss of this base station (in dB). This setting is only relevant when an antenna with a filter is installed."
-        },
-        "antennaMaxAdmissiblePower": {
-          "type": "number",
-          "format": "double",
-          "description": "Antenna max admissible power of this base station (in dBm). This setting is only relevant when an antenna with a filter is installed."
-        },
-        "gainFlag": {
-          "type": "boolean",
-          "description": "true if the base station has a gain flag"
-        },
-        "mastEquipmentGain": {
-          "type": "number",
-          "format": "double",
-          "description": "Mast equipment gain of this base station (in dB)"
-        },
-        "mastEquipmentNoiseFigure": {
-          "type": "number",
-          "format": "double",
-          "description": "Mast equipment noise figure of this base station (in dB)"
-        },
-        "lnaInsertionLoss": {
-          "type": "number",
-          "format": "double",
-          "description": "LNA insertion loss of this base station (in dB)"
-        },
-        "cavityFilterInsertionLoss": {
-          "type": "number",
-          "format": "double",
-          "description": "Cavity filter insertion loss of this base station (in dB)"
-        },
-        "txPowerMargin": {
-          "type": "number",
-          "format": "double",
-          "description": "TX power margin of this base station (in dBm)",
-          "minimum": -20,
-          "maximum": 20
-        },
-        "serviceCoverage": {
-          "type": "integer",
-          "format": "int32",
-          "description": "Service coverage of a mini base station\n0 -> GLOBAL\n1 -> CUSTOMER\n"
-        },
-        "antenna": {
-          "type": "object",
-          "allOf": [{ "$ref": "#/definitions/antenna" }]
-        },
-        "monarchBeaconEnabled": {
-          "type": "boolean",
-          "description": "true if Monarch Beacon is enabled"
-        }
-      },
-      "description": "Provide information to update a Base Station",
-      "example": {
-        "id": 1,
-        "name": "Paris La Villette (Paris)",
-        "versionCurrent": "N/A",
-        "pac": "--automatic--",
-        "remoteIp": "10.30.26.28",
-        "autoTxPeriod": 6,
-        "tilt": 46.29,
-        "antenna": {
-          "model": "abcd",
-          "azimuth": 20.19,
-          "attenuationDirect": 178.29,
-          "attenuationIndirect": 241.6,
-          "attenuation": 80
-        }
-      }
-    },
-    "baseStationBulkEdit": {
-      "type": "object",
-      "required": ["basestations", "groupId"],
-      "properties": {
-        "groupId": {
-          "type": "string",
-          "description": "Operator id of named base stations for bulk update"
-        },
-        "basestations": {
-          "type": "array",
-          "items": { "$ref": "#/definitions/baseStationUpdate" }
-        }
-      },
-      "example": {
-        "groupId": "1234AE",
-        "basestations": [
-          {
-            "id": "001C",
-            "name": "Base station #001C",
-            "versionCurrent": "v2.6.3",
-            "hwVersion": "TAPV1.0",
-            "pac": "ADA9832316B3AAF1",
-            "remoteIp": "10.250.0.240",
-            "capabilities": "BAND800",
-            "fifoExpiration": 0,
-            "expectedHwVersion": "TAPV1.0",
-            "autoTxPeriod": 6,
-            "monarchBeaconEnabled": false
-          },
-          {
-            "id": 1,
-            "name": "Paris La Villette (Paris)",
-            "versionCurrent": "N/A",
-            "pac": "ADA9832316B3AAF2",
-            "remoteIp": "10.30.26.28",
-            "fifoExpiration": 86400,
-            "expectedHwVersion": "TAPV1.0",
-            "autoTxPeriod": 5
-          }
-        ]
-      }
-    },
     "cellularConnectivityForBs": {
       "description": "Cellular connectivity configuration for a base station.",
       "required": ["name", "apn"],
@@ -11535,21 +11341,6 @@
         }
       ]
     },
-    "maintenanceCreation": {
-      "allOf": [
-        { "$ref": "#/definitions/baseMaintenance" },
-        {
-          "type": "object",
-          "required": ["groupId"],
-          "properties": {
-            "groupId": {
-              "type": "string",
-              "description": "identifier of the group of this maintenance"
-            }
-          }
-        }
-      ]
-    },
     "perm": {
       "type": "object",
       "properties": {
@@ -11683,6 +11474,21 @@
         }
       ]
     },
+    "providerCreation": {
+      "allOf": [
+        { "$ref": "#/definitions/baseProvider" },
+        {
+          "type": "object",
+          "required": ["groupId"],
+          "properties": {
+            "groupId": {
+              "type": "string",
+              "description": "identifier of the group of this provider"
+            }
+          }
+        }
+      ]
+    },
     "commonRole": {
       "type": "object",
       "properties": {
@@ -11698,6 +11504,32 @@
         }
       },
       "description": "generic information about a Role"
+    },
+    "roleCreate": {
+      "allOf": [
+        { "$ref": "#/definitions/commonRole" },
+        {
+          "type": "object",
+          "properties": {
+            "parentRoleId": {
+              "type": "string",
+              "description": "The role's parent's identifier"
+            },
+            "perms": {
+              "type": "array",
+              "description": "the permisions included in this role, if the role is not META or META_EMPTY type,",
+              "title": "Perms",
+              "items": { "type": "integer", "format": "int32" }
+            }
+          },
+          "example": {
+            "name": "CRUD",
+            "type": 0,
+            "parentRoleId": "572f6805e0b90abc0b5104ab",
+            "perms": [4000, 4001, 4003, 4002]
+          }
+        }
+      ]
     },
     "role": {
       "description": "Information about a Role",
@@ -11971,6 +11803,38 @@
         }
       ]
     },
+    "lanSubscription": {
+      "description": "Information about LAN internet subscription",
+      "allOf": [
+        { "$ref": "#/definitions/internetSubscription" },
+        {
+          "type": "object",
+          "properties": {
+            "networkType": {
+              "type": "integer",
+              "format": "int32",
+              "description": "Subscription network type\n- 0 -> COMPANY\n- 1 -> OTHER\n- 2 -> RESIDENT\n"
+            },
+            "ethConnectionType": {
+              "type": "integer",
+              "format": "int32",
+              "description": "Subscription connection type\n- 0 -> DHCP\n- 1 -> STATIC\n"
+            },
+            "addressing": {
+              "type": "string",
+              "example": "192.168.0.212",
+              "description": "The addressing of this internet subscription. This field can be unset when updating."
+            },
+            "connectionComments": {
+              "type": "number",
+              "format": "double",
+              "example": "IP Address: 192.168.0.212 Subnet Mask : 255.255.255.0 DNS : 192.168.0.154",
+              "description": "Comments about the connection of this internet subscription. This field can be unset when updating."
+            }
+          }
+        }
+      ]
+    },
     "wifiSubscription": {
       "description": "Information about Wi-Fi internet subscription",
       "allOf": [
@@ -12043,107 +11907,6 @@
       },
       "description": "Generic internet subscription information"
     },
-    "createGsmSubscription": {
-      "description": "Information about cellular internet subscription",
-      "required": ["modemSerialNumber"],
-      "allOf": [
-        { "$ref": "#/definitions/createInternetSubscription" },
-        {
-          "type": "object",
-          "properties": {
-            "dataNumber": {
-              "type": "string",
-              "description": "The data number of this internet subscription. This field can be unset when updating."
-            },
-            "simCardNumber": {
-              "type": "string",
-              "description": "The sim card number of this internet subscription. This field can be unset when updating."
-            },
-            "imei": {
-              "type": "string",
-              "description": "The IMEI of this internet subscription. This field can be unset when updating."
-            },
-            "modem": {
-              "type": "string",
-              "description": "The modem of this internet subscription. This field can be unset when updating."
-            },
-            "modemSerialNumber": {
-              "type": "string",
-              "description": "The serial number of the modem of this internet subscription"
-            },
-            "gsmConnectionType": {
-              "type": "integer",
-              "format": "int32",
-              "description": "GSM subscription connection type\n- 0 -> DONGLE_USB\n- 1 -> ROUTER_ETH\n"
-            }
-          }
-        }
-      ]
-    },
-    "createLanSubscription": {
-      "description": "Information about LAN internet subscription",
-      "required": ["networkType", "connectionType"],
-      "allOf": [
-        { "$ref": "#/definitions/createInternetSubscription" },
-        {
-          "type": "object",
-          "properties": {
-            "networkType": {
-              "type": "integer",
-              "format": "int32",
-              "description": "Subscription network type\n- 0 -> COMPANY\n- 1 -> OTHER\n- 2 -> RESIDENT\n"
-            },
-            "ethConnectionType": {
-              "type": "integer",
-              "format": "int32",
-              "description": "Subscription connection type\n- 0 -> DHCP\n- 1 -> STATIC\n"
-            },
-            "addressing": {
-              "type": "string",
-              "example": "192.168.0.212",
-              "description": "The addressing of this internet subscription. This field can be unset when updating."
-            },
-            "connectionComments": {
-              "type": "number",
-              "format": "double",
-              "example": "IP Address: 192.168.0.212 Subnet Mask : 255.255.255.0 DNS : 192.168.0.154",
-              "description": "Comments about the connection of this internet subscription. This field can be unset when updating."
-            }
-          }
-        }
-      ]
-    },
-    "createWifiSubscription": {
-      "description": "Information about Wi-Fi internet subscription",
-      "required": ["networkType", "connectionType"],
-      "allOf": [
-        { "$ref": "#/definitions/createInternetSubscription" },
-        {
-          "type": "object",
-          "properties": {
-            "networkType": {
-              "type": "integer",
-              "format": "int32",
-              "example": 0,
-              "description": "Subscription network type\n- 0 -> COMPANY\n- 1 -> OTHER\n- 2 -> RESIDENT\n"
-            },
-            "ethConnectionType": {
-              "type": "integer",
-              "format": "int32",
-              "description": "Subscription connection type\n- 0 -> DHCP\n- 1 -> STATIC\n"
-            },
-            "ssid": {
-              "type": "string",
-              "description": "The SSID of this Wi-Fi internet subscription. This field can be unset when updating."
-            },
-            "passphrase": {
-              "type": "string",
-              "description": "The passphrase on this Wi-Fi internet subscription. This field can be unset when updating."
-            }
-          }
-        }
-      ]
-    },
     "updateInternetSubscription": {
       "type": "object",
       "discriminator": "type",
@@ -12181,177 +11944,8 @@
       },
       "description": "Generic internet subscription information"
     },
-    "updateAdslSubscription": {
-      "description": "Information about ADSL internet subscription",
-      "allOf": [
-        { "$ref": "#/definitions/updateInternetSubscription" },
-        {
-          "type": "object",
-          "properties": {
-            "connectionStatus": {
-              "type": "integer",
-              "format": "int32",
-              "example": 2,
-              "description": "Subscription connection status\n- 0 -> REQUEST\n- 1 -> INSTALLED\n- 2 -> ACTIVATED\n"
-            },
-            "internetAccount": {
-              "type": "string",
-              "description": "The internet account of this internet subscription. This field can be unset when updating."
-            },
-            "orderNumber": {
-              "type": "string",
-              "description": "The order number of this internet subscription. This field can be unset when updating."
-            },
-            "interfaceLogin": {
-              "type": "string",
-              "description": "The interface login of this internet subscription"
-            },
-            "interfacePassword": {
-              "type": "string",
-              "description": "The interface password of this internet subscription"
-            },
-            "adslLogin": {
-              "type": "string",
-              "description": "The adsl login of this internet subscription. This field can be unset when updating."
-            },
-            "adslPassword": {
-              "type": "string",
-              "description": "The adsl password of this internet subscription. This field can be unset when updating."
-            },
-            "lineNumber": {
-              "type": "string",
-              "description": "The line number of this internet subscription"
-            },
-            "modem": {
-              "type": "string",
-              "description": "The modem of this internet subscription"
-            },
-            "modemSerialNumber": {
-              "type": "string",
-              "description": "The serial number of the modem of this internet subscription"
-            },
-            "jumperStrip": {
-              "type": "string",
-              "description": "The jumper strip of this internet subscription. This field can be unset when updating."
-            },
-            "jumperBlock": {
-              "type": "string",
-              "description": "The jumper block of this internet subscription. This field can be unset when updating."
-            },
-            "pair": {
-              "type": "string",
-              "description": "The pair of this internet subscription. This field can be unset when updating."
-            }
-          }
-        }
-      ]
-    },
-    "updateGsmSubscription": {
-      "description": "Information about cellular internet subscription",
-      "allOf": [
-        { "$ref": "#/definitions/updateInternetSubscription" },
-        {
-          "type": "object",
-          "properties": {
-            "dataNumber": {
-              "type": "string",
-              "description": "The data number of this internet subscription. This field can be unset when updating."
-            },
-            "simCardNumber": {
-              "type": "string",
-              "description": "The sim card number of this internet subscription. This field can be unset when updating."
-            },
-            "imei": {
-              "type": "string",
-              "description": "The IMEI of this internet subscription. This field can be unset when updating."
-            },
-            "modem": {
-              "type": "string",
-              "description": "The modem of this internet subscription. This field can be unset when updating."
-            },
-            "modemSerialNumber": {
-              "type": "string",
-              "description": "The serial number of the modem of this internet subscription"
-            },
-            "gsmConnectionType": {
-              "type": "integer",
-              "format": "int32",
-              "description": "GSM subscription connection type\n- 0 -> DONGLE_USB\n- 1 -> ROUTER_ETH\n"
-            }
-          }
-        }
-      ]
-    },
-    "updateSatSubscription": {
-      "description": "Information about satellite internet subscription",
-      "required": ["rType", "orderNumber", "connectionStatus"],
-      "allOf": [
-        { "$ref": "#/definitions/updateInternetSubscription" },
-        {
-          "type": "object",
-          "properties": {
-            "connectionStatus": {
-              "type": "integer",
-              "format": "int32",
-              "example": 2,
-              "description": "Subscription connection status\n- 0 -> REQUEST\n- 1 -> CREDENTIALS PROVIDED\n- 2 -> KIT RECEIVED\n"
-            },
-            "altitude": {
-              "type": "number",
-              "format": "double",
-              "example": 670,
-              "description": "The altitude of the satellite of this internet subscription"
-            },
-            "azimuth": {
-              "type": "number",
-              "format": "double",
-              "example": 205.152,
-              "description": "The azimuth of the satellite of this internet subscription"
-            },
-            "polarization": {
-              "type": "number",
-              "format": "double",
-              "example": 11.856,
-              "description": "The polarization of the satellite of this internet subscription"
-            },
-            "orderNumber": {
-              "type": "string",
-              "example": "218337",
-              "description": "The order number of this internet subscription"
-            },
-            "locationCode": {
-              "type": "string",
-              "example": "FR",
-              "description": "The location code of this internet subscription. This field can be unset when updating."
-            },
-            "clusterCode": {
-              "type": "string",
-              "example": "002A",
-              "description": "The cluster code of this internet subscription. This field can be unset when updating."
-            },
-            "login": {
-              "type": "string",
-              "example": "cattherine.menitro",
-              "description": "The login of this internet subscription. This field can be unset when updating."
-            },
-            "password": {
-              "type": "string",
-              "example": "PMFPAI53A3",
-              "description": "The password of this internet subscription. This field can be unset when updating."
-            },
-            "rType": {
-              "type": "integer",
-              "format": "int32",
-              "example": 1,
-              "description": "Subscription receiver type\n- 0 -> HEATING\n- 1 -> STANDARD\n"
-            }
-          }
-        }
-      ]
-    },
-    "updateWifiSubscription": {
-      "description": "Information about Wi-Fi internet subscription",
-      "required": ["networkType", "connectionType"],
+    "updateLanSubscription": {
+      "description": "Information about LAN internet subscription",
       "allOf": [
         { "$ref": "#/definitions/updateInternetSubscription" },
         {
@@ -12360,7 +11954,6 @@
             "networkType": {
               "type": "integer",
               "format": "int32",
-              "example": 0,
               "description": "Subscription network type\n- 0 -> COMPANY\n- 1 -> OTHER\n- 2 -> RESIDENT\n"
             },
             "ethConnectionType": {
@@ -12368,13 +11961,16 @@
               "format": "int32",
               "description": "Subscription connection type\n- 0 -> DHCP\n- 1 -> STATIC\n"
             },
-            "ssid": {
+            "addressing": {
               "type": "string",
-              "description": "The SSID of this Wi-Fi internet subscription. This field can be unset when updating."
+              "example": "192.168.0.212",
+              "description": "The addressing of this internet subscription. This field can be unset when updating."
             },
-            "passphrase": {
-              "type": "string",
-              "description": "The passphrase on this Wi-Fi internet subscription. This field can be unset when updating."
+            "connectionComments": {
+              "type": "number",
+              "format": "double",
+              "example": "IP Address: 192.168.0.212 Subnet Mask : 255.255.255.0 DNS : 192.168.0.154",
+              "description": "Comments about the connection of this internet subscription. This field can be unset when updating."
             }
           }
         }
@@ -12684,30 +12280,6 @@
             "lat": 40.32,
             "lng": 51.65,
             "location": [250, 11, 93]
-          }
-        }
-      ]
-    },
-    "siteCreation": {
-      "required": [
-        "locs",
-        "address",
-        "groupId",
-        "name",
-        "inverterInfo",
-        "status",
-        "lat",
-        "lng"
-      ],
-      "allOf": [
-        { "$ref": "#/definitions/siteUpdate" },
-        {
-          "type": "object",
-          "properties": {
-            "groupId": {
-              "type": "string",
-              "description": "identifier of the group of this site"
-            }
           }
         }
       ]
